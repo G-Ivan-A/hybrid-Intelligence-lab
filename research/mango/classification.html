@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Классификация IT/Telecom SaaS-продуктов MANGO OFFICE</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --accent: #1f6feb;
+      --head: #eef3fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 10px 28px rgba(31, 41, 51, 0.06);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+    }
+    h2 {
+      margin-top: 36px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    h3 { margin-top: 28px; }
+    p, li { font-size: 16px; }
+    a { color: var(--accent); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 28px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+    th {
+      background: var(--head);
+      text-align: left;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: #fbfcfe; }
+    code {
+      background: #edf2f7;
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    @media (max-width: 760px) {
+      main { padding: 16px 10px 32px; }
+      article { padding: 20px 14px; }
+      table { display: block; overflow-x: auto; white-space: normal; }
+      th, td { min-width: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+<h1>Классификация IT/Telecom SaaS-продуктов MANGO OFFICE</h1>
+<p>Дата среза: 22 мая 2026 г.</p>
+<p>Цель документа: зафиксировать рабочую международную классификацию продуктов и сервисов MANGO OFFICE, чтобы бизнес-аналитик мог сравнивать входящие требования с эталонным каталогом и быстро понимать, относится ли требование к существующему продукту, смежной возможности или внешнему классу решений.</p>
+<h2>Краткий вывод</h2>
+<p>Публичный каталог MANGO OFFICE покрывает пять крупных продуктовых семейств:</p>
+<ol>
+<li>Корпоративная телефония и UCaaS: виртуальная АТС, IP-телефония, номера, SIP trunk, мобильная телефония, запись, IVR, распределение звонков, Mango Talker и видеоконференции.</li>
+<li>Контакт-центр и CCaaS: входящие и исходящие обращения, омниканальность, рабочее место оператора, отчеты, WFM, управление персоналом, база знаний, чат для сайта, управление сделками и оценка эффективности.</li>
+<li>Цифровые каналы и коммуникации: онлайн-чат, мессенджеры, email, SMS, мессенджер-маркетинг, единое окно оператора.</li>
+<li>AI и автоматизация: голосовой робот, чат-бот, робот-администратор, речевая аналитика, управление качеством, робот-аналитик и робот-маркетолог.</li>
+<li>Маркетинговая и бизнес-аналитика: коллтрекинг, мультиканальная и сквозная аналитика, email-трекинг, ROMI, товарная аналитика, анализ конкурентов и интеграции с CRM/1C/API/webhook.</li>
+</ol>
+<p>Для стандартной классификации выбраны два взаимодополняющих фреймворка:</p>
+<ul>
+<li><strong>TM Forum Frameworx / Open APIs</strong>: основной отраслевой фреймворк для телеком- и цифровых сервис-провайдеров. Он удобен для внутренней классификации требований через домены Market &amp; Sales, Customer, Product, Service и Resource, а также через жизненный цикл каталога, заказа, обслуживания и эксплуатации.</li>
+<li><strong>UNSPSC</strong>: глобальная товарно-сервисная классификация ООН/UNDP. Она удобна для закупочной, договорной и внешней классификации: к каждому продукту можно присвоить код commodity-класса и связать требование с международной номенклатурой.</li>
+</ul>
+<p>Рекомендуемая схема для БА: одно требование получает два ключа классификации. Первый ключ отвечает на вопрос "какой это домен и capability в телеком/цифровом сервис-провайдере" по TM Forum. Второй ключ отвечает на вопрос "какой это товарно-сервисный класс для закупки, договора или сравнения поставщиков" по UNSPSC.</p>
+<h2>Методика</h2>
+<ul>
+<li>Источники по продуктам: публичный каталог и страницы продуктов MANGO OFFICE на <code class="notranslate">mango-office.ru</code>.</li>
+<li>Источники по стандартам: страницы TM Forum по eTOM, SID и TMF620; официальный обзор UNSPSC от UNDP; публичный экспорт UNSPSC из UNGM.</li>
+<li>Статус в колонке MANGO OFFICE:
+<ul>
+<li><strong>Есть</strong>: продукт или возможность явно присутствует в публичном каталоге.</li>
+<li><strong>Частично</strong>: возможность есть как часть более крупного продукта, через модуль, интеграцию или ограниченный сценарий.</li>
+<li><strong>Не выявлено</strong>: в публичном каталоге не найден самостоятельный продукт такого класса.</li>
+<li><strong>Вне SaaS-ядра</strong>: предложение присутствует, но относится к оборудованию или смежной поставке, а не к SaaS-сервису.</li>
+</ul>
+</li>
+<li>UNSPSC-коды приведены как рабочие коды для классификации требований. Для закупки или договора их стоит проверять по актуальному экспортному файлу UNGM/UNSPSC на дату использования.</li>
+</ul>
+<h2>Анализ публичного каталога MANGO OFFICE</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Семейство</th>
+<th>Продукты и возможности MANGO OFFICE</th>
+<th>Роль в классификации требований</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Телефония и UCaaS</td>
+<td>Виртуальная АТС, IP-телефония, виртуальные номера, 8-800, SIP trunk, запись разговоров, голосовое меню IVR, распределение звонков, автосекретарь, обратный звонок, SMS-рассылки, Mango Mobile, Mango Talker, видеоконференции</td>
+<td>Базовый класс требований к корпоративной голосовой связи, унифицированным коммуникациям и номерной емкости</td>
+</tr>
+<tr>
+<td>Контакт-центр и CCaaS</td>
+<td>Омниканальный контакт-центр, исходящий обзвон, омниканальные коммуникации, рабочее место сотрудника, управление персоналом, WFM, конструктор отчетов, робот-администратор, база знаний, чат для сайта, управление сделками, оценка эффективности, API для УВК/CRM</td>
+<td>Класс требований к обслуживанию клиентов, очередям, маршрутизации, outbound-кампаниям, SLA и рабочему месту оператора</td>
+</tr>
+<tr>
+<td>Интеграции</td>
+<td>Интеграции по API, webhook, 1C, LDAP/ОПДкРК, маркетплейс интеграций</td>
+<td>Класс требований к обмену данными, embedding в CRM/ERP, событиям, синхронизации справочников и расширяемости</td>
+</tr>
+<tr>
+<td>AI и контроль качества</td>
+<td>Голосовой робот, чат-бот, искусственный интеллект, речевая аналитика, управление качеством, бизнес-аналитика</td>
+<td>Класс требований к автоматизации диалогов, распознаванию речи, контролю качества, аналитике операторов и снижению ручной нагрузки</td>
+</tr>
+<tr>
+<td>Маркетинговая аналитика</td>
+<td>Коллтрекинг, мультиканальная аналитика, сквозная аналитика, email-трекинг, ROMI, товарная аналитика, анализ конкурентов, робот-аналитик, робот-маркетолог, мессенджер-маркетинг</td>
+<td>Класс требований к атрибуции, источникам лидов, рекламной эффективности и маркетинговым отчетам</td>
+</tr>
+<tr>
+<td>Оборудование и безопасность</td>
+<td>SIP-телефоны, гарнитуры, устройства, информационная безопасность</td>
+<td>Смежные классы: оборудование и защищенность сервиса. Не являются ядром SaaS-классификации, но важны для полного требования</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>Рассмотренные стандарты и фреймворки</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Стандарт или фреймворк</th>
+<th>Что дает для этой задачи</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TM Forum Frameworx: eTOM, SID, Open APIs</td>
+<td>Отраслевой язык телеком-провайдера: продукт, сервис, ресурс, клиент, заказ, каталог, эксплуатация, партнеры. Хорошо подходит для MANGO OFFICE как поставщика коммуникационных сервисов.</td>
+<td>Выбран как основной доменный стандарт</td>
+</tr>
+<tr>
+<td>UNSPSC</td>
+<td>Международная иерархическая классификация продуктов и услуг. Хорошо подходит для внешнего сравнения, закупки и кодирования требований.</td>
+<td>Выбран как второй стандарт</td>
+</tr>
+<tr>
+<td>ITIL 4 / ISO/IEC 20000</td>
+<td>Сильный фреймворк управления IT-сервисами: SLA, инциденты, запросы, каталог услуг, эксплуатация. Полезен для NFR и процессов поддержки, но слабее классифицирует сами телеком/SaaS-продукты.</td>
+<td>Не выбран для основной таблицы, использовать как дополнительный процессный слой</td>
+</tr>
+<tr>
+<td>MEF LSO</td>
+<td>Полезен для операторских сетевых сервисов и оркестрации connectivity/NaaS. Для ВАТС, контакт-центра, ботов и маркетинговой аналитики слишком узкий.</td>
+<td>Не выбран для основной таблицы</td>
+</tr>
+<tr>
+<td>NAICS/ISIC/ОКВЭД-подобные классификаторы</td>
+<td>Классифицируют отрасли и компании, а не конкретные SaaS-продукты.</td>
+<td>Не выбран</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>Правила применения двух выбранных стандартов</h2>
+<h3>TM Forum Frameworx / Open APIs</h3>
+<p>В этой работе TM Forum используется не как перечень "товарных карточек", а как доменная модель для телеком/SaaS-провайдера:</p>
+<ul>
+<li><strong>Market &amp; Sales</strong>: требования к продажам, маркетинговой аналитике, коммерческим предложениям, рекламным кампаниям и атрибуции.</li>
+<li><strong>Customer</strong>: требования к клиенту, пользователю, обращению, коммуникации, SLA, качеству обслуживания и взаимодействию.</li>
+<li><strong>Product</strong>: требования к продуктовой карточке, тарифу, опции, пакету, каталогу и заказу.</li>
+<li><strong>Service</strong>: требования к логическому сервису: ВАТС, контакт-центр, IVR, робот, речевая аналитика, каналы коммуникаций.</li>
+<li><strong>Resource</strong>: требования к ресурсам: номер, SIP trunk, канал, линия, устройство, запись разговора, интеграционный endpoint.</li>
+</ul>
+<p>Open API слой нужен как ориентир для реализации и интеграций: продуктовые требования обычно связаны с каталогом и заказом, сервисные требования - с service inventory/order, клиентские обращения - с customer/party interaction, эксплуатационные требования - с trouble ticket, SLA, usage и monitoring.</p>
+<h3>UNSPSC</h3>
+<p>UNSPSC используется как внешний кодировщик товарно-сервисного класса. Для SaaS-продукта часто нужны два уровня:</p>
+<ul>
+<li>обобщающий код <strong>81162000 Cloud-based software as a service</strong>;</li>
+<li>функциональный код, например <strong>43232903 Contact center software</strong>, <strong>43232303 Customer relationship management CRM software</strong>, <strong>83111510 Interactive voice response service</strong> или <strong>80141501 Marketing analysis</strong>.</li>
+</ul>
+<p>Такой двойной подход уменьшает неоднозначность: требование "голосовой робот" является SaaS-сервисом, но функционально ближе к IVR, voice recognition и контакт-центру.</p>
+<h2>Сравнительная таблица классификации</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="right">№</th>
+<th>Продукт/сервис</th>
+<th>MANGO OFFICE: есть/нет</th>
+<th>Стандарт 1: TM Forum Frameworx / Open APIs (обоснование)</th>
+<th>Стандарт 2: UNSPSC (обоснование)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td>Виртуальная АТС / облачная телефония</td>
+<td>Есть</td>
+<td>Product Offering в Product domain; Service domain для голосового сервиса; Resource domain для номеров, линий и правил маршрутизации.</td>
+<td>81162000 Cloud-based software as a service + 83111500 Local and long distance telephone communications.</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>IP-телефония и SIP trunk</td>
+<td>Есть</td>
+<td>Service/Resource: логический голосовой сервис поверх SIP-ресурсов; удобно отделять заказ продукта от ресурсов подключения.</td>
+<td>83111500 Local and long distance telephone communications; 43232901 Access software или 43232915 Platform interconnectivity software для софтверной части.</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Виртуальные номера, 8-800, мобильные номера</td>
+<td>Есть</td>
+<td>Resource domain: номерная емкость как ресурс, привязанный к продукту ВАТС или контакт-центру.</td>
+<td>83111501 Local telephone service, 83111502 Long distance telephone services, 83111603 Cellular telephone services.</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Голосовое меню IVR, автосекретарь, автоинформатор</td>
+<td>Есть</td>
+<td>Service capability внутри голосового сервиса; требования относятся к service specification, routing и customer interaction.</td>
+<td>83111510 Interactive voice response service + 43232703 Interactive voice response software.</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Распределение звонков, очереди, правила маршрутизации</td>
+<td>Есть</td>
+<td>Customer/Service: управление взаимодействием и исполнением сервиса; для требований важны SLA, skill groups и правила маршрутизации.</td>
+<td>43232903 Contact center software или 43231501 Helpdesk or call center software.</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Запись разговоров, журнал звонков, статистика</td>
+<td>Есть</td>
+<td>Service assurance и usage: фиксация использования сервиса, контроль качества и доказательная база для обращений.</td>
+<td>43232300 Data management and query software + 43232605 Analytical or scientific software.</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Обратный звонок с сайта</td>
+<td>Есть</td>
+<td>Market &amp; Sales + Customer interaction: лидогенерация превращается в коммуникацию и заказ обратного вызова.</td>
+<td>80141603 Telemarketing + 83111500 Telephone communications.</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Mango Talker: корпоративный мессенджер и softphone</td>
+<td>Есть</td>
+<td>Customer interaction и Service: единое рабочее пространство коммуникаций; Resource - пользовательские endpoint-устройства и приложения.</td>
+<td>43232702 Desktop communications software + 43223204 Unified messaging platform.</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>Видеоконференции</td>
+<td>Есть</td>
+<td>Service domain для UCaaS-сервиса; Product domain для опции или отдельного предложения в каталоге.</td>
+<td>43233502 Video conferencing software + 81162000 Cloud-based software as a service.</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>SMS-рассылки</td>
+<td>Есть</td>
+<td>Customer interaction и Campaign/Market &amp; Sales: массовые уведомления и коммуникации с клиентами.</td>
+<td>43223202 Short message service center + 81161600 Electronic mail and messaging services.</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>Омниканальный контакт-центр / CCaaS</td>
+<td>Есть</td>
+<td>Product/Service: отдельное Product Offering с capability обслуживания обращений; Customer domain для клиента и обращения.</td>
+<td>43232903 Contact center software + 43231501 Helpdesk or call center software.</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>Входящие обращения, очереди, рабочее место оператора</td>
+<td>Есть</td>
+<td>Customer interaction и Service assurance: управление обращением, оператором, каналом и SLA.</td>
+<td>43232903 Contact center software.</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>Исходящий обзвон и кампании</td>
+<td>Есть</td>
+<td>Market &amp; Sales + Customer interaction: outbound-кампания как коммерческое взаимодействие, исполняемое контакт-центром.</td>
+<td>80141603 Telemarketing + 43232903 Contact center software.</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>Омниканальные коммуникации: чат, мессенджеры, соцсети, email</td>
+<td>Есть</td>
+<td>Customer interaction across channels; полезно классифицировать канал отдельно от бизнес-сценария обращения.</td>
+<td>43223204 Unified messaging platform, 43223205 Instant messaging platform, 81161600 Electronic mail and messaging services.</td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td>Чат для сайта</td>
+<td>Есть</td>
+<td>Customer interaction: цифровой канал обращения, связанный с контакт-центром и карточкой клиента.</td>
+<td>43233504 Instant messaging software + 81161600 Electronic mail and messaging services.</td>
+</tr>
+<tr>
+<td align="right">16</td>
+<td>Чат-бот</td>
+<td>Есть</td>
+<td>Service automation внутри Customer domain; бот исполняет часть interaction flow до передачи оператору.</td>
+<td>43231511 Expert system software + 43223205 Instant messaging platform.</td>
+</tr>
+<tr>
+<td align="right">17</td>
+<td>Голосовой робот / voice bot</td>
+<td>Есть</td>
+<td>Service automation для голосового канала; связывает IVR, customer interaction и orchestration сценариев.</td>
+<td>43233413 Voice recognition software + 83111510 Interactive voice response service.</td>
+</tr>
+<tr>
+<td align="right">18</td>
+<td>Робот-администратор</td>
+<td>Есть</td>
+<td>Service orchestration: автоматизирует операционные действия контакт-центра и обращения клиента.</td>
+<td>81112106 Application service providers + 43232403 Enterprise application integration software.</td>
+</tr>
+<tr>
+<td align="right">19</td>
+<td>Речевая аналитика / conversation intelligence</td>
+<td>Есть</td>
+<td>Service assurance и Customer insight: анализ записей, транскриптов и качества коммуникаций.</td>
+<td>43233413 Voice recognition software + 43232605 Analytical or scientific software.</td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td>Управление качеством операторов (QM)</td>
+<td>Есть</td>
+<td>Service assurance: контроль качества, чек-листы, оценки и обратная связь по обслуживанию.</td>
+<td>43232606 Compliance software + 43231501 Helpdesk or call center software.</td>
+</tr>
+<tr>
+<td align="right">21</td>
+<td>Workforce Management / управление рабочими ресурсами</td>
+<td>Есть</td>
+<td>Resource/Enterprise management: планирование операторов как ресурса сервиса контакт-центра.</td>
+<td>43231505 Human resources software + 43232903 Contact center software.</td>
+</tr>
+<tr>
+<td align="right">22</td>
+<td>База знаний и скрипты операторов</td>
+<td>Есть</td>
+<td>Customer/Service support: knowledge artifacts поддерживают выполнение service interaction.</td>
+<td>43232200 Content management software + 43232201 Content workflow software.</td>
+</tr>
+<tr>
+<td align="right">23</td>
+<td>Управление сделками / легкий CRM-сценарий</td>
+<td>Есть</td>
+<td>Customer + Market &amp; Sales: связка клиента, сделки, коммуникации и коммерческого процесса.</td>
+<td>43232303 Customer relationship management CRM software.</td>
+</tr>
+<tr>
+<td align="right">24</td>
+<td>Полноценная CRM как самостоятельная платформа</td>
+<td>Частично</td>
+<td>TM Forum классифицирует как Customer/Sales capability, но в MANGO OFFICE публично виден скорее встроенный сценарий управления сделками и интеграции с внешними CRM.</td>
+<td>43232303 Customer relationship management CRM software.</td>
+</tr>
+<tr>
+<td align="right">25</td>
+<td>Интеграции с CRM, 1C, LDAP, marketplace</td>
+<td>Есть</td>
+<td>Product/Service integration: интеграционные endpoints и партнерские системы вокруг основного продукта.</td>
+<td>43232403 Enterprise application integration software + 81112106 Application service providers.</td>
+</tr>
+<tr>
+<td align="right">26</td>
+<td>Open API, webhook, API для УВК/CRM</td>
+<td>Есть</td>
+<td>Open API слой соответствует интеграционному подходу TM Forum: отделить продуктовый каталог, заказ, сервис и клиентские события от конкретного UI.</td>
+<td>43232403 Enterprise application integration software + 43232915 Platform interconnectivity software.</td>
+</tr>
+<tr>
+<td align="right">27</td>
+<td>Коллтрекинг</td>
+<td>Есть</td>
+<td>Market &amp; Sales: атрибуция звонков к рекламным источникам; Service/Resource: динамические номера как ресурс.</td>
+<td>80141501 Marketing analysis + 83111500 Telephone communications.</td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>Сквозная аналитика и ROMI</td>
+<td>Есть</td>
+<td>Market &amp; Sales analytics: связывает коммуникации, расходы, лиды, сделки и выручку.</td>
+<td>80141501 Marketing analysis + 43232605 Analytical or scientific software.</td>
+</tr>
+<tr>
+<td align="right">29</td>
+<td>Мультиканальная аналитика и атрибуция</td>
+<td>Есть</td>
+<td>Market &amp; Sales + Customer insight: классифицирует требования к источникам, каналам и конверсиям.</td>
+<td>80141501 Marketing analysis.</td>
+</tr>
+<tr>
+<td align="right">30</td>
+<td>Email-трекинг</td>
+<td>Есть</td>
+<td>Customer interaction + Market &amp; Sales: email как канал коммуникации и атрибуции.</td>
+<td>43233501 Electronic mail software + 81161600 Electronic mail and messaging services.</td>
+</tr>
+<tr>
+<td align="right">31</td>
+<td>Товарная аналитика / ecommerce analytics</td>
+<td>Есть</td>
+<td>Market &amp; Sales: анализ спроса, товарных позиций и эффективности продаж.</td>
+<td>80141501 Marketing analysis + 43232307 Data mining software.</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>Анализ конкурентов</td>
+<td>Есть</td>
+<td>Market intelligence в Market &amp; Sales domain; не является core-телеком сервисом, но поддерживает коммерческие решения.</td>
+<td>80141501 Marketing analysis + 80141500 Market research.</td>
+</tr>
+<tr>
+<td align="right">33</td>
+<td>Мессенджер-маркетинг</td>
+<td>Есть</td>
+<td>Market &amp; Sales + Customer interaction: кампании в цифровых каналах, связанные с клиентскими событиями.</td>
+<td>43223205 Instant messaging platform + 81161601 Instant Messaging Administration Service.</td>
+</tr>
+<tr>
+<td align="right">34</td>
+<td>CPaaS / программируемые голосовые и messaging API</td>
+<td>Частично</td>
+<td>TM Forum позволяет оформить как API-enabled Product/Service; у MANGO OFFICE есть API/webhook, но публично не выделен полный CPaaS как отдельная товарная линейка.</td>
+<td>81112106 Application service providers + 43232403 Enterprise application integration software.</td>
+</tr>
+<tr>
+<td align="right">35</td>
+<td>Service desk / ITSM helpdesk</td>
+<td>Частично</td>
+<td>В TM Forum соответствует assurance, trouble ticket и customer problem; у MANGO OFFICE это ближе к контакт-центру, а не к самостоятельному ITSM-продукту.</td>
+<td>43231501 Helpdesk or call center software.</td>
+</tr>
+<tr>
+<td align="right">36</td>
+<td>Информационная безопасность</td>
+<td>Есть</td>
+<td>Enterprise/Security capability, поддерживающая доверие и эксплуатацию сервиса; не основной коммуникационный продукт.</td>
+<td>43233200 Security and protection software или смежные security-коды по актуальному UNSPSC.</td>
+</tr>
+<tr>
+<td align="right">37</td>
+<td>SIP-телефоны, гарнитуры и устройства</td>
+<td>Вне SaaS-ядра</td>
+<td>Resource domain: физические ресурсы доступа к сервису. В требованиях лучше отделять от SaaS-функциональности.</td>
+<td>43222800 Telephony equipment; 43222900 Telephony equipment accessories.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>Рабочая таксономия для входящих требований</h2>
+<p>Для практического использования в backlog можно завести поля:</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Пример значения</th>
+<th>Зачем нужно</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product family</td>
+<td><code class="notranslate">CCaaS / Контакт-центр</code></td>
+<td>Быстрая маршрутизация требования к продуктовой зоне</td>
+</tr>
+<tr>
+<td>Mango status</td>
+<td><code class="notranslate">Есть</code>, <code class="notranslate">Частично</code>, <code class="notranslate">Не выявлено</code></td>
+<td>Понимание, является ли требование развитием существующего продукта или новым классом</td>
+</tr>
+<tr>
+<td>Mango product</td>
+<td><code class="notranslate">Омниканальный контакт-центр</code></td>
+<td>Привязка к публичному или внутреннему каталогу продуктов</td>
+</tr>
+<tr>
+<td>TM Forum domain</td>
+<td><code class="notranslate">Customer</code>, <code class="notranslate">Product</code>, <code class="notranslate">Service</code>, <code class="notranslate">Resource</code>, <code class="notranslate">Market &amp; Sales</code></td>
+<td>Единый доменный язык для аналитики и архитектуры</td>
+</tr>
+<tr>
+<td>TM Forum capability</td>
+<td><code class="notranslate">Customer interaction</code>, <code class="notranslate">Product catalog</code>, <code class="notranslate">Service assurance</code>, <code class="notranslate">Usage</code>, <code class="notranslate">Resource management</code></td>
+<td>Уточнение типа требования</td>
+</tr>
+<tr>
+<td>UNSPSC code</td>
+<td><code class="notranslate">43232903 Contact center software</code></td>
+<td>Внешняя классификация для сравнения поставщиков и закупки</td>
+</tr>
+<tr>
+<td>Requirement relation</td>
+<td><code class="notranslate">Core feature</code>, <code class="notranslate">Option</code>, <code class="notranslate">Integration</code>, <code class="notranslate">Process</code>, <code class="notranslate">Hardware</code>, <code class="notranslate">Out of scope</code></td>
+<td>Связь требования с продуктом</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>Примеры:</p>
+<ul>
+<li>"Нужно принимать обращения из Telegram, WhatsApp, сайта и email в одном окне": Product family <code class="notranslate">CCaaS / Digital channels</code>; Mango status <code class="notranslate">Есть</code>; TM Forum <code class="notranslate">Customer interaction</code>; UNSPSC <code class="notranslate">43223204 Unified messaging platform</code> и <code class="notranslate">43232903 Contact center software</code>.</li>
+<li>"Нужно автоматически оценивать все звонки операторов по чек-листу": Product family <code class="notranslate">AI / QM</code>; Mango status <code class="notranslate">Есть</code>; TM Forum <code class="notranslate">Service assurance</code>; UNSPSC <code class="notranslate">43233413 Voice recognition software</code> и <code class="notranslate">43232606 Compliance software</code>.</li>
+<li>"Нужно полноценное ITSM-решение для внутренних инцидентов ИТ": Product family <code class="notranslate">Adjacent ITSM</code>; Mango status <code class="notranslate">Частично/не core</code>; TM Forum <code class="notranslate">Assurance / trouble ticket</code>; UNSPSC <code class="notranslate">43231501 Helpdesk or call center software</code>; рекомендация - сравнивать с ITIL/ISO 20000 как дополнительным процессным слоем.</li>
+</ul>
+<h2>Рекомендации по ведению стандарта</h2>
+<ol>
+<li>Вести классификацию как живой справочник в репозитории: один Markdown-источник и HTML-версию для просмотра без Markdown-рендера.</li>
+<li>Для каждого нового требования сначала выбирать product family, затем Mango status, затем TM Forum domain/capability и UNSPSC-код.</li>
+<li>Если требование не укладывается в текущие классы, добавлять строку в расширенный список со статусом <code class="notranslate">Не выявлено</code> или <code class="notranslate">Частично</code>, а не смешивать ее с существующим продуктом.</li>
+<li>Для коммерческих и закупочных документов использовать UNSPSC; для архитектуры, интеграций и декомпозиции требований использовать TM Forum.</li>
+<li>Для требований поддержки, SLA, инцидентов и service desk дополнительно помечать ITIL/ISO 20000, потому что эти фреймворки лучше описывают процессы эксплуатации, но не заменяют продуктовую классификацию.</li>
+</ol>
+<h2>Источники</h2>
+<ul>
+<li>MANGO OFFICE, публичный каталог продуктов: <a href="https://www.mango-office.ru/products/" rel="nofollow">https://www.mango-office.ru/products/</a></li>
+<li>MANGO OFFICE, Виртуальная АТС: <a href="https://www.mango-office.ru/products/virtualnaya_ats/" rel="nofollow">https://www.mango-office.ru/products/virtualnaya_ats/</a></li>
+<li>MANGO OFFICE, Контакт-центр: <a href="https://www.mango-office.ru/products/contact-center/" rel="nofollow">https://www.mango-office.ru/products/contact-center/</a></li>
+<li>MANGO OFFICE, Интеграции по API: <a href="https://www.mango-office.ru/products/integraciya/api/" rel="nofollow">https://www.mango-office.ru/products/integraciya/api/</a></li>
+<li>MANGO OFFICE, Голосовой робот: <a href="https://www.mango-office.ru/products/contact-center/ai/voice-robot/" rel="nofollow">https://www.mango-office.ru/products/contact-center/ai/voice-robot/</a></li>
+<li>MANGO OFFICE, Чат-бот: <a href="https://www.mango-office.ru/products/contact-center/vozmozhnosti/chat-bot/" rel="nofollow">https://www.mango-office.ru/products/contact-center/vozmozhnosti/chat-bot/</a></li>
+<li>MANGO OFFICE, Речевая аналитика: <a href="https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/" rel="nofollow">https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/</a></li>
+<li>MANGO OFFICE, Коллтрекинг: <a href="https://www.mango-office.ru/products/calltracking/" rel="nofollow">https://www.mango-office.ru/products/calltracking/</a></li>
+<li>MANGO OFFICE, Мультиканальная аналитика: <a href="https://www.mango-office.ru/products/calltracking/vozmozhnosti/multichannel-analytics/" rel="nofollow">https://www.mango-office.ru/products/calltracking/vozmozhnosti/multichannel-analytics/</a></li>
+<li>TM Forum, Business Process Framework (eTOM): <a href="https://www.tmforum.org/business-process-framework/" rel="nofollow">https://www.tmforum.org/business-process-framework/</a></li>
+<li>TM Forum, Information Framework (SID): <a href="https://www.tmforum.org/oda/information-systems/information-framework-sid/" rel="nofollow">https://www.tmforum.org/oda/information-systems/information-framework-sid/</a></li>
+<li>TM Forum, TMF620 Product Catalog Management API: <a href="https://www.tmforum.org/resources/standard/tmf620-product-catalog-management-api-rest-specification-r14-5-0/" rel="nofollow">https://www.tmforum.org/resources/standard/tmf620-product-catalog-management-api-rest-specification-r14-5-0/</a></li>
+<li>UNDP, United Nations Standard Products and Services Code: <a href="https://www.undp.org/unspsc" rel="nofollow">https://www.undp.org/unspsc</a></li>
+<li>UNGM, UNSPSC browser and Excel export: <a href="https://www.ungm.org/Public/UNSPSC" rel="nofollow">https://www.ungm.org/Public/UNSPSC</a></li>
+<li>PeopleCert, ITIL 4 practices overview: <a href="https://www.peoplecert.org/ITIL4-practices" rel="nofollow">https://www.peoplecert.org/ITIL4-practices</a></li>
+<li>ISO, ISO/IEC 20000-1:2018 service management system requirements: <a href="https://www.iso.org/standard/70636.html" rel="nofollow">https://www.iso.org/standard/70636.html</a></li>
+<li>MEF, Lifecycle Service Orchestration APIs: <a href="https://www.mef.net/service-automation/lso-apis/" rel="nofollow">https://www.mef.net/service-automation/lso-apis/</a></li>
+</ul>
+    </article>
+  </main>
+</body>
+</html>
