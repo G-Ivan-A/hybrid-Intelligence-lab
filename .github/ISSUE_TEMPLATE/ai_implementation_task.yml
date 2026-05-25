@@ -1,0 +1,102 @@
+name: AI Implementation Task
+description: Structured task for an AI contributor to implement within governance boundaries.
+title: "[AI-TASK] <concise outcome>"
+labels:
+  - ai-native
+  - needs-human-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when delegating implementation, documentation, or repository-structure work to an AI agent.
+        Read [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) and [docs/governance/hybrid-team-collaboration.md](../../docs/governance/hybrid-team-collaboration.md) before opening the task.
+  - type: dropdown
+    id: operating_mode
+    attributes:
+      label: Operating Mode
+      description: Use Structured Mode by default. Use Research Mode for source-based investigations.
+      options:
+        - Structured Mode
+        - Research Mode
+        - Creative Proposal Mode
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      description: Select the expected language for the result.
+      options:
+        - Russian
+        - English
+        - Bilingual ru/en
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why this task exists and what previous issues, PRs, or documents frame it.
+      placeholder: |
+        - Problem statement
+        - Related issues / PRs / documents
+        - Constraints from previous work
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: List requirements as FR-1, FR-2, ...
+      placeholder: |
+        - FR-1: ...
+        - FR-2: ...
+    validations:
+      required: true
+  - type: textarea
+    id: allowed_forbidden
+    attributes:
+      label: Allowed and Forbidden Changes
+      description: Be explicit. Anything not listed as allowed should be treated as out of scope.
+      placeholder: |
+        Allowed:
+        - ...
+
+        Forbidden:
+        - ...
+    validations:
+      required: true
+  - type: textarea
+    id: governance_context
+    attributes:
+      label: Governance Context
+      description: Link affected governance, concept, research, or experiment documents.
+      placeholder: |
+        - AI_GOVERNANCE.md
+        - docs/concept/repository-structure.md
+        - docs/governance/hybrid-team-collaboration.md
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Concrete, testable checks the pull request must satisfy.
+      placeholder: |
+        - [ ] ...
+        - [ ] ./tests/validate-repository-structure.sh passes
+        - [ ] Documentation updated where applicable
+    validations:
+      required: true
+  - type: textarea
+    id: human_review
+    attributes:
+      label: Human Review Focus
+      description: Tell reviewers where to look first.
+      placeholder: |
+        - Governance
+        - Repository structure
+        - Research quality
+        - Publication safety
+    validations:
+      required: true

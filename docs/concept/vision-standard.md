@@ -4,7 +4,7 @@
 
 Дата среза: 25 мая 2026 г.
 
-Связанная задача: [issue #11](https://github.com/G-Ivan-A/research-and-edu-ai-lab/issues/11)
+Связанная задача: [issue #11](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/11)
 
 ## Задача
 

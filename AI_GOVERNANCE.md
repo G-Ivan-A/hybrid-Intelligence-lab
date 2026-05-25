@@ -1,7 +1,7 @@
 # AI Governance
 
 Операционный контракт для работы гибридных human + AI команд в
-`research-and-edu-ai-lab`.
+`hybrid-Intelligence-lab`.
 
 ## Назначение
 

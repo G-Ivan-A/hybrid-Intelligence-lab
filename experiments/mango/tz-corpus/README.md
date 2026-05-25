@@ -15,16 +15,18 @@ Reproducible pipeline for `research/mango/classification-tz.md`.
 # from repo root
 pip install --user python-docx openpyxl markdown
 
-mkdir -p experiments/tz-corpus/files
+mkdir -p experiments/mango/tz-corpus/files experiments/mango/tz-corpus/text
 while read idx ext url; do
   curl -L -H "Authorization: token $(gh auth token)" \
-    -o "experiments/tz-corpus/files/${idx}.${ext}" "${url}"
-done < experiments/tz-corpus/urls.txt
+    -o "experiments/mango/tz-corpus/files/${idx}.${ext}" "${url}"
+done < experiments/mango/tz-corpus/urls.txt
 
 # .doc files (4, 17) — convert manually
-catdoc -d utf-8 experiments/tz-corpus/files/4.doc  > experiments/tz-corpus/text/4.txt
-catdoc -d utf-8 experiments/tz-corpus/files/17.doc > experiments/tz-corpus/text/17.txt
+catdoc -d utf-8 experiments/mango/tz-corpus/files/4.doc  > experiments/mango/tz-corpus/text/4.txt
+catdoc -d utf-8 experiments/mango/tz-corpus/files/17.doc > experiments/mango/tz-corpus/text/17.txt
 
-cd experiments/tz-corpus && python3 extract_docx.py
-cd ../.. && python3 experiments/tz-corpus/build_html.py
+cd experiments/mango/tz-corpus
+python3 extract_docx.py
+cd ../../..
+python3 experiments/mango/tz-corpus/build_html.py
 ```

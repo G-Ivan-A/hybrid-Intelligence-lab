@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AI Governance Contract
+    url: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/AI_GOVERNANCE.md
+    about: Read the operating contract before opening AI-assisted tasks.
+  - name: Hybrid Team Collaboration
+    url: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/governance/hybrid-team-collaboration.md
+    about: Review workflow, roles, and escalation rules for human + AI teams.
+  - name: Repository Structure
+    url: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/concept/repository-structure.md
+    about: Artifact placement, directory roles, and ru/en language policy.

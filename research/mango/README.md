@@ -14,4 +14,4 @@
 ## Воспроизводимость
 
 Скрипты и инструкции для корпуса ТЗ находятся в
-[experiments/tz-corpus/](../../experiments/tz-corpus/).
+[experiments/mango/tz-corpus/](../../experiments/mango/tz-corpus/).

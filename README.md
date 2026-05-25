@@ -1,6 +1,6 @@
-# Research and Edu AI Lab
+# hybrid-Intelligence-lab
 
-`research-and-edu-ai-lab` - центральный knowledge hub для исследований,
+`hybrid-Intelligence-lab` - центральный knowledge hub для исследований,
 образовательных материалов, методологий и проектных артефактов по
 управляемой работе гибридных human + AI команд.
 
@@ -14,6 +14,9 @@
 | --- | --- |
 | [PRODUCT_VISION.md](PRODUCT_VISION.md) | Краткое продуктовое видение и концепция репозитория. |
 | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) | Правила взаимодействия Founder & PO, Команды C, людей-экспертов и AI-агентов. |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | GitHub-native правила участия, проверки и подготовки PR. |
+| [CHANGELOG.md](CHANGELOG.md) | Журнал значимых изменений репозитория. |
+| [LICENSE](LICENSE) | Текущий статус лицензии и TODO по финальному выбору Founder & PO. |
 | [docs/concept/repository-structure.md](docs/concept/repository-structure.md) | Обоснование структуры каталогов, артефактов и языковой политики. |
 | [docs/concept/vision-standard.md](docs/concept/vision-standard.md) | Выбранный стандарт оформления видения для ведения в репозитории и презентации стейкхолдерам. |
 
@@ -39,7 +42,7 @@
 - исследования по MANGO OFFICE:
   [research/mango/](research/mango/);
 - воспроизводимый контур экспериментов для корпуса ТЗ:
-  [experiments/tz-corpus/](experiments/tz-corpus/).
+  [experiments/mango/tz-corpus/](experiments/mango/tz-corpus/).
 
 ## Локальная проверка структуры
 
