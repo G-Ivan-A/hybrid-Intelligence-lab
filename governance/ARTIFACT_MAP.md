@@ -67,10 +67,11 @@ ai-generated: false
 | `/tools/validate-frontmatter.sh` | утилита | Soft-проверка обязательных полей frontmatter в Markdown. | ✅ Да | `CONTRIBUTING.md`, `standards/README.md` |
 | `/tools/validate-repository-structure.sh` | утилита | Проверка активной структуры, навигационных ссылок и `-old` миграции. | ✅ Да | `governance/REPO_MODEL.md`, `governance/ARTIFACT_MAP.md` |
 | `/.github/ISSUE_TEMPLATE/task.yml` | шаблон | GitHub-native структура постановки задач с operating mode. | ✅ Да | `AI_GOVERNANCE.md`, `standards/GLOSSARY.md` |
+| `/research/mango/taxonomy-concept-2026-05.md` | концепция | Draft-концепция Unified Capability Taxonomy для Mango: мета-модель, mapping фич, процесс нормализации, интерфейс команд, метрики, пилот и риски. | ⚠️ По необходимости | `research/mango/classification-old.md`, `research/mango/classification-tz-old.md`, `research/mango/requirements-flow-old.md`, `projects/mango/README.md`, `standards/GLOSSARY.md`, `governance/REPO_MODEL.md` |
 | `/standards/` | каталог | Плоский реестр стандартов, шаблонов и правил оформления артефактов. | ✅ Да | `standards/README.md`, `governance/REPO_MODEL.md` |
 | `/governance/` | каталог | Модель репозитория, навигация и сквозные governance-правила. | ✅ Да | `governance/REPO_MODEL.md`, `governance/ARTIFACT_MAP.md` |
 | `/tools/` | каталог | Локальные validation и maintenance скрипты. | ✅ Да | `tools/validate-frontmatter.sh`, `tools/validate-repository-structure.sh` |
-| `/research/` | каталог | Доменные исследования и source-backed analysis (сейчас — `-old` исторические входы). | ✅ Да | `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
+| `/research/` | каталог | Доменные исследования и source-backed analysis; содержит активную Mango taxonomy-концепцию и сохраненные `-old` исторические входы. | ✅ Да | `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/frameworks/` | каталог | Методологии, создаваемые только после доказанного gap (сейчас — `-old` входы). | ✅ Да | `governance/REPO_MODEL.md`, `standards/README.md` |
 | `/projects/` | каталог | Project knowledge bases и контекст spoke-репозиториев (сейчас — `-old` входы). | ✅ Да | `standards/PRODUCT_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/education/` | каталог | Open education: программы и учебные материалы (сейчас — `-old` входы). | ✅ Да | `standards/EDUCATION_PROFILE.md`, `governance/REPO_MODEL.md` |
@@ -78,10 +79,11 @@ ai-generated: false
 
 ## Исторические входы (`-old`)
 
-Файлы и каталоги с суффиксом `-old` (например, `research/mango/`,
-`research/repository-governance/`, `education/ba-prompt-engineering/`,
-`docs-old/`, `experiments-old/`, `meta-old/`) — это сохраненные historical
-inputs предыдущей структуры. Они не являются активным контрактом и не
+Файлы и каталоги с суффиксом `-old` (например, `research/mango/*-old.md`,
+`research/repository-governance/*-old.md`,
+`education/ba-prompt-engineering/*-old.md`, `docs-old/`, `experiments-old/`,
+`meta-old/`) — это сохраненные historical inputs предыдущей структуры. Они не
+являются активным контрактом и не
 перечислены построчно в карте.
 
 Их содержание переносится в активные артефакты только через reviewable pull

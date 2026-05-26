@@ -45,6 +45,7 @@ is_active_file() {
     standards/PRODUCT_PROFILE.md | \
     standards/TEAM_CONTRACT.md | \
     standards/ISSUE_WORKFLOW.md | \
+    research/mango/taxonomy-concept-2026-05.md | \
     projects/mango/README.md | \
     projects/repo-development/README.md | \
     projects/repo-development/docs/migration-audit-2026-05.md | \

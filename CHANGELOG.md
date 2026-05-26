@@ -6,6 +6,10 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #52: draft-концепция `research/mango/taxonomy-concept-2026-05.md`
+  для Unified Capability Taxonomy Mango: обзор применимых стандартов,
+  мета-модель capability, mapping реальных фич, процесс нормализации,
+  интерфейс продуктовых команд, метрики, план пилота и риски.
 - Issue #47: проект `projects/repo-development/` с навигационным `README.md` и
   отчётом аудита миграции `docs/migration-audit-2026-05.md` (чек-лист
   согласованности с `CONCEPT.md`, матрица перекрёстных ссылок, таблица миграции
