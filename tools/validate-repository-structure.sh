@@ -38,11 +38,13 @@ is_active_file() {
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
+    standards/FILE_NAMING.md | \
     standards/RESEARCH_PROFILE.md | \
     standards/GLOSSARY.md | \
     standards/EDUCATION_PROFILE.md | \
     standards/PRODUCT_PROFILE.md | \
     standards/TEAM_CONTRACT.md | \
+    standards/ISSUE_WORKFLOW.md | \
     governance/REPO_MODEL.md | \
     governance/ARTIFACT_MAP.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
@@ -80,11 +82,13 @@ required_files=(
   "CHANGELOG.md"
   "LICENSE"
   "standards/README.md"
+  "standards/FILE_NAMING.md"
   "standards/RESEARCH_PROFILE.md"
   "standards/GLOSSARY.md"
   "standards/EDUCATION_PROFILE.md"
   "standards/PRODUCT_PROFILE.md"
   "standards/TEAM_CONTRACT.md"
+  "standards/ISSUE_WORKFLOW.md"
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -159,12 +163,14 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "Как пользоваться"
+require_text "standards/README.md" "FILE_NAMING.md"
 require_text "standards/README.md" "RESEARCH_PROFILE.md"
 require_text "standards/README.md" "TEAM_CONTRACT.md"
 require_text "standards/README.md" "standards/GLOSSARY.md"
 require_text "standards/README.md" "standards/EDUCATION_PROFILE.md"
 require_text "standards/README.md" "PRODUCT_PROFILE.md"
 require_text "standards/README.md" "ARTIFACT_MAP.md"
+require_text "standards/README.md" "ISSUE_WORKFLOW.md"
 
 require_text "standards/TEAM_CONTRACT.md" "status: canonical"
 require_text "standards/TEAM_CONTRACT.md" "version: 1.0"
@@ -182,6 +188,40 @@ require_text "standards/TEAM_CONTRACT.md" "RESEARCH_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "PRODUCT_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "EDUCATION_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "Источники"
+
+require_text "standards/ISSUE_WORKFLOW.md" "status: canonical"
+require_text "standards/ISSUE_WORKFLOW.md" "version: 1.0"
+require_text "standards/ISSUE_WORKFLOW.md" "updated: 2026-05-26"
+require_text "standards/ISSUE_WORKFLOW.md" "ai-generated: false"
+require_text "standards/ISSUE_WORKFLOW.md" "## Назначение"
+require_text "standards/ISSUE_WORKFLOW.md" "## Статусы задач"
+require_text "standards/ISSUE_WORKFLOW.md" "## Правила переходов"
+require_text "standards/ISSUE_WORKFLOW.md" "## Связи между артефактами"
+require_text "standards/ISSUE_WORKFLOW.md" "## Точки автоматизации"
+require_text "standards/ISSUE_WORKFLOW.md" "## Источники и адаптация"
+require_text "standards/ISSUE_WORKFLOW.md" '`draft`'
+require_text "standards/ISSUE_WORKFLOW.md" '`ready`'
+require_text "standards/ISSUE_WORKFLOW.md" '`in-progress`'
+require_text "standards/ISSUE_WORKFLOW.md" '`review`'
+require_text "standards/ISSUE_WORKFLOW.md" '`merged`'
+require_text "standards/ISSUE_WORKFLOW.md" '`closed`'
+require_text "standards/ISSUE_WORKFLOW.md" '`blocked`'
+require_text "standards/ISSUE_WORKFLOW.md" "User Story / ФТ"
+require_text "standards/ISSUE_WORKFLOW.md" "CHANGELOG.md"
+require_text "standards/ISSUE_WORKFLOW.md" "governance/ARTIFACT_MAP.md"
+require_text "standards/ISSUE_WORKFLOW.md" "validate-frontmatter.sh"
+require_text "standards/ISSUE_WORKFLOW.md" "validate-repository-structure.sh"
+require_text "standards/FILE_NAMING.md" "status: canonical"
+require_text "standards/FILE_NAMING.md" "version: 1.0"
+require_text "standards/FILE_NAMING.md" "updated: 2026-05-26"
+require_text "standards/FILE_NAMING.md" "ai-generated: false"
+require_text "standards/FILE_NAMING.md" "YYYY-MM-topic.md"
+require_text "standards/FILE_NAMING.md" "STANDARD_NAME.md"
+require_text "standards/FILE_NAMING.md" "exp-{slug}/"
+require_text "standards/FILE_NAMING.md" "{ТИП}_PROFILE.md"
+require_text "standards/FILE_NAMING.md" "{course-slug}/"
+require_text "standards/FILE_NAMING.md" "Анти-паттерны"
+require_text "standards/FILE_NAMING.md" "Как использовать"
 
 require_text "standards/RESEARCH_PROFILE.md" "status: canonical"
 require_text "standards/RESEARCH_PROFILE.md" "version: 1.0"

@@ -58,6 +58,8 @@ ai-generated: false
 | `/governance/ARTIFACT_MAP.md` | навигация | Эта карта: навигация по артефактам, типам, обязательности и связям. | ✅ Да | `README.md`, `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
 | `/standards/README.md` | навигация | Плоский реестр активных и планируемых стандартов и инструкция применения. | ✅ Да | `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
 | `/standards/GLOSSARY.md` | стандарт | Единый словарь терминов для standards, governance и AI-assisted work. | ✅ Да | `standards/README.md`, все стандарты |
+| `/standards/FILE_NAMING.md` | стандарт | Единые паттерны именования файлов и каталогов для research, standards, экспериментов, профилей и курсов. | ✅ Да | `standards/README.md`, `standards/GLOSSARY.md` |
+| `/standards/ISSUE_WORKFLOW.md` | стандарт | Жизненный цикл задач: 7 статусов, правила переходов и связи между артефактами. | ✅ Да | `standards/README.md`, `governance/ARTIFACT_MAP.md`, `CHANGELOG.md` |
 | `/standards/TEAM_CONTRACT.md` | шаблон | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. | ✅ Да | `standards/RESEARCH_PROFILE.md`, `standards/PRODUCT_PROFILE.md`, `standards/EDUCATION_PROFILE.md` |
 | `/standards/RESEARCH_PROFILE.md` | профиль | Профиль исследовательских проектов: именование, frontmatter, эксперименты. | ✅ Да | `standards/README.md`, `standards/TEAM_CONTRACT.md` |
 | `/standards/PRODUCT_PROFILE.md` | профиль | Профиль продуктовых проектов: обязательные артефакты и шаблон `PRODUCT_VISION.md`. | ✅ Да | `standards/README.md`, `standards/TEAM_CONTRACT.md` |

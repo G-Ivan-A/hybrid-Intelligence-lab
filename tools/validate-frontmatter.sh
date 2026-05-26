@@ -62,10 +62,10 @@ validate_field() {
   case "$field" in
     status)
       case "$value" in
-        draft | reviewed | published | superseded)
+        draft | reviewed | published | superseded | canonical)
           ;;
         *)
-          warn "$path" "$line" "invalid status '$value' (expected one of: draft, reviewed, published, superseded)"
+          warn "$path" "$line" "invalid status '$value' (expected one of: draft, reviewed, published, superseded, canonical)"
           ;;
       esac
       ;;
