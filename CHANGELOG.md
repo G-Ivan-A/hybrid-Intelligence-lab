@@ -11,6 +11,11 @@ All notable repository governance changes are documented here.
 - Repository structure validation в `tools/validate-repository-structure.sh`.
 - Active documentation для Anti-Inflation principle: артефакт создается только
   когда снижает операционную боль.
+- Issue #31: `standards/RESEARCH_PROFILE.md` — canonical профиль
+  исследовательских проектов (именование `YYYY-MM-topic.md`, frontmatter
+  исследований, организация экспериментов `exp-<slug>/`, чек-лист публикации и
+  цитируемые best practices). Зарегистрирован как active в `standards/README.md`
+  и проверяется в `tools/validate-repository-structure.sh`.
 
 ### Changed
 
