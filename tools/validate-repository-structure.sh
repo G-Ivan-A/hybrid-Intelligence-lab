@@ -38,6 +38,7 @@ is_active_file() {
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
+    standards/FILE_NAMING.md | \
     standards/RESEARCH_PROFILE.md | \
     standards/GLOSSARY.md | \
     standards/EDUCATION_PROFILE.md | \
@@ -79,6 +80,7 @@ required_files=(
   "CHANGELOG.md"
   "LICENSE"
   "standards/README.md"
+  "standards/FILE_NAMING.md"
   "standards/RESEARCH_PROFILE.md"
   "standards/GLOSSARY.md"
   "standards/EDUCATION_PROFILE.md"
@@ -156,6 +158,7 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "Как пользоваться"
+require_text "standards/README.md" "FILE_NAMING.md"
 require_text "standards/README.md" "RESEARCH_PROFILE.md"
 require_text "standards/README.md" "TEAM_CONTRACT.md"
 require_text "standards/README.md" "standards/GLOSSARY.md"
@@ -178,6 +181,18 @@ require_text "standards/TEAM_CONTRACT.md" "RESEARCH_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "PRODUCT_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "EDUCATION_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "Источники"
+
+require_text "standards/FILE_NAMING.md" "status: canonical"
+require_text "standards/FILE_NAMING.md" "version: 1.0"
+require_text "standards/FILE_NAMING.md" "updated: 2026-05-26"
+require_text "standards/FILE_NAMING.md" "ai-generated: false"
+require_text "standards/FILE_NAMING.md" "YYYY-MM-topic.md"
+require_text "standards/FILE_NAMING.md" "STANDARD_NAME.md"
+require_text "standards/FILE_NAMING.md" "exp-{slug}/"
+require_text "standards/FILE_NAMING.md" "{ТИП}_PROFILE.md"
+require_text "standards/FILE_NAMING.md" "{course-slug}/"
+require_text "standards/FILE_NAMING.md" "Анти-паттерны"
+require_text "standards/FILE_NAMING.md" "Как использовать"
 
 require_text "standards/RESEARCH_PROFILE.md" "status: canonical"
 require_text "standards/RESEARCH_PROFILE.md" "version: 1.0"

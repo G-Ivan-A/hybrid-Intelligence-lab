@@ -6,6 +6,9 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Canonical file naming standard в `standards/FILE_NAMING.md` для
+  исследований, standards, экспериментов, профилей и курсов; зарегистрирован
+  в `standards/README.md` и structure validation.
 - Canonical education project profile в `standards/EDUCATION_PROFILE.md` для
   структуры курсов, модулей, уроков, упражнений и адаптации под open,
   commercial и internal learning formats.
@@ -53,6 +56,7 @@ All notable repository governance changes are documented here.
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [standards/README.md](standards/README.md)
 - [standards/GLOSSARY.md](standards/GLOSSARY.md)
+- [standards/FILE_NAMING.md](standards/FILE_NAMING.md)
 - [standards/EDUCATION_PROFILE.md](standards/EDUCATION_PROFILE.md)
 - [standards/TEAM_CONTRACT.md](standards/TEAM_CONTRACT.md)
 - [governance/REPO_MODEL.md](governance/REPO_MODEL.md)
