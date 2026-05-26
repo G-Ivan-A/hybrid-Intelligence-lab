@@ -1,3 +1,14 @@
+---
+status: reviewed
+version: 2.0
+updated: 2026-05-26
+ai-generated: false
+type: external-analysis
+context: [mango, product-classification]
+method: comparative-analysis
+source: research/mango/classification-old.md
+---
+
 # Классификация IT/Telecom SaaS-продуктов MANGO OFFICE
 
 Версия: 2

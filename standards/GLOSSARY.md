@@ -26,8 +26,8 @@ ai-generated: false
    обязательности, а не как взаимозаменяемые слова.
 4. Для AI-assisted work явно указывай `Operating Mode`, если задача требует
    поведения, отличного от обычной structured work.
-5. Ссылайся на canonical artifacts; `-old` files можно использовать как
-   historical input, но не как активный источник правил.
+5. Ссылайся на canonical artifacts; historical migration records можно
+   использовать как context, но не как активный источник правил.
 
 ## Термины
 

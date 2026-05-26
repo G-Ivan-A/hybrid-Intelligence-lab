@@ -45,6 +45,17 @@ is_active_file() {
     standards/PRODUCT_PROFILE.md | \
     standards/TEAM_CONTRACT.md | \
     standards/ISSUE_WORKFLOW.md | \
+    research/README.md | \
+    research/mango/README.md | \
+    research/mango/classification.md | \
+    research/mango/classification.html | \
+    research/mango/classification-tz.md | \
+    research/mango/classification-tz.html | \
+    research/mango/requirements-flow.md | \
+    research/mango/requirements-flow.html | \
+    frameworks/README.md | \
+    education/README.md | \
+    projects/README.md | \
     projects/mango/README.md | \
     projects/repo-development/README.md | \
     projects/repo-development/docs/migration-audit-2026-05.md | \
@@ -92,6 +103,20 @@ required_files=(
   "standards/PRODUCT_PROFILE.md"
   "standards/TEAM_CONTRACT.md"
   "standards/ISSUE_WORKFLOW.md"
+  "research/README.md"
+  "research/mango/README.md"
+  "research/mango/classification.md"
+  "research/mango/classification.html"
+  "research/mango/classification-tz.md"
+  "research/mango/classification-tz.html"
+  "research/mango/requirements-flow.md"
+  "research/mango/requirements-flow.html"
+  "frameworks/README.md"
+  "education/README.md"
+  "projects/README.md"
+  "projects/mango/README.md"
+  "projects/repo-development/README.md"
+  "projects/repo-development/docs/migration-audit-2026-05.md"
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -107,23 +132,18 @@ for file in "${required_files[@]}"; do
   require_file "$file"
 done
 
-old_file_count=0
 while IFS= read -r file; do
   if is_active_file "$file"; then
     continue
   fi
 
   if is_old_file "$file"; then
-    old_file_count=$((old_file_count + 1))
+    fail "tracked legacy -old file after migration cleanup: $file"
     continue
   fi
 
   fail "tracked legacy file without -old suffix: $file"
 done < <(git ls-files)
-
-if [[ "$old_file_count" -eq 0 ]]; then
-  fail "expected preserved -old files for migration analysis"
-fi
 
 require_text "README.md" "CONCEPT.md"
 require_text "README.md" "standards/README.md"
@@ -131,6 +151,7 @@ require_text "README.md" "standards/GLOSSARY.md"
 require_text "README.md" "standards/TEAM_CONTRACT.md"
 require_text "README.md" "governance/REPO_MODEL.md"
 require_text "README.md" "governance/ARTIFACT_MAP.md"
+require_text "README.md" "research/mango/README.md"
 require_text "README.md" "./tools/validate-frontmatter.sh"
 require_text "README.md" "./tools/validate-repository-structure.sh"
 
@@ -160,6 +181,7 @@ require_text "AI_GOVERNANCE.md" "Human reviewer"
 require_text "AI_GOVERNANCE.md" "standards/README.md"
 
 require_text "CHANGELOG.md" "## Unreleased"
+require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
 require_text "CHANGELOG.md" "### Removed"
@@ -305,6 +327,36 @@ require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | Назначе�
 require_text "governance/ARTIFACT_MAP.md" "Как использовать карту"
 require_text "governance/ARTIFACT_MAP.md" "Как обновлять карту"
 require_text "governance/ARTIFACT_MAP.md" "GLOSSARY.md"
+require_text "governance/ARTIFACT_MAP.md" "research/mango/classification.md"
+require_text "governance/ARTIFACT_MAP.md" "projects/README.md"
+
+require_text "research/README.md" "status: canonical"
+require_text "research/README.md" "standards/RESEARCH_PROFILE.md"
+require_text "research/README.md" "research/<domain>/exp-<slug>/"
+
+require_text "research/mango/README.md" "status: canonical"
+require_text "research/mango/README.md" "classification.md"
+require_text "research/mango/README.md" "requirements-flow.md"
+require_text "research/mango/README.md" "research/mango/exp-tz-corpus/"
+
+require_text "research/mango/classification.md" "status: reviewed"
+require_text "research/mango/classification.md" "source: research/mango/classification-old.md"
+require_text "research/mango/classification-tz.md" "status: reviewed"
+require_text "research/mango/classification-tz.md" "source: research/mango/classification-tz-old.md"
+require_text "research/mango/requirements-flow.md" "status: reviewed"
+require_text "research/mango/requirements-flow.md" "source: research/mango/requirements-flow-old.md"
+
+require_text "projects/README.md" "status: canonical"
+require_text "projects/README.md" "mango/"
+require_text "projects/README.md" "repo-development/"
+
+require_text "projects/mango/README.md" "research/mango/README.md"
+
+require_text "education/README.md" "status: canonical"
+require_text "education/README.md" "standards/EDUCATION_PROFILE.md"
+
+require_text "frameworks/README.md" "status: canonical"
+require_text "frameworks/README.md" "governance/REPO_MODEL.md"
 
 require_text ".github/ISSUE_TEMPLATE/task.yml" "📋 Task Implementation"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "structured"
@@ -315,7 +367,7 @@ require_text ".github/ISSUE_TEMPLATE/task.yml" "📄 Артефакты для �
 require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
 
 if [[ -e meta/README.md ]]; then
-  fail "active meta/README.md should be renamed to meta/README-old.md"
+  fail "active meta/README.md should move to governance/"
 fi
 
 if [[ -e tests/validate-repository-structure.sh ]]; then

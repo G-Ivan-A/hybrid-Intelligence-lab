@@ -1,3 +1,11 @@
+---
+status: canonical
+version: 1.0
+updated: 2026-05-26
+ai-generated: false
+source: frameworks/README-old.md
+---
+
 # Frameworks
 
 Каталог для методологий и фреймворков, которые могут использоваться
@@ -29,3 +37,6 @@ frameworks/<framework-slug>/
 Для черновика допустим один `README.ru.md`, если issue явно ограничивает
 результат русским языком. Для публичного framework итоговая версия должна иметь
 ru/en пару или зафиксированное исключение.
+
+Правило Anti-Inflation и критерий сравнения с существующими подходами
+зафиксированы в [governance/REPO_MODEL.md](../governance/REPO_MODEL.md).

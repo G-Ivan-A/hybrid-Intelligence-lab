@@ -1,3 +1,11 @@
+---
+status: canonical
+version: 1.0
+updated: 2026-05-26
+ai-generated: false
+source: projects/README-old.md
+---
+
 # Projects
 
 Каталог для проектных рабочих областей: промптов, баз знаний, процессов,
@@ -33,3 +41,10 @@ projects/<project-slug>/
   knowledge-base/
   process/
 ```
+
+## Активные проекты
+
+| Проект | Назначение |
+| --- | --- |
+| [mango/](mango/) | Пилотный продуктовый spoke-проект Mango: навигация, применяемые стандарты и связь с research. |
+| [repo-development/](repo-development/) | Развитие структуры, governance и локальных проверок самого репозитория. |

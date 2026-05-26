@@ -1,3 +1,14 @@
+---
+status: reviewed
+version: 1.0
+updated: 2026-05-26
+ai-generated: false
+type: internal-analysis
+context: [mango, tender-requirements]
+method: corpus-analysis
+source: research/mango/classification-tz-old.md
+---
+
 # Классификация требований по корпусу ТЗ (classification (TZ))
 
 Версия: 1

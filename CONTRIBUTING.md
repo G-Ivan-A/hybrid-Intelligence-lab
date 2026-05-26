@@ -22,9 +22,9 @@ AI agents следуют [AI_GOVERNANCE.md](AI_GOVERNANCE.md): читают issu
 последние комментарии, сохраняют human decision rights, не публикуют sensitive
 data и работают внутри requested scope.
 
-Файлы с суффиксом `-old` являются source material для анализа. Они не считаются
-active governance, пока новый артефакт явно не перенесет и не свяжет их
-содержание.
+Historical migration material используется только как source context через
+audit, PR history или явно указанный `source` path. Новый active artifact должен
+показывать, откуда перенесено содержание и почему оно остается полезным.
 
 ## Локальная проверка
 
@@ -39,6 +39,6 @@ active governance, пока новый артефакт явно не перен
 - Измененные файлы соответствуют целевой структуре.
 - Новые артефакты ссылаются на standards или объясняют, почему стандарта пока
   нет.
-- Перенос из `-old` файлов указывает source path.
+- Перенос historical material указывает source path.
 - Локальная проверка указана в PR.
 - Риски, допущения и human review focus сформулированы явно.

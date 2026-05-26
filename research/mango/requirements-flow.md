@@ -1,3 +1,14 @@
+---
+status: reviewed
+version: 1.0
+updated: 2026-05-26
+ai-generated: false
+type: internal-analysis
+context: [mango, requirements-flow]
+method: system-analysis
+source: research/mango/requirements-flow-old.md
+---
+
 # Flow требований для AI-анализа тендерных ТЗ MANGO OFFICE
 
 Версия: 1

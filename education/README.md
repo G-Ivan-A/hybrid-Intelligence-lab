@@ -1,3 +1,11 @@
+---
+status: canonical
+version: 1.0
+updated: 2026-05-26
+ai-generated: false
+source: education/README-old.md
+---
+
 # Education
 
 Каталог для open education: курсов, программ, сценариев преподавателя,
@@ -12,9 +20,9 @@ Open education живет здесь. Коммерческое обучение 
 
 ## Текущие материалы
 
-| Каталог | Назначение |
-| --- | --- |
-| [ba-prompt-engineering/](ba-prompt-engineering/) | Курс "Практика применения промпт-инжиниринга в работе БА". |
+Активных образовательных пакетов после cleanup issue #49 пока нет. Новый курс
+или учебный пакет добавляется сюда только после issue и по
+[standards/EDUCATION_PROFILE.md](../standards/EDUCATION_PROFILE.md).
 
 ## Минимальная структура образовательного пакета
 

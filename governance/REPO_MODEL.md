@@ -39,14 +39,14 @@
 | Формат нужен повторно. | Создать или обновить standard в `standards/`. |
 | Governance text распадается на несколько активных областей. | Выделить только область, где уже есть active use и review pain. |
 | Production code получает собственный lifecycle. | Перенести его в spoke repository и ссылаться назад на этот hub. |
-| Old content может быть полезным. | Сохранить `-old` source, переносить выборочно и указывать source path. |
+| Historical content может быть полезным. | Переносить выборочно через reviewable PR и указывать source path из audit/history. |
 
 ## Migration Handling
 
-Файлы с суффиксом `-old` являются сохраненными historical inputs. В них могут
-оставаться полезные исследования, course material, experiments или прежний
-governance. Они не являются active contracts, пока содержание не перенесено в
-новый active file через reviewed pull request.
+Cleanup issue #49 удалил или перенес legacy files с суффиксом `-old`. Новые
+tracked `-old` файлы не добавляются без отдельного migration issue и явного
+обоснования. Если содержание переносится из historical input, active artifact
+указывает source path, а PR объясняет, почему содержание остается полезным.
 
 ## Validation
 

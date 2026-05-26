@@ -22,7 +22,7 @@
 4. AI agents могут предлагать структуру, но humans принимают финальные решения
    по vision, publication, license и sensitive context.
 5. Claims, влияющие на решения, связываются с sources, experiments, issues,
-   PRs или сохраненными `-old` files.
+   PRs или historical migration records.
 6. Secrets, private client data, credentials и несанитизированные
    production-промпты не коммитятся.
 7. Малые reviewable pull requests предпочтительнее широких undocumented
@@ -52,7 +52,7 @@
 Для AI-assisted repository changes:
 
 - active files находятся в ожидаемых каталогах;
-- old material сохранен с `-old`, если явно не superseded;
+- historical material удален, перенесен или сохранен только с явным rationale;
 - navigation и standards links обновлены;
 - `./tools/validate-repository-structure.sh` проходит;
 - PR description объясняет implementation, validation и remaining risks.
