@@ -38,6 +38,7 @@ is_active_file() {
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
+    standards/PRODUCT_PROFILE.md | \
     governance/REPO_MODEL.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     tools/validate-repository-structure.sh)
@@ -73,6 +74,7 @@ required_files=(
   "CHANGELOG.md"
   "LICENSE"
   "standards/README.md"
+  "standards/PRODUCT_PROFILE.md"
   "governance/REPO_MODEL.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   "tools/validate-repository-structure.sh"
@@ -140,6 +142,13 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "Как пользоваться"
+require_text "standards/README.md" "PRODUCT_PROFILE.md"
+
+require_text "standards/PRODUCT_PROFILE.md" "status: canonical"
+require_text "standards/PRODUCT_PROFILE.md" "ai-generated: false"
+require_text "standards/PRODUCT_PROFILE.md" "PRODUCT_VISION.md"
+require_text "standards/PRODUCT_PROFILE.md" "Обязательные артефакты"
+require_text "standards/PRODUCT_PROFILE.md" "Метрики успеха"
 
 require_text "governance/REPO_MODEL.md" "Артефакт только при операционной боли"
 require_text "governance/REPO_MODEL.md" "Anti-Inflation"

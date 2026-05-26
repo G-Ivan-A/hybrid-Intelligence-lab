@@ -11,6 +11,7 @@
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
 | Repository model | Active | Размещение артефактов и правила создания | [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) |
+| Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [PRODUCT_PROFILE.md](PRODUCT_PROFILE.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
 | Education program | Planned | `education/` | Создать после повторения стабильного course format. |
