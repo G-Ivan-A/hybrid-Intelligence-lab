@@ -1,0 +1,101 @@
+name: "📋 Task Implementation"
+description: "Structured task for implementation, documentation, tooling, or governance work."
+title: "[scope] Краткое описание задачи"
+labels:
+  - tools
+  - governance
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Для ИИ**: если поле пустое, не генерируй значение. Работай в режиме `structured` по умолчанию. Не добавляй лишние поля, не меняй структуру задачи и явно сохраняй traceability между контекстом, артефактами и DoD.
+
+  - type: input
+    id: labels
+    attributes:
+      label: "Labels"
+      description: "Метки задачи через `|` или запятую."
+      placeholder: "tools | governance | priority:P1 | sprint:1"
+    validations:
+      required: false
+
+  - type: input
+    id: milestone
+    attributes:
+      label: "Milestone"
+      description: "Целевой milestone или спринт."
+      placeholder: "Sprint 1 — Structure Migration"
+    validations:
+      required: false
+
+  - type: input
+    id: user_story
+    attributes:
+      label: "User Story / ФТ"
+      description: "Связанная user story, функциональное требование или `—`."
+      placeholder: "—"
+    validations:
+      required: false
+
+  - type: input
+    id: linked_backlog
+    attributes:
+      label: "Linked Backlog"
+      description: "Ссылка на backlog item или `—`."
+      placeholder: "—"
+    validations:
+      required: false
+
+  - type: input
+    id: depends_on
+    attributes:
+      label: "Depends On"
+      description: "Зависимости по issue, PR, документам или `—`."
+      placeholder: "—"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: operating_mode
+    attributes:
+      label: "Operating Mode"
+      description: "Default: structured, если не указано."
+      options:
+        - structured
+        - creative
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "🎯 Контекст"
+      description: "Почему задача нужна, какие решения и ограничения уже заданы."
+      placeholder: |
+        Опишите проблему, цель, границы и связанные документы / issue / PR.
+    validations:
+      required: true
+
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: "📄 Артефакты для создания/изменения"
+      description: "Конкретные файлы, документы, проверки или UI-сценарии."
+      placeholder: |
+        - [ ] Создать или изменить ...
+        - [ ] Проверить ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dod
+    attributes:
+      label: "✅ Готово, когда"
+      description: "Измеримые acceptance criteria и проверки."
+      placeholder: |
+        - [ ] ...
+        - [ ] Локальная проверка проходит без ошибок
+        - [ ] Изменения закоммичены и отправлены в PR
+    validations:
+      required: true

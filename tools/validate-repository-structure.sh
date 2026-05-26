@@ -39,6 +39,7 @@ is_active_file() {
     LICENSE | \
     standards/README.md | \
     governance/REPO_MODEL.md | \
+    .github/ISSUE_TEMPLATE/task.yml | \
     tools/validate-repository-structure.sh)
       return 0
       ;;
@@ -73,6 +74,7 @@ required_files=(
   "LICENSE"
   "standards/README.md"
   "governance/REPO_MODEL.md"
+  ".github/ISSUE_TEMPLATE/task.yml"
   "tools/validate-repository-structure.sh"
 )
 
@@ -130,6 +132,14 @@ require_text "standards/README.md" "Как пользоваться"
 require_text "governance/REPO_MODEL.md" "Артефакт только при операционной боли"
 require_text "governance/REPO_MODEL.md" "Anti-Inflation"
 require_text "governance/REPO_MODEL.md" "tools/"
+
+require_text ".github/ISSUE_TEMPLATE/task.yml" "📋 Task Implementation"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "structured"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "creative"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "⚠️ **Для ИИ**"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "🎯 Контекст"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "📄 Артефакты для создания/изменения"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
 
 if [[ -e meta/README.md ]]; then
   fail "active meta/README.md should be renamed to meta/README-old.md"
