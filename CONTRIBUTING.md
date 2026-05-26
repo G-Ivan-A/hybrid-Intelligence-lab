@@ -29,6 +29,7 @@ active governance, пока новый артефакт явно не перен
 ## Локальная проверка
 
 ```bash
+./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
 ```
 

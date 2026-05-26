@@ -48,5 +48,6 @@
 ## Локальная проверка
 
 ```bash
+./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
 ```

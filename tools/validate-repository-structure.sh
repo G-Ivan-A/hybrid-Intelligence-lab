@@ -43,6 +43,7 @@ is_active_file() {
     standards/TEAM_CONTRACT.md | \
     governance/REPO_MODEL.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
+    tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
       return 0
       ;;
@@ -81,6 +82,7 @@ required_files=(
   "standards/TEAM_CONTRACT.md"
   "governance/REPO_MODEL.md"
   ".github/ISSUE_TEMPLATE/task.yml"
+  "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
 )
 
@@ -115,6 +117,7 @@ require_text "README.md" "standards/README.md"
 require_text "README.md" "standards/GLOSSARY.md"
 require_text "README.md" "standards/TEAM_CONTRACT.md"
 require_text "README.md" "governance/REPO_MODEL.md"
+require_text "README.md" "./tools/validate-frontmatter.sh"
 require_text "README.md" "./tools/validate-repository-structure.sh"
 
 require_text "CONCEPT.md" "governance/REPO_MODEL.md"
@@ -135,6 +138,7 @@ require_text "CONCEPT.md" "единой терминологии"
 
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
+require_text "CONTRIBUTING.md" "./tools/validate-frontmatter.sh"
 require_text "CONTRIBUTING.md" "./tools/validate-repository-structure.sh"
 
 require_text "AI_GOVERNANCE.md" "Founder & PO"
