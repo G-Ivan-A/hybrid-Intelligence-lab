@@ -38,6 +38,7 @@ is_active_file() {
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
+    standards/RESEARCH_PROFILE.md | \
     standards/GLOSSARY.md | \
     standards/PRODUCT_PROFILE.md | \
     standards/TEAM_CONTRACT.md | \
@@ -76,6 +77,7 @@ required_files=(
   "CHANGELOG.md"
   "LICENSE"
   "standards/README.md"
+  "standards/RESEARCH_PROFILE.md"
   "standards/GLOSSARY.md"
   "standards/PRODUCT_PROFILE.md"
   "standards/TEAM_CONTRACT.md"
@@ -148,6 +150,7 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "Как пользоваться"
+require_text "standards/README.md" "RESEARCH_PROFILE.md"
 require_text "standards/README.md" "TEAM_CONTRACT.md"
 require_text "standards/README.md" "standards/GLOSSARY.md"
 require_text "standards/README.md" "PRODUCT_PROFILE.md"
@@ -168,6 +171,21 @@ require_text "standards/TEAM_CONTRACT.md" "RESEARCH_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "PRODUCT_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "EDUCATION_PROFILE.md"
 require_text "standards/TEAM_CONTRACT.md" "Источники"
+
+require_text "standards/RESEARCH_PROFILE.md" "status: canonical"
+require_text "standards/RESEARCH_PROFILE.md" "version: 1.0"
+require_text "standards/RESEARCH_PROFILE.md" "updated: 2026-05-26"
+require_text "standards/RESEARCH_PROFILE.md" "ai-generated: false"
+require_text "standards/RESEARCH_PROFILE.md" "Назначение"
+require_text "standards/RESEARCH_PROFILE.md" "Обязательные артефакты"
+require_text "standards/RESEARCH_PROFILE.md" "YYYY-MM-topic.md"
+require_text "standards/RESEARCH_PROFILE.md" "exp-<slug>"
+require_text "standards/RESEARCH_PROFILE.md" "Шаблон frontmatter исследования"
+require_text "standards/RESEARCH_PROFILE.md" "external-analysis | internal-analysis | experiment"
+require_text "standards/RESEARCH_PROFILE.md" "Как организовать исследование"
+require_text "standards/RESEARCH_PROFILE.md" "Чек-лист готовности к публикации"
+require_text "standards/RESEARCH_PROFILE.md" "Правила цитирования источников"
+require_text "standards/RESEARCH_PROFILE.md" "FAIR Principles"
 
 require_text "standards/GLOSSARY.md" "status: canonical"
 require_text "standards/GLOSSARY.md" "version: 1.0"
