@@ -46,6 +46,7 @@ is_active_file() {
     standards/TEAM_CONTRACT.md | \
     standards/ISSUE_WORKFLOW.md | \
     research/mango/taxonomy-concept-2026-05.md | \
+    research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/README.md | \
     research/mango/README.md | \
     research/mango/classification.md | \
