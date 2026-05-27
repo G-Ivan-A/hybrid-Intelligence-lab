@@ -14,6 +14,10 @@ All notable repository governance changes are documented here.
   НФТ-классами, интеграция с `kb/product-matrix.md` и процесс обновления.
   Файл зарегистрирован как active в `tools/validate-repository-structure.sh`,
   `governance/ARTIFACT_MAP.md` и `research/mango/README.md`.
+- Issue #75: эксперимент `projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md`
+  и промпт `projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md`
+  для пошаговой генерации Use Case с согласованием акторов, компонентов,
+  controlled output, логами и тестами на 4 кейсах.
 - Issue #67: четырёхуровневая иерархия `Domain → Capability → Feature →
   Atomic Function` в `research/mango/classification.md` (v3.0): семь доменов
   пилота, явные слои `📊 Product Layer` и `🛒 Commercial Layer` со связью через
@@ -46,6 +50,9 @@ All notable repository governance changes are documented here.
 ### Removed
 
 - Issue #69: повторно удалён служебный корневой `.gitkeep`, восстановленный при
+  создании PR-ветки, чтобы `tools/validate-repository-structure.sh` проходил без
+  ошибок.
+- Issue #75: повторно удалён служебный корневой `.gitkeep`, восстановленный при
   создании PR-ветки, чтобы `tools/validate-repository-structure.sh` проходил без
   ошибок.
 - Issue #67: повторно удалён служебный корневой `.gitkeep`, восстановленный при
