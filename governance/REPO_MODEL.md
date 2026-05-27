@@ -20,6 +20,9 @@
 | `tools/` | Локальные validation и maintenance scripts. | Добавлять scripts, которые делают проверки воспроизводимыми. |
 | `.github/ISSUE_TEMPLATE/` | GitHub-native task intake. | Держать templates focused на качестве issue и reviewability. |
 
+Именование файлов для корня репозитория и вложенных каталогов описано в
+[standards/FILE_NAMING.md](../standards/FILE_NAMING.md).
+
 ## Anti-Inflation Principle
 
 **Артефакт только при операционной боли.**
@@ -34,6 +37,7 @@
 
 | Ситуация | Действие |
 | --- | --- |
+| Создается новый файл. | Проверить имя по [standards/FILE_NAMING.md](../standards/FILE_NAMING.md). |
 | Новый документ повторяет existing standard. | Сослаться на standard и держать документ коротким. |
 | Формат нужен один раз. | Встроить нужную структуру прямо в artifact. |
 | Формат нужен повторно. | Создать или обновить standard в `standards/`. |

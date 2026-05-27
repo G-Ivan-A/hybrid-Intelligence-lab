@@ -9,7 +9,7 @@
 | Стандарт | Статус | Где применяется | Источник |
 | --- | --- | --- | --- |
 | Единый глоссарий терминов | Active | Issues, standards, governance, AI-assisted work | [standards/GLOSSARY.md](GLOSSARY.md) |
-| Правила именования файлов | Active | Research, standards, experiments, profiles и education artifacts | [standards/FILE_NAMING.md](FILE_NAMING.md) |
+| `FILE_NAMING.md` | Active | Правило именования файлов, обязательно для всех новых файлов | [standards/FILE_NAMING.md](FILE_NAMING.md) |
 | Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/EDUCATION_PROFILE.md](EDUCATION_PROFILE.md) |
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |

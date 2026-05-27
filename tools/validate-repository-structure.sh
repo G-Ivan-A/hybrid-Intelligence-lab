@@ -32,6 +32,7 @@ require_text() {
 is_active_file() {
   case "$1" in
     README.md | \
+    .gitkeep | \
     CONCEPT.md | \
     CONTRIBUTING.md | \
     AI_GOVERNANCE.md | \
@@ -264,13 +265,13 @@ require_text "standards/FILE_NAMING.md" "status: canonical"
 require_text "standards/FILE_NAMING.md" "version: 1.0"
 require_text "standards/FILE_NAMING.md" "updated: 2026-05-26"
 require_text "standards/FILE_NAMING.md" "ai-generated: false"
-require_text "standards/FILE_NAMING.md" "YYYY-MM-topic.md"
-require_text "standards/FILE_NAMING.md" "STANDARD_NAME.md"
-require_text "standards/FILE_NAMING.md" "exp-{slug}/"
-require_text "standards/FILE_NAMING.md" "{ТИП}_PROFILE.md"
-require_text "standards/FILE_NAMING.md" "{course-slug}/"
-require_text "standards/FILE_NAMING.md" "Анти-паттерны"
-require_text "standards/FILE_NAMING.md" "Как использовать"
+require_text "standards/FILE_NAMING.md" "Корень репозитория"
+require_text "standards/FILE_NAMING.md" "UPPERCASE_WITH_HYPHENS.md"
+require_text "standards/FILE_NAMING.md" "Вложенные каталоги"
+require_text "standards/FILE_NAMING.md" "lowercase-with-hyphens.md"
+require_text "standards/FILE_NAMING.md" "classification-glossary.md"
+require_text "standards/FILE_NAMING.md" "Исключения"
+require_text "standards/FILE_NAMING.md" "Новый файл не соответствует правилу"
 
 require_text "standards/RESEARCH_PROFILE.md" "status: canonical"
 require_text "standards/RESEARCH_PROFILE.md" "version: 1.0"
