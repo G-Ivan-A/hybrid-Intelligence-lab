@@ -61,6 +61,7 @@ is_active_file() {
     education/README.md | \
     projects/README.md | \
     projects/mango/README.md | \
+    projects/mango/experiments/tz-stats-prototype-2026-05.md | \
     projects/mango/standards/classification-glossary.md | \
     projects/mango/kb/.gitkeep | \
     projects/mango/prompts/.gitkeep | \
@@ -135,6 +136,7 @@ required_files=(
   "education/README.md"
   "projects/README.md"
   "projects/mango/README.md"
+  "projects/mango/experiments/tz-stats-prototype-2026-05.md"
   "projects/mango/standards/classification-glossary.md"
   "projects/mango/kb/.gitkeep"
   "projects/mango/prompts/.gitkeep"
