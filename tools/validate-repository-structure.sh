@@ -83,6 +83,7 @@ is_active_file() {
     research/project-context-and-bootstrap-patterns-2026-05.md | \
     research/prompts-classification-audit-2026-05.md | \
     research/prompts-classification-standard-2026-05.md | \
+    research/user-prompts-analysis-2026-05.md | \
     research/README.md | \
     research/mango/README.md | \
     research/mango/classification.md | \
@@ -414,8 +415,8 @@ require_text "governance/REPO_MODEL.md" "Anti-Inflation"
 require_text "governance/REPO_MODEL.md" "tools/"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.1"
-require_text "governance/ARTIFACT_MAP.md" "updated: 2026-05-27"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.2"
+require_text "governance/ARTIFACT_MAP.md" "updated: 2026-05-28"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/ARTIFACT_MAP.md" "Как использовать карту"
@@ -424,6 +425,7 @@ require_text "governance/ARTIFACT_MAP.md" "GLOSSARY.md"
 require_text "governance/ARTIFACT_MAP.md" "research/mango/classification.md"
 require_text "governance/ARTIFACT_MAP.md" "research/mango/rag-mapping-roadmap-2026-05.md"
 require_text "governance/ARTIFACT_MAP.md" "research/project-context-and-bootstrap-patterns-2026-05.md"
+require_text "governance/ARTIFACT_MAP.md" "research/user-prompts-analysis-2026-05.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/mango/standards/classification-glossary.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/README.md"
 
@@ -433,6 +435,7 @@ require_text "research/README.md" "research/<domain>/exp-<slug>/"
 require_text "research/README.md" "project-context-and-bootstrap-patterns-2026-05.md"
 require_text "research/README.md" "prompts-classification-audit-2026-05.md"
 require_text "research/README.md" "prompts-classification-standard-2026-05.md"
+require_text "research/README.md" "user-prompts-analysis-2026-05.md"
 
 require_text "research/mango/README.md" "status: canonical"
 require_text "research/mango/README.md" "classification.md"
@@ -480,6 +483,16 @@ require_text "research/prompts-classification-standard-2026-05.md" "Когда �
 require_text "research/prompts-classification-standard-2026-05.md" "Шаблоны промптов"
 require_text "research/prompts-classification-standard-2026-05.md" "План интеграции"
 require_text "research/prompts-classification-standard-2026-05.md" "Вопросы для согласования"
+
+require_text "research/user-prompts-analysis-2026-05.md" "status: draft"
+require_text "research/user-prompts-analysis-2026-05.md" "type: prompt-analysis"
+require_text "research/user-prompts-analysis-2026-05.md" "scope: user-specific + repo-integration"
+require_text "research/user-prompts-analysis-2026-05.md" "Таблица классификации 18 промптов"
+require_text "research/user-prompts-analysis-2026-05.md" "Признаки устаревших паттернов"
+require_text "research/user-prompts-analysis-2026-05.md" "Дубли/уникальная ценность"
+require_text "research/user-prompts-analysis-2026-05.md" "Рекомендации по действиям"
+require_text "research/user-prompts-analysis-2026-05.md" "План интеграции"
+require_text "research/user-prompts-analysis-2026-05.md" "Вопросы для согласования"
 
 require_text "research/mango/capability-decomposition-2026-05.md" "status: draft"
 require_text "research/mango/capability-decomposition-2026-05.md" "type: atomic-functions-reference"
