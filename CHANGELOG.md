@@ -6,6 +6,11 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #81: исследование `research/project-context-and-bootstrap-patterns-2026-05.md`
+  с минималистичными паттернами передачи контекста между чатами, предсказуемого
+  создания project areas и маршрута "рекомендация -> задача" на опыте Mango.
+  Файл зарегистрирован как active в `tools/validate-repository-structure.sh`,
+  `governance/ARTIFACT_MAP.md` и `research/README.md`.
 - Issue #79: исследование `research/prompts-classification-audit-2026-05.md`
   (аудит входных данных: инвентаризация 6 Mango промптов, паттерны отладки,
   пробелы классификации) и `research/prompts-classification-standard-2026-05.md`
@@ -67,6 +72,9 @@ All notable repository governance changes are documented here.
 
 ### Removed
 
+- Issue #81: повторно удалён служебный корневой `.gitkeep`, восстановленный при
+  создании PR-ветки, чтобы `tools/validate-repository-structure.sh` проходил
+  без ошибок.
 - Issue #77: удалены root `.gitkeep` из служебного PR-initial commit и
   `projects/mango/prompts/.gitkeep`, потому что `prompts/` теперь содержит
   шесть активных prompt files.
