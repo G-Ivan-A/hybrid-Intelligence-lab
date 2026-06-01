@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-05-28
+version: 1.3
+updated: 2026-06-01
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.2
+Версия: 1.3
 
-Дата: 2026-05-28
+Дата: 2026-06-01
 
 Карта артефактов — единая точка входа в репозиторий `hybrid-Intelligence-lab`.
 Она показывает, что где лежит, зачем нужно и как связано, чтобы новые участники
@@ -75,6 +75,7 @@ ai-generated: false
 | `/research/project-context-and-bootstrap-patterns-2026-05.md` | исследование | Паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. Scope: repo-wide. | ⚠️ По необходимости | `projects/mango/README.md`, `projects/mango/experiments/`, `research/mango/`, `standards/PROJECT_STRUCTURE_INHERITANCE.md` |
 | `/research/prompts-classification-audit-2026-05.md` | исследование | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. Scope: repo-wide. | ⚠️ По необходимости | `research/prompts-classification-standard-2026-05.md`, `projects/mango/prompts/`, `projects/mango/experiments/prompts-audit-2026-05-26.md` |
 | `/research/prompts-classification-standard-2026-05.md` | исследование | Стандарт классификации промптов: таксономия (6 осей), матрица «тип × зрелость × сценарий» (10 ячеек), шаблоны отладки (A/B/C), план интеграции и вопросы для согласования. Scope: repo-wide. | ⚠️ По необходимости | `research/prompts-classification-audit-2026-05.md`, `projects/mango/prompts/`, `standards/RESEARCH_PROFILE.md` |
+| `/research/team-c-governance-strategy-audit-2026-05.md` | исследование | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, lightweight hierarchy, research lifecycle и backlog candidates. Scope: repo-wide. | ⚠️ По необходимости | `research/project-context-and-bootstrap-patterns-2026-05.md`, `governance/REPO_MODEL.md`, `standards/RESEARCH_PROFILE.md` |
 | `/research/user-prompts-analysis-2026-05.md` | исследование | Анализ 18 пользовательских промптов по стандарту классификации: матрица, оценка актуальности, дубли, рекомендации и план интеграции с `projects/mango/prompts/`. Scope: user-specific + repo-integration. | ⚠️ По необходимости | `research/prompts-classification-standard-2026-05.md`, `projects/mango/prompts/`, `projects/mango/experiments/prompts-audit-2026-05-26.md` |
 | `/standards/` | каталог | Плоский реестр стандартов, шаблонов и правил оформления артефактов. | ✅ Да | `standards/README.md`, `governance/REPO_MODEL.md` |
 | `/governance/` | каталог | Модель репозитория, навигация и сквозные governance-правила. | ✅ Да | `governance/REPO_MODEL.md`, `governance/ARTIFACT_MAP.md` |

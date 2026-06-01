@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-05-28
+version: 1.2
+updated: 2026-06-01
 ai-generated: false
 source: research/README-old.md
 ---
@@ -29,6 +29,7 @@ source: research/README-old.md
 | [project-context-and-bootstrap-patterns-2026-05.md](project-context-and-bootstrap-patterns-2026-05.md) | Минималистичные паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. |
 | [prompts-classification-audit-2026-05.md](prompts-classification-audit-2026-05.md) | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. |
 | [prompts-classification-standard-2026-05.md](prompts-classification-standard-2026-05.md) | Стандарт классификации промптов: таксономия (6 осей), матрица зрелости, шаблоны отладки, план интеграции. |
+| [team-c-governance-strategy-audit-2026-05.md](team-c-governance-strategy-audit-2026-05.md) | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, hierarchy/lifecycle вопросы и backlog candidates. |
 | [user-prompts-analysis-2026-05.md](user-prompts-analysis-2026-05.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
 
 ## Рекомендуемая структура
