@@ -85,6 +85,7 @@ is_active_file() {
     research/hub/prompts-classification-audit-2026-05.md | \
     research/hub/prompts-classification-standard-2026-05.md | \
     research/hub/team-c-governance-strategy-audit-2026-05.md | \
+    research/hub/external-governance-patterns-review-2026-06.md | \
     research/hub/user-prompts-analysis-2026-05.md | \
     research/README.md | \
     research/hub/README.md | \
@@ -492,7 +493,7 @@ require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.7"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.8"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
@@ -589,6 +590,17 @@ require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Governa
 require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Предложения команды C"
 require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Рекомендации для backlog"
 require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Вопросы для human review"
+
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "status: draft"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "type: external-analysis"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "scope: repo-wide"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "Что ценного в рекомендациях Команды С"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "Матрица применимости"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "ВЗЯТЬ СЕЙЧАС"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "ОТЛОЖИТЬ"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "ОТКЛОНИТЬ"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "North Star"
+require_text "research/hub/external-governance-patterns-review-2026-06.md" "Триггеры для пересмотра матрицы"
 
 require_text "research/hub/user-prompts-analysis-2026-05.md" "status: draft"
 require_text "research/hub/user-prompts-analysis-2026-05.md" "type: prompt-analysis"
