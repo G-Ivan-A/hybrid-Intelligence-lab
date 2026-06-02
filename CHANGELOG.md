@@ -6,6 +6,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #89: креативный RFC `governance/proposals/rfc-creative-template-design.md`
+  — проект "ДНК-шаблона" для клонирования spoke-проектов: концептуальная аналогия
+  (геном, а не чемодан), сравнительная матрица имён корневого каталога
+  (`templates`/`blueprints`/`genesis`), минимальная карта файлов с креативными
+  комментариями, три антипаттерна, обработка краевых случаев ("А что, если...") и
+  Mermaid-схема процесса клонирования. RFC соблюдает запрет на создание `research/`
+  в споках по умолчанию (`docs/adr/`, `docs/audit/` только) и завершается блоком
+  "Решение за человеком". Создан каталог `governance/proposals/`. Файл
+  зарегистрирован как active в `tools/validate-repository-structure.sh` и
+  `governance/ARTIFACT_MAP.md`.
 - Issue #81: исследование `research/project-context-and-bootstrap-patterns-2026-05.md`
   с минималистичными паттернами передачи контекста между чатами, предсказуемого
   создания project areas и маршрута "рекомендация -> задача" на опыте Mango.
