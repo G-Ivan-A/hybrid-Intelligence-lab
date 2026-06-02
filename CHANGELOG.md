@@ -25,6 +25,17 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #110 (B-002): связаны входные точки репозитория с онбордингом. В
+  `README.md` добавлены предполётный блок «🛫 Новый агент? Начни здесь →
+  `governance/AGENT_ONBOARDING.md`» и строка в таблице «Ключевые документы»; в
+  `AI_GOVERNANCE.md` онбординг закреплён как обязательный pre-flight шаг (нота в
+  шапке + ссылка в правиле 2 «читай до изменения файлов»). Это ссылки, а не
+  копии протокола (Anti-Inflation, риск дублирования снят). Навигационные связи
+  зафиксированы в валидаторе (`require_text` на `governance/AGENT_ONBOARDING.md`
+  в `README.md` и `AI_GOVERNANCE.md`) и в `governance/ARTIFACT_MAP.md` (связи у
+  строк `README.md`, `AI_GOVERNANCE.md` и `AGENT_ONBOARDING.md`; версия карты
+  1.10 → 1.11). Замыкает Кейс 1: артефакт B-001 (#109) теперь виден из двух
+  очевидных точек входа.
 - Issue #116 (B-011): в RFC-манифест
   `governance/proposals/rfc-two-cases-of-project-initialization.md` добавлен
   раздел «Evidence trail: git history + issues + PRs как след доказательств»,
