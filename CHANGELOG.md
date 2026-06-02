@@ -51,6 +51,19 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #109 (B-001): рабочая инструкция `governance/AGENT_ONBOARDING.md`
+  (`status: canonical`, тип `правило`) — единый входной артефакт *Runtime-онбординга*
+  (Кейс 1) по дизайну `proposals/rfc-agent-onboarding-protocol.md`. Содержит:
+  *Handover Prompt* с плейсхолдером `{{REPO_NAME}}`, 4-шаговый протокол агента
+  (чек-лист governance → чек-лист контекста → *Readback* → стоп до апрува), шаблон
+  *Readback* и раздел threat awareness «Что может пойти не так» (5 рисков холодного
+  старта) — реализация рекомендации команды Q без отдельного файла (Anti-Inflation).
+  Все термины — со ссылкой на `standards/GLOSSARY.md`; добавлены перекрёстные ссылки
+  на `templates/spoke/README.md` (Кейс 2) и на RFC-манифест двух кейсов. Граница с
+  RFC явная: RFC остаётся *проектом* (`proposals/`), а `AGENT_ONBOARDING.md` —
+  *рабочей инструкцией*. Файл зарегистрирован как active в
+  `tools/validate-repository-structure.sh` (`is_active_file`, `required_files` и
+  набор `require_text`) и `governance/ARTIFACT_MAP.md` (версия карты 1.9 → 1.10).
 - Issue #99: RFC-манифест `governance/proposals/rfc-two-cases-of-project-initialization.md`
   — концептуальное разделение двух ортогональных кейсов инициализации проекта:
   Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Ведущая аналогия

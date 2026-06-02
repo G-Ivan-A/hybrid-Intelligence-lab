@@ -90,6 +90,7 @@ is_active_file() {
     projects/education-ba-prompt/docs/course-ideas.md | \
     projects/repo-development/README.md | \
     projects/repo-development/docs/migration-audit-2026-05.md | \
+    governance/AGENT_ONBOARDING.md | \
     governance/REPO_MODEL.md | \
     governance/ARTIFACT_MAP.md | \
     governance/BACKLOG.md | \
@@ -197,6 +198,7 @@ required_files=(
   "projects/mango/decisions/.gitkeep"
   "projects/repo-development/README.md"
   "projects/repo-development/docs/migration-audit-2026-05.md"
+  "governance/AGENT_ONBOARDING.md"
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
   "governance/BACKLOG.md"
@@ -465,6 +467,18 @@ require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" '```mermaid'
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Follow-up"
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
+
+require_text "governance/AGENT_ONBOARDING.md" "status: canonical"
+require_text "governance/AGENT_ONBOARDING.md" "version: 1.0"
+require_text "governance/AGENT_ONBOARDING.md" "updated: 2026-06-02"
+require_text "governance/AGENT_ONBOARDING.md" "Handover Prompt"
+require_text "governance/AGENT_ONBOARDING.md" "{{REPO_NAME}}"
+require_text "governance/AGENT_ONBOARDING.md" "Readback"
+require_text "governance/AGENT_ONBOARDING.md" "Что может пойти не так"
+require_text "governance/AGENT_ONBOARDING.md" "standards/GLOSSARY.md"
+require_text "governance/AGENT_ONBOARDING.md" "rfc-agent-onboarding-protocol.md"
+require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initialization.md"
+require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
 require_text "governance/ARTIFACT_MAP.md" "version: 1.10"
