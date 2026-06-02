@@ -6,6 +6,20 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #115 (B-005): шаблон `templates/spoke/README.md` (точка входа **Кейса 2**,
+  *Bootstrap-клонирование*) дополнен разделами «🛠️ Как адаптировать
+  `{{...}}`-плейсхолдеры» (таблица плейсхолдеров, запуск `init.sh`, ручная правка,
+  пояснение про `{{REPO_NAME}}`) и «✅ Как валидировать структуру» (запуск
+  `./tools/validate-repository-structure.sh` перед PR). Замкнуты перекрёстные
+  ссылки между двумя точками входа (follow-up #4, #5 RFC-манифеста двух кейсов):
+  спок-README → Хаб `governance/AGENT_ONBOARDING.md` (Кейс 1),
+  `rfc-two-cases-of-project-initialization.md` и `rfc-creative-template-design.md`
+  через `{{hub_url}}`; обратная ссылка (онбординг → спок-README) уже существовала.
+  Структурный валидатор расширен проверками контента спок-README
+  (`tools/validate-repository-structure.sh`: ссылка на `governance/AGENT_ONBOARDING.md`
+  и наличие раздела валидации). Удалён сгенерированный харнессом корневой
+  `.gitkeep` (его нет в `main`), снимавший FAIL структурного валидатора.
+
 - Issue #114 (B-003): новый артефакт генома спока
   `templates/spoke/AI_HANDOVER_PROMPT.md` — копия *Handover Prompt* с
   плейсхолдером `{{REPO_NAME}}` (по умолчанию `hybrid-Intelligence-lab`), готовая
