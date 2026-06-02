@@ -4,6 +4,25 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- Issue #114 (B-003): новый артефакт генома спока
+  `templates/spoke/AI_HANDOVER_PROMPT.md` — копия *Handover Prompt* с
+  плейсхолдером `{{REPO_NAME}}` (по умолчанию `hybrid-Intelligence-lab`), готовая
+  «доверенность» для запуска агента (*Runtime-онбординг*) прямо из склонированного
+  спока. Источник истины зафиксирован за Хабом
+  ([`governance/AGENT_ONBOARDING.md`](governance/AGENT_ONBOARDING.md), создаётся в
+  B-001 → #109): файл явно помечен как копия шаблона со ссылкой на хабовый
+  оригинал, чтобы избежать рассинхронизации. Файл зарегистрирован как active в
+  обоих валидаторах (`tools/validate-repository-structure.sh` — `is_active_file`,
+  `required_files` и проверки контента; `templates/spoke/tools/validate-repository-structure.sh`
+  — `required_files` и проверка сохранности `{{REPO_NAME}}`) и в
+  `governance/ARTIFACT_MAP.md` (тип `шаблон`, версия карты 1.9 → 1.10).
+  Перекрёстные ссылки добавлены в `templates/spoke/README.md`; шаблонный
+  `templates/spoke/CHANGELOG.md` упоминает *Handover Prompt* в составе генома.
+  Удалён сгенерированный харнессом корневой `.gitkeep` (его нет в `main`),
+  снимавший FAIL структурного валидатора.
+
 ### Changed
 
 - Issue #116 (B-011): в RFC-манифест

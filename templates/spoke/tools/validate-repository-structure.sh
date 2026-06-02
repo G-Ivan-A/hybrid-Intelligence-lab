@@ -42,6 +42,7 @@ required_directories=(
 required_files=(
   "AI_GOVERNANCE.md"
   "AI_QUICK_RULES.md"
+  "AI_HANDOVER_PROMPT.md"
   "README.md"
   "CONTRIBUTING.md"
   "CHANGELOG.md"
@@ -61,6 +62,12 @@ done
 
 # AI_GOVERNANCE.md обязателен в корне каждого спока (жёсткое ограничение Хаба).
 require_file "AI_GOVERNANCE.md"
+
+# Handover Prompt должен оставаться параметризованным ({{REPO_NAME}}), чтобы
+# «доверенность» переносилась в любой спок без правок (см. AI_HANDOVER_PROMPT.md).
+if [[ -f "AI_HANDOVER_PROMPT.md" ]] && ! grep -Fq '{{REPO_NAME}}' "AI_HANDOVER_PROMPT.md"; then
+  fail "AI_HANDOVER_PROMPT.md must keep the {{REPO_NAME}} placeholder"
+fi
 
 # Negative check: research/ по умолчанию не создаётся в споке. Фундаментальные
 # знания живут в research/ Хаба. Если папка появилась — это должно быть

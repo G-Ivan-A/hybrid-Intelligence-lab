@@ -16,8 +16,8 @@ ai-generated: true
 ### Added
 
 - Инициализация спока `{{project_name}}` из «ДНК-шаблона» Хаба
-  (`templates/spoke/`): базовый геном (governance, quick rules, навигация,
-  каркасы `docs/adr/`, `docs/audit/`, валидатор структуры).
+  (`templates/spoke/`): базовый геном (governance, quick rules, *Handover
+  Prompt*, навигация, каркасы `docs/adr/`, `docs/audit/`, валидатор структуры).
 
 ### Changed
 

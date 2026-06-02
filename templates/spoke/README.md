@@ -21,6 +21,7 @@ ai-generated: true
 | Фундаментальные знания | `research/` Хаба (в споке `research/` **не создаётся**) |
 | Операционный контракт проекта | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
 | Быстрые правила для агента | [AI_QUICK_RULES.md](AI_QUICK_RULES.md) |
+| «Доверенность» для запуска агента (Handover Prompt) | [AI_HANDOVER_PROMPT.md](AI_HANDOVER_PROMPT.md) |
 
 ## 🗂️ Структура (сейчас)
 
@@ -28,6 +29,7 @@ ai-generated: true
 | --- | --- |
 | `AI_GOVERNANCE.md` | Конституция проекта: роли, правила, эскалация, DoD. |
 | `AI_QUICK_RULES.md` | Одностраничная инструкция для AI-агента. |
+| `AI_HANDOVER_PROMPT.md` | Готовый *Handover Prompt* (`{{REPO_NAME}}`) для запуска агента; копия хабового шаблона. |
 | `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
 | `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |

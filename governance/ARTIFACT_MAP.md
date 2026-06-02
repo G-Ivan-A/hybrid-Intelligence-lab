@@ -1,13 +1,13 @@
 ---
 status: canonical
-version: 1.9
+version: 1.10
 updated: 2026-06-02
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.9
+Версия: 1.10
 
 Дата: 2026-06-02
 
@@ -63,6 +63,7 @@ ai-generated: false
 | `/governance/proposals/rfc-two-cases-of-project-initialization.md` | RFC | Концептуальный манифест разделения двух ортогональных кейсов инициализации проекта: Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Аналогии из 4 смежных областей, таблица-манифест (13 строк), Mermaid-схема жизненного цикла, обоснование с трассировкой к ретроспективе, follow-up. Термины — только из `standards/GLOSSARY.md`. Решение за человеком. | ⚠️ По необходимости | `governance/proposals/rfc-agent-onboarding-protocol.md`, `governance/proposals/rfc-creative-template-design.md`, `research/hub/ai-collaboration-retrospective-2026-06.md`, `standards/GLOSSARY.md` |
 | `/templates/spoke/AI_GOVERNANCE.md` | шаблон | Шаблон конституции спока: роли, правила, operating modes, эскалация и DoD. Ядро генома (обязателен в корне спока). Плейсхолдеры `{{project_name}}`, `{{hub_url}}`, `{{date}}`. | ⚠️ По необходимости | `governance/proposals/rfc-creative-template-design.md`, `AI_GOVERNANCE.md`, `templates/spoke/AI_QUICK_RULES.md` |
 | `/templates/spoke/AI_QUICK_RULES.md` | шаблон | Шаблон одностраничной "инструкции по выживанию" агента в новом споке: куда смотреть, чего не делать (включая запрет `research/`), как звать человека. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/README.md` |
+| `/templates/spoke/AI_HANDOVER_PROMPT.md` | шаблон | Копия *Handover Prompt* (с плейсхолдером `{{REPO_NAME}}`) в геноме спока: готовая «доверенность» для запуска агента (Runtime-онбординг). Источник истины — хабовый `governance/AGENT_ONBOARDING.md`; спок хранит копию для самодостаточности. | ⚠️ По необходимости | `governance/proposals/rfc-agent-onboarding-protocol.md`, `templates/spoke/AI_QUICK_RULES.md`, `templates/spoke/README.md` |
 | `/templates/spoke/README.md` | шаблон | Шаблон визитки спока с плейсхолдерами и связью с Хабом: цель, структура "сейчас", ссылки на governance. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/CONTRIBUTING.md` |
 | `/templates/spoke/CONTRIBUTING.md` | шаблон | Шаблон workflow вклада спока: issue → PR → review, PR checklist, AI-assisted work. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/.github/ISSUE_TEMPLATE/task.md` |
 | `/templates/spoke/CHANGELOG.md` | шаблон | Шаблон журнала спока: каркас с секцией `## Unreleased` (Keep a Changelog). | ⚠️ По необходимости | `templates/spoke/README.md` |

@@ -99,6 +99,7 @@ is_active_file() {
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
+    templates/spoke/AI_HANDOVER_PROMPT.md | \
     templates/spoke/README.md | \
     templates/spoke/CONTRIBUTING.md | \
     templates/spoke/CHANGELOG.md | \
@@ -207,6 +208,7 @@ required_files=(
   ".github/ISSUE_TEMPLATE/task.yml"
   "templates/spoke/AI_GOVERNANCE.md"
   "templates/spoke/AI_QUICK_RULES.md"
+  "templates/spoke/AI_HANDOVER_PROMPT.md"
   "templates/spoke/README.md"
   "templates/spoke/CONTRIBUTING.md"
   "templates/spoke/CHANGELOG.md"
@@ -465,7 +467,7 @@ require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.9"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.10"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
@@ -706,6 +708,9 @@ require_text "templates/spoke/AI_GOVERNANCE.md" "{{project_name}}"
 require_text "templates/spoke/AI_GOVERNANCE.md" "Эскалация"
 require_text "templates/spoke/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/spoke/AI_QUICK_RULES.md" "Не создавай"
+require_text "templates/spoke/AI_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
+require_text "templates/spoke/AI_HANDOVER_PROMPT.md" "governance/AGENT_ONBOARDING.md"
+require_text "templates/spoke/README.md" "AI_HANDOVER_PROMPT.md"
 require_text "templates/spoke/README.md" "{{project_name}}"
 require_text "templates/spoke/CONTRIBUTING.md" "issue → PR → review"
 require_text "templates/spoke/CHANGELOG.md" "## Unreleased"
