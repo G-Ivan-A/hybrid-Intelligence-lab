@@ -54,6 +54,18 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #91: рефакторинг структуры `research/` (namespacing). Фундаментальные
+  (`scope: repo-wide`) исследования перенесены через `git mv` из корня в новый
+  подкаталог `research/hub/` (`project-context-and-bootstrap-patterns-2026-05.md`,
+  `prompts-classification-audit-2026-05.md`,
+  `prompts-classification-standard-2026-05.md`,
+  `team-c-governance-strategy-audit-2026-05.md`,
+  `user-prompts-analysis-2026-05.md`); добавлен `research/hub/README.md`.
+  `research/README.md` получил строгое правило о запрете файлов в корне
+  `research/` и актуализированное оглавление; пути обновлены в
+  `governance/ARTIFACT_MAP.md` (v1.4). Валидатор структуры теперь требует
+  подкаталоги `research/hub` и `research/mango` и запрещает любые файлы в корне
+  `research/`, кроме `README.md`.
 - Issue #77: прототипные `_exp` prompt-файлы для User Story и Use Case
   заменены короткими copy-paste промптами; валидатор структуры теперь проверяет
   наличие ровно 6 файлов в `projects/mango/prompts/` и лимиты длины prompt body

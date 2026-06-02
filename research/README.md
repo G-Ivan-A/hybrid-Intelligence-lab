@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-06-01
+version: 1.3
+updated: 2026-06-02
 ai-generated: false
 source: research/README-old.md
 ---
@@ -11,10 +11,16 @@ source: research/README-old.md
 Каталог для независимых исследований рынка, технологий, стандартов и доменных
 задач.
 
+> ⛔ **Строгое правило:** Размещение файлов исследований в корне каталога
+> `research/` запрещено. Все исследования должны находиться в тематических
+> подкаталогах (например, `research/hub/`, `research/mango/`). Это обеспечивает
+> масштабируемость и изоляцию контекста.
+
 ## Принципы
 
 | Принцип | Требование |
 | --- | --- |
+| Изоляция по доменам | Файлы исследований размещаются только в тематических подкаталогах (`research/hub/`, `research/mango/`); корень `research/` содержит лишь `README.md`. |
 | Независимость | Research не должен зависеть от production-секретов или закрытых контрактов. |
 | Воспроизводимость | Скрипты и эксперименты размещаются рядом с направлением как `research/<domain>/exp-<slug>/` и связываются с отчетом. |
 | Сравнение вариантов | Если исследование выбирает стандарт, классификацию или подход, нужна таблица вариантов. |
@@ -23,14 +29,20 @@ source: research/README-old.md
 
 ## Текущие исследования
 
-| Каталог / Файл | Назначение |
+| Подкаталог | Назначение |
 | --- | --- |
-| [mango/](mango/) | Классификация продуктов и требований MANGO OFFICE, анализ корпуса ТЗ и flow требований. |
-| [project-context-and-bootstrap-patterns-2026-05.md](project-context-and-bootstrap-patterns-2026-05.md) | Минималистичные паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. |
-| [prompts-classification-audit-2026-05.md](prompts-classification-audit-2026-05.md) | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. |
-| [prompts-classification-standard-2026-05.md](prompts-classification-standard-2026-05.md) | Стандарт классификации промптов: таксономия (6 осей), матрица зрелости, шаблоны отладки, план интеграции. |
-| [team-c-governance-strategy-audit-2026-05.md](team-c-governance-strategy-audit-2026-05.md) | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, hierarchy/lifecycle вопросы и backlog candidates. |
-| [user-prompts-analysis-2026-05.md](user-prompts-analysis-2026-05.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
+| [hub/](hub/) | Фундаментальные исследования работы Хаба: передача контекста, project bootstrap, governance-стратегия и классификация промптов (`scope: repo-wide`). |
+| [mango/](mango/) | Классификация продуктов и требований MANGO OFFICE, анализ корпуса ТЗ и flow требований (`scope: mango-only`). |
+
+### Подкаталог `hub/`
+
+| Файл | Назначение |
+| --- | --- |
+| [project-context-and-bootstrap-patterns-2026-05.md](hub/project-context-and-bootstrap-patterns-2026-05.md) | Минималистичные паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. |
+| [prompts-classification-audit-2026-05.md](hub/prompts-classification-audit-2026-05.md) | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. |
+| [prompts-classification-standard-2026-05.md](hub/prompts-classification-standard-2026-05.md) | Стандарт классификации промптов: таксономия (6 осей), матрица зрелости, шаблоны отладки, план интеграции. |
+| [team-c-governance-strategy-audit-2026-05.md](hub/team-c-governance-strategy-audit-2026-05.md) | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, hierarchy/lifecycle вопросы и backlog candidates. |
+| [user-prompts-analysis-2026-05.md](hub/user-prompts-analysis-2026-05.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
 
 ## Рекомендуемая структура
 

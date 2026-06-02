@@ -16,7 +16,7 @@ based_on:
   - "BABOK Guide v3 — IIBA (2015)"
 related_issue: 79
 related_artifacts:
-  - research/prompts-classification-audit-2026-05.md
+  - research/hub/prompts-classification-audit-2026-05.md
   - projects/mango/prompts/
   - projects/mango/experiments/prompts-audit-2026-05-26.md
 ---
@@ -507,5 +507,5 @@ patterns (chain → agent → multi-agent). Уровни PT-1..PT-4 соотве
 | 6 | TM Forum. *IG1230: Autonomous Networks*. https://www.tmforum.org/resources/reference/ig1230-autonomous-networks-technical-architecture/ | Стандарт | 2023 | Уровни автономности сетей (L0–L5) — аналогия для maturity model |
 | 7 | IIBA. *BABOK Guide v3*. https://www.iiba.org/standards-and-resources/babok/ | Стандарт | 2015 | Техники elicitation (brainstorming, prototyping, workshops) — связь с БА-задачами |
 | 8 | White, J. et al. *A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT*. arXiv:2302.11382 | Исследование | 2023 | Каталог паттернов промптов: Persona, Template, Recipe, Reflection, Meta-Language |
-| 9 | `research/prompts-classification-audit-2026-05.md` | Внутренний | 2026 | Аудит входных данных для этой классификации |
+| 9 | `research/hub/prompts-classification-audit-2026-05.md` | Внутренний | 2026 | Аудит входных данных для этой классификации |
 | 10 | `projects/mango/experiments/prompts-audit-2026-05-26.md` | Внутренний | 2026 | Критерии готовности промптов, эволюция прототипов |

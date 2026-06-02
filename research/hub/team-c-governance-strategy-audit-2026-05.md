@@ -9,7 +9,7 @@ context: [governance, repository-strategy, research-lifecycle, team-c]
 method: interpretive-synthesis
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/87"
 related_artifacts:
-  - "research/project-context-and-bootstrap-patterns-2026-05.md"
+  - "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
   - "governance/REPO_MODEL.md"
   - "standards/RESEARCH_PROFILE.md"
   - "standards/TEAM_CONTRACT.md"
@@ -146,7 +146,7 @@ standard или practice?
 | Источник | Использование |
 | --- | --- |
 | Issue #87 | Входные предложения команды C и acceptance criteria. |
-| `research/project-context-and-bootstrap-patterns-2026-05.md` | Механизм `recommendation -> issue`, context handoff и bootstrap patterns. |
+| `research/hub/project-context-and-bootstrap-patterns-2026-05.md` | Механизм `recommendation -> issue`, context handoff и bootstrap patterns. |
 | `governance/REPO_MODEL.md` | Anti-Inflation principle и правило размещения артефактов. |
 | `standards/RESEARCH_PROFILE.md` | Требования к research frontmatter, traceability и ограничениям. |
 | `standards/TEAM_CONTRACT.md` | Контекст team contract, AI governance и project-level adaptation. |

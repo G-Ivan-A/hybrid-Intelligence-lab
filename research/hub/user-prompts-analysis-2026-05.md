@@ -8,7 +8,7 @@ scope: user-specific + repo-integration
 based_on: prompts-classification-standard-2026-05.md
 related_issue: 85
 related_artifacts:
-  - research/prompts-classification-standard-2026-05.md
+  - research/hub/prompts-classification-standard-2026-05.md
   - projects/mango/prompts/
 ---
 
@@ -19,7 +19,7 @@ related_artifacts:
 ## 🔹 Краткий итог (для быстрого чтения)
 
 Анализ применяет матрицу из
-`research/prompts-classification-standard-2026-05.md` к 18 пользовательским
+`research/hub/prompts-classification-standard-2026-05.md` к 18 пользовательским
 промптам из issue #85.
 
 Главный вывод: все 18 промптов относятся к `Structured`-уровню (`PT-2`) и
@@ -179,6 +179,6 @@ Mango workflow и дополняют существующие `user-story-genera
 | Источник | Использование |
 |----------|---------------|
 | Issue #85 | 18 пользовательских промптов и критерии готовности |
-| `research/prompts-classification-standard-2026-05.md` | Таксономия, матрица M1-M10, шаблоны A/B/C |
+| `research/hub/prompts-classification-standard-2026-05.md` | Таксономия, матрица M1-M10, шаблоны A/B/C |
 | `projects/mango/prompts/` | Сравнение с существующими Mango prompt assets |
 | `projects/mango/experiments/prompts-audit-2026-05-26.md` | Критерии готовности prompt body и разделение `_simple` / `_exp` |

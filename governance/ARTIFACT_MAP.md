@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-06-01
+version: 1.4
+updated: 2026-06-02
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.3
+Версия: 1.4
 
-Дата: 2026-06-01
+Дата: 2026-06-02
 
 Карта артефактов — единая точка входа в репозиторий `hybrid-Intelligence-lab`.
 Она показывает, что где лежит, зачем нужно и как связано, чтобы новые участники
@@ -72,11 +72,11 @@ ai-generated: false
 | `/research/mango/requirements-lifecycle-uncertainty-2026-05.md` | исследование | Жизненный цикл требования на доработку Mango: бенчмарк международной практики, моделирование кейсов (`0 → 1`), обработка неопределенности, декомпозиция и рекомендации для стандарта процесса БА. | ⚠️ По необходимости | `research/mango/requirements-flow.md`, `research/mango/taxonomy-concept-2026-05.md`, `research/mango/classification.md`, `projects/mango/README.md`, `standards/GLOSSARY.md` |
 | `/research/mango/rag-mapping-roadmap-2026-05.md` | исследование | Маппинг продуктов/фич Mango как RAG-навигатор: структура `kb/product-matrix.md`, оценка источников документации, roadmap автоматизации БА и карта PlantUML-диаграмм. | ⚠️ По необходимости | `research/mango/taxonomy-concept-2026-05.md`, `research/mango/requirements-lifecycle-uncertainty-2026-05.md`, `projects/mango/README.md`, `standards/RESEARCH_PROFILE.md` |
 | `/research/mango/capability-decomposition-2026-05.md` | исследование | Справочник атомарных функций пилотных доменов Mango (`voice-ucaas`, `contact-center`, `digital-channels`): параметры, международные источники, примеры ТЗ, критерии атомарности и связь с НФТ-классами. | ⚠️ По необходимости | `research/mango/classification.md`, `research/mango/classification-tz.md`, `research/mango/rag-mapping-roadmap-2026-05.md`, `projects/mango/standards/classification-glossary.md` |
-| `/research/project-context-and-bootstrap-patterns-2026-05.md` | исследование | Паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. Scope: repo-wide. | ⚠️ По необходимости | `projects/mango/README.md`, `projects/mango/experiments/`, `research/mango/`, `standards/PROJECT_STRUCTURE_INHERITANCE.md` |
-| `/research/prompts-classification-audit-2026-05.md` | исследование | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. Scope: repo-wide. | ⚠️ По необходимости | `research/prompts-classification-standard-2026-05.md`, `projects/mango/prompts/`, `projects/mango/experiments/prompts-audit-2026-05-26.md` |
-| `/research/prompts-classification-standard-2026-05.md` | исследование | Стандарт классификации промптов: таксономия (6 осей), матрица «тип × зрелость × сценарий» (10 ячеек), шаблоны отладки (A/B/C), план интеграции и вопросы для согласования. Scope: repo-wide. | ⚠️ По необходимости | `research/prompts-classification-audit-2026-05.md`, `projects/mango/prompts/`, `standards/RESEARCH_PROFILE.md` |
-| `/research/team-c-governance-strategy-audit-2026-05.md` | исследование | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, lightweight hierarchy, research lifecycle и backlog candidates. Scope: repo-wide. | ⚠️ По необходимости | `research/project-context-and-bootstrap-patterns-2026-05.md`, `governance/REPO_MODEL.md`, `standards/RESEARCH_PROFILE.md` |
-| `/research/user-prompts-analysis-2026-05.md` | исследование | Анализ 18 пользовательских промптов по стандарту классификации: матрица, оценка актуальности, дубли, рекомендации и план интеграции с `projects/mango/prompts/`. Scope: user-specific + repo-integration. | ⚠️ По необходимости | `research/prompts-classification-standard-2026-05.md`, `projects/mango/prompts/`, `projects/mango/experiments/prompts-audit-2026-05-26.md` |
+| `/research/hub/project-context-and-bootstrap-patterns-2026-05.md` | исследование | Паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. Scope: repo-wide. | ⚠️ По необходимости | `projects/mango/README.md`, `projects/mango/experiments/`, `research/mango/`, `standards/PROJECT_STRUCTURE_INHERITANCE.md` |
+| `/research/hub/prompts-classification-audit-2026-05.md` | исследование | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. Scope: repo-wide. | ⚠️ По необходимости | `research/hub/prompts-classification-standard-2026-05.md`, `projects/mango/prompts/`, `projects/mango/experiments/prompts-audit-2026-05-26.md` |
+| `/research/hub/prompts-classification-standard-2026-05.md` | исследование | Стандарт классификации промптов: таксономия (6 осей), матрица «тип × зрелость × сценарий» (10 ячеек), шаблоны отладки (A/B/C), план интеграции и вопросы для согласования. Scope: repo-wide. | ⚠️ По необходимости | `research/hub/prompts-classification-audit-2026-05.md`, `projects/mango/prompts/`, `standards/RESEARCH_PROFILE.md` |
+| `/research/hub/team-c-governance-strategy-audit-2026-05.md` | исследование | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, lightweight hierarchy, research lifecycle и backlog candidates. Scope: repo-wide. | ⚠️ По необходимости | `research/hub/project-context-and-bootstrap-patterns-2026-05.md`, `governance/REPO_MODEL.md`, `standards/RESEARCH_PROFILE.md` |
+| `/research/hub/user-prompts-analysis-2026-05.md` | исследование | Анализ 18 пользовательских промптов по стандарту классификации: матрица, оценка актуальности, дубли, рекомендации и план интеграции с `projects/mango/prompts/`. Scope: user-specific + repo-integration. | ⚠️ По необходимости | `research/hub/prompts-classification-standard-2026-05.md`, `projects/mango/prompts/`, `projects/mango/experiments/prompts-audit-2026-05-26.md` |
 | `/standards/` | каталог | Плоский реестр стандартов, шаблонов и правил оформления артефактов. | ✅ Да | `standards/README.md`, `governance/REPO_MODEL.md` |
 | `/governance/` | каталог | Модель репозитория, навигация и сквозные governance-правила. | ✅ Да | `governance/REPO_MODEL.md`, `governance/ARTIFACT_MAP.md` |
 | `/tools/` | каталог | Локальные validation и maintenance скрипты. | ✅ Да | `tools/validate-frontmatter.sh`, `tools/validate-repository-structure.sh` |
@@ -97,7 +97,8 @@ ai-generated: false
 | `/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md` | шаблон | Standalone prompt для пошаговой генерации Use Case без доступа к репозиторию. | ✅ Да | `projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` |
 | `/projects/repo-development/README.md` | навигация | Развитие структуры, governance и локальных проверок самого репозитория. | ✅ Да | `projects/README.md`, `governance/REPO_MODEL.md` |
 | `/projects/repo-development/docs/migration-audit-2026-05.md` | исследование | Аудит миграции: согласованность, ссылки, таблица `-old` и рекомендации cleanup. | ✅ Да | `projects/repo-development/README.md`, `CONCEPT.md` |
-| `/research/README.md` | навигация | Навигация по исследовательским направлениям и правилам воспроизводимости. | ✅ Да | `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
+| `/research/README.md` | навигация | Навигация по исследовательским направлениям, правило запрета файлов в корне `research/` и правила воспроизводимости. | ✅ Да | `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
+| `/research/hub/README.md` | навигация | Индекс фундаментальных (`scope: repo-wide`) исследований работы Хаба. | ✅ Да | `research/README.md`, `governance/REPO_MODEL.md` |
 | `/research/mango/README.md` | навигация | Индекс активных исследований MANGO OFFICE и их HTML-export. | ✅ Да | `research/README.md`, `projects/mango/README.md` |
 | `/research/mango/classification.md` | исследование | Классификация IT/Telecom SaaS-продуктов MANGO OFFICE. | ✅ Да | `research/mango/README.md`, `standards/RESEARCH_PROFILE.md` |
 | `/research/mango/classification-tz.md` | исследование | Проверка классификатора на корпусе тендерных ТЗ и рекомендации по дополнениям. | ✅ Да | `research/mango/classification.md`, `research/mango/README.md` |
@@ -111,7 +112,9 @@ ai-generated: false
 | `/standards/` | каталог | Плоский реестр стандартов, шаблонов и правил оформления артефактов. | ✅ Да | `standards/README.md`, `governance/REPO_MODEL.md` |
 | `/governance/` | каталог | Модель репозитория, навигация и сквозные governance-правила. | ✅ Да | `governance/REPO_MODEL.md`, `governance/ARTIFACT_MAP.md` |
 | `/tools/` | каталог | Локальные validation и maintenance скрипты. | ✅ Да | `tools/validate-frontmatter.sh`, `tools/validate-repository-structure.sh` |
-| `/research/` | каталог | Доменные исследования и source-backed analysis; сейчас содержит active Mango research. | ✅ Да | `research/README.md`, `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
+| `/research/` | каталог | Доменные исследования и source-backed analysis; файлы размещаются только в тематических подкаталогах (`hub/`, `mango/`), корень содержит лишь `README.md`. | ✅ Да | `research/README.md`, `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
+| `/research/hub/` | каталог | Фундаментальные исследования работы Хаба (`scope: repo-wide`): bootstrap, governance-стратегия, классификация промптов. | ✅ Да | `research/hub/README.md`, `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
+| `/research/mango/` | каталог | Доменные исследования MANGO OFFICE (`scope: mango-only`). | ✅ Да | `research/mango/README.md`, `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/frameworks/` | каталог | Методологии, создаваемые только после доказанного gap; сейчас содержит active navigation. | ✅ Да | `frameworks/README.md`, `governance/REPO_MODEL.md`, `standards/README.md` |
 | `/projects/` | каталог | Project knowledge bases и контекст spoke-репозиториев; сейчас содержит Mango и repo-development. | ✅ Да | `projects/README.md`, `standards/PRODUCT_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/education/` | каталог | Open education: программы и учебные материалы; сейчас содержит active navigation. | ✅ Да | `education/README.md`, `standards/EDUCATION_PROFILE.md`, `governance/REPO_MODEL.md` |

@@ -80,12 +80,13 @@ is_active_file() {
     research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/mango/rag-mapping-roadmap-2026-05.md | \
     research/mango/capability-decomposition-2026-05.md | \
-    research/project-context-and-bootstrap-patterns-2026-05.md | \
-    research/prompts-classification-audit-2026-05.md | \
-    research/prompts-classification-standard-2026-05.md | \
-    research/team-c-governance-strategy-audit-2026-05.md | \
-    research/user-prompts-analysis-2026-05.md | \
+    research/hub/project-context-and-bootstrap-patterns-2026-05.md | \
+    research/hub/prompts-classification-audit-2026-05.md | \
+    research/hub/prompts-classification-standard-2026-05.md | \
+    research/hub/team-c-governance-strategy-audit-2026-05.md | \
+    research/hub/user-prompts-analysis-2026-05.md | \
     research/README.md | \
+    research/hub/README.md | \
     research/mango/README.md | \
     research/mango/classification.md | \
     research/mango/classification.html | \
@@ -139,6 +140,8 @@ required_directories=(
   ".github/ISSUE_TEMPLATE"
   "standards"
   "research"
+  "research/hub"
+  "research/mango"
   "frameworks"
   "projects"
   "projects/mango/standards"
@@ -169,6 +172,7 @@ required_files=(
   "standards/ISSUE_WORKFLOW.md"
   "standards/PROJECT_STRUCTURE_INHERITANCE.md"
   "research/README.md"
+  "research/hub/README.md"
   "research/mango/README.md"
   "research/mango/classification.md"
   "research/mango/classification.html"
@@ -416,8 +420,8 @@ require_text "governance/REPO_MODEL.md" "Anti-Inflation"
 require_text "governance/REPO_MODEL.md" "tools/"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.3"
-require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-01"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.4"
+require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/ARTIFACT_MAP.md" "Как использовать карту"
@@ -425,9 +429,9 @@ require_text "governance/ARTIFACT_MAP.md" "Как обновлять карту"
 require_text "governance/ARTIFACT_MAP.md" "GLOSSARY.md"
 require_text "governance/ARTIFACT_MAP.md" "research/mango/classification.md"
 require_text "governance/ARTIFACT_MAP.md" "research/mango/rag-mapping-roadmap-2026-05.md"
-require_text "governance/ARTIFACT_MAP.md" "research/project-context-and-bootstrap-patterns-2026-05.md"
-require_text "governance/ARTIFACT_MAP.md" "research/team-c-governance-strategy-audit-2026-05.md"
-require_text "governance/ARTIFACT_MAP.md" "research/user-prompts-analysis-2026-05.md"
+require_text "governance/ARTIFACT_MAP.md" "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
+require_text "governance/ARTIFACT_MAP.md" "research/hub/team-c-governance-strategy-audit-2026-05.md"
+require_text "governance/ARTIFACT_MAP.md" "research/hub/user-prompts-analysis-2026-05.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/mango/standards/classification-glossary.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/README.md"
 
@@ -439,6 +443,22 @@ require_text "research/README.md" "prompts-classification-audit-2026-05.md"
 require_text "research/README.md" "prompts-classification-standard-2026-05.md"
 require_text "research/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/README.md" "user-prompts-analysis-2026-05.md"
+require_text "research/README.md" "Размещение файлов исследований в корне каталога"
+
+# Namespacing: no research files allowed in the research/ root except README.md.
+while IFS= read -r research_root_file; do
+  base="${research_root_file##*/}"
+  if [[ "$base" != "README.md" ]]; then
+    fail "research root must only contain README.md; found: $research_root_file"
+  fi
+done < <(find research -maxdepth 1 -type f)
+
+require_text "research/hub/README.md" "status: canonical"
+require_text "research/hub/README.md" "project-context-and-bootstrap-patterns-2026-05.md"
+require_text "research/hub/README.md" "prompts-classification-audit-2026-05.md"
+require_text "research/hub/README.md" "prompts-classification-standard-2026-05.md"
+require_text "research/hub/README.md" "team-c-governance-strategy-audit-2026-05.md"
+require_text "research/hub/README.md" "user-prompts-analysis-2026-05.md"
 
 require_text "research/mango/README.md" "status: canonical"
 require_text "research/mango/README.md" "classification.md"
@@ -459,52 +479,52 @@ require_text "research/mango/rag-mapping-roadmap-2026-05.md" "Roadmap реали
 require_text "research/mango/rag-mapping-roadmap-2026-05.md" "PlantUML"
 require_text "research/mango/rag-mapping-roadmap-2026-05.md" "Вопросы для согласования"
 
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "status: draft"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "type: internal-analysis"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "scope: repo-wide"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "Опыт проекта Mango"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "Проблемы (5 пунктов"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "Предложенные решения"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "Чек-лист для ИИ"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "Механизм «рекомендация → задача»"
-require_text "research/project-context-and-bootstrap-patterns-2026-05.md" "Вопросы для согласования"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "status: draft"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "type: internal-analysis"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "scope: repo-wide"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Опыт проекта Mango"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Проблемы (5 пунктов"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Предложенные решения"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Чек-лист для ИИ"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Механизм «рекомендация → задача»"
+require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Вопросы для согласования"
 
-require_text "research/prompts-classification-audit-2026-05.md" "status: draft"
-require_text "research/prompts-classification-audit-2026-05.md" "type: internal-analysis"
-require_text "research/prompts-classification-audit-2026-05.md" "scope: repo-wide"
-require_text "research/prompts-classification-audit-2026-05.md" "Преобладающие типы"
-require_text "research/prompts-classification-audit-2026-05.md" "Паттерны отладки"
-require_text "research/prompts-classification-audit-2026-05.md" "Пробелы"
-require_text "research/prompts-classification-audit-2026-05.md" "Выводы для классификации"
+require_text "research/hub/prompts-classification-audit-2026-05.md" "status: draft"
+require_text "research/hub/prompts-classification-audit-2026-05.md" "type: internal-analysis"
+require_text "research/hub/prompts-classification-audit-2026-05.md" "scope: repo-wide"
+require_text "research/hub/prompts-classification-audit-2026-05.md" "Преобладающие типы"
+require_text "research/hub/prompts-classification-audit-2026-05.md" "Паттерны отладки"
+require_text "research/hub/prompts-classification-audit-2026-05.md" "Пробелы"
+require_text "research/hub/prompts-classification-audit-2026-05.md" "Выводы для классификации"
 
-require_text "research/prompts-classification-standard-2026-05.md" "status: draft"
-require_text "research/prompts-classification-standard-2026-05.md" "type: classification-standard"
-require_text "research/prompts-classification-standard-2026-05.md" "scope: repo-wide"
-require_text "research/prompts-classification-standard-2026-05.md" "Таксономия промптов"
-require_text "research/prompts-classification-standard-2026-05.md" "Матрица"
-require_text "research/prompts-classification-standard-2026-05.md" "Когда использовать"
-require_text "research/prompts-classification-standard-2026-05.md" "Шаблоны промптов"
-require_text "research/prompts-classification-standard-2026-05.md" "План интеграции"
-require_text "research/prompts-classification-standard-2026-05.md" "Вопросы для согласования"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "status: draft"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "type: classification-standard"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "scope: repo-wide"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "Таксономия промптов"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "Матрица"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "Когда использовать"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "Шаблоны промптов"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "План интеграции"
+require_text "research/hub/prompts-classification-standard-2026-05.md" "Вопросы для согласования"
 
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "status: draft"
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "type: internal-analysis"
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "scope: repo-wide"
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "Интерпретация аудита стратегии governance"
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "Governance overgrowth"
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "Предложения команды C"
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "Рекомендации для backlog"
-require_text "research/team-c-governance-strategy-audit-2026-05.md" "Вопросы для human review"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "status: draft"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "type: internal-analysis"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "scope: repo-wide"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Интерпретация аудита стратегии governance"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Governance overgrowth"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Предложения команды C"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Рекомендации для backlog"
+require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Вопросы для human review"
 
-require_text "research/user-prompts-analysis-2026-05.md" "status: draft"
-require_text "research/user-prompts-analysis-2026-05.md" "type: prompt-analysis"
-require_text "research/user-prompts-analysis-2026-05.md" "scope: user-specific + repo-integration"
-require_text "research/user-prompts-analysis-2026-05.md" "Таблица классификации 18 промптов"
-require_text "research/user-prompts-analysis-2026-05.md" "Признаки устаревших паттернов"
-require_text "research/user-prompts-analysis-2026-05.md" "Дубли/уникальная ценность"
-require_text "research/user-prompts-analysis-2026-05.md" "Рекомендации по действиям"
-require_text "research/user-prompts-analysis-2026-05.md" "План интеграции"
-require_text "research/user-prompts-analysis-2026-05.md" "Вопросы для согласования"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "status: draft"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "type: prompt-analysis"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "scope: user-specific + repo-integration"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "Таблица классификации 18 промптов"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "Признаки устаревших паттернов"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "Дубли/уникальная ценность"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "Рекомендации по действиям"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "План интеграции"
+require_text "research/hub/user-prompts-analysis-2026-05.md" "Вопросы для согласования"
 
 require_text "research/mango/capability-decomposition-2026-05.md" "status: draft"
 require_text "research/mango/capability-decomposition-2026-05.md" "type: atomic-functions-reference"

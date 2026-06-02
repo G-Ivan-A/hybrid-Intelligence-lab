@@ -15,7 +15,7 @@ related_artifacts:
   - "projects/mango/experiments/prompts-audit-2026-05-26.md"
   - "projects/mango/experiments/prompts-selftest-2026-05-26.md"
   - "research/mango/rag-mapping-roadmap-2026-05.md"
-  - "research/team-c-governance-strategy-audit-2026-05.md"
+  - "research/hub/team-c-governance-strategy-audit-2026-05.md"
   - "standards/PROJECT_STRUCTURE_INHERITANCE.md"
   - "governance/REPO_MODEL.md"
 related_issues:
@@ -282,12 +282,12 @@ governance быстрее, чем появляются operational scenarios.
 
 | ID | Источник | Рекомендация | Scope | Польза | Усилие | Статус | Следующее действие | Issue |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `TC-GOV-001` | `research/team-c-governance-strategy-audit-2026-05.md` | Закрепить принцип "нет governance artifact без operational pain". | repo-wide | high | small | idea | согласовать формулировку с Founder & PO | - |
-| `TC-GOV-002` | `research/team-c-governance-strategy-audit-2026-05.md` | Описать lightweight governance hierarchy. | repo-wide | high | medium | idea | подготовить issue на `governance/REPO_MODEL.md` или отдельный раздел в existing governance | - |
-| `TC-GOV-003` | `research/team-c-governance-strategy-audit-2026-05.md` | Провести semantic cleanup audit для `framework/practice/policy/profile/contract`. | repo-wide | medium | medium | idea | собрать термины и конфликтующие места без переименований | - |
-| `TC-GOV-004` | `research/team-c-governance-strategy-audit-2026-05.md` | Согласовать lifecycle transitions для research. | research | high | medium | idea | определить критерии `draft -> reviewed` и `reviewed -> standard/practice` | - |
-| `TC-GOV-005` | `research/team-c-governance-strategy-audit-2026-05.md` | Провести 2-3 pilot cycles перед новыми standards/frameworks. | repo-wide | high | medium | idea | выбрать pilot workflow и метрики использования артефактов | - |
-| `TC-GOV-006` | `research/team-c-governance-strategy-audit-2026-05.md` | Отложить machine-readable governance до повторной automation need. | repo-wide | medium | small | idea | вернуться после pilot cycles или появления CI/automation pain | - |
+| `TC-GOV-001` | `research/hub/team-c-governance-strategy-audit-2026-05.md` | Закрепить принцип "нет governance artifact без operational pain". | repo-wide | high | small | idea | согласовать формулировку с Founder & PO | - |
+| `TC-GOV-002` | `research/hub/team-c-governance-strategy-audit-2026-05.md` | Описать lightweight governance hierarchy. | repo-wide | high | medium | idea | подготовить issue на `governance/REPO_MODEL.md` или отдельный раздел в existing governance | - |
+| `TC-GOV-003` | `research/hub/team-c-governance-strategy-audit-2026-05.md` | Провести semantic cleanup audit для `framework/practice/policy/profile/contract`. | repo-wide | medium | medium | idea | собрать термины и конфликтующие места без переименований | - |
+| `TC-GOV-004` | `research/hub/team-c-governance-strategy-audit-2026-05.md` | Согласовать lifecycle transitions для research. | research | high | medium | idea | определить критерии `draft -> reviewed` и `reviewed -> standard/practice` | - |
+| `TC-GOV-005` | `research/hub/team-c-governance-strategy-audit-2026-05.md` | Провести 2-3 pilot cycles перед новыми standards/frameworks. | repo-wide | high | medium | idea | выбрать pilot workflow и метрики использования артефактов | - |
+| `TC-GOV-006` | `research/hub/team-c-governance-strategy-audit-2026-05.md` | Отложить machine-readable governance до повторной automation need. | repo-wide | medium | small | idea | вернуться после pilot cycles или появления CI/automation pain | - |
 
 ## ❓ Вопросы для согласования
 
