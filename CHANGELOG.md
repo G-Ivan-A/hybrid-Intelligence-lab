@@ -6,7 +6,31 @@ All notable repository governance changes are documented here.
 
 ### Added
 
-- Issue #96: креативный RFC `governance/proposals/rfc-agent-onboarding-protocol.md`
+- Issue #99: RFC-манифест `governance/proposals/rfc-two-cases-of-project-initialization.md`
+  — концептуальное разделение двух ортогональных кейсов инициализации проекта:
+  Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Ведущая аналогия
+  «сертификация самолёта ≠ лицензия пилота» + анализ ещё трёх смежных областей
+  (медицина, юриспруденция, DevOps) с выводами для модели; таблица-манифест из 13
+  строк; Mermaid-схема жизненного цикла проекта с явным разделением кейсов;
+  обоснование с трассировкой к `research/hub/ai-collaboration-retrospective-2026-06.md`;
+  фиксация будущих README по каждому кейсу и follow-up-список. Манифест
+  намеренно не определяет термины — только использует их со ссылкой на глоссарий.
+  Файл зарегистрирован как active в `tools/validate-repository-structure.sh` и
+  `governance/ARTIFACT_MAP.md` (тип `RFC`, версия карты 1.6 → 1.7).
+
+### Changed
+
+- Issue #99: уточнён `governance/proposals/rfc-agent-onboarding-protocol.md` —
+  добавлен раздел «Модель процесса» (без блока терминологии, только ссылки на
+  `standards/GLOSSARY.md` и на RFC-манифест), фиксирующий, что агент работает в
+  *Среде работы агента* (чат) и обращается к *Источнику контекста* (репозиторий);
+  *Handover Prompt* параметризован плейсхолдером `{{REPO_NAME}}` и
+  переформулирован без ложной модели «агент в репозитории».
+- Issue #99: в `standards/GLOSSARY.md` добавлены 6 терминов (Bootstrap-клонирование,
+  Runtime-онбординг, Handover Prompt, Readback, Среда работы агента, Источник
+  контекста) со ссылками на вводящие их RFC, плюс две строки связей терминов.
+
+
   — «Протокол бесшовной передачи проекта» (Seamless Project Handover Protocol)
   против ошибок холодного старта. Аналогия предполётного чек-листа и «читки
   обратно» (readback); обоснование с дословной трассировкой к 5 провалам

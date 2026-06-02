@@ -1,13 +1,13 @@
 ---
 status: canonical
-version: 1.6
+version: 1.7
 updated: 2026-06-02
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.6
+Версия: 1.7
 
 Дата: 2026-06-02
 
@@ -59,6 +59,7 @@ ai-generated: false
 | `/governance/ARTIFACT_MAP.md` | навигация | Эта карта: навигация по артефактам, типам, обязательности и связям. | ✅ Да | `README.md`, `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
 | `/governance/proposals/rfc-creative-template-design.md` | RFC | Креативное предложение "ДНК-шаблона" для клонирования spoke-проектов: аналогия, сравнительная матрица имён (`templates`/`blueprints`/`genesis`), минимальная карта файлов, краевые случаи и Mermaid-схема. Решение за человеком. | ⚠️ По необходимости | `governance/REPO_MODEL.md`, `research/project-context-and-bootstrap-patterns-2026-05.md`, `standards/PROJECT_STRUCTURE_INHERITANCE.md` |
 | `/governance/proposals/rfc-agent-onboarding-protocol.md` | RFC | Креативное предложение "Протокола бесшовной передачи проекта": аналогия предполётного чек-листа и readback, обоснование с трассировкой к провалам холодного старта, готовый Handover Prompt, 4-шаговый алгоритм агента (governance → контекст → readback → стоп до апрува), Mermaid-схема и выбор места для будущего `AGENT_ONBOARDING.md`. Решение за человеком. | ⚠️ По необходимости | `AI_GOVERNANCE.md`, `governance/REPO_MODEL.md`, `research/hub/project-context-and-bootstrap-patterns-2026-05.md`, `standards/PROJECT_STRUCTURE_INHERITANCE.md` |
+| `/governance/proposals/rfc-two-cases-of-project-initialization.md` | RFC | Концептуальный манифест разделения двух ортогональных кейсов инициализации проекта: Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Аналогии из 4 смежных областей, таблица-манифест (13 строк), Mermaid-схема жизненного цикла, обоснование с трассировкой к ретроспективе, follow-up. Термины — только из `standards/GLOSSARY.md`. Решение за человеком. | ⚠️ По необходимости | `governance/proposals/rfc-agent-onboarding-protocol.md`, `governance/proposals/rfc-creative-template-design.md`, `research/hub/ai-collaboration-retrospective-2026-06.md`, `standards/GLOSSARY.md` |
 | `/templates/spoke/AI_GOVERNANCE.md` | шаблон | Шаблон конституции спока: роли, правила, operating modes, эскалация и DoD. Ядро генома (обязателен в корне спока). Плейсхолдеры `{{project_name}}`, `{{hub_url}}`, `{{date}}`. | ⚠️ По необходимости | `governance/proposals/rfc-creative-template-design.md`, `AI_GOVERNANCE.md`, `templates/spoke/AI_QUICK_RULES.md` |
 | `/templates/spoke/AI_QUICK_RULES.md` | шаблон | Шаблон одностраничной "инструкции по выживанию" агента в новом споке: куда смотреть, чего не делать (включая запрет `research/`), как звать человека. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/README.md` |
 | `/templates/spoke/README.md` | шаблон | Шаблон визитки спока с плейсхолдерами и связью с Хабом: цель, структура "сейчас", ссылки на governance. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/CONTRIBUTING.md` |
