@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-02
 ai-generated: true
 type: rfc
@@ -11,15 +11,17 @@ related_artifacts:
   - "governance/proposals/rfc-agent-onboarding-protocol.md"
   - "governance/proposals/rfc-creative-template-design.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
+  - "research/hub/external-governance-patterns-review-2026-06.md"
   - "standards/GLOSSARY.md"
   - "governance/REPO_MODEL.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/99"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/116"
 ---
 
 # RFC-манифест: два ортогональных кейса инициализации проекта
 
-Версия: 0.1
+Версия: 0.2
 
 Дата: 2026-06-02
 
@@ -211,6 +213,43 @@ flowchart TD
 постоянный *Источник контекста*; **Кейс 1 случается заново при каждом чате** и
 лишь читает этот источник в *Среду работы агента*. Стрелка-петля «новый чат /
 смена агента» подчёркивает повторяемость Кейса 1, которой нет у Кейса 2.
+
+---
+
+## 🧾 Evidence trail: git history + issues + PRs как след доказательств
+
+Узел `Work` на схеме выше («новые issue/PR → меняют *Источник контекста*»)
+указывает на свойство, которое до сих пор оставалось неназванным, хотя
+**уже работает** в репозитории. Зафиксируем его явно одним именем:
+
+> **Evidence trail** (след доказательств) — это **git history + issues + PRs**,
+> которые вместе образуют проверяемую летопись того, *кто, что, когда и почему*
+> изменил в *Источнике контекста*. Каждое изменение репозитория проходит через
+> issue (зачем) и PR (что именно), а git history фиксирует факт и авторство.
+
+Этот тезис **введён не здесь** — он сформулирован командой С как один из шести
+архитектурных gaps (`[C5]`, см.
+[external-governance-patterns-review-2026-06.md](../../research/hub/external-governance-patterns-review-2026-06.md),
+раздел 1.3, строка *Evidence model*) и помечен в её матрице применимости как
+«**взять сейчас**» именно потому, что функция **уже есть** — недоставало лишь
+имени (раздел 3.1 того же документа, целевое место — этот манифест; источники
+`[C5]`, `[GAP]`). Здесь манифест лишь **называет** существующее и закрепляет имя
+рядом с моделью жизненного цикла, где evidence trail естественно возникает.
+
+Связь с двумя кейсами:
+
+- **Кейс 2 (Bootstrap-клонирование)** оставляет *первичный* след — issue
+  `bootstrap:<project>` и PR с физическими файлами из `templates/spoke/`
+  фиксируют рождение spoke в git history.
+- **Кейс 1 (Runtime-онбординг)** сам по себе **ничего не пишет** (он read-only до
+  апрува человека), но *работа после* онбординга — новые issue/PR — продолжает
+  тот же evidence trail, дописывая летопись *Источника контекста*.
+
+> ⚠️ **Это не новый формат и не обёртка.** Манифест сознательно **не вводит**
+> JSON-обёртку (Governance Metadata Envelope из external-review отнесена в
+> «отклонить») и не создаёт новых артефактов. По принципу Anti-Inflation
+> ([governance/REPO_MODEL.md](../REPO_MODEL.md)) задача — *назвать* уже
+> работающую способность, а не нарастить структуру.
 
 ---
 

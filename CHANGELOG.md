@@ -6,6 +6,19 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #116 (B-011): в RFC-манифест
+  `governance/proposals/rfc-two-cases-of-project-initialization.md` добавлен
+  раздел «Evidence trail: git history + issues + PRs как след доказательств»,
+  явно называющий уже работающую способность (тезис команды С `[C5]`, метка
+  «взять сейчас» из матрицы применимости) и связывающий её ссылкой с
+  `research/hub/external-governance-patterns-review-2026-06.md` (разделы 1.3 и
+  3.1). Имя evidence trail закреплено рядом с моделью жизненного цикла; новый
+  формат/обёртка сознательно не вводятся (Anti-Inflation). Версия RFC `0.1 → 0.2`,
+  во frontmatter добавлены external-review в `related_artifacts` и #116 в
+  `related_issues`. Статус B-011 в `governance/BACKLOG.md`: `ЧАСТИЧНО → DONE`.
+  Удалён сгенерированный харнессом корневой `.gitkeep`, снимавший FAIL
+  структурного валидатора.
+
 - Issue #107 (B-013): `governance/BACKLOG.md` промоутнут из `draft` в `canonical`
   (`version 0.1 → 1.0`) по команде Human Review. Замкнут маршрут «бэклог →
   issues»: по всем открытым задачам бэклога заведены отдельные issues со ссылкой
