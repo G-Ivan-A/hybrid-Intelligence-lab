@@ -6,6 +6,21 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #93: «ДНК-шаблон» `templates/spoke/` — минимальный геном для клонирования
+  новых spoke-проектов из Хаба. Девять базовых артефактов: `AI_GOVERNANCE.md`
+  (конституция спока со ссылкой на Хаб), `AI_QUICK_RULES.md` (инструкция по
+  выживанию агента), `README.md`, `CONTRIBUTING.md` (issue → PR → review),
+  `CHANGELOG.md` (каркас с `## Unreleased`), `docs/adr/.gitkeep`,
+  `docs/audit/.gitkeep`, `.github/ISSUE_TEMPLATE/task.md` (наследует поля Хаба
+  из `standards/ISSUE_WORKFLOW.md`) и исполняемый `tools/validate-repository-structure.sh`
+  (минимальный валидатор с предупреждением о `research/`). Шаблон по умолчанию
+  не содержит `research/`: фундаментальные знания остаются в Хабе. Креативное
+  улучшение UX инициализации — исполняемый `templates/spoke/init.sh`:
+  интерактивная/CLI-замена плейсхолдеров (`{{project_name}}`,
+  `{{project_description}}`, `{{hub_url}}`), автоген `{{date}}` (`updated:` во
+  frontmatter), портабельный `sed` (без `sed -i`) и самоудаление после запуска.
+  Артефакты зарегистрированы как active в `tools/validate-repository-structure.sh`
+  и `governance/ARTIFACT_MAP.md` (тип `шаблон`, версия карты 1.4 → 1.5).
 - Issue #89: креативный RFC `governance/proposals/rfc-creative-template-design.md`
   — проект "ДНК-шаблона" для клонирования spoke-проектов: концептуальная аналогия
   (геном, а не чемодан), сравнительная матрица имён корневого каталога

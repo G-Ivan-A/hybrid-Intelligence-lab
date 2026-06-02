@@ -122,6 +122,16 @@ is_active_file() {
     governance/ARTIFACT_MAP.md | \
     governance/proposals/rfc-creative-template-design.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
+    templates/spoke/AI_GOVERNANCE.md | \
+    templates/spoke/AI_QUICK_RULES.md | \
+    templates/spoke/README.md | \
+    templates/spoke/CONTRIBUTING.md | \
+    templates/spoke/CHANGELOG.md | \
+    templates/spoke/docs/adr/.gitkeep | \
+    templates/spoke/docs/audit/.gitkeep | \
+    templates/spoke/.github/ISSUE_TEMPLATE/task.md | \
+    templates/spoke/tools/validate-repository-structure.sh | \
+    templates/spoke/init.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
       return 0
@@ -139,6 +149,12 @@ is_old_file() {
 
 required_directories=(
   ".github/ISSUE_TEMPLATE"
+  "templates"
+  "templates/spoke"
+  "templates/spoke/docs/adr"
+  "templates/spoke/docs/audit"
+  "templates/spoke/.github/ISSUE_TEMPLATE"
+  "templates/spoke/tools"
   "standards"
   "research"
   "research/hub"
@@ -211,6 +227,16 @@ required_files=(
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
+  "templates/spoke/AI_GOVERNANCE.md"
+  "templates/spoke/AI_QUICK_RULES.md"
+  "templates/spoke/README.md"
+  "templates/spoke/CONTRIBUTING.md"
+  "templates/spoke/CHANGELOG.md"
+  "templates/spoke/docs/adr/.gitkeep"
+  "templates/spoke/docs/audit/.gitkeep"
+  "templates/spoke/.github/ISSUE_TEMPLATE/task.md"
+  "templates/spoke/tools/validate-repository-structure.sh"
+  "templates/spoke/init.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
 )
@@ -434,7 +460,8 @@ require_text "governance/proposals/rfc-creative-template-design.md" '```mermaid'
 require_text "governance/proposals/rfc-creative-template-design.md" "Решение за человеком"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.4"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.5"
+require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
 require_text "governance/ARTIFACT_MAP.md" "governance/proposals/rfc-creative-template-design.md"
@@ -653,6 +680,23 @@ require_text ".github/ISSUE_TEMPLATE/task.yml" "⚠️ **Для ИИ**"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "🎯 Контекст"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "📄 Артефакты для создания/изменения"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
+
+# Spoke "ДНК-шаблон" (templates/spoke/): минимальный геном для клонирования.
+require_text "templates/spoke/AI_GOVERNANCE.md" "{{project_name}}"
+require_text "templates/spoke/AI_GOVERNANCE.md" "Эскалация"
+require_text "templates/spoke/AI_QUICK_RULES.md" "{{project_name}}"
+require_text "templates/spoke/AI_QUICK_RULES.md" "Не создавай"
+require_text "templates/spoke/README.md" "{{project_name}}"
+require_text "templates/spoke/CONTRIBUTING.md" "issue → PR → review"
+require_text "templates/spoke/CHANGELOG.md" "## Unreleased"
+require_text "templates/spoke/.github/ISSUE_TEMPLATE/task.md" "🎯 Контекст"
+require_text "templates/spoke/.github/ISSUE_TEMPLATE/task.md" "✅ Готово, когда"
+require_text "templates/spoke/tools/validate-repository-structure.sh" "AI_GOVERNANCE.md"
+
+# Hard constraint: research/ must NOT be baked into the spoke template.
+if [[ -e templates/spoke/research ]]; then
+  fail "templates/spoke must not contain research/ (knowledge lives in the hub research/)"
+fi
 
 if [[ -e meta/README.md ]]; then
   fail "active meta/README.md should move to governance/"

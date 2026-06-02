@@ -1,13 +1,13 @@
 ---
 status: canonical
-version: 1.4
+version: 1.5
 updated: 2026-06-02
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.4
+Версия: 1.5
 
 Дата: 2026-06-02
 
@@ -58,6 +58,16 @@ ai-generated: false
 | `/governance/REPO_MODEL.md` | правило | Модель структуры репозитория и Anti-Inflation principle. | ✅ Да | `CONCEPT.md`, `standards/README.md`, `tools/validate-repository-structure.sh` |
 | `/governance/ARTIFACT_MAP.md` | навигация | Эта карта: навигация по артефактам, типам, обязательности и связям. | ✅ Да | `README.md`, `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
 | `/governance/proposals/rfc-creative-template-design.md` | RFC | Креативное предложение "ДНК-шаблона" для клонирования spoke-проектов: аналогия, сравнительная матрица имён (`templates`/`blueprints`/`genesis`), минимальная карта файлов, краевые случаи и Mermaid-схема. Решение за человеком. | ⚠️ По необходимости | `governance/REPO_MODEL.md`, `research/project-context-and-bootstrap-patterns-2026-05.md`, `standards/PROJECT_STRUCTURE_INHERITANCE.md` |
+| `/templates/spoke/AI_GOVERNANCE.md` | шаблон | Шаблон конституции спока: роли, правила, operating modes, эскалация и DoD. Ядро генома (обязателен в корне спока). Плейсхолдеры `{{project_name}}`, `{{hub_url}}`, `{{date}}`. | ⚠️ По необходимости | `governance/proposals/rfc-creative-template-design.md`, `AI_GOVERNANCE.md`, `templates/spoke/AI_QUICK_RULES.md` |
+| `/templates/spoke/AI_QUICK_RULES.md` | шаблон | Шаблон одностраничной "инструкции по выживанию" агента в новом споке: куда смотреть, чего не делать (включая запрет `research/`), как звать человека. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/README.md` |
+| `/templates/spoke/README.md` | шаблон | Шаблон визитки спока с плейсхолдерами и связью с Хабом: цель, структура "сейчас", ссылки на governance. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/CONTRIBUTING.md` |
+| `/templates/spoke/CONTRIBUTING.md` | шаблон | Шаблон workflow вклада спока: issue → PR → review, PR checklist, AI-assisted work. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/.github/ISSUE_TEMPLATE/task.md` |
+| `/templates/spoke/CHANGELOG.md` | шаблон | Шаблон журнала спока: каркас с секцией `## Unreleased` (Keep a Changelog). | ⚠️ По необходимости | `templates/spoke/README.md` |
+| `/templates/spoke/docs/adr/.gitkeep` | шаблон | Каркас каталога Architecture Decision Records спока с поясняющим комментарием. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md` |
+| `/templates/spoke/docs/audit/.gitkeep` | шаблон | Каркас каталога аудитов и проверок соответствия спока с поясняющим комментарием. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md` |
+| `/templates/spoke/.github/ISSUE_TEMPLATE/task.md` | шаблон | Шаблон задачи спока (Markdown), наследующий поля Хаба из `standards/ISSUE_WORKFLOW.md`: Мета, Контекст, Артефакты, Готово когда. | ⚠️ По необходимости | `standards/ISSUE_WORKFLOW.md`, `.github/ISSUE_TEMPLATE/task.yml` |
+| `/templates/spoke/tools/validate-repository-structure.sh` | шаблон | Минимальный валидатор структуры спока ("иммунная система"): проверяет 9 базовых артефактов и предупреждает о `research/` и незаменённых плейсхолдерах. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `tools/validate-repository-structure.sh` |
+| `/templates/spoke/init.sh` | шаблон | Скрипт инициализации спока (креативное улучшение UX): интерактивная/CLI-замена плейсхолдеров `{{...}}`, автоген `{{date}}`, портабельный `sed`, самоудаление после запуска. | ⚠️ По необходимости | `templates/spoke/README.md`, `templates/spoke/tools/validate-repository-structure.sh` |
 | `/standards/README.md` | навигация | Плоский реестр активных и планируемых стандартов и инструкция применения. | ✅ Да | `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
 | `/standards/GLOSSARY.md` | стандарт | Единый словарь терминов для standards, governance и AI-assisted work. | ✅ Да | `standards/README.md`, все стандарты |
 | `/standards/FILE_NAMING.md` | стандарт | Единые паттерны именования файлов и каталогов для research, standards, экспериментов, профилей и курсов. | ✅ Да | `standards/README.md`, `standards/GLOSSARY.md` |
@@ -121,6 +131,8 @@ ai-generated: false
 | `/projects/` | каталог | Project knowledge bases и контекст spoke-репозиториев; сейчас содержит Mango и repo-development. | ✅ Да | `projects/README.md`, `standards/PRODUCT_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/education/` | каталог | Open education: программы и учебные материалы; сейчас содержит active navigation. | ✅ Да | `education/README.md`, `standards/EDUCATION_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/.github/ISSUE_TEMPLATE/` | каталог | GitHub-native структура постановки задач. | ✅ Да | `.github/ISSUE_TEMPLATE/task.yml` |
+| `/templates/` | каталог | Образцы («ДНК-шаблоны») для клонирования новых проектов из Хаба. | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `governance/proposals/rfc-creative-template-design.md` |
+| `/templates/spoke/` | каталог | Минимальный геном spoke-проекта: базовые артефакты, шаблон задачи, валидатор и `init.sh`. Без `research/` (фундаментальные знания живут в Хабе). | ⚠️ По необходимости | `templates/spoke/AI_GOVERNANCE.md`, `templates/spoke/init.sh`, `governance/REPO_MODEL.md` |
 
 ## Исторические входы (`-old`)
 
