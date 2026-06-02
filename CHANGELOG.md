@@ -21,6 +21,29 @@ All notable repository governance changes are documented here.
   `tools/validate-repository-structure.sh` (`is_active_file`) и в навигации
   `research/hub/README.md`. Удалён сгенерированный харнессом корневой `.gitkeep`
   (его нет в `main`), снимавший FAIL структурного валидатора.
+- Issue #113 (B-007): в шаблон генома спока `templates/spoke/AI_GOVERNANCE.md`
+  добавлена секция «Границы действий» — простая capability taxonomy из трёх
+  корзин разрешений **прозой** («можно без спроса / можно с апрувом / нельзя
+  никогда») с 1–2 примерами на корзину. Сознательно без YAML-машинерии и
+  таблиц: формальный Capability Manifest (YAML) `ОТЛОЖЕН` до первого инцидента
+  (решение Конарда, упрощающее «ментальный список» команды Q сильнее; источники
+  — Q «взять сейчас», команда С `[C5]`, внешний паттерн `[GAP]`). Секция даёт
+  агенту ясные границы между корзинами «Правила» и «Эскалация» без новой
+  структуры (Anti-Inflation).
+- Issue #115 (B-005): шаблон `templates/spoke/README.md` (точка входа **Кейса 2**,
+  *Bootstrap-клонирование*) дополнен разделами «🛠️ Как адаптировать
+  `{{...}}`-плейсхолдеры» (таблица плейсхолдеров, запуск `init.sh`, ручная правка,
+  пояснение про `{{REPO_NAME}}`) и «✅ Как валидировать структуру» (запуск
+  `./tools/validate-repository-structure.sh` перед PR). Замкнуты перекрёстные
+  ссылки между двумя точками входа (follow-up #4, #5 RFC-манифеста двух кейсов):
+  спок-README → Хаб `governance/AGENT_ONBOARDING.md` (Кейс 1),
+  `rfc-two-cases-of-project-initialization.md` и `rfc-creative-template-design.md`
+  через `{{hub_url}}`; обратная ссылка (онбординг → спок-README) уже существовала.
+  Структурный валидатор расширен проверками контента спок-README
+  (`tools/validate-repository-structure.sh`: ссылка на `governance/AGENT_ONBOARDING.md`
+  и наличие раздела валидации). Удалён сгенерированный харнессом корневой
+  `.gitkeep` (его нет в `main`), снимавший FAIL структурного валидатора.
+
 - Issue #114 (B-003): новый артефакт генома спока
   `templates/spoke/AI_HANDOVER_PROMPT.md` — копия *Handover Prompt* с
   плейсхолдером `{{REPO_NAME}}` (по умолчанию `hybrid-Intelligence-lab`), готовая
@@ -39,6 +62,19 @@ All notable repository governance changes are documented here.
   снимавший FAIL структурного валидатора.
 
 ### Changed
+
+- Issue #111 (B-004): в канон `governance/REPO_MODEL.md` добавлен раздел
+  «Spoke Lifecycle: два кейса инициализации», фиксирующий разделение
+  *Runtime-онбординг* (Кейс 1) ⟂ *Bootstrap-клонирование* (Кейс 2) как часть
+  модели жизненного цикла spoke. Operating Mode привязан к кейсу (Кейс 1 →
+  `Structured`, Кейс 2 → `Project`). Раздел сознательно краткий: определения
+  терминов вынесены в `standards/GLOSSARY.md`, полное обоснование с аналогиями и
+  Mermaid-схемой — в RFC-манифесте
+  `governance/proposals/rfc-two-cases-of-project-initialization.md`; канон
+  ссылается на источники, а не дублирует их (Anti-Inflation). Снят риск
+  повторения терминологической путаницы (ошибка №5 ретроспективы). Удалён
+  сгенерированный харнессом корневой `.gitkeep`, снимавший FAIL структурного
+  валидатора.
 
 - Issue #110 (B-002): связаны входные точки репозитория с онбордингом. В
   `README.md` добавлены предполётный блок «🛫 Новый агент? Начни здесь →
