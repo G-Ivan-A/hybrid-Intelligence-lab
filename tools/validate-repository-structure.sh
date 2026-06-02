@@ -122,6 +122,7 @@ is_active_file() {
     projects/repo-development/docs/migration-audit-2026-05.md | \
     governance/REPO_MODEL.md | \
     governance/ARTIFACT_MAP.md | \
+    governance/BACKLOG.md | \
     governance/proposals/rfc-creative-template-design.md | \
     governance/proposals/rfc-agent-onboarding-protocol.md | \
     governance/proposals/rfc-two-cases-of-project-initialization.md | \
@@ -227,6 +228,7 @@ required_files=(
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
+  "governance/BACKLOG.md"
   "governance/proposals/rfc-creative-template-design.md"
   "governance/proposals/rfc-agent-onboarding-protocol.md"
   "governance/proposals/rfc-two-cases-of-project-initialization.md"
@@ -493,7 +495,7 @@ require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.8"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.9"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
@@ -509,6 +511,17 @@ require_text "governance/ARTIFACT_MAP.md" "research/hub/team-c-governance-strate
 require_text "governance/ARTIFACT_MAP.md" "research/hub/user-prompts-analysis-2026-05.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/mango/standards/classification-glossary.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/README.md"
+require_text "governance/ARTIFACT_MAP.md" "governance/BACKLOG.md"
+
+require_text "governance/BACKLOG.md" "status: draft"
+require_text "governance/BACKLOG.md" "type: backlog"
+require_text "governance/BACKLOG.md" "standards/GLOSSARY.md"
+require_text "governance/BACKLOG.md" "| ID | Название | Приоритет | Зависимости | Статус | Источник | Обоснование приоритета |"
+require_text "governance/BACKLOG.md" "North Star"
+require_text "governance/BACKLOG.md" "Триггеры для пересмотра бэклога"
+require_text "governance/BACKLOG.md" "Критический путь"
+require_text "governance/BACKLOG.md" '```mermaid'
+require_text "governance/BACKLOG.md" "Анализ рекомендаций команд С и Q"
 
 require_text "research/README.md" "status: canonical"
 require_text "research/README.md" "standards/RESEARCH_PROFILE.md"
