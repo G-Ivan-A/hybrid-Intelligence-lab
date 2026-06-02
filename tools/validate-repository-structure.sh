@@ -483,10 +483,10 @@ require_text "governance/ARTIFACT_MAP.md" "projects/mango/standards/classificati
 require_text "governance/ARTIFACT_MAP.md" "projects/README.md"
 require_text "governance/ARTIFACT_MAP.md" "governance/BACKLOG.md"
 
-require_text "governance/BACKLOG.md" "status: draft"
+require_text "governance/BACKLOG.md" "status: canonical"
 require_text "governance/BACKLOG.md" "type: backlog"
 require_text "governance/BACKLOG.md" "standards/GLOSSARY.md"
-require_text "governance/BACKLOG.md" "| ID | Название | Приоритет | Зависимости | Статус | Источник | Обоснование приоритета |"
+require_text "governance/BACKLOG.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Обоснование приоритета |"
 require_text "governance/BACKLOG.md" "North Star"
 require_text "governance/BACKLOG.md" "Триггеры для пересмотра бэклога"
 require_text "governance/BACKLOG.md" "Критический путь"

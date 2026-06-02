@@ -1,6 +1,6 @@
 ---
-status: draft
-version: 0.1
+status: canonical
+version: 1.0
 updated: 2026-06-02
 ai-generated: true
 type: backlog
@@ -17,17 +17,28 @@ related_artifacts:
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/103"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/105"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/109"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/110"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/111"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/112"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/113"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/114"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/115"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/116"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
 
-Версия: 0.1
+Версия: 1.0
 
 Дата: 2026-06-02
 
-Статус: черновик для согласования (`draft`). Приоритеты, статусы и сам факт
-заведения отдельных issues — за человеком (см. раздел
-[8. Решение за человеком](#8-решение-за-человеком)).
+Статус: канонический (`canonical`). Приоритизация, North Star и триггеры
+утверждены человеком в рамках задачи **B-013**
+([issue #107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107)).
+По утверждённым задачам заведены отдельные issues (см. колонку «Issue» в
+[разделе 2](#2-сводная-таблица-задач) и [раздел 8](#8-решение-за-человеком)).
 
 > В этом документе используются термины из
 > [standards/GLOSSARY.md](../standards/GLOSSARY.md): *Operating Mode*, *Policy*,
@@ -127,20 +138,20 @@ principle ([governance/REPO_MODEL.md](REPO_MODEL.md)): **артефакт соз
 `TODO` — не начато; `DONE` — выполнено в репозитории; `ЧАСТИЧНО` — выполнено
 частично.
 
-| ID | Название | Приоритет | Зависимости | Статус | Источник | Обоснование приоритета |
-| --- | --- | --- | --- | --- | --- | --- |
-| **B-010** | Снять лимиты длины Mango-промптов; промпты не менять | **P0** | — | DONE | Issue #105; [validator](../tools/validate-repository-structure.sh) | Искусственный лимит ограничивал prompt body; инвариант восстановлен снятием лимита, без правки промптов. |
-| **B-001** | Создать `governance/AGENT_ONBOARDING.md` (Кейс 1, вкл. threat awareness) | **P1** | — | TODO | RFC-онбординг; RFC-два-кейса (follow-up #3); Q «взять сейчас» | Краеугольный артефакт *Runtime-онбординга* и старт критического пути; без него правило «новый агент → начни здесь» не имеет адресата. |
-| **B-002** | Связать онбординг ссылками из `README.md` Хаба и `AI_GOVERNANCE.md` | **P1** | B-001 | TODO | RFC-два-кейса (follow-up #5); RFC-онбординг | Дёшево и замыкает точку входа: артефакт без ссылок невидим. |
-| **B-004** | Зафиксировать двухкейсовую модель инициализации в `governance/REPO_MODEL.md` | **P1** | — | TODO | RFC-два-кейса (follow-up #2) | Закрепляет концептуальный фундамент в каноне; снижает риск повторной терминологической путаницы (ошибка №5 ретроспективы). |
-| **B-006** | Fail-closed semantics одной фразой → `templates/spoke/AI_QUICK_RULES.md` | **P1** | — | TODO | Q «взять сейчас»; С [C5]; [EGA] | «Бесплатно» (одна фраза), прямо снижает риск галлюцинаций агента уже сегодня. |
-| **B-007** | Простая capability taxonomy (3 корзины) → `templates/spoke/AI_GOVERNANCE.md` | **P1** | — | TODO | Q «взять сейчас»; С [C5]; [GAP] | «Бесплатно» (3 строки прозой), даёт агенту ясные границы без машинерии. |
-| **B-003** | Продублировать *Handover Prompt* в `templates/spoke/` | **P2** | B-001 | TODO | RFC-онбординг | Полезно для самодостаточности спока, но не блокирует критический путь. |
-| **B-005** | Дополнить `templates/spoke/README.md` (Кейс 2) + перекрёстные ссылки README | **P2** | B-001 | TODO | RFC-два-кейса (follow-up #4, #5) | Завершает «обе точки входа ссылаются друг на друга»; полезно для будущих bootstrap-спринтов. |
-| **B-011** | Явно назвать Evidence model в RFC-манифесте | **P2** | — | ЧАСТИЧНО | Q «взять сейчас»; С [C5]; [GAP] | Термин уже введён в external-review; осталась консолидация — низкая срочность. |
-| **B-008** | Рефакторинг `research/` (разделение `hub/` и `mango/`) | **P1** | — | DONE | Обсуждение §5 | Выполнено в предыдущих PR; зафиксировано как факт для целостности картины. |
-| **B-013** | 💡 Промоут `BACKLOG.md` в `canonical` и завести issues по утверждённым P1 | **P1** | (этот PR) | TODO | Креативное улучшение Конарда | Замыкает маршрут «бэклог → issues»; без него бэклог остаётся планом без исполнения. |
-| **B-014** | 💡 Лёгкий «governance health»: регулярный прогон валидаторов + мониторинг триггеров | **P3** | — | TODO | Креативное улучшение Конарда | Ценно, но боль возникнет позже; внедряется по триггеру, не сейчас. |
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Обоснование приоритета |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-010** | Снять лимиты длины Mango-промптов; промпты не менять | **P0** | — | DONE | [#105](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/105) | Issue #105; [validator](../tools/validate-repository-structure.sh) | Искусственный лимит ограничивал prompt body; инвариант восстановлен снятием лимита, без правки промптов. |
+| **B-001** | Создать `governance/AGENT_ONBOARDING.md` (Кейс 1, вкл. threat awareness) | **P1** | — | TODO | [#109](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/109) | RFC-онбординг; RFC-два-кейса (follow-up #3); Q «взять сейчас» | Краеугольный артефакт *Runtime-онбординга* и старт критического пути; без него правило «новый агент → начни здесь» не имеет адресата. |
+| **B-002** | Связать онбординг ссылками из `README.md` Хаба и `AI_GOVERNANCE.md` | **P1** | B-001 | TODO | [#110](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/110) | RFC-два-кейса (follow-up #5); RFC-онбординг | Дёшево и замыкает точку входа: артефакт без ссылок невидим. |
+| **B-004** | Зафиксировать двухкейсовую модель инициализации в `governance/REPO_MODEL.md` | **P1** | — | TODO | [#111](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/111) | RFC-два-кейса (follow-up #2) | Закрепляет концептуальный фундамент в каноне; снижает риск повторной терминологической путаницы (ошибка №5 ретроспективы). |
+| **B-006** | Fail-closed semantics одной фразой → `templates/spoke/AI_QUICK_RULES.md` | **P1** | — | TODO | [#112](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/112) | Q «взять сейчас»; С [C5]; [EGA] | «Бесплатно» (одна фраза), прямо снижает риск галлюцинаций агента уже сегодня. |
+| **B-007** | Простая capability taxonomy (3 корзины) → `templates/spoke/AI_GOVERNANCE.md` | **P1** | — | TODO | [#113](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/113) | Q «взять сейчас»; С [C5]; [GAP] | «Бесплатно» (3 строки прозой), даёт агенту ясные границы без машинерии. |
+| **B-003** | Продублировать *Handover Prompt* в `templates/spoke/` | **P2** | B-001 | TODO | [#114](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/114) | RFC-онбординг | Полезно для самодостаточности спока, но не блокирует критический путь. |
+| **B-005** | Дополнить `templates/spoke/README.md` (Кейс 2) + перекрёстные ссылки README | **P2** | B-001 | TODO | [#115](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/115) | RFC-два-кейса (follow-up #4, #5) | Завершает «обе точки входа ссылаются друг на друга»; полезно для будущих bootstrap-спринтов. |
+| **B-011** | Явно назвать Evidence model в RFC-манифесте | **P2** | — | ЧАСТИЧНО | [#116](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/116) | Q «взять сейчас»; С [C5]; [GAP] | Термин уже введён в external-review; осталась консолидация — низкая срочность. |
+| **B-008** | Рефакторинг `research/` (разделение `hub/` и `mango/`) | **P1** | — | DONE | [#91](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/91) | Обсуждение §5 | Выполнено в предыдущих PR; зафиксировано как факт для целостности картины. |
+| **B-013** | 💡 Промоут `BACKLOG.md` в `canonical` и завести issues по утверждённым P1 | **P1** | (этот PR) | DONE | [#107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107) | Креативное улучшение Конарда | Замыкает маршрут «бэклог → issues»; без него бэклог остаётся планом без исполнения. |
+| **B-014** | 💡 Лёгкий «governance health»: регулярный прогон валидаторов + мониторинг триггеров | **P3** | — | TODO | — (отложено) | Креативное улучшение Конарда | Ценно, но боль возникнет позже; внедряется по триггеру, не сейчас. |
 
 💡 — креативные задачи, предложенные Конардом и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
@@ -530,35 +541,55 @@ Governance Metadata Envelope находится в «отклонить», см.
 **Источник:** 🔗 Креативное улучшение Конарда (маршрут «идея → задача» из
 онбординг-RFC)
 **Зависимости:** этот PR (создание бэклога)
+**Статус:** **DONE** (реализовано в [issue #107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107) / PR)
 **Режим работы:** `Structured`
 
 **Контекст:**
-Бэклог без исполнения — это план на полке. После Human Review нужно (1) перевести
-`BACKLOG.md` из `draft` в `canonical` и (2) завести отдельные issues по
-утверждённым задачам P1 — именно то, что эта задача **запрещает делать сейчас**
-(см. [раздел 6](#6-ограничения)). P0-задача B-010 уже выполнена в рамках
-корректировки issue #105. Эта строка фиксирует, что маршрут существует и его
-надо пройти явным шагом.
+Бэклог без исполнения — это план на полке. Human Review дал команду на B-013
+([issue #107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107)):
+(1) перевести `BACKLOG.md` из `draft` в `canonical` и (2) завести отдельные
+issues по утверждённым задачам — именно то, что предыдущая версия этой задачи
+запрещала делать до апрува (см. [раздел 6](#6-ограничения)). P0-задача B-010 уже
+выполнена в рамках корректировки issue #105. Этот шаг замыкает маршрут «бэклог →
+issues».
 
-**Что нужно сделать:**
-1. После апрува сменить `status: draft → canonical`, обновить `version`.
-2. Завести issues по утверждённым P1-задачам, со ссылкой на строку бэклога как
-   источник.
+**Что сделано:**
+1. `status: draft → canonical`, `version: 0.1 → 1.0` (по команде issue #107).
+2. Заведены отдельные issues по всем открытым задачам бэклога, кроме B-014
+   (отложена по решению человека). Каждый issue ссылается на строку бэклога как
+   источник. Маппинг:
+
+   | Задача | Issue | Приоритет |
+   | --- | --- | --- |
+   | B-001 | [#109](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/109) | P1 |
+   | B-002 | [#110](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/110) | P1 |
+   | B-004 | [#111](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/111) | P1 |
+   | B-006 | [#112](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/112) | P1 |
+   | B-007 | [#113](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/113) | P1 |
+   | B-003 | [#114](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/114) | P2 |
+   | B-005 | [#115](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/115) | P2 |
+   | B-011 | [#116](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/116) | P2 |
+
+   Задачи `DONE` (B-010 → #105, B-008 → #91) уже имеют свои issues и завершены —
+   новые не заводятся. B-013 — это [issue #107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107).
+   B-014 (P3) намеренно **не заводится** — отложена до триггера
+   ([раздел 7](#7-триггеры-для-пересмотра-бэклога)).
 
 **Ожидаемые артефакты:**
-- `governance/BACKLOG.md` (статус обновлён); набор issues
+- `governance/BACKLOG.md` (статус `canonical`, маппинг issues); набор issues #109–#116
 
 **Критерии приёмки (DoD):**
-- [ ] Бэклог `canonical` после апрува человека.
-- [ ] По каждой утверждённой P1-задаче заведён issue со ссылкой на бэклог.
+- [x] Бэклог `canonical` по команде человека (issue #107).
+- [x] По каждой утверждённой P1-задаче заведён issue со ссылкой на бэклог.
 
 **Обоснование приоритета:**
 P1 — замыкает петлю «бэклог → работа». Без него весь этот документ не имеет
 исполнительной силы.
 
 **Риски и ограничения:**
-Не заводить issues до апрува (нарушит ограничение текущей задачи и Anti-Inflation
-для issue-трекера).
+Issues заведены **по явной команде человека** (issue #107), а не самовольно;
+B-014 исключена согласно решению. Это сохраняет инвариант «финальные решения по
+governance — за человеком» и Anti-Inflation для issue-трекера.
 
 ---
 
@@ -737,8 +768,12 @@ content.
   артефакта, кроме `governance/BACKLOG.md` (Anti-Inflation principle,
   [REPO_MODEL.md](REPO_MODEL.md)). Все будущие артефакты живут *строками
   таблицы*.
-- **Issues не заводятся.** Отдельные issues по задачам бэклога создаются **после**
-  утверждения бэклога человеком (это сама задача B-013), а не в этом PR.
+- **Issues заведены по команде человека.** Изначально это ограничение
+  запрещало заводить issues до утверждения бэклога. Оно **снято** командой
+  человека на B-013 ([issue #107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107)):
+  issues по открытым задачам заведены (кроме B-014, отложенной), см.
+  [раздел 3 → B-013](#b-013--промоут-backlogmd-в-canonical-и-завести-issues-по-p1)
+  и колонку «Issue» [раздела 2](#2-сводная-таблица-задач).
 - **Промпты Mango не правятся.** Issue #105 снимает лимиты в валидаторе, но не
   меняет prompt body. Любая правка текста промптов — отдельная задача.
 - **Bootstrap первого спока не входит в этот бэклог.** Создание
@@ -782,9 +817,15 @@ content.
 
 ## 8. Решение за человеком
 
-Этот документ — предложение, а не финальное решение
-([AI_GOVERNANCE.md](../AI_GOVERNANCE.md): humans принимают финальные решения по
-governance). Прошу:
+> ✅ **Статус (2026-06-02):** команда на B-013 получена
+> ([issue #107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107)).
+> Бэклог переведён в `canonical`, по открытым задачам заведены issues #109–#116
+> (кроме B-014, отложенной). Пункты 1–5 ниже сохранены как исходная просьба
+> Human Review для трассируемости.
+
+Этот документ был предложением до утверждения; финальные решения по governance
+принимает человек ([AI_GOVERNANCE.md](../AI_GOVERNANCE.md)). Исходная просьба
+Human Review:
 
 1. **Утвердить приоритизацию** (P0–P3) и распределение задач раздела 2 или
    скорректировать строки.
@@ -793,11 +834,12 @@ governance). Прошу:
 3. **Утвердить North Star** (раздел 4.4) как рабочее стратегическое направление.
 4. **Согласовать триггеры** раздела 7 как условия возврата к бэклогу.
 5. **Дать команду на B-013** — перевод бэклога в `canonical` и заведение issues
-   по утверждённым P1-задачам.
+   по утверждённым P1-задачам. ✅ **Выполнено** (issue #107).
 
-> **Что я НЕ делаю без твоего слова:** не правлю prompt body Mango, не создаю
-> `mango_ba_prompts`, не завожу отдельные issues по задачам бэклога, не создаю
-> файлы будущих артефактов (`AGENT_ONBOARDING.md` и т.д.).
+> **Что я по-прежнему НЕ делаю без твоего слова:** не правлю prompt body Mango,
+> не создаю `mango_ba_prompts`, не создаю файлы будущих артефактов
+> (`AGENT_ONBOARDING.md` и т.д.) — это работа по отдельным заведённым issues
+> (#109–#116), выполняемая в своих PR с Human Review. B-014 не заведена.
 
 ---
 

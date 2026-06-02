@@ -4,6 +4,19 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Changed
+
+- Issue #107 (B-013): `governance/BACKLOG.md` промоутнут из `draft` в `canonical`
+  (`version 0.1 → 1.0`) по команде Human Review. Замкнут маршрут «бэклог →
+  issues»: по всем открытым задачам бэклога заведены отдельные issues со ссылкой
+  на строку-источник — B-001 → #109, B-002 → #110, B-004 → #111, B-006 → #112,
+  B-007 → #113, B-003 → #114, B-005 → #115, B-011 → #116. Задача B-014 (P3)
+  намеренно отложена и не заведена; задачи `DONE` (B-010 → #105, B-008 → #91) уже
+  имеют issues. В бэклог добавлена колонка «Issue» в сводной таблице, маппинг в
+  разделе 3 (B-013), обновлены `related_issues` во frontmatter и разделы 6/8.
+  Удалён сгенерированный харнессом корневой `.gitkeep` (его нет в `main`),
+  снимавший FAIL структурного валидатора.
+
 ### Added
 
 - Issue #99: RFC-манифест `governance/proposals/rfc-two-cases-of-project-initialization.md`
