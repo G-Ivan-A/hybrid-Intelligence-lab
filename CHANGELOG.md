@@ -6,6 +6,18 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #96: креативный RFC `governance/proposals/rfc-agent-onboarding-protocol.md`
+  — «Протокол бесшовной передачи проекта» (Seamless Project Handover Protocol)
+  против ошибок холодного старта. Аналогия предполётного чек-листа и «читки
+  обратно» (readback); обоснование с дословной трассировкой к 5 провалам
+  ретроспективы `research/hub/project-context-and-bootstrap-patterns-2026-05.md`
+  и аудиту команды C; готовый к копированию Handover Prompt для пользователя;
+  4-шаговый алгоритм агента (чек-лист governance → чек-лист контекста → readback
+  → стоп до апрува); Mermaid-схема потока инициализации и сравнение мест для
+  будущего `AGENT_ONBOARDING.md` (рекомендация — `governance/`). RFC намеренно не
+  создаёт `AGENT_ONBOARDING.md` и завершается блоком «Решение за человеком».
+  Файл зарегистрирован как active в `tools/validate-repository-structure.sh` и
+  `governance/ARTIFACT_MAP.md` (тип `RFC`, версия карты 1.5 → 1.6).
 - Issue #93: «ДНК-шаблон» `templates/spoke/` — минимальный геном для клонирования
   новых spoke-проектов из Хаба. Девять базовых артефактов: `AI_GOVERNANCE.md`
   (конституция спока со ссылкой на Хаб), `AI_QUICK_RULES.md` (инструкция по
