@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-06-01
+version: 1.4
+updated: 2026-06-02
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.3
+Версия: 1.4
 
-Дата: 2026-06-01
+Дата: 2026-06-02
 
 Карта артефактов — единая точка входа в репозиторий `hybrid-Intelligence-lab`.
 Она показывает, что где лежит, зачем нужно и как связано, чтобы новые участники
@@ -57,6 +57,7 @@ ai-generated: false
 | `/LICENSE` | лицензия | Текущий license placeholder и pending-решение Founder & PO. | ✅ Да | `CONCEPT.md`, `AI_GOVERNANCE.md` |
 | `/governance/REPO_MODEL.md` | правило | Модель структуры репозитория и Anti-Inflation principle. | ✅ Да | `CONCEPT.md`, `standards/README.md`, `tools/validate-repository-structure.sh` |
 | `/governance/ARTIFACT_MAP.md` | навигация | Эта карта: навигация по артефактам, типам, обязательности и связям. | ✅ Да | `README.md`, `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
+| `/governance/proposals/rfc-creative-template-design.md` | RFC | Креативное предложение "ДНК-шаблона" для клонирования spoke-проектов: аналогия, сравнительная матрица имён (`templates`/`blueprints`/`genesis`), минимальная карта файлов, краевые случаи и Mermaid-схема. Решение за человеком. | ⚠️ По необходимости | `governance/REPO_MODEL.md`, `research/project-context-and-bootstrap-patterns-2026-05.md`, `standards/PROJECT_STRUCTURE_INHERITANCE.md` |
 | `/standards/README.md` | навигация | Плоский реестр активных и планируемых стандартов и инструкция применения. | ✅ Да | `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
 | `/standards/GLOSSARY.md` | стандарт | Единый словарь терминов для standards, governance и AI-assisted work. | ✅ Да | `standards/README.md`, все стандарты |
 | `/standards/FILE_NAMING.md` | стандарт | Единые паттерны именования файлов и каталогов для research, standards, экспериментов, профилей и курсов. | ✅ Да | `standards/README.md`, `standards/GLOSSARY.md` |
@@ -80,6 +81,7 @@ ai-generated: false
 | `/standards/` | каталог | Плоский реестр стандартов, шаблонов и правил оформления артефактов. | ✅ Да | `standards/README.md`, `governance/REPO_MODEL.md` |
 | `/governance/` | каталог | Модель репозитория, навигация и сквозные governance-правила. | ✅ Да | `governance/REPO_MODEL.md`, `governance/ARTIFACT_MAP.md` |
 | `/tools/` | каталог | Локальные validation и maintenance скрипты. | ✅ Да | `tools/validate-frontmatter.sh`, `tools/validate-repository-structure.sh` |
+| `/governance/proposals/` | каталог | RFC и предложения по governance до принятия решения человеком. | ⚠️ По необходимости | `governance/REPO_MODEL.md`, `AI_GOVERNANCE.md` |
 | `/research/` | каталог | Доменные исследования и source-backed analysis; содержит активную Mango taxonomy-концепцию, классификацию промптов и сохраненные `-old` исторические входы. | ✅ Да | `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/frameworks/` | каталог | Методологии, создаваемые только после доказанного gap (сейчас — `-old` входы). | ✅ Да | `governance/REPO_MODEL.md`, `standards/README.md` |
 | `/projects/` | каталог | Project knowledge bases и контекст spoke-репозиториев (сейчас — `-old` входы). | ✅ Да | `standards/PRODUCT_PROFILE.md`, `governance/REPO_MODEL.md` |

@@ -119,6 +119,7 @@ is_active_file() {
     projects/repo-development/docs/migration-audit-2026-05.md | \
     governance/REPO_MODEL.md | \
     governance/ARTIFACT_MAP.md | \
+    governance/proposals/rfc-creative-template-design.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
@@ -149,6 +150,7 @@ required_directories=(
   "projects/mango/decisions"
   "education"
   "governance"
+  "governance/proposals"
   "tools"
 )
 
@@ -201,6 +203,7 @@ required_files=(
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
+  "governance/proposals/rfc-creative-template-design.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -415,10 +418,22 @@ require_text "governance/REPO_MODEL.md" "Артефакт только при о
 require_text "governance/REPO_MODEL.md" "Anti-Inflation"
 require_text "governance/REPO_MODEL.md" "tools/"
 
+require_text "governance/proposals/rfc-creative-template-design.md" "status: draft"
+require_text "governance/proposals/rfc-creative-template-design.md" "ai-generated: true"
+require_text "governance/proposals/rfc-creative-template-design.md" "Концептуальная аналогия"
+require_text "governance/proposals/rfc-creative-template-design.md" "Сравнительная матрица"
+require_text "governance/proposals/rfc-creative-template-design.md" "templates/spoke/"
+require_text "governance/proposals/rfc-creative-template-design.md" "AI_GOVERNANCE.md"
+require_text "governance/proposals/rfc-creative-template-design.md" "Антипаттерны"
+require_text "governance/proposals/rfc-creative-template-design.md" "А что, если"
+require_text "governance/proposals/rfc-creative-template-design.md" '```mermaid'
+require_text "governance/proposals/rfc-creative-template-design.md" "Решение за человеком"
+
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.3"
-require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-01"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.4"
+require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
+require_text "governance/ARTIFACT_MAP.md" "governance/proposals/rfc-creative-template-design.md"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/ARTIFACT_MAP.md" "Как использовать карту"
 require_text "governance/ARTIFACT_MAP.md" "Как обновлять карту"
