@@ -121,6 +121,7 @@ is_active_file() {
     governance/REPO_MODEL.md | \
     governance/ARTIFACT_MAP.md | \
     governance/proposals/rfc-creative-template-design.md | \
+    governance/proposals/rfc-agent-onboarding-protocol.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
@@ -224,6 +225,7 @@ required_files=(
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
   "governance/proposals/rfc-creative-template-design.md"
+  "governance/proposals/rfc-agent-onboarding-protocol.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -459,8 +461,18 @@ require_text "governance/proposals/rfc-creative-template-design.md" "А что, 
 require_text "governance/proposals/rfc-creative-template-design.md" '```mermaid'
 require_text "governance/proposals/rfc-creative-template-design.md" "Решение за человеком"
 
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "status: draft"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "ai-generated: true"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Концептуальная аналогия"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Обоснование"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Handover Prompt"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "ai-collaboration-retrospective-2026-06.md"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "AGENT_ONBOARDING.md"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" '```mermaid'
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Решение за человеком"
+
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.5"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.6"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
