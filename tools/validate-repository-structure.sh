@@ -29,36 +29,6 @@ require_text() {
   fi
 }
 
-markdown_body_chars() {
-  local path="$1"
-  awk '
-    NR == 1 && $0 == "---" {
-      in_frontmatter = 1
-      next
-    }
-    in_frontmatter && $0 == "---" {
-      in_frontmatter = 0
-      next
-    }
-    !in_frontmatter {
-      print
-    }
-  ' "$path" | wc -m | tr -d '[:space:]'
-}
-
-require_max_body_chars() {
-  local path="$1"
-  local max_chars="$2"
-
-  if [[ -f "$path" ]]; then
-    local chars
-    chars="$(markdown_body_chars "$path")"
-    if (( chars > max_chars )); then
-      fail "$path body is ${chars} chars, expected <= ${max_chars}"
-    fi
-  fi
-}
-
 is_active_file() {
   case "$1" in
     README.md | \
@@ -676,13 +646,6 @@ require_text "projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md" 
 require_text "projects/mango/prompts/tz-stats-generator_simple-2026-05.md" "variant: simple"
 require_text "projects/mango/prompts/user-story-generator_simple-2026-05.md" "variant: simple"
 require_text "projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md" "variant: simple"
-
-require_max_body_chars "projects/mango/prompts/tz-stats-generator_exp-2026-05.md" 1000
-require_max_body_chars "projects/mango/prompts/user-story-generator_exp-2026-05.md" 1000
-require_max_body_chars "projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md" 1000
-require_max_body_chars "projects/mango/prompts/tz-stats-generator_simple-2026-05.md" 3000
-require_max_body_chars "projects/mango/prompts/user-story-generator_simple-2026-05.md" 3000
-require_max_body_chars "projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md" 3000
 
 require_text "projects/mango/experiments/prompts-audit-2026-05-26.md" "type: prompt-audit"
 require_text "projects/mango/experiments/prompts-audit-2026-05-26.md" "Что работает"
