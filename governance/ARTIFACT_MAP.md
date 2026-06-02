@@ -1,13 +1,13 @@
 ---
 status: canonical
-version: 1.10
+version: 1.11
 updated: 2026-06-02
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.10
+Версия: 1.11
 
 Дата: 2026-06-02
 
@@ -49,13 +49,13 @@ ai-generated: false
 
 | Путь | Тип | Назначение | Обязательный? | Связанные артефакты |
 | --- | --- | --- | --- | --- |
-| `/README.md` | навигация | Визитка репозитория, ключевые документы и структура. | ✅ Да | `CONCEPT.md`, `standards/README.md`, `governance/ARTIFACT_MAP.md` |
+| `/README.md` | навигация | Визитка репозитория, ключевые документы и структура. | ✅ Да | `CONCEPT.md`, `standards/README.md`, `governance/ARTIFACT_MAP.md`, `governance/AGENT_ONBOARDING.md` |
 | `/CONCEPT.md` | концепция | Актуальная концепция, аудитории, границы и модель hub-and-spoke. | ✅ Да | `governance/REPO_MODEL.md`, `standards/README.md` |
-| `/AI_GOVERNANCE.md` | контракт | Роли, правила, operating modes, эскалация и Definition of Done для AI-assisted work. | ✅ Да | `CONCEPT.md`, `CONTRIBUTING.md`, `standards/README.md` |
+| `/AI_GOVERNANCE.md` | контракт | Роли, правила, operating modes, эскалация и Definition of Done для AI-assisted work. | ✅ Да | `CONCEPT.md`, `CONTRIBUTING.md`, `standards/README.md`, `governance/AGENT_ONBOARDING.md` |
 | `/CONTRIBUTING.md` | руководство | Workflow вклада, локальные проверки и PR checklist. | ✅ Да | `AI_GOVERNANCE.md`, `governance/REPO_MODEL.md`, `standards/README.md` |
 | `/CHANGELOG.md` | журнал | Date-based журнал governance-изменений репозитория. | ✅ Да | `README.md`, `CONCEPT.md` |
 | `/LICENSE` | лицензия | Текущий license placeholder и pending-решение Founder & PO. | ✅ Да | `CONCEPT.md`, `AI_GOVERNANCE.md` |
-| `/governance/AGENT_ONBOARDING.md` | правило | Рабочая инструкция *Runtime-онбординга* (Кейс 1): единый входной артефакт для нового агента — *Handover Prompt* с `{{REPO_NAME}}`, 4-шаговый протокол (governance → контекст → *Readback* → стоп до апрува) и раздел threat awareness «Что может пойти не так». Операционная пара к дизайн-RFC (`proposals/`). | ✅ Да | `governance/proposals/rfc-agent-onboarding-protocol.md`, `governance/proposals/rfc-two-cases-of-project-initialization.md`, `templates/spoke/README.md`, `standards/GLOSSARY.md` |
+| `/governance/AGENT_ONBOARDING.md` | правило | Рабочая инструкция *Runtime-онбординга* (Кейс 1): единый входной артефакт для нового агента — *Handover Prompt* с `{{REPO_NAME}}`, 4-шаговый протокол (governance → контекст → *Readback* → стоп до апрува) и раздел threat awareness «Что может пойти не так». Операционная пара к дизайн-RFC (`proposals/`). Точки входа — `README.md` и `AI_GOVERNANCE.md`. | ✅ Да | `README.md`, `AI_GOVERNANCE.md`, `governance/proposals/rfc-agent-onboarding-protocol.md`, `governance/proposals/rfc-two-cases-of-project-initialization.md`, `templates/spoke/README.md`, `standards/GLOSSARY.md` |
 | `/governance/REPO_MODEL.md` | правило | Модель структуры репозитория и Anti-Inflation principle. | ✅ Да | `CONCEPT.md`, `standards/README.md`, `tools/validate-repository-structure.sh` |
 | `/governance/ARTIFACT_MAP.md` | навигация | Эта карта: навигация по артефактам, типам, обязательности и связям. | ✅ Да | `README.md`, `governance/REPO_MODEL.md`, `standards/GLOSSARY.md` |
 | `/governance/BACKLOG.md` | навигация | Единый бэклог работ Хаба (Sprint 3): сводная таблица задач, приоритеты P0–P3, зависимости и критический путь, источники, креативный анализ рекомендаций команд С и Q, North Star и триггеры пересмотра. Ортогонален этой карте: карта показывает «что есть», бэклог — «что осталось». Решение по приоритетам за человеком. | ✅ Да | `governance/proposals/rfc-agent-onboarding-protocol.md`, `governance/proposals/rfc-two-cases-of-project-initialization.md`, `research/hub/external-governance-patterns-review-2026-06.md`, `standards/GLOSSARY.md` |

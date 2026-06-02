@@ -2,6 +2,12 @@
 
 Операционный контракт для AI-assisted work в `hybrid-Intelligence-lab`.
 
+> **🛫 Pre-flight (обязательно перед любой работой).** Прежде чем менять файлы,
+> ИИ-агент проходит предполётный протокол *Runtime-онбординга*
+> [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md): чек-лист
+> governance → чек-лист контекста → *Readback* → стоп до апрува человека. Этот
+> контракт описывает *что* можно делать; онбординг — *как* безопасно начать.
+
 ## Роли
 
 | Роль | Ответственность |
@@ -15,7 +21,8 @@
 
 1. Работа начинается с issue или явного maintainer request.
 2. AI agents читают issue, последние comments, relevant files и текущий PR
-   context до изменения файлов.
+   context до изменения файлов — по предполётному протоколу
+   [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md).
 3. Изменения должны следовать [CONCEPT.md](CONCEPT.md),
    [governance/REPO_MODEL.md](governance/REPO_MODEL.md) и
    [standards/README.md](standards/README.md).
