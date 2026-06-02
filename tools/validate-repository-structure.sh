@@ -81,6 +81,7 @@ is_active_file() {
     research/mango/rag-mapping-roadmap-2026-05.md | \
     research/mango/capability-decomposition-2026-05.md | \
     research/hub/project-context-and-bootstrap-patterns-2026-05.md | \
+    research/hub/ai-collaboration-retrospective-2026-06.md | \
     research/hub/prompts-classification-audit-2026-05.md | \
     research/hub/prompts-classification-standard-2026-05.md | \
     research/hub/team-c-governance-strategy-audit-2026-05.md | \
@@ -122,6 +123,7 @@ is_active_file() {
     governance/ARTIFACT_MAP.md | \
     governance/proposals/rfc-creative-template-design.md | \
     governance/proposals/rfc-agent-onboarding-protocol.md | \
+    governance/proposals/rfc-two-cases-of-project-initialization.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
@@ -226,6 +228,7 @@ required_files=(
   "governance/ARTIFACT_MAP.md"
   "governance/proposals/rfc-creative-template-design.md"
   "governance/proposals/rfc-agent-onboarding-protocol.md"
+  "governance/proposals/rfc-two-cases-of-project-initialization.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -470,9 +473,26 @@ require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "ai-collabo
 require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "AGENT_ONBOARDING.md"
 require_text "governance/proposals/rfc-agent-onboarding-protocol.md" '```mermaid'
 require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Решение за человеком"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Модель процесса"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "rfc-two-cases-of-project-initialization.md"
+require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "{{REPO_NAME}}"
+
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "status: draft"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "ai-generated: true"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Концептуальная аналогия"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Таблица-манифест"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Runtime-онбординг"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Bootstrap-клонирование"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "standards/GLOSSARY.md"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "ai-collaboration-retrospective-2026-06.md"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "rfc-agent-onboarding-protocol.md"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "rfc-creative-template-design.md"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" '```mermaid'
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Follow-up"
+require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.6"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.7"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
