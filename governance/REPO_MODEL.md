@@ -45,6 +45,25 @@
 | Production code получает собственный lifecycle. | Перенести его в spoke repository и ссылаться назад на этот hub. |
 | Historical content может быть полезным. | Переносить выборочно через reviewable PR и указывать source path из audit/history. |
 
+## Spoke Lifecycle: два кейса инициализации
+
+Слово «инициализация проекта» в модели hub-and-spoke скрывает **два
+ортогональных процесса**. Их нельзя смешивать — иначе повторяется
+терминологическая путаница (ошибка №5 ретроспективы). Канон фиксирует разделение
+кратко и ссылается на источники; полное обоснование, аналогии и Mermaid-схема
+жизненного цикла — в RFC-манифесте, а определения терминов — в глоссарии.
+
+| Кейс | Суть | Долговечность | Operating Mode |
+| --- | --- | --- | --- |
+| **Кейс 1 — *Runtime-онбординг*** | Агент в чате загружает контекст проекта из репозитория в оперативную память диалога; файлы не создаются (read-only до апрува человека). | Эфемерный — повторяется при каждом чате. | `Structured` |
+| **Кейс 2 — *Bootstrap-клонирование*** | Из шаблонов Хаба (`templates/spoke/`) рождается новый spoke-репозиторий с правильной структурой. | Постоянный — однократный акт при создании spoke. | `Project` |
+
+- Определения терминов *Runtime-онбординг* и *Bootstrap-клонирование* — единый
+  источник истины в [standards/GLOSSARY.md](../standards/GLOSSARY.md).
+- Полная модель жизненного цикла spoke (аналогии, таблица-манифест,
+  Mermaid-схема, привязка к ретроспективе) —
+  [governance/proposals/rfc-two-cases-of-project-initialization.md](proposals/rfc-two-cases-of-project-initialization.md).
+
 ## Standards
 
 - [standards/PROJECT_STRUCTURE_INHERITANCE.md](../standards/PROJECT_STRUCTURE_INHERITANCE.md)

@@ -25,6 +25,19 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #111 (B-004): в канон `governance/REPO_MODEL.md` добавлен раздел
+  «Spoke Lifecycle: два кейса инициализации», фиксирующий разделение
+  *Runtime-онбординг* (Кейс 1) ⟂ *Bootstrap-клонирование* (Кейс 2) как часть
+  модели жизненного цикла spoke. Operating Mode привязан к кейсу (Кейс 1 →
+  `Structured`, Кейс 2 → `Project`). Раздел сознательно краткий: определения
+  терминов вынесены в `standards/GLOSSARY.md`, полное обоснование с аналогиями и
+  Mermaid-схемой — в RFC-манифесте
+  `governance/proposals/rfc-two-cases-of-project-initialization.md`; канон
+  ссылается на источники, а не дублирует их (Anti-Inflation). Снят риск
+  повторения терминологической путаницы (ошибка №5 ретроспективы). Удалён
+  сгенерированный харнессом корневой `.gitkeep`, снимавший FAIL структурного
+  валидатора.
+
 - Issue #110 (B-002): связаны входные точки репозитория с онбордингом. В
   `README.md` добавлены предполётный блок «🛫 Новый агент? Начни здесь →
   `governance/AGENT_ONBOARDING.md`» и строка в таблице «Ключевые документы»; в
