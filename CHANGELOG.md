@@ -6,6 +6,19 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #145 (CE-008): в `standards/GLOSSARY.md` (версия 1.1 → 1.2) добавлены
+  термины **«Исполнимый документ» (Executable Contract)** и **«Директивный
+  блок»** из стандарта исполнимых документов
+  `governance/proposals/contract-executability-rfc.md` (§4.2, §6.1, §7).
+  Указаны контекст использования и примеры артефактов; зафиксирована
+  ортогональность с `Operating Mode` (нет терминологической коллизии: `executable`
+  помечает тип документа, Operating Mode — режим выполнения задачи). В раздел
+  «Связи терминов» добавлены связи `Исполнимый документ -> Директивный блок`,
+  `Operating Mode ⟂ Исполнимый документ` и `Исполнимый документ -> Validation`
+  для traceability. Структурный валидатор
+  `tools/validate-repository-structure.sh` обновлён под новую версию/дату и
+  проверяет наличие новых терминов.
+
 - Issue #133: созданы отдельные GitHub Issues CE-001..CE-010
   ([#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138)–[#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147))
   для каждого файла из плана внедрения стандарта исполнимых документов

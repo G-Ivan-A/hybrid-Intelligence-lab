@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-02
+version: 1.2
+updated: 2026-06-04
 ai-generated: false
 ---
 
 # Glossary
 
-Версия: 1.1
+Версия: 1.2
 
-Дата: 2026-06-02
+Дата: 2026-06-04
 
 Этот глоссарий фиксирует рабочие определения терминов для
 `hybrid-Intelligence-lab`. Он нужен, чтобы issues, standards, governance-файлы
@@ -44,6 +44,8 @@ ai-generated: false
 | Canonical | Текущий утвержденный источник истины для темы. Canonical artifact используется по умолчанию в issues, reviews и AI context. | Отличается от `Draft`: canonical можно применять как действующее правило или reference. Если canonical artifact изменяется, нужна reviewable причина и обновление навигации. | [CONCEPT.md](../CONCEPT.md) с `status: canonical` |
 | Draft | Черновик или proposal, который еще не является источником истины и требует review, проверки или решения owner. | Используется для исследовательских вариантов, будущих шаблонов и PR work-in-progress. Draft не должен отменять canonical artifact без явного решения в PR. | `research/<domain>/<topic>.md` до review, draft PR |
 | Operating Mode | Явно заданный режим работы AI-assisted task, который определяет ожидаемую автономию, тип результата и допустимый уровень исследования. | `structured` используется по умолчанию для конкретных инструкций; `creative` подходит, когда дана цель и нужны варианты; `research`, `education` и `project` уточняют тип работы. | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md), [.github/ISSUE_TEMPLATE/task.yml](../.github/ISSUE_TEMPLATE/task.yml) |
+| Исполнимый документ (Executable Contract) | Документ, предназначенный для немедленного исполнения ИИ-агентом, а не для чтения или анализа: помечается полем `executable: true` во frontmatter (опционально `entrypoint: true` — точка входа) и строится по паттерну «Директива сверху, контекст под катом» — `Директивный блок` и EXECUTION-часть сверху, EXPLANATION-часть ниже. | Отличается от описательного документа (`executable: false` или отсутствие поля): исполнимый документ — команда к действию «выполняй сейчас», а не справочный материал. Ортогонален `Operating Mode`: `executable` задаёт *тип документа* (исполнять или учитывать как справку), а Operating Mode — *режим выполнения задачи* (автономия и тип результата), поэтому терминологической коллизии нет. | [governance/AGENT_ONBOARDING.md](../governance/AGENT_ONBOARDING.md), [templates/spoke/AI_QUICK_RULES.md](../templates/spoke/AI_QUICK_RULES.md); стандарт — [governance/proposals/contract-executability-rfc.md](../governance/proposals/contract-executability-rfc.md) (§4.2, §7) |
+| Директивный блок | Короткий блок-цитата в самом верху `Исполнимого документа` (сразу после frontmatter, до любого пояснения) с тремя обязательными элементами: стоп-сигналом «не анализируй — выполняй», User-Story-формулировкой роли и цели агента и явным запретом анализировать текст вместо его исполнения. | Работает как in-band «системная роль», которой у обычного Markdown-документа нет: несёт сигнал исполнимости в первом видимом блоке. Отличается от `Handover Prompt`: директивный блок — короткая директива-указатель на исполнимую часть, а не копия канонического промпта (канон остаётся единственным). | 🚦-блок в начале [governance/AGENT_ONBOARDING.md](../governance/AGENT_ONBOARDING.md); шаблон — [governance/proposals/contract-executability-rfc.md](../governance/proposals/contract-executability-rfc.md) (§4.2, пример 5.1) |
 | Profile | Контекстная настройка framework, standard или risk model под конкретную область, проект, аудиторию или класс риска. | Используется, когда общий framework сохраняется, но нужны domain-specific controls, priorities или examples. Отличается от нового framework: profile адаптирует существующую модель, а не создает новую. | `projects/<project-slug>/README.md`, NIST AI RMF profile as external pattern |
 | Bootstrap-клонирование (Кейс 2) | Процесс создания нового spoke-репозитория из шаблонов Хаба (`templates/spoke/`). Результат — физическая, постоянная структура репозитория с правильными файлами. | Ортогонален `Runtime-онбордингу`: bootstrap создаёт файлы один раз при рождении проекта, а не загружает контекст в память агента. Operating Mode задачи — `Project`. | [governance/proposals/rfc-two-cases-of-project-initialization.md](../governance/proposals/rfc-two-cases-of-project-initialization.md), [governance/proposals/rfc-creative-template-design.md](../governance/proposals/rfc-creative-template-design.md) |
 | Runtime-онбординг (Кейс 1) | Процесс загрузки контекста проекта из репозитория в оперативную память агента, работающего в чате диалога. Результат — агент знает правила и контекст проекта; файлы при этом не создаются. | Ортогонален `Bootstrap-клонированию`: онбординг повторяется при каждом чате и является read-only до апрува человека. Operating Mode задачи — `Structured`. | [governance/proposals/rfc-agent-onboarding-protocol.md](../governance/proposals/rfc-agent-onboarding-protocol.md), [governance/proposals/rfc-two-cases-of-project-initialization.md](../governance/proposals/rfc-two-cases-of-project-initialization.md) |
@@ -67,6 +69,9 @@ ai-generated: false
 | Framework -> Profile | Profile адаптирует framework под контекст без создания конкурирующей методологии. |
 | Artifact -> Canonical / Draft | Artifact имеет lifecycle; canonical artifact действует как источник истины, draft artifact ожидает review. |
 | Operating Mode -> Artifact | Operating Mode задает, какой тип артефакта ожидается и насколько исполнитель может исследовать варианты. |
+| Исполнимый документ -> Директивный блок | Исполнимый документ обязан открываться директивным блоком: сигнал «исполняй, не анализируй» стоит в первом видимом блоке (in-band «системная роль»), после чего идёт EXECUTION-часть, а пояснение понижается в EXPLANATION-часть. |
+| Operating Mode ⟂ Исполнимый документ | Ортогональны и не создают коллизии: `executable` помечает *тип документа* (исполнять или учитывать как справку), Operating Mode задаёт *режим выполнения задачи* (автономия, тип результата). Один и тот же исполнимый документ применяется в любом Operating Mode. Манифест стандарта — [governance/proposals/contract-executability-rfc.md](../governance/proposals/contract-executability-rfc.md). |
+| Исполнимый документ -> Validation | Машиночитаемый маркер `executable` во frontmatter позволяет мягко проверять тип документа в [tools/validate-frontmatter.sh](../tools/validate-frontmatter.sh), как и прочие frontmatter-поля. |
 | Standard -> Validation | Если standard можно проверить автоматически, правило добавляется в validation script или checklist. |
 | Bootstrap-клонирование ⟂ Runtime-онбординг | Два ортогональных кейса инициализации проекта: первый создаёт постоянную структуру репо один раз, второй каждый раз загружает контекст в память агента. Манифест разделения — [governance/proposals/rfc-two-cases-of-project-initialization.md](../governance/proposals/rfc-two-cases-of-project-initialization.md). |
 | Среда работы агента ⟂ Источник контекста | Чат диалога, где работает агент, и репозиторий, который он читает, — разные сущности. Агент не «живёт» в репозитории. |
