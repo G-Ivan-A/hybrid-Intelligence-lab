@@ -4,6 +4,19 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Changed
+
+- Issue #138 (CE-001): `governance/AGENT_ONBOARDING.md` (версия 1.0 → 1.1)
+  переведён в стандарт исполнимых документов
+  `governance/proposals/contract-executability-rfc.md` (§5.1, §6.1, §7).
+  Во frontmatter добавлены маркеры `executable: true` и `entrypoint: true`;
+  сразу после frontmatter добавлен директивный блок «🚦 ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ
+  АНАЛИЗИРУЙ, ВЫПОЛНЯЙ»; содержимое разделено на `▶️ EXECUTION` (Handover Prompt
+  и 4-шаговый протокол) и `ℹ️ EXPLANATION` (модель процесса, threat awareness,
+  перекрёстные ссылки) без потери смысла. Структурный валидатор
+  `tools/validate-repository-structure.sh` обновлён под новую версию/дату и
+  проверяет наличие маркеров и блоков EXECUTION/EXPLANATION.
+
 ### Added
 
 - Issue #145 (CE-008): в `standards/GLOSSARY.md` (версия 1.1 → 1.2) добавлены
