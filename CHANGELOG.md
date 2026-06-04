@@ -99,6 +99,13 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #144 (CE-007): `standards/ISSUE_WORKFLOW.md` converted to the
+  executable-documents frontmatter standard as a reference process standard.
+  Version `1.0 → 1.1`, date `2026-06-04`; frontmatter now includes
+  `executable: false`. The terminology note explicitly separates task
+  Operating Mode from document executability, while task statuses and transition
+  rules remain unchanged. The structural validator now checks the new
+  version/date and `executable: false` marker.
 - Issue #142 (CE-005): `governance/REPO_MODEL.md` converted to the executable
   document standard as a reference policy: added canonical frontmatter with
   `executable: false`, bumped version `1 → 1.1` and date to `2026-06-04`, and
