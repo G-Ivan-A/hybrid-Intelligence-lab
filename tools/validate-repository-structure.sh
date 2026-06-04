@@ -343,9 +343,10 @@ require_text "standards/ISSUE_WORKFLOW.md" '`closed`'
 require_text "standards/ISSUE_WORKFLOW.md" '`blocked`'
 
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "status: canonical"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "version: 1.0"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "updated: 2026-05-26"
+require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "version: 1.1"
+require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "updated: 2026-06-04"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "ai-generated: false"
+require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "executable: false"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Разрешённые подкаталоги"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Правила связывания стандартов"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "scope: mango-only"
@@ -495,8 +496,13 @@ require_text "governance/proposals/contract-executability-rfc.md" "governance/pr
 require_text "governance/proposals/contract-executability-rfc.md" "Дата утверждения"
 
 require_text "governance/AGENT_ONBOARDING.md" "status: canonical"
-require_text "governance/AGENT_ONBOARDING.md" "version: 1.0"
-require_text "governance/AGENT_ONBOARDING.md" "updated: 2026-06-02"
+require_text "governance/AGENT_ONBOARDING.md" "version: 1.1"
+require_text "governance/AGENT_ONBOARDING.md" "updated: 2026-06-04"
+require_text "governance/AGENT_ONBOARDING.md" "executable: true"
+require_text "governance/AGENT_ONBOARDING.md" "entrypoint: true"
+require_text "governance/AGENT_ONBOARDING.md" "ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ АНАЛИЗИРУЙ, ВЫПОЛНЯЙ"
+require_text "governance/AGENT_ONBOARDING.md" "EXECUTION"
+require_text "governance/AGENT_ONBOARDING.md" "EXPLANATION"
 require_text "governance/AGENT_ONBOARDING.md" "Handover Prompt"
 require_text "governance/AGENT_ONBOARDING.md" "{{REPO_NAME}}"
 require_text "governance/AGENT_ONBOARDING.md" "Readback"
