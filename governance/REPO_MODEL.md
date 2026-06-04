@@ -1,8 +1,16 @@
+---
+status: canonical
+version: 1.1
+updated: 2026-06-04
+ai-generated: false
+executable: false
+---
+
 # Repository Model
 
-Версия: 1
+Версия: 1.1
 
-Дата: 2026-05-26
+Дата: 2026-06-04
 
 Документ фиксирует активную структуру репозитория и Anti-Inflation principle
 для `hybrid-Intelligence-lab`.
@@ -33,7 +41,11 @@
 
 Артефакт не оправдан, если он только делает дерево визуально полным.
 
-## Decision Rules
+## Decision Rules — исполнимая часть справочного документа
+
+> Применяй эти правила при создании и изменении структуры репозитория. Весь
+> документ остается справочным policy/reference (`executable: false`), а таблица
+> ниже является decision checklist к применению.
 
 | Ситуация | Действие |
 | --- | --- |

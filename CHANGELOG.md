@@ -99,6 +99,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #142 (CE-005): `governance/REPO_MODEL.md` converted to the executable
+  document standard as a reference policy: added canonical frontmatter with
+  `executable: false`, bumped version `1 → 1.1` and date to `2026-06-04`, and
+  marked Decision Rules as the executable decision checklist inside the
+  otherwise reference document. Structural validation now checks the new
+  frontmatter/version markers; removed the generated harness `.gitkeep`.
 - Issue #143 (CE-006): `standards/PROJECT_STRUCTURE_INHERITANCE.md` converted
   to the executable-documents standard as a reference standard. Version
   `1.0 → 1.1`; `updated` is now `2026-06-04`; frontmatter explicitly contains
