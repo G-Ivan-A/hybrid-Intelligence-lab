@@ -86,6 +86,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #143 (CE-006): `standards/PROJECT_STRUCTURE_INHERITANCE.md` converted
+  to the executable-documents standard as a reference standard. Version
+  `1.0 → 1.1`; `updated` is now `2026-06-04`; frontmatter explicitly contains
+  `executable: false`. The project-structure inheritance rules are unchanged,
+  and `tools/validate-repository-structure.sh` now checks the new metadata.
+
 - Issue #147 (CE-010): `governance/ARTIFACT_MAP.md` refactored for the
   executable-documents standard. Version `1.14 → 1.15`; the main artifact table
   now has a `🚦 Исполнимый?` column with `🚦 entrypoint`, `🚦 да`, `справка` and

@@ -343,9 +343,10 @@ require_text "standards/ISSUE_WORKFLOW.md" '`closed`'
 require_text "standards/ISSUE_WORKFLOW.md" '`blocked`'
 
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "status: canonical"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "version: 1.0"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "updated: 2026-05-26"
+require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "version: 1.1"
+require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "updated: 2026-06-04"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "ai-generated: false"
+require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "executable: false"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Разрешённые подкаталоги"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Правила связывания стандартов"
 require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "scope: mango-only"

@@ -1,8 +1,9 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-06-04
 ai-generated: false
+executable: false
 ---
 
 # Project Structure Inheritance
