@@ -4,6 +4,19 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Changed
+
+- Issue #138 (CE-001): `governance/AGENT_ONBOARDING.md` (версия 1.0 → 1.1)
+  переведён в стандарт исполнимых документов
+  `governance/proposals/contract-executability-rfc.md` (§5.1, §6.1, §7).
+  Во frontmatter добавлены маркеры `executable: true` и `entrypoint: true`;
+  сразу после frontmatter добавлен директивный блок «🚦 ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ
+  АНАЛИЗИРУЙ, ВЫПОЛНЯЙ»; содержимое разделено на `▶️ EXECUTION` (Handover Prompt
+  и 4-шаговый протокол) и `ℹ️ EXPLANATION` (модель процесса, threat awareness,
+  перекрёстные ссылки) без потери смысла. Структурный валидатор
+  `tools/validate-repository-structure.sh` обновлён под новую версию/дату и
+  проверяет наличие маркеров и блоков EXECUTION/EXPLANATION.
+
 ### Added
 
 - Issue #145 (CE-008): в `standards/GLOSSARY.md` (версия 1.1 → 1.2) добавлены
@@ -93,6 +106,17 @@ All notable repository governance changes are documented here.
   Operating Mode from document executability, while task statuses and transition
   rules remain unchanged. The structural validator now checks the new
   version/date and `executable: false` marker.
+- Issue #142 (CE-005): `governance/REPO_MODEL.md` converted to the executable
+  document standard as a reference policy: added canonical frontmatter with
+  `executable: false`, bumped version `1 → 1.1` and date to `2026-06-04`, and
+  marked Decision Rules as the executable decision checklist inside the
+  otherwise reference document. Structural validation now checks the new
+  frontmatter/version markers; removed the generated harness `.gitkeep`.
+- Issue #143 (CE-006): `standards/PROJECT_STRUCTURE_INHERITANCE.md` converted
+  to the executable-documents standard as a reference standard. Version
+  `1.0 → 1.1`; `updated` is now `2026-06-04`; frontmatter explicitly contains
+  `executable: false`. The project-structure inheritance rules are unchanged,
+  and `tools/validate-repository-structure.sh` now checks the new metadata.
 
 - Issue #147 (CE-010): `governance/ARTIFACT_MAP.md` refactored for the
   executable-documents standard. Version `1.14 → 1.15`; the main artifact table
