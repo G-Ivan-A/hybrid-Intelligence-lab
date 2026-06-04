@@ -99,6 +99,11 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #146 (CE-009): `tools/validate-frontmatter.sh` теперь мягко
+  валидирует опциональные маркеры стандарта исполнимых документов:
+  `executable` допускает только `true|false`, а `entrypoint` при наличии
+  допускает только `true`. Поле `executable` не стало обязательным, поэтому
+  существующая fail-open семантика и документы без этого маркера сохранены.
 - Issue #144 (CE-007): `standards/ISSUE_WORKFLOW.md` converted to the
   executable-documents frontmatter standard as a reference process standard.
   Version `1.0 → 1.1`, date `2026-06-04`; frontmatter now includes

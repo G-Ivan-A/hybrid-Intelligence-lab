@@ -14,6 +14,11 @@ required_fields=(
   "ai-generated"
 )
 
+optional_fields=(
+  "executable"
+  "entrypoint"
+)
+
 warn() {
   local path="$1"
   local line="$2"
@@ -45,6 +50,23 @@ is_required_field() {
 
   case "$key" in
     status | version | updated | ai-generated)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+is_validated_field() {
+  local key="$1"
+
+  if is_required_field "$key"; then
+    return 0
+  fi
+
+  case "$key" in
+    executable | entrypoint)
       return 0
       ;;
     *)
@@ -85,6 +107,24 @@ validate_field() {
           ;;
         *)
           warn "$path" "$line" "invalid ai-generated '$value' (expected true or false)"
+          ;;
+      esac
+      ;;
+    executable)
+      case "$value" in
+        true | false)
+          ;;
+        *)
+          warn "$path" "$line" "invalid executable '$value' (expected true or false)"
+          ;;
+      esac
+      ;;
+    entrypoint)
+      case "$value" in
+        true)
+          ;;
+        *)
+          warn "$path" "$line" "invalid entrypoint '$value' (expected true)"
           ;;
       esac
       ;;
@@ -130,7 +170,7 @@ validate_file() {
       local key="${BASH_REMATCH[1]}"
       local raw_value="${BASH_REMATCH[2]}"
 
-      if is_required_field "$key" && [[ -z "${lines[$key]+set}" ]]; then
+      if is_validated_field "$key" && [[ -z "${lines[$key]+set}" ]]; then
         lines["$key"]="$line_no"
         values["$key"]="$(trim_value "$raw_value")"
       fi
@@ -155,6 +195,12 @@ validate_file() {
     fi
 
     validate_field "$path" "$field" "${lines[$field]}" "${values[$field]}"
+  done
+
+  for field in "${optional_fields[@]}"; do
+    if [[ -n "${lines[$field]+set}" ]]; then
+      validate_field "$path" "$field" "${lines[$field]}" "${values[$field]}"
+    fi
   done
 }
 
