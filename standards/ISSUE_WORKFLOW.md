@@ -1,15 +1,16 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-06-04
 ai-generated: false
+executable: false
 ---
 
 # Issue Workflow
 
-Версия: 1.0
+Версия: 1.1
 
-Дата: 2026-05-26
+Дата: 2026-06-04
 
 ## Назначение
 
@@ -25,16 +26,21 @@ ai-generated: false
 [governance/REPO_MODEL.md](../governance/REPO_MODEL.md)).
 
 Терминология сверяется с [standards/GLOSSARY.md](GLOSSARY.md). Важно различать
-два независимых понятия:
+несколько независимых понятий:
 
 - **Статус задачи** (этот документ) — где задача находится в рабочем процессе:
   `draft`, `ready`, `in-progress`, `review`, `merged`, `closed`, `blocked`.
 - **Maturity артефакта** (`Canonical` / `Draft` в [GLOSSARY.md](GLOSSARY.md) и
   поле `status` в frontmatter) — насколько сам документ является источником
   истины.
+- **Operating Mode задачи** ([GLOSSARY.md](GLOSSARY.md)) — режим выполнения
+  конкретной задачи, а не тип документа.
+- **Исполнимость документа** (`executable: false` в этом frontmatter) — этот
+  стандарт является справкой процесса, а не протоколом для немедленного
+  исполнения.
 
-Это разные оси: задача может быть `in-progress`, а создаваемый ею артефакт —
-ещё `draft` в frontmatter.
+Это разные оси: задача может быть `in-progress`, её Operating Mode может быть
+`Structured`, а создаваемый ею артефакт — ещё `draft` в frontmatter.
 
 ## Статусы задач
 
