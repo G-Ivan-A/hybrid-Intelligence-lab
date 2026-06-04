@@ -6,6 +6,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #133: созданы отдельные GitHub Issues CE-001..CE-010
+  ([#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138)–[#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147))
+  для каждого файла из плана внедрения стандарта исполнимых документов
+  `governance/proposals/contract-executability-rfc.md` §6.1. В
+  `governance/BACKLOG.md` добавлен отдельный backlog-раздел с приоритетами,
+  зависимостями и ссылками на issues; создан реестр
+  `governance/EXECUTABLE_DOCUMENTS_ISSUES.md`; реестр зарегистрирован в
+  `governance/ARTIFACT_MAP.md` и структурном валидаторе. Физический рефакторинг
+  файлов из RFC §6.1 не выполнялся.
+
 - Issue #124: новый research-артефакт
   `research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md` —
   ретроспектива ошибок AI-агента в сессии проектирования миграции Mango

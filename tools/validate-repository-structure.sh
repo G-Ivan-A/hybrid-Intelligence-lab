@@ -96,6 +96,7 @@ is_active_file() {
     governance/REPO_MODEL.md | \
     governance/ARTIFACT_MAP.md | \
     governance/BACKLOG.md | \
+    governance/EXECUTABLE_DOCUMENTS_ISSUES.md | \
     governance/proposals/rfc-creative-template-design.md | \
     governance/proposals/rfc-agent-onboarding-protocol.md | \
     governance/proposals/rfc-two-cases-of-project-initialization.md | \
@@ -206,6 +207,7 @@ required_files=(
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
   "governance/BACKLOG.md"
+  "governance/EXECUTABLE_DOCUMENTS_ISSUES.md"
   "governance/proposals/rfc-creative-template-design.md"
   "governance/proposals/rfc-agent-onboarding-protocol.md"
   "governance/proposals/rfc-two-cases-of-project-initialization.md"
@@ -495,7 +497,7 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.13"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.14"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-04"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
@@ -513,11 +515,23 @@ require_text "governance/ARTIFACT_MAP.md" "research/hub/user-prompts-analysis-20
 require_text "governance/ARTIFACT_MAP.md" "projects/mango/standards/classification-glossary.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/README.md"
 require_text "governance/ARTIFACT_MAP.md" "governance/BACKLOG.md"
+require_text "governance/ARTIFACT_MAP.md" "governance/EXECUTABLE_DOCUMENTS_ISSUES.md"
 
 require_text "governance/BACKLOG.md" "status: canonical"
 require_text "governance/BACKLOG.md" "type: backlog"
 require_text "governance/BACKLOG.md" "standards/GLOSSARY.md"
 require_text "governance/BACKLOG.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Обоснование приоритета |"
+require_text "governance/BACKLOG.md" "Бэклог: Внедрение стандарта исполнимых документов"
+require_text "governance/BACKLOG.md" "CE-001"
+require_text "governance/BACKLOG.md" "CE-010"
+
+require_text "governance/EXECUTABLE_DOCUMENTS_ISSUES.md" "status: canonical"
+require_text "governance/EXECUTABLE_DOCUMENTS_ISSUES.md" "type: registry"
+require_text "governance/EXECUTABLE_DOCUMENTS_ISSUES.md" "contract-executability-rfc.md"
+require_text "governance/EXECUTABLE_DOCUMENTS_ISSUES.md" "CE-001"
+require_text "governance/EXECUTABLE_DOCUMENTS_ISSUES.md" "CE-010"
+require_text "governance/EXECUTABLE_DOCUMENTS_ISSUES.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138"
+require_text "governance/EXECUTABLE_DOCUMENTS_ISSUES.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147"
 require_text "governance/BACKLOG.md" "North Star"
 require_text "governance/BACKLOG.md" "Триггеры для пересмотра бэклога"
 require_text "governance/BACKLOG.md" "Критический путь"

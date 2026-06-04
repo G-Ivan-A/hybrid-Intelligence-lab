@@ -1,10 +1,10 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-06-02
+version: 1.1
+updated: 2026-06-04
 ai-generated: true
 type: backlog
-context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke]
+context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents]
 method: creative-analysis + synthesis + dependency-mapping
 scope: repo-wide
 related_artifacts:
@@ -14,7 +14,20 @@ related_artifacts:
   - "research/hub/external-governance-patterns-review-2026-06.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
   - "standards/GLOSSARY.md"
+  - "governance/proposals/contract-executability-rfc.md"
+  - "governance/EXECUTABLE_DOCUMENTS_ISSUES.md"
 related_issues:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/133"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/146"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/103"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/105"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107"
@@ -30,9 +43,9 @@ related_issues:
 
 # BACKLOG — единый бэклог работ Хаба
 
-Версия: 1.0
+Версия: 1.1
 
-Дата: 2026-06-02
+Дата: 2026-06-04
 
 Статус: канонический (`canonical`). Приоритизация, North Star и триггеры
 утверждены человеком в рамках задачи **B-013**
@@ -155,6 +168,31 @@ principle ([governance/REPO_MODEL.md](REPO_MODEL.md)): **артефакт соз
 
 💡 — креативные задачи, предложенные Конардом и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
+
+---
+
+## 📋 Бэклог: Внедрение стандарта исполнимых документов
+
+Источник: [`governance/proposals/contract-executability-rfc.md`](proposals/contract-executability-rfc.md),
+§6.1 «Файлы, подлежащие обновлению». Реестр созданных issues:
+[`governance/EXECUTABLE_DOCUMENTS_ISSUES.md`](EXECUTABLE_DOCUMENTS_ISSUES.md).
+
+Ограничение scope: этот раздел фиксирует только файлы из RFC §6.1. README-разметка
+из RFC §6.2 не добавлена как отдельная задача в рамках issue #133, потому что
+в задаче явно задан принцип «не добавлять файлы сверх плана §6.1».
+
+| ID | Файл | Приоритет | Зависимости | Статус | Issue |
+| --- | --- | --- | --- | --- | --- |
+| CE-001 | `governance/AGENT_ONBOARDING.md` | P0 | CE-008 | TODO | [#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138) |
+| CE-002 | `templates/spoke/AI_QUICK_RULES.md` | P0 | CE-008 | TODO | [#139](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139) |
+| CE-003 | `templates/spoke/AI_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) |
+| CE-004 | `AI_GOVERNANCE.md` | P1 | CE-001, CE-008 | TODO | [#141](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141) |
+| CE-005 | `governance/REPO_MODEL.md` | P2 | CE-008 | TODO | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) |
+| CE-006 | `standards/PROJECT_STRUCTURE_INHERITANCE.md` | P3 | CE-008 | TODO | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) |
+| CE-007 | `standards/ISSUE_WORKFLOW.md` | P3 | CE-008 | TODO | [#144](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144) |
+| CE-008 | `standards/GLOSSARY.md` | P1 | — | TODO | [#145](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145) |
+| CE-009 | `tools/validate-frontmatter.sh` | P2 | CE-008 | TODO | [#146](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/146) |
+| CE-010 | `governance/ARTIFACT_MAP.md` | P2 | CE-001, CE-002, CE-003, CE-004, CE-008 | TODO | [#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147) |
 
 ---
 
