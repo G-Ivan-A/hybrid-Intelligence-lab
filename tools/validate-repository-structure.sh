@@ -99,7 +99,7 @@ is_active_file() {
     governance/proposals/rfc-creative-template-design.md | \
     governance/proposals/rfc-agent-onboarding-protocol.md | \
     governance/proposals/rfc-two-cases-of-project-initialization.md | \
-    docs/analysis/contract-executability-rfc.md | \
+    governance/proposals/contract-executability-rfc.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
@@ -209,6 +209,7 @@ required_files=(
   "governance/proposals/rfc-creative-template-design.md"
   "governance/proposals/rfc-agent-onboarding-protocol.md"
   "governance/proposals/rfc-two-cases-of-project-initialization.md"
+  "governance/proposals/contract-executability-rfc.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -474,6 +475,13 @@ require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" '
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Follow-up"
 require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
 
+require_text "governance/proposals/contract-executability-rfc.md" "status: draft"
+require_text "governance/proposals/contract-executability-rfc.md" "version: 1.1"
+require_text "governance/proposals/contract-executability-rfc.md" "Решения фаундера по RFC"
+require_text "governance/proposals/contract-executability-rfc.md" "executable: true|false"
+require_text "governance/proposals/contract-executability-rfc.md" "governance/proposals/"
+require_text "governance/proposals/contract-executability-rfc.md" "Дата утверждения"
+
 require_text "governance/AGENT_ONBOARDING.md" "status: canonical"
 require_text "governance/AGENT_ONBOARDING.md" "version: 1.0"
 require_text "governance/AGENT_ONBOARDING.md" "updated: 2026-06-02"
@@ -487,11 +495,12 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.12"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.13"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-04"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
 require_text "governance/ARTIFACT_MAP.md" "governance/proposals/rfc-creative-template-design.md"
+require_text "governance/ARTIFACT_MAP.md" "governance/proposals/contract-executability-rfc.md"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/ARTIFACT_MAP.md" "Как использовать карту"
 require_text "governance/ARTIFACT_MAP.md" "Как обновлять карту"
