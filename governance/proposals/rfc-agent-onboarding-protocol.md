@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-02
+version: 1.1
+updated: 2026-06-06
 ai-generated: true
 type: rfc
 context: [agent-onboarding, context-handoff, cold-start, governance, hub-and-spoke]
@@ -20,9 +20,9 @@ related_issues:
 
 # RFC: Протокол бесшовной передачи проекта (Seamless Project Handover Protocol)
 
-Версия: 0.1
+Версия: 1.1
 
-Дата: 2026-06-02
+Дата: 2026-06-06
 
 Статус: черновик для согласования (RFC). Решение — за человеком (см. финальный
 блок).
@@ -336,3 +336,36 @@ governance). Прошу выбрать направление:
 > корне, ни в `governance/`), ссылки из `README.md`/`AI_GOVERNANCE.md` и дубль
 > промпта в `templates/spoke/`. Этот PR добавляет только данный RFC в
 > `governance/proposals/`.
+
+## ✅ Решения фаундера (Human Review 2026-06)
+
+### 2.1. Протокол из 4 шагов
+
+**Решение:** Принято. С учётом стандарта `contract-executability-rfc`:
+`executable: true` в frontmatter, структура EXECUTION BLOCK → EXPLANATION BLOCK.
+
+### 2.2. Handover Prompt (Часть A)
+
+**Решение:** Утверждён с адаптацией под стандарт исполнимых документов. Промпт
+явно выделен для копирования в чат.
+
+### 2.3. Место файла
+
+**Решение:** `governance/AGENT_ONBOARDING.md` (следовать контракту
+`ARTIFACT_MAP.md`). Override контракта не требуется.
+
+### 2.4. Создание файла
+
+**Статус:** Файл уже создан (`governance/AGENT_ONBOARDING.md` v1.1,
+2026-06-04) с применением стандарта исполнимых документов (`executable: true`,
+`entrypoint: true`).
+
+### 2.5. Выводы из ретроспективы
+
+**Решение:** Добавить после завершения задачи `creative: self-report ошибок
+исполнения контрактов`.
+
+---
+
+**Дата утверждения:** 2026-06-06
+**Утверждено:** Иван Гулиенко (фаундер)

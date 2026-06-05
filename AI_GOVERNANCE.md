@@ -13,6 +13,10 @@ executable: false
 > файл — контракт-справка (`executable: false`): он описывает *что* можно делать;
 > онбординг — *как* безопасно начать.
 
+> **Кейс 2 — Bootstrap-клонирование.** Для создания нового spoke-репозитория
+> используйте шаблон [`templates/spoke/`](templates/spoke/). Точка входа:
+> [`templates/spoke/README.md`](templates/spoke/README.md).
+
 # AI Governance
 
 Версия: 1.1
