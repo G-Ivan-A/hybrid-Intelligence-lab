@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-06-05
 ai-generated: false
 source: projects/README-old.md
 ---
@@ -54,5 +54,12 @@ projects/<project-slug>/
 
 | Проект | Назначение |
 | --- | --- |
-| [mango/](mango/) | Пилотный продуктовый spoke-проект Mango: навигация, применяемые стандарты и связь с research. |
 | [repo-development/](repo-development/) | Развитие структуры, governance и локальных проверок самого репозитория. |
+
+## Мигрировавшие проекты
+
+| Проект | Статус | Новый репозиторий | Дата миграции |
+|--------|--------|-------------------|---------------|
+| Mango | ✅ Мигрировал | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | 2026-06-05 |
+
+Архивная версия: `archive/projects/mango/` (только для истории, не для разработки).

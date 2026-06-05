@@ -5,7 +5,7 @@ updated: 2026-05-26
 ai-generated: false
 scope: mango-only
 related_standards:
-  - "../../../standards/GLOSSARY.md"
+  - "../../../../standards/GLOSSARY.md"
 ---
 
 # Classification Glossary
@@ -24,18 +24,18 @@ related_standards:
 Глоссарий применяется только к Mango:
 
 1. исследованиям в `research/mango/`;
-2. проектным артефактам в `projects/mango/`;
+2. архивным проектным артефактам в `archive/projects/mango/`;
 3. будущим файлам Mango `kb/`, если они описывают продукты, требования,
    capability, feature, gap или coverage status.
 
 Если термин нужен для другого проекта, его нужно согласовывать отдельно через
-общий [GLOSSARY.md](../../../standards/GLOSSARY.md), а не копировать Mango
+общий [GLOSSARY.md](../../../../standards/GLOSSARY.md), а не копировать Mango
 иерархию как обязательную.
 
 ## Правило применения
 
 Все исследования Mango используют термины из
-`projects/mango/standards/classification-glossary.md`.
+`archive/projects/mango/standards/classification-glossary.md`.
 
 Если входящий термин не находится в источниках или не имеет устойчивого аналога,
 помечайте его как `⚠️ Требуется уточнение` и сохраняйте ближайший рабочий
@@ -155,12 +155,12 @@ atomic function плюс overlay, а не новый domain.
 
 ## Связанные артефакты
 
-- [projects/mango/README.md](../README.md) - навигация по Mango project area.
-- [research/mango/classification.md](../../../research/mango/classification.md)
+- [archive/projects/mango/README.md](../README.md) - навигация по архивной Mango project area.
+- [research/mango/classification.md](../../../../research/mango/classification.md)
   - рабочая классификация продуктов MANGO OFFICE.
-- [research/mango/taxonomy-concept-2026-05.md](../../../research/mango/taxonomy-concept-2026-05.md)
+- [research/mango/taxonomy-concept-2026-05.md](../../../../research/mango/taxonomy-concept-2026-05.md)
   - draft-концепция Unified Capability Taxonomy Mango.
-- [standards/GLOSSARY.md](../../../standards/GLOSSARY.md) - общий глоссарий
+- [standards/GLOSSARY.md](../../../../standards/GLOSSARY.md) - общий глоссарий
   репозитория, не заменяемый этим Mango-only документом.
 
 ## Источники

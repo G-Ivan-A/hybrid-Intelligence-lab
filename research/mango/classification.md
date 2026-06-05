@@ -19,7 +19,7 @@ source: research/mango/classification-old.md
 
 ## Связанные документы
 
-- Термины уровней классификации (Domain, Capability, Feature, Atomic Function) и правила их применения описаны в глоссарии [projects/mango/standards/classification-glossary.md](../../projects/mango/standards/classification-glossary.md). Этот файл — нормализованный продуктовый каталог; единая терминология берётся из глоссария.
+- Термины уровней классификации (Domain, Capability, Feature, Atomic Function) и правила их применения описаны в глоссарии [mango_ba_prompts/standards/GLOSSARY.md](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md). Этот файл — нормализованный продуктовый каталог; единая терминология берётся из глоссария.
 - «Зеркало спроса» — корпус из 30 ТЗ и проверка эталона на нём — ведётся отдельно в [classification-tz.md](classification-tz.md). Сырой спрос не интегрируется в этот файл; сюда переносятся только нормализованные продуктовые классы (см. §«Что нового в версии 3.0»).
 
 ## Что нового в версии 3.0

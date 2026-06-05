@@ -9,7 +9,7 @@ based_on: prompts-classification-standard-2026-05.md
 related_issue: 85
 related_artifacts:
   - research/hub/prompts-classification-standard-2026-05.md
-  - projects/mango/prompts/
+  - mango_ba_prompts/prompts/
 ---
 
 # Анализ пользовательских промптов
@@ -96,23 +96,23 @@ Mango workflow и дополняют существующие `user-story-genera
 
 | Группа | Промпты | Пересечение с repo | Вывод |
 |--------|---------|--------------------|-------|
-| ASR post-editing | #1, #2, #3 | Нет прямого аналога в `projects/mango/prompts/` | Уникально. #1 - база expert prompt, #3 - quick prompt, #2 архивировать как предыдущую версию |
-| Валидация и генерация ФТ | #4, #5, #6, #7, #8, #9, #10, #11 | Частично рядом с `user-story-generator_*`, но ФТ-документ не покрыт | Ценно для Mango. Интегрировать не все версии, а 2 варианта: полный `ft-generator_simple` и короткий `ft-generator_quick` |
+| ASR post-editing | #1, #2, #3 | Нет прямого аналога в `mango_ba_prompts/prompts/` | Уникально. #1 - база expert prompt, #3 - quick prompt, #2 архивировать как предыдущую версию |
+| Валидация и генерация ФТ | #4, #5, #6, #7, #8, #9, #10, #11 | Частично рядом с `user-story-generator.md` / `user-story-generator-simple.md`, но ФТ-документ не покрыт | Ценно для Mango. Интегрировать не все версии, а 2 варианта: полный `ft-generator_simple` и короткий `ft-generator_quick` |
 | Контекст разделов 1-2 | #12 | Нет аналога | Уникально. Хороший кандидат для отдельного prompt asset после согласования структуры ФТ |
 | Раздел 7 "Список доработок" | #13 | Нет аналога | Уникально, но требует аккуратных границ: не превращать ФТ в UI/API design без входов |
 | Суммаризация встреч | #14, #15, #16 | Нет аналога | Ценно. #15 оставить как quick summary, #16 как finalization; #14 использовать как источник требований к full mode |
 | Сопроводительное письмо | #17 | Нет аналога | Уникально, но лучше держать как lightweight prompt, не как часть core Mango pipeline |
-| Уточняющие вопросы заказчику | #18 | Частично пересекается с `user-story-generator_simple-2026-05.md`, который задает вопросы при неполном входе | Лучший кандидат для интеграции: превращает сырой запрос в список вопросов до User Story/Use Case |
+| Уточняющие вопросы заказчику | #18 | Частично пересекается с `mango_ba_prompts/prompts/user-story-generator-simple.md`, который задает вопросы при неполном входе | Лучший кандидат для интеграции: превращает сырой запрос в список вопросов до User Story/Use Case |
 
 Что уже покрывают существующие Mango prompts:
 
 | Файл | Что покрывает | Что не покрывает из 18 промптов |
 |------|---------------|----------------------------------|
-| `projects/mango/prompts/user-story-generator_simple-2026-05.md` | Нормализация сырого запроса в User Story + Acceptance Criteria | Полный ФТ-документ, разделы 1/2/7, письмо заказчику |
-| `projects/mango/prompts/user-story-generator_exp-2026-05.md` | То же, но с Mango taxonomy/RAG context | Системную проверку ФТ по TM Forum/ODA без подготовленной KB |
-| `projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md` | Пошаговый Use Case с согласованием акторов и компонентов | Суммаризацию встреч, генерацию ФТ и ASR очистку |
-| `projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md` | Use Case с выдержками классификации | ФТ-разделы и вопросы заказчику до формализации |
-| `projects/mango/prompts/tz-stats-generator_*` | Статистика классов по ТЗ | Генерацию или редактирование требований |
+| `mango_ba_prompts/prompts/user-story-generator-simple.md` | Нормализация сырого запроса в User Story + Acceptance Criteria | Полный ФТ-документ, разделы 1/2/7, письмо заказчику |
+| `mango_ba_prompts/prompts/user-story-generator.md` | То же, но с Mango taxonomy/RAG context | Системную проверку ФТ по TM Forum/ODA без подготовленной KB |
+| `mango_ba_prompts/prompts/usecase-stepwise-generator-simple.md` | Пошаговый Use Case с согласованием акторов и компонентов | Суммаризацию встреч, генерацию ФТ и ASR очистку |
+| `mango_ba_prompts/prompts/usecase-stepwise-generator.md` | Use Case с выдержками классификации | ФТ-разделы и вопросы заказчику до формализации |
+| `mango_ba_prompts/prompts/tz-stats-generator.md` / `tz-stats-generator-simple.md` | Статистика классов по ТЗ | Генерацию или редактирование требований |
 
 ## 🔹 Рекомендации по действиям
 
@@ -140,7 +140,7 @@ Mango workflow и дополняют существующие `user-story-genera
 ## 🔹 План интеграции
 
 Интеграцию лучше делать отдельными небольшими PR, чтобы не раздуть
-`projects/mango/prompts/` и не сломать текущий контракт каталога.
+`mango_ba_prompts/prompts/` и не сломать текущий контракт каталога.
 
 | Приоритет | Что интегрировать | Источник | Целевой формат | Почему |
 |-----------|-------------------|----------|----------------|--------|
@@ -153,7 +153,7 @@ Mango workflow и дополняют существующие `user-story-genera
 
 Минимальная схема адаптации для каждого нового prompt asset:
 
-1. Добавить frontmatter по образцу существующих `projects/mango/prompts/*`.
+1. Добавить frontmatter по образцу существующих `mango_ba_prompts/prompts/*`.
 2. Использовать структуру `# РОЛЬ`, `# КОНТЕКСТ` или `# ВХОДЫ`,
    `# КАК РАБОТАЕМ`, `# ПРАВИЛА`, `# ФОРМАТ ВЫВОДА`, `# НАЧНЕМ?`.
 3. Для `_simple` держать standalone-логику без ссылок на репозиторий.
@@ -164,7 +164,7 @@ Mango workflow и дополняют существующие `user-story-genera
 ## ❓ Вопросы для согласования
 
 1. Нужно ли считать ASR post-editing частью Mango prompt library, или лучше
-   оставить его как universal prompt вне `projects/mango/prompts/`?
+   оставить его как universal prompt вне `mango_ba_prompts/prompts/`?
 2. Какой prompt family интегрировать первым: вопросы заказчику (#18) или
    генератор ФТ (#6/#10)?
 3. Есть ли утвержденный источник для ODA/eTOM/Mango capability map, который
@@ -180,5 +180,5 @@ Mango workflow и дополняют существующие `user-story-genera
 |----------|---------------|
 | Issue #85 | 18 пользовательских промптов и критерии готовности |
 | `research/hub/prompts-classification-standard-2026-05.md` | Таксономия, матрица M1-M10, шаблоны A/B/C |
-| `projects/mango/prompts/` | Сравнение с существующими Mango prompt assets |
-| `projects/mango/experiments/prompts-audit-2026-05-26.md` | Критерии готовности prompt body и разделение `_simple` / `_exp` |
+| `mango_ba_prompts/prompts/` | Сравнение с существующими Mango prompt assets |
+| `mango_ba_prompts/prompts/experiments/prompts-audit-2026-05-26.md` | Критерии готовности prompt body и разделение `_simple` / `_exp` |

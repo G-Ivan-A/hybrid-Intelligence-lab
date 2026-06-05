@@ -17,8 +17,8 @@ based_on:
 related_issue: 79
 related_artifacts:
   - research/hub/prompts-classification-audit-2026-05.md
-  - projects/mango/prompts/
-  - projects/mango/experiments/prompts-audit-2026-05-26.md
+  - mango_ba_prompts/prompts/
+  - mango_ba_prompts/prompts/experiments/prompts-audit-2026-05-26.md
 ---
 
 # Стандарт классификации промптов
@@ -409,7 +409,7 @@ patterns (chain → agent → multi-agent). Уровни PT-1..PT-4 соотве
 
 ### 7.1 Применение к промптам Mango
 
-На основе анализа 6 промптов в `projects/mango/prompts/`:
+На основе анализа 6 промптов в `mango_ba_prompts/prompts/`:
 
 | Промпт | Текущий тип | Рекомендуемый по матрице | Действие |
 |--------|-------------|--------------------------|----------|
@@ -432,7 +432,7 @@ patterns (chain → agent → multi-agent). Уровни PT-1..PT-4 соотве
 | 3 | Добавить JSON-output вариант одного из промптов для API-интеграции | M6 | P3 — после появления API consumers |
 | 4 | Описать multi-agent pipeline (PT-4) как целевую архитектуру | M7 | P3 — долгосрочная перспектива |
 
-### 7.3 Обновление `projects/mango/prompts/`
+### 7.3 Обновление `mango_ba_prompts/prompts/`
 
 При принятии классификации рекомендуется:
 
@@ -445,9 +445,9 @@ patterns (chain → agent → multi-agent). Уровни PT-1..PT-4 соотве
    maturity_level: 2
    domain_scope: DS-D
    ```
-2. Обновить `projects/mango/experiments/prompts-audit-2026-05-26.md` с
+2. Обновить `mango_ba_prompts/prompts/experiments/prompts-audit-2026-05-26.md` с
    привязкой к классификации.
-3. Обновить `projects/mango/README.md` со ссылкой на классификацию.
+3. Обновить `mango_ba_prompts/README.md` со ссылкой на классификацию.
 
 ### 7.4 Применение к 18 промптам пользователя
 
@@ -508,4 +508,4 @@ patterns (chain → agent → multi-agent). Уровни PT-1..PT-4 соотве
 | 7 | IIBA. *BABOK Guide v3*. https://www.iiba.org/standards-and-resources/babok/ | Стандарт | 2015 | Техники elicitation (brainstorming, prototyping, workshops) — связь с БА-задачами |
 | 8 | White, J. et al. *A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT*. arXiv:2302.11382 | Исследование | 2023 | Каталог паттернов промптов: Persona, Template, Recipe, Reflection, Meta-Language |
 | 9 | `research/hub/prompts-classification-audit-2026-05.md` | Внутренний | 2026 | Аудит входных данных для этой классификации |
-| 10 | `projects/mango/experiments/prompts-audit-2026-05-26.md` | Внутренний | 2026 | Критерии готовности промптов, эволюция прототипов |
+| 10 | `mango_ba_prompts/prompts/experiments/prompts-audit-2026-05-26.md` | Внутренний | 2026 | Критерии готовности промптов, эволюция прототипов |

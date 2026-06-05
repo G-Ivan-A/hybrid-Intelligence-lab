@@ -47,7 +47,7 @@ executable: false
 ### Пример структуры проекта
 
 ```text
-projects/mango/
+projects/<project-slug>/
 ├── README.md                          # Навигация по проекту
 ├── standards/
 │   ├── classification-glossary.md     # scope: mango-only

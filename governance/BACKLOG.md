@@ -223,7 +223,7 @@ prompt assets и обязательных секций, но не сжимать
 1. Удалены проверки `require_max_body_chars` для всех Mango prompt-файлов.
 2. Удалён сам helper `require_max_body_chars`, так как после снятия лимитов он не
    используется.
-3. Prompt-файлы в `projects/mango/prompts/` не изменялись.
+3. Prompt-файлы в `archive/projects/mango/prompts/` не изменялись.
 
 **Ожидаемые артефакты:**
 - `tools/validate-repository-structure.sh` (изменён)
@@ -796,7 +796,7 @@ governance-улучшения) перед P2/P3 — и есть операцио
 правилу раздела 7. Длина prompt body больше не является валидируемым инвариантом.
 
 **Промпты Mango сознательно не правятся.** Любые изменения текста в
-`projects/mango/prompts/` требуют отдельной задачи и review качества prompt
+`archive/projects/mango/prompts/` требуют отдельной задачи и review качества prompt
 content.
 
 ---

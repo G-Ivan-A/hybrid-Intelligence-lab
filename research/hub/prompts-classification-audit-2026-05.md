@@ -23,7 +23,7 @@ related_issue: 79
 **Вопрос исследования**: какие типы промптов и паттерны уже существуют в
 репозитории и какие оси классификации недостаточно представлены?
 
-**Метод**: сканирование `projects/mango/prompts/`, `projects/mango/experiments/`
+**Метод**: сканирование `mango_ba_prompts/prompts/`, `mango_ba_prompts/prompts/experiments/`
 и прикреплённых документов из issue #79; сравнение с международной практикой
 классификации промптов.
 
@@ -39,13 +39,13 @@ related_issue: 79
 
 | # | Источник | Путь / Ссылка | Статус доступа |
 |---|----------|---------------|----------------|
-| 1 | Промпты Mango (`_exp` вариант) | `projects/mango/prompts/*_exp-2026-05.md` (3 файла) | ✅ Доступен |
-| 2 | Промпты Mango (`_simple` вариант) | `projects/mango/prompts/*_simple-2026-05.md` (3 файла) | ✅ Доступен |
-| 3 | Эксперимент: прототип TZ Stats | `projects/mango/experiments/tz-stats-prototype-2026-05.md` | ✅ Доступен |
-| 4 | Эксперимент: генератор User Story | `projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md` | ✅ Доступен |
-| 5 | Эксперимент: генератор Use Case | `projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` | ✅ Доступен |
-| 6 | Аудит промптов | `projects/mango/experiments/prompts-audit-2026-05-26.md` | ✅ Доступен |
-| 7 | Self-test промптов | `projects/mango/experiments/prompts-selftest-2026-05-26.md` | ✅ Доступен |
+| 1 | Промпты Mango (`_exp` вариант) | `mango_ba_prompts/prompts/{tz-stats-generator,user-story-generator,usecase-stepwise-generator}.md` (3 файла) | ✅ Доступен |
+| 2 | Промпты Mango (`_simple` вариант) | `mango_ba_prompts/prompts/*-simple.md` (3 файла) | ✅ Доступен |
+| 3 | Эксперимент: прототип TZ Stats | `mango_ba_prompts/prompts/experiments/tz-stats-prototype-2026-05.md` | ✅ Доступен |
+| 4 | Эксперимент: генератор User Story | `mango_ba_prompts/prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md` | ✅ Доступен |
+| 5 | Эксперимент: генератор Use Case | `mango_ba_prompts/prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` | ✅ Доступен |
+| 6 | Аудит промптов | `mango_ba_prompts/prompts/experiments/prompts-audit-2026-05-26.md` | ✅ Доступен |
+| 7 | Self-test промптов | `mango_ba_prompts/prompts/experiments/prompts-selftest-2026-05-26.md` | ✅ Доступен |
 | 8 | 18 промптов пользователя | `existing-prompts-list.docx` (issue #79) | ❌ Недоступен |
 | 9 | Пример отладки промпта | `prompt-debug-example.docx` (issue #79) | ❌ Недоступен |
 
@@ -103,7 +103,7 @@ related_issue: 79
 
 ## 4. Паттерны отладки (из экспериментов)
 
-На основе анализа `projects/mango/experiments/prompts-audit-2026-05-26.md` и
+На основе анализа `mango_ba_prompts/prompts/experiments/prompts-audit-2026-05-26.md` и
 `prompts-selftest-2026-05-26.md`:
 
 ### 4.1 Эволюция промптов в репозитории
@@ -167,7 +167,7 @@ related_issue: 79
 2. Заполнить ≥8 ячеек матрицы, включая теоретические ячейки для уровней 1, 3, 4.
 3. Создать 3 шаблона промптов (simple, system, agent) для тестирования практики
    «отладки формата».
-4. Предложить план интеграции классификации к промптам в `projects/mango/prompts/`.
+4. Предложить план интеграции классификации к промптам в `mango_ba_prompts/prompts/`.
 
 ---
 
@@ -175,10 +175,10 @@ related_issue: 79
 
 | Источник | Тип | Использование в аудите |
 |----------|-----|----------------------|
-| `projects/mango/prompts/` (6 файлов) | Внутренний | Инвентаризация типов и паттернов |
-| `projects/mango/experiments/prompts-audit-2026-05-26.md` | Внутренний | Критерии готовности, эволюция промптов |
-| `projects/mango/experiments/prompts-selftest-2026-05-26.md` | Внутренний | Паттерны отладки, результаты тестов |
-| `projects/mango/experiments/tz-stats-prototype-2026-05.md` | Внутренний | Пример прототипа до сжатия |
-| `projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md` | Внутренний | Пример composability и stop-gates |
-| `projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` | Внутренний | Пример multi-turn с согласованием |
+| `mango_ba_prompts/prompts/` (6 файлов) | Внутренний | Инвентаризация типов и паттернов |
+| `mango_ba_prompts/prompts/experiments/prompts-audit-2026-05-26.md` | Внутренний | Критерии готовности, эволюция промптов |
+| `mango_ba_prompts/prompts/experiments/prompts-selftest-2026-05-26.md` | Внутренний | Паттерны отладки, результаты тестов |
+| `mango_ba_prompts/prompts/experiments/tz-stats-prototype-2026-05.md` | Внутренний | Пример прототипа до сжатия |
+| `mango_ba_prompts/prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md` | Внутренний | Пример composability и stop-gates |
+| `mango_ba_prompts/prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` | Внутренний | Пример multi-turn с согласованием |
 | Issue #79 | Внутренний | Требования к классификации и прикреплённые документы |

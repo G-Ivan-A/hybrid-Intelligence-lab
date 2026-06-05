@@ -13,7 +13,7 @@ ai-generated: false
 
 `projects/repo-development/` координирует работы по эволюции структуры,
 стандартов и процессов самого репозитория `hybrid-Intelligence-lab`. В отличие
-от продуктовых spoke-проектов (например, `projects/mango/`), этот проект
+от продуктовых spoke-проектов (например, `mango_ba_prompts`), этот проект
 рассматривает сам hub как объект развития: его навигацию, governance-правила и
 миграцию.
 
@@ -67,4 +67,4 @@ ai-generated: false
 - [governance/ARTIFACT_MAP.md](../../governance/ARTIFACT_MAP.md)
 - [standards/README.md](../../standards/README.md)
 - [standards/ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md)
-- [projects/mango/README.md](../mango/README.md)
+- [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts)
