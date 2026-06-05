@@ -13,6 +13,16 @@ All notable repository governance changes are documented here.
   `governance/AGENT_ONBOARDING.md`. Roles, Operating Modes, escalation and
   Definition of Done remain unchanged. Structural validation now checks the new
   frontmatter/version markers; removed the generated harness `.gitkeep`.
+- Issue #140 (CE-003): `templates/spoke/AI_HANDOVER_PROMPT.md` (версия 0.1 →
+  0.2) переведён в стандарт исполнимых документов: во frontmatter добавлен
+  `executable: true`, сразу после frontmatter добавлен директивный блок
+  «🚦 ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ», готовый prompt с
+  `{{REPO_NAME}}` поднят в блок `▶️ EXECUTION`, а пояснения, источник истины в
+  Хабе и ссылки перенесены в `ℹ️ EXPLANATION` без изменения смысла prompt.
+  Структурный валидатор теперь проверяет CE-003-маркеры и блоки
+  EXECUTION/EXPLANATION; удалён сгенерированный корневой `.gitkeep`, который не
+  является active-файлом репозитория.
+
 - Issue #138 (CE-001): `governance/AGENT_ONBOARDING.md` (версия 1.0 → 1.1)
   переведён в стандарт исполнимых документов
   `governance/proposals/contract-executability-rfc.md` (§5.1, §6.1, §7).
