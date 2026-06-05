@@ -36,6 +36,28 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #159 (Creative mode): концепт-проект портала `open-ai.ru` («единая точка
+  сборки» spoke-проектов) — независимое исследование, сравнительный анализ и
+  предложение без старта реализации. Добавлен RFC
+  `governance/proposals/open-ai-portal-concept-rfc.md` (15 разделов: 5 слоганов,
+  сравнение 4 вариантов концепции по матрице из 14 критериев, синтез
+  оптимального решения, дорожная карта Phase 0–4 и запрос на согласование с
+  7 вопросами фаундеру); черновик стандарта
+  `standards/PORTAL_REPOSITORY_STRUCTURE.md` (структура репозитория портала,
+  наследующая геном спока и добавляющая портал-каталоги); четыре research-отчёта в
+  новом подкаталоге `research/portal/` — сравнение стандартов документации (вывод:
+  ADR + C4 — обязательное ядро), сравнение архитектур и стека (модульный монолит,
+  SSG + islands, Cloudflare Pages, Supabase, выбор фреймворка по матрице), дизайн
+  структуры репозитория и паттерны интеграции AI/`mango_ba_prompts` (Yandex GPT
+  через serverless-proxy, content-collection санитизированных промптов, граница
+  приватности) — плюс навигация `research/portal/README.md`. Все артефакты
+  зарегистрированы как active в `tools/validate-repository-structure.sh`
+  (`is_active_file`, `required_files`, `required_directories`),
+  `governance/ARTIFACT_MAP.md` (версия карты 1.15 → 1.16), `research/README.md`
+  и реестре `standards/README.md`. Стандарт и RFC — в статусе `draft`: принятие
+  как обязательного остаётся решением человека (AI_GOVERNANCE, правило 4).
+  Реализация портала не начиналась.
+
 - Issue #145 (CE-008): в `standards/GLOSSARY.md` (версия 1.1 → 1.2) добавлены
   термины **«Исполнимый документ» (Executable Contract)** и **«Директивный
   блок»** из стандарта исполнимых документов

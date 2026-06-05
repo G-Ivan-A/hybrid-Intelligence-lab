@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-06-02
+version: 1.4
+updated: 2026-06-05
 ai-generated: false
 source: research/README-old.md
 ---
@@ -13,8 +13,8 @@ source: research/README-old.md
 
 > ⛔ **Строгое правило:** Размещение файлов исследований в корне каталога
 > `research/` запрещено. Все исследования должны находиться в тематических
-> подкаталогах (например, `research/hub/`, `research/mango/`). Это обеспечивает
-> масштабируемость и изоляцию контекста.
+> подкаталогах (например, `research/hub/`, `research/mango/`, `research/portal/`).
+> Это обеспечивает масштабируемость и изоляцию контекста.
 
 ## Принципы
 
@@ -33,6 +33,7 @@ source: research/README-old.md
 | --- | --- |
 | [hub/](hub/) | Фундаментальные исследования работы Хаба: передача контекста, project bootstrap, governance-стратегия и классификация промптов (`scope: repo-wide`). |
 | [mango/](mango/) | Классификация продуктов и требований MANGO OFFICE, анализ корпуса ТЗ и flow требований (`scope: mango-only`). |
+| [portal/](portal/) | Концепция портала `open-ai.ru` («единая точка сборки»): сравнение стандартов документации, архитектуры и стека, дизайн структуры репозитория, паттерны AI/Mango-интеграции (`scope: repo-wide`). |
 
 ### Подкаталог `hub/`
 
@@ -44,6 +45,15 @@ source: research/README-old.md
 | [team-c-governance-strategy-audit-2026-05.md](hub/team-c-governance-strategy-audit-2026-05.md) | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, hierarchy/lifecycle вопросы и backlog candidates. |
 | [user-prompts-analysis-2026-05.md](hub/user-prompts-analysis-2026-05.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
 | [external-governance-patterns-review-2026-06.md](hub/external-governance-patterns-review-2026-06.md) | Анализ external governance patterns (GitAgent/EGAProtocol/IETF AgentID) и матрица применимости рекомендаций команды С: «взять сейчас / отложить / отклонить», North Star и триггеры пересмотра. |
+
+### Подкаталог `portal/`
+
+| Файл | Назначение |
+| --- | --- |
+| [documentation-standards-comparison-2026-06.md](portal/documentation-standards-comparison-2026-06.md) | Сравнение стандартов документации (C4, arc42, ADR, RFC, Diátaxis, IEEE 42010, Concept Doc) и вывод о минимальном ядре для портала: ADR + C4 обязательны, RFC и frontmatter наследуются от Хаба, arc42-lite и Diátaxis — по росту. |
+| [architecture-and-stack-comparison-2026-06.md](portal/architecture-and-stack-comparison-2026-06.md) | Сравнение архитектур и технологического стека (frontend, backend, хостинг, BaaS, аналитика, автоматизация): модульный монолит, SSG + islands, Cloudflare Pages, Supabase, выбор фреймворка по матрице критериев. |
+| [repository-structure-design-2026-06.md](portal/repository-structure-design-2026-06.md) | Дизайн структуры репозитория портала как spoke-проекта: наследование генома спока, портал-специфичные каталоги, альтернативы и обоснование (источник стандарта `PORTAL_REPOSITORY_STRUCTURE.md`). |
+| [ai-and-mango-integration-patterns-2026-06.md](portal/ai-and-mango-integration-patterns-2026-06.md) | Паттерны интеграции AI и `mango_ba_prompts` (Yandex GPT через serverless-proxy, content-collection санитизированных промптов, Supabase Auth + RLS, клиентское маскирование) с разбивкой по фазам и границей приватности. |
 
 ## Рекомендуемая структура
 

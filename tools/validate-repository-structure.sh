@@ -46,6 +46,7 @@ is_active_file() {
     standards/TEAM_CONTRACT.md | \
     standards/ISSUE_WORKFLOW.md | \
     standards/PROJECT_STRUCTURE_INHERITANCE.md | \
+    standards/PORTAL_REPOSITORY_STRUCTURE.md | \
     research/mango/taxonomy-concept-2026-05.md | \
     research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/mango/rag-mapping-roadmap-2026-05.md | \
@@ -61,6 +62,11 @@ is_active_file() {
     research/README.md | \
     research/hub/README.md | \
     research/mango/README.md | \
+    research/portal/README.md | \
+    research/portal/documentation-standards-comparison-2026-06.md | \
+    research/portal/architecture-and-stack-comparison-2026-06.md | \
+    research/portal/repository-structure-design-2026-06.md | \
+    research/portal/ai-and-mango-integration-patterns-2026-06.md | \
     research/mango/classification.md | \
     research/mango/classification.html | \
     research/mango/classification-tz.md | \
@@ -101,6 +107,7 @@ is_active_file() {
     governance/proposals/rfc-agent-onboarding-protocol.md | \
     governance/proposals/rfc-two-cases-of-project-initialization.md | \
     governance/proposals/contract-executability-rfc.md | \
+    governance/proposals/open-ai-portal-concept-rfc.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
@@ -140,6 +147,7 @@ required_directories=(
   "research"
   "research/hub"
   "research/mango"
+  "research/portal"
   "frameworks"
   "projects"
   "projects/mango/standards"
@@ -170,9 +178,14 @@ required_files=(
   "standards/TEAM_CONTRACT.md"
   "standards/ISSUE_WORKFLOW.md"
   "standards/PROJECT_STRUCTURE_INHERITANCE.md"
+  "standards/PORTAL_REPOSITORY_STRUCTURE.md"
   "research/README.md"
   "research/hub/README.md"
   "research/mango/README.md"
+  "research/portal/README.md"
+  "research/portal/documentation-standards-comparison-2026-06.md"
+  "research/portal/architecture-and-stack-comparison-2026-06.md"
+  "research/portal/repository-structure-design-2026-06.md"
   "research/mango/classification.md"
   "research/mango/classification.html"
   "research/mango/classification-tz.md"
@@ -212,6 +225,7 @@ required_files=(
   "governance/proposals/rfc-agent-onboarding-protocol.md"
   "governance/proposals/rfc-two-cases-of-project-initialization.md"
   "governance/proposals/contract-executability-rfc.md"
+  "governance/proposals/open-ai-portal-concept-rfc.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -524,9 +538,9 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.15"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.16"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
-require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-04"
+require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-05"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
 require_text "governance/ARTIFACT_MAP.md" "governance/proposals/rfc-creative-template-design.md"
 require_text "governance/ARTIFACT_MAP.md" "governance/proposals/contract-executability-rfc.md"
