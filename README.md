@@ -29,6 +29,7 @@
 | [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
 | [governance/REPO_MODEL.md](governance/REPO_MODEL.md) | Модель структуры репозитория и Anti-Inflation правило. |
 | [governance/ARTIFACT_MAP.md](governance/ARTIFACT_MAP.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
+| [templates/spoke/](templates/spoke/) | Шаблон для создания spoke-репозиториев (*Bootstrap-клонирование*, Кейс 2). Используйте `templates/spoke/README.md` как точку входа. |
 
 ## Структура
 
