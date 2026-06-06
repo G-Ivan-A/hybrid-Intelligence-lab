@@ -29,6 +29,7 @@ related_issues:
 | Документ | Назначение |
 | --- | --- |
 | [documentation-standards-comparison-2026-06.md](documentation-standards-comparison-2026-06.md) | Исследование 1: сравнение ≥3 стандартов документации (C4, arc42, ADR, RFC, Diátaxis, Concept Doc, IEEE 42010) по 5 критериям; выбор оптимального для портала. |
+| [concept-standards-comparison-2026-06.md](concept-standards-comparison-2026-06.md) | Исследование (issue #166): сравнение 8 подходов к стандартизации структуры **концепции** (ISO 42010, TOGAF, BABOK, Continuous Discovery, PRD, RFC, Concept Doc, Vision Document) по 7 критериям; выход — [standards/webportal-concept-standard.md](../../standards/webportal-concept-standard.md). |
 | [architecture-and-stack-comparison-2026-06.md](architecture-and-stack-comparison-2026-06.md) | Исследование 2: независимое сравнение ≥4 архитектурных подходов и ≥7 стеков, таблица на ≥10 критериев, выбор оптимального. |
 | [repository-structure-design-2026-06.md](repository-structure-design-2026-06.md) | Исследование 3: анализ структуры Хаба, требований портала, альтернатив; обоснование структуры и связь со стандартом `PORTAL_REPOSITORY_STRUCTURE.md`. |
 | [ai-and-mango-integration-patterns-2026-06.md](ai-and-mango-integration-patterns-2026-06.md) | Дополнительное исследование: паттерны AI-интеграции (Yandex GPT), интеграции `mango_ba_prompts`, аутентификации и маскирования данных по фазам. |

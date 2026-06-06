@@ -23,6 +23,7 @@
 | RESEARCH_DOCUMENTATION_STANDARD.md | Draft (предложен, на утверждении) | Порядок изложения исследований (`research/<domain>/`): Введение → Результаты → Детализация | [RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md) |
 | EXECUTABLE_CONTRACT_STANDARD.md | Draft (предложен, на утверждении) | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md) |
 | CONTRACT_DOCUMENTATION_STANDARD.md | Draft (предложен, на утверждении) | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) |
+| webportal-concept-standard.md | Draft (предложен, на утверждении) | Структура концепции веб-портала (сайт-визитка → app-портал): обязательное ядро + опциональные слои, связи с roadmap/исследованиями/структурой репозитория. Не для лендингов, мобильных приложений, бэкенд-сервисов, микросервисов | [webportal-concept-standard.md](webportal-concept-standard.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
 | Project knowledge base | Planned | `projects/` | Создать после повторяющейся потребности в project context. |

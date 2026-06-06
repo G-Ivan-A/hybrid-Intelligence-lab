@@ -4,6 +4,28 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- Issue #166 (Creative mode): **универсальный стандарт структуры концепции
+  веб-портала**. Добавлен `standards/webportal-concept-standard.md` (v1.0,
+  `draft`): обязательное ядро из 6 разделов (Summary, Vision & Goals, Scope,
+  Roadmap, Risks, Metrics) плюс 9 опциональных слоёв, каждый с минимальной и
+  расширенной версией; профили сложности (сайт-визитка / контентный портал /
+  app-портал); явные связи с roadmap, исследованиями и структурой репозитория
+  (структура выбирается из политики Хаба, а не из концепции); явно заданные
+  границы (не для лендингов, мобильных приложений, бэкенд-сервисов и
+  микросервисов). Основа выбрана исследованием
+  `research/portal/concept-standards-comparison-2026-06.md` — сравнение 8
+  подходов (ISO/IEC/IEEE 42010, TOGAF, BABOK, Continuous Discovery, PRD, RFC,
+  Concept Doc, Vision Document) по 7 критериям; вывод — гибрид «PRD-ядро плюс
+  Vision-слой плюс TOGAF-модульность» с учётом (и аргументированным частичным
+  несогласием по структуре репозитория) мнения команды Q. Добавлен копируемый
+  шаблон `templates/webportal-concept-template.md`. Артефакты
+  зарегистрированы в `governance/ARTIFACT_MAP.md` (1.17 → 1.18),
+  `standards/README.md`, `research/portal/README.md` и структурном валидаторе
+  (`is_active_file` + `required_files`); валидатор проходит (exit 0). Решение о
+  переводе стандарта в `reviewed`/`canonical` остаётся за фаундером.
+
 ### Changed
 
 - Issue #165 (Creative mode): каталог `governance/proposals/` переименован в
