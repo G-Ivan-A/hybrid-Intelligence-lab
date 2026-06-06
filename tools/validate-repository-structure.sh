@@ -119,6 +119,7 @@ is_active_file() {
     governance/rfc/rfc-agent-onboarding-protocol.md | \
     governance/rfc/rfc-two-cases-of-project-initialization.md | \
     governance/rfc/contract-executability-rfc.md | \
+    governance/rfc/repository-quality-improvement-plan.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
@@ -271,6 +272,7 @@ required_files=(
   "governance/rfc/rfc-agent-onboarding-protocol.md"
   "governance/rfc/rfc-two-cases-of-project-initialization.md"
   "governance/rfc/contract-executability-rfc.md"
+  "governance/rfc/repository-quality-improvement-plan.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -572,6 +574,13 @@ require_text "governance/rfc/contract-executability-rfc.md" "executable: true|fa
 require_text "governance/rfc/contract-executability-rfc.md" "governance/rfc/"
 require_text "governance/rfc/contract-executability-rfc.md" "Дата утверждения"
 
+require_text "governance/rfc/repository-quality-improvement-plan.md" "status: draft"
+require_text "governance/rfc/repository-quality-improvement-plan.md" "version: 0.1"
+require_text "governance/rfc/repository-quality-improvement-plan.md" "archive/projects/mango/"
+require_text "governance/rfc/repository-quality-improvement-plan.md" "Phase 1"
+require_text "governance/rfc/repository-quality-improvement-plan.md" "Запрос На Согласование"
+require_text "governance/rfc/repository-quality-improvement-plan.md" "Задачи Для Создания После Согласования"
+
 require_text "governance/AGENT_ONBOARDING.md" "status: canonical"
 require_text "governance/AGENT_ONBOARDING.md" "version: 1.1"
 require_text "governance/AGENT_ONBOARDING.md" "updated: 2026-06-04"
@@ -590,12 +599,13 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.18"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.19"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-06"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
 require_text "governance/ARTIFACT_MAP.md" "governance/rfc/rfc-creative-template-design.md"
 require_text "governance/ARTIFACT_MAP.md" "governance/rfc/contract-executability-rfc.md"
+require_text "governance/ARTIFACT_MAP.md" "governance/rfc/repository-quality-improvement-plan.md"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | 🚦 Исполнимый? | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/ARTIFACT_MAP.md" "🚦 entrypoint"
 require_text "governance/ARTIFACT_MAP.md" "standards/project-structure-inheritance.md"

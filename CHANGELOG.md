@@ -6,6 +6,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #171 (Creative mode): added
+  `governance/rfc/repository-quality-improvement-plan.md` with a full
+  repository-quality audit after PR #170. The RFC covers naming, duplicate and
+  overlapping documents, metadata duplication, traceability, draft statuses,
+  obsolete files, and the recommended removal of `archive/projects/mango/`.
+  Registered the RFC in `governance/rfc/README.md`,
+  `governance/ARTIFACT_MAP.md` (1.18 -> 1.19), and
+  `tools/validate-repository-structure.sh`. The PR removes the generated root
+  `.gitkeep` placeholder so structural validation can pass; cleanup actions from
+  the RFC remain pending human approval.
 - Issue #166 (Creative mode): **универсальный стандарт структуры концепции
   веб-портала**. Добавлен `standards/webportal-concept-standard.md` (v1.0,
   `draft`): обязательное ядро из 6 разделов (Summary, Vision & Goals, Scope,

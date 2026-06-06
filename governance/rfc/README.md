@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-06
 ai-generated: true
 type: navigation
@@ -44,6 +44,7 @@ Comments) — отраслевой термин IETF: документ, выно
 | [rfc-agent-onboarding-protocol.md](rfc-agent-onboarding-protocol.md) | «Протокол бесшовной передачи проекта»: Handover Prompt, 4-шаговый алгоритм агента, выбор места для `AGENT_ONBOARDING.md`. |
 | [rfc-two-cases-of-project-initialization.md](rfc-two-cases-of-project-initialization.md) | Разделение двух кейсов инициализации: Runtime-онбординг (Кейс 1) и Bootstrap-клонирование (Кейс 2). |
 | [contract-executability-rfc.md](contract-executability-rfc.md) | Архитектура исполнимых документов: маркер `executable: true\|false`, директивные блоки, план внедрения и решения фаундера. |
+| [repository-quality-improvement-plan.md](repository-quality-improvement-plan.md) | Комплексный аудит качества репозитория после PR #170: naming, дубли, metadata, traceability, drafts, archive Mango и phased cleanup plan. |
 
 ## Связанные артефакты
 
