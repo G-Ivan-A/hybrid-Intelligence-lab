@@ -113,7 +113,7 @@ HTML-версия для браузера:
 
 - Решение: [ ] принять как навигацию [ ] запросить правки [ ] оставить draft
 - Комментарий:
-  > 
+  >
 
 ### D02. `ai-and-mango-integration-patterns-2026-06.md`
 
@@ -137,7 +137,7 @@ HTML-версия для браузера:
 
 - Решение: [ ] принять pattern [ ] доработать privacy model [ ] отложить
 - Комментарий:
-  > 
+  >
 
 ### D03. `architecture-and-stack-comparison-2026-06.md`
 
@@ -160,7 +160,7 @@ Supabase с Phase 2 и serverless functions для AI proxy. Astro + islands
 
 - Решение: [ ] Astro [ ] Angular [ ] Next.js [ ] нужен новый comparison pass
 - Комментарий:
-  > 
+  >
 
 ### D04. `concept-standards-comparison-2026-06.md`
 
@@ -183,7 +183,7 @@ Supabase с Phase 2 и serverless functions для AI proxy. Astro + islands
 
 - Решение: [ ] принять основу standard [ ] изменить ядро [ ] оставить research draft
 - Комментарий:
-  > 
+  >
 
 ### D05. `documentation-standards-comparison-2026-06.md`
 
@@ -205,7 +205,7 @@ arc42-lite и Diátaxis по мере роста.
 
 - Решение: [ ] ADR+C4 accepted [ ] изменить набор [ ] отложить
 - Комментарий:
-  > 
+  >
 
 ### D06. `open-ai-portal-concept-rfc.md`
 
@@ -228,7 +228,7 @@ Yandex GPT через serverless-proxy и roadmap Phase 0-4. Документ у
 
 - Решение: [ ] принять направление [ ] доработать RFC [ ] закрыть portal direction
 - Комментарий:
-  > 
+  >
 
 ### D07. `repository-structure-design-2026-06.md`
 
@@ -251,7 +251,7 @@ spoke-репозиторием, потому что это production portal с 
 
 - Решение: [ ] вариант C accepted [ ] изменить структуру [ ] оставить draft
 - Комментарий:
-  > 
+  >
 
 ### D08. `standards/portal-repository-structure.md`
 
@@ -273,7 +273,7 @@ spoke-проекта: полный genome спока в корне плюс port
 
 - Решение: [ ] canonical [ ] reviewed [ ] оставить draft [ ] переписать scope
 - Комментарий:
-  > 
+  >
 
 ### D09. `standards/webportal-concept-standard.md`
 
@@ -295,7 +295,7 @@ backend services и microservices.
 
 - Решение: [ ] canonical [ ] reviewed [ ] оставить draft [ ] изменить ядро
 - Комментарий:
-  > 
+  >
 
 ### D10. `templates/webportal-concept-template.md`
 
@@ -319,7 +319,7 @@ standard и содержит `{{date}}`, поэтому template placeholder lif
 
 - Решение: [ ] принять template [ ] доработать placeholders [ ] отложить
 - Комментарий:
-  > 
+  >
 
 ## 5. Рекомендуемый порядок review
 
