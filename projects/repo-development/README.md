@@ -43,7 +43,7 @@ ai-generated: false
 | [docs/contract-violations-self-report-2026-06.md](docs/contract-violations-self-report-2026-06.md) | Self-report (`type: audit`) ошибок исполнения контрактов в сессии миграции Mango: обоснование таргета, 6 нарушений, системные выводы и анализ размещения ретроспектив. |
 | [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md) | Модель структуры репозитория и Anti-Inflation principle. |
 | [governance/ARTIFACT_MAP.md](../../governance/ARTIFACT_MAP.md) | Карта артефактов: где что лежит и как связано. |
-| [standards/ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md) | Жизненный цикл задач: статусы и правила переходов. |
+| [standards/issue-workflow.md](../../standards/issue-workflow.md) | Жизненный цикл задач: статусы и правила переходов. |
 | [.github/ISSUE_TEMPLATE/task.yml](../../.github/ISSUE_TEMPLATE/task.yml) | Предложить улучшение через Issue. |
 
 ## 🔄 Процесс
@@ -58,7 +58,7 @@ ai-generated: false
 4. Реализуй изменение отдельным reviewable pull request.
 
 Порядок статусов задачи соответствует
-[standards/ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md).
+[standards/issue-workflow.md](../../standards/issue-workflow.md).
 
 ## Связанные артефакты
 
@@ -66,5 +66,5 @@ ai-generated: false
 - [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md)
 - [governance/ARTIFACT_MAP.md](../../governance/ARTIFACT_MAP.md)
 - [standards/README.md](../../standards/README.md)
-- [standards/ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md)
+- [standards/issue-workflow.md](../../standards/issue-workflow.md)
 - [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts)

@@ -14,7 +14,7 @@ executable: false
 
 ## Назначение
 
-`ISSUE_WORKFLOW.md` фиксирует единый жизненный цикл задач (Issue) в
+`issue-workflow.md` фиксирует единый жизненный цикл задач (Issue) в
 `hybrid-Intelligence-lab`: статусы, правила переходов, связи между артефактами и
 точки автоматизации. Цель — сделать выполнение задач предсказуемым и
 проверяемым как для человека, так и для AI-агента.
@@ -25,15 +25,15 @@ executable: false
 операционную боль (см. Anti-Inflation principle в
 [governance/REPO_MODEL.md](../governance/REPO_MODEL.md)).
 
-Терминология сверяется с [standards/GLOSSARY.md](GLOSSARY.md). Важно различать
+Терминология сверяется с [standards/glossary.md](glossary.md). Важно различать
 несколько независимых понятий:
 
 - **Статус задачи** (этот документ) — где задача находится в рабочем процессе:
   `draft`, `ready`, `in-progress`, `review`, `merged`, `closed`, `blocked`.
-- **Maturity артефакта** (`Canonical` / `Draft` в [GLOSSARY.md](GLOSSARY.md) и
+- **Maturity артефакта** (`Canonical` / `Draft` в [glossary.md](glossary.md) и
   поле `status` в frontmatter) — насколько сам документ является источником
   истины.
-- **Operating Mode задачи** ([GLOSSARY.md](GLOSSARY.md)) — режим выполнения
+- **Operating Mode задачи** ([glossary.md](glossary.md)) — режим выполнения
   конкретной задачи, а не тип документа.
 - **Исполнимость документа** (`executable: false` в этом frontmatter) — этот
   стандарт является справкой процесса, а не протоколом для немедленного
@@ -204,7 +204,7 @@ changelog объясняет смысл изменения, а не только
 ## Связанные документы
 
 - [standards/README.md](README.md)
-- [standards/GLOSSARY.md](GLOSSARY.md)
+- [standards/glossary.md](glossary.md)
 - [governance/REPO_MODEL.md](../governance/REPO_MODEL.md)
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)

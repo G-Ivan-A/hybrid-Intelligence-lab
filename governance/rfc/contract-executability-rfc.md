@@ -11,11 +11,11 @@ related_artifacts:
   - governance/AGENT_ONBOARDING.md
   - AI_GOVERNANCE.md
   - governance/REPO_MODEL.md
-  - standards/PROJECT_STRUCTURE_INHERITANCE.md
-  - standards/ISSUE_WORKFLOW.md
+  - standards/project-structure-inheritance.md
+  - standards/issue-workflow.md
   - templates/spoke/AI_QUICK_RULES.md
   - templates/spoke/AI_HANDOVER_PROMPT.md
-  - standards/GLOSSARY.md
+  - standards/glossary.md
 related_issues:
   - "#129"
   - "#132"
@@ -35,12 +35,12 @@ related_issues:
 > утверждены фаундером (см. раздел 7); физический рефакторинг контрактов
 > выполняется отдельными малыми PR.
 
-Термины используются по [standards/GLOSSARY.md](../../standards/GLOSSARY.md)
-([Operating Mode](../../standards/GLOSSARY.md),
-[Runtime-онбординг](../../standards/GLOSSARY.md),
-[Handover Prompt](../../standards/GLOSSARY.md),
-[Readback](../../standards/GLOSSARY.md),
-[Contract](../../standards/GLOSSARY.md), [Policy](../../standards/GLOSSARY.md)).
+Термины используются по [standards/glossary.md](../../standards/glossary.md)
+([Operating Mode](../../standards/glossary.md),
+[Runtime-онбординг](../../standards/glossary.md),
+[Handover Prompt](../../standards/glossary.md),
+[Readback](../../standards/glossary.md),
+[Contract](../../standards/glossary.md), [Policy](../../standards/glossary.md)).
 Новые термины («Исполнимый документ», «Директивный блок») здесь только
 *предлагаются*; их фиксация в глоссарии — часть плана внедрения (раздел 6), а не
 этого RFC (Anti-Inflation).
@@ -54,8 +54,8 @@ related_issues:
 В ходе диалога ИИ-ассистент получил ссылку на файл
 [governance/AGENT_ONBOARDING.md](../../governance/AGENT_ONBOARDING.md) с явным
 запросом подтвердить понимание контекста. Вместо того чтобы **исполнить** протокол
-онбординга ([Runtime-онбординг](../../standards/GLOSSARY.md), Кейс 1 — прочитать
-governance-файлы, выполнить [Readback](../../standards/GLOSSARY.md), остановиться до
+онбординга ([Runtime-онбординг](../../standards/glossary.md), Кейс 1 — прочитать
+governance-файлы, выполнить [Readback](../../standards/glossary.md), остановиться до
 апрува), ИИ начал **анализировать** документ как исследовательский артефакт:
 описал его структуру, перечислил «концептуальные опоры» и предложил темы для
 дальнейшей доработки. На следующих шагах ассистент усугубил отклонение — вышел за
@@ -180,8 +180,8 @@ governance-файлы, выполнить [Readback](../../standards/GLOSSARY.md
 | [`governance/AGENT_ONBOARDING.md`](../../governance/AGENT_ONBOARDING.md) | **Исполнимый** (рабочая инструкция, *Runtime-онбординг*) | Машинного маркера нет. Прозой в шапке: «рабочая инструкция… до первого изменения файлов»; есть Handover Prompt в блоке ` ```text `. | Часть A (Handover Prompt) и Часть B (4-шаговый протокол), **после** ~40 строк пояснений (frontmatter → заголовок → 2 вводных абзаца → «Модель процесса» → лишь затем Часть A). | **Высокий.** Ровно этот инцидент: пояснительный текст идёт раньше команды; агент принял документ за объект анализа. |
 | [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) | **Смешанный**: описательный контракт + исполнимый pre-flight | Блок-цитата сверху «🛫 Pre-flight (обязательно перед любой работой)» со ссылкой на онбординг. **Frontmatter отсутствует.** | Pre-flight-нота сверху (команда «пройди онбординг»); остальное — описательный контракт (роли, правила, Operating Modes, эскалация, DoD). | **Средний.** Pre-flight можно прочитать как справку, а не как команду немедленно перейти к онбордингу; нет машинного маркера и frontmatter-якоря. |
 | [`governance/REPO_MODEL.md`](../../governance/REPO_MODEL.md) | **Описательный** (правило-референс) с исполнимыми Decision Rules | Маркера нет. **Frontmatter отсутствует.** | Раздел «Decision Rules» (если ситуация → действие) и команда валидации структуры. | **Низкий–средний.** По природе справочный, но Decision Rules фактически исполнимы и никак не помечены. |
-| [`standards/PROJECT_STRUCTURE_INHERITANCE.md`](../../standards/PROJECT_STRUCTURE_INHERITANCE.md) | **Описательный** (стандарт) с исполнимыми проверками | `frontmatter status: canonical`; маркера исполнимости нет. | Раздел «Проверка» (если X → действие в ревью). | **Низкий.** Стандарт-референс; проверки исполнимы, но риск перепутать «учесть» и «выполнить» невелик. |
-| [`standards/ISSUE_WORKFLOW.md`](../../standards/ISSUE_WORKFLOW.md) | **Описательный** (стандарт процесса) | `frontmatter status: canonical`; маркера исполнимости нет. | «Точки автоматизации» + команды локальной проверки перед `review`. | **Низкий.** Справочник жизненного цикла задач; исполнимый только в части локальных проверок. |
+| [`standards/project-structure-inheritance.md`](../../standards/project-structure-inheritance.md) | **Описательный** (стандарт) с исполнимыми проверками | `frontmatter status: canonical`; маркера исполнимости нет. | Раздел «Проверка» (если X → действие в ревью). | **Низкий.** Стандарт-референс; проверки исполнимы, но риск перепутать «учесть» и «выполнить» невелик. |
+| [`standards/issue-workflow.md`](../../standards/issue-workflow.md) | **Описательный** (стандарт процесса) | `frontmatter status: canonical`; маркера исполнимости нет. | «Точки автоматизации» + команды локальной проверки перед `review`. | **Низкий.** Справочник жизненного цикла задач; исполнимый только в части локальных проверок. |
 | [`templates/spoke/AI_QUICK_RULES.md`](../../templates/spoke/AI_QUICK_RULES.md) | **Исполнимый** («инструкция по выживанию» агента) | `frontmatter status: draft`; маркера исполнимости нет; заголовок «инструкция по выживанию» — человекочитаемый намёк. | Весь файл: «🧭 Куда смотреть первым», «⛔ Чего не делать», «🆘 Как звать человека». | **Средний–высокий.** Наследуется в *каждый* спок; те же грабли, что у онбординга: выглядит как памятка для чтения, а не как набор команд к соблюдению. |
 | [`templates/spoke/AI_HANDOVER_PROMPT.md`](../../templates/spoke/AI_HANDOVER_PROMPT.md) | **Исполнимый** (готовый промпт-«доверенность») | `frontmatter status: draft`; есть промпт в ` ```text ` и пометка «🛂 Готовый промпт (копируйте целиком)». Машинного маркера нет. | Блок ` ```text ` с Handover Prompt. | **Средний.** Размечен лучше прочих (есть «копируйте целиком»), но без машинного маркера и анти-аналитического сигнала. |
 
@@ -250,7 +250,7 @@ governance-файлы, выполнить [Readback](../../standards/GLOSSARY.md
    ```
 
    Сознательно **не** называем поле `mode:` (как в Видении 2): термин *Operating
-   Mode* уже занят в [GLOSSARY.md](../../standards/GLOSSARY.md)
+   Mode* уже занят в [glossary.md](../../standards/glossary.md)
    (Structured/Research/Education/Project) — переиспользование «mode» создаст
    терминологическую путаницу (тот же класс ошибки, что разбирался в ретроспективах
    Хаба). Описательные документы помечаются `executable: false` либо отсутствием поля.
@@ -461,8 +461,8 @@ executable: true
 | 3 | `templates/spoke/AI_HANDOVER_PROMPT.md` | Маркер `executable: true` + директивный блок над «🛂 Готовый промпт». | P1 |
 | 4 | `AI_GOVERNANCE.md` | Сначала **добавить frontmatter** (сейчас отсутствует); затем `executable: false` (контракт-справка) и оформить pre-flight как директиву-указатель на онбординг. | P1 |
 | 5 | `governance/REPO_MODEL.md` | Добавить frontmatter; пометить `executable: false`; пометить раздел Decision Rules как исполнимую часть. | P2 |
-| 6 | `standards/PROJECT_STRUCTURE_INHERITANCE.md`, `standards/ISSUE_WORKFLOW.md` | `executable: false` (стандарты-справки) — для единообразия. | P3 |
-| 7 | `standards/GLOSSARY.md` | Добавить термины **«Исполнимый документ» (Executable Contract)** и **«Директивный блок»**; bump версии. | P1 |
+| 6 | `standards/project-structure-inheritance.md`, `standards/issue-workflow.md` | `executable: false` (стандарты-справки) — для единообразия. | P3 |
+| 7 | `standards/glossary.md` | Добавить термины **«Исполнимый документ» (Executable Contract)** и **«Директивный блок»**; bump версии. | P1 |
 | 8 | `tools/validate-frontmatter.sh` | (опц.) валидировать поле `executable` (`true`/`false`) — мягкое предупреждение, как у прочих полей. | P2 |
 | 9 | `governance/ARTIFACT_MAP.md` | Добавить колонку/пометку «🚦 исполнимый» и зарегистрировать этот RFC после решения о его финальном размещении. | P2 |
 
@@ -498,7 +498,7 @@ executable: true
 **Решение:** Принят маркер **`executable: true|false`** в frontmatter (с
 опциональным полем `entrypoint: true`).
 **Обоснование:** Избегает коллизии с термином `Operating Mode` из
-`ISSUE_WORKFLOW.md`, который относится к режимам выполнения задач, а не к типу
+`issue-workflow.md`, который относится к режимам выполнения задач, а не к типу
 документа.
 
 Пример frontmatter исполнимого контракта:
@@ -543,6 +543,6 @@ entrypoint: true
 - [governance/AGENT_ONBOARDING.md](../../governance/AGENT_ONBOARDING.md) — контракт в центре инцидента.
 - [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — операционный контракт и pre-flight.
 - [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md) — Anti-Inflation principle.
-- [standards/PROJECT_STRUCTURE_INHERITANCE.md](../../standards/PROJECT_STRUCTURE_INHERITANCE.md), [standards/ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md) — стандарты-справки.
+- [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md), [standards/issue-workflow.md](../../standards/issue-workflow.md) — стандарты-справки.
 - [templates/spoke/AI_QUICK_RULES.md](../../templates/spoke/AI_QUICK_RULES.md), [templates/spoke/AI_HANDOVER_PROMPT.md](../../templates/spoke/AI_HANDOVER_PROMPT.md) — наследуемые споками исполнимые артефакты.
-- [standards/GLOSSARY.md](../../standards/GLOSSARY.md) — единый источник терминов.
+- [standards/glossary.md](../../standards/glossary.md) — единый источник терминов.

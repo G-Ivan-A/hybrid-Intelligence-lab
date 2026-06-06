@@ -98,11 +98,11 @@ scope: portal
 
 ### Структура репозитория
 <!-- ВАЖНО: концепция НЕ определяет структуру репозитория. Структура выбирается
-из политики Хаба: standards/PORTAL_REPOSITORY_STRUCTURE.md и
-standards/PROJECT_STRUCTURE_INHERITANCE.md — на основе этой концепции. -->
+из политики Хаба: standards/portal-repository-structure.md и
+standards/project-structure-inheritance.md — на основе этой концепции. -->
 
 ### Локальные термины
-<!-- Термины проекта. Общие термины Хаба не переопределять — см. standards/GLOSSARY.md. -->
+<!-- Термины проекта. Общие термины Хаба не переопределять — см. standards/glossary.md. -->
 
 ### Открытые вопросы
 <!-- Нерешённые вопросы, гипотезы на проверку. -->

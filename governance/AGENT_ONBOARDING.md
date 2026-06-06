@@ -47,7 +47,7 @@ entrypoint: true
 Сделай ровно по шагам:
 1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай AI_GOVERNANCE.md, CONTRIBUTING.md,
    governance/REPO_MODEL.md, governance/ARTIFACT_MAP.md и
-   standards/PROJECT_STRUCTURE_INHERITANCE.md.
+   standards/project-structure-inheritance.md.
 2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/спока) и блок «Быстрый контекст»,
    если он есть.
@@ -80,7 +80,7 @@ entrypoint: true
 - [governance/REPO_MODEL.md](REPO_MODEL.md) — модель структуры и Anti-Inflation
   principle.
 - [governance/ARTIFACT_MAP.md](ARTIFACT_MAP.md) — навигация по артефактам.
-- [standards/PROJECT_STRUCTURE_INHERITANCE.md](../standards/PROJECT_STRUCTURE_INHERITANCE.md)
+- [standards/project-structure-inheritance.md](../standards/project-structure-inheritance.md)
   — что можно, а что нельзя создавать.
 
 **Выход:** агент знает границы *раньше*, чем узнал цель, — поэтому цель не
@@ -133,18 +133,18 @@ entrypoint: true
 
 ### 🧭 Модель процесса (одна строка)
 
-Агент работает в [Среде работы агента](../standards/GLOSSARY.md) (чат диалога) и
-обращается к [Источнику контекста](../standards/GLOSSARY.md) (репозиторий) по
+Агент работает в [Среде работы агента](../standards/glossary.md) (чат диалога) и
+обращается к [Источнику контекста](../standards/glossary.md) (репозиторий) по
 алгоритму из EXECUTION-блока выше. Агент **не «живёт» в репозитории** — он *читает*
 его в оперативную память диалога.
 
 > Термины используются по
-> [standards/GLOSSARY.md](../standards/GLOSSARY.md): [Runtime-онбординг](../standards/GLOSSARY.md),
-> [Handover Prompt](../standards/GLOSSARY.md), [Readback](../standards/GLOSSARY.md),
-> [Среда работы агента](../standards/GLOSSARY.md), [Источник контекста](../standards/GLOSSARY.md).
+> [standards/glossary.md](../standards/glossary.md): [Runtime-онбординг](../standards/glossary.md),
+> [Handover Prompt](../standards/glossary.md), [Readback](../standards/glossary.md),
+> [Среда работы агента](../standards/glossary.md), [Источник контекста](../standards/glossary.md).
 > Здесь они только **используются**; определения — в глоссарии как в едином
 > источнике истины. Разделение Кейса 1 (этот файл) и
-> [Bootstrap-клонирования](../standards/GLOSSARY.md) (Кейс 2) — в манифесте двух
+> [Bootstrap-клонирования](../standards/glossary.md) (Кейс 2) — в манифесте двух
 > кейсов: [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md).
 
 ### ⚠️ Что может пойти не так (threat awareness)
@@ -170,7 +170,7 @@ entrypoint: true
 | [governance/rfc/rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md) | Дизайн-обоснование протокола (RFC, *проект*): аналогия, трассировка к провалам, Mermaid-схема. |
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
 | [templates/spoke/README.md](../templates/spoke/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить спок из «ДНК-шаблона» Хаба. |
-| [standards/GLOSSARY.md](../standards/GLOSSARY.md) | Единый источник определений терминов протокола. |
+| [standards/glossary.md](../standards/glossary.md) | Единый источник определений терминов протокола. |
 
 > **Граница с RFC.** RFC остаётся *проектом* (дизайн в `rfc/`), а этот файл —
 > *рабочей инструкцией*. По вопросам «как делать» — этот файл; по вопросам «почему

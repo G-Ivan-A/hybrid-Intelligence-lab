@@ -6,10 +6,10 @@ ai-generated: true
 executable: false
 scope: repo-wide
 related_standards:
-  - "RESEARCH_DOCUMENTATION_STANDARD.md"
-  - "EXECUTABLE_CONTRACT_STANDARD.md"
-  - "GLOSSARY.md"
-  - "TEAM_CONTRACT.md"
+  - "research-documentation-standard.md"
+  - "executable-contract-standard.md"
+  - "glossary.md"
+  - "team-contract.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 ---
@@ -36,7 +36,7 @@ related_issues:
 Стандарт описывает структуру контракта из пяти элементов и единый нормативный
 словарь. Он применяется к governance-контрактам Хаба (например,
 [AI_GOVERNANCE.md](../AI_GOVERNANCE.md), [governance/REPO_MODEL.md](../governance/REPO_MODEL.md),
-[standards/TEAM_CONTRACT.md](TEAM_CONTRACT.md), [standards/ISSUE_WORKFLOW.md](ISSUE_WORKFLOW.md),
+[standards/team-contract.md](team-contract.md), [standards/issue-workflow.md](issue-workflow.md),
 профили) и наследуется споками.
 
 Нормативные термины — по [RFC 2119 / BCP 14](https://www.rfc-editor.org/info/bcp14).
@@ -46,8 +46,8 @@ related_issues:
 | Документ | Стандарт |
 | --- | --- |
 | Фиксирует обязательства/правила/политику (кто кого к чему обязывает) | ✅ этот стандарт |
-| Должен **исполняться** агентом как процедура | [EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md) |
-| Производит знание для решения | [RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md) |
+| Должен **исполняться** агентом как процедура | [executable-contract-standard.md](executable-contract-standard.md) |
+| Производит знание для решения | [research-documentation-standard.md](research-documentation-standard.md) |
 
 ## Нормативный словарь (обязателен)
 
@@ -79,7 +79,7 @@ related_issues:
    **НЕ ДОЛЖЕН** быть обязан читать обоснование, чтобы соблюсти контракт.
 
 Термины контракт **НЕ ДОЛЖЕН** переопределять — он **ДОЛЖЕН** ссылаться на
-[standards/GLOSSARY.md](GLOSSARY.md) (single source of truth).
+[standards/glossary.md](glossary.md) (single source of truth).
 
 ## Скелет документа
 
@@ -112,7 +112,7 @@ related_issues:
 - **Микро-контракт.** Разделы «Стороны/Область» и «Обязательства» обязательны
   всегда; «Обоснование» **МОЖНО** опустить, если решение очевидно.
 - **Контракт + исполнение.** Если документ ещё и *запускается* агентом,
-  применяется [EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md)
+  применяется [executable-contract-standard.md](executable-contract-standard.md)
   (команда сверху); контракт-формат — про *обязательства*, не про *запуск*.
 - **Совместимость с frontmatter.** Стандарт описывает *тело* контракта и не
   отменяет обязательный frontmatter Хаба.
@@ -130,13 +130,13 @@ related_issues:
   иначе нормализовать.
 - Есть критерий проверки (DoD)? → иначе добавить.
 - Обоснование вынесено *ниже* обязательств? → иначе переставить.
-- Термины не переопределяются, а берутся из `GLOSSARY.md`? → иначе заменить
+- Термины не переопределяются, а берутся из `glossary.md`? → иначе заменить
   ссылкой.
 
 ## Источники
 
 - [research/governance/contract-documentation-format-2026-06.md](../research/governance/contract-documentation-format-2026-06.md) — исследование-обоснование (OpenAPI, RFC 2119/BCP 14, SLA/SLO, Design by Contract, ADR, Pact).
-- [standards/GLOSSARY.md](GLOSSARY.md) — нормативные термины Хаба (single source of truth).
-- [standards/RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md), [standards/EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md) — смежные форматы.
+- [standards/glossary.md](glossary.md) — нормативные термины Хаба (single source of truth).
+- [standards/research-documentation-standard.md](research-documentation-standard.md), [standards/executable-contract-standard.md](executable-contract-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4 (утверждение стандарта — за человеком).

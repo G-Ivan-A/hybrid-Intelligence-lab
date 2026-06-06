@@ -1683,8 +1683,8 @@ lookup_request:
 ## 🔄 Как обновлять справочник
 
 Процесс добавления/изменения атомарной функции (lightweight, по
-[RESEARCH_PROFILE.md](../../standards/RESEARCH_PROFILE.md) и
-[ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md)):
+[research-profile.md](../../standards/research-profile.md) и
+[issue-workflow.md](../../standards/issue-workflow.md)):
 
 | Шаг | Кто | Действие |
 | --- | --- | --- |
@@ -1742,7 +1742,7 @@ lookup_request:
 - [research/mango/classification-tz.md](classification-tz.md) — корпус ТЗ, классы A/B/C, источник примеров и НФТ.
 - [research/mango/rag-mapping-roadmap-2026-05.md](rag-mapping-roadmap-2026-05.md) — структура `kb/product-matrix.md` и интерфейс промпта.
 - [research/mango/taxonomy-concept-2026-05.md](taxonomy-concept-2026-05.md) — мета-модель capability и принципы версионирования.
-- [standards/RESEARCH_PROFILE.md](../../standards/RESEARCH_PROFILE.md) — правила research-артефактов и цитирования.
+- [standards/research-profile.md](../../standards/research-profile.md) — правила research-артефактов и цитирования.
 
 ## Источники
 

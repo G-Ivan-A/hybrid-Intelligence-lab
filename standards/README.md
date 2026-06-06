@@ -8,21 +8,21 @@
 
 | Стандарт | Статус | Где применяется | Источник |
 | --- | --- | --- | --- |
-| Единый глоссарий терминов | Active | Issues, standards, governance, AI-assisted work | [standards/GLOSSARY.md](GLOSSARY.md) |
-| `FILE_NAMING.md` | Active | Правило именования файлов, обязательно для всех новых файлов | [standards/FILE_NAMING.md](FILE_NAMING.md) |
-| Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/EDUCATION_PROFILE.md](EDUCATION_PROFILE.md) |
+| Единый глоссарий терминов | Active | Issues, standards, governance, AI-assisted work | [standards/glossary.md](glossary.md) |
+| `file-naming.md` | Active | Правило именования файлов, обязательно для всех новых файлов | [standards/file-naming.md](file-naming.md) |
+| Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/education-profile.md](education-profile.md) |
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
 | Repository model | Active | Размещение артефактов и правила создания | [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) |
-| Профиль исследовательских проектов | Active | `research/<domain>/` | [RESEARCH_PROFILE.md](RESEARCH_PROFILE.md) |
-| Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [PRODUCT_PROFILE.md](PRODUCT_PROFILE.md) |
-| Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [TEAM_CONTRACT.md](TEAM_CONTRACT.md) |
-| Жизненный цикл задач | Active | Issues, PRs, переходы статусов, AI-assisted task execution | [ISSUE_WORKFLOW.md](ISSUE_WORKFLOW.md) |
-| PROJECT_STRUCTURE_INHERITANCE.md | Active | Правило наследования структуры каталогов в проектах; обязательно для новых проектов | [PROJECT_STRUCTURE_INHERITANCE.md](PROJECT_STRUCTURE_INHERITANCE.md) |
-| PORTAL_REPOSITORY_STRUCTURE.md | Draft (предложен, на утверждении) | Структура репозитория портала — spoke-проекта «единая точка сборки» (`open-ai.ru`); наследует геном спока и добавляет портал-каталоги | [PORTAL_REPOSITORY_STRUCTURE.md](PORTAL_REPOSITORY_STRUCTURE.md) |
-| RESEARCH_DOCUMENTATION_STANDARD.md | Draft (предложен, на утверждении) | Порядок изложения исследований (`research/<domain>/`): Введение → Результаты → Детализация | [RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md) |
-| EXECUTABLE_CONTRACT_STANDARD.md | Draft (предложен, на утверждении) | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md) |
-| CONTRACT_DOCUMENTATION_STANDARD.md | Draft (предложен, на утверждении) | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) |
+| Профиль исследовательских проектов | Active | `research/<domain>/` | [research-profile.md](research-profile.md) |
+| Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [product-profile.md](product-profile.md) |
+| Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [team-contract.md](team-contract.md) |
+| Жизненный цикл задач | Active | Issues, PRs, переходы статусов, AI-assisted task execution | [issue-workflow.md](issue-workflow.md) |
+| project-structure-inheritance.md | Active | Правило наследования структуры каталогов в проектах; обязательно для новых проектов | [project-structure-inheritance.md](project-structure-inheritance.md) |
+| portal-repository-structure.md | Draft (предложен, на утверждении) | Структура репозитория портала — spoke-проекта «единая точка сборки» (`open-ai.ru`); наследует геном спока и добавляет портал-каталоги | [portal-repository-structure.md](portal-repository-structure.md) |
+| research-documentation-standard.md | Draft (предложен, на утверждении) | Порядок изложения исследований (`research/<domain>/`): Введение → Результаты → Детализация | [research-documentation-standard.md](research-documentation-standard.md) |
+| executable-contract-standard.md | Draft (предложен, на утверждении) | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [executable-contract-standard.md](executable-contract-standard.md) |
+| contract-documentation-standard.md | Draft (предложен, на утверждении) | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [contract-documentation-standard.md](contract-documentation-standard.md) |
 | webportal-concept-standard.md | Draft (предложен, на утверждении) | Структура концепции веб-портала (сайт-визитка → app-портал): обязательное ядро + опциональные слои, связи с roadmap/исследованиями/структурой репозитория. Не для лендингов, мобильных приложений, бэкенд-сервисов, микросервисов | [webportal-concept-standard.md](webportal-concept-standard.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
@@ -36,11 +36,11 @@
    существующим артефактам и их связям используйте
    [governance/ARTIFACT_MAP.md](../governance/ARTIFACT_MAP.md).
 2. Выберите имя файла или каталога по
-   [standards/FILE_NAMING.md](FILE_NAMING.md).
-3. Проверьте терминологию по [standards/GLOSSARY.md](GLOSSARY.md), если
+   [standards/file-naming.md](file-naming.md).
+3. Проверьте терминологию по [standards/glossary.md](glossary.md), если
    документ вводит governance, lifecycle или AI-assisted work terms.
 4. Для образовательных материалов используйте
-   [standards/EDUCATION_PROFILE.md](EDUCATION_PROFILE.md) до создания курса,
+   [standards/education-profile.md](education-profile.md) до создания курса,
    воркшопа или учебной документации.
 5. Используйте active standard из таблицы, если он уже есть.
 6. Если standard planned, но еще не active, держите артефакт минимальным и

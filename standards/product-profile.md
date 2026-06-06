@@ -61,11 +61,11 @@ knowledge hub: канонический `PRODUCT_VISION.md` живет в кор
 | Артефакт | Назначение | Где размещать | Пример/Шаблон |
 | --- | --- | --- | --- |
 | `PRODUCT_VISION.md` | Границы, аудитория, ценность, метрики | Корень проекта | [Шаблон ниже](#шаблон-product_visionmd) |
-| `CONTRIBUTING.md` | Правила внесения изменений | Корень проекта | Адаптировать из планируемого `TEAM_CONTRACT.md`; до его принятия — из [CONTRIBUTING.md](../CONTRIBUTING.md) лаборатории |
-| `AI_GOVERNANCE.md` | Правила работы ИИ-агентов | Корень проекта | Адаптировать из планируемого `TEAM_CONTRACT.md`; до его принятия — из [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) лаборатории |
+| `CONTRIBUTING.md` | Правила внесения изменений | Корень проекта | Адаптировать из планируемого `team-contract.md`; до его принятия — из [CONTRIBUTING.md](../CONTRIBUTING.md) лаборатории |
+| `AI_GOVERNANCE.md` | Правила работы ИИ-агентов | Корень проекта | Адаптировать из планируемого `team-contract.md`; до его принятия — из [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) лаборатории |
 | `CHANGELOG.md` | История версий продукта | Корень проекта | Формат [Keep a Changelog](https://keepachangelog.com) + [SemVer](https://semver.org); см. [CHANGELOG.md](../CHANGELOG.md) |
 
-> `TEAM_CONTRACT.md` — планируемый общий шаблон командного соглашения
+> `team-contract.md` — планируемый общий шаблон командного соглашения
 > (см. [CONCEPT.md](../CONCEPT.md)). Пока он не создан и не принят review,
 > `CONTRIBUTING.md` и `AI_GOVERNANCE.md` продукта адаптируются из активных
 > контрактов лаборатории.

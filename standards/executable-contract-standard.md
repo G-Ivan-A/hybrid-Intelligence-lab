@@ -6,10 +6,10 @@ ai-generated: true
 executable: false
 scope: repo-wide
 related_standards:
-  - "RESEARCH_DOCUMENTATION_STANDARD.md"
-  - "CONTRACT_DOCUMENTATION_STANDARD.md"
-  - "GLOSSARY.md"
-  - "FILE_NAMING.md"
+  - "research-documentation-standard.md"
+  - "contract-documentation-standard.md"
+  - "glossary.md"
+  - "file-naming.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 ---
@@ -48,8 +48,8 @@ related_issues:
 | --- | --- | --- |
 | Агент должен **выполнить** процедуру (онбординг, runbook, handover) | `true` | ✅ этот стандарт |
 | Точка входа агента (единственная «первая» исполнимая инструкция) | `true` + `entrypoint: true` | ✅ этот стандарт |
-| Документ читается для знания/решения | `false`/нет | [RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md) |
-| Документ фиксирует обязательства сторон | `false` | [CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) |
+| Документ читается для знания/решения | `false`/нет | [research-documentation-standard.md](research-documentation-standard.md) |
+| Документ фиксирует обязательства сторон | `false` | [contract-documentation-standard.md](contract-documentation-standard.md) |
 
 Эталон применения — [governance/AGENT_ONBOARDING.md](../governance/AGENT_ONBOARDING.md)
 (`executable: true`, `entrypoint: true`).
@@ -63,7 +63,7 @@ related_issues:
 
 Документ **ДОЛЖЕН** нести `executable: true` во frontmatter; точка входа
 **ДОЛЖНА** дополнительно нести `entrypoint: true`. Маркер ортогонален
-`Operating Mode` (см. [standards/GLOSSARY.md](GLOSSARY.md)) и машиночитаем.
+`Operating Mode` (см. [standards/glossary.md](glossary.md)) и машиночитаем.
 
 ### Слой 2 — директивный блок (🚦)
 
@@ -78,7 +78,7 @@ related_issues:
 Директивный блок **ДОЛЖЕН** быть указателем на исполнимую часть, а **НЕ ДОЛЖЕН**
 копировать канонический текст (например, целиком Handover Prompt) — копия
 рассинхронизируется с каноном (см. «Директивный блок» в
-[GLOSSARY.md](GLOSSARY.md)).
+[glossary.md](glossary.md)).
 
 ### Слой 3 — EXECUTION → EXPLANATION
 
@@ -161,7 +161,7 @@ entrypoint: true        # только для точки входа
 - [research/governance/executable-contract-format-2026-06.md](../research/governance/executable-contract-format-2026-06.md) — исследование-обоснование (system prompts, SRE runbooks, man SYNOPSIS, README Quick Start).
 - [governance/rfc/contract-executability-rfc.md](../governance/rfc/contract-executability-rfc.md) — утверждённое «Видение 3» и трёхслойная защита.
 - [governance/AGENT_ONBOARDING.md](../governance/AGENT_ONBOARDING.md) — эталонный исполнимый документ.
-- [standards/GLOSSARY.md](GLOSSARY.md) — «Директивный блок», «Operating Mode», 🚦.
-- [standards/RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md), [standards/CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) — смежные форматы.
+- [standards/glossary.md](glossary.md) — «Директивный блок», «Operating Mode», 🚦.
+- [standards/research-documentation-standard.md](research-documentation-standard.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4.

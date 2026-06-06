@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-06-06
 ai-generated: false
 ---
 
 # Правило именования файлов
 
-Версия: 1.0
+Версия: 1.1
 
-Дата: 2026-05-26
+Дата: 2026-06-06
 
 Стандарт фиксирует единое правило именования файлов для новых артефактов
 репозитория. Цель — сохранить GitHub-конвенцию для корневых файлов и сделать
@@ -21,6 +21,20 @@ ai-generated: false
 | --- | --- | --- | --- |
 | **Корень репозитория** (`/`) | `UPPERCASE_WITH_HYPHENS.md` | `README.md`, `CONCEPT.md`, `CHANGELOG.md` | Конвенция GitHub, файлы видны сразу |
 | **Вложенные каталоги** (`standards/`, `research/`, `projects/`, `kb/` и др.) | `lowercase-with-hyphens.md` | `classification-glossary.md`, `rag-mapping-roadmap.md` | Читаемость, сортировка, удобно в терминале, масштабируемость |
+
+## Правила именования файлов в standards/
+
+- Все файлы в `standards/` должны быть в `kebab-case`: строчные буквы, цифры и
+  дефисы.
+- Исключения: только системные файлы `README.md`, `LICENSE`, `CHANGELOG.md`.
+- `CAPS_LOCK` запрещён для документов внутри `standards/`.
+
+### Примеры для standards/
+
+- Правильно: `research-documentation-standard.md`
+- Правильно: `executable-contract-standard.md`
+- Неправильно: `RESEARCH_DOCUMENTATION_STANDARD.md`
+- Неправильно: `Research_Documentation_Standard.md`
 
 ### Исключения
 

@@ -29,7 +29,7 @@ executable: true
 Сделай ровно по шагам:
 1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай AI_GOVERNANCE.md, CONTRIBUTING.md,
    governance/REPO_MODEL.md, governance/ARTIFACT_MAP.md и
-   standards/PROJECT_STRUCTURE_INHERITANCE.md.
+   standards/project-structure-inheritance.md.
 2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/спока) и блок «Быстрый контекст»,
    если он есть.
@@ -65,7 +65,7 @@ executable: true
 
 > **Где в споке лежат governance-файлы.** Полный 4-шаговый протокол и часть
 > governance-контрактов (`REPO_MODEL.md`, `ARTIFACT_MAP.md`,
-> `PROJECT_STRUCTURE_INHERITANCE.md`, `AGENT_ONBOARDING.md`) живут в **Хабе**
+> `project-structure-inheritance.md`, `AGENT_ONBOARDING.md`) живут в **Хабе**
 > ([{{hub_url}}]({{hub_url}})); локально у спока есть `AI_GOVERNANCE.md`,
 > `AI_QUICK_RULES.md` и `CONTRIBUTING.md`. Агент читает локальные правила спока и
 > обращается к Хабу как к источнику фундаментальных знаний.

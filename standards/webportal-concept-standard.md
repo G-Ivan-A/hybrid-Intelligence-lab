@@ -6,11 +6,11 @@ ai-generated: true
 executable: false
 scope: portal
 related_standards:
-  - "PORTAL_REPOSITORY_STRUCTURE.md"
-  - "RESEARCH_DOCUMENTATION_STANDARD.md"
-  - "CONTRACT_DOCUMENTATION_STANDARD.md"
-  - "GLOSSARY.md"
-  - "FILE_NAMING.md"
+  - "portal-repository-structure.md"
+  - "research-documentation-standard.md"
+  - "contract-documentation-standard.md"
+  - "glossary.md"
+  - "file-naming.md"
 related_research:
   - "research/portal/concept-standards-comparison-2026-06.md"
   - "research/portal/documentation-standards-comparison-2026-06.md"
@@ -43,7 +43,7 @@ Continuous Discovery, Concept Doc) и выбор основы:
 
 Нормативные термины — по [RFC 2119 / BCP 14](https://www.rfc-editor.org/info/bcp14)
 (**ДОЛЖНО / MUST**, **СЛЕДУЕТ / SHOULD**, **МОЖНО / MAY**). Терминология — по
-[standards/GLOSSARY.md](GLOSSARY.md) (не переопределяется).
+[standards/glossary.md](glossary.md) (не переопределяется).
 
 ## 1. Введение
 
@@ -132,7 +132,7 @@ Continuous Discovery, Concept Doc) и выбор основы:
 ## 3. Frontmatter и оформление
 
 Концепция **ДОЛЖНА** иметь обязательный frontmatter Хаба (`status`, `version`,
-`updated`, `ai-generated`) и соответствовать [standards/FILE_NAMING.md](FILE_NAMING.md).
+`updated`, `ai-generated`) и соответствовать [standards/file-naming.md](file-naming.md).
 Концепция **СЛЕДУЕТ** размещать как `CONCEPT.md` в корне портал-спока либо как
 именованный документ в его `docs/`. Нормативные требования внутри концепции (ФТ,
 НФТ, безопасность) **СЛЕДУЕТ** формулировать на языке RFC 2119 (ДОЛЖНО/СЛЕДУЕТ/МОЖНО).
@@ -157,7 +157,7 @@ Continuous Discovery, Concept Doc) и выбор основы:
   гипотезы переходят в разделы (стек, архитектура), опровергнутые — в открытые
   вопросы или scope-out.
 - Исследования портал-домена **СЛЕДУЕТ** оформлять по
-  [standards/RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md)
+  [standards/research-documentation-standard.md](research-documentation-standard.md)
   и размещать в `research/portal/` (или в `research/` спок-проекта).
 
 ## 5. Связь со структурой репозитория
@@ -166,8 +166,8 @@ Continuous Discovery, Concept Doc) и выбор основы:
   отвечает на «зачем/что», а структура каталогов — **следствие** выбора стека и
   архитектуры, которые исследуются **после** концепции.
 - Структура репозитория портала **ДОЛЖНА** выбираться из политики Хаба —
-  [standards/PORTAL_REPOSITORY_STRUCTURE.md](PORTAL_REPOSITORY_STRUCTURE.md) и
-  [standards/PROJECT_STRUCTURE_INHERITANCE.md](PROJECT_STRUCTURE_INHERITANCE.md) —
+  [standards/portal-repository-structure.md](portal-repository-structure.md) и
+  [standards/project-structure-inheritance.md](project-structure-inheritance.md) —
   на основе концепции, а не вместо неё.
 - Концепция **МОЖЕТ** ссылаться на выбранную структуру, но **НЕ ДОЛЖНА** её
   дублировать или подменять.
@@ -202,7 +202,7 @@ Continuous Discovery, Concept Doc) и выбор основы:
 - **Метрики** — конверсия посетитель→заявка.
 
 Опциональные слои не подключаются. Структура репозитория выбирается по
-`PORTAL_REPOSITORY_STRUCTURE.md`.
+`portal-repository-structure.md`.
 
 ### 7.2. Контентный портал
 
@@ -267,7 +267,7 @@ scope: portal
 ### 8.3. Глоссарий
 
 Термины (`Concept`, `Roadmap`, `Scope`, `Standard`, `Draft`) — по
-[standards/GLOSSARY.md](GLOSSARY.md). Локальные термины проекта **СЛЕДУЕТ**
+[standards/glossary.md](glossary.md). Локальные термины проекта **СЛЕДУЕТ**
 выносить в раздел 15 «Приложения» конкретной концепции, не переопределяя
 общие термины Хаба.
 
@@ -289,9 +289,9 @@ issue. «Сначала исследуй, потом предлагай».
 
 - [research/portal/concept-standards-comparison-2026-06.md](../research/portal/concept-standards-comparison-2026-06.md) — сравнение 8 подходов и выбор основы (PRD + Vision + TOGAF-модульность).
 - [research/portal/documentation-standards-comparison-2026-06.md](../research/portal/documentation-standards-comparison-2026-06.md) — смежный слой (формат документации).
-- [standards/PORTAL_REPOSITORY_STRUCTURE.md](PORTAL_REPOSITORY_STRUCTURE.md), [standards/PROJECT_STRUCTURE_INHERITANCE.md](PROJECT_STRUCTURE_INHERITANCE.md) — выбор структуры репозитория.
-- [standards/RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md), [standards/CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) — смежные форматы.
-- [standards/GLOSSARY.md](GLOSSARY.md) — нормативные термины (single source of truth).
+- [standards/portal-repository-structure.md](portal-repository-structure.md), [standards/project-structure-inheritance.md](project-structure-inheritance.md) — выбор структуры репозитория.
+- [standards/research-documentation-standard.md](research-documentation-standard.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
+- [standards/glossary.md](glossary.md) — нормативные термины (single source of truth).
 - IETF RFC 2119 / BCP 14 — [rfc-editor.org/info/bcp14](https://www.rfc-editor.org/info/bcp14).
 - Marty Cagan / SVPG (PRD), Roman Pichler (Product Vision Board), The Open Group (TOGAF), IIBA (BABOK), ISO/IEC/IEEE 42010 — см. раздел «Источники» исследования.
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4 (утверждение стандарта — за человеком).

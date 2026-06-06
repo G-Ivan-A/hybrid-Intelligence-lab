@@ -9,7 +9,7 @@ method: comparative-analysis
 scope: repo-wide
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 related_artifacts:
-  - "standards/EXECUTABLE_CONTRACT_STANDARD.md"
+  - "standards/executable-contract-standard.md"
   - "governance/rfc/contract-executability-rfc.md"
   - "governance/AGENT_ONBOARDING.md"
 related_issues:
@@ -30,7 +30,7 @@ related_issues:
 
 **Цель.** Исследовать лучшие практики оформления исполнимых документов
 (системные промпты, инструкции, runbooks) и зафиксировать оптимальный формат в
-[standards/EXECUTABLE_CONTRACT_STANDARD.md](../../standards/EXECUTABLE_CONTRACT_STANDARD.md).
+[standards/executable-contract-standard.md](../../standards/executable-contract-standard.md).
 
 **Связанные артефакты.**
 - [governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md) — утверждённое фаундером «Видение 3» и трёхслойная защита; этот стандарт **кодифицирует** RFC в нормативную форму.
@@ -59,7 +59,7 @@ SRE runbooks, CLI man-page SYNOPSIS, README Quick Start, Makefile) и сопос
 
 | # | Рекомендация | Куда фиксируется |
 | --- | --- | --- |
-| R1 | Маркер `executable: true` (опц. `entrypoint: true`) во frontmatter — машиночитаемый сигнал типа документа. | `EXECUTABLE_CONTRACT_STANDARD.md` |
+| R1 | Маркер `executable: true` (опц. `entrypoint: true`) во frontmatter — машиночитаемый сигнал типа документа. | `executable-contract-standard.md` |
 | R2 | Сразу после frontmatter — **директивный блок** (🚦 blockquote): стоп-сигнал «не анализируй — выполняй» + роль/цель (User-Story) + явный запрет анализа. | стандарт |
 | R3 | Далее — **▶️ EXECUTION**: первая строка = императивная команда; шаги по порядку, без «контекста». | стандарт |
 | R4 | Ниже — **ℹ️ EXPLANATION**: контекст, обоснование, краевые случаи (всё, что *не* нужно для немедленного исполнения). | стандарт |
@@ -115,7 +115,7 @@ SRE runbooks, CLI man-page SYNOPSIS, README Quick Start, Makefile) и сопос
 
 1. **Frontmatter-маркер** — `executable: true` (`entrypoint: true` для точки
    входа). Машиночитаемо, ортогонально `Operating Mode` (см.
-   [standards/GLOSSARY.md](../../standards/GLOSSARY.md)).
+   [standards/glossary.md](../../standards/glossary.md)).
 2. **Директивный блок** (🚦) — in-band «системная роль» для документа, которой у
    обычного Markdown нет: стоп-сигнал + User-Story (роль/цель агента) + запрет
    анализа. Стоит **до** любого пояснения.
@@ -131,7 +131,7 @@ SRE runbooks, CLI man-page SYNOPSIS, README Quick Start, Makefile) и сопос
 коротко указывает «исполняй процедуру ниже». Канон (например, сам Handover Prompt)
 остаётся в единственном экземпляре, иначе появляются рассинхронизированные копии
 (анти-DRY). См. определение «Директивный блок» в
-[standards/GLOSSARY.md](../../standards/GLOSSARY.md).
+[standards/glossary.md](../../standards/glossary.md).
 
 ### 3.5. Краевые случаи
 
@@ -163,7 +163,7 @@ SRE runbooks, CLI man-page SYNOPSIS, README Quick Start, Makefile) и сопос
 - Google SRE Workbook — runbook как упорядоченная последовательность действий.
 - POSIX/`man(7)` — порядок секций: `NAME` → `SYNOPSIS` → `DESCRIPTION`.
 - Практика README «Quick Start» — команда запуска до архитектуры.
-- Внутренние: [governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md) (§4.2, §7), [governance/AGENT_ONBOARDING.md](../../governance/AGENT_ONBOARDING.md), [standards/GLOSSARY.md](../../standards/GLOSSARY.md), issue #165 (Блок 2).
+- Внутренние: [governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md) (§4.2, §7), [governance/AGENT_ONBOARDING.md](../../governance/AGENT_ONBOARDING.md), [standards/glossary.md](../../standards/glossary.md), issue #165 (Блок 2).
 
 > Внешние ссылки на гайды промптинга версионно-чувствительны и помечены как
 > требующие проверки перед переводом документа в `reviewed`.

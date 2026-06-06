@@ -35,7 +35,7 @@ ai-generated: false
 ## 🗂️ Навигация
 
 - [Идеи курса](docs/course-ideas.md) - основное пространство для обсуждений.
-- [Профиль образовательных проектов](../../standards/EDUCATION_PROFILE.md) -
+- [Профиль образовательных проектов](../../standards/education-profile.md) -
   стандарты для курсов.
 - [Предложить идею](../../.github/ISSUE_TEMPLATE/task.yml) - создать задачу на
   новую тему.
@@ -52,7 +52,7 @@ ai-generated: false
 
 ## Связанные артефакты
 
-- [standards/EDUCATION_PROFILE.md](../../standards/EDUCATION_PROFILE.md)
-- [standards/FILE_NAMING.md](../../standards/FILE_NAMING.md)
-- [standards/ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md)
+- [standards/education-profile.md](../../standards/education-profile.md)
+- [standards/file-naming.md](../../standards/file-naming.md)
+- [standards/issue-workflow.md](../../standards/issue-workflow.md)
 - [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md)

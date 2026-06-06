@@ -22,14 +22,14 @@ executable: false
 | `standards/` | Плоский реестр standards, templates и artifact format rules. | Добавлять standard после повторяющейся review или coordination problem. |
 | `research/` | Domain-based research и source-backed analysis. | Использовать `research/<domain>/` для домена или topic area. |
 | `frameworks/` | Методологии для hybrid human + AI teams. | Создавать только после comparison, показывающего недостаточность existing approaches. |
-| `projects/` | Project knowledge bases, prompts, process context и spoke links. | Использовать, когда работа относится к scoped initiative, но не к production code. Наследование структуры в проектах — см. `standards/PROJECT_STRUCTURE_INHERITANCE.md`. |
+| `projects/` | Project knowledge bases, prompts, process context и spoke links. | Использовать, когда работа относится к scoped initiative, но не к production code. Наследование структуры в проектах — см. `standards/project-structure-inheritance.md`. |
 | `education/` | Open education programs, course materials и teaching scenarios. | Использовать для материалов, пригодных для обучения или partner delivery. |
 | `governance/` | Repository model и cross-cutting operating decisions. | Добавлять governance files только когда они уточняют active decision-making. |
 | `tools/` | Локальные validation и maintenance scripts. | Добавлять scripts, которые делают проверки воспроизводимыми. |
 | `.github/ISSUE_TEMPLATE/` | GitHub-native task intake. | Держать templates focused на качестве issue и reviewability. |
 
 Именование файлов для корня репозитория и вложенных каталогов описано в
-[standards/FILE_NAMING.md](../standards/FILE_NAMING.md).
+[standards/file-naming.md](../standards/file-naming.md).
 
 ## Anti-Inflation Principle
 
@@ -49,7 +49,7 @@ executable: false
 
 | Ситуация | Действие |
 | --- | --- |
-| Создается новый файл. | Проверить имя по [standards/FILE_NAMING.md](../standards/FILE_NAMING.md). |
+| Создается новый файл. | Проверить имя по [standards/file-naming.md](../standards/file-naming.md). |
 | Новый документ повторяет existing standard. | Сослаться на standard и держать документ коротким. |
 | Формат нужен один раз. | Встроить нужную структуру прямо в artifact. |
 | Формат нужен повторно. | Создать или обновить standard в `standards/`. |
@@ -71,14 +71,14 @@ executable: false
 | **Кейс 2 — *Bootstrap-клонирование*** | Из шаблонов Хаба (`templates/spoke/`) рождается новый spoke-репозиторий с правильной структурой. | Постоянный — однократный акт при создании spoke. | `Project` |
 
 - Определения терминов *Runtime-онбординг* и *Bootstrap-клонирование* — единый
-  источник истины в [standards/GLOSSARY.md](../standards/GLOSSARY.md).
+  источник истины в [standards/glossary.md](../standards/glossary.md).
 - Полная модель жизненного цикла spoke (аналогии, таблица-манифест,
   Mermaid-схема, привязка к ретроспективе) —
   [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md).
 
 ## Standards
 
-- [standards/PROJECT_STRUCTURE_INHERITANCE.md](../standards/PROJECT_STRUCTURE_INHERITANCE.md)
+- [standards/project-structure-inheritance.md](../standards/project-structure-inheritance.md)
   фиксирует наследование структуры каталогов в проектах и границы
   проект-специфичных стандартов.
 

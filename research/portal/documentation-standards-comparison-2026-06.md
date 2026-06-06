@@ -12,7 +12,7 @@ related_artifacts:
   - "research/portal/architecture-and-stack-comparison-2026-06.md"
   - "research/portal/repository-structure-design-2026-06.md"
   - "research/portal/open-ai-portal-concept-rfc.md"
-  - "standards/RESEARCH_PROFILE.md"
+  - "standards/research-profile.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
 ---
@@ -39,7 +39,7 @@ related_issues:
 > Перед исследованием проверено (issue #159): в Хабе **нет** обязательного
 > стандарта документации архитектуры для порталов. Есть смежная практика — RFC в
 > `governance/rfc/`, Concept Doc (`CONCEPT.md`), Mermaid-диаграммы и
-> `standards/GLOSSARY.md`. Поэтому исследование обязательно.
+> `standards/glossary.md`. Поэтому исследование обязательно.
 
 ## Кандидаты
 
@@ -136,7 +136,7 @@ IEEE на старте).
 - RFC крупных решений — `governance/rfc/` Хаба или `docs/` спока.
 
 Связь со стандартом структуры: [research/portal/repository-structure-design-2026-06.md](repository-structure-design-2026-06.md)
-и [standards/PORTAL_REPOSITORY_STRUCTURE.md](../../standards/PORTAL_REPOSITORY_STRUCTURE.md).
+и [standards/portal-repository-structure.md](../../standards/portal-repository-structure.md).
 
 ## Решение за человеком
 

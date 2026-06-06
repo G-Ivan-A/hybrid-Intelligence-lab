@@ -22,7 +22,7 @@ Open education живет здесь. Коммерческое обучение 
 
 Активных образовательных пакетов после cleanup issue #49 пока нет. Новый курс
 или учебный пакет добавляется сюда только после issue и по
-[standards/EDUCATION_PROFILE.md](../standards/EDUCATION_PROFILE.md).
+[standards/education-profile.md](../standards/education-profile.md).
 
 ## Минимальная структура образовательного пакета
 

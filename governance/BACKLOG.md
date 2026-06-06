@@ -13,7 +13,7 @@ related_artifacts:
   - "governance/rfc/rfc-two-cases-of-project-initialization.md"
   - "research/hub/external-governance-patterns-review-2026-06.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
-  - "standards/GLOSSARY.md"
+  - "standards/glossary.md"
   - "governance/rfc/contract-executability-rfc.md"
   - "governance/EXECUTABLE_DOCUMENTS_ISSUES.md"
 related_issues:
@@ -54,7 +54,7 @@ related_issues:
 [разделе 2](#2-сводная-таблица-задач) и [раздел 8](#8-решение-за-человеком)).
 
 > В этом документе используются термины из
-> [standards/GLOSSARY.md](../standards/GLOSSARY.md): *Operating Mode*, *Policy*,
+> [standards/glossary.md](../standards/glossary.md): *Operating Mode*, *Policy*,
 > *Standard*, *Practice*, *Artifact*, *Canonical*, *Draft*, *Runtime-онбординг
 > (Кейс 1)*, *Bootstrap-клонирование (Кейс 2)*, *Handover Prompt*, *Readback*,
 > *Среда работы агента*, *Источник контекста*, *North Star*, *Триггер
@@ -188,9 +188,9 @@ principle ([governance/REPO_MODEL.md](REPO_MODEL.md)): **артефакт соз
 | CE-003 | `templates/spoke/AI_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) |
 | CE-004 | `AI_GOVERNANCE.md` | P1 | CE-001, CE-008 | TODO | [#141](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141) |
 | CE-005 | `governance/REPO_MODEL.md` | P2 | CE-008 | TODO | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) |
-| CE-006 | `standards/PROJECT_STRUCTURE_INHERITANCE.md` | P3 | CE-008 | TODO | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) |
-| CE-007 | `standards/ISSUE_WORKFLOW.md` | P3 | CE-008 | TODO | [#144](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144) |
-| CE-008 | `standards/GLOSSARY.md` | P1 | — | TODO | [#145](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145) |
+| CE-006 | `standards/project-structure-inheritance.md` | P3 | CE-008 | TODO | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) |
+| CE-007 | `standards/issue-workflow.md` | P3 | CE-008 | TODO | [#144](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144) |
+| CE-008 | `standards/glossary.md` | P1 | — | TODO | [#145](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145) |
 | CE-009 | `tools/validate-frontmatter.sh` | P2 | CE-008 | TODO | [#146](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/146) |
 | CE-010 | `governance/ARTIFACT_MAP.md` | P2 | CE-001, CE-002, CE-003, CE-004, CE-008 | TODO | [#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147) |
 
@@ -279,7 +279,7 @@ pre-flight чтение) не имеет адресата.
 **Критерии приёмки (DoD):**
 - [ ] Файл содержит 4-шаговый протокол, *Handover Prompt* с `{{REPO_NAME}}` и
       раздел threat awareness.
-- [ ] Все термины — со ссылкой на [GLOSSARY](../standards/GLOSSARY.md).
+- [ ] Все термины — со ссылкой на [GLOSSARY](../standards/glossary.md).
 - [ ] Файл зарегистрирован в `ARTIFACT_MAP.md` и валидаторе; валидатор проходит.
 
 **Обоснование приоритета:**
@@ -752,7 +752,7 @@ Machine, YAML Capability Manifest, Signed Artifacts, JSON Envelope) **немед
 
 ### 4.4. North Star проекта
 
-> **North Star** (см. [GLOSSARY](../standards/GLOSSARY.md)): проект движется в
+> **North Star** (см. [GLOSSARY](../standards/glossary.md)): проект движется в
 > сторону **governance-grade provenance-aware hybrid intelligence
 > infrastructure** — не «очередного AI-agent framework», а *early governance
 > substrate for auditable agent ecosystems*.
@@ -828,7 +828,7 @@ content.
 
 Условия, при наступлении любого из которых нужно вернуться к бэклогу и
 пересмотреть приоритеты и распределение «взять/отложить/отклонить» (см. термин
-*Триггер внедрения* в [GLOSSARY](../standards/GLOSSARY.md)). Триггеры
+*Триггер внедрения* в [GLOSSARY](../standards/glossary.md)). Триггеры
 **событийные**, а не календарные.
 
 - [ ] **Утверждён новый RFC** → перенести его follow-up в бэклог отдельными
@@ -893,7 +893,7 @@ Human Review:
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Источник задач B-004, B-005, B-011. |
 | [research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md) | Источник матрицы С/Q, North Star и триггеров (B-006, B-007, B-011, deferred `approved_by:`). |
 | [research/hub/ai-collaboration-retrospective-2026-06.md](../research/hub/ai-collaboration-retrospective-2026-06.md) | Системные ошибки, мотивирующие fail-closed, threat awareness и двухкейсовую модель. |
-| [standards/GLOSSARY.md](../standards/GLOSSARY.md) | Единый источник терминов для всего бэклога. |
+| [standards/glossary.md](../standards/glossary.md) | Единый источник терминов для всего бэклога. |
 
 ---
 
