@@ -6,6 +6,15 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #186: added `governance/rfc/draft-triage-and-exit-plan.md` with a
+  four-group triage of 20 draft documents marked "К доработке" in the
+  repository-quality RFC. The new RFC records current state, link/placeholder
+  risks, concrete exit plans (`approval_target`, `dependencies`,
+  `required_changes`, `estimated_effort`), phased cleanup, placeholder strategy,
+  Mango spoke boundaries, education scope questions, and Definition of Done.
+  Registered the RFC in `governance/rfc/README.md`,
+  `governance/artifact-map.md` (1.20 -> 1.21), and
+  `tools/validate-repository-structure.sh`.
 - Issue #171 (Creative mode): added
   `governance/rfc/repository-quality-improvement-plan.md` with a full
   repository-quality audit after PR #170. The RFC covers naming, duplicate and

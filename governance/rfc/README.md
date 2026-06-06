@@ -1,12 +1,13 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-06-07
+version: 1.1
+updated: 2026-06-06
 ai-generated: true
 type: navigation
 scope: repo-wide
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/186"
 ---
 
 # Governance RFC
@@ -45,6 +46,7 @@ Comments) — отраслевой термин IETF: документ, выно
 | [rfc-two-cases-of-project-initialization.md](rfc-two-cases-of-project-initialization.md) | Разделение двух кейсов инициализации: Runtime-онбординг (Кейс 1) и Bootstrap-клонирование (Кейс 2). |
 | [contract-executability-rfc.md](contract-executability-rfc.md) | Архитектура исполнимых документов: маркер `executable: true\|false`, директивные блоки, план внедрения и решения фаундера. |
 | [repository-quality-improvement-plan.md](repository-quality-improvement-plan.md) | Комплексный аудит качества репозитория после PR #170: naming, дубли, metadata, traceability, drafts, archive Mango и phased cleanup plan. |
+| [draft-triage-and-exit-plan.md](draft-triage-and-exit-plan.md) | Триаж 20 draft-документов категории "К доработке": группы template/hub/Mango/education, exit plans, phased cleanup и вопросы к Founder/PO. |
 
 ## Связанные артефакты
 

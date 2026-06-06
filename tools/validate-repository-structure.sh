@@ -102,6 +102,7 @@ is_active_file() {
     governance/rfc/rfc-two-cases-of-project-initialization.md | \
     governance/rfc/contract-executability-rfc.md | \
     governance/rfc/repository-quality-improvement-plan.md | \
+    governance/rfc/draft-triage-and-exit-plan.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
@@ -361,6 +362,7 @@ required_files=(
   "governance/rfc/rfc-two-cases-of-project-initialization.md"
   "governance/rfc/contract-executability-rfc.md"
   "governance/rfc/repository-quality-improvement-plan.md"
+  "governance/rfc/draft-triage-and-exit-plan.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -678,6 +680,13 @@ require_text "governance/rfc/repository-quality-improvement-plan.md" "Phase 1"
 require_text "governance/rfc/repository-quality-improvement-plan.md" "Запрос На Согласование"
 require_text "governance/rfc/repository-quality-improvement-plan.md" "Задачи Для Создания После Согласования"
 
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "status: draft"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "version: 0.1"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "Template Placeholders"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "approval_target"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "estimated_effort"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "Questions To Founder And PO"
+
 require_text "governance/agent-onboarding.md" "status: canonical"
 require_text "governance/agent-onboarding.md" "version: 1.1"
 require_text "governance/agent-onboarding.md" "updated: 2026-06-04"
@@ -696,13 +705,14 @@ require_text "governance/agent-onboarding.md" "rfc-two-cases-of-project-initiali
 require_text "governance/agent-onboarding.md" "templates/spoke/README.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.20"
+require_text "governance/artifact-map.md" "version: 1.21"
 require_text "governance/artifact-map.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "updated: 2026-06-06"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/rfc/rfc-creative-template-design.md"
 require_text "governance/artifact-map.md" "governance/rfc/contract-executability-rfc.md"
 require_text "governance/artifact-map.md" "governance/rfc/repository-quality-improvement-plan.md"
+require_text "governance/artifact-map.md" "governance/rfc/draft-triage-and-exit-plan.md"
 require_text "governance/artifact-map.md" "| Путь | Тип | 🚦 Исполнимый? | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/artifact-map.md" "🚦 entrypoint"
 require_text "governance/artifact-map.md" "standards/project-structure-inheritance.md"
