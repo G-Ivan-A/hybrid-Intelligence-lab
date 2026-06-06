@@ -8,9 +8,9 @@ context: [voice-ucaas, contact-center, digital-channels]
 method: international-benchmark + atomic-decomposition + practical-mapping
 scope: mango-only
 related_artifacts:
-  - "classification.md v3.0"
-  - "classification-glossary.md"
-  - "classification-tz.md"
+  - "research/mango/classification.md"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md"
+  - "research/mango/classification-tz.md"
 ---
 
 # Справочник атомарных функций пилотных доменов Mango
@@ -37,7 +37,7 @@ Mango — `voice-ucaas`, `contact-center`, `digital-channels`. Он отвеча
 
 | Документ | Что отвечает | Чем отличается от этого справочника |
 | --- | --- | --- |
-| [classification.md](classification.md) v3.0, §`📊 Product Layer` | Какие `Domain → Capability → Feature → Atomic Function` существуют и каков их `Mango status`. | Перечисляет функции списком с краткими параметрами; здесь — полная детализация (типы, диапазоны, источники, примеры, НФТ). |
+| [classification.md](classification.md), §`📊 Product Layer` | Какие `Domain → Capability → Feature → Atomic Function` существуют и каков их `Mango status`. | Перечисляет функции списком с краткими параметрами; здесь — полная детализация (типы, диапазоны, источники, примеры, НФТ). |
 | [mango_ba_prompts/standards/GLOSSARY.md](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md) | Что означают уровни иерархии и термины. | Термины берём из глоссария, не переопределяем. |
 | [classification-tz.md](classification-tz.md) | Какой реальный спрос виден в корпусе из 30 ТЗ (классы A/B/C). | Здесь — источник примеров требований (`example_requirements`) и НФТ-классов (`related_nfr`). |
 | [rag-mapping-roadmap-2026-05.md](rag-mapping-roadmap-2026-05.md) | Как `kb/product-matrix.md` навигирует промпт к документации. | Здесь — формат запроса «требование → функция» и связь со схемой записи `product-matrix`. |
@@ -112,7 +112,7 @@ overlay**, а не новый domain.
 | `origin` | Что означает | Как фиксировать |
 | --- | --- | --- |
 | `standard` | Параметр устойчив в международной практике телекома/CCaaS (есть у нескольких vendor и/или в стандартах). | Имя и семантику не менять; диапазон сверять с vendor docs. |
-| `mango-custom` | Параметр специфичен для продуктовой реальности Mango или для локального рынка РФ. | Фиксировать в `classification-glossary.md`/`kb/` и помечать как кандидат на стандартизацию. |
+| `mango-custom` | Параметр специфичен для продуктовой реальности Mango или для локального рынка РФ. | Фиксировать в `mango_ba_prompts/standards/GLOSSARY.md` или `mango_ba_prompts/kb/` и помечать как кандидат на стандартизацию. |
 
 Практическое правило: `standard`-параметры обеспечивают сопоставимость с
 конкурентами и benchmark, `mango-custom`-параметры — точность под продукт. Если

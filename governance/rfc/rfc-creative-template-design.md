@@ -9,7 +9,7 @@ method: creative-analysis + comparative-matrix + minimal-pattern-design
 scope: repo-wide
 related_artifacts:
   - "governance/REPO_MODEL.md"
-  - "research/project-context-and-bootstrap-patterns-2026-05.md"
+  - "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
   - "standards/project-structure-inheritance.md"
   - "AI_GOVERNANCE.md"
 related_issues:

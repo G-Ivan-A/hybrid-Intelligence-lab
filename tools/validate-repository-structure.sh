@@ -87,23 +87,6 @@ is_active_file() {
     frameworks/README.md | \
     education/README.md | \
     projects/README.md | \
-    archive/projects/mango/README.md | \
-    archive/projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md | \
-    archive/projects/mango/experiments/tz-stats-prototype-2026-05.md | \
-    archive/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md | \
-    archive/projects/mango/experiments/prompts-audit-2026-05-26.md | \
-    archive/projects/mango/experiments/prompts-selftest-2026-05-26.md | \
-    archive/projects/mango/prompts/tz-stats-generator_exp-2026-05.md | \
-    archive/projects/mango/prompts/tz-stats-generator_simple-2026-05.md | \
-    archive/projects/mango/prompts/user-story-generator_exp-2026-05.md | \
-    archive/projects/mango/prompts/user-story-generator_simple-2026-05.md | \
-    archive/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md | \
-    archive/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md | \
-    archive/projects/mango/standards/classification-glossary.md | \
-    archive/projects/mango/kb/.gitkeep | \
-    archive/projects/mango/docs/.gitkeep | \
-    archive/projects/mango/experiments/.gitkeep | \
-    archive/projects/mango/decisions/.gitkeep | \
     projects/education-ba-prompt/README.md | \
     projects/education-ba-prompt/docs/course-ideas.md | \
     projects/repo-development/README.md | \
@@ -183,14 +166,6 @@ required_directories=(
   "research/portal"
   "frameworks"
   "projects"
-  "archive"
-  "archive/projects"
-  "archive/projects/mango/standards"
-  "archive/projects/mango/kb"
-  "archive/projects/mango/prompts"
-  "archive/projects/mango/docs"
-  "archive/projects/mango/experiments"
-  "archive/projects/mango/decisions"
   "education"
   "governance"
   "governance/rfc"
@@ -242,23 +217,6 @@ required_files=(
   "frameworks/README.md"
   "education/README.md"
   "projects/README.md"
-  "archive/projects/mango/README.md"
-  "archive/projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md"
-  "archive/projects/mango/experiments/tz-stats-prototype-2026-05.md"
-  "archive/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md"
-  "archive/projects/mango/experiments/prompts-audit-2026-05-26.md"
-  "archive/projects/mango/experiments/prompts-selftest-2026-05-26.md"
-  "archive/projects/mango/prompts/tz-stats-generator_exp-2026-05.md"
-  "archive/projects/mango/prompts/tz-stats-generator_simple-2026-05.md"
-  "archive/projects/mango/prompts/user-story-generator_exp-2026-05.md"
-  "archive/projects/mango/prompts/user-story-generator_simple-2026-05.md"
-  "archive/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md"
-  "archive/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md"
-  "archive/projects/mango/standards/classification-glossary.md"
-  "archive/projects/mango/kb/.gitkeep"
-  "archive/projects/mango/docs/.gitkeep"
-  "archive/projects/mango/experiments/.gitkeep"
-  "archive/projects/mango/decisions/.gitkeep"
   "projects/repo-development/README.md"
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
@@ -599,7 +557,7 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.19"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.20"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-06"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
@@ -618,7 +576,7 @@ require_text "governance/ARTIFACT_MAP.md" "research/hub/project-context-and-boot
 require_text "governance/ARTIFACT_MAP.md" "research/hub/team-c-governance-strategy-audit-2026-05.md"
 require_text "governance/ARTIFACT_MAP.md" "research/hub/user-prompts-analysis-2026-05.md"
 require_text "governance/ARTIFACT_MAP.md" "mango_ba_prompts"
-require_text "governance/ARTIFACT_MAP.md" "archive/projects/mango/"
+require_text "governance/ARTIFACT_MAP.md" "projects/education-ba-prompt/README.md"
 require_text "governance/ARTIFACT_MAP.md" "projects/README.md"
 require_text "governance/ARTIFACT_MAP.md" "governance/BACKLOG.md"
 require_text "governance/ARTIFACT_MAP.md" "governance/EXECUTABLE_DOCUMENTS_ISSUES.md"
@@ -761,66 +719,12 @@ require_text "research/mango/capability-decomposition-2026-05.md" "Domain: digit
 require_text "projects/README.md" "status: canonical"
 require_text "projects/README.md" "Мигрировавшие проекты"
 require_text "projects/README.md" "mango_ba_prompts"
-require_text "projects/README.md" "archive/projects/mango/"
 require_text "projects/README.md" "repo-development/"
+require_text "projects/README.md" "education-ba-prompt/"
 
-require_text "archive/projects/mango/README.md" "research/mango/README.md"
-require_text "archive/projects/mango/README.md" "standards/classification-glossary.md"
-require_text "archive/projects/mango/README.md" 'Все исследования Mango используют термины из `standards/classification-glossary.md`'
-
-prompt_file_count="$(find archive/projects/mango/prompts -maxdepth 1 -type f | wc -l | tr -d '[:space:]')"
-if [[ "$prompt_file_count" != "6" ]]; then
-  fail "archive/projects/mango/prompts must contain exactly 6 files, found $prompt_file_count"
+if [[ -e "archive/projects/mango" ]]; then
+  fail "obsolete archive must not exist: archive/projects/mango"
 fi
-
-prompt_files=(
-  "archive/projects/mango/prompts/tz-stats-generator_exp-2026-05.md"
-  "archive/projects/mango/prompts/tz-stats-generator_simple-2026-05.md"
-  "archive/projects/mango/prompts/user-story-generator_exp-2026-05.md"
-  "archive/projects/mango/prompts/user-story-generator_simple-2026-05.md"
-  "archive/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md"
-  "archive/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md"
-)
-
-for prompt_file in "${prompt_files[@]}"; do
-  require_text "$prompt_file" "type:"
-  require_text "$prompt_file" "variant:"
-  require_text "$prompt_file" "scope: mango-only"
-  require_text "$prompt_file" "based_on:"
-  require_text "$prompt_file" "# РОЛЬ"
-  require_text "$prompt_file" "# КАК РАБОТАЕМ"
-  require_text "$prompt_file" "# ПРАВИЛА"
-  require_text "$prompt_file" "# НАЧНЕМ?"
-done
-
-require_text "archive/projects/mango/prompts/tz-stats-generator_exp-2026-05.md" "variant: exp"
-require_text "archive/projects/mango/prompts/user-story-generator_exp-2026-05.md" "variant: exp"
-require_text "archive/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md" "variant: exp"
-require_text "archive/projects/mango/prompts/tz-stats-generator_simple-2026-05.md" "variant: simple"
-require_text "archive/projects/mango/prompts/user-story-generator_simple-2026-05.md" "variant: simple"
-require_text "archive/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md" "variant: simple"
-
-require_text "archive/projects/mango/experiments/prompts-audit-2026-05-26.md" "type: prompt-audit"
-require_text "archive/projects/mango/experiments/prompts-audit-2026-05-26.md" "Что работает"
-require_text "archive/projects/mango/experiments/prompts-audit-2026-05-26.md" 'Упрощения для `_simple`'
-require_text "archive/projects/mango/experiments/prompts-audit-2026-05-26.md" 'Критичные ссылки для `_exp`'
-
-require_text "archive/projects/mango/experiments/prompts-selftest-2026-05-26.md" "type: prompt-selftest"
-require_text "archive/projects/mango/experiments/prompts-selftest-2026-05-26.md" "Результаты self-test"
-require_text "archive/projects/mango/experiments/prompts-selftest-2026-05-26.md" "Идеи на будущее"
-require_text "archive/projects/mango/experiments/prompts-selftest-2026-05-26.md" "Вопросы для согласования"
-
-require_text "archive/projects/mango/standards/classification-glossary.md" "status: draft"
-require_text "archive/projects/mango/standards/classification-glossary.md" "version: 0.1"
-require_text "archive/projects/mango/standards/classification-glossary.md" "updated: 2026-05-26"
-require_text "archive/projects/mango/standards/classification-glossary.md" "ai-generated: false"
-require_text "archive/projects/mango/standards/classification-glossary.md" "scope: mango-only"
-require_text "archive/projects/mango/standards/classification-glossary.md" "Domain (Семейство)"
-require_text "archive/projects/mango/standards/classification-glossary.md" "Capability (Класс)"
-require_text "archive/projects/mango/standards/classification-glossary.md" "Feature (Подкласс)"
-require_text "archive/projects/mango/standards/classification-glossary.md" "Atomic Function (Функция)"
-require_text "archive/projects/mango/standards/classification-glossary.md" "Термин Mango | Международный аналог | Источник | Пример использования"
-require_text "archive/projects/mango/standards/classification-glossary.md" "⚠️ Требуется уточнение"
 
 require_text "education/README.md" "status: canonical"
 require_text "education/README.md" "standards/education-profile.md"

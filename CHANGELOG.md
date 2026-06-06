@@ -36,6 +36,14 @@ All notable repository governance changes are documented here.
   (`is_active_file` + `required_files`); валидатор проходит (exit 0). Решение о
   переводе стандарта в `reviewed`/`canonical` остаётся за фаундером.
 
+### Removed
+
+- Issue #176: removed the obsolete `archive/projects/mango/` Hub archive and
+  the generated root `.gitkeep` placeholder after the Mango assets moved to
+  `mango_ba_prompts`. Updated active navigation, artifact map references, stale
+  local links, and the repository structure validator so the archive is no
+  longer required and cannot silently reappear.
+
 ### Changed
 
 - Issue #169: файлы стандартов внутри `standards/` переименованы из

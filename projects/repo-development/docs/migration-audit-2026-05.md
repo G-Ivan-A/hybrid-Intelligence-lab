@@ -71,10 +71,9 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 
 - **Битых ссылок нет.** Все 131 относительная ссылка между активными
   артефактами ведут на существующие цели.
-- **⚠️ Активная ссылка на `-old`.** `archive/projects/mango/README.md` в разделе
-  «Связанные артефакты» ссылается на `projects/README-old.md`. Это исторический
-  вход, а не активный контракт. Последствие: `projects/README-old.md` нельзя
-  удалить, пока ссылка не заменена или не убрана (см. раздел удаления).
+- **Активных ссылок на `-old` нет.** На момент аудита архивная копия Mango
+  ссылалась на `projects/README-old.md`; cleanup issue #176 удалил эту архивную
+  копию из hub, а рабочие Mango assets живут во внешнем spoke `mango_ba_prompts`.
 - **Ложные срабатывания.** Наивный поиск ссылок отметил 7 «битых» целей
   (`standards/education-profile.md` и `standards/research-profile.md`) — все
   находятся внутри fenced шаблонов (`module-01/`, `lesson-01.md`,
@@ -95,13 +94,13 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 | `research/repository-governance/*-old.md` | `CONCEPT.md`, `governance/REPO_MODEL.md` | Governance-as-you-grow → Anti-Inflation; «операционный костяк сначала»; статусы зрелости | Промежуточные межкомандные обсуждения (ценность архивная) |
 | `meta-old/README-old.md` | `governance/ARTIFACT_MAP.md` + frontmatter `status` | Идея artifact map; maturity model (`draft/reviewed/published/superseded`) | Каталог `meta/` как слой — заменён на `governance/` |
 | `standards/README-old.md` | `standards/README.md` | Реестр стандартов; «будущие стандарты» → строки `Planned` | Прямая ссылка на `docs/concept/vision-standard.md` |
-| `projects/README-old.md` | `archive/projects/mango/README.md` + `projects/repo-development/README.md` | Критерии «когда `/projects` vs spoke», рекомендуемая структура | Единый каталоговый `README` пока не воссоздан (см. предложение 2) |
+| `projects/README-old.md` | `projects/README.md` + `projects/repo-development/README.md` + внешний spoke `mango_ba_prompts` | Критерии «когда `/projects` vs spoke», рекомендуемая структура | Архивная копия Mango удалена из hub в cleanup issue #176 |
 | `tests-old/validate-repository-structure-old.sh` | `tools/validate-repository-structure.sh` | Логика проверки структуры и `-old` миграции | Путь `tests/` → `tools/` |
 | `.github/ISSUE_TEMPLATE/{ai_implementation_task,config,governance_change,research_task}-old` | `.github/ISSUE_TEMPLATE/task.yml` | Структура постановки задач + operating mode | 4 шаблона объединены в один focused шаблон |
 | `.github/pull_request_template-old.md` | ⚠️ Активный PR-шаблон не воссоздан | — | Решить: нужен ли активный PR-шаблон |
 | `PRODUCT_VISION-old.md` | `standards/product-profile.md` (шаблон) | Структура продуктового видения | Корневой `PRODUCT_VISION.md` убран: видение — артефакт spoke-проекта |
 | `AI_GOVERNANCE-old.md`, `CONTRIBUTING-old.md`, `CHANGELOG-old.md`, `LICENSE-old` | `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `LICENSE` | Контракты, workflow, журнал, лицензия-placeholder | Сокращены до коротких активных контрактов |
-| `education/**-old`, `experiments-old/mango/tz-corpus/**` | `standards/education-profile.md`; контекст `archive/projects/mango/` | Профиль курсов; решение «`tz-corpus` → Mango» | Сам учебный/экспериментальный контент пока не перенесён в активные артефакты |
+| `education/**-old`, `experiments-old/mango/tz-corpus/**` | `standards/education-profile.md`; контекст `research/mango/` и внешний spoke `mango_ba_prompts` | Профиль курсов; решение «`tz-corpus` → Mango» | Сам учебный/экспериментальный контент пока не перенесён в активные артефакты hub |
 | `research/mango/**-old`, `frameworks/README-old.md` | Каталоги сохранены; активного контента нет | Доменные каталоги зарезервированы | Перенос отложен до операционной потребности (Anti-Inflation) |
 
 ## 💡 Лучшее из `-old`: что учтено
@@ -127,7 +126,7 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 6. **Структурная проверка.** `tests-old/validate-repository-structure-old.sh`
    перенесён и развит в `tools/validate-repository-structure.sh`.
 7. **`tz-corpus` → Mango.** Решение #7 final-vision о переносе эксперимента в
-   контекст Mango отражено в позиционировании `archive/projects/mango/`.
+   контекст Mango отражено в `research/mango/` и внешнем spoke `mango_ba_prompts`.
 
 ## 🚀 Предложения по улучшениям (НЕ реализованы, только рекомендации)
 
@@ -154,8 +153,8 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 ### Предложение 2. Дрейф `governance/ARTIFACT_MAP.md` по `projects/`
 
 - **Проблема.** Строка `/projects/` в карте помечена «сейчас — `-old` входы»,
-  но активные project README уже существуют (`archive/projects/mango/README.md`, теперь
-  `projects/repo-development/README.md`). Собственное правило карты требует
+  но активные project README уже существуют (`projects/repo-development/README.md`,
+  `projects/education-ba-prompt/README.md`). Собственное правило карты требует
   отражать фактическое состояние и добавлять строку на каждый новый активный
   артефакт. ⚠️ Найдено расхождение.
 - **Идея.** Обновить примечание строки `/projects/` и/или добавить строки на
@@ -233,8 +232,8 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 
 ### ⚠️ Требует ручной проверки (перенос частичный или ссылка не разорвана)
 
-- `projects/README-old.md` — на него **ссылается активный**
-  `archive/projects/mango/README.md`. Сначала заменить/убрать ссылку, затем удалять.
+- `projects/README-old.md` — на момент аудита на него ссылалась активная
+  архивная копия Mango; cleanup issue #176 удалил архивную копию из hub.
 - `docs-old/concept/repository-structure-old.md`,
   `docs-old/concept/vision-standard-old.md` — обоснования перенесены частично;
   сверить, что таблицы сравнения не нужны как архив.

@@ -102,7 +102,7 @@ source-backed analysis**, а не для операционных отчётов
 ### Нарушения принципа «контракт первичен» (дополнение версии 1.1)
 
 Источник кейсов: сессия работы над RFC
-[`contract-executability-rfc.md`](../../../docs/analysis/contract-executability-rfc.md)
+[`contract-executability-rfc.md`](../../../governance/rfc/contract-executability-rfc.md)
 и [issue #134](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/134).
 Эти кейсы фиксируют, что исполнитель распознал противоречие между задачей и
 контрактом, но не применил приоритет «контракт первичен».

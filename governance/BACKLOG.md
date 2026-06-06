@@ -223,7 +223,8 @@ prompt assets и обязательных секций, но не сжимать
 1. Удалены проверки `require_max_body_chars` для всех Mango prompt-файлов.
 2. Удалён сам helper `require_max_body_chars`, так как после снятия лимитов он не
    используется.
-3. Prompt-файлы в `archive/projects/mango/prompts/` не изменялись.
+3. Prompt-файлы Mango не изменялись; после очистки issue #176 рабочая копия
+   prompt assets живёт во внешнем spoke `mango_ba_prompts/prompts/`.
 
 **Ожидаемые артефакты:**
 - `tools/validate-repository-structure.sh` (изменён)
@@ -785,9 +786,8 @@ governance-улучшения) перед P2/P3 — и есть операцио
   справедливо помечал его как `tracked legacy file`). Это снимает один FAIL, не
   внося новых.
 - По issue #105 удалены проверки длины prompt body (`require_max_body_chars`) для
-  Mango-промптов. Валидатор продолжает проверять структуру prompt assets
-  (`type`, `variant`, `scope`, `based_on`, обязательные разделы), но больше не
-  ограничивает объём текста.
+  Mango-промптов. После cleanup issue #176 архивная копия Mango удалена из hub, а
+  рабочие prompt assets живут во внешнем spoke `mango_ba_prompts/prompts/`.
 
 **Текущее состояние:**
 
@@ -795,9 +795,9 @@ governance-улучшения) перед P2/P3 — и есть операцио
 появляется новая структурная регрессия, она рассматривается как отдельный P0 по
 правилу раздела 7. Длина prompt body больше не является валидируемым инвариантом.
 
-**Промпты Mango сознательно не правятся.** Любые изменения текста в
-`archive/projects/mango/prompts/` требуют отдельной задачи и review качества prompt
-content.
+**Промпты Mango сознательно не правятся в hub.** Любые изменения текста в
+`mango_ba_prompts/prompts/` требуют отдельной задачи и review качества prompt
+content во внешнем spoke.
 
 ---
 

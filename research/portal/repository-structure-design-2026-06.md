@@ -154,4 +154,4 @@ open-ai.ru/                         # spoke-репозиторий портал�
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md) — наследование структуры.
 - [standards/file-naming.md](../../standards/file-naming.md) — именование.
 - [templates/spoke/README.md](../../templates/spoke/README.md) — геном спока.
-- [projects/mango/README.md](../../projects/mango/README.md) — пример прикладного спок-проекта.
+- [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) — пример прикладного спок-проекта.
