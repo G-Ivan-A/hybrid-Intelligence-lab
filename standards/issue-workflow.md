@@ -8,10 +8,6 @@ executable: false
 
 # Issue Workflow
 
-Версия: 1.1
-
-Дата: 2026-06-04
-
 ## Назначение
 
 `issue-workflow.md` фиксирует единый жизненный цикл задач (Issue) в

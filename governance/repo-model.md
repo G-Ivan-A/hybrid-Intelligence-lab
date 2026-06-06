@@ -8,10 +8,6 @@ executable: false
 
 # Repository Model
 
-Версия: 1.1
-
-Дата: 2026-06-04
-
 Документ фиксирует активную структуру репозитория и Anti-Inflation principle
 для `hybrid-Intelligence-lab`.
 

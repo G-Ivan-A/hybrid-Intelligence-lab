@@ -15,12 +15,8 @@ related_issues:
 
 # Portal Repository Structure
 
-Версия: 0.1
-
-Дата: 2026-06-05
-
-Статус: **черновик стандарта (`draft`)**, предложен на утверждение фаундеру (см.
-RFC [research/portal/open-ai-portal-concept-rfc.md](../research/portal/open-ai-portal-concept-rfc.md),
+Документ предложен на утверждение фаундеру (см. RFC
+[research/portal/open-ai-portal-concept-rfc.md](../research/portal/open-ai-portal-concept-rfc.md),
 §14). До утверждения — рекомендация, не обязательное правило. Принятие стандарта
 как обязательного для порталов — решение человека (AI_GOVERNANCE, правило 4).
 

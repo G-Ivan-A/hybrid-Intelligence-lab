@@ -28,10 +28,6 @@ related_issues:
 
 # Реестр issues: внедрение стандарта исполнимых документов
 
-Версия: 1.0
-
-Дата: 2026-06-04
-
 Источник: [`governance/rfc/contract-executability-rfc.md`](rfc/contract-executability-rfc.md),
 раздел 6.1 «Файлы, подлежащие обновлению».
 

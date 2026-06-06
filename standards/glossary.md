@@ -7,10 +7,6 @@ ai-generated: false
 
 # Glossary
 
-Версия: 1.2
-
-Дата: 2026-06-04
-
 Этот глоссарий фиксирует рабочие определения терминов для
 `hybrid-Intelligence-lab`. Он нужен, чтобы issues, standards, governance-файлы
 и AI-assisted changes использовали одни и те же различия между типами правил,

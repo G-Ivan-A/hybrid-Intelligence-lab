@@ -7,7 +7,7 @@ cd "$ROOT_DIR"
 failures=0
 
 fail() {
-  printf 'FAIL: %s\n' "$1" >&2
+  printf 'ERROR: %s\n' "$1" >&2
   failures=$((failures + 1))
 }
 
@@ -150,6 +150,137 @@ validate_kebab_case_file_naming() {
   done < <(find "$dir" -maxdepth 1 -type f)
 }
 
+validate_metadata_not_duplicated() {
+  local file
+
+  while IFS= read -r file; do
+    if awk '
+      NR == 1 {
+        if ($0 != "---") {
+          exit 1
+        }
+        next
+      }
+
+      !frontmatter_done {
+        if ($0 == "---") {
+          frontmatter_done = 1
+          next
+        }
+        if ($0 ~ /^(status|version|updated):[[:space:]]*/) {
+          has_metadata = 1
+        }
+        next
+      }
+
+      frontmatter_done {
+        if (!has_metadata) {
+          exit 1
+        }
+        body_lines += 1
+        if (body_lines > 20) {
+          exit 1
+        }
+        if ($0 ~ /^[[:space:]]*(Версия|Дата|Статус|Version|Date|Status):/) {
+          found_duplicate = 1
+          exit 0
+        }
+      }
+
+      END {
+        if (found_duplicate) {
+          exit 0
+        }
+        exit 1
+      }
+    ' "$file"; then
+      fail "Metadata duplicated in body of $file. Keep it only in frontmatter."
+    fi
+  done < <(find standards governance -type f -name '*.md' | sort)
+}
+
+validate_internal_markdown_links() {
+  local file
+  local link_target
+  local target_without_anchor
+  local target_path
+  local file_dir
+
+  while IFS= read -r file; do
+    file_dir="$(dirname "$file")"
+
+    while IFS= read -r link_target; do
+      case "$link_target" in
+        http://* | https://* | mailto:* | tel:* | ftp://* | "#"* )
+          continue
+          ;;
+      esac
+
+      if [[ "$link_target" == *"{{"* || "$link_target" == *"}}"* ]]; then
+        continue
+      fi
+
+      target_without_anchor="${link_target%%#*}"
+      target_without_anchor="${target_without_anchor%%\?*}"
+
+      if [[ -z "$target_without_anchor" || "$target_without_anchor" != *.md ]]; then
+        continue
+      fi
+
+      if [[ "$target_without_anchor" == /* ]]; then
+        target_path=".${target_without_anchor}"
+      else
+        target_path="$file_dir/$target_without_anchor"
+      fi
+
+      if [[ ! -f "$target_path" ]]; then
+        fail "Broken link in $file -> $link_target"
+      fi
+    done < <(perl -ne 'while (/\[[^\]]+\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g) { print "$1\n" }' "$file")
+  done < <(find . -path ./.git -prune -o -type f -name '*.md' -print | sed 's#^\./##' | sort)
+}
+
+validate_artifact_map_paths() {
+  local artifact_path
+  local target_path
+  declare -A seen_paths=()
+
+  while IFS= read -r artifact_path; do
+    if [[ -n "${seen_paths[$artifact_path]:-}" ]]; then
+      fail "Duplicate artifact-map path: $artifact_path"
+      continue
+    fi
+    seen_paths["$artifact_path"]=1
+
+    case "$artifact_path" in
+      http://* | https://* )
+        continue
+        ;;
+    esac
+
+    target_path=".$artifact_path"
+    if [[ ! -e "$target_path" ]]; then
+      fail "Broken artifact-map path: $artifact_path"
+    fi
+  done < <(
+    awk -F'|' '
+      /^## Карта артефактов/ {
+        in_map = 1
+        next
+      }
+      /^## Исторические/ {
+        in_map = 0
+      }
+      in_map && /^\| `/ {
+        path = $2
+        gsub(/^[[:space:]]+|[[:space:]]+$/, "", path)
+        gsub(/`/, "", path)
+        print path
+      }
+    ' governance/artifact-map.md
+  )
+}
+
 required_directories=(
   ".github/ISSUE_TEMPLATE"
   "templates"
@@ -261,7 +392,15 @@ for kebab_case_dir in standards governance; do
   validate_kebab_case_file_naming "$kebab_case_dir"
 done
 
+validate_metadata_not_duplicated
+validate_internal_markdown_links
+validate_artifact_map_paths
+
 while IFS= read -r file; do
+  if [[ ! -e "$file" ]]; then
+    continue
+  fi
+
   if is_active_file "$file"; then
     continue
   fi
@@ -362,8 +501,6 @@ require_text "standards/issue-workflow.md" "version: 1.1"
 require_text "standards/issue-workflow.md" "updated: 2026-06-04"
 require_text "standards/issue-workflow.md" "ai-generated: false"
 require_text "standards/issue-workflow.md" "executable: false"
-require_text "standards/issue-workflow.md" "Версия: 1.1"
-require_text "standards/issue-workflow.md" "Дата: 2026-06-04"
 require_text "standards/issue-workflow.md" "## Назначение"
 require_text "standards/issue-workflow.md" "## Статусы задач"
 require_text "standards/issue-workflow.md" "## Правила переходов"
@@ -487,8 +624,6 @@ require_text "governance/repo-model.md" "version: 1.1"
 require_text "governance/repo-model.md" "updated: 2026-06-04"
 require_text "governance/repo-model.md" "ai-generated: false"
 require_text "governance/repo-model.md" "executable: false"
-require_text "governance/repo-model.md" "Версия: 1.1"
-require_text "governance/repo-model.md" "Дата: 2026-06-04"
 require_text "governance/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
 
 require_text "governance/rfc/rfc-creative-template-design.md" "status: draft"
