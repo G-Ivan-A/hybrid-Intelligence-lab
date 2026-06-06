@@ -12,7 +12,7 @@ related_artifacts:
   - "governance/rfc/rfc-creative-template-design.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
   - "research/hub/external-governance-patterns-review-2026-06.md"
-  - "standards/GLOSSARY.md"
+  - "standards/glossary.md"
   - "governance/REPO_MODEL.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/99"
@@ -32,17 +32,17 @@ related_issues:
 зафиксировать, что в модели hub-and-spoke слово «инициализация проекта»
 скрывает **два разных процесса**, которые нельзя смешивать:
 
-- **Кейс 1 — *Runtime-онбординг*** (см. определение в [standards/GLOSSARY.md](../../standards/GLOSSARY.md)):
+- **Кейс 1 — *Runtime-онбординг*** (см. определение в [standards/glossary.md](../../standards/glossary.md)):
   агент в чате загружает контекст проекта из репозитория в оперативную память
   диалога. Протокол: [rfc-agent-onboarding-protocol.md](rfc-agent-onboarding-protocol.md).
-- **Кейс 2 — *Bootstrap-клонирование*** (см. определение в [standards/GLOSSARY.md](../../standards/GLOSSARY.md)):
+- **Кейс 2 — *Bootstrap-клонирование*** (см. определение в [standards/glossary.md](../../standards/glossary.md)):
   из шаблонов Хаба (`templates/spoke/`) рождается новый spoke-репозиторий.
   Дизайн шаблона: [rfc-creative-template-design.md](rfc-creative-template-design.md).
 
 > ⚠️ **Этот документ не определяет термины.** Все термины — *Runtime-онбординг*,
 > *Bootstrap-клонирование*, *Handover Prompt*, *Readback*, *Среда работы агента*,
 > *Источник контекста* — берутся из единого источника истины
-> [standards/GLOSSARY.md](../../standards/GLOSSARY.md). Здесь они только
+> [standards/glossary.md](../../standards/glossary.md). Здесь они только
 > **используются**. Если по ходу обсуждения понадобится новый термин — он сначала
 > добавляется в глоссарий, и лишь затем используется здесь.
 
@@ -84,7 +84,7 @@ related_issues:
 
 ## 📜 Таблица-манифест: два кейса построчно
 
-Все термины ниже — из [standards/GLOSSARY.md](../../standards/GLOSSARY.md).
+Все термины ниже — из [standards/glossary.md](../../standards/glossary.md).
 
 | № | Аспект | **КЕЙС 1: Runtime-онбординг** | **КЕЙС 2: Bootstrap-клонирование** |
 |---|--------|-------------------------------|------------------------------------|
@@ -319,7 +319,7 @@ governance). Прошу:
 1. **Принять разделение** на Кейс 1 (Runtime-онбординг) и Кейс 2
    (Bootstrap-клонирование) как концептуальный фундамент, либо указать, что
    уточнить.
-2. **Подтвердить 6 новых терминов** в [standards/GLOSSARY.md](../../standards/GLOSSARY.md)
+2. **Подтвердить 6 новых терминов** в [standards/glossary.md](../../standards/glossary.md)
    (*Runtime-онбординг*, *Bootstrap-клонирование*, *Handover Prompt*, *Readback*,
    *Среда работы агента*, *Источник контекста*) или поправить формулировки.
 3. **Утвердить follow-up-список** (5 задач выше) и порядок их выполнения.
@@ -339,7 +339,7 @@ Bootstrap-клонирование (Кейс 2) утверждено как ко
 ### 1.2. Новые термины в глоссарии
 
 **Решение:** Подтверждено. Следующие 6 терминов добавлены в
-`standards/GLOSSARY.md`:
+`standards/glossary.md`:
 
 - Runtime-онбординг
 - Bootstrap-клонирование

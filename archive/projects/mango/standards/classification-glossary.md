@@ -5,7 +5,7 @@ updated: 2026-05-26
 ai-generated: false
 scope: mango-only
 related_standards:
-  - "../../../../standards/GLOSSARY.md"
+  - "../../../../standards/glossary.md"
 ---
 
 # Classification Glossary
@@ -29,7 +29,7 @@ related_standards:
    capability, feature, gap или coverage status.
 
 Если термин нужен для другого проекта, его нужно согласовывать отдельно через
-общий [GLOSSARY.md](../../../../standards/GLOSSARY.md), а не копировать Mango
+общий [glossary.md](../../../../standards/glossary.md), а не копировать Mango
 иерархию как обязательную.
 
 ## Правило применения
@@ -160,7 +160,7 @@ atomic function плюс overlay, а не новый domain.
   - рабочая классификация продуктов MANGO OFFICE.
 - [research/mango/taxonomy-concept-2026-05.md](../../../../research/mango/taxonomy-concept-2026-05.md)
   - draft-концепция Unified Capability Taxonomy Mango.
-- [standards/GLOSSARY.md](../../../../standards/GLOSSARY.md) - общий глоссарий
+- [standards/glossary.md](../../../../standards/glossary.md) - общий глоссарий
   репозитория, не заменяемый этим Mango-only документом.
 
 ## Источники

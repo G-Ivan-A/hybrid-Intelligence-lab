@@ -6,10 +6,10 @@ ai-generated: true
 executable: false
 scope: repo-wide
 related_standards:
-  - "RESEARCH_PROFILE.md"
-  - "EXECUTABLE_CONTRACT_STANDARD.md"
-  - "CONTRACT_DOCUMENTATION_STANDARD.md"
-  - "FILE_NAMING.md"
+  - "research-profile.md"
+  - "executable-contract-standard.md"
+  - "contract-documentation-standard.md"
+  - "file-naming.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 ---
@@ -37,10 +37,10 @@ related_issues:
 исследовательским документам в `research/<domain>/`.
 
 Он **дополняет**, а не заменяет
-[standards/RESEARCH_PROFILE.md](RESEARCH_PROFILE.md): профиль отвечает за
+[standards/research-profile.md](research-profile.md): профиль отвечает за
 frontmatter, источники, воспроизводимость и язык; этот стандарт — только за
 *порядок изложения тела документа*. При конфликте трактовок приоритет у
-`RESEARCH_PROFILE.md` в части метаданных и у этого стандарта в части структуры.
+`research-profile.md` в части метаданных и у этого стандарта в части структуры.
 
 ## Когда применять
 
@@ -48,8 +48,8 @@ frontmatter, источники, воспроизводимость и язык;
 | --- | --- |
 | Отчёт/обзор/анализ в `research/<domain>/` (`YYYY-MM-topic.md`) | ✅ ДОЛЖНО |
 | README направления (`type: navigation`) | СЛЕДУЕТ применять дух (назначение сверху), полная структура не обязательна |
-| Исполнимый документ (`executable: true`) | ❌ применяется [EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md) |
-| Контракт/governance-документ обязательств | ❌ применяется [CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) |
+| Исполнимый документ (`executable: true`) | ❌ применяется [executable-contract-standard.md](executable-contract-standard.md) |
+| Контракт/governance-документ обязательств | ❌ применяется [contract-documentation-standard.md](contract-documentation-standard.md) |
 
 Нормативные термины — по [RFC 2119 / BCP 14](https://www.rfc-editor.org/info/bcp14)
 (ДОЛЖНО/MUST, СЛЕДУЕТ/SHOULD, МОЖНО/MAY).
@@ -90,13 +90,13 @@ frontmatter, источники, воспроизводимость и язык;
 читатель-рецензент идёт в §3.
 
 В конце **ДОЛЖНО** быть «Источники» по правилам цитирования
-[RESEARCH_PROFILE.md](RESEARCH_PROFILE.md).
+[research-profile.md](research-profile.md).
 
 ## Скелет документа
 
 ```markdown
 ---
-# frontmatter по RESEARCH_PROFILE.md (status/version/updated/ai-generated/type/...)
+# frontmatter по research-profile.md (status/version/updated/ai-generated/type/...)
 ---
 
 # Исследование: <тема>
@@ -124,9 +124,9 @@ frontmatter, источники, воспроизводимость и язык;
 - **Микро-заметки (<1 страницы).** «Введение» **МОЖНО** сжать до 1–2 строк;
   «Результаты» обязательны; «Детализация» **МОЖНО** опустить.
 - **Двуязычие.** Каждый языковой файл (`*.ru.md`, `*.en.md`) несёт ту же
-  структуру симметрично (см. `RESEARCH_PROFILE.md` про языковые пары).
+  структуру симметрично (см. `research-profile.md` про языковые пары).
 - **Граница с профилем.** Стандарт **НЕ ДОЛЖЕН** дублировать правила frontmatter,
-  источников и воспроизводимости — они в `RESEARCH_PROFILE.md`.
+  источников и воспроизводимости — они в `research-profile.md`.
 
 ## Миграция
 
@@ -141,12 +141,12 @@ frontmatter, источники, воспроизводимость и язык;
   переставить.
 - Вывод можно извлечь, не читая «Детализацию»? → если нет, вынести вывод наверх.
 - Чужое мнение учтено явно (согласие/несогласие с обоснованием)? → если применимо.
-- Frontmatter и источники валидны по `RESEARCH_PROFILE.md`? → иначе доработать.
+- Frontmatter и источники валидны по `research-profile.md`? → иначе доработать.
 
 ## Источники
 
 - [research/governance/research-documentation-format-2026-06.md](../research/governance/research-documentation-format-2026-06.md) — исследование-обоснование (IMRaD, BLUF, Inverted Pyramid, Minto, RFC 7322, ADR, Diátaxis).
-- [standards/RESEARCH_PROFILE.md](RESEARCH_PROFILE.md) — frontmatter, источники, воспроизводимость.
-- [standards/EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md), [standards/CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) — смежные форматы (зеркальные классы документов).
+- [standards/research-profile.md](research-profile.md) — frontmatter, источники, воспроизводимость.
+- [standards/executable-contract-standard.md](executable-contract-standard.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы (зеркальные классы документов).
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4 (утверждение стандарта — за человеком).

@@ -6,20 +6,26 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #169: файлы стандартов внутри `standards/` переименованы из
+  `CAPS_LOCK`/underscore-стиля в kebab-case, все ссылки на старые имена
+  обновлены. `standards/file-naming.md` обновлён до версии 1.1 с явным правилом
+  для `standards/`; `tools/validate-repository-structure.sh` теперь проверяет,
+  что все файлы в `standards/` используют kebab-case, кроме `README.md`,
+  `LICENSE` и `CHANGELOG.md`.
 - Issue #165 (Creative mode): каталог `governance/proposals/` переименован в
   `governance/rfc/` (решение Q1): имя `rfc/` соответствует файлам `*-rfc.md` и
   отраслевому термину IETF «RFC», снимая рассинхрон «proposals vs rfc». `git mv`
   четырёх RFC; обновлены все живые ссылки (`governance/AGENT_ONBOARDING.md`,
   `REPO_MODEL.md`, `BACKLOG.md`, `EXECUTABLE_DOCUMENTS_ISSUES.md`,
-  `ARTIFACT_MAP.md`, `standards/GLOSSARY.md`, `templates/spoke/README.md`,
+  `ARTIFACT_MAP.md`, `standards/glossary.md`, `templates/spoke/README.md`,
   research-документы Хаба и портала, кросс-ссылки внутри RFC). Концепт-RFC
   портала перенесён `governance/proposals/` →
   `research/portal/open-ai-portal-concept-rfc.md` (решение Q2: концепция
   проекта — это research проекта и живёт в `research/{project}/`, а не в
   governance Хаба; канонический путь без точки в имени каталога по
-  `standards/FILE_NAMING.md`). `governance/rfc/` задокументирован как
+  `standards/file-naming.md`). `governance/rfc/` задокументирован как
   опциональный, не наследуемый споками каталог (решение Q3,
-  `standards/PORTAL_REPOSITORY_STRUCTURE.md`). `AI_GOVERNANCE.md` (1.1 → 1.2):
+  `standards/portal-repository-structure.md`). `AI_GOVERNANCE.md` (1.1 → 1.2):
   зафиксирован слоган Хаба. `governance/ARTIFACT_MAP.md` (1.16 → 1.17):
   обновлены пути RFC и добавлены строки новых артефактов. Структурный валидатор
   обновлён под новые пути и проходит (exit 0). Исторические записи (этот
@@ -60,10 +66,10 @@ All notable repository governance changes are documented here.
   `AI_GOVERNANCE.md` и `templates/spoke/README.md` (primary для Хаба,
   наследуется споками); слоган закреплён проверками структурного валидатора.
   Добавлены три стандарта оформления —
-  `standards/RESEARCH_DOCUMENTATION_STANDARD.md` (структура research:
+  `standards/research-documentation-standard.md` (структура research:
   Введение → Результаты → Детализация),
-  `standards/EXECUTABLE_CONTRACT_STANDARD.md` (EXECUTION → EXPLANATION, команда
-  первой строкой) и `standards/CONTRACT_DOCUMENTATION_STANDARD.md`
+  `standards/executable-contract-standard.md` (EXECUTION → EXPLANATION, команда
+  первой строкой) и `standards/contract-documentation-standard.md`
   (нормативный язык RFC 2119 / BCP 14) — каждый с опорой на отдельное
   исследование в новом каталоге `research/governance/`
   (`research-documentation-format-2026-06.md`,
@@ -81,7 +87,7 @@ All notable repository governance changes are documented here.
   сравнение 4 вариантов концепции по матрице из 14 критериев, синтез
   оптимального решения, дорожная карта Phase 0–4 и запрос на согласование с
   7 вопросами фаундеру); черновик стандарта
-  `standards/PORTAL_REPOSITORY_STRUCTURE.md` (структура репозитория портала,
+  `standards/portal-repository-structure.md` (структура репозитория портала,
   наследующая геном спока и добавляющая портал-каталоги); четыре research-отчёта в
   новом подкаталоге `research/portal/` — сравнение стандартов документации (вывод:
   ADR + C4 — обязательное ядро), сравнение архитектур и стека (модульный монолит,
@@ -96,7 +102,7 @@ All notable repository governance changes are documented here.
   как обязательного остаётся решением человека (AI_GOVERNANCE, правило 4).
   Реализация портала не начиналась.
 
-- Issue #145 (CE-008): в `standards/GLOSSARY.md` (версия 1.1 → 1.2) добавлены
+- Issue #145 (CE-008): в `standards/glossary.md` (версия 1.1 → 1.2) добавлены
   термины **«Исполнимый документ» (Executable Contract)** и **«Директивный
   блок»** из стандарта исполнимых документов
   `governance/proposals/contract-executability-rfc.md` (§4.2, §6.1, §7).
@@ -129,7 +135,7 @@ All notable repository governance changes are documented here.
   запрошенного в issue `ai-collaboration-retrospective-2026-06.md`: тот файл уже
   существует в `main` и описывает другую сессию (проектирование шаблонов споков,
   #95) — перезапись уничтожила бы прежний артефакт. Новые термины «Ретроспектива»
-  и «Корневая причина» добавлены в `standards/GLOSSARY.md` (версия 1.0 → 1.1) как
+  и «Корневая причина» добавлены в `standards/glossary.md` (версия 1.0 → 1.1) как
   единый источник определений. Артефакт зарегистрирован как active в
   `tools/validate-repository-structure.sh` (`is_active_file`) и в навигации
   `research/hub/README.md`. Удалён сгенерированный харнессом корневой `.gitkeep`
@@ -181,7 +187,7 @@ All notable repository governance changes are documented here.
   `executable` допускает только `true|false`, а `entrypoint` при наличии
   допускает только `true`. Поле `executable` не стало обязательным, поэтому
   существующая fail-open семантика и документы без этого маркера сохранены.
-- Issue #144 (CE-007): `standards/ISSUE_WORKFLOW.md` converted to the
+- Issue #144 (CE-007): `standards/issue-workflow.md` converted to the
   executable-documents frontmatter standard as a reference process standard.
   Version `1.0 → 1.1`, date `2026-06-04`; frontmatter now includes
   `executable: false`. The terminology note explicitly separates task
@@ -194,7 +200,7 @@ All notable repository governance changes are documented here.
   marked Decision Rules as the executable decision checklist inside the
   otherwise reference document. Structural validation now checks the new
   frontmatter/version markers; removed the generated harness `.gitkeep`.
-- Issue #143 (CE-006): `standards/PROJECT_STRUCTURE_INHERITANCE.md` converted
+- Issue #143 (CE-006): `standards/project-structure-inheritance.md` converted
   to the executable-documents standard as a reference standard. Version
   `1.0 → 1.1`; `updated` is now `2026-06-04`; frontmatter explicitly contains
   `executable: false`. The project-structure inheritance rules are unchanged,
@@ -213,7 +219,7 @@ All notable repository governance changes are documented here.
   *Runtime-онбординг* (Кейс 1) ⟂ *Bootstrap-клонирование* (Кейс 2) как часть
   модели жизненного цикла spoke. Operating Mode привязан к кейсу (Кейс 1 →
   `Structured`, Кейс 2 → `Project`). Раздел сознательно краткий: определения
-  терминов вынесены в `standards/GLOSSARY.md`, полное обоснование с аналогиями и
+  терминов вынесены в `standards/glossary.md`, полное обоснование с аналогиями и
   Mermaid-схемой — в RFC-манифесте
   `governance/proposals/rfc-two-cases-of-project-initialization.md`; канон
   ссылается на источники, а не дублирует их (Anti-Inflation). Снят риск
@@ -265,7 +271,7 @@ All notable repository governance changes are documented here.
   (чек-лист governance → чек-лист контекста → *Readback* → стоп до апрува), шаблон
   *Readback* и раздел threat awareness «Что может пойти не так» (5 рисков холодного
   старта) — реализация рекомендации команды Q без отдельного файла (Anti-Inflation).
-  Все термины — со ссылкой на `standards/GLOSSARY.md`; добавлены перекрёстные ссылки
+  Все термины — со ссылкой на `standards/glossary.md`; добавлены перекрёстные ссылки
   на `templates/spoke/README.md` (Кейс 2) и на RFC-манифест двух кейсов. Граница с
   RFC явная: RFC остаётся *проектом* (`proposals/`), а `AGENT_ONBOARDING.md` —
   *рабочей инструкцией*. Файл зарегистрирован как active в
@@ -287,11 +293,11 @@ All notable repository governance changes are documented here.
 
 - Issue #99: уточнён `governance/proposals/rfc-agent-onboarding-protocol.md` —
   добавлен раздел «Модель процесса» (без блока терминологии, только ссылки на
-  `standards/GLOSSARY.md` и на RFC-манифест), фиксирующий, что агент работает в
+  `standards/glossary.md` и на RFC-манифест), фиксирующий, что агент работает в
   *Среде работы агента* (чат) и обращается к *Источнику контекста* (репозиторий);
   *Handover Prompt* параметризован плейсхолдером `{{REPO_NAME}}` и
   переформулирован без ложной модели «агент в репозитории».
-- Issue #99: в `standards/GLOSSARY.md` добавлены 6 терминов (Bootstrap-клонирование,
+- Issue #99: в `standards/glossary.md` добавлены 6 терминов (Bootstrap-клонирование,
   Runtime-онбординг, Handover Prompt, Readback, Среда работы агента, Источник
   контекста) со ссылками на вводящие их RFC, плюс две строки связей терминов.
 
@@ -313,7 +319,7 @@ All notable repository governance changes are documented here.
   выживанию агента), `README.md`, `CONTRIBUTING.md` (issue → PR → review),
   `CHANGELOG.md` (каркас с `## Unreleased`), `docs/adr/.gitkeep`,
   `docs/audit/.gitkeep`, `.github/ISSUE_TEMPLATE/task.md` (наследует поля Хаба
-  из `standards/ISSUE_WORKFLOW.md`) и исполняемый `tools/validate-repository-structure.sh`
+  из `standards/issue-workflow.md`) и исполняемый `tools/validate-repository-structure.sh`
   (минимальный валидатор с предупреждением о `research/`). Шаблон по умолчанию
   не содержит `research/`: фундаментальные знания остаются в Хабе. Креативное
   улучшение UX инициализации — исполняемый `templates/spoke/init.sh`:
@@ -454,13 +460,13 @@ All notable repository governance changes are documented here.
   артефакты», разделы «Как использовать карту» и «Как обновлять карту»).
   Зарегистрирована как active в `tools/validate-repository-structure.sh` и
   связана из `README.md` и `standards/README.md`.
-- Canonical file naming standard в `standards/FILE_NAMING.md` для
+- Canonical file naming standard в `standards/file-naming.md` для
   исследований, standards, экспериментов, профилей и курсов; зарегистрирован
   в `standards/README.md` и structure validation.
-- Canonical education project profile в `standards/EDUCATION_PROFILE.md` для
+- Canonical education project profile в `standards/education-profile.md` для
   структуры курсов, модулей, уроков, упражнений и адаптации под open,
   commercial и internal learning formats.
-- Canonical glossary в `standards/GLOSSARY.md` для единых терминов standards,
+- Canonical glossary в `standards/glossary.md` для единых терминов standards,
   governance и AI-assisted work.
 - Issue #17 migration structure: `CONCEPT.md`, обновленные root governance
   files, `standards/README.md`, `governance/REPO_MODEL.md` и `tools/`.
@@ -470,18 +476,18 @@ All notable repository governance changes are documented here.
   `ai-generated` без блокирующего exit code.
 - Active documentation для Anti-Inflation principle: артефакт создается только
   когда снижает операционную боль.
-- Issue #31: `standards/RESEARCH_PROFILE.md` — canonical профиль
+- Issue #31: `standards/research-profile.md` — canonical профиль
   исследовательских проектов (именование `YYYY-MM-topic.md`, frontmatter
   исследований, организация экспериментов `exp-<slug>/`, чек-лист публикации и
   цитируемые best practices). Зарегистрирован как active в `standards/README.md`
   и проверяется в `tools/validate-repository-structure.sh`.
-- `standards/PRODUCT_PROFILE.md` (issue #29): профиль для продуктовых проектов
+- `standards/product-profile.md` (issue #29): профиль для продуктовых проектов
   с обязательными артефактами, шаблоном `PRODUCT_VISION.md` и матрицей
   адаптации по стадиям MVP / Pilot / Production; зарегистрирован в реестре
   standards и в structure validation.
-- `standards/TEAM_CONTRACT.md` как шаблон и инструкция для создания
+- `standards/team-contract.md` как шаблон и инструкция для создания
   project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` в spoke-проектах.
-- Issue #41: `standards/ISSUE_WORKFLOW.md` — canonical жизненный цикл задач
+- Issue #41: `standards/issue-workflow.md` — canonical жизненный цикл задач
   (7 статусов: `draft`, `ready`, `in-progress`, `review`, `merged`, `closed`,
   `blocked`), правила переходов, связи между артефактами (`User Story / ФТ`,
   `CHANGELOG.md`, `governance/ARTIFACT_MAP.md`) и точки автоматизации.
@@ -516,11 +522,11 @@ All notable repository governance changes are documented here.
 - [AI_GOVERNANCE.md](AI_GOVERNANCE.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [standards/README.md](standards/README.md)
-- [standards/GLOSSARY.md](standards/GLOSSARY.md)
-- [standards/FILE_NAMING.md](standards/FILE_NAMING.md)
-- [standards/EDUCATION_PROFILE.md](standards/EDUCATION_PROFILE.md)
-- [standards/TEAM_CONTRACT.md](standards/TEAM_CONTRACT.md)
-- [standards/ISSUE_WORKFLOW.md](standards/ISSUE_WORKFLOW.md)
+- [standards/glossary.md](standards/glossary.md)
+- [standards/file-naming.md](standards/file-naming.md)
+- [standards/education-profile.md](standards/education-profile.md)
+- [standards/team-contract.md](standards/team-contract.md)
+- [standards/issue-workflow.md](standards/issue-workflow.md)
 - [governance/REPO_MODEL.md](governance/REPO_MODEL.md)
 - [governance/ARTIFACT_MAP.md](governance/ARTIFACT_MAP.md)
 

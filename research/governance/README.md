@@ -29,16 +29,16 @@ related_issues:
 
 | Документ | Назначение |
 | --- | --- |
-| [research-documentation-format-2026-06.md](research-documentation-format-2026-06.md) | Исследование формата исследований: сравнение ≥6 практик (IMRaD, BLUF, Inverted Pyramid, Minto, IETF RFC Abstract, ADR, Diátaxis) по 6 критериям; выбор схемы **Введение → Результаты → Детализация**. Источник стандарта `RESEARCH_DOCUMENTATION_STANDARD.md`. |
-| [executable-contract-format-2026-06.md](executable-contract-format-2026-06.md) | Исследование формата исполнимых контрактов: системные промпты, runbooks, императивный UX, action-first. Структура **EXECUTION → EXPLANATION**. Источник стандарта `EXECUTABLE_CONTRACT_STANDARD.md`. |
-| [contract-documentation-format-2026-06.md](contract-documentation-format-2026-06.md) | Исследование формата прочих контрактов: OpenAPI, RFC 2119/BCP 14, SLA/SLO, ADR, Pact. Структура «контракт сверху, обоснование под катом». Источник стандарта `CONTRACT_DOCUMENTATION_STANDARD.md`. |
+| [research-documentation-format-2026-06.md](research-documentation-format-2026-06.md) | Исследование формата исследований: сравнение ≥6 практик (IMRaD, BLUF, Inverted Pyramid, Minto, IETF RFC Abstract, ADR, Diátaxis) по 6 критериям; выбор схемы **Введение → Результаты → Детализация**. Источник стандарта `research-documentation-standard.md`. |
+| [executable-contract-format-2026-06.md](executable-contract-format-2026-06.md) | Исследование формата исполнимых контрактов: системные промпты, runbooks, императивный UX, action-first. Структура **EXECUTION → EXPLANATION**. Источник стандарта `executable-contract-standard.md`. |
+| [contract-documentation-format-2026-06.md](contract-documentation-format-2026-06.md) | Исследование формата прочих контрактов: OpenAPI, RFC 2119/BCP 14, SLA/SLO, ADR, Pact. Структура «контракт сверху, обоснование под катом». Источник стандарта `contract-documentation-standard.md`. |
 | [governance-folder-structure-decisions-2026-06.md](governance-folder-structure-decisions-2026-06.md) | Решения по спорным вопросам Q1 (`proposals/` → `rfc/`), Q2 (размещение концепции портала) и Q3 (папка `rfc/` в проектах) с обоснованием и учётом мнения команды Q. |
 
 ## Связанные стандарты
 
-- [standards/RESEARCH_DOCUMENTATION_STANDARD.md](../../standards/RESEARCH_DOCUMENTATION_STANDARD.md) — формат исследований.
-- [standards/EXECUTABLE_CONTRACT_STANDARD.md](../../standards/EXECUTABLE_CONTRACT_STANDARD.md) — формат исполнимых контрактов.
-- [standards/CONTRACT_DOCUMENTATION_STANDARD.md](../../standards/CONTRACT_DOCUMENTATION_STANDARD.md) — формат прочих контрактов.
+- [standards/research-documentation-standard.md](../../standards/research-documentation-standard.md) — формат исследований.
+- [standards/executable-contract-standard.md](../../standards/executable-contract-standard.md) — формат исполнимых контрактов.
+- [standards/contract-documentation-standard.md](../../standards/contract-documentation-standard.md) — формат прочих контрактов.
 
 ## Политики направления
 
@@ -51,6 +51,6 @@ related_issues:
 
 ## Связанные артефакты
 
-- [standards/RESEARCH_PROFILE.md](../../standards/RESEARCH_PROFILE.md) — правила frontmatter, источников и воспроизводимости исследований.
+- [standards/research-profile.md](../../standards/research-profile.md) — правила frontmatter, источников и воспроизводимости исследований.
 - [governance/ARTIFACT_MAP.md](../../governance/ARTIFACT_MAP.md) — карта артефактов и связей.
 - [research/README.md](../README.md) — навигация по исследовательским направлениям.

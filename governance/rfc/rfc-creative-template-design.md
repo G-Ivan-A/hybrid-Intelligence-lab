@@ -10,7 +10,7 @@ scope: repo-wide
 related_artifacts:
   - "governance/REPO_MODEL.md"
   - "research/project-context-and-bootstrap-patterns-2026-05.md"
-  - "standards/PROJECT_STRUCTURE_INHERITANCE.md"
+  - "standards/project-structure-inheritance.md"
   - "AI_GOVERNANCE.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/89"
@@ -97,7 +97,7 @@ namespace на случай, если позже появятся шаблоны
   на знания Хаба, а не копирует их внутрь себя.
 - `prompts/`, `experiments/`, `kb/`, `standards/`, `decisions/` — создаются только
   по запросу, при появлении операционной боли (см.
-  [standards/PROJECT_STRUCTURE_INHERITANCE.md](../../standards/PROJECT_STRUCTURE_INHERITANCE.md)).
+  [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md)).
 
 ---
 

@@ -32,4 +32,4 @@ source: research/mango/README-old.md
 [classification-tz.md](classification-tz.md). Если эксперимент потребуется
 восстановить, новый воспроизводимый контур должен жить в
 `research/mango/exp-tz-corpus/` по
-[standards/RESEARCH_PROFILE.md](../../standards/RESEARCH_PROFILE.md).
+[standards/research-profile.md](../../standards/research-profile.md).

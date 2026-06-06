@@ -13,7 +13,7 @@ related_artifacts:
   - "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
   - "research/hub/team-c-governance-strategy-audit-2026-05.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
-  - "standards/PROJECT_STRUCTURE_INHERITANCE.md"
+  - "standards/project-structure-inheritance.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/96"
 ---
@@ -43,7 +43,7 @@ Anti-Inflation principle
 ## 🧭 Модель процесса
 
 > В этом документе используются термины из
-> [standards/GLOSSARY.md](../../standards/GLOSSARY.md): *Runtime-онбординг*,
+> [standards/glossary.md](../../standards/glossary.md): *Runtime-онбординг*,
 > *Handover Prompt*, *Readback*, *Среда работы агента*, *Источник контекста*.
 > Здесь они только **используются** — их определения живут в глоссарии как в
 > едином источнике истины, и в этом разделе **намеренно нет блока терминологии**.
@@ -181,7 +181,7 @@ Bootstrap-клонирование).
 Сделай ровно по шагам:
 1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай AI_GOVERNANCE.md, CONTRIBUTING.md,
    governance/REPO_MODEL.md, governance/ARTIFACT_MAP.md и
-   standards/PROJECT_STRUCTURE_INHERITANCE.md.
+   standards/project-structure-inheritance.md.
 2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/спока) и блок «Быстрый контекст»,
    если он есть.
@@ -210,7 +210,7 @@ Bootstrap-клонирование).
 Агент читает контракты репозитория **до** контекста задачи:
 `AI_GOVERNANCE.md` (роли, эскалация, DoD), `CONTRIBUTING.md` (workflow),
 `governance/REPO_MODEL.md` (структура и Anti-Inflation), `governance/ARTIFACT_MAP.md`
-(навигация) и `standards/PROJECT_STRUCTURE_INHERITANCE.md` (что можно, а что
+(навигация) и `standards/project-structure-inheritance.md` (что можно, а что
 нельзя создавать). Выход из шага: агент знает границы *раньше*, чем узнал цель —
 поэтому цель не «продавит» границы.
 → Лечит провалы **#2, #3** (непредсказуемые папки и нарушение стандартов).

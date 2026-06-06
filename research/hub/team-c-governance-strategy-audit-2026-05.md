@@ -11,8 +11,8 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/87"
 related_artifacts:
   - "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
   - "governance/REPO_MODEL.md"
-  - "standards/RESEARCH_PROFILE.md"
-  - "standards/TEAM_CONTRACT.md"
+  - "standards/research-profile.md"
+  - "standards/team-contract.md"
 ---
 
 # Интерпретация аудита стратегии governance от команды C
@@ -73,8 +73,8 @@ governance-архитектура для human + AI collaboration.
 Сейчас полезнее определить минимальный набор активных governance-артефактов и
 границы их роли, чем создавать новые уровни. Минимум уже есть:
 `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `governance/REPO_MODEL.md`,
-`standards/README.md`, `standards/RESEARCH_PROFILE.md`,
-`standards/ISSUE_WORKFLOW.md` и `governance/ARTIFACT_MAP.md`.
+`standards/README.md`, `standards/research-profile.md`,
+`standards/issue-workflow.md` и `governance/ARTIFACT_MAP.md`.
 
 Рекомендация: следующий governance artifact создавать только при повторяющейся
 операционной боли, зафиксированной в issue, PR review или research findings.
@@ -89,7 +89,7 @@ governance-архитектура для human + AI collaboration.
 | Concept | Зачем существует репозиторий и где его границы. | `CONCEPT.md` |
 | Governance contracts | Как работают люди и ИИ, кто принимает решения. | `AI_GOVERNANCE.md`, `CONTRIBUTING.md` |
 | Repository model | Где живут артефакты и когда создаются новые. | `governance/REPO_MODEL.md` |
-| Standards / profiles | Обязательные форматы для повторяемых работ. | `standards/RESEARCH_PROFILE.md`, `standards/ISSUE_WORKFLOW.md` |
+| Standards / profiles | Обязательные форматы для повторяемых работ. | `standards/research-profile.md`, `standards/issue-workflow.md` |
 | Practices | Рекомендации, проверяемые на workflow до стандартизации. | Research-рекомендации и будущие pilot examples |
 | Frameworks | Методологии, появляющиеся только после доказанного gap. | `frameworks/` |
 
@@ -148,5 +148,5 @@ standard или practice?
 | Issue #87 | Входные предложения команды C и acceptance criteria. |
 | `research/hub/project-context-and-bootstrap-patterns-2026-05.md` | Механизм `recommendation -> issue`, context handoff и bootstrap patterns. |
 | `governance/REPO_MODEL.md` | Anti-Inflation principle и правило размещения артефактов. |
-| `standards/RESEARCH_PROFILE.md` | Требования к research frontmatter, traceability и ограничениям. |
-| `standards/TEAM_CONTRACT.md` | Контекст team contract, AI governance и project-level adaptation. |
+| `standards/research-profile.md` | Требования к research frontmatter, traceability и ограничениям. |
+| `standards/team-contract.md` | Контекст team contract, AI governance и project-level adaptation. |

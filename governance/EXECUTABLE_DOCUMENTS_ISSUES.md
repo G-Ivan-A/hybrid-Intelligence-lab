@@ -11,7 +11,7 @@ source: governance/rfc/contract-executability-rfc.md
 related_artifacts:
   - "governance/rfc/contract-executability-rfc.md"
   - "governance/BACKLOG.md"
-  - "standards/GLOSSARY.md"
+  - "standards/glossary.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/133"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138"
@@ -54,9 +54,9 @@ related_issues:
 | CE-003 | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) | `templates/spoke/AI_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO |
 | CE-004 | [#141](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141) | `AI_GOVERNANCE.md` | P1 | CE-001, CE-008 | TODO |
 | CE-005 | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) | `governance/REPO_MODEL.md` | P2 | CE-008 | TODO |
-| CE-006 | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) | `standards/PROJECT_STRUCTURE_INHERITANCE.md` | P3 | CE-008 | TODO |
-| CE-007 | [#144](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144) | `standards/ISSUE_WORKFLOW.md` | P3 | CE-008 | TODO |
-| CE-008 | [#145](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145) | `standards/GLOSSARY.md` | P1 | — | TODO |
+| CE-006 | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) | `standards/project-structure-inheritance.md` | P3 | CE-008 | TODO |
+| CE-007 | [#144](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144) | `standards/issue-workflow.md` | P3 | CE-008 | TODO |
+| CE-008 | [#145](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145) | `standards/glossary.md` | P1 | — | TODO |
 | CE-009 | [#146](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/146) | `tools/validate-frontmatter.sh` | P2 | CE-008 | TODO |
 | CE-010 | [#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147) | `governance/ARTIFACT_MAP.md` | P2 | CE-001, CE-002, CE-003, CE-004, CE-008 | TODO |
 

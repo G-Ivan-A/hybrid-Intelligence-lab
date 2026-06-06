@@ -13,7 +13,7 @@ ai-generated: false
 
 ## Назначение
 
-`TEAM_CONTRACT.md` - это шаблон, набор лучших практик и инструкция по
+`team-contract.md` - это шаблон, набор лучших практик и инструкция по
 адаптации для проектных репозиториев, которые используют подходы
 `hybrid-Intelligence-lab`.
 
@@ -35,9 +35,9 @@ reviewed result.
 Минимальный результат адаптации:
 
 1. Выбран профиль проекта:
-   [RESEARCH_PROFILE.md](#research_profilemd),
-   [PRODUCT_PROFILE.md](#product_profilemd) или
-   [EDUCATION_PROFILE.md](#education_profilemd).
+   [research-profile.md](#research_profilemd),
+   [product-profile.md](#product_profilemd) или
+   [education-profile.md](#education_profilemd).
 2. Создан `CONTRIBUTING.md`, который объясняет человеческий workflow.
 3. Создан `AI_GOVERNANCE.md`, который объясняет AI-assisted workflow.
 4. PR template или issue template ссылается на оба файла, если проект
@@ -53,11 +53,11 @@ reviewed result.
 
 | Профиль | Когда выбирать | Главный риск | Что усиливать в контракте |
 | --- | --- | --- | --- |
-| [RESEARCH_PROFILE.md](#research_profilemd) | Исследования, reports, experiments, datasets, methods. | Непроверяемые claims, слабая воспроизводимость, sensitive data. | Sources, method, limitations, reproducibility, publication boundary. |
-| [PRODUCT_PROFILE.md](#product_profilemd) | Production code, product delivery, integrations, releases. | Regression, security, broken ownership, unreviewed AI output. | CI, code review, CODEOWNERS, release gates, rollback, secrets policy. |
-| [EDUCATION_PROFILE.md](#education_profilemd) | Courses, lessons, scenarios, open education materials. | Несовпадение с аудиторией, устаревшие материалы, неясные learning outcomes. | Audience, learning goals, review by teacher/domain expert, update cadence. |
+| [research-profile.md](#research_profilemd) | Исследования, reports, experiments, datasets, methods. | Непроверяемые claims, слабая воспроизводимость, sensitive data. | Sources, method, limitations, reproducibility, publication boundary. |
+| [product-profile.md](#product_profilemd) | Production code, product delivery, integrations, releases. | Regression, security, broken ownership, unreviewed AI output. | CI, code review, CODEOWNERS, release gates, rollback, secrets policy. |
+| [education-profile.md](#education_profilemd) | Courses, lessons, scenarios, open education materials. | Несовпадение с аудиторией, устаревшие материалы, неясные learning outcomes. | Audience, learning goals, review by teacher/domain expert, update cadence. |
 
-### RESEARCH_PROFILE.md
+### research-profile.md
 
 Создайте этот профиль в проекте, если основной результат - исследование,
 аналитический отчет, corpus, experiment или methodology.
@@ -73,7 +73,7 @@ reviewed result.
 - rule for AI-assisted summaries: sources must be linked and unverifiable
   claims must be marked as assumptions.
 
-### PRODUCT_PROFILE.md
+### product-profile.md
 
 Создайте этот профиль в проекте, если репозиторий содержит production code,
 product implementation, deployment, integrations or user-facing workflows.
@@ -90,7 +90,7 @@ product implementation, deployment, integrations or user-facing workflows.
 - AI usage boundary: allowed coding assistance, forbidden autonomous changes,
   required human review for generated code.
 
-### EDUCATION_PROFILE.md
+### education-profile.md
 
 Создайте этот профиль в проекте, если основной результат - course, lesson plan,
 training scenario, rubric or public learning material.
@@ -301,7 +301,7 @@ claim, or the AI would need to operate outside the approved scope.
 
 ### Research project
 
-- `RESEARCH_PROFILE.md`: research question, dataset policy, reproducibility.
+- `research-profile.md`: research question, dataset policy, reproducibility.
 - `CONTRIBUTING.md`: issue-first changes, source-backed reports, experiment
   folders, review by domain expert.
 - `AI_GOVERNANCE.md`: AI can summarize sources and draft analysis, but must
@@ -311,7 +311,7 @@ claim, or the AI would need to operate outside the approved scope.
 
 ### Product repository
 
-- `PRODUCT_PROFILE.md`: owners, environments, release cadence, support
+- `product-profile.md`: owners, environments, release cadence, support
   boundaries.
 - `CONTRIBUTING.md`: branch from `main`, PR template, required checks,
   CODEOWNERS for critical paths.
@@ -322,7 +322,7 @@ claim, or the AI would need to operate outside the approved scope.
 
 ### Education repository
 
-- `EDUCATION_PROFILE.md`: audience, learning outcomes, delivery format,
+- `education-profile.md`: audience, learning outcomes, delivery format,
   accessibility and localization.
 - `CONTRIBUTING.md`: lesson changes require learning objective and teacher
   review; examples must be runnable or clearly marked as conceptual.

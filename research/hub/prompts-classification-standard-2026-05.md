@@ -491,7 +491,7 @@ patterns (chain → agent → multi-agent). Уровни PT-1..PT-4 соотве
 6. **Должна ли классификация быть стандартом (`standards/`) или остаться
    исследованием (`research/`)?**
    Текущий статус: `draft` в `research/`. После review и согласования может
-   быть повышена до `standards/PROMPT_CLASSIFICATION.md`.
+   быть повышена до `standards/prompt-classification.md`.
 
 ---
 

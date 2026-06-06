@@ -6,9 +6,9 @@ ai-generated: true
 executable: false
 scope: repo-wide
 related_standards:
-  - "PROJECT_STRUCTURE_INHERITANCE.md"
-  - "FILE_NAMING.md"
-  - "RESEARCH_PROFILE.md"
+  - "project-structure-inheritance.md"
+  - "file-naming.md"
+  - "research-profile.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
 ---
@@ -32,7 +32,7 @@ spoke-проекта, который служит «единой точкой с
 `open-ai.ru`.
 
 Стандарт **наследует** геном спока (`templates/spoke/`) и принципы
-[standards/PROJECT_STRUCTURE_INHERITANCE.md](PROJECT_STRUCTURE_INHERITANCE.md), и
+[standards/project-structure-inheritance.md](project-structure-inheritance.md), и
 **добавляет** портал-специфичные каталоги. Он не вводит обязательных
 зависимостей для других споков (портал-каталоги опциональны и создаются по
 операционной потребности — Anti-Inflation).
@@ -141,7 +141,7 @@ spoke-проекта, который служит «единой точкой с
 2. **Хаб — источник истины.** Governance, стандарты и фундаментальные знания
    живут в Хабе; в споке `research/` **не создаётся** (см. `templates/spoke/README.md`).
 3. **Frontmatter и lifecycle.** Те же `status/version/updated/ai-generated` и
-   правила именования ([FILE_NAMING.md](FILE_NAMING.md)).
+   правила именования ([file-naming.md](file-naming.md)).
 4. **Иммунная система.** Свой `tools/validate-repository-structure.sh`,
    проверяемый перед каждым PR (Definition of Done).
 5. **Anti-Inflation.** Каталог создаётся, только когда снижает реальную боль.
@@ -155,7 +155,7 @@ spoke-проекта, который служит «единой точкой с
    production-код проекта живёт в его собственном репозитории.
 3. **Без обязательных зависимостей.** Наличие портал-каталогов не обязывает
    другие споки их повторять (наследует
-   [PROJECT_STRUCTURE_INHERITANCE.md](PROJECT_STRUCTURE_INHERITANCE.md)).
+   [project-structure-inheritance.md](project-structure-inheritance.md)).
 4. **Стандарт repo-wide не ссылается на проект.** Во избежание циклов этот
    стандарт описывает *класс* порталов, а не конкретный `open-ai.ru`.
 5. **Приватность.** Секреты, реальные клиентские данные и несанитизированные
@@ -220,8 +220,8 @@ open-ai.ru/
 
 ## Источники
 
-- [standards/PROJECT_STRUCTURE_INHERITANCE.md](PROJECT_STRUCTURE_INHERITANCE.md) — родительский принцип наследования.
-- [standards/FILE_NAMING.md](FILE_NAMING.md) — правила именования.
+- [standards/project-structure-inheritance.md](project-structure-inheritance.md) — родительский принцип наследования.
+- [standards/file-naming.md](file-naming.md) — правила именования.
 - [templates/spoke/README.md](../templates/spoke/README.md) — геном спока.
 - [projects/README.md](../projects/README.md) — критерии spoke vs `/projects`.
 - [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) — Anti-Inflation, размещение артефактов.

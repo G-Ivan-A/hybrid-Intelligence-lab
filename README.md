@@ -28,8 +28,8 @@
 | [CHANGELOG.md](CHANGELOG.md) | Date-based журнал governance-изменений репозитория. |
 | [LICENSE](LICENSE) | Текущий статус лицензии и pending-решение Founder & PO. |
 | [standards/README.md](standards/README.md) | Таблица активных и планируемых стандартов. |
-| [standards/GLOSSARY.md](standards/GLOSSARY.md) | Единый словарь терминов для standards, governance и AI-assisted work. |
-| [standards/TEAM_CONTRACT.md](standards/TEAM_CONTRACT.md) | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. |
+| [standards/glossary.md](standards/glossary.md) | Единый словарь терминов для standards, governance и AI-assisted work. |
+| [standards/team-contract.md](standards/team-contract.md) | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. |
 | [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
 | [governance/REPO_MODEL.md](governance/REPO_MODEL.md) | Модель структуры репозитория и Anti-Inflation правило. |
 | [governance/ARTIFACT_MAP.md](governance/ARTIFACT_MAP.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |

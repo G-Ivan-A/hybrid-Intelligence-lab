@@ -52,7 +52,7 @@ source: research/README-old.md
 | --- | --- |
 | [documentation-standards-comparison-2026-06.md](portal/documentation-standards-comparison-2026-06.md) | Сравнение стандартов документации (C4, arc42, ADR, RFC, Diátaxis, IEEE 42010, Concept Doc) и вывод о минимальном ядре для портала: ADR + C4 обязательны, RFC и frontmatter наследуются от Хаба, arc42-lite и Diátaxis — по росту. |
 | [architecture-and-stack-comparison-2026-06.md](portal/architecture-and-stack-comparison-2026-06.md) | Сравнение архитектур и технологического стека (frontend, backend, хостинг, BaaS, аналитика, автоматизация): модульный монолит, SSG + islands, Cloudflare Pages, Supabase, выбор фреймворка по матрице критериев. |
-| [repository-structure-design-2026-06.md](portal/repository-structure-design-2026-06.md) | Дизайн структуры репозитория портала как spoke-проекта: наследование генома спока, портал-специфичные каталоги, альтернативы и обоснование (источник стандарта `PORTAL_REPOSITORY_STRUCTURE.md`). |
+| [repository-structure-design-2026-06.md](portal/repository-structure-design-2026-06.md) | Дизайн структуры репозитория портала как spoke-проекта: наследование генома спока, портал-специфичные каталоги, альтернативы и обоснование (источник стандарта `portal-repository-structure.md`). |
 | [ai-and-mango-integration-patterns-2026-06.md](portal/ai-and-mango-integration-patterns-2026-06.md) | Паттерны интеграции AI и `mango_ba_prompts` (Yandex GPT через serverless-proxy, content-collection санитизированных промптов, Supabase Auth + RLS, клиентское маскирование) с разбивкой по фазам и границей приватности. |
 
 ## Рекомендуемая структура
@@ -69,4 +69,4 @@ research/<domain>/
 исключение.
 
 Подробные правила frontmatter, источников и экспериментов зафиксированы в
-[standards/RESEARCH_PROFILE.md](../standards/RESEARCH_PROFILE.md).
+[standards/research-profile.md](../standards/research-profile.md).

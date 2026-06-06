@@ -38,18 +38,18 @@ is_active_file() {
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
-    standards/FILE_NAMING.md | \
-    standards/RESEARCH_PROFILE.md | \
-    standards/GLOSSARY.md | \
-    standards/EDUCATION_PROFILE.md | \
-    standards/PRODUCT_PROFILE.md | \
-    standards/TEAM_CONTRACT.md | \
-    standards/ISSUE_WORKFLOW.md | \
-    standards/PROJECT_STRUCTURE_INHERITANCE.md | \
-    standards/PORTAL_REPOSITORY_STRUCTURE.md | \
-    standards/RESEARCH_DOCUMENTATION_STANDARD.md | \
-    standards/EXECUTABLE_CONTRACT_STANDARD.md | \
-    standards/CONTRACT_DOCUMENTATION_STANDARD.md | \
+    standards/file-naming.md | \
+    standards/research-profile.md | \
+    standards/glossary.md | \
+    standards/education-profile.md | \
+    standards/product-profile.md | \
+    standards/team-contract.md | \
+    standards/issue-workflow.md | \
+    standards/project-structure-inheritance.md | \
+    standards/portal-repository-structure.md | \
+    standards/research-documentation-standard.md | \
+    standards/executable-contract-standard.md | \
+    standards/contract-documentation-standard.md | \
     research/mango/taxonomy-concept-2026-05.md | \
     research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/mango/rag-mapping-roadmap-2026-05.md | \
@@ -144,6 +144,25 @@ is_old_file() {
   [[ "$name" == *-old || "$name" == *-old.* ]]
 }
 
+validate_standards_file_naming() {
+  local file
+  local basename
+
+  while IFS= read -r file; do
+    basename="${file##*/}"
+
+    case "$basename" in
+      README.md | LICENSE | CHANGELOG.md)
+        continue
+        ;;
+    esac
+
+    if [[ ! "$basename" =~ ^[a-z0-9]+(-[a-z0-9]+)*\.md$ ]]; then
+      fail "standards file must use kebab-case: $file"
+    fi
+  done < <(find standards -maxdepth 1 -type f)
+}
+
 required_directories=(
   ".github/ISSUE_TEMPLATE"
   "templates"
@@ -182,18 +201,18 @@ required_files=(
   "CHANGELOG.md"
   "LICENSE"
   "standards/README.md"
-  "standards/FILE_NAMING.md"
-  "standards/RESEARCH_PROFILE.md"
-  "standards/GLOSSARY.md"
-  "standards/EDUCATION_PROFILE.md"
-  "standards/PRODUCT_PROFILE.md"
-  "standards/TEAM_CONTRACT.md"
-  "standards/ISSUE_WORKFLOW.md"
-  "standards/PROJECT_STRUCTURE_INHERITANCE.md"
-  "standards/PORTAL_REPOSITORY_STRUCTURE.md"
-  "standards/RESEARCH_DOCUMENTATION_STANDARD.md"
-  "standards/EXECUTABLE_CONTRACT_STANDARD.md"
-  "standards/CONTRACT_DOCUMENTATION_STANDARD.md"
+  "standards/file-naming.md"
+  "standards/research-profile.md"
+  "standards/glossary.md"
+  "standards/education-profile.md"
+  "standards/product-profile.md"
+  "standards/team-contract.md"
+  "standards/issue-workflow.md"
+  "standards/project-structure-inheritance.md"
+  "standards/portal-repository-structure.md"
+  "standards/research-documentation-standard.md"
+  "standards/executable-contract-standard.md"
+  "standards/contract-documentation-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/mango/README.md"
@@ -273,6 +292,8 @@ for file in "${required_files[@]}"; do
   require_file "$file"
 done
 
+validate_standards_file_naming
+
 while IFS= read -r file; do
   if is_active_file "$file"; then
     continue
@@ -288,8 +309,8 @@ done < <(git ls-files)
 
 require_text "README.md" "CONCEPT.md"
 require_text "README.md" "standards/README.md"
-require_text "README.md" "standards/GLOSSARY.md"
-require_text "README.md" "standards/TEAM_CONTRACT.md"
+require_text "README.md" "standards/glossary.md"
+require_text "README.md" "standards/team-contract.md"
 require_text "README.md" "governance/AGENT_ONBOARDING.md"
 require_text "README.md" "governance/REPO_MODEL.md"
 require_text "README.md" "governance/ARTIFACT_MAP.md"
@@ -310,9 +331,9 @@ require_text "CONCEPT.md" "Версия: 1.0"
 require_text "CONCEPT.md" "Operating Mode"
 require_text "CONCEPT.md" "structured mode"
 require_text "CONCEPT.md" "creative mode"
-require_text "CONCEPT.md" "standards/TEAM_CONTRACT.md"
+require_text "CONCEPT.md" "standards/team-contract.md"
 require_text "CONCEPT.md" "Шаблон командного соглашения"
-require_text "CONCEPT.md" "GLOSSARY.md"
+require_text "CONCEPT.md" "glossary.md"
 require_text "CONCEPT.md" "единой терминологии"
 
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
@@ -342,149 +363,151 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "Как пользоваться"
-require_text "standards/README.md" "FILE_NAMING.md"
-require_text "standards/README.md" "RESEARCH_PROFILE.md"
-require_text "standards/README.md" "TEAM_CONTRACT.md"
-require_text "standards/README.md" "standards/GLOSSARY.md"
-require_text "standards/README.md" "standards/EDUCATION_PROFILE.md"
-require_text "standards/README.md" "PRODUCT_PROFILE.md"
-require_text "standards/README.md" "PROJECT_STRUCTURE_INHERITANCE.md"
+require_text "standards/README.md" "file-naming.md"
+require_text "standards/README.md" "research-profile.md"
+require_text "standards/README.md" "team-contract.md"
+require_text "standards/README.md" "standards/glossary.md"
+require_text "standards/README.md" "standards/education-profile.md"
+require_text "standards/README.md" "product-profile.md"
+require_text "standards/README.md" "project-structure-inheritance.md"
 require_text "standards/README.md" "ARTIFACT_MAP.md"
-require_text "standards/README.md" "ISSUE_WORKFLOW.md"
+require_text "standards/README.md" "issue-workflow.md"
 
-require_text "standards/TEAM_CONTRACT.md" "status: canonical"
-require_text "standards/TEAM_CONTRACT.md" "version: 1.0"
-require_text "standards/TEAM_CONTRACT.md" "updated: 2026-05-26"
-require_text "standards/TEAM_CONTRACT.md" "ai-generated: false"
-require_text "standards/TEAM_CONTRACT.md" "Назначение"
-require_text "standards/TEAM_CONTRACT.md" "не является контрактом для прямого использования"
-require_text "standards/TEAM_CONTRACT.md" "CONTRIBUTING.md"
-require_text "standards/TEAM_CONTRACT.md" "AI_GOVERNANCE.md"
-require_text "standards/TEAM_CONTRACT.md" "Definition of Done"
-require_text "standards/TEAM_CONTRACT.md" "operating modes"
-require_text "standards/TEAM_CONTRACT.md" "disclosure"
-require_text "standards/TEAM_CONTRACT.md" "self-review checklist"
-require_text "standards/TEAM_CONTRACT.md" "RESEARCH_PROFILE.md"
-require_text "standards/TEAM_CONTRACT.md" "PRODUCT_PROFILE.md"
-require_text "standards/TEAM_CONTRACT.md" "EDUCATION_PROFILE.md"
-require_text "standards/TEAM_CONTRACT.md" "Источники"
+require_text "standards/team-contract.md" "status: canonical"
+require_text "standards/team-contract.md" "version: 1.0"
+require_text "standards/team-contract.md" "updated: 2026-05-26"
+require_text "standards/team-contract.md" "ai-generated: false"
+require_text "standards/team-contract.md" "Назначение"
+require_text "standards/team-contract.md" "не является контрактом для прямого использования"
+require_text "standards/team-contract.md" "CONTRIBUTING.md"
+require_text "standards/team-contract.md" "AI_GOVERNANCE.md"
+require_text "standards/team-contract.md" "Definition of Done"
+require_text "standards/team-contract.md" "operating modes"
+require_text "standards/team-contract.md" "disclosure"
+require_text "standards/team-contract.md" "self-review checklist"
+require_text "standards/team-contract.md" "research-profile.md"
+require_text "standards/team-contract.md" "product-profile.md"
+require_text "standards/team-contract.md" "education-profile.md"
+require_text "standards/team-contract.md" "Источники"
 
-require_text "standards/ISSUE_WORKFLOW.md" "status: canonical"
-require_text "standards/ISSUE_WORKFLOW.md" "version: 1.1"
-require_text "standards/ISSUE_WORKFLOW.md" "updated: 2026-06-04"
-require_text "standards/ISSUE_WORKFLOW.md" "ai-generated: false"
-require_text "standards/ISSUE_WORKFLOW.md" "executable: false"
-require_text "standards/ISSUE_WORKFLOW.md" "Версия: 1.1"
-require_text "standards/ISSUE_WORKFLOW.md" "Дата: 2026-06-04"
-require_text "standards/ISSUE_WORKFLOW.md" "## Назначение"
-require_text "standards/ISSUE_WORKFLOW.md" "## Статусы задач"
-require_text "standards/ISSUE_WORKFLOW.md" "## Правила переходов"
-require_text "standards/ISSUE_WORKFLOW.md" "## Связи между артефактами"
-require_text "standards/ISSUE_WORKFLOW.md" "## Точки автоматизации"
-require_text "standards/ISSUE_WORKFLOW.md" "## Источники и адаптация"
-require_text "standards/ISSUE_WORKFLOW.md" '`draft`'
-require_text "standards/ISSUE_WORKFLOW.md" '`ready`'
-require_text "standards/ISSUE_WORKFLOW.md" '`in-progress`'
-require_text "standards/ISSUE_WORKFLOW.md" '`review`'
-require_text "standards/ISSUE_WORKFLOW.md" '`merged`'
-require_text "standards/ISSUE_WORKFLOW.md" '`closed`'
-require_text "standards/ISSUE_WORKFLOW.md" '`blocked`'
+require_text "standards/issue-workflow.md" "status: canonical"
+require_text "standards/issue-workflow.md" "version: 1.1"
+require_text "standards/issue-workflow.md" "updated: 2026-06-04"
+require_text "standards/issue-workflow.md" "ai-generated: false"
+require_text "standards/issue-workflow.md" "executable: false"
+require_text "standards/issue-workflow.md" "Версия: 1.1"
+require_text "standards/issue-workflow.md" "Дата: 2026-06-04"
+require_text "standards/issue-workflow.md" "## Назначение"
+require_text "standards/issue-workflow.md" "## Статусы задач"
+require_text "standards/issue-workflow.md" "## Правила переходов"
+require_text "standards/issue-workflow.md" "## Связи между артефактами"
+require_text "standards/issue-workflow.md" "## Точки автоматизации"
+require_text "standards/issue-workflow.md" "## Источники и адаптация"
+require_text "standards/issue-workflow.md" '`draft`'
+require_text "standards/issue-workflow.md" '`ready`'
+require_text "standards/issue-workflow.md" '`in-progress`'
+require_text "standards/issue-workflow.md" '`review`'
+require_text "standards/issue-workflow.md" '`merged`'
+require_text "standards/issue-workflow.md" '`closed`'
+require_text "standards/issue-workflow.md" '`blocked`'
 
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "status: canonical"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "version: 1.1"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "updated: 2026-06-04"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "ai-generated: false"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "executable: false"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Разрешённые подкаталоги"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Правила связывания стандартов"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "scope: mango-only"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Пример структуры проекта"
-require_text "standards/PROJECT_STRUCTURE_INHERITANCE.md" "Репозиторий-широкий стандарт НЕ должен ссылаться на проектный"
-require_text "standards/ISSUE_WORKFLOW.md" "User Story / ФТ"
-require_text "standards/ISSUE_WORKFLOW.md" "CHANGELOG.md"
-require_text "standards/ISSUE_WORKFLOW.md" "governance/ARTIFACT_MAP.md"
-require_text "standards/ISSUE_WORKFLOW.md" "validate-frontmatter.sh"
-require_text "standards/ISSUE_WORKFLOW.md" "validate-repository-structure.sh"
-require_text "standards/FILE_NAMING.md" "status: canonical"
-require_text "standards/FILE_NAMING.md" "version: 1.0"
-require_text "standards/FILE_NAMING.md" "updated: 2026-05-26"
-require_text "standards/FILE_NAMING.md" "ai-generated: false"
-require_text "standards/FILE_NAMING.md" "Корень репозитория"
-require_text "standards/FILE_NAMING.md" "UPPERCASE_WITH_HYPHENS.md"
-require_text "standards/FILE_NAMING.md" "Вложенные каталоги"
-require_text "standards/FILE_NAMING.md" "lowercase-with-hyphens.md"
-require_text "standards/FILE_NAMING.md" "classification-glossary.md"
-require_text "standards/FILE_NAMING.md" "Исключения"
-require_text "standards/FILE_NAMING.md" "Новый файл не соответствует правилу"
+require_text "standards/project-structure-inheritance.md" "status: canonical"
+require_text "standards/project-structure-inheritance.md" "version: 1.1"
+require_text "standards/project-structure-inheritance.md" "updated: 2026-06-04"
+require_text "standards/project-structure-inheritance.md" "ai-generated: false"
+require_text "standards/project-structure-inheritance.md" "executable: false"
+require_text "standards/project-structure-inheritance.md" "Разрешённые подкаталоги"
+require_text "standards/project-structure-inheritance.md" "Правила связывания стандартов"
+require_text "standards/project-structure-inheritance.md" "scope: mango-only"
+require_text "standards/project-structure-inheritance.md" "Пример структуры проекта"
+require_text "standards/project-structure-inheritance.md" "Репозиторий-широкий стандарт НЕ должен ссылаться на проектный"
+require_text "standards/issue-workflow.md" "User Story / ФТ"
+require_text "standards/issue-workflow.md" "CHANGELOG.md"
+require_text "standards/issue-workflow.md" "governance/ARTIFACT_MAP.md"
+require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
+require_text "standards/issue-workflow.md" "validate-repository-structure.sh"
+require_text "standards/file-naming.md" "status: canonical"
+require_text "standards/file-naming.md" "version: 1.1"
+require_text "standards/file-naming.md" "updated: 2026-06-06"
+require_text "standards/file-naming.md" "ai-generated: false"
+require_text "standards/file-naming.md" "Корень репозитория"
+require_text "standards/file-naming.md" "UPPERCASE_WITH_HYPHENS.md"
+require_text "standards/file-naming.md" "Вложенные каталоги"
+require_text "standards/file-naming.md" "lowercase-with-hyphens.md"
+require_text "standards/file-naming.md" "Правила именования файлов в standards/"
+require_text "standards/file-naming.md" '`CAPS_LOCK` запрещён'
+require_text "standards/file-naming.md" "classification-glossary.md"
+require_text "standards/file-naming.md" "Исключения"
+require_text "standards/file-naming.md" "Новый файл не соответствует правилу"
 
-require_text "standards/RESEARCH_PROFILE.md" "status: canonical"
-require_text "standards/RESEARCH_PROFILE.md" "version: 1.0"
-require_text "standards/RESEARCH_PROFILE.md" "updated: 2026-05-26"
-require_text "standards/RESEARCH_PROFILE.md" "ai-generated: false"
-require_text "standards/RESEARCH_PROFILE.md" "Назначение"
-require_text "standards/RESEARCH_PROFILE.md" "Обязательные артефакты"
-require_text "standards/RESEARCH_PROFILE.md" "YYYY-MM-topic.md"
-require_text "standards/RESEARCH_PROFILE.md" "exp-<slug>"
-require_text "standards/RESEARCH_PROFILE.md" "Шаблон frontmatter исследования"
-require_text "standards/RESEARCH_PROFILE.md" "external-analysis | internal-analysis | experiment"
-require_text "standards/RESEARCH_PROFILE.md" "Как организовать исследование"
-require_text "standards/RESEARCH_PROFILE.md" "Чек-лист готовности к публикации"
-require_text "standards/RESEARCH_PROFILE.md" "Правила цитирования источников"
-require_text "standards/RESEARCH_PROFILE.md" "FAIR Principles"
+require_text "standards/research-profile.md" "status: canonical"
+require_text "standards/research-profile.md" "version: 1.0"
+require_text "standards/research-profile.md" "updated: 2026-05-26"
+require_text "standards/research-profile.md" "ai-generated: false"
+require_text "standards/research-profile.md" "Назначение"
+require_text "standards/research-profile.md" "Обязательные артефакты"
+require_text "standards/research-profile.md" "YYYY-MM-topic.md"
+require_text "standards/research-profile.md" "exp-<slug>"
+require_text "standards/research-profile.md" "Шаблон frontmatter исследования"
+require_text "standards/research-profile.md" "external-analysis | internal-analysis | experiment"
+require_text "standards/research-profile.md" "Как организовать исследование"
+require_text "standards/research-profile.md" "Чек-лист готовности к публикации"
+require_text "standards/research-profile.md" "Правила цитирования источников"
+require_text "standards/research-profile.md" "FAIR Principles"
 
-require_text "standards/GLOSSARY.md" "status: canonical"
-require_text "standards/GLOSSARY.md" "version: 1.2"
-require_text "standards/GLOSSARY.md" "updated: 2026-06-04"
-require_text "standards/GLOSSARY.md" "ai-generated: false"
-require_text "standards/GLOSSARY.md" "Standard"
-require_text "standards/GLOSSARY.md" "Concept"
-require_text "standards/GLOSSARY.md" "Policy"
-require_text "standards/GLOSSARY.md" "Contract"
-require_text "standards/GLOSSARY.md" "Practice"
-require_text "standards/GLOSSARY.md" "Framework"
-require_text "standards/GLOSSARY.md" "Guideline"
-require_text "standards/GLOSSARY.md" "Artifact"
-require_text "standards/GLOSSARY.md" "Canonical"
-require_text "standards/GLOSSARY.md" "Draft"
-require_text "standards/GLOSSARY.md" "Operating Mode"
-require_text "standards/GLOSSARY.md" "Profile"
-require_text "standards/GLOSSARY.md" "Исполнимый документ"
-require_text "standards/GLOSSARY.md" "Директивный блок"
-require_text "standards/GLOSSARY.md" "Как использовать"
-require_text "standards/GLOSSARY.md" "Связи терминов"
-require_text "standards/GLOSSARY.md" "Источники"
+require_text "standards/glossary.md" "status: canonical"
+require_text "standards/glossary.md" "version: 1.2"
+require_text "standards/glossary.md" "updated: 2026-06-04"
+require_text "standards/glossary.md" "ai-generated: false"
+require_text "standards/glossary.md" "Standard"
+require_text "standards/glossary.md" "Concept"
+require_text "standards/glossary.md" "Policy"
+require_text "standards/glossary.md" "Contract"
+require_text "standards/glossary.md" "Practice"
+require_text "standards/glossary.md" "Framework"
+require_text "standards/glossary.md" "Guideline"
+require_text "standards/glossary.md" "Artifact"
+require_text "standards/glossary.md" "Canonical"
+require_text "standards/glossary.md" "Draft"
+require_text "standards/glossary.md" "Operating Mode"
+require_text "standards/glossary.md" "Profile"
+require_text "standards/glossary.md" "Исполнимый документ"
+require_text "standards/glossary.md" "Директивный блок"
+require_text "standards/glossary.md" "Как использовать"
+require_text "standards/glossary.md" "Связи терминов"
+require_text "standards/glossary.md" "Источники"
 
-require_text "standards/EDUCATION_PROFILE.md" "status: canonical"
-require_text "standards/EDUCATION_PROFILE.md" "version: 1.0"
-require_text "standards/EDUCATION_PROFILE.md" "updated: 2026-05-26"
-require_text "standards/EDUCATION_PROFILE.md" "ai-generated: false"
-require_text "standards/EDUCATION_PROFILE.md" "## Назначение"
-require_text "standards/EDUCATION_PROFILE.md" "PRODUCT_PROFILE.md"
-require_text "standards/EDUCATION_PROFILE.md" "RESEARCH_PROFILE.md"
-require_text "standards/EDUCATION_PROFILE.md" "| Артефакт | Назначение | Где размещать | Пример/Шаблон |"
-require_text "standards/EDUCATION_PROFILE.md" "CONCEPT.md"
-require_text "standards/EDUCATION_PROFILE.md" "module-XX/"
-require_text "standards/EDUCATION_PROFILE.md" "lesson-01.md"
-require_text "standards/EDUCATION_PROFILE.md" "exercise-01.md"
-require_text "standards/EDUCATION_PROFILE.md" "solution.md"
-require_text "standards/EDUCATION_PROFILE.md" "## Стандарт именования"
-require_text "standards/EDUCATION_PROFILE.md" "## Шаблон структуры модуля"
-require_text "standards/EDUCATION_PROFILE.md" "## Как адаптировать под формат обучения"
-require_text "standards/EDUCATION_PROFILE.md" "Открытый курс"
-require_text "standards/EDUCATION_PROFILE.md" "Коммерческий продукт"
-require_text "standards/EDUCATION_PROFILE.md" "Внутреннее обучение"
-require_text "standards/EDUCATION_PROFILE.md" "## Гибридный формат: чат-бот и LMS"
-require_text "standards/EDUCATION_PROFILE.md" "## Источники и адаптация"
-require_text "standards/EDUCATION_PROFILE.md" "Carnegie Mellon University Eberly Center"
-require_text "standards/EDUCATION_PROFILE.md" "CAST Universal Design for Learning"
-require_text "standards/EDUCATION_PROFILE.md" "UNESCO Open Educational Resources"
-require_text "standards/EDUCATION_PROFILE.md" "1EdTech Common Cartridge"
-require_text "standards/EDUCATION_PROFILE.md" "ADL Experience API"
-require_text "standards/PRODUCT_PROFILE.md" "status: canonical"
-require_text "standards/PRODUCT_PROFILE.md" "ai-generated: false"
-require_text "standards/PRODUCT_PROFILE.md" "PRODUCT_VISION.md"
-require_text "standards/PRODUCT_PROFILE.md" "Обязательные артефакты"
-require_text "standards/PRODUCT_PROFILE.md" "Метрики успеха"
+require_text "standards/education-profile.md" "status: canonical"
+require_text "standards/education-profile.md" "version: 1.0"
+require_text "standards/education-profile.md" "updated: 2026-05-26"
+require_text "standards/education-profile.md" "ai-generated: false"
+require_text "standards/education-profile.md" "## Назначение"
+require_text "standards/education-profile.md" "product-profile.md"
+require_text "standards/education-profile.md" "research-profile.md"
+require_text "standards/education-profile.md" "| Артефакт | Назначение | Где размещать | Пример/Шаблон |"
+require_text "standards/education-profile.md" "CONCEPT.md"
+require_text "standards/education-profile.md" "module-XX/"
+require_text "standards/education-profile.md" "lesson-01.md"
+require_text "standards/education-profile.md" "exercise-01.md"
+require_text "standards/education-profile.md" "solution.md"
+require_text "standards/education-profile.md" "## Стандарт именования"
+require_text "standards/education-profile.md" "## Шаблон структуры модуля"
+require_text "standards/education-profile.md" "## Как адаптировать под формат обучения"
+require_text "standards/education-profile.md" "Открытый курс"
+require_text "standards/education-profile.md" "Коммерческий продукт"
+require_text "standards/education-profile.md" "Внутреннее обучение"
+require_text "standards/education-profile.md" "## Гибридный формат: чат-бот и LMS"
+require_text "standards/education-profile.md" "## Источники и адаптация"
+require_text "standards/education-profile.md" "Carnegie Mellon University Eberly Center"
+require_text "standards/education-profile.md" "CAST Universal Design for Learning"
+require_text "standards/education-profile.md" "UNESCO Open Educational Resources"
+require_text "standards/education-profile.md" "1EdTech Common Cartridge"
+require_text "standards/education-profile.md" "ADL Experience API"
+require_text "standards/product-profile.md" "status: canonical"
+require_text "standards/product-profile.md" "ai-generated: false"
+require_text "standards/product-profile.md" "PRODUCT_VISION.md"
+require_text "standards/product-profile.md" "Обязательные артефакты"
+require_text "standards/product-profile.md" "Метрики успеха"
 
 require_text "governance/REPO_MODEL.md" "Артефакт только при операционной боли"
 require_text "governance/REPO_MODEL.md" "Anti-Inflation"
@@ -528,7 +551,7 @@ require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Кон
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Таблица-манифест"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Runtime-онбординг"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Bootstrap-клонирование"
-require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "standards/GLOSSARY.md"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "standards/glossary.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "ai-collaboration-retrospective-2026-06.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "rfc-agent-onboarding-protocol.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "rfc-creative-template-design.md"
@@ -555,7 +578,7 @@ require_text "governance/AGENT_ONBOARDING.md" "Handover Prompt"
 require_text "governance/AGENT_ONBOARDING.md" "{{REPO_NAME}}"
 require_text "governance/AGENT_ONBOARDING.md" "Readback"
 require_text "governance/AGENT_ONBOARDING.md" "Что может пойти не так"
-require_text "governance/AGENT_ONBOARDING.md" "standards/GLOSSARY.md"
+require_text "governance/AGENT_ONBOARDING.md" "standards/glossary.md"
 require_text "governance/AGENT_ONBOARDING.md" "rfc-agent-onboarding-protocol.md"
 require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initialization.md"
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
@@ -569,10 +592,10 @@ require_text "governance/ARTIFACT_MAP.md" "governance/rfc/rfc-creative-template-
 require_text "governance/ARTIFACT_MAP.md" "governance/rfc/contract-executability-rfc.md"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | 🚦 Исполнимый? | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/ARTIFACT_MAP.md" "🚦 entrypoint"
-require_text "governance/ARTIFACT_MAP.md" "standards/PROJECT_STRUCTURE_INHERITANCE.md"
+require_text "governance/ARTIFACT_MAP.md" "standards/project-structure-inheritance.md"
 require_text "governance/ARTIFACT_MAP.md" "Как использовать карту"
 require_text "governance/ARTIFACT_MAP.md" "Как обновлять карту"
-require_text "governance/ARTIFACT_MAP.md" "GLOSSARY.md"
+require_text "governance/ARTIFACT_MAP.md" "glossary.md"
 require_text "governance/ARTIFACT_MAP.md" "research/mango/classification.md"
 require_text "governance/ARTIFACT_MAP.md" "research/mango/rag-mapping-roadmap-2026-05.md"
 require_text "governance/ARTIFACT_MAP.md" "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
@@ -586,7 +609,7 @@ require_text "governance/ARTIFACT_MAP.md" "governance/EXECUTABLE_DOCUMENTS_ISSUE
 
 require_text "governance/BACKLOG.md" "status: canonical"
 require_text "governance/BACKLOG.md" "type: backlog"
-require_text "governance/BACKLOG.md" "standards/GLOSSARY.md"
+require_text "governance/BACKLOG.md" "standards/glossary.md"
 require_text "governance/BACKLOG.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Обоснование приоритета |"
 require_text "governance/BACKLOG.md" "Бэклог: Внедрение стандарта исполнимых документов"
 require_text "governance/BACKLOG.md" "CE-001"
@@ -606,7 +629,7 @@ require_text "governance/BACKLOG.md" '```mermaid'
 require_text "governance/BACKLOG.md" "Анализ рекомендаций команд С и Q"
 
 require_text "research/README.md" "status: canonical"
-require_text "research/README.md" "standards/RESEARCH_PROFILE.md"
+require_text "research/README.md" "standards/research-profile.md"
 require_text "research/README.md" "research/<domain>/exp-<slug>/"
 require_text "research/README.md" "project-context-and-bootstrap-patterns-2026-05.md"
 require_text "research/README.md" "prompts-classification-audit-2026-05.md"
@@ -784,7 +807,7 @@ require_text "archive/projects/mango/standards/classification-glossary.md" "Те
 require_text "archive/projects/mango/standards/classification-glossary.md" "⚠️ Требуется уточнение"
 
 require_text "education/README.md" "status: canonical"
-require_text "education/README.md" "standards/EDUCATION_PROFILE.md"
+require_text "education/README.md" "standards/education-profile.md"
 
 require_text "frameworks/README.md" "status: canonical"
 require_text "frameworks/README.md" "governance/REPO_MODEL.md"
@@ -794,7 +817,7 @@ require_text "projects/education-ba-prompt/README.md" "version: 0.1"
 require_text "projects/education-ba-prompt/README.md" "updated: 2026-05-26"
 require_text "projects/education-ba-prompt/README.md" "ai-generated: false"
 require_text "projects/education-ba-prompt/README.md" "docs/course-ideas.md"
-require_text "projects/education-ba-prompt/README.md" "standards/EDUCATION_PROFILE.md"
+require_text "projects/education-ba-prompt/README.md" "standards/education-profile.md"
 
 require_text "projects/education-ba-prompt/docs/course-ideas.md" "status: draft"
 require_text "projects/education-ba-prompt/docs/course-ideas.md" "version: 0.1"
