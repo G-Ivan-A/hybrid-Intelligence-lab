@@ -8,9 +8,10 @@
 #
 # Заменяемые плейсхолдеры:
 #   {{project_name}}         — имя проекта
-#   {{project_description}}  — одно-двухстрочное описание проекта
 #   {{hub_url}}              — ссылка на Хаб (источник истины)
 #   {{date}}                 — текущая дата (YYYY-MM-DD), автоген
+# Заполняемые поля:
+#   README description       — одно-двухстрочное описание проекта
 #
 # Использование:
 #   ./init.sh                                  # интерактивно (спросит значения)
@@ -88,7 +89,7 @@ replace_in_file() {
   tmp="$(mktemp)"
   sed \
     -e "s|{{project_name}}|$esc_name|g" \
-    -e "s|{{project_description}}|$esc_desc|g" \
+    -e "s|TODO: добавьте краткое описание проекта после инициализации\\.|$esc_desc|g" \
     -e "s|{{hub_url}}|$esc_hub|g" \
     -e "s|{{date}}|$esc_date|g" \
     "$file" > "$tmp"

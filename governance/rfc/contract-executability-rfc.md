@@ -1,21 +1,16 @@
 ---
-status: draft
+status: reviewed
 version: 1.1
-updated: 2026-06-04
+updated: 2026-06-07
 ai-generated: true
 type: rfc
 context: [governance, onboarding, contracts, architecture]
 method: incident-analysis + synthesis of three visions + industry best practices
 scope: repo-wide
 related_artifacts:
+  - standards/executable-contract-standard.md
   - governance/agent-onboarding.md
-  - AI_GOVERNANCE.md
-  - governance/repo-model.md
-  - standards/project-structure-inheritance.md
-  - standards/issue-workflow.md
-  - templates/spoke/AI_QUICK_RULES.md
-  - templates/spoke/AI_HANDOVER_PROMPT.md
-  - standards/glossary.md
+  - governance/backlog.md
 related_issues:
   - "#129"
   - "#132"
@@ -23,13 +18,13 @@ related_issues:
 
 # RFC: Архитектура исполнимых документов (Executable Contracts)
 
-> **Статус: RFC с зафиксированными решениями Human Review.** Это RFC —
-> *дизайн-предложение*, а не рабочая инструкция. Документ анализирует инцидент
-> «анализ вместо исполнения», сравнивает три равноприоритетных видения с
-> практиками индустрии и формирует **Видение 3** — оптимальную архитектуру
-> исполнимых документов Хаба и шаблонов споков. Видение 3 и план внедрения
-> утверждены фаундером (см. раздел 7); физический рефакторинг контрактов
-> выполняется отдельными малыми PR.
+> **Статус: reviewed decision record.** Это RFC — принятый источник решения, а
+> не рабочая инструкция. Документ анализирует инцидент «анализ вместо
+> исполнения», сравнивает три равноприоритетных видения с практиками индустрии и
+> фиксирует **Видение 3** как утверждённую архитектуру исполнимых документов Хаба
+> и шаблонов споков. Нормативные правила живут в
+> [standards/executable-contract-standard.md](../../standards/executable-contract-standard.md);
+> физический рефакторинг контрактов выполняется отдельными малыми PR.
 
 Термины используются по [standards/glossary.md](../../standards/glossary.md)
 ([Operating Mode](../../standards/glossary.md),
@@ -37,9 +32,22 @@ related_issues:
 [Handover Prompt](../../standards/glossary.md),
 [Readback](../../standards/glossary.md),
 [Contract](../../standards/glossary.md), [Policy](../../standards/glossary.md)).
-Новые термины («Исполнимый документ», «Директивный блок») здесь только
-*предлагаются*; их фиксация в глоссарии — часть плана внедрения (раздел 6), а не
-этого RFC (Anti-Inflation).
+Новые термины («Исполнимый документ», «Директивный блок») зафиксированы в
+[standards/glossary.md](../../standards/glossary.md); этот RFC сохраняет
+историческое обоснование их принятия.
+
+## Decision Status
+
+| Раздел | Статус | Normative Owner |
+| --- | --- | --- |
+| Executable markers | accepted | `standards/executable-contract-standard.md` |
+| Directive block | accepted | `governance/agent-onboarding.md` |
+| Rollout plan | implemented | `governance/backlog.md` |
+| Open questions | deferred | — |
+
+Решения из RFC считаются закрытыми для Phase 1: обсуждение и rationale остаются
+здесь, а дальнейшие обязательные правила и внедрение отслеживаются в указанных
+owner-артефактах.
 
 ---
 

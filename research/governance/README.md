@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.1
-updated: 2026-06-06
+status: reviewed
+version: 0.2
+updated: 2026-06-07
 ai-generated: true
 type: navigation
 scope: repo-wide
@@ -24,6 +24,17 @@ related_issues:
 Задача-источник: [issue #165](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165)
 (режим `creative`, полная автономия исполнителя). Мнения команды Q — **входные
 данные, не догма**: каждое решение трассируется к best practices.
+
+## Active standards and Source research
+
+Governance research is reviewed rationale. Active standards are the normative
+owners for day-to-day execution; this index links the source research to those
+derived standards without duplicating their rules.
+
+| Layer | Role | Derived standards |
+| --- | --- | --- |
+| Active standards | Normative rules that agents and reviewers apply. | `standards/research-profile.md`, `standards/executable-contract-standard.md`, `standards/contract-documentation-standard.md` |
+| Source research | Reviewed evidence, comparison matrices, alternatives, and rationale. | The documents listed below; each remains source material unless a standard explicitly imports it. |
 
 ## Документы
 

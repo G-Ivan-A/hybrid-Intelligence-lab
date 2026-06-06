@@ -75,6 +75,20 @@ is_validated_field() {
   esac
 }
 
+is_spoke_source_template() {
+  local path="$1"
+
+  case "$path" in
+    templates/spoke/*.md | ./templates/spoke/*.md | \
+    templates/spoke/.github/ISSUE_TEMPLATE/*.md | ./templates/spoke/.github/ISSUE_TEMPLATE/*.md)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
 validate_field() {
   local path="$1"
   local field="$2"
@@ -98,6 +112,9 @@ validate_field() {
       ;;
     updated)
       if [[ ! "$value" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+        if is_spoke_source_template "$path" && [[ "$value" == "{{date}}" ]]; then
+          return
+        fi
         warn "$path" "$line" "invalid updated '$value' (expected ISO8601 date YYYY-MM-DD)"
       fi
       ;;

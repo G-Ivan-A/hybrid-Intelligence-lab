@@ -7,10 +7,12 @@ type: atomic-functions-reference
 context: [voice-ucaas, contact-center, digital-channels]
 method: international-benchmark + atomic-decomposition + practical-mapping
 scope: mango-only
+# Fixed per draft-triage RFC Phase 1: local relations use path-only values;
+# the live Mango glossary remains an external spoke artifact.
 related_artifacts:
-  - "classification.md v3.0"
-  - "classification-glossary.md"
-  - "classification-tz.md"
+  - research/mango/classification.md
+  - research/mango/classification-tz.md
+  - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md
 ---
 
 # Справочник атомарных функций пилотных доменов Mango
@@ -112,7 +114,7 @@ overlay**, а не новый domain.
 | `origin` | Что означает | Как фиксировать |
 | --- | --- | --- |
 | `standard` | Параметр устойчив в международной практике телекома/CCaaS (есть у нескольких vendor и/или в стандартах). | Имя и семантику не менять; диапазон сверять с vendor docs. |
-| `mango-custom` | Параметр специфичен для продуктовой реальности Mango или для локального рынка РФ. | Фиксировать в `classification-glossary.md`/`kb/` и помечать как кандидат на стандартизацию. |
+| `mango-custom` | Параметр специфичен для продуктовой реальности Mango или для локального рынка РФ. | Фиксировать во внешнем [Mango glossary](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md) или `kb/` и помечать как кандидат на стандартизацию. |
 
 Практическое правило: `standard`-параметры обеспечивают сопоставимость с
 конкурентами и benchmark, `mango-custom`-параметры — точность под продукт. Если

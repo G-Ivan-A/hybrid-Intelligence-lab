@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.1
-updated: 2026-06-06
+status: canonical
+version: 0.2
+updated: 2026-06-07
 ai-generated: true
 type: rfc
 context: [governance, draft-lifecycle, triage, repository-quality, templates, research, education]
@@ -11,12 +11,6 @@ related_artifacts:
   - "governance/rfc/repository-quality-improvement-plan.md"
   - "governance/artifact-map.md"
   - "governance/backlog.md"
-  - "governance/rfc/contract-executability-rfc.md"
-  - "templates/spoke/README.md"
-  - "research/governance/README.md"
-  - "research/hub/prompts-classification-standard-2026-05.md"
-  - "research/mango/taxonomy-concept-2026-05.md"
-  - "projects/education-ba-prompt/README.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/186"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/171"
@@ -160,6 +154,32 @@ roadmap.
    If a project appears as required in artifact map, the corresponding project
    README should explain whether it is active public work, a sandbox, or a
    historical/migrated area.
+
+## 9. Масштабируемость и защита от бюрократии (Anti-Bureaucracy)
+
+Founder approval for issue #193 adds the following Phase 1 constraints to keep
+draft cleanup reviewable and prevent metadata inflation:
+
+1. **Unidirectional Links.** Research may point to standards as its output or
+   normative owner. Standards must not carry research backlinks in frontmatter;
+   if a major standard bump needs rationale traceability, record that link in
+   the changelog or body history instead.
+2. **Index over Frontmatter.** Deep relation matrices belong in
+   `governance/artifact-map.md` or catalog `README.md` files. Frontmatter
+   `related_artifacts` should stay at three or fewer critical links and should
+   use path-only local values or explicit external URLs.
+3. **Lazy Reconciliation.** Moving research to `reviewed` does not force
+   immediate updates to every influenced standard. Standards are reconciled when
+   they receive a planned major version bump or when an issue explicitly targets
+   that standard.
+4. **Static Exit-Plans.** Draft exit-plan fields such as `approval_target` and
+   `dependencies` are a point-in-time snapshot. They do not require cascading
+   rewrites when adjacent documents change; update them only when reviewing that
+   draft or executing the named phase.
+
+These rules are intentionally procedural. They govern how cleanup proceeds; they
+do not promote Phase 2/3 research, create new artifacts, or require broad
+metadata deduplication in this PR.
 
 ## Phased Plan
 

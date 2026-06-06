@@ -283,6 +283,22 @@ validate_artifact_map_paths() {
   )
 }
 
+validate_spoke_template_placeholders() {
+  local file
+  local line
+  local placeholder
+
+  while IFS=: read -r file line placeholder; do
+    case "$placeholder" in
+      "{{date}}" | "{{project_name}}" | "{{hub_url}}" | "{{REPO_NAME}}")
+        ;;
+      *)
+        fail "unapproved spoke source placeholder in $file:$line: $placeholder"
+        ;;
+    esac
+  done < <(grep -RIno '{{[A-Za-z_][A-Za-z_]*}}' templates/spoke || true)
+}
+
 required_directories=(
   ".github/ISSUE_TEMPLATE"
   "templates"
@@ -365,8 +381,6 @@ required_files=(
   "governance/rfc/contract-executability-rfc.md"
   "governance/rfc/repository-quality-improvement-plan.md"
   "governance/rfc/draft-triage-and-exit-plan.md"
-  "projects/education-ba-prompt/README.md"
-  "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   "templates/spoke/AI_GOVERNANCE.md"
   "templates/spoke/AI_QUICK_RULES.md"
@@ -399,6 +413,7 @@ done
 validate_metadata_not_duplicated
 validate_internal_markdown_links
 validate_artifact_map_paths
+validate_spoke_template_placeholders
 
 while IFS= read -r file; do
   if [[ ! -e "$file" ]]; then
@@ -644,8 +659,13 @@ require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" '```mer
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Follow-up"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
 
-require_text "governance/rfc/contract-executability-rfc.md" "status: draft"
+require_text "governance/rfc/contract-executability-rfc.md" "status: reviewed"
 require_text "governance/rfc/contract-executability-rfc.md" "version: 1.1"
+require_text "governance/rfc/contract-executability-rfc.md" "## Decision Status"
+require_text "governance/rfc/contract-executability-rfc.md" '| Executable markers | accepted | `standards/executable-contract-standard.md` |'
+require_text "governance/rfc/contract-executability-rfc.md" '| Directive block | accepted | `governance/agent-onboarding.md` |'
+require_text "governance/rfc/contract-executability-rfc.md" '| Rollout plan | implemented | `governance/backlog.md` |'
+require_text "governance/rfc/contract-executability-rfc.md" "| Open questions | deferred | — |"
 require_text "governance/rfc/contract-executability-rfc.md" "Решения фаундера по RFC"
 require_text "governance/rfc/contract-executability-rfc.md" "executable: true|false"
 require_text "governance/rfc/contract-executability-rfc.md" "governance/rfc/"
@@ -658,12 +678,18 @@ require_text "governance/rfc/repository-quality-improvement-plan.md" "Phase 1"
 require_text "governance/rfc/repository-quality-improvement-plan.md" "Запрос На Согласование"
 require_text "governance/rfc/repository-quality-improvement-plan.md" "Задачи Для Создания После Согласования"
 
-require_text "governance/rfc/draft-triage-and-exit-plan.md" "status: draft"
-require_text "governance/rfc/draft-triage-and-exit-plan.md" "version: 0.1"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "status: canonical"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "version: 0.2"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "updated: 2026-06-07"
 require_text "governance/rfc/draft-triage-and-exit-plan.md" "Template Placeholders"
 require_text "governance/rfc/draft-triage-and-exit-plan.md" "approval_target"
 require_text "governance/rfc/draft-triage-and-exit-plan.md" "estimated_effort"
 require_text "governance/rfc/draft-triage-and-exit-plan.md" "Questions To Founder And PO"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "## 9. Масштабируемость и защита от бюрократии (Anti-Bureaucracy)"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "Unidirectional Links"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "Index over Frontmatter"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "Lazy Reconciliation"
+require_text "governance/rfc/draft-triage-and-exit-plan.md" "Static Exit-Plans"
 
 require_text "governance/agent-onboarding.md" "status: canonical"
 require_text "governance/agent-onboarding.md" "version: 1.1"
@@ -683,7 +709,7 @@ require_text "governance/agent-onboarding.md" "rfc-two-cases-of-project-initiali
 require_text "governance/agent-onboarding.md" "templates/spoke/README.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.22"
+require_text "governance/artifact-map.md" "version: 1.23"
 require_text "governance/artifact-map.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "updated: 2026-06-07"
 require_text "governance/artifact-map.md" "ai-generated: false"
@@ -752,6 +778,12 @@ require_text "research/hub/README.md" "prompts-classification-audit-2026-05.md"
 require_text "research/hub/README.md" "prompts-classification-standard-2026-05.md"
 require_text "research/hub/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/hub/README.md" "user-prompts-analysis-2026-05.md"
+
+require_text "research/governance/README.md" "status: reviewed"
+require_text "research/governance/README.md" "version: 0.2"
+require_text "research/governance/README.md" "Active standards"
+require_text "research/governance/README.md" "Source research"
+require_text "research/governance/README.md" "Derived standards"
 
 require_text "research/mango/README.md" "status: canonical"
 require_text "research/mango/README.md" "classification.md"
@@ -833,6 +865,9 @@ require_text "research/hub/user-prompts-analysis-2026-05.md" "Вопросы д�
 require_text "research/mango/capability-decomposition-2026-05.md" "status: draft"
 require_text "research/mango/capability-decomposition-2026-05.md" "type: atomic-functions-reference"
 require_text "research/mango/capability-decomposition-2026-05.md" "scope: mango-only"
+require_text "research/mango/capability-decomposition-2026-05.md" "# Fixed per draft-triage RFC Phase 1"
+require_text "research/mango/capability-decomposition-2026-05.md" "research/mango/classification.md"
+require_text "research/mango/capability-decomposition-2026-05.md" "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md"
 require_text "research/mango/capability-decomposition-2026-05.md" "Критерии атомарности"
 require_text "research/mango/capability-decomposition-2026-05.md" "Связь с НФТ-классами"
 require_text "research/mango/capability-decomposition-2026-05.md" "Интеграция с"
@@ -841,6 +876,12 @@ require_text "research/mango/capability-decomposition-2026-05.md" "Вопрос�
 require_text "research/mango/capability-decomposition-2026-05.md" "Domain: voice-ucaas"
 require_text "research/mango/capability-decomposition-2026-05.md" "Domain: contact-center"
 require_text "research/mango/capability-decomposition-2026-05.md" "Domain: digital-channels"
+if grep -Fq 'classification-glossary.md' "research/mango/capability-decomposition-2026-05.md"; then
+  fail "research/mango/capability-decomposition-2026-05.md must not reference removed local classification-glossary.md"
+fi
+if grep -Fq '"classification.md v3.0"' "research/mango/capability-decomposition-2026-05.md"; then
+  fail "research/mango/capability-decomposition-2026-05.md related_artifacts must use path-only values"
+fi
 
 require_text "projects/README.md" "status: canonical"
 require_text "projects/README.md" "Мигрировавшие проекты"
@@ -857,6 +898,8 @@ require_text "projects/education-ba-prompt/README.md" "status: draft"
 require_text "projects/education-ba-prompt/README.md" "version: 0.1"
 require_text "projects/education-ba-prompt/README.md" "updated: 2026-05-26"
 require_text "projects/education-ba-prompt/README.md" "ai-generated: false"
+require_text "projects/education-ba-prompt/README.md" "## Scope: Sandbox"
+require_text "projects/education-ba-prompt/README.md" "Raw ideas area. Not a public project until owner + roadmap are assigned."
 require_text "projects/education-ba-prompt/README.md" "docs/course-ideas.md"
 require_text "projects/education-ba-prompt/README.md" "standards/education-profile.md"
 
@@ -892,7 +935,15 @@ require_text "templates/spoke/AI_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDO
 require_text "templates/spoke/AI_HANDOVER_PROMPT.md" "EXECUTION"
 require_text "templates/spoke/AI_HANDOVER_PROMPT.md" "EXPLANATION"
 require_text "templates/spoke/README.md" "AI_HANDOVER_PROMPT.md"
+require_text "templates/spoke/README.md" "status: canonical"
+require_text "templates/spoke/README.md" "version: 0.2"
+require_text "templates/spoke/README.md" "## Template Placeholder Policy"
+require_text "templates/spoke/README.md" "Source templates may contain placeholders"
+require_text "templates/spoke/README.md" "Generated spokes must not keep unresolved source placeholders"
+require_text "templates/spoke/README.md" "{{date}}"
 require_text "templates/spoke/README.md" "{{project_name}}"
+require_text "templates/spoke/README.md" "{{hub_url}}"
+require_text "templates/spoke/README.md" "{{REPO_NAME}}"
 require_text "templates/spoke/README.md" "governance/agent-onboarding.md"
 require_text "templates/spoke/README.md" "Как валидировать структуру"
 require_text "templates/spoke/README.md" "Design Decisions & Rationale"
