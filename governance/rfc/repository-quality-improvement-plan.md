@@ -8,12 +8,11 @@ context: [repository-quality, audit, cleanup, governance, traceability, archive]
 method: repository-audit + validator-baseline + link-scan + duplicate-scan
 scope: repo-wide
 related_artifacts:
-  - "governance/ARTIFACT_MAP.md"
-  - "governance/BACKLOG.md"
-  - "governance/REPO_MODEL.md"
+  - "governance/artifact-map.md"
+  - "governance/backlog.md"
+  - "governance/repo-model.md"
   - "standards/file-naming.md"
   - "standards/research-profile.md"
-  - "standards/research-documentation-standard.md"
   - "tools/validate-repository-structure.sh"
   - "tools/validate-frontmatter.sh"
 related_issues:
@@ -108,7 +107,7 @@ Baseline validation до удаления PR-заглушки:
 | `standards/` | Нарушений нет. Все `.md` кроме `README.md` используют kebab-case. | P0 закрыт | Ничего не менять. |
 | `governance/rfc/` | Нарушений нет: все RFC используют kebab-case. | P0 закрыт | Ничего не менять. |
 | `research/` | Нарушений lowercase/hyphen для tracked `.md`/`.html` нет. | P0 закрыт | Ничего не менять. |
-| broader nested governance | `governance/AGENT_ONBOARDING.md`, `governance/ARTIFACT_MAP.md`, `governance/BACKLOG.md`, `governance/EXECUTABLE_DOCUMENTS_ISSUES.md`, `governance/REPO_MODEL.md` остаются CAPS style inside nested directory. | P1 | Human decision: либо переименовать в kebab-case, либо явно закрепить legacy/governance exception в `file-naming.md` и validator. |
+| broader nested governance | `governance/agent-onboarding.md`, `governance/artifact-map.md`, `governance/backlog.md`, `governance/executable-documents-issues.md`, `governance/repo-model.md` остаются CAPS style inside nested directory. | P1 | Human decision: либо переименовать в kebab-case, либо явно закрепить legacy/governance exception в `file-naming.md` и validator. |
 | templates/spoke root-like files | `templates/spoke/AI_GOVERNANCE.md`, `AI_HANDOVER_PROMPT.md`, `AI_QUICK_RULES.md`, `CONTRIBUTING.md` выглядят как violations во вложенном каталоге, но при копировании в spoke становятся root files. | P2 | Зафиксировать template-root exception явно, чтобы scanner не считал это silent violation. |
 | `archive/projects/mango/` | 8 файлов с `_` в имени (`*_exp`, `*_simple`, `user-story_gen...`, `usecase_gen...`). | P1 | Не переименовывать архив; удалить весь `archive/projects/mango/` после approval. |
 
@@ -129,7 +128,7 @@ Semantic overlap:
 
 | Пара | Наблюдение | Приоритет | Рекомендация |
 | --- | --- | --- | --- |
-| `standards/research-profile.md` + `standards/research-documentation-standard.md` | Не exact duplicate. `research-profile.md:45-84` задаёт артефакты, naming, frontmatter и воспроизводимость. `research-documentation-standard.md:35-43` явно говорит, что дополняет профиль и отвечает только за порядок body. | P1 | Human decision: оставить пару как `profile + body standard`, либо слить draft body-standard в `research-profile.md` и удалить отдельный draft. |
+| `standards/research-profile.md` + бывший draft body-standard | Не exact duplicate. `research-profile.md:45-84` задаёт артефакты, naming, frontmatter и воспроизводимость; бывший отдельный draft отвечал только за порядок body. | P1 | Решение Phase 1: слить правила порядка изложения в `research-profile.md` и удалить отдельный draft. |
 | `research/governance/*-format-2026-06.md` + `standards/*-standard.md` | Ожидаемая пара research -> standard. | P2 | Оставить, но добавить явное правило "research source не является duplicate standard". |
 | `standards/webportal-concept-standard.md` + `templates/webportal-concept-template.md` | Ожидаемая пара standard -> copyable template. | P2 | Оставить; в template frontmatter решить placeholder-warning отдельно. |
 | `AI_GOVERNANCE.md` + `templates/spoke/AI_GOVERNANCE.md` | Ожидаемая hub contract -> spoke template пара. | P2 | Оставить; relation должна быть описана как inheritance/template, не duplicate. |
@@ -152,7 +151,7 @@ Standards с повтором metadata:
 | `standards/issue-workflow.md` | `11: Версия`, `13: Дата` | P1 |
 | `standards/portal-repository-structure.md` | `18: Версия`, `20: Дата`, `22: Статус` | P1 |
 | `standards/product-profile.md` | `10: Версия`, `12: Дата` | P1 |
-| `standards/research-documentation-standard.md` | `19: Версия`, `21: Дата`, `23: Статус` | P1 |
+| `standards/research-profile.md` | `19: Версия`, `21: Дата`, `23: Статус` | P1 |
 | `standards/research-profile.md` | `10: Версия`, `12: Дата` | P1 |
 | `standards/team-contract.md` | `10: Версия`, `12: Дата` | P1 |
 | `standards/webportal-concept-standard.md` | `26: Версия`, `28: Дата`, `30: Статус` | P1 |
@@ -180,12 +179,12 @@ Artifact map and validator inconsistencies:
 
 | Файл | Строки | Проблема | Приоритет |
 | --- | --- | --- | --- |
-| `governance/ARTIFACT_MAP.md` | 128 | Related artifacts include deleted `projects/mango/README.md`. | P1 |
-| `governance/ARTIFACT_MAP.md` | 136-149, 175 | Archive Mango is documented as present and mostly mandatory. | P1 |
+| `governance/artifact-map.md` | 128 | Related artifacts include deleted `projects/mango/README.md`. | P1 |
+| `governance/artifact-map.md` | 136-149, 175 | Archive Mango is documented as present and mostly mandatory. | P1 |
 | `tools/validate-repository-structure.sh` | 187-192, 244-260 | Archive Mango directories and files are required by validation. | P1 |
 | `README.md` | 58 | Root README points reviewers to archive copy. | P1 |
 | `projects/README.md` | 65 | Project index says archive copy exists. | P1 |
-| `governance/ARTIFACT_MAP.md` | none for `projects/education-ba-prompt/*` | `README.md` and validator know this project, but artifact map has no row for `projects/education-ba-prompt/README.md` or `docs/course-ideas.md`. | P2 |
+| `governance/artifact-map.md` | none for `projects/education-ba-prompt/*` | `README.md` and validator know this project, but artifact map has no row for `projects/education-ba-prompt/README.md` or `docs/course-ideas.md`. | P2 |
 
 Scanner false positives excluded from the problem list:
 
@@ -196,8 +195,8 @@ Scanner false positives excluded from the problem list:
 
 ### 2.5. Draft-документы
 
-Frontmatter scan found 52 draft documents in audit scope, excluding this RFC
-itself:
+Frontmatter scan found 52 draft documents in audit scope before Phase 1
+cleanup, excluding this RFC itself:
 
 | Группа | Count | Recommendation |
 | --- | ---: | --- |
@@ -213,13 +212,13 @@ Full draft list:
 | Номер | Файл | Линия | Саммари | Рекомендация на русском | Обоснование |
 | ---: | --- | ---: | --- | --- | --- |
 | 1 | `governance/rfc/README.md` | 2 | Навигация по RFC Хаба: правила попадания в каталог, список RFC и связанные governance-артефакты. | Перевести в canonical | Каталог уже принят как `governance/rfc/` после issue #165 и используется в 4 связанных файлах; документ фиксирует навигацию, а не спорное решение. |
-| 2 | `governance/rfc/rfc-two-cases-of-project-initialization.md` | 2 | RFC-манифест разделяет Runtime-онбординг и Bootstrap-клонирование, связывает термины с onboarding и spoke-template. | Перевести в canonical | Термины уже используются в `AGENT_ONBOARDING.md`, `templates/spoke/README.md` и других RFC; документ упоминается в 9 файлах и стабилизирует vocabulary Хаба. |
+| 2 | `governance/rfc/rfc-two-cases-of-project-initialization.md` | 2 | RFC-манифест разделяет Runtime-онбординг и Bootstrap-клонирование, связывает термины с onboarding и spoke-template. | Перевести в canonical | Термины уже используются в `agent-onboarding.md`, `templates/spoke/README.md` и других RFC; документ упоминается в 9 файлах и стабилизирует vocabulary Хаба. |
 | 3 | `research/governance/governance-folder-structure-decisions-2026-06.md` | 2 | Decision record по структуре governance-каталогов: `rfc/` вместо `proposals/`, границы portal research и правила исторических ссылок. | Перевести в canonical | Решения Q1-Q3 уже реализованы в структуре репозитория и валидаторе; документ связан с 4 файлами и должен стать canonical evidence для переименований. |
 | 4 | `research/governance/contract-documentation-format-2026-06.md` | 2 | Исследование формата контрактных документов: RFC 2119, API contracts, SLA, design by contract и ADR-подход. | Перевести в canonical | Документ является источником для `standards/contract-documentation-standard.md` и упоминается в 4 файлах; после human review его можно зафиксировать как research source. |
 | 5 | `research/governance/executable-contract-format-2026-06.md` | 2 | Исследование формата исполнимых контрактов: action-first структура, системные prompt-паттерны, runbook-подход и восприятие агентом. | Перевести в canonical | На документ опирается `standards/executable-contract-standard.md`; он связан с 3 файлами и уже отражён в принятых executable-doc работах. |
-| 6 | `research/governance/research-documentation-format-2026-06.md` | 2 | Исследование структуры research-документов Хаба: BLUF, traceability, выводы, детализация и связи с decision-making. | Перевести в canonical | Документ является источником для `standards/research-documentation-standard.md` и связан с 4 файлами; после решения по split/merge research-profile его можно закрыть как canonical source. |
+| 6 | `research/governance/research-documentation-format-2026-06.md` | 2 | Исследование структуры research-документов Хаба: BLUF, traceability, выводы, детализация и связи с decision-making. | Перевести в canonical | Документ является источником для раздела порядка изложения в `standards/research-profile.md` и связан с 4 файлами; после Phase 1 merge его можно закрыть как canonical source. |
 | 7 | `standards/contract-documentation-standard.md` | 2 | Стандарт оформления контрактных документов Хаба: нормативный язык, frontmatter, секции и decision traceability. | Перевести в canonical | Стандарт уже зарегистрирован в валидаторе и связан с 8 файлами; препятствий кроме human approval и снятия draft-статуса не найдено. |
-| 8 | `standards/executable-contract-standard.md` | 2 | Стандарт исполнимых контрактов: разделение EXECUTION/EXPLANATION, директивный блок и требования к агентскому выполнению. | Перевести в canonical | Формат уже применён в `AGENT_ONBOARDING.md` и `templates/spoke/AI_HANDOVER_PROMPT.md`; документ упоминается в 9 файлах и готов к approval. |
+| 8 | `standards/executable-contract-standard.md` | 2 | Стандарт исполнимых контрактов: разделение EXECUTION/EXPLANATION, директивный блок и требования к агентскому выполнению. | Перевести в canonical | Формат уже применён в `agent-onboarding.md` и `templates/spoke/AI_HANDOVER_PROMPT.md`; документ упоминается в 9 файлах и готов к approval. |
 | 9 | `research/portal/README.md` | 2 | Навигация по исследованиям портала open-ai.ru: concept, architecture, documentation, repository structure и AI integration. | Отложить | Scope `portal` и сам портал ещё не согласованы; документ связан с 4 файлами, но зависит от отдельного portal review вне repository cleanup. |
 | 10 | `research/portal/ai-and-mango-integration-patterns-2026-06.md` | 2 | Исследование AI-интеграции портала: Yandex GPT, `mango_ba_prompts`, auth, маскирование данных и serverless proxy. | Отложить | В разделе 2.4 уже отмечены stale-ссылки на удалённый `projects/mango/README.md`; смысл портальной интеграции должен решаться отдельной portal-задачей. |
 | 11 | `research/portal/architecture-and-stack-comparison-2026-06.md` | 2 | Сравнение архитектуры и технологического стека open-ai.ru: SSG, serverless, hosting, open-source и AI integration. | Отложить | Документ относится к portal scope и упоминается в 6 файлах; repository-quality RFC явно не анализирует смысл концепции `open-ai.ru`. |
@@ -230,8 +229,8 @@ Full draft list:
 | 16 | `standards/portal-repository-structure.md` | 2 | Стандарт структуры репозитория веб-портала: наследование spoke-генома, portal-specific каталоги и validation expectations. | Отложить | Стандарт упоминается в 12 файлах, но является portal-specific; canonical-решение должно следовать после согласования `open-ai.ru`. |
 | 17 | `standards/webportal-concept-standard.md` | 2 | Стандарт структуры концепции веб-портала: обязательное PRD-ядро, Vision/TOGAF-модули, roadmap, risks и metrics. | Отложить | Стандарт связан с 6 файлами, но его применение зависит от решения по portal-концепциям и шаблону; оставлять draft до approval. |
 | 18 | `templates/webportal-concept-template.md` | 2 | Копируемый шаблон концепции веб-портала с placeholders, portal scope и секциями из webportal concept standard. | Отложить | Шаблон зависит от `standards/webportal-concept-standard.md` и содержит `{{date}}`; нужен общий подход к template placeholders перед снятием draft. |
-| 19 | `governance/rfc/contract-executability-rfc.md` | 2 | RFC архитектуры исполнимых документов: маркеры `executable`, directive block, rollout plan и решения фаундера. | Доработать | Принятые части уже вынесены в `AGENT_ONBOARDING.md` и standards, но RFC ещё содержит planning/history blocks; нужен explicit статус accepted/superseded по разделам. |
-| 20 | `projects/education-ba-prompt/README.md` | 2 | Навигация sandbox-проекта курса БА по prompt engineering: цель, docs, связь с education-profile и текущий draft scope. | Доработать | Проект упоминается в 2 файлах и отсутствует в `ARTIFACT_MAP.md` по разделу 2.6; перед canonical нужно решить, это sandbox или public project. |
+| 19 | `governance/rfc/contract-executability-rfc.md` | 2 | RFC архитектуры исполнимых документов: маркеры `executable`, directive block, rollout plan и решения фаундера. | Доработать | Принятые части уже вынесены в `agent-onboarding.md` и standards, но RFC ещё содержит planning/history blocks; нужен explicit статус accepted/superseded по разделам. |
+| 20 | `projects/education-ba-prompt/README.md` | 2 | Навигация sandbox-проекта курса БА по prompt engineering: цель, docs, связь с education-profile и текущий draft scope. | Доработать | Проект упоминается в 2 файлах и отсутствует в `artifact-map.md` по разделу 2.6; перед canonical нужно решить, это sandbox или public project. |
 | 21 | `projects/education-ba-prompt/docs/course-ideas.md` | 2 | Набор идей курса: термины, практические кейсы БА, рабочие шаблоны промптов, модули и форматы подачи. | Доработать | Документ связан только с project README; требуется разнести идеи в утверждённые course artifacts или оставить как sandbox draft с exit criteria. |
 | 22 | `research/governance/README.md` | 2 | Навигация по governance research: форматы research, executable contracts, contract docs и decisions по структуре папок. | Доработать | Каталог уже содержит source-документы для стандартов, но README остаётся draft; нужно синхронизировать статус с решением по derived standards. |
 | 23 | `research/hub/external-governance-patterns-review-2026-06.md` | 2 | Анализ external governance patterns и матрицы применимости: что взять сейчас, что отложить, что отклонить. | Доработать | Документ упоминается в 6 файлах и содержит открытые применимые решения; нужен pass, который переносит accepted пункты в backlog или явно закрывает вопросы. |
@@ -250,9 +249,9 @@ Full draft list:
 | 36 | `templates/spoke/CHANGELOG.md` | 2 | Каркас changelog для spoke-проекта: `## Unreleased`, Keep a Changelog и SemVer placeholders. | Доработать | Файл связан с 3 файлами и содержит `{{date}}`; нужен template lifecycle rule, иначе draft-статус остаётся технической защитой. |
 | 37 | `templates/spoke/CONTRIBUTING.md` | 2 | Шаблон contributing для spoke: issue -> PR -> review, локальная проверка и checklist для изменений. | Доработать | Файл связан с 2 файлами и содержит placeholders; до canonical нужно согласовать, какие template root files валидируются как generated artifacts. |
 | 38 | `templates/spoke/README.md` | 2 | Главная навигация spoke template: состав генома, placeholders, `init.sh`, validation и ссылки на hub onboarding. | Доработать | Файл упоминается в 11 местах и является центральным template artifact; требуется решить placeholder validation before/after init. |
-| 39 | `governance/rfc/rfc-agent-onboarding-protocol.md` | 2 | RFC протокола бесшовной передачи проекта: handover prompt, 4-step agent algorithm и место для `AGENT_ONBOARDING.md`. | Объединить с `governance/AGENT_ONBOARDING.md` | Реализация уже живёт в canonical `AGENT_ONBOARDING.md`; RFC нужно закрыть как source/history или перенести оставшиеся уникальные правила в canonical документ. |
+| 39 | `governance/rfc/rfc-agent-onboarding-protocol.md` | 2 | RFC протокола бесшовной передачи проекта: handover prompt, 4-step agent algorithm и место для `agent-onboarding.md`. | Объединить с `governance/agent-onboarding.md` | Реализация уже живёт в canonical `agent-onboarding.md`; RFC нужно закрыть как source/history или перенести оставшиеся уникальные правила в canonical документ. |
 | 40 | `governance/rfc/rfc-creative-template-design.md` | 2 | RFC дизайна ДНК-шаблона spoke: карта файлов, naming options, Mermaid-схема и anti-patterns bootstrap. | Объединить с `templates/spoke/README.md` | Основные решения уже реализованы в `templates/spoke/`; уникальные rationale можно оставить как history, а эксплуатационные правила перенести в README/template docs. |
-| 41 | `standards/research-documentation-standard.md` | 2 | Стандарт body-структуры research-документов: введение, результаты, детализация, sources, open questions и template. | Объединить с `standards/research-profile.md` | Раздел 2.2 уже фиксирует overlap с `research-profile.md`; нужно выбрать модель `profile + body standard` или слить body-order rules в один canonical profile. |
+| 41 | former research body-order draft | 2 | Стандарт body-структуры research-документов: введение, результаты, детализация, sources, open questions и template. | Объединён с `standards/research-profile.md` | Phase 1 слил body-order rules в единый research profile и удалил отдельный draft standard; история остаётся в git. |
 | 42 | `archive/projects/mango/experiments/prompts-audit-2026-05-26.md` | 2 | Архивный Mango prompt-audit: что работает в prompt assets, упрощения для simple variants и критичные ссылки для exp variants. | Удалить | Файл находится под `archive/projects/mango/`, а раздел 2.7 рекомендует удалить весь архив после approval; внешним source of truth стал `mango_ba_prompts`. |
 | 43 | `archive/projects/mango/experiments/prompts-selftest-2026-05-26.md` | 2 | Архивный self-test Mango prompts: результаты проверки готовых prompt variants и идеи на будущее. | Удалить | Архив Mango создаёт stale local paths и placeholder debt; файл упоминается только как часть archive package и должен удаляться вместе с ним. |
 | 44 | `archive/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` | 2 | Архивный эксперимент пошаговой генерации Use Case с согласованием акторов, компонентов и output format. | Удалить | Имя нарушает nested kebab-case из-за underscore, но переименование архива нецелесообразно; раздел 2.7 рекомендует удалить весь archive package. |
@@ -312,9 +311,9 @@ Full draft list:
 - [ ] `templates/spoke/README.md`
 
 #### К объединению (3 документа):
-- [ ] `governance/rfc/rfc-agent-onboarding-protocol.md` -> объединить с `governance/AGENT_ONBOARDING.md`
+- [ ] `governance/rfc/rfc-agent-onboarding-protocol.md` -> объединить с `governance/agent-onboarding.md`
 - [ ] `governance/rfc/rfc-creative-template-design.md` -> объединить с `templates/spoke/README.md`
-- [ ] `standards/research-documentation-standard.md` -> объединить с `standards/research-profile.md`
+- [ ] former research body-order draft -> объединён с `standards/research-profile.md`
 
 #### К удалению (11 документов):
 - [ ] `archive/projects/mango/experiments/prompts-audit-2026-05-26.md`
@@ -336,7 +335,7 @@ Full draft list:
 | `archive/projects/mango/` | 17 tracked files, 4 `.gitkeep`; `projects/README.md:63-65` says Mango migrated to `mango_ba_prompts`. | Delete after approval; update references, map and validator in same PR. | P1 |
 | Archive `.gitkeep` placeholders | `archive/projects/mango/decisions`, `docs`, `kb` contain only `.gitkeep`; `experiments/.gitkeep` duplicates empty content. | Delete with archive. | P1 |
 | Root PR placeholder `.gitkeep` | Auto-generated branch placeholder; structure validator rejects it as unknown tracked file. | Remove in this PR because it is not part of repo state and blocks validation. | Done in this PR |
-| `projects/education-ba-prompt/*` missing from `ARTIFACT_MAP.md` | Validator and README include it, map does not. | Add rows or decide it is non-public sandbox and remove from README/validator. | P2 |
+| `projects/education-ba-prompt/*` missing from `artifact-map.md` | Validator and README include it, map does not. | Add rows or decide it is non-public sandbox and remove from README/validator. | P2 |
 | Frontmatter `source: *-old.md` fields | `education/README.md`, `frameworks/README.md`, `projects/README.md`, `research/README.md`, `research/mango/*.md` reference historical paths that no longer exist. | Decide whether historical source references are allowed as non-resolving provenance, or replace with PR/history references. | P2 |
 
 ### 2.7. `archive/projects/mango/`
@@ -354,7 +353,7 @@ Reasoning:
 - keeping both archive and external spoke blurs source of truth.
 
 Deletion is not a standalone `rm -rf`: it must update at least
-`README.md`, `projects/README.md`, `governance/ARTIFACT_MAP.md`,
+`README.md`, `projects/README.md`, `governance/artifact-map.md`,
 `tools/validate-repository-structure.sh`, and affected research/frontmatter links.
 
 ## 3. План Исправлений
@@ -367,15 +366,14 @@ Deletion is not a standalone `rm -rf`: it must update at least
    - or add explicit legacy/governance/template exceptions to `file-naming.md`
      and validator.
 3. Fix confirmed stale links and frontmatter relations listed in section 2.4.
-4. Decide `research-profile.md` vs `research-documentation-standard.md`:
-   keep as complementary documents or merge body-order rules into one canonical
-   profile.
+4. Merge body-order rules into `research-profile.md` and remove the separate
+   draft body-standard.
 
 ### Phase 2: P1, validation and metadata
 
 5. Remove body-level duplication of `Версия`, `Дата`, `Статус` where the same
    data is already in frontmatter.
-6. Update `governance/ARTIFACT_MAP.md` to reflect actual state, including the
+6. Update `governance/artifact-map.md` to reflect actual state, including the
    education project decision.
 7. Strengthen validators:
    - nested naming check beyond `standards/`;
@@ -399,10 +397,10 @@ Deletion is not a standalone `rm -rf`: it must update at least
 | Step | Что сделать | Файлы | Зависимости | Риски | Rollback |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Approve this RFC and choose archive decision. | This RFC, issue #171 | Human approval | Without decision, cleanup tasks should not start. | Keep RFC draft. |
-| 2 | Delete `archive/projects/mango/` and update archive references. | `archive/projects/mango/**`, `README.md`, `projects/README.md`, `governance/ARTIFACT_MAP.md`, `tools/validate-repository-structure.sh`, selected research docs | Step 1 | Broken references if partial. | Revert deletion commit or restore from git history. |
+| 2 | Delete `archive/projects/mango/` and update archive references. | `archive/projects/mango/**`, `README.md`, `projects/README.md`, `governance/artifact-map.md`, `tools/validate-repository-structure.sh`, selected research docs | Step 1 | Broken references if partial. | Revert deletion commit or restore from git history. |
 | 3 | Fix stale links and relation values. | Files in section 2.4 | Step 1 | Portal links require scope discipline. | Revert link-only commit. |
 | 4 | Resolve naming exception strategy. | `standards/file-naming.md`, validator, possibly renamed governance/template files | Step 1 | Renames touch many links. | Use `git mv` and revert if validation fails. |
-| 5 | Decide research-profile split. | `standards/research-profile.md`, `standards/research-documentation-standard.md`, `standards/README.md`, map/validator | Step 1 | Removing a draft too early may lose useful body-order standard. | Keep both until explicit approval. |
+| 5 | Resolve research-profile split. | `standards/research-profile.md`, `standards/README.md`, map/validator | Step 1 | Removing a draft too early may lose useful body-order standard. | Restore from git history if review requests a separate standard. |
 | 6 | Remove metadata duplication by class. | `standards/**`, then governance/research batches | Steps 2-5 | Review churn across many docs. | Batch commits by directory. |
 | 7 | Add validator improvements. | `tools/validate-repository-structure.sh`, possibly `tools/validate-frontmatter.sh` | Steps 2-6 | False positives for examples/templates. | Add explicit allowlist and fixture examples. |
 | 8 | Triage drafts. | All files in section 2.5 | Steps 2-7 | Human review capacity. | Keep status draft with exit-plan. |
@@ -419,7 +417,7 @@ Add checks to `tools/validate-repository-structure.sh`:
   relation paths; ignore documented examples and `{{placeholder}}` URLs.
 - `validate_metadata_single_source`: warn/fail when `Версия`, `Дата`, `Статус`
   duplicate frontmatter fields in the body.
-- `validate_artifact_map_paths`: ensure local paths in `ARTIFACT_MAP.md` exist
+- `validate_artifact_map_paths`: ensure local paths in `artifact-map.md` exist
   and required files are represented or intentionally excluded.
 - `validate_no_archive_mango`: after approval, fail if
   `archive/projects/mango/` reappears.
@@ -430,8 +428,8 @@ Update contracts after approval:
 
 - `standards/file-naming.md`: add explicit section for governance legacy files
   and template-root files, or require renames.
-- `standards/research-profile.md`: clarify relation to
-  `research-documentation-standard.md`.
+- `standards/research-profile.md`: own both research metadata/reproducibility and
+  body-order rules.
 - `standards/contract-documentation-standard.md` and related standards: state
   that metadata lives in frontmatter; body may contain status prose only when it
   adds decision context not already represented by a field.
@@ -462,10 +460,9 @@ Questions for Founder & PO:
    - rename to kebab-case;
    - keep as explicit legacy exception;
    - defer decision.
-5. For `research-profile.md` and `research-documentation-standard.md`, choose one:
-   - keep as complementary profile + body standard;
-   - merge into one canonical profile;
-   - defer until standards review.
+5. For research body-order rules, confirm the Phase 1 merge into
+   `research-profile.md` or request restoration of a separate standard from git
+   history.
 6. May I create the follow-up issues listed below after approval?
 
 ## 7. Задачи Для Создания После Согласования

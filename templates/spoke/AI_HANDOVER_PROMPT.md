@@ -23,12 +23,12 @@ executable: true
 Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
 {{REPO_NAME}} (модель hub-and-spoke); ты обращаешься к нему, но не «живёшь» в нём.
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/AGENT_ONBOARDING.md). Это предполётный чек-лист — взлёт (изменение
+(governance/agent-onboarding.md). Это предполётный чек-лист — взлёт (изменение
 файлов) запрещён до моего апрува.
 
 Сделай ровно по шагам:
 1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай AI_GOVERNANCE.md, CONTRIBUTING.md,
-   governance/REPO_MODEL.md, governance/ARTIFACT_MAP.md и
+   governance/repo-model.md, governance/artifact-map.md и
    standards/project-structure-inheritance.md.
 2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/спока) и блок «Быстрый контекст»,
@@ -53,7 +53,7 @@ executable: true
 репозиторий самодостаточен: «доверенность» лежит в геноме, а не только в Хабе.
 
 > **Источник истины — Хаб.** Канонический *Handover Prompt* и полный 4-шаговый
-> протокол живут в Хабе: [`governance/AGENT_ONBOARDING.md`]({{hub_url}}/blob/main/governance/AGENT_ONBOARDING.md)
+> протокол живут в Хабе: [`governance/agent-onboarding.md`]({{hub_url}}/blob/main/governance/agent-onboarding.md)
 > (Хаб `hybrid-Intelligence-lab`, [{{hub_url}}]({{hub_url}})). Этот файл — **копия
 > шаблона** для удобства спока. При расхождении приоритет у хабовой версии; правки
 > вносятся сначала в Хаб, затем переносятся сюда.
@@ -64,8 +64,8 @@ executable: true
 оставьте дефолт, если работаете в Хабе.
 
 > **Где в споке лежат governance-файлы.** Полный 4-шаговый протокол и часть
-> governance-контрактов (`REPO_MODEL.md`, `ARTIFACT_MAP.md`,
-> `project-structure-inheritance.md`, `AGENT_ONBOARDING.md`) живут в **Хабе**
+> governance-контрактов (`repo-model.md`, `artifact-map.md`,
+> `project-structure-inheritance.md`, `agent-onboarding.md`) живут в **Хабе**
 > ([{{hub_url}}]({{hub_url}})); локально у спока есть `AI_GOVERNANCE.md`,
 > `AI_QUICK_RULES.md` и `CONTRIBUTING.md`. Агент читает локальные правила спока и
 > обращается к Хабу как к источнику фундаментальных знаний.
@@ -76,5 +76,5 @@ executable: true
   выживанию» агента в этом споке.
 - [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) — конституция проекта: роли, правила,
   эскалация, DoD.
-- Хаб [`governance/AGENT_ONBOARDING.md`]({{hub_url}}/blob/main/governance/AGENT_ONBOARDING.md)
+- Хаб [`governance/agent-onboarding.md`]({{hub_url}}/blob/main/governance/agent-onboarding.md)
   — полный 4-шаговый протокол и канонический *Handover Prompt* (источник истины).

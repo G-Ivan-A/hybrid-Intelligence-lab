@@ -55,4 +55,4 @@ ai-generated: false
 - [standards/education-profile.md](../../standards/education-profile.md)
 - [standards/file-naming.md](../../standards/file-naming.md)
 - [standards/issue-workflow.md](../../standards/issue-workflow.md)
-- [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md)
+- [governance/repo-model.md](../../governance/repo-model.md)

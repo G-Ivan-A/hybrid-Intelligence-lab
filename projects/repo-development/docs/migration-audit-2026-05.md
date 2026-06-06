@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-06-06
 ai-generated: false
 ---
 
 # Отчёт аудита миграции — май 2026
 
-Версия: 1.0
+Версия: 1.1
 
-Дата: 2026-05-26
+Дата: 2026-06-06
 
 Связанная задача: [issue #47](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/47)
 
@@ -46,14 +46,14 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 
 | Принцип | Реализован? | Где проверено | Комментарий |
 |---------|-------------|---------------|-------------|
-| Governance before scale | ✅ | `governance/REPO_MODEL.md`, `tools/validate-repository-structure.sh` | Структура и правила зафиксированы и проверяются скриптом до роста артефактов. |
-| Separation of concerns | ✅ | `README.md` (таблица «Структура»), `governance/REPO_MODEL.md` | `standards / research / frameworks / projects / education / governance / tools` имеют разные дома. |
-| Existing frameworks first | ✅ | `governance/REPO_MODEL.md`, `frameworks/README-old.md` | Активного framework нет; `frameworks/` содержит только `-old` вход — преждевременная методология не создана. |
+| Governance before scale | ✅ | `governance/repo-model.md`, `tools/validate-repository-structure.sh` | Структура и правила зафиксированы и проверяются скриптом до роста артефактов. |
+| Separation of concerns | ✅ | `README.md` (таблица «Структура»), `governance/repo-model.md` | `standards / research / frameworks / projects / education / governance / tools` имеют разные дома. |
+| Existing frameworks first | ✅ | `governance/repo-model.md`, `frameworks/README-old.md` | Активного framework нет; `frameworks/` содержит только `-old` вход — преждевременная методология не создана. |
 | Traceability (Evidence-driven) | ⚠️ | frontmatter, ссылки на `-old`, `CHANGELOG.md` (issue refs), `standards/glossary.md` | Источники и issue прослеживаются. Замечание: frontmatter присутствует не во всех canonical файлах (см. предложение 1). |
 | Operating Mode | ✅ | `AI_GOVERNANCE.md` (Operating Modes), `standards/glossary.md`, `.github/ISSUE_TEMPLATE/task.yml` | Режим задаётся явно; данный аудит выполнен в `creative`. |
 | Human-in-control | ✅ | `AI_GOVERNANCE.md` (Роли, Эскалация) | Решения остаются за Founder & PO и reviewers; аудит откладывает реализацию до согласования. |
 | Safe publication | ✅ | `AI_GOVERNANCE.md` (правило 6) | Секреты и sensitive data в активных файлах не обнаружены; репозиторий — документация. |
-| Anti-Inflation | ✅ | `governance/REPO_MODEL.md`, `governance/ARTIFACT_MAP.md` (колонка «Обязательный?») | Артефакт оправдан только при операционной боли; обязательность артефактов размечена. |
+| Anti-Inflation | ✅ | `governance/repo-model.md`, `governance/artifact-map.md` (колонка «Обязательный?») | Артефакт оправдан только при операционной боли; обязательность артефактов размечена. |
 
 Итог: 7 из 8 принципов реализованы без замечаний; 1 (`Traceability`) — с минорным
 замечанием по полноте frontmatter.
@@ -71,17 +71,17 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 
 - **Битых ссылок нет.** Все 131 относительная ссылка между активными
   артефактами ведут на существующие цели.
-- **⚠️ Активная ссылка на `-old`.** `archive/projects/mango/README.md` в разделе
-  «Связанные артефакты» ссылается на `projects/README-old.md`. Это исторический
-  вход, а не активный контракт. Последствие: `projects/README-old.md` нельзя
-  удалить, пока ссылка не заменена или не убрана (см. раздел удаления).
+- **Активная ссылка на `-old` закрыта в issue #173.** Прежняя Mango-архивная
+  копия удалена из Хаба после миграции во внешний `mango_ba_prompts`, поэтому
+  блокирующая ссылка на `projects/README-old.md` больше не является активным
+  контрактом.
 - **Ложные срабатывания.** Наивный поиск ссылок отметил 7 «битых» целей
   (`standards/education-profile.md` и `standards/research-profile.md`) — все
   находятся внутри fenced шаблонов (`module-01/`, `lesson-01.md`,
   `2026-05-topic.md` и т. п.) и являются примерами структуры курса/исследования,
   а не реальной навигацией. Конфликтом не считаются.
 - **Циклы.** Двунаправленные ссылки (например, `README.md` ↔ `CONCEPT.md` ↔
-  `governance/REPO_MODEL.md`) — это намеренная hub-навигация, а не вредные
+  `governance/repo-model.md`) — это намеренная hub-навигация, а не вредные
   циклы.
 
 ## 📦 Таблица миграции `-old`
@@ -89,19 +89,19 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 | Старый путь | Новый путь / Статус | Что сохранено | Что отброшено + почему |
 |------------|---------------------|---------------|------------------------|
 | `README-old.md` | `README.md` | Позиционирование hub-and-spoke, таблицы ключевых документов и структуры | Ссылки на `PRODUCT_VISION.md`, `docs/concept/*`, отдельные каталоги `meta/`, `experiments/`, `docs/` — заменены новой моделью |
-| `docs-old/concept/repository-structure-old.md` | `CONCEPT.md` + `governance/REPO_MODEL.md` | Модель hub-and-spoke, separation of concerns, обоснование структуры | Детальная таблица сравнения 5 вариантов структуры (осталась как контекст в `-old`) |
+| `docs-old/concept/repository-structure-old.md` | `CONCEPT.md` + `governance/repo-model.md` | Модель hub-and-spoke, separation of concerns, обоснование структуры | Детальная таблица сравнения 5 вариантов структуры (осталась как контекст в `-old`) |
 | `docs-old/concept/vision-standard-old.md` | `standards/product-profile.md` (+ профили research/education) | Product Vision Board как основа `PRODUCT_VISION.md` | Полное сравнение PRD/Lean/ADR/RFC-lite/IMRAD перенесено выборочно |
 | `docs-old/governance/hybrid-team-collaboration-old.md` | `AI_GOVERNANCE.md` + `standards/issue-workflow.md` | Роли, 7-шаговый workflow, правила постановки задач для ИИ | Терминология «Команда C» обобщена до ролей reviewer/contributor |
-| `research/repository-governance/*-old.md` | `CONCEPT.md`, `governance/REPO_MODEL.md` | Governance-as-you-grow → Anti-Inflation; «операционный костяк сначала»; статусы зрелости | Промежуточные межкомандные обсуждения (ценность архивная) |
-| `meta-old/README-old.md` | `governance/ARTIFACT_MAP.md` + frontmatter `status` | Идея artifact map; maturity model (`draft/reviewed/published/superseded`) | Каталог `meta/` как слой — заменён на `governance/` |
+| `research/repository-governance/*-old.md` | `CONCEPT.md`, `governance/repo-model.md` | Governance-as-you-grow → Anti-Inflation; «операционный костяк сначала»; статусы зрелости | Промежуточные межкомандные обсуждения (ценность архивная) |
+| `meta-old/README-old.md` | `governance/artifact-map.md` + frontmatter `status` | Идея artifact map; maturity model (`draft/reviewed/published/superseded`) | Каталог `meta/` как слой — заменён на `governance/` |
 | `standards/README-old.md` | `standards/README.md` | Реестр стандартов; «будущие стандарты» → строки `Planned` | Прямая ссылка на `docs/concept/vision-standard.md` |
-| `projects/README-old.md` | `archive/projects/mango/README.md` + `projects/repo-development/README.md` | Критерии «когда `/projects` vs spoke», рекомендуемая структура | Единый каталоговый `README` пока не воссоздан (см. предложение 2) |
+| `projects/README-old.md` | `projects/README.md` + внешний `mango_ba_prompts` + `projects/repo-development/README.md` | Критерии «когда `/projects` vs spoke», рекомендуемая структура | Прежняя Mango-архивная копия удалена в issue #173 после миграции во spoke |
 | `tests-old/validate-repository-structure-old.sh` | `tools/validate-repository-structure.sh` | Логика проверки структуры и `-old` миграции | Путь `tests/` → `tools/` |
 | `.github/ISSUE_TEMPLATE/{ai_implementation_task,config,governance_change,research_task}-old` | `.github/ISSUE_TEMPLATE/task.yml` | Структура постановки задач + operating mode | 4 шаблона объединены в один focused шаблон |
 | `.github/pull_request_template-old.md` | ⚠️ Активный PR-шаблон не воссоздан | — | Решить: нужен ли активный PR-шаблон |
 | `PRODUCT_VISION-old.md` | `standards/product-profile.md` (шаблон) | Структура продуктового видения | Корневой `PRODUCT_VISION.md` убран: видение — артефакт spoke-проекта |
 | `AI_GOVERNANCE-old.md`, `CONTRIBUTING-old.md`, `CHANGELOG-old.md`, `LICENSE-old` | `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `LICENSE` | Контракты, workflow, журнал, лицензия-placeholder | Сокращены до коротких активных контрактов |
-| `education/**-old`, `experiments-old/mango/tz-corpus/**` | `standards/education-profile.md`; контекст `archive/projects/mango/` | Профиль курсов; решение «`tz-corpus` → Mango» | Сам учебный/экспериментальный контент пока не перенесён в активные артефакты |
+| `education/**-old`, `experiments-old/mango/tz-corpus/**` | `standards/education-profile.md`; контекст внешнего `mango_ba_prompts` | Профиль курсов; решение «`tz-corpus` → Mango» | Сам учебный/экспериментальный контент пока не перенесён в активные артефакты Хаба |
 | `research/mango/**-old`, `frameworks/README-old.md` | Каталоги сохранены; активного контента нет | Доменные каталоги зарезервированы | Перенос отложен до операционной потребности (Anti-Inflation) |
 
 ## 💡 Лучшее из `-old`: что учтено
@@ -110,7 +110,7 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 
 1. **Модель hub-and-spoke.** Из `docs-old/concept/repository-structure-old.md`
    (сравнение пяти вариантов структуры) выбрана и зафиксирована в
-   `CONCEPT.md` («Модель репозитория») и `governance/REPO_MODEL.md`.
+   `CONCEPT.md` («Модель репозитория») и `governance/repo-model.md`.
 2. **Статусы зрелости.** Решение #5 в
    `research/repository-governance/final-vision-old.md` и «Maturity model» в
    `meta-old/README-old.md` (`draft/reviewed/published/superseded`)
@@ -118,16 +118,16 @@ issue «Evidence-driven» соответствует принципу `Traceabil
    `tools/validate-frontmatter.sh` (добавлен `canonical`).
 3. **Governance-as-you-grow → Anti-Inflation.** «Сначала операционный костяк,
    `/governance/`-дерево позже по триггеру» (решения #2–#3 final-vision)
-   превратилось в Anti-Inflation principle в `governance/REPO_MODEL.md`.
+   превратилось в Anti-Inflation principle в `governance/repo-model.md`.
 4. **Роли и workflow.** Ролевая модель и 7-шаговый поток из
    `docs-old/governance/hybrid-team-collaboration-old.md` перенесены в
    `AI_GOVERNANCE.md` (Роли, Правила) и `standards/issue-workflow.md`.
 5. **Artifact map.** Идея реестра ключевых документов из
-   `meta-old/README-old.md` реализована как `governance/ARTIFACT_MAP.md`.
+   `meta-old/README-old.md` реализована как `governance/artifact-map.md`.
 6. **Структурная проверка.** `tests-old/validate-repository-structure-old.sh`
    перенесён и развит в `tools/validate-repository-structure.sh`.
 7. **`tz-corpus` → Mango.** Решение #7 final-vision о переносе эксперимента в
-   контекст Mango отражено в позиционировании `archive/projects/mango/`.
+   контекст Mango отражено во внешнем spoke-репозитории `mango_ba_prompts`.
 
 ## 🚀 Предложения по улучшениям (НЕ реализованы, только рекомендации)
 
@@ -139,7 +139,7 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 
 - **Проблема.** Из 16 активных `.md` 6 не имеют frontmatter
   (`README.md`, `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `CHANGELOG.md`,
-  `governance/REPO_MODEL.md`, `standards/README.md`), тогда как остальные 10
+  `governance/repo-model.md`, `standards/README.md`), тогда как остальные 10
   имеют. `validate-frontmatter.sh` — soft (только warnings), поэтому
   несогласованность сохраняется незаметно.
 - **Идея.** Принять явную политику: либо (a) добавить frontmatter во все
@@ -151,11 +151,12 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 - **Сложность.** Низкая (добавить 4-строчные блоки) — Средняя (решение по
   политике + правка 6 файлов).
 
-### Предложение 2. Дрейф `governance/ARTIFACT_MAP.md` по `projects/`
+### Предложение 2. Дрейф `governance/artifact-map.md` по `projects/`
 
-- **Проблема.** Строка `/projects/` в карте помечена «сейчас — `-old` входы»,
-  но активные project README уже существуют (`archive/projects/mango/README.md`, теперь
-  `projects/repo-development/README.md`). Собственное правило карты требует
+- **Проблема.** Строка `/projects/` в карте была помечена «сейчас — `-old`
+  входы», но активные project README уже существуют (`projects/README.md`,
+  `projects/repo-development/README.md`), а Mango живёт во внешнем
+  `mango_ba_prompts`. Собственное правило карты требует
   отражать фактическое состояние и добавлять строку на каждый новый активный
   артефакт. ⚠️ Найдено расхождение.
 - **Идея.** Обновить примечание строки `/projects/` и/или добавить строки на
@@ -174,7 +175,7 @@ issue «Evidence-driven» соответствует принципу `Traceabil
   правки скрипта.
 - **Идея.** Распознавать «активные опциональные» файлы по соглашению (например,
   любой `.md` без `-old` внутри `projects/<slug>/` считать активным) или
-  генерировать whitelist из `governance/ARTIFACT_MAP.md` / манифеста.
+  генерировать whitelist из `governance/artifact-map.md` / манифеста.
 - **Польза.** Меньше ручных правок, меньше случайно «красных» PR, единый
   источник истины.
 - **Сложность.** Средняя (правка скрипта + выбор источника истины).
@@ -225,7 +226,7 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 - `AI_GOVERNANCE-old.md` → `AI_GOVERNANCE.md`
 - `CHANGELOG-old.md` → `CHANGELOG.md`
 - `standards/README-old.md` → `standards/README.md`
-- `meta-old/README-old.md` → `governance/ARTIFACT_MAP.md` + frontmatter `status`
+- `meta-old/README-old.md` → `governance/artifact-map.md` + frontmatter `status`
 - `tests-old/validate-repository-structure-old.sh` → `tools/validate-repository-structure.sh`
 - `.github/ISSUE_TEMPLATE/ai_implementation_task-old.yml`,
   `config-old.yml`, `governance_change-old.md`, `research_task-old.md` →
@@ -233,8 +234,8 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 
 ### ⚠️ Требует ручной проверки (перенос частичный или ссылка не разорвана)
 
-- `projects/README-old.md` — на него **ссылается активный**
-  `archive/projects/mango/README.md`. Сначала заменить/убрать ссылку, затем удалять.
+- `projects/README-old.md` — блокирующая активная ссылка устранена в issue #173
+  при удалении прежней Mango-архивной копии из Хаба.
 - `docs-old/concept/repository-structure-old.md`,
   `docs-old/concept/vision-standard-old.md` — обоснования перенесены частично;
   сверить, что таблицы сравнения не нужны как архив.
@@ -260,8 +261,8 @@ issue «Evidence-driven» соответствует принципу `Traceabil
 ## Связанные артефакты
 
 - [CONCEPT.md](../../../CONCEPT.md)
-- [governance/REPO_MODEL.md](../../../governance/REPO_MODEL.md)
-- [governance/ARTIFACT_MAP.md](../../../governance/ARTIFACT_MAP.md)
+- [governance/repo-model.md](../../../governance/repo-model.md)
+- [governance/artifact-map.md](../../../governance/artifact-map.md)
 - [standards/glossary.md](../../../standards/glossary.md)
 - [standards/issue-workflow.md](../../../standards/issue-workflow.md)
 - [projects/repo-development/README.md](../README.md)

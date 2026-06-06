@@ -13,7 +13,7 @@ related_artifacts:
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
   - "research/hub/external-governance-patterns-review-2026-06.md"
   - "standards/glossary.md"
-  - "governance/REPO_MODEL.md"
+  - "governance/repo-model.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/99"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/116"
@@ -94,12 +94,12 @@ related_issues:
 | 4 | **Триггер** | Пользователь вставляет *Handover Prompt* в чат LLM | Пользователь инициирует issue `bootstrap:` |
 | 5 | **Что происходит** | Контекст копируется в **оперативную память агента** (не файлы!) | **Физические файлы** копируются из `templates/spoke/` в новый репо |
 | 6 | **Среда** | *Среда работы агента* = чат диалога | Файловая система / GitHub нового репо |
-| 7 | **Ключевой артефакт Хаба** | будущий `governance/AGENT_ONBOARDING.md` | `templates/spoke/` (геном-шаблон) |
+| 7 | **Ключевой артефакт Хаба** | будущий `governance/agent-onboarding.md` | `templates/spoke/` (геном-шаблон) |
 | 8 | **Результат** | Агент *знает* правила и контекст проекта | Новый репо *имеет* правильную структуру |
 | 9 | **Долговечность результата** | Эфемерный (живёт, пока жив чат) | Постоянный (файлы остаются в репо) |
 | 10 | **Покрытие RFC** | [rfc-agent-onboarding-protocol.md](rfc-agent-onboarding-protocol.md) | [rfc-creative-template-design.md](rfc-creative-template-design.md) |
 | 11 | **Operating Mode задачи** | `Structured` | `Project` |
-| 12 | **Точка входа для инструкций** | `README.md` Хаба → будущий `governance/AGENT_ONBOARDING.md` | будущий `templates/spoke/README.md` |
+| 12 | **Точка входа для инструкций** | `README.md` Хаба → будущий `governance/agent-onboarding.md` | будущий `templates/spoke/README.md` |
 | 13 | **Авиационная аналогия** | Лицензия пилота + предполётный чек-лист | Сертификация типа самолёта |
 
 ---
@@ -248,7 +248,7 @@ flowchart TD
 > ⚠️ **Это не новый формат и не обёртка.** Манифест сознательно **не вводит**
 > JSON-обёртку (Governance Metadata Envelope из external-review отнесена в
 > «отклонить») и не создаёт новых артефактов. По принципу Anti-Inflation
-> ([governance/REPO_MODEL.md](../REPO_MODEL.md)) задача — *назвать* уже
+> ([governance/repo-model.md](../repo-model.md)) задача — *назвать* уже
 > работающую способность, а не нарастить структуру.
 
 ---
@@ -277,13 +277,13 @@ flowchart TD
 ## 🏗️ Следствие для структуры Хаба: какие README и где
 
 Манифест **не создаёт** README в этой задаче (Anti-Inflation,
-[governance/REPO_MODEL.md](../REPO_MODEL.md)). Он лишь фиксирует, что после
+[governance/repo-model.md](../repo-model.md)). Он лишь фиксирует, что после
 утверждения должны появиться **ровно два** входных документа, по одному на кейс:
 
 | README | Кейс | Где | Что содержит | Перекрёстные ссылки |
 | --- | --- | --- | --- | --- |
 | `templates/spoke/README.md` *(уже существует как шаблон)* | Кейс 2 | `templates/spoke/` | Что копировать, как адаптировать `PROJECT_CONTRACT`/плейсхолдеры, как валидировать структуру | → этот манифест, → `rfc-creative-template-design.md`, → README Кейса 1 |
-| `governance/AGENT_ONBOARDING.md` *(будущий, по `rfc-agent-onboarding-protocol.md`)* | Кейс 1 | `governance/` (рекомендация онбординг-RFC) с короткой ссылкой из `README.md` Хаба | *Handover Prompt*, алгоритм чтения файлов, шаблон *Readback* | → этот манифест, → `rfc-agent-onboarding-protocol.md`, → README Кейса 2 |
+| `governance/agent-onboarding.md` *(будущий, по `rfc-agent-onboarding-protocol.md`)* | Кейс 1 | `governance/` (рекомендация онбординг-RFC) с короткой ссылкой из `README.md` Хаба | *Handover Prompt*, алгоритм чтения файлов, шаблон *Readback* | → этот манифест, → `rfc-agent-onboarding-protocol.md`, → README Кейса 2 |
 
 Оба документа обязаны **явно ссылаться друг на друга** и на этот манифест —
 чтобы читатель, попавший в любую точку входа, сразу видел: «есть второй,
@@ -299,9 +299,9 @@ flowchart TD
    процесса» со ссылками на глоссарий и на этот манифест, параметризовать
    *Handover Prompt* плейсхолдером `{{REPO_NAME}}`. *(Частично выполнено в этом
    же PR — см. изменения онбординг-RFC.)*
-2. **Обновить [governance/REPO_MODEL.md](../REPO_MODEL.md)** — зафиксировать
+2. **Обновить [governance/repo-model.md](../repo-model.md)** — зафиксировать
    двухкейсовую модель инициализации как часть описания жизненного цикла spoke.
-3. **Создать `governance/AGENT_ONBOARDING.md`** (Кейс 1) — после утверждения
+3. **Создать `governance/agent-onboarding.md`** (Кейс 1) — после утверждения
    онбординг-RFC.
 4. **Дополнить `templates/spoke/README.md`** (Кейс 2) — раздел про адаптацию и
    валидацию, со ссылкой на этот манифест и на README Кейса 1.
@@ -325,8 +325,8 @@ governance). Прошу:
 3. **Утвердить follow-up-список** (5 задач выше) и порядок их выполнения.
 
 > **Что мне НЕ создавать без твоего слова:** сами README (`templates/spoke/README.md`
-> наполнять инструкцией Кейса 2, `governance/AGENT_ONBOARDING.md`), изменения
-> `governance/REPO_MODEL.md`. Этот PR добавляет только данный манифест, раздел
+> наполнять инструкцией Кейса 2, `governance/agent-onboarding.md`), изменения
+> `governance/repo-model.md`. Этот PR добавляет только данный манифест, раздел
 > «Модель процесса» в онбординг-RFC и 6 терминов в глоссарий.
 
 ## ✅ Решения фаундера (Human Review 2026-06)
@@ -352,9 +352,9 @@ Bootstrap-клонирование (Кейс 2) утверждено как ко
 
 **Решение:** Утверждено. Статус выполнения:
 
-- ✅ Создать `governance/AGENT_ONBOARDING.md` — выполнено (v1.1, 2026-06-04)
+- ✅ Создать `governance/agent-onboarding.md` — выполнено (v1.1, 2026-06-04)
 - ✅ Создать `templates/spoke/README.md` — выполнено
-- ✅ Обновить `governance/REPO_MODEL.md` — выполнено (v1.1, 2026-06-04)
+- ✅ Обновить `governance/repo-model.md` — выполнено (v1.1, 2026-06-04)
 - ⚠️ Добавить ссылки из `README.md` и `AI_GOVERNANCE.md` — выполняется в
   рамках текущей задачи
 - ✅ Создать дубль промпта в `templates/spoke/` — выполнено

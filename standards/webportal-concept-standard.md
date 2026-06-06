@@ -7,7 +7,7 @@ executable: false
 scope: portal
 related_standards:
   - "portal-repository-structure.md"
-  - "research-documentation-standard.md"
+  - "research-profile.md"
   - "contract-documentation-standard.md"
   - "glossary.md"
   - "file-naming.md"
@@ -157,7 +157,7 @@ Continuous Discovery, Concept Doc) и выбор основы:
   гипотезы переходят в разделы (стек, архитектура), опровергнутые — в открытые
   вопросы или scope-out.
 - Исследования портал-домена **СЛЕДУЕТ** оформлять по
-  [standards/research-documentation-standard.md](research-documentation-standard.md)
+  [standards/research-profile.md](research-profile.md)
   и размещать в `research/portal/` (или в `research/` спок-проекта).
 
 ## 5. Связь со структурой репозитория
@@ -290,7 +290,7 @@ issue. «Сначала исследуй, потом предлагай».
 - [research/portal/concept-standards-comparison-2026-06.md](../research/portal/concept-standards-comparison-2026-06.md) — сравнение 8 подходов и выбор основы (PRD + Vision + TOGAF-модульность).
 - [research/portal/documentation-standards-comparison-2026-06.md](../research/portal/documentation-standards-comparison-2026-06.md) — смежный слой (формат документации).
 - [standards/portal-repository-structure.md](portal-repository-structure.md), [standards/project-structure-inheritance.md](project-structure-inheritance.md) — выбор структуры репозитория.
-- [standards/research-documentation-standard.md](research-documentation-standard.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
+- [standards/research-profile.md](research-profile.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
 - [standards/glossary.md](glossary.md) — нормативные термины (single source of truth).
 - IETF RFC 2119 / BCP 14 — [rfc-editor.org/info/bcp14](https://www.rfc-editor.org/info/bcp14).
 - Marty Cagan / SVPG (PRD), Roman Pichler (Product Vision Board), The Open Group (TOGAF), IIBA (BABOK), ISO/IEC/IEEE 42010 — см. раздел «Источники» исследования.

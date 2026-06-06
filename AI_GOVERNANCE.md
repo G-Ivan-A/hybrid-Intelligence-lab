@@ -8,7 +8,7 @@ executable: false
 
 > **🛫 Директива pre-flight (обязательно перед любой работой).** ИИ-агент
 > выполняет предполётный протокол *Runtime-онбординга* по
-> [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md): чек-лист
+> [governance/agent-onboarding.md](governance/agent-onboarding.md): чек-лист
 > governance → чек-лист контекста → *Readback* → стоп до апрува человека. Этот
 > файл — контракт-справка (`executable: false`): он описывает *что* можно делать;
 > онбординг — *как* безопасно начать.
@@ -44,9 +44,9 @@ executable: false
 1. Работа начинается с issue или явного maintainer request.
 2. AI agents читают issue, последние comments, relevant files и текущий PR
    context до изменения файлов — по предполётному протоколу
-   [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md).
+   [governance/agent-onboarding.md](governance/agent-onboarding.md).
 3. Изменения должны следовать [CONCEPT.md](CONCEPT.md),
-   [governance/REPO_MODEL.md](governance/REPO_MODEL.md) и
+   [governance/repo-model.md](governance/repo-model.md) и
    [standards/README.md](standards/README.md).
 4. AI agents могут предлагать структуру, но humans принимают финальные решения
    по vision, publication, license и sensitive context.

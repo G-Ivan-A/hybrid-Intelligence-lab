@@ -199,4 +199,4 @@ BaaS) вводится в Phase 2 под кабинет/маскирование
 - Supabase — [supabase.com](https://supabase.com); PostHog — [posthog.com](https://posthog.com); n8n — [n8n.io](https://n8n.io).
 - Tailwind — [tailwindcss.com](https://tailwindcss.com); shadcn/ui — [ui.shadcn.com](https://ui.shadcn.com); Radix — [radix-ui.com](https://www.radix-ui.com).
 - Yandex GPT 5 — [yandex.cloud/docs/foundation-models](https://yandex.cloud/en/docs/foundation-models/) (детали — соседнее исследование).
-- Внутренние: [CONCEPT.md](../../CONCEPT.md), [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md), [projects/README.md](../../projects/README.md).
+- Внутренние: [CONCEPT.md](../../CONCEPT.md), [governance/repo-model.md](../../governance/repo-model.md), [projects/README.md](../../projects/README.md).

@@ -41,12 +41,12 @@ entrypoint: true
 Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
 {{REPO_NAME}} (модель hub-and-spoke); ты обращаешься к нему, но не «живёшь» в нём.
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/AGENT_ONBOARDING.md). Это предполётный чек-лист — взлёт (изменение
+(governance/agent-onboarding.md). Это предполётный чек-лист — взлёт (изменение
 файлов) запрещён до моего апрува.
 
 Сделай ровно по шагам:
 1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай AI_GOVERNANCE.md, CONTRIBUTING.md,
-   governance/REPO_MODEL.md, governance/ARTIFACT_MAP.md и
+   governance/repo-model.md, governance/artifact-map.md и
    standards/project-structure-inheritance.md.
 2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/спока) и блок «Быстрый контекст»,
@@ -77,9 +77,9 @@ entrypoint: true
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — роли, правила, operating modes,
   эскалация, Definition of Done.
 - [CONTRIBUTING.md](../CONTRIBUTING.md) — workflow вклада и локальные проверки.
-- [governance/REPO_MODEL.md](REPO_MODEL.md) — модель структуры и Anti-Inflation
+- [governance/repo-model.md](repo-model.md) — модель структуры и Anti-Inflation
   principle.
-- [governance/ARTIFACT_MAP.md](ARTIFACT_MAP.md) — навигация по артефактам.
+- [governance/artifact-map.md](artifact-map.md) — навигация по артефактам.
 - [standards/project-structure-inheritance.md](../standards/project-structure-inheritance.md)
   — что можно, а что нельзя создавать.
 
@@ -128,7 +128,7 @@ entrypoint: true
 старта живут в
 [governance/rfc/rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md)
 (*проект*, `rfc/`). Граница намеренна: RFC — это дизайн, а
-`AGENT_ONBOARDING.md` — рабочая инструкция; единый источник истины по процессу
+`agent-onboarding.md` — рабочая инструкция; единый источник истины по процессу
 онбординга — этот файл.
 
 ### 🧭 Модель процесса (одна строка)

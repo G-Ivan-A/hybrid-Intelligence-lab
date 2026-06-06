@@ -10,7 +10,7 @@ method: interpretive-synthesis
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/87"
 related_artifacts:
   - "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
-  - "governance/REPO_MODEL.md"
+  - "governance/repo-model.md"
   - "standards/research-profile.md"
   - "standards/team-contract.md"
 ---
@@ -72,9 +72,9 @@ governance-архитектура для human + AI collaboration.
 
 Сейчас полезнее определить минимальный набор активных governance-артефактов и
 границы их роли, чем создавать новые уровни. Минимум уже есть:
-`AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `governance/REPO_MODEL.md`,
+`AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `governance/repo-model.md`,
 `standards/README.md`, `standards/research-profile.md`,
-`standards/issue-workflow.md` и `governance/ARTIFACT_MAP.md`.
+`standards/issue-workflow.md` и `governance/artifact-map.md`.
 
 Рекомендация: следующий governance artifact создавать только при повторяющейся
 операционной боли, зафиксированной в issue, PR review или research findings.
@@ -88,7 +88,7 @@ governance-архитектура для human + AI collaboration.
 | --- | --- | --- |
 | Concept | Зачем существует репозиторий и где его границы. | `CONCEPT.md` |
 | Governance contracts | Как работают люди и ИИ, кто принимает решения. | `AI_GOVERNANCE.md`, `CONTRIBUTING.md` |
-| Repository model | Где живут артефакты и когда создаются новые. | `governance/REPO_MODEL.md` |
+| Repository model | Где живут артефакты и когда создаются новые. | `governance/repo-model.md` |
 | Standards / profiles | Обязательные форматы для повторяемых работ. | `standards/research-profile.md`, `standards/issue-workflow.md` |
 | Practices | Рекомендации, проверяемые на workflow до стандартизации. | Research-рекомендации и будущие pilot examples |
 | Frameworks | Методологии, появляющиеся только после доказанного gap. | `frameworks/` |
@@ -119,7 +119,7 @@ standard или practice?
 
 | ID | Рекомендация | Почему это нужно | Следующее действие |
 | --- | --- | --- | --- |
-| `TC-GOV-001` | Закрепить принцип "нет governance-артефакта без операционной боли". | Снижает риск governance overgrowth. | Создать issue на уточнение `governance/REPO_MODEL.md` после review этого research. |
+| `TC-GOV-001` | Закрепить принцип "нет governance-артефакта без операционной боли". | Снижает риск governance overgrowth. | Создать issue на уточнение `governance/repo-model.md` после review этого research. |
 | `TC-GOV-002` | Согласовать lightweight governance hierarchy. | Убирает вопрос, что является обязательным контрактом, а что рекомендацией. | Создать issue с таблицей hierarchy и критериями конфликтов между артефактами. |
 | `TC-GOV-003` | Провести semantic cleanup audit. | Снижает пересечение терминов `framework`, `practice`, `contract`, `profile`, `policy`. | Создать research/task issue без немедленных переименований. |
 | `TC-GOV-004` | Описать research lifecycle transitions. | Предотвращает research entropy и случайную канонизацию черновиков. | Создать issue на правила перехода `draft -> reviewed -> published/canonical/superseded`. |
@@ -131,7 +131,7 @@ standard или practice?
 1. Согласен ли Founder & PO с принципом "нет governance-артефакта без
    операционной боли" как обязательным decision rule?
 2. Нужна ли отдельная governance hierarchy сейчас, или достаточно встроить
-   таблицу hierarchy в существующий `governance/REPO_MODEL.md`?
+   таблицу hierarchy в существующий `governance/repo-model.md`?
 3. Какие lifecycle statuses считать применимыми именно к research:
    `draft/reviewed/published` или `draft/reviewed/canonical/archived`?
 4. Какие 2-3 workflow выбрать как pilot cycles для проверки governance minimum?
@@ -147,6 +147,6 @@ standard или practice?
 | --- | --- |
 | Issue #87 | Входные предложения команды C и acceptance criteria. |
 | `research/hub/project-context-and-bootstrap-patterns-2026-05.md` | Механизм `recommendation -> issue`, context handoff и bootstrap patterns. |
-| `governance/REPO_MODEL.md` | Anti-Inflation principle и правило размещения артефактов. |
+| `governance/repo-model.md` | Anti-Inflation principle и правило размещения артефактов. |
 | `standards/research-profile.md` | Требования к research frontmatter, traceability и ограничениям. |
 | `standards/team-contract.md` | Контекст team contract, AI governance и project-level adaptation. |

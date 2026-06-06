@@ -10,7 +10,7 @@ scope: portal
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
 related_artifacts:
   - "research/portal/architecture-and-stack-comparison-2026-06.md"
-  - "projects/mango/README.md"
+  - "mango_ba_prompts"
   - "research/portal/open-ai-portal-concept-rfc.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
@@ -165,4 +165,4 @@ context принимает человек.
 - Supabase Auth — [supabase.com/docs/guides/auth](https://supabase.com/docs/guides/auth); RLS — [supabase.com/docs/guides/database/postgres/row-level-security](https://supabase.com/docs/guides/database/postgres/row-level-security).
 - Cloudflare Workers (secrets) — [developers.cloudflare.com/workers/configuration/secrets](https://developers.cloudflare.com/workers/configuration/secrets/).
 - PostHog privacy — [posthog.com/docs/privacy](https://posthog.com/docs/privacy).
-- Внутренние: [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) (правило 6 — секреты/приватные данные), [projects/mango/README.md](../../projects/mango/README.md), [research/portal/architecture-and-stack-comparison-2026-06.md](architecture-and-stack-comparison-2026-06.md).
+- Внутренние: [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) (правило 6 — секреты/приватные данные), [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts), [research/portal/architecture-and-stack-comparison-2026-06.md](architecture-and-stack-comparison-2026-06.md).

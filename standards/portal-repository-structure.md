@@ -224,7 +224,7 @@ open-ai.ru/
 - [standards/file-naming.md](file-naming.md) — правила именования.
 - [templates/spoke/README.md](../templates/spoke/README.md) — геном спока.
 - [projects/README.md](../projects/README.md) — критерии spoke vs `/projects`.
-- [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) — Anti-Inflation, размещение артефактов.
+- [governance/repo-model.md](../governance/repo-model.md) — Anti-Inflation, размещение артефактов.
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правила 4 и 6.
 - [research/portal/repository-structure-design-2026-06.md](../research/portal/repository-structure-design-2026-06.md) — обоснование и альтернативы.
 - [research/portal/documentation-standards-comparison-2026-06.md](../research/portal/documentation-standards-comparison-2026-06.md) — ADR + C4 + Diátaxis.
