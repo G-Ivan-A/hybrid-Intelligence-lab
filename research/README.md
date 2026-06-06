@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.4
-updated: 2026-06-05
+version: 1.5
+updated: 2026-06-06
 ai-generated: false
 source: research/README-old.md
 ---
@@ -54,6 +54,7 @@ source: research/README-old.md
 | [architecture-and-stack-comparison-2026-06.md](portal/architecture-and-stack-comparison-2026-06.md) | Сравнение архитектур и технологического стека (frontend, backend, хостинг, BaaS, аналитика, автоматизация): модульный монолит, SSG + islands, Cloudflare Pages, Supabase, выбор фреймворка по матрице критериев. |
 | [repository-structure-design-2026-06.md](portal/repository-structure-design-2026-06.md) | Дизайн структуры репозитория портала как spoke-проекта: наследование генома спока, портал-специфичные каталоги, альтернативы и обоснование (источник стандарта `portal-repository-structure.md`). |
 | [ai-and-mango-integration-patterns-2026-06.md](portal/ai-and-mango-integration-patterns-2026-06.md) | Паттерны интеграции AI и `mango_ba_prompts` (Yandex GPT через serverless-proxy, content-collection санитизированных промптов, Supabase Auth + RLS, клиентское маскирование) с разбивкой по фазам и границей приватности. |
+| [portal-documents-review-2026-06.md](portal/portal-documents-review-2026-06.md) | Review-tool для согласования 10 отложенных portal-документов: ссылки, краткие саммари, спорные вопросы, матрица решений и HTML-версия для браузера. |
 
 ## Рекомендуемая структура
 

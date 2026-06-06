@@ -77,6 +77,9 @@ is_active_file() {
     research/portal/repository-structure-design-2026-06.md | \
     research/portal/ai-and-mango-integration-patterns-2026-06.md | \
     research/portal/open-ai-portal-concept-rfc.md | \
+    research/portal/portal-documents-review-2026-06.md | \
+    research/portal/portal-documents-review-2026-06.html | \
+    research/portal/portal-documents-review-2026-06.png | \
     research/mango/classification.md | \
     research/mango/classification.html | \
     research/mango/classification-tz.md | \
@@ -338,6 +341,9 @@ required_files=(
   "research/portal/architecture-and-stack-comparison-2026-06.md"
   "research/portal/repository-structure-design-2026-06.md"
   "research/portal/open-ai-portal-concept-rfc.md"
+  "research/portal/portal-documents-review-2026-06.md"
+  "research/portal/portal-documents-review-2026-06.html"
+  "research/portal/portal-documents-review-2026-06.png"
   "research/mango/classification.md"
   "research/mango/classification.html"
   "research/mango/classification-tz.md"
@@ -705,7 +711,7 @@ require_text "governance/agent-onboarding.md" "rfc-two-cases-of-project-initiali
 require_text "governance/agent-onboarding.md" "templates/spoke/README.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.21"
+require_text "governance/artifact-map.md" "version: 1.22"
 require_text "governance/artifact-map.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "updated: 2026-06-06"
 require_text "governance/artifact-map.md" "ai-generated: false"
