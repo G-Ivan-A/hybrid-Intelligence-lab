@@ -537,7 +537,7 @@ require_text "governance/rfc/contract-executability-rfc.md" "governance/rfc/"
 require_text "governance/rfc/contract-executability-rfc.md" "Дата утверждения"
 
 require_text "governance/rfc/repository-quality-improvement-plan.md" "status: draft"
-require_text "governance/rfc/repository-quality-improvement-plan.md" "version: 0.1"
+require_text "governance/rfc/repository-quality-improvement-plan.md" "version: 0.2"
 require_text "governance/rfc/repository-quality-improvement-plan.md" "archive/projects/mango/"
 require_text "governance/rfc/repository-quality-improvement-plan.md" "Phase 1"
 require_text "governance/rfc/repository-quality-improvement-plan.md" "Запрос На Согласование"

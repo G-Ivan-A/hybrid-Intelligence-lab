@@ -39,11 +39,17 @@ All notable repository governance changes are documented here.
 ### Changed
 
 - Issue #173: governance-файлы переименованы в kebab-case, правила порядка
-  изложения из `standards/research-documentation-standard.md` объединены с
+  изложения из бывшего draft body-standard объединены с
   `standards/research-profile.md`, архив `archive/projects/mango/` удалён после
   миграции во внешний `mango_ba_prompts`, `standards/file-naming.md` расширен до
   версии 1.2 для `governance/`, карта артефактов обновлена до 1.20, а
   структурный валидатор обновлён под новый целевой набор артефактов.
+- Issue #177 (Structured mode): `governance/rfc/repository-quality-improvement-plan.md`
+  обновлён до v0.2: раздел "Full draft list" заменён 52-строчной таблицей
+  с колонками для номера, файла, строки `status: draft`, summary,
+  рекомендации и обоснования. Добавлен "Триаж по категориям" для canonical,
+  отложенных, доработки, объединения и удаления; структурный валидатор теперь
+  ожидает версию RFC 0.2.
 - Issue #169: файлы стандартов внутри `standards/` переименованы из
   `CAPS_LOCK`/underscore-стиля в kebab-case, все ссылки на старые имена
   обновлены. `standards/file-naming.md` обновлён до версии 1.1 с явным правилом

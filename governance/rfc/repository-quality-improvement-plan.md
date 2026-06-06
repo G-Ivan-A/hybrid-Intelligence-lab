@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-06
 ai-generated: true
 type: rfc
@@ -17,17 +17,26 @@ related_artifacts:
   - "tools/validate-frontmatter.sh"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/171"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/177"
 ---
 
 # RFC: Repository Quality Improvement Plan
 
-Версия: 0.1
+Версия: 0.2
 
 Дата: 2026-06-06
 
 Статус: черновик для согласования. Это RFC фиксирует аудит и план, а не
 выполняет физическую очистку репозитория. Решение о применении фаз и создании
 отдельных задач принимает человек.
+
+## Changelog
+
+### v0.2 (2026-06-06)
+
+- Структурирован раздел "Full draft list" с новыми колонками.
+- Добавлены рекомендации и обоснования для каждого draft-документа.
+- Добавлен раздел "Триаж по категориям".
 
 ## 1. Executive Summary
 
@@ -42,9 +51,9 @@ related_issues:
 - карта артефактов и валидатор всё ещё делают архив Mango обязательным;
 - после миграций остались stale-ссылки на удалённые `projects/mango/` и
   `*-old.md` пути;
-- 52 документа имеют `status: draft` во frontmatter и требуют явного решения:
-  согласовать, оставить как draft с exit-plan, объединить, удалить или вынести
-  в отдельную задачу.
+- 52 audit-scope документа имеют `status: draft` во frontmatter и требуют
+  явного решения: согласовать, оставить как draft с exit-plan, объединить,
+  удалить или вынести в отдельную задачу.
 
 Концепция портала `open-ai.ru` не анализируется по смыслу: это отдельный scope.
 В этом RFC учитываются только repository-quality факты, например битые ссылки в
@@ -186,7 +195,8 @@ Scanner false positives excluded from the problem list:
 
 ### 2.5. Draft-документы
 
-Frontmatter scan found 52 draft documents:
+Frontmatter scan found 52 draft documents in audit scope before Phase 1
+cleanup, excluding this RFC itself:
 
 | Группа | Count | Recommendation |
 | --- | ---: | --- |
@@ -199,60 +209,124 @@ Frontmatter scan found 52 draft documents:
 
 Full draft list:
 
-| Файл | Линия | Рекомендация |
-| --- | ---: | --- |
-| `archive/projects/mango/experiments/prompts-audit-2026-05-26.md` | 2 | Delete with archive. |
-| `archive/projects/mango/experiments/prompts-selftest-2026-05-26.md` | 2 | Delete with archive. |
-| `archive/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` | 2 | Delete with archive. |
-| `archive/projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md` | 2 | Delete with archive. |
-| `archive/projects/mango/prompts/tz-stats-generator_exp-2026-05.md` | 2 | Delete with archive. |
-| `archive/projects/mango/prompts/tz-stats-generator_simple-2026-05.md` | 2 | Delete with archive. |
-| `archive/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md` | 2 | Delete with archive. |
-| `archive/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md` | 2 | Delete with archive. |
-| `archive/projects/mango/prompts/user-story-generator_exp-2026-05.md` | 2 | Delete with archive. |
-| `archive/projects/mango/prompts/user-story-generator_simple-2026-05.md` | 2 | Delete with archive. |
-| `archive/projects/mango/standards/classification-glossary.md` | 2 | Delete with archive. |
-| `governance/rfc/README.md` | 2 | Keep draft navigation unless human promotes RFC catalog policy. |
-| `governance/rfc/contract-executability-rfc.md` | 2 | Decide if accepted parts should become canonical standard/backlog only. |
-| `governance/rfc/rfc-agent-onboarding-protocol.md` | 2 | Review against implemented `agent-onboarding.md`; possibly supersede. |
-| `governance/rfc/rfc-creative-template-design.md` | 2 | Review against implemented `templates/spoke/`. |
-| `governance/rfc/rfc-two-cases-of-project-initialization.md` | 2 | Decide whether to keep as RFC-mанифест or promote term decisions elsewhere. |
-| `projects/education-ba-prompt/README.md` | 2 | Keep sandbox draft or promote after education scope review. |
-| `projects/education-ba-prompt/docs/course-ideas.md` | 2 | Keep sandbox draft or split into course artifacts after approval. |
-| `research/governance/README.md` | 2 | Review navigation status. |
-| `research/governance/contract-documentation-format-2026-06.md` | 2 | Review with derived standard. |
-| `research/governance/executable-contract-format-2026-06.md` | 2 | Review with derived standard. |
-| `research/governance/governance-folder-structure-decisions-2026-06.md` | 2 | Review and mark decisions as reviewed/canonical if accepted. |
-| `research/governance/research-documentation-format-2026-06.md` | 2 | Review with derived standard. |
-| `research/hub/external-governance-patterns-review-2026-06.md` | 2 | Review or keep draft with open questions. |
-| `research/hub/project-context-and-bootstrap-patterns-2026-05.md` | 2 | Review after Mango archive deletion decision. |
-| `research/hub/prompts-classification-audit-2026-05.md` | 2 | Review against external `mango_ba_prompts` state. |
-| `research/hub/prompts-classification-standard-2026-05.md` | 2 | Merge into a standard or keep as draft research. |
-| `research/hub/team-c-governance-strategy-audit-2026-05.md` | 2 | Review or supersede by backlog/external-governance analysis. |
-| `research/hub/user-prompts-analysis-2026-05.md` | 2 | Review against prompt migration state. |
-| `research/mango/capability-decomposition-2026-05.md` | 2 | Fix relations, then review. |
-| `research/mango/rag-mapping-roadmap-2026-05.md` | 2 | Review after external Mango repo decision. |
-| `research/mango/requirements-lifecycle-uncertainty-2026-05.md` | 2 | Review or keep draft with exit criteria. |
-| `research/mango/taxonomy-concept-2026-05.md` | 2 | Fix stale links, then review. |
-| `research/portal/README.md` | 2 | Portal-specific review outside this RFC. |
-| `research/portal/ai-and-mango-integration-patterns-2026-06.md` | 2 | Portal-specific review outside this RFC; fix stale links separately. |
-| `research/portal/architecture-and-stack-comparison-2026-06.md` | 2 | Portal-specific review outside this RFC. |
-| `research/portal/concept-standards-comparison-2026-06.md` | 2 | Portal-specific review outside this RFC. |
-| `research/portal/documentation-standards-comparison-2026-06.md` | 2 | Portal-specific review outside this RFC. |
-| `research/portal/open-ai-portal-concept-rfc.md` | 2 | Out of scope for this cleanup; separate portal discussion. |
-| `research/portal/repository-structure-design-2026-06.md` | 2 | Portal-specific review outside this RFC; fix stale links separately. |
-| `standards/contract-documentation-standard.md` | 2 | Approve, merge, or reject. |
-| `standards/executable-contract-standard.md` | 2 | Approve, merge, or reject. |
-| `standards/portal-repository-structure.md` | 2 | Portal-specific approval. |
-| `standards/research-profile.md` | 2 | Decide relation to `research-profile.md`. |
-| `standards/webportal-concept-standard.md` | 2 | Portal-specific approval. |
-| `templates/spoke/AI_GOVERNANCE.md` | 2 | Keep draft template; decide placeholder validation rule. |
-| `templates/spoke/AI_HANDOVER_PROMPT.md` | 2 | Keep draft template; decide placeholder validation rule. |
-| `templates/spoke/AI_QUICK_RULES.md` | 2 | Keep draft template; decide placeholder validation rule. |
-| `templates/spoke/CHANGELOG.md` | 2 | Keep draft template; decide placeholder validation rule. |
-| `templates/spoke/CONTRIBUTING.md` | 2 | Keep draft template; decide placeholder validation rule. |
-| `templates/spoke/README.md` | 2 | Keep draft template; decide placeholder validation rule. |
-| `templates/webportal-concept-template.md` | 2 | Keep draft template; decide placeholder validation rule. |
+| Номер | Файл | Линия | Саммари | Рекомендация на русском | Обоснование |
+| ---: | --- | ---: | --- | --- | --- |
+| 1 | `governance/rfc/README.md` | 2 | Навигация по RFC Хаба: правила попадания в каталог, список RFC и связанные governance-артефакты. | Перевести в canonical | Каталог уже принят как `governance/rfc/` после issue #165 и используется в 4 связанных файлах; документ фиксирует навигацию, а не спорное решение. |
+| 2 | `governance/rfc/rfc-two-cases-of-project-initialization.md` | 2 | RFC-манифест разделяет Runtime-онбординг и Bootstrap-клонирование, связывает термины с onboarding и spoke-template. | Перевести в canonical | Термины уже используются в `agent-onboarding.md`, `templates/spoke/README.md` и других RFC; документ упоминается в 9 файлах и стабилизирует vocabulary Хаба. |
+| 3 | `research/governance/governance-folder-structure-decisions-2026-06.md` | 2 | Decision record по структуре governance-каталогов: `rfc/` вместо `proposals/`, границы portal research и правила исторических ссылок. | Перевести в canonical | Решения Q1-Q3 уже реализованы в структуре репозитория и валидаторе; документ связан с 4 файлами и должен стать canonical evidence для переименований. |
+| 4 | `research/governance/contract-documentation-format-2026-06.md` | 2 | Исследование формата контрактных документов: RFC 2119, API contracts, SLA, design by contract и ADR-подход. | Перевести в canonical | Документ является источником для `standards/contract-documentation-standard.md` и упоминается в 4 файлах; после human review его можно зафиксировать как research source. |
+| 5 | `research/governance/executable-contract-format-2026-06.md` | 2 | Исследование формата исполнимых контрактов: action-first структура, системные prompt-паттерны, runbook-подход и восприятие агентом. | Перевести в canonical | На документ опирается `standards/executable-contract-standard.md`; он связан с 3 файлами и уже отражён в принятых executable-doc работах. |
+| 6 | `research/governance/research-documentation-format-2026-06.md` | 2 | Исследование структуры research-документов Хаба: BLUF, traceability, выводы, детализация и связи с decision-making. | Перевести в canonical | Документ является источником для раздела порядка изложения в `standards/research-profile.md` и связан с 4 файлами; после Phase 1 merge его можно закрыть как canonical source. |
+| 7 | `standards/contract-documentation-standard.md` | 2 | Стандарт оформления контрактных документов Хаба: нормативный язык, frontmatter, секции и decision traceability. | Перевести в canonical | Стандарт уже зарегистрирован в валидаторе и связан с 8 файлами; препятствий кроме human approval и снятия draft-статуса не найдено. |
+| 8 | `standards/executable-contract-standard.md` | 2 | Стандарт исполнимых контрактов: разделение EXECUTION/EXPLANATION, директивный блок и требования к агентскому выполнению. | Перевести в canonical | Формат уже применён в `agent-onboarding.md` и `templates/spoke/AI_HANDOVER_PROMPT.md`; документ упоминается в 9 файлах и готов к approval. |
+| 9 | `research/portal/README.md` | 2 | Навигация по исследованиям портала open-ai.ru: concept, architecture, documentation, repository structure и AI integration. | Отложить | Scope `portal` и сам портал ещё не согласованы; документ связан с 4 файлами, но зависит от отдельного portal review вне repository cleanup. |
+| 10 | `research/portal/ai-and-mango-integration-patterns-2026-06.md` | 2 | Исследование AI-интеграции портала: Yandex GPT, `mango_ba_prompts`, auth, маскирование данных и serverless proxy. | Отложить | В разделе 2.4 уже отмечены stale-ссылки на удалённый `projects/mango/README.md`; смысл портальной интеграции должен решаться отдельной portal-задачей. |
+| 11 | `research/portal/architecture-and-stack-comparison-2026-06.md` | 2 | Сравнение архитектуры и технологического стека open-ai.ru: SSG, serverless, hosting, open-source и AI integration. | Отложить | Документ относится к portal scope и упоминается в 6 файлах; repository-quality RFC явно не анализирует смысл концепции `open-ai.ru`. |
+| 12 | `research/portal/concept-standards-comparison-2026-06.md` | 2 | Исследование стандартов концепции портала: PRD, Vision, RFC, TOGAF-модульность, roadmap и links to research. | Отложить | Документ является источником для портального стандарта, но принятие стандарта зависит от отдельного решения по portal governance. |
+| 13 | `research/portal/documentation-standards-comparison-2026-06.md` | 2 | Сравнение стандартов документации портала: ADR, C4, decision traceability, architecture docs и AI-native практики. | Отложить | Документ связан с 7 файлами, но используется только внутри portal package; перевод в canonical преждевременен до согласования portal концепции. |
+| 14 | `research/portal/open-ai-portal-concept-rfc.md` | 2 | RFC концепции open-ai.ru: коммуникационный хаб, варианты решения, roadmap, риски и вопросы согласования. | Отложить | Это отдельный concept-RFC, связанный с 10 файлами; текущий RFC фиксирует только repository-quality факты и не должен утверждать portal direction. |
+| 15 | `research/portal/repository-structure-design-2026-06.md` | 2 | Исследование структуры репозитория портала: hub-and-spoke inheritance, spoke template, каталогизация и governance boundaries. | Отложить | В разделе 2.4 отмечена stale-ссылка на `projects/mango/README.md`; правка ссылок нужна отдельно, а статус зависит от portal approval. |
+| 16 | `standards/portal-repository-structure.md` | 2 | Стандарт структуры репозитория веб-портала: наследование spoke-генома, portal-specific каталоги и validation expectations. | Отложить | Стандарт упоминается в 12 файлах, но является portal-specific; canonical-решение должно следовать после согласования `open-ai.ru`. |
+| 17 | `standards/webportal-concept-standard.md` | 2 | Стандарт структуры концепции веб-портала: обязательное PRD-ядро, Vision/TOGAF-модули, roadmap, risks и metrics. | Отложить | Стандарт связан с 6 файлами, но его применение зависит от решения по portal-концепциям и шаблону; оставлять draft до approval. |
+| 18 | `templates/webportal-concept-template.md` | 2 | Копируемый шаблон концепции веб-портала с placeholders, portal scope и секциями из webportal concept standard. | Отложить | Шаблон зависит от `standards/webportal-concept-standard.md` и содержит `{{date}}`; нужен общий подход к template placeholders перед снятием draft. |
+| 19 | `governance/rfc/contract-executability-rfc.md` | 2 | RFC архитектуры исполнимых документов: маркеры `executable`, directive block, rollout plan и решения фаундера. | Доработать | Принятые части уже вынесены в `agent-onboarding.md` и standards, но RFC ещё содержит planning/history blocks; нужен explicit статус accepted/superseded по разделам. |
+| 20 | `projects/education-ba-prompt/README.md` | 2 | Навигация sandbox-проекта курса БА по prompt engineering: цель, docs, связь с education-profile и текущий draft scope. | Доработать | Проект упоминается в 2 файлах и отсутствует в `artifact-map.md` по разделу 2.6; перед canonical нужно решить, это sandbox или public project. |
+| 21 | `projects/education-ba-prompt/docs/course-ideas.md` | 2 | Набор идей курса: термины, практические кейсы БА, рабочие шаблоны промптов, модули и форматы подачи. | Доработать | Документ связан только с project README; требуется разнести идеи в утверждённые course artifacts или оставить как sandbox draft с exit criteria. |
+| 22 | `research/governance/README.md` | 2 | Навигация по governance research: форматы research, executable contracts, contract docs и decisions по структуре папок. | Доработать | Каталог уже содержит source-документы для стандартов, но README остаётся draft; нужно синхронизировать статус с решением по derived standards. |
+| 23 | `research/hub/external-governance-patterns-review-2026-06.md` | 2 | Анализ external governance patterns и матрицы применимости: что взять сейчас, что отложить, что отклонить. | Доработать | Документ упоминается в 6 файлах и содержит открытые применимые решения; нужен pass, который переносит accepted пункты в backlog или явно закрывает вопросы. |
+| 24 | `research/hub/project-context-and-bootstrap-patterns-2026-05.md` | 2 | Исследование передачи контекста и предсказуемого bootstrap проекта на опыте Mango: проблемы, решения и AI checklist. | Доработать | Документ связан с 6 файлами и зависит от решения по удалению `archive/projects/mango/`; после archive decision нужно обновить ссылки и статус. |
+| 25 | `research/hub/prompts-classification-audit-2026-05.md` | 2 | Аудит входных данных для классификации промптов: типы, maturity, паттерны отладки и пробелы классификации. | Доработать | Документ связан с 3 файлами и должен быть сверён с текущим состоянием внешнего `mango_ba_prompts`; без этой сверки статус canonical будет преждевременным. |
+| 26 | `research/hub/prompts-classification-standard-2026-05.md` | 2 | Draft-стандарт классификации промптов: таксономия, матрица, шаблоны промптов и план интеграции. | Доработать | Документ выглядит как стандарт, но живёт в `research/hub`; нужно решить, переносить ли его в `standards/` или оставить как research source. |
+| 27 | `research/hub/team-c-governance-strategy-audit-2026-05.md` | 2 | Интерпретация аудита governance strategy от команды C: риски overgrowth, рекомендации и вопросы human review. | Доработать | Документ связан с 5 файлами, но часть выводов уже покрыта external-governance review и backlog; нужно отметить superseded/accepted пункты. |
+| 28 | `research/hub/user-prompts-analysis-2026-05.md` | 2 | Анализ пользовательских промптов: классификация 18 промптов, признаки устаревших паттернов, дубли и план интеграции. | Доработать | Документ связан с 2 файлами и основан на draft prompt-classification standard; нужен review после решения по prompt taxonomy. |
+| 29 | `research/mango/capability-decomposition-2026-05.md` | 2 | Справочник атомарных функций Mango по доменам voice-ucaas, contact-center и digital-channels. | Доработать | Раздел 2.4 фиксирует проблемы `related_artifacts` и неразрешённые path/version значения; сначала исправить relations, затем решать статус. |
+| 30 | `research/mango/rag-mapping-roadmap-2026-05.md` | 2 | Research по RAG-навигации продуктов и фич Mango: маппинг, diagram usage, roadmap автоматизации БА и вопросы согласования. | Доработать | Документ связан с 5 файлами и остаётся mango-only; нужен review после решения, какие материалы живут во внешнем Mango spoke. |
+| 31 | `research/mango/requirements-lifecycle-uncertainty-2026-05.md` | 2 | Исследование жизненного цикла требований Mango: неопределённость, декомпозиция, telecom practice и exit criteria. | Доработать | Документ связан с 3 файлами, но не имеет явного exit-plan; нужно либо добавить criteria для draft, либо принять как reviewed research. |
+| 32 | `research/mango/taxonomy-concept-2026-05.md` | 2 | Концепция единой таксономии Mango: capability model, mapping фич, процесс нормализации и pilot risks. | Доработать | Раздел 2.4 фиксирует stale links на `*-old.md`; сначала заменить ссылки на active файлы или историческое описание, потом решать статус. |
+| 33 | `templates/spoke/AI_GOVERNANCE.md` | 2 | Шаблон governance-файла spoke-проекта: роли, границы действий, escalation и связь с hub governance. | Доработать | Документ содержит `{{date}}` и template placeholders; нужно решить placeholder validation rule, иначе frontmatter warnings останутся ожидаемыми. |
+| 34 | `templates/spoke/AI_HANDOVER_PROMPT.md` | 2 | Шаблон executable handover prompt для spoke: runtime onboarding, directive block и EXECUTION/EXPLANATION структура. | Доработать | Файл упоминается в 7 местах и уже оформлен как executable template, но содержит `{{date}}`; нужен общий template exemption или post-init validation rule. |
+| 35 | `templates/spoke/AI_QUICK_RULES.md` | 2 | Краткие правила для AI в spoke-проекте: project placeholders, operational constraints и связь с governance. | Доработать | Шаблон связан с 7 файлами, но статус зависит от решения по placeholder frontmatter и от того, какие root-like template files считать canonical. |
+| 36 | `templates/spoke/CHANGELOG.md` | 2 | Каркас changelog для spoke-проекта: `## Unreleased`, Keep a Changelog и SemVer placeholders. | Доработать | Файл связан с 3 файлами и содержит `{{date}}`; нужен template lifecycle rule, иначе draft-статус остаётся технической защитой. |
+| 37 | `templates/spoke/CONTRIBUTING.md` | 2 | Шаблон contributing для spoke: issue -> PR -> review, локальная проверка и checklist для изменений. | Доработать | Файл связан с 2 файлами и содержит placeholders; до canonical нужно согласовать, какие template root files валидируются как generated artifacts. |
+| 38 | `templates/spoke/README.md` | 2 | Главная навигация spoke template: состав генома, placeholders, `init.sh`, validation и ссылки на hub onboarding. | Доработать | Файл упоминается в 11 местах и является центральным template artifact; требуется решить placeholder validation before/after init. |
+| 39 | `governance/rfc/rfc-agent-onboarding-protocol.md` | 2 | RFC протокола бесшовной передачи проекта: handover prompt, 4-step agent algorithm и место для `agent-onboarding.md`. | Объединить с `governance/agent-onboarding.md` | Реализация уже живёт в canonical `agent-onboarding.md`; RFC нужно закрыть как source/history или перенести оставшиеся уникальные правила в canonical документ. |
+| 40 | `governance/rfc/rfc-creative-template-design.md` | 2 | RFC дизайна ДНК-шаблона spoke: карта файлов, naming options, Mermaid-схема и anti-patterns bootstrap. | Объединить с `templates/spoke/README.md` | Основные решения уже реализованы в `templates/spoke/`; уникальные rationale можно оставить как history, а эксплуатационные правила перенести в README/template docs. |
+| 41 | former research body-order draft | 2 | Стандарт body-структуры research-документов: введение, результаты, детализация, sources, open questions и template. | Объединён с `standards/research-profile.md` | Phase 1 слил body-order rules в единый research profile и удалил отдельный draft standard; история остаётся в git. |
+| 42 | `archive/projects/mango/experiments/prompts-audit-2026-05-26.md` | 2 | Архивный Mango prompt-audit: что работает в prompt assets, упрощения для simple variants и критичные ссылки для exp variants. | Удалить | Файл находится под `archive/projects/mango/`, а раздел 2.7 рекомендует удалить весь архив после approval; внешним source of truth стал `mango_ba_prompts`. |
+| 43 | `archive/projects/mango/experiments/prompts-selftest-2026-05-26.md` | 2 | Архивный self-test Mango prompts: результаты проверки готовых prompt variants и идеи на будущее. | Удалить | Архив Mango создаёт stale local paths и placeholder debt; файл упоминается только как часть archive package и должен удаляться вместе с ним. |
+| 44 | `archive/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` | 2 | Архивный эксперимент пошаговой генерации Use Case с согласованием акторов, компонентов и output format. | Удалить | Имя нарушает nested kebab-case из-за underscore, но переименование архива нецелесообразно; раздел 2.7 рекомендует удалить весь archive package. |
+| 45 | `archive/projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md` | 2 | Архивный эксперимент генерации User Story из сырого запроса: partial/success runs, критерии и lessons learned. | Удалить | Файл лежит в удаляемом archive scope и имеет underscore naming exception; полезная история сохраняется в git history и внешнем Mango spoke. |
+| 46 | `archive/projects/mango/prompts/tz-stats-generator_exp-2026-05.md` | 2 | Архивный experimental prompt для TZ Stats: роль, правила, workflow и start prompt. | Удалить | Prompt asset относится к migrated Mango assets; хранение в hub archive дублирует внешний spoke и поддерживает stale `projects/mango` references. |
+| 47 | `archive/projects/mango/prompts/tz-stats-generator_simple-2026-05.md` | 2 | Архивный simple prompt для TZ Stats: короткий copy-paste workflow, output format и ограничения. | Удалить | Файл является частью шести archive prompt assets; section 2.7 предлагает удалить пакет целиком, а не поддерживать отдельные variants. |
+| 48 | `archive/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md` | 2 | Архивный experimental prompt для пошаговой генерации Use Case с согласованием и controlled output. | Удалить | Prompt связан с archive experiment и должен уйти вместе с `archive/projects/mango/`; active source переносится во внешний Mango repository. |
+| 49 | `archive/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md` | 2 | Архивный simple prompt для Use Case: роль, workflow, правила, формат вывода и start instruction. | Удалить | Файл дублирует migrated prompt asset в archive scope; поддержка simple/exp variants в hub противоречит решению вынести Mango. |
+| 50 | `archive/projects/mango/prompts/user-story-generator_exp-2026-05.md` | 2 | Архивный experimental prompt для User Story из сырого запроса: роль, workflow, правила и start prompt. | Удалить | Файл принадлежит archive Mango package и должен удаляться с остальными prompt assets после approval, чтобы убрать stale source of truth. |
+| 51 | `archive/projects/mango/prompts/user-story-generator_simple-2026-05.md` | 2 | Архивный simple prompt для User Story: краткий workflow, output format и минимальные правила генерации. | Удалить | Это migrated Mango prompt asset; раздел 2.7 рекомендует удалить весь archive package, а историю оставить в git. |
+| 52 | `archive/projects/mango/standards/classification-glossary.md` | 2 | Архивный Mango glossary: Domain, Capability, Feature, Atomic Function, терминологический mapping и уточнения. | Удалить | Glossary имеет `scope: mango-only` и лежит в archive package; после external spoke decision его не нужно держать active в hub. |
+
+### Триаж по категориям
+
+#### К переводу в canonical (8 документов):
+- [ ] `governance/rfc/README.md`
+- [ ] `governance/rfc/rfc-two-cases-of-project-initialization.md`
+- [ ] `research/governance/governance-folder-structure-decisions-2026-06.md`
+- [ ] `research/governance/contract-documentation-format-2026-06.md`
+- [ ] `research/governance/executable-contract-format-2026-06.md`
+- [ ] `research/governance/research-documentation-format-2026-06.md`
+- [ ] `standards/contract-documentation-standard.md`
+- [ ] `standards/executable-contract-standard.md`
+
+#### К откладыванию (10 документов):
+- [ ] `research/portal/README.md`
+- [ ] `research/portal/ai-and-mango-integration-patterns-2026-06.md`
+- [ ] `research/portal/architecture-and-stack-comparison-2026-06.md`
+- [ ] `research/portal/concept-standards-comparison-2026-06.md`
+- [ ] `research/portal/documentation-standards-comparison-2026-06.md`
+- [ ] `research/portal/open-ai-portal-concept-rfc.md`
+- [ ] `research/portal/repository-structure-design-2026-06.md`
+- [ ] `standards/portal-repository-structure.md`
+- [ ] `standards/webportal-concept-standard.md`
+- [ ] `templates/webportal-concept-template.md`
+
+#### К доработке (20 документов):
+- [ ] `governance/rfc/contract-executability-rfc.md`
+- [ ] `projects/education-ba-prompt/README.md`
+- [ ] `projects/education-ba-prompt/docs/course-ideas.md`
+- [ ] `research/governance/README.md`
+- [ ] `research/hub/external-governance-patterns-review-2026-06.md`
+- [ ] `research/hub/project-context-and-bootstrap-patterns-2026-05.md`
+- [ ] `research/hub/prompts-classification-audit-2026-05.md`
+- [ ] `research/hub/prompts-classification-standard-2026-05.md`
+- [ ] `research/hub/team-c-governance-strategy-audit-2026-05.md`
+- [ ] `research/hub/user-prompts-analysis-2026-05.md`
+- [ ] `research/mango/capability-decomposition-2026-05.md`
+- [ ] `research/mango/rag-mapping-roadmap-2026-05.md`
+- [ ] `research/mango/requirements-lifecycle-uncertainty-2026-05.md`
+- [ ] `research/mango/taxonomy-concept-2026-05.md`
+- [ ] `templates/spoke/AI_GOVERNANCE.md`
+- [ ] `templates/spoke/AI_HANDOVER_PROMPT.md`
+- [ ] `templates/spoke/AI_QUICK_RULES.md`
+- [ ] `templates/spoke/CHANGELOG.md`
+- [ ] `templates/spoke/CONTRIBUTING.md`
+- [ ] `templates/spoke/README.md`
+
+#### К объединению (3 документа):
+- [ ] `governance/rfc/rfc-agent-onboarding-protocol.md` -> объединить с `governance/agent-onboarding.md`
+- [ ] `governance/rfc/rfc-creative-template-design.md` -> объединить с `templates/spoke/README.md`
+- [ ] former research body-order draft -> объединён с `standards/research-profile.md`
+
+#### К удалению (11 документов):
+- [ ] `archive/projects/mango/experiments/prompts-audit-2026-05-26.md`
+- [ ] `archive/projects/mango/experiments/prompts-selftest-2026-05-26.md`
+- [ ] `archive/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md`
+- [ ] `archive/projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md`
+- [ ] `archive/projects/mango/prompts/tz-stats-generator_exp-2026-05.md`
+- [ ] `archive/projects/mango/prompts/tz-stats-generator_simple-2026-05.md`
+- [ ] `archive/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md`
+- [ ] `archive/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md`
+- [ ] `archive/projects/mango/prompts/user-story-generator_exp-2026-05.md`
+- [ ] `archive/projects/mango/prompts/user-story-generator_simple-2026-05.md`
+- [ ] `archive/projects/mango/standards/classification-glossary.md`
 
 ### 2.6. Устаревшие и ненужные файлы
 
