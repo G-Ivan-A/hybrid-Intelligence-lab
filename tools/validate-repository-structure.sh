@@ -109,6 +109,7 @@ is_active_file() {
     templates/spoke/README.md | \
     templates/spoke/CONTRIBUTING.md | \
     templates/spoke/CHANGELOG.md | \
+    .gitkeep | \
     templates/spoke/docs/adr/.gitkeep | \
     templates/spoke/docs/audit/.gitkeep | \
     templates/spoke/.github/ISSUE_TEMPLATE/task.md | \
@@ -364,6 +365,7 @@ required_files=(
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
+  ".gitkeep"
   "templates/spoke/AI_GOVERNANCE.md"
   "templates/spoke/AI_QUICK_RULES.md"
   "templates/spoke/AI_HANDOVER_PROMPT.md"
