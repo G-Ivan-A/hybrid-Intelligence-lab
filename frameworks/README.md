@@ -39,4 +39,4 @@ frameworks/<framework-slug>/
 ru/en пару или зафиксированное исключение.
 
 Правило Anti-Inflation и критерий сравнения с существующими подходами
-зафиксированы в [governance/REPO_MODEL.md](../governance/REPO_MODEL.md).
+зафиксированы в [governance/repo-model.md](../governance/repo-model.md).

@@ -1,13 +1,13 @@
 ---
 status: canonical
-version: 1.1
+version: 1.2
 updated: 2026-06-06
 ai-generated: false
 ---
 
 # Правило именования файлов
 
-Версия: 1.1
+Версия: 1.2
 
 Дата: 2026-06-06
 
@@ -22,18 +22,20 @@ ai-generated: false
 | **Корень репозитория** (`/`) | `UPPERCASE_WITH_HYPHENS.md` | `README.md`, `CONCEPT.md`, `CHANGELOG.md` | Конвенция GitHub, файлы видны сразу |
 | **Вложенные каталоги** (`standards/`, `research/`, `projects/`, `kb/` и др.) | `lowercase-with-hyphens.md` | `classification-glossary.md`, `rag-mapping-roadmap.md` | Читаемость, сортировка, удобно в терминале, масштабируемость |
 
-## Правила именования файлов в standards/
+## Правила именования файлов в standards/ и governance/
 
-- Все файлы в `standards/` должны быть в `kebab-case`: строчные буквы, цифры и
-  дефисы.
+- Все файлы в `standards/` и `governance/` должны быть в `kebab-case`: строчные
+  буквы, цифры и дефисы.
 - Исключения: только системные файлы `README.md`, `LICENSE`, `CHANGELOG.md`.
-- `CAPS_LOCK` запрещён для документов внутри `standards/`.
+- `CAPS_LOCK` запрещён для документов внутри `standards/` и `governance/`.
 
-### Примеры для standards/
+### Примеры для standards/ и governance/
 
 - Правильно: `research-documentation-standard.md`
+- Правильно: `agent-onboarding.md`
 - Правильно: `executable-contract-standard.md`
 - Неправильно: `RESEARCH_DOCUMENTATION_STANDARD.md`
+- Неправильно: `AGENT_ONBOARDING.md`
 - Неправильно: `Research_Documentation_Standard.md`
 
 ### Исключения

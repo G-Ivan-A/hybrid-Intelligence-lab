@@ -41,13 +41,13 @@ Comments) — отраслевой термин IETF: документ, выно
 | RFC | Назначение |
 | --- | --- |
 | [rfc-creative-template-design.md](rfc-creative-template-design.md) | «ДНК-шаблон» для клонирования spoke-проектов: аналогия, сравнительная матрица имён, карта файлов, Mermaid-схема. |
-| [rfc-agent-onboarding-protocol.md](rfc-agent-onboarding-protocol.md) | «Протокол бесшовной передачи проекта»: Handover Prompt, 4-шаговый алгоритм агента, выбор места для `AGENT_ONBOARDING.md`. |
+| [rfc-agent-onboarding-protocol.md](rfc-agent-onboarding-protocol.md) | «Протокол бесшовной передачи проекта»: Handover Prompt, 4-шаговый алгоритм агента, выбор места для `agent-onboarding.md`. |
 | [rfc-two-cases-of-project-initialization.md](rfc-two-cases-of-project-initialization.md) | Разделение двух кейсов инициализации: Runtime-онбординг (Кейс 1) и Bootstrap-клонирование (Кейс 2). |
 | [contract-executability-rfc.md](contract-executability-rfc.md) | Архитектура исполнимых документов: маркер `executable: true\|false`, директивные блоки, план внедрения и решения фаундера. |
 | [repository-quality-improvement-plan.md](repository-quality-improvement-plan.md) | Комплексный аудит качества репозитория после PR #170: naming, дубли, metadata, traceability, drafts, archive Mango и phased cleanup plan. |
 
 ## Связанные артефакты
 
-- [governance/ARTIFACT_MAP.md](../ARTIFACT_MAP.md) — карта артефактов и связей.
-- [governance/REPO_MODEL.md](../REPO_MODEL.md) — модель структуры и Anti-Inflation principle.
+- [governance/artifact-map.md](../artifact-map.md) — карта артефактов и связей.
+- [governance/repo-model.md](../repo-model.md) — модель структуры и Anti-Inflation principle.
 - [research/governance/governance-folder-structure-decisions-2026-06.md](../../research/governance/governance-folder-structure-decisions-2026-06.md) — решения Q1/Q2/Q3.

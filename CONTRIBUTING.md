@@ -8,7 +8,7 @@ traceability и практическую полезность для hybrid huma
 1. Начинайте с GitHub issue, где есть context, scope, язык результата,
    acceptance criteria и forbidden changes.
 2. Выбирайте целевой каталог по
-   [governance/REPO_MODEL.md](governance/REPO_MODEL.md).
+   [governance/repo-model.md](governance/repo-model.md).
 3. Используйте ближайший стандарт из [standards/README.md](standards/README.md).
 4. Держите изменение reviewable: одна цель, понятные ссылки, без unrelated
    restructuring.

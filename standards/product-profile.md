@@ -29,7 +29,7 @@ governance репозитория.
 
 Профиль рассчитан на размещение продукта в отдельном spoke-репозитории или в
 каталоге `projects/` лаборатории (правила выбора — в
-[governance/REPO_MODEL.md](../governance/REPO_MODEL.md)). Лаборатория остается
+[governance/repo-model.md](../governance/repo-model.md)). Лаборатория остается
 knowledge hub: канонический `PRODUCT_VISION.md` живет в корне продуктового
 проекта, а **не** в корне лаборатории.
 
@@ -74,7 +74,7 @@ knowledge hub: канонический `PRODUCT_VISION.md` живет в кор
 
 Добавляются по мере роста продукта и только при операционной боли, которую они
 снижают (Anti-Inflation principle из
-[governance/REPO_MODEL.md](../governance/REPO_MODEL.md)).
+[governance/repo-model.md](../governance/repo-model.md)).
 
 | Артефакт | Когда добавлять |
 | --- | --- |
@@ -220,7 +220,7 @@ governance:
 | Документ | Роль |
 | --- | --- |
 | [CONCEPT.md](../CONCEPT.md) | Концепция hub-and-spoke и обязательность traceability. |
-| [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) | Anti-Inflation principle и правила размещения артефактов. |
+| [governance/repo-model.md](../governance/repo-model.md) | Anti-Inflation principle и правила размещения артефактов. |
 | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) | Роли, operating modes и Definition of Done для AI-assisted work. |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | Workflow вклада и PR checklist. |
 | [standards/README.md](README.md) | Реестр активных и планируемых стандартов. |

@@ -18,7 +18,7 @@ ai-generated: false
 миграцию.
 
 Файл является навигацией, а не контрактом: обязательные правила остаются в
-[CONCEPT.md](../../CONCEPT.md), [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md)
+[CONCEPT.md](../../CONCEPT.md), [governance/repo-model.md](../../governance/repo-model.md)
 и [standards/README.md](../../standards/README.md).
 
 ## 🎯 Назначение
@@ -41,8 +41,8 @@ ai-generated: false
 | --- | --- |
 | [docs/migration-audit-2026-05.md](docs/migration-audit-2026-05.md) | Отчёт аудита миграции: согласованность с `CONCEPT.md`, матрица ссылок, таблица `-old`, рекомендации. |
 | [docs/contract-violations-self-report-2026-06.md](docs/contract-violations-self-report-2026-06.md) | Self-report (`type: audit`) ошибок исполнения контрактов в сессии миграции Mango: обоснование таргета, 6 нарушений, системные выводы и анализ размещения ретроспектив. |
-| [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md) | Модель структуры репозитория и Anti-Inflation principle. |
-| [governance/ARTIFACT_MAP.md](../../governance/ARTIFACT_MAP.md) | Карта артефактов: где что лежит и как связано. |
+| [governance/repo-model.md](../../governance/repo-model.md) | Модель структуры репозитория и Anti-Inflation principle. |
+| [governance/artifact-map.md](../../governance/artifact-map.md) | Карта артефактов: где что лежит и как связано. |
 | [standards/issue-workflow.md](../../standards/issue-workflow.md) | Жизненный цикл задач: статусы и правила переходов. |
 | [.github/ISSUE_TEMPLATE/task.yml](../../.github/ISSUE_TEMPLATE/task.yml) | Предложить улучшение через Issue. |
 
@@ -63,8 +63,8 @@ ai-generated: false
 ## Связанные артефакты
 
 - [CONCEPT.md](../../CONCEPT.md)
-- [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md)
-- [governance/ARTIFACT_MAP.md](../../governance/ARTIFACT_MAP.md)
+- [governance/repo-model.md](../../governance/repo-model.md)
+- [governance/artifact-map.md](../../governance/artifact-map.md)
 - [standards/README.md](../../standards/README.md)
 - [standards/issue-workflow.md](../../standards/issue-workflow.md)
 - [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts)

@@ -6,7 +6,7 @@ ai-generated: true
 executable: false
 scope: repo-wide
 related_standards:
-  - "research-documentation-standard.md"
+  - "research-profile.md"
   - "executable-contract-standard.md"
   - "glossary.md"
   - "team-contract.md"
@@ -35,7 +35,7 @@ related_issues:
 
 Стандарт описывает структуру контракта из пяти элементов и единый нормативный
 словарь. Он применяется к governance-контрактам Хаба (например,
-[AI_GOVERNANCE.md](../AI_GOVERNANCE.md), [governance/REPO_MODEL.md](../governance/REPO_MODEL.md),
+[AI_GOVERNANCE.md](../AI_GOVERNANCE.md), [governance/repo-model.md](../governance/repo-model.md),
 [standards/team-contract.md](team-contract.md), [standards/issue-workflow.md](issue-workflow.md),
 профили) и наследуется споками.
 
@@ -47,7 +47,7 @@ related_issues:
 | --- | --- |
 | Фиксирует обязательства/правила/политику (кто кого к чему обязывает) | ✅ этот стандарт |
 | Должен **исполняться** агентом как процедура | [executable-contract-standard.md](executable-contract-standard.md) |
-| Производит знание для решения | [research-documentation-standard.md](research-documentation-standard.md) |
+| Производит знание для решения | [research-profile.md](research-profile.md) |
 
 ## Нормативный словарь (обязателен)
 
@@ -137,6 +137,6 @@ related_issues:
 
 - [research/governance/contract-documentation-format-2026-06.md](../research/governance/contract-documentation-format-2026-06.md) — исследование-обоснование (OpenAPI, RFC 2119/BCP 14, SLA/SLO, Design by Contract, ADR, Pact).
 - [standards/glossary.md](glossary.md) — нормативные термины Хаба (single source of truth).
-- [standards/research-documentation-standard.md](research-documentation-standard.md), [standards/executable-contract-standard.md](executable-contract-standard.md) — смежные форматы.
+- [standards/research-profile.md](research-profile.md), [standards/executable-contract-standard.md](executable-contract-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4 (утверждение стандарта — за человеком).

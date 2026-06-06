@@ -9,7 +9,7 @@ method: creative-analysis + protocol-design + traceability-mapping
 scope: repo-wide
 related_artifacts:
   - "AI_GOVERNANCE.md"
-  - "governance/REPO_MODEL.md"
+  - "governance/repo-model.md"
   - "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
   - "research/hub/team-c-governance-strategy-audit-2026-05.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
@@ -33,8 +33,8 @@ related_issues:
 (cold start): галлюцинации недостающего знания и тихие нарушения стандартов. Это
 креативное governance-предложение в рамках модели **«Гибридный минимум»** и
 Anti-Inflation principle
-([governance/REPO_MODEL.md](../REPO_MODEL.md)), а не финальный стандарт. RFC
-*проектирует* протокол и сам файл `AGENT_ONBOARDING.md`, но **не создаёт** его в
+([governance/repo-model.md](../repo-model.md)), а не финальный стандарт. RFC
+*проектирует* протокол и сам файл `agent-onboarding.md`, но **не создаёт** его в
 корне: физическое создание — после Human Review (см. раздел «Интеграция» и
 финальный блок).
 
@@ -135,7 +135,7 @@ Bootstrap-клонирование).
 Аудит команды C усиливает направление и даёт прямое предписание для протокола:
 
 > «AI-агент при bootstrap должен читать `AI_GOVERNANCE.md`, `CONTRIBUTING.md`,
-> `governance/REPO_MODEL.md` и ближайший README **до создания артефактов**.»
+> `governance/repo-model.md` и ближайший README **до создания артефактов**.»
 > — [team-c-governance-strategy-audit-2026-05.md](../../research/hub/team-c-governance-strategy-audit-2026-05.md)
 
 И ещё один тезис ретроспективы — прямой анти-галлюцинационный контракт, который
@@ -175,12 +175,12 @@ Bootstrap-клонирование).
 Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
 {{REPO_NAME}} (модель hub-and-spoke); ты обращаешься к нему, но не «живёшь» в нём.
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/AGENT_ONBOARDING.md). Это предполётный чек-лист — взлёт (изменение
+(governance/agent-onboarding.md). Это предполётный чек-лист — взлёт (изменение
 файлов) запрещён до моего апрува.
 
 Сделай ровно по шагам:
 1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай AI_GOVERNANCE.md, CONTRIBUTING.md,
-   governance/REPO_MODEL.md, governance/ARTIFACT_MAP.md и
+   governance/repo-model.md, governance/artifact-map.md и
    standards/project-structure-inheritance.md.
 2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/спока) и блок «Быстрый контекст»,
@@ -201,7 +201,7 @@ Bootstrap-клонирование).
 
 ### Часть B. Пошаговый алгоритм для ИИ-агента
 
-Алгоритм — это и есть содержимое будущего `AGENT_ONBOARDING.md`. Он построен так,
+Алгоритм — это и есть содержимое будущего `agent-onboarding.md`. Он построен так,
 чтобы соблюдение было дешевле нарушения: каждый шаг — короткий, с явным «выходом»
 в следующий.
 
@@ -209,7 +209,7 @@ Bootstrap-клонирование).
 
 Агент читает контракты репозитория **до** контекста задачи:
 `AI_GOVERNANCE.md` (роли, эскалация, DoD), `CONTRIBUTING.md` (workflow),
-`governance/REPO_MODEL.md` (структура и Anti-Inflation), `governance/ARTIFACT_MAP.md`
+`governance/repo-model.md` (структура и Anti-Inflation), `governance/artifact-map.md`
 (навигация) и `standards/project-structure-inheritance.md` (что можно, а что
 нельзя создавать). Выход из шага: агент знает границы *раньше*, чем узнал цель —
 поэтому цель не «продавит» границы.
@@ -296,19 +296,19 @@ flowchart TD
 
 ## 🔌 Интеграция: куда поместить файл после апрува
 
-RFC только *проектирует* протокол. Сам файл `AGENT_ONBOARDING.md` создаётся
+RFC только *проектирует* протокол. Сам файл `agent-onboarding.md` создаётся
 отдельным issue/PR после Human Review этого предложения. Сравним два места.
 
 | Вариант | Плюсы | Минусы | Оценка |
 | --- | --- | --- | --- |
-| Корень `/AGENT_ONBOARDING.md` | Максимально заметен; первое, что видит новый чат | Корень — это контракт верхнего уровня; ещё один UPPERCASE-файл размывает фокус `README`/`CONCEPT`/`AI_GOVERNANCE` | Заметность важна, но шум в корне противоречит Anti-Inflation |
-| **`governance/AGENT_ONBOARDING.md`** (рекомендация) | Живёт рядом с `REPO_MODEL`/`ARTIFACT_MAP`, где и место операционным правилам; регистрируется в `ARTIFACT_MAP.md`; на него ссылаются `README` и `AI_GOVERNANCE.md` | На один клик дальше от корня | Соответствует структуре governance и снижает шум корня |
+| Корень `/agent-onboarding.md` | Максимально заметен; первое, что видит новый чат | Корень — это контракт верхнего уровня; ещё один UPPERCASE-файл размывает фокус `README`/`CONCEPT`/`AI_GOVERNANCE` | Заметность важна, но шум в корне противоречит Anti-Inflation |
+| **`governance/agent-onboarding.md`** (рекомендация) | Живёт рядом с `REPO_MODEL`/`ARTIFACT_MAP`, где и место операционным правилам; регистрируется в `artifact-map.md`; на него ссылаются `README` и `AI_GOVERNANCE.md` | На один клик дальше от корня | Соответствует структуре governance и снижает шум корня |
 
-**Рекомендация автора RFC: `governance/AGENT_ONBOARDING.md`** с короткой ссылкой
+**Рекомендация автора RFC: `governance/agent-onboarding.md`** с короткой ссылкой
 из `README.md` («Новый агент? Начни здесь →») и из `AI_GOVERNANCE.md` (правило 2
 получает явную реализацию). Так заметность достигается ссылкой, а не загрязнением
 корня. После создания файл регистрируется как active в
-`tools/validate-repository-structure.sh` и `governance/ARTIFACT_MAP.md` (тип
+`tools/validate-repository-structure.sh` и `governance/artifact-map.md` (тип
 `правило`), а Handover Prompt дублируется в `templates/spoke/`, чтобы протокол
 наследовался споками.
 
@@ -324,15 +324,15 @@ governance). Прошу выбрать направление:
    readback → стоп до апрува) как основу, либо указать, что изменить.
 2. **Handover Prompt.** Утвердить текст готового промпта (Часть A) или поправить
    формулировки/набор файлов для чтения.
-3. **Место файла.** Подтвердить `governance/AGENT_ONBOARDING.md` (рекомендация),
-   либо выбрать корень `/AGENT_ONBOARDING.md`, либо предложить иное.
+3. **Место файла.** Подтвердить `governance/agent-onboarding.md` (рекомендация),
+   либо выбрать корень `/agent-onboarding.md`, либо предложить иное.
 4. **Следующий шаг.** Создавать ли в отдельном issue/PR сам
-   `AGENT_ONBOARDING.md`, ссылки из `README`/`AI_GOVERNANCE.md` и дубль промпта в
+   `agent-onboarding.md`, ссылки из `README`/`AI_GOVERNANCE.md` и дубль промпта в
    `templates/spoke/` — или сначала доработать дизайн?
 5. **Источник.** Когда появится `research/hub/ai-collaboration-retrospective-2026-06.md`,
    добавить ли его выводы в таблицу обоснования отдельными строками?
 
-> **Что мне НЕ создавать без твоего слова:** сам файл `AGENT_ONBOARDING.md` (ни в
+> **Что мне НЕ создавать без твоего слова:** сам файл `agent-onboarding.md` (ни в
 > корне, ни в `governance/`), ссылки из `README.md`/`AI_GOVERNANCE.md` и дубль
 > промпта в `templates/spoke/`. Этот PR добавляет только данный RFC в
 > `governance/rfc/`.
@@ -351,12 +351,12 @@ governance). Прошу выбрать направление:
 
 ### 2.3. Место файла
 
-**Решение:** `governance/AGENT_ONBOARDING.md` (следовать контракту
-`ARTIFACT_MAP.md`). Override контракта не требуется.
+**Решение:** `governance/agent-onboarding.md` (следовать контракту
+`artifact-map.md`). Override контракта не требуется.
 
 ### 2.4. Создание файла
 
-**Статус:** Файл уже создан (`governance/AGENT_ONBOARDING.md` v1.1,
+**Статус:** Файл уже создан (`governance/agent-onboarding.md` v1.1,
 2026-06-04) с применением стандарта исполнимых документов (`executable: true`,
 `entrypoint: true`).
 

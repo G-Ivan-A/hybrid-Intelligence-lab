@@ -9,7 +9,7 @@ method: comparative-analysis
 scope: repo-wide
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 related_artifacts:
-  - "standards/research-documentation-standard.md"
+  - "standards/research-profile.md"
   - "standards/research-profile.md"
   - "research/governance/contract-documentation-format-2026-06.md"
 related_issues:
@@ -29,7 +29,7 @@ related_issues:
 **Цель.** Исследовать лучшие практики оформления исследований (академические
 статьи, технические отчёты, RFC) и предложить **обоснованный** формат, который
 выносит причину и выводы наверх. Результат фиксируется в
-[standards/research-documentation-standard.md](../../standards/research-documentation-standard.md).
+[standards/research-profile.md](../../standards/research-profile.md).
 
 **Связанные артефакты.**
 - [standards/research-profile.md](../../standards/research-profile.md) — действующие правила frontmatter, источников и воспроизводимости (формат их **дополняет**, не отменяет).
@@ -61,7 +61,7 @@ related_issues:
 
 | # | Рекомендация | Куда фиксируется |
 | --- | --- | --- |
-| R1 | Принять обязательную структуру «Введение → Результаты → Детализация» для всех новых исследований. | `research-documentation-standard.md` |
+| R1 | Принять обязательную структуру «Введение → Результаты → Детализация» для всех новых исследований. | `research-profile.md` |
 | R2 | «Результаты» содержат три подблока: **выводы**, **открытые вопросы**, **рекомендации** (таблицей). | стандарт, §структура |
 | R3 | Каждый вывод трассируется к источнику/эксперименту (наследуется от `research-profile.md`). | стандарт, §traceability |
 | R4 | Существующие исследования **не переписывать** массово (Anti-Inflation); приводить к формату при следующем существенном изменении. | стандарт, §миграция |

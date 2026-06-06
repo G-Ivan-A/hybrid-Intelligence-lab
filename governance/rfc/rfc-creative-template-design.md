@@ -8,8 +8,8 @@ context: [spoke-bootstrap, template-design, hybrid-minimum, governance, hub-and-
 method: creative-analysis + comparative-matrix + minimal-pattern-design
 scope: repo-wide
 related_artifacts:
-  - "governance/REPO_MODEL.md"
-  - "research/project-context-and-bootstrap-patterns-2026-05.md"
+  - "governance/repo-model.md"
+  - "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
   - "standards/project-structure-inheritance.md"
   - "AI_GOVERNANCE.md"
 related_issues:
@@ -28,7 +28,7 @@ related_issues:
 Цель документа — спроектировать механизм, благодаря которому новый spoke рождается
 из Хаба уже "правильным", но не перегруженным. Это креативное архитектурное
 предложение в рамках модели **"Гибридный минимум"** и Anti-Inflation principle
-([governance/REPO_MODEL.md](../REPO_MODEL.md)), а не финальный стандарт.
+([governance/repo-model.md](../repo-model.md)), а не финальный стандарт.
 
 ---
 

@@ -10,7 +10,7 @@ scope: repo-wide
 source: governance/rfc/contract-executability-rfc.md
 related_artifacts:
   - "governance/rfc/contract-executability-rfc.md"
-  - "governance/BACKLOG.md"
+  - "governance/backlog.md"
   - "standards/glossary.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/133"
@@ -49,16 +49,16 @@ related_issues:
 
 | ID | Issue | Файл | Приоритет | Зависимости | Статус |
 | --- | --- | --- | --- | --- | --- |
-| CE-001 | [#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138) | `governance/AGENT_ONBOARDING.md` | P0 | CE-008 | TODO |
+| CE-001 | [#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138) | `governance/agent-onboarding.md` | P0 | CE-008 | TODO |
 | CE-002 | [#139](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139) | `templates/spoke/AI_QUICK_RULES.md` | P0 | CE-008 | TODO |
 | CE-003 | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) | `templates/spoke/AI_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO |
 | CE-004 | [#141](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141) | `AI_GOVERNANCE.md` | P1 | CE-001, CE-008 | TODO |
-| CE-005 | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) | `governance/REPO_MODEL.md` | P2 | CE-008 | TODO |
+| CE-005 | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) | `governance/repo-model.md` | P2 | CE-008 | TODO |
 | CE-006 | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) | `standards/project-structure-inheritance.md` | P3 | CE-008 | TODO |
 | CE-007 | [#144](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144) | `standards/issue-workflow.md` | P3 | CE-008 | TODO |
 | CE-008 | [#145](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145) | `standards/glossary.md` | P1 | — | TODO |
 | CE-009 | [#146](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/146) | `tools/validate-frontmatter.sh` | P2 | CE-008 | TODO |
-| CE-010 | [#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147) | `governance/ARTIFACT_MAP.md` | P2 | CE-001, CE-002, CE-003, CE-004, CE-008 | TODO |
+| CE-010 | [#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147) | `governance/artifact-map.md` | P2 | CE-001, CE-002, CE-003, CE-004, CE-008 | TODO |
 
 ## Обязательные метки
 
@@ -85,4 +85,4 @@ related_issues:
       «один issue = один файл».
 - [x] Созданы отдельные issues CE-001..CE-010.
 - [x] Все URLs созданных issues зафиксированы в этом реестре.
-- [x] Сводная таблица добавлена в [`governance/BACKLOG.md`](BACKLOG.md).
+- [x] Сводная таблица добавлена в [`governance/backlog.md`](backlog.md).

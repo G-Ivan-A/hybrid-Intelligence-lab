@@ -13,14 +13,13 @@
 | Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/education-profile.md](education-profile.md) |
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
-| Repository model | Active | Размещение артефактов и правила создания | [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) |
+| Repository model | Active | Размещение артефактов и правила создания | [governance/repo-model.md](../governance/repo-model.md) |
 | Профиль исследовательских проектов | Active | `research/<domain>/` | [research-profile.md](research-profile.md) |
 | Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [product-profile.md](product-profile.md) |
 | Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [team-contract.md](team-contract.md) |
 | Жизненный цикл задач | Active | Issues, PRs, переходы статусов, AI-assisted task execution | [issue-workflow.md](issue-workflow.md) |
 | project-structure-inheritance.md | Active | Правило наследования структуры каталогов в проектах; обязательно для новых проектов | [project-structure-inheritance.md](project-structure-inheritance.md) |
 | portal-repository-structure.md | Draft (предложен, на утверждении) | Структура репозитория портала — spoke-проекта «единая точка сборки» (`open-ai.ru`); наследует геном спока и добавляет портал-каталоги | [portal-repository-structure.md](portal-repository-structure.md) |
-| research-documentation-standard.md | Draft (предложен, на утверждении) | Порядок изложения исследований (`research/<domain>/`): Введение → Результаты → Детализация | [research-documentation-standard.md](research-documentation-standard.md) |
 | executable-contract-standard.md | Draft (предложен, на утверждении) | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [executable-contract-standard.md](executable-contract-standard.md) |
 | contract-documentation-standard.md | Draft (предложен, на утверждении) | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [contract-documentation-standard.md](contract-documentation-standard.md) |
 | webportal-concept-standard.md | Draft (предложен, на утверждении) | Структура концепции веб-портала (сайт-визитка → app-портал): обязательное ядро + опциональные слои, связи с roadmap/исследованиями/структурой репозитория. Не для лендингов, мобильных приложений, бэкенд-сервисов, микросервисов | [webportal-concept-standard.md](webportal-concept-standard.md) |
@@ -32,9 +31,9 @@
 ## Как пользоваться
 
 1. Определите тип артефакта и целевой каталог по
-   [governance/REPO_MODEL.md](../governance/REPO_MODEL.md). Для навигации по
+   [governance/repo-model.md](../governance/repo-model.md). Для навигации по
    существующим артефактам и их связям используйте
-   [governance/ARTIFACT_MAP.md](../governance/ARTIFACT_MAP.md).
+   [governance/artifact-map.md](../governance/artifact-map.md).
 2. Выберите имя файла или каталога по
    [standards/file-naming.md](file-naming.md).
 3. Проверьте терминологию по [standards/glossary.md](glossary.md), если

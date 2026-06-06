@@ -13,7 +13,7 @@
 в отдельных spoke-репозиториях и ссылаться сюда как на источник переиспользуемых
 знаний и правил работы.
 
-> **🛫 Новый агент? Начни здесь → [`governance/AGENT_ONBOARDING.md`](governance/AGENT_ONBOARDING.md).**
+> **🛫 Новый агент? Начни здесь → [`governance/agent-onboarding.md`](governance/agent-onboarding.md).**
 > Это обязательный предполётный чек-лист *Runtime-онбординга* (Кейс 1): любой
 > ИИ-агент проходит его, получив ссылку на репозиторий, **до** первого изменения
 > файлов.
@@ -30,9 +30,9 @@
 | [standards/README.md](standards/README.md) | Таблица активных и планируемых стандартов. |
 | [standards/glossary.md](standards/glossary.md) | Единый словарь терминов для standards, governance и AI-assisted work. |
 | [standards/team-contract.md](standards/team-contract.md) | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. |
-| [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
-| [governance/REPO_MODEL.md](governance/REPO_MODEL.md) | Модель структуры репозитория и Anti-Inflation правило. |
-| [governance/ARTIFACT_MAP.md](governance/ARTIFACT_MAP.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
+| [governance/agent-onboarding.md](governance/agent-onboarding.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
+| [governance/repo-model.md](governance/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
+| [governance/artifact-map.md](governance/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
 | [templates/spoke/](templates/spoke/) | Шаблон для создания spoke-репозиториев (*Bootstrap-клонирование*, Кейс 2). Используйте `templates/spoke/README.md` как точку входа. |
 
 ## Структура
@@ -55,7 +55,7 @@
 | [projects/README.md](projects/README.md) | Навигация по проектным рабочим областям и правило выбора `/projects` vs spoke-репозиторий. |
 | [projects/repo-development/README.md](projects/repo-development/README.md) | Развитие самого репозитория: аудит миграции, согласованность и предложения по оптимизации. |
 | [projects/education-ba-prompt/README.md](projects/education-ba-prompt/README.md) | Песочница идей, терминов, кейсов и шаблонов для будущего курса БА по промпт-инжинирингу. |
-| [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | Мигрировавший spoke-репозиторий Mango. Архивная копия в Хабе: [archive/projects/mango/README.md](archive/projects/mango/README.md). |
+| [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | Мигрировавший spoke-репозиторий Mango; прежняя архивная копия удалена из Хаба, история доступна через git. |
 
 ## Исследования
 

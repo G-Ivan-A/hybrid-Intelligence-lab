@@ -23,7 +23,7 @@ executable: false
 работе гибридных команд. Он не вводит enterprise-процесс ради полноты дерева
 статусов: каждый статус и переход существует, потому что снижает конкретную
 операционную боль (см. Anti-Inflation principle в
-[governance/REPO_MODEL.md](../governance/REPO_MODEL.md)).
+[governance/repo-model.md](../governance/repo-model.md)).
 
 Терминология сверяется с [standards/glossary.md](glossary.md). Важно различать
 несколько независимых понятий:
@@ -142,26 +142,26 @@ stateDiagram-v2
 но ответственность за формулировку остаётся за исполнителем, потому что
 changelog объясняет смысл изменения, а не только факт коммита.
 
-### Связь с `governance/ARTIFACT_MAP.md`
+### Связь с `governance/artifact-map.md`
 
-Карта артефактов (`governance/ARTIFACT_MAP.md`) — **планируемый** governance-
+Карта артефактов (`governance/artifact-map.md`) — **планируемый** governance-
 артефакт; по Anti-Inflation principle он создаётся только при реальной
 повторяющейся потребности связать артефакты в явный граф. Пока его роль
 выполняют два активных документа:
 
-- [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) — где размещается
+- [governance/repo-model.md](../governance/repo-model.md) — где размещается
   артефакт и по какому правилу он создаётся;
 - [standards/README.md](README.md) — реестр активных и планируемых стандартов.
 
 Поэтому задача, создающая или меняющая active artifact, при `merged`:
 
-1. размещает артефакт в каталоге по `REPO_MODEL.md`;
+1. размещает артефакт в каталоге по `repo-model.md`;
 2. регистрирует его в реестре `standards/README.md` (для стандартов);
 3. обновляет навигацию в `README.md`, если артефакт становится частью
    публичного контракта.
 
-Когда `ARTIFACT_MAP.md` появится, эти три шага станут его обновлением; до тех
-пор контракт сохраняется через `REPO_MODEL.md` + `standards/README.md`.
+Когда `artifact-map.md` появится, эти три шага станут его обновлением; до тех
+пор контракт сохраняется через `repo-model.md` + `standards/README.md`.
 
 ## Точки автоматизации
 
@@ -205,7 +205,7 @@ changelog объясняет смысл изменения, а не только
 
 - [standards/README.md](README.md)
 - [standards/glossary.md](glossary.md)
-- [governance/REPO_MODEL.md](../governance/REPO_MODEL.md)
+- [governance/repo-model.md](../governance/repo-model.md)
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [CHANGELOG.md](../CHANGELOG.md)
