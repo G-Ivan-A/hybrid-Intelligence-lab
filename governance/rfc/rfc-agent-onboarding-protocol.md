@@ -50,7 +50,7 @@ Anti-Inflation principle
 
 Концептуальный фундамент этого протокола — манифест разделения двух кейсов
 инициализации проекта
-[governance/proposals/rfc-two-cases-of-project-initialization.md](rfc-two-cases-of-project-initialization.md).
+[governance/rfc/rfc-two-cases-of-project-initialization.md](rfc-two-cases-of-project-initialization.md).
 Данный RFC покрывает **Кейс 1 — Runtime-онбординг** (а не Кейс 2 —
 Bootstrap-клонирование).
 
@@ -335,7 +335,7 @@ governance). Прошу выбрать направление:
 > **Что мне НЕ создавать без твоего слова:** сам файл `AGENT_ONBOARDING.md` (ни в
 > корне, ни в `governance/`), ссылки из `README.md`/`AI_GOVERNANCE.md` и дубль
 > промпта в `templates/spoke/`. Этот PR добавляет только данный RFC в
-> `governance/proposals/`.
+> `governance/rfc/`.
 
 ## ✅ Решения фаундера (Human Review 2026-06)
 

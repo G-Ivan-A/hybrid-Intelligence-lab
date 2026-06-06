@@ -19,7 +19,7 @@ related_issues:
 Это исследовательское направление (`scope: portal`) производит **знание для
 решения**, а не сам портал: сравнение стандартов документации, архитектур,
 стеков и структур репозитория. Реализация портала здесь **не ведётся** — это
-вход для RFC [governance/proposals/open-ai-portal-concept-rfc.md](../../governance/proposals/open-ai-portal-concept-rfc.md).
+вход для RFC [open-ai-portal-concept-rfc.md](open-ai-portal-concept-rfc.md).
 
 Задача-источник: [issue #159](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159)
 (режим `creative`, полная автономия исполнителя).
@@ -45,7 +45,7 @@ related_issues:
 
 ## Связанные артефакты
 
-- [governance/proposals/open-ai-portal-concept-rfc.md](../../governance/proposals/open-ai-portal-concept-rfc.md) — RFC, синтезирующий эти исследования в предложение.
+- [open-ai-portal-concept-rfc.md](open-ai-portal-concept-rfc.md) — RFC, синтезирующий эти исследования в предложение.
 - [standards/PORTAL_REPOSITORY_STRUCTURE.md](../../standards/PORTAL_REPOSITORY_STRUCTURE.md) — стандарт структуры портал-спока (выход Исследования 3).
 - [standards/RESEARCH_PROFILE.md](../../standards/RESEARCH_PROFILE.md) — правила frontmatter, источников и воспроизводимости.
 - [projects/README.md](../../projects/README.md) — критерии «когда `/projects`, а когда отдельный spoke-репозиторий».

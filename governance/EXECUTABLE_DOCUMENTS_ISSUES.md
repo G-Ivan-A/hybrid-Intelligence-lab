@@ -7,9 +7,9 @@ type: registry
 context: [governance, contracts, executable-documents, issues, sprint-3]
 method: structured-issue-generation
 scope: repo-wide
-source: governance/proposals/contract-executability-rfc.md
+source: governance/rfc/contract-executability-rfc.md
 related_artifacts:
-  - "governance/proposals/contract-executability-rfc.md"
+  - "governance/rfc/contract-executability-rfc.md"
   - "governance/BACKLOG.md"
   - "standards/GLOSSARY.md"
 related_issues:
@@ -32,7 +32,7 @@ related_issues:
 
 Дата: 2026-06-04
 
-Источник: [`governance/proposals/contract-executability-rfc.md`](proposals/contract-executability-rfc.md),
+Источник: [`governance/rfc/contract-executability-rfc.md`](rfc/contract-executability-rfc.md),
 раздел 6.1 «Файлы, подлежащие обновлению».
 
 Этот реестр фиксирует GitHub Issues, созданные по issue

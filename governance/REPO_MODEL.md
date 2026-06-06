@@ -74,7 +74,7 @@ executable: false
   источник истины в [standards/GLOSSARY.md](../standards/GLOSSARY.md).
 - Полная модель жизненного цикла spoke (аналогии, таблица-манифест,
   Mermaid-схема, привязка к ретроспективе) —
-  [governance/proposals/rfc-two-cases-of-project-initialization.md](proposals/rfc-two-cases-of-project-initialization.md).
+  [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md).
 
 ## Standards
 

@@ -11,7 +11,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
 related_artifacts:
   - "research/portal/architecture-and-stack-comparison-2026-06.md"
   - "research/portal/repository-structure-design-2026-06.md"
-  - "governance/proposals/open-ai-portal-concept-rfc.md"
+  - "research/portal/open-ai-portal-concept-rfc.md"
   - "standards/RESEARCH_PROFILE.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
@@ -38,7 +38,7 @@ related_issues:
 
 > Перед исследованием проверено (issue #159): в Хабе **нет** обязательного
 > стандарта документации архитектуры для порталов. Есть смежная практика — RFC в
-> `governance/proposals/`, Concept Doc (`CONCEPT.md`), Mermaid-диаграммы и
+> `governance/rfc/`, Concept Doc (`CONCEPT.md`), Mermaid-диаграммы и
 > `standards/GLOSSARY.md`. Поэтому исследование обязательно.
 
 ## Кандидаты
@@ -50,7 +50,7 @@ related_issues:
 | 3 | **ADR** (Architecture Decision Record) | Короткие записи отдельных решений: контекст → решение → последствия. | M. Nygard, 2011; [adr.github.io](https://adr.github.io); [joelparkerhenderson/architecture-decision-record](https://github.com/joelparkerhenderson/architecture-decision-record) |
 | 4 | **RFC** (Request for Comments) | Структурированное предложение изменения с обсуждением и нормативным языком (BCP 14 / RFC 2119: MUST/SHOULD/MAY). | [rfc-editor.org/rfc/rfc2119](https://www.rfc-editor.org/rfc/rfc2119) |
 | 5 | **Diátaxis** | Каркас пользовательской документации: tutorials / how-to / reference / explanation. | D. Procida — [diataxis.fr](https://diataxis.fr) |
-| 6 | **Concept Doc (Хаб)** | Внутренняя практика Хаба: `CONCEPT.md` + executable-documents + frontmatter-стандарт. | [CONCEPT.md](../../CONCEPT.md), [governance/proposals/contract-executability-rfc.md](../../governance/proposals/contract-executability-rfc.md) |
+| 6 | **Concept Doc (Хаб)** | Внутренняя практика Хаба: `CONCEPT.md` + executable-documents + frontmatter-стандарт. | [CONCEPT.md](../../CONCEPT.md), [governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md) |
 | 7 | **IEEE/ISO/IEC 42010** | Формальный стандарт описания архитектуры через stakeholders, concerns, viewpoints, views. | ISO/IEC/IEEE 42010:2022 — [iso.org/standard/74393.html](https://www.iso.org/standard/74393.html) |
 
 ## Критерии оценки (из issue #159)
@@ -93,7 +93,7 @@ related_issues:
 - **RFC.** Сильное предложение-with-rationale (как этот документ-сосед);
   нормативный язык MUST/SHOULD/MAY полезен для контрактов 🟢 трассируемость. Но
   RFC тяжелее ADR для рутинных решений (порог 🟡). **Уже practice Хаба**
-  (`governance/proposals/`).
+  (`governance/rfc/`).
 - **Diátaxis.** Лучший каркас для *пользовательской* документации портала
   (`learning/`, `knowledge-base/`) 🟢, но не для архитектурных решений
   (трассируемость 🔴) — это другой слой.
@@ -133,7 +133,7 @@ IEEE на старте).
 - `docs/adr/` — ADR (уже в `templates/spoke/`).
 - `docs/architecture.md` + Mermaid `C4Context`/`C4Container` — C4 (вводится в Phase 0–1).
 - `learning/`, `knowledge-base/` — Diátaxis (Phase 1+).
-- RFC крупных решений — `governance/proposals/` Хаба или `docs/` спока.
+- RFC крупных решений — `governance/rfc/` Хаба или `docs/` спока.
 
 Связь со стандартом структуры: [research/portal/repository-structure-design-2026-06.md](repository-structure-design-2026-06.md)
 и [standards/PORTAL_REPOSITORY_STRUCTURE.md](../../standards/PORTAL_REPOSITORY_STRUCTURE.md).
@@ -143,7 +143,7 @@ IEEE на старте).
 Это исследование рекомендует, но не вводит обязательный стандарт. Финальное
 решение по тому, какой набор сделать обязательным для порталов, принимает
 фаундер в рамках RFC
-[open-ai-portal-concept-rfc.md](../../governance/proposals/open-ai-portal-concept-rfc.md)
+[open-ai-portal-concept-rfc.md](open-ai-portal-concept-rfc.md)
 (см. эскалацию «нужен новый обязательный standard, но нет comparison» в
 [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — это comparison закрывает её).
 
@@ -163,4 +163,4 @@ IEEE на старте).
 - RFC 2119 / BCP 14 — нормативные ключевые слова — [rfc-editor.org/rfc/rfc2119](https://www.rfc-editor.org/rfc/rfc2119).
 - Diátaxis — Daniele Procida, [diataxis.fr](https://diataxis.fr).
 - ISO/IEC/IEEE 42010:2022 — [iso.org/standard/74393.html](https://www.iso.org/standard/74393.html).
-- Внутренние: [CONCEPT.md](../../CONCEPT.md), [governance/proposals/contract-executability-rfc.md](../../governance/proposals/contract-executability-rfc.md), [templates/spoke/README.md](../../templates/spoke/README.md).
+- Внутренние: [CONCEPT.md](../../CONCEPT.md), [governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md), [templates/spoke/README.md](../../templates/spoke/README.md).

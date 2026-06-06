@@ -8,8 +8,8 @@ context: [project-initialization, runtime-onboarding, bootstrap, governance, hub
 method: creative-analysis + cross-domain-analogy + lifecycle-mapping
 scope: repo-wide
 related_artifacts:
-  - "governance/proposals/rfc-agent-onboarding-protocol.md"
-  - "governance/proposals/rfc-creative-template-design.md"
+  - "governance/rfc/rfc-agent-onboarding-protocol.md"
+  - "governance/rfc/rfc-creative-template-design.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
   - "research/hub/external-governance-patterns-review-2026-06.md"
   - "standards/GLOSSARY.md"

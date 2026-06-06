@@ -12,7 +12,7 @@ related_artifacts:
   - "research/portal/documentation-standards-comparison-2026-06.md"
   - "research/portal/repository-structure-design-2026-06.md"
   - "research/portal/ai-and-mango-integration-patterns-2026-06.md"
-  - "governance/proposals/open-ai-portal-concept-rfc.md"
+  - "research/portal/open-ai-portal-concept-rfc.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
 ---
@@ -173,7 +173,7 @@ BaaS) вводится в Phase 2 под кабинет/маскирование
 
 Архитектура и стек рекомендованы, но не зафиксированы как обязательные. Выбор —
 за фаундером в RFC
-[open-ai-portal-concept-rfc.md](../../governance/proposals/open-ai-portal-concept-rfc.md).
+[open-ai-portal-concept-rfc.md](open-ai-portal-concept-rfc.md).
 
 ### Вопросы для согласования
 

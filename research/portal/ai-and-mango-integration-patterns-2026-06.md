@@ -11,7 +11,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
 related_artifacts:
   - "research/portal/architecture-and-stack-comparison-2026-06.md"
   - "projects/mango/README.md"
-  - "governance/proposals/open-ai-portal-concept-rfc.md"
+  - "research/portal/open-ai-portal-concept-rfc.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/159"
 ---

@@ -126,8 +126,8 @@ entrypoint: true
 готовый к исполнению протокол (выше, в блоке EXECUTION). Концептуальное
 обоснование, аналогия предполётного чек-листа и трассировка к провалам холодного
 старта живут в
-[governance/proposals/rfc-agent-onboarding-protocol.md](proposals/rfc-agent-onboarding-protocol.md)
-(*проект*, `proposals/`). Граница намеренна: RFC — это дизайн, а
+[governance/rfc/rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md)
+(*проект*, `rfc/`). Граница намеренна: RFC — это дизайн, а
 `AGENT_ONBOARDING.md` — рабочая инструкция; единый источник истины по процессу
 онбординга — этот файл.
 
@@ -145,7 +145,7 @@ entrypoint: true
 > Здесь они только **используются**; определения — в глоссарии как в едином
 > источнике истины. Разделение Кейса 1 (этот файл) и
 > [Bootstrap-клонирования](../standards/GLOSSARY.md) (Кейс 2) — в манифесте двух
-> кейсов: [governance/proposals/rfc-two-cases-of-project-initialization.md](proposals/rfc-two-cases-of-project-initialization.md).
+> кейсов: [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md).
 
 ### ⚠️ Что может пойти не так (threat awareness)
 
@@ -167,12 +167,12 @@ entrypoint: true
 
 | Куда | Зачем |
 | --- | --- |
-| [governance/proposals/rfc-agent-onboarding-protocol.md](proposals/rfc-agent-onboarding-protocol.md) | Дизайн-обоснование протокола (RFC, *проект*): аналогия, трассировка к провалам, Mermaid-схема. |
-| [governance/proposals/rfc-two-cases-of-project-initialization.md](proposals/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
+| [governance/rfc/rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md) | Дизайн-обоснование протокола (RFC, *проект*): аналогия, трассировка к провалам, Mermaid-схема. |
+| [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
 | [templates/spoke/README.md](../templates/spoke/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить спок из «ДНК-шаблона» Хаба. |
 | [standards/GLOSSARY.md](../standards/GLOSSARY.md) | Единый источник определений терминов протокола. |
 
-> **Граница с RFC.** RFC остаётся *проектом* (дизайн в `proposals/`), а этот файл —
+> **Граница с RFC.** RFC остаётся *проектом* (дизайн в `rfc/`), а этот файл —
 > *рабочей инструкцией*. По вопросам «как делать» — этот файл; по вопросам «почему
 > так спроектировано» — RFC.
 </content>

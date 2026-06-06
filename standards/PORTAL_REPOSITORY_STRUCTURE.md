@@ -20,7 +20,7 @@ related_issues:
 Дата: 2026-06-05
 
 Статус: **черновик стандарта (`draft`)**, предложен на утверждение фаундеру (см.
-RFC [governance/proposals/open-ai-portal-concept-rfc.md](../governance/proposals/open-ai-portal-concept-rfc.md),
+RFC [research/portal/open-ai-portal-concept-rfc.md](../research/portal/open-ai-portal-concept-rfc.md),
 §14). До утверждения — рекомендация, не обязательное правило. Принятие стандарта
 как обязательного для порталов — решение человека (AI_GOVERNANCE, правило 4).
 
@@ -127,6 +127,12 @@ spoke-проекта, который служит «единой точкой с
 - `presentations/`, `collaborations/`, `learning/`, `knowledge-base/` — по мере
   появления реального контента.
 - `src/` — при старте реализации (вне рамок research-стадии).
+- `governance/rfc/` — **опциональный** каталог: создаётся, только когда у проекта
+  появляются собственные предложения уровня его governance; отсутствие каталога —
+  норма (Anti-Inflation). Текущие решения портал фиксирует в `docs/adr/` (геном
+  спока). `governance/rfc/` Хаба **не наследуется** и не является зависимостью для
+  других споков (решение Q3, issue #165 — см.
+  [research/governance/governance-folder-structure-decisions-2026-06.md](../research/governance/governance-folder-structure-decisions-2026-06.md)).
 
 ## Принципы наследования от Хаба
 
