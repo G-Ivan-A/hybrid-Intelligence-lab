@@ -6,6 +6,20 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #191: added `research/portal/portal-documents-review-2026-06.md`,
+  standalone `research/portal/portal-documents-review-2026-06.html`, and a
+  desktop verification screenshot to support founder review of the 10 deferred
+  portal documents from the repository-quality RFC. The Markdown document
+  consolidates clickable links, 2-3 sentence summaries, executor-side disputed
+  questions, founder decision placeholders, a Q01-Q12 decision matrix and
+  review DoD. The HTML version opens directly in a browser without external
+  dependencies and includes full-width responsive tables, sticky navigation,
+  color-coded statuses, checkboxes, textareas, local browser persistence and
+  JSON export. Registered the artifacts in `governance/artifact-map.md`
+  (1.21 -> 1.22),
+  `research/README.md` (1.4 -> 1.5), and
+  `tools/validate-repository-structure.sh`. The original 10 portal documents
+  remain unchanged.
 - Issue #186: added `governance/rfc/draft-triage-and-exit-plan.md` with a
   four-group triage of 20 draft documents marked "К доработке" in the
   repository-quality RFC. The new RFC records current state, link/placeholder
