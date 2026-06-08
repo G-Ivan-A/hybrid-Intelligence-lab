@@ -6,7 +6,7 @@ ai-generated: false
 type: external-analysis
 context: [mango, product-classification]
 method: comparative-analysis
-source: research/mango/classification-old.md
+source: git history before migration to research/mango/classification.md
 ---
 
 # Классификация IT/Telecom SaaS-продуктов MANGO OFFICE

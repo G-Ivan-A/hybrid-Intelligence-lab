@@ -6,7 +6,7 @@ ai-generated: false
 type: internal-analysis
 context: [mango, tender-requirements]
 method: corpus-analysis
-source: research/mango/classification-tz-old.md
+source: git history before migration to research/mango/classification-tz.md
 ---
 
 # Классификация требований по корпусу ТЗ (classification (TZ))
