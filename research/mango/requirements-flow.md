@@ -6,7 +6,7 @@ ai-generated: false
 type: internal-analysis
 context: [mango, requirements-flow]
 method: system-analysis
-source: research/mango/requirements-flow-old.md
+source: git history before migration to research/mango/requirements-flow.md
 ---
 
 # Flow требований для AI-анализа тендерных ТЗ MANGO OFFICE
