@@ -35,7 +35,7 @@ Comments) — отраслевой термин IETF: документ, выно
 ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), правило 4). Статус каталога —
 **опциональный, создаётся по необходимости** (Anti-Inflation): проект без
 собственных RFC не обязан держать пустой `rfc/` (см. Q3 и
-[standards/portal-repository-structure.md](../../standards/portal-repository-structure.md)).
+[standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md)).
 
 ## Документы
 

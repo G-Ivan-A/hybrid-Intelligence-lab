@@ -46,10 +46,10 @@ is_active_file() {
     standards/team-contract.md | \
     standards/issue-workflow.md | \
     standards/project-structure-inheritance.md | \
-    standards/portal-repository-structure.md | \
     standards/executable-contract-standard.md | \
     standards/contract-documentation-standard.md | \
-    standards/webportal-concept-standard.md | \
+    standards/webportal-product-concept-standard.md | \
+    standards/webportal-solution-concept-standard.md | \
     research/mango/taxonomy-concept-2026-05.md | \
     research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/mango/rag-mapping-roadmap-2026-05.md | \
@@ -70,16 +70,6 @@ is_active_file() {
     research/governance/executable-contract-format-2026-06.md | \
     research/governance/contract-documentation-format-2026-06.md | \
     research/governance/governance-folder-structure-decisions-2026-06.md | \
-    research/portal/README.md | \
-    research/portal/documentation-standards-comparison-2026-06.md | \
-    research/portal/concept-standards-comparison-2026-06.md | \
-    research/portal/architecture-and-stack-comparison-2026-06.md | \
-    research/portal/repository-structure-design-2026-06.md | \
-    research/portal/ai-and-mango-integration-patterns-2026-06.md | \
-    research/portal/open-ai-portal-concept-rfc.md | \
-    research/portal/portal-documents-review-2026-06.md | \
-    research/portal/portal-documents-review-2026-06.html | \
-    research/portal/portal-documents-review-2026-06.png | \
     research/mango/classification.md | \
     research/mango/classification.html | \
     research/mango/classification-tz.md | \
@@ -116,7 +106,8 @@ is_active_file() {
     templates/spoke/.github/ISSUE_TEMPLATE/task.md | \
     templates/spoke/tools/validate-repository-structure.sh | \
     templates/spoke/init.sh | \
-    templates/webportal-concept-template.md | \
+    templates/webportal-product-concept-template.md | \
+    templates/webportal-solution-concept-template.md | \
     tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
       return 0
@@ -283,7 +274,7 @@ validate_artifact_map_paths() {
   )
 }
 
-validate_spoke_template_placeholders() {
+validate_template_placeholders() {
   local file
   local line
   local placeholder
@@ -293,10 +284,10 @@ validate_spoke_template_placeholders() {
       "{{date}}" | "{{project_name}}" | "{{hub_url}}" | "{{REPO_NAME}}")
         ;;
       *)
-        fail "unapproved spoke source placeholder in $file:$line: $placeholder"
+        fail "unapproved template placeholder in $file:$line: $placeholder"
         ;;
     esac
-  done < <(grep -RIno '{{[A-Za-z_][A-Za-z_]*}}' templates/spoke || true)
+  done < <(grep -RIno '{{[A-Za-z_][A-Za-z_]*}}' templates || true)
 }
 
 required_directories=(
@@ -312,7 +303,6 @@ required_directories=(
   "research/hub"
   "research/mango"
   "research/governance"
-  "research/portal"
   "frameworks"
   "projects"
   "education"
@@ -337,10 +327,10 @@ required_files=(
   "standards/team-contract.md"
   "standards/issue-workflow.md"
   "standards/project-structure-inheritance.md"
-  "standards/portal-repository-structure.md"
   "standards/executable-contract-standard.md"
   "standards/contract-documentation-standard.md"
-  "standards/webportal-concept-standard.md"
+  "standards/webportal-product-concept-standard.md"
+  "standards/webportal-solution-concept-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/mango/README.md"
@@ -349,15 +339,6 @@ required_files=(
   "research/governance/executable-contract-format-2026-06.md"
   "research/governance/contract-documentation-format-2026-06.md"
   "research/governance/governance-folder-structure-decisions-2026-06.md"
-  "research/portal/README.md"
-  "research/portal/documentation-standards-comparison-2026-06.md"
-  "research/portal/concept-standards-comparison-2026-06.md"
-  "research/portal/architecture-and-stack-comparison-2026-06.md"
-  "research/portal/repository-structure-design-2026-06.md"
-  "research/portal/open-ai-portal-concept-rfc.md"
-  "research/portal/portal-documents-review-2026-06.md"
-  "research/portal/portal-documents-review-2026-06.html"
-  "research/portal/portal-documents-review-2026-06.png"
   "research/mango/classification.md"
   "research/mango/classification.html"
   "research/mango/classification-tz.md"
@@ -393,7 +374,8 @@ required_files=(
   "templates/spoke/.github/ISSUE_TEMPLATE/task.md"
   "templates/spoke/tools/validate-repository-structure.sh"
   "templates/spoke/init.sh"
-  "templates/webportal-concept-template.md"
+  "templates/webportal-product-concept-template.md"
+  "templates/webportal-solution-concept-template.md"
   "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
 )
@@ -413,7 +395,7 @@ done
 validate_metadata_single_source
 validate_internal_markdown_links
 validate_artifact_map_paths
-validate_spoke_template_placeholders
+validate_template_placeholders
 
 while IFS= read -r file; do
   if [[ ! -e "$file" ]]; then
@@ -635,6 +617,42 @@ require_text "standards/product-profile.md" "PRODUCT_VISION.md"
 require_text "standards/product-profile.md" "Обязательные артефакты"
 require_text "standards/product-profile.md" "Метрики успеха"
 
+require_text "standards/webportal-product-concept-standard.md" "status: draft"
+require_text "standards/webportal-product-concept-standard.md" "level: L2"
+require_text "standards/webportal-product-concept-standard.md" "Product Concept (L2)"
+require_text "standards/webportal-product-concept-standard.md" "User Personas"
+require_text "standards/webportal-product-concept-standard.md" "User Stories / Jobs-to-Be-Done"
+require_text "standards/webportal-product-concept-standard.md" "Key Features (MVP Scope)"
+require_text "standards/webportal-product-concept-standard.md" "User Flows"
+require_text "standards/webportal-product-concept-standard.md" "Success Metrics"
+require_text "standards/webportal-product-concept-standard.md" "Roadmap (High-Level)"
+require_text "standards/webportal-product-concept-standard.md" "webportal-solution-concept-standard.md"
+if grep -Eiq 'hub-and-spoke|spoke|repository|Yandex GPT|provider|technology stack|C4|Mermaid' "standards/webportal-product-concept-standard.md"; then
+  fail "standards/webportal-product-concept-standard.md must stay L2/product-only and must not include L3/provider/repository language"
+fi
+
+require_text "standards/webportal-solution-concept-standard.md" "status: draft"
+require_text "standards/webportal-solution-concept-standard.md" "level: L3"
+require_text "standards/webportal-solution-concept-standard.md" "Solution Concept (L3)"
+require_text "standards/webportal-solution-concept-standard.md" "System Architecture (C4 Model)"
+require_text "standards/webportal-solution-concept-standard.md" "Technology Stack"
+require_text "standards/webportal-solution-concept-standard.md" "Integration Points"
+require_text "standards/webportal-solution-concept-standard.md" "Data Model"
+require_text "standards/webportal-solution-concept-standard.md" "Non-Functional Requirements"
+require_text "standards/webportal-solution-concept-standard.md" "Deployment Strategy"
+require_text "standards/webportal-solution-concept-standard.md" "Provider-Agnostic Architecture"
+require_text "standards/webportal-solution-concept-standard.md" "Yandex GPT"
+require_text "standards/webportal-solution-concept-standard.md" '```mermaid'
+require_text "templates/webportal-product-concept-template.md" "{{project_name}}"
+require_text "templates/webportal-product-concept-template.md" "{{date}}"
+require_text "templates/webportal-product-concept-template.md" "{{hub_url}}"
+require_text "templates/webportal-product-concept-template.md" "Product Concept: {{project_name}}"
+require_text "templates/webportal-solution-concept-template.md" "{{project_name}}"
+require_text "templates/webportal-solution-concept-template.md" "{{date}}"
+require_text "templates/webportal-solution-concept-template.md" "{{hub_url}}"
+require_text "templates/webportal-solution-concept-template.md" "Solution Concept: {{project_name}}"
+require_text "templates/webportal-solution-concept-template.md" "Provider-agnostic AI boundary"
+
 require_text "governance/repo-model.md" "Артефакт только при операционной боли"
 require_text "governance/repo-model.md" "Anti-Inflation"
 require_text "governance/repo-model.md" "tools/"
@@ -709,9 +727,9 @@ require_text "governance/agent-onboarding.md" "rfc-two-cases-of-project-initiali
 require_text "governance/agent-onboarding.md" "templates/spoke/README.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.23"
+require_text "governance/artifact-map.md" "version: 1.24"
 require_text "governance/artifact-map.md" "templates/spoke/AI_GOVERNANCE.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-07"
+require_text "governance/artifact-map.md" "updated: 2026-06-08"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding.md"
 require_text "governance/artifact-map.md" "governance/rfc/contract-executability-rfc.md"

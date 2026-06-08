@@ -6,6 +6,13 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #199: added split webportal concept standards:
+  `standards/webportal-product-concept-standard.md` for L2 Product Concept and
+  `standards/webportal-solution-concept-standard.md` for L3 Solution Concept.
+  Added matching templates
+  `templates/webportal-product-concept-template.md` and
+  `templates/webportal-solution-concept-template.md` with approved
+  `{{project_name}}`, `{{date}}` and `{{hub_url}}` placeholders.
 - Issue #191: added `research/portal/portal-documents-review-2026-06.md`,
   standalone `research/portal/portal-documents-review-2026-06.html`, and a
   desktop verification screenshot to support founder review of the 10 deferred
@@ -61,6 +68,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #199: updated `standards/README.md`, `research/README.md`,
+  `governance/artifact-map.md`, `governance/rfc/README.md`,
+  `research/governance/governance-folder-structure-decisions-2026-06.md`,
+  `tools/validate-frontmatter.sh` and `tools/validate-repository-structure.sh`
+  for the new L2/L3 webportal standard split and the removal of the active
+  portal package from the Hub.
 - Issue #173: governance-файлы переименованы в kebab-case, правила порядка
   изложения из бывшего draft body-standard объединены с
   `standards/research-profile.md`, архив `archive/projects/mango/` удалён после
@@ -132,6 +145,14 @@ All notable repository governance changes are documented here.
   перекрёстные ссылки) без потери смысла. Структурный валидатор
   `tools/validate-repository-structure.sh` обновлён под новую версию/дату и
   проверяет наличие маркеров и блоков EXECUTION/EXPLANATION.
+
+### Removed
+
+- Issue #199: removed the active `research/portal/` package, the old mixed
+  `standards/webportal-concept-standard.md`, the portal-specific
+  `standards/portal-repository-structure.md`, the old
+  `templates/webportal-concept-template.md` and the generated root `.gitkeep`
+  placeholder.
 
 ### Added
 
