@@ -7,38 +7,38 @@ ai-generated: true
 
 # Contributing — {{project_name}}
 
-Вклад в `{{project_name}}` сохраняет малый размер активных контрактов,
-traceability и практическую полезность для hybrid human + AI work. Правила входа
-наследуются от Хаба `hybrid-Intelligence-lab` и не дублируют его.
+`{{project_name}}` — это **spoke-репозиторий** (отдельный продукт с
+production-кодом), связанный с Хабом `hybrid-Intelligence-lab`. В отличие от
+HTOM-команды, здесь основной артефакт — код в `src/` с тестами и CI/CD.
+Governance-правила наследуются от Хаба и не дублируются.
 
 ## Workflow: issue → PR → review
 
-1. **Issue.** Начинайте с GitHub issue (см. шаблон в
-   [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md)): context,
-   scope, Operating Mode, измеримый Definition of Done.
-2. **PR.** Держите изменение reviewable: одна цель, понятные ссылки, без
-   unrelated restructuring. Связывайте PR с issue.
+1. **Issue.** Начинайте с GitHub issue: context, scope, измеримый Definition of
+   Done. Для продуктовых изменений ссылайтесь на концепцию (L2) и решения (L3) в
+   стандартах Хаба.
+2. **PR.** Держите изменение reviewable: одна цель, зелёный CI, без unrelated
+   restructuring. Связывайте PR с issue.
 3. **Review.** Финальные решения по vision, publication и merge остаются за
-   человеком согласно [AI_GOVERNANCE.md](AI_GOVERNANCE.md).
+   человеком.
+
+## Качество кода и тесты
+
+- Код живёт в `src/`, тесты — в `tests/`. Новая функциональность сопровождается
+  тестами; багфикс — тестом, воспроизводящим проблему.
+- CI (`.github/workflows/ci.yml`) обязан быть зелёным до merge: линт + тесты на
+  каждый push и pull request.
+- Значимые архитектурные решения фиксируются как ADR в `docs/adr/`.
 
 ## AI-Assisted Work
 
-AI agents следуют [AI_GOVERNANCE.md](AI_GOVERNANCE.md) и
-[AI_QUICK_RULES.md](AI_QUICK_RULES.md): читают issue и последние комментарии,
-сохраняют human decision rights, не публикуют sensitive data, работают внутри
-requested scope и не создают `research/` в споке.
-
-## Локальная проверка
-
-```bash
-./tools/validate-repository-structure.sh
-```
+ИИ-агенты сохраняют human decision rights, не публикуют sensitive data, работают
+внутри requested scope и наследуют контракты Хаба `hybrid-Intelligence-lab`.
 
 ## Pull Request Checklist
 
 - [ ] PR связан с issue.
-- [ ] Изменённые файлы соответствуют целевой структуре спока.
-- [ ] Значимое изменение отражено в [CHANGELOG.md](CHANGELOG.md) (`## Unreleased`).
-- [ ] Решение, отклоняющееся от правила Хаба, зафиксировано как ADR в `docs/adr/`.
-- [ ] Локальная проверка `./tools/validate-repository-structure.sh` пройдена.
+- [ ] Новая функциональность/багфикс покрыты тестами в `tests/`.
+- [ ] CI (`ci.yml`) зелёный: линт и тесты проходят.
+- [ ] Значимое изменение отражено в документации / ADR (`docs/adr/`).
 - [ ] Риски, допущения и фокус human review сформулированы явно.

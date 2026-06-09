@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-05
+version: 1.2
+updated: 2026-06-09
 ai-generated: false
 source: projects/README-old.md
 ---
@@ -30,6 +30,25 @@ source: projects/README-old.md
 | Отдельная команда | Нужны собственные issue templates, ownership и roadmap. |
 | Закрытый контекст | Нельзя смешивать с open education/research. |
 | Долгий жизненный цикл | Требуется самостоятельная история решений, контрактов и версий. |
+
+## Классификация: HTOM-команда vs Spoke
+
+Слово «проект» раньше смешивало два разных типа. Их различает
+[RFC htom-vs-spoke](../governance/rfc/htom-vs-spoke-clarification-2026-06.md):
+
+- **HTOM-команда** — гибридная human + AI рабочая единица, наследующая
+  governance-геном [`templates/htom/`](../templates/htom/). Сюда относятся
+  knowledge-base проекты, промпт-наборы и сам Хаб.
+- **Spoke-репозиторий** — production-репозиторий с собственным кодом, CI/CD и
+  release lifecycle, создаётся из [`templates/spoke/`](../templates/spoke/) и
+  ссылается на Хаб как на источник правил.
+
+| Текущий проект | Тип | Обоснование |
+| --- | --- | --- |
+| `hybrid-Intelligence-lab` (Хаб) | HTOM-команда | Governance-first knowledge hub без production-кода. |
+| `repo-development` | HTOM-команда | Развитие governance и проверок самого Хаба, кода-продукта нет. |
+| `mango_ba_prompts` | HTOM-команда | Промпт- и knowledge-репозиторий БА, гибридная human + AI работа. |
+| `open-ai.ru` | Spoke | Первый реальный production-спок с собственным кодом и жизненным циклом. |
 
 ## Рекомендуемая структура проекта
 

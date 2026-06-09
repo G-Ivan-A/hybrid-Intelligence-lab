@@ -79,6 +79,8 @@ is_source_template() {
   local path="$1"
 
   case "$path" in
+    templates/htom/*.md | ./templates/htom/*.md | \
+    templates/htom/.github/ISSUE_TEMPLATE/*.md | ./templates/htom/.github/ISSUE_TEMPLATE/*.md | \
     templates/spoke/*.md | ./templates/spoke/*.md | \
     templates/spoke/.github/ISSUE_TEMPLATE/*.md | ./templates/spoke/.github/ISSUE_TEMPLATE/*.md | \
     templates/webportal-product-concept-template.md | ./templates/webportal-product-concept-template.md | \

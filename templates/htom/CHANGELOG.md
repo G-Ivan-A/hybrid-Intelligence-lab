@@ -15,8 +15,8 @@ ai-generated: true
 
 ### Added
 
-- Инициализация спока `{{project_name}}` из «ДНК-шаблона» Хаба
-  (`templates/spoke/`): базовый геном (governance, quick rules, *Handover
+- Инициализация HTOM-команды `{{project_name}}` из «ДНК-шаблона» Хаба
+  (`templates/htom/`): базовый геном (governance, quick rules, *Handover
   Prompt*, навигация, каркасы `docs/adr/`, `docs/audit/`, валидатор структуры).
 
 ### Changed

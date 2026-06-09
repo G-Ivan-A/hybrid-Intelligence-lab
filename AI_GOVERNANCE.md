@@ -13,9 +13,11 @@ executable: false
 > файл — контракт-справка (`executable: false`): он описывает *что* можно делать;
 > онбординг — *как* безопасно начать.
 
-> **Кейс 2 — Bootstrap-клонирование.** Для создания нового spoke-репозитория
-> используйте шаблон [`templates/spoke/`](templates/spoke/). Точка входа:
-> [`templates/spoke/README.md`](templates/spoke/README.md).
+> **Кейс 2 — Bootstrap-клонирование.** Для новой **HTOM-команды** (гибридная
+> human + AI работа) используйте геном [`templates/htom/`](templates/htom/);
+> для **production-спока** (репозиторий с собственным кодом) —
+> [`templates/spoke/`](templates/spoke/). Различие определено в
+> [RFC htom-vs-spoke](governance/rfc/htom-vs-spoke-clarification-2026-06.md).
 
 # AI Governance
 
@@ -28,7 +30,7 @@ executable: false
 > **Слоган Хаба (зафиксирован):** «Человек задаёт смысл, AI ускоряет путь — вместе по правилам».
 > Это формула гибридной работы человек + AI: человек отвечает за смысл, цели и
 > решения (правило 4), AI ускоряет путь к ним внутри правил. Слоган — primary
-> для Хаба и наследуется всеми споками (геном `templates/spoke/`).
+> для Хаба и наследуется всеми HTOM-командами (геном `templates/htom/`).
 
 ## Роли
 

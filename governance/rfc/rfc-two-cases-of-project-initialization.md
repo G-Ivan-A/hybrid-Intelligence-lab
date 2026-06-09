@@ -9,7 +9,7 @@ method: creative-analysis + cross-domain-analogy + lifecycle-mapping
 scope: repo-wide
 related_artifacts:
   - "governance/agent-onboarding.md"
-  - "templates/spoke/README.md"
+  - "templates/htom/README.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
   - "research/hub/external-governance-patterns-review-2026-06.md"
   - "standards/glossary.md"
@@ -31,8 +31,10 @@ related_issues:
   агент в чате загружает контекст проекта из репозитория в оперативную память
   диалога. Протокол: [governance/agent-onboarding.md](../agent-onboarding.md).
 - **Кейс 2 — *Bootstrap-клонирование*** (см. определение в [standards/glossary.md](../../standards/glossary.md)):
-  из шаблонов Хаба (`templates/spoke/`) рождается новый spoke-репозиторий.
-  Дизайн шаблона: [templates/spoke/README.md](../../templates/spoke/README.md).
+  из шаблонов Хаба рождается новый репозиторий: HTOM-команда из генома
+  `templates/htom/` или spoke-репозиторий из `templates/spoke/` (см.
+  [htom-vs-spoke-clarification-2026-06.md](htom-vs-spoke-clarification-2026-06.md)).
+  Дизайн генома HTOM-команды: [templates/htom/README.md](../../templates/htom/README.md).
 
 > ⚠️ **Этот документ не определяет термины.** Все термины — *Runtime-онбординг*,
 > *Bootstrap-клонирование*, *Handover Prompt*, *Readback*, *Среда работы агента*,
@@ -62,7 +64,7 @@ related_issues:
   перед работой.
 
 Ключевое наблюдение: **самолёт можно сертифицировать без единого пилота, а пилот
-не строит самолёт — он его поднимает.** Точно так же `templates/spoke/` создаёт
+не строит самолёт — он его поднимает.** Точно так же `templates/htom/` создаёт
 структуру репозитория *без участия агента в чате*, а Runtime-онбординг загружает
 контекст *в уже существующий* репозиторий, ничего в нём (на этом шаге) не строя.
 Смешать их — всё равно что выдать пилоту чертежи и потребовать «инициализировать
@@ -83,18 +85,18 @@ related_issues:
 
 | № | Аспект | **КЕЙС 1: Runtime-онбординг** | **КЕЙС 2: Bootstrap-клонирование** |
 |---|--------|-------------------------------|------------------------------------|
-| 1 | **Суть** | Агент в чате загружает контекст проекта из репо в оперативную память диалога | Создаётся новый spoke-репозиторий из шаблонов Хаба |
+| 1 | **Суть** | Агент в чате загружает контекст проекта из репо в оперативную память диалога | Создаётся новый репозиторий (HTOM-команда или spoke) из шаблонов Хаба |
 | 2 | **Вопрос, на который отвечает** | «Готов ли *этот* агент работать с *этим* проектом *сейчас*?» | «Существует ли репозиторий правильной конструкции?» |
 | 3 | **Когда** | При старте нового чата, передаче проекта, смене агента — **каждый раз** | При создании нового spoke-проекта — **однократно** |
 | 4 | **Триггер** | Пользователь вставляет *Handover Prompt* в чат LLM | Пользователь инициирует issue `bootstrap:` |
-| 5 | **Что происходит** | Контекст копируется в **оперативную память агента** (не файлы!) | **Физические файлы** копируются из `templates/spoke/` в новый репо |
+| 5 | **Что происходит** | Контекст копируется в **оперативную память агента** (не файлы!) | **Физические файлы** копируются из `templates/htom/` в новый репо |
 | 6 | **Среда** | *Среда работы агента* = чат диалога | Файловая система / GitHub нового репо |
-| 7 | **Ключевой артефакт Хаба** | `governance/agent-onboarding.md` | `templates/spoke/` (геном-шаблон) |
+| 7 | **Ключевой артефакт Хаба** | `governance/agent-onboarding.md` | `templates/htom/` (геном-шаблон) |
 | 8 | **Результат** | Агент *знает* правила и контекст проекта | Новый репо *имеет* правильную структуру |
 | 9 | **Долговечность результата** | Эфемерный (живёт, пока жив чат) | Постоянный (файлы остаются в репо) |
-| 10 | **Canonical-точка** | [governance/agent-onboarding.md](../agent-onboarding.md) | [templates/spoke/README.md](../../templates/spoke/README.md) |
+| 10 | **Canonical-точка** | [governance/agent-onboarding.md](../agent-onboarding.md) | [templates/htom/README.md](../../templates/htom/README.md) |
 | 11 | **Operating Mode задачи** | `Structured` | `Project` |
-| 12 | **Точка входа для инструкций** | `README.md` Хаба → `governance/agent-onboarding.md` | `templates/spoke/README.md` |
+| 12 | **Точка входа для инструкций** | `README.md` Хаба → `governance/agent-onboarding.md` | `templates/htom/README.md` |
 | 13 | **Авиационная аналогия** | Лицензия пилота + предполётный чек-лист | Сертификация типа самолёта |
 
 ---
@@ -173,7 +175,7 @@ flowchart TD
     subgraph C2["КЕЙС 2 — Bootstrap-клонирование (однократно)"]
         direction TB
         B1["📥 issue: bootstrap:<project>"]
-        B2["🧬 Копирование физических файлов<br/>templates/spoke/ → новый репо"]
+        B2["🧬 Копирование физических файлов<br/>templates/htom/ → новый репо"]
         B3["🛠️ Адаптация PROJECT_CONTRACT,<br/>плейсхолдеров, валидация структуры"]
         B1 --> B2 --> B3
     end
@@ -234,7 +236,7 @@ flowchart TD
 Связь с двумя кейсами:
 
 - **Кейс 2 (Bootstrap-клонирование)** оставляет *первичный* след — issue
-  `bootstrap:<project>` и PR с физическими файлами из `templates/spoke/`
+  `bootstrap:<project>` и PR с физическими файлами из `templates/htom/`
   фиксируют рождение spoke в git history.
 - **Кейс 1 (Runtime-онбординг)** сам по себе **ничего не пишет** (он read-only до
   апрува человека), но *работа после* онбординга — новые issue/PR — продолжает
@@ -277,7 +279,7 @@ flowchart TD
 
 | README | Кейс | Где | Что содержит | Перекрёстные ссылки |
 | --- | --- | --- | --- | --- |
-| `templates/spoke/README.md` *(уже существует как шаблон)* | Кейс 2 | `templates/spoke/` | Что копировать, как адаптировать `PROJECT_CONTRACT`/плейсхолдеры, как валидировать структуру | → этот манифест, → раздел Design Decisions & Rationale, → README Кейса 1 |
+| `templates/htom/README.md` *(уже существует как шаблон)* | Кейс 2 | `templates/htom/` | Что копировать, как адаптировать `PROJECT_CONTRACT`/плейсхолдеры, как валидировать структуру | → этот манифест, → раздел Design Decisions & Rationale, → README Кейса 1 |
 | `governance/agent-onboarding.md` *(уже существует как executable-контракт)* | Кейс 1 | `governance/` с короткой ссылкой из `README.md` Хаба | *Handover Prompt*, алгоритм чтения файлов, шаблон *Readback* | → этот манифест, → раздел Design Rationale & History, → README Кейса 2 |
 
 Оба документа обязаны **явно ссылаться друг на друга** и на этот манифест —
@@ -298,7 +300,7 @@ flowchart TD
    двухкейсовую модель инициализации как часть описания жизненного цикла spoke.
 3. **Поддерживать `governance/agent-onboarding.md`** (Кейс 1) как canonical
    executable-контракт после утверждения решений по онбордингу.
-4. **Дополнить `templates/spoke/README.md`** (Кейс 2) — раздел про адаптацию и
+4. **Дополнить `templates/htom/README.md`** (Кейс 2) — раздел про адаптацию и
    валидацию, со ссылкой на этот манифест и на README Кейса 1.
 5. **Связать оба README перекрёстными ссылками** и со ссылкой из `README.md`
    Хаба («Новый агент? Начни здесь →» и «Создаёшь новый spoke? Начни здесь →»).
@@ -319,7 +321,7 @@ governance). Прошу:
    *Среда работы агента*, *Источник контекста*) или поправить формулировки.
 3. **Утвердить follow-up-список** (5 задач выше) и порядок их выполнения.
 
-> **Что мне НЕ создавать без твоего слова:** сами README (`templates/spoke/README.md`
+> **Что мне НЕ создавать без твоего слова:** сами README (`templates/htom/README.md`
 > наполнять инструкцией Кейса 2, `governance/agent-onboarding.md`), изменения
 > `governance/repo-model.md`. Этот PR добавляет только данный манифест, раздел
 > «Модель процесса» в онбординг-RFC и 6 терминов в глоссарий.
@@ -348,12 +350,12 @@ Bootstrap-клонирование (Кейс 2) утверждено как ко
 **Решение:** Утверждено. Статус выполнения:
 
 - ✅ Создать `governance/agent-onboarding.md` — выполнено (v1.1, 2026-06-04)
-- ✅ Создать `templates/spoke/README.md` — выполнено
+- ✅ Создать `templates/htom/README.md` — выполнено
 - ✅ Обновить `governance/repo-model.md` — выполнено (v1.1, 2026-06-04)
 - ⚠️ Добавить ссылки из `README.md` и `AI_GOVERNANCE.md` — выполняется в
   рамках текущей задачи
-- ✅ Создать дубль промпта в `templates/spoke/` — выполнено
-  (`templates/spoke/AI_HANDOVER_PROMPT.md`)
+- ✅ Создать дубль промпта в `templates/htom/` — выполнено
+  (`templates/htom/AI_HANDOVER_PROMPT.md`)
 
 ---
 

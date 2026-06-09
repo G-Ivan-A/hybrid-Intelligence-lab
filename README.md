@@ -2,7 +2,7 @@
 
 > **«Человек задаёт смысл, AI ускоряет путь — вместе по правилам»** — слоган
 > Хаба и формула гибридной работы человек + AI. Зафиксирован для Хаба и
-> наследуется всеми споками (геном [`templates/spoke/`](templates/spoke/)).
+> наследуется всеми HTOM-командами (геном [`templates/htom/`](templates/htom/)).
 
 `hybrid-Intelligence-lab` - governance-first knowledge hub для исследований,
 образования, стандартов, проектных knowledge bases и управляемой работы
@@ -33,7 +33,8 @@
 | [governance/agent-onboarding.md](governance/agent-onboarding.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
 | [governance/repo-model.md](governance/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
 | [governance/artifact-map.md](governance/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
-| [templates/spoke/](templates/spoke/) | Шаблон для создания spoke-репозиториев (*Bootstrap-клонирование*, Кейс 2). Используйте `templates/spoke/README.md` как точку входа. |
+| [templates/htom/](templates/htom/) | Геном **HTOM-команды** — минимальный governance-скелет для гибридной human + AI работы (*Bootstrap-клонирование*, Кейс 2). Точка входа: `templates/htom/README.md`. |
+| [templates/spoke/](templates/spoke/) | Шаблон **production-спока** — репозитория с собственным кодом и жизненным циклом. Точка входа: `templates/spoke/README.md`. Различие HTOM-команда vs spoke — в [RFC](governance/rfc/htom-vs-spoke-clarification-2026-06.md). |
 
 ## Продукт и гайды
 

@@ -9,7 +9,7 @@ assignees: []
 <!--
 ⚠️ Для ИИ: если поле пустое — не генерируй значение. Работай в режиме
 `structured` по умолчанию. Сохраняй traceability между контекстом, артефактами
-и DoD. Не создавай `research/` в споке (см. AI_QUICK_RULES.md).
+и DoD. Не создавай `research/` в HTOM-команде (см. AI_QUICK_RULES.md).
 Поля наследуют конвенцию Хаба `hybrid-Intelligence-lab` (ISSUE_WORKFLOW.md).
 -->
 

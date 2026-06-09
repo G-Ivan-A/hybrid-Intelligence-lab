@@ -46,8 +46,8 @@ related_issues:
 | ID | Issue | Файл | Приоритет | Зависимости | Статус |
 | --- | --- | --- | --- | --- | --- |
 | CE-001 | [#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138) | `governance/agent-onboarding.md` | P0 | CE-008 | TODO |
-| CE-002 | [#139](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139) | `templates/spoke/AI_QUICK_RULES.md` | P0 | CE-008 | TODO |
-| CE-003 | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) | `templates/spoke/AI_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO |
+| CE-002 | [#139](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139) | `templates/htom/AI_QUICK_RULES.md` | P0 | CE-008 | TODO |
+| CE-003 | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) | `templates/htom/AI_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO |
 | CE-004 | [#141](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141) | `AI_GOVERNANCE.md` | P1 | CE-001, CE-008 | TODO |
 | CE-005 | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) | `governance/repo-model.md` | P2 | CE-008 | TODO |
 | CE-006 | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) | `standards/project-structure-inheritance.md` | P3 | CE-008 | TODO |

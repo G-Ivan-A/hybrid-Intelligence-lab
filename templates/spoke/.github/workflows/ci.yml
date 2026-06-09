@@ -1,0 +1,32 @@
+# CI/CD шаблон для spoke-репозитория {{project_name}}.
+#
+# Базовый pipeline: линт + тесты на каждый push и pull request. Шаги намеренно
+# провайдер-агностичны и оформлены как заглушки — адаптируйте их под стек
+# продукта (язык, менеджер пакетов, команды сборки/тестов/деплоя).
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run linters
+        run: |
+          echo "TODO: подставьте команду линта продукта, например:"
+          echo "  npm run lint  /  ruff check .  /  golangci-lint run"
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests
+        run: |
+          echo "TODO: подставьте команду тестов продукта, например:"
+          echo "  npm test  /  pytest  /  go test ./..."

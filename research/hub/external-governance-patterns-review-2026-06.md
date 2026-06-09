@@ -88,7 +88,7 @@ infrastructure. Фактическое состояние Хаба на дату
 
 - один пользователь (Founder & PO);
 - 3 проекта в горизонте месяца (`mango_ba_prompts`, `portal`, `vector-core`);
-- `templates/spoke/` создан как геном, но ни один спок ещё не клонирован
+- `templates/htom/` создан как геном, но ни один спок ещё не клонирован
   (`Bootstrap-клонирование` пока не выполнялось на реальном проекте);
 - нет ни одного реального кейса работы внешнего агента в `Runtime-онбординге`.
 
@@ -133,8 +133,8 @@ governance-машины» (classic enterprise-architecture-astronaut anti-patter
 
 | Идея | Как взять | Куда встроить (целевой артефакт) | Источник |
 | --- | --- | --- | --- |
-| Fail-closed semantics | Одна фраза: «Если действие не описано в контракте — агент не выполняет, а запрашивает human review». Операционно это уже заложено в Шаг 4 (стоп до апрува) протокола онбординга. | `templates/spoke/AI_QUICK_RULES.md` | `[C5]`, `[EGA]` |
-| Capability taxonomy (простая) | Ментальный список из трёх корзин: «можно без спроса», «можно с апрувом», «никогда». Без YAML, в прозе. | `templates/spoke/AI_GOVERNANCE.md` | `[C5]`, `[GAP]` |
+| Fail-closed semantics | Одна фраза: «Если действие не описано в контракте — агент не выполняет, а запрашивает human review». Операционно это уже заложено в Шаг 4 (стоп до апрува) протокола онбординга. | `templates/htom/AI_QUICK_RULES.md` | `[C5]`, `[EGA]` |
+| Capability taxonomy (простая) | Ментальный список из трёх корзин: «можно без спроса», «можно с апрувом», «никогда». Без YAML, в прозе. | `templates/htom/AI_GOVERNANCE.md` | `[C5]`, `[GAP]` |
 | Threat awareness | Раздел «Что может пойти не так»: 3–5 рисков в человекочитаемом виде. | `governance/agent-onboarding.md` (проектируется в RFC онбординга) | `[C5]` |
 | Evidence model (назвать явно) | Зафиксировать тезис: «git history + issues + PRs = evidence trail». Функция уже есть — нужно дать ей имя. | RFC-манифест `governance/rfc/rfc-two-cases-of-project-initialization.md` | `[C5]`, `[GAP]` |
 | Approval semantics (простые) | Поле `approved_by:` во frontmatter критичных файлов как явный след апрува. | `standards/file-naming.md` | `[C5]`, `[EGA]` |

@@ -1,189 +1,73 @@
 ---
 status: canonical
-version: 0.2
+version: 0.1
 updated: {{date}}
 ai-generated: true
 ---
 
 # {{project_name}}
 
-> Spoke-проект, рождённый из Хаба `hybrid-Intelligence-lab` по «ДНК-шаблону»
-> (`templates/spoke/`). Минимальный, но «правильный» геном: правила, контакт с
-> Хабом и каркас для роста по запросу.
+> Spoke-репозиторий, связанный с Хабом `hybrid-Intelligence-lab`. **Spoke — это
+> отдельный продукт с production-кодом**, а не HTOM-команда: здесь живут `src/`,
+> `tests/`, документация и CI/CD. Геном гибридной работы (HTOM-команды) лежит в
+> отдельном шаблоне `templates/htom/`.
 >
-> **Слоган (наследуется от Хаба):** «Человек задаёт смысл, AI ускоряет путь — вместе по правилам».
+> Первый настоящий spoke Хаба — портал `open-ai.ru`.
 
-TODO: добавьте краткое описание проекта после инициализации.
+TODO: добавьте краткое описание продукта после инициализации.
 
-## 🧬 Связь с Хабом
+## 🧭 Spoke ≠ HTOM-команда
+
+| | HTOM-команда (`templates/htom/`) | Spoke-репозиторий (`templates/spoke/`) |
+| --- | --- | --- |
+| Что это | Гибридная команда: люди + ИИ-агенты | Отдельный продукт с production-кодом |
+| Артефакт | Контракты работы с ИИ, итеративные задачи | `src/`, `tests/`, docs, CI/CD |
+| Цикл | Итеративный, минимальная структура | Полный SDLC отдельного продукта |
+| Пример | `mango_ba_prompts`, `repo-development` | `open-ai.ru` |
+
+Полное обоснование различия — в RFC Хаба
+[`governance/rfc/htom-vs-spoke-clarification-2026-06.md`]({{hub_url}}/blob/main/governance/rfc/htom-vs-spoke-clarification-2026-06.md).
+
+## 🔗 Связь с Хабом
 
 | Что | Где |
 | --- | --- |
 | Источник истины (governance, стандарты, research) | [{{hub_url}}]({{hub_url}}) |
-| Фундаментальные знания | `research/` Хаба (в споке `research/` **не создаётся**) |
-| Операционный контракт проекта | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
-| Быстрые правила для агента | [AI_QUICK_RULES.md](AI_QUICK_RULES.md) |
-| «Доверенность» для запуска агента (Handover Prompt) | [AI_HANDOVER_PROMPT.md](AI_HANDOVER_PROMPT.md) |
+| Концепция продукта (L2) и решения (L3) | стандарты `webportal-*-concept-standard.md` Хаба |
+| Правила участия в этом spoke | [CONTRIBUTING.md](CONTRIBUTING.md) |
 
-## 🗂️ Структура (сейчас)
+Spoke не дублирует фундаментальные знания Хаба, а ссылается на них. Продуктовые
+и архитектурные решения фиксируются локально (в `docs/`), governance-правила
+наследуются от Хаба.
+
+## 🗂️ Целевая структура
 
 | Путь | Роль |
 | --- | --- |
-| `AI_GOVERNANCE.md` | Конституция проекта: роли, правила, эскалация, DoD. |
-| `AI_QUICK_RULES.md` | Одностраничная инструкция для AI-агента. |
-| `AI_HANDOVER_PROMPT.md` | Готовый *Handover Prompt* (`{{REPO_NAME}}`) для запуска агента; копия хабового шаблона. |
-| `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
-| `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
-| `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |
-| `docs/audit/` | Ревизии, аудиты и проверки соответствия. |
-| `.github/ISSUE_TEMPLATE/` | Шаблон постановки задач (язык Хаба). |
-| `tools/` | Локальные проверки структуры репозитория. |
+| `src/` | Production-код продукта. |
+| `tests/` | Автотесты (unit, integration, e2e). |
+| `docs/` | Продуктовая и техническая документация, ADR. |
+| `.github/workflows/` | CI/CD: линт, тесты, сборка, деплой. |
+| `README.md` | Визитка продукта и точка входа. |
+| `CONTRIBUTING.md` | Workflow вклада и требования к PR. |
 
-Каталоги создаются по запросу, при появлении операционной боли (Anti-Inflation
-principle Хаба). Пустые «органеллы» спок не носит с собой.
+> В отличие от HTOM-команды, spoke создаёт `src/` и `tests/` сразу — это
+> production-репозиторий, и код в нём ожидаем с первого дня. Anti-Inflation
+> по-прежнему действует для вспомогательной обвязки: не плодите пустые каталоги
+> «на вырост».
 
-## Template Placeholder Policy
+## 🛠️ Плейсхолдеры
 
-Source templates may contain placeholders only when the placeholder is part of
-the approved spoke-template lifecycle. Generated spokes must not keep unresolved
-source placeholders after initialization.
-
-| Placeholder | Lifecycle | Rule |
-| --- | --- | --- |
-| `{{date}}` | Source template → generated spoke | Allowed in source-template frontmatter. `init.sh` replaces it with the initialization date (`YYYY-MM-DD`). |
-| `{{project_name}}` | Source template → generated spoke | Allowed for spoke-local names. `init.sh` replaces it during initialization. |
-| `{{hub_url}}` | Source template → generated spoke | Allowed for links back to the Hub. `init.sh` replaces it during initialization. |
-| `{{REPO_NAME}}` | Runtime handover prompt | Allowed only where a copied prompt must name the current repository at execution time. `init.sh` intentionally leaves it untouched. |
-
-No other `{{...}}` placeholders are approved for `templates/spoke/` source
-templates. New placeholders require an explicit policy update in this section
-and matching validator behavior before they are introduced.
-
-Generated-spoke Definition of Done:
-
-- `{{date}}`, `{{project_name}}`, and `{{hub_url}}` are replaced by `init.sh` or
-  manually before the first spoke commit.
-- Generated spokes must not keep unresolved source placeholders.
-- `{{REPO_NAME}}` may remain as the documented runtime placeholder for copy/paste
-  handover. The active placeholder lives in `AI_HANDOVER_PROMPT.md`; README
-  guidance may reference it only to explain that exception.
-
-`init.sh` also fills the README description line from `--description`; that field
-is not a `{{...}}` placeholder and is outside the placeholder whitelist.
-
-## 🛠️ Как адаптировать `{{...}}`-плейсхолдеры
-
-Файлы шаблона содержат `{{...}}`-плейсхолдеры — «гены», которые нужно подставить
-под конкретный спок **один раз**, сразу после клонирования:
-
-| Плейсхолдер | Что подставить | Кто заполняет |
-| --- | --- | --- |
-| `{{project_name}}` | Имя проекта-спока | `init.sh` / вручную |
-| `{{hub_url}}` | Ссылка на Хаб (источник истины) | `init.sh` / вручную |
-| `{{date}}` | Текущая дата (`YYYY-MM-DD`) во frontmatter | `init.sh` (автоген) |
-| `{{REPO_NAME}}` | Имя репозитория в *Handover Prompt* | **вручную** (см. ниже) |
-
-**Самый простой путь — скрипт `init.sh`** (он заменяет строчные `{{...}}` во всех
-файлах, проставляет дату и затем удаляет себя как одноразовый):
+Шаблон содержит `{{project_name}}`, `{{hub_url}}` и `{{date}}` (frontmatter).
+Подставьте их под конкретный spoke сразу после клонирования и убедитесь, что
+незаменённых плейсхолдеров не осталось:
 
 ```bash
-# интерактивно (спросит значения)
-./init.sh
-
-# неинтерактивно (для CI): все значения через флаги
-./init.sh -n "My Spoke" -d "Краткое описание" -u "https://github.com/ORG/HUB" --yes
+grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно быть пусто
 ```
 
-> **Почему `{{REPO_NAME}}` — отдельно.** `init.sh` заменяет только строчные
-> плейсхолдеры (`{{[a-z_]*}}`) и **не трогает** `{{REPO_NAME}}` в
-> [AI_HANDOVER_PROMPT.md](AI_HANDOVER_PROMPT.md): по умолчанию там остаётся
-> `hybrid-Intelligence-lab`. Подставьте имя своего спока вручную или оставьте
-> дефолт, если работаете в Хабе.
+## ✅ CI/CD
 
-Если правите вручную — найдите остатки плейсхолдеров по дереву перед коммитом:
-
-```bash
-grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно остаться пусто после init.sh
-```
-
-## ✅ Как валидировать структуру
-
-После адаптации (и далее — перед каждым PR) прогоните локальный структурный
-валидатор. Он проверяет, что геном спока на месте, плейсхолдеры заполнены, а
-дерево не «раздулось» сверх контракта:
-
-```bash
-./tools/validate-repository-structure.sh
-```
-
-Скрипт завершается с ненулевым кодом и печатает `FAIL: …` при нарушениях —
-почините их **до** отправки PR (Definition of Done из [CONTRIBUTING.md](CONTRIBUTING.md)).
-
-## 🧭 Две точки входа (Кейс 1 ↔ Кейс 2)
-
-Этот README — точка входа **Кейса 2** (*Bootstrap-клонирование*): как **родить**
-новый спок из «ДНК-шаблона» Хаба. Есть ортогональный **Кейс 1**
-(*Runtime-онбординг*): как ИИ-агенту **войти в уже существующий** репозиторий до
-первого изменения файлов. Попав в любую точку входа, держите в поле зрения вторую:
-
-| Куда | Зачем |
-| --- | --- |
-| Хаб [`governance/agent-onboarding.md`]({{hub_url}}/blob/main/governance/agent-onboarding.md) | **Кейс 1**: протокол *Runtime-онбординга* агента (Handover Prompt, Readback, стоп до апрува). |
-| Хаб [`rfc-two-cases-of-project-initialization.md`]({{hub_url}}/blob/main/governance/rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 2 (этот файл) отличается от Кейса 1. |
-| Этот README, раздел [Design Decisions & Rationale](#design-decisions--rationale) | Дизайн «ДНК-шаблона» спока: почему геном именно такой. |
-
-## Design Decisions & Rationale
-
-Раздел сохраняет rationale из утверждённого дизайн-предложения, которое
-предшествовало этому шаблону. После слияния именно этот README является
-canonical-точкой входа для bootstrap-клонирования спока.
-
-### ДНК клетки, а не чемодан переезжающего
-
-Шаблон спока устроен как компактный геном: он задаёт, кем проект может стать и по
-каким правилам растёт, но не тащит с собой все возможные каталоги «на всякий
-случай». Поэтому `research/`, `prompts/`, `experiments/`, `kb/`, `standards/` и
-другие тяжёлые разделы не создаются на старте. Они появляются только при
-операционной боли и с явным rationale.
-
-### Почему путь `templates/spoke/`
-
-| Решение | Почему |
-| --- | --- |
-| `templates/`, а не `blueprints/` | Имя прямо подсказывает действие: копировать и адаптировать. `blueprints/` звучит как чертёж, но не как готовый минимальный набор файлов. |
-| `templates/`, а не `genesis/` | `genesis/` провоцирует избыточность и желание «сотворить мир» вместо минимального bootstrap. |
-| Namespace `spoke/` | Оставляет место будущим типам шаблонов без раздувания корня. |
-| Kebab-case имена | Совместимо с [file-naming.md]({{hub_url}}/blob/main/standards/file-naming.md), даёт стабильные ссылки и хорошо читается AI-агентами. |
-
-### Почему минимальный набор остаётся малым
-
-Исходный дизайн выбрал 9 стартовых ролей. Позже *Handover Prompt* был вынесен в
-отдельный файл для самодостаточности спока, но принцип не изменился: каждый
-артефакт должен нести отдельную стартовую роль, а не создавать структуру «на
-вырост».
-
-| Файл | Дизайн-роль |
-| --- | --- |
-| `AI_GOVERNANCE.md` | Конституция спока: роли, решения человека, границы AI. |
-| `AI_QUICK_RULES.md` | Fail-closed инструкция для агента: куда смотреть и чего не делать. |
-| `AI_HANDOVER_PROMPT.md` | Самодостаточный запуск Runtime-онбординга в новом споке. |
-| `README.md` | Визитка проекта, карта текущей структуры и связь с Хабом. |
-| `CONTRIBUTING.md` | Минимальный workflow issue → PR → review. |
-| `CHANGELOG.md` | Память изменений с первого значимого шага. |
-| `docs/adr/.gitkeep` | Каркас для решений: почему выбран путь, а не только что изменено. |
-| `docs/audit/.gitkeep` | Каркас для ревизий и проверок соответствия. |
-| `.github/ISSUE_TEMPLATE/task.md` и `tools/validate-repository-structure.sh` | Единый язык задач и локальная защита от структурного разрастания. |
-
-### Антипаттерны bootstrap
-
-1. **Копировать всё, вдруг пригодится.** Пустые папки и TODO-заглушки создают шум,
-   который новый агент принимает за реальную структуру.
-2. **Вшивать research в спок.** Фундаментальные знания должны оставаться в Хабе,
-   иначе появляются расходящиеся копии source of truth.
-3. **Строить структуру на вырост.** Глубокая вложенность до появления работы
-   становится налогом для каждого нового спока.
-
-Если человек осознанно просит нарушить правило (например, создать `research/` на
-старте), агент должен назвать правило, предложить легитимную альтернативу
-ссылкой на Хаб или ADR, и только после явного решения человека фиксировать
-отклонение как documented decision.
+Базовый pipeline лежит в [`.github/workflows/ci.yml`](.github/workflows/ci.yml):
+он запускает линт и тесты на каждый push и pull request. Адаптируйте шаги под
+стек продукта (язык, менеджер пакетов, команды сборки/тестов).

@@ -31,7 +31,7 @@ entrypoint: true
 Чтобы соблюдение протокола было *самым простым путём*, человеку не нужно ничего
 формулировать — он копирует один блок в начало диалога с ИИ. Промпт параметризован
 плейсхолдером `{{REPO_NAME}}` (по умолчанию — `hybrid-Intelligence-lab`), чтобы тот
-же текст переносился в любой спок без правок.
+же текст переносился в любую HTOM-команду или spoke без правок.
 
 ```text
 Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
@@ -57,9 +57,10 @@ entrypoint: true
 Начни с Шага 1.
 ```
 
-> Тот же промпт дублируется в шаблон спока (`templates/spoke/`), чтобы каждый клон
-> Хаба наследовал протокол «из коробки» (задача B-003). Один источник — два места
-> применения: Хаб и споки.
+> Тот же промпт дублируется в геном HTOM-команды (`templates/htom/`), чтобы каждый
+> клон Хаба наследовал протокол «из коробки» (задача B-003). Один источник — два
+> места применения: Хаб и его HTOM-команды. О разнице между HTOM-командой и
+> spoke-репозиторием см. [htom-vs-spoke-clarification-2026-06.md](rfc/htom-vs-spoke-clarification-2026-06.md).
 
 ### Часть B. Четырёхшаговый протокол (исполняет Агент)
 
@@ -160,7 +161,7 @@ entrypoint: true
 | Куда | Зачем |
 | --- | --- |
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
-| [templates/spoke/README.md](../templates/spoke/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить спок из «ДНК-шаблона» Хаба. |
+| [templates/htom/README.md](../templates/htom/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить HTOM-команду из «ДНК-шаблона» Хаба. |
 | [standards/glossary.md](../standards/glossary.md) | Единый источник определений терминов протокола. |
 
 ## Design Rationale & History
@@ -216,7 +217,7 @@ entrypoint: true
 | Handover Prompt | Один копируемый блок с плейсхолдером `{{REPO_NAME}}` |
 | Место canonical-файла | `governance/agent-onboarding.md`, рядом с repo governance |
 | Исполнимость | `executable: true`, `entrypoint: true`, EXECUTION сверху |
-| Наследование споками | Копия prompt живёт в `templates/spoke/AI_HANDOVER_PROMPT.md` |
+| Наследование HTOM-командами | Копия prompt живёт в `templates/htom/AI_HANDOVER_PROMPT.md` |
 
 Историческое разделение было таким: дизайн-предложение объясняло «почему», а
 этот файл исполнял «как». После слияния граница упрощена: по вопросам «как

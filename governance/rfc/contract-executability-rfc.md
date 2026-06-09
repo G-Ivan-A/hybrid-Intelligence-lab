@@ -77,8 +77,8 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 
 Это системная проблема, а не разовая ошибка одной модели: тот же риск заложен в
 любой контракт Хаба и в наследуемые споками шаблоны
-([`templates/spoke/AI_QUICK_RULES.md`](../../templates/spoke/AI_QUICK_RULES.md),
-[`templates/spoke/AI_HANDOVER_PROMPT.md`](../../templates/spoke/AI_HANDOVER_PROMPT.md)).
+([`templates/htom/AI_QUICK_RULES.md`](../../templates/htom/AI_QUICK_RULES.md),
+[`templates/htom/AI_HANDOVER_PROMPT.md`](../../templates/htom/AI_HANDOVER_PROMPT.md)).
 
 ### 1.3. Полный текст диалога с ошибкой (юридически полный, слово в слово)
 
@@ -186,8 +186,8 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 | [`governance/repo-model.md`](../../governance/repo-model.md) | **Описательный** (правило-референс) с исполнимыми Decision Rules | Маркера нет. **Frontmatter отсутствует.** | Раздел «Decision Rules» (если ситуация → действие) и команда валидации структуры. | **Низкий–средний.** По природе справочный, но Decision Rules фактически исполнимы и никак не помечены. |
 | [`standards/project-structure-inheritance.md`](../../standards/project-structure-inheritance.md) | **Описательный** (стандарт) с исполнимыми проверками | `frontmatter status: canonical`; маркера исполнимости нет. | Раздел «Проверка» (если X → действие в ревью). | **Низкий.** Стандарт-референс; проверки исполнимы, но риск перепутать «учесть» и «выполнить» невелик. |
 | [`standards/issue-workflow.md`](../../standards/issue-workflow.md) | **Описательный** (стандарт процесса) | `frontmatter status: canonical`; маркера исполнимости нет. | «Точки автоматизации» + команды локальной проверки перед `review`. | **Низкий.** Справочник жизненного цикла задач; исполнимый только в части локальных проверок. |
-| [`templates/spoke/AI_QUICK_RULES.md`](../../templates/spoke/AI_QUICK_RULES.md) | **Исполнимый** («инструкция по выживанию» агента) | `frontmatter status: draft`; маркера исполнимости нет; заголовок «инструкция по выживанию» — человекочитаемый намёк. | Весь файл: «🧭 Куда смотреть первым», «⛔ Чего не делать», «🆘 Как звать человека». | **Средний–высокий.** Наследуется в *каждый* спок; те же грабли, что у онбординга: выглядит как памятка для чтения, а не как набор команд к соблюдению. |
-| [`templates/spoke/AI_HANDOVER_PROMPT.md`](../../templates/spoke/AI_HANDOVER_PROMPT.md) | **Исполнимый** (готовый промпт-«доверенность») | `frontmatter status: draft`; есть промпт в ` ```text ` и пометка «🛂 Готовый промпт (копируйте целиком)». Машинного маркера нет. | Блок ` ```text ` с Handover Prompt. | **Средний.** Размечен лучше прочих (есть «копируйте целиком»), но без машинного маркера и анти-аналитического сигнала. |
+| [`templates/htom/AI_QUICK_RULES.md`](../../templates/htom/AI_QUICK_RULES.md) | **Исполнимый** («инструкция по выживанию» агента) | `frontmatter status: draft`; маркера исполнимости нет; заголовок «инструкция по выживанию» — человекочитаемый намёк. | Весь файл: «🧭 Куда смотреть первым», «⛔ Чего не делать», «🆘 Как звать человека». | **Средний–высокий.** Наследуется в *каждый* спок; те же грабли, что у онбординга: выглядит как памятка для чтения, а не как набор команд к соблюдению. |
+| [`templates/htom/AI_HANDOVER_PROMPT.md`](../../templates/htom/AI_HANDOVER_PROMPT.md) | **Исполнимый** (готовый промпт-«доверенность») | `frontmatter status: draft`; есть промпт в ` ```text ` и пометка «🛂 Готовый промпт (копируйте целиком)». Машинного маркера нет. | Блок ` ```text ` с Handover Prompt. | **Средний.** Размечен лучше прочих (есть «копируйте целиком»), но без машинного маркера и анти-аналитического сигнала. |
 
 **Сводные наблюдения по Шагу 1:**
 
@@ -388,7 +388,7 @@ entrypoint: true
 ... (весь нынешний пояснительный текст переносится сюда без потерь) ...
 ```
 
-### 5.2. `templates/spoke/AI_QUICK_RULES.md` — начало шаблона
+### 5.2. `templates/htom/AI_QUICK_RULES.md` — начало шаблона
 
 **Было (сейчас):**
 
@@ -457,8 +457,8 @@ executable: true
 | # | Файл | Что сделать | Приоритет |
 | --- | --- | --- | --- |
 | 1 | `governance/agent-onboarding.md` | Добавить `executable: true`, `entrypoint: true`; директивный блок; разделить EXECUTION/EXPLANATION (пример 5.1). Bump версии. | P0 (источник инцидента) |
-| 2 | `templates/spoke/AI_QUICK_RULES.md` | Маркер `executable: true` + директивный блок + EXECUTION/EXPLANATION (пример 5.2). | P0 (наследуется споками) |
-| 3 | `templates/spoke/AI_HANDOVER_PROMPT.md` | Маркер `executable: true` + директивный блок над «🛂 Готовый промпт». | P1 |
+| 2 | `templates/htom/AI_QUICK_RULES.md` | Маркер `executable: true` + директивный блок + EXECUTION/EXPLANATION (пример 5.2). | P0 (наследуется споками) |
+| 3 | `templates/htom/AI_HANDOVER_PROMPT.md` | Маркер `executable: true` + директивный блок над «🛂 Готовый промпт». | P1 |
 | 4 | `AI_GOVERNANCE.md` | Сначала **добавить frontmatter** (сейчас отсутствует); затем `executable: false` (контракт-справка) и оформить pre-flight как директиву-указатель на онбординг. | P1 |
 | 5 | `governance/repo-model.md` | Добавить frontmatter; пометить `executable: false`; пометить раздел Decision Rules как исполнимую часть. | P2 |
 | 6 | `standards/project-structure-inheritance.md`, `standards/issue-workflow.md` | `executable: false` (стандарты-справки) — для единообразия. | P3 |
@@ -544,5 +544,5 @@ entrypoint: true
 - [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — операционный контракт и pre-flight.
 - [governance/repo-model.md](../../governance/repo-model.md) — Anti-Inflation principle.
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md), [standards/issue-workflow.md](../../standards/issue-workflow.md) — стандарты-справки.
-- [templates/spoke/AI_QUICK_RULES.md](../../templates/spoke/AI_QUICK_RULES.md), [templates/spoke/AI_HANDOVER_PROMPT.md](../../templates/spoke/AI_HANDOVER_PROMPT.md) — наследуемые споками исполнимые артефакты.
+- [templates/htom/AI_QUICK_RULES.md](../../templates/htom/AI_QUICK_RULES.md), [templates/htom/AI_HANDOVER_PROMPT.md](../../templates/htom/AI_HANDOVER_PROMPT.md) — наследуемые споками исполнимые артефакты.
 - [standards/glossary.md](../../standards/glossary.md) — единый источник терминов.

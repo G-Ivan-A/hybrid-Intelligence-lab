@@ -4,6 +4,34 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Changed
+
+- Issue #201 (Creative mode): clarified the Hub concept by separating
+  **HTOM-команды** (hybrid human + AI work units that inherit the governance
+  genome) from **spoke-репозитории** (production code repositories with their
+  own lifecycle). The minimal governance genome was renamed
+  `templates/spoke/` -> `templates/htom/` (via `git mv`, history preserved),
+  and a new `templates/spoke/` (README.md, CONTRIBUTING.md,
+  `.github/workflows/ci.yml`) was created as the production-spoke template.
+  Migration map (old -> new) for the genome:
+  `templates/spoke/AI_GOVERNANCE.md` -> `templates/htom/AI_GOVERNANCE.md`,
+  `templates/spoke/AI_QUICK_RULES.md` -> `templates/htom/AI_QUICK_RULES.md`,
+  `templates/spoke/AI_HANDOVER_PROMPT.md` -> `templates/htom/AI_HANDOVER_PROMPT.md`,
+  `templates/spoke/README.md` -> `templates/htom/README.md`,
+  `templates/spoke/CONTRIBUTING.md` -> `templates/htom/CONTRIBUTING.md`,
+  `templates/spoke/CHANGELOG.md` -> `templates/htom/CHANGELOG.md`,
+  `templates/spoke/init.sh` -> `templates/htom/init.sh`,
+  `templates/spoke/.github/ISSUE_TEMPLATE/task.md` -> `templates/htom/.github/ISSUE_TEMPLATE/task.md`,
+  `templates/spoke/tools/validate-repository-structure.sh` -> `templates/htom/tools/validate-repository-structure.sh`.
+  Added `governance/rfc/htom-vs-spoke-clarification-2026-06.md` with the
+  definitions, comparison table and current-project classification
+  (Хаб, `repo-development`, `mango_ba_prompts` -> HTOM-команды; `open-ai.ru`
+  -> first real spoke). Repointed genome references across `README.md`,
+  `AI_GOVERNANCE.md`, `governance/repo-model.md`, `governance/artifact-map.md`
+  (1.24 -> 1.25), `standards/glossary.md` (1.2 -> 1.3),
+  `projects/README.md` (1.1 -> 1.2) and validators; extended
+  `tools/validate-repository-structure.sh` to assert both templates.
+
 ### Added
 
 - Issue #203 (Creative mode): added a single Draft documentation package for the
