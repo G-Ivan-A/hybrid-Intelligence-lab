@@ -19,7 +19,7 @@ method: manual-review
 - Issue: [G-Ivan-A/hybrid-Intelligence-lab#202](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/202)
 - Источник: [link-foundation/js-ai-driven-development-pipeline-template](https://github.com/link-foundation/js-ai-driven-development-pipeline-template)
 - Стандарт: [standards/research-profile.md](../../standards/research-profile.md)
-- Backlog: [governance/BACKLOG.md](../../governance/BACKLOG.md)
+- Backlog: [governance/backlog.md](../../governance/backlog.md)
 
 **Метод.** Manual review: полное дерево файлов, все workflow YAML, конфигурации инструментов, документация `BEST-PRACTICES.md`.
 

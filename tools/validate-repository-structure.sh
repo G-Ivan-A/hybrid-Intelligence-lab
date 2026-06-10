@@ -71,6 +71,8 @@ is_active_file() {
     research/governance/executable-contract-format-2026-06.md | \
     research/governance/contract-documentation-format-2026-06.md | \
     research/governance/governance-folder-structure-decisions-2026-06.md | \
+    research/cicd/README.md | \
+    research/cicd/2026-06-js-cicd-template-analysis.md | \
     research/mango/classification.md | \
     research/mango/classification.html | \
     research/mango/classification-tz.md | \
