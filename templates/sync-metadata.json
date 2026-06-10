@@ -1,6 +1,14 @@
 {
   "manifest_version": "1.0",
-  "_comment": "Sync-policy metadata for the Smart Sync registry. This file is hand-maintained; templates/manifest.json is auto-generated from it by tools/generate-manifest.py and must NOT be edited by hand (issue #207). `version` is read from each template's frontmatter when present; overrides here win. target_type defaults to HTOM for templates/htom/*, Spoke for templates/spoke/*, and both for root templates.",
+  "_comment": "Sync-policy metadata for the Smart Sync registry. This file is hand-maintained; templates/manifest.json is auto-generated from it by tools/generate-manifest.py and must NOT be edited by hand (issue #207). `version` is read from each template's frontmatter when present; overrides here win. target_type defaults to HTOM for templates/htom/*, Spoke for templates/spoke/*, and both for root templates. `sync_rules` documents directory-level sync policy (issue #211); per-file behaviour is still driven by `overrides`.",
+  "sync_rules": {
+    "issue-templates": {
+      "source": "templates/htom/.github/ISSUE_TEMPLATE/",
+      "target": ".github/ISSUE_TEMPLATE/",
+      "criticality": "CORE",
+      "auto_sync": true
+    }
+  },
   "defaults": {
     "stack": ["all"],
     "min_phase": 0,
@@ -75,11 +83,11 @@
     },
     "templates/htom/.github/ISSUE_TEMPLATE/task.md": {
       "id": "htom-issue-template-task",
-      "version": "1.0.0",
-      "target_type": ["HTOM"],
-      "criticality": "OPTIONAL",
-      "tags": ["github", "issue-template"],
-      "description": "Шаблон issue-задачи для HTOM-команды."
+      "version": "2.0.0",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "CORE",
+      "tags": ["issue-template", "task"],
+      "description": "Шаблон задачи (полная структура): мета, цель, шаги, ограничения, DoD."
     },
     "templates/spoke/README.md": {
       "id": "spoke-readme",
