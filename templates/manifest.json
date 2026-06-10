@@ -1,24 +1,25 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-06-09",
+  "last_updated": "2026-06-10",
   "templates": [
     {
       "id": "htom-issue-template-task",
       "path": "templates/htom/.github/ISSUE_TEMPLATE/task.md",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "target_type": [
-        "HTOM"
+        "HTOM",
+        "Spoke"
       ],
       "stack": [
         "all"
       ],
       "min_phase": 0,
-      "criticality": "OPTIONAL",
+      "criticality": "CORE",
       "tags": [
-        "github",
-        "issue-template"
+        "issue-template",
+        "task"
       ],
-      "description": "Шаблон issue-задачи для HTOM-команды."
+      "description": "Шаблон задачи (полная структура): мета, цель, шаги, ограничения, DoD."
     },
     {
       "id": "htom-ai-governance",
