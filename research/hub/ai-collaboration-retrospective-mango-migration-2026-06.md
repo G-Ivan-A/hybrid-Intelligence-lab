@@ -21,7 +21,7 @@ spoke-репозиторий. Цель документа — сохранить
 [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md),
 [`standards/issue-workflow.md`](../../standards/issue-workflow.md),
 [`governance/repo-model.md`](../../governance/repo-model.md),
-[`governance/agent-onboarding.md`](../../governance/agent-onboarding.md) и
+[`governance/agent-onboarding-protocol.md`](../../governance/agent-onboarding-protocol.md) и
 [`standards/file-naming.md`](../../standards/file-naming.md).
 
 > **Scope:** `repo-wide`. Документ дополняет, а не заменяет ретроспективу сессии
@@ -35,7 +35,7 @@ spoke-репозиторий. Цель документа — сохранить
 | Ошибка | Место в диалоге | Корневая причина | Как было исправлено | Системный вывод (как предотвратить) |
 | --- | --- | --- | --- | --- |
 | Выдумывание несуществующего operating mode `Research + Structured` вместо одного из зафиксированных (`Structured`, `Research`, `Education`, `Project`). | Выбор режима работы для задач по стратегии миграции Mango. | Агент скомбинировал два ярлыка режима, не сверившись с таблицей Operating Modes в [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md). | Режим сведён к одному допустимому значению из закрытого списка (для миграции — `Structured`, для самой ретроспективы — `Research`). | Перед началом работы сверять mode с таблицей Operating Modes в `AI_GOVERNANCE.md`; не вводить комбинированные ярлыки без отдельного governance decision. Если задача выглядит смешанной — выбрать доминирующий режим и описать ограничения. |
-| Генерация решений (дерево спока, план миграции) без предварительного чтения [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) и [`standards/issue-workflow.md`](../../standards/issue-workflow.md). | Ранний этап проектирования стратегии миграции, до чтения обязательного контекста. | Пропущен pre-flight онбординг: нарушено правило 2 `AI_GOVERNANCE.md` («читать issue, последние comments, relevant files и PR context до изменения файлов»). | Контекст был перечитан и использован как основание для пересборки структуры миграции и DoD. | Сделать pre-flight чтение обязательным gate: issue → последние комментарии → `AI_GOVERNANCE.md` → ближайший workflow/standard → текущий PR context, и только затем предлагать структуру или файлы (предполётный протокол [`governance/agent-onboarding.md`](../../governance/agent-onboarding.md)). |
+| Генерация решений (дерево спока, план миграции) без предварительного чтения [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) и [`standards/issue-workflow.md`](../../standards/issue-workflow.md). | Ранний этап проектирования стратегии миграции, до чтения обязательного контекста. | Пропущен pre-flight онбординг: нарушено правило 2 `AI_GOVERNANCE.md` («читать issue, последние comments, relevant files и PR context до изменения файлов»). | Контекст был перечитан и использован как основание для пересборки структуры миграции и DoD. | Сделать pre-flight чтение обязательным gate: issue → последние комментарии → `AI_GOVERNANCE.md` → ближайший workflow/standard → текущий PR context, и только затем предлагать структуру или файлы (предполётный протокол [`governance/agent-onboarding-protocol.md`](../../governance/agent-onboarding-protocol.md)). |
 | Нарушение Anti-Inflation principle: предложение создать каталог `research/` в споке и продублировать `hub-research-links.md` без подтверждённой операционной боли. | Проектирование дерева spoke-репозитория Mango и связей со Хабом. | Дерево оптимизировалось под визуальную полноту, а не под доказанную повторяющуюся боль (Anti-Inflation principle в [`governance/repo-model.md`](../../governance/repo-model.md)). | Предложение ограничено: новые каталоги/файлы создаются только при наблюдаемой боли; дублирование заменено ссылкой, спорные элементы отложены до триггера внедрения. | Каждое предложение нового каталога, файла или стандарта связывать с конкретной operational pain и ссылкой на Anti-Inflation principle; при отсутствии боли — фиксировать `Триггер внедрения`, а не создавать артефакт «про запас». |
 | Отклонение от эталонного формата issue (#79): отсутствие обязательных таблиц, поля `User Story / ФТ`, корректного DoD и формата коммита. | Черновая постановка задачи на миграцию Mango. | Постановка не сверена с действующим [`standards/issue-workflow.md`](../../standards/issue-workflow.md) и эталонным issue #79 → потеряны traceability-поля и измеримые acceptance criteria. | Формат приведён к эталону: контекст, входные данные, артефакты, измеримый DoD и требуемый commit message. | Для задач на изменение репозитория сверять постановку с `issue-workflow.md` и ближайшим эталонным issue до публикации черновика; трактовать `User Story / ФТ`, DoD и формат коммита как часть traceability, а не как оформление. |
 | Архитектурная неточность: размещение глоссария в `kb/` вместо `standards/` и смешение экспериментов спока с исследованиями Хаба (`research/hub/`). | Распределение артефактов между Хабом и споком при планировании миграции. | Не применено правило размещения из [`governance/repo-model.md`](../../governance/repo-model.md) и не учтено различие scope `repo-wide` (Хаб) против domain/project (спок). | Глоссарий отнесён к `standards/` (общий термин-контракт), эксперименты — в `projects/<spoke>/experiments/`, repo-wide исследования остаются в `research/hub/`. | Перед размещением артефакта определять его тип и scope по `repo-model.md`; не смешивать `experiments` (project-уровень) с `research` (repo-wide) и не размещать term-контракты вне `standards/`. |
@@ -44,7 +44,7 @@ spoke-репозиторий. Цель документа — сохранить
 
 Выводы предназначены для будущего proposal или human review правил
 [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) и
-[`governance/agent-onboarding.md`](../../governance/agent-onboarding.md); в рамках
+[`governance/agent-onboarding-protocol.md`](../../governance/agent-onboarding-protocol.md); в рамках
 этой задачи governance-файлы не меняются.
 
 1. **Operating mode — проверяемое значение из закрытого списка.** AI-агент
@@ -55,7 +55,7 @@ spoke-репозиторий. Цель документа — сохранить
 
 2. **Pre-flight чтение контекста — обязательный gate, а не рекомендация.**
    Перед генерацией структуры, файлов, плана миграции или DoD агент проходит
-   предполётный протокол `agent-onboarding.md`: issue → последние комментарии →
+   предполётный протокол `agent-onboarding-protocol.md`: issue → последние комментарии →
    `AI_GOVERNANCE.md` → ближайший workflow/standard → текущий PR context →
    *Readback* → стоп до апрува человека.
 

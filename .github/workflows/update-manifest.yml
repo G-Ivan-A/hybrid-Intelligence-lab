@@ -1,0 +1,58 @@
+name: update-manifest
+
+# Auto-regenerate templates/manifest.json from the templates/ tree.
+# The manifest is the Smart Sync registry consumed by tools/sync-from-hub.sh
+# and must never be hand-edited (issue #207). On every push to main that
+# touches templates/, this workflow regenerates the manifest and commits it
+# only when its structural content actually changed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "templates/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-manifest
+  cancel-in-progress: false
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate manifest if templates changed
+        id: regen
+        run: |
+          set -euo pipefail
+          if python3 tools/generate-manifest.py --check; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "manifest.json already up to date; nothing to commit."
+          else
+            python3 tools/generate-manifest.py --write
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push manifest
+        if: steps.regen.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add templates/manifest.json
+          if git diff --cached --quiet; then
+            echo "No staged changes; skipping commit."
+          else
+            git commit -m "chore: update manifest.json"
+            git push
+          fi

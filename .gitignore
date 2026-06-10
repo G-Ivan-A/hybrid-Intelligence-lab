@@ -4,3 +4,7 @@
 
 # Playwright MCP scratch artifacts.
 .playwright-mcp/
+
+# Python bytecode caches
+__pycache__/
+*.pyc

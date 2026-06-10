@@ -6,6 +6,21 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #207 (Creative mode): semantic separation of the onboarding files into
+  **protocol** (process/checklist) and **artefact** (copyable prompt). Renamed
+  (via `git mv`, history preserved):
+  `governance/agent-onboarding.md` -> `governance/agent-onboarding-protocol.md`
+  (1.1 -> 1.2) and
+  `templates/htom/AI_HANDOVER_PROMPT.md` -> `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`
+  (0.2 -> 0.3). Added disambiguation disclaimers — to the protocol
+  «⚠️ ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат.» and to the prompt
+  «⚠️ ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат.» Repointed all live
+  references across `README.md`, `AI_GOVERNANCE.md`, `governance/`, `standards/`,
+  `research/`, `templates/htom/` and both validators. NB: the issue proposed
+  `UPPER_CASE` governance paths and a `templates/spoke/` location; both were
+  adapted to the repository's `standards/file-naming.md` (governance uses
+  kebab-case) and the actual genome layout (the handover prompt lives in
+  `templates/htom/`).
 - Issue #201 (Creative mode): clarified the Hub concept by separating
   **HTOM-команды** (hybrid human + AI work units that inherit the governance
   genome) from **spoke-репозитории** (production code repositories with their
@@ -34,6 +49,23 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #207 (Creative mode): Smart Sync infrastructure for Hub ↔ spoke
+  template synchronization. New auto-generated registry `templates/manifest.json`
+  (fields `manifest_version`, `last_updated`, `templates[]` with
+  `id`/`path`/`version`/`target_type`/`stack`/`min_phase`/`criticality`/`tags`/
+  `description`), produced from the hand-maintained `templates/sync-metadata.json`
+  by `tools/generate-manifest.py` (`--write`/`--check`) — the manifest is never
+  hand-edited. New GitHub Action `.github/workflows/update-manifest.yml`
+  regenerates and commits the manifest (`chore: update manifest.json`) on pushes
+  to `main` that touch `templates/`. New client `tools/sync-from-hub.sh` with
+  `--report` / `--apply` / `--apply --force` / `--init`: it filters templates by
+  the local `.hub-profile.json` (target_type, stack, min_phase), compares
+  versions against `last_sync`, prints a sync report, and applies safely by
+  default (writes `<name>.hub-new.<ext>` alongside local files; `--force`
+  overwrites). End-to-end test `experiments/test-smart-sync.sh`. Extended
+  `tools/validate-repository-structure.sh` to allowlist and assert the new
+  artifacts plus a manifest drift check; bumped `governance/artifact-map.md`
+  (1.25 -> 1.26) with rows for the new artifacts.
 - Issue #203 (Creative mode): added a single Draft documentation package for the
   Hub product layer. New product docs `docs/vision.md` (Product Vision, L1) and
   `docs/product-concept.md` (Product Concept, L2); RFC
@@ -306,7 +338,7 @@ All notable repository governance changes are documented here.
   плейсхолдером `{{REPO_NAME}}` (по умолчанию `hybrid-Intelligence-lab`), готовая
   «доверенность» для запуска агента (*Runtime-онбординг*) прямо из склонированного
   спока. Источник истины зафиксирован за Хабом
-  ([`governance/agent-onboarding.md`](governance/agent-onboarding.md), создаётся в
+  ([`governance/agent-onboarding.md`](governance/agent-onboarding-protocol.md), создаётся в
   B-001 → #109): файл явно помечен как копия шаблона со ссылкой на хабовый
   оригинал, чтобы избежать рассинхронизации. Файл зарегистрирован как active в
   обоих валидаторах (`tools/validate-repository-structure.sh` — `is_active_file`,

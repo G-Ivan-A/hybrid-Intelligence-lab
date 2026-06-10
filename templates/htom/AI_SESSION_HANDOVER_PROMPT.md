@@ -1,10 +1,16 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: {{date}}
 ai-generated: true
 executable: true
 ---
+
+> ⚠️ **ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат.**
+> Этот файл — *артефакт* (готовый промпт), а не процесс. Скопируйте блок
+> EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
+> Runtime-онбординг агента. Сам **протокол** (чек-лист и обоснование) живёт
+> отдельно: [governance/agent-onboarding-protocol.md]({{hub_url}}/blob/main/governance/agent-onboarding-protocol.md).
 
 > 🚦 **ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ.**
 > Я как ИИ-агент в HTOM-команде {{project_name}} должен выполнить готовый Handover
@@ -23,7 +29,7 @@ executable: true
 Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
 {{REPO_NAME}} (модель hub-and-spoke); ты обращаешься к нему, но не «живёшь» в нём.
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/agent-onboarding.md). Это предполётный чек-лист — взлёт (изменение
+(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — взлёт (изменение
 файлов) запрещён до моего апрува.
 
 Сделай ровно по шагам:
@@ -54,7 +60,7 @@ executable: true
 а не только в Хабе.
 
 > **Источник истины — Хаб.** Канонический *Handover Prompt* и полный 4-шаговый
-> протокол живут в Хабе: [`governance/agent-onboarding.md`]({{hub_url}}/blob/main/governance/agent-onboarding.md)
+> протокол живут в Хабе: [`governance/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/governance/agent-onboarding-protocol.md)
 > (Хаб `hybrid-Intelligence-lab`, [{{hub_url}}]({{hub_url}})). Этот файл — **копия
 > шаблона** для удобства HTOM-команды. При расхождении приоритет у хабовой версии; правки
 > вносятся сначала в Хаб, затем переносятся сюда.
@@ -66,7 +72,7 @@ executable: true
 
 > **Где в HTOM-команде лежат governance-файлы.** Полный 4-шаговый протокол и часть
 > governance-контрактов (`repo-model.md`, `artifact-map.md`,
-> `project-structure-inheritance.md`, `agent-onboarding.md`) живут в **Хабе**
+> `project-structure-inheritance.md`, `agent-onboarding-protocol.md`) живут в **Хабе**
 > ([{{hub_url}}]({{hub_url}})); локально у HTOM-команды есть `AI_GOVERNANCE.md`,
 > `AI_QUICK_RULES.md` и `CONTRIBUTING.md`. Агент читает локальные правила команды
 > и обращается к Хабу как к источнику фундаментальных знаний.
@@ -77,5 +83,5 @@ executable: true
   выживанию» агента в этой HTOM-команде.
 - [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) — конституция проекта: роли, правила,
   эскалация, DoD.
-- Хаб [`governance/agent-onboarding.md`]({{hub_url}}/blob/main/governance/agent-onboarding.md)
+- Хаб [`governance/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/governance/agent-onboarding-protocol.md)
   — полный 4-шаговый протокол и канонический *Handover Prompt* (источник истины).

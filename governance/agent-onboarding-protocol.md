@@ -1,11 +1,19 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-04
+version: 1.2
+updated: 2026-06-09
 ai-generated: true
 executable: true
 entrypoint: true
 ---
+
+> ⚠️ **ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат.**
+> Этот файл — *процесс* (чек-лист и ссылки), который агент **исполняет**,
+> получив ссылку на него. Не вставляйте этот документ целиком в диалог с LLM.
+> Чтобы запустить агента, скопируйте **артефакт** — готовый *Handover Prompt*
+> (Часть A ниже или
+> [templates/htom/AI_SESSION_HANDOVER_PROMPT.md](../templates/htom/AI_SESSION_HANDOVER_PROMPT.md)).
+> О разнице протокол↔артефакт см. [standards/glossary.md](../standards/glossary.md).
 
 > 🚦 **ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ АНАЛИЗИРУЙ, ВЫПОЛНЯЙ.**
 > Я как ИИ-агент, получивший ссылку на этот файл, должен немедленно выполнить
@@ -37,7 +45,7 @@ entrypoint: true
 Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
 {{REPO_NAME}} (модель hub-and-spoke); ты обращаешься к нему, но не «живёшь» в нём.
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/agent-onboarding.md). Это предполётный чек-лист — взлёт (изменение
+(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — взлёт (изменение
 файлов) запрещён до моего апрува.
 
 Сделай ровно по шагам:
@@ -215,9 +223,9 @@ entrypoint: true
 | --- | --- |
 | Форма протокола | 4 шага: governance → контекст → readback → стоп до апрува |
 | Handover Prompt | Один копируемый блок с плейсхолдером `{{REPO_NAME}}` |
-| Место canonical-файла | `governance/agent-onboarding.md`, рядом с repo governance |
+| Место canonical-файла | `governance/agent-onboarding-protocol.md`, рядом с repo governance |
 | Исполнимость | `executable: true`, `entrypoint: true`, EXECUTION сверху |
-| Наследование HTOM-командами | Копия prompt живёт в `templates/htom/AI_HANDOVER_PROMPT.md` |
+| Наследование HTOM-командами | Копия prompt живёт в `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` |
 
 Историческое разделение было таким: дизайн-предложение объясняло «почему», а
 этот файл исполнял «как». После слияния граница упрощена: по вопросам «как

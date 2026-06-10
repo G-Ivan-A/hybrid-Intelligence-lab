@@ -9,7 +9,7 @@ method: creative-analysis + synthesis + dependency-mapping
 scope: repo-wide
 related_artifacts:
   - "templates/htom/README.md"
-  - "governance/agent-onboarding.md"
+  - "governance/agent-onboarding-protocol.md"
   - "governance/rfc/rfc-two-cases-of-project-initialization.md"
   - "research/hub/external-governance-patterns-review-2026-06.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
@@ -72,7 +72,7 @@ related_issues:
 
 - блоки **Follow-up** в утверждённых onboarding/bootstrap-артефактах
   ([templates/htom/README.md](../templates/htom/README.md),
-  [governance/agent-onboarding.md](agent-onboarding.md),
+  [governance/agent-onboarding-protocol.md](agent-onboarding-protocol.md),
   [rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md));
 - матрица применимости рекомендаций внешних экспертов
   ([research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md));
@@ -149,7 +149,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Обоснование приоритета |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **B-010** | Снять лимиты длины Mango-промптов; промпты не менять | **P0** | — | DONE | [#105](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/105) | Issue #105; [validator](../tools/validate-repository-structure.sh) | Искусственный лимит ограничивал prompt body; инвариант восстановлен снятием лимита, без правки промптов. |
-| **B-001** | Создать `governance/agent-onboarding.md` (Кейс 1, вкл. threat awareness) | **P1** | — | TODO | [#109](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/109) | RFC-онбординг; RFC-два-кейса (follow-up #3); Q «взять сейчас» | Краеугольный артефакт *Runtime-онбординга* и старт критического пути; без него правило «новый агент → начни здесь» не имеет адресата. |
+| **B-001** | Создать `governance/agent-onboarding-protocol.md` (Кейс 1, вкл. threat awareness) | **P1** | — | TODO | [#109](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/109) | RFC-онбординг; RFC-два-кейса (follow-up #3); Q «взять сейчас» | Краеугольный артефакт *Runtime-онбординга* и старт критического пути; без него правило «новый агент → начни здесь» не имеет адресата. |
 | **B-002** | Связать онбординг ссылками из `README.md` Хаба и `AI_GOVERNANCE.md` | **P1** | B-001 | TODO | [#110](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/110) | RFC-два-кейса (follow-up #5); RFC-онбординг | Дёшево и замыкает точку входа: артефакт без ссылок невидим. |
 | **B-004** | Зафиксировать двухкейсовую модель инициализации в `governance/repo-model.md` | **P1** | — | DONE | [#111](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/111) | RFC-два-кейса (follow-up #2) | Закрепляет концептуальный фундамент в каноне; снижает риск повторной терминологической путаницы (ошибка №5 ретроспективы). |
 | **B-006** | Fail-closed semantics одной фразой → `templates/htom/AI_QUICK_RULES.md` | **P1** | — | TODO | [#112](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/112) | Q «взять сейчас»; С [C5]; [EGA] | «Бесплатно» (одна фраза), прямо снижает риск галлюцинаций агента уже сегодня. |
@@ -178,9 +178,9 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 
 | ID | Файл | Приоритет | Зависимости | Статус | Issue |
 | --- | --- | --- | --- | --- | --- |
-| CE-001 | `governance/agent-onboarding.md` | P0 | CE-008 | TODO | [#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138) |
+| CE-001 | `governance/agent-onboarding-protocol.md` | P0 | CE-008 | TODO | [#138](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138) |
 | CE-002 | `templates/htom/AI_QUICK_RULES.md` | P0 | CE-008 | TODO | [#139](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139) |
-| CE-003 | `templates/htom/AI_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) |
+| CE-003 | `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) |
 | CE-004 | `AI_GOVERNANCE.md` | P1 | CE-001, CE-008 | TODO | [#141](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141) |
 | CE-005 | `governance/repo-model.md` | P2 | CE-008 | TODO | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) |
 | CE-006 | `standards/project-structure-inheritance.md` | P3 | CE-008 | TODO | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) |
@@ -242,10 +242,10 @@ prompt assets и обязательных секций, но не сжимать
 
 ---
 
-### B-001: Создать `governance/agent-onboarding.md` (Кейс 1)
+### B-001: Создать `governance/agent-onboarding-protocol.md` (Кейс 1)
 
 **Приоритет:** P1
-**Источник:** 🔗 [governance/agent-onboarding.md](agent-onboarding.md);
+**Источник:** 🔗 [governance/agent-onboarding-protocol.md](agent-onboarding-protocol.md);
 [rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md)
 (follow-up #3); команда Q «взять сейчас» (threat awareness)
 **Зависимости:** —
@@ -255,12 +255,12 @@ prompt assets и обязательных секций, но не сжимать
 *Runtime-онбординг* (Кейс 1) — это процесс, в котором агент в *Среде работы
 агента* (чате) загружает контекст из *Источника контекста* (репо) в оперативную
 память. У этого процесса по дизайну должен быть один входной артефакт —
-`governance/agent-onboarding.md`, — но его пока **нет**. Без него правило «новый
+`governance/agent-onboarding-protocol.md`, — но его пока **нет**. Без него правило «новый
 агент → начни здесь» (системный вывод №2 ретроспективы про обязательное
 pre-flight чтение) не имеет адресата.
 
 **Что нужно сделать:**
-1. Создать `governance/agent-onboarding.md` по дизайну онбординг-RFC: 4-шаговый
+1. Создать `governance/agent-onboarding-protocol.md` по дизайну онбординг-RFC: 4-шаговый
    алгоритм (governance → контекст → *Readback* → стоп до апрува).
 2. Включить *Handover Prompt* с плейсхолдером `{{REPO_NAME}}`.
 3. Встроить раздел «Что может пойти не так» (3–5 рисков) — реализация *threat
@@ -269,7 +269,7 @@ pre-flight чтение) не имеет адресата.
    RFC-манифест двух кейсов.
 
 **Ожидаемые артефакты:**
-- `governance/agent-onboarding.md` (новый)
+- `governance/agent-onboarding-protocol.md` (новый)
 - строка в [artifact-map.md](artifact-map.md) и регистрация в валидаторе
 
 **Критерии приёмки (DoD):**
@@ -286,7 +286,7 @@ P1 и старт критического пути. Это не «бесплат
 
 **Риски и ограничения:**
 Риск дублирования с онбординг-RFC: RFC остаётся *проектом* (`rfc/`), а
-`agent-onboarding.md` — рабочей инструкцией. Граница должна быть явной, иначе
+`agent-onboarding-protocol.md` — рабочей инструкцией. Граница должна быть явной, иначе
 получим два источника истины.
 
 ---
@@ -300,12 +300,12 @@ P1 и старт критического пути. Это не «бесплат
 **Режим работы:** `Structured`
 
 **Контекст:**
-Артефакт без входной ссылки невидим. После создания `agent-onboarding.md` нужно
+Артефакт без входной ссылки невидим. После создания `agent-onboarding-protocol.md` нужно
 поставить на него указатели из двух очевидных точек входа: визитки репозитория
 (`README.md`) и контракта AI-работы (`AI_GOVERNANCE.md`).
 
 **Что нужно сделать:**
-1. В `README.md` добавить блок «Новый агент? Начни здесь → `governance/agent-onboarding.md`».
+1. В `README.md` добавить блок «Новый агент? Начни здесь → `governance/agent-onboarding-protocol.md`».
 2. В `AI_GOVERNANCE.md` сослаться на онбординг как на обязательный pre-flight шаг.
 
 **Ожидаемые артефакты:**
@@ -437,7 +437,7 @@ P1 — «бесплатно» и снижает неопределённость
 ### B-003: Продублировать *Handover Prompt* в `templates/htom/`
 
 **Приоритет:** P2
-**Источник:** 🔗 [governance/agent-onboarding.md](agent-onboarding.md)
+**Источник:** 🔗 [governance/agent-onboarding-protocol.md](agent-onboarding-protocol.md)
 **Зависимости:** B-001
 **Режим работы:** `Structured`
 
@@ -449,7 +449,7 @@ P1 — «бесплатно» и снижает неопределённость
 **Что нужно сделать:**
 1. Поместить параметризованный *Handover Prompt* в подходящий файл
    `templates/htom/` (вероятно, рядом с `AI_QUICK_RULES.md`).
-2. Связать его ссылкой с хабовым `agent-onboarding.md`.
+2. Связать его ссылкой с хабовым `agent-onboarding-protocol.md`.
 
 **Ожидаемые артефакты:**
 - файл(ы) в `templates/htom/` (изменены/дополнены)
@@ -485,10 +485,10 @@ RFC-манифест требует, чтобы **обе** точки входа
 **Что нужно сделать:**
 1. Дополнить `templates/htom/README.md` разделом «как адаптировать
    `{{...}}`-плейсхолдеры и валидировать структуру».
-2. Добавить перекрёстные ссылки: спок-README → `agent-onboarding.md` и наоборот.
+2. Добавить перекрёстные ссылки: спок-README → `agent-onboarding-protocol.md` и наоборот.
 
 **Ожидаемые артефакты:**
-- `templates/htom/README.md` (изменён); ссылки в `agent-onboarding.md`
+- `templates/htom/README.md` (изменён); ссылки в `agent-onboarding-protocol.md`
 
 **Критерии приёмки (DoD):**
 - [ ] Обе точки входа ссылаются друг на друга.
@@ -732,7 +732,7 @@ Machine, YAML Capability Manifest, Signed Artifacts, JSON Envelope) **немед
    **B-010 — единственный P0**, выше любой архитектурной идеи С.
 
 2. **Threat awareness — без отдельного файла.** Q указала целью
-   `governance/agent-onboarding.md`. Я не создаю отдельный артефакт под threat
+   `governance/agent-onboarding-protocol.md`. Я не создаю отдельный артефакт под threat
    awareness, а складываю его *разделом* в B-001 — иначе нарушим Anti-Inflation
    (новый файл без отдельной боли).
 
@@ -873,7 +873,7 @@ Human Review:
 
 > **Что я по-прежнему НЕ делаю без твоего слова:** не правлю prompt body Mango,
 > не создаю `mango_ba_prompts`, не создаю файлы будущих артефактов
-> (`agent-onboarding.md` и т.д.) — это работа по отдельным заведённым issues
+> (`agent-onboarding-protocol.md` и т.д.) — это работа по отдельным заведённым issues
 > (#109–#116), выполняемая в своих PR с Human Review. B-014 не заведена.
 
 ---
@@ -884,7 +884,7 @@ Human Review:
 | --- | --- |
 | [governance/artifact-map.md](artifact-map.md) | Карта «что есть»; бэклог — её ортогональная пара «что осталось». |
 | [governance/repo-model.md](repo-model.md) | Anti-Inflation principle — фундамент шкалы приоритетов. |
-| [governance/agent-onboarding.md](agent-onboarding.md) | Источник задач B-001, B-002, B-003 (Кейс 1). |
+| [governance/agent-onboarding-protocol.md](agent-onboarding-protocol.md) | Источник задач B-001, B-002, B-003 (Кейс 1). |
 | [templates/htom/README.md](../templates/htom/README.md) | Контекст генома `templates/htom/`; первый bootstrap вынесен за пределы текущего бэклога. |
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Источник задач B-004, B-005, B-011. |
 | [research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md) | Источник матрицы С/Q, North Star и триггеров (B-006, B-007, B-011, deferred `approved_by:`). |
@@ -904,7 +904,7 @@ bootstrap (`mango_ba_prompts`) вынесен в отдельный sprint/issue
 ```mermaid
 flowchart TD
     B010["B-010 · DONE<br/>Сняты лимиты промптов<br/>(prompt body не менялся)"]
-    B001["B-001 · P1<br/>agent-onboarding.md<br/>(Кейс 1 + threat awareness)"]
+    B001["B-001 · P1<br/>agent-onboarding-protocol.md<br/>(Кейс 1 + threat awareness)"]
     B002["B-002 · P1<br/>Ссылки из README<br/>и AI_GOVERNANCE"]
     B005["B-005 · P2<br/>spoke/README (Кейс 2)<br/>+ перекрёстные ссылки"]
 

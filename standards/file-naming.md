@@ -28,7 +28,7 @@ ai-generated: false
 ### Примеры для standards/ и governance/
 
 - Правильно: `research-profile.md`
-- Правильно: `agent-onboarding.md`
+- Правильно: `agent-onboarding-protocol.md`
 - Правильно: `executable-contract-standard.md`
 - Неправильно: `RESEARCH_DOCUMENTATION_STANDARD.md`
 - Неправильно: `AGENT_ONBOARDING.md`

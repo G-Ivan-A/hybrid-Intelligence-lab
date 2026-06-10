@@ -9,7 +9,7 @@ method: incident-analysis + synthesis of three visions + industry best practices
 scope: repo-wide
 related_artifacts:
   - standards/executable-contract-standard.md
-  - governance/agent-onboarding.md
+  - governance/agent-onboarding-protocol.md
   - governance/backlog.md
 related_issues:
   - "#129"
@@ -41,7 +41,7 @@ related_issues:
 | Раздел | Статус | Normative Owner |
 | --- | --- | --- |
 | Executable markers | accepted | `standards/executable-contract-standard.md` |
-| Directive block | accepted | `governance/agent-onboarding.md` |
+| Directive block | accepted | `governance/agent-onboarding-protocol.md` |
 | Rollout plan | implemented | `governance/backlog.md` |
 | Open questions | deferred | — |
 
@@ -56,7 +56,7 @@ owner-артефактах.
 ### 1.1. Ситуация: инцидент анализа вместо исполнения
 
 В ходе диалога ИИ-ассистент получил ссылку на файл
-[governance/agent-onboarding.md](../../governance/agent-onboarding.md) с явным
+[governance/agent-onboarding-protocol.md](../../governance/agent-onboarding-protocol.md) с явным
 запросом подтвердить понимание контекста. Вместо того чтобы **исполнить** протокол
 онбординга ([Runtime-онбординг](../../standards/glossary.md), Кейс 1 — прочитать
 governance-файлы, выполнить [Readback](../../standards/glossary.md), остановиться до
@@ -67,7 +67,7 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 
 ### 1.2. Корневая проблема
 
-Контракт `agent-onboarding.md` **не содержит явного, недвусмысленного сигнала в
+Контракт `agent-onboarding-protocol.md` **не содержит явного, недвусмысленного сигнала в
 самом начале**, что это *исполнимый* документ, требующий немедленного перехода в
 режим выполнения алгоритма, а не объект для рефлексии или обсуждения. Исполнимая
 часть (Handover Prompt и 4-шаговый протокол) теряется среди ~40 строк
@@ -78,7 +78,7 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 Это системная проблема, а не разовая ошибка одной модели: тот же риск заложен в
 любой контракт Хаба и в наследуемые споками шаблоны
 ([`templates/htom/AI_QUICK_RULES.md`](../../templates/htom/AI_QUICK_RULES.md),
-[`templates/htom/AI_HANDOVER_PROMPT.md`](../../templates/htom/AI_HANDOVER_PROMPT.md)).
+[`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](../../templates/htom/AI_SESSION_HANDOVER_PROMPT.md)).
 
 ### 1.3. Полный текст диалога с ошибкой (юридически полный, слово в слово)
 
@@ -88,10 +88,10 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 
 ```text
 [ПОЛЬЗОВАТЕЛЬ]:
-Проанализируй, подтверди понимание контекста: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/governance/agent-onboarding.md
+Проанализируй, подтверди понимание контекста: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/governance/agent-onboarding-protocol.md
 
 [ИИ-АССИСТЕНТ — НЕПРАВИЛЬНАЯ РЕАКЦИЯ]:
-Контекст документа governance/agent-onboarding.md принят и проанализирован.
+Контекст документа governance/agent-onboarding-protocol.md принят и проанализирован.
 Я понимаю, что передо мной операционный документ (рабочая инструкция), а не проектное предложение (RFC). Его задача — дать готовый к исполнению алгоритм Runtime-онбординга (Кейс 1) для любого ИИ-агента, подключающегося к репозиторию (или его спуку) по модели hub-and-spoke.
 Ключевые концептуальные опоры документа, которые я зафиксировал:
 - Разделение сред: Агент работает в Среде работы агента (чат) и лишь читает Источник контекста (репозиторий) в оперативную память. Он не «живёт» в репозитории.
@@ -181,13 +181,13 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 
 | Файл | Тип (исполнимый/описательный) | Текущий маркер исполнимости | Где находится исполнимая часть | Оценка риска некорректного выполнения |
 | --- | --- | --- | --- | --- |
-| [`governance/agent-onboarding.md`](../../governance/agent-onboarding.md) | **Исполнимый** (рабочая инструкция, *Runtime-онбординг*) | Машинного маркера нет. Прозой в шапке: «рабочая инструкция… до первого изменения файлов»; есть Handover Prompt в блоке ` ```text `. | Часть A (Handover Prompt) и Часть B (4-шаговый протокол), **после** ~40 строк пояснений (frontmatter → заголовок → 2 вводных абзаца → «Модель процесса» → лишь затем Часть A). | **Высокий.** Ровно этот инцидент: пояснительный текст идёт раньше команды; агент принял документ за объект анализа. |
+| [`governance/agent-onboarding-protocol.md`](../../governance/agent-onboarding-protocol.md) | **Исполнимый** (рабочая инструкция, *Runtime-онбординг*) | Машинного маркера нет. Прозой в шапке: «рабочая инструкция… до первого изменения файлов»; есть Handover Prompt в блоке ` ```text `. | Часть A (Handover Prompt) и Часть B (4-шаговый протокол), **после** ~40 строк пояснений (frontmatter → заголовок → 2 вводных абзаца → «Модель процесса» → лишь затем Часть A). | **Высокий.** Ровно этот инцидент: пояснительный текст идёт раньше команды; агент принял документ за объект анализа. |
 | [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) | **Смешанный**: описательный контракт + исполнимый pre-flight | Блок-цитата сверху «🛫 Pre-flight (обязательно перед любой работой)» со ссылкой на онбординг. **Frontmatter отсутствует.** | Pre-flight-нота сверху (команда «пройди онбординг»); остальное — описательный контракт (роли, правила, Operating Modes, эскалация, DoD). | **Средний.** Pre-flight можно прочитать как справку, а не как команду немедленно перейти к онбордингу; нет машинного маркера и frontmatter-якоря. |
 | [`governance/repo-model.md`](../../governance/repo-model.md) | **Описательный** (правило-референс) с исполнимыми Decision Rules | Маркера нет. **Frontmatter отсутствует.** | Раздел «Decision Rules» (если ситуация → действие) и команда валидации структуры. | **Низкий–средний.** По природе справочный, но Decision Rules фактически исполнимы и никак не помечены. |
 | [`standards/project-structure-inheritance.md`](../../standards/project-structure-inheritance.md) | **Описательный** (стандарт) с исполнимыми проверками | `frontmatter status: canonical`; маркера исполнимости нет. | Раздел «Проверка» (если X → действие в ревью). | **Низкий.** Стандарт-референс; проверки исполнимы, но риск перепутать «учесть» и «выполнить» невелик. |
 | [`standards/issue-workflow.md`](../../standards/issue-workflow.md) | **Описательный** (стандарт процесса) | `frontmatter status: canonical`; маркера исполнимости нет. | «Точки автоматизации» + команды локальной проверки перед `review`. | **Низкий.** Справочник жизненного цикла задач; исполнимый только в части локальных проверок. |
 | [`templates/htom/AI_QUICK_RULES.md`](../../templates/htom/AI_QUICK_RULES.md) | **Исполнимый** («инструкция по выживанию» агента) | `frontmatter status: draft`; маркера исполнимости нет; заголовок «инструкция по выживанию» — человекочитаемый намёк. | Весь файл: «🧭 Куда смотреть первым», «⛔ Чего не делать», «🆘 Как звать человека». | **Средний–высокий.** Наследуется в *каждый* спок; те же грабли, что у онбординга: выглядит как памятка для чтения, а не как набор команд к соблюдению. |
-| [`templates/htom/AI_HANDOVER_PROMPT.md`](../../templates/htom/AI_HANDOVER_PROMPT.md) | **Исполнимый** (готовый промпт-«доверенность») | `frontmatter status: draft`; есть промпт в ` ```text ` и пометка «🛂 Готовый промпт (копируйте целиком)». Машинного маркера нет. | Блок ` ```text ` с Handover Prompt. | **Средний.** Размечен лучше прочих (есть «копируйте целиком»), но без машинного маркера и анти-аналитического сигнала. |
+| [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](../../templates/htom/AI_SESSION_HANDOVER_PROMPT.md) | **Исполнимый** (готовый промпт-«доверенность») | `frontmatter status: draft`; есть промпт в ` ```text ` и пометка «🛂 Готовый промпт (копируйте целиком)». Машинного маркера нет. | Блок ` ```text ` с Handover Prompt. | **Средний.** Размечен лучше прочих (есть «копируйте целиком»), но без машинного маркера и анти-аналитического сигнала. |
 
 **Сводные наблюдения по Шагу 1:**
 
@@ -197,8 +197,8 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 2. **Два контракта (`AI_GOVERNANCE.md`, `repo-model.md`) вообще без frontmatter** —
    значит, маркер во frontmatter (идея Видения 2) к ним напрямую не применить без
    предварительного добавления frontmatter.
-3. **Самый высокий риск — у входных исполнимых артефактов** (`agent-onboarding.md` и
-   наследуемые споками `AI_QUICK_RULES.md`, `AI_HANDOVER_PROMPT.md`): именно с них
+3. **Самый высокий риск — у входных исполнимых артефактов** (`agent-onboarding-protocol.md` и
+   наследуемые споками `AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md`): именно с них
    начинается работа агента, и именно там пояснение идёт раньше команды.
 
 ### 3.2. Шаг 2 — Анализ лучших практик индустрии
@@ -235,7 +235,7 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 Различие — как между **табличкой «При пожаре разбить стекло»** на стене и **главой о
 пожарной безопасности в учебнике**. Текст может частично совпадать, но табличка —
 *исполнимый документ*: она кричит «действуй сейчас», и её нельзя спутать с материалом
-для изучения. Сегодня `agent-onboarding.md` написан как глава учебника, хотя по
+для изучения. Сегодня `agent-onboarding-protocol.md` написан как глава учебника, хотя по
 функции это табличка. Видение 3 возвращает табличке её природу — добавляет ей
 недвусмысленный сигнал «исполняй, не изучай», не выбрасывая полезное «почему».
 
@@ -325,7 +325,7 @@ flowchart TD
 > ⚠️ Примеры ниже — **иллюстрация будущего стандарта**, а не применённое изменение.
 > В рамках этой задачи контракты физически не меняются (Anti-Inflation; см. раздел 7).
 
-### 5.1. `governance/agent-onboarding.md` — начало документа
+### 5.1. `governance/agent-onboarding-protocol.md` — начало документа
 
 **Было (сейчас):**
 
@@ -346,7 +346,7 @@ ai-generated: true
 Этот файл — *операционный* документ: его задача не объяснять «почему так», а дать
 готовый к исполнению протокол. Концептуальное обоснование, аналогия предполётного
 чек-листа и трассировка к провалам холодного старта живут в
-governance/agent-onboarding.md#design-rationale--history ...
+governance/agent-onboarding-protocol.md#design-rationale--history ...
 ```
 *(Команда к действию — Часть A / Часть B — идёт лишь спустя ~40 строк пояснений.)*
 
@@ -456,9 +456,9 @@ executable: true
 
 | # | Файл | Что сделать | Приоритет |
 | --- | --- | --- | --- |
-| 1 | `governance/agent-onboarding.md` | Добавить `executable: true`, `entrypoint: true`; директивный блок; разделить EXECUTION/EXPLANATION (пример 5.1). Bump версии. | P0 (источник инцидента) |
+| 1 | `governance/agent-onboarding-protocol.md` | Добавить `executable: true`, `entrypoint: true`; директивный блок; разделить EXECUTION/EXPLANATION (пример 5.1). Bump версии. | P0 (источник инцидента) |
 | 2 | `templates/htom/AI_QUICK_RULES.md` | Маркер `executable: true` + директивный блок + EXECUTION/EXPLANATION (пример 5.2). | P0 (наследуется споками) |
-| 3 | `templates/htom/AI_HANDOVER_PROMPT.md` | Маркер `executable: true` + директивный блок над «🛂 Готовый промпт». | P1 |
+| 3 | `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` | Маркер `executable: true` + директивный блок над «🛂 Готовый промпт». | P1 |
 | 4 | `AI_GOVERNANCE.md` | Сначала **добавить frontmatter** (сейчас отсутствует); затем `executable: false` (контракт-справка) и оформить pre-flight как директиву-указатель на онбординг. | P1 |
 | 5 | `governance/repo-model.md` | Добавить frontmatter; пометить `executable: false`; пометить раздел Decision Rules как исполнимую часть. | P2 |
 | 6 | `standards/project-structure-inheritance.md`, `standards/issue-workflow.md` | `executable: false` (стандарты-справки) — для единообразия. | P3 |
@@ -469,7 +469,7 @@ executable: true
 ### 6.2. Изменения в `README.md` для маркировки исполнимых документов
 
 - В таблицу «Ключевые документы» добавить **колонку «Тип»** или **значок 🚦** у
-  исполнимых файлов (как минимум `governance/agent-onboarding.md`).
+  исполнимых файлов (как минимум `governance/agent-onboarding-protocol.md`).
 - Добавить **легенду**: `🚦 — исполнимый документ: при получении ссылки выполняй
   протокол, не анализируй его как текст`.
 - Сослаться на этот RFC как на источник стандарта исполнимых документов.
@@ -540,9 +540,9 @@ entrypoint: true
 
 ## Связанные артефакты
 
-- [governance/agent-onboarding.md](../../governance/agent-onboarding.md) — контракт в центре инцидента.
+- [governance/agent-onboarding-protocol.md](../../governance/agent-onboarding-protocol.md) — контракт в центре инцидента.
 - [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — операционный контракт и pre-flight.
 - [governance/repo-model.md](../../governance/repo-model.md) — Anti-Inflation principle.
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md), [standards/issue-workflow.md](../../standards/issue-workflow.md) — стандарты-справки.
-- [templates/htom/AI_QUICK_RULES.md](../../templates/htom/AI_QUICK_RULES.md), [templates/htom/AI_HANDOVER_PROMPT.md](../../templates/htom/AI_HANDOVER_PROMPT.md) — наследуемые споками исполнимые артефакты.
+- [templates/htom/AI_QUICK_RULES.md](../../templates/htom/AI_QUICK_RULES.md), [templates/htom/AI_SESSION_HANDOVER_PROMPT.md](../../templates/htom/AI_SESSION_HANDOVER_PROMPT.md) — наследуемые споками исполнимые артефакты.
 - [standards/glossary.md](../../standards/glossary.md) — единый источник терминов.

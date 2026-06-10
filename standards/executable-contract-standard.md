@@ -47,7 +47,7 @@ related_issues:
 | Документ читается для знания/решения | `false`/нет | [research-profile.md](research-profile.md) |
 | Документ фиксирует обязательства сторон | `false` | [contract-documentation-standard.md](contract-documentation-standard.md) |
 
-Эталон применения — [governance/agent-onboarding.md](../governance/agent-onboarding.md)
+Эталон применения — [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md)
 (`executable: true`, `entrypoint: true`).
 
 ## Три слоя (defense in depth)
@@ -120,7 +120,7 @@ entrypoint: true        # только для точки входа
   исполнимой делать только выделенную процедуру (или выносить её в отдельный
   `executable: true` файл).
 - **Точка входа единственна.** `entrypoint: true` **ДОЛЖЕН** быть ровно у одного
-  документа (в Хабе — `governance/agent-onboarding.md`); валидатор frontmatter
+  документа (в Хабе — `governance/agent-onboarding-protocol.md`); валидатор frontmatter
   допускает только значение `true`.
 
 ## Зеркальность с форматом исследований
@@ -137,8 +137,8 @@ entrypoint: true        # только для точки входа
 ## Миграция
 
 Существующие исполнимые документы **НЕ ДОЛЖНЫ** переписываться массово
-(Anti-Inflation). `governance/agent-onboarding.md` — эталон; шаблоны спока
-(`AI_QUICK_RULES.md`, `AI_HANDOVER_PROMPT.md`) уже несут 🚦. Прочие приводятся к
+(Anti-Inflation). `governance/agent-onboarding-protocol.md` — эталон; шаблоны спока
+(`AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md`) уже несут 🚦. Прочие приводятся к
 формату при следующем существенном изменении.
 
 ## Проверка соответствия
@@ -156,7 +156,7 @@ entrypoint: true        # только для точки входа
 
 - [research/governance/executable-contract-format-2026-06.md](../research/governance/executable-contract-format-2026-06.md) — исследование-обоснование (system prompts, SRE runbooks, man SYNOPSIS, README Quick Start).
 - [governance/rfc/contract-executability-rfc.md](../governance/rfc/contract-executability-rfc.md) — утверждённое «Видение 3» и трёхслойная защита.
-- [governance/agent-onboarding.md](../governance/agent-onboarding.md) — эталонный исполнимый документ.
+- [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md) — эталонный исполнимый документ.
 - [standards/glossary.md](glossary.md) — «Директивный блок», «Operating Mode», 🚦.
 - [standards/research-profile.md](research-profile.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.

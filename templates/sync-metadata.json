@@ -1,0 +1,123 @@
+{
+  "manifest_version": "1.0",
+  "_comment": "Sync-policy metadata for the Smart Sync registry. This file is hand-maintained; templates/manifest.json is auto-generated from it by tools/generate-manifest.py and must NOT be edited by hand (issue #207). `version` is read from each template's frontmatter when present; overrides here win. target_type defaults to HTOM for templates/htom/*, Spoke for templates/spoke/*, and both for root templates.",
+  "defaults": {
+    "stack": ["all"],
+    "min_phase": 0,
+    "criticality": "RECOMMENDED",
+    "tags": [],
+    "version": "1.0.0"
+  },
+  "exclude": [
+    "*.gitkeep",
+    ".gitkeep",
+    "templates/manifest.json",
+    "templates/sync-metadata.json"
+  ],
+  "overrides": {
+    "templates/htom/AI_GOVERNANCE.md": {
+      "id": "htom-ai-governance",
+      "target_type": ["HTOM"],
+      "criticality": "CORE",
+      "tags": ["governance", "rules", "constitution"],
+      "description": "Конституция HTOM-команды: роли, правила работы ИИ, эскалация, DoD."
+    },
+    "templates/htom/AI_QUICK_RULES.md": {
+      "id": "htom-ai-quick-rules",
+      "target_type": ["HTOM"],
+      "criticality": "CORE",
+      "tags": ["governance", "quick-rules"],
+      "description": "Одностраничная «инструкция по выживанию» агента в HTOM-команде."
+    },
+    "templates/htom/AI_SESSION_HANDOVER_PROMPT.md": {
+      "id": "htom-ai-session-handover-prompt",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "CORE",
+      "tags": ["onboarding", "prompt", "handover"],
+      "description": "Артефакт для копирования: готовый Handover Prompt для Runtime-онбординга агента в новом чате."
+    },
+    "templates/htom/README.md": {
+      "id": "htom-readme",
+      "target_type": ["HTOM"],
+      "criticality": "RECOMMENDED",
+      "tags": ["docs", "readme"],
+      "description": "README генома HTOM-команды."
+    },
+    "templates/htom/CONTRIBUTING.md": {
+      "id": "htom-contributing",
+      "target_type": ["HTOM"],
+      "criticality": "RECOMMENDED",
+      "tags": ["workflow", "contributing"],
+      "description": "Workflow вклада в HTOM-команде."
+    },
+    "templates/htom/CHANGELOG.md": {
+      "id": "htom-changelog",
+      "target_type": ["HTOM"],
+      "criticality": "OPTIONAL",
+      "tags": ["changelog"],
+      "description": "Журнал изменений генома HTOM-команды."
+    },
+    "templates/htom/init.sh": {
+      "id": "htom-init",
+      "version": "1.0.0",
+      "target_type": ["HTOM"],
+      "criticality": "RECOMMENDED",
+      "tags": ["bootstrap", "tooling"],
+      "description": "Скрипт инициализации генома: замена плейсхолдеров при клонировании из Хаба."
+    },
+    "templates/htom/tools/validate-repository-structure.sh": {
+      "id": "htom-validate-repository-structure",
+      "version": "1.0.0",
+      "target_type": ["HTOM"],
+      "criticality": "RECOMMENDED",
+      "tags": ["validation", "tooling"],
+      "description": "Валидатор структуры HTOM-репозитория."
+    },
+    "templates/htom/.github/ISSUE_TEMPLATE/task.md": {
+      "id": "htom-issue-template-task",
+      "version": "1.0.0",
+      "target_type": ["HTOM"],
+      "criticality": "OPTIONAL",
+      "tags": ["github", "issue-template"],
+      "description": "Шаблон issue-задачи для HTOM-команды."
+    },
+    "templates/spoke/README.md": {
+      "id": "spoke-readme",
+      "target_type": ["Spoke"],
+      "criticality": "RECOMMENDED",
+      "tags": ["docs", "readme"],
+      "description": "README spoke-репозитория (production-продукт)."
+    },
+    "templates/spoke/CONTRIBUTING.md": {
+      "id": "spoke-contributing",
+      "target_type": ["Spoke"],
+      "criticality": "RECOMMENDED",
+      "tags": ["workflow", "contributing"],
+      "description": "Workflow вклада в spoke-репозитории."
+    },
+    "templates/spoke/.github/workflows/ci.yml": {
+      "id": "spoke-ci",
+      "version": "1.0.0",
+      "target_type": ["Spoke"],
+      "criticality": "CORE",
+      "tags": ["cicd", "github-actions"],
+      "description": "Базовый CI workflow для spoke-репозитория."
+    },
+    "templates/webportal-product-concept-template.md": {
+      "id": "webportal-product-concept-template",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "OPTIONAL",
+      "stack": ["webportal"],
+      "tags": ["concept", "product", "webportal"],
+      "description": "Шаблон Product Concept (L2) для веб-портала."
+    },
+    "templates/webportal-solution-concept-template.md": {
+      "id": "webportal-solution-concept-template",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "OPTIONAL",
+      "stack": ["webportal"],
+      "tags": ["concept", "solution", "webportal"],
+      "description": "Шаблон Solution Concept (L3) для веб-портала."
+    }
+  }
+}

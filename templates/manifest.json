@@ -1,0 +1,264 @@
+{
+  "manifest_version": "1.0",
+  "last_updated": "2026-06-09",
+  "templates": [
+    {
+      "id": "htom-issue-template-task",
+      "path": "templates/htom/.github/ISSUE_TEMPLATE/task.md",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "OPTIONAL",
+      "tags": [
+        "github",
+        "issue-template"
+      ],
+      "description": "Шаблон issue-задачи для HTOM-команды."
+    },
+    {
+      "id": "htom-ai-governance",
+      "path": "templates/htom/AI_GOVERNANCE.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "governance",
+        "rules",
+        "constitution"
+      ],
+      "description": "Конституция HTOM-команды: роли, правила работы ИИ, эскалация, DoD."
+    },
+    {
+      "id": "htom-ai-quick-rules",
+      "path": "templates/htom/AI_QUICK_RULES.md",
+      "version": "0.2.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "governance",
+        "quick-rules"
+      ],
+      "description": "Одностраничная «инструкция по выживанию» агента в HTOM-команде."
+    },
+    {
+      "id": "htom-ai-session-handover-prompt",
+      "path": "templates/htom/AI_SESSION_HANDOVER_PROMPT.md",
+      "version": "0.3.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "onboarding",
+        "prompt",
+        "handover"
+      ],
+      "description": "Артефакт для копирования: готовый Handover Prompt для Runtime-онбординга агента в новом чате."
+    },
+    {
+      "id": "htom-changelog",
+      "path": "templates/htom/CHANGELOG.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "OPTIONAL",
+      "tags": [
+        "changelog"
+      ],
+      "description": "Журнал изменений генома HTOM-команды."
+    },
+    {
+      "id": "htom-contributing",
+      "path": "templates/htom/CONTRIBUTING.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "workflow",
+        "contributing"
+      ],
+      "description": "Workflow вклада в HTOM-команде."
+    },
+    {
+      "id": "htom-readme",
+      "path": "templates/htom/README.md",
+      "version": "0.3.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "docs",
+        "readme"
+      ],
+      "description": "README генома HTOM-команды."
+    },
+    {
+      "id": "htom-init",
+      "path": "templates/htom/init.sh",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "bootstrap",
+        "tooling"
+      ],
+      "description": "Скрипт инициализации генома: замена плейсхолдеров при клонировании из Хаба."
+    },
+    {
+      "id": "htom-validate-repository-structure",
+      "path": "templates/htom/tools/validate-repository-structure.sh",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "validation",
+        "tooling"
+      ],
+      "description": "Валидатор структуры HTOM-репозитория."
+    },
+    {
+      "id": "spoke-ci",
+      "path": "templates/spoke/.github/workflows/ci.yml",
+      "version": "1.0.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "cicd",
+        "github-actions"
+      ],
+      "description": "Базовый CI workflow для spoke-репозитория."
+    },
+    {
+      "id": "spoke-contributing",
+      "path": "templates/spoke/CONTRIBUTING.md",
+      "version": "0.1.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "workflow",
+        "contributing"
+      ],
+      "description": "Workflow вклада в spoke-репозитории."
+    },
+    {
+      "id": "spoke-readme",
+      "path": "templates/spoke/README.md",
+      "version": "0.1.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "docs",
+        "readme"
+      ],
+      "description": "README spoke-репозитория (production-продукт)."
+    },
+    {
+      "id": "webportal-product-concept-template",
+      "path": "templates/webportal-product-concept-template.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "webportal"
+      ],
+      "min_phase": 0,
+      "criticality": "OPTIONAL",
+      "tags": [
+        "concept",
+        "product",
+        "webportal"
+      ],
+      "description": "Шаблон Product Concept (L2) для веб-портала."
+    },
+    {
+      "id": "webportal-solution-concept-template",
+      "path": "templates/webportal-solution-concept-template.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "webportal"
+      ],
+      "min_phase": 0,
+      "criticality": "OPTIONAL",
+      "tags": [
+        "concept",
+        "solution",
+        "webportal"
+      ],
+      "description": "Шаблон Solution Concept (L3) для веб-портала."
+    }
+  ]
+}
