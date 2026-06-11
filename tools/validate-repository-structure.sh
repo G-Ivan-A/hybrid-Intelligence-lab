@@ -97,12 +97,14 @@ is_active_file() {
     governance/rfc/rfc-two-cases-of-project-initialization.md | \
     governance/rfc/contract-executability-rfc.md | \
     governance/rfc/repository-quality-improvement-plan.md | \
+    governance/rfc/tech-debt-solutions-proposal-2026-06.md | \
     governance/rfc/draft-triage-and-exit-plan.md | \
     governance/rfc/htom-vs-spoke-clarification-2026-06.md | \
     governance/rfc/hub-vision-concept-proposal-2026-06.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
+    docs/audit/task-execution-audit-2026-06.md | \
     docs/screenshots/concept-desktop.png | \
     docs/screenshots/concept-mobile.png | \
     docs/screenshots/ecosystem-map-desktop.png | \
