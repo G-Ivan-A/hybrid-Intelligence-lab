@@ -2,6 +2,10 @@
 # GitHub Pages from CI, not committed to the repository).
 /site/
 
+# Build artifacts.
+research/mango/*.html
+docs/screenshots/*.png
+
 # Playwright MCP scratch artifacts.
 .playwright-mcp/
 

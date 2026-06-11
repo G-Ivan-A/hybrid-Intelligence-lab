@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.27
+version: 1.28
 updated: 2026-06-11
 ai-generated: false
 ---
@@ -137,13 +137,10 @@ ai-generated: false
 | `/projects/repo-development/docs/contract-violations-self-report-2026-06.md` | исследование | — | Операционный self-report (`type: audit`) шести ошибок исполнения контрактов в сессии миграции Mango: обоснование выбора таргета, реестр нарушений, системные выводы для контрактов и анализ размещения существующих ретроспектив (без перемещения). | ⚠️ По необходимости | `projects/repo-development/README.md`, `standards/project-structure-inheritance.md`, `standards/file-naming.md`, `research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md` |
 | `/research/README.md` | навигация | — | Навигация по исследовательским направлениям, правило запрета файлов в корне `research/` и правила воспроизводимости. | ✅ Да | `standards/research-profile.md`, `governance/repo-model.md` |
 | `/research/hub/README.md` | навигация | — | Индекс фундаментальных (`scope: repo-wide`) исследований работы Хаба. | ✅ Да | `research/README.md`, `governance/repo-model.md` |
-| `/research/mango/README.md` | навигация | — | Индекс активных исследований MANGO OFFICE и их HTML-export. | ✅ Да | `research/README.md`, `mango_ba_prompts` |
+| `/research/mango/README.md` | навигация | — | Индекс активных исследований MANGO OFFICE. | ✅ Да | `research/README.md`, `mango_ba_prompts` |
 | `/research/mango/classification.md` | исследование | — | Классификация IT/Telecom SaaS-продуктов MANGO OFFICE. | ✅ Да | `research/mango/README.md`, `standards/research-profile.md` |
 | `/research/mango/classification-tz.md` | исследование | — | Проверка классификатора на корпусе тендерных ТЗ и рекомендации по дополнениям. | ✅ Да | `research/mango/classification.md`, `research/mango/README.md` |
 | `/research/mango/requirements-flow.md` | исследование | — | Flow требований для AI-анализа тендерных ТЗ MANGO OFFICE. | ✅ Да | `research/mango/classification.md`, `mango_ba_prompts` |
-| `/research/mango/classification.html` | исследование | — | HTML-export классификации MANGO OFFICE. | ✅ Да | `research/mango/classification.md` |
-| `/research/mango/classification-tz.html` | исследование | — | HTML-export проверки классификатора на корпусе ТЗ. | ✅ Да | `research/mango/classification-tz.md` |
-| `/research/mango/requirements-flow.html` | исследование | — | HTML-export flow требований. | ✅ Да | `research/mango/requirements-flow.md` |
 | `/education/README.md` | навигация | — | Граница open education и ссылка на профиль образовательных пакетов. | ✅ Да | `standards/education-profile.md`, `governance/repo-model.md` |
 | `/frameworks/README.md` | навигация | — | Правила создания фреймворков и будущая структура framework artifacts. | ✅ Да | `governance/repo-model.md`, `standards/README.md` |
 | `/standards/` | каталог | — | Плоский реестр стандартов, шаблонов и правил оформления артефактов. | ✅ Да | `standards/README.md`, `governance/repo-model.md` |

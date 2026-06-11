@@ -6,6 +6,10 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #218 (Structured mode): removed generated HTML build artifacts from
+  `research/mango/` and obsolete PNG screenshots from `docs/screenshots/`.
+  Added scoped `.gitignore` rules for those artifact paths and removed the
+  deleted files from repository-structure validation.
 - Issue #215 (Creative mode): separated **Runtime-онбординг** from chat-to-chat
   context handover and synchronized `AI_SESSION_HANDOVER_PROMPT.md` with a new
   draft standard. Added `standards/session-handover-standard.md`, updated
