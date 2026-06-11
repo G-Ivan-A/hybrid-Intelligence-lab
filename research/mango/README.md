@@ -21,9 +21,11 @@ source: research/mango/README-old.md
 | [requirements-lifecycle-uncertainty-2026-05.md](requirements-lifecycle-uncertainty-2026-05.md) | Жизненный цикл требования на доработку: обработка неопределенности, декомпозиция и сравнение с международной практикой. |
 | [rag-mapping-roadmap-2026-05.md](rag-mapping-roadmap-2026-05.md) | Маппинг продуктов/фич как RAG-навигатор, roadmap автоматизации БА и карта применения PlantUML-диаграмм. |
 | [capability-decomposition-2026-05.md](capability-decomposition-2026-05.md) | Справочник атомарных функций пилотных доменов (`voice-ucaas`, `contact-center`, `digital-channels`): параметры, международные источники, примеры ТЗ и связь с НФТ-классами. |
+
 ## Воспроизводимость
 
-Исторические scripts для корпуса ТЗ удалены в cleanup issue #49 вместе с
+Исторические HTML-exports публикуются через MkDocs/GitHub Pages и не хранятся
+в репозитории. Исторические scripts для корпуса ТЗ удалены в cleanup issue #49 вместе с
 `experiments-old/`. Метод извлечения и ограничения корпуса сохранены в
 [classification-tz.md](classification-tz.md). Если эксперимент потребуется
 восстановить, новый воспроизводимый контур должен жить в

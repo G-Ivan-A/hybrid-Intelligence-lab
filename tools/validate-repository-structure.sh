@@ -142,6 +142,7 @@ is_active_file() {
     templates/sync-metadata.json | \
     tools/generate-manifest.py | \
     tools/sync-from-hub.sh | \
+    tools/validate-mkdocs-site.sh | \
     experiments/test-smart-sync.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
@@ -420,6 +421,7 @@ required_files=(
   ".github/workflows/update-manifest.yml"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
+  "tools/validate-mkdocs-site.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
 )
