@@ -18,6 +18,7 @@
 | Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [product-profile.md](product-profile.md) |
 | Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [team-contract.md](team-contract.md) |
 | Жизненный цикл задач | Active | Issues, PRs, переходы статусов, AI-assisted task execution | [issue-workflow.md](issue-workflow.md) |
+| Session handover prompt | Draft (предложен на утверждение) | `AI_SESSION_HANDOVER_PROMPT.md`: передача контекста между чатами и запуск Runtime-онбординга | [session-handover-standard.md](session-handover-standard.md) |
 | project-structure-inheritance.md | Active | Правило наследования структуры каталогов в проектах; обязательно для новых проектов | [project-structure-inheritance.md](project-structure-inheritance.md) |
 | executable-contract-standard.md | Canonical | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [executable-contract-standard.md](executable-contract-standard.md) |
 | contract-documentation-standard.md | Canonical | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [contract-documentation-standard.md](contract-documentation-standard.md) |

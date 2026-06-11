@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: {{date}}
 ai-generated: true
 ---
@@ -71,8 +71,8 @@ ai-generated: true
 | Mode | Когда использовать |
 | --- | --- |
 | Structured | По умолчанию для структуры проекта, governance и tooling. |
+| Creative | Для задач с заданной целью и свободой выбора структуры, prompt/process/context решений или governance-синтеза. |
 | Research | Для source-backed analysis (фундаментальные знания — вкладом в `research/` Хаба, а не в команду). |
-| Project | Для prompt, process и knowledge-base context этой HTOM-команды. |
 
 ## Definition of Done
 

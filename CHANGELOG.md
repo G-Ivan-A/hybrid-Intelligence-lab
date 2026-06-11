@@ -6,6 +6,17 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #215 (Creative mode): separated **Runtime-онбординг** from chat-to-chat
+  context handover and synchronized `AI_SESSION_HANDOVER_PROMPT.md` with a new
+  draft standard. Added `standards/session-handover-standard.md`, updated
+  `docs/ecosystem-map.md` with the ecosystem principle, expanded the canonical
+  `governance/agent-onboarding-protocol.md` and
+  `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` with project-type detection,
+  `Контекст чата диалога`, `Канал взаимодействия с репо`, `Проверка шаблонов`
+  and `Формат постановки задач`. Synced Operating Modes by removing the stale
+  `Project` mode from active AI governance contracts in favour of `Creative`
+  for open-ended project-context work. Extended structural validation to assert
+  the new standard and prompt sections.
 - Issue #207 (Creative mode): semantic separation of the onboarding files into
   **protocol** (process/checklist) and **artefact** (copyable prompt). Renamed
   (via `git mv`, history preserved):

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-06-06
+version: 1.3
+updated: 2026-06-11
 ai-generated: false
 executable: false
 ---
@@ -21,9 +21,9 @@ executable: false
 
 # AI Governance
 
-Версия: 1.2
+Версия: 1.3
 
-Дата: 2026-06-06
+Дата: 2026-06-11
 
 Операционный контракт для AI-assisted work в `hybrid-Intelligence-lab`.
 
@@ -64,9 +64,9 @@ executable: false
 | Mode | Когда использовать |
 | --- | --- |
 | Structured | По умолчанию для governance, структуры репозитория, standards и migration work. |
+| Creative | Для задач с заданной целью и свободой выбора структуры, вариантов решения или governance-синтеза. |
 | Research | Для source-backed analysis, domain research, methods, limitations и reproducibility. |
 | Education | Для programs, lessons, scenarios и teaching artifacts. |
-| Project | Для prompt, process и knowledge-base context, связанных с scoped initiative. |
 
 ## Эскалация
 

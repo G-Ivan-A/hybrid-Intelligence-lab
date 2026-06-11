@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-06-09
+version: 1.3
+updated: 2026-06-11
 ai-generated: true
 executable: true
 entrypoint: true
@@ -39,27 +39,50 @@ entrypoint: true
 Чтобы соблюдение протокола было *самым простым путём*, человеку не нужно ничего
 формулировать — он копирует один блок в начало диалога с ИИ. Промпт параметризован
 плейсхолдером `{{REPO_NAME}}` (по умолчанию — `hybrid-Intelligence-lab`), чтобы тот
-же текст переносился в любую HTOM-команду или spoke без правок.
+же текст переносился в любую HTOM-команду или spoke без правок и не смешивал
+тип проекта с моделью экосистемы.
 
 ```text
 Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
-{{REPO_NAME}} (модель hub-and-spoke); ты обращаешься к нему, но не «живёшь» в нём.
+{{REPO_NAME}}; ты обращаешься к нему, но не «живёшь» в нём. Хаб
+`hybrid-Intelligence-lab` — источник общих governance-правил, а тип текущего
+проекта нужно определить отдельно: `HTOM-команда` или `Spoke-репозиторий`.
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — взлёт (изменение
-файлов) запрещён до моего апрува.
+(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
+файлов запрещено до моего апрува.
+
+Контекст чата диалога:
+- Если я передал summary предыдущего чата, учти его как входной контекст.
+- Если summary нет или оно неполное, явно напиши, чего не хватает, и задай
+  вопросы. Не выдумывай отсутствующий контекст.
+
+Канал взаимодействия с репо:
+- Если у тебя есть доступ к файлам/issue/PR, читай их сам.
+- Если доступа нет, попроси меня вставить нужные фрагменты или дать ссылки.
 
 Сделай ровно по шагам:
-1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай AI_GOVERNANCE.md, CONTRIBUTING.md,
-   governance/repo-model.md, governance/artifact-map.md и
-   standards/project-structure-inheritance.md.
-2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, ближайший
-   README (репозитория и затронутого проекта/спока) и блок «Быстрый контекст»,
-   если он есть.
-3. READBACK. Кратко перескажи своими словами: (а) цель задачи, (б) границы и
+1. Контекст проекта. Определи тип проекта по README/AI_GOVERNANCE: HTOM-команда,
+   Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
+   явного основания.
+2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md, CONTRIBUTING.md и
+   README.md. Если доступны, прочитай governance/repo-model.md,
+   governance/artifact-map.md, standards/project-structure-inheritance.md и
+   standards/session-handover-standard.md в Хабе или текущем репозитории.
+3. Чек-лист контекста. Прочитай текст issue и последние комментарии, ближайший
+   README (репозитория и затронутого проекта/команды) и блок «Быстрый контекст»,
+   если он есть. Учитывай Контекст чата диалога выше.
+4. Проверка шаблонов. Проверь наличие локальных AI_SESSION_HANDOVER_PROMPT.md,
+   AI_QUICK_RULES.md, AI_GOVERNANCE.md, CONTRIBUTING.md и issue template, если
+   они релевантны задаче. Если шаблона нет или ссылка на Хаб сломана — зафиксируй
+   это в Readback как риск.
+5. Формат постановки задач. Не меняй структуру issue и не заполняй пустые поля
+   выдуманными значениями. Operating Mode бери из issue; по умолчанию —
+   structured.
+6. Readback. Кратко перескажи своими словами: (а) цель задачи, (б) границы и
    запреты, которые ты понял, (в) релевантные стандарты, (г) план первых
    действий. Затем задай вопросы по всему, что неоднозначно. Если контекста не
    хватает — спрашивай, НЕ выдумывай.
-4. СТОП. Остановись и жди моего апрува. Не создавай и не меняй файлы до явного
+7. Стоп. Остановись и жди моего апрува. Не создавай и не меняй файлы до явного
    «approve / поехали».
 
 Начни с Шага 1.
@@ -170,6 +193,7 @@ entrypoint: true
 | --- | --- |
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
 | [templates/htom/README.md](../templates/htom/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить HTOM-команду из «ДНК-шаблона» Хаба. |
+| [standards/session-handover-standard.md](../standards/session-handover-standard.md) | Draft-стандарт обязательных разделов `AI_SESSION_HANDOVER_PROMPT.md`: контекст проекта, чат-диалог, канал репо и проверка шаблонов. |
 | [standards/glossary.md](../standards/glossary.md) | Единый источник определений терминов протокола. |
 
 ## Design Rationale & History
@@ -223,6 +247,7 @@ entrypoint: true
 | --- | --- |
 | Форма протокола | 4 шага: governance → контекст → readback → стоп до апрува |
 | Handover Prompt | Один копируемый блок с плейсхолдером `{{REPO_NAME}}` |
+| Session handover sections | Prompt должен различать Runtime-онбординг и передачу контекста между чатами; структура — в `standards/session-handover-standard.md` |
 | Место canonical-файла | `governance/agent-onboarding-protocol.md`, рядом с repo governance |
 | Исполнимость | `executable: true`, `entrypoint: true`, EXECUTION сверху |
 | Наследование HTOM-командами | Копия prompt живёт в `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` |

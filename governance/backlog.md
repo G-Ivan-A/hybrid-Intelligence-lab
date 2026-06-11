@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-04
+version: 1.2
+updated: 2026-06-11
 ai-generated: true
 type: backlog
 context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents]
@@ -22,6 +22,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/215"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144"
@@ -344,7 +345,8 @@ P1 — дёшево и замыкает Кейс 1. Откладывать не�
 **Что нужно сделать:**
 1. Добавить в `repo-model.md` краткий раздел о двух ортогональных кейсах
    инициализации со ссылкой на RFC-манифест и GLOSSARY.
-2. Привязать Operating Mode к кейсу (Кейс 1 → `Structured`, Кейс 2 → `Project`).
+2. Привязать Operating Mode к кейсу (Кейс 1 → `Structured`, Кейс 2 → `Creative`
+   для выбора структуры или `Structured` для заданных bootstrap-шагов).
 
 **Ожидаемые артефакты:**
 - `governance/repo-model.md` (изменён)
@@ -474,7 +476,7 @@ P2 — полезно для UX bootstrap, но не блокирует крит
 **Источник:** 🔗 [rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md)
 (follow-up #4, #5)
 **Зависимости:** B-001
-**Режим работы:** `Project`
+**Режим работы:** `Creative`
 
 **Контекст:**
 RFC-манифест требует, чтобы **обе** точки входа (Кейс 1 и Кейс 2) ссылались друг
