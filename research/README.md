@@ -49,6 +49,8 @@ source: research/README-old.md
 | [user-prompts-analysis-2026-05.md](hub/user-prompts-analysis-2026-05.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
 | [external-governance-patterns-review-2026-06.md](hub/external-governance-patterns-review-2026-06.md) | Анализ external governance patterns (GitAgent/EGAProtocol/IETF AgentID) и матрица применимости рекомендаций команды С: «взять сейчас / отложить / отклонить», North Star и триггеры пересмотра. |
 | [ecosystem-governance-audit-2026-06.md](hub/ecosystem-governance-audit-2026-06.md) | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. |
+| [external-practice-intake-2026-06.md](hub/external-practice-intake-2026-06.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
+| [international-ai-governance-practices-2026-06.md](hub/international-ai-governance-practices-2026-06.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
 
 ## Рекомендуемая структура
 

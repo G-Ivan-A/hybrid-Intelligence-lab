@@ -30,6 +30,18 @@ The audit is not a full compliance assessment. It extracts practices that are
 useful for the Hub as a recommendation source and rejects controls that would
 inflate the Hub beyond its current role.
 
+Follow-up rebuild artifacts split this first-pass audit into executable knowledge
+layers:
+
+- [external-practice-intake-2026-06.md](external-practice-intake-2026-06.md)
+  records Habr source intake, Mango docs error pattern and agent-work practice
+  extraction.
+- [international-ai-governance-practices-2026-06.md](international-ai-governance-practices-2026-06.md)
+  records international governance practice analysis and an executable
+  implementation matrix.
+- [practices/README.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/practices/README.md) contains fixed reusable
+  practice nodes separated from research.
+
 ## External Governance Practices
 
 | Practice source | Useful pattern for the Hub | Adaptation in this PR |

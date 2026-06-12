@@ -134,6 +134,13 @@
       "stack": ["webportal"],
       "tags": ["concept", "solution", "webportal"],
       "description": "Шаблон Solution Concept (L3) для веб-портала."
+    },
+    "templates/sync-project-with-hub-prompt.md": {
+      "id": "sync-project-with-hub-prompt",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "RECOMMENDED",
+      "tags": ["sync", "prompt", "practices", "governance"],
+      "description": "Исполнимый prompt для сравнения проекта с практиками, стандартами и шаблонами Хаба перед импортом."
     }
   }
 }

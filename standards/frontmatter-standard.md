@@ -17,6 +17,12 @@ metadata в параллельную базу связей.
 изменяют активные Markdown-документы в `hybrid-Intelligence-lab`, `templates/`
 и наследуемых HTOM/spoke-репозиториях.
 
+Специализация минимального набора по классам документов зафиксирована в
+[frontmatter-docs-standard.md](frontmatter-docs-standard.md). Этот файл остаётся
+базовым контрактом, а специализированный стандарт объясняет necessary and
+sufficient поля для standards, guides, RFC, ADR, research, templates и practice
+nodes.
+
 Не распространяется на YAML issue forms, workflow-файлы, код, JSON и внешние
 репозитории. Legacy-документы приводятся к стандарту при следующем существенном
 изменении, без массовой механической миграции.
