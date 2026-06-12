@@ -2,6 +2,7 @@
 status: canonical
 version: 1.2
 updated: 2026-06-06
+temperature: 0.1
 ai-generated: false
 ---
 

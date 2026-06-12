@@ -2,6 +2,7 @@
 status: reviewed
 version: 3.0
 updated: 2026-05-27
+temperature: 0.1
 ai-generated: false
 type: external-analysis
 context: [mango, product-classification]

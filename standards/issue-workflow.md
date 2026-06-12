@@ -1,7 +1,8 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-04
+version: 1.2
+updated: 2026-06-12
+temperature: 0.1
 ai-generated: false
 executable: false
 ---
@@ -123,10 +124,14 @@ stateDiagram-v2
 
 ### Связь с `User Story / ФТ`
 
-Шаблон задачи [.github/ISSUE_TEMPLATE/task.yml](../.github/ISSUE_TEMPLATE/task.yml)
-содержит поле `User Story / ФТ`. Задача ссылается на родительскую user story
+Шаблоны задач
+[.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md),
+[.github/ISSUE_TEMPLATE/task-creative.md](../.github/ISSUE_TEMPLATE/task-creative.md)
+и GitHub-native форма
+[.github/ISSUE_TEMPLATE/task.yml](../.github/ISSUE_TEMPLATE/task.yml)
+содержат поле `User Story / ФТ`. Задача ссылается на родительскую user story
 или функциональное требование по его идентификатору/ссылке. Если связи нет,
-поле остаётся `—` (AI-агент не генерирует значение для пустого поля). Это даёт
+поле остаётся `-` (AI-агент не генерирует значение для пустого поля). Это даёт
 двустороннюю прослеживаемость: от требования к задачам и обратно.
 
 ### Связь с `CHANGELOG.md`
@@ -140,24 +145,21 @@ changelog объясняет смысл изменения, а не только
 
 ### Связь с `governance/artifact-map.md`
 
-Карта артефактов (`governance/artifact-map.md`) — **планируемый** governance-
-артефакт; по Anti-Inflation principle он создаётся только при реальной
-повторяющейся потребности связать артефакты в явный граф. Пока его роль
-выполняют два активных документа:
+Карта артефактов (`governance/artifact-map.md`) - активная навигационная точка
+для traceability. Она дополняет:
 
-- [governance/repo-model.md](../governance/repo-model.md) — где размещается
+- [governance/repo-model.md](../governance/repo-model.md) - где размещается
   артефакт и по какому правилу он создаётся;
-- [standards/README.md](README.md) — реестр активных и планируемых стандартов.
+- [standards/README.md](README.md) - реестр активных и планируемых стандартов.
 
-Поэтому задача, создающая или меняющая active artifact, при `merged`:
+Поэтому задача, создающая или меняющая active artifact, при переходе в `review`
+или `merged`:
 
 1. размещает артефакт в каталоге по `repo-model.md`;
 2. регистрирует его в реестре `standards/README.md` (для стандартов);
-3. обновляет навигацию в `README.md`, если артефакт становится частью
+3. добавляет или обновляет строку в `governance/artifact-map.md`;
+4. обновляет навигацию в `README.md`, если артефакт становится частью
    публичного контракта.
-
-Когда `artifact-map.md` появится, эти три шага станут его обновлением; до тех
-пор контракт сохраняется через `repo-model.md` + `standards/README.md`.
 
 ## Точки автоматизации
 
@@ -205,4 +207,6 @@ changelog объясняет смысл изменения, а не только
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [CHANGELOG.md](../CHANGELOG.md)
+- [.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md)
+- [.github/ISSUE_TEMPLATE/task-creative.md](../.github/ISSUE_TEMPLATE/task-creative.md)
 - [.github/ISSUE_TEMPLATE/task.yml](../.github/ISSUE_TEMPLATE/task.yml)

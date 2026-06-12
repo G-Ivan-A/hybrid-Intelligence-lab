@@ -2,6 +2,7 @@
 status: canonical
 version: 0.2
 updated: 2026-06-07
+temperature: 0.1
 ai-generated: true
 type: rfc
 context: [governance, draft-lifecycle, triage, repository-quality, templates, research, education]

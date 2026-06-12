@@ -83,11 +83,19 @@
     },
     "templates/htom/.github/ISSUE_TEMPLATE/task.md": {
       "id": "htom-issue-template-task",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "target_type": ["HTOM", "Spoke"],
       "criticality": "CORE",
       "tags": ["issue-template", "task"],
-      "description": "Шаблон задачи (полная структура): мета, цель, шаги, ограничения, DoD."
+      "description": "Structured шаблон задачи: мета, контекст, артефакты, ограничения, AI-agent specifics, DoD."
+    },
+    "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md": {
+      "id": "htom-issue-template-task-creative",
+      "version": "1.0.0",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "CORE",
+      "tags": ["issue-template", "task", "creative"],
+      "description": "Creative шаблон задачи: цель, НФТ, свобода исполнителя, hard constraints и запись обоснованного обхода."
     },
     "templates/spoke/README.md": {
       "id": "spoke-readme",
@@ -126,6 +134,13 @@
       "stack": ["webportal"],
       "tags": ["concept", "solution", "webportal"],
       "description": "Шаблон Solution Concept (L3) для веб-портала."
+    },
+    "templates/sync-project-with-hub-prompt.md": {
+      "id": "sync-project-with-hub-prompt",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "RECOMMENDED",
+      "tags": ["sync", "prompt", "practices", "governance"],
+      "description": "Исполнимый prompt для сравнения проекта с практиками, стандартами и шаблонами Хаба перед импортом."
     }
   }
 }

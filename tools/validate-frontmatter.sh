@@ -11,10 +11,11 @@ required_fields=(
   "status"
   "version"
   "updated"
-  "ai-generated"
+  "temperature"
 )
 
 optional_fields=(
+  "ai-generated"
   "executable"
   "entrypoint"
 )
@@ -49,7 +50,7 @@ is_required_field() {
   local key="$1"
 
   case "$key" in
-    status | version | updated | ai-generated)
+    status | version | updated | temperature)
       return 0
       ;;
     *)
@@ -66,7 +67,7 @@ is_validated_field() {
   fi
 
   case "$key" in
-    executable | entrypoint)
+    ai-generated | executable | entrypoint)
       return 0
       ;;
     *)
@@ -120,6 +121,13 @@ validate_field() {
           return
         fi
         warn "$path" "$line" "invalid updated '$value' (expected ISO8601 date YYYY-MM-DD)"
+      fi
+      ;;
+    temperature)
+      if [[ ! "$value" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+        warn "$path" "$line" "invalid temperature '$value' (expected number from 0 to 2)"
+      elif ! awk -v value="$value" 'BEGIN { exit !(value >= 0 && value <= 2) }'; then
+        warn "$path" "$line" "invalid temperature '$value' (expected number from 0 to 2)"
       fi
       ;;
     ai-generated)

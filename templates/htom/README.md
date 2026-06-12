@@ -2,6 +2,7 @@
 status: canonical
 version: 0.4
 updated: {{date}}
+temperature: 0.1
 ai-generated: true
 ---
 
@@ -41,7 +42,7 @@ TODO: добавьте краткое описание проекта после
 | `CHANGELOG.md` | Память команды: журнал значимых изменений. |
 | `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |
 | `docs/audit/` | Ревизии, аудиты и проверки соответствия. |
-| `.github/ISSUE_TEMPLATE/` | Шаблон постановки задач (язык Хаба). |
+| `.github/ISSUE_TEMPLATE/` | Шаблоны постановки задач: structured `task.md` и creative `task-creative.md` (язык Хаба). |
 | `tools/` | Локальные проверки структуры репозитория. |
 
 Каталоги создаются по запросу, при появлении операционной боли (Anti-Inflation
@@ -178,7 +179,7 @@ canonical-точкой входа для bootstrap-клонирования HTOM
 | `CHANGELOG.md` | Память изменений с первого значимого шага. |
 | `docs/adr/.gitkeep` | Каркас для решений: почему выбран путь, а не только что изменено. |
 | `docs/audit/.gitkeep` | Каркас для ревизий и проверок соответствия. |
-| `.github/ISSUE_TEMPLATE/task.md` и `tools/validate-repository-structure.sh` | Единый язык задач и локальная защита от структурного разрастания. |
+| `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task-creative.md` и `tools/validate-repository-structure.sh` | Единый язык structured/creative задач и локальная защита от структурного разрастания. |
 
 ### Антипаттерны bootstrap
 

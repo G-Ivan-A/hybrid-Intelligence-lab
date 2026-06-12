@@ -2,6 +2,7 @@
 status: canonical
 version: 1.0
 updated: 2026-06-07
+temperature: 0.1
 ai-generated: true
 type: external-analysis
 context: [governance, hub, research-format, documentation-standards, decision-traceability, bluf]

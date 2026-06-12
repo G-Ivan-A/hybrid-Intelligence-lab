@@ -39,6 +39,7 @@ is_active_file() {
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
+    standards/frontmatter-standard.md | \
     standards/file-naming.md | \
     standards/research-profile.md | \
     standards/glossary.md | \
@@ -50,6 +51,9 @@ is_active_file() {
     standards/project-structure-inheritance.md | \
     standards/executable-contract-standard.md | \
     standards/contract-documentation-standard.md | \
+    standards/frontmatter-docs-standard.md | \
+    standards/executable-documentation-standard.md | \
+    standards/htom-documentation-structure.md | \
     standards/webportal-product-concept-standard.md | \
     standards/webportal-solution-concept-standard.md | \
     research/mango/taxonomy-concept-2026-05.md | \
@@ -63,6 +67,9 @@ is_active_file() {
     research/hub/prompts-classification-standard-2026-05.md | \
     research/hub/team-c-governance-strategy-audit-2026-05.md | \
     research/hub/external-governance-patterns-review-2026-06.md | \
+    research/hub/ecosystem-governance-audit-2026-06.md | \
+    research/hub/external-practice-intake-2026-06.md | \
+    research/hub/international-ai-governance-practices-2026-06.md | \
     research/hub/user-prompts-analysis-2026-05.md | \
     research/README.md | \
     research/hub/README.md | \
@@ -77,6 +84,20 @@ is_active_file() {
     research/mango/classification.md | \
     research/mango/classification-tz.md | \
     research/mango/requirements-flow.md | \
+    practices/README.md | \
+    practices/agent-work/README.md | \
+    practices/agent-work/hybrid-search-before-action.md | \
+    practices/agent-work/definition-of-ready-check.md | \
+    practices/agent-work/plan-verify-ship-loop.md | \
+    practices/agent-work/skills-as-reusable-workflows.md | \
+    practices/agent-work/skill-catalog-token-budget.md | \
+    practices/ai-governance/README.md | \
+    practices/ai-governance/nist-ai-rmf-profile-loop.md | \
+    practices/ai-governance/eu-ai-act-risk-tiering.md | \
+    practices/ai-governance/iso-42001-management-loop.md | \
+    practices/ai-governance/openai-evaluation-and-feedback-loop.md | \
+    practices/ai-governance/anthropic-capability-thresholds.md | \
+    practices/ai-governance/google-saif-agent-security.md | \
     frameworks/README.md | \
     education/README.md | \
     projects/README.md | \
@@ -122,6 +143,8 @@ is_active_file() {
     .github/workflows/deploy-docs.yml | \
     .github/workflows/update-manifest.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
+    .github/ISSUE_TEMPLATE/task.md | \
+    .github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/AI_GOVERNANCE.md | \
     templates/htom/AI_QUICK_RULES.md | \
     templates/htom/AI_SESSION_HANDOVER_PROMPT.md | \
@@ -131,6 +154,7 @@ is_active_file() {
     templates/htom/docs/adr/.gitkeep | \
     templates/htom/docs/audit/.gitkeep | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
+    templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
     templates/htom/init.sh | \
     templates/spoke/README.md | \
@@ -138,6 +162,7 @@ is_active_file() {
     templates/spoke/.github/workflows/ci.yml | \
     templates/webportal-product-concept-template.md | \
     templates/webportal-solution-concept-template.md | \
+    templates/sync-project-with-hub-prompt.md | \
     templates/manifest.json | \
     templates/sync-metadata.json | \
     tools/generate-manifest.py | \
@@ -196,7 +221,7 @@ validate_metadata_single_source() {
           frontmatter_done = 1
           next
         }
-        if ($0 ~ /^(status|version|updated):[[:space:]]*/) {
+        if ($0 ~ /^(status|version|updated|temperature):[[:space:]]*/) {
           has_metadata = 1
         }
         next
@@ -341,6 +366,9 @@ required_directories=(
   "research/hub"
   "research/mango"
   "research/governance"
+  "practices"
+  "practices/agent-work"
+  "practices/ai-governance"
   "frameworks"
   "projects"
   "education"
@@ -357,6 +385,7 @@ required_files=(
   "CHANGELOG.md"
   "LICENSE"
   "standards/README.md"
+  "standards/frontmatter-standard.md"
   "standards/file-naming.md"
   "standards/research-profile.md"
   "standards/glossary.md"
@@ -368,10 +397,16 @@ required_files=(
   "standards/project-structure-inheritance.md"
   "standards/executable-contract-standard.md"
   "standards/contract-documentation-standard.md"
+  "standards/frontmatter-docs-standard.md"
+  "standards/executable-documentation-standard.md"
+  "standards/htom-documentation-structure.md"
   "standards/webportal-product-concept-standard.md"
   "standards/webportal-solution-concept-standard.md"
   "research/README.md"
   "research/hub/README.md"
+  "research/hub/ecosystem-governance-audit-2026-06.md"
+  "research/hub/external-practice-intake-2026-06.md"
+  "research/hub/international-ai-governance-practices-2026-06.md"
   "research/mango/README.md"
   "research/governance/README.md"
   "research/governance/research-documentation-format-2026-06.md"
@@ -382,6 +417,20 @@ required_files=(
   "research/mango/classification-tz.md"
   "research/mango/requirements-flow.md"
   "research/mango/rag-mapping-roadmap-2026-05.md"
+  "practices/README.md"
+  "practices/agent-work/README.md"
+  "practices/agent-work/hybrid-search-before-action.md"
+  "practices/agent-work/definition-of-ready-check.md"
+  "practices/agent-work/plan-verify-ship-loop.md"
+  "practices/agent-work/skills-as-reusable-workflows.md"
+  "practices/agent-work/skill-catalog-token-budget.md"
+  "practices/ai-governance/README.md"
+  "practices/ai-governance/nist-ai-rmf-profile-loop.md"
+  "practices/ai-governance/eu-ai-act-risk-tiering.md"
+  "practices/ai-governance/iso-42001-management-loop.md"
+  "practices/ai-governance/openai-evaluation-and-feedback-loop.md"
+  "practices/ai-governance/anthropic-capability-thresholds.md"
+  "practices/ai-governance/google-saif-agent-security.md"
   "frameworks/README.md"
   "education/README.md"
   "projects/README.md"
@@ -400,6 +449,8 @@ required_files=(
   "governance/rfc/draft-triage-and-exit-plan.md"
   "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
   ".github/ISSUE_TEMPLATE/task.yml"
+  ".github/ISSUE_TEMPLATE/task.md"
+  ".github/ISSUE_TEMPLATE/task-creative.md"
   "templates/htom/AI_GOVERNANCE.md"
   "templates/htom/AI_QUICK_RULES.md"
   "templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
@@ -409,6 +460,7 @@ required_files=(
   "templates/htom/docs/adr/.gitkeep"
   "templates/htom/docs/audit/.gitkeep"
   "templates/htom/.github/ISSUE_TEMPLATE/task.md"
+  "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
   "templates/htom/tools/validate-repository-structure.sh"
   "templates/htom/init.sh"
   "templates/spoke/README.md"
@@ -416,6 +468,7 @@ required_files=(
   "templates/spoke/.github/workflows/ci.yml"
   "templates/webportal-product-concept-template.md"
   "templates/webportal-solution-concept-template.md"
+  "templates/sync-project-with-hub-prompt.md"
   "templates/manifest.json"
   "templates/sync-metadata.json"
   ".github/workflows/update-manifest.yml"
@@ -469,6 +522,7 @@ require_text "README.md" "governance/repo-model.md"
 require_text "README.md" "governance/artifact-map.md"
 require_text "README.md" "projects/education-ba-prompt/README.md"
 require_text "README.md" "research/mango/README.md"
+require_text "README.md" "practices/README.md"
 require_text "README.md" "./tools/validate-frontmatter.sh"
 require_text "README.md" "./tools/validate-repository-structure.sh"
 require_text "README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
@@ -480,7 +534,6 @@ require_text "CONCEPT.md" "status: canonical"
 require_text "CONCEPT.md" "version: 1.0"
 require_text "CONCEPT.md" "updated: 2026-05-26"
 require_text "CONCEPT.md" "ai-generated: false"
-require_text "CONCEPT.md" "Версия: 1.0"
 require_text "CONCEPT.md" "Operating Mode"
 require_text "CONCEPT.md" "structured mode"
 require_text "CONCEPT.md" "creative mode"
@@ -491,20 +544,31 @@ require_text "CONCEPT.md" "единой терминологии"
 
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
+require_text "CONTRIBUTING.md" "status: canonical"
+require_text "CONTRIBUTING.md" "version: 1.1"
+require_text "CONTRIBUTING.md" "updated: 2026-06-12"
+require_text "CONTRIBUTING.md" "temperature: 0.1"
+require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
+require_text "CONTRIBUTING.md" "Специфика работы с AI-агентами"
+require_text "CONTRIBUTING.md" "manual restart"
+require_text "CONTRIBUTING.md" "standards/frontmatter-standard.md"
 require_text "CONTRIBUTING.md" "./tools/validate-frontmatter.sh"
 require_text "CONTRIBUTING.md" "./tools/validate-repository-structure.sh"
 
 require_text "AI_GOVERNANCE.md" "status: canonical"
-require_text "AI_GOVERNANCE.md" "version: 1.3"
-require_text "AI_GOVERNANCE.md" "updated: 2026-06-11"
-require_text "AI_GOVERNANCE.md" "ai-generated: false"
+require_text "AI_GOVERNANCE.md" "version: 1.4"
+require_text "AI_GOVERNANCE.md" "updated: 2026-06-12"
+require_text "AI_GOVERNANCE.md" "temperature: 0.1"
 require_text "AI_GOVERNANCE.md" "executable: false"
-require_text "AI_GOVERNANCE.md" "Версия: 1.3"
-require_text "AI_GOVERNANCE.md" "Дата: 2026-06-11"
 require_text "AI_GOVERNANCE.md" "Директива pre-flight"
 require_text "AI_GOVERNANCE.md" "Founder & PO"
 require_text "AI_GOVERNANCE.md" "Human reviewer"
 require_text "AI_GOVERNANCE.md" "Creative"
+require_text "AI_GOVERNANCE.md" "Хаб является источником рекомендаций"
+require_text "AI_GOVERNANCE.md" "Обоснованный обход в Creative Mode"
+require_text "AI_GOVERNANCE.md" "Специфика работы с AI-агентами"
+require_text "AI_GOVERNANCE.md" "standards/frontmatter-standard.md"
 require_text "AI_GOVERNANCE.md" "standards/README.md"
 require_text "AI_GOVERNANCE.md" "governance/agent-onboarding-protocol.md"
 require_text "AI_GOVERNANCE.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
@@ -516,7 +580,12 @@ require_text "CHANGELOG.md" "### Changed"
 require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
+require_text "standards/README.md" "status: canonical"
+require_text "standards/README.md" "version: 1.2"
+require_text "standards/README.md" "updated: 2026-06-12"
+require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "Как пользоваться"
+require_text "standards/README.md" "frontmatter-standard.md"
 require_text "standards/README.md" "file-naming.md"
 require_text "standards/README.md" "research-profile.md"
 require_text "standards/README.md" "team-contract.md"
@@ -524,9 +593,56 @@ require_text "standards/README.md" "standards/glossary.md"
 require_text "standards/README.md" "standards/education-profile.md"
 require_text "standards/README.md" "product-profile.md"
 require_text "standards/README.md" "project-structure-inheritance.md"
+require_text "standards/README.md" "frontmatter-docs-standard.md"
+require_text "standards/README.md" "executable-documentation-standard.md"
+require_text "standards/README.md" "htom-documentation-structure.md"
 require_text "standards/README.md" "artifact-map.md"
 require_text "standards/README.md" "issue-workflow.md"
 require_text "standards/README.md" "session-handover-standard.md"
+
+require_text "standards/frontmatter-standard.md" "status: canonical"
+require_text "standards/frontmatter-standard.md" "version: 1.0"
+require_text "standards/frontmatter-standard.md" "updated: 2026-06-12"
+require_text "standards/frontmatter-standard.md" "temperature: 0.1"
+require_text "standards/frontmatter-standard.md" '`status`'
+require_text "standards/frontmatter-standard.md" '`version`'
+require_text "standards/frontmatter-standard.md" '`updated`'
+require_text "standards/frontmatter-standard.md" '`temperature`'
+require_text "standards/frontmatter-standard.md" '`ai-generated` **НЕ ЯВЛЯЕТСЯ обязательным полем**'
+require_text "standards/frontmatter-standard.md" "NIST AI Risk Management Framework"
+
+require_text "standards/frontmatter-docs-standard.md" "status: canonical"
+require_text "standards/frontmatter-docs-standard.md" "version: 1.0"
+require_text "standards/frontmatter-docs-standard.md" "updated: 2026-06-12"
+require_text "standards/frontmatter-docs-standard.md" "temperature: 0.1"
+require_text "standards/frontmatter-docs-standard.md" "standards/frontmatter-standard.md"
+require_text "standards/frontmatter-docs-standard.md" "Standard"
+require_text "standards/frontmatter-docs-standard.md" "Guide"
+require_text "standards/frontmatter-docs-standard.md" "RFC"
+require_text "standards/frontmatter-docs-standard.md" "ADR"
+require_text "standards/frontmatter-docs-standard.md" "Research"
+require_text "standards/frontmatter-docs-standard.md" "Template"
+require_text "standards/frontmatter-docs-standard.md" "necessary and sufficient"
+
+require_text "standards/executable-documentation-standard.md" "status: canonical"
+require_text "standards/executable-documentation-standard.md" "version: 1.0"
+require_text "standards/executable-documentation-standard.md" "updated: 2026-06-12"
+require_text "standards/executable-documentation-standard.md" "temperature: 0.1"
+require_text "standards/executable-documentation-standard.md" "Descriptive documents"
+require_text "standards/executable-documentation-standard.md" "Executable documents"
+require_text "standards/executable-documentation-standard.md" "Atomization"
+require_text "standards/executable-documentation-standard.md" "Practice graph"
+require_text "standards/executable-documentation-standard.md" "research/hub/international-ai-governance-practices-2026-06.md"
+
+require_text "standards/htom-documentation-structure.md" "status: canonical"
+require_text "standards/htom-documentation-structure.md" "version: 1.0"
+require_text "standards/htom-documentation-structure.md" "updated: 2026-06-12"
+require_text "standards/htom-documentation-structure.md" "temperature: 0.1"
+require_text "standards/htom-documentation-structure.md" "Mango docs error pattern"
+require_text "standards/htom-documentation-structure.md" "docs/README.md"
+require_text "standards/htom-documentation-structure.md" "docs/adr/"
+require_text "standards/htom-documentation-structure.md" "docs/rfc/"
+require_text "standards/htom-documentation-structure.md" "templates/sync-project-with-hub-prompt.md"
 
 require_text "standards/team-contract.md" "status: canonical"
 require_text "standards/team-contract.md" "version: 1.0"
@@ -546,8 +662,9 @@ require_text "standards/team-contract.md" "education-profile.md"
 require_text "standards/team-contract.md" "Источники"
 
 require_text "standards/issue-workflow.md" "status: canonical"
-require_text "standards/issue-workflow.md" "version: 1.1"
-require_text "standards/issue-workflow.md" "updated: 2026-06-04"
+require_text "standards/issue-workflow.md" "version: 1.2"
+require_text "standards/issue-workflow.md" "updated: 2026-06-12"
+require_text "standards/issue-workflow.md" "temperature: 0.1"
 require_text "standards/issue-workflow.md" "ai-generated: false"
 require_text "standards/issue-workflow.md" "executable: false"
 require_text "standards/issue-workflow.md" "## Назначение"
@@ -588,6 +705,8 @@ require_text "standards/project-structure-inheritance.md" "scope: mango-only"
 require_text "standards/project-structure-inheritance.md" "Пример структуры проекта"
 require_text "standards/project-structure-inheritance.md" "Репозиторий-широкий стандарт НЕ должен ссылаться на проектный"
 require_text "standards/issue-workflow.md" "User Story / ФТ"
+require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task-creative.md"
 require_text "standards/issue-workflow.md" "CHANGELOG.md"
 require_text "standards/issue-workflow.md" "governance/artifact-map.md"
 require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
@@ -715,13 +834,37 @@ require_text "templates/webportal-solution-concept-template.md" "{{date}}"
 require_text "templates/webportal-solution-concept-template.md" "{{hub_url}}"
 require_text "templates/webportal-solution-concept-template.md" "Solution Concept: {{project_name}}"
 require_text "templates/webportal-solution-concept-template.md" "Provider-agnostic AI boundary"
+require_text "templates/sync-project-with-hub-prompt.md" "status: canonical"
+require_text "templates/sync-project-with-hub-prompt.md" "version: 0.1"
+require_text "templates/sync-project-with-hub-prompt.md" "updated: 2026-06-12"
+require_text "templates/sync-project-with-hub-prompt.md" "temperature: 0.1"
+require_text "templates/sync-project-with-hub-prompt.md" "executable: true"
+require_text "templates/sync-project-with-hub-prompt.md" "{{project_name}}"
+require_text "templates/sync-project-with-hub-prompt.md" "{{hub_url}}"
+require_text "templates/sync-project-with-hub-prompt.md" "Compare local project practices with Hub practices"
+require_text "templates/sync-project-with-hub-prompt.md" "Do not overwrite project-specific decisions"
+
+require_text "docs/vision.md" "version: 0.2"
+require_text "docs/vision.md" "Связь миров: экосистема гибридных команд"
+require_text "docs/vision.md" "Core Innovation"
+require_text "docs/vision.md" "обмениваться проверенными практиками"
+require_text "docs/product-concept.md" "version: 0.2"
+require_text "docs/product-concept.md" "collaborative environment"
+require_text "docs/product-concept.md" "AI_SESSION_HANDOVER_PROMPT.md"
+require_text "docs/product-concept.md" "несколько чатов"
+require_text "docs/product-concept.md" "быстрее входить в рабочее пространство"
+require_text "docs/ecosystem-map.md" "version: 0.3"
+require_text "docs/ecosystem-map.md" "обмен практиками"
+require_text "docs/ecosystem-map.md" "practices/README.md"
+require_text "docs/ecosystem-map.md" "templates/sync-project-with-hub-prompt.md"
 
 require_text "governance/repo-model.md" "Артефакт только при операционной боли"
 require_text "governance/repo-model.md" "Anti-Inflation"
 require_text "governance/repo-model.md" "tools/"
+require_text "governance/repo-model.md" "practices/"
 require_text "governance/repo-model.md" "status: canonical"
-require_text "governance/repo-model.md" "version: 1.1"
-require_text "governance/repo-model.md" "updated: 2026-06-04"
+require_text "governance/repo-model.md" "version: 1.2"
+require_text "governance/repo-model.md" "updated: 2026-06-12"
 require_text "governance/repo-model.md" "ai-generated: false"
 require_text "governance/repo-model.md" "executable: false"
 require_text "governance/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
@@ -809,11 +952,12 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.28"
+require_text "governance/artifact-map.md" "version: 1.30"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-11"
+require_text "governance/artifact-map.md" "updated: 2026-06-12"
+require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "governance/rfc/contract-executability-rfc.md"
@@ -834,6 +978,19 @@ require_text "governance/artifact-map.md" "mango_ba_prompts"
 require_text "governance/artifact-map.md" "projects/README.md"
 require_text "governance/artifact-map.md" "governance/backlog.md"
 require_text "governance/artifact-map.md" "governance/executable-documents-issues.md"
+require_text "governance/artifact-map.md" "standards/frontmatter-standard.md"
+require_text "governance/artifact-map.md" "standards/frontmatter-docs-standard.md"
+require_text "governance/artifact-map.md" "standards/executable-documentation-standard.md"
+require_text "governance/artifact-map.md" "standards/htom-documentation-structure.md"
+require_text "governance/artifact-map.md" "research/hub/ecosystem-governance-audit-2026-06.md"
+require_text "governance/artifact-map.md" "research/hub/external-practice-intake-2026-06.md"
+require_text "governance/artifact-map.md" "research/hub/international-ai-governance-practices-2026-06.md"
+require_text "governance/artifact-map.md" "practices/README.md"
+require_text "governance/artifact-map.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
+require_text "governance/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "governance/artifact-map.md" ".github/ISSUE_TEMPLATE/task-creative.md"
+require_text "governance/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
+require_text "governance/artifact-map.md" "templates/sync-project-with-hub-prompt.md"
 
 require_text "governance/backlog.md" "status: canonical"
 require_text "governance/backlog.md" "type: backlog"
@@ -864,6 +1021,9 @@ require_text "research/README.md" "prompts-classification-audit-2026-05.md"
 require_text "research/README.md" "prompts-classification-standard-2026-05.md"
 require_text "research/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/README.md" "user-prompts-analysis-2026-05.md"
+require_text "research/README.md" "ecosystem-governance-audit-2026-06.md"
+require_text "research/README.md" "external-practice-intake-2026-06.md"
+require_text "research/README.md" "international-ai-governance-practices-2026-06.md"
 require_text "research/README.md" "Размещение файлов исследований в корне каталога"
 
 # Namespacing: no research files allowed in the research/ root except README.md.
@@ -880,6 +1040,43 @@ require_text "research/hub/README.md" "prompts-classification-audit-2026-05.md"
 require_text "research/hub/README.md" "prompts-classification-standard-2026-05.md"
 require_text "research/hub/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/hub/README.md" "user-prompts-analysis-2026-05.md"
+require_text "research/hub/README.md" "ecosystem-governance-audit-2026-06.md"
+require_text "research/hub/README.md" "external-practice-intake-2026-06.md"
+require_text "research/hub/README.md" "international-ai-governance-practices-2026-06.md"
+
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "status: draft"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "version: 0.1"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "updated: 2026-06-12"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "temperature: 0.1"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "mango_ba_prompts"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "open-ai.ru"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "clarify-engine-ai"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "NIST AI RMF"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "EU AI Act"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "Creative override"
+
+require_text "research/hub/external-practice-intake-2026-06.md" "status: draft"
+require_text "research/hub/external-practice-intake-2026-06.md" "version: 0.1"
+require_text "research/hub/external-practice-intake-2026-06.md" "updated: 2026-06-12"
+require_text "research/hub/external-practice-intake-2026-06.md" "temperature: 0.1"
+require_text "research/hub/external-practice-intake-2026-06.md" "Artem Chirkov"
+require_text "research/hub/external-practice-intake-2026-06.md" "slam"
+require_text "research/hub/external-practice-intake-2026-06.md" "Research vs fixed practices"
+require_text "research/hub/external-practice-intake-2026-06.md" "Mango docs error pattern"
+require_text "research/hub/external-practice-intake-2026-06.md" "practices/agent-work/hybrid-search-before-action.md"
+
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "status: draft"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "version: 0.1"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "updated: 2026-06-12"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "temperature: 0.1"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "NIST AI RMF"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "EU AI Act"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "ISO/IEC 42001"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "OpenAI"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "Anthropic"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "Google SAIF"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "Executable implementation matrix"
+require_text "research/hub/international-ai-governance-practices-2026-06.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
 
 require_text "research/governance/README.md" "status: reviewed"
 require_text "research/governance/README.md" "version: 0.2"
@@ -985,6 +1182,54 @@ if grep -Fq '"classification.md v3.0"' "research/mango/capability-decomposition-
   fail "research/mango/capability-decomposition-2026-05.md related_artifacts must use path-only values"
 fi
 
+require_text "practices/README.md" "status: canonical"
+require_text "practices/README.md" "version: 1.0"
+require_text "practices/README.md" "updated: 2026-06-12"
+require_text "practices/README.md" "temperature: 0.1"
+require_text "practices/README.md" "Research vs fixed practices"
+require_text "practices/README.md" "Practice catalog"
+require_text "practices/README.md" "Source, author, link"
+require_text "practices/README.md" "research/hub/external-practice-intake-2026-06.md"
+require_text "practices/README.md" "research/hub/international-ai-governance-practices-2026-06.md"
+
+require_text "practices/agent-work/README.md" "status: canonical"
+require_text "practices/agent-work/README.md" "Hybrid search before action"
+require_text "practices/agent-work/README.md" "Definition of Ready check"
+require_text "practices/agent-work/README.md" "Plan-verify-ship loop"
+require_text "practices/agent-work/README.md" "Skills as reusable workflows"
+require_text "practices/agent-work/README.md" "Skill catalog token budget"
+require_text "practices/agent-work/hybrid-search-before-action.md" "status: canonical"
+require_text "practices/agent-work/hybrid-search-before-action.md" "Artem Chirkov"
+require_text "practices/agent-work/hybrid-search-before-action.md" "structured search"
+require_text "practices/agent-work/definition-of-ready-check.md" "status: canonical"
+require_text "practices/agent-work/definition-of-ready-check.md" "Definition of Ready"
+require_text "practices/agent-work/plan-verify-ship-loop.md" "status: canonical"
+require_text "practices/agent-work/plan-verify-ship-loop.md" "Explore -> Plan -> Code -> Test -> Review -> Ship"
+require_text "practices/agent-work/skills-as-reusable-workflows.md" "status: canonical"
+require_text "practices/agent-work/skills-as-reusable-workflows.md" "slam"
+require_text "practices/agent-work/skill-catalog-token-budget.md" "status: canonical"
+require_text "practices/agent-work/skill-catalog-token-budget.md" "91,000+"
+
+require_text "practices/ai-governance/README.md" "status: canonical"
+require_text "practices/ai-governance/README.md" "NIST AI RMF profile loop"
+require_text "practices/ai-governance/README.md" "EU AI Act risk tiering"
+require_text "practices/ai-governance/README.md" "ISO/IEC 42001 management loop"
+require_text "practices/ai-governance/README.md" "OpenAI evaluation and feedback loop"
+require_text "practices/ai-governance/README.md" "Anthropic capability thresholds"
+require_text "practices/ai-governance/README.md" "Google SAIF agent security"
+require_text "practices/ai-governance/nist-ai-rmf-profile-loop.md" "status: canonical"
+require_text "practices/ai-governance/nist-ai-rmf-profile-loop.md" "Map, Measure, Manage, Govern"
+require_text "practices/ai-governance/eu-ai-act-risk-tiering.md" "status: canonical"
+require_text "practices/ai-governance/eu-ai-act-risk-tiering.md" "risk tier"
+require_text "practices/ai-governance/iso-42001-management-loop.md" "status: canonical"
+require_text "practices/ai-governance/iso-42001-management-loop.md" "management system"
+require_text "practices/ai-governance/openai-evaluation-and-feedback-loop.md" "status: canonical"
+require_text "practices/ai-governance/openai-evaluation-and-feedback-loop.md" "evaluations"
+require_text "practices/ai-governance/anthropic-capability-thresholds.md" "status: canonical"
+require_text "practices/ai-governance/anthropic-capability-thresholds.md" "Responsible Scaling Policy"
+require_text "practices/ai-governance/google-saif-agent-security.md" "status: canonical"
+require_text "practices/ai-governance/google-saif-agent-security.md" "SAIF"
+
 require_text "projects/README.md" "status: canonical"
 require_text "projects/README.md" "Мигрировавшие проекты"
 require_text "projects/README.md" "mango_ba_prompts"
@@ -1024,10 +1269,25 @@ require_text ".github/ISSUE_TEMPLATE/task.yml" "🎯 Контекст"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "📄 Артефакты для создания/изменения"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
 
+require_text ".github/ISSUE_TEMPLATE/task.md" "status: canonical"
+require_text ".github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
+require_text ".github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured`'
+require_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
+require_text ".github/ISSUE_TEMPLATE/task.md" "Готово, когда"
+
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "status: canonical"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Не писать, как именно реализовывать задачу"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
+
 # HTOM-команда "ДНК-шаблон" (templates/htom/): минимальный геном для клонирования.
 # HTOM-контракты (AI_GOVERNANCE / AI_QUICK_RULES / AI_HANDOVER_PROMPT) обязательны.
 require_text "templates/htom/AI_GOVERNANCE.md" "{{project_name}}"
 require_text "templates/htom/AI_GOVERNANCE.md" "Эскалация"
+require_text "templates/htom/AI_GOVERNANCE.md" "temperature: 0.1"
+require_text "templates/htom/AI_GOVERNANCE.md" "Хаб является источником рекомендаций"
+require_text "templates/htom/AI_GOVERNANCE.md" "Обоснованный обход в Creative Mode"
 require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
@@ -1056,11 +1316,19 @@ require_text "templates/htom/README.md" "governance/agent-onboarding-protocol.md
 require_text "templates/htom/README.md" "Как валидировать структуру"
 require_text "templates/htom/README.md" "Design Decisions & Rationale"
 require_text "templates/htom/README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
-require_text "templates/htom/CONTRIBUTING.md" "issue → PR → review"
+require_text "templates/htom/CONTRIBUTING.md" "issue -> PR -> review"
+require_text "templates/htom/CONTRIBUTING.md" "task-creative.md"
+require_text "templates/htom/CONTRIBUTING.md" "manual restart"
 require_text "templates/htom/CHANGELOG.md" "## Unreleased"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "🎯 Контекст"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "✅ Готово, когда"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured`'
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
 require_text "templates/htom/tools/validate-repository-structure.sh" "AI_GOVERNANCE.md"
+require_text "templates/htom/tools/validate-repository-structure.sh" "task-creative.md"
 
 # Spoke-репозиторий шаблон (templates/spoke/): production-код, отдельный продукт.
 # Для spoke обязателен CI/CD (отличие от HTOM-команды).
@@ -1078,8 +1346,10 @@ require_text "templates/spoke/.github/workflows/ci.yml" "pull_request"
 # Smart Sync infrastructure (issue #207): auto-generated manifest + registry +
 # generator + sync CLI. manifest.json must never be hand-edited.
 require_text "templates/sync-metadata.json" "auto-generated"
+require_text "templates/sync-metadata.json" "sync-project-with-hub-prompt"
 require_text "templates/manifest.json" "manifest_version"
 require_text "templates/manifest.json" "target_type"
+require_text "templates/manifest.json" "sync-project-with-hub-prompt"
 require_text "tools/generate-manifest.py" "templates/manifest.json"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"

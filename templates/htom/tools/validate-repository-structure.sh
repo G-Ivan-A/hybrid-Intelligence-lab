@@ -49,6 +49,7 @@ required_files=(
   "docs/adr/.gitkeep"
   "docs/audit/.gitkeep"
   ".github/ISSUE_TEMPLATE/task.md"
+  ".github/ISSUE_TEMPLATE/task-creative.md"
   "tools/validate-repository-structure.sh"
 )
 

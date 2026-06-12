@@ -1,3 +1,10 @@
+---
+status: canonical
+version: 1.2
+updated: 2026-06-12
+temperature: 0.1
+---
+
 # Standards
 
 Каталог является плоским реестром активных и планируемых стандартов. Более
@@ -14,6 +21,8 @@
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
 | Repository model | Active | Размещение артефактов и правила создания | [governance/repo-model.md](../governance/repo-model.md) |
+| Frontmatter standard | Canonical | Минимальный metadata contract для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
+| Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |
 | Профиль исследовательских проектов | Active | `research/<domain>/` | [research-profile.md](research-profile.md) |
 | Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [product-profile.md](product-profile.md) |
 | Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [team-contract.md](team-contract.md) |
@@ -21,7 +30,9 @@
 | Session handover prompt | Draft (предложен на утверждение) | `AI_SESSION_HANDOVER_PROMPT.md`: передача контекста между чатами и запуск Runtime-онбординга | [session-handover-standard.md](session-handover-standard.md) |
 | project-structure-inheritance.md | Active | Правило наследования структуры каталогов в проектах; обязательно для новых проектов | [project-structure-inheritance.md](project-structure-inheritance.md) |
 | executable-contract-standard.md | Canonical | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [executable-contract-standard.md](executable-contract-standard.md) |
+| executable-documentation-standard.md | Canonical | Разделение descriptive/executable docs, атомизация practice graph и правила импорта практик | [executable-documentation-standard.md](executable-documentation-standard.md) |
 | contract-documentation-standard.md | Canonical | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [contract-documentation-standard.md](contract-documentation-standard.md) |
+| htom-documentation-structure.md | Canonical | Стандарт структуры `docs/` для HTOM-репозиториев и разбор Mango docs error pattern | [htom-documentation-structure.md](htom-documentation-structure.md) |
 | webportal-product-concept-standard.md | Draft (L2, предложен на утверждение) | Product Concept веб-портала: personas, jobs-to-be-done, MVP scope, user flows, success metrics и high-level roadmap | [webportal-product-concept-standard.md](webportal-product-concept-standard.md) |
 | webportal-solution-concept-standard.md | Draft (L3, предложен на утверждение) | Solution Concept веб-портала: C4 architecture, technology stack, integrations, data model, NFR, deployment и risks | [webportal-solution-concept-standard.md](webportal-solution-concept-standard.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |

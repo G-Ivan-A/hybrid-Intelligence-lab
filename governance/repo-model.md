@@ -1,7 +1,8 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-04
+version: 1.2
+updated: 2026-06-12
+temperature: 0.1
 ai-generated: false
 executable: false
 ---
@@ -17,6 +18,7 @@ executable: false
 | --- | --- | --- |
 | `standards/` | Плоский реестр standards, templates и artifact format rules. | Добавлять standard после повторяющейся review или coordination problem. |
 | `research/` | Domain-based research и source-backed analysis. | Использовать `research/<domain>/` для домена или topic area. |
+| `practices/` | Fixed practice knowledge base: атомарные reusable practices, отделённые от research и docs. | Создавать practice node только после source-backed research или повторяющейся проектной боли. |
 | `frameworks/` | Методологии для hybrid human + AI teams. | Создавать только после comparison, показывающего недостаточность existing approaches. |
 | `projects/` | Project knowledge bases, prompts, process context и spoke links. | Использовать, когда работа относится к scoped initiative, но не к production code. Наследование структуры в проектах — см. `standards/project-structure-inheritance.md`. |
 | `education/` | Open education programs, course materials и teaching scenarios. | Использовать для материалов, пригодных для обучения или partner delivery. |
@@ -77,6 +79,10 @@ executable: false
 - [standards/project-structure-inheritance.md](../standards/project-structure-inheritance.md)
   фиксирует наследование структуры каталогов в проектах и границы
   проект-специфичных стандартов.
+- [standards/executable-documentation-standard.md](../standards/executable-documentation-standard.md)
+  фиксирует границу descriptive documents, executable documents и practice graph.
+- [standards/htom-documentation-structure.md](../standards/htom-documentation-structure.md)
+  фиксирует рекомендуемую структуру `docs/` для HTOM-репозиториев.
 
 ## Migration Handling
 

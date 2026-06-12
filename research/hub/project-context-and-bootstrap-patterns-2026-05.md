@@ -2,6 +2,7 @@
 status: draft
 version: 0.2
 updated: 2026-06-01
+temperature: 0.1
 ai-generated: true
 type: internal-analysis
 context: [mango, context-handoff, project-bootstrap, recommendations, governance-strategy]

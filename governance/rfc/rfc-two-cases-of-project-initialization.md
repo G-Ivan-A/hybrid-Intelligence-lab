@@ -2,6 +2,7 @@
 status: canonical
 version: 1.1
 updated: 2026-06-11
+temperature: 0.1
 ai-generated: true
 type: rfc
 context: [project-initialization, runtime-onboarding, bootstrap, governance, hub-and-spoke, terminology]

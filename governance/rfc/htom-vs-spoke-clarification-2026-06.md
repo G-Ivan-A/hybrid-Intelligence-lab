@@ -2,6 +2,7 @@
 status: canonical
 version: 1.0
 updated: 2026-06-09
+temperature: 0.1
 ai-generated: true
 type: rfc
 context: [hub-and-spoke, htom, spoke, terminology, governance, templates, migration]

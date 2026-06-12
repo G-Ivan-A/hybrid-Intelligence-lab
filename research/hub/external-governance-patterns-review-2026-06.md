@@ -2,6 +2,7 @@
 status: draft
 version: 0.1
 updated: 2026-06-02
+temperature: 0.1
 ai-generated: true
 type: external-analysis
 context: [governance, hub, external-patterns, agent-ecosystems, applicability-matrix]

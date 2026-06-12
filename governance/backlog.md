@@ -2,6 +2,7 @@
 status: canonical
 version: 1.2
 updated: 2026-06-11
+temperature: 0.1
 ai-generated: true
 type: backlog
 context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents]

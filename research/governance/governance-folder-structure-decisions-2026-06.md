@@ -2,6 +2,7 @@
 status: canonical
 version: 1.1
 updated: 2026-06-08
+temperature: 0.1
 ai-generated: true
 type: decision-record
 context: [governance, hub, folder-structure, rfc, proposals, portal, naming, team-q]

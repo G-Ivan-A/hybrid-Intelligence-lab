@@ -1,13 +1,8 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-06
-ai-generated: true
-type: navigation
-scope: repo-wide
-related_issues:
-  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
-  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/186"
+version: 1.2
+updated: 2026-06-12
+temperature: 0.1
 ---
 
 # Governance RFC
@@ -16,6 +11,12 @@ related_issues:
 структуры, контрактов) до принятия решения человеком. «RFC» (Request for
 Comments) — отраслевой термин IETF: документ, выносимый на обсуждение и решение,
 а не уже принятая норма.
+
+RFC - это рекомендация или proposal, а не блокирующее правило. Даже canonical
+RFC фиксирует принятое решение и rationale, но обязательная норма должна быть
+делегирована в active artifact: standard, policy, template, validator или
+операционный контракт. До такой делегации downstream-репозиторий может ссылаться
+на RFC как на обоснование, но не обязан выполнять его механически.
 
 Каталог переименован из `governance/proposals/` в `governance/rfc/` по
 [issue #165](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165)

@@ -1,11 +1,31 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-06-11",
+  "last_updated": "2026-06-12",
   "templates": [
+    {
+      "id": "htom-issue-template-task-creative",
+      "path": "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "issue-template",
+        "task",
+        "creative"
+      ],
+      "description": "Creative шаблон задачи: цель, НФТ, свобода исполнителя, hard constraints и запись обоснованного обхода."
+    },
     {
       "id": "htom-issue-template-task",
       "path": "templates/htom/.github/ISSUE_TEMPLATE/task.md",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "target_type": [
         "HTOM",
         "Spoke"
@@ -19,12 +39,12 @@
         "issue-template",
         "task"
       ],
-      "description": "Шаблон задачи (полная структура): мета, цель, шаги, ограничения, DoD."
+      "description": "Structured шаблон задачи: мета, контекст, артефакты, ограничения, AI-agent specifics, DoD."
     },
     {
       "id": "htom-ai-governance",
       "path": "templates/htom/AI_GOVERNANCE.md",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "target_type": [
         "HTOM"
       ],
@@ -98,7 +118,7 @@
     {
       "id": "htom-contributing",
       "path": "templates/htom/CONTRIBUTING.md",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "target_type": [
         "HTOM"
       ],
@@ -220,6 +240,27 @@
         "readme"
       ],
       "description": "README spoke-репозитория (production-продукт)."
+    },
+    {
+      "id": "sync-project-with-hub-prompt",
+      "path": "templates/sync-project-with-hub-prompt.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "sync",
+        "prompt",
+        "practices",
+        "governance"
+      ],
+      "description": "Исполнимый prompt для сравнения проекта с практиками, стандартами и шаблонами Хаба перед импортом."
     },
     {
       "id": "webportal-product-concept-template",

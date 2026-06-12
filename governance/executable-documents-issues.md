@@ -2,6 +2,7 @@
 status: canonical
 version: 1.0
 updated: 2026-06-04
+temperature: 0.1
 ai-generated: true
 type: registry
 context: [governance, contracts, executable-documents, issues, sprint-3]

@@ -2,6 +2,7 @@
 status: canonical
 version: 1.0
 updated: 2026-06-07
+temperature: 0.1
 ai-generated: true
 type: external-analysis
 context: [governance, hub, contracts, api-contracts, sla, rfc-2119, design-by-contract, adr]
