@@ -84,6 +84,8 @@ is_source_template() {
     templates/htom/.github/ISSUE_TEMPLATE/*.md | ./templates/htom/.github/ISSUE_TEMPLATE/*.md | \
     templates/spoke/*.md | ./templates/spoke/*.md | \
     templates/spoke/.github/ISSUE_TEMPLATE/*.md | ./templates/spoke/.github/ISSUE_TEMPLATE/*.md | \
+    templates/product-concept-template.md | ./templates/product-concept-template.md | \
+    templates/solution-concept-template.md | ./templates/solution-concept-template.md | \
     templates/webportal-product-concept-template.md | ./templates/webportal-product-concept-template.md | \
     templates/webportal-solution-concept-template.md | ./templates/webportal-solution-concept-template.md)
       return 0

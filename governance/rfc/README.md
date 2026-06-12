@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.2
+version: 1.3
 updated: 2026-06-12
 temperature: 0.1
 ---
@@ -47,6 +47,10 @@ RFC фиксирует принятое решение и rationale, но обя
 | [repository-quality-improvement-plan.md](repository-quality-improvement-plan.md) | Комплексный аудит качества репозитория после PR #170: naming, дубли, metadata, traceability, drafts, archive Mango и phased cleanup plan. |
 | [draft-triage-and-exit-plan.md](draft-triage-and-exit-plan.md) | Триаж 20 draft-документов категории "К доработке": группы template/hub/Mango/education, exit plans, phased cleanup и вопросы к Founder/PO. |
 | [hub-vision-concept-proposal-2026-06.md](hub-vision-concept-proposal-2026-06.md) | Vision (L1) и Concept (L2) Хаба, библиотека гайдов и публикация MkDocs: сравнение подходов, обоснование и вопросы к фаундеру (Draft, единый пакет). |
+| [knowledge-lifecycle-proposal.md](knowledge-lifecycle-proposal.md) | Proposal для стандарта жизненного цикла знаний: Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive. |
+| [resolve-artifact-location-proposal.md](resolve-artifact-location-proposal.md) | Proposal для executable resolver prompt, который выбирает каталог и фиксирует lifecycle gaps. |
+| [product-concept-template-proposal.md](product-concept-template-proposal.md) | Proposal для универсального L2 Product Concept template, отделённого от webportal-специализации. |
+| [solution-concept-template-proposal.md](solution-concept-template-proposal.md) | Proposal для универсального L3 Solution Concept template, отделённого от webportal-специализации. |
 
 ## Связанные артефакты
 

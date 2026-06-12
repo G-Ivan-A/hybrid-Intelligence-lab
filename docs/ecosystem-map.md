@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-06-12
 temperature: 0.1
 ai-generated: true
@@ -32,7 +32,7 @@ ai-generated: true
 
 ## Введение
 
-Хаб `hybrid-Intelligence-lab` — методологический центр и connective layer
+Хаб `hybrid-Intelligence-lab` — методологический центр и связующий слой
 растущей экосистемы проектов. Экосистема устроена по модели **hub-and-spoke**:
 Хаб хранит общие правила, стандарты, шаблоны и практики, а проекты вокруг него
 создают продукты, импортируют применимые практики и возвращают улучшения через
@@ -153,6 +153,13 @@ templates/ и sync prompt помогают импортировать приме
 Проект адаптирует практику и возвращает обратную связь в Хаб
 ```
 
+Цикл обмена практиками соответствует жизненному циклу знаний:
+Observation и Research фиксируют сигнал, Hypothesis и RFC делают предложение
+reviewable, Pattern и Standard закрепляют повторяемость, Template и Framework
+дают готовые формы и методологические пакеты, Deprecation/Archive закрывает
+устаревшее. Подробный стандарт — в
+[Knowledge Lifecycle](../standards/knowledge-lifecycle.md).
+
 Ключевые артефакты:
 
 | Артефакт | Роль |
@@ -161,10 +168,22 @@ templates/ и sync prompt помогают импортировать приме
 | [external-practice-intake-2026-06.md](../research/hub/external-practice-intake-2026-06.md) | Анализ внешних agent-work практик и Mango docs pattern. |
 | [international-ai-governance-practices-2026-06.md](../research/hub/international-ai-governance-practices-2026-06.md) | Анализ NIST, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF. |
 | [templates/sync-project-with-hub-prompt.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/sync-project-with-hub-prompt.md) | Исполнимый prompt для сравнения проекта с Хабом и предложения импортов. |
+| [templates/resolve-artifact-location-prompt.md](../templates/resolve-artifact-location-prompt.md) | Исполнимый prompt для выбора правильного места нового артефакта в жизненном цикле. |
 
 Правило импорта: Хаб предлагает практику, но проект принимает решение с учётом
 локального контекста. Creative mode может обоснованно обойти рекомендацию, если
 альтернатива лучше решает цель проекта.
+
+## Связь L1-L4
+
+Карта экосистемы завершает Framework-слой **L1-L2**: Vision объясняет зачем,
+Product Concept описывает что, а карта показывает как проекты связаны вокруг
+Хаба. Methodology-слой **L3-L4** находится в
+[governance/](../governance/artifact-map.md),
+[standards/](../standards/README.md), [practices/](../practices/README.md) и
+[templates/](../templates/resolve-artifact-location-prompt.md). Проект берёт
+из L3-L4 только то, что подходит его контексту, и возвращает обратную связь
+через issue или PR.
 
 ---
 
@@ -298,6 +317,8 @@ templates/ и sync prompt помогают импортировать приме
 | [Product Concept](product-concept.md) | Уровень L2: что делает Хаб, для кого и как. |
 | [Каталог практик](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/practices/README.md) | Фиксированные практики для обмена между Хабом и проектами. |
 | [Sync Project With Hub Prompt](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/sync-project-with-hub-prompt.md) | Prompt для проектной синхронизации с практиками и шаблонами Хаба. |
+| [Knowledge Lifecycle](../standards/knowledge-lifecycle.md) | Стандарт движения знания от observation до deprecation/archive. |
+| [Resolve Artifact Location Prompt](../templates/resolve-artifact-location-prompt.md) | Resolver для выбора места нового артефакта и фиксации нарушений lifecycle. |
 | [Синхронизация с проектами](../guides/sync-with-projects.md) | Человекочитаемый процесс синхронизации карты. |
 | [htom-vs-spoke-clarification-2026-06.md](../governance/rfc/htom-vs-spoke-clarification-2026-06.md) | Различие HTOM-команда vs Spoke-репозиторий. |
 | [session-handover-standard.md](../standards/session-handover-standard.md) | Draft-стандарт структуры `AI_SESSION_HANDOVER_PROMPT.md` и разделения онбординга/передачи контекста. |

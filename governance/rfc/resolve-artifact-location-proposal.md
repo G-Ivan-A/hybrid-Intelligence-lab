@@ -1,0 +1,71 @@
+---
+status: draft
+version: 0.1
+updated: 2026-06-12
+temperature: 0.1
+---
+
+# RFC: Resolve Artifact Location Prompt
+
+## Proposal
+
+Adopt
+[templates/resolve-artifact-location-prompt.md](../../templates/resolve-artifact-location-prompt.md)
+as the executable resolver for deciding where a new Hub artifact belongs.
+
+## Problem
+
+The Hub has multiple artifact classes and lifecycle stages. Without an
+executable resolver, contributors and AI agents can place artifacts by local
+guesswork, skip lifecycle stages, or create duplicate standards/templates.
+
+## Decision Tree
+
+| Question | Target |
+| --- | --- |
+| Is it raw signal, source-backed analysis, or comparison? | `research/<domain>/` |
+| Is it a governance or structure proposal? | `governance/rfc/` |
+| Is it an approved reusable behavior? | `practices/<domain>/` |
+| Is it an obligatory rule or format? | `standards/` |
+| Is it a copyable form or executable prompt? | `templates/` |
+| Is it a methodology package for a class of projects? | `frameworks/` |
+| Is it product-level Hub Vision, Concept, or ecosystem framing? | `docs/` |
+
+## Integration
+
+The resolver must read:
+
+- [artifact-map.md](../artifact-map.md) as the factual map of active artifacts;
+- [htom-documentation-structure.md](../../standards/htom-documentation-structure.md)
+  for HTOM docs structure;
+- [knowledge-lifecycle.md](../../standards/knowledge-lifecycle.md) for lifecycle
+  stage and transition rules;
+- [repo-model.md](../repo-model.md) for Anti-Inflation and folder boundaries.
+
+## Two-Factor Confirmation
+
+Hard violations require explicit human approval:
+
+- changing the top-level folder structure;
+- deleting files or overwriting local project decisions;
+- bypassing Anti-Inflation;
+- bypassing fail-closed behavior.
+
+Soft violations are logged in the PR:
+
+- skipped lifecycle stage in Structured mode;
+- minor frontmatter drift;
+- draft artifact used only as draft context.
+
+## Creative Mode Initiation
+
+If a needed prior stage is missing, Creative mode creates the smallest missing
+proposal or draft candidate. If blocked, the agent creates the safe part and
+documents the dependency in the PR. The founder then approves the transition or
+explicitly writes "skip stage X".
+
+## Target Artifact
+
+| Target | Status in this PR | Promotion condition |
+| --- | --- | --- |
+| `templates/resolve-artifact-location-prompt.md` | Draft executable prompt | Founder review or explicit delegated approval. |

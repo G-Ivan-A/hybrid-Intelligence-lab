@@ -188,6 +188,67 @@
       "description": "Валидатор структуры HTOM-репозитория."
     },
     {
+      "id": "product-concept-template",
+      "path": "templates/product-concept-template.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "OPTIONAL",
+      "tags": [
+        "concept",
+        "product",
+        "universal"
+      ],
+      "description": "Универсальный шаблон Product Concept (L2) для product, service, knowledge-base, education и HTOM-team initiatives."
+    },
+    {
+      "id": "resolve-artifact-location-prompt",
+      "path": "templates/resolve-artifact-location-prompt.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "resolver",
+        "prompt",
+        "lifecycle",
+        "governance"
+      ],
+      "description": "Исполнимый prompt для выбора каталога и lifecycle stage нового артефакта."
+    },
+    {
+      "id": "solution-concept-template",
+      "path": "templates/solution-concept-template.md",
+      "version": "0.1.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "OPTIONAL",
+      "tags": [
+        "concept",
+        "solution",
+        "universal"
+      ],
+      "description": "Универсальный шаблон Solution Concept (L3) для architecture, operating model и delivery design."
+    },
+    {
       "id": "spoke-ci",
       "path": "templates/spoke/.github/workflows/ci.yml",
       "version": "1.0.0",

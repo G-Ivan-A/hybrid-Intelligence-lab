@@ -135,6 +135,29 @@
       "tags": ["concept", "solution", "webportal"],
       "description": "Шаблон Solution Concept (L3) для веб-портала."
     },
+    "templates/product-concept-template.md": {
+      "id": "product-concept-template",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "OPTIONAL",
+      "stack": ["all"],
+      "tags": ["concept", "product", "universal"],
+      "description": "Универсальный шаблон Product Concept (L2) для product, service, knowledge-base, education и HTOM-team initiatives."
+    },
+    "templates/solution-concept-template.md": {
+      "id": "solution-concept-template",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "OPTIONAL",
+      "stack": ["all"],
+      "tags": ["concept", "solution", "universal"],
+      "description": "Универсальный шаблон Solution Concept (L3) для architecture, operating model и delivery design."
+    },
+    "templates/resolve-artifact-location-prompt.md": {
+      "id": "resolve-artifact-location-prompt",
+      "target_type": ["HTOM", "Spoke"],
+      "criticality": "RECOMMENDED",
+      "tags": ["resolver", "prompt", "lifecycle", "governance"],
+      "description": "Исполнимый prompt для выбора каталога и lifecycle stage нового артефакта."
+    },
     "templates/sync-project-with-hub-prompt.md": {
       "id": "sync-project-with-hub-prompt",
       "target_type": ["HTOM", "Spoke"],

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.4
+version: 1.5
 updated: 2026-06-12
 temperature: 0.1
 executable: false
@@ -38,6 +38,44 @@ RFC в `governance/rfc/` - это рекомендации и proposals. Они 
 обязательными только после human decision и переноса нормативной части в
 canonical standard, policy, template или другой active artifact.
 
+Жизненный цикл таких переходов описан в
+[standards/knowledge-lifecycle.md](standards/knowledge-lifecycle.md), а выбор
+места нового артефакта выполняется через
+[templates/resolve-artifact-location-prompt.md](templates/resolve-artifact-location-prompt.md).
+
+## Правило авто-заполнения Мета
+
+Человек может поставить задачу без полного блока Мета. AI-агент достраивает
+недостающий контекст по активным контрактам, но не выдумывает факты и не
+повышает lifecycle stage без явного решения.
+
+Приоритеты:
+
+1. Явно указанная Мета в issue или комментарии.
+2. Operating Mode: `Structured`, `Creative`, `Research` или `Education`.
+3. Ближайшие активные контракты: `AI_GOVERNANCE.md`,
+   `CONTRIBUTING.md`, [standards/README.md](standards/README.md),
+   [governance/artifact-map.md](governance/artifact-map.md) и
+   [standards/knowledge-lifecycle.md](standards/knowledge-lifecycle.md).
+4. Resolver для выбора места нового артефакта.
+
+Если явная Мета нарушает hard rule, агент фиксирует конфликт и запрашивает
+human guidance. Если Мета неполная, агент записывает допущения в PR body,
+issue/PR comment или RFC.
+
+## Разделение Framework vs Methodology
+
+Хаб использует два слоя:
+
+| Слой | Уровень | Где живёт | Назначение |
+| --- | --- | --- | --- |
+| Framework | L1-L2 | `docs/vision.md`, `docs/product-concept.md`, `docs/ecosystem-map.md` | Границы, видение, продуктовая роль и карта экосистемы. |
+| Methodology | L3-L4 | `governance/`, `standards/`, `practices/`, `templates/`, `tools/`, `frameworks/` по необходимости | Правила, lifecycle, reusable practices, prompts, templates и проверки. |
+
+Framework-документы обязаны указывать, как перейти к Methodology. Methodology
+не должна переопределять Vision/Concept; она ссылается на L1-L2 и фиксирует
+исполнение.
+
 ## Роли
 
 | Роль | Ответственность |
@@ -67,6 +105,10 @@ canonical standard, policy, template или другой active artifact.
 8. Минимальный frontmatter для активных Markdown-артефактов описан в
    [standards/frontmatter-standard.md](standards/frontmatter-standard.md):
    `status`, `version`, `updated`, `temperature`.
+9. Новый артефакт размещается по
+   [Knowledge Lifecycle](standards/knowledge-lifecycle.md) и, если есть
+   сомнение, через
+   [Resolve Artifact Location Prompt](templates/resolve-artifact-location-prompt.md).
 
 ## Operating Modes
 
@@ -132,6 +174,8 @@ traceable precedent, который человек может принять, с
 Для AI-assisted repository changes:
 
 - active files находятся в ожидаемых каталогах;
+- lifecycle stage и L1-L4 связь зафиксированы, если изменение создаёт или
+  продвигает knowledge artifact;
 - historical material удален, перенесен или сохранен только с явным rationale;
 - navigation, standards links и artifact map обновлены, если изменяется active
   artifact;
