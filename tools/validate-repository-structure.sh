@@ -92,6 +92,12 @@ is_active_file() {
     research/mango/classification.md | \
     research/mango/classification-tz.md | \
     research/mango/requirements-flow.md | \
+    research/external-knowledge/README.md | \
+    research/external-knowledge/external-sources-registry.md | \
+    research/external-knowledge/external-insights/README.md | \
+    research/external-knowledge/external-insights/building-effective-agents-2026-06.md | \
+    research/external-knowledge/external-insights/12-factor-agents-2026-06.md | \
+    research/external-knowledge/external-insights/spec-driven-development-2026-06.md | \
     practices/README.md | \
     practices/agent-work/README.md | \
     practices/agent-work/hybrid-search-before-action.md | \
@@ -130,6 +136,7 @@ is_active_file() {
     governance/rfc/hub-vision-concept-proposal-2026-06.md | \
     governance/rfc/knowledge-lifecycle-proposal.md | \
     governance/rfc/resolve-artifact-location-proposal.md | \
+    governance/rfc/external-knowledge-integration.md | \
     governance/rfc/product-concept-template-proposal.md | \
     governance/rfc/solution-concept-template-proposal.md | \
     docs/vision.md | \
@@ -379,6 +386,8 @@ required_directories=(
   "research/hub"
   "research/mango"
   "research/governance"
+  "research/external-knowledge"
+  "research/external-knowledge/external-insights"
   "practices"
   "practices/agent-work"
   "practices/ai-governance"
@@ -430,6 +439,12 @@ required_files=(
   "research/mango/classification-tz.md"
   "research/mango/requirements-flow.md"
   "research/mango/rag-mapping-roadmap-2026-05.md"
+  "research/external-knowledge/README.md"
+  "research/external-knowledge/external-sources-registry.md"
+  "research/external-knowledge/external-insights/README.md"
+  "research/external-knowledge/external-insights/building-effective-agents-2026-06.md"
+  "research/external-knowledge/external-insights/12-factor-agents-2026-06.md"
+  "research/external-knowledge/external-insights/spec-driven-development-2026-06.md"
   "practices/README.md"
   "practices/agent-work/README.md"
   "practices/agent-work/hybrid-search-before-action.md"
@@ -464,6 +479,7 @@ required_files=(
   "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
   "governance/rfc/knowledge-lifecycle-proposal.md"
   "governance/rfc/resolve-artifact-location-proposal.md"
+  "governance/rfc/external-knowledge-integration.md"
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -1083,6 +1099,41 @@ require_text "governance/artifact-map.md" "Scope Resolver-а"
 require_text "governance/artifact-map.md" "governance/session-digests.md"
 reject_text "governance/artifact-map.md" "Конард"
 reject_text "governance/artifact-map.md" "Фаундера"
+
+require_text "governance/artifact-map.md" "research/external-knowledge/README.md"
+require_text "governance/artifact-map.md" "research/external-knowledge/external-sources-registry.md"
+require_text "governance/artifact-map.md" "research/external-knowledge/external-insights/README.md"
+require_text "governance/artifact-map.md" "governance/rfc/external-knowledge-integration.md"
+
+# External knowledge integration (issue #227): Base Registry + insights + RFC.
+require_text "research/external-knowledge/README.md" "status: draft"
+require_text "research/external-knowledge/README.md" "scope: repo-wide"
+require_text "research/external-knowledge/README.md" "Base Registry"
+require_text "research/external-knowledge/README.md" "external-sources-registry.md"
+require_text "research/external-knowledge/README.md" "external-insights/"
+require_text "research/external-knowledge/README.md" "Anti-Inflation"
+
+require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
+require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
+require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
+require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-001"
+require_text "research/external-knowledge/external-sources-registry.md" "Anti-Inflation"
+
+require_text "research/external-knowledge/external-insights/README.md" "status: draft"
+require_text "research/external-knowledge/external-insights/README.md" "source_id"
+require_text "research/external-knowledge/external-insights/README.md" "observation"
+require_text "research/external-knowledge/external-insights/README.md" "candidate-practice"
+require_text "research/external-knowledge/external-insights/README.md" "Стоп-правило"
+
+require_text "governance/rfc/external-knowledge-integration.md" "status: draft"
+require_text "governance/rfc/external-knowledge-integration.md" "version: 0.1"
+require_text "governance/rfc/external-knowledge-integration.md" "Base Registry"
+require_text "governance/rfc/external-knowledge-integration.md" "Local Extension"
+require_text "governance/rfc/external-knowledge-integration.md" "Smart Sync"
+require_text "governance/rfc/external-knowledge-integration.md" "Creative override"
+require_text "governance/rfc/external-knowledge-integration.md" "clarify-engine-ai"
+require_text "governance/rfc/external-knowledge-integration.md" "Open Decision"
 
 require_text "governance/session-digests.md" "status: draft"
 require_text "governance/session-digests.md" "version: 0.2"
