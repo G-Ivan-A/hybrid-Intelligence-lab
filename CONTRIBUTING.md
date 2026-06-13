@@ -23,8 +23,8 @@ traceability и практическую полезность для hybrid huma
    лишние шаги реализации.
 4. Выбирайте целевой каталог по
    [governance/repo-model.md](governance/repo-model.md),
-   [standards/knowledge-lifecycle.md](standards/knowledge-lifecycle.md) и
-   [templates/resolve-artifact-location-prompt.md](templates/resolve-artifact-location-prompt.md),
+   [governance/rfc/knowledge-lifecycle-proposal.md](governance/rfc/knowledge-lifecycle-proposal.md) и
+   [governance/rfc/resolve-artifact-location-proposal.md](governance/rfc/resolve-artifact-location-proposal.md),
    если место артефакта не очевидно.
 5. Используйте ближайший стандарт из [standards/README.md](standards/README.md).
 6. Держите изменение reviewable: одна цель, понятные ссылки, без unrelated
@@ -47,7 +47,7 @@ data и работают внутри requested scope.
 | Что отсутствует | Как достраивается |
 | --- | --- |
 | Target artifact | По `governance/artifact-map.md`, `governance/repo-model.md` и resolver prompt. |
-| Lifecycle stage | По `standards/knowledge-lifecycle.md`; сомнительный переход записывается как gap. |
+| Lifecycle stage | По `governance/rfc/knowledge-lifecycle-proposal.md`; сомнительный переход записывается как gap. |
 | L1-L4 link | Product docs дают L1-L2, governance/standards/templates дают L3-L4. |
 | Validation | Минимум: frontmatter, structure validator, manifest check when templates changed. |
 

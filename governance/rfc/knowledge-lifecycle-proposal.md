@@ -9,8 +9,8 @@ temperature: 0.1
 
 ## Proposal
 
-Adopt [standards/knowledge-lifecycle.md](../../standards/knowledge-lifecycle.md)
-as the Hub lifecycle for knowledge artifacts:
+Adopt `standards/knowledge-lifecycle.md` as the future canonical Hub lifecycle
+standard for knowledge artifacts after explicit Founder approval:
 
 ```text
 Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive
@@ -33,7 +33,7 @@ status by itself.
 
 | Target | Status in this PR | Promotion condition |
 | --- | --- | --- |
-| `standards/knowledge-lifecycle.md` | Draft candidate | Founder review or explicit delegated approval. |
+| `standards/knowledge-lifecycle.md` | Proposed target, not created by this PR | Founder review plus explicit Founder approval. |
 
 ## Key Rules
 
@@ -47,6 +47,9 @@ status by itself.
   way to make the work reviewable.
 - Silence means acceptance of current state only, not approval to transition to
   the next stage.
+- Merge silence means applying this PR as-is: the RFC stays in
+  `governance/rfc/` with `status: draft`; it does not create the target file and
+  does not promote the artifact to `canonical`.
 
 ## Acceptance Criteria
 

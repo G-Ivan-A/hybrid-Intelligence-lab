@@ -14,6 +14,7 @@ All notable repository governance changes are documented here.
 ### Changed
 
 - structured: обновить Vision/Concept + создать knowledge-lifecycle + resolver + универсальные шаблоны.
+- fix: откатить автоматический перевод Draft → Canonical, требуется явное подтверждение Фаундера.
 - Issue #217 PR rebuild (Creative mode): added a separate `practices/` KB for
   fixed practices; extracted Habr agent-work practices with sources/authors;
   added international AI governance practice analysis (NIST AI RMF, EU AI Act,

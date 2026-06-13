@@ -431,10 +431,10 @@ Product Concept — это уровень **L2** Framework-слоя: он опи
 | L1 Vision | [vision.md](vision.md) | Зачем существует Хаб и что означает «Связь миров». |
 | L2 Product Concept | Этот документ и [ecosystem-map.md](ecosystem-map.md) | Что делает Хаб и как проекты обмениваются практиками. |
 | L3 Governance / Standards / Practices | [governance/artifact-map.md](../governance/artifact-map.md), [standards/README.md](../standards/README.md), [practices/README.md](../practices/README.md) | Как принимать решения, оформлять знания и применять практики. |
-| L4 Templates / Tools | [templates/resolve-artifact-location-prompt.md](../templates/resolve-artifact-location-prompt.md), [templates/product-concept-template.md](../templates/product-concept-template.md), `tools/` | Как запускать, синхронизировать и проверять работу. |
+| L4 Templates / Tools | [governance/rfc/resolve-artifact-location-proposal.md](../governance/rfc/resolve-artifact-location-proposal.md), [governance/rfc/product-concept-template-proposal.md](../governance/rfc/product-concept-template-proposal.md), `tools/` | Как запускать, синхронизировать и проверять работу. |
 
 Жизненный цикл переходов между уровнями описан в
-[Knowledge Lifecycle](../standards/knowledge-lifecycle.md).
+[Knowledge Lifecycle proposal](../governance/rfc/knowledge-lifecycle-proposal.md).
 
 ---
 

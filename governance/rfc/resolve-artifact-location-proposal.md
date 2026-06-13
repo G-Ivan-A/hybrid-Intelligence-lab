@@ -9,9 +9,9 @@ temperature: 0.1
 
 ## Proposal
 
-Adopt
-[templates/resolve-artifact-location-prompt.md](../../templates/resolve-artifact-location-prompt.md)
-as the executable resolver for deciding where a new Hub artifact belongs.
+Adopt `templates/resolve-artifact-location-prompt.md` as the future executable
+resolver for deciding where a new Hub artifact belongs after explicit Founder
+approval.
 
 ## Problem
 
@@ -38,8 +38,8 @@ The resolver must read:
 - [artifact-map.md](../artifact-map.md) as the factual map of active artifacts;
 - [htom-documentation-structure.md](../../standards/htom-documentation-structure.md)
   for HTOM docs structure;
-- [knowledge-lifecycle.md](../../standards/knowledge-lifecycle.md) for lifecycle
-  stage and transition rules;
+- [knowledge-lifecycle-proposal.md](knowledge-lifecycle-proposal.md) for the
+  proposed lifecycle stage and transition rules;
 - [repo-model.md](../repo-model.md) for Anti-Inflation and folder boundaries.
 
 ## Two-Factor Confirmation
@@ -68,4 +68,8 @@ explicitly writes "skip stage X".
 
 | Target | Status in this PR | Promotion condition |
 | --- | --- | --- |
-| `templates/resolve-artifact-location-prompt.md` | Draft executable prompt | Founder review or explicit delegated approval. |
+| `templates/resolve-artifact-location-prompt.md` | Proposed target, not created by this PR | Founder review plus explicit Founder approval. |
+
+Merge silence means applying this PR as-is: the RFC stays in `governance/rfc/`
+with `status: draft`; it does not create the target file and does not promote
+the artifact to `canonical`.
