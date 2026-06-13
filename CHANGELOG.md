@@ -13,6 +13,24 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- creative: documentation architecture balance research and RFC (issue #231).
+  Added `governance/rfc/documentation-architecture-balance.md` resolving the
+  tension between Anti-Inflation (merge to avoid excess documents) and Atomicity
+  (one artifact per file) at ecosystem scale. Introduced an Index → Summary →
+  Full detail-level framework (explicitly distinct from Framework L1–L4) and a
+  max-three-class document classification (A Index / B Summary / C Full) with
+  selection criteria (query frequency, size, reach), class transitions and
+  examples applied to real files across the four ecosystem projects (hub,
+  mango_ba_prompts, open-ai.ru, clarify-engine-ai). The current-state analysis
+  flags whole-file version copies (`…_vN.md`) in clarify-engine-ai as inflation
+  and oversized monolithic ADR/RFC/CONCEPT files as lacking entry points.
+  Navigation stays bureaucracy-free: markdown links + heading anchors +
+  `governance/artifact-map.md`, no `artifact-graph.json`, no CI scrapers, and a
+  minimal four-field frontmatter (no new navigation fields). Develops PR #229's
+  external-knowledge conclusions (Diátaxis `ext-006`, context engineering
+  `ext-008`/`ext-007`) without duplicating its source analysis. Registered the
+  RFC in `governance/artifact-map.md` (v1.34), `governance/rfc/README.md` (v1.5)
+  and the structure validator. Status `draft`; promotion stays a human decision.
 - creative: external knowledge integration research and RFC (issue #227). Added
   the `research/external-knowledge/` domain with a Base Registry of external
   sources (`external-sources-registry.md`, minimal metadata, tag/project

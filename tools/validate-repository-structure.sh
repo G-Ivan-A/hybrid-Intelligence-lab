@@ -137,6 +137,7 @@ is_active_file() {
     governance/rfc/knowledge-lifecycle-proposal.md | \
     governance/rfc/resolve-artifact-location-proposal.md | \
     governance/rfc/external-knowledge-integration.md | \
+    governance/rfc/documentation-architecture-balance.md | \
     governance/rfc/product-concept-template-proposal.md | \
     governance/rfc/solution-concept-template-proposal.md | \
     docs/vision.md | \
@@ -480,6 +481,7 @@ required_files=(
   "governance/rfc/knowledge-lifecycle-proposal.md"
   "governance/rfc/resolve-artifact-location-proposal.md"
   "governance/rfc/external-knowledge-integration.md"
+  "governance/rfc/documentation-architecture-balance.md"
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -1048,7 +1050,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.33"
+require_text "governance/artifact-map.md" "version: 1.34"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1134,6 +1136,17 @@ require_text "governance/rfc/external-knowledge-integration.md" "Smart Sync"
 require_text "governance/rfc/external-knowledge-integration.md" "Creative override"
 require_text "governance/rfc/external-knowledge-integration.md" "clarify-engine-ai"
 require_text "governance/rfc/external-knowledge-integration.md" "Open Decision"
+
+# Documentation architecture balance (issue #231): Index/Summary/Full framework.
+require_text "governance/artifact-map.md" "governance/rfc/documentation-architecture-balance.md"
+require_text "governance/rfc/README.md" "documentation-architecture-balance.md"
+require_text "governance/rfc/documentation-architecture-balance.md" "status: draft"
+require_text "governance/rfc/documentation-architecture-balance.md" "version: 0.1"
+require_text "governance/rfc/documentation-architecture-balance.md" "Anti-Inflation"
+require_text "governance/rfc/documentation-architecture-balance.md" "Index"
+require_text "governance/rfc/documentation-architecture-balance.md" "Summary"
+require_text "governance/rfc/documentation-architecture-balance.md" "clarify-engine-ai"
+require_text "governance/rfc/documentation-architecture-balance.md" "Open Decision"
 
 require_text "governance/session-digests.md" "status: draft"
 require_text "governance/session-digests.md" "version: 0.2"
