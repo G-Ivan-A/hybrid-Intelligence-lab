@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-06-12
+version: 1.4
+updated: 2026-06-13
 temperature: 0.1
 ---
 
@@ -13,6 +13,19 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- creative: external knowledge integration research and RFC (issue #227). Added
+  the `research/external-knowledge/` domain with a Base Registry of external
+  sources (`external-sources-registry.md`, minimal metadata, tag/project
+  filtering, no content scraping — Anti-Inflation), an insight storage mechanism
+  (`external-insights/` with stages `observation → candidate-practice` and a
+  stop-rule before `practices/`) plus three example insights (`ext-001`
+  Building Effective Agents, `ext-002` 12-Factor Agents, `ext-003` spec-driven
+  development). Added `governance/rfc/external-knowledge-integration.md`
+  describing the Base Registry (Hub) + Local Extension (projects) + Smart Sync
+  model, lifecycle binding and application for the four ecosystem projects (hub,
+  mango_ba_prompts, open-ai.ru, clarify-engine-ai). No CI scrapers; promotion to
+  `practices/` stays a human decision. Registered all artifacts in
+  `governance/artifact-map.md` (v1.33) and the structure validator.
 - creative: session digest mechanism for context transfer between chats
   (issue #225). Added `governance/session-digests.md` as the single storage
   point for session summaries (index + instructions + first digest for the

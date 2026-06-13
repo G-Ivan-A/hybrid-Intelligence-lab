@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-06-12
+version: 1.4
+updated: 2026-06-13
 temperature: 0.1
 ---
 
@@ -51,6 +51,7 @@ RFC фиксирует принятое решение и rationale, но обя
 | [resolve-artifact-location-proposal.md](resolve-artifact-location-proposal.md) | Proposal для executable resolver prompt, который выбирает каталог и фиксирует lifecycle gaps. |
 | [product-concept-template-proposal.md](product-concept-template-proposal.md) | Proposal для универсального L2 Product Concept template, отделённого от webportal-специализации. |
 | [solution-concept-template-proposal.md](solution-concept-template-proposal.md) | Proposal для универсального L3 Solution Concept template, отделённого от webportal-специализации. |
+| [external-knowledge-integration.md](external-knowledge-integration.md) | Механизм интеграции внешних знаний: Base Registry (Хаб) + Local Extension (проекты) + Smart Sync, привязка к knowledge lifecycle и применение для 4 проектов экосистемы (Anti-Inflation, без CI-скраперов). |
 
 ## Связанные артефакты
 
