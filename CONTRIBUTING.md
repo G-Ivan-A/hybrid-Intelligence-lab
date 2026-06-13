@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.1
+version: 1.2
 updated: 2026-06-12
 temperature: 0.1
 ---
@@ -22,7 +22,10 @@ traceability и практическую полезность для hybrid huma
    описывайте цель, constraints и Definition of Done, не предписывая исполнителю
    лишние шаги реализации.
 4. Выбирайте целевой каталог по
-   [governance/repo-model.md](governance/repo-model.md).
+   [governance/repo-model.md](governance/repo-model.md),
+   [governance/rfc/knowledge-lifecycle-proposal.md](governance/rfc/knowledge-lifecycle-proposal.md) и
+   [governance/rfc/resolve-artifact-location-proposal.md](governance/rfc/resolve-artifact-location-proposal.md),
+   если место артефакта не очевидно.
 5. Используйте ближайший стандарт из [standards/README.md](standards/README.md).
 6. Держите изменение reviewable: одна цель, понятные ссылки, без unrelated
    restructuring.
@@ -35,6 +38,21 @@ traceability и практическую полезность для hybrid huma
 AI agents следуют [AI_GOVERNANCE.md](AI_GOVERNANCE.md): читают issue и
 последние комментарии, сохраняют human decision rights, не публикуют sensitive
 data и работают внутри requested scope.
+
+### Правило авто-заполнения Мета
+
+Автор задачи может указать только цель и Operating Mode. AI-агент обязан
+достроить рабочую Мета из активных контрактов:
+
+| Что отсутствует | Как достраивается |
+| --- | --- |
+| Target artifact | По `governance/artifact-map.md`, `governance/repo-model.md` и resolver prompt. |
+| Lifecycle stage | По `governance/rfc/knowledge-lifecycle-proposal.md`; сомнительный переход записывается как gap. |
+| L1-L4 link | Product docs дают L1-L2, governance/standards/templates дают L3-L4. |
+| Validation | Минимум: frontmatter, structure validator, manifest check when templates changed. |
+
+Явная Мета в issue имеет приоритет, если она не нарушает hard rules. Если
+правило нарушено, агент фиксирует конфликт и запрашивает guidance.
 
 Historical migration material используется только как source context через
 audit, PR history или явно указанный `source` path. Новый active artifact должен

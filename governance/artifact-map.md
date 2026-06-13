@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.30
+version: 1.31
 updated: 2026-06-12
 temperature: 0.1
 ai-generated: false
@@ -53,6 +53,24 @@ ai-generated: false
 | `справка` | Справочный контракт, стандарт или RFC: читать как контекст и источник правил, без немедленного исполнения всего файла. |
 | `—` | Исполнимость не применяется к этому артефакту. |
 
+## Уровни документации: Framework vs Methodology
+
+Хаб разделяет смысловой Framework-слой и исполняемый Methodology-слой.
+
+| Уровень | Слой | Основные артефакты | Назначение |
+| --- | --- | --- | --- |
+| L1 | Framework | `docs/vision.md` | Зачем существует Хаб и что означает «Связь миров». |
+| L2 | Framework | `docs/product-concept.md`, `docs/ecosystem-map.md` | Что делает Хаб, для кого и как проекты обмениваются практиками. |
+| L3 | Methodology | `governance/`, `standards/`, `practices/` | Как принимать решения, оформлять знания и фиксировать reusable practices. |
+| L4 | Methodology | `templates/`, `tools/`, project adaptations | Как исполнять, синхронизировать, проверять и переиспользовать методологию. |
+
+Переходы между уровнями предложены в
+[governance/rfc/knowledge-lifecycle-proposal.md](rfc/knowledge-lifecycle-proposal.md),
+а выбор места нового артефакта — в
+[governance/rfc/resolve-artifact-location-proposal.md](rfc/resolve-artifact-location-proposal.md).
+Целевые `standards/` и `templates/` расположения требуют явного подтверждения
+Фаундера перед переводом из `draft` в `canonical`.
+
 ## Карта артефактов
 
 | Путь | Тип | 🚦 Исполнимый? | Назначение | Обязательный? | Связанные артефакты |
@@ -74,6 +92,10 @@ ai-generated: false
 | `/governance/rfc/repository-quality-improvement-plan.md` | RFC | справка | Комплексный аудит качества репозитория после PR #170: naming, дубли, metadata duplication, traceability, draft-документы, archive Mango и phased cleanup plan с запросом на согласование. | ⚠️ По необходимости | `governance/artifact-map.md`, `governance/backlog.md`, `governance/repo-model.md`, `standards/file-naming.md`, `tools/validate-repository-structure.sh` |
 | `/governance/rfc/draft-triage-and-exit-plan.md` | RFC | справка | Canonical RFC триажа 20 draft-документов категории "К доработке": группировка template/hub/Mango/education, exit plans, placeholder strategy, draft lifecycle rule, phased cleanup и утверждённые Anti-Bureaucracy правила Phase 1. | ⚠️ По необходимости | `governance/rfc/repository-quality-improvement-plan.md`, `templates/htom/README.md`, `research/governance/README.md`, `research/hub/prompts-classification-standard-2026-05.md`, `research/mango/taxonomy-concept-2026-05.md`, `projects/education-ba-prompt/README.md` |
 | `/governance/rfc/htom-vs-spoke-clarification-2026-06.md` | RFC | Canonical | Креативный RFC разделения понятий HTOM-команда (гибридная команда людей+ИИ, геном `templates/htom/`) и spoke-репозиторий (production-продукт, шаблон `templates/spoke/`): определения, сравнительная таблица, обоснование, классификация проектов и карта переименований genome `templates/spoke/`→`templates/htom/`. Решение за человеком. | ⚠️ По необходимости | `templates/htom/README.md`, `templates/spoke/README.md`, `governance/repo-model.md`, `standards/glossary.md`, `projects/README.md` |
+| `/governance/rfc/knowledge-lifecycle-proposal.md` | RFC | справка | Draft proposal стандарта жизненного цикла знаний; целевое расположение после явного подтверждения: `standards/knowledge-lifecycle.md`. | ⚠️ По необходимости | `governance/rfc/resolve-artifact-location-proposal.md`, `AI_GOVERNANCE.md` |
+| `/governance/rfc/resolve-artifact-location-proposal.md` | RFC | справка | Draft proposal executable resolver prompt; целевое расположение после явного подтверждения: `templates/resolve-artifact-location-prompt.md`. | ⚠️ По необходимости | `governance/artifact-map.md`, `governance/rfc/knowledge-lifecycle-proposal.md` |
+| `/governance/rfc/product-concept-template-proposal.md` | RFC | справка | Draft proposal универсального L2 Product Concept template; целевое расположение после явного подтверждения: `templates/product-concept-template.md`. | ⚠️ По необходимости | `templates/webportal-product-concept-template.md`, `governance/rfc/knowledge-lifecycle-proposal.md` |
+| `/governance/rfc/solution-concept-template-proposal.md` | RFC | справка | Draft proposal универсального L3 Solution Concept template; целевое расположение после явного подтверждения: `templates/solution-concept-template.md`. | ⚠️ По необходимости | `templates/webportal-solution-concept-template.md`, `governance/rfc/knowledge-lifecycle-proposal.md` |
 | `/templates/htom/AI_GOVERNANCE.md` | шаблон | справка | Шаблон конституции HTOM-команды: роли, правила, operating modes, эскалация и DoD. Ядро генома (обязателен в корне HTOM-команды). Плейсхолдеры `{{project_name}}`, `{{hub_url}}`, `{{date}}`. | ⚠️ По необходимости | `templates/htom/README.md`, `AI_GOVERNANCE.md`, `templates/htom/AI_QUICK_RULES.md` |
 | `/templates/htom/AI_QUICK_RULES.md` | шаблон | 🚦 да | Шаблон одностраничной "инструкции по выживанию" агента в новой HTOM-команде: куда смотреть, чего не делать (включая запрет `research/`), как звать человека. | ⚠️ По необходимости | `templates/htom/AI_GOVERNANCE.md`, `templates/htom/README.md`, `governance/rfc/contract-executability-rfc.md` |
 | `/templates/htom/AI_SESSION_HANDOVER_PROMPT.md` | шаблон | 🚦 да | Копия *Handover Prompt* (с плейсхолдером `{{REPO_NAME}}`) в геноме HTOM-команды: готовая «доверенность» для запуска агента и передачи контекста между чатами. Источник истины — хабовый `governance/agent-onboarding-protocol.md`; обязательные секции закреплены в `standards/session-handover-standard.md`; команда хранит копию для самодостаточности. | ⚠️ По необходимости | `governance/agent-onboarding-protocol.md`, `standards/session-handover-standard.md`, `templates/htom/AI_QUICK_RULES.md`, `templates/htom/README.md`, `governance/rfc/contract-executability-rfc.md` |

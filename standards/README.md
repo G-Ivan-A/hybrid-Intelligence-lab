@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.2
+version: 1.3
 updated: 2026-06-12
 temperature: 0.1
 ---
@@ -23,6 +23,7 @@ temperature: 0.1
 | Repository model | Active | Размещение артефактов и правила создания | [governance/repo-model.md](../governance/repo-model.md) |
 | Frontmatter standard | Canonical | Минимальный metadata contract для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
 | Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |
+| Knowledge lifecycle | Draft RFC (предложен на утверждение) | Переходы Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive | [../governance/rfc/knowledge-lifecycle-proposal.md](../governance/rfc/knowledge-lifecycle-proposal.md) |
 | Профиль исследовательских проектов | Active | `research/<domain>/` | [research-profile.md](research-profile.md) |
 | Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [product-profile.md](product-profile.md) |
 | Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [team-contract.md](team-contract.md) |
@@ -38,7 +39,7 @@ temperature: 0.1
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
 | Project knowledge base | Planned | `projects/` | Создать после повторяющейся потребности в project context. |
-| Artifact lifecycle | Planned | Все reviewed artifacts | Создать, когда maturity states станут операционно необходимы. |
+| Artifact location resolver | Draft RFC (предложен на утверждение) | Выбор каталога и lifecycle stage для нового артефакта | [../governance/rfc/resolve-artifact-location-proposal.md](../governance/rfc/resolve-artifact-location-proposal.md) |
 
 ## Как пользоваться
 
