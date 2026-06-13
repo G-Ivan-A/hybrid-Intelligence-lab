@@ -11,8 +11,24 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- creative: session digest mechanism for context transfer between chats
+  (issue #225). Added `governance/session-digests.md` as the single storage
+  point for session summaries (index + instructions + first digest for the
+  2026-06-13 documentation-architecture discussion). The mechanism is for
+  external agents (ChatGPT/Claude) on chat-to-chat handover only and explicitly
+  does NOT affect the task-executor agent (Konard) — no token burn on
+  summarization during task execution. Propagates to project repos via Smart
+  Sync of the `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` genome.
+
 ### Changed
 
+- creative: добавлен раздел «Периодическая суммаризация сессии» в
+  `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` (порог 30 обращений / ~50К
+  токенов; путь `governance/session-digests.md`; структура контекст/решения/
+  открытые вопросы/следующие шаги; агент инициирует вопрос пользователю только
+  при передаче контекста в чат). Обновлена `governance/artifact-map.md`.
 - structured: обновить Vision/Concept + создать knowledge-lifecycle + resolver + универсальные шаблоны.
 - fix: откатить автоматический перевод Draft → Canonical, требуется явное подтверждение Фаундера.
 - Issue #217 PR rebuild (Creative mode): added a separate `practices/` KB for

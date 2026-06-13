@@ -111,6 +111,7 @@ is_active_file() {
     governance/artifact-map.md | \
     governance/backlog.md | \
     governance/executable-documents-issues.md | \
+    governance/session-digests.md | \
     governance/rfc/README.md | \
     governance/rfc/rfc-two-cases-of-project-initialization.md | \
     governance/rfc/contract-executability-rfc.md | \
@@ -446,6 +447,7 @@ required_files=(
   "governance/artifact-map.md"
   "governance/backlog.md"
   "governance/executable-documents-issues.md"
+  "governance/session-digests.md"
   "governance/rfc/README.md"
   "governance/rfc/rfc-two-cases-of-project-initialization.md"
   "governance/rfc/contract-executability-rfc.md"
@@ -1010,11 +1012,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.31"
+require_text "governance/artifact-map.md" "version: 1.32"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-12"
+require_text "governance/artifact-map.md" "updated: 2026-06-13"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
@@ -1055,6 +1057,20 @@ require_text "governance/artifact-map.md" "governance/rfc/resolve-artifact-locat
 require_text "governance/artifact-map.md" "governance/rfc/product-concept-template-proposal.md"
 require_text "governance/artifact-map.md" "governance/rfc/solution-concept-template-proposal.md"
 require_text "governance/artifact-map.md" "явного подтверждения"
+require_text "governance/artifact-map.md" "governance/session-digests.md"
+
+require_text "governance/session-digests.md" "status: draft"
+require_text "governance/session-digests.md" "version: 0.1"
+require_text "governance/session-digests.md" "updated: 2026-06-13"
+require_text "governance/session-digests.md" "temperature: 0.1"
+require_text "governance/session-digests.md" "Контекст"
+require_text "governance/session-digests.md" "Решения"
+require_text "governance/session-digests.md" "Открытые вопросы"
+require_text "governance/session-digests.md" "Следующие шаги"
+require_text "governance/session-digests.md" "Индекс"
+require_text "governance/session-digests.md" "2026-06-13"
+require_text "governance/session-digests.md" "Anti-Inflation"
+require_text "governance/session-digests.md" "Разложение на проектные репо"
 
 require_text "governance/backlog.md" "status: canonical"
 require_text "governance/backlog.md" "type: backlog"
@@ -1356,7 +1372,9 @@ require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/agent-onboarding-protocol.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.4"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.5"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/session-digests.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "executable: true"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат."
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"

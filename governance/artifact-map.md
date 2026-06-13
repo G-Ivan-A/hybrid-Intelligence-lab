@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.31
-updated: 2026-06-12
+version: 1.32
+updated: 2026-06-13
 temperature: 0.1
 ai-generated: false
 ---
@@ -86,6 +86,7 @@ ai-generated: false
 | `/governance/artifact-map.md` | навигация | справка | Эта карта: навигация по артефактам, типам, обязательности, исполнимости и связям. | ✅ Да | `README.md`, `governance/repo-model.md`, `standards/glossary.md`, `governance/rfc/contract-executability-rfc.md` |
 | `/governance/backlog.md` | навигация | — | Единый бэклог работ Хаба (Sprint 3): сводная таблица задач, приоритеты P0–P3, зависимости и критический путь, источники, креативный анализ рекомендаций команд С и Q, North Star и триггеры пересмотра. Ортогонален этой карте: карта показывает «что есть», бэклог — «что осталось». Решение по приоритетам за человеком. | ✅ Да | `governance/agent-onboarding-protocol.md`, `governance/rfc/rfc-two-cases-of-project-initialization.md`, `research/hub/external-governance-patterns-review-2026-06.md`, `standards/glossary.md` |
 | `/governance/executable-documents-issues.md` | навигация | — | Реестр GitHub Issues CE-001..CE-010 для внедрения стандарта исполнимых документов по RFC §6.1: URL задач, файлы, приоритеты, зависимости, статусы и обязательные метки. | ✅ Да | `governance/rfc/contract-executability-rfc.md`, `governance/backlog.md`, `standards/glossary.md` |
+| `/governance/session-digests.md` | журнал | справка | Единая точка хранения суммарий длинных сессий с внешними агентами (ChatGPT/Claude) для передачи контекста между чатами: индекс + инструкции + суммарии с якорями по дате. Механизм только для внешних агентов; агент-исполнитель (Конард) его НЕ использует и не жжёт токены на суммаризацию. | ⚠️ По необходимости | `standards/session-handover-standard.md`, `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, `governance/agent-onboarding-protocol.md`, `guides/sync-with-projects.md` |
 | `/governance/rfc/README.md` | навигация | Canonical | Индекс каталога RFC Хаба: RFC как рекомендации/proposals до human decision и делегирования обязательных норм в active artifacts. | ✅ Да | `governance/artifact-map.md`, `governance/repo-model.md`, `research/governance/governance-folder-structure-decisions-2026-06.md` |
 | `/governance/rfc/rfc-two-cases-of-project-initialization.md` | RFC | Canonical | Концептуальный манифест разделения двух ортогональных кейсов инициализации проекта: Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Аналогии из 4 смежных областей, таблица-манифест (13 строк), Mermaid-схема жизненного цикла, обоснование с трассировкой к ретроспективе, follow-up. Термины — только из `standards/glossary.md`. Решение за человеком. | ⚠️ По необходимости | `governance/agent-onboarding-protocol.md`, `templates/htom/README.md`, `research/hub/ai-collaboration-retrospective-2026-06.md`, `standards/glossary.md` |
 | `/governance/rfc/contract-executability-rfc.md` | RFC | справка | Reviewed decision record архитектуры исполнимых документов: анализ инцидента «анализ вместо исполнения», утверждённое Видение 3, decision-status table и делегирование нормативных правил в `standards/executable-contract-standard.md`. | ⚠️ По необходимости | `governance/artifact-map.md`, `governance/agent-onboarding-protocol.md`, `AI_GOVERNANCE.md`, `standards/issue-workflow.md`, `templates/htom/AI_QUICK_RULES.md`, `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, `standards/glossary.md` |
