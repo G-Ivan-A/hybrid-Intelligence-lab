@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.4
+version: 1.5
 updated: 2026-06-13
 temperature: 0.1
 ---
@@ -13,6 +13,14 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- structured: open questions consolidation rule (issue #233). Added the rule
+  that open questions from `governance/session-digests.md` must be consolidated
+  into `governance/backlog.md` without duplication, with digest links tracked in
+  «Связанные дайджесты». Added the `governance/backlog.md` section
+  «Открытые вопросы», seeded it from the existing 2026-06-13 session digest,
+  and synchronized `CONTRIBUTING.md`,
+  `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, `governance/session-digests.md`
+  and `governance/artifact-map.md`.
 - creative: documentation architecture balance research and RFC (issue #231).
   Added `governance/rfc/documentation-architecture-balance.md` resolving the
   tension between Anti-Inflation (merge to avoid excess documents) and Atomicity

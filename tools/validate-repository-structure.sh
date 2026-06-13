@@ -541,6 +541,10 @@ while IFS= read -r file; do
     continue
   fi
 
+  if [[ "${file##*/}" == ".gitkeep" ]]; then
+    continue
+  fi
+
   if is_old_file "$file"; then
     fail "tracked legacy -old file after migration cleanup: $file"
     continue
@@ -581,8 +585,10 @@ require_text "CONCEPT.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.2"
-require_text "CONTRIBUTING.md" "updated: 2026-06-12"
+require_text "CONTRIBUTING.md" "version: 1.3"
+require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
+require_text "CONTRIBUTING.md" "governance/backlog.md"
+require_text "CONTRIBUTING.md" "updated: 2026-06-13"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -1050,7 +1056,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.34"
+require_text "governance/artifact-map.md" "version: 1.35"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1149,7 +1155,7 @@ require_text "governance/rfc/documentation-architecture-balance.md" "clarify-eng
 require_text "governance/rfc/documentation-architecture-balance.md" "Open Decision"
 
 require_text "governance/session-digests.md" "status: draft"
-require_text "governance/session-digests.md" "version: 0.2"
+require_text "governance/session-digests.md" "version: 0.3"
 require_text "governance/session-digests.md" "updated: 2026-06-13"
 require_text "governance/session-digests.md" "temperature: 0.1"
 require_text "governance/session-digests.md" "Контекст"
@@ -1160,12 +1166,15 @@ require_text "governance/session-digests.md" "Индекс"
 require_text "governance/session-digests.md" "2026-06-13"
 require_text "governance/session-digests.md" "Anti-Inflation"
 require_text "governance/session-digests.md" "Разложение на проектные репо"
+require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.3"
+require_text "governance/backlog.md" "version: 1.4"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
+require_text "governance/backlog.md" "## Открытые вопросы"
+require_text "governance/backlog.md" "| Дата | Источник | Суть | Статус | Связанные дайджесты | Связанный артефакт |"
 require_text "governance/backlog.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Обоснование приоритета |"
 require_text "governance/backlog.md" "Бэклог: Внедрение стандарта исполнимых документов"
 require_text "governance/backlog.md" "CE-001"
@@ -1464,9 +1473,10 @@ require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/agent-onboarding-protocol.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.6"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.7"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/session-digests.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/BACKLOG.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "executable: true"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат."
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.3
+version: 1.4
 updated: 2026-06-13
 temperature: 0.1
 ai-generated: true
@@ -139,6 +139,21 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 - **После изменения** — обнови поле `updated` во frontmatter и прогони локальные
   проверки (`./tools/validate-frontmatter.sh .` и
   `./tools/validate-repository-structure.sh`).
+
+---
+
+## Открытые вопросы
+
+Единый трекер открытых вопросов из
+[`governance/session-digests.md`](session-digests.md). При создании нового
+дайджеста вопросы из блока «Открытые вопросы» добавляются сюда. Если вопрос уже
+есть, строка не дублируется: новая ссылка добавляется в колонку «Связанные
+дайджесты».
+
+| Дата | Источник | Суть | Статус | Связанные дайджесты | Связанный артефакт |
+| --- | --- | --- | --- | --- | --- |
+| 2026-06-13 | session-digest: [2026-06-13](session-digests.md#2026-06-13--архитектура-документации-и-баланс-anti-inflation-vs-атомарность) | Когда переходить к графовой структуре знаний вместо плоского индекса. | open | [session-digests.md#2026-06-13](session-digests.md#2026-06-13--архитектура-документации-и-баланс-anti-inflation-vs-атомарность) | — |
+| 2026-06-13 | session-digest: [2026-06-13](session-digests.md#2026-06-13--архитектура-документации-и-баланс-anti-inflation-vs-атомарность) | Как фиксировать связи между атомами без дублирования метаданных и нарушения Anti-Inflation. | open | [session-digests.md#2026-06-13](session-digests.md#2026-06-13--архитектура-документации-и-баланс-anti-inflation-vs-атомарность) | [draft-triage-and-exit-plan.md](rfc/draft-triage-and-exit-plan.md) |
 
 ---
 
