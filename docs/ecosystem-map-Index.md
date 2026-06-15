@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-15
 temperature: 0.1
 ai-generated: true
@@ -17,12 +17,12 @@ ai-generated: true
 
 ## Карта проектов
 
-| Проект | URL | Текущая фаза | Ключевые теги | Ссылка на Summary |
-| --- | --- | --- | --- | --- |
-| hybrid-Intelligence-lab (Хаб) | [github](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) | Sprint 3 «Hybrid Minimum Bootstrap» | `hub`, `governance`, `knowledge-lifecycle`, `external-knowledge` | [AI_PROJECT_CONTEXT-Summary.md](../AI_PROJECT_CONTEXT-Summary.md) |
-| mango_ba_prompts | [github](https://github.com/G-Ivan-A/mango_ba_prompts) | Фаза 1 — миграция в standalone-спок | `ba-prompts`, `mango`, `taxonomy`, `github-pages` | [staging](project-summaries/mango-ba-prompts-context-Summary.md) → `mango_ba_prompts/AI_PROJECT_CONTEXT-Summary.md` |
-| open-ai.ru | [github](https://github.com/G-Ivan-A/open-ai.ru) | Phase 0 — Planning & Vision | `ai-native`, `hybrid-teams`, `product`, `bootstrap` | [staging](project-summaries/open-ai-ru-context-Summary.md) → `open-ai.ru/AI_PROJECT_CONTEXT-Summary.md` |
-| clarify-engine-ai | [github](https://github.com/G-Ivan-A/clarify-engine-ai) | MVP/Pilot — CONCEPT v2.6 Approved | `rag`, `tender-analysis`, `human-in-the-loop`, `hybrid-search` | [staging](project-summaries/clarify-engine-ai-context-Summary.md) → `clarify-engine-ai/AI_PROJECT_CONTEXT-Summary.md` |
+| Проект | URL | Текущая фаза | Дата актуализации фазы | Ключевые теги | Ссылка на Summary |
+| --- | --- | --- | --- | --- | --- |
+| hybrid-Intelligence-lab (Хаб) | [github](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) | Sprint 3 «Hybrid Minimum Bootstrap» | 2026-06-15 | `hub`, `governance`, `knowledge-lifecycle`, `external-knowledge` | [AI_PROJECT_CONTEXT-Summary.md](../AI_PROJECT_CONTEXT-Summary.md) |
+| mango_ba_prompts | [github](https://github.com/G-Ivan-A/mango_ba_prompts) | Фаза 1 — миграция в standalone-спок | 2026-06-15 | `ba-prompts`, `mango`, `taxonomy`, `github-pages` | [staging](project-summaries/mango-ba-prompts-context-Summary.md) → `mango_ba_prompts/AI_PROJECT_CONTEXT-Summary.md` |
+| open-ai.ru | [github](https://github.com/G-Ivan-A/open-ai.ru) | Phase 0 — Planning & Vision | 2026-06-15 | `ai-native`, `hybrid-teams`, `product`, `bootstrap` | [staging](project-summaries/open-ai-ru-context-Summary.md) → `open-ai.ru/AI_PROJECT_CONTEXT-Summary.md` |
+| clarify-engine-ai | [github](https://github.com/G-Ivan-A/clarify-engine-ai) | MVP/Pilot — CONCEPT v2.6 Approved | 2026-06-15 | `rag`, `tender-analysis`, `human-in-the-loop`, `hybrid-search` | [staging](project-summaries/clarify-engine-ai-context-Summary.md) → `clarify-engine-ai/AI_PROJECT_CONTEXT-Summary.md` |
 
 > ⚠️ **Staging vs канон.** Карты `-Summary` спок-проектов созданы в Хабе как
 > источник истины и физически лежат в
@@ -34,8 +34,9 @@ ai-generated: true
 ## Как пользоваться
 
 1. Нашёл нужный проект по фазе или тегам в таблице.
-2. Перешёл в его `-Summary` — получил цель, фокус, активные стандарты и границы.
-3. Нужны детали связей и синхронизации? → [ecosystem-map.md](ecosystem-map.md)
+2. Проверил дату актуализации фазы (формат ISO 8601: `YYYY-MM-DD`).
+3. Перешёл в его `-Summary` — получил цель, фокус, активные стандарты и границы.
+4. Нужны детали связей и синхронизации? → [ecosystem-map.md](ecosystem-map.md)
    (уровень `Full`).
 
 ## Связанные документы

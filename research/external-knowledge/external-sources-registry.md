@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-06-15
 temperature: 0.1
 ai-generated: true
@@ -48,30 +48,32 @@ related_issues:
 | Тип | Класс источника для грубой фильтрации. | `github` · `blog` · `habr` · `standard` · `paper` · `docs`. |
 | Язык | Язык первоисточника — для фильтрации и Traceability. | `ru` · `en` · др. |
 | Теги | Тематические метки для отбора агентами и проектами. | `kebab-case`, через запятую. |
-| Stage | Стадия жизненного цикла знания (см. lifecycle). | `observation` · `research` · `hypothesis` · `deprecated`. |
+| Теги будущих фаз / тем | Опциональные метки для источников, полезных не сейчас, а для будущих фаз или смежных тем. | `future-phase: agents`, `topic: orchestration`, `use-case: training-courses`. |
+| Stage | Стадия жизненного цикла знания (см. lifecycle). | `observation` · `research` · `hypothesis` · `deprecated` · `rejected`. |
 | Проекты | Кому источник релевантен. | `hub` · `mango` · `open-ai.ru` · `clarify-engine-ai` · `all`. |
-| Запись в БЗ | Есть ли извлечённый инсайт в базе знаний и ссылка на него. | `✅` + путь в `external-insights/` · `❌` (бесполезен/не извлечён). |
+| Запись в БЗ | Есть ли извлечённый инсайт в базе знаний и ссылка на него. | `✅` + путь в `external-insights/` · `❌` (не извлечён/отклонено). |
 
 > 📌 **Почему `stage` не идёт дальше `hypothesis` в реестре.** Реестр фиксирует
-> только стадии «наблюдения и исследования». Стадии `rfc → pattern → standard`
-> живут в `governance/rfc/`, `practices/` и `standards/` — у реестра нет права
+> только стадии «наблюдения и исследования» плюс служебные терминальные статусы
+> `deprecated` и `rejected`. Стадии `rfc → pattern → standard` живут в
+> `governance/rfc/`, `practices/` и `standards/` — у реестра нет права
 > «протащить» источник в практику в обход валидации человеком.
 
 ## Реестр
 
-| `id` | Источник | Тип | Язык | Теги | Stage | Проекты | Запись в БЗ |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `ext-001` | [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) | `blog` | `en` | `agents, workflow-patterns, orchestration, hybrid-collaboration` | `research` | `all` | ✅ [building-effective-agents-2026-06.md](external-insights/building-effective-agents-2026-06.md) |
-| `ext-002` | [12-Factor Agents (HumanLayer)](https://github.com/humanlayer/12-factor-agents) | `github` | `en` | `agents, production, prompt-ownership, human-in-the-loop` | `research` | `all` | ✅ [12-factor-agents-2026-06.md](external-insights/12-factor-agents-2026-06.md) |
-| `ext-003` | [GitHub Spec Kit (Spec-Driven Development)](https://github.com/github/spec-kit) | `github` | `en` | `spec-driven, requirements, agents, executable-spec` | `hypothesis` | `mango, clarify-engine-ai` | ✅ [spec-driven-development-2026-06.md](external-insights/spec-driven-development-2026-06.md) |
-| `ext-004` | [Anthropic — Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) | `blog` | `en` | `agents, coding-agent, workflow, tooling` | `observation` | `hub, open-ai.ru` | ❌ |
-| `ext-005` | [OpenAI — A Practical Guide to Building Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) | `paper` | `en` | `agents, guardrails, orchestration` | `observation` | `all` | ❌ |
-| `ext-006` | [Diátaxis — documentation framework](https://diataxis.fr/) | `docs` | `en` | `documentation, tutorials, reference, knowledge-structure` | `observation` | `hub` | ❌ |
-| `ext-007` | [Habr — Контекст-инжиниринг для AI-агентов](https://habr.com/ru/companies/ru_mts/articles/) | `habr` | `ru` | `context-engineering, agents, ru-community` | `observation` | `hub, mango` | ❌ |
-| `ext-008` | [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | `blog` | `en` | `context-engineering, agents, token-budget` | `observation` | `all` | ❌ |
-| `ext-009` | [Habr — Codex и локальная память на SQLite (Hermes Codex Plugin)](https://habr.com/ru/articles/1045262/) | `habr` | `ru` | `context-engineering, agent-memory, token-budget, mcp, project-rules` | `research` | `hub, mango, open-ai.ru, clarify-engine-ai` | ✅ [agent-local-memory-context-2026-06.md](external-insights/agent-local-memory-context-2026-06.md) |
-| `ext-010` | [Habr — Паттерн экономии токенов в Claude Code на правке файлов](https://habr.com/ru/articles/1045186/) | `habr` | `ru` | `token-budget, claude-code, file-editing, tool-specific` | `observation` | `hub` | ❌ (бесполезен) |
-| `ext-011` | [Habr — Структурированная разработка на основе промптов (SPDD)](https://habr.com/ru/articles/1045060/) | `habr` | `ru` | `spec-driven, prompts-as-artifacts, reproducibility, workflow` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` | ✅ [structured-prompt-driven-development-2026-06.md](external-insights/structured-prompt-driven-development-2026-06.md) |
+| `id` | Источник | Тип | Язык | Теги | Теги будущих фаз / тем | Stage | Проекты | Запись в БЗ |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `ext-001` | [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) | `blog` | `en` | `agents, workflow-patterns, orchestration, hybrid-collaboration` | `future-phase: agents, topic: orchestration` | `research` | `all` | ✅ [building-effective-agents-2026-06.md](external-insights/building-effective-agents-2026-06.md) |
+| `ext-002` | [12-Factor Agents (HumanLayer)](https://github.com/humanlayer/12-factor-agents) | `github` | `en` | `agents, production, prompt-ownership, human-in-the-loop` | `future-phase: agents, topic: production-agents` | `research` | `all` | ✅ [12-factor-agents-2026-06.md](external-insights/12-factor-agents-2026-06.md) |
+| `ext-003` | [GitHub Spec Kit (Spec-Driven Development)](https://github.com/github/spec-kit) | `github` | `en` | `spec-driven, requirements, agents, executable-spec` | `use-case: requirements-engineering` | `hypothesis` | `mango, clarify-engine-ai` | ✅ [spec-driven-development-2026-06.md](external-insights/spec-driven-development-2026-06.md) |
+| `ext-004` | [Anthropic — Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) | `blog` | `en` | `agents, coding-agent, workflow, tooling` | `future-phase: agents, topic: coding-agent-workflow` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-005` | [OpenAI — A Practical Guide to Building Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) | `paper` | `en` | `agents, guardrails, orchestration` | `future-phase: agents, topic: guardrails, topic: orchestration` | `observation` | `all` | ❌ |
+| `ext-006` | [Diátaxis — documentation framework](https://diataxis.fr/) | `docs` | `en` | `documentation, tutorials, reference, knowledge-structure` | `use-case: training-courses` | `observation` | `hub` | ❌ |
+| `ext-007` | [Habr — Контекст-инжиниринг для AI-агентов](https://habr.com/ru/companies/ru_mts/articles/) | `habr` | `ru` | `context-engineering, agents, ru-community` | `future-phase: agents, topic: context-engineering` | `observation` | `hub, mango` | ❌ |
+| `ext-008` | [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | `blog` | `en` | `context-engineering, agents, token-budget` | `future-phase: agents, topic: context-engineering` | `observation` | `all` | ❌ |
+| `ext-009` | [Habr — Codex и локальная память на SQLite (Hermes Codex Plugin)](https://habr.com/ru/articles/1045262/) | `habr` | `ru` | `context-engineering, agent-memory, token-budget, mcp, project-rules` | `future-phase: agent-memory, topic: token-budget` | `research` | `hub, mango, open-ai.ru, clarify-engine-ai` | ✅ [agent-local-memory-context-2026-06.md](external-insights/agent-local-memory-context-2026-06.md) |
+| `ext-010` | [Habr — Паттерн экономии токенов в Claude Code на правке файлов](https://habr.com/ru/articles/1045186/) | `habr` | `ru` | `token-budget, claude-code, file-editing, tool-specific` | `topic: tool-specific-file-editing` | `observation` | `hub` | ❌ (не извлечён) |
+| `ext-011` | [Habr — Структурированная разработка на основе промптов (SPDD)](https://habr.com/ru/articles/1045060/) | `habr` | `ru` | `spec-driven, prompts-as-artifacts, reproducibility, workflow` | `use-case: training-courses, topic: prompt-artifacts` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` | ✅ [structured-prompt-driven-development-2026-06.md](external-insights/structured-prompt-driven-development-2026-06.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
@@ -86,13 +88,17 @@ related_issues:
    `stage: observation`.
 3. Если из источника извлечён конкретный вывод — создай инсайт в
    [external-insights/](external-insights/), проставь `✅` и ссылку в колонке
-   «Запись в БЗ». Если источник бесполезен — оставь `❌ (бесполезен)`, инсайт не
-   создавай (Anti-Inflation).
-4. Если источник относится только к одному проекту — он может жить в **Local
+   «Запись в БЗ».
+4. Если источник не полезен текущей фазе, но содержит идеи для будущих фаз или
+   смежных тем — заполни колонку «Теги будущих фаз / тем» (`future-phase: X`,
+   `topic: Y`, `use-case: Z`) и сохрани извлечённый вывод как задел на будущее.
+5. Если источник имеет явные признаки хайпа/воды — поставь `stage: rejected`,
+   оставь `❌ (отклонено)` и не создавай инсайт (Anti-Inflation).
+6. Если источник относится только к одному проекту — он может жить в **Local
    Extension** проекта (`research/<project>/external-sources-registry.md` в споке),
    а в Base Registry попадает лишь при общей ценности (см.
    [governance/rfc/external-knowledge-integration.md](../../governance/rfc/external-knowledge-integration.md)).
-5. Обнови `updated` во frontmatter.
+7. Обнови `updated` во frontmatter.
 
 ## Как использовать (для агентов)
 
