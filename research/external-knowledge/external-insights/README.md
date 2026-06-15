@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-13
+version: 0.2
+updated: 2026-06-15
 temperature: 0.1
 ai-generated: true
 ---
@@ -70,6 +70,8 @@ context: [tag1, tag2]
 | [building-effective-agents-2026-06.md](building-effective-agents-2026-06.md) | `ext-001` | `research` | `all` |
 | [12-factor-agents-2026-06.md](12-factor-agents-2026-06.md) | `ext-002` | `research` | `all` |
 | [spec-driven-development-2026-06.md](spec-driven-development-2026-06.md) | `ext-003` | `hypothesis` | `mango, clarify-engine-ai` |
+| [agent-local-memory-context-2026-06.md](agent-local-memory-context-2026-06.md) | `ext-009` | `research` | `all` |
+| [structured-prompt-driven-development-2026-06.md](structured-prompt-driven-development-2026-06.md) | `ext-011` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` |
 
 ## Как добавить инсайт
 
@@ -77,5 +79,6 @@ context: [tag1, tag2]
    [реестре](../external-sources-registry.md) (если нет — добавь запись).
 2. Создай файл `<slug>-YYYY-MM.md` с frontmatter выше.
 3. Сформулируй один атомарный вывод, аргументы и «Путь к практике».
-4. Проставь ссылку на инсайт в колонке «Инсайт» реестра и в таблице выше.
+4. Проставь `✅` и ссылку на инсайт в колонке «Запись в БЗ»
+   [реестра](../external-sources-registry.md) и добавь строку в таблицу выше.
 5. Обнови `updated`.

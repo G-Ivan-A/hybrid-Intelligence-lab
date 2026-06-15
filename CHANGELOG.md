@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.5
-updated: 2026-06-13
+version: 1.6
+updated: 2026-06-15
 temperature: 0.1
 ---
 
@@ -13,6 +13,25 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- creative: external sources rules + Index/Summary maps + Habr test (issue #235).
+  Added the detail-level suffix rule (`-Index` / `-Summary` / `-Full`) to
+  `standards/file-naming.md` (v1.3) with a cross-reference in
+  `standards/executable-documentation-standard.md` (v1.2). Codified rules for
+  working with external sources — task recognition (label `research` without a
+  URL = broad search; concrete URL = study that source), result fixation (a
+  studied fact always goes to the registry; a useful insight additionally to
+  `external-insights/`; a useless source stays registry-only with status
+  «бесполезен» and no insight), and record cleanliness (study facts never enter
+  `CHANGELOG.md`) — in `research/external-knowledge/README.md` and
+  `CONTRIBUTING.md` (v1.4). Extended `external-sources-registry.md` (v0.2) with
+  the `Запись в БЗ`, `Проекты` and `Язык` columns. Created the two-level
+  navigation maps: `docs/ecosystem-map-Index.md` (Index over the four ecosystem
+  projects) and `AI_PROJECT_CONTEXT-Summary.md` in the hub root, plus staged
+  spoke summaries under `docs/project-summaries/` (mango_ba_prompts, open-ai.ru,
+  clarify-engine-ai) for later propagation via separate PRs. Tested the
+  Index → Summary filter on three Habr articles: registered `ext-009`/`ext-011`
+  with insight files and `ext-010` as registry-only «бесполезен». Registered the
+  new active artifacts in `governance/artifact-map.md` (v1.36).
 - structured: open questions consolidation rule (issue #233). Added the rule
   that open questions from `governance/session-digests.md` must be consolidated
   into `governance/backlog.md` without duplication, with digest links tracked in

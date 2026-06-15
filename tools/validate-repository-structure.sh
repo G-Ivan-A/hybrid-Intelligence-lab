@@ -44,6 +44,7 @@ is_active_file() {
     CONCEPT.md | \
     CONTRIBUTING.md | \
     AI_GOVERNANCE.md | \
+    AI_PROJECT_CONTEXT-Summary.md | \
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
@@ -98,6 +99,8 @@ is_active_file() {
     research/external-knowledge/external-insights/building-effective-agents-2026-06.md | \
     research/external-knowledge/external-insights/12-factor-agents-2026-06.md | \
     research/external-knowledge/external-insights/spec-driven-development-2026-06.md | \
+    research/external-knowledge/external-insights/agent-local-memory-context-2026-06.md | \
+    research/external-knowledge/external-insights/structured-prompt-driven-development-2026-06.md | \
     practices/README.md | \
     practices/agent-work/README.md | \
     practices/agent-work/hybrid-search-before-action.md | \
@@ -143,6 +146,11 @@ is_active_file() {
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
+    docs/ecosystem-map-Index.md | \
+    docs/project-summaries/README.md | \
+    docs/project-summaries/mango-ba-prompts-context-Summary.md | \
+    docs/project-summaries/open-ai-ru-context-Summary.md | \
+    docs/project-summaries/clarify-engine-ai-context-Summary.md | \
     docs/audit/task-execution-audit-2026-06.md | \
     guides/README.md | \
     guides/quick-start.md | \
@@ -446,6 +454,8 @@ required_files=(
   "research/external-knowledge/external-insights/building-effective-agents-2026-06.md"
   "research/external-knowledge/external-insights/12-factor-agents-2026-06.md"
   "research/external-knowledge/external-insights/spec-driven-development-2026-06.md"
+  "research/external-knowledge/external-insights/agent-local-memory-context-2026-06.md"
+  "research/external-knowledge/external-insights/structured-prompt-driven-development-2026-06.md"
   "practices/README.md"
   "practices/agent-work/README.md"
   "practices/agent-work/hybrid-search-before-action.md"
@@ -585,10 +595,11 @@ require_text "CONCEPT.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.3"
+require_text "CONTRIBUTING.md" "version: 1.4"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
+require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "governance/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-06-13"
+require_text "CONTRIBUTING.md" "updated: 2026-06-15"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -677,8 +688,8 @@ require_text "standards/frontmatter-docs-standard.md" "Template"
 require_text "standards/frontmatter-docs-standard.md" "necessary and sufficient"
 
 require_text "standards/executable-documentation-standard.md" "status: canonical"
-require_text "standards/executable-documentation-standard.md" "version: 1.1"
-require_text "standards/executable-documentation-standard.md" "updated: 2026-06-13"
+require_text "standards/executable-documentation-standard.md" "version: 1.2"
+require_text "standards/executable-documentation-standard.md" "updated: 2026-06-15"
 require_text "standards/executable-documentation-standard.md" "temperature: 0.1"
 require_text "standards/executable-documentation-standard.md" "Descriptive documents"
 require_text "standards/executable-documentation-standard.md" "Executable documents"
@@ -688,6 +699,8 @@ require_text "standards/executable-documentation-standard.md" "Template = оди
 require_text "standards/executable-documentation-standard.md" "Framework = набор связанных Standards, Templates, Patterns"
 require_text "standards/executable-documentation-standard.md" "Practice graph"
 require_text "standards/executable-documentation-standard.md" "research/hub/international-ai-governance-practices-2026-06.md"
+require_text "standards/executable-documentation-standard.md" "Detail-level naming"
+require_text "standards/executable-documentation-standard.md" "[file-naming.md](file-naming.md)"
 
 require_text "standards/htom-documentation-structure.md" "status: canonical"
 require_text "standards/htom-documentation-structure.md" "version: 1.0"
@@ -768,8 +781,8 @@ require_text "standards/issue-workflow.md" "governance/artifact-map.md"
 require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
 require_text "standards/issue-workflow.md" "validate-repository-structure.sh"
 require_text "standards/file-naming.md" "status: canonical"
-require_text "standards/file-naming.md" "version: 1.2"
-require_text "standards/file-naming.md" "updated: 2026-06-06"
+require_text "standards/file-naming.md" "version: 1.3"
+require_text "standards/file-naming.md" "updated: 2026-06-15"
 require_text "standards/file-naming.md" "ai-generated: false"
 require_text "standards/file-naming.md" "Корень репозитория"
 require_text "standards/file-naming.md" "UPPERCASE_WITH_HYPHENS.md"
@@ -781,6 +794,10 @@ require_text "standards/file-naming.md" "classification-glossary.md"
 require_text "standards/file-naming.md" "agent-onboarding-protocol.md"
 require_text "standards/file-naming.md" "Исключения"
 require_text "standards/file-naming.md" "Новый файл не соответствует правилу"
+require_text "standards/file-naming.md" "Правило суффиксов уровня детализации"
+require_text "standards/file-naming.md" '`-Index`'
+require_text "standards/file-naming.md" '`-Summary`'
+require_text "standards/file-naming.md" '`-Full`'
 
 require_text "standards/research-profile.md" "status: canonical"
 require_text "standards/research-profile.md" "version: 1.1"
@@ -1056,11 +1073,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.35"
+require_text "governance/artifact-map.md" "version: 1.36"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-13"
+require_text "governance/artifact-map.md" "updated: 2026-06-15"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
@@ -1120,6 +1137,11 @@ require_text "research/external-knowledge/README.md" "Base Registry"
 require_text "research/external-knowledge/README.md" "external-sources-registry.md"
 require_text "research/external-knowledge/README.md" "external-insights/"
 require_text "research/external-knowledge/README.md" "Anti-Inflation"
+require_text "research/external-knowledge/README.md" "Правила работы с внешними источниками"
+require_text "research/external-knowledge/README.md" "Распознавание задачи"
+require_text "research/external-knowledge/README.md" "Фиксация результата"
+require_text "research/external-knowledge/README.md" "Чистота записей"
+require_text "research/external-knowledge/README.md" "устарел"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
@@ -1127,6 +1149,10 @@ require_text "research/external-knowledge/external-sources-registry.md" "scope: 
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
 require_text "research/external-knowledge/external-sources-registry.md" "ext-001"
 require_text "research/external-knowledge/external-sources-registry.md" "Anti-Inflation"
+require_text "research/external-knowledge/external-sources-registry.md" "Запись в БЗ"
+require_text "research/external-knowledge/external-sources-registry.md" "| \`id\` | Источник | Тип | Язык | Теги | Stage | Проекты | Запись в БЗ |"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-009"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-011"
 
 require_text "research/external-knowledge/external-insights/README.md" "status: draft"
 require_text "research/external-knowledge/external-insights/README.md" "source_id"

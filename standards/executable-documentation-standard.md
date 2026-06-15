@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-13
+version: 1.2
+updated: 2026-06-15
 temperature: 0.1
 ---
 
@@ -74,6 +74,27 @@ reject, or adapt one practice without taking an entire research report.
 **Критерий:** Framework всегда содержит 2+ артефакта разных типов
 (Standards + Templates + Patterns) и описывает их взаимосвязи для класса
 проектов.
+
+## Detail-level naming (`-Index` / `-Summary` / `-Full`)
+
+When the same concept exists at several **detail levels** — the
+`Index → Summary → Full` framing from
+[../governance/rfc/documentation-architecture-balance.md](../governance/rfc/documentation-architecture-balance.md)
+— the files use a base name plus a level suffix so the level is visible in the
+file name itself and lazy loading is predictable: an agent opens `-Index` to
+select, `-Summary` for task context, and `-Full` only when the shallower slice
+does not answer the question.
+
+| Suffix | Level | Purpose |
+| --- | --- | --- |
+| `-Index` | minimum | Entry point / navigation: a table or list of links, no detail. |
+| `-Summary` | brief | Compact task context: goal, focus, boundaries. |
+| `-Full` | full | Expanded document with all detail and rationale. |
+
+The suffix is added **only when more than one level of the same concept exists**
+(Anti-Inflation), and promoting/demoting a level is a human decision. The
+canonical rule, casing (`PascalCase` suffix) and placement interaction live in
+[file-naming.md](file-naming.md).
 
 ## Practice graph
 

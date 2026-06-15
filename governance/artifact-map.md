@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.35
-updated: 2026-06-13
+version: 1.36
+updated: 2026-06-15
 temperature: 0.1
 ai-generated: false
 ---
@@ -185,6 +185,8 @@ ai-generated: false
 | `/research/external-knowledge/external-insights/building-effective-agents-2026-06.md` | исследование | — | Инсайт `ext-001`: простые компонуемые паттерны агентов > монолитные «умные» агенты; совпадение с Anti-Inflation principle. Stage: research. | ⚠️ По необходимости | `research/external-knowledge/external-sources-registry.md`, `governance/repo-model.md`, `practices/agent-work/README.md` |
 | `/research/external-knowledge/external-insights/12-factor-agents-2026-06.md` | исследование | — | Инсайт `ext-002`: владей промптами/контекстом как кодом, держи человека в петле; совпадение с executable-contract-standard и hard rule решения за человеком. Stage: research. | ⚠️ По необходимости | `research/external-knowledge/external-sources-registry.md`, `standards/executable-contract-standard.md`, `AI_GOVERNANCE.md` |
 | `/research/external-knowledge/external-insights/spec-driven-development-2026-06.md` | исследование | — | Инсайт `ext-003`: spec-driven development как кандидат для уточнения требований (Mango/clarify-engine-ai). Stage: hypothesis. | ⚠️ По необходимости | `research/external-knowledge/external-sources-registry.md`, `research/mango/requirements-flow.md`, `governance/rfc/knowledge-lifecycle-proposal.md` |
+| `/research/external-knowledge/external-insights/agent-local-memory-context-2026-06.md` | исследование | — | Инсайт `ext-009`: локальная память проекта + выборочный доступ к контексту подкрепляют рамку Index → Summary → Full и Anti-Inflation. Stage: research. | ⚠️ По необходимости | `research/external-knowledge/external-sources-registry.md`, `standards/file-naming.md`, `research/external-knowledge/README.md` |
+| `/research/external-knowledge/external-insights/structured-prompt-driven-development-2026-06.md` | исследование | — | Инсайт `ext-011`: промпт как версионируемый артефакт (SPDD), ru-перспектива SDD; усиливает executable documentation. Stage: research. | ⚠️ По необходимости | `research/external-knowledge/external-sources-registry.md`, `standards/executable-documentation-standard.md`, `research/external-knowledge/external-insights/spec-driven-development-2026-06.md` |
 | `/projects/README.md` | навигация | — | Правило выбора `/projects` vs spoke-репозиторий, список активных project areas и реестр мигрировавших проектов. | ✅ Да | `standards/product-profile.md`, `governance/repo-model.md`, `mango_ba_prompts` |
 | `https://github.com/G-Ivan-A/mango_ba_prompts` | каталог | — | Внешний spoke-репозиторий Mango: рабочие prompt assets, эксперименты, `standards/GLOSSARY.md` и migration manifest. | ⚠️ По необходимости | `projects/README.md`, `research/mango/README.md` |
 | `/projects/education-ba-prompt/README.md` | навигация | — | Sandbox raw-ideas area для курса по промпт-инжинирингу для бизнес-аналитиков: не public project до назначения owner + roadmap; содержит назначение, навигацию, процесс накопления идей и связи со стандартами. | ⚠️ По необходимости | `projects/README.md`, `standards/education-profile.md`, `standards/file-naming.md`, `standards/issue-workflow.md` |
