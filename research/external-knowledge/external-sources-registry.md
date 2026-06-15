@@ -14,12 +14,10 @@ related_artifacts:
   - "research/external-knowledge/external-insights/README.md"
   - "governance/rfc/external-knowledge-integration.md"
   - "governance/rfc/knowledge-lifecycle-proposal.md"
-  - "governance/rfc/research-memory-source-intelligence.md"
   - "governance/rfc/repository-archetypes-template-release.md"
   - "standards/research-profile.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/227"
-  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/239"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/240"
 ---
 

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.9
+version: 1.8
 updated: 2026-06-15
 temperature: 0.1
 ---
