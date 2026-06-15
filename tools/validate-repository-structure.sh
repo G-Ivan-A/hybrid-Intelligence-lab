@@ -123,6 +123,7 @@ is_active_file() {
     projects/repo-development/README.md | \
     projects/repo-development/docs/migration-audit-2026-05.md | \
     projects/repo-development/docs/contract-violations-self-report-2026-06.md | \
+    projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md | \
     governance/agent-onboarding-protocol.md | \
     governance/repo-model.md | \
     governance/artifact-map.md | \
@@ -477,6 +478,7 @@ required_files=(
   "projects/repo-development/README.md"
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
+  "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
   "governance/agent-onboarding-protocol.md"
   "governance/repo-model.md"
   "governance/artifact-map.md"
@@ -641,6 +643,7 @@ require_text "AI_GOVERNANCE.md" "Человек задаёт смысл, AI ус
 
 require_text "CHANGELOG.md" "## Unreleased"
 require_text "CHANGELOG.md" "issue #237"
+require_text "CHANGELOG.md" "issue #241"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
@@ -1082,7 +1085,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.37"
+require_text "governance/artifact-map.md" "version: 1.38"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1490,6 +1493,21 @@ require_text "projects/README.md" "status: canonical"
 require_text "projects/README.md" "Мигрировавшие проекты"
 require_text "projects/README.md" "mango_ba_prompts"
 require_text "projects/README.md" "repo-development/"
+
+require_text "projects/repo-development/README.md" "mango-ba-prompts-repository-migration-plan-2026-06.md"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "status: draft"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "version: 0.1"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Issue #241"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Task 2 RFC"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Prompt & Pattern Library"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "GitHub Flow + trunk discipline"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Scenario A"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Scenario B"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "governance/BACKLOG.md"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "scripts/validation/"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "prompts/experiments/"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "PR #90"
+require_text "governance/artifact-map.md" "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
 
 require_text "education/README.md" "status: canonical"
 require_text "education/README.md" "standards/education-profile.md"

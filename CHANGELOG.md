@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.7
+version: 1.8
 updated: 2026-06-15
 temperature: 0.1
 ---
@@ -13,6 +13,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- structured: Migration Plan for `mango_ba_prompts` repository (issue #241).
+  Added
+  `projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md`
+  as a draft planning artifact gated on the Task 2 RFC merge. The plan records
+  the provisional RFC sections used, current Mango repository snapshot, gap
+  analysis against the Prompt & Pattern Library archetype, Scenario A vs
+  Scenario B comparison, the in-place migration recommendation, Dev/Prod
+  strategy based on GitHub Flow + trunk discipline, and a future GitHub Actions
+  example. Registered the artifact in `projects/repo-development/README.md`,
+  `governance/artifact-map.md` (v1.38), and the structure validator.
 - creative: Research Memory & Source Intelligence RFC (issue #239). Added
   `governance/rfc/research-memory-source-intelligence.md` as a draft framework
   for Knowledge Object primacy over Tier 1 external sources and Tier 2 internal
