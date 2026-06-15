@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.8
+version: 1.9
 updated: 2026-06-15
 temperature: 0.1
 ---
@@ -16,13 +16,27 @@ All notable repository governance changes are documented here.
 - structured: Migration Plan for `mango_ba_prompts` repository (issue #241).
   Added
   `projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md`
-  as a draft planning artifact gated on the Task 2 RFC merge. The plan records
-  the provisional RFC sections used, current Mango repository snapshot, gap
-  analysis against the Prompt & Pattern Library archetype, Scenario A vs
-  Scenario B comparison, the in-place migration recommendation, Dev/Prod
-  strategy based on GitHub Flow + trunk discipline, and a future GitHub Actions
-  example. Registered the artifact in `projects/repo-development/README.md`,
-  `governance/artifact-map.md` (v1.38), and the structure validator.
+  as a draft planning artifact based on the merged Task 2 RFC
+  `governance/rfc/repository-archetypes-template-release.md`. The plan records
+  the final RFC sections used, current Mango repository snapshot, gap analysis
+  against the Prompt & Pattern Library archetype, Scenario A vs Scenario B
+  comparison, the in-place migration recommendation, Dev/Prod strategy based on
+  GitHub Flow + trunk discipline, and a future GitHub Actions example.
+  Registered the artifact in `projects/repo-development/README.md`,
+  `governance/artifact-map.md` (v1.39), and the structure validator.
+- creative: repository archetypes, project template and release strategy RFC
+  (issue #240). Added
+  `governance/rfc/repository-archetypes-template-release.md` with a necessity
+  analysis, external structure benchmark (LangChain, CrewAI examples, Microsoft
+  Foundry samples/templates, Azure AI chat sample), release-model benchmark
+  (GitHub Flow, GitFlow, Trunk-Based Development, GitHub Pages Actions), a
+  minimal ecosystem repository archetype taxonomy, a Prompt & Pattern Library
+  project template, illustrative `mango_ba_prompts` mapping without migration
+  instructions, a Governance sync rule (Hub base + local extension), and a
+  GitHub Flow + trunk discipline release strategy with a Pages workflow example.
+  Registered external sources as `ext-016`..`ext-024`, added navigation in
+  `governance/rfc/README.md` and `governance/artifact-map.md`, and extended the
+  structure validator to protect the RFC acceptance criteria.
 - creative: Research Memory & Source Intelligence RFC (issue #239). Added
   `governance/rfc/research-memory-source-intelligence.md` as a draft framework
   for Knowledge Object primacy over Tier 1 external sources and Tier 2 internal

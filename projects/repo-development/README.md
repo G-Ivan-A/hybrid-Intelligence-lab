@@ -42,7 +42,7 @@ ai-generated: false
 | --- | --- |
 | [docs/migration-audit-2026-05.md](docs/migration-audit-2026-05.md) | Отчёт аудита миграции: согласованность с `CONCEPT.md`, матрица ссылок, таблица `-old`, рекомендации. |
 | [docs/contract-violations-self-report-2026-06.md](docs/contract-violations-self-report-2026-06.md) | Self-report (`type: audit`) ошибок исполнения контрактов в сессии миграции Mango: обоснование таргета, 6 нарушений, системные выводы и анализ размещения ретроспектив. |
-| [docs/mango-ba-prompts-repository-migration-plan-2026-06.md](docs/mango-ba-prompts-repository-migration-plan-2026-06.md) | План миграции `mango_ba_prompts` к Repository Archetype Standard: зависимость от Task 2 RFC, gap analysis, сравнение сценариев, рекомендация и checklist исполнения. |
+| [docs/mango-ba-prompts-repository-migration-plan-2026-06.md](docs/mango-ba-prompts-repository-migration-plan-2026-06.md) | План миграции `mango_ba_prompts` к Repository Archetype Standard: применение merged Task 2 RFC, gap analysis, сравнение сценариев, рекомендация и checklist исполнения. |
 | [governance/repo-model.md](../../governance/repo-model.md) | Модель структуры репозитория и Anti-Inflation principle. |
 | [governance/artifact-map.md](../../governance/artifact-map.md) | Карта артефактов: где что лежит и как связано. |
 | [standards/issue-workflow.md](../../standards/issue-workflow.md) | Жизненный цикл задач: статусы и правила переходов. |

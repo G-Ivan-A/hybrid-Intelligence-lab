@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-15
 temperature: 0.1
 ---
@@ -10,8 +10,9 @@ temperature: 0.1
 This document closes Issue #241 by producing a reviewable migration plan for
 `mango_ba_prompts`. It does not execute the migration in the project
 repository. Execution must happen in a separate PR in
-`G-Ivan-A/mango_ba_prompts` after the Task 2 RFC is merged or this plan is
-revalidated against its final text.
+`G-Ivan-A/mango_ba_prompts` using the merged Task 2 RFC as input. If the RFC is
+later delegated into active standards/templates, revalidate this plan against
+those operational artifacts before execution.
 
 Related artifacts:
 
@@ -21,6 +22,8 @@ Related artifacts:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/240>
 - Task 2 RFC PR #243:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/243>
+- Task 2 RFC file:
+  `governance/rfc/repository-archetypes-template-release.md`
 - Completed dependency PR #238:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/238>
 - Target repository:
@@ -33,18 +36,20 @@ Status checked on 2026-06-15:
 | Dependency | Status | Impact |
 | --- | --- | --- |
 | PR #238 | Merged on 2026-06-15 | Dependency satisfied. |
-| Task 2 RFC issue #240 | Open | Final source of the archetype standard is not yet closed. |
-| Task 2 RFC PR #243 | Open | This plan uses the draft file `governance/rfc/repository-archetypes-template-release.md` from PR #243 as provisional input. |
+| Task 2 RFC issue #240 | Closed on 2026-06-15 | Dependency satisfied. |
+| Task 2 RFC PR #243 | Merged on 2026-06-15 as `d4d9f39` | This plan uses the merged file `governance/rfc/repository-archetypes-template-release.md` as its source input. |
 
 Execution gate:
 
-1. Do not start the Mango repository refactoring until PR #243 is merged.
-2. If the merged RFC differs from the draft reviewed here, diff the sections
-   listed below and update this plan before opening the Mango migration PR.
-3. Treat every structural recommendation below as a plan for human review, not
+1. Treat every structural recommendation below as a plan for human review, not
    as an automatic mandate to move files.
+2. If the RFC is later promoted into an active standard or template, compare
+   those operational artifacts against the RFC sections listed below before
+   opening the Mango migration PR.
+3. If Mango changes materially before execution, refresh the repository
+   snapshot and gap analysis.
 
-RFC sections used from the Task 2 RFC draft:
+RFC sections used from the merged Task 2 RFC:
 
 | RFC section | How this plan uses it |
 | --- | --- |
@@ -87,13 +92,13 @@ High-level structure found:
 
 ## 2. RFC Template Applied to Mango
 
-The draft RFC defines `mango_ba_prompts` as a Prompt & Pattern Library. The
+The merged RFC defines `mango_ba_prompts` as a Prompt & Pattern Library. The
 template requirements map to Mango as follows:
 
 | RFC template element | Required by RFC? | Mango state | Planning conclusion |
 | --- | --- | --- | --- |
 | `README.md` | Yes | Present | Keep. Update only if migration changes paths. |
-| `AI_GOVERNANCE.md` | Yes | Present | Keep. Mark sync provenance against Hub after RFC merge. |
+| `AI_GOVERNANCE.md` | Yes | Present | Keep. Mark sync provenance against Hub during the Mango migration PR. |
 | `CONTRIBUTING.md` | Yes | Present | Keep. Update if validation paths move. |
 | `CHANGELOG.md` | Yes | Present | Keep. Record migration phases. |
 | `governance/artifact-map.md` | Yes | Present | Keep. Fill missing path ownership after moves. |
@@ -157,7 +162,7 @@ Description:
 Pros:
 
 - Preserves history, links, issues, PRs, and existing GitHub Pages URL.
-- Matches the draft RFC release model: GitHub Flow + trunk discipline.
+- Matches the merged RFC release model: GitHub Flow + trunk discipline.
 - Smaller blast radius because the current structure already mostly matches the
   archetype.
 - Easier for ongoing work, including PR #90, to rebase or merge.
@@ -228,17 +233,20 @@ Reasoning:
   history, and the public Pages URL.
 - Scenario B creates more governance and release risk than it removes.
 
-Execution must still wait for the Task 2 RFC merge or a revalidation step. If
-the final RFC materially changes the Prompt & Pattern Library template, the
-Governance Sync Rule, or the Release Engineering Strategy, revisit the
-recommendation before touching Mango.
+Execution no longer waits on the Task 2 RFC merge. It still requires a fresh
+Mango pre-migration snapshot and human review before moving files. If the RFC is
+later promoted into active standards/templates and those artifacts materially
+change the Prompt & Pattern Library template, the Governance Sync Rule, or the
+Release Engineering Strategy, revisit the recommendation before touching Mango.
 
 ## 6. Step-by-step Checklist
 
 ### Phase 0 - Gate and Freeze
 
-1. Confirm PR #243 is merged and read the final RFC text.
-2. Compare final RFC against the sections used by this plan.
+1. Confirm the current Mango branch, open PRs, and issue state immediately
+   before execution.
+2. Compare any active standard/template derived from the Task 2 RFC against the
+   sections used by this plan.
 3. Decide the status of PR #90: merge first, pause, or require rebase after the
    structural PR.
 4. Open a short-lived Mango branch for the migration. Do not introduce a

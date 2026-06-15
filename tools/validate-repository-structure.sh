@@ -143,6 +143,7 @@ is_active_file() {
     governance/rfc/external-knowledge-integration.md | \
     governance/rfc/documentation-architecture-balance.md | \
     governance/rfc/research-memory-source-intelligence.md | \
+    governance/rfc/repository-archetypes-template-release.md | \
     governance/rfc/product-concept-template-proposal.md | \
     governance/rfc/solution-concept-template-proposal.md | \
     docs/vision.md | \
@@ -496,6 +497,7 @@ required_files=(
   "governance/rfc/external-knowledge-integration.md"
   "governance/rfc/documentation-architecture-balance.md"
   "governance/rfc/research-memory-source-intelligence.md"
+  "governance/rfc/repository-archetypes-template-release.md"
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -644,6 +646,7 @@ require_text "AI_GOVERNANCE.md" "Человек задаёт смысл, AI ус
 require_text "CHANGELOG.md" "## Unreleased"
 require_text "CHANGELOG.md" "issue #237"
 require_text "CHANGELOG.md" "issue #241"
+require_text "CHANGELOG.md" "issue #240"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
@@ -1085,7 +1088,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.38"
+require_text "governance/artifact-map.md" "version: 1.39"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1161,7 +1164,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.4"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.5"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
@@ -1173,6 +1176,8 @@ require_text "research/external-knowledge/external-sources-registry.md" "| \`id\
 require_text "research/external-knowledge/external-sources-registry.md" "ext-009"
 require_text "research/external-knowledge/external-sources-registry.md" "ext-011"
 require_text "research/external-knowledge/external-sources-registry.md" "ext-015"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-016"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-024"
 
 require_text "research/external-knowledge/external-insights/README.md" "status: draft"
 require_text "research/external-knowledge/external-insights/README.md" "source_id"
@@ -1218,6 +1223,23 @@ require_text "governance/rfc/research-memory-source-intelligence.md" "Source Int
 require_text "governance/rfc/research-memory-source-intelligence.md" "Context Engineering"
 require_text "governance/rfc/research-memory-source-intelligence.md" "clarify-engine-ai"
 require_text "governance/rfc/research-memory-source-intelligence.md" "Open Decisions"
+
+# Repository archetypes, Prompt & Pattern Library template and release strategy (issue #240).
+require_text "governance/artifact-map.md" "governance/rfc/repository-archetypes-template-release.md"
+require_text "governance/rfc/README.md" "repository-archetypes-template-release.md"
+require_text "governance/rfc/repository-archetypes-template-release.md" "status: draft"
+require_text "governance/rfc/repository-archetypes-template-release.md" "version: 0.1"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Почему текущей ситуации недостаточно"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Анализ внешних эталонов структуры"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Анализ моделей Release Engineering"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Таксономия архетипов"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Project Template для Prompt & Pattern Library"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Маппинг mango_ba_prompts"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Правило синхронизации Governance"
+require_text "governance/rfc/repository-archetypes-template-release.md" "GitHub Flow"
+require_text "governance/rfc/repository-archetypes-template-release.md" "GitFlow"
+require_text "governance/rfc/repository-archetypes-template-release.md" "Trunk-Based Development"
+require_text "governance/rfc/repository-archetypes-template-release.md" "GitHub Pages"
 
 # Index/Summary format improvement (issue #237): phase dates + future horizons.
 require_text "docs/ecosystem-map-Index.md" "version: 0.2"
@@ -1496,7 +1518,7 @@ require_text "projects/README.md" "repo-development/"
 
 require_text "projects/repo-development/README.md" "mango-ba-prompts-repository-migration-plan-2026-06.md"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "status: draft"
-require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "version: 0.1"
+require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "version: 0.2"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Issue #241"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Task 2 RFC"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Prompt & Pattern Library"
