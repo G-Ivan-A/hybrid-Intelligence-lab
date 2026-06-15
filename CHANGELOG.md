@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.8
+version: 1.9
 updated: 2026-06-15
 temperature: 0.1
 ---
@@ -13,6 +13,17 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- structured: Migration Plan for `mango_ba_prompts` repository (issue #241).
+  Added
+  `projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md`
+  as a draft planning artifact based on the merged Task 2 RFC
+  `governance/rfc/repository-archetypes-template-release.md`. The plan records
+  the final RFC sections used, current Mango repository snapshot, gap analysis
+  against the Prompt & Pattern Library archetype, Scenario A vs Scenario B
+  comparison, the in-place migration recommendation, Dev/Prod strategy based on
+  GitHub Flow + trunk discipline, and a future GitHub Actions example.
+  Registered the artifact in `projects/repo-development/README.md`,
+  `governance/artifact-map.md` (v1.39), and the structure validator.
 - creative: repository archetypes, project template and release strategy RFC
   (issue #240). Added
   `governance/rfc/repository-archetypes-template-release.md` with a necessity

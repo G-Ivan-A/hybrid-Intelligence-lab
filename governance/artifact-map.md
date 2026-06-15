@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.38
+version: 1.39
 updated: 2026-06-15
 temperature: 0.1
 ai-generated: false
@@ -196,6 +196,7 @@ ai-generated: false
 | `/projects/repo-development/README.md` | навигация | — | Развитие структуры, governance и локальных проверок самого репозитория. | ✅ Да | `projects/README.md`, `governance/repo-model.md` |
 | `/projects/repo-development/docs/migration-audit-2026-05.md` | исследование | — | Аудит миграции: согласованность, ссылки, таблица `-old` и рекомендации cleanup. | ✅ Да | `projects/repo-development/README.md`, `CONCEPT.md` |
 | `/projects/repo-development/docs/contract-violations-self-report-2026-06.md` | исследование | — | Операционный self-report (`type: audit`) шести ошибок исполнения контрактов в сессии миграции Mango: обоснование выбора таргета, реестр нарушений, системные выводы для контрактов и анализ размещения существующих ретроспектив (без перемещения). | ⚠️ По необходимости | `projects/repo-development/README.md`, `standards/project-structure-inheritance.md`, `standards/file-naming.md`, `research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md` |
+| `/projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md` | исследование | — | План миграции `mango_ba_prompts` к Repository Archetype Standard: применение merged Task 2 RFC, snapshot проекта, gap analysis, сравнение in-place vs new repository, рекомендация, checklist и пример GitHub Actions. | ✅ Да | `projects/repo-development/README.md`, `mango_ba_prompts`, `governance/repo-model.md`, `governance/rfc/repository-archetypes-template-release.md`, `tools/validate-repository-structure.sh` |
 | `/research/README.md` | навигация | — | Навигация по исследовательским направлениям, правило запрета файлов в корне `research/` и правила воспроизводимости. | ✅ Да | `standards/research-profile.md`, `governance/repo-model.md` |
 | `/research/hub/README.md` | навигация | — | Индекс фундаментальных (`scope: repo-wide`) исследований работы Хаба. | ✅ Да | `research/README.md`, `governance/repo-model.md` |
 | `/research/mango/README.md` | навигация | — | Индекс активных исследований MANGO OFFICE; HTML генерируется через MkDocs/GitHub Pages и не хранится в репозитории. | ✅ Да | `research/README.md`, `mango_ba_prompts` |
