@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-06-15
 temperature: 0.1
 ai-generated: true
@@ -74,6 +74,10 @@ related_issues:
 | `ext-009` | [Habr — Codex и локальная память на SQLite (Hermes Codex Plugin)](https://habr.com/ru/articles/1045262/) | `habr` | `ru` | `context-engineering, agent-memory, token-budget, mcp, project-rules` | `future-phase: agent-memory, topic: token-budget` | `research` | `hub, mango, open-ai.ru, clarify-engine-ai` | ✅ [agent-local-memory-context-2026-06.md](external-insights/agent-local-memory-context-2026-06.md) |
 | `ext-010` | [Habr — Паттерн экономии токенов в Claude Code на правке файлов](https://habr.com/ru/articles/1045186/) | `habr` | `ru` | `token-budget, claude-code, file-editing, tool-specific` | `topic: tool-specific-file-editing` | `observation` | `hub` | ❌ (не извлечён) |
 | `ext-011` | [Habr — Структурированная разработка на основе промптов (SPDD)](https://habr.com/ru/articles/1045060/) | `habr` | `ru` | `spec-driven, prompts-as-artifacts, reproducibility, workflow` | `use-case: training-courses, topic: prompt-artifacts` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` | ✅ [structured-prompt-driven-development-2026-06.md](external-insights/structured-prompt-driven-development-2026-06.md) |
+| `ext-012` | [Communication with Zettelkastens](https://zettelkasten.de/communications-with-zettelkastens/) | `paper` | `en` | `research-memory, knowledge-management, zettelkasten, atomic-notes` | `topic: knowledge-object-primacy` | `research` | `hub` | ✅ [research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) |
+| `ext-013` | [Andy Matuschak — Evergreen notes](https://notes.andymatuschak.org/z5E5QawiXCMbtNtupvxeoEX) | `docs` | `en` | `research-memory, pkm, evergreen-notes, atomic-notes` | `topic: cross-project-memory` | `research` | `hub` | ✅ [research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) |
+| `ext-014` | [ResearchOps Community — About ResearchOps](https://researchops.community/about/) | `docs` | `en` | `researchops, knowledge-management, research-pipeline, operations` | `topic: research-operations` | `research` | `hub` | ✅ [research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) |
+| `ext-015` | [Michael Nygard — Documenting Architecture Decisions](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions) | `blog` | `en` | `adr, decision-records, traceability, architecture-decisions` | `topic: decision-traceability` | `research` | `hub` | ✅ [research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

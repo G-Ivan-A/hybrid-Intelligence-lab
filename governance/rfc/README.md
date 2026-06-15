@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.5
-updated: 2026-06-13
+version: 1.6
+updated: 2026-06-15
 temperature: 0.1
 ---
 
@@ -53,6 +53,7 @@ RFC фиксирует принятое решение и rationale, но обя
 | [solution-concept-template-proposal.md](solution-concept-template-proposal.md) | Proposal для универсального L3 Solution Concept template, отделённого от webportal-специализации. |
 | [external-knowledge-integration.md](external-knowledge-integration.md) | Механизм интеграции внешних знаний: Base Registry (Хаб) + Local Extension (проекты) + Smart Sync, привязка к knowledge lifecycle и применение для 4 проектов экосистемы (Anti-Inflation, без CI-скраперов). |
 | [documentation-architecture-balance.md](documentation-architecture-balance.md) | Баланс Anti-Inflation vs атомарность: рамка уровней детализации Index → Summary → Full, классификация документов (макс. 3 класса) с критериями и переходами, гибкая навигация без новой инфраструктуры и решения для 4 проектов экосистемы. |
+| [research-memory-source-intelligence.md](research-memory-source-intelligence.md) | Framework Research Memory & Source Intelligence: Knowledge Object primacy поверх Tier 1 external sources, Tier 2 internal research memory, статусы `Observed` / `Candidate` / `Applied` / `Rejected` / `Superseded`, критерии source intelligence и traceability-схема `Knowledge Object → Sources → RFC/ADR → Consumer`. |
 
 ## Связанные артефакты
 
