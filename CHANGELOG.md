@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.6
+version: 1.7
 updated: 2026-06-15
 temperature: 0.1
 ---
@@ -13,6 +13,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- structured: improve Index/Summary format with ISO phase dates and future-phase
+  tagging (issue #237). Added `Дата актуализации фазы` to
+  `docs/ecosystem-map-Index.md` (v0.2) for all four ecosystem projects, added
+  `Горизонты / Актуально для будущих фаз` to
+  `AI_PROJECT_CONTEXT-Summary.md` (v0.2), extended
+  `external-sources-registry.md` (v0.3) with `Теги будущих фаз / тем`, and
+  replaced the old registry-only discard rule in `CONTRIBUTING.md` (v1.5) and
+  `research/external-knowledge/README.md` (v0.3) with future-phase/topic tagging
+  plus explicit `rejected` handling for hype/water. Fixed the date-format rule
+  in `standards/file-naming.md` (v1.4) as ISO 8601: `YYYY-MM-DD`.
 - creative: external sources rules + Index/Summary maps + Habr test (issue #235).
   Added the detail-level suffix rule (`-Index` / `-Summary` / `-Full`) to
   `standards/file-naming.md` (v1.3) with a cross-reference in
