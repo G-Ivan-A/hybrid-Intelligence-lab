@@ -13,6 +13,26 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- creative: Research Wigers book with AI-era actualization (issue #247). Added
+  `research/hub/wigers-requirements-analysis-2026-06.md` — an independent,
+  bilingual (ru/en) extraction of the Wiegers & Beatty *Software Requirements*
+  system (requirement levels Business → User → Functional/Non-functional,
+  requirement types incl. the five business-rule categories and quality
+  attributes, requirements-engineering processes, and the Appendix А glossary),
+  plus a three-trend actualization (2020 Wiegers / 2026 Agile-DevOps-CI·CD /
+  2026 AI) mapped onto the five-layer model and the full-vs-local chain
+  variability. Added `governance/rfc/requirements-engineering-ai-era-2026.md` —
+  an RFC comparing the extracted Wiegers system with `mango_ba_prompts`
+  ADR-003..ADR-010, grading genuine gaps (🔴 requirement-level ladder, absent
+  Business-Rule type), bridge-needed overlaps (🟡 operations crosswalk) and
+  justified localizations (🟢 glossary, ГОСТ ТЗ vs SRS), with a C1–C5
+  synchronization proposal kept under the human decision gate. Registered both
+  artifacts in `research/README.md`, `research/hub/README.md`,
+  `governance/rfc/README.md` (v1.9), `governance/artifact-map.md` (v1.41), the
+  structure validator and the MkDocs navigation. Drive-by: registered the
+  pre-existing `governance/rfc/methodology-research-and-proposals.md`
+  (issue #245) in the structure validator allowlist — it was tracked but never
+  added to `is_active_file()`, which left the validator failing on `main`.
 - structured: Migration Plan for `mango_ba_prompts` repository (issue #241).
   Added
   `projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md`

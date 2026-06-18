@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-12
+version: 1.2
+updated: 2026-06-18
 temperature: 0.1
 ai-generated: false
 ---
@@ -28,6 +28,7 @@ project bootstrap, governance-стратегии и классификации �
 | [ecosystem-governance-audit-2026-06.md](ecosystem-governance-audit-2026-06.md) | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. |
 | [external-practice-intake-2026-06.md](external-practice-intake-2026-06.md) | Анализ внешних agent-work практик по Habr-источникам Artem Chirkov и slam, тест структуры `practices/`, и Mango docs error pattern без изменения Mango. |
 | [international-ai-governance-practices-2026-06.md](international-ai-governance-practices-2026-06.md) | Анализ международных AI governance sources и executable implementation matrix: NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic, Google SAIF. |
+| [wigers-requirements-analysis-2026-06.md](wigers-requirements-analysis-2026-06.md) | Независимое двуязычное (ru/en) извлечение системы требований Вигерса (уровни Бизнес → Пользовательские → Функциональные/НФТ, типы требований, пять категорий бизнес-правил, атрибуты качества, глоссарий Приложения А) и актуализация по трём трендам (2020 Вигерс / 2026 Agile-DevOps-CI·CD / 2026 AI) на пятислойную модель и вариативность полной/локальной цепочки. |
 
 ## Воспроизводимость
 
