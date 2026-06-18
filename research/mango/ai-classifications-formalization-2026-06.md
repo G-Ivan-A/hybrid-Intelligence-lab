@@ -19,9 +19,9 @@ ai-generated: true
 ## Назначение
 
 Документ продолжает линию исследования Вигерса
-([research/hub/wigers-requirements-analysis-2026-06.md](../hub/wigers-requirements-analysis-2026-06.md))
+([research/external-knowledge/wigers-requirements-analysis-2026-06.md](../external-knowledge/wigers-requirements-analysis-2026-06.md))
 и синхронизирующего RFC
-([governance/rfc/requirements-engineering-ai-era-2026.md](../../governance/rfc/requirements-engineering-ai-era-2026.md)).
+([research/mango/requirements-engineering-ai-era-2026.md](requirements-engineering-ai-era-2026.md)).
 Если RFC отвечал на вопрос «**что** в онтологии mango стоит синхронизировать с
 Вигерсом (С1–С5)», то этот документ отвечает на вопрос «**как именно** новые
 AI-подпроцессы устроены внутри (операции / артефакты / связь с классикой) и **как**
@@ -460,9 +460,9 @@ AI-ассистированная операция требует осознан
 
 ## Связанные артефакты
 
-- [governance/rfc/requirements-engineering-ai-era-2026.md](../../governance/rfc/requirements-engineering-ai-era-2026.md)
+- [research/mango/requirements-engineering-ai-era-2026.md](requirements-engineering-ai-era-2026.md)
   — RFC синхронизации Вигерс ↔ mango (С1–С5); базовый контракт этого документа.
-- [research/hub/wigers-requirements-analysis-2026-06.md](../hub/wigers-requirements-analysis-2026-06.md)
+- [research/external-knowledge/wigers-requirements-analysis-2026-06.md](../external-knowledge/wigers-requirements-analysis-2026-06.md)
   — независимое извлечение системы Вигерса (доказательная база).
 - [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md)
   — Knowledge Status (`Candidate`/`Applied`) для разметки AI-практик.

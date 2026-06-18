@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-18
 temperature: 0.1
 ai-generated: true
@@ -17,7 +17,7 @@ method: comparative-analysis
 > Документ намеренно **не опирается** на mango-ADR на этапе извлечения
 > (требование независимости issue #247, НФТ‑1); сопоставление с mango и поиск
 > «велосипедов» вынесены в отдельный RFC
-> [governance/rfc/requirements-engineering-ai-era-2026.md](../../governance/rfc/requirements-engineering-ai-era-2026.md).
+> [research/mango/requirements-engineering-ai-era-2026.md](../mango/requirements-engineering-ai-era-2026.md).
 
 ## 1. Введение
 
@@ -43,7 +43,7 @@ method: comparative-analysis
 | issue [#247](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/247) | Источник требований (ФТ‑1…ФТ‑6, НФТ‑1…НФТ‑11, DoD). |
 | [standards/research-profile.md](../../standards/research-profile.md) | Обязательная структура `Введение → Результаты → Детализация → Источники`. |
 | [standards/glossary.md](../../standards/glossary.md) | Целевой словарь для опциональной ФТ‑6. |
-| [governance/rfc/requirements-engineering-ai-era-2026.md](../../governance/rfc/requirements-engineering-ai-era-2026.md) | RFC сравнения с mango‑ADR и синхронизации (ФТ‑5). |
+| [research/mango/requirements-engineering-ai-era-2026.md](../mango/requirements-engineering-ai-era-2026.md) | RFC сравнения с mango‑ADR и синхронизации (ФТ‑5). |
 | [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) | Модель Knowledge Status и Tier‑1 источников (PR #242). |
 | [governance/rfc/methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md) | 5‑слойная модель и ось доверия E0–E4 (PR #246). |
 
@@ -90,9 +90,9 @@ method: comparative-analysis
 (вариативность цепочек). Ключевой содержательный результат для экосистемы:
 **модель Вигерса операциональна и проверяема (E3–E4), но сама по себе не
 покрывает AI‑слой** — AI‑тренды (AI‑ассистированное выявление, автоматическая
-проверка согласованности, AI‑трассировка, prompt engineering как новый тип
-требования) — это **расширение**, а не замена, и большинство их утверждений пока
-имеют доказательность E1–E2.
+проверка согласованности, AI‑трассировка, инжиниринг промптов как **подпроцесс**
+разработки AI‑решения — НЕ тип требования) — это **расширение**, а не замена, и
+большинство их утверждений пока имеют доказательность E1–E2.
 
 ### 2.2. Рекомендации
 
@@ -100,31 +100,23 @@ method: comparative-analysis
 | --- | --- | --- |
 | Р1 | Принять 4‑мерную рамку Вигерса (уровни / типы / процессы / артефакты) как общий словарь инженерии требований Хаба, двуязычно. | Этот документ §3.1–3.4; опционально [standards/glossary.md](../../standards/glossary.md) (ФТ‑6). |
 | Р2 | Зафиксировать соответствие операций Вигерса 5‑слойной модели (Analysis/Solution — слабые слои экосистемы). | §3.3.2; RFC §«5‑слойная карта». |
-| Р3 | Ввести `prompt-engineering` как **новый тип требования** AI‑эры, но с доверием E1–E2 и статусом `Candidate`, не как стандарт. | §3.3.3; [research-memory RFC](../../governance/rfc/research-memory-source-intelligence.md). |
+| Р3 | Зафиксировать `prompt engineering` / инжиниринг промптов как **подпроцесс** разработки AI‑решения (НЕ тип требования; Prompt = интерфейс к Tool), с доверием E1–E2 и статусом `Candidate`. | §3.3.3; [RFC §«Классификация AI‑разработки»](../mango/requirements-engineering-ai-era-2026.md); [research-memory RFC](../../governance/rfc/research-memory-source-intelligence.md). |
 | Р4 | Различать полную и локальную цепочку производства артефакта по явным критериям выбора. | §3.4; RFC §«Вариативность». |
-| Р5 | Сравнить извлечённую систему с mango‑ADR #003–#010, выявить «велосипеды» и предложить синхронизацию. | [RFC requirements-engineering-ai-era-2026](../../governance/rfc/requirements-engineering-ai-era-2026.md) (ФТ‑5). |
+| Р5 | Сравнить извлечённую систему с mango‑ADR #003–#010, выявить «велосипеды» и предложить синхронизацию. | [RFC requirements-engineering-ai-era-2026](../mango/requirements-engineering-ai-era-2026.md) (ФТ‑5). |
 
-### 2.3. Открытые вопросы
+> 🧭 **Открытые вопросы — в конце.** Раздел «Открытые вопросы» (ОВ‑1…ОВ‑4) с
+> ответами перенесён в **конец документа** (§5) согласно требованию issue #249
+> (ФТ‑5): вопросы по результату закрывают исследование, а не прерывают изложение.
 
-- **ОВ‑1.** PDF книги не приложен. Нужна сверка постраничных якорей и точных
-  формулировок после прикрепления вложения к issue #247 (НФТ‑2/НФТ‑4).
-- **ОВ‑2.** Двуязычные термины приведены в рабочем переводе; канонизация ru/en
-  пары в `standards/glossary.md` требует human review (ФТ‑6 — опциональна).
-- **ОВ‑3.** AI‑тренды быстро меняются; уровни доверия E1–E2 нужно пересматривать
-  по мере появления воспроизводимых подтверждений (Knowledge Status `Candidate` →
-  `Applied`).
-- **ОВ‑4.** Размещение файла: issue (DoD) просит `research/wigers-...md` в корне
-  `research/`, что нарушает hard rule (см. §2.4). Файл размещён в `research/hub/`;
-  требуется подтверждение решения человеком.
+### 2.3. Учёт прежних решений и hard rules
 
-### 2.4. Учёт прежних решений и hard rules
-
-Исследование явно учитывает действующие правила репозитория и фиксирует одно
-обоснованное отклонение от буквальной формулировки issue:
+Исследование явно учитывает действующие правила репозитория. Размещение файла,
+изначально расходившееся с буквальной формулировкой issue #247, исправлено в
+issue #249 (файл — внешний источник Tier 1, каталог `research/external-knowledge/`):
 
 | Прежнее решение / правило | Как учтено |
 | --- | --- |
-| **Hard rule** [research/README.md](../README.md): файлы исследований в корне `research/` запрещены. | DoD issue #247 просит `research/wigers-requirements-analysis-2026-06.md` (корень). Это нарушает hard rule. По [CONTRIBUTING.md](../../CONTRIBUTING.md) («Явная Мета в issue имеет приоритет, если не нарушает hard rules») файл размещён в `research/hub/` (scope: repo‑wide), **имя файла сохранено точно** для соответствия DoD‑чек‑боксу. |
+| **Hard rule** [research/README.md](../README.md): файлы исследований в корне `research/` запрещены. | DoD issue #247 просил `research/wigers-requirements-analysis-2026-06.md` (корень) — это нарушало hard rule. По issue #249 (ФТ‑1, ОВ‑4) файл размещён в **`research/external-knowledge/`** как **внешний источник (Tier 1)**, а не внутреннее исследование Хаба; **имя файла сохранено точно** для соответствия DoD‑чек‑боксу. |
 | **НФТ‑1 (Независимость):** не опираться на mango‑ADR при извлечении. | Раздел §3 (извлечение) не ссылается на mango. Сравнение с mango вынесено в отдельный RFC. |
 | **НФТ‑8 (Trust & Evidence):** запрещено добавлять гипотезы E0 как стандарты. | Каждый AI‑тренд размечен E0–E4; §3.3.3 явно маркирует незрелые утверждения. |
 | **PR #242** (Research Memory): статусы `Observed/Candidate/Applied/Rejected/Superseded`. | AI‑тренды отнесены к `Candidate`; базовая модель Вигерса — `Applied`. |
@@ -272,7 +264,7 @@ Agent → Tool → Knowledge».
 | --- | --- | --- | --- | --- |
 | Выявление / Elicitation | Интервью, воркшопы, наблюдение; документ‑центрично. | Backlog, User Stories по INVEST, непрерывное уточнение со stakeholder’ами. | AI‑ассистированное выявление: LLM суммирует интервью, генерирует уточняющие вопросы, черновики US. | **E1–E2** (Candidate) |
 | Анализ / Analysis | Ручные модели (DFD/ERD), таблицы решений. | «Just‑enough» моделирование, lightweight UML/BPMN. | NLP‑детекция неоднозначности и неполноты, авто‑извлечение сущностей из текста. | **E2** (Candidate) |
-| Спецификация / Specification | Полный SRS по шаблону (IEEE‑830‑наследие). | Living documentation, US + критерии приёмки, спецификация как код. | Авто‑черновик SRS/US из заметок; **prompt engineering как новый тип требования** к AI‑компоненту. | **E1–E2** (Candidate) |
+| Спецификация / Specification | Полный SRS по шаблону (IEEE‑830‑наследие). | Living documentation, US + критерии приёмки, спецификация как код. | Авто‑черновик SRS/US из заметок; **инжиниринг промптов как подпроцесс** разработки AI‑решения (НЕ тип требования) с артефактом **Prompt specification**. | **E1–E2** (Candidate) |
 | Проверка / Validation | Рецензии, прототипы, тест‑кейсы вручную. | BDD/ATDD, исполнимые спецификации в CI. | Автоматическая проверка согласованности набора требований, AI‑генерация тест‑кейсов. | **E2** (Candidate) |
 | Управление / Management | Baseline, RTM, контроль изменений вручную. | Инструментальная трассировка (Jira/ALM), CI‑gate’ы. | AI‑powered traceability: авто‑связывание требование↔код↔тест, дрейф‑детекция. | **E1–E2** (Candidate) |
 
@@ -288,9 +280,12 @@ Agent → Tool → Knowledge».
 | Управление | Утверждает baseline | Поддерживает трассировку, ловит дрейф | RTM/ALM, CI | Матрица трассировки | full‑auto (с аудитом) |
 
 > 🔒 **Дисциплина доверия (НФТ‑8).** Все AI‑строки выше — `Candidate` уровня E1–E2.
-> Они **не** вносятся как стандарт. `prompt engineering как тип требования` —
-> перспективная, но незрелая практика: фиксируется как кандидат, требующий
-> воспроизводимого подтверждения, прежде чем стать частью канонического словаря.
+> Они **не** вносятся как стандарт. **Инжиниринг промптов — это подпроцесс**
+> разработки AI‑решения, а **не тип требования**: тип отвечает на вопрос «ЧТО»
+> (Функция/Качество/Ограничение/Бизнес‑правило), а инжиниринг промптов — «КАК»
+> (Prompt = интерфейс к Tool, аналогия SQL‑запрос ≠ база данных). Полная модель
+> подпроцесса, его операций и артефакта `Prompt specification` —
+> в [RFC §«Классификация AI‑разработки»](../mango/requirements-engineering-ai-era-2026.md).
 
 ### 3.4. ФТ‑2 + ФТ‑4 — Инвентаризация артефактов и вариативность цепочек
 
@@ -409,6 +404,50 @@ Agent → Tool → Knowledge».
 > в Хабе терминологией (например, трактовка «фичи») разрешаются в ФТ‑6 под human
 > review, а не правкой канонического глоссария в этом исследовании.
 
+### 3.6. ФТ‑4 — Сравнение классификаций (Вигерс / BABOK v3 / ISO 29148 / AI‑разработка)
+
+Извлечённая система Вигерса сопоставлена с двумя другими доверенными источниками
+по инженерии требований (**BABOK v3** — современный стандарт бизнес‑анализа,
+**ISO/IEC/IEEE 29148** — стандарт требований) и с практикой **AI‑разработки**
+(**LangChain**, **CrewAI**, Microsoft AI Toolkit). Цель — понять, **что устарело**,
+**что дополняется** и **что принципиально новое** в AI‑эру. Колонка «Дельта» —
+содержательный вывод по строке. AI‑строки имеют доверие E1–E2 (`Candidate`).
+
+| Аспект | Вигерс (2020) | BABOK v3 | ISO/IEC 29148 | AI‑разработка (LangChain / CrewAI) | Дельта |
+| --- | --- | --- | --- | --- | --- |
+| **Уровни требований** | Business → User → Functional → Non‑functional | Business → Stakeholder → Solution → Transition | System → Software → Hardware | + AI behavior requirements (поведение агента, guardrails) | Дополняется AI‑specific уровнями. |
+| **Типы требований** | Feature, Quality, Constraint, Business rules | Functional, Non‑functional, Business rules | Functional, Non‑functional | + Safety/guardrails, Agent orchestration | Расширяется AI‑specific типами. |
+| **Процессы** | Выявление, Анализ, Документирование, Валидация | Elicitation, Analysis, Design, Validation | Requirements engineering process | + Prompt engineering, RAG configuration, Agent orchestration | Дополняется AI‑подпроцессами. |
+| **Операции** | Интервью, Семинары, Анализ документов | Interviews, Workshops, Document analysis | Analysis techniques | + AI‑assisted analysis, Prompt writing | AI‑assisted версии классических операций. |
+| **Артефакты** | SRS, Use Case, User Story | Business case, Requirements package | SRS, SDD | + Prompt specification, Agent workflow, RAG configuration document | Расширяется AI‑specific артефактами. |
+
+> 📐 **Двуязычие (НФТ‑3).** AI‑строки даны двуязычно по англоязычной практике
+> фреймворков: поведенческие требования к агенту / AI behavior requirements,
+> ограничители безопасности / safety guardrails, оркестрация агентов / agent
+> orchestration, инжиниринг промптов / prompt engineering, настройка RAG / RAG
+> configuration, спецификация промпта / prompt specification.
+
+**Выводы (что устарело · что дополняется · что принципиально новое).**
+
+1. **Что устарело.** Принципиально — **ничего**. Базовые измерения (уровни, типы,
+   процессы, артефакты) Вигерса, BABOK и ISO 29148 остаются валидными и в AI‑эру,
+   но требуют **AI‑адаптации** (осознанного перехода классических операций в их
+   AI‑assisted версии, а не «включения кнопки»).
+2. **Что дополняется.** **Все** классификации расширяются AI‑specific элементами:
+   новые уровни (AI behavior), новые типы (safety/guardrails), AI‑assisted
+   операции и AI‑артефакты (prompt specification, RAG config). Это **расширение**
+   на ту же ось, а не замена.
+3. **Что принципиально новое.** Три подпроцесса, которых нет в классике и которые
+   появляются только в AI‑разработке: **Prompt engineering** (инжиниринг промптов),
+   **RAG configuration** (настройка retrieval‑augmented generation) и
+   **Agent orchestration** (оркестрация агентов). Их детальная декомпозиция на
+   операции и артефакты — в [RFC «Процессы и подпроцессы для разработки AI‑агента»](../mango/requirements-engineering-ai-era-2026.md).
+
+> 🔗 **Источники сравнения (Tier 1).** BABOK v3 (IIBA), ISO/IEC/IEEE 29148:2018,
+> LangChain и CrewAI (открытые фреймворки AI‑разработки) — см. раздел «Источники»
+> (И3, И4, И11, И12). Изобретение сущностей запрещено (НФТ‑6): AI‑строки опираются
+> на публичную документацию фреймворков, а не на гипотезы.
+
 ## 4. Источники
 
 Цитирование по [standards/research-profile.md](../../standards/research-profile.md):
@@ -428,6 +467,8 @@ Agent → Tool → Knowledge».
 | И8 | issue [#247](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/247) | Tier 2 | ФТ/НФТ/DoD, постраничные якоря, примеры цепочек. |
 | И9 | [governance/rfc/methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md) | Tier 2 | 5‑слойная модель, ось доверия E0–E4. |
 | И10 | [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) | Tier 2 | Статусы знания `Observed/Candidate/Applied/Rejected/Superseded`. |
+| И11 | LangChain — фреймворк разработки LLM‑приложений (RAG, агенты, оркестрация) — [github.com/langchain-ai/langchain](https://github.com/langchain-ai/langchain) | Tier 1 | AI‑подпроцессы: RAG configuration, prompt engineering, agent orchestration (§3.6). |
+| И12 | CrewAI — фреймворк мультиагентной оркестрации — [github.com/crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | Tier 1 | AI‑подпроцессы: оркестрация ролей агентов, координация (§3.6, сравнение классификаций). |
 
 > **Заметка о точности (НФТ‑2/НФТ‑4).** Содержательные утверждения о книге сверены
 > по источникам И1–И2 (авторский сайт и аннотация издателя) и кросс‑проверены по
@@ -435,3 +476,32 @@ Agent → Tool → Knowledge».
 > направлениями и помечены доверием E1–E2; конкретные продуктовые заявления и
 > непроверенные гипотезы (E0) в документ не внесены. Постраничные якоря —
 > структурные (из issue #247), а не цитаты из недоступного PDF (см. ОВ‑1).
+
+## 5. Открытые вопросы и ответы
+
+Раздел перенесён в конец документа (issue #249, ФТ‑5): открытые вопросы (ОВ) по
+результату исследования вместе с **ответами**, принятыми при доработке issue #249.
+
+**ОВ‑1. PDF книги не приложен. Нужна ли сверка?**
+**Ответ:** Нет, сверять не будем. Проведённого извлечения достаточно — структура
+Вигерса общеизвестна и подтверждена по доверенным открытым источникам (И1–И2,
+кросс‑проверка И3–И5). Если PDF будет приложен позднее, документ можно сверить
+точечно, но это не блокирует результат.
+
+**ОВ‑2. Двуязычные термины требуют канонизации в `standards/glossary.md`?**
+**Ответ:** Принято как есть. Канонизация ru/en‑пар в
+[standards/glossary.md](../../standards/glossary.md) — **отдельная задача** (ФТ‑6,
+опциональна) под human review; в рамках этого исследования термины зафиксированы
+в рабочем переводе (§3.5), без правки канонического глоссария.
+
+**ОВ‑3. AI‑тренды быстро меняются. Нужно ли пересматривать уровни доверия?**
+**Ответ:** Да. Уровни доверия E1–E2 пересматриваются **по мере появления
+воспроизводимых подтверждений** (Knowledge Status `Candidate` → `Applied`, PR
+#242). AI‑строки — кандидаты, а не стандарт; их повышение в статусе — отдельное
+решение с доказательной базой.
+
+**ОВ‑4. Размещение файла в `research/hub/` нарушает правила. Куда переместить?**
+**Ответ:** Переместить в **`research/external-knowledge/`** — это **внешний
+источник (Tier 1)**, а не внутреннее исследование Хаба. Выполнено в issue #249
+(ФТ‑1): файл и все ссылки на него обновлены (README, artifact‑map, MkDocs,
+валидатор); имя файла сохранено точно.
