@@ -79,7 +79,7 @@ is_active_file() {
     research/hub/ecosystem-governance-audit-2026-06.md | \
     research/hub/external-practice-intake-2026-06.md | \
     research/hub/international-ai-governance-practices-2026-06.md | \
-    research/hub/wigers-requirements-analysis-2026-06.md | \
+    research/external-knowledge/wigers-requirements-analysis-2026-06.md | \
     research/hub/user-prompts-analysis-2026-05.md | \
     research/README.md | \
     research/hub/README.md | \
@@ -148,7 +148,7 @@ is_active_file() {
     governance/rfc/product-concept-template-proposal.md | \
     governance/rfc/solution-concept-template-proposal.md | \
     governance/rfc/methodology-research-and-proposals.md | \
-    governance/rfc/requirements-engineering-ai-era-2026.md | \
+    research/mango/requirements-engineering-ai-era-2026.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
@@ -444,7 +444,7 @@ required_files=(
   "research/hub/ecosystem-governance-audit-2026-06.md"
   "research/hub/external-practice-intake-2026-06.md"
   "research/hub/international-ai-governance-practices-2026-06.md"
-  "research/hub/wigers-requirements-analysis-2026-06.md"
+  "research/external-knowledge/wigers-requirements-analysis-2026-06.md"
   "research/mango/README.md"
   "research/governance/README.md"
   "research/governance/research-documentation-format-2026-06.md"
@@ -504,7 +504,7 @@ required_files=(
   "governance/rfc/repository-archetypes-template-release.md"
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
-  "governance/rfc/requirements-engineering-ai-era-2026.md"
+  "research/mango/requirements-engineering-ai-era-2026.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
   ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -1093,7 +1093,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.41"
+require_text "governance/artifact-map.md" "version: 1.42"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1270,48 +1270,58 @@ require_text "governance/rfc/methodology-research-and-proposals.md" "open-ai.ru"
 require_text "governance/rfc/methodology-research-and-proposals.md" "Open Decisions"
 
 # Wigers requirements research + AI-era RFC (issue #247): independent extraction + mango sync.
-require_text "governance/artifact-map.md" "research/hub/wigers-requirements-analysis-2026-06.md"
-require_text "governance/artifact-map.md" "governance/rfc/requirements-engineering-ai-era-2026.md"
-require_text "research/README.md" "wigers-requirements-analysis-2026-06.md"
-require_text "research/hub/README.md" "wigers-requirements-analysis-2026-06.md"
-require_text "governance/rfc/README.md" "requirements-engineering-ai-era-2026.md"
+require_text "governance/artifact-map.md" "research/external-knowledge/wigers-requirements-analysis-2026-06.md"
+require_text "governance/artifact-map.md" "research/mango/requirements-engineering-ai-era-2026.md"
+require_text "research/external-knowledge/README.md" "wigers-requirements-analysis-2026-06.md"
+require_text "research/mango/README.md" "requirements-engineering-ai-era-2026.md"
 # Research doc: independent bilingual Wiegers extraction (FT-1..FT-4).
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "status: draft"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "version: 0.1"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "type: external-analysis"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Requirement levels"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Requirement types"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Business rule"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Quality attribute"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Requirements development"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Requirements management"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Активаторы операций"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Вычисления"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Vision and Scope"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Software Requirements Specification"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "ISO/IEC/IEEE 29148"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "MoSCoW"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "prompt engineering"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "User Story"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Use Case"
-require_text "research/hub/wigers-requirements-analysis-2026-06.md" "Candidate"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "status: draft"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "version: 0.2"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "type: external-analysis"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirement levels"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirement types"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Business rule"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Quality attribute"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirements development"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirements management"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Активаторы операций"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Вычисления"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Vision and Scope"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Software Requirements Specification"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "ISO/IEC/IEEE 29148"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "MoSCoW"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "prompt engineering"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "User Story"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Use Case"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Candidate"
+# Issue #249 additions: classifications comparison + open-questions-at-end.
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "BABOK"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "CrewAI"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Сравнение классификаций"
+require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "ОВ‑4"
 # RFC: Wiegers <-> mango-ADR sync (FT-5) with honest reinvention gradation.
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "status: draft"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "version: 0.1"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "RFC: Requirements Engineering in the AI Era"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Decision Scope"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Карта сравнения"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "mango_ba_prompts"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "велосипед"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "requirement_level"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Бизнес-правило"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "ГОСТ 34.602-2020"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "crosswalk"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Trust & Evidence"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Candidate"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Anti-Inflation"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Acceptance Criteria"
-require_text "governance/rfc/requirements-engineering-ai-era-2026.md" "Open Decisions"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "status: draft"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "version: 0.2"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "RFC: Requirements Engineering in the AI Era"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Decision Scope"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Карта сравнения"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "mango_ba_prompts"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "велосипед"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "requirement_level"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Бизнес-правило"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "ГОСТ 34.602-2020"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "crosswalk"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Trust & Evidence"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Candidate"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Anti-Inflation"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Acceptance Criteria"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Open Decisions"
+# Issue #249 additions: prompt = interface to Tool, prompt-engineering subprocess, AI-agent processes.
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Инжиниринг промптов"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Prompt specification"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Разработка AI-агента"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Настройка RAG"
+require_text "research/mango/requirements-engineering-ai-era-2026.md" "Оркестрация агентов"
 
 # Index/Summary format improvement (issue #237): phase dates + future horizons.
 require_text "docs/ecosystem-map-Index.md" "version: 0.2"

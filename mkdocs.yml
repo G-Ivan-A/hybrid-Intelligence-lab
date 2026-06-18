@@ -102,7 +102,6 @@ nav:
       - Аудит governance ecosystem: research/hub/ecosystem-governance-audit-2026-06.md
       - Внешние практики agent work: research/hub/external-practice-intake-2026-06.md
       - Международные AI governance practices: research/hub/international-ai-governance-practices-2026-06.md
-      - Требования (Вигерс, AI-эра): research/hub/wigers-requirements-analysis-2026-06.md
       - Ретроспектива AI-коллаборации: research/hub/ai-collaboration-retrospective-2026-06.md
       - Ретроспектива миграции Mango: research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md
     - Governance:
@@ -120,3 +119,4 @@ nav:
       - Дорожная карта RAG-маппинга: research/mango/rag-mapping-roadmap-2026-05.md
       - Неопределённость жизненного цикла требований: research/mango/requirements-lifecycle-uncertainty-2026-05.md
       - Концепция таксономии: research/mango/taxonomy-concept-2026-05.md
+      - Требования в AI-эру (Вигерс ↔ mango): research/mango/requirements-engineering-ai-era-2026.md

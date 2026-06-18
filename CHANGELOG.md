@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.9
-updated: 2026-06-15
+version: 1.10
+updated: 2026-06-18
 temperature: 0.1
 ---
 
@@ -13,22 +13,47 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- creative: Fix Wigers research — paths, classification, AI-processes, BABOK
+  comparison (issue #249, corrects PR #248). Moved
+  `research/hub/wigers-requirements-analysis-2026-06.md` →
+  `research/external-knowledge/wigers-requirements-analysis-2026-06.md` (it is a
+  Tier-1 external source, not internal Hub research) and
+  `governance/rfc/requirements-engineering-ai-era-2026.md` →
+  `research/mango/requirements-engineering-ai-era-2026.md` (it is a spoke-project
+  RFC for `mango`, not Hub core), updating every reference. Corrected the RFC
+  classification: removed "prompt engineering as a type of requirement"; recorded
+  that a Prompt is an **interface to a Tool** (analogy: SQL query ≠ database),
+  that prompt engineering is a **subprocess** (operations: task analysis, draft
+  writing, testing, iteration, validation), and split prompt artifacts into an
+  executable prompt (`prompts/analyze-doc.md`) vs a descriptive **Prompt
+  specification** (`docs/prompts/analyze-doc-spec.md`). Added the RFC section
+  "Процессы и подпроцессы для разработки AI-агента" (process "Разработка
+  AI-агента" with five subprocesses: agent architecture design, RAG
+  configuration, prompt engineering, agent orchestration, AI-component testing).
+  Added the research section "Сравнение классификаций" (Wiegers 2020 / BABOK v3 /
+  ISO/IEC 29148 / AI-development LangChain·CrewAI / delta) with conclusions, and
+  moved the open questions (ОВ-1…ОВ-4) to the end of the document with answers.
+  Re-registered both artifacts across `research/README.md`,
+  `research/hub/README.md`, `research/external-knowledge/README.md`,
+  `governance/rfc/README.md` (v1.10), `research/mango/README.md`,
+  `governance/artifact-map.md` (v1.42), the structure validator and the MkDocs
+  navigation.
 - creative: Research Wigers book with AI-era actualization (issue #247). Added
-  `research/hub/wigers-requirements-analysis-2026-06.md` — an independent,
+  `research/external-knowledge/wigers-requirements-analysis-2026-06.md` — an independent,
   bilingual (ru/en) extraction of the Wiegers & Beatty *Software Requirements*
   system (requirement levels Business → User → Functional/Non-functional,
   requirement types incl. the five business-rule categories and quality
   attributes, requirements-engineering processes, and the Appendix А glossary),
   plus a three-trend actualization (2020 Wiegers / 2026 Agile-DevOps-CI·CD /
   2026 AI) mapped onto the five-layer model and the full-vs-local chain
-  variability. Added `governance/rfc/requirements-engineering-ai-era-2026.md` —
+  variability. Added `research/mango/requirements-engineering-ai-era-2026.md` —
   an RFC comparing the extracted Wiegers system with `mango_ba_prompts`
   ADR-003..ADR-010, grading genuine gaps (🔴 requirement-level ladder, absent
   Business-Rule type), bridge-needed overlaps (🟡 operations crosswalk) and
   justified localizations (🟢 glossary, ГОСТ ТЗ vs SRS), with a C1–C5
   synchronization proposal kept under the human decision gate. Registered both
-  artifacts in `research/README.md`, `research/hub/README.md`,
-  `governance/rfc/README.md` (v1.9), `governance/artifact-map.md` (v1.41), the
+  artifacts in `research/README.md`, `research/external-knowledge/README.md`,
+  `research/mango/README.md`, `governance/artifact-map.md`, the
   structure validator and the MkDocs navigation. Drive-by: registered the
   pre-existing `governance/rfc/methodology-research-and-proposals.md`
   (issue #245) in the structure validator allowlist — it was tracked but never

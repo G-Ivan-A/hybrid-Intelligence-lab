@@ -52,7 +52,6 @@ source: research/README-old.md
 | [ecosystem-governance-audit-2026-06.md](hub/ecosystem-governance-audit-2026-06.md) | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. |
 | [external-practice-intake-2026-06.md](hub/external-practice-intake-2026-06.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
 | [international-ai-governance-practices-2026-06.md](hub/international-ai-governance-practices-2026-06.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
-| [wigers-requirements-analysis-2026-06.md](hub/wigers-requirements-analysis-2026-06.md) | Независимое двуязычное (ru/en) извлечение системы требований Вигерса (уровни, типы, пять категорий бизнес-правил, атрибуты качества, глоссарий Приложения А) и актуализация по трём трендам (2020 / 2026 Agile-DevOps / 2026 AI) на пятислойную модель и вариативность полной/локальной цепочки. |
 
 ## Рекомендуемая структура
 

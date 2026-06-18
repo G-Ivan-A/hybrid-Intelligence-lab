@@ -22,6 +22,7 @@ source: research/mango/README-old.md
 | [requirements-lifecycle-uncertainty-2026-05.md](requirements-lifecycle-uncertainty-2026-05.md) | Жизненный цикл требования на доработку: обработка неопределенности, декомпозиция и сравнение с международной практикой. |
 | [rag-mapping-roadmap-2026-05.md](rag-mapping-roadmap-2026-05.md) | Маппинг продуктов/фич как RAG-навигатор, roadmap автоматизации БА и карта применения PlantUML-диаграмм. |
 | [capability-decomposition-2026-05.md](capability-decomposition-2026-05.md) | Справочник атомарных функций пилотных доменов (`voice-ucaas`, `contact-center`, `digital-channels`): параметры, международные источники, примеры ТЗ и связь с НФТ-классами. |
+| [requirements-engineering-ai-era-2026.md](requirements-engineering-ai-era-2026.md) | RFC для спок-проекта `mango_ba_prompts`: синхронизация независимо извлечённой системы требований Вигерса с ADR-003..010 (карта сравнения, каталог «велосипедов» 🔴/🟡/🟢), исправленная классификация AI-эры (Prompt = интерфейс к Tool, инжиниринг промптов = подпроцесс, Prompt specification как артефакт), процессы/подпроцессы разработки AI-агента (Фаза 2) и предложение синхронизации С1–С5 под человеческим решением. |
 
 ## Воспроизводимость
 

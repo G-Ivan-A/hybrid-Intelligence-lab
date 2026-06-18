@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.9
+version: 1.10
 updated: 2026-06-18
 temperature: 0.1
 ---
@@ -56,7 +56,6 @@ RFC фиксирует принятое решение и rationale, но обя
 | [repository-archetypes-template-release.md](repository-archetypes-template-release.md) | Таксономия архетипов репозиториев экосистемы, Project Template для Prompt & Pattern Library, правило Governance sync и Release Engineering strategy GitHub Flow + trunk discipline. |
 | [research-memory-source-intelligence.md](research-memory-source-intelligence.md) | Framework Research Memory & Source Intelligence: Knowledge Object primacy поверх Tier 1 external sources, Tier 2 internal research memory, статусы `Observed` / `Candidate` / `Applied` / `Rejected` / `Superseded`, критерии source intelligence и traceability-схема `Knowledge Object → Sources → RFC/ADR → Consumer`. |
 | [methodology-research-and-proposals.md](methodology-research-and-proposals.md) | Исследование шести методологий (Enterprise Intelligence, Opportunity Discovery, Human-AI Collaboration, Trust & Evidence, Influence & Network Analysis, AI Solution Architecture) с внешними источниками; сравнение с PR #242/#243/#244; подтверждение предложения фаундера (BA-классификация, шаблон AI Solution Architecture, ось доверия E0–E4); три независимых предложения (Хаб/Mango/Open-AI) с уровнями L3/L4 и модель консистентности. |
-| [requirements-engineering-ai-era-2026.md](requirements-engineering-ai-era-2026.md) | Синхронизация независимо извлечённой системы требований Вигерса с `mango_ba_prompts` ADR-003..010: карта сравнения по 6 измерениям, каталог «велосипедов» с честной градацией 🔴 настоящие пробелы (лестница уровней требований, отсутствующий тип «бизнес-правило») / 🟡 нужен мост (кросс-уолк операций ↔ BABOK KA) / 🟢 оправданная локализация (глоссарий, ГОСТ ТЗ vs SRS), AI-слой статуса Candidate (E1–E2) и предложение синхронизации С1–С5 под человеческим решением. |
 
 ## Связанные артефакты
 
