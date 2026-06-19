@@ -24,7 +24,7 @@ information security)**, **внешнего хранилища (external storage
 обязательная норма после решения Пользователя (human decision) должна быть
 делегирована в active artifact самого спока (`standards/`, validators,
 операционный контракт), а до этого остаётся рекомендацией
-([governance/rfc/README.md](README.md)).
+([governance/rfc/README.md](../../governance/rfc/README.md)).
 
 ## Decision Scope / Границы решения
 
@@ -224,7 +224,7 @@ Private: `runs/`, feedback, артефакты, аудит. Object Storage: сы
 **Вариант C — мульти-репо «по доменам» (framework + operations + knowledge-vault
 как отдельный repo) или монорепо с строгими CODEOWNERS.**
 - *Минусы:* избыточная дробность (нарушает Anti-Inflation,
-  [governance/repo-model.md](../repo-model.md)); knowledge-vault логичнее как
+  [governance/repo-model.md](../../governance/repo-model.md)); knowledge-vault логичнее как
   Object Storage, а не Git-репо (бинарные PDF/DOCX/транскрипты).
 
 ### 3.2. Независимое решение / Decision
@@ -390,11 +390,11 @@ s3://mango-vault/                   # доступ по аутентификац
   (Вывод 1 фаундера; принцип «проекты независимы»).
 - **Ручная инициация передачи опыта:** опыт спока → Хаб только через RFC,
   заводимый человеком; в споке — `governance/rfc/`, в Хабе — соответствующий
-  `research/mango/` или [governance/rfc/](README.md). Автосинхронизации нет.
+  `research/mango/` или [governance/rfc/](../../governance/rfc/README.md). Автосинхронизации нет.
 - **Служебный промпт синхронизации:** `governance/prompts/hub-sync-prompt.md` —
   governance-инструмент, **не** в каталоге `prompts/` (там только БА-методология).
 - Хаб остаётся источником рекомендаций, а не блокирующих правил
-  ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), [governance/repo-model.md](../repo-model.md)).
+  ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), [governance/repo-model.md](../../governance/repo-model.md)).
 
 ### 5.2. Связь с порталом `open-ai.ru` / Portal Integration (последовательно)
 
@@ -509,7 +509,7 @@ status: success | partial | failed
 **Зависимость:** оптимизация документации по токенам (full vs executable,
 Index/Summary/Full уровни) — следующая задача, опирающаяся на принятую здесь
 структуру. Прямая аналогия с уже существующей в Хабе рамкой баланса
-[governance/rfc/documentation-architecture-balance.md](documentation-architecture-balance.md).
+[governance/rfc/documentation-architecture-balance.md](../../governance/rfc/documentation-architecture-balance.md).
 
 ---
 
@@ -547,8 +547,8 @@ Index/Summary/Full уровни) — следующая задача, опира
 - Дерево `G-Ivan-A/mango_ba_prompts@main` (снимок 2026-06-19).
 - 4 видения: команды C, Q, G, фаундера (вложения issue
   [#253](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/253)).
-- Hub-контекст: [governance/repo-model.md](../repo-model.md) (Anti-Inflation),
-  [governance/rfc/README.md](README.md) (статус RFC),
-  [research/mango/README.md](../../research/mango/README.md),
+- Hub-контекст: [governance/repo-model.md](../../governance/repo-model.md) (Anti-Inflation),
+  [governance/rfc/README.md](../../governance/rfc/README.md) (статус RFC),
+  [research/mango/README.md](README.md),
   [projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md](../../projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md),
   [docs/project-summaries/mango-ba-prompts-context-Summary.md](../../docs/project-summaries/mango-ba-prompts-context-Summary.md).

@@ -15,7 +15,7 @@ All notable repository governance changes are documented here.
 
 - creative: Independent vision of the `mango_ba_prompts` repository structure
   (issue #253). Added
-  `governance/rfc/repository-structure-vision-2026-06.md` — a bilingual (ru/en)
+  `research/mango/repository-structure-vision-2026-06.md` — a bilingual (ru/en)
   draft RFC that audits the real spoke repository, synthesises the four team
   visions (C/Q/G/founder) into a comparison table, weighs structure options
   A/B/C and recommends Option B in a phased path (Phase 0 write-contract +
@@ -25,18 +25,21 @@ All notable repository governance changes are documented here.
   Confidential), a unified run-writing contract (`runs/RUN-XXXX/` +
   `metadata.yaml`) for the three scenarios, a single Hub bridge, open-ai.ru
   portal reuse, and records the token-inflation problem **without** proposing
-  optimisation (per the founder's constraint). Registered in
-  `governance/rfc/README.md`, `governance/artifact-map.md` and the structure
-  validator. Decision stays with the human (accept/reject RFC).
+  optimisation (per the founder's constraint). As a spoke-scoped RFC it lives in
+  `research/mango/` (not the Hub-core `governance/rfc/`); registered in
+  `research/mango/README.md`, `governance/artifact-map.md`, the MkDocs nav and
+  the structure validator. Decision stays with the human (accept/reject RFC).
 - creative: Независимое видение структуры репозитория `mango_ba_prompts`
   (issue #253). Добавлен
-  `governance/rfc/repository-structure-vision-2026-06.md` — двуязычный (ru/en)
+  `research/mango/repository-structure-vision-2026-06.md` — двуязычный (ru/en)
   draft RFC: аудит реального спока, синтез четырёх командных видений
   (C/Q/G/фаундер) с таблицей сравнения, варианты A/B/C и решение (Вариант B
   фазово), деревья каталогов, три уровня ИБ, единый контракт записи прогонов
   для трёх сценариев, один мост к Хабу, переиспользование портала open-ai.ru и
-  фиксация проблемы токеновой инфляции **без** предложения оптимизации.
-  Решение за человеком.
+  фиксация проблемы токеновой инфляции **без** предложения оптимизации. Как RFC
+  спок-проекта размещён в `research/mango/` (а не в Hub-core `governance/rfc/`);
+  зарегистрирован в `research/mango/README.md`, `governance/artifact-map.md`,
+  навигации MkDocs и валидаторе структуры. Решение за человеком.
 - creative: Formalize AI-classifications and integrate into Mango roadmap
   (issue #251, builds on PR #248/#250). Added
   `research/mango/ai-classifications-formalization-2026-06.md` — a detailed
