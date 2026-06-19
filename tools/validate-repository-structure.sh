@@ -151,6 +151,7 @@ is_active_file() {
     research/mango/requirements-engineering-ai-era-2026.md | \
     research/mango/ai-classifications-formalization-2026-06.md | \
     research/mango/repository-structure-vision-2026-06.md | \
+    research/mango/token-optimization-proposal-2026-06.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
