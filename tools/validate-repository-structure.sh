@@ -150,6 +150,7 @@ is_active_file() {
     governance/rfc/methodology-research-and-proposals.md | \
     research/mango/requirements-engineering-ai-era-2026.md | \
     research/mango/ai-classifications-formalization-2026-06.md | \
+    research/mango/repository-structure-vision-2026-06.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
@@ -506,6 +507,7 @@ required_files=(
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
   "research/mango/requirements-engineering-ai-era-2026.md"
+  "research/mango/repository-structure-vision-2026-06.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
   ".github/ISSUE_TEMPLATE/task-creative.md"
