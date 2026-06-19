@@ -148,6 +148,7 @@ is_active_file() {
     governance/rfc/product-concept-template-proposal.md | \
     governance/rfc/solution-concept-template-proposal.md | \
     governance/rfc/methodology-research-and-proposals.md | \
+    governance/rfc/repository-structure-vision-2026-06.md | \
     research/mango/requirements-engineering-ai-era-2026.md | \
     research/mango/ai-classifications-formalization-2026-06.md | \
     docs/vision.md | \
@@ -505,6 +506,7 @@ required_files=(
   "governance/rfc/repository-archetypes-template-release.md"
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
+  "governance/rfc/repository-structure-vision-2026-06.md"
   "research/mango/requirements-engineering-ai-era-2026.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
