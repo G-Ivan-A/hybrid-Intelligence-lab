@@ -123,3 +123,10 @@ nav:
       - Требования в AI-эру (Вигерс ↔ mango): research/mango/requirements-engineering-ai-era-2026.md
       - Видение структуры репозитория: research/mango/repository-structure-vision-2026-06.md
       - Оптимизация потребления токенов: research/mango/token-optimization-proposal-2026-06.md
+    - Репутационные технологии:
+      - Обзор: research/reputation-technologies/README.md
+      - Видение фаундера и фреймворк GRA (RU): research/reputation-technologies/2026-06-founders-vision-and-framework.ru.md
+      - Стандарт фреймворка (EN): research/reputation-technologies/2026-06-framework-standard.en.md
+      - White paper (EN): research/reputation-technologies/2026-06-white-paper.en.md
+      - Executive summary (RU + EN): research/reputation-technologies/2026-06-executive-summary.ru-en.md
+      - Словарь терминов (RU↔EN): research/reputation-technologies/2026-06-glossary.ru-en.md

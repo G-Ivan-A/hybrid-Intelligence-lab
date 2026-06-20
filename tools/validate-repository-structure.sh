@@ -92,6 +92,12 @@ is_active_file() {
     research/governance/governance-folder-structure-decisions-2026-06.md | \
     research/cicd/README.md | \
     research/cicd/2026-06-js-cicd-template-analysis.md | \
+    research/reputation-technologies/README.md | \
+    research/reputation-technologies/2026-06-founders-vision-and-framework.ru.md | \
+    research/reputation-technologies/2026-06-framework-standard.en.md | \
+    research/reputation-technologies/2026-06-white-paper.en.md | \
+    research/reputation-technologies/2026-06-executive-summary.ru-en.md | \
+    research/reputation-technologies/2026-06-glossary.ru-en.md | \
     research/mango/classification.md | \
     research/mango/classification-tz.md | \
     research/mango/requirements-flow.md | \
