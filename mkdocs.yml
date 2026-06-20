@@ -123,3 +123,6 @@ nav:
       - Требования в AI-эру (Вигерс ↔ mango): research/mango/requirements-engineering-ai-era-2026.md
       - Видение структуры репозитория: research/mango/repository-structure-vision-2026-06.md
       - Оптимизация потребления токенов: research/mango/token-optimization-proposal-2026-06.md
+    - open-ai.ru:
+      - Обзор: research/open-ai-ru/README.md
+      - Архитектура репозитория и уровни L3-L4: research/open-ai-ru/2026-06-open-ai-ru-repository-architecture-and-l3-l4.md

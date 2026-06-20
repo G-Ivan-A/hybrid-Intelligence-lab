@@ -35,6 +35,7 @@ source: research/README-old.md
 | --- | --- |
 | [hub/](hub/) | Фундаментальные исследования работы Хаба: передача контекста, project bootstrap, governance-стратегия и классификация промптов (`scope: repo-wide`). |
 | [mango/](mango/) | Классификация продуктов и требований MANGO OFFICE, анализ корпуса ТЗ и flow требований (`scope: mango-only`). |
+| [open-ai-ru/](open-ai-ru/) | Архитектура репозитория и продуктовых уровней L1–L4 для spoke-проекта open-ai.ru: инвентаризация стандартов Хаба, аудит репо, международные практики и детализация L3–L4 (`scope: open-ai-ru`). |
 | [governance/](governance/) | Исследования governance-форматов Хаба: формат research-документации, исполнимых контрактов, contract documentation и решений по структуре каталогов (`scope: repo-wide`). |
 | [external-knowledge/](external-knowledge/) | Интеграция внешних знаний: Base Registry внешних источников, механизм инсайтов и привязка к knowledge lifecycle (`scope: repo-wide`). |
 | [cicd/](cicd/) | Исследования практик и стандартов CI/CD для AI-native проектов: анализ шаблонов, паттернов автоматизации и применимости к нашим репозиториям (`scope: repo-wide`). |
@@ -53,6 +54,12 @@ source: research/README-old.md
 | [ecosystem-architecture-research-2026-06.md](hub/ecosystem-architecture-research-2026-06.md) | Комплексное исследование архитектуры экосистемы для issue #257: Hub как центр 5+ проектов, token balance, L1-L4 для `open-ai.ru` и репутационные технологии. |
 | [external-practice-intake-2026-06.md](hub/external-practice-intake-2026-06.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
 | [international-ai-governance-practices-2026-06.md](hub/international-ai-governance-practices-2026-06.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
+
+### Подкаталог `open-ai-ru/`
+
+| Файл | Назначение |
+| --- | --- |
+| [2026-06-open-ai-ru-repository-architecture-and-l3-l4.md](open-ai-ru/2026-06-open-ai-ru-repository-architecture-and-l3-l4.md) | Архитектура репозитория open-ai.ru и детализация уровней L3–L4 для issue #259: инвентаризация стандартов Хаба, аудит репо, сравнение с международными практиками (8 проектов, проверено через GitHub API), C4-диаграммы, ADR-формат и предложение структуры репо с trade-offs. |
 
 ## Рекомендуемая структура
 
