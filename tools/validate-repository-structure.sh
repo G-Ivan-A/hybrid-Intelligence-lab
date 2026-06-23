@@ -82,6 +82,7 @@ is_active_file() {
     research/hub/international-ai-governance-practices-2026-06.md | \
     research/external-knowledge/wigers-requirements-analysis-2026-06.md | \
     research/hub/user-prompts-analysis-2026-05.md | \
+    research/hub/repository-structure-concept-2026-06.md | \
     research/README.md | \
     research/hub/README.md | \
     research/mango/README.md | \
@@ -457,6 +458,7 @@ required_files=(
   "research/hub/ecosystem-architecture-research-2026-06.md"
   "research/hub/external-practice-intake-2026-06.md"
   "research/hub/international-ai-governance-practices-2026-06.md"
+  "research/hub/repository-structure-concept-2026-06.md"
   "research/external-knowledge/wigers-requirements-analysis-2026-06.md"
   "research/mango/README.md"
   "research/governance/README.md"
@@ -1107,11 +1109,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.43"
+require_text "governance/artifact-map.md" "version: 1.44"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-20"
+require_text "governance/artifact-map.md" "updated: 2026-06-23"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
