@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.11
-updated: 2026-06-20
+version: 1.12
+updated: 2026-06-23
 temperature: 0.1
 ai-generated: false
 source: research/README-old.md
@@ -55,6 +55,7 @@ source: research/README-old.md
 | [ecosystem-architecture-research-2026-06.md](hub/ecosystem-architecture-research-2026-06.md) | Комплексное исследование архитектуры экосистемы для issue #257: Hub как центр 5+ проектов, token balance, L1-L4 для `open-ai.ru` и репутационные технологии. |
 | [external-practice-intake-2026-06.md](hub/external-practice-intake-2026-06.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
 | [international-ai-governance-practices-2026-06.md](hub/international-ai-governance-practices-2026-06.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
+| [repository-structure-concept-2026-06.md](hub/repository-structure-concept-2026-06.md) | Дополнение к mango-исследованию (issue #263): видение фаундера как приоритетная база, 4 открытых вопроса, 3 противоречия, критический анализ рисков и концепция базовых/рекомендуемых/специфичных каталогов для 4 архетипов PR #243 (10+ международных проектов на архетип). |
 
 ### Подкаталог `open-ai-ru/`
 

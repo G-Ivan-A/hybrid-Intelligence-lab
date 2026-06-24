@@ -13,6 +13,35 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Repository structure concept for project archetypes (issue #263).
+  Added `research/hub/repository-structure-concept-2026-06.md` — an addendum
+  (not a replacement) to the `mango_ba_prompts` directory-structure research. It
+  fixes the founder's vision as the priority base, closes the four open
+  questions (`prompts/` vs in-process prompts, `docs/` vs `knowledge/`, flat vs
+  subdirectory criterion, `scripts/` vs `tools/`), resolves three
+  contradictions (root `prompts/`, root `standards/` vs `kb/`, `knowledge/` vs
+  `docs/`), runs a critical risk analysis where the vision diverges from
+  international practice, and derives a base/recommended/specific directory
+  concept for the four PR #243 archetypes (Governance & Knowledge Hub, Prompt &
+  Pattern Library, Product Spoke/Runtime, Education) benchmarked against 10+
+  international repositories each, plus Hub sync recommendations. A research
+  note, not an RFC; decisions stay with the human. Registered in
+  `research/hub/README.md`, `research/README.md`, `governance/artifact-map.md`,
+  the MkDocs nav and the structure validator.
+- research: Концепция структуры репозитория для архетипов проектов (issue #263).
+  Добавлен `research/hub/repository-structure-concept-2026-06.md` — дополнение
+  (не замена) к исследованию структуры каталогов `mango_ba_prompts`: фиксирует
+  видение фаундера как приоритетную базу, закрывает четыре открытых вопроса
+  (`prompts/` ↔ процессные промпты, `docs/` ↔ `knowledge/`, критерий «плоский vs
+  с подкаталогами», `scripts/` ↔ `tools/`), разрешает три противоречия
+  (корневой `prompts/`, корневой `standards/` vs `kb/`, `knowledge/` vs
+  `docs/`), проводит критический анализ рисков расхождения с международной
+  практикой и выводит концепцию базовых/рекомендуемых/специфичных каталогов для
+  четырёх архетипов PR #243 (10+ международных проектов на архетип) с
+  рекомендациями по синхронизации с Хабом. Это research-документ, не RFC;
+  решение остаётся за человеком. Зарегистрирован в `research/hub/README.md`,
+  `research/README.md`, `governance/artifact-map.md`, навигации MkDocs и
+  валидаторе структуры.
 - creative: Independent vision of the `mango_ba_prompts` repository structure
   (issue #253). Added
   `research/mango/repository-structure-vision-2026-06.md` — a bilingual (ru/en)
