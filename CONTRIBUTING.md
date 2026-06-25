@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.5
-updated: 2026-06-15
+version: 1.6
+updated: 2026-06-25
 temperature: 0.1
 ---
 
@@ -111,9 +111,18 @@ frontmatter из [standards/frontmatter-standard.md](standards/frontmatter-stand
 только когда их потребляет валидатор, executable contract или migration
 provenance.
 
+## File Naming
+
+Новые и мигрируемые хронологические Markdown-артефакты используют date-first
+имена по [standards/file-naming.md](standards/file-naming.md):
+`YYYY-MM-name.md`, `YYYY-name.md` или `YYYY-MM-adr-NNN-name.md` для spoke ADR.
+Проверяемые области: Hub `research/`, spoke `docs/analysis/`, `docs/rfc/` и
+`docs/adr/`.
+
 ## Локальная проверка
 
 ```bash
+./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
 python3 tools/generate-manifest.py --check

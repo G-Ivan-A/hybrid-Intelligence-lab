@@ -165,8 +165,8 @@ reviewable, Pattern и Standard закрепляют повторяемость,
 | Артефакт | Роль |
 | --- | --- |
 | [practices/README.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/practices/README.md) | Каталог фиксированных практик, отдельный от research и product docs. |
-| [external-practice-intake-2026-06.md](../research/hub/external-practice-intake-2026-06.md) | Анализ внешних agent-work практик и Mango docs pattern. |
-| [international-ai-governance-practices-2026-06.md](../research/hub/international-ai-governance-practices-2026-06.md) | Анализ NIST, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF. |
+| [2026-06-external-practice-intake.md](../research/hub/2026-06-external-practice-intake.md) | Анализ внешних agent-work практик и Mango docs pattern. |
+| [2026-06-international-ai-governance-practices.md](../research/hub/2026-06-international-ai-governance-practices.md) | Анализ NIST, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF. |
 | [templates/sync-project-with-hub-prompt.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/sync-project-with-hub-prompt.md) | Исполнимый prompt для сравнения проекта с Хабом и предложения импортов. |
 | [governance/rfc/resolve-artifact-location-proposal.md](../governance/rfc/resolve-artifact-location-proposal.md) | Исполнимый prompt для выбора правильного места нового артефакта в жизненном цикле. |
 

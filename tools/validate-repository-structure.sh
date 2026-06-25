@@ -50,6 +50,7 @@ is_active_file() {
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
+    standards/file-naming-convention.md | \
     standards/research-profile.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
@@ -65,32 +66,33 @@ is_active_file() {
     standards/htom-documentation-structure.md | \
     standards/webportal-product-concept-standard.md | \
     standards/webportal-solution-concept-standard.md | \
-    research/mango/taxonomy-concept-2026-05.md | \
-    research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
-    research/mango/rag-mapping-roadmap-2026-05.md | \
-    research/mango/capability-decomposition-2026-05.md | \
-    research/hub/project-context-and-bootstrap-patterns-2026-05.md | \
-    research/hub/ai-collaboration-retrospective-2026-06.md | \
-    research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md | \
-    research/hub/prompts-classification-audit-2026-05.md | \
-    research/hub/prompts-classification-standard-2026-05.md | \
-    research/hub/team-c-governance-strategy-audit-2026-05.md | \
-    research/hub/external-governance-patterns-review-2026-06.md | \
-    research/hub/ecosystem-governance-audit-2026-06.md | \
-    research/hub/ecosystem-architecture-research-2026-06.md | \
-    research/hub/external-practice-intake-2026-06.md | \
-    research/hub/international-ai-governance-practices-2026-06.md | \
-    research/external-knowledge/wigers-requirements-analysis-2026-06.md | \
-    research/hub/user-prompts-analysis-2026-05.md | \
-    research/hub/repository-structure-concept-2026-06.md | \
+    research/mango/2026-05-taxonomy-concept.md | \
+    research/mango/2026-05-requirements-lifecycle-uncertainty.md | \
+    research/mango/2026-05-rag-mapping-roadmap.md | \
+    research/mango/2026-05-capability-decomposition.md | \
+    research/hub/2026-05-project-context-and-bootstrap-patterns.md | \
+    research/hub/2026-06-ai-collaboration-retrospective.md | \
+    research/hub/2026-06-ai-collaboration-retrospective-mango-migration.md | \
+    research/hub/2026-05-prompts-classification-audit.md | \
+    research/hub/2026-05-prompts-classification-standard.md | \
+    research/hub/2026-05-team-c-governance-strategy-audit.md | \
+    research/hub/2026-06-external-governance-patterns-review.md | \
+    research/hub/2026-06-ecosystem-governance-audit.md | \
+    research/hub/2026-06-ecosystem-architecture-research.md | \
+    research/hub/2026-06-external-practice-intake.md | \
+    research/hub/2026-06-international-ai-governance-practices.md | \
+    research/external-knowledge/2026-06-wigers-requirements-analysis.md | \
+    research/hub/2026-05-user-prompts-analysis.md | \
+    research/hub/2026-06-repository-structure-concept.md | \
+    research/hub/2026-06-artifact-inventory-and-classification.md | \
     research/README.md | \
     research/hub/README.md | \
     research/mango/README.md | \
     research/governance/README.md | \
-    research/governance/research-documentation-format-2026-06.md | \
-    research/governance/executable-contract-format-2026-06.md | \
-    research/governance/contract-documentation-format-2026-06.md | \
-    research/governance/governance-folder-structure-decisions-2026-06.md | \
+    research/governance/2026-06-research-documentation-format.md | \
+    research/governance/2026-06-executable-contract-format.md | \
+    research/governance/2026-06-contract-documentation-format.md | \
+    research/governance/2026-06-governance-folder-structure-decisions.md | \
     research/cicd/README.md | \
     research/cicd/2026-06-js-cicd-template-analysis.md | \
     research/open-ai-ru/README.md | \
@@ -101,17 +103,17 @@ is_active_file() {
     research/reputation-technologies/2026-06-white-paper.en.md | \
     research/reputation-technologies/2026-06-executive-summary.ru-en.md | \
     research/reputation-technologies/2026-06-glossary.ru-en.md | \
-    research/mango/classification.md | \
-    research/mango/classification-tz.md | \
-    research/mango/requirements-flow.md | \
+    research/mango/2026-05-classification.md | \
+    research/mango/2026-05-classification-tz.md | \
+    research/mango/2026-05-requirements-flow.md | \
     research/external-knowledge/README.md | \
     research/external-knowledge/external-sources-registry.md | \
     research/external-knowledge/external-insights/README.md | \
-    research/external-knowledge/external-insights/building-effective-agents-2026-06.md | \
-    research/external-knowledge/external-insights/12-factor-agents-2026-06.md | \
-    research/external-knowledge/external-insights/spec-driven-development-2026-06.md | \
-    research/external-knowledge/external-insights/agent-local-memory-context-2026-06.md | \
-    research/external-knowledge/external-insights/structured-prompt-driven-development-2026-06.md | \
+    research/external-knowledge/external-insights/2026-06-building-effective-agents.md | \
+    research/external-knowledge/external-insights/2026-06-12-factor-agents.md | \
+    research/external-knowledge/external-insights/2026-06-spec-driven-development.md | \
+    research/external-knowledge/external-insights/2026-06-agent-local-memory-context.md | \
+    research/external-knowledge/external-insights/2026-06-structured-prompt-driven-development.md | \
     practices/README.md | \
     practices/agent-work/README.md | \
     practices/agent-work/hybrid-search-before-action.md | \
@@ -158,10 +160,10 @@ is_active_file() {
     governance/rfc/product-concept-template-proposal.md | \
     governance/rfc/solution-concept-template-proposal.md | \
     governance/rfc/methodology-research-and-proposals.md | \
-    research/mango/requirements-engineering-ai-era-2026.md | \
-    research/mango/ai-classifications-formalization-2026-06.md | \
-    research/mango/repository-structure-vision-2026-06.md | \
-    research/mango/token-optimization-proposal-2026-06.md | \
+    research/mango/2026-requirements-engineering-ai-era.md | \
+    research/mango/2026-06-ai-classifications-formalization.md | \
+    research/mango/2026-06-repository-structure-vision.md | \
+    research/mango/2026-06-token-optimization-proposal.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
@@ -190,6 +192,7 @@ is_active_file() {
     website/research | \
     .github/workflows/deploy-docs.yml | \
     .github/workflows/update-manifest.yml | \
+    .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
     .github/ISSUE_TEMPLATE/task.md | \
     .github/ISSUE_TEMPLATE/task-creative.md | \
@@ -207,7 +210,9 @@ is_active_file() {
     templates/htom/init.sh | \
     templates/spoke/README.md | \
     templates/spoke/CONTRIBUTING.md | \
+    templates/spoke/docs/README.md | \
     templates/spoke/.github/workflows/ci.yml | \
+    templates/spoke/tools/validate-file-naming.sh | \
     templates/webportal-product-concept-template.md | \
     templates/webportal-solution-concept-template.md | \
     templates/sync-project-with-hub-prompt.md | \
@@ -218,6 +223,7 @@ is_active_file() {
     tools/validate-mkdocs-site.sh | \
     experiments/test-smart-sync.sh | \
     tools/validate-frontmatter.sh | \
+    tools/validate-file-naming.sh | \
     tools/validate-repository-structure.sh)
       return 0
       ;;
@@ -408,7 +414,9 @@ required_directories=(
   "templates/htom/.github/ISSUE_TEMPLATE"
   "templates/htom/tools"
   "templates/spoke"
+  "templates/spoke/docs"
   "templates/spoke/.github/workflows"
+  "templates/spoke/tools"
   "standards"
   "research"
   "research/hub"
@@ -437,6 +445,7 @@ required_files=(
   "standards/README.md"
   "standards/frontmatter-standard.md"
   "standards/file-naming.md"
+  "standards/file-naming-convention.md"
   "standards/research-profile.md"
   "standards/glossary.md"
   "standards/education-profile.md"
@@ -454,30 +463,31 @@ required_files=(
   "standards/webportal-solution-concept-standard.md"
   "research/README.md"
   "research/hub/README.md"
-  "research/hub/ecosystem-governance-audit-2026-06.md"
-  "research/hub/ecosystem-architecture-research-2026-06.md"
-  "research/hub/external-practice-intake-2026-06.md"
-  "research/hub/international-ai-governance-practices-2026-06.md"
-  "research/hub/repository-structure-concept-2026-06.md"
-  "research/external-knowledge/wigers-requirements-analysis-2026-06.md"
+  "research/hub/2026-06-ecosystem-governance-audit.md"
+  "research/hub/2026-06-ecosystem-architecture-research.md"
+  "research/hub/2026-06-external-practice-intake.md"
+  "research/hub/2026-06-international-ai-governance-practices.md"
+  "research/hub/2026-06-repository-structure-concept.md"
+  "research/hub/2026-06-artifact-inventory-and-classification.md"
+  "research/external-knowledge/2026-06-wigers-requirements-analysis.md"
   "research/mango/README.md"
   "research/governance/README.md"
-  "research/governance/research-documentation-format-2026-06.md"
-  "research/governance/executable-contract-format-2026-06.md"
-  "research/governance/contract-documentation-format-2026-06.md"
-  "research/governance/governance-folder-structure-decisions-2026-06.md"
-  "research/mango/classification.md"
-  "research/mango/classification-tz.md"
-  "research/mango/requirements-flow.md"
-  "research/mango/rag-mapping-roadmap-2026-05.md"
+  "research/governance/2026-06-research-documentation-format.md"
+  "research/governance/2026-06-executable-contract-format.md"
+  "research/governance/2026-06-contract-documentation-format.md"
+  "research/governance/2026-06-governance-folder-structure-decisions.md"
+  "research/mango/2026-05-classification.md"
+  "research/mango/2026-05-classification-tz.md"
+  "research/mango/2026-05-requirements-flow.md"
+  "research/mango/2026-05-rag-mapping-roadmap.md"
   "research/external-knowledge/README.md"
   "research/external-knowledge/external-sources-registry.md"
   "research/external-knowledge/external-insights/README.md"
-  "research/external-knowledge/external-insights/building-effective-agents-2026-06.md"
-  "research/external-knowledge/external-insights/12-factor-agents-2026-06.md"
-  "research/external-knowledge/external-insights/spec-driven-development-2026-06.md"
-  "research/external-knowledge/external-insights/agent-local-memory-context-2026-06.md"
-  "research/external-knowledge/external-insights/structured-prompt-driven-development-2026-06.md"
+  "research/external-knowledge/external-insights/2026-06-building-effective-agents.md"
+  "research/external-knowledge/external-insights/2026-06-12-factor-agents.md"
+  "research/external-knowledge/external-insights/2026-06-spec-driven-development.md"
+  "research/external-knowledge/external-insights/2026-06-agent-local-memory-context.md"
+  "research/external-knowledge/external-insights/2026-06-structured-prompt-driven-development.md"
   "practices/README.md"
   "practices/agent-work/README.md"
   "practices/agent-work/hybrid-search-before-action.md"
@@ -519,8 +529,8 @@ required_files=(
   "governance/rfc/repository-archetypes-template-release.md"
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
-  "research/mango/requirements-engineering-ai-era-2026.md"
-  "research/mango/repository-structure-vision-2026-06.md"
+  "research/mango/2026-requirements-engineering-ai-era.md"
+  "research/mango/2026-06-repository-structure-vision.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
   ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -538,17 +548,21 @@ required_files=(
   "templates/htom/init.sh"
   "templates/spoke/README.md"
   "templates/spoke/CONTRIBUTING.md"
+  "templates/spoke/docs/README.md"
   "templates/spoke/.github/workflows/ci.yml"
+  "templates/spoke/tools/validate-file-naming.sh"
   "templates/webportal-product-concept-template.md"
   "templates/webportal-solution-concept-template.md"
   "templates/sync-project-with-hub-prompt.md"
   "templates/manifest.json"
   "templates/sync-metadata.json"
+  ".github/workflows/validate.yml"
   ".github/workflows/update-manifest.yml"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
   "tools/validate-mkdocs-site.sh"
   "tools/validate-frontmatter.sh"
+  "tools/validate-file-naming.sh"
   "tools/validate-repository-structure.sh"
 )
 
@@ -568,6 +582,9 @@ validate_metadata_single_source
 validate_internal_markdown_links
 validate_artifact_map_paths
 validate_template_placeholders
+if ! ./tools/validate-file-naming.sh; then
+  fail "file naming validation failed"
+fi
 
 while IFS= read -r file; do
   if [[ ! -e "$file" ]]; then
@@ -592,6 +609,7 @@ done < <(git ls-files)
 
 require_text "README.md" "CONCEPT.md"
 require_text "README.md" "standards/README.md"
+require_text "README.md" "standards/file-naming.md"
 require_text "README.md" "standards/glossary.md"
 require_text "README.md" "standards/team-contract.md"
 require_text "README.md" "governance/agent-onboarding-protocol.md"
@@ -601,6 +619,7 @@ require_text "README.md" "projects/education-ba-prompt/README.md"
 require_text "README.md" "research/mango/README.md"
 require_text "README.md" "practices/README.md"
 require_text "README.md" "./tools/validate-frontmatter.sh"
+require_text "README.md" "./tools/validate-file-naming.sh"
 require_text "README.md" "./tools/validate-repository-structure.sh"
 require_text "README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 
@@ -622,11 +641,11 @@ require_text "CONCEPT.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.5"
+require_text "CONTRIBUTING.md" "version: 1.6"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "governance/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-06-15"
+require_text "CONTRIBUTING.md" "updated: 2026-06-25"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -637,7 +656,9 @@ require_text "CONTRIBUTING.md" "governance/rfc/knowledge-lifecycle-proposal.md"
 require_text "CONTRIBUTING.md" "governance/rfc/resolve-artifact-location-proposal.md"
 require_text "CONTRIBUTING.md" "Правило авто-заполнения Мета"
 require_text "CONTRIBUTING.md" "./tools/validate-frontmatter.sh"
+require_text "CONTRIBUTING.md" "./tools/validate-file-naming.sh"
 require_text "CONTRIBUTING.md" "./tools/validate-repository-structure.sh"
+require_text "CONTRIBUTING.md" "File Naming"
 require_text "CONTRIBUTING.md" "future-phase: X"
 require_text "CONTRIBUTING.md" "topic: Y"
 require_text "CONTRIBUTING.md" "Повторный анализ инициирует только Пользователь"
@@ -675,12 +696,13 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: canonical"
-require_text "standards/README.md" "version: 1.3"
-require_text "standards/README.md" "updated: 2026-06-12"
+require_text "standards/README.md" "version: 1.4"
+require_text "standards/README.md" "updated: 2026-06-25"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "Как пользоваться"
 require_text "standards/README.md" "frontmatter-standard.md"
 require_text "standards/README.md" "file-naming.md"
+require_text "standards/README.md" "file-naming-convention.md"
 require_text "standards/README.md" "research-profile.md"
 require_text "standards/README.md" "team-contract.md"
 require_text "standards/README.md" "standards/glossary.md"
@@ -732,7 +754,7 @@ require_text "standards/executable-documentation-standard.md" "Framework vs Temp
 require_text "standards/executable-documentation-standard.md" "Template = один воспроизводимый артефакт"
 require_text "standards/executable-documentation-standard.md" "Framework = набор связанных Standards, Templates, Patterns"
 require_text "standards/executable-documentation-standard.md" "Practice graph"
-require_text "standards/executable-documentation-standard.md" "research/hub/international-ai-governance-practices-2026-06.md"
+require_text "standards/executable-documentation-standard.md" "research/hub/2026-06-international-ai-governance-practices.md"
 require_text "standards/executable-documentation-standard.md" "Detail-level naming"
 require_text "standards/executable-documentation-standard.md" "[file-naming.md](file-naming.md)"
 
@@ -815,8 +837,8 @@ require_text "standards/issue-workflow.md" "governance/artifact-map.md"
 require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
 require_text "standards/issue-workflow.md" "validate-repository-structure.sh"
 require_text "standards/file-naming.md" "status: canonical"
-require_text "standards/file-naming.md" "version: 1.4"
-require_text "standards/file-naming.md" "updated: 2026-06-15"
+require_text "standards/file-naming.md" "version: 1.5"
+require_text "standards/file-naming.md" "updated: 2026-06-25"
 require_text "standards/file-naming.md" "ai-generated: false"
 require_text "standards/file-naming.md" "Корень репозитория"
 require_text "standards/file-naming.md" "UPPERCASE_WITH_HYPHENS.md"
@@ -834,6 +856,18 @@ require_text "standards/file-naming.md" '`-Summary`'
 require_text "standards/file-naming.md" '`-Full`'
 require_text "standards/file-naming.md" "Формат датировки"
 require_text "standards/file-naming.md" "ISO 8601: YYYY-MM-DD"
+require_text "standards/file-naming.md" "Хронологические артефакты"
+require_text "standards/file-naming.md" "YYYY-MM-name.md"
+require_text "standards/file-naming.md" "YYYY-MM-adr-NNN-name.md"
+require_text "standards/file-naming.md" "tools/validate-file-naming.sh"
+
+require_text "standards/file-naming-convention.md" "status: canonical"
+require_text "standards/file-naming-convention.md" "version: 1.0"
+require_text "standards/file-naming-convention.md" "updated: 2026-06-25"
+require_text "standards/file-naming-convention.md" "file-naming.md"
+require_text "standards/file-naming-convention.md" "YYYY-MM-name.md"
+require_text "standards/file-naming-convention.md" "YYYY-MM-adr-NNN-name.md"
+require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/research-profile.md" "status: canonical"
 require_text "standards/research-profile.md" "version: 1.1"
@@ -998,7 +1032,7 @@ require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Таб
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Runtime-онбординг"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Bootstrap-клонирование"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "standards/glossary.md"
-require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "ai-collaboration-retrospective-2026-06.md"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "2026-06-ai-collaboration-retrospective.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "templates/htom/README.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" '```mermaid'
@@ -1109,7 +1143,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.45"
+require_text "governance/artifact-map.md" "version: 1.46"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1126,29 +1160,34 @@ require_text "governance/artifact-map.md" "standards/project-structure-inheritan
 require_text "governance/artifact-map.md" "Как использовать карту"
 require_text "governance/artifact-map.md" "Как обновлять карту"
 require_text "governance/artifact-map.md" "glossary.md"
-require_text "governance/artifact-map.md" "research/mango/classification.md"
-require_text "governance/artifact-map.md" "research/mango/rag-mapping-roadmap-2026-05.md"
-require_text "governance/artifact-map.md" "research/hub/project-context-and-bootstrap-patterns-2026-05.md"
-require_text "governance/artifact-map.md" "research/hub/team-c-governance-strategy-audit-2026-05.md"
-require_text "governance/artifact-map.md" "research/hub/user-prompts-analysis-2026-05.md"
+require_text "governance/artifact-map.md" "research/mango/2026-05-classification.md"
+require_text "governance/artifact-map.md" "research/mango/2026-05-rag-mapping-roadmap.md"
+require_text "governance/artifact-map.md" "research/hub/2026-05-project-context-and-bootstrap-patterns.md"
+require_text "governance/artifact-map.md" "research/hub/2026-05-team-c-governance-strategy-audit.md"
+require_text "governance/artifact-map.md" "research/hub/2026-05-user-prompts-analysis.md"
 require_text "governance/artifact-map.md" "mango_ba_prompts"
 require_text "governance/artifact-map.md" "projects/README.md"
 require_text "governance/artifact-map.md" "governance/backlog.md"
 require_text "governance/artifact-map.md" "governance/executable-documents-issues.md"
 require_text "governance/artifact-map.md" "standards/frontmatter-standard.md"
 require_text "governance/artifact-map.md" "standards/frontmatter-docs-standard.md"
+require_text "governance/artifact-map.md" "standards/file-naming-convention.md"
 require_text "governance/artifact-map.md" "standards/executable-documentation-standard.md"
 require_text "governance/artifact-map.md" "standards/htom-documentation-structure.md"
-require_text "governance/artifact-map.md" "research/hub/ecosystem-governance-audit-2026-06.md"
-require_text "governance/artifact-map.md" "research/hub/ecosystem-architecture-research-2026-06.md"
-require_text "governance/artifact-map.md" "research/hub/external-practice-intake-2026-06.md"
-require_text "governance/artifact-map.md" "research/hub/international-ai-governance-practices-2026-06.md"
+require_text "governance/artifact-map.md" "research/hub/2026-06-ecosystem-governance-audit.md"
+require_text "governance/artifact-map.md" "research/hub/2026-06-ecosystem-architecture-research.md"
+require_text "governance/artifact-map.md" "research/hub/2026-06-external-practice-intake.md"
+require_text "governance/artifact-map.md" "research/hub/2026-06-international-ai-governance-practices.md"
 require_text "governance/artifact-map.md" "practices/README.md"
 require_text "governance/artifact-map.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
 require_text "governance/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "governance/artifact-map.md" ".github/ISSUE_TEMPLATE/task-creative.md"
 require_text "governance/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
+require_text "governance/artifact-map.md" "templates/spoke/docs/README.md"
+require_text "governance/artifact-map.md" "templates/spoke/tools/validate-file-naming.sh"
 require_text "governance/artifact-map.md" "templates/sync-project-with-hub-prompt.md"
+require_text "governance/artifact-map.md" "tools/validate-file-naming.sh"
+require_text "governance/artifact-map.md" ".github/workflows/validate.yml"
 require_text "governance/artifact-map.md" "Уровни документации: Framework vs Methodology"
 require_text "governance/artifact-map.md" "governance/rfc/knowledge-lifecycle-proposal.md"
 require_text "governance/artifact-map.md" "governance/rfc/resolve-artifact-location-proposal.md"
@@ -1288,58 +1327,58 @@ require_text "governance/rfc/methodology-research-and-proposals.md" "open-ai.ru"
 require_text "governance/rfc/methodology-research-and-proposals.md" "Open Decisions"
 
 # Wigers requirements research + AI-era RFC (issue #247): independent extraction + mango sync.
-require_text "governance/artifact-map.md" "research/external-knowledge/wigers-requirements-analysis-2026-06.md"
-require_text "governance/artifact-map.md" "research/mango/requirements-engineering-ai-era-2026.md"
-require_text "research/external-knowledge/README.md" "wigers-requirements-analysis-2026-06.md"
-require_text "research/mango/README.md" "requirements-engineering-ai-era-2026.md"
+require_text "governance/artifact-map.md" "research/external-knowledge/2026-06-wigers-requirements-analysis.md"
+require_text "governance/artifact-map.md" "research/mango/2026-requirements-engineering-ai-era.md"
+require_text "research/external-knowledge/README.md" "2026-06-wigers-requirements-analysis.md"
+require_text "research/mango/README.md" "2026-requirements-engineering-ai-era.md"
 # Research doc: independent bilingual Wiegers extraction (FT-1..FT-4).
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "status: draft"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "version: 0.2"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "type: external-analysis"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirement levels"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirement types"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Business rule"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Quality attribute"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirements development"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Requirements management"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Активаторы операций"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Вычисления"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Vision and Scope"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Software Requirements Specification"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "ISO/IEC/IEEE 29148"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "MoSCoW"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "prompt engineering"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "User Story"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Use Case"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Candidate"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "status: draft"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "version: 0.2"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "type: external-analysis"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Requirement levels"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Requirement types"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Business rule"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Quality attribute"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Requirements development"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Requirements management"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Активаторы операций"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Вычисления"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Vision and Scope"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Software Requirements Specification"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "ISO/IEC/IEEE 29148"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "MoSCoW"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "prompt engineering"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "User Story"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Use Case"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Candidate"
 # Issue #249 additions: classifications comparison + open-questions-at-end.
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "BABOK"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "CrewAI"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "Сравнение классификаций"
-require_text "research/external-knowledge/wigers-requirements-analysis-2026-06.md" "ОВ‑4"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "BABOK"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "CrewAI"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "Сравнение классификаций"
+require_text "research/external-knowledge/2026-06-wigers-requirements-analysis.md" "ОВ‑4"
 # RFC: Wiegers <-> mango-ADR sync (FT-5) with honest reinvention gradation.
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "status: draft"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "version: 0.2"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "RFC: Requirements Engineering in the AI Era"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Decision Scope"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Карта сравнения"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "mango_ba_prompts"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "велосипед"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "requirement_level"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Бизнес-правило"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "ГОСТ 34.602-2020"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "crosswalk"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Trust & Evidence"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Candidate"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Anti-Inflation"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Acceptance Criteria"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Open Decisions"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "status: draft"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "version: 0.2"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "RFC: Requirements Engineering in the AI Era"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Decision Scope"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Карта сравнения"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "mango_ba_prompts"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "велосипед"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "requirement_level"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Бизнес-правило"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "ГОСТ 34.602-2020"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "crosswalk"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Trust & Evidence"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Candidate"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Anti-Inflation"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Acceptance Criteria"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Open Decisions"
 # Issue #249 additions: prompt = interface to Tool, prompt-engineering subprocess, AI-agent processes.
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Инжиниринг промптов"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Prompt specification"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Разработка AI-агента"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Настройка RAG"
-require_text "research/mango/requirements-engineering-ai-era-2026.md" "Оркестрация агентов"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Инжиниринг промптов"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Prompt specification"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Разработка AI-агента"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Настройка RAG"
+require_text "research/mango/2026-requirements-engineering-ai-era.md" "Оркестрация агентов"
 
 # Index/Summary format improvement (issue #237): phase dates + future horizons.
 require_text "docs/ecosystem-map-Index.md" "version: 0.2"
@@ -1397,15 +1436,15 @@ reject_text "governance/backlog.md" "Конард"
 require_text "research/README.md" "status: canonical"
 require_text "research/README.md" "standards/research-profile.md"
 require_text "research/README.md" "research/<domain>/exp-<slug>/"
-require_text "research/README.md" "project-context-and-bootstrap-patterns-2026-05.md"
-require_text "research/README.md" "prompts-classification-audit-2026-05.md"
-require_text "research/README.md" "prompts-classification-standard-2026-05.md"
-require_text "research/README.md" "team-c-governance-strategy-audit-2026-05.md"
-require_text "research/README.md" "user-prompts-analysis-2026-05.md"
-require_text "research/README.md" "ecosystem-governance-audit-2026-06.md"
-require_text "research/README.md" "ecosystem-architecture-research-2026-06.md"
-require_text "research/README.md" "external-practice-intake-2026-06.md"
-require_text "research/README.md" "international-ai-governance-practices-2026-06.md"
+require_text "research/README.md" "2026-05-project-context-and-bootstrap-patterns.md"
+require_text "research/README.md" "2026-05-prompts-classification-audit.md"
+require_text "research/README.md" "2026-05-prompts-classification-standard.md"
+require_text "research/README.md" "2026-05-team-c-governance-strategy-audit.md"
+require_text "research/README.md" "2026-05-user-prompts-analysis.md"
+require_text "research/README.md" "2026-06-ecosystem-governance-audit.md"
+require_text "research/README.md" "2026-06-ecosystem-architecture-research.md"
+require_text "research/README.md" "2026-06-external-practice-intake.md"
+require_text "research/README.md" "2026-06-international-ai-governance-practices.md"
 require_text "research/README.md" "Размещение файлов исследований в корне каталога"
 
 # Namespacing: no research files allowed in the research/ root except README.md.
@@ -1417,60 +1456,60 @@ while IFS= read -r research_root_file; do
 done < <(find research -maxdepth 1 -type f)
 
 require_text "research/hub/README.md" "status: canonical"
-require_text "research/hub/README.md" "project-context-and-bootstrap-patterns-2026-05.md"
-require_text "research/hub/README.md" "prompts-classification-audit-2026-05.md"
-require_text "research/hub/README.md" "prompts-classification-standard-2026-05.md"
-require_text "research/hub/README.md" "team-c-governance-strategy-audit-2026-05.md"
-require_text "research/hub/README.md" "user-prompts-analysis-2026-05.md"
-require_text "research/hub/README.md" "ecosystem-governance-audit-2026-06.md"
-require_text "research/hub/README.md" "ecosystem-architecture-research-2026-06.md"
-require_text "research/hub/README.md" "external-practice-intake-2026-06.md"
-require_text "research/hub/README.md" "international-ai-governance-practices-2026-06.md"
+require_text "research/hub/README.md" "2026-05-project-context-and-bootstrap-patterns.md"
+require_text "research/hub/README.md" "2026-05-prompts-classification-audit.md"
+require_text "research/hub/README.md" "2026-05-prompts-classification-standard.md"
+require_text "research/hub/README.md" "2026-05-team-c-governance-strategy-audit.md"
+require_text "research/hub/README.md" "2026-05-user-prompts-analysis.md"
+require_text "research/hub/README.md" "2026-06-ecosystem-governance-audit.md"
+require_text "research/hub/README.md" "2026-06-ecosystem-architecture-research.md"
+require_text "research/hub/README.md" "2026-06-external-practice-intake.md"
+require_text "research/hub/README.md" "2026-06-international-ai-governance-practices.md"
 
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "status: draft"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "version: 0.1"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "updated: 2026-06-12"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "temperature: 0.1"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "mango_ba_prompts"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "open-ai.ru"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "clarify-engine-ai"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "NIST AI RMF"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "EU AI Act"
-require_text "research/hub/ecosystem-governance-audit-2026-06.md" "Creative override"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "status: draft"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "version: 0.1"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "updated: 2026-06-12"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "temperature: 0.1"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "mango_ba_prompts"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "open-ai.ru"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "clarify-engine-ai"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "NIST AI RMF"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "EU AI Act"
+require_text "research/hub/2026-06-ecosystem-governance-audit.md" "Creative override"
 
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "status: draft"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "version: 0.1"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "updated: 2026-06-20"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "temperature: 0.1"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "open-ai.ru"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "mango_ba_prompts"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "clarify-engine-ai"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "репутационные технологии"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "Executable -> Summary -> Full -> Raw"
-require_text "research/hub/ecosystem-architecture-research-2026-06.md" "Проверка требований issue #257"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "status: draft"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "version: 0.1"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "updated: 2026-06-20"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "temperature: 0.1"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "open-ai.ru"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "mango_ba_prompts"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "clarify-engine-ai"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "репутационные технологии"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "Executable -> Summary -> Full -> Raw"
+require_text "research/hub/2026-06-ecosystem-architecture-research.md" "Проверка требований issue #257"
 
-require_text "research/hub/external-practice-intake-2026-06.md" "status: draft"
-require_text "research/hub/external-practice-intake-2026-06.md" "version: 0.1"
-require_text "research/hub/external-practice-intake-2026-06.md" "updated: 2026-06-12"
-require_text "research/hub/external-practice-intake-2026-06.md" "temperature: 0.1"
-require_text "research/hub/external-practice-intake-2026-06.md" "Artem Chirkov"
-require_text "research/hub/external-practice-intake-2026-06.md" "slam"
-require_text "research/hub/external-practice-intake-2026-06.md" "Research vs fixed practices"
-require_text "research/hub/external-practice-intake-2026-06.md" "Mango docs error pattern"
-require_text "research/hub/external-practice-intake-2026-06.md" "practices/agent-work/hybrid-search-before-action.md"
+require_text "research/hub/2026-06-external-practice-intake.md" "status: draft"
+require_text "research/hub/2026-06-external-practice-intake.md" "version: 0.1"
+require_text "research/hub/2026-06-external-practice-intake.md" "updated: 2026-06-12"
+require_text "research/hub/2026-06-external-practice-intake.md" "temperature: 0.1"
+require_text "research/hub/2026-06-external-practice-intake.md" "Artem Chirkov"
+require_text "research/hub/2026-06-external-practice-intake.md" "slam"
+require_text "research/hub/2026-06-external-practice-intake.md" "Research vs fixed practices"
+require_text "research/hub/2026-06-external-practice-intake.md" "Mango docs error pattern"
+require_text "research/hub/2026-06-external-practice-intake.md" "practices/agent-work/hybrid-search-before-action.md"
 
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "status: draft"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "version: 0.1"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "updated: 2026-06-12"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "temperature: 0.1"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "NIST AI RMF"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "EU AI Act"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "ISO/IEC 42001"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "OpenAI"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "Anthropic"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "Google SAIF"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "Executable implementation matrix"
-require_text "research/hub/international-ai-governance-practices-2026-06.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "status: draft"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "version: 0.1"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "updated: 2026-06-12"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "temperature: 0.1"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "NIST AI RMF"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "EU AI Act"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "ISO/IEC 42001"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "OpenAI"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "Anthropic"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "Google SAIF"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "Executable implementation matrix"
+require_text "research/hub/2026-06-international-ai-governance-practices.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
 
 require_text "research/governance/README.md" "status: reviewed"
 require_text "research/governance/README.md" "version: 0.2"
@@ -1479,101 +1518,101 @@ require_text "research/governance/README.md" "Source research"
 require_text "research/governance/README.md" "Derived standards"
 
 require_text "research/mango/README.md" "status: canonical"
-require_text "research/mango/README.md" "classification.md"
-require_text "research/mango/README.md" "requirements-flow.md"
-require_text "research/mango/README.md" "rag-mapping-roadmap-2026-05.md"
+require_text "research/mango/README.md" "2026-05-classification.md"
+require_text "research/mango/README.md" "2026-05-requirements-flow.md"
+require_text "research/mango/README.md" "2026-05-rag-mapping-roadmap.md"
 require_text "research/mango/README.md" "research/mango/exp-tz-corpus/"
 
-require_text "research/mango/classification.md" "status: reviewed"
-require_text "research/mango/classification.md" "source: git history before migration to research/mango/classification.md"
-require_text "research/mango/classification-tz.md" "status: reviewed"
-require_text "research/mango/classification-tz.md" "source: git history before migration to research/mango/classification-tz.md"
-require_text "research/mango/requirements-flow.md" "status: reviewed"
-require_text "research/mango/requirements-flow.md" "source: git history before migration to research/mango/requirements-flow.md"
-require_text "research/mango/rag-mapping-roadmap-2026-05.md" "status: draft"
-require_text "research/mango/rag-mapping-roadmap-2026-05.md" "type: process-research"
-require_text "research/mango/rag-mapping-roadmap-2026-05.md" "Маппинг продуктов/фич"
-require_text "research/mango/rag-mapping-roadmap-2026-05.md" "Roadmap реализации проекта"
-require_text "research/mango/rag-mapping-roadmap-2026-05.md" "PlantUML"
-require_text "research/mango/rag-mapping-roadmap-2026-05.md" "Вопросы для согласования"
+require_text "research/mango/2026-05-classification.md" "status: reviewed"
+require_text "research/mango/2026-05-classification.md" "source: git history before migration to research/mango/2026-05-classification.md"
+require_text "research/mango/2026-05-classification-tz.md" "status: reviewed"
+require_text "research/mango/2026-05-classification-tz.md" "source: git history before migration to research/mango/2026-05-classification-tz.md"
+require_text "research/mango/2026-05-requirements-flow.md" "status: reviewed"
+require_text "research/mango/2026-05-requirements-flow.md" "source: git history before migration to research/mango/2026-05-requirements-flow.md"
+require_text "research/mango/2026-05-rag-mapping-roadmap.md" "status: draft"
+require_text "research/mango/2026-05-rag-mapping-roadmap.md" "type: process-research"
+require_text "research/mango/2026-05-rag-mapping-roadmap.md" "Маппинг продуктов/фич"
+require_text "research/mango/2026-05-rag-mapping-roadmap.md" "Roadmap реализации проекта"
+require_text "research/mango/2026-05-rag-mapping-roadmap.md" "PlantUML"
+require_text "research/mango/2026-05-rag-mapping-roadmap.md" "Вопросы для согласования"
 
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "status: draft"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "type: internal-analysis"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "scope: repo-wide"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Опыт проекта Mango"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Проблемы (5 пунктов"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Предложенные решения"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Чек-лист для ИИ"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Механизм «рекомендация → задача»"
-require_text "research/hub/project-context-and-bootstrap-patterns-2026-05.md" "Вопросы для согласования"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "status: draft"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "type: internal-analysis"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "scope: repo-wide"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "Опыт проекта Mango"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "Проблемы (5 пунктов"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "Предложенные решения"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "Чек-лист для ИИ"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "Механизм «рекомендация → задача»"
+require_text "research/hub/2026-05-project-context-and-bootstrap-patterns.md" "Вопросы для согласования"
 
-require_text "research/hub/prompts-classification-audit-2026-05.md" "status: draft"
-require_text "research/hub/prompts-classification-audit-2026-05.md" "type: internal-analysis"
-require_text "research/hub/prompts-classification-audit-2026-05.md" "scope: repo-wide"
-require_text "research/hub/prompts-classification-audit-2026-05.md" "Преобладающие типы"
-require_text "research/hub/prompts-classification-audit-2026-05.md" "Паттерны отладки"
-require_text "research/hub/prompts-classification-audit-2026-05.md" "Пробелы"
-require_text "research/hub/prompts-classification-audit-2026-05.md" "Выводы для классификации"
+require_text "research/hub/2026-05-prompts-classification-audit.md" "status: draft"
+require_text "research/hub/2026-05-prompts-classification-audit.md" "type: internal-analysis"
+require_text "research/hub/2026-05-prompts-classification-audit.md" "scope: repo-wide"
+require_text "research/hub/2026-05-prompts-classification-audit.md" "Преобладающие типы"
+require_text "research/hub/2026-05-prompts-classification-audit.md" "Паттерны отладки"
+require_text "research/hub/2026-05-prompts-classification-audit.md" "Пробелы"
+require_text "research/hub/2026-05-prompts-classification-audit.md" "Выводы для классификации"
 
-require_text "research/hub/prompts-classification-standard-2026-05.md" "status: draft"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "type: classification-standard"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "scope: repo-wide"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "Таксономия промптов"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "Матрица"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "Когда использовать"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "Шаблоны промптов"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "План интеграции"
-require_text "research/hub/prompts-classification-standard-2026-05.md" "Вопросы для согласования"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "status: draft"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "type: classification-standard"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "scope: repo-wide"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "Таксономия промптов"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "Матрица"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "Когда использовать"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "Шаблоны промптов"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "План интеграции"
+require_text "research/hub/2026-05-prompts-classification-standard.md" "Вопросы для согласования"
 
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "status: draft"
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "type: internal-analysis"
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "scope: repo-wide"
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Интерпретация аудита стратегии governance"
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Governance overgrowth"
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Предложения команды C"
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Рекомендации для backlog"
-require_text "research/hub/team-c-governance-strategy-audit-2026-05.md" "Вопросы для human review"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "status: draft"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "type: internal-analysis"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "scope: repo-wide"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "Интерпретация аудита стратегии governance"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "Governance overgrowth"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "Предложения команды C"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "Рекомендации для backlog"
+require_text "research/hub/2026-05-team-c-governance-strategy-audit.md" "Вопросы для human review"
 
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "status: draft"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "type: external-analysis"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "scope: repo-wide"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "Что ценного в рекомендациях Команды С"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "Матрица применимости"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "ВЗЯТЬ СЕЙЧАС"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "ОТЛОЖИТЬ"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "ОТКЛОНИТЬ"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "North Star"
-require_text "research/hub/external-governance-patterns-review-2026-06.md" "Триггеры для пересмотра матрицы"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "status: draft"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "type: external-analysis"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "scope: repo-wide"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "Что ценного в рекомендациях Команды С"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "Матрица применимости"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "ВЗЯТЬ СЕЙЧАС"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "ОТЛОЖИТЬ"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "ОТКЛОНИТЬ"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "North Star"
+require_text "research/hub/2026-06-external-governance-patterns-review.md" "Триггеры для пересмотра матрицы"
 
-require_text "research/hub/user-prompts-analysis-2026-05.md" "status: draft"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "type: prompt-analysis"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "scope: user-specific + repo-integration"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "Таблица классификации 18 промптов"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "Признаки устаревших паттернов"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "Дубли/уникальная ценность"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "Рекомендации по действиям"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "План интеграции"
-require_text "research/hub/user-prompts-analysis-2026-05.md" "Вопросы для согласования"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "status: draft"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "type: prompt-analysis"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "scope: user-specific + repo-integration"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "Таблица классификации 18 промптов"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "Признаки устаревших паттернов"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "Дубли/уникальная ценность"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "Рекомендации по действиям"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "План интеграции"
+require_text "research/hub/2026-05-user-prompts-analysis.md" "Вопросы для согласования"
 
-require_text "research/mango/capability-decomposition-2026-05.md" "status: draft"
-require_text "research/mango/capability-decomposition-2026-05.md" "type: atomic-functions-reference"
-require_text "research/mango/capability-decomposition-2026-05.md" "scope: mango-only"
-require_text "research/mango/capability-decomposition-2026-05.md" "# Fixed per draft-triage RFC Phase 1"
-require_text "research/mango/capability-decomposition-2026-05.md" "research/mango/classification.md"
-require_text "research/mango/capability-decomposition-2026-05.md" "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md"
-require_text "research/mango/capability-decomposition-2026-05.md" "Критерии атомарности"
-require_text "research/mango/capability-decomposition-2026-05.md" "Связь с НФТ-классами"
-require_text "research/mango/capability-decomposition-2026-05.md" "Интеграция с"
-require_text "research/mango/capability-decomposition-2026-05.md" "Как обновлять справочник"
-require_text "research/mango/capability-decomposition-2026-05.md" "Вопросы для согласования с PO/Founder"
-require_text "research/mango/capability-decomposition-2026-05.md" "Domain: voice-ucaas"
-require_text "research/mango/capability-decomposition-2026-05.md" "Domain: contact-center"
-require_text "research/mango/capability-decomposition-2026-05.md" "Domain: digital-channels"
-if grep -Fq 'classification-glossary.md' "research/mango/capability-decomposition-2026-05.md"; then
-  fail "research/mango/capability-decomposition-2026-05.md must not reference removed local classification-glossary.md"
+require_text "research/mango/2026-05-capability-decomposition.md" "status: draft"
+require_text "research/mango/2026-05-capability-decomposition.md" "type: atomic-functions-reference"
+require_text "research/mango/2026-05-capability-decomposition.md" "scope: mango-only"
+require_text "research/mango/2026-05-capability-decomposition.md" "# Fixed per draft-triage RFC Phase 1"
+require_text "research/mango/2026-05-capability-decomposition.md" "research/mango/2026-05-classification.md"
+require_text "research/mango/2026-05-capability-decomposition.md" "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md"
+require_text "research/mango/2026-05-capability-decomposition.md" "Критерии атомарности"
+require_text "research/mango/2026-05-capability-decomposition.md" "Связь с НФТ-классами"
+require_text "research/mango/2026-05-capability-decomposition.md" "Интеграция с"
+require_text "research/mango/2026-05-capability-decomposition.md" "Как обновлять справочник"
+require_text "research/mango/2026-05-capability-decomposition.md" "Вопросы для согласования с PO/Founder"
+require_text "research/mango/2026-05-capability-decomposition.md" "Domain: voice-ucaas"
+require_text "research/mango/2026-05-capability-decomposition.md" "Domain: contact-center"
+require_text "research/mango/2026-05-capability-decomposition.md" "Domain: digital-channels"
+if grep -Fq 'classification-glossary.md' "research/mango/2026-05-capability-decomposition.md"; then
+  fail "research/mango/2026-05-capability-decomposition.md must not reference removed local classification-glossary.md"
 fi
-if grep -Fq '"classification.md v3.0"' "research/mango/capability-decomposition-2026-05.md"; then
-  fail "research/mango/capability-decomposition-2026-05.md related_artifacts must use path-only values"
+if grep -Fq '"2026-05-classification.md v3.0"' "research/mango/2026-05-capability-decomposition.md"; then
+  fail "research/mango/2026-05-capability-decomposition.md related_artifacts must use path-only values"
 fi
 
 require_text "practices/README.md" "status: canonical"
@@ -1583,8 +1622,8 @@ require_text "practices/README.md" "temperature: 0.1"
 require_text "practices/README.md" "Research vs fixed practices"
 require_text "practices/README.md" "Practice catalog"
 require_text "practices/README.md" "Source, author, link"
-require_text "practices/README.md" "research/hub/external-practice-intake-2026-06.md"
-require_text "practices/README.md" "research/hub/international-ai-governance-practices-2026-06.md"
+require_text "practices/README.md" "research/hub/2026-06-external-practice-intake.md"
+require_text "practices/README.md" "research/hub/2026-06-international-ai-governance-practices.md"
 
 require_text "practices/agent-work/README.md" "status: canonical"
 require_text "practices/agent-work/README.md" "Hybrid search before action"
@@ -1751,10 +1790,19 @@ require_text "templates/spoke/README.md" "{{hub_url}}"
 require_text "templates/spoke/README.md" "production-код"
 require_text "templates/spoke/README.md" "htom-vs-spoke-clarification-2026-06.md"
 require_text "templates/spoke/README.md" ".github/workflows/ci.yml"
+require_text "templates/spoke/README.md" "./tools/validate-file-naming.sh"
 require_text "templates/spoke/CONTRIBUTING.md" "issue → PR → review"
 require_text "templates/spoke/CONTRIBUTING.md" "spoke-репозиторий"
+require_text "templates/spoke/CONTRIBUTING.md" "docs/analysis/"
+require_text "templates/spoke/CONTRIBUTING.md" "./tools/validate-file-naming.sh"
+require_text "templates/spoke/docs/README.md" "YYYY-MM-name.md"
+require_text "templates/spoke/docs/README.md" "YYYY-MM-adr-NNN-name.md"
+require_text "templates/spoke/docs/README.md" "./tools/validate-file-naming.sh"
 require_text "templates/spoke/.github/workflows/ci.yml" "name: ci"
 require_text "templates/spoke/.github/workflows/ci.yml" "pull_request"
+require_text "templates/spoke/.github/workflows/ci.yml" "Validate documentation file naming"
+require_text "templates/spoke/tools/validate-file-naming.sh" "docs/analysis"
+require_text "templates/spoke/tools/validate-file-naming.sh" "YYYY-MM-name.md"
 
 # Smart Sync infrastructure (issue #207): auto-generated manifest + registry +
 # generator + sync CLI. manifest.json must never be hand-edited.
@@ -1764,6 +1812,8 @@ require_text "templates/manifest.json" "manifest_version"
 require_text "templates/manifest.json" "target_type"
 require_text "templates/manifest.json" "sync-project-with-hub-prompt"
 require_text "tools/generate-manifest.py" "templates/manifest.json"
+require_text ".github/workflows/validate.yml" "Validate file naming"
+require_text ".github/workflows/validate.yml" "./tools/validate-file-naming.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

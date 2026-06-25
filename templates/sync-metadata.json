@@ -111,6 +111,13 @@
       "tags": ["workflow", "contributing"],
       "description": "Workflow вклада в spoke-репозитории."
     },
+    "templates/spoke/docs/README.md": {
+      "id": "spoke-docs-readme",
+      "target_type": ["Spoke"],
+      "criticality": "RECOMMENDED",
+      "tags": ["docs", "naming"],
+      "description": "Локальные правила для spoke docs: date-first имена analysis/RFC/ADR и список исключений."
+    },
     "templates/spoke/.github/workflows/ci.yml": {
       "id": "spoke-ci",
       "version": "1.0.0",
@@ -118,6 +125,14 @@
       "criticality": "CORE",
       "tags": ["cicd", "github-actions"],
       "description": "Базовый CI workflow для spoke-репозитория."
+    },
+    "templates/spoke/tools/validate-file-naming.sh": {
+      "id": "spoke-validate-file-naming",
+      "version": "1.0.0",
+      "target_type": ["Spoke"],
+      "criticality": "CORE",
+      "tags": ["validation", "tooling", "docs"],
+      "description": "Валидатор date-first именования для spoke docs/analysis, docs/rfc и docs/adr."
     },
     "templates/webportal-product-concept-template.md": {
       "id": "webportal-product-concept-template",

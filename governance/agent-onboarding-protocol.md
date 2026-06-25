@@ -224,9 +224,9 @@ entrypoint: true
 ### Какие провалы холодного старта закрываются
 
 Дизайн был привязан к уже зафиксированным ретроспективам Хаба:
-[project-context-and-bootstrap-patterns-2026-05.md](../research/hub/project-context-and-bootstrap-patterns-2026-05.md)
+[2026-05-project-context-and-bootstrap-patterns.md](../research/hub/2026-05-project-context-and-bootstrap-patterns.md)
 и
-[team-c-governance-strategy-audit-2026-05.md](../research/hub/team-c-governance-strategy-audit-2026-05.md).
+[2026-05-team-c-governance-strategy-audit.md](../research/hub/2026-05-team-c-governance-strategy-audit.md).
 Протокол закрывает пять повторяющихся рисков:
 
 | Риск | Почему это боль | Где закрывается |

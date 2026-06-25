@@ -23,14 +23,14 @@ RFC фиксирует принятое решение и rationale, но обя
 (Q1): имя `rfc/` точнее отражает содержимое (файлы `*-rfc.md`) и устраняет
 рассогласование «каталог `proposals/` ↔ файлы `*-rfc.md`». Обоснование и учёт
 мнения команды Q — в
-[research/governance/governance-folder-structure-decisions-2026-06.md](../../research/governance/governance-folder-structure-decisions-2026-06.md).
+[research/governance/2026-06-governance-folder-structure-decisions.md](../../research/governance/2026-06-governance-folder-structure-decisions.md).
 
 ## Что сюда попадает
 
 - **RFC изменения governance Хаба** — правил, структуры, контрактов, шаблонов.
 - **НЕ сюда:** концепция или исследование конкретного проекта — это
   `research/{project}/` (см. Q2 в
-  [decision record](../../research/governance/governance-folder-structure-decisions-2026-06.md)).
+  [decision record](../../research/governance/2026-06-governance-folder-structure-decisions.md)).
 
 Решение по каждому RFC (принять/отклонить/доработать) — за человеком
 ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), правило 4). Статус каталога —
@@ -61,4 +61,4 @@ RFC фиксирует принятое решение и rationale, но обя
 
 - [governance/artifact-map.md](../artifact-map.md) — карта артефактов и связей.
 - [governance/repo-model.md](../repo-model.md) — модель структуры и Anti-Inflation principle.
-- [research/governance/governance-folder-structure-decisions-2026-06.md](../../research/governance/governance-folder-structure-decisions-2026-06.md) — решения Q1/Q2/Q3.
+- [research/governance/2026-06-governance-folder-structure-decisions.md](../../research/governance/2026-06-governance-folder-structure-decisions.md) — решения Q1/Q2/Q3.

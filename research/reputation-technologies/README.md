@@ -18,7 +18,7 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 (ограничение issue #260).
 
 Логическое продолжение раздела «репутационные технологии» из
-[../hub/ecosystem-architecture-research-2026-06.md](../hub/ecosystem-architecture-research-2026-06.md),
+[../hub/2026-06-ecosystem-architecture-research.md](../hub/2026-06-ecosystem-architecture-research.md),
 который зафиксировал отсутствие сырых данных по репутации; issue #260 их приложил, а этот домен —
 анализирует.
 

@@ -16,7 +16,7 @@ related_artifacts:
   - "standards/project-structure-inheritance.md"
   - "docs/ecosystem-map.md"
   - "docs/project-summaries/open-ai-ru-context-Summary.md"
-  - "research/hub/ecosystem-architecture-research-2026-06.md"
+  - "research/hub/2026-06-ecosystem-architecture-research.md"
   - "templates/webportal-solution-concept-template.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/259"
@@ -35,7 +35,7 @@ Issue #259 требует не реализации продуктового к�
 объявлена независимой от исследования архитектуры Хаба (issue #257) и может
 выполняться параллельно; пересечение по теме L1–L4 учтено через ссылку на уже
 существующий отчёт
-[`research/hub/ecosystem-architecture-research-2026-06.md`](../hub/ecosystem-architecture-research-2026-06.md).
+[`research/hub/2026-06-ecosystem-architecture-research.md`](../hub/2026-06-ecosystem-architecture-research.md).
 
 open-ai.ru — это **production-портал** экосистемы Hybrid Intelligence Lab:
 AI-native рабочая среда для гибридных (human + AI) команд. На момент
@@ -804,7 +804,7 @@ flowchart LR
   `standards/project-structure-inheritance.md`, `standards/research-profile.md`
 - `docs/ecosystem-map.md`, `docs/project-summaries/open-ai-ru-context-Summary.md`
 - `templates/webportal-solution-concept-template.md`
-- `research/hub/ecosystem-architecture-research-2026-06.md` (issue #257)
+- `research/hub/2026-06-ecosystem-architecture-research.md` (issue #257)
 
 **Репозиторий open-ai.ru** (через GitHub API, 2026-06-20):
 - `README.md`, `AI_GOVERNANCE.md`, `docs/vision.md`, `docs/product-concept.md`,

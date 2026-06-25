@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.4
-updated: 2026-06-15
+version: 1.5
+updated: 2026-06-25
 temperature: 0.1
 ai-generated: false
 ---
@@ -18,6 +18,27 @@ ai-generated: false
 | --- | --- | --- | --- |
 | **Корень репозитория** (`/`) | `UPPERCASE_WITH_HYPHENS.md` | `README.md`, `CONCEPT.md`, `CHANGELOG.md` | Конвенция GitHub, файлы видны сразу |
 | **Вложенные каталоги** (`standards/`, `research/`, `projects/`, `kb/` и др.) | `lowercase-with-hyphens.md` | `classification-glossary.md`, `rag-mapping-roadmap.md` | Читаемость, сортировка, удобно в терминале, масштабируемость |
+
+## Хронологические артефакты
+
+Файлы, которые фиксируют событие, исследование, анализ, RFC или ADR во времени,
+используют дату в начале имени. Это даёт стабильную сортировку в файловой
+системе и одинаковый вид ссылок в Hub и spoke-репозиториях.
+
+| Расположение | Формат | Пример |
+| --- | --- | --- |
+| `research/<domain>/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-ecosystem-governance-audit.md` |
+| `research/<domain>/external-insights/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-building-effective-agents.md` |
+| spoke `docs/analysis/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-repository-structure-analysis.md` |
+| spoke `docs/rfc/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-api-contract-proposal.md` |
+| spoke `docs/adr/` | `YYYY-MM-adr-NNN-name.md` | `2026-06-adr-001-storage-choice.md` |
+
+Дата ставится первой. Суффикс даты в конце (`name-2026-06.md`) запрещён для
+новых и мигрируемых хронологических файлов.
+
+Исключения без даты: `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`,
+`CODE_OF_CONDUCT.md`, `LICENSE`, `LICENSE.md`, `AI_GOVERNANCE.md`,
+`*-registry.md`, `*-index.md` и существующий суффикс уровня `*-Index.md`.
 
 ## Правила именования файлов в standards/ и governance/
 
@@ -45,6 +66,7 @@ ai-generated: false
 - Новый файл не соответствует правилу? Отклонить в ревью.
 - Существующий файл нарушает правило? Переименовать при следующем
   редактировании, не блокируя текущую работу.
+- Для хронологических файлов запускать `./tools/validate-file-naming.sh`.
 
 ## Формат датировки
 

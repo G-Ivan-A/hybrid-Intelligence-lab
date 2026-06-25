@@ -12,8 +12,8 @@ related_artifacts:
   - "templates/htom/README.md"
   - "governance/agent-onboarding-protocol.md"
   - "governance/rfc/rfc-two-cases-of-project-initialization.md"
-  - "research/hub/external-governance-patterns-review-2026-06.md"
-  - "research/hub/ai-collaboration-retrospective-2026-06.md"
+  - "research/hub/2026-06-external-governance-patterns-review.md"
+  - "research/hub/2026-06-ai-collaboration-retrospective.md"
   - "standards/glossary.md"
   - "governance/rfc/contract-executability-rfc.md"
   - "governance/executable-documents-issues.md"
@@ -77,7 +77,7 @@ related_issues:
   [governance/agent-onboarding-protocol.md](agent-onboarding-protocol.md),
   [rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md));
 - матрица применимости рекомендаций внешних экспертов
-  ([research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md));
+  ([research/hub/2026-06-external-governance-patterns-review.md](../research/hub/2026-06-external-governance-patterns-review.md));
 - разрозненные задачи из обсуждений (рефакторинг `research/`, лимиты
   Mango-промптов).
 
@@ -530,7 +530,7 @@ P2 — нужно к моменту будущих bootstrap-спринтов, �
 
 **Контекст:**
 Тезис «git history + issues + PRs = evidence trail» уже **введён** в
-[external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md)
+[2026-06-external-governance-patterns-review.md](../research/hub/2026-06-external-governance-patterns-review.md)
 (раздел 2). Осталась консолидация: команда Q указывала целевым местом
 RFC-манифест двух кейсов, где термин логично закрепить рядом с моделью
 жизненного цикла.
@@ -772,7 +772,7 @@ Machine, YAML Capability Manifest, Signed Artifacts, JSON Envelope) **немед
 > substrate for auditable agent ecosystems*.
 
 Обоснование (трассируется к выводу `[C6]` команды С и к
-[external-review](../research/hub/external-governance-patterns-review-2026-06.md),
+[external-review](../research/hub/2026-06-external-governance-patterns-review.md),
 раздел 4): рынок orchestration переполнён, а ниша governance / provenance /
 trust lifecycle / auditability только формируется. Актив раннего входа у Хаба уже
 есть: git-native governance, зачаток trust lifecycle и фокус на anti-drift.
@@ -905,8 +905,8 @@ Human Review:
 | [governance/agent-onboarding-protocol.md](agent-onboarding-protocol.md) | Источник задач B-001, B-002, B-003 (Кейс 1). |
 | [templates/htom/README.md](../templates/htom/README.md) | Контекст генома `templates/htom/`; первый bootstrap вынесен за пределы текущего бэклога. |
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Источник задач B-004, B-005, B-011. |
-| [research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md) | Источник матрицы С/Q, North Star и триггеров (B-006, B-007, B-011, deferred `approved_by:`). |
-| [research/hub/ai-collaboration-retrospective-2026-06.md](../research/hub/ai-collaboration-retrospective-2026-06.md) | Системные ошибки, мотивирующие fail-closed, threat awareness и двухкейсовую модель. |
+| [research/hub/2026-06-external-governance-patterns-review.md](../research/hub/2026-06-external-governance-patterns-review.md) | Источник матрицы С/Q, North Star и триггеров (B-006, B-007, B-011, deferred `approved_by:`). |
+| [research/hub/2026-06-ai-collaboration-retrospective.md](../research/hub/2026-06-ai-collaboration-retrospective.md) | Системные ошибки, мотивирующие fail-closed, threat awareness и двухкейсовую модель. |
 | [standards/glossary.md](../standards/glossary.md) | Единый источник терминов для всего бэклога. |
 
 ---

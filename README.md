@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-12
+version: 1.2
+updated: 2026-06-25
 temperature: 0.1
 ---
 
@@ -35,6 +35,7 @@ temperature: 0.1
 | [CHANGELOG.md](CHANGELOG.md) | Date-based журнал governance-изменений репозитория. |
 | [LICENSE](LICENSE) | Текущий статус лицензии и pending-решение Founder & PO. |
 | [standards/README.md](standards/README.md) | Таблица активных и планируемых стандартов. |
+| [standards/file-naming.md](standards/file-naming.md) | Правила именования файлов, включая date-first research/analysis/RFC/ADR артефакты. |
 | [standards/glossary.md](standards/glossary.md) | Единый словарь терминов для standards, governance и AI-assisted work. |
 | [standards/frontmatter-standard.md](standards/frontmatter-standard.md) | Минимальный frontmatter для Markdown-артефактов: `status`, `version`, `updated`, `temperature`. |
 | [practices/README.md](practices/README.md) | Каталог фиксированных практик: отдельный KB-слой между research, templates и проектными адаптациями. |
@@ -110,6 +111,7 @@ frontmatter. Исторический контекст и решение по к
 ## Локальная проверка
 
 ```bash
+./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
 ```
