@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.12
-updated: 2026-06-23
+version: 1.13
+updated: 2026-06-25
 temperature: 0.1
 ai-generated: false
 source: research/README-old.md
@@ -56,6 +56,7 @@ source: research/README-old.md
 | [external-practice-intake-2026-06.md](hub/external-practice-intake-2026-06.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
 | [international-ai-governance-practices-2026-06.md](hub/international-ai-governance-practices-2026-06.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
 | [repository-structure-concept-2026-06.md](hub/repository-structure-concept-2026-06.md) | Дополнение к mango-исследованию (issue #263): видение фаундера как приоритетная база, 4 открытых вопроса, 3 противоречия, критический анализ рисков и концепция базовых/рекомендуемых/специфичных каталогов для 4 архетипов PR #243 (10+ международных проектов на архетип). |
+| [artifact-inventory-and-classification-2026-06.md](hub/artifact-inventory-and-classification-2026-06.md) | Инвентаризация артефактов обоих репозиториев экосистемы (`mango_ba_prompts` + Хаб, issue #265) и классификация по 4 осям (уровень L0–L4, 8 областей знаний, архетип, статус); разбор конфликта четырёх лестниц «L1–L4», наложение на 4 исследования, cleanup-кандидаты (рекомендации) и правила маршрутизации для AI-агентов. |
 
 ### Подкаталог `open-ai-ru/`
 
