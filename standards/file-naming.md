@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.5
+version: 1.6
 updated: 2026-06-25
 temperature: 0.1
 ai-generated: false
@@ -27,14 +27,19 @@ ai-generated: false
 
 | Расположение | Формат | Пример |
 | --- | --- | --- |
-| `research/<domain>/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-ecosystem-governance-audit.md` |
-| `research/<domain>/external-insights/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-building-effective-agents.md` |
-| spoke `docs/analysis/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-repository-structure-analysis.md` |
+| `research/<domain>/` | `YYYY-MM-DD-name.md` | `2026-06-12-ecosystem-governance-audit.md` |
+| `research/<domain>/external-insights/` | `YYYY-MM-DD-name.md` | `2026-06-13-building-effective-agents.md` |
+| spoke `docs/analysis/` | `YYYY-MM-DD-name.md` | `2026-06-12-repository-structure-analysis.md` |
 | spoke `docs/rfc/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-api-contract-proposal.md` |
 | spoke `docs/adr/` | `YYYY-MM-adr-NNN-name.md` | `2026-06-adr-001-storage-choice.md` |
 
 Дата ставится первой. Суффикс даты в конце (`name-2026-06.md`) запрещён для
 новых и мигрируемых хронологических файлов.
+
+Для `research/` и spoke `docs/analysis/` день обязателен: он сохраняет нативную
+сортировку при частоте больше одного артефакта в месяц и делает имена
+уникальными. При миграции существующих файлов дата берётся из git history
+создания файла; если достоверно известен только месяц, используется день `01`.
 
 Исключения без даты: `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`,
 `CODE_OF_CONDUCT.md`, `LICENSE`, `LICENSE.md`, `AI_GOVERNANCE.md`,

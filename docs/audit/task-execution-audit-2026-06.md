@@ -148,7 +148,7 @@ temperature: 0.1
 ### Проверка Definition of Done
 
 - [x] Создан research-документ
-  `research/cicd/2026-06-js-cicd-template-analysis.md`.
+  `research/cicd/2026-06-09-js-cicd-template-analysis.md`.
 - [x] Создан `research/cicd/README.md`.
 - [x] Каталог `research/cicd/` добавлен в структурную модель репозитория.
 - [x] В PR #210 был устранён pre-existing сбой allowlist/ссылки для

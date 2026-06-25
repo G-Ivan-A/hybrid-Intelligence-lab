@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.6
+version: 1.7
 updated: 2026-06-25
 temperature: 0.1
 ---
@@ -115,7 +115,9 @@ provenance.
 
 Новые и мигрируемые хронологические Markdown-артефакты используют date-first
 имена по [standards/file-naming.md](standards/file-naming.md):
-`YYYY-MM-name.md`, `YYYY-name.md` или `YYYY-MM-adr-NNN-name.md` для spoke ADR.
+`YYYY-MM-DD-name.md` для Hub `research/` и spoke `docs/analysis/`;
+`YYYY-MM-name.md` или `YYYY-name.md` для spoke `docs/rfc/`;
+`YYYY-MM-adr-NNN-name.md` для spoke ADR.
 Проверяемые области: Hub `research/`, spoke `docs/analysis/`, `docs/rfc/` и
 `docs/adr/`.
 

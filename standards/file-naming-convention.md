@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.0
+version: 1.1
 updated: 2026-06-25
 temperature: 0.1
 ai-generated: false
@@ -14,16 +14,19 @@ ai-generated: false
 
 ## Хронологические файлы
 
-Хронологические Markdown-артефакты используют дату в начале имени:
+Хронологические Markdown-артефакты используют дату в начале имени.
 
-- `YYYY-MM-name.md`, если известен месяц;
-- `YYYY-name.md`, если известен только год;
+- `YYYY-MM-DD-name.md` для Hub `research/` и spoke `docs/analysis/`;
+- `YYYY-MM-name.md` или `YYYY-name.md` для spoke `docs/rfc/`;
 - `YYYY-MM-adr-NNN-name.md` для spoke ADR.
 
 Области применения:
 
 - Hub: `research/<domain>/` и вложенные тематические каталоги research;
 - spoke: `docs/analysis/`, `docs/rfc/`, `docs/adr/`.
+
+Для research/analysis-файлов день берётся из git history создания файла. Если
+достоверно известен только месяц, используется день `01`.
 
 Исключения без даты: `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`,
 `CODE_OF_CONDUCT.md`, `LICENSE`, `LICENSE.md`, `AI_GOVERNANCE.md`,

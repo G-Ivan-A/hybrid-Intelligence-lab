@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.13
+version: 1.14
 updated: 2026-06-25
 temperature: 0.1
 ---
@@ -11,11 +11,20 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Changed
+
+- correction: Normalized Hub research artifact filenames from `YYYY-MM-name.md`
+  / `YYYY-name.md` to `YYYY-MM-DD-name.md` using git creation dates (issue
+  #271). Updated all repository links, MkDocs navigation, artifact-map entries,
+  the file-naming standards, spoke templates, and validation scripts so
+  research and spoke `docs/analysis/` artifacts sort correctly when there is
+  more than one file per month.
+
 ### Added
 
 - research: Axes decomposition, executability routing, format rules (variants
   provided) (issue #269). Appended **Part II** (§16–§23) to
-  `research/hub/2026-06-artifact-inventory-and-classification.md` — a critical
+  `research/hub/2026-06-25-artifact-inventory-and-classification.md` — a critical
   `Research` extension that deliberately provides **objective, evidence-backed
   variants instead of recommendations** (the choice is the founder's). It
   registers all six problems without solutions (§16); gives variant axis sets
@@ -37,7 +46,7 @@ All notable repository governance changes are documented here.
   structure validator failed on it on `main`).
 - research: Декомпозиция осей, маршрутизация по исполнимости, правила форматов
   (предоставлены варианты) (issue #269). В
-  `research/hub/2026-06-artifact-inventory-and-classification.md` дописана
+  `research/hub/2026-06-25-artifact-inventory-and-classification.md` дописана
   **Часть II** (§16–§23) — критическое расширение в режиме `Research`, которое
   намеренно даёт **объективные доказательные варианты вместо рекомендаций**
   (выбор — за фаундером). Зафиксированы все шесть проблем без решений (§16);
@@ -66,7 +75,7 @@ All notable repository governance changes are documented here.
   files to `YYYY-MM-name.md` or `YYYY-name.md` with links updated.
 - research: Artifact inventory and classification (mango_ba_prompts +
   hybrid-Intelligence-lab) (issue #265). Added
-  `research/hub/2026-06-artifact-inventory-and-classification.md` — a full
+  `research/hub/2026-06-25-artifact-inventory-and-classification.md` — a full
   artifact inventory of both ecosystem repositories (the Governance Hub and the
   Prompt & Pattern Library spoke) classified on four orthogonal axes
   (abstraction level L0–L4, eight knowledge areas, archetype A–D, lifecycle
@@ -82,7 +91,7 @@ All notable repository governance changes are documented here.
   and the MkDocs nav.
 - research: Инвентаризация и классификация артефактов (mango_ba_prompts +
   hybrid-Intelligence-lab) (issue #265). Добавлен
-  `research/hub/2026-06-artifact-inventory-and-classification.md` — полная
+  `research/hub/2026-06-25-artifact-inventory-and-classification.md` — полная
   инвентаризация артефактов обоих репозиториев экосистемы (Хаб governance и спок
   Prompt & Pattern Library) с классификацией по четырём ортогональным осям
   (уровень абстракции L0–L4, восемь областей знаний, архетип A–D, статус
@@ -98,7 +107,7 @@ All notable repository governance changes are documented here.
   навигации MkDocs.
 
 - research: Repository structure concept for project archetypes (issue #263).
-  Added `research/hub/2026-06-repository-structure-concept.md` — an addendum
+  Added `research/hub/2026-06-23-repository-structure-concept.md` — an addendum
   (not a replacement) to the `mango_ba_prompts` directory-structure research. It
   fixes the founder's vision as the priority base, closes the four open
   questions (`prompts/` vs in-process prompts, `docs/` vs `knowledge/`, flat vs
@@ -113,7 +122,7 @@ All notable repository governance changes are documented here.
   `research/hub/README.md`, `research/README.md`, `governance/artifact-map.md`,
   the MkDocs nav and the structure validator.
 - research: Концепция структуры репозитория для архетипов проектов (issue #263).
-  Добавлен `research/hub/2026-06-repository-structure-concept.md` — дополнение
+  Добавлен `research/hub/2026-06-23-repository-structure-concept.md` — дополнение
   (не замена) к исследованию структуры каталогов `mango_ba_prompts`: фиксирует
   видение фаундера как приоритетную базу, закрывает четыре открытых вопроса
   (`prompts/` ↔ процессные промпты, `docs/` ↔ `knowledge/`, критерий «плоский vs
@@ -128,7 +137,7 @@ All notable repository governance changes are documented here.
   валидаторе структуры.
 - creative: Independent vision of the `mango_ba_prompts` repository structure
   (issue #253). Added
-  `research/mango/2026-06-repository-structure-vision.md` — a bilingual (ru/en)
+  `research/mango/2026-06-19-repository-structure-vision.md` — a bilingual (ru/en)
   draft RFC that audits the real spoke repository, synthesises the four team
   visions (C/Q/G/founder) into a comparison table, weighs structure options
   A/B/C and recommends Option B in a phased path (Phase 0 write-contract +
@@ -144,7 +153,7 @@ All notable repository governance changes are documented here.
   the structure validator. Decision stays with the human (accept/reject RFC).
 - creative: Независимое видение структуры репозитория `mango_ba_prompts`
   (issue #253). Добавлен
-  `research/mango/2026-06-repository-structure-vision.md` — двуязычный (ru/en)
+  `research/mango/2026-06-19-repository-structure-vision.md` — двуязычный (ru/en)
   draft RFC: аудит реального спока, синтез четырёх командных видений
   (C/Q/G/фаундер) с таблицей сравнения, варианты A/B/C и решение (Вариант B
   фазово), деревья каталогов, три уровня ИБ, единый контракт записи прогонов
@@ -155,7 +164,7 @@ All notable repository governance changes are documented here.
   навигации MkDocs и валидаторе структуры. Решение за человеком.
 - creative: Formalize AI-classifications and integrate into Mango roadmap
   (issue #251, builds on PR #248/#250). Added
-  `research/mango/2026-06-ai-classifications-formalization.md` — a detailed
+  `research/mango/2026-06-18-ai-classifications-formalization.md` — a detailed
   formalization of the four new AI-subprocesses (prompt engineering, RAG
   configuration, agent orchestration design, AI-component testing), each with
   operations (input → action → output), descriptive/executable artifacts, an
@@ -168,13 +177,14 @@ All notable repository governance changes are documented here.
   questions (ОВ-1…ОВ-6) are answered at the end. Registered the artifact in
   `research/mango/README.md` and the structure validator.
 - creative: Fix Wigers research — paths, classification, AI-processes, BABOK
-  comparison (issue #249, corrects PR #248). Moved
-  `research/hub/2026-06-wigers-requirements-analysis.md` →
-  `research/external-knowledge/2026-06-wigers-requirements-analysis.md` (it is a
-  Tier-1 external source, not internal Hub research) and
-  `governance/rfc/2026-requirements-engineering-ai-era.md` →
-  `research/mango/2026-requirements-engineering-ai-era.md` (it is a spoke-project
-  RFC for `mango`, not Hub core), updating every reference. Corrected the RFC
+  comparison (issue #249, corrects PR #248). Moved the Wigers requirements
+  analysis into
+  `research/external-knowledge/2026-06-18-wigers-requirements-analysis.md` (it is
+  a Tier-1 external source, not internal Hub research) and moved the
+  requirements-engineering AI-era RFC into
+  `research/mango/2026-06-18-requirements-engineering-ai-era.md` (it is a
+  spoke-project RFC for `mango`, not Hub core), updating every reference.
+  Corrected the RFC
   classification: removed "prompt engineering as a type of requirement"; recorded
   that a Prompt is an **interface to a Tool** (analogy: SQL query ≠ database),
   that prompt engineering is a **subprocess** (operations: task analysis, draft
@@ -193,14 +203,14 @@ All notable repository governance changes are documented here.
   `governance/artifact-map.md` (v1.42), the structure validator and the MkDocs
   navigation.
 - creative: Research Wigers book with AI-era actualization (issue #247). Added
-  `research/external-knowledge/2026-06-wigers-requirements-analysis.md` — an independent,
+  `research/external-knowledge/2026-06-18-wigers-requirements-analysis.md` — an independent,
   bilingual (ru/en) extraction of the Wiegers & Beatty *Software Requirements*
   system (requirement levels Business → User → Functional/Non-functional,
   requirement types incl. the five business-rule categories and quality
   attributes, requirements-engineering processes, and the Appendix А glossary),
   plus a three-trend actualization (2020 Wiegers / 2026 Agile-DevOps-CI·CD /
   2026 AI) mapped onto the five-layer model and the full-vs-local chain
-  variability. Added `research/mango/2026-requirements-engineering-ai-era.md` —
+  variability. Added `research/mango/2026-06-18-requirements-engineering-ai-era.md` —
   an RFC comparing the extracted Wiegers system with `mango_ba_prompts`
   ADR-003..ADR-010, grading genuine gaps (🔴 requirement-level ladder, absent
   Business-Rule type), bridge-needed overlaps (🟡 operations crosswalk) and
@@ -526,7 +536,7 @@ All notable repository governance changes are documented here.
 
 - Issue #199: updated `standards/README.md`, `research/README.md`,
   `governance/artifact-map.md`, `governance/rfc/README.md`,
-  `research/governance/2026-06-governance-folder-structure-decisions.md`,
+  `research/governance/2026-06-06-governance-folder-structure-decisions.md`,
   `tools/validate-frontmatter.sh` and `tools/validate-repository-structure.sh`
   for the new L2/L3 webportal standard split and the removal of the active
   portal package from the Hub.
@@ -623,10 +633,10 @@ All notable repository governance changes are documented here.
   первой строкой) и `standards/contract-documentation-standard.md`
   (нормативный язык RFC 2119 / BCP 14) — каждый с опорой на отдельное
   исследование в новом каталоге `research/governance/`
-  (`2026-06-research-documentation-format.md`,
-  `2026-06-executable-contract-format.md`,
-  `2026-06-contract-documentation-format.md` и запись решений
-  `2026-06-governance-folder-structure-decisions.md` плюс навигация
+  (`2026-06-06-research-documentation-format.md`,
+  `2026-06-06-executable-contract-format.md`,
+  `2026-06-06-contract-documentation-format.md` и запись решений
+  `2026-06-06-governance-folder-structure-decisions.md` плюс навигация
   `README.md`). Добавлен навигационный индекс `governance/rfc/README.md`. Все
   новые артефакты зарегистрированы как active в
   `tools/validate-repository-structure.sh` (`is_active_file`, `required_files`,
@@ -677,13 +687,13 @@ All notable repository governance changes are documented here.
   файлов из RFC §6.1 не выполнялся.
 
 - Issue #124: новый research-артефакт
-  `research/hub/2026-06-ai-collaboration-retrospective-mango-migration.md` —
+  `research/hub/2026-06-02-ai-collaboration-retrospective-mango-migration.md` —
   ретроспектива ошибок AI-агента в сессии проектирования миграции Mango
   (Хаб → спок): реестр из 5 ошибок (режимы, pre-flight контекст, Anti-Inflation,
   формат issue, архитектурное размещение артефактов), их корневые причины и
   4 системных вывода для будущего onboarding/governance proposal (режим
   `Research`, governance-файлы не меняются). Имя файла осознанно отличается от
-  запрошенного в issue `2026-06-ai-collaboration-retrospective.md`: тот файл уже
+  запрошенного в issue `2026-06-02-ai-collaboration-retrospective.md`: тот файл уже
   существует в `main` и описывает другую сессию (проектирование шаблонов споков,
   #95) — перезапись уничтожила бы прежний артефакт. Новые термины «Ретроспектива»
   и «Корневая причина» добавлены в `standards/glossary.md` (версия 1.0 → 1.1) как
@@ -794,7 +804,7 @@ All notable repository governance changes are documented here.
   раздел «Evidence trail: git history + issues + PRs как след доказательств»,
   явно называющий уже работающую способность (тезис команды С `[C5]`, метка
   «взять сейчас» из матрицы применимости) и связывающий её ссылкой с
-  `research/hub/2026-06-external-governance-patterns-review.md` (разделы 1.3 и
+  `research/hub/2026-06-02-external-governance-patterns-review.md` (разделы 1.3 и
   3.1). Имя evidence trail закреплено рядом с моделью жизненного цикла; новый
   формат/обёртка сознательно не вводятся (Anti-Inflation). Версия RFC `0.1 → 0.2`,
   во frontmatter добавлены external-review в `related_artifacts` и #116 в
@@ -834,7 +844,7 @@ All notable repository governance changes are documented here.
   «сертификация самолёта ≠ лицензия пилота» + анализ ещё трёх смежных областей
   (медицина, юриспруденция, DevOps) с выводами для модели; таблица-манифест из 13
   строк; Mermaid-схема жизненного цикла проекта с явным разделением кейсов;
-  обоснование с трассировкой к `research/hub/2026-06-ai-collaboration-retrospective.md`;
+  обоснование с трассировкой к `research/hub/2026-06-02-ai-collaboration-retrospective.md`;
   фиксация будущих README по каждому кейсу и follow-up-список. Манифест
   намеренно не определяет термины — только использует их со ссылкой на глоссарий.
   Файл зарегистрирован как active в `tools/validate-repository-structure.sh` и
@@ -856,7 +866,7 @@ All notable repository governance changes are documented here.
   — «Протокол бесшовной передачи проекта» (Seamless Project Handover Protocol)
   против ошибок холодного старта. Аналогия предполётного чек-листа и «читки
   обратно» (readback); обоснование с дословной трассировкой к 5 провалам
-  ретроспективы `research/hub/2026-05-project-context-and-bootstrap-patterns.md`
+  ретроспективы `research/hub/2026-05-28-project-context-and-bootstrap-patterns.md`
   и аудиту команды C; готовый к копированию Handover Prompt для пользователя;
   4-шаговый алгоритм агента (чек-лист governance → чек-лист контекста → readback
   → стоп до апрува); Mermaid-схема потока инициализации и сравнение мест для
@@ -889,14 +899,14 @@ All notable repository governance changes are documented here.
   "Решение за человеком". Создан каталог `governance/proposals/`. Файл
   зарегистрирован как active в `tools/validate-repository-structure.sh` и
   `governance/artifact-map.md`.
-- Issue #81: исследование `research/2026-05-project-context-and-bootstrap-patterns.md`
+- Issue #81: исследование `research/2026-05-28-project-context-and-bootstrap-patterns.md`
   с минималистичными паттернами передачи контекста между чатами, предсказуемого
   создания project areas и маршрута "рекомендация -> задача" на опыте Mango.
   Файл зарегистрирован как active в `tools/validate-repository-structure.sh`,
   `governance/artifact-map.md` и `research/README.md`.
-- Issue #79: исследование `research/2026-05-prompts-classification-audit.md`
+- Issue #79: исследование `research/2026-05-28-prompts-classification-audit.md`
   (аудит входных данных: инвентаризация 6 Mango промптов, паттерны отладки,
-  пробелы классификации) и `research/2026-05-prompts-classification-standard.md`
+  пробелы классификации) и `research/2026-05-28-prompts-classification-standard.md`
   (стандарт классификации промптов: таксономия из 6 осей, матрица «тип × зрелость
   × сценарий» с 10 ячейками, 3 шаблона для отладки формата (Simple/System/Agent),
   план интеграции к Mango промптам и вопросы для согласования). Scope: repo-wide.
@@ -908,7 +918,7 @@ All notable repository governance changes are documented here.
   User Story и Use Case в вариантах `_exp` и `_simple`. Prompt assets
   зарегистрированы в `tools/validate-repository-structure.sh`,
   `projects/mango/README.md` и `governance/artifact-map.md`.
-- Issue #69: справочник `research/mango/2026-05-capability-decomposition.md`
+- Issue #69: справочник `research/mango/2026-05-27-capability-decomposition.md`
   (`status: draft`, `scope: mango-only`) — детализация уровня `Atomic Function`
   для трёх пилотных доменов (`voice-ucaas`, `contact-center`,
   `digital-channels`): 54 функции с параметрами, ≥2 международными источниками
@@ -921,7 +931,7 @@ All notable repository governance changes are documented here.
   для пошаговой генерации Use Case с согласованием акторов, компонентов,
   controlled output, логами и тестами на 4 кейсах.
 - Issue #67: четырёхуровневая иерархия `Domain → Capability → Feature →
-  Atomic Function` в `research/mango/2026-05-classification.md` (v3.0): семь доменов
+  Atomic Function` в `research/mango/2026-05-22-classification.md` (v3.0): семь доменов
   пилота, явные слои `📊 Product Layer` и `🛒 Commercial Layer` со связью через
   `related_commercial_fields`, пять новых `Capability` (R2.1–R2.5) и раздел
   `🚀 Возможные улучшения (не активны в v3.0)` с отложенными атрибутами
@@ -939,11 +949,11 @@ All notable repository governance changes are documented here.
 
 - Issue #91: рефакторинг структуры `research/` (namespacing). Фундаментальные
   (`scope: repo-wide`) исследования перенесены через `git mv` из корня в новый
-  подкаталог `research/hub/` (`2026-05-project-context-and-bootstrap-patterns.md`,
-  `2026-05-prompts-classification-audit.md`,
-  `2026-05-prompts-classification-standard.md`,
-  `2026-05-team-c-governance-strategy-audit.md`,
-  `2026-05-user-prompts-analysis.md`); добавлен `research/hub/README.md`.
+  подкаталог `research/hub/` (`2026-05-28-project-context-and-bootstrap-patterns.md`,
+  `2026-05-28-prompts-classification-audit.md`,
+  `2026-05-28-prompts-classification-standard.md`,
+  `2026-06-01-team-c-governance-strategy-audit.md`,
+  `2026-05-28-user-prompts-analysis.md`); добавлен `research/hub/README.md`.
   `research/README.md` получил строгое правило о запрете файлов в корне
   `research/` и актуализированное оглавление; пути обновлены в
   `governance/artifact-map.md` (v1.4). Валидатор структуры теперь требует
@@ -953,7 +963,7 @@ All notable repository governance changes are documented here.
   заменены короткими copy-paste промптами; валидатор структуры теперь проверяет
   наличие ровно 6 файлов в `projects/mango/prompts/` и лимиты длины prompt body
   для `_exp` / `_simple`.
-- Issue #67: `research/mango/2026-05-classification.md` обновлён с версии 2 до v3.0
+- Issue #67: `research/mango/2026-05-22-classification.md` обновлён с версии 2 до v3.0
   аддитивно — все 37 существующих строк сохранены и переструктурированы под
   новую модель; сравнительная таблица международной классификации дополнена
   колонками `Domain → Capability (v3.0)` и `BABOK` и строками 38–42; HTML-экспорт
@@ -989,15 +999,15 @@ All notable repository governance changes are documented here.
 
 ### Added
 
-- Issue #52: draft-концепция `research/mango/2026-05-taxonomy-concept.md`
+- Issue #52: draft-концепция `research/mango/2026-05-26-taxonomy-concept.md`
   для Unified Capability Taxonomy Mango: обзор применимых стандартов,
   мета-модель capability, mapping реальных фич, процесс нормализации,
   интерфейс продуктовых команд, метрики, план пилота и риски.
 - Issue #49: active directory indexes for `projects/`, `research/`,
   `education/` and `frameworks/` after cleanup of legacy `-old` inputs.
 - Issue #49: active Mango research artifacts in `research/mango/`
-  (`README.md`, `2026-05-classification.md`, `2026-05-classification-tz.md`,
-  `2026-05-requirements-flow.md` and HTML exports) with frontmatter and source
+  (`README.md`, `2026-05-22-classification.md`, `2026-05-22-classification-tz.md`,
+  `2026-05-22-requirements-flow.md` and HTML exports) with frontmatter and source
   traceability.
 - Issue #47: проект `projects/repo-development/` с навигационным `README.md` и
   отчётом аудита миграции `docs/migration-audit-2026-05.md` (чек-лист

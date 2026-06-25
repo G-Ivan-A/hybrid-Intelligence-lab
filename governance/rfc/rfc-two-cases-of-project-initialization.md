@@ -11,8 +11,8 @@ scope: repo-wide
 related_artifacts:
   - "governance/agent-onboarding-protocol.md"
   - "templates/htom/README.md"
-  - "research/hub/2026-06-ai-collaboration-retrospective.md"
-  - "research/hub/2026-06-external-governance-patterns-review.md"
+  - "research/hub/2026-06-02-ai-collaboration-retrospective.md"
+  - "research/hub/2026-06-02-external-governance-patterns-review.md"
   - "standards/glossary.md"
   - "governance/repo-model.md"
 related_issues:
@@ -72,7 +72,7 @@ related_issues:
 самолёт»: непонятно, он его проектирует или поднимает.
 
 Эта аналогия — мост к ретроспективе
-[research/hub/2026-06-ai-collaboration-retrospective.md](../../research/hub/2026-06-ai-collaboration-retrospective.md):
+[research/hub/2026-06-02-ai-collaboration-retrospective.md](../../research/hub/2026-06-02-ai-collaboration-retrospective.md):
 её системный вывод №2 («pre-flight чтение контекста должно быть обязательным
 шагом») — это ровно «лицензия пилота + чек-лист», то есть **Кейс 1**. Когда этот
 вывод по ошибке формулируют как «инициализацию репозитория», он подменяет Кейс 1
@@ -227,7 +227,7 @@ flowchart TD
 
 Этот тезис **введён не здесь** — он сформулирован командой С как один из шести
 архитектурных gaps (`[C5]`, см.
-[2026-06-external-governance-patterns-review.md](../../research/hub/2026-06-external-governance-patterns-review.md),
+[2026-06-02-external-governance-patterns-review.md](../../research/hub/2026-06-02-external-governance-patterns-review.md),
 раздел 1.3, строка *Evidence model*) и помечен в её матрице применимости как
 «**взять сейчас**» именно потому, что функция **уже есть** — недоставало лишь
 имени (раздел 3.1 того же документа, целевое место — этот манифест; источники
@@ -254,7 +254,7 @@ flowchart TD
 ## 🎯 Обоснование разделения: почему смешение ведёт к ошибкам
 
 Источник ошибок —
-[research/hub/2026-06-ai-collaboration-retrospective.md](../../research/hub/2026-06-ai-collaboration-retrospective.md).
+[research/hub/2026-06-02-ai-collaboration-retrospective.md](../../research/hub/2026-06-02-ai-collaboration-retrospective.md).
 Хотя ретроспектива фиксирует ошибки сессии проектирования шаблонов, её системные
 выводы прямо мотивируют этот манифест:
 

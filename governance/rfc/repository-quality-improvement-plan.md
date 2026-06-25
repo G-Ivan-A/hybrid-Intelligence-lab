@@ -128,7 +128,7 @@ Semantic overlap:
 | `research/governance/*-format-2026-06.md` + `standards/*-standard.md` | Ожидаемая пара research -> standard. | P2 | Оставить, но добавить явное правило "research source не является duplicate standard". |
 | `standards/webportal-concept-standard.md` + `templates/webportal-concept-template.md` | Ожидаемая пара standard -> copyable template. | P2 | Оставить; в template frontmatter решить placeholder-warning отдельно. |
 | `AI_GOVERNANCE.md` + `templates/htom/AI_GOVERNANCE.md` | Ожидаемая hub contract -> spoke template пара. | P2 | Оставить; relation должна быть описана как inheritance/template, не duplicate. |
-| `research/hub/2026-06-ai-collaboration-retrospective.md` + `research/hub/2026-06-ai-collaboration-retrospective-mango-migration.md` | Высокое пересечение темы ретроспектив, но разные события. | P2 | При следующем изменении добавить cross-link "общая ретроспектива / Mango migration retrospective", не объединять автоматически. |
+| `research/hub/2026-06-02-ai-collaboration-retrospective.md` + `research/hub/2026-06-02-ai-collaboration-retrospective-mango-migration.md` | Высокое пересечение темы ретроспектив, но разные события. | P2 | При следующем изменении добавить cross-link "общая ретроспектива / Mango migration retrospective", не объединять автоматически. |
 
 ### 2.3. Дублирование метаданных
 
@@ -165,9 +165,9 @@ Confirmed broken or stale local references:
 | Файл | Строка | Проблема | Приоритет | Рекомендация |
 | --- | --- | --- | --- | --- |
 | `projects/repo-development/docs/contract-violations-self-report-2026-06.md` | 105 | Link points to deleted `../../../docs/analysis/contract-executability-rfc.md`. | P1 | Replace with `../../../governance/rfc/contract-executability-rfc.md`. |
-| `research/mango/2026-05-taxonomy-concept.md` | 43-45 | Links point to deleted `classification-old.md`, `classification-tz-old.md`, `requirements-flow-old.md`. | P1 | Replace with active `2026-05-classification.md`, `2026-05-classification-tz.md`, `2026-05-requirements-flow.md` or mark as historical source without link. |
-| Superseded spoke-template design draft | 12 | Frontmatter pointed to `research/2026-05-project-context-and-bootstrap-patterns.md`; actual file is under `research/hub/`. | P1 | Merged into `templates/htom/README.md`; stale draft removed. |
-| `research/mango/2026-05-capability-decomposition.md` | 11-12 | `related_artifacts` includes `2026-05-classification.md v3.0` and `classification-glossary.md`; one value mixes path and version, the other does not resolve locally. | P1 | Use path-only relation values; move version into prose if needed. |
+| `research/mango/2026-05-26-taxonomy-concept.md` | 43-45 | Links point to deleted `classification-old.md`, `classification-tz-old.md`, `requirements-flow-old.md`. | P1 | Replace with active `2026-05-22-classification.md`, `2026-05-22-classification-tz.md`, `2026-05-22-requirements-flow.md` or mark as historical source without link. |
+| Superseded spoke-template design draft | 12 | Frontmatter pointed to `research/2026-05-28-project-context-and-bootstrap-patterns.md`; actual file is under `research/hub/`. | P1 | Merged into `templates/htom/README.md`; stale draft removed. |
+| `research/mango/2026-05-27-capability-decomposition.md` | 11-12 | `related_artifacts` includes `2026-05-22-classification.md v3.0` and `classification-glossary.md`; one value mixes path and version, the other does not resolve locally. | P1 | Use path-only relation values; move version into prose if needed. |
 | `research/portal/ai-and-mango-integration-patterns-2026-06.md` | 13, 168 | References deleted `projects/mango/README.md`. | P1, portal-deferred | Decide whether to point to `archive/projects/mango/README.md` or external `mango_ba_prompts`; do not alter portal concept semantics here. |
 | `research/portal/repository-structure-design-2026-06.md` | 157 | References deleted `projects/mango/README.md`. | P1, portal-deferred | Same decision as above. |
 
@@ -209,10 +209,10 @@ Full draft list:
 | ---: | --- | ---: | --- | --- | --- |
 | 1 | `governance/rfc/README.md` | 2 | Навигация по RFC Хаба: правила попадания в каталог, список RFC и связанные governance-артефакты. | Перевести в canonical | Каталог уже принят как `governance/rfc/` после issue #165 и используется в 4 связанных файлах; документ фиксирует навигацию, а не спорное решение. |
 | 2 | `governance/rfc/rfc-two-cases-of-project-initialization.md` | 2 | RFC-манифест разделяет Runtime-онбординг и Bootstrap-клонирование, связывает термины с onboarding и spoke-template. | Перевести в canonical | Термины уже используются в `agent-onboarding-protocol.md`, `templates/htom/README.md` и других RFC; документ упоминается в 9 файлах и стабилизирует vocabulary Хаба. |
-| 3 | `research/governance/2026-06-governance-folder-structure-decisions.md` | 2 | Decision record по структуре governance-каталогов: `rfc/` вместо `proposals/`, границы portal research и правила исторических ссылок. | Перевести в canonical | Решения Q1-Q3 уже реализованы в структуре репозитория и валидаторе; документ связан с 4 файлами и должен стать canonical evidence для переименований. |
-| 4 | `research/governance/2026-06-contract-documentation-format.md` | 2 | Исследование формата контрактных документов: RFC 2119, API contracts, SLA, design by contract и ADR-подход. | Перевести в canonical | Документ является источником для `standards/contract-documentation-standard.md` и упоминается в 4 файлах; после human review его можно зафиксировать как research source. |
-| 5 | `research/governance/2026-06-executable-contract-format.md` | 2 | Исследование формата исполнимых контрактов: action-first структура, системные prompt-паттерны, runbook-подход и восприятие агентом. | Перевести в canonical | На документ опирается `standards/executable-contract-standard.md`; он связан с 3 файлами и уже отражён в принятых executable-doc работах. |
-| 6 | `research/governance/2026-06-research-documentation-format.md` | 2 | Исследование структуры research-документов Хаба: BLUF, traceability, выводы, детализация и связи с decision-making. | Перевести в canonical | Документ является источником для раздела порядка изложения в `standards/research-profile.md` и связан с 4 файлами; после Phase 1 merge его можно закрыть как canonical source. |
+| 3 | `research/governance/2026-06-06-governance-folder-structure-decisions.md` | 2 | Decision record по структуре governance-каталогов: `rfc/` вместо `proposals/`, границы portal research и правила исторических ссылок. | Перевести в canonical | Решения Q1-Q3 уже реализованы в структуре репозитория и валидаторе; документ связан с 4 файлами и должен стать canonical evidence для переименований. |
+| 4 | `research/governance/2026-06-06-contract-documentation-format.md` | 2 | Исследование формата контрактных документов: RFC 2119, API contracts, SLA, design by contract и ADR-подход. | Перевести в canonical | Документ является источником для `standards/contract-documentation-standard.md` и упоминается в 4 файлах; после human review его можно зафиксировать как research source. |
+| 5 | `research/governance/2026-06-06-executable-contract-format.md` | 2 | Исследование формата исполнимых контрактов: action-first структура, системные prompt-паттерны, runbook-подход и восприятие агентом. | Перевести в canonical | На документ опирается `standards/executable-contract-standard.md`; он связан с 3 файлами и уже отражён в принятых executable-doc работах. |
+| 6 | `research/governance/2026-06-06-research-documentation-format.md` | 2 | Исследование структуры research-документов Хаба: BLUF, traceability, выводы, детализация и связи с decision-making. | Перевести в canonical | Документ является источником для раздела порядка изложения в `standards/research-profile.md` и связан с 4 файлами; после Phase 1 merge его можно закрыть как canonical source. |
 | 7 | `standards/contract-documentation-standard.md` | 2 | Стандарт оформления контрактных документов Хаба: нормативный язык, frontmatter, секции и decision traceability. | Перевести в canonical | Стандарт уже зарегистрирован в валидаторе и связан с 8 файлами; препятствий кроме human approval и снятия draft-статуса не найдено. |
 | 8 | `standards/executable-contract-standard.md` | 2 | Стандарт исполнимых контрактов: разделение EXECUTION/EXPLANATION, директивный блок и требования к агентскому выполнению. | Перевести в canonical | Формат уже применён в `agent-onboarding-protocol.md` и `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`; документ упоминается в 9 файлах и готов к approval. |
 | 9 | `research/portal/README.md` | 2 | Навигация по исследованиям портала open-ai.ru: concept, architecture, documentation, repository structure и AI integration. | Отложить | Scope `portal` и сам портал ещё не согласованы; документ связан с 4 файлами, но зависит от отдельного portal review вне repository cleanup. |
@@ -229,16 +229,16 @@ Full draft list:
 | 20 | `projects/education-ba-prompt/README.md` | 2 | Навигация sandbox-проекта курса БА по prompt engineering: цель, docs, связь с education-profile и текущий draft scope. | Доработать | Проект упоминается в 2 файлах и отсутствует в `artifact-map.md` по разделу 2.6; перед canonical нужно решить, это sandbox или public project. |
 | 21 | `projects/education-ba-prompt/docs/course-ideas.md` | 2 | Набор идей курса: термины, практические кейсы БА, рабочие шаблоны промптов, модули и форматы подачи. | Доработать | Документ связан только с project README; требуется разнести идеи в утверждённые course artifacts или оставить как sandbox draft с exit criteria. |
 | 22 | `research/governance/README.md` | 2 | Навигация по governance research: форматы research, executable contracts, contract docs и decisions по структуре папок. | Доработать | Каталог уже содержит source-документы для стандартов, но README остаётся draft; нужно синхронизировать статус с решением по derived standards. |
-| 23 | `research/hub/2026-06-external-governance-patterns-review.md` | 2 | Анализ external governance patterns и матрицы применимости: что взять сейчас, что отложить, что отклонить. | Доработать | Документ упоминается в 6 файлах и содержит открытые применимые решения; нужен pass, который переносит accepted пункты в backlog или явно закрывает вопросы. |
-| 24 | `research/hub/2026-05-project-context-and-bootstrap-patterns.md` | 2 | Исследование передачи контекста и предсказуемого bootstrap проекта на опыте Mango: проблемы, решения и AI checklist. | Доработать | Документ связан с 6 файлами и зависит от решения по удалению `archive/projects/mango/`; после archive decision нужно обновить ссылки и статус. |
-| 25 | `research/hub/2026-05-prompts-classification-audit.md` | 2 | Аудит входных данных для классификации промптов: типы, maturity, паттерны отладки и пробелы классификации. | Доработать | Документ связан с 3 файлами и должен быть сверён с текущим состоянием внешнего `mango_ba_prompts`; без этой сверки статус canonical будет преждевременным. |
-| 26 | `research/hub/2026-05-prompts-classification-standard.md` | 2 | Draft-стандарт классификации промптов: таксономия, матрица, шаблоны промптов и план интеграции. | Доработать | Документ выглядит как стандарт, но живёт в `research/hub`; нужно решить, переносить ли его в `standards/` или оставить как research source. |
-| 27 | `research/hub/2026-05-team-c-governance-strategy-audit.md` | 2 | Интерпретация аудита governance strategy от команды C: риски overgrowth, рекомендации и вопросы human review. | Доработать | Документ связан с 5 файлами, но часть выводов уже покрыта external-governance review и backlog; нужно отметить superseded/accepted пункты. |
-| 28 | `research/hub/2026-05-user-prompts-analysis.md` | 2 | Анализ пользовательских промптов: классификация 18 промптов, признаки устаревших паттернов, дубли и план интеграции. | Доработать | Документ связан с 2 файлами и основан на draft prompt-classification standard; нужен review после решения по prompt taxonomy. |
-| 29 | `research/mango/2026-05-capability-decomposition.md` | 2 | Справочник атомарных функций Mango по доменам voice-ucaas, contact-center и digital-channels. | Доработать | Раздел 2.4 фиксирует проблемы `related_artifacts` и неразрешённые path/version значения; сначала исправить relations, затем решать статус. |
-| 30 | `research/mango/2026-05-rag-mapping-roadmap.md` | 2 | Research по RAG-навигации продуктов и фич Mango: маппинг, diagram usage, roadmap автоматизации БА и вопросы согласования. | Доработать | Документ связан с 5 файлами и остаётся mango-only; нужен review после решения, какие материалы живут во внешнем Mango spoke. |
-| 31 | `research/mango/2026-05-requirements-lifecycle-uncertainty.md` | 2 | Исследование жизненного цикла требований Mango: неопределённость, декомпозиция, telecom practice и exit criteria. | Доработать | Документ связан с 3 файлами, но не имеет явного exit-plan; нужно либо добавить criteria для draft, либо принять как reviewed research. |
-| 32 | `research/mango/2026-05-taxonomy-concept.md` | 2 | Концепция единой таксономии Mango: capability model, mapping фич, процесс нормализации и pilot risks. | Доработать | Раздел 2.4 фиксирует stale links на `*-old.md`; сначала заменить ссылки на active файлы или историческое описание, потом решать статус. |
+| 23 | `research/hub/2026-06-02-external-governance-patterns-review.md` | 2 | Анализ external governance patterns и матрицы применимости: что взять сейчас, что отложить, что отклонить. | Доработать | Документ упоминается в 6 файлах и содержит открытые применимые решения; нужен pass, который переносит accepted пункты в backlog или явно закрывает вопросы. |
+| 24 | `research/hub/2026-05-28-project-context-and-bootstrap-patterns.md` | 2 | Исследование передачи контекста и предсказуемого bootstrap проекта на опыте Mango: проблемы, решения и AI checklist. | Доработать | Документ связан с 6 файлами и зависит от решения по удалению `archive/projects/mango/`; после archive decision нужно обновить ссылки и статус. |
+| 25 | `research/hub/2026-05-28-prompts-classification-audit.md` | 2 | Аудит входных данных для классификации промптов: типы, maturity, паттерны отладки и пробелы классификации. | Доработать | Документ связан с 3 файлами и должен быть сверён с текущим состоянием внешнего `mango_ba_prompts`; без этой сверки статус canonical будет преждевременным. |
+| 26 | `research/hub/2026-05-28-prompts-classification-standard.md` | 2 | Draft-стандарт классификации промптов: таксономия, матрица, шаблоны промптов и план интеграции. | Доработать | Документ выглядит как стандарт, но живёт в `research/hub`; нужно решить, переносить ли его в `standards/` или оставить как research source. |
+| 27 | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | 2 | Интерпретация аудита governance strategy от команды C: риски overgrowth, рекомендации и вопросы human review. | Доработать | Документ связан с 5 файлами, но часть выводов уже покрыта external-governance review и backlog; нужно отметить superseded/accepted пункты. |
+| 28 | `research/hub/2026-05-28-user-prompts-analysis.md` | 2 | Анализ пользовательских промптов: классификация 18 промптов, признаки устаревших паттернов, дубли и план интеграции. | Доработать | Документ связан с 2 файлами и основан на draft prompt-classification standard; нужен review после решения по prompt taxonomy. |
+| 29 | `research/mango/2026-05-27-capability-decomposition.md` | 2 | Справочник атомарных функций Mango по доменам voice-ucaas, contact-center и digital-channels. | Доработать | Раздел 2.4 фиксирует проблемы `related_artifacts` и неразрешённые path/version значения; сначала исправить relations, затем решать статус. |
+| 30 | `research/mango/2026-05-26-rag-mapping-roadmap.md` | 2 | Research по RAG-навигации продуктов и фич Mango: маппинг, diagram usage, roadmap автоматизации БА и вопросы согласования. | Доработать | Документ связан с 5 файлами и остаётся mango-only; нужен review после решения, какие материалы живут во внешнем Mango spoke. |
+| 31 | `research/mango/2026-05-26-requirements-lifecycle-uncertainty.md` | 2 | Исследование жизненного цикла требований Mango: неопределённость, декомпозиция, telecom practice и exit criteria. | Доработать | Документ связан с 3 файлами, но не имеет явного exit-plan; нужно либо добавить criteria для draft, либо принять как reviewed research. |
+| 32 | `research/mango/2026-05-26-taxonomy-concept.md` | 2 | Концепция единой таксономии Mango: capability model, mapping фич, процесс нормализации и pilot risks. | Доработать | Раздел 2.4 фиксирует stale links на `*-old.md`; сначала заменить ссылки на active файлы или историческое описание, потом решать статус. |
 | 33 | `templates/htom/AI_GOVERNANCE.md` | 2 | Шаблон governance-файла spoke-проекта: роли, границы действий, escalation и связь с hub governance. | Доработать | Документ содержит `{{date}}` и template placeholders; нужно решить placeholder validation rule, иначе frontmatter warnings останутся ожидаемыми. |
 | 34 | `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` | 2 | Шаблон executable handover prompt для spoke: runtime onboarding, directive block и EXECUTION/EXPLANATION структура. | Доработать | Файл упоминается в 7 местах и уже оформлен как executable template, но содержит `{{date}}`; нужен общий template exemption или post-init validation rule. |
 | 35 | `templates/htom/AI_QUICK_RULES.md` | 2 | Краткие правила для AI в spoke-проекте: project placeholders, operational constraints и связь с governance. | Доработать | Шаблон связан с 7 файлами, но статус зависит от решения по placeholder frontmatter и от того, какие root-like template files считать canonical. |
@@ -265,10 +265,10 @@ Full draft list:
 #### К переводу в canonical (8 документов):
 - [ ] `governance/rfc/README.md`
 - [ ] `governance/rfc/rfc-two-cases-of-project-initialization.md`
-- [ ] `research/governance/2026-06-governance-folder-structure-decisions.md`
-- [ ] `research/governance/2026-06-contract-documentation-format.md`
-- [ ] `research/governance/2026-06-executable-contract-format.md`
-- [ ] `research/governance/2026-06-research-documentation-format.md`
+- [ ] `research/governance/2026-06-06-governance-folder-structure-decisions.md`
+- [ ] `research/governance/2026-06-06-contract-documentation-format.md`
+- [ ] `research/governance/2026-06-06-executable-contract-format.md`
+- [ ] `research/governance/2026-06-06-research-documentation-format.md`
 - [ ] `standards/contract-documentation-standard.md`
 - [ ] `standards/executable-contract-standard.md`
 
@@ -289,16 +289,16 @@ Full draft list:
 - [ ] `projects/education-ba-prompt/README.md`
 - [ ] `projects/education-ba-prompt/docs/course-ideas.md`
 - [ ] `research/governance/README.md`
-- [ ] `research/hub/2026-06-external-governance-patterns-review.md`
-- [ ] `research/hub/2026-05-project-context-and-bootstrap-patterns.md`
-- [ ] `research/hub/2026-05-prompts-classification-audit.md`
-- [ ] `research/hub/2026-05-prompts-classification-standard.md`
-- [ ] `research/hub/2026-05-team-c-governance-strategy-audit.md`
-- [ ] `research/hub/2026-05-user-prompts-analysis.md`
-- [ ] `research/mango/2026-05-capability-decomposition.md`
-- [ ] `research/mango/2026-05-rag-mapping-roadmap.md`
-- [ ] `research/mango/2026-05-requirements-lifecycle-uncertainty.md`
-- [ ] `research/mango/2026-05-taxonomy-concept.md`
+- [ ] `research/hub/2026-06-02-external-governance-patterns-review.md`
+- [ ] `research/hub/2026-05-28-project-context-and-bootstrap-patterns.md`
+- [ ] `research/hub/2026-05-28-prompts-classification-audit.md`
+- [ ] `research/hub/2026-05-28-prompts-classification-standard.md`
+- [ ] `research/hub/2026-06-01-team-c-governance-strategy-audit.md`
+- [ ] `research/hub/2026-05-28-user-prompts-analysis.md`
+- [ ] `research/mango/2026-05-27-capability-decomposition.md`
+- [ ] `research/mango/2026-05-26-rag-mapping-roadmap.md`
+- [ ] `research/mango/2026-05-26-requirements-lifecycle-uncertainty.md`
+- [ ] `research/mango/2026-05-26-taxonomy-concept.md`
 - [ ] `templates/htom/AI_GOVERNANCE.md`
 - [ ] `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`
 - [ ] `templates/htom/AI_QUICK_RULES.md`

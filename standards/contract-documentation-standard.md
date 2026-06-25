@@ -26,7 +26,7 @@ related_issues:
 **обязательства сверху, обоснование под катом**.
 
 Обоснование, сравнение практик и источники:
-[research/governance/2026-06-contract-documentation-format.md](../research/governance/2026-06-contract-documentation-format.md).
+[research/governance/2026-06-06-contract-documentation-format.md](../research/governance/2026-06-06-contract-documentation-format.md).
 
 ## Назначение
 
@@ -132,7 +132,7 @@ related_issues:
 
 ## Источники
 
-- [research/governance/2026-06-contract-documentation-format.md](../research/governance/2026-06-contract-documentation-format.md) — исследование-обоснование (OpenAPI, RFC 2119/BCP 14, SLA/SLO, Design by Contract, ADR, Pact).
+- [research/governance/2026-06-06-contract-documentation-format.md](../research/governance/2026-06-06-contract-documentation-format.md) — исследование-обоснование (OpenAPI, RFC 2119/BCP 14, SLA/SLO, Design by Contract, ADR, Pact).
 - [standards/glossary.md](glossary.md) — нормативные термины Хаба (single source of truth).
 - [standards/research-profile.md](research-profile.md), [standards/executable-contract-standard.md](executable-contract-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.

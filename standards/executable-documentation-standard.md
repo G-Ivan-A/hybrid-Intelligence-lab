@@ -106,11 +106,11 @@ source research -> practice index -> atomic practice -> template/check/script
 ```
 
 For international AI governance, the research owner is
-[2026-06-international-ai-governance-practices.md](../research/hub/2026-06-international-ai-governance-practices.md).
+[2026-06-12-international-ai-governance-practices.md](../research/hub/2026-06-12-international-ai-governance-practices.md).
 Its fixed practice nodes live under `practices/ai-governance/`.
 
 For external agent-work practices, the research owner is
-[2026-06-external-practice-intake.md](../research/hub/2026-06-external-practice-intake.md).
+[2026-06-12-external-practice-intake.md](../research/hub/2026-06-12-external-practice-intake.md).
 Its fixed practice nodes live under `practices/agent-work/`.
 
 ## Import Rule

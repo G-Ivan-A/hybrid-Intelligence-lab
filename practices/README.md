@@ -25,8 +25,8 @@ Research can recommend. A practice node fixes. A sync prompt or issue imports.
 
 | Area | Index | Research source |
 | --- | --- | --- |
-| Agent work | [agent-work/](agent-work/) | [2026-06-external-practice-intake.md](../research/hub/2026-06-external-practice-intake.md) |
-| AI governance | [ai-governance/](ai-governance/) | [2026-06-international-ai-governance-practices.md](../research/hub/2026-06-international-ai-governance-practices.md) |
+| Agent work | [agent-work/](agent-work/) | [2026-06-12-external-practice-intake.md](../research/hub/2026-06-12-external-practice-intake.md) |
+| AI governance | [ai-governance/](ai-governance/) | [2026-06-12-international-ai-governance-practices.md](../research/hub/2026-06-12-international-ai-governance-practices.md) |
 
 ## Node Requirements
 

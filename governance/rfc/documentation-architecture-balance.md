@@ -73,7 +73,7 @@ RFC предлагает **рамку классификации и навига
 
 | Проект | Профиль документации | Симптом | Худший случай |
 | --- | --- | --- | --- |
-| **Хаб** (`hybrid-Intelligence-lab`) | Дисциплина атомарности соблюдена: самый большой markdown ≈ 1774 строки, большинство < 600. | Риск обратный — переатомизация: навигация держится на `artifact-map.md` и индексах. | `research/mango/2026-05-capability-decomposition.md` (1774 стр.) — читается целиком. |
+| **Хаб** (`hybrid-Intelligence-lab`) | Дисциплина атомарности соблюдена: самый большой markdown ≈ 1774 строки, большинство < 600. | Риск обратный — переатомизация: навигация держится на `artifact-map.md` и индексах. | `research/mango/2026-05-27-capability-decomposition.md` (1774 стр.) — читается целиком. |
 | **mango_ba_prompts** | Монолитные нормативные документы. | Правило прячется внутри файла без точки входа. | `docs/analysis/migration-strategy-rfc.md` ≈ 54 КБ; `docs/ba-ecosystem.md` ≈ 42 КБ; ADR `002-pattern-standard.md` ≈ 38 КБ. |
 | **open-ai.ru** | Небольшой репозиторий, пара крупных концептов. | Терпимо сейчас, но `product-concept.md` уже точка боли. | `docs/product-concept.md` ≈ 39 КБ. |
 | **clarify-engine-ai** | Тяжёлые research/CONCEPT + **поверсионные копии целых файлов**. | Двойная боль: гигантские файлы И инфляция через версии-копии. | `docs/research/2026-05-21_…_v2.md` ≈ 220 КБ, `CONCEPT.md` ≈ 113 КБ; backlog `…_rag-optimization` в копиях `v1 … v1.5` (42→91 КБ каждая). |
@@ -114,7 +114,7 @@ RFC предлагает **рамку классификации и навига
 *трассируемости* решений, но не предписывает гранулярность файлов — поэтому она
 здесь учитывается как ограничение (ссылки не должны рваться при дроблении), а не
 как источник классификации. Углублённый разбор регуляторики — зона
-[research/hub/2026-06-international-ai-governance-practices.md](../../research/hub/2026-06-international-ai-governance-practices.md),
+[research/hub/2026-06-12-international-ai-governance-practices.md](../../research/hub/2026-06-12-international-ai-governance-practices.md),
 дублировать его не нужно.
 
 ## 3. Классификация документов (максимум 3 класса)
@@ -155,7 +155,7 @@ A (Index) --атом перестали запрашивать--> C (Full): сл
 | `standards/frontmatter-standard.md` (4 поля) — норма, дёргается постоянно | A | Оставить атомом; уже корректно. |
 | mango `docs/adr/002-pattern-standard.md` (38 КБ) | B | Добавить оглавление-якоря; не дробить файл ADR. |
 | clarify `docs/research/…_v2.md` (220 КБ) | C | Оставить Full; завести короткий Summary-вход; **версии-копии убрать в git/CHANGELOG**. |
-| Хаб `research/mango/2026-05-capability-decomposition.md` (1774 стр.) | C | Не дробить ради дробления (Anti-Inflation); по желанию — Summary-голова. |
+| Хаб `research/mango/2026-05-27-capability-decomposition.md` (1774 стр.) | C | Не дробить ради дробления (Anti-Inflation); по желанию — Summary-голова. |
 
 ## 4. Гибкий подход без бюрократии
 

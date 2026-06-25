@@ -41,10 +41,10 @@ derived standards without duplicating their rules.
 
 | Документ | Назначение |
 | --- | --- |
-| [2026-06-research-documentation-format.md](2026-06-research-documentation-format.md) | Исследование формата исследований: сравнение ≥6 практик (IMRaD, BLUF, Inverted Pyramid, Minto, IETF RFC Abstract, ADR, Diátaxis) по 6 критериям; выбор схемы **Введение → Результаты → Детализация**. Правила зафиксированы в `research-profile.md`. |
-| [2026-06-executable-contract-format.md](2026-06-executable-contract-format.md) | Исследование формата исполнимых контрактов: системные промпты, runbooks, императивный UX, action-first. Структура **EXECUTION → EXPLANATION**. Источник стандарта `executable-contract-standard.md`. |
-| [2026-06-contract-documentation-format.md](2026-06-contract-documentation-format.md) | Исследование формата прочих контрактов: OpenAPI, RFC 2119/BCP 14, SLA/SLO, ADR, Pact. Структура «контракт сверху, обоснование под катом». Источник стандарта `contract-documentation-standard.md`. |
-| [2026-06-governance-folder-structure-decisions.md](2026-06-governance-folder-structure-decisions.md) | Решения по спорным вопросам Q1 (`proposals/` → `rfc/`), Q2 (размещение концепции портала) и Q3 (папка `rfc/` в проектах) с обоснованием и учётом мнения команды Q. |
+| [2026-06-06-research-documentation-format.md](2026-06-06-research-documentation-format.md) | Исследование формата исследований: сравнение ≥6 практик (IMRaD, BLUF, Inverted Pyramid, Minto, IETF RFC Abstract, ADR, Diátaxis) по 6 критериям; выбор схемы **Введение → Результаты → Детализация**. Правила зафиксированы в `research-profile.md`. |
+| [2026-06-06-executable-contract-format.md](2026-06-06-executable-contract-format.md) | Исследование формата исполнимых контрактов: системные промпты, runbooks, императивный UX, action-first. Структура **EXECUTION → EXPLANATION**. Источник стандарта `executable-contract-standard.md`. |
+| [2026-06-06-contract-documentation-format.md](2026-06-06-contract-documentation-format.md) | Исследование формата прочих контрактов: OpenAPI, RFC 2119/BCP 14, SLA/SLO, ADR, Pact. Структура «контракт сверху, обоснование под катом». Источник стандарта `contract-documentation-standard.md`. |
+| [2026-06-06-governance-folder-structure-decisions.md](2026-06-06-governance-folder-structure-decisions.md) | Решения по спорным вопросам Q1 (`proposals/` → `rfc/`), Q2 (размещение концепции портала) и Q3 (папка `rfc/` в проектах) с обоснованием и учётом мнения команды Q. |
 
 ## Связанные стандарты
 

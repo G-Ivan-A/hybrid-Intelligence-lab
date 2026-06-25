@@ -16,7 +16,7 @@ ai-generated: false
 
 | Документ | Назначение |
 | --- | --- |
-| [2026-06-js-cicd-template-analysis.md](2026-06-js-cicd-template-analysis.md) | Анализ JS CI/CD шаблона Константина (`link-foundation/js-ai-driven-development-pipeline-template`): структура, workflows, AI-паттерны, применимость к `open-ai.ru`, `mango_ba_prompts`, хабу. |
+| [2026-06-09-js-cicd-template-analysis.md](2026-06-09-js-cicd-template-analysis.md) | Анализ JS CI/CD шаблона Константина (`link-foundation/js-ai-driven-development-pipeline-template`): структура, workflows, AI-паттерны, применимость к `open-ai.ru`, `mango_ba_prompts`, хабу. |
 
 ## Политики направления
 

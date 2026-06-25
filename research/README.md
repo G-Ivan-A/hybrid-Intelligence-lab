@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.14
+version: 1.15
 updated: 2026-06-25
 temperature: 0.1
 ai-generated: false
@@ -23,7 +23,7 @@ source: research/README-old.md
 | Принцип | Требование |
 | --- | --- |
 | Изоляция по доменам | Файлы исследований размещаются только в тематических подкаталогах (`research/hub/`, `research/mango/`); корень `research/` содержит лишь `README.md`. |
-| Date-first naming | Хронологические research-файлы именуются `YYYY-MM-name.md` или `YYYY-name.md`; дата всегда стоит первой. |
+| Date-first naming | Хронологические research-файлы именуются `YYYY-MM-DD-name.md`; дата всегда стоит первой и берётся из git history создания файла. |
 | Независимость | Research не должен зависеть от production-секретов или закрытых контрактов. |
 | Воспроизводимость | Скрипты и эксперименты размещаются рядом с направлением как `research/<domain>/exp-<slug>/` и связываются с отчетом. |
 | Сравнение вариантов | Если исследование выбирает стандарт, классификацию или подход, нужна таблица вариантов. |
@@ -46,43 +46,43 @@ source: research/README-old.md
 
 | Файл | Назначение |
 | --- | --- |
-| [2026-05-project-context-and-bootstrap-patterns.md](hub/2026-05-project-context-and-bootstrap-patterns.md) | Минималистичные паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. |
-| [2026-05-prompts-classification-audit.md](hub/2026-05-prompts-classification-audit.md) | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. |
-| [2026-05-prompts-classification-standard.md](hub/2026-05-prompts-classification-standard.md) | Стандарт классификации промптов: таксономия (6 осей), матрица зрелости, шаблоны отладки, план интеграции. |
-| [2026-05-team-c-governance-strategy-audit.md](hub/2026-05-team-c-governance-strategy-audit.md) | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, hierarchy/lifecycle вопросы и backlog candidates. |
-| [2026-05-user-prompts-analysis.md](hub/2026-05-user-prompts-analysis.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
-| [2026-06-external-governance-patterns-review.md](hub/2026-06-external-governance-patterns-review.md) | Анализ external governance patterns (GitAgent/EGAProtocol/IETF AgentID) и матрица применимости рекомендаций команды С: «взять сейчас / отложить / отклонить», North Star и триггеры пересмотра. |
-| [2026-06-ecosystem-governance-audit.md](hub/2026-06-ecosystem-governance-audit.md) | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. |
-| [2026-06-ecosystem-architecture-research.md](hub/2026-06-ecosystem-architecture-research.md) | Комплексное исследование архитектуры экосистемы для issue #257: Hub как центр 5+ проектов, token balance, L1-L4 для `open-ai.ru` и репутационные технологии. |
-| [2026-06-external-practice-intake.md](hub/2026-06-external-practice-intake.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
-| [2026-06-international-ai-governance-practices.md](hub/2026-06-international-ai-governance-practices.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
-| [2026-06-repository-structure-concept.md](hub/2026-06-repository-structure-concept.md) | Дополнение к mango-исследованию (issue #263): видение фаундера как приоритетная база, 4 открытых вопроса, 3 противоречия, критический анализ рисков и концепция базовых/рекомендуемых/специфичных каталогов для 4 архетипов PR #243 (10+ международных проектов на архетип). |
-| [2026-06-artifact-inventory-and-classification.md](hub/2026-06-artifact-inventory-and-classification.md) | Инвентаризация артефактов обоих репозиториев экосистемы (`mango_ba_prompts` + Хаб, issue #265) и классификация по 4 осям (уровень L0–L4, 8 областей знаний, архетип, статус); разбор конфликта четырёх лестниц «L1–L4», наложение на 4 исследования, cleanup-кандидаты (рекомендации) и правила маршрутизации для AI-агентов. |
+| [2026-05-28-project-context-and-bootstrap-patterns.md](hub/2026-05-28-project-context-and-bootstrap-patterns.md) | Минималистичные паттерны передачи контекста, предсказуемого project bootstrap и маршрута "рекомендация -> задача" на опыте Mango. |
+| [2026-05-28-prompts-classification-audit.md](hub/2026-05-28-prompts-classification-audit.md) | Аудит входных данных для классификации промптов: инвентаризация типов, паттерны отладки, пробелы. |
+| [2026-05-28-prompts-classification-standard.md](hub/2026-05-28-prompts-classification-standard.md) | Стандарт классификации промптов: таксономия (6 осей), матрица зрелости, шаблоны отладки, план интеграции. |
+| [2026-06-01-team-c-governance-strategy-audit.md](hub/2026-06-01-team-c-governance-strategy-audit.md) | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, hierarchy/lifecycle вопросы и backlog candidates. |
+| [2026-05-28-user-prompts-analysis.md](hub/2026-05-28-user-prompts-analysis.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
+| [2026-06-02-external-governance-patterns-review.md](hub/2026-06-02-external-governance-patterns-review.md) | Анализ external governance patterns (GitAgent/EGAProtocol/IETF AgentID) и матрица применимости рекомендаций команды С: «взять сейчас / отложить / отклонить», North Star и триггеры пересмотра. |
+| [2026-06-12-ecosystem-governance-audit.md](hub/2026-06-12-ecosystem-governance-audit.md) | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. |
+| [2026-06-20-ecosystem-architecture-research.md](hub/2026-06-20-ecosystem-architecture-research.md) | Комплексное исследование архитектуры экосистемы для issue #257: Hub как центр 5+ проектов, token balance, L1-L4 для `open-ai.ru` и репутационные технологии. |
+| [2026-06-12-external-practice-intake.md](hub/2026-06-12-external-practice-intake.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
+| [2026-06-12-international-ai-governance-practices.md](hub/2026-06-12-international-ai-governance-practices.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
+| [2026-06-23-repository-structure-concept.md](hub/2026-06-23-repository-structure-concept.md) | Дополнение к mango-исследованию (issue #263): видение фаундера как приоритетная база, 4 открытых вопроса, 3 противоречия, критический анализ рисков и концепция базовых/рекомендуемых/специфичных каталогов для 4 архетипов PR #243 (10+ международных проектов на архетип). |
+| [2026-06-25-artifact-inventory-and-classification.md](hub/2026-06-25-artifact-inventory-and-classification.md) | Инвентаризация артефактов обоих репозиториев экосистемы (`mango_ba_prompts` + Хаб, issue #265) и классификация по 4 осям (уровень L0–L4, 8 областей знаний, архетип, статус); разбор конфликта четырёх лестниц «L1–L4», наложение на 4 исследования, cleanup-кандидаты (рекомендации) и правила маршрутизации для AI-агентов. |
 
 ### Подкаталог `open-ai-ru/`
 
 | Файл | Назначение |
 | --- | --- |
-| [2026-06-open-ai-ru-repository-architecture-and-l3-l4.md](open-ai-ru/2026-06-open-ai-ru-repository-architecture-and-l3-l4.md) | Архитектура репозитория open-ai.ru и детализация уровней L3–L4 для issue #259: инвентаризация стандартов Хаба, аудит репо, сравнение с международными практиками (8 проектов, проверено через GitHub API), C4-диаграммы, ADR-формат и предложение структуры репо с trade-offs. |
+| [2026-06-20-open-ai-ru-repository-architecture-and-l3-l4.md](open-ai-ru/2026-06-20-open-ai-ru-repository-architecture-and-l3-l4.md) | Архитектура репозитория open-ai.ru и детализация уровней L3–L4 для issue #259: инвентаризация стандартов Хаба, аудит репо, сравнение с международными практиками (8 проектов, проверено через GitHub API), C4-диаграммы, ADR-формат и предложение структуры репо с trade-offs. |
 
 ### Подкаталог `reputation-technologies/`
 
 | Файл | Назначение |
 | --- | --- |
-| [2026-06-founders-vision-and-framework.ru.md](reputation-technologies/2026-06-founders-vision-and-framework.ru.md) | Основной отчёт (RU): видение фаундера, эволюция, репутация как система, роль ИИ, 15 международных проектов, фреймворк GRA, стандарт, отдельный репозиторий, roadmaps, trade-offs. |
-| [2026-06-framework-standard.en.md](reputation-technologies/2026-06-framework-standard.en.md) | Проект стандарта (EN) в формате ISO/IEC/IEEE 42010:2022 + ISO/IEC 42001:2023. |
-| [2026-06-white-paper.en.md](reputation-technologies/2026-06-white-paper.en.md) | White paper (EN, 10–15 c.) для международной аудитории. |
-| [2026-06-executive-summary.ru-en.md](reputation-technologies/2026-06-executive-summary.ru-en.md) | Executive summary (RU + EN, 2–3 c.). |
-| [2026-06-glossary.ru-en.md](reputation-technologies/2026-06-glossary.ru-en.md) | Терминологический словарь (RU↔EN) с международными аналогами. |
+| [2026-06-20-founders-vision-and-framework.ru.md](reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) | Основной отчёт (RU): видение фаундера, эволюция, репутация как система, роль ИИ, 15 международных проектов, фреймворк GRA, стандарт, отдельный репозиторий, roadmaps, trade-offs. |
+| [2026-06-20-framework-standard.en.md](reputation-technologies/2026-06-20-framework-standard.en.md) | Проект стандарта (EN) в формате ISO/IEC/IEEE 42010:2022 + ISO/IEC 42001:2023. |
+| [2026-06-20-white-paper.en.md](reputation-technologies/2026-06-20-white-paper.en.md) | White paper (EN, 10–15 c.) для международной аудитории. |
+| [2026-06-20-executive-summary.ru-en.md](reputation-technologies/2026-06-20-executive-summary.ru-en.md) | Executive summary (RU + EN, 2–3 c.). |
+| [2026-06-20-glossary.ru-en.md](reputation-technologies/2026-06-20-glossary.ru-en.md) | Терминологический словарь (RU↔EN) с международными аналогами. |
 
 ## Рекомендуемая структура
 
 ```text
 research/<domain>/
   README.md
-  YYYY-MM-topic.md
-  YYYY-MM-topic.ru.md
-  YYYY-MM-topic.en.md
+  YYYY-MM-DD-topic.md
+  YYYY-MM-DD-topic.ru.md
+  YYYY-MM-DD-topic.en.md
 ```
 
 Если issue явно требует только русский результат, допускается один `.md` файл.

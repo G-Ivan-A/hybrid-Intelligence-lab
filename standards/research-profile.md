@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-06-07
+version: 1.2
+updated: 2026-06-25
 temperature: 0.1
 ai-generated: false
 ---
@@ -45,7 +45,7 @@ Anti-Inflation principle).
 
 | Артефакт | Назначение | Где размещать | Пример/Шаблон |
 | --- | --- | --- | --- |
-| `YYYY-MM-topic.md` | Результат исследования (отчёт, обзор, анализ). | `research/<domain>/` | [Шаблон frontmatter исследования](#шаблон-frontmatter-исследования) |
+| `YYYY-MM-DD-topic.md` | Результат исследования (отчёт, обзор, анализ). | `research/<domain>/` | [Шаблон frontmatter исследования](#шаблон-frontmatter-исследования) |
 | `exp-<slug>/` | Воспроизводимый эксперимент внутри направления. | `research/<domain>/exp-<slug>/` | [Структура эксперимента](#структура-эксперимента) |
 | `README.md` | Навигация по направлению и его политики. | `research/<domain>/README.md` | [Пример README направления](#пример-readme-направления) |
 
@@ -57,10 +57,10 @@ Anti-Inflation principle).
 
 | Правило | Значение |
 | --- | --- |
-| Формат отчёта | `YYYY-MM-topic.md`, где `YYYY-MM` — год и месяц старта, `topic` — короткий `kebab-case` слаг на латинице. |
-| Пример | `2026-05-prompt-injection-defenses.md` |
+| Формат отчёта | `YYYY-MM-DD-topic.md`, где `YYYY-MM-DD` — точная дата создания или старта исследования, `topic` — короткий `kebab-case` слаг на латинице. |
+| Пример | `2026-05-28-prompt-injection-defenses.md` |
 | Эксперимент | каталог `exp-<slug>/` рядом с отчётами направления. |
-| Языковая пара | для внешней аудитории — `YYYY-MM-topic.ru.md` и `YYYY-MM-topic.en.md`; если issue требует только русский, допускается один `.md` с явной фиксацией исключения. |
+| Языковая пара | для внешней аудитории — `YYYY-MM-DD-topic.ru.md` и `YYYY-MM-DD-topic.en.md`; если issue требует только русский, допускается один `.md` с явной фиксацией исключения. |
 
 Хронологический префикс делает каталог направления отсортированным по времени и
 устойчивым к коллизиям имён; `kebab-case` слаг даёт стабильные ссылки и удобен
@@ -103,7 +103,7 @@ research/<domain>/exp-<slug>/
 
 ## Шаблон frontmatter исследования
 
-Каждый файл `YYYY-MM-topic.md` начинается с frontmatter:
+Каждый файл `YYYY-MM-DD-topic.md` начинается с frontmatter:
 
 ```yaml
 ---

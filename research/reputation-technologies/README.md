@@ -18,7 +18,7 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 (ограничение issue #260).
 
 Логическое продолжение раздела «репутационные технологии» из
-[../hub/2026-06-ecosystem-architecture-research.md](../hub/2026-06-ecosystem-architecture-research.md),
+[../hub/2026-06-20-ecosystem-architecture-research.md](../hub/2026-06-20-ecosystem-architecture-research.md),
 который зафиксировал отсутствие сырых данных по репутации; issue #260 их приложил, а этот домен —
 анализирует.
 
@@ -26,11 +26,11 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 
 | Документ | Назначение |
 | --- | --- |
-| [2026-06-founders-vision-and-framework.ru.md](2026-06-founders-vision-and-framework.ru.md) | **Основной отчёт (RU)**: видение фаундера (очищенное от образовательной обёртки), эволюция версий и решений команд Q/G, репутация как система, роль ИИ, 15 международных проектов (таблица, позиционирование, white space, коммерциализация, продвижение), фреймворк GRA (концепт-модель, архитектура, диаграммы, методологии), стандарт, архитектура отдельного репозитория, roadmaps, trade-offs. |
-| [2026-06-framework-standard.en.md](2026-06-framework-standard.en.md) | **Проект стандарта (EN)** в формате ISO/IEC/IEEE 42010:2022 + ISO/IEC 42001:2023: scope, нормативные ссылки, термины, наименование, концептуальная модель, нормативный чек-лист элементов, требования к ИИ, governance/этика, валидация (TOGAF ADM). |
-| [2026-06-white-paper.en.md](2026-06-white-paper.en.md) | **White paper (EN, 10–15 c.)** для международной аудитории: проблема, формализация видения, доказательства из 15 проектов, фреймворк, стандартизация, go-to-market, экосистема, roadmap. |
-| [2026-06-executive-summary.ru-en.md](2026-06-executive-summary.ru-en.md) | **Executive summary (RU + EN, 2–3 c.)**: суть, модель, выводы рынка, рекомендации, роль ИИ. |
-| [2026-06-glossary.ru-en.md](2026-06-glossary.ru-en.md) | **Терминологический словарь (RU↔EN)**: ядро модели, методология, капитал/метрики, данные/ИИ, governance/этика, наименования — с международными аналогами. |
+| [2026-06-20-founders-vision-and-framework.ru.md](2026-06-20-founders-vision-and-framework.ru.md) | **Основной отчёт (RU)**: видение фаундера (очищенное от образовательной обёртки), эволюция версий и решений команд Q/G, репутация как система, роль ИИ, 15 международных проектов (таблица, позиционирование, white space, коммерциализация, продвижение), фреймворк GRA (концепт-модель, архитектура, диаграммы, методологии), стандарт, архитектура отдельного репозитория, roadmaps, trade-offs. |
+| [2026-06-20-framework-standard.en.md](2026-06-20-framework-standard.en.md) | **Проект стандарта (EN)** в формате ISO/IEC/IEEE 42010:2022 + ISO/IEC 42001:2023: scope, нормативные ссылки, термины, наименование, концептуальная модель, нормативный чек-лист элементов, требования к ИИ, governance/этика, валидация (TOGAF ADM). |
+| [2026-06-20-white-paper.en.md](2026-06-20-white-paper.en.md) | **White paper (EN, 10–15 c.)** для международной аудитории: проблема, формализация видения, доказательства из 15 проектов, фреймворк, стандартизация, go-to-market, экосистема, roadmap. |
+| [2026-06-20-executive-summary.ru-en.md](2026-06-20-executive-summary.ru-en.md) | **Executive summary (RU + EN, 2–3 c.)**: суть, модель, выводы рынка, рекомендации, роль ИИ. |
+| [2026-06-20-glossary.ru-en.md](2026-06-20-glossary.ru-en.md) | **Терминологический словарь (RU↔EN)**: ядро модели, методология, капитал/метрики, данные/ИИ, governance/этика, наименования — с международными аналогами. |
 
 ## Карта Definition of Done (issue #260)
 
@@ -42,10 +42,10 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 | Роль ИИ (модель/управление/прогноз/автоматизация) | основной отчёт §V; стандарт §7 |
 | 10+ проектов: таблица, позиционирование, коммерциализация, продвижение | основной отчёт §VI–§VII |
 | Фреймворк (модель, архитектура, компоненты, методологии) | основной отчёт §VIII; диаграммы (mermaid) |
-| Стандарт (международный формат) | [framework-standard.en.md](2026-06-framework-standard.en.md) |
-| Словарь терминов (RU↔EN) | [glossary.ru-en.md](2026-06-glossary.ru-en.md) |
-| White paper (10–15 c.) | [white-paper.en.md](2026-06-white-paper.en.md) |
-| Executive summary (RU + EN) | [executive-summary.ru-en.md](2026-06-executive-summary.ru-en.md) |
+| Стандарт (международный формат) | [framework-standard.en.md](2026-06-20-framework-standard.en.md) |
+| Словарь терминов (RU↔EN) | [glossary.ru-en.md](2026-06-20-glossary.ru-en.md) |
+| White paper (10–15 c.) | [white-paper.en.md](2026-06-20-white-paper.en.md) |
+| Executive summary (RU + EN) | [executive-summary.ru-en.md](2026-06-20-executive-summary.ru-en.md) |
 | Roadmap стандартизации | основной отчёт §XI; standard §9 |
 | Архитектура отдельного репо + интеграция с экосистемой | основной отчёт §X |
 | Диаграммы (концепт-модель, архитектура, экосистема) | основной отчёт §III, §VIII, §X (mermaid) |

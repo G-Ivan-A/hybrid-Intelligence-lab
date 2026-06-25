@@ -23,7 +23,7 @@ ai-generated: true
 
 | Документ | Назначение |
 | --- | --- |
-| [2026-06-open-ai-ru-repository-architecture-and-l3-l4.md](2026-06-open-ai-ru-repository-architecture-and-l3-l4.md) | Комплексное исследование архитектуры репозитория open-ai.ru и детализация уровней L3–L4 на основе стандартов Хаба и международных практик (issue #259). |
+| [2026-06-20-open-ai-ru-repository-architecture-and-l3-l4.md](2026-06-20-open-ai-ru-repository-architecture-and-l3-l4.md) | Комплексное исследование архитектуры репозитория open-ai.ru и детализация уровней L3–L4 на основе стандартов Хаба и международных практик (issue #259). |
 
 ## Эксперименты
 
