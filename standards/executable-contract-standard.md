@@ -26,7 +26,7 @@ related_issues:
 команда к действию, а не заголовок.
 
 Обоснование, сравнение практик и источники:
-[research/governance/executable-contract-format-2026-06.md](../research/governance/executable-contract-format-2026-06.md).
+[research/governance/2026-06-executable-contract-format.md](../research/governance/2026-06-executable-contract-format.md).
 Кодифицирует утверждённое Пользователем «Видение 3» из
 [governance/rfc/contract-executability-rfc.md](../governance/rfc/contract-executability-rfc.md).
 
@@ -155,7 +155,7 @@ entrypoint: true        # только для точки входа
 
 ## Источники
 
-- [research/governance/executable-contract-format-2026-06.md](../research/governance/executable-contract-format-2026-06.md) — исследование-обоснование (system prompts, SRE runbooks, man SYNOPSIS, README Quick Start).
+- [research/governance/2026-06-executable-contract-format.md](../research/governance/2026-06-executable-contract-format.md) — исследование-обоснование (system prompts, SRE runbooks, man SYNOPSIS, README Quick Start).
 - [governance/rfc/contract-executability-rfc.md](../governance/rfc/contract-executability-rfc.md) — утверждённое «Видение 3» и трёхслойная защита.
 - [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md) — эталонный исполнимый документ.
 - [standards/glossary.md](glossary.md) — «Директивный блок», «Operating Mode», 🚦.

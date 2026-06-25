@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-06-12
+version: 1.4
+updated: 2026-06-25
 temperature: 0.1
 ---
 
@@ -16,7 +16,7 @@ temperature: 0.1
 | Стандарт | Статус | Где применяется | Источник |
 | --- | --- | --- | --- |
 | Единый глоссарий терминов | Active | Issues, standards, governance, AI-assisted work | [standards/glossary.md](glossary.md) |
-| `file-naming.md` | Active | Правило именования файлов, обязательно для всех новых файлов | [standards/file-naming.md](file-naming.md) |
+| File naming convention | Active | Правило именования файлов, включая date-first research/analysis/RFC/ADR артефакты | [standards/file-naming.md](file-naming.md), [standards/file-naming-convention.md](file-naming-convention.md) |
 | Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/education-profile.md](education-profile.md) |
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
@@ -48,7 +48,8 @@ temperature: 0.1
    существующим артефактам и их связям используйте
    [governance/artifact-map.md](../governance/artifact-map.md).
 2. Выберите имя файла или каталога по
-   [standards/file-naming.md](file-naming.md).
+   [standards/file-naming.md](file-naming.md); compatibility entry для
+   date-first правила — [standards/file-naming-convention.md](file-naming-convention.md).
 3. Проверьте терминологию по [standards/glossary.md](glossary.md), если
    документ вводит governance, lifecycle или AI-assisted work terms.
 4. Для образовательных материалов используйте

@@ -93,38 +93,38 @@ nav:
     - Обзор: research/README.md
     - Hub:
       - Обзор: research/hub/README.md
-      - Контекст и bootstrap-паттерны: research/hub/project-context-and-bootstrap-patterns-2026-05.md
-      - Аудит классификации промптов: research/hub/prompts-classification-audit-2026-05.md
-      - Стандарт классификации промптов: research/hub/prompts-classification-standard-2026-05.md
-      - Аудит governance-стратегии команды C: research/hub/team-c-governance-strategy-audit-2026-05.md
-      - Анализ пользовательских промптов: research/hub/user-prompts-analysis-2026-05.md
-      - Внешние governance-паттерны: research/hub/external-governance-patterns-review-2026-06.md
-      - Аудит governance ecosystem: research/hub/ecosystem-governance-audit-2026-06.md
-      - Архитектура экосистемы Hub/open-ai.ru/reputation: research/hub/ecosystem-architecture-research-2026-06.md
-      - Внешние практики agent work: research/hub/external-practice-intake-2026-06.md
-      - Международные AI governance practices: research/hub/international-ai-governance-practices-2026-06.md
-      - Концепция базовых каталогов для архетипов: research/hub/repository-structure-concept-2026-06.md
-      - Инвентаризация и классификация артефактов экосистемы: research/hub/artifact-inventory-and-classification-2026-06.md
-      - Ретроспектива AI-коллаборации: research/hub/ai-collaboration-retrospective-2026-06.md
-      - Ретроспектива миграции Mango: research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md
+      - Контекст и bootstrap-паттерны: research/hub/2026-05-project-context-and-bootstrap-patterns.md
+      - Аудит классификации промптов: research/hub/2026-05-prompts-classification-audit.md
+      - Стандарт классификации промптов: research/hub/2026-05-prompts-classification-standard.md
+      - Аудит governance-стратегии команды C: research/hub/2026-05-team-c-governance-strategy-audit.md
+      - Анализ пользовательских промптов: research/hub/2026-05-user-prompts-analysis.md
+      - Внешние governance-паттерны: research/hub/2026-06-external-governance-patterns-review.md
+      - Аудит governance ecosystem: research/hub/2026-06-ecosystem-governance-audit.md
+      - Архитектура экосистемы Hub/open-ai.ru/reputation: research/hub/2026-06-ecosystem-architecture-research.md
+      - Внешние практики agent work: research/hub/2026-06-external-practice-intake.md
+      - Международные AI governance practices: research/hub/2026-06-international-ai-governance-practices.md
+      - Концепция базовых каталогов для архетипов: research/hub/2026-06-repository-structure-concept.md
+      - Инвентаризация и классификация артефактов экосистемы: research/hub/2026-06-artifact-inventory-and-classification.md
+      - Ретроспектива AI-коллаборации: research/hub/2026-06-ai-collaboration-retrospective.md
+      - Ретроспектива миграции Mango: research/hub/2026-06-ai-collaboration-retrospective-mango-migration.md
     - Governance:
       - Обзор: research/governance/README.md
-      - Формат research-документации: research/governance/research-documentation-format-2026-06.md
-      - Формат исполнимых контрактов: research/governance/executable-contract-format-2026-06.md
-      - Формат документации контрактов: research/governance/contract-documentation-format-2026-06.md
-      - Решения по структуре каталогов: research/governance/governance-folder-structure-decisions-2026-06.md
+      - Формат research-документации: research/governance/2026-06-research-documentation-format.md
+      - Формат исполнимых контрактов: research/governance/2026-06-executable-contract-format.md
+      - Формат документации контрактов: research/governance/2026-06-contract-documentation-format.md
+      - Решения по структуре каталогов: research/governance/2026-06-governance-folder-structure-decisions.md
     - Mango:
       - Обзор: research/mango/README.md
-      - Классификация продуктов: research/mango/classification.md
-      - Классификация ТЗ: research/mango/classification-tz.md
-      - Flow требований: research/mango/requirements-flow.md
-      - Декомпозиция возможностей: research/mango/capability-decomposition-2026-05.md
-      - Дорожная карта RAG-маппинга: research/mango/rag-mapping-roadmap-2026-05.md
-      - Неопределённость жизненного цикла требований: research/mango/requirements-lifecycle-uncertainty-2026-05.md
-      - Концепция таксономии: research/mango/taxonomy-concept-2026-05.md
-      - Требования в AI-эру (Вигерс ↔ mango): research/mango/requirements-engineering-ai-era-2026.md
-      - Видение структуры репозитория: research/mango/repository-structure-vision-2026-06.md
-      - Оптимизация потребления токенов: research/mango/token-optimization-proposal-2026-06.md
+      - Классификация продуктов: research/mango/2026-05-classification.md
+      - Классификация ТЗ: research/mango/2026-05-classification-tz.md
+      - Flow требований: research/mango/2026-05-requirements-flow.md
+      - Декомпозиция возможностей: research/mango/2026-05-capability-decomposition.md
+      - Дорожная карта RAG-маппинга: research/mango/2026-05-rag-mapping-roadmap.md
+      - Неопределённость жизненного цикла требований: research/mango/2026-05-requirements-lifecycle-uncertainty.md
+      - Концепция таксономии: research/mango/2026-05-taxonomy-concept.md
+      - Требования в AI-эру (Вигерс ↔ mango): research/mango/2026-requirements-engineering-ai-era.md
+      - Видение структуры репозитория: research/mango/2026-06-repository-structure-vision.md
+      - Оптимизация потребления токенов: research/mango/2026-06-token-optimization-proposal.md
     - open-ai.ru:
       - Обзор: research/open-ai-ru/README.md
       - Архитектура репозитория и уровни L3-L4: research/open-ai-ru/2026-06-open-ai-ru-repository-architecture-and-l3-l4.md

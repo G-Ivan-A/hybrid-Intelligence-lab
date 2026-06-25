@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-06-13",
+  "last_updated": "2026-06-25",
   "templates": [
     {
       "id": "htom-issue-template-task-creative",
@@ -240,6 +240,43 @@
         "readme"
       ],
       "description": "README spoke-репозитория (production-продукт)."
+    },
+    {
+      "id": "spoke-docs-readme",
+      "path": "templates/spoke/docs/README.md",
+      "version": "0.1.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [
+        "docs",
+        "naming"
+      ],
+      "description": "Локальные правила для spoke docs: date-first имена analysis/RFC/ADR и список исключений."
+    },
+    {
+      "id": "spoke-validate-file-naming",
+      "path": "templates/spoke/tools/validate-file-naming.sh",
+      "version": "1.0.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "validation",
+        "tooling",
+        "docs"
+      ],
+      "description": "Валидатор date-first именования для spoke docs/analysis, docs/rfc и docs/adr."
     },
     {
       "id": "sync-project-with-hub-prompt",

@@ -67,11 +67,11 @@ context: [tag1, tag2]
 
 | Инсайт | Источник | Stage | Проекты |
 | --- | --- | --- | --- |
-| [building-effective-agents-2026-06.md](building-effective-agents-2026-06.md) | `ext-001` | `research` | `all` |
-| [12-factor-agents-2026-06.md](12-factor-agents-2026-06.md) | `ext-002` | `research` | `all` |
-| [spec-driven-development-2026-06.md](spec-driven-development-2026-06.md) | `ext-003` | `hypothesis` | `mango, clarify-engine-ai` |
-| [agent-local-memory-context-2026-06.md](agent-local-memory-context-2026-06.md) | `ext-009` | `research` | `all` |
-| [structured-prompt-driven-development-2026-06.md](structured-prompt-driven-development-2026-06.md) | `ext-011` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` |
+| [2026-06-building-effective-agents.md](2026-06-building-effective-agents.md) | `ext-001` | `research` | `all` |
+| [2026-06-12-factor-agents.md](2026-06-12-factor-agents.md) | `ext-002` | `research` | `all` |
+| [2026-06-spec-driven-development.md](2026-06-spec-driven-development.md) | `ext-003` | `hypothesis` | `mango, clarify-engine-ai` |
+| [2026-06-agent-local-memory-context.md](2026-06-agent-local-memory-context.md) | `ext-009` | `research` | `all` |
+| [2026-06-structured-prompt-driven-development.md](2026-06-structured-prompt-driven-development.md) | `ext-011` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` |
 
 ## Как добавить инсайт
 
