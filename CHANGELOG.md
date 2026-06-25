@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.11
-updated: 2026-06-18
+version: 1.12
+updated: 2026-06-25
 temperature: 0.1
 ---
 
@@ -12,6 +12,39 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- research: Artifact inventory and classification (mango_ba_prompts +
+  hybrid-Intelligence-lab) (issue #265). Added
+  `research/hub/artifact-inventory-and-classification-2026-06.md` — a full
+  artifact inventory of both ecosystem repositories (the Governance Hub and the
+  Prompt & Pattern Library spoke) classified on four orthogonal axes
+  (abstraction level L0–L4, eight knowledge areas, archetype A–D, lifecycle
+  status). It surfaces the ecosystem's central classification hazard — four
+  mutually incompatible "L1–L4" ladders — and proposes a single neutral routing
+  ladder (the L0+L4 extension is justified, not invented for novelty),
+  overlays the inventory on four prior studies (directory-structure concept,
+  artifact-chain hypothesis, approval-contract test, BCREQ-FR contract
+  analysis), lists cleanup candidates as recommendations only (no deletion), and
+  derives executable routing rules for AI agents (RT-01…RT-10). A research note,
+  not an RFC; decisions stay with the human. Registered in
+  `research/hub/README.md`, `research/README.md`, `governance/artifact-map.md`
+  and the MkDocs nav.
+- research: Инвентаризация и классификация артефактов (mango_ba_prompts +
+  hybrid-Intelligence-lab) (issue #265). Добавлен
+  `research/hub/artifact-inventory-and-classification-2026-06.md` — полная
+  инвентаризация артефактов обоих репозиториев экосистемы (Хаб governance и спок
+  Prompt & Pattern Library) с классификацией по четырём ортогональным осям
+  (уровень абстракции L0–L4, восемь областей знаний, архетип A–D, статус
+  жизненного цикла). Выявляет ключевой риск классификации экосистемы — четыре
+  несовместимые лестницы «L1–L4» — и предлагает единую нейтральную ось
+  маршрутизации (расширение L0+L4 с обоснованием), накладывает инвентарь на
+  четыре исследования (концепция структуры каталогов, гипотеза цепочки
+  артефактов, тест контракта согласования, анализ BCREQ-FR-контракта),
+  перечисляет cleanup-кандидаты только как рекомендации (без удаления) и выводит
+  исполнимые правила маршрутизации для AI-агентов (RT-01…RT-10). Это
+  research-заметка, а не RFC; решение остаётся за человеком. Зарегистрирован в
+  `research/hub/README.md`, `research/README.md`, `governance/artifact-map.md` и
+  навигации MkDocs.
 
 - research: Repository structure concept for project archetypes (issue #263).
   Added `research/hub/repository-structure-concept-2026-06.md` — an addendum
