@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.14
-updated: 2026-06-25
+version: 1.15
+updated: 2026-06-26
 temperature: 0.1
 ---
 
@@ -22,6 +22,40 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Follow-up study of the "Ecosystem Project Infrastructure
+  Architecture" Agreement (issue #274). Appended **Part II** (§14–§22) to
+  `research/hub/2026-06-23-repository-structure-concept.md` — a critical
+  `Research` extension in refutation-first mode. It records the Agreement in
+  structured form with its deltas vs the founder vision (§15), stress-tests every
+  section and delta against industry norms — 8 ✅ / 3 ⚠️ / 4 ❌ (§16), correlates
+  the IL-0..IL-3 executability levels with the industrial executability norm and
+  refutes "IL-1 = 100% YAML/JSON" via policy-as-code (Rego), SKOS taxonomies and
+  the repo's own Markdown contract format (§17), and proves IL is **orthogonal**
+  to the documentation axes of Diátaxis and DITA (§18). It locates and refutes the
+  task's deliberately planted incorrect statement — the claim that "Golden
+  Standard" is a valid ML/AI term (the industry terms are *gold standard* /
+  *ground truth*) — with secondary refutations (§19), opens boundary-case
+  hypotheses (§20) and reconciles with the founder vision (§21). Part I is not
+  rewritten (Anti-Inflation); the file version bumps to 0.2. Eight external
+  sources (`ext-067`..`ext-074`) are registered in the external-sources registry;
+  structural decisions remain with the founder via RFC → ADR.
+- research: До-исследование Соглашения «Архитектура инфраструктуры проектов
+  экосистемы» (issue #274). В
+  `research/hub/2026-06-23-repository-structure-concept.md` дописана **Часть II**
+  (§14–§22) — критическое расширение в режиме `Research` с приоритетом
+  опровержения. Соглашение зафиксировано структурированно с дельтами относительно
+  видения фаундера (§15); каждый раздел и дельта проверены по индустриальным
+  нормам — 8 ✅ / 3 ⚠️ / 4 ❌ (§16); уровни исполнимости IL-0..IL-3 соотнесены с
+  индустриальной нормой, тезис «IL-1 = 100 % YAML/JSON» опровергнут через
+  policy-as-code (Rego), таксономии SKOS и собственный Markdown-формат контрактов
+  репозитория (§17); доказано, что IL **ортогонален** осям документации Diátaxis
+  и DITA (§18). Обнаружена и опровергнута заложенная в задачу некорректная
+  постановка — тезис о валидности термина «Golden Standard» в ML/AI (корректно —
+  *gold standard* / *ground truth*) — со вторичными опровержениями (§19); открыты
+  гипотезы граничных кейсов (§20) и проведена реконсиляция с видением фаундера
+  (§21). Часть I не переписана (Anti-Inflation); версия файла повышена до 0.2.
+  Восемь внешних источников (`ext-067`..`ext-074`) зарегистрированы в реестре;
+  структурные решения остаются за фаундером через RFC → ADR.
 - research: Axes decomposition, executability routing, format rules (variants
   provided) (issue #269). Appended **Part II** (§16–§23) to
   `research/hub/2026-06-25-artifact-inventory-and-classification.md` — a critical

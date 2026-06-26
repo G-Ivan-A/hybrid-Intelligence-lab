@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.15
-updated: 2026-06-25
+version: 1.16
+updated: 2026-06-26
 temperature: 0.1
 ai-generated: false
 source: research/README-old.md
@@ -56,7 +56,7 @@ source: research/README-old.md
 | [2026-06-20-ecosystem-architecture-research.md](hub/2026-06-20-ecosystem-architecture-research.md) | Комплексное исследование архитектуры экосистемы для issue #257: Hub как центр 5+ проектов, token balance, L1-L4 для `open-ai.ru` и репутационные технологии. |
 | [2026-06-12-external-practice-intake.md](hub/2026-06-12-external-practice-intake.md) | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, выделение agent-work практик и Mango docs error pattern. |
 | [2026-06-12-international-ai-governance-practices.md](hub/2026-06-12-international-ai-governance-practices.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
-| [2026-06-23-repository-structure-concept.md](hub/2026-06-23-repository-structure-concept.md) | Дополнение к mango-исследованию (issue #263): видение фаундера как приоритетная база, 4 открытых вопроса, 3 противоречия, критический анализ рисков и концепция базовых/рекомендуемых/специфичных каталогов для 4 архетипов PR #243 (10+ международных проектов на архетип). |
+| [2026-06-23-repository-structure-concept.md](hub/2026-06-23-repository-structure-concept.md) | Дополнение к mango-исследованию (issue #263): видение фаундера как приоритетная база, 4 открытых вопроса, 3 противоречия, критический анализ рисков и концепция базовых/рекомендуемых/специфичных каталогов для 4 архетипов PR #243 (10+ международных проектов на архетип). **Часть II (§14–§22, issue #274):** до-исследование Соглашения «Архитектура инфраструктуры проектов экосистемы» — дельта-проверка по индустриальным нормам, соотнесение уровней IL, ортогональность осям документации, опровержение заложенной некорректной постановки. |
 | [2026-06-25-artifact-inventory-and-classification.md](hub/2026-06-25-artifact-inventory-and-classification.md) | Инвентаризация артефактов обоих репозиториев экосистемы (`mango_ba_prompts` + Хаб, issue #265) и классификация по 4 осям (уровень L0–L4, 8 областей знаний, архетип, статус); разбор конфликта четырёх лестниц «L1–L4», наложение на 4 исследования, cleanup-кандидаты (рекомендации) и правила маршрутизации для AI-агентов. |
 
 ### Подкаталог `open-ai-ru/`

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.7
-updated: 2026-06-20
+version: 0.8
+updated: 2026-06-26
 temperature: 0.1
 ai-generated: true
 type: external-analysis
@@ -22,6 +22,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/240"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/245"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/257"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/274"
 ---
 
 # Реестр внешних источников
@@ -134,6 +135,14 @@ related_issues:
 | `ext-064` | [X Community Notes — Note ranking algorithm](https://communitynotes.x.com/guide/en/under-the-hood/ranking-notes) | `docs` | `en` | `reputation-systems, collective-intelligence, ranking, disagreement-bridging` | `future-phase: reputation-engineering` | `observation` | `open-ai.ru` | ❌ |
 | `ext-065` | [OpenRank Documentation](https://docs.openrank.com/) | `docs` | `en` | `reputation-systems, decentralized-reputation, graph-ranking, eigentrust` | `future-phase: reputation-engineering` | `deprecated` | `open-ai.ru` | ❌ |
 | `ext-066` | [KuCoin — Decentralized Reputation Protocol OpenRank to Cease Operations](https://www.kucoin.com/news/flash/decentralized-reputation-protocol-openrank-to-cease-operations) | `blog` | `en` | `reputation-systems, postmortem, business-model, openrank` | `lesson: infrastructure-needs-workflow-anchor` | `observation` | `open-ai.ru` | ❌ |
+| `ext-067` | [Gold standard (test) — Wikipedia](https://en.wikipedia.org/wiki/Gold_standard_%28test%29) | `docs` | `en` | `terminology, gold-standard, evaluation, ground-truth` | `topic: terminology-precision` | `research` | `hub` | ❌ |
+| `ext-068` | [BMJ — The gold standard: not a golden standard](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC557893/) | `paper` | `en` | `terminology, gold-standard, misnomer, evaluation` | `topic: terminology-precision` | `research` | `hub` | ❌ |
+| `ext-069` | [Google ML Glossary — Ground truth](https://developers.google.com/machine-learning/glossary#ground-truth) | `docs` | `en` | `ml, ground-truth, labels, evaluation, terminology` | `topic: terminology-precision` | `observation` | `hub` | ❌ |
+| `ext-070` | [Open Policy Agent — Rego Policy Language](https://www.openpolicyagent.org/docs/latest/policy-language/) | `docs` | `en` | `policy-as-code, rego, rules, machine-validated, executability` | `topic: executability-levels` | `research` | `hub` | ❌ |
+| `ext-071` | [Gartner — AIOps (AI for IT Operations) Glossary](https://www.gartner.com/en/information-technology/glossary/aiops-artificial-intelligence-operations) | `docs` | `en` | `aiops, it-operations, naming-collision, terminology` | `topic: naming-collision` | `observation` | `hub` | ❌ |
+| `ext-072` | [OASIS — DITA 1.3 Overview](https://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part0-overview.html) | `standard` | `en` | `documentation, dita, information-types, concept-task-reference` | `topic: documentation-axes` | `research` | `hub` | ❌ |
+| `ext-073` | [W3C — SKOS Simple Knowledge Organization System Reference](https://www.w3.org/TR/skos-reference/) | `standard` | `en` | `taxonomies, skos, rdf, knowledge-organization, machine-readable` | `topic: executability-levels` | `research` | `hub` | ❌ |
+| `ext-074` | [AGENTS.md — open format for agent instructions](https://agents.md/) | `docs` | `en` | `agents, agent-instructions, conventions, ai-ops` | `topic: agent-rules-placement` | `observation` | `hub, mango, open-ai.ru, clarify-engine-ai` | ❌ |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
