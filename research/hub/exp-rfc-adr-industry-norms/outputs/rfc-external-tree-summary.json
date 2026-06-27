@@ -1,0 +1,1307 @@
+[
+  {
+    "repo": "rust-lang/rfcs",
+    "archetype": "A",
+    "label": "Rust RFCs",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/rust-lang/rfcs",
+    "description": "RFCs for changes to Rust",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 80,
+    "sample_paths": [
+      "0000-template.md",
+      "text/0168-mod.md",
+      "text/1191-hir.md",
+      "text/1211-mir.md",
+      "text/1317-ide.md",
+      "text/2094-nll.md",
+      "text/2349-pin.md",
+      "text/0132-ufcs.md",
+      "text/2386-used.md",
+      "text/3192-dyno.md",
+      "text/0135-where.md",
+      "text/0221-panic.md",
+      "text/1444-union.md",
+      "text/1961-clamp.md",
+      "text/3678-final.md",
+      "text/0048-traits.md",
+      "text/0050-assert.md",
+      "text/0160-if-let.md",
+      "text/1504-int128.md",
+      "text/1510-cdylib.md",
+      "text/1584-macros.md",
+      "text/1623-static.md",
+      "text/2052-epochs.md",
+      "text/2500-needle.md",
+      "text/3455-t-test.md"
+    ],
+    "sample_headings": {
+      "0000-template.md": [
+        "- Feature Name: (fill me in with a unique ident, `my_awesome_feature`)",
+        "- Start Date: (fill me in with today's date, YYYY-MM-DD)",
+        "- RFC PR: [rust-lang/rfcs#0000](https://github.com/rust-lang/rfcs/pull/0000)",
+        "- Rust Issue: [rust-lang/rust#0000](https://github.com/rust-lang/rust/issues/0000)"
+      ],
+      "text/0168-mod.md": [
+        "- Start Date: 2014-06-06",
+        "- RFC PR: [rust-lang/rfcs#168](https://github.com/rust-lang/rfcs/pull/168)",
+        "- Rust Issue: [rust-lang/rust#15722](https://github.com/rust-lang/rust/issues/15722)",
+        "- Author: Tommit (edited by nrc)"
+      ],
+      "text/1191-hir.md": [
+        "- Feature Name: N/A",
+        "- Start Date: 2015-07-06",
+        "- RFC PR: [rust-lang/rfcs#1191](https://github.com/rust-lang/rfcs/pull/1191)",
+        "- Rust Issue: N/A"
+      ],
+      "text/1211-mir.md": [
+        "- Feature Name: N/A",
+        "- Start Date: 2015-07-14",
+        "- RFC PR: [rust-lang/rfcs#1211](https://github.com/rust-lang/rfcs/pull/1211)",
+        "- Rust Issue: [rust-lang/rust#27840](https://github.com/rust-lang/rust/issues/27840)"
+      ],
+      "text/1317-ide.md": [
+        "- Feature Name: n/a",
+        "- Start Date: 2015-10-13",
+        "- RFC PR: [rust-lang/rfcs#1317](https://github.com/rust-lang/rfcs/pull/1317)",
+        "- Rust Issue: [rust-lang/rust#31548](https://github.com/rust-lang/rust/issues/31548)"
+      ]
+    }
+  },
+  {
+    "repo": "kubernetes/enhancements",
+    "archetype": "A",
+    "label": "Kubernetes KEPs",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/kubernetes/enhancements",
+    "description": "Enhancements tracking repo for Kubernetes",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 80,
+    "sample_paths": [
+      "keps/OWNERS",
+      "keps/README.md",
+      "keps/sig-ui/OWNERS",
+      "keps/sig-cli/FAQ.md",
+      "keps/sig-cli/OWNERS",
+      "keps/sig-apps/OWNERS",
+      "keps/sig-auth/OWNERS",
+      "keps/sig-etcd/OWNERS",
+      "keps/sig-node/OWNERS",
+      "pkg/proposal/create.go",
+      "keps/sig-network/OWNERS",
+      "keps/sig-release/OWNERS",
+      "keps/sig-storage/OWNERS",
+      "keps/sig-testing/OWNERS",
+      "keps/sig-windows/OWNERS",
+      "pkg/proposal/options.go",
+      "pkg/proposal/promote.go",
+      "keps/provider-aws/OWNERS",
+      "keps/sig-security/OWNERS",
+      "keps/prod-readiness/OWNERS",
+      "keps/sig-scheduling/OWNERS",
+      "keps/sig-autoscaling/OWNERS",
+      "keps/sig-architecture/OWNERS",
+      "keps/sig-multicluster/OWNERS",
+      "keps/prod-readiness/README.md"
+    ],
+    "sample_headings": {
+      "keps/README.md": [
+        "# Kubernetes Enhancement Proposals (KEPs)"
+      ],
+      "keps/sig-cli/FAQ.md": [
+        "# SIG CLI KEP FAQ"
+      ]
+    }
+  },
+  {
+    "repo": "open-telemetry/oteps",
+    "archetype": "A",
+    "label": "OpenTelemetry OTEPs",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/open-telemetry/oteps",
+    "description": "OpenTelemetry Enhancement Proposals",
+    "archived": true,
+    "tree_truncated": false,
+    "match_count_capped": 69,
+    "sample_paths": [
+      "0000-template.md",
+      "text/0110-z-pages.md",
+      "text/0083-component.md",
+      "text/0099-otlp-http.md",
+      "text/0005-global-init.md",
+      "text/0265-event-vision.md",
+      "text/0016-named-tracers.md",
+      "text/0225-configuration.md",
+      "text/0122-otlp-http-json.md",
+      "text/trace/0006-sampling.md",
+      "text/0155-external-modules.md",
+      "text/0201-scope-attributes.md",
+      "text/0232-maturity-of-otel.md",
+      "text/logs/0092-logs-vision.md",
+      "text/0152-telemetry-schemas.md",
+      "text/0156-columnar-encoding.md",
+      "text/metrics/0113-exemplars.md",
+      "text/0147-upgrade-procedures.md",
+      "text/0182-otlp-remote-parent.md",
+      "text/0266-move-oteps-to-spec.md",
+      "text/0202-events-and-logs-api.md",
+      "text/logs/0097-log-data-model.md",
+      "text/logs/0091-logs-vocabulary.md",
+      "text/trace/0136-error_flagging.md",
+      "text/0149-exponential-histogram.md"
+    ],
+    "sample_headings": {
+      "0000-template.md": [
+        "# Replace this with your awesome OTEP title"
+      ],
+      "text/0110-z-pages.md": [
+        "# zPages: general direction (#110)"
+      ],
+      "text/0083-component.md": [
+        "# InstrumentationLibrary"
+      ],
+      "text/0099-otlp-http.md": [
+        "# OTLP/HTTP: HTTP Transport Extension for OTLP"
+      ],
+      "text/0005-global-init.md": [
+        "# Global SDK initialization"
+      ]
+    }
+  },
+  {
+    "repo": "cncf/toc",
+    "archetype": "A",
+    "label": "CNCF TOC proposals",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/cncf/toc",
+    "description": "⚖️ The CNCF Technical Oversight Committee (TOC) is the technical governing body of the CNCF Foundation.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 80,
+    "sample_paths": [
+      "governance/tag-governance.md",
+      "projects/bfe/2022-Bfe-anual.md",
+      "projects/bfe/2021-BFE-annual.md",
+      "projects/dex/2021-dex-annual.md",
+      "projects/dex/2023-dex-annual.md",
+      "projects/k3s/2021-k3s-annual.md",
+      "projects/k3s/2022-k3s-annual.md",
+      "projects/akri/2022-akri-annual.md",
+      "projects/flux/2020-flux-annual.md",
+      "projects/k8gb/2022-k8gb-annual.md",
+      "projects/k8gb/2023-k8gb-annual.md",
+      "projects/k8up/2022-k8up-annual.md",
+      "projects/keda/2021-KEDA-annual.md",
+      "projects/kuma/2021-kuma-annual.md",
+      "projects/kuma/2022-kuma-annual.md",
+      "projects/oras/2022-oras-annual.md",
+      "projects/cdk8s/2022-cdk8s-annual.md",
+      "projects/curve/2023-Curve-annual.md",
+      "projects/fluid/2022-fluid-annual.md",
+      "projects/keptn/2021-keptn-annual.md",
+      "projects/pixie/2022-pixie-annual.md",
+      "projects/antrea/2022-Antrea-annual.md",
+      "projects/antrea/2023-antrea-annual.md",
+      "projects/athenz/2022-Athenz-annual.md",
+      "projects/athenz/2023-Athenz-annual.md"
+    ],
+    "sample_headings": {
+      "governance/tag-governance.md": [
+        "# CNCF Technical Group Governance"
+      ],
+      "projects/bfe/2022-Bfe-anual.md": [
+        "# BFE 2022 Annual Review"
+      ],
+      "projects/bfe/2021-BFE-annual.md": [
+        "# 2021 BFE Annual Review"
+      ],
+      "projects/dex/2021-dex-annual.md": [
+        "# Dex 2021 Annual Review"
+      ],
+      "projects/dex/2023-dex-annual.md": [
+        "# Dex 2023 Annual Review"
+      ]
+    }
+  },
+  {
+    "repo": "nodejs/TSC",
+    "archetype": "A",
+    "label": "Node.js TSC proposals/governance",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/nodejs/TSC",
+    "description": "The Node.js Technical Steering Committee",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 80,
+    "sample_paths": [
+      "meetings/2015-05-27.md",
+      "meetings/2015-06-03.md",
+      "meetings/2015-06-10.md",
+      "meetings/2015-06-17.md",
+      "meetings/2015-07-01.md",
+      "meetings/2015-07-08.md",
+      "meetings/2015-07-15.md",
+      "meetings/2015-07-22.md",
+      "meetings/2015-07-29.md",
+      "meetings/2015-08-12.md",
+      "meetings/2015-08-19.md",
+      "meetings/2015-08-26.md",
+      "meetings/2015-09-02.md",
+      "meetings/2015-09-16.md",
+      "meetings/2015-09-30.md",
+      "meetings/2015-10-07.md",
+      "meetings/2015-10-14.md",
+      "meetings/2015-10-21.md",
+      "meetings/2015-12-03.md",
+      "meetings/2016-01-07.md",
+      "meetings/2016-01-14.md",
+      "meetings/2016-01-21.md",
+      "meetings/2016-01-28.md",
+      "meetings/2016-02-04.md",
+      "meetings/2016-02-11.md"
+    ],
+    "sample_headings": {
+      "meetings/2015-05-27.md": [
+        "# Node Foundation TSC Meeting 2015-05-27"
+      ],
+      "meetings/2015-06-03.md": [
+        "# Node.js Foundation TSC Meeting 2015-06-03"
+      ],
+      "meetings/2015-06-10.md": [
+        "# Node Foundation TSC Meeting 2015-06-10"
+      ],
+      "meetings/2015-06-17.md": [
+        "# Node Foundation TSC Meeting 2015-06-17"
+      ],
+      "meetings/2015-07-01.md": [
+        "# Node Foundation TSC Meeting 2015-07-01"
+      ]
+    }
+  },
+  {
+    "repo": "python/peps",
+    "archetype": "A",
+    "label": "Python PEPs",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/python/peps",
+    "description": "Python Enhancement Proposals",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 80,
+    "sample_paths": [
+      "peps/conf.py",
+      "peps/contents.rst",
+      "peps/pep-0001.rst",
+      "peps/pep-0002.rst",
+      "peps/pep-0003.rst",
+      "peps/pep-0004.rst",
+      "peps/pep-0005.rst",
+      "peps/pep-0006.rst",
+      "peps/pep-0007.rst",
+      "peps/pep-0008.rst",
+      "peps/pep-0009.rst",
+      "peps/pep-0010.rst",
+      "peps/pep-0011.rst",
+      "peps/pep-0012.rst",
+      "peps/pep-0013.rst",
+      "peps/pep-0020.rst",
+      "peps/pep-0042.rst",
+      "peps/pep-0100.rst",
+      "peps/pep-0101.rst",
+      "peps/pep-0102.rst",
+      "peps/pep-0103.rst",
+      "peps/pep-0160.rst",
+      "peps/pep-0200.rst",
+      "peps/pep-0201.rst",
+      "peps/pep-0202.rst"
+    ],
+    "sample_headings": {
+      "peps/contents.rst": [
+        ".. This file is placed in the public domain or under the",
+        "CC0-1.0-Universal license, whichever is more permissive.",
+        "Python Enhancement Proposals (PEPs)",
+        "***********************************"
+      ],
+      "peps/pep-0001.rst": [
+        "Status: Active"
+      ],
+      "peps/pep-0002.rst": [
+        "Status: Active"
+      ],
+      "peps/pep-0003.rst": [
+        "Status: Withdrawn"
+      ]
+    }
+  },
+  {
+    "repo": "golang/proposal",
+    "archetype": "A",
+    "label": "Go proposals",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/golang/proposal",
+    "description": "Go Project Design Documents",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 80,
+    "sample_paths": [
+      "design/30411-env.md",
+      "design/55022-pgo.md",
+      "design/25530-sumdb.md",
+      "design/25530-notary.md",
+      "design/4238-go12nil.md",
+      "design/40307-fuzzing.md",
+      "design/43810-go-pmem.md",
+      "design/56986-godebug.md",
+      "design/60078-loopvar.md",
+      "design/12166-subtests.md",
+      "design/15292-generics.md",
+      "design/51082-godocfmt.md",
+      "design/12914-monotonic.md",
+      "design/45713-workspace.md",
+      "design/6282-table-data.md",
+      "design/18130-type-alias.md",
+      "design/19480-xml-stream.md",
+      "design/25719-go15vendor.md",
+      "design/40276-go-install.md",
+      "design/42372-wasmexport.md",
+      "design/13504-natural-xml.md",
+      "design/15292/2011-03-gen.md",
+      "design/15292/2013-10-gen.md",
+      "design/16339-alias-decls.md",
+      "design/16410-heap-viewer.md"
+    ],
+    "sample_headings": {
+      "design/30411-env.md": [
+        "# Proposal: `go` command configuration file"
+      ],
+      "design/55022-pgo.md": [
+        "# Proposal: profile-guided optimization"
+      ],
+      "design/25530-sumdb.md": [
+        "# Proposal: Secure the Public Go Module Ecosystem"
+      ],
+      "design/25530-notary.md": [
+        "Moved to [golang.org/design/25530-sumdb](https://golang.org/design/25530-sumdb)."
+      ],
+      "design/4238-go12nil.md": [
+        "# Go 1.2 Field Selectors and Nil Checks"
+      ]
+    }
+  },
+  {
+    "repo": "tc39/proposals",
+    "archetype": "A",
+    "label": "TC39 proposals",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/tc39/proposals",
+    "description": "Tracking ECMAScript Proposals",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "WICG/proposals",
+    "archetype": "A",
+    "label": "WICG proposals",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/WICG/proposals",
+    "description": "A home for well-formed proposed incubations for the web platform. All proposals welcome.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 2,
+    "sample_paths": [
+      ".github/ISSUE_TEMPLATE/proposal-with-explainer.md",
+      ".github/ISSUE_TEMPLATE/proposal-without-explainer.md"
+    ],
+    "sample_headings": {
+      ".github/ISSUE_TEMPLATE/proposal-with-explainer.md": [
+        "---",
+        "name: New Proposal With an Explainer",
+        "about: If you've got a new idea and created an Explainer elsewhere, use this template",
+        "title: 'PROPOSAL NAME'"
+      ],
+      ".github/ISSUE_TEMPLATE/proposal-without-explainer.md": [
+        "---",
+        "name: New Proposal Without an Explainer",
+        "about: If you've got a new idea, but have not created an Explainer elsewhere, use this template",
+        "title: 'PROPOSAL NAME'"
+      ]
+    }
+  },
+  {
+    "repo": "ethereum/EIPs",
+    "archetype": "A",
+    "label": "Ethereum EIPs",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/ethereum/EIPs",
+    "description": "The Ethereum Improvement Proposal repository",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 80,
+    "sample_paths": [
+      "EIPS/eip-1.md",
+      "EIPS/eip-2.md",
+      "EIPS/eip-3.md",
+      "EIPS/eip-4.md",
+      "EIPS/eip-5.md",
+      "EIPS/eip-6.md",
+      "EIPS/eip-7.md",
+      "EIPS/eip-8.md",
+      "EIPS/eip-20.md",
+      "EIPS/eip-55.md",
+      "EIPS/eip-67.md",
+      "EIPS/eip-86.md",
+      "eip-template.md",
+      "EIPS/eip-100.md",
+      "EIPS/eip-101.md",
+      "EIPS/eip-107.md",
+      "EIPS/eip-137.md",
+      "EIPS/eip-140.md",
+      "EIPS/eip-141.md",
+      "EIPS/eip-145.md",
+      "EIPS/eip-150.md",
+      "EIPS/eip-152.md",
+      "EIPS/eip-155.md",
+      "EIPS/eip-158.md",
+      "EIPS/eip-160.md"
+    ],
+    "sample_headings": {
+      "EIPS/eip-1.md": [
+        "status: Living"
+      ],
+      "EIPS/eip-2.md": [
+        "status: Final",
+        "# Specification",
+        "# Rationale",
+        "# Implementation"
+      ],
+      "EIPS/eip-3.md": [
+        "status: Withdrawn",
+        "# Abstract",
+        "# Motivation",
+        "# Specification",
+        "# Rationale",
+        "# Implementation"
+      ],
+      "EIPS/eip-4.md": [
+        "status: Final",
+        "# Abstract",
+        "# Motivation",
+        "# Specification",
+        "# 1. Consensus Layer",
+        "# 2. Networking Layer",
+        "# 3. API/RPC Layer",
+        "# 4. Applications Layer"
+      ],
+      "EIPS/eip-5.md": [
+        "status: Final"
+      ]
+    }
+  },
+  {
+    "repo": "bitcoin/bips",
+    "archetype": "A",
+    "label": "Bitcoin BIPs",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/bitcoin/bips",
+    "description": "Bitcoin Improvement Proposals",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 26,
+    "sample_paths": [
+      "bip-0003.md",
+      "bip-0054.md",
+      "bip-0077.md",
+      "bip-0095.md",
+      "bip-0346.md",
+      "bip-0348.md",
+      "bip-0349.md",
+      "bip-0379.md",
+      "bip-0434.md",
+      "bip-0442.md",
+      "bip-0446.md",
+      "bip-0448.md",
+      "bip-0449.md",
+      "bip-0451.md",
+      "bip-0375/README.md",
+      "bip-0446/README.md",
+      "bip-0324/message_type_ids.md",
+      "bip-0039/bip-0039-wordlists.md",
+      "bip-0054/test_vectors/README.md",
+      "bip-0352/secp256k1lab/README.md",
+      "bip-0374/secp256k1lab/README.md",
+      "bip-0360/ref-impl/rust/README.md",
+      "bip-0352/secp256k1lab/CHANGELOG.md",
+      "bip-0374/secp256k1lab/CHANGELOG.md",
+      "bip-0375/deps/secp256k1lab/README.md"
+    ],
+    "sample_headings": {
+      "bip-0003.md": [
+        "```",
+        "BIP: 3",
+        "Title: Updated BIP Process",
+        "Authors: Murch <murch@murch.one>"
+      ],
+      "bip-0054.md": [
+        "```",
+        "BIP: 54",
+        "Layer: Consensus (soft fork)",
+        "Title: Consensus Cleanup"
+      ],
+      "bip-0077.md": [
+        "```",
+        "BIP: 77",
+        "Layer: Applications",
+        "Title: Async Payjoin"
+      ],
+      "bip-0095.md": [
+        "```",
+        "BIP: 95",
+        "Layer: Applications",
+        "Title: Testnet 5"
+      ],
+      "bip-0346.md": [
+        "# Abstract",
+        "# Specification"
+      ]
+    }
+  },
+  {
+    "repo": "whatwg/html",
+    "archetype": "A",
+    "label": "WHATWG HTML governance/spec",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/whatwg/html",
+    "description": "HTML Standard",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "langchain-ai/langchain",
+    "archetype": "B",
+    "label": "LangChain",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/langchain-ai/langchain",
+    "description": "The agent engineering platform.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "langchain-ai/langgraph",
+    "archetype": "B",
+    "label": "LangGraph",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/langchain-ai/langgraph",
+    "description": "Build resilient agents.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "microsoft/promptflow",
+    "archetype": "B",
+    "label": "Microsoft Promptflow",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/microsoft/promptflow",
+    "description": "Build high-quality LLM apps - from prototyping, testing to production deployment and monitoring.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "promptfoo/promptfoo",
+    "archetype": "B",
+    "label": "Promptfoo",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/promptfoo/promptfoo",
+    "description": "Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare performance of GPT, Claude, Gemini, DeepSeek, and more. Simple declarative configs with command line and CI/CD integration.  Used by OpenAI and Anthropic.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 3,
+    "sample_paths": [
+      "site/blog/2025-summer-new-redteam-agent.md",
+      "docs/plans/2026-05-02-multi-package-system-proposal.md",
+      "docs/plans/2026-01-08-plugins-state-management-refactor.md"
+    ],
+    "sample_headings": {
+      "site/blog/2025-summer-new-redteam-agent.md": [
+        "# The Next Generation of Red Teaming for LLM Agents"
+      ],
+      "docs/plans/2026-05-02-multi-package-system-proposal.md": [
+        "# Proposal: A Layered Package System for Promptfoo"
+      ],
+      "docs/plans/2026-01-08-plugins-state-management-refactor.md": [
+        "# Plugins State Management Refactor Implementation Plan"
+      ]
+    }
+  },
+  {
+    "repo": "guidance-ai/guidance",
+    "archetype": "B",
+    "label": "Guidance",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/guidance-ai/guidance",
+    "description": "A guidance language for controlling large language models.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "openai/openai-cookbook",
+    "archetype": "B",
+    "label": "OpenAI Cookbook",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/openai/openai-cookbook",
+    "description": "Examples and guides for using the OpenAI API",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "anthropics/claude-cookbooks",
+    "archetype": "B",
+    "label": "Anthropic Claude Cookbooks",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/anthropics/claude-cookbooks",
+    "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "microsoft/generative-ai-for-beginners",
+    "archetype": "B",
+    "label": "Generative AI for Beginners",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/microsoft/generative-ai-for-beginners",
+    "description": "21 Lessons, Get Started Building with Generative AI ",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "deepset-ai/haystack",
+    "archetype": "B",
+    "label": "Haystack",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/deepset-ai/haystack",
+    "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "run-llama/llama_index",
+    "archetype": "B",
+    "label": "LlamaIndex",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/run-llama/llama_index",
+    "description": "LlamaIndex is the leading document agent and OCR platform",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "crewAIInc/crewAI",
+    "archetype": "B",
+    "label": "CrewAI",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/crewAIInc/crewAI",
+    "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "stanfordnlp/dspy",
+    "archetype": "B",
+    "label": "DSPy",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/stanfordnlp/dspy",
+    "description": "DSPy: The framework for programming—not prompting—language models",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "supabase/supabase",
+    "archetype": "C",
+    "label": "Supabase",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/supabase/supabase",
+    "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "calcom/cal.com",
+    "archetype": "C",
+    "label": "Cal.com",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/calcom/cal.diy",
+    "description": "Scheduling infrastructure for absolutely everyone.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "directus/directus",
+    "archetype": "C",
+    "label": "Directus",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/directus/directus",
+    "description": "The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "strapi/strapi",
+    "archetype": "C",
+    "label": "Strapi",
+    "lens": "rfc",
+    "default_branch": "develop",
+    "html_url": "https://github.com/strapi/strapi",
+    "description": "🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 4,
+    "sample_paths": [
+      "docs/docs/rfcs/example.md",
+      "docs/docs/rfcs/00-intro.md",
+      "docs/docs/rfcs/01-custom-fields.md",
+      "docs/docs/rfcs/02-publication-filter-query-modes.md"
+    ],
+    "sample_headings": {
+      "docs/docs/rfcs/example.md": [
+        "# RFC Example Doc"
+      ],
+      "docs/docs/rfcs/00-intro.md": [
+        "---",
+        "title: Introduction",
+        "---",
+        "This section of the contributor docs is a collection of public facing RFCs."
+      ],
+      "docs/docs/rfcs/01-custom-fields.md": [
+        "# Custom fields"
+      ],
+      "docs/docs/rfcs/02-publication-filter-query-modes.md": [
+        "# Publication filter query modes"
+      ]
+    }
+  },
+  {
+    "repo": "grafana/grafana",
+    "archetype": "C",
+    "label": "Grafana",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/grafana/grafana",
+    "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "n8n-io/n8n",
+    "archetype": "C",
+    "label": "n8n",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/n8n-io/n8n",
+    "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "mattermost/mattermost",
+    "archetype": "C",
+    "label": "Mattermost",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/mattermost/mattermost",
+    "description": "Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "hashicorp/terraform",
+    "archetype": "C",
+    "label": "Terraform",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/hashicorp/terraform",
+    "description": "Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "backstage/backstage",
+    "archetype": "C",
+    "label": "Backstage",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/backstage/backstage",
+    "description": "Backstage is an open framework for building developer portals",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 43,
+    "sample_paths": [
+      "beps/0013-backstage-ai/README.md",
+      "beps/0011-event-auditor/README.md",
+      "beps/0009-plugin-metadata/README.md",
+      "beps/0012-metrics-service/README.md",
+      "beps/0014-connection-service/README.md",
+      "beps/0001-notifications-system/README.md",
+      "docs/golden-path/deployment/001-docker.md",
+      "beps/0007-auth-external-services/README.md",
+      "docs/golden-path/deployment/007-scaling.md",
+      "beps/0005-split-backend-discovery/README.md",
+      "docs/golden-path/deployment/002-database.md",
+      "beps/0002-dynamic-frontend-plugins/README.md",
+      "docs/golden-path/deployment/004-deploying.md",
+      "docs/golden-path/adoption/008-full-catalog.md",
+      "docs/golden-path/deployment/006-monitoring.md",
+      "beps/0006-scaffolder-action-rollback/README.md",
+      "beps/0003-auth-architecture-evolution/README.md",
+      "beps/0004-scaffolder-task-idempotency/README.md",
+      "docs/golden-path/deployment/005-config-first.md",
+      "docs/golden-path/plugins/backend/005-testing.md",
+      "docs/golden-path/adoption/001-getting-started.md",
+      "docs/golden-path/plugins/frontend/005-testing.md",
+      "docs/golden-path/adoption/003-setting-up-a-poc.md",
+      "docs/golden-path/adoption/006-preparing-for-ga.md",
+      "docs/golden-path/adoption/007-plugin-ownership.md"
+    ],
+    "sample_headings": {
+      "beps/0013-backstage-ai/README.md": [
+        "status: implementable",
+        "# BEP: AI skills for Backstage development"
+      ],
+      "beps/0011-event-auditor/README.md": [
+        "status: provisional",
+        "# BEP: Event Auditor"
+      ],
+      "beps/0009-plugin-metadata/README.md": [
+        "status: implemented",
+        "# BEP: Plugin Metadata"
+      ],
+      "beps/0012-metrics-service/README.md": [
+        "status: implementable",
+        "# Examples",
+        "# Examples"
+      ],
+      "beps/0014-connection-service/README.md": [
+        "status: implementable",
+        "# BEP: Connection Service"
+      ]
+    }
+  },
+  {
+    "repo": "elastic/kibana",
+    "archetype": "C",
+    "label": "Kibana",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/elastic/kibana",
+    "description": "Your window into all of your data",
+    "archived": false,
+    "tree_truncated": true,
+    "match_count_capped": 31,
+    "sample_paths": [
+      "legacy_rfcs/0000_template.md",
+      "legacy_rfcs/text/0008_pulse.md",
+      "legacy_rfcs/text/0015_bazel.md",
+      "legacy_rfcs/text/0018_buildkite.md",
+      "legacy_rfcs/text/0016_ols_phase_1.md",
+      "legacy_rfcs/text/0017_url_service.md",
+      "legacy_rfcs/text/0005_route_handler.md",
+      "legacy_rfcs/text/0011_global_search.md",
+      "legacy_rfcs/text/0010_service_status.md",
+      "legacy_rfcs/text/0001_lifecycle_setup.md",
+      "legacy_rfcs/text/0013_search_sessions.md",
+      "legacy_rfcs/text/0003_handler_interface.md",
+      "legacy_rfcs/text/0014_api_documentation.md",
+      "legacy_rfcs/text/0019_lifecycle_preboot.md",
+      "legacy_rfcs/text/0020_nodejs_clustering.md",
+      "legacy_rfcs/text/0007_lifecycle_unblocked.md",
+      "legacy_rfcs/text/0011_reporting_as_an_api.md",
+      "legacy_rfcs/text/0002_encrypted_attributes.md",
+      "legacy_rfcs/text/0009_screenshot_mode_service.md",
+      "legacy_rfcs/text/0012_encryption_key_rotation.md",
+      "legacy_rfcs/text/0013_saved_object_migrations.md",
+      "legacy_rfcs/text/0006_management_section_service.md",
+      "legacy_rfcs/text/0004_application_service_mounting.md",
+      "src/platform/plugins/shared/workflows_execution_engine/docs/rfc_step_memory_limits.md",
+      "src/platform/plugins/shared/embeddable/common/bwc/enhancements/dynamic_actions/types.ts"
+    ],
+    "sample_headings": {
+      "legacy_rfcs/0000_template.md": [
+        "# Executive Summary",
+        "# Who is affected and how",
+        "# Detailed design",
+        "# Risks",
+        "# Alternatives",
+        "# Adoption strategy",
+        "# How this scales",
+        "# How we teach this",
+        "# Unresolved questions"
+      ],
+      "legacy_rfcs/text/0008_pulse.md": [
+        "# Table of contents",
+        "# Summary",
+        "# Basic example",
+        "# Motivation",
+        "# Detailed design"
+      ],
+      "legacy_rfcs/text/0015_bazel.md": [
+        "# Summary",
+        "# What is Bazel",
+        "# Motivation",
+        "# Detailed design"
+      ],
+      "legacy_rfcs/text/0018_buildkite.md": [
+        "# Summary",
+        "# Motivation"
+      ],
+      "legacy_rfcs/text/0016_ols_phase_1.md": [
+        "# 1. Summary",
+        "# 2. Motivation",
+        "# 3. Detailed design"
+      ]
+    }
+  },
+  {
+    "repo": "home-assistant/core",
+    "archetype": "C",
+    "label": "Home Assistant Core",
+    "lens": "rfc",
+    "default_branch": "dev",
+    "html_url": "https://github.com/home-assistant/core",
+    "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "penpot/penpot",
+    "archetype": "C",
+    "label": "Penpot",
+    "lens": "rfc",
+    "default_branch": "develop",
+    "html_url": "https://github.com/penpot/penpot",
+    "description": "Penpot: The open-source design tool for design and code collaboration",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "freeCodeCamp/freeCodeCamp",
+    "archetype": "D",
+    "label": "freeCodeCamp",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/freeCodeCamp/freeCodeCamp",
+    "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "mdn/content",
+    "archetype": "D",
+    "label": "MDN Content",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/mdn/content",
+    "description": "The official source for MDN Web Docs content. Home to over 14,000 pages of documentation about HTML, CSS, JS, HTTP, Web APIs, and more.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "TheAlgorithms/Python",
+    "archetype": "D",
+    "label": "The Algorithms Python",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/TheAlgorithms/Python",
+    "description": "All Algorithms implemented in Python",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "ossu/computer-science",
+    "archetype": "D",
+    "label": "OSSU Computer Science",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/ossu/computer-science",
+    "description": "🎓 Path to a free self-taught education in Computer Science!",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "codecrafters-io/build-your-own-x",
+    "archetype": "D",
+    "label": "Build Your Own X",
+    "lens": "rfc",
+    "default_branch": "master",
+    "html_url": "https://github.com/codecrafters-io/build-your-own-x",
+    "description": "Master programming by recreating your favorite technologies from scratch.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "exercism/v3",
+    "archetype": "D",
+    "label": "Exercism v3",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/exercism/v3",
+    "description": "The work-in-progress project for developing v3 tracks",
+    "archived": true,
+    "tree_truncated": false,
+    "match_count_capped": 1,
+    "sample_paths": [
+      "languages/python/reference/concepts/pep_8_style_guide.md"
+    ],
+    "sample_headings": {
+      "languages/python/reference/concepts/pep_8_style_guide.md": [
+        "# PEP 8 Style"
+      ]
+    }
+  },
+  {
+    "repo": "kubernetes/website",
+    "archetype": "D",
+    "label": "Kubernetes Website",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/kubernetes/website",
+    "description": "Kubernetes website and documentation repo: ",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 32,
+    "sample_paths": [
+      "content/en/blog/_posts/2018/2018-linkerd-2-0.md",
+      "content/en/blog/_posts/2026-03-20-etcd-370-beta.md",
+      "content/en/blog/_posts/2019/2019-sig-docs-survey.md",
+      "content/uk/blog/_posts/2024-03-12-mid-cycle-1.30.md",
+      "content/ja/blog/_posts/2025-12-29-gang-scheduling.md",
+      "content/es/blog/_posts/2023-08-29-Gateway-API-v080.md",
+      "content/zh-cn/blog/_posts/2019/2019-sig-docs-survey.md",
+      "content/ko/blog/_posts/2022-05-13-grpc-probes-in-beta.md",
+      "content/bn/blog/_posts/2024-05-09-gateway-api-v1.1/index.md",
+      "content/ko/blog/_posts/2021-08-04-kubernetes-release-1.22.md",
+      "content/ko/blog/_posts/2025-11-12-ingress-nginx-retirement.md",
+      "content/pt-br/blog/_posts/2023-03-10-image-registry-change.md",
+      "content/pt-br/blog/_posts/2022-02-17-updated-dockershim-faq.md",
+      "content/pt-br/blog/_posts/2022-11-28-registry-k8s-io-change.md",
+      "content/id/blog/_posts/2025-03-24-ingress-nginx-CVE-2025-1974.md",
+      "content/uk/blog/_posts/2025-07-28-kubernetes-v1.34-sneak-peek.md",
+      "content/de/blog/_posts/2023-02-06-k8s-gcr-io-freeze-announcement.md",
+      "content/ko/blog/_posts/2025-08-27-Kubernetes-v1-34-Release/index.md",
+      "content/ko/blog/_posts/2018-11-07-grpc-load-balancing-with-linkerd.md",
+      "content/ko/blog/_posts/2020-12-02-dont-panic-kubernetes-and-docker.md",
+      "content/pt-br/blog/_posts/2023-02-06-k8s-gcr-io-freeze-announcement.md",
+      "content/bn/blog/_posts/2023-12-18-read-write-once-pod-access-mode-ga.md",
+      "content/en/blog/_posts/2019/2019-steering-committee-election-results.md",
+      "content/pt-br/blog/_posts/2020-12-02-dont-panic-kubernetes-and-docker.md",
+      "content/zh-cn/blog/_posts/2019/2019-steering-committee-election-results.md"
+    ],
+    "sample_headings": {
+      "content/en/blog/_posts/2018/2018-linkerd-2-0.md": [
+        "---",
+        "layout: blog",
+        "title:  'Hands On With Linkerd 2.0'",
+        "date:   2018-09-18"
+      ],
+      "content/en/blog/_posts/2026-03-20-etcd-370-beta.md": [
+        "---",
+        "layout: blog",
+        "title: 'Announcing etcd 3.7.0-beta.0'",
+        "date: 2026-05-20"
+      ],
+      "content/en/blog/_posts/2019/2019-sig-docs-survey.md": [
+        "# Key takeaways",
+        "# Survey methodology and respondents",
+        "# Question and response highlights",
+        "# Where to see more"
+      ],
+      "content/uk/blog/_posts/2024-03-12-mid-cycle-1.30.md": [
+        "---",
+        "layout: blog",
+        "title: 'Огляд Kubernetes v1.30'",
+        "date: 2024-03-12"
+      ],
+      "content/ja/blog/_posts/2025-12-29-gang-scheduling.md": [
+        "---",
+        "layout: blog",
+        "title: \"Kubernetes v1.35: Workload Aware Scheduling の導入\"",
+        "date: 2025-12-29T10:30:00-08:00"
+      ]
+    }
+  },
+  {
+    "repo": "github/docs",
+    "archetype": "D",
+    "label": "GitHub Docs",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/github/docs",
+    "description": "The open-source repo for docs.github.com",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 2,
+    "sample_paths": [
+      "data/reusables/dotcom_billing/500-error.md",
+      "data/reusables/release-notes/2024-06-possible-frontend-5-minute-outage-during-hotpatch-upgrade.md"
+    ],
+    "sample_headings": {
+      "data/reusables/dotcom_billing/500-error.md": [
+        "If you receive a 500 error when trying to upgrade your account:",
+        "* Try clearing your browser's cache, then resubmit your information.",
+        "* Check to make sure you have entered your payment data correctly.",
+        "If that doesn't resolve the error, please contact {% data variables.contact.contact_support %}."
+      ],
+      "data/reusables/release-notes/2024-06-possible-frontend-5-minute-outage-during-hotpatch-upgrade.md": [
+        "If a hotpatch upgrade requires the `haproxy-frontend` service to be restarted, the restart will hang if there are existing long-lived connections, such as browser web sockets or Git operations. No new connections will be accepted for up to 5 minutes. Any existing unfinished connections at this time will be disconnected."
+      ]
+    }
+  },
+  {
+    "repo": "facebook/react",
+    "archetype": "D",
+    "label": "React docs/project",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/react/react",
+    "description": "The library for web and native user interfaces.",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "django/djangoproject.com",
+    "archetype": "D",
+    "label": "Django project website",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/django/djangoproject.com",
+    "description": "Source code to djangoproject.com",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  },
+  {
+    "repo": "microsoft/Web-Dev-For-Beginners",
+    "archetype": "D",
+    "label": "Web Dev for Beginners",
+    "lens": "rfc",
+    "default_branch": "main",
+    "html_url": "https://github.com/microsoft/Web-Dev-For-Beginners",
+    "description": "24 Lessons, 12 Weeks, Get Started as a Web Developer",
+    "archived": false,
+    "tree_truncated": false,
+    "match_count_capped": 0,
+    "sample_paths": [],
+    "sample_headings": {}
+  }
+]

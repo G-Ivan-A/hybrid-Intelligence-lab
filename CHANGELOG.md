@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.16
+version: 1.17
 updated: 2026-06-27
 temperature: 0.1
 ---
@@ -22,6 +22,13 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: RFC/ADR industry norms and variants for issue #278. Added separate
+  Hub research reports for RFC-like proposal processes and ADR/decision-record
+  processes, plus a reproducible evidence experiment under
+  `research/hub/exp-rfc-adr-industry-norms/`, external-source registry entries
+  `ext-075`..`ext-126`, MkDocs navigation, and artifact-map/index wiring. The
+  change intentionally does not create a new RFC or ADR; it preserves the result
+  as research input for later founder decisions.
 - adr: Fixed founder infrastructure decisions for issue #276 in
   `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md` and
   `docs/adr/2026-06-adr-002-artifact-document-methodology.md`. The two incoming

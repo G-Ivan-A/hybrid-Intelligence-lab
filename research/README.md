@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.17
+version: 1.18
 updated: 2026-06-27
 temperature: 0.1
 ai-generated: false
@@ -58,6 +58,8 @@ source: research/README-old.md
 | [2026-06-12-international-ai-governance-practices.md](hub/2026-06-12-international-ai-governance-practices.md) | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. |
 | [2026-06-23-repository-structure-concept.md](hub/2026-06-23-repository-structure-concept.md) | Reviewed research input для issue #276: дополнение к mango-исследованию (issue #263), Часть II по соглашению «Архитектура инфраструктуры проектов экосистемы» (issue #274), критическая проверка соглашения и источники для [ADR-001](../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md) / [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md). |
 | [2026-06-25-artifact-inventory-and-classification.md](hub/2026-06-25-artifact-inventory-and-classification.md) | Reviewed research input для issue #276: инвентаризация артефактов экосистемы, классификация по ортогональным осям, routing rules RT-01..RT-10 и source-backed вход для [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) / [ADR-001](../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md). |
+| [2026-06-27-rfc-industry-norms-and-variants.md](hub/2026-06-27-rfc-industry-norms-and-variants.md) | Research input для issue #278: RFC-like индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с воспроизводимым external source corpus. |
+| [2026-06-27-adr-industry-norms-and-variants.md](hub/2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: ADR/decision-record индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с дельтами и критериями применимости. |
 
 ### Подкаталог `open-ai-ru/`
 

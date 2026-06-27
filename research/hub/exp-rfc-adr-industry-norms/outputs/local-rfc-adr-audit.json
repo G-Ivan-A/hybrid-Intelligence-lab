@@ -1,0 +1,360 @@
+{
+  "hybrid-Intelligence-lab": [
+    {
+      "path": "governance/rfc/README.md",
+      "status": "canonical",
+      "heading": "Governance RFC",
+      "bytes": 7859
+    },
+    {
+      "path": "governance/rfc/contract-executability-rfc.md",
+      "status": "reviewed",
+      "heading": "RFC: Архитектура исполнимых документов (Executable Contracts)",
+      "bytes": 43985
+    },
+    {
+      "path": "governance/rfc/documentation-architecture-balance.md",
+      "status": "draft",
+      "heading": "RFC: Documentation Architecture Balance (Anti-Inflation vs Atomicity)",
+      "bytes": 23794
+    },
+    {
+      "path": "governance/rfc/draft-triage-and-exit-plan.md",
+      "status": "canonical",
+      "heading": "RFC: Draft Triage And Exit Plan",
+      "bytes": 24115
+    },
+    {
+      "path": "governance/rfc/external-knowledge-integration.md",
+      "status": "draft",
+      "heading": "RFC: External Knowledge Integration",
+      "bytes": 12401
+    },
+    {
+      "path": "governance/rfc/htom-vs-spoke-clarification-2026-06.md",
+      "status": "canonical",
+      "heading": "RFC: разделение концепций «HTOM-команда» и «spoke-репозиторий»",
+      "bytes": 13449
+    },
+    {
+      "path": "governance/rfc/hub-vision-concept-proposal-2026-06.md",
+      "status": "draft",
+      "heading": "RFC: Vision и Concept Хаба + библиотека гайдов + MkDocs + экосистемная карта",
+      "bytes": 20923
+    },
+    {
+      "path": "governance/rfc/knowledge-lifecycle-proposal.md",
+      "status": "draft",
+      "heading": "RFC: Knowledge Lifecycle",
+      "bytes": 4597
+    },
+    {
+      "path": "governance/rfc/methodology-research-and-proposals.md",
+      "status": "draft",
+      "heading": "RFC: Methodology Research & Proposals for Hub / Mango / Open-AI",
+      "bytes": 63333
+    },
+    {
+      "path": "governance/rfc/product-concept-template-proposal.md",
+      "status": "draft",
+      "heading": "RFC: Universal Product Concept Template",
+      "bytes": 1732
+    },
+    {
+      "path": "governance/rfc/repository-archetypes-template-release.md",
+      "status": "draft",
+      "heading": "RFC: Repository Archetypes, Project Template & Release Strategy",
+      "bytes": 27861
+    },
+    {
+      "path": "governance/rfc/repository-quality-improvement-plan.md",
+      "status": "draft",
+      "heading": "RFC: Repository Quality Improvement Plan",
+      "bytes": 53024
+    },
+    {
+      "path": "governance/rfc/research-memory-source-intelligence.md",
+      "status": "draft",
+      "heading": "RFC: Research Memory & Source Intelligence Framework",
+      "bytes": 25765
+    },
+    {
+      "path": "governance/rfc/resolve-artifact-location-proposal.md",
+      "status": "draft",
+      "heading": "RFC: Resolve Artifact Location Prompt",
+      "bytes": 3639
+    },
+    {
+      "path": "governance/rfc/rfc-two-cases-of-project-initialization.md",
+      "status": "canonical",
+      "heading": "RFC-манифест: два ортогональных кейса инициализации проекта",
+      "bytes": 29902
+    },
+    {
+      "path": "governance/rfc/solution-concept-template-proposal.md",
+      "status": "draft",
+      "heading": "RFC: Universal Solution Concept Template",
+      "bytes": 1794
+    },
+    {
+      "path": "governance/rfc/tech-debt-solutions-proposal-2026-06.md",
+      "status": "draft",
+      "heading": "RFC: Предложения по решению техдолга",
+      "bytes": 12392
+    },
+    {
+      "path": "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md",
+      "status": "canonical",
+      "heading": "ADR-001: Методология инфраструктуры проектов экосистемы",
+      "bytes": 10328
+    },
+    {
+      "path": "docs/adr/2026-06-adr-002-artifact-document-methodology.md",
+      "status": "canonical",
+      "heading": "ADR-002: Методология создания и управления артефактами",
+      "bytes": 10712
+    }
+  ],
+  "mango_ba_prompts": [
+    {
+      "path": "governance/rfc/ba-processes-observability-implementation-proposal.md",
+      "status": "draft",
+      "heading": "RFC-243: предложение по БА-процессам и observability",
+      "bytes": 19543
+    },
+    {
+      "path": "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md",
+      "status": "proposed",
+      "heading": "RFC: Правила формирования скоупа bcreq ФТ (что описываем, а что исключаем)",
+      "bytes": 14056
+    },
+    {
+      "path": "governance/rfc/prompt-improvement-bcreq-1025-proposal.md",
+      "status": "proposed",
+      "heading": "RFC: Улучшение промптов на основе эксперимента BCREQ-1025",
+      "bytes": 22712
+    },
+    {
+      "path": "governance/rfc/prompt-improvement-multichannel-proposal.md",
+      "status": "proposed",
+      "heading": "RFC: Улучшение промптов на основе эксперимента «Многоканальная нагрузка агента»",
+      "bytes": 9868
+    },
+    {
+      "path": "docs/adr/0001-hub-sync-pr208.md",
+      "status": "accepted",
+      "heading": "ADR-0001: Синхронизация governance-файлов с Хабом после PR #208",
+      "bytes": 14465
+    },
+    {
+      "path": "docs/adr/0002-issue48-handover-local-enrichment.md",
+      "status": "accepted",
+      "heading": "ADR-0002: Локальное обогащение `AI_SESSION_HANDOVER_PROMPT.md` (issue #48)",
+      "bytes": 12346
+    },
+    {
+      "path": "docs/adr/0003-creative-mode-governance.md",
+      "status": "accepted",
+      "heading": "ADR-0003: Creative-mode governance без архитектурного долга",
+      "bytes": 10113
+    },
+    {
+      "path": "docs/adr/001-prompt-standard.md",
+      "status": "accepted",
+      "heading": "ADR-001: Стандарт промптов `mango_ba_prompts`",
+      "bytes": 32663
+    },
+    {
+      "path": "docs/adr/002-pattern-standard.md",
+      "status": "accepted",
+      "heading": "ADR-002: Стандарт паттернов бизнес-анализа",
+      "bytes": 38187
+    },
+    {
+      "path": "docs/adr/003-ba-ontology.md",
+      "status": "proposed",
+      "heading": "ADR-003: Онтология бизнес-анализа (Артефакт ↔ Процесс ↔ Операция)",
+      "bytes": 45561
+    },
+    {
+      "path": "docs/adr/004-operations-taxonomy.md",
+      "status": "proposed",
+      "heading": "ADR-004: Ревизия таксономии операций и маппинг на BABOK / ISO / ГОСТ",
+      "bytes": 20901
+    },
+    {
+      "path": "docs/adr/005-artifact-team-naming.md",
+      "status": "proposed",
+      "heading": "ADR-005: Стандарт нейминга артефактов, стандартов и команд (Team Directory)",
+      "bytes": 15276
+    },
+    {
+      "path": "docs/adr/006-prompt-naming.md",
+      "status": "proposed",
+      "heading": "ADR-006: Стандарт нейминга промптов (подтверждение схемы, запрет перегрузки, KB-промпты)",
+      "bytes": 15492
+    },
+    {
+      "path": "docs/adr/007-kb-standard.md",
+      "status": "proposed",
+      "heading": "ADR-007: Стандарт базы знаний (KB) до настоящего RAG — формат цитирования, синхронизация с глоссарием, pre-RAG механизм",
+      "bytes": 14968
+    },
+    {
+      "path": "docs/adr/008-industry-standards-standard.md",
+      "status": "proposed",
+      "heading": "ADR-008: Стандарт отраслевых стандартов и best practices — терминология, правила применения, верификация источников",
+      "bytes": 13321
+    },
+    {
+      "path": "docs/adr/009-bcreq-formation-process.md",
+      "status": "proposed",
+      "heading": "ADR-009: Многоуровневый процесс формирования BCREQ — подпроцессы, human gates, механизм незавершённых подпроцессов",
+      "bytes": 20566
+    },
+    {
+      "path": "docs/adr/010-pages-ux.md",
+      "status": "proposed",
+      "heading": "ADR-010: UX GitHub Pages — дерево процессов/подпроцессов, показывающее только элементы с промптами",
+      "bytes": 21593
+    },
+    {
+      "path": "standards/decisions/ADR-011-industry-taxonomy.md",
+      "status": "canonical",
+      "heading": "ADR-011: Industry Taxonomy для классификации продуктов Mango Office",
+      "bytes": 33200
+    },
+    {
+      "path": "standards/decisions/ADR-012-mango-taxonomy.md",
+      "status": "canonical",
+      "heading": "ADR-012: Mango Taxonomy для корпоративной таксономии продуктов Mango Office",
+      "bytes": 42155
+    },
+    {
+      "path": "docs/analysis/2026-06-02-migration-strategy-rfc.md",
+      "status": "draft",
+      "heading": "RFC: стратегия миграции проекта Mango из Хаба в спок `mango_ba_prompts`",
+      "bytes": 54679
+    },
+    {
+      "path": "docs/analysis/2026-06-16-experiment-1027-analysis.md",
+      "status": "draft",
+      "heading": "Анализ эксперимента «Задача 1027»",
+      "bytes": 55968
+    },
+    {
+      "path": "docs/analysis/2026-06-21-industry-inventory.md",
+      "status": "active",
+      "heading": "Industry Inventory — аналитическое доисследование для дозаполнения реестра (issue #168)",
+      "bytes": 33475
+    },
+    {
+      "path": "docs/analysis/2026-06-21-voice-digital-channels-comparison.md",
+      "status": "draft",
+      "heading": "Сравнительный анализ: голосовые vs текстовые каналы в Industry Taxonomy (ADR-011)",
+      "bytes": 24969
+    },
+    {
+      "path": "docs/analysis/2026-06-22-issue-170-mango-inventory.md",
+      "status": "draft",
+      "heading": "Инвентаризация Mango-реестра и перевод в JSON (issue #170)",
+      "bytes": 47055
+    },
+    {
+      "path": "docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md",
+      "status": "active",
+      "heading": "Тест на сходимость маппинга Mango Taxonomy на Industry Taxonomy",
+      "bytes": 28414
+    },
+    {
+      "path": "docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md",
+      "status": "draft",
+      "heading": "RFC: доработка Industry Taxonomy после теста на сходимость",
+      "bytes": 22366
+    },
+    {
+      "path": "docs/analysis/2026-06-22-rfc-mango-taxonomy-improvement.md",
+      "status": "draft",
+      "heading": "RFC: доработка Mango Taxonomy после теста на сходимость",
+      "bytes": 29849
+    },
+    {
+      "path": "docs/analysis/2026-06-22-rfc-rules-registry-system.md",
+      "status": "proposed",
+      "heading": "RFC: Rules Registry System для управления правилами создания артефактов",
+      "bytes": 25195
+    },
+    {
+      "path": "docs/analysis/2026-06-22-rfc-taxonomy-extension-mechanism.md",
+      "status": "draft",
+      "heading": "RFC: системный механизм расширения таксономий (Industry + Mango)",
+      "bytes": 23305
+    },
+    {
+      "path": "docs/analysis/2026-06-22-taxonomy-convergence-test.md",
+      "status": "draft",
+      "heading": "Тест на сходимость классификации функций по Industry Taxonomy Standard",
+      "bytes": 30030
+    },
+    {
+      "path": "docs/analysis/2026-06-23-approval-contract-test-industry-rfc.md",
+      "status": "draft",
+      "heading": "Тест контракта согласования: RFC Industry Taxonomy",
+      "bytes": 10353
+    },
+    {
+      "path": "docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md",
+      "status": "draft",
+      "heading": "Систематизация проблем исполнимых контрактов и RFC",
+      "bytes": 37631
+    },
+    {
+      "path": "docs/analysis/2026-06-23-repository-structure-analysis.md",
+      "status": "draft",
+      "heading": "Аналитическое исследование структуры каталогов проекта (обоснование архитектуры)",
+      "bytes": 90543
+    },
+    {
+      "path": "docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md",
+      "status": "draft",
+      "heading": "Исследование гипотезы цепочки артефактов",
+      "bytes": 39177
+    },
+    {
+      "path": "docs/analysis/2026-06-24-naming-convention-audit.md",
+      "status": "draft",
+      "heading": "Аудит нарушений naming convention",
+      "bytes": 60146
+    },
+    {
+      "path": "docs/analysis/2026-06-24-runs-contract-log-policy-audit.md",
+      "status": "draft",
+      "heading": "Аудит контракта runs: Markdown-логи",
+      "bytes": 4689
+    },
+    {
+      "path": "docs/analysis/2026-06-25-ba-processes-industry-analysis.md",
+      "status": "draft",
+      "heading": "Структурный анализ БА-процессов и артефактов с опорой на индустриальные практики телекома",
+      "bytes": 78433
+    },
+    {
+      "path": "docs/analysis/2026-06-25-bcreq-fr-contract-process-analysis.md",
+      "status": "draft",
+      "heading": "Структурный анализ применения контракта BCREQ-FR: монолитный промпт против последовательности операций",
+      "bytes": 55277
+    },
+    {
+      "path": "docs/analysis/2026-06-25-runs-observability-research.md",
+      "status": "draft",
+      "heading": "Исследование трассируемости промптов в runs и внешних практик контроля проходов",
+      "bytes": 58669
+    },
+    {
+      "path": "docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md",
+      "status": "draft",
+      "heading": "Эмпирическая база: BA/Requirements-практики телеком-вендоров и операторов",
+      "bytes": 44497
+    }
+  ]
+}
