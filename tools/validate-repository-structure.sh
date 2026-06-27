@@ -47,6 +47,8 @@ is_active_file() {
     AI_PROJECT_CONTEXT-Summary.md | \
     CHANGELOG.md | \
     LICENSE | \
+    docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
+    docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -407,6 +409,8 @@ validate_template_placeholders() {
 
 required_directories=(
   ".github/ISSUE_TEMPLATE"
+  "docs"
+  "docs/adr"
   "templates"
   "templates/htom"
   "templates/htom/docs/adr"
@@ -442,6 +446,8 @@ required_files=(
   "AI_GOVERNANCE.md"
   "CHANGELOG.md"
   "LICENSE"
+  "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
+  "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   "standards/README.md"
   "standards/frontmatter-standard.md"
   "standards/file-naming.md"
@@ -1143,14 +1149,16 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.48"
+require_text "governance/artifact-map.md" "version: 1.49"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-26"
+require_text "governance/artifact-map.md" "updated: 2026-06-27"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
+require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
+require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
 require_text "governance/artifact-map.md" "governance/rfc/contract-executability-rfc.md"
 require_text "governance/artifact-map.md" "governance/rfc/repository-quality-improvement-plan.md"
 require_text "governance/artifact-map.md" "governance/rfc/draft-triage-and-exit-plan.md"
