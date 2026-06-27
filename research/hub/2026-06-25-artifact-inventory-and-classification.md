@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.2
-updated: 2026-06-25
+status: reviewed
+version: 0.3
+updated: 2026-06-27
 temperature: 0.1
 ai-generated: true
 type: artifact-inventory-and-classification-research
@@ -10,6 +10,8 @@ method: comparative-analysis
 scope: repo-wide
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/265"
 related_artifacts:
+  - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
+  - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "research/hub/2026-06-20-ecosystem-architecture-research.md"
   - "governance/artifact-map.md"
@@ -22,6 +24,7 @@ related_artifacts:
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/265"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/269"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/276"
 external_artifacts:
   - "mango_ba_prompts/docs/analysis/artifact-chain-hypothesis-research.md"
   - "mango_ba_prompts/docs/analysis/approval-contract-test-industry-rfc.md"

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.15
-updated: 2026-06-26
+version: 1.16
+updated: 2026-06-27
 temperature: 0.1
 ---
 
@@ -22,6 +22,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- adr: Fixed founder infrastructure decisions for issue #276 in
+  `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md` and
+  `docs/adr/2026-06-adr-002-artifact-document-methodology.md`. The two incoming
+  research files are now `reviewed`, linked to the ADRs, and registered through
+  `governance/artifact-map.md`; the PR intentionally records methodology and
+  transition rules without a repo-wide physical migration.
 - research: Follow-up study of the "Ecosystem Project Infrastructure
   Architecture" Agreement (issue #274). Appended **Part II** (§14–§22) to
   `research/hub/2026-06-23-repository-structure-concept.md` — a critical

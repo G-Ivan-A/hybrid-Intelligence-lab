@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.2
-updated: 2026-06-26
+status: reviewed
+version: 0.3
+updated: 2026-06-27
 temperature: 0.1
 ai-generated: true
 type: repository-structure-concept-research
@@ -11,7 +11,10 @@ scope: repo-wide
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/263"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/274"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/276"
 related_artifacts:
+  - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
+  - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "governance/rfc/repository-archetypes-template-release.md"
   - "research/mango/2026-06-19-repository-structure-vision.md"
   - "research/hub/2026-06-20-ecosystem-architecture-research.md"
