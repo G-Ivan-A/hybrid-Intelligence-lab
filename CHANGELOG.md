@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.17
+version: 1.18
 updated: 2026-06-27
 temperature: 0.1
 ---
@@ -22,6 +22,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- rfc: ADR/RFC structure standards for issue #280. Added
+  `governance/rfc/2026-06-27-rfc-adr-standard.md` and
+  `governance/rfc/2026-06-27-rfc-rfc-standard.md` with base contracts,
+  lifecycle rules, A/B/C/D delta matrices, Critical Analysis sections and an
+  explicit RFC/ADR boundary. Registered both RFCs in the RFC index,
+  artifact-map and repository-structure validator.
 - research: RFC/ADR industry norms and variants for issue #278. Added separate
   Hub research reports for RFC-like proposal processes and ADR/decision-record
   processes, plus a reproducible evidence experiment under

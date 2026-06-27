@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.10
+version: 1.11
 updated: 2026-06-18
 temperature: 0.1
 ---
@@ -56,6 +56,8 @@ RFC фиксирует принятое решение и rationale, но обя
 | [repository-archetypes-template-release.md](repository-archetypes-template-release.md) | Таксономия архетипов репозиториев экосистемы, Project Template для Prompt & Pattern Library, правило Governance sync и Release Engineering strategy GitHub Flow + trunk discipline. |
 | [research-memory-source-intelligence.md](research-memory-source-intelligence.md) | Framework Research Memory & Source Intelligence: Knowledge Object primacy поверх Tier 1 external sources, Tier 2 internal research memory, статусы `Observed` / `Candidate` / `Applied` / `Rejected` / `Superseded`, критерии source intelligence и traceability-схема `Knowledge Object → Sources → RFC/ADR → Consumer`. |
 | [methodology-research-and-proposals.md](methodology-research-and-proposals.md) | Исследование шести методологий (Enterprise Intelligence, Opportunity Discovery, Human-AI Collaboration, Trust & Evidence, Influence & Network Analysis, AI Solution Architecture) с внешними источниками; сравнение с PR #242/#243/#244; подтверждение предложения фаундера (BA-классификация, шаблон AI Solution Architecture, ось доверия E0–E4); три независимых предложения (Хаб/Mango/Open-AI) с уровнями L3/L4 и модель консистентности. |
+| [2026-06-27-rfc-adr-standard.md](2026-06-27-rfc-adr-standard.md) | Draft RFC стандарта структуры ADR: базовый контракт decision record, идентификация, минимальный frontmatter, body-level metadata, lifecycle, матрица дельт A/B/C/D, Critical Analysis и boundary между RFC и ADR. |
+| [2026-06-27-rfc-rfc-standard.md](2026-06-27-rfc-rfc-standard.md) | Draft RFC стандарта структуры RFC: базовый proposal contract, owner/status/impacted artifacts в теле, lifecycle Draft -> Review -> Accepted/Rejected -> Implemented/Superseded, матрица дельт A/B/C/D, Critical Analysis и boundary между RFC и ADR. |
 
 ## Связанные артефакты
 
