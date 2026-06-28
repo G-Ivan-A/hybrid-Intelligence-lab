@@ -14,6 +14,7 @@ from pathlib import Path
 
 
 SCAN_DATE = date(2026, 6, 28).isoformat()
+HUB_BASELINE_SHA = "1a2a9cdfb37ab7e689b143d94623923ade65e33a"
 TEXT_EXTENSIONS = {".md", ".markdown", ".html", ".txt"}
 SELF_PATHS = {
     "research/hub/2026-06-28-research-analysis-audit-inventory.md",
@@ -105,7 +106,7 @@ def classify(path: str, fields: dict[str, str], title: str, text: str) -> tuple[
     if name in {".gitkeep"}:
         return "Other", "structure-placeholder", "placeholder file, not a knowledge artifact"
 
-    if lower_path.startswith(("docs/adr/", "docs/adr/", "docs/adr")) or "/adr/" in lower_path:
+    if lower_path.startswith("docs/adr/") or "/adr/" in lower_path:
         return "Other", "decision-record", "ADR/decision record rather than Research/Analysis/Audit"
 
     if "decision-record" in lower_type:
@@ -355,6 +356,11 @@ def markdown_matrix(records: list[dict], repo_meta: dict[str, dict]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--hub-root", default=".", help="Path to hybrid-Intelligence-lab checkout")
+    parser.add_argument(
+        "--hub-baseline-sha",
+        default=HUB_BASELINE_SHA,
+        help="Hub baseline SHA recorded in outputs; issue #288 deliverables are excluded from the scan.",
+    )
     parser.add_argument("--mango-root", required=True, help="Path to mango_ba_prompts checkout")
     parser.add_argument("--clarify-root", required=True, help="Path to clarify-engine-ai checkout")
     parser.add_argument(
@@ -378,7 +384,7 @@ def main() -> None:
             "label": spec.label,
             "root": str(spec.root),
             "url": spec.url,
-            "sha": repo_sha(spec.root),
+            "sha": args.hub_baseline_sha if spec.key == "hub" else repo_sha(spec.root),
         }
         for path in tracked_files(spec.root):
             if in_scope(path):
