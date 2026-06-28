@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.18
-updated: 2026-06-27
+version: 1.19
+updated: 2026-06-28
 temperature: 0.1
 ---
 
@@ -13,6 +13,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- chore: Accepted the ADR/RFC structure RFCs for issue #286 and delegated their
+  normative contracts into `standards/adr-structure-standard.md` and
+  `standards/rfc-structure-standard.md`. Registered both standards in
+  `standards/README.md`, `governance/artifact-map.md`,
+  `governance/rfc/README.md` and the structure validator; added backlog tech debt
+  for frontmatter validator routing, status migration and approved-field policy.
 - correction: Normalized Hub research artifact filenames from `YYYY-MM-name.md`
   / `YYYY-name.md` to `YYYY-MM-DD-name.md` using git creation dates (issue
   #271). Updated all repository links, MkDocs navigation, artifact-map entries,

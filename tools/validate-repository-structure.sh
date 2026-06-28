@@ -64,6 +64,8 @@ is_active_file() {
     standards/executable-contract-standard.md | \
     standards/contract-documentation-standard.md | \
     standards/frontmatter-docs-standard.md | \
+    standards/adr-structure-standard.md | \
+    standards/rfc-structure-standard.md | \
     standards/executable-documentation-standard.md | \
     standards/htom-documentation-structure.md | \
     standards/webportal-product-concept-standard.md | \
@@ -482,6 +484,8 @@ required_files=(
   "standards/executable-contract-standard.md"
   "standards/contract-documentation-standard.md"
   "standards/frontmatter-docs-standard.md"
+  "standards/adr-structure-standard.md"
+  "standards/rfc-structure-standard.md"
   "standards/executable-documentation-standard.md"
   "standards/htom-documentation-structure.md"
   "standards/webportal-product-concept-standard.md"
@@ -728,8 +732,8 @@ require_text "mkdocs.yml" "2026-06-28-ripple-effects-282-research.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.4"
-require_text "standards/README.md" "updated: 2026-06-25"
+require_text "standards/README.md" "version: 1.5"
+require_text "standards/README.md" "updated: 2026-06-28"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -743,6 +747,8 @@ require_text "standards/README.md" "standards/education-profile.md"
 require_text "standards/README.md" "product-profile.md"
 require_text "standards/README.md" "project-structure-inheritance.md"
 require_text "standards/README.md" "frontmatter-docs-standard.md"
+require_text "standards/README.md" "adr-structure-standard.md"
+require_text "standards/README.md" "rfc-structure-standard.md"
 require_text "standards/README.md" "executable-documentation-standard.md"
 require_text "standards/README.md" "htom-documentation-structure.md"
 require_text "standards/README.md" "artifact-map.md"
@@ -777,6 +783,18 @@ require_text "standards/frontmatter-docs-standard.md" "ADR"
 require_text "standards/frontmatter-docs-standard.md" "Research"
 require_text "standards/frontmatter-docs-standard.md" "Template"
 require_text "standards/frontmatter-docs-standard.md" "necessary and sufficient"
+
+require_text "standards/adr-structure-standard.md" "status: accepted"
+require_text "standards/adr-structure-standard.md" "owner: G-Ivan-A"
+require_text "standards/adr-structure-standard.md" "frontmatter-docs-standard.md"
+require_text "standards/adr-structure-standard.md" "decision-type"
+require_text "standards/adr-structure-standard.md" "Boundary RFC/ADR"
+
+require_text "standards/rfc-structure-standard.md" "status: accepted"
+require_text "standards/rfc-structure-standard.md" "owner: G-Ivan-A"
+require_text "standards/rfc-structure-standard.md" "frontmatter-docs-standard.md"
+require_text "standards/rfc-structure-standard.md" "rfc-scope"
+require_text "standards/rfc-structure-standard.md" "Open Questions"
 
 require_text "standards/executable-documentation-standard.md" "status: accepted"
 require_text "standards/executable-documentation-standard.md" "version: 1.2"
@@ -1173,11 +1191,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.51"
+require_text "governance/artifact-map.md" "version: 1.52"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-27"
+require_text "governance/artifact-map.md" "updated: 2026-06-28"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1202,6 +1220,8 @@ require_text "governance/artifact-map.md" "governance/backlog.md"
 require_text "governance/artifact-map.md" "governance/executable-documents-issues.md"
 require_text "governance/artifact-map.md" "standards/frontmatter-standard.md"
 require_text "governance/artifact-map.md" "standards/frontmatter-docs-standard.md"
+require_text "governance/artifact-map.md" "standards/adr-structure-standard.md"
+require_text "governance/artifact-map.md" "standards/rfc-structure-standard.md"
 require_text "governance/artifact-map.md" "standards/file-naming-convention.md"
 require_text "governance/artifact-map.md" "standards/executable-documentation-standard.md"
 require_text "governance/artifact-map.md" "standards/htom-documentation-structure.md"
@@ -1241,9 +1261,11 @@ require_text "governance/artifact-map.md" "research/external-knowledge/external-
 require_text "governance/artifact-map.md" "governance/rfc/external-knowledge-integration.md"
 
 require_text "governance/rfc/README.md" "status: accepted"
-require_text "governance/rfc/README.md" "version: 1.12"
+require_text "governance/rfc/README.md" "version: 1.13"
 require_text "governance/rfc/README.md" "updated: 2026-06-28"
 require_text "governance/rfc/README.md" "owner: G-Ivan-A"
+require_text "governance/rfc/README.md" "adr-structure-standard.md"
+require_text "governance/rfc/README.md" "rfc-structure-standard.md"
 
 # External knowledge integration (issue #227): Base Registry + insights + RFC.
 require_text "research/external-knowledge/README.md" "status: draft"
@@ -1450,7 +1472,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.4"
+require_text "governance/backlog.md" "version: 1.5"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"
@@ -1459,6 +1481,8 @@ require_text "governance/backlog.md" "| ID | Название | Приорите
 require_text "governance/backlog.md" "Бэклог: Внедрение стандарта исполнимых документов"
 require_text "governance/backlog.md" "CE-001"
 require_text "governance/backlog.md" "CE-010"
+require_text "governance/backlog.md" "RFC: Валидатор frontmatter, миграция статусов и approved list"
+require_text "governance/backlog.md" "research/hub/2026-06-28-ripple-effects-282-research.md"
 
 require_text "governance/executable-documents-issues.md" "status: canonical"
 require_text "governance/executable-documents-issues.md" "type: registry"

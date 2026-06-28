@@ -1,6 +1,6 @@
 ---
-status: draft
-version: 0.2
+status: accepted
+version: 1.0
 updated: 2026-06-28
 temperature: 0.1
 owner: G-Ivan-A
@@ -16,10 +16,11 @@ A/B/C/D: proposal с владельцем, `rfc-scope`, мотивацией, р
 альтернативами, trade-offs, impacted artifacts, открытыми вопросами и
 lifecycle.
 
-RFC не является обязательной нормой сам по себе. Даже accepted RFC должен
-делегировать исполняемые правила в standard, template, validator,
-practice или ADR, если downstream-репозитории должны выполнять правило
-механически. Это сохраняет границу из [Governance RFC](README.md) и
+Этот RFC принят как governance decision record. Обязательная норма делегирована
+в [RFC Structure Standard](../../standards/rfc-structure-standard.md). Даже
+accepted RFC остаётся rationale/proposal record: downstream-репозитории
+исполняют standard, template, validator, practice или ADR, а не proposal-текст.
+Это сохраняет границу из [Governance RFC](README.md) и
 [ADR-002](../../docs/adr/2026-06-adr-002-artifact-document-methodology.md).
 
 Входные источники:
@@ -278,26 +279,34 @@ frontmatter drift, duplicate decision records or over-process for B/D.
 
 ## Impacted Artifacts
 
-Immediate PR impact:
+Accepted impact:
 
-- add this RFC under `governance/rfc/`;
-- register it in [Governance RFC README](README.md);
-- register it in [Artifact Map](../artifact-map.md);
-- allow it in `tools/validate-repository-structure.sh`.
-- align `tools/validate-frontmatter.sh` with RFC `owner`, `rfc-scope`, status
-  vocabulary and Open Questions cleanup expectations.
+- promote this RFC to `accepted` governance status;
+- create [RFC Structure Standard](../../standards/rfc-structure-standard.md);
+- register the RFC and standard in [Governance RFC README](README.md),
+  [Standards README](../../standards/README.md), [Artifact Map](../artifact-map.md)
+  and `tools/validate-repository-structure.sh`;
+- keep `tools/validate-frontmatter.sh` as-is because it already enforces RFC
+  `owner`, `rfc-scope` and governance status vocabulary from
+  [Frontmatter Docs Standard](../../standards/frontmatter-docs-standard.md).
 
-Future work after human acceptance:
+Future work after acceptance:
 
-- create `standards/rfc-structure-standard.md` or equivalent;
 - add an RFC template if repeated creation continues;
 - evaluate numeric RFC id allocation after RFC-020; if adopted, migrate with
   backlink preservation;
 - extend validators only if additional RFC metadata must become machine-enforced;
 - decide separately whether current Hub RFCs migrate to `docs/rfc/`.
 
+## Open Questions
+
+No blocking Open Questions remain for acceptance. Non-blocking follow-up work is
+limited to future templates, numeric id allocation, validator expansion and a
+separate migration decision for current Hub RFC paths.
+
 ## Review Status
 
-This RFC is ready for human review as the proposed answer for issue #280. It
-does not accept itself and does not create a mandatory RFC standard until the
-review decision is made.
+Accepted for issue #286 as the rationale source for
+[RFC Structure Standard](../../standards/rfc-structure-standard.md). The
+mandatory contract lives in the standard; this RFC preserves context,
+alternatives, trade-offs and boundary reasoning.

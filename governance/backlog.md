@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.4
-updated: 2026-06-13
+version: 1.5
+updated: 2026-06-28
 temperature: 0.1
 type: backlog
 context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents]
@@ -16,6 +16,7 @@ related_artifacts:
   - "standards/glossary.md"
   - "governance/rfc/contract-executability-rfc.md"
   - "governance/executable-documents-issues.md"
+  - "research/hub/2026-06-28-ripple-effects-282-research.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/133"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138"
@@ -40,6 +41,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/114"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/115"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/116"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/286"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -176,6 +178,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-008** | Рефакторинг `research/` (разделение `hub/` и `mango/`) | **P1** | — | DONE | [#91](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/91) | Обсуждение §5 | Выполнено в предыдущих PR; зафиксировано как факт для целостности картины. |
 | **B-013** | 💡 Промоут `backlog.md` в `canonical` и завести issues по утверждённым P1 | **P1** | (этот PR) | DONE | [#107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107) | Креативное улучшение агента-исполнителя | Замыкает маршрут «бэклог → issues»; без него бэклог остаётся планом без исполнения. |
 | **B-014** | 💡 Лёгкий «governance health»: регулярный прогон валидаторов + мониторинг триггеров | **P3** | — | TODO | — (отложено) | Креативное улучшение агента-исполнителя | Ценно, но боль возникнет позже; внедряется по триггеру, не сейчас. |
+| **B-015** | RFC: Валидатор frontmatter, миграция статусов и approved list | **P2** | RFC/ADR structure standards | TODO | — (tech debt) | [Ripple Effects 282](../research/hub/2026-06-28-ripple-effects-282-research.md); issue [#286](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/286) | Нужен отдельный RFC/implementation path для routing, status migration, approved fields and CI modes; issue #286 сознательно не меняет validator/migration rules. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
@@ -678,6 +681,53 @@ P3 — отложено до *Триггера внедрения*: «перва
 **Риски и ограничения:**
 Не вводить тяжёлый CI/автоматизацию преждевременно (это `ОТЛОЖИТЬ` до появления
 команды/CI-боли).
+
+---
+
+### B-015: RFC: Валидатор frontmatter, миграция статусов и approved list
+
+**Приоритет:** P2
+**Источник:** 🔗 [Ripple Effects issue 282](../research/hub/2026-06-28-ripple-effects-282-research.md);
+[issue #286](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/286)
+**Зависимости:** Accepted RFC/ADR structure RFCs and standards
+**Режим работы:** `Structured`
+
+**Контекст:**
+Issue #286 сознательно выводит физическую миграцию существующих ADR/RFC,
+изменение валидатора и удаление legacy `ai-generated` из scope. Ripple-effects
+research показал, что это отдельный контур решений: routing validator-а,
+transition matrix статусов, approved list frontmatter-полей, migration mode and
+CI fail-open/fail-closed behavior.
+
+**Что нужно сделать:**
+1. Подготовить RFC или implementation plan для frontmatter validator routing:
+   path-first/type-first/hybrid/manifest.
+2. Зафиксировать transition matrix для Knowledge и Governance vocabulary.
+3. Выбрать approved field registry: Markdown table, YAML/JSON manifest, schema
+   or validator-owned rules.
+4. Определить migration mode for legacy fields and statuses.
+5. Определить CI mode: warning only, changed-files strict, whole-repo strict or
+   two-step bridge.
+
+**Ожидаемые артефакты:**
+- RFC/issue for validator and migration decisions;
+- optional validator/registry update after human decision.
+
+**Критерии приёмки (DoD):**
+- [ ] Есть выбранный routing rule and conflict rule.
+- [ ] Есть transition matrix для старых и новых статусов.
+- [ ] Approved list полей трассируется к consumers.
+- [ ] CI mode and migration mode explicit.
+- [ ] Validator/templates do not generate invalid docs.
+
+**Обоснование приоритета:**
+P2: работа важна для enforceability новых стандартов, но не блокирует issue
+#286. Делать её внутри этого PR рискованно: это превратит acceptance standards
+в массовую migration/validator task.
+
+**Риски и ограничения:**
+Не менять текущий validator без human-approved migration plan; иначе можно
+случайно повысить или сломать legacy governance artifacts.
 
 ---
 
