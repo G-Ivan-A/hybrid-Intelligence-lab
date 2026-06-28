@@ -1,0 +1,122 @@
+{
+  "scan_date": "2026-06-28",
+  "markdown_files": 170,
+  "files_with_frontmatter": 170,
+  "files_without_frontmatter": 0,
+  "files_with_ai_generated": 119,
+  "files_with_extra_fields": 126,
+  "excluded_paths": [
+    "research/hub/2026-06-28-ripple-effects-282-research.md"
+  ],
+  "excluded_prefixes": [
+    "research/hub/exp-ripple-effects-282/"
+  ],
+  "status_counts": {
+    "draft": 94,
+    "canonical": 69,
+    "reviewed": 7
+  },
+  "field_counts": {
+    "status": 170,
+    "version": 170,
+    "updated": 170,
+    "temperature": 170,
+    "ai-generated": 119,
+    "type": 50,
+    "context": 44,
+    "method": 39,
+    "scope": 39,
+    "related_issues": 31,
+    "related_artifacts": 29,
+    "source": 27,
+    "executable": 14,
+    "source_id": 5,
+    "stage": 5,
+    "projects": 5,
+    "name": 4,
+    "about": 4,
+    "title": 4,
+    "labels": 4,
+    "assignees": 4,
+    "related_standards": 4,
+    "level": 4,
+    "related_issue": 3,
+    "external_artifacts": 3,
+    "based_on": 2,
+    "concept_type": 2,
+    "related_templates": 2,
+    "standard": 2,
+    "entrypoint": 1,
+    "author": 1,
+    "session": 1,
+    "self-report": 1
+  },
+  "extra_field_counts": {
+    "ai-generated": 119,
+    "type": 50,
+    "context": 44,
+    "method": 39,
+    "scope": 39,
+    "related_issues": 31,
+    "related_artifacts": 29,
+    "source": 27,
+    "executable": 14,
+    "source_id": 5,
+    "stage": 5,
+    "projects": 5,
+    "name": 4,
+    "about": 4,
+    "title": 4,
+    "labels": 4,
+    "assignees": 4,
+    "related_standards": 4,
+    "level": 4,
+    "related_issue": 3,
+    "external_artifacts": 3,
+    "based_on": 2,
+    "concept_type": 2,
+    "related_templates": 2,
+    "standard": 2,
+    "entrypoint": 1,
+    "author": 1,
+    "session": 1,
+    "self-report": 1
+  },
+  "path_class_counts": {
+    "governance": 74,
+    "knowledge": 58,
+    "other": 38
+  },
+  "samples": {
+    "extra_field_paths": [
+      ".github/ISSUE_TEMPLATE/task-creative.md",
+      ".github/ISSUE_TEMPLATE/task.md",
+      "AI_GOVERNANCE.md",
+      "AI_PROJECT_CONTEXT-Summary.md",
+      "CONCEPT.md",
+      "docs/ecosystem-map-Index.md",
+      "docs/ecosystem-map.md",
+      "docs/product-concept.md"
+    ],
+    "ai_generated_paths": [
+      "AI_PROJECT_CONTEXT-Summary.md",
+      "CONCEPT.md",
+      "docs/ecosystem-map-Index.md",
+      "docs/ecosystem-map.md",
+      "docs/product-concept.md",
+      "docs/project-summaries/README.md",
+      "docs/project-summaries/clarify-engine-ai-context-Summary.md",
+      "docs/project-summaries/mango-ba-prompts-context-Summary.md"
+    ],
+    "governance_canonical_paths": [
+      "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md",
+      "docs/adr/2026-06-adr-002-artifact-document-methodology.md",
+      "governance/agent-onboarding-protocol.md",
+      "governance/artifact-map.md",
+      "governance/backlog.md",
+      "governance/executable-documents-issues.md",
+      "governance/repo-model.md",
+      "governance/rfc/README.md"
+    ]
+  }
+}

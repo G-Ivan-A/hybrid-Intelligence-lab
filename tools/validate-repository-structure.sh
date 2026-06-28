@@ -89,6 +89,7 @@ is_active_file() {
     research/hub/2026-06-25-artifact-inventory-and-classification.md | \
     research/hub/2026-06-27-rfc-industry-norms-and-variants.md | \
     research/hub/2026-06-27-adr-industry-norms-and-variants.md | \
+    research/hub/2026-06-28-ripple-effects-282-research.md | \
     research/README.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
@@ -100,6 +101,10 @@ is_active_file() {
     research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md | \
     research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-rfc-external-tree-summary.md | \
     research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-adr-external-tree-summary.md | \
+    research/hub/exp-ripple-effects-282/README.md | \
+    research/hub/exp-ripple-effects-282/scan-frontmatter.py | \
+    research/hub/exp-ripple-effects-282/outputs/frontmatter-scan.json | \
+    research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -490,6 +495,7 @@ required_files=(
   "research/hub/2026-06-25-artifact-inventory-and-classification.md"
   "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
   "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
+  "research/hub/2026-06-28-ripple-effects-282-research.md"
   "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
   "research/mango/README.md"
   "research/governance/README.md"
@@ -717,6 +723,7 @@ require_text "CHANGELOG.md" "### Changed"
 require_text "CHANGELOG.md" "### Removed"
 require_text "mkdocs.yml" "2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "mkdocs.yml" "2026-06-27-adr-industry-norms-and-variants.md"
+require_text "mkdocs.yml" "2026-06-28-ripple-effects-282-research.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: canonical"

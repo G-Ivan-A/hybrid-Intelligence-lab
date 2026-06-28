@@ -33,12 +33,14 @@ project bootstrap, governance-стратегии и классификации �
 | [2026-06-25-artifact-inventory-and-classification.md](2026-06-25-artifact-inventory-and-classification.md) | Reviewed research input для issue #276: инвентаризация артефактов экосистемы, классификация по ортогональным осям, routing rules RT-01..RT-10 и source-backed вход для [ADR-002](../../docs/adr/2026-06-adr-002-artifact-document-methodology.md) / [ADR-001](../../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md). |
 | [2026-06-27-rfc-industry-norms-and-variants.md](2026-06-27-rfc-industry-norms-and-variants.md) | Research input для issue #278: аудит RFC Hub/Mango, индустриальные RFC-like нормы по архетипам A-D, дельты, lifecycle diagrams и варианты RFC-модели без создания нового RFC. |
 | [2026-06-27-adr-industry-norms-and-variants.md](2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: аудит ADR/decision records Hub/Mango, индустриальные ADR-нормы, дельты, lifecycle diagrams и варианты ADR-модели без создания нового ADR. |
+| [2026-06-28-ripple-effects-282-research.md](2026-06-28-ripple-effects-282-research.md) | Research input для issue #284: ripple effects issue #282 по двойному словарю статусов, validator routing, necessary/sufficient frontmatter, `ai-generated` cleanup, CI modes и migration scenarios без выбора финального варианта. |
 
 ## Эксперименты
 
 | Эксперимент | Назначение |
 | --- | --- |
 | [exp-rfc-adr-industry-norms/](exp-rfc-adr-industry-norms/) | Воспроизводимый corpus scan для issue #278: local Hub/Mango RFC/ADR audit и external RFC/ADR path-signal summaries по архетипам A-D. |
+| [exp-ripple-effects-282/](exp-ripple-effects-282/) | Воспроизводимый frontmatter scan для issue #284: counts for status values, `ai-generated`, extra fields, path classes and migration examples. |
 
 ## Воспроизводимость
 
