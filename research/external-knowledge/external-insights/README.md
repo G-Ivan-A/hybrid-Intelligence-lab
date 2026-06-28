@@ -3,7 +3,6 @@ status: draft
 version: 0.2
 updated: 2026-06-15
 temperature: 0.1
-ai-generated: true
 ---
 
 # External Insights
@@ -36,7 +35,6 @@ status: draft | reviewed
 version: 0.1
 updated: YYYY-MM-DD
 temperature: 0.1
-ai-generated: true
 type: external-analysis
 source_id: ext-NNN
 stage: observation | research | hypothesis | candidate-practice

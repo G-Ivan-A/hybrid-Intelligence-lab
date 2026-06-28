@@ -3,7 +3,6 @@ status: reviewed
 version: 0.3
 updated: 2026-06-27
 temperature: 0.1
-ai-generated: true
 type: repository-structure-concept-research
 context: [hub, archetypes, repository-structure, base-directories, mango, founder-vision, agreement, industry-norms, executability-levels, diataxis, ai-governance]
 method: comparative-analysis

@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-05-26
 temperature: 0.1
-ai-generated: false
 type: prompt-analysis
 scope: user-specific + repo-integration
 based_on: 2026-05-28-prompts-classification-standard.md

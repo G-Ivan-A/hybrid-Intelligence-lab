@@ -1,9 +1,10 @@
 ---
-status: canonical
+status: accepted
 version: 1.2
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
+rfc-scope: A
 type: rfc
 context: [project-initialization, runtime-onboarding, bootstrap, governance, hub-and-spoke, terminology]
 method: creative-analysis + cross-domain-analogy + lifecycle-mapping

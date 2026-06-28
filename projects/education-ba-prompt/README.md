@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-05-26
 temperature: 0.1
-ai-generated: false
 ---
 
 # Проект: Идеи для курса БА по промпт-инжинирингу

@@ -3,6 +3,8 @@ status: draft
 version: 0.1
 updated: 2026-06-15
 temperature: 0.1
+owner: G-Ivan-A
+rfc-scope: A
 ---
 
 # RFC: Repository Archetypes, Project Template & Release Strategy

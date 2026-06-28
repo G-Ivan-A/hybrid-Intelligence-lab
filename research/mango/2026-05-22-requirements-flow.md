@@ -3,7 +3,6 @@ status: reviewed
 version: 1.0
 updated: 2026-05-26
 temperature: 0.1
-ai-generated: false
 type: internal-analysis
 context: [mango, requirements-flow]
 method: system-analysis

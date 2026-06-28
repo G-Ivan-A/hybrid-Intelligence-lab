@@ -1,9 +1,10 @@
 ---
-status: reviewed
+status: proposed
 version: 1.2
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
+rfc-scope: A
 type: rfc
 context: [governance, onboarding, contracts, architecture]
 method: incident-analysis + synthesis of three visions + industry best practices
@@ -332,10 +333,9 @@ flowchart TD
 
 ```markdown
 ---
-status: canonical
+status: accepted
 version: 1.0
 updated: 2026-06-02
-ai-generated: true
 ---
 
 # Agent Onboarding — Протокол бесшовной передачи проекта
@@ -355,10 +355,9 @@ governance/agent-onboarding-protocol.md#design-rationale--history ...
 
 ```markdown
 ---
-status: canonical
+status: accepted
 version: 1.1
 updated: 2026-06-04
-ai-generated: true
 executable: true
 entrypoint: true
 ---
@@ -398,7 +397,6 @@ entrypoint: true
 status: draft
 version: 0.1
 updated: {{date}}
-ai-generated: true
 ---
 
 # AI Quick Rules — {{project_name}}
@@ -418,7 +416,6 @@ ai-generated: true
 status: draft
 version: 0.2
 updated: {{date}}
-ai-generated: true
 executable: true
 ---
 
@@ -506,7 +503,7 @@ executable: true
 
 ```yaml
 ---
-status: canonical
+status: accepted
 version: 1.0
 updated: 2026-06-04
 executable: true

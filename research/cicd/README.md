@@ -3,7 +3,6 @@ status: canonical
 version: 1.0
 updated: 2026-06-09
 temperature: 0.1
-ai-generated: false
 ---
 
 # Research: CI/CD

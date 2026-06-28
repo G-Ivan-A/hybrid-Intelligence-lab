@@ -1,9 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.4
 updated: 2026-06-11
 temperature: 0.1
-ai-generated: false
+owner: G-Ivan-A
 ---
 
 # Glossary

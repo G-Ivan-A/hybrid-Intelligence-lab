@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-20
 temperature: 0.1
-ai-generated: true
 type: ecosystem-architecture-research
 context: [hub, ecosystem, open-ai.ru, reputation-engineering, token-optimization]
 method: comparative-analysis

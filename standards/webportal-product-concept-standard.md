@@ -3,7 +3,7 @@ status: draft
 version: 1.1
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
 executable: false
 level: L2
 concept_type: product-concept

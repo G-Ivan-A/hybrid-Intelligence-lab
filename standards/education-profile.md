@@ -1,9 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.0
 updated: 2026-05-26
 temperature: 0.1
-ai-generated: false
+owner: G-Ivan-A
 ---
 
 # Education Profile
@@ -92,7 +92,6 @@ reference-first допустимы, если в `CONCEPT.md` явно описа
 status: draft
 version: 1.0
 updated: YYYY-MM-DD
-ai-generated: false
 ---
 
 # {Название курса}

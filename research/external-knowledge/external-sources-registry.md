@@ -3,7 +3,6 @@ status: draft
 version: 0.9
 updated: 2026-06-27
 temperature: 0.1
-ai-generated: true
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
 method: comparative-analysis

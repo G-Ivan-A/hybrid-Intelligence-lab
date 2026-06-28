@@ -1,9 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.1
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
 executable: false
 scope: repo-wide
 related_standards:
@@ -94,7 +94,6 @@ related_issues:
 status: …
 version: …
 updated: …
-ai-generated: …
 executable: true
 entrypoint: true        # только для точки входа
 ---

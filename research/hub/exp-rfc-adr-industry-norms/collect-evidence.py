@@ -305,7 +305,6 @@ def evidence_frontmatter(slug: str, updated: str) -> str:
             "version: 0.1",
             f"updated: {updated}",
             "temperature: 0.1",
-            "ai-generated: true",
             f"type: {slug}",
             "scope: evidence",
             "---",

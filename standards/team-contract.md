@@ -1,9 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.1
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: false
+owner: G-Ivan-A
 ---
 
 # Team Contract
@@ -271,7 +271,7 @@ PRs and published artifacts should disclose:
 - Relevant files, comments and previous decisions were read.
 - Tests, validation or manual checks are listed.
 - No secrets, credentials or sensitive data are included.
-- AI-generated code was reviewed by a human before merge.
+- AI-assisted code was reviewed by a human before merge.
 - Sources are linked for factual claims.
 - Risks, assumptions and follow-ups are visible.
 - The reviewer knows where to focus attention.

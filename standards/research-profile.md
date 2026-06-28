@@ -1,9 +1,9 @@
 ---
-status: canonical
-version: 1.2
-updated: 2026-06-25
+status: accepted
+version: 1.3
+updated: 2026-06-28
 temperature: 0.1
-ai-generated: false
+owner: G-Ivan-A
 ---
 
 # Research Profile
@@ -107,9 +107,10 @@ research/<domain>/exp-<slug>/
 
 ```yaml
 ---
-status: draft | reviewed | published
+status: draft | reviewed | canonical | superseded
 version: 0.1 | 1.0
 updated: YYYY-MM-DD
+temperature: 0.1
 type: external-analysis | internal-analysis | experiment
 context: [tag1, tag2]
 method: prompt-template | comparative-analysis | manual-review
@@ -118,7 +119,7 @@ method: prompt-template | comparative-analysis | manual-review
 
 | Поле | Назначение | Значения |
 | --- | --- | --- |
-| `status` | Зрелость артефакта. | `draft` (в работе) → `reviewed` (проверено human reviewer) → `published` (опубликовано вовне). |
+| `status` | Зрелость артефакта. | `draft` (в работе) → `reviewed` (проверено human reviewer) → `canonical` (принято как reusable basis) → `superseded` (заменено). |
 | `version` | Версия документа. | `0.1` для черновика, `1.0`+ после review; растёт по semver-логике. |
 | `updated` | Дата последнего значимого изменения. | `YYYY-MM-DD`. |
 | `type` | Тип исследования. | `external-analysis` (внешние источники), `internal-analysis` (внутренние репозитории/данные), `experiment` (прогон с результатами). |
@@ -132,6 +133,7 @@ method: prompt-template | comparative-analysis | manual-review
 status: reviewed
 version: 1.0
 updated: 2026-05-26
+temperature: 0.1
 type: comparative-analysis
 context: [governance, repository-structure]
 method: comparative-analysis

@@ -1,9 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.1
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
 executable: false
 scope: repo-wide
 related_standards:
@@ -82,7 +82,7 @@ related_issues:
 
 ```markdown
 ---
-# frontmatter Хаба: status/version/updated/ai-generated; executable: false; scope; related_*
+# frontmatter Хаба: status/version/updated/temperature; owner для governance-артефактов; executable при необходимости
 ---
 
 # <Имя контракта>

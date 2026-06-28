@@ -1,8 +1,10 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-27
+version: 0.2
+updated: 2026-06-28
 temperature: 0.1
+owner: G-Ivan-A
+rfc-scope: A
 ---
 
 # RFC: Стандарт структуры ADR
@@ -10,13 +12,13 @@ temperature: 0.1
 ## Summary
 
 Принять единый базовый контракт ADR (Architectural Decision Record) для Хаба и
-архетипов A/B/C/D: минимальный frontmatter, стабильная идентификация, тело с
-контекстом, решением, альтернативами, последствиями, проверкой и явной
-семантикой supersession.
+архетипов A/B/C/D: necessary and sufficient frontmatter, стабильная
+идентификация, тело с контекстом, решением, альтернативами, последствиями,
+проверкой и явной семантикой supersession.
 
 Этот RFC не переводит контракт сразу в обязательный standard. После human review
 он должен стать входом для одного из следующих артефактов: `standards/`,
-`docs/adr/README.md`, ADR template или validator update. До этого документ
+ADR template или validator update. До этого документ
 является draft proposal в смысле [Governance RFC](README.md).
 
 Входные источники:
@@ -35,10 +37,10 @@ temperature: 0.1
    `governance/rfc/` без отдельного миграционного решения.
 3. Новый Hub/HTOM ADR использует имя
    `YYYY-MM-adr-NNN-short-title.md`, где `NNN` - стабильный ADR id.
-4. Frontmatter ADR остается минимальным: `status`, `version`, `updated`,
-   `temperature`. Поля `type`, `decision-drivers`, `owner`,
-   `impacted-artifacts` и `supersedes` обязательны в теле документа, а не в YAML,
-   пока локальный ADR index или validator их не потребляет.
+4. Frontmatter ADR содержит поля, необходимые и достаточные для governance:
+   `status`, `version`, `updated`, `temperature`, `owner`, `decision-type`.
+   Frontmatter `status` является единственным machine-readable canon; body-level
+   status в `Decision Metadata` остается narrative summary.
 5. Базовый ADR contract обязателен для всех архетипов, но вес отдельных секций
    меняется по матрице A/B/C/D.
 
@@ -70,13 +72,14 @@ status: draft
 version: 0.1
 updated: YYYY-MM-DD
 temperature: 0.1
+owner: Human owner or owning group
+decision-type: governance | methodology | product | curriculum | runtime
 ---
 ```
 
-Дополнительные поля не становятся обязательными в YAML. Это защищает ADR от
-frontmatter inflation и соответствует [Frontmatter Docs Standard](../../standards/frontmatter-docs-standard.md):
-если поле не потребляет инструмент, индекс, шаблон или provenance rule, оно
-должно жить в теле.
+Дополнительные поля не становятся обязательными в YAML, пока их не потребляет
+инструмент, индекс, шаблон или provenance rule. `ai-generated` запрещен:
+provenance фиксируется в issue, PR, changelog или audit.
 
 ### Required Body Sections
 
@@ -103,7 +106,7 @@ ADR должен содержать секции в таком порядке:
 | --- | --- |
 | ADR id | ADR-NNN |
 | Decision type | governance / methodology / product / curriculum / runtime |
-| Decision status | proposed / accepted / rejected / deprecated / superseded |
+| Decision status | same as frontmatter status; narrative summary only |
 | Decision date | YYYY-MM-DD |
 | Owner | Human owner or owning group |
 | Source | Issue/RFC/research/PR link |
@@ -149,21 +152,23 @@ Links to RFC, standard, template, validator, implementation PR or research.
 
 ## Lifecycle
 
-ADR lifecycle uses a body-level `Decision status` vocabulary and maps it to the
-current frontmatter vocabulary.
+ADR lifecycle uses the Governance frontmatter vocabulary from
+[Frontmatter Docs Standard](../../standards/frontmatter-docs-standard.md).
 
-| Decision status | Meaning | Frontmatter status today |
-| --- | --- | --- |
-| `proposed` | ADR text is being reviewed before acceptance. | `draft` |
-| `accepted` | Human decision accepted; ADR is the active decision record. | `canonical` |
-| `rejected` | Decision proposal was rejected but preserved for rationale. | `reviewed` or `superseded` with body note |
-| `deprecated` | Decision still describes history but should not guide new work. | `canonical` with body note until validator supports `deprecated` |
-| `superseded` | Later ADR/RFC replaces this decision. | `superseded` |
+| Frontmatter status | Meaning |
+| --- | --- |
+| `draft` | ADR text is being written before review. |
+| `proposed` | ADR text is ready for human review before acceptance. |
+| `accepted` | Human decision accepted; ADR is the active decision record. |
+| `rejected` | Decision proposal was rejected but preserved for rationale. |
+| `deprecated` | Decision still describes history but should not guide new work. |
+| `superseded` | Later ADR/RFC replaces this decision. |
 
 Allowed transitions:
 
 ```mermaid
 flowchart LR
+    Draft[draft] --> Proposed[proposed]
     Proposed[proposed] --> Accepted[accepted]
     Proposed --> Rejected[rejected]
     Accepted --> Deprecated[deprecated]
@@ -185,8 +190,42 @@ Rules:
 | --- | --- | --- | --- |
 | A. Governance & Knowledge Hub | Governance-record for cross-repository methodology, lifecycle, standards and AI contracts. | Require source RFC/research link, impacted artifacts, compliance/validation and supersession. | Do not create ADR for typo fixes, local cleanup or accepted RFCs that already serve as decision records. |
 | B. Prompt & Pattern Library | Lightweight decision record for stable prompt/process/pattern standards. | Require evidence link, affected prompts/patterns and rollback/evaluation notes. | Do not create ADR for routine prompt wording, experiments or one-off tuning. |
-| C. Product Spoke / Runtime | Engineering decision record for public API, runtime architecture, data, compatibility and release-impact choices. | Require compatibility, migration, runtime validation and owner. | Do not duplicate product specs, issue acceptance criteria or small feature PRs. |
+| C. Product Spoke / Runtime | Engineering decision record for public API, runtime architecture, data, compatibility and release-impact choices. Library/SDK is a profile of archetype C, not a separate archetype. | Require compatibility, migration, runtime validation and owner. | Do not duplicate product specs, issue acceptance criteria or small feature PRs. |
 | D. Education / Learning Package | Curriculum/platform decision record for durable learning outcomes, assessment and course architecture. | Require learner impact, curriculum migration and review trigger. | Do not create ADR for individual lesson edits or short-lived course notes. |
+
+## Appendix: Minimal Archetype Examples
+
+### B. Prompt & Pattern Library ADR
+
+```yaml
+---
+status: proposed
+version: 0.1
+updated: YYYY-MM-DD
+temperature: 0.1
+owner: Prompt library owner
+decision-type: methodology
+---
+```
+
+Minimum body emphasis: affected prompts or patterns, evidence from a failed case
+or evaluation, rollback rule and review trigger.
+
+### C. Product Spoke / Runtime ADR
+
+```yaml
+---
+status: proposed
+version: 0.1
+updated: YYYY-MM-DD
+temperature: 0.1
+owner: Product or engineering owner
+decision-type: product
+---
+```
+
+Minimum body emphasis: compatibility impact, migration path, runtime validation,
+release impact and rollback rule. Library/SDK decisions use this same C profile.
 
 ## Boundary RFC/ADR
 
@@ -194,7 +233,7 @@ Use this rule for the RFC/ADR boundary:
 
 | Situation | Decision |
 | --- | --- |
-| Proposal needs broad review, alternatives and human choice before the decision. | Create RFC first; create ADR after acceptance only if a short canonical decision record is needed. |
+| Proposal needs broad review, alternatives and human choice before the decision. | Create RFC first; create ADR after acceptance only if a short accepted decision record is needed. |
 | Accepted RFC already contains final status, rationale, alternatives, consequences and no separate downstream standard is produced. | Accepted RFC may itself be the decision record; do not duplicate it as ADR. |
 | Decision is narrow, already accepted, or does not need proposal-stage discussion. | Create ADR directly. |
 | Accepted decision creates or changes a standard, template, validator, practice or cross-repository rule. | Prefer RFC -> ADR -> standard/template/validator route. |
@@ -208,10 +247,10 @@ answers "what decision was accepted and why?".
 | Hypothesis under attack | Refutation attempt | Decision |
 | --- | --- | --- |
 | ADR filenames should switch to number-first because strict ADR tools use that norm. | Number-first improves ADR tool compatibility, but conflicts with the current Hub date-first ADR validator and would require a migration unrelated to this task. Stable `ADR-NNN` inside a date-first filename preserves both citation and chronology. | Keep `YYYY-MM-adr-NNN-short-title.md`. |
-| `type`, `decision-drivers`, `owner` and `supersedes` must be frontmatter. | Rich YAML improves machine querying only after an index/validator consumes it. Today the repo standard says explanatory metadata belongs in the body. Mandatory YAML would add drift without automation. | Require these fields in `Decision Metadata` and body sections, not frontmatter. |
-| Every accepted RFC should produce an ADR. | Backstage-like RFC -> ADR separation is useful for large proposal histories, but PEP/EIP/Rust-like accepted proposals can be decision records themselves. Mandatory duplication would create two sources of truth. | ADR is required only when a concise canonical decision or downstream standard trace is needed. |
+| `owner` and `decision-type` should stay in body metadata only. | Issue #282 makes both fields governance-critical: validators and routing need them without reading prose. | Require `owner` and `decision-type` in frontmatter; keep impacted artifacts and rationale in the body. |
+| Every accepted RFC should produce an ADR. | Backstage-like RFC -> ADR separation is useful for large proposal histories, but PEP/EIP/Rust-like accepted proposals can be decision records themselves. Mandatory duplication would create two sources of truth. | ADR is required only when a concise accepted decision record or downstream standard trace is needed. |
 | One strict ADR template should apply identically to A/B/C/D. | Industry evidence shows strong ADR signals in governance/product contexts and weak signals in prompt/education contexts. Uniform weight would over-formalize B/D. | Use a common base contract plus archetype deltas. |
-| `deprecated` should immediately become a frontmatter status. | The current validator accepts `draft`, `reviewed`, `published`, `superseded`, `canonical`, `experimental`. Adding `deprecated` without validator update creates warnings. | Keep `deprecated` in body-level lifecycle until a future validator change. |
+| `deprecated` should remain body-only. | Deprecation is a governance lifecycle state and the validator now supports it. Keeping it body-only would recreate two status sources. | Allow `deprecated` in frontmatter Governance status. |
 
 Confirmation threshold: all accepted decisions above survived refutation except
 with bounded, documented trade-offs. The trade-offs are below the issue's 20%
@@ -226,12 +265,15 @@ Immediate PR impact:
 - register it in [Governance RFC README](README.md);
 - register it in [Artifact Map](../artifact-map.md);
 - allow it in `tools/validate-repository-structure.sh`.
+- align `tools/validate-frontmatter.sh` with ADR `owner` and `decision-type`
+  requirements.
 
 Future work after human acceptance:
 
 - create `standards/adr-structure-standard.md` or equivalent;
-- create `docs/adr/README.md` index and template if ADR volume grows;
-- update validators only if body-level metadata needs machine enforcement.
+- create an ADR template if repeated ADR creation continues;
+- evaluate numeric RFC/ADR id allocation after RFC-020; if adopted, migrate with
+  backlink preservation.
 
 ## Review Status
 

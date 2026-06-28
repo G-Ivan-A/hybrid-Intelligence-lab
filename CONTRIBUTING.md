@@ -105,11 +105,14 @@ audit, PR history или явно указанный `source` path. Новый a
 
 ## Frontmatter
 
-Новые и существенно изменённые Markdown-артефакты используют минимальный
-frontmatter из [standards/frontmatter-standard.md](standards/frontmatter-standard.md):
-`status`, `version`, `updated`, `temperature`. Дополнительные поля добавляются
-только когда их потребляет валидатор, executable contract или migration
-provenance.
+Новые и существенно изменённые Markdown-артефакты используют necessary and
+sufficient frontmatter из
+[standards/frontmatter-standard.md](standards/frontmatter-standard.md) и
+[standards/frontmatter-docs-standard.md](standards/frontmatter-docs-standard.md):
+базовые поля `status`, `version`, `updated`, `temperature` плюс обязательные
+поля класса документа. Governance-артефакты требуют `owner`, ADR требует
+`decision-type`, RFC требует `rfc-scope`. `ai-generated` во frontmatter
+запрещён.
 
 ## File Naming
 
@@ -124,6 +127,7 @@ provenance.
 ## Локальная проверка
 
 ```bash
+bash experiments/test-frontmatter-validator.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh

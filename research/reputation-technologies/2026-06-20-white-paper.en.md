@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-20
 temperature: 0.2
-ai-generated: true
 type: external-analysis
 context: [reputation-technologies, gra, framework, white-paper, international-standard]
 method: comparative-analysis

@@ -3,7 +3,6 @@ status: draft
 version: 0.2
 updated: 2026-06-18
 temperature: 0.1
-ai-generated: true
 type: external-analysis
 context: [requirements-engineering, wiegers, ai-era, knowledge-extraction]
 method: comparative-analysis

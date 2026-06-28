@@ -3,7 +3,6 @@ status: canonical
 version: 1.1
 updated: 2026-06-06
 temperature: 0.1
-ai-generated: false
 ---
 
 # Отчёт аудита миграции — май 2026

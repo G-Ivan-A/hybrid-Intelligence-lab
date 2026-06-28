@@ -1,8 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.0
 updated: 2026-06-12
 temperature: 0.1
+owner: G-Ivan-A
 ---
 
 # HTOM Documentation Structure

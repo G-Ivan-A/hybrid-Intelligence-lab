@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-15
 temperature: 0.1
-ai-generated: true
 ---
 
 # Контекст проекта mango_ba_prompts (Summary)

@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-10
 temperature: 0.1
-ai-generated: true
 ---
 
 # Синхронизация с проектами

@@ -1,9 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.0
 updated: 2026-05-26
 temperature: 0.1
-ai-generated: false
+owner: G-Ivan-A
 ---
 
 # Product Profile
@@ -96,7 +96,6 @@ knowledge hub: канонический `PRODUCT_VISION.md` живет в кор
 status: draft
 version: 0.1
 updated: YYYY-MM-DD
-ai-generated: false
 ---
 
 # Product Vision: <название продукта>

@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-27
 temperature: 0.1
-ai-generated: true
 type: rfc-industry-norms-and-variants-research
 context: [hub, mango, rfc, industry-norms, archetypes, governance, decision-making]
 method: comparative-analysis

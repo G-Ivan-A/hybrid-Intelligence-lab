@@ -3,7 +3,6 @@ status: canonical
 version: 0.2
 updated: {{date}}
 temperature: 0.1
-ai-generated: true
 ---
 
 # Docs

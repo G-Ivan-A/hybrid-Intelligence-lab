@@ -25,6 +25,9 @@ jobs:
       - name: Validate shell syntax
         run: bash -n tools/*.sh templates/htom/tools/*.sh templates/spoke/tools/*.sh
 
+      - name: Test frontmatter validator
+        run: bash experiments/test-frontmatter-validator.sh
+
       - name: Validate frontmatter
         run: ./tools/validate-frontmatter.sh .
 

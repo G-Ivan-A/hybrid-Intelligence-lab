@@ -1,8 +1,10 @@
 ---
-status: canonical
-version: 1.0
-updated: 2026-06-27
+status: accepted
+version: 1.1
+updated: 2026-06-28
 temperature: 0.1
+owner: G-Ivan-A
+decision-type: methodology
 ---
 
 # ADR-002: Методология создания и управления артефактами
@@ -52,7 +54,7 @@ analysis. Но переход "исследование стало нормой"
 | Что это делает? | Тип/функция | research, analysis, report, RFC, ADR, standard, policy, contract, template, prompt, practice, manifest, run |
 | Кто или что это исполняет? | Уровень исполнимости | IL-0, IL-1, IL-2, IL-3 |
 | Где это применимо? | Scope/архетип | repo-wide, hub, spoke, archetype A-D, project-specific |
-| Насколько это зрелое? | Lifecycle status | draft, reviewed, canonical, published, superseded, experimental |
+| Насколько это зрелое или принятое? | Lifecycle status | Knowledge: `draft`, `reviewed`, `canonical`, `superseded`; Governance: `draft`, `proposed`, `accepted`, `rejected`, `deprecated`, `superseded` |
 | Кто принимает решение? | Governance owner | human decision, AI draft, validator check, project owner |
 
 Уровни исполнимости принимаются в формулировке issue #276:
@@ -100,18 +102,20 @@ Markdown с RFC 2119/BCP 14, IDL и другие форматы, если они
 5. место размещения и ссылку на ближайший стандарт;
 6. проверку, которая подтвердит корректность размещения.
 
-Markdown-артефакт с frontmatter обязан иметь четыре базовых поля:
-`status`, `version`, `updated`, `temperature`. Дополнительные поля добавляются
-только если их потребляет валидатор, шаблон, provenance rule или документный
-класс.
+Markdown-артефакт с frontmatter обязан иметь базовые поля `status`, `version`,
+`updated`, `temperature` и обязательные поля своего класса из
+[frontmatter-docs-standard.md](../../standards/frontmatter-docs-standard.md).
+Governance-артефакты добавляют `owner`; ADR добавляет `decision-type`; RFC
+добавляет `rfc-scope`. Дополнительные поля добавляются только если их
+потребляет валидатор, шаблон, provenance rule или документный класс.
 
 ## Human/AI governance
 
 | Действие | Human | AI | Валидатор |
 | --- | --- | --- | --- |
 | Создать draft/research/proposal | утверждает scope или issue | может подготовить текст и варианты | проверяет формат |
-| Перевести `draft` в `reviewed` | выполняет или подтверждает review | может обновить ссылки и traceability | проверяет frontmatter и links |
-| Перевести в `canonical` | принимает решение | не принимает самостоятельно | проверяет структуру и регистрацию |
+| Перевести knowledge `draft` в `reviewed` | выполняет или подтверждает review | может обновить ссылки и traceability | проверяет frontmatter и links |
+| Перевести knowledge в `canonical` или governance в `accepted` | принимает решение | не принимает самостоятельно | проверяет структуру и регистрацию |
 | Создать ADR | принимает решение или фиксирует уже принятое | оформляет record и rationale | проверяет naming/frontmatter/map |
 | Создать standard/validator | подтверждает норму и scope | реализует и тестирует | исполняет проверку |
 
@@ -147,5 +151,6 @@ AI-авторство не является обязательным полем 
 - часть текущих RFC Хаба пока остается в `governance/rfc/`, а новые целевые
   правила называют `docs/rfc/`;
 - физическая миграция existing artifacts требует отдельного плана;
-- валидаторы должны обновляться вместе с появлением новых canonical-артефактов,
+- валидаторы должны обновляться вместе с появлением новых accepted governance
+  или canonical knowledge артефактов,
   иначе карта артефактов и дерево будут расходиться.

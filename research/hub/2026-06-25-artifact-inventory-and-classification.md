@@ -3,7 +3,6 @@ status: reviewed
 version: 0.3
 updated: 2026-06-27
 temperature: 0.1
-ai-generated: true
 type: artifact-inventory-and-classification-research
 context: [hub, mango, artifacts, inventory, classification, L0-L4, knowledge-areas, routing-rules, archetypes, axes-decomposition, executability, format-rules, depends-on-contract, research-naming]
 method: comparative-analysis

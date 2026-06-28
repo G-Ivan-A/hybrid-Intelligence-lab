@@ -1,8 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.4
 updated: 2026-06-25
 temperature: 0.1
+owner: G-Ivan-A
 ---
 
 # Standards

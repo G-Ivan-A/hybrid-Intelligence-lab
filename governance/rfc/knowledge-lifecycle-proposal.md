@@ -3,6 +3,8 @@ status: draft
 version: 0.2
 updated: 2026-06-13
 temperature: 0.1
+owner: G-Ivan-A
+rfc-scope: A
 ---
 
 # RFC: Knowledge Lifecycle

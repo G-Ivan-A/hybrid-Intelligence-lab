@@ -3,7 +3,6 @@ status: reviewed
 version: 0.2
 updated: 2026-06-07
 temperature: 0.1
-ai-generated: true
 type: navigation
 scope: repo-wide
 related_issues:

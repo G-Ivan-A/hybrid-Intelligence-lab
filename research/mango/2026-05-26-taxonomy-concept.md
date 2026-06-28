@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-05-26
 temperature: 0.1
-ai-generated: false
 type: concept-proposal
 context: [taxonomy, telecom, product-management]
 method: standards-analysis + gap-mapping

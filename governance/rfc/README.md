@@ -1,8 +1,9 @@
 ---
-status: canonical
-version: 1.11
-updated: 2026-06-18
+status: accepted
+version: 1.12
+updated: 2026-06-28
 temperature: 0.1
+owner: G-Ivan-A
 ---
 
 # Governance RFC
@@ -12,8 +13,8 @@ temperature: 0.1
 Comments) — отраслевой термин IETF: документ, выносимый на обсуждение и решение,
 а не уже принятая норма.
 
-RFC - это рекомендация или proposal, а не блокирующее правило. Даже canonical
-RFC фиксирует принятое решение и rationale, но обязательная норма должна быть
+RFC - это рекомендация или proposal, а не блокирующее правило. Даже accepted RFC
+фиксирует принятое решение и rationale, но обязательная норма должна быть
 делегирована в active artifact: standard, policy, template, validator или
 операционный контракт. До такой делегации downstream-репозиторий может ссылаться
 на RFC как на обоснование, но не обязан выполнять его механически.

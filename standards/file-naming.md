@@ -1,9 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.6
 updated: 2026-06-25
 temperature: 0.1
-ai-generated: false
+owner: G-Ivan-A
 ---
 
 # Правило именования файлов

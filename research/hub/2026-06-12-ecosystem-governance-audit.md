@@ -66,8 +66,8 @@ Strengths:
 
 Gaps:
 
-- Frontmatter still treated `ai-generated` as required, while the ecosystem is
-  moving toward a smaller four-field convention.
+- Frontmatter previously treated `ai-generated` as required, while the ecosystem
+  needed a smaller base-field convention.
 - Root governance did not yet state that the Hub is a recommendation source,
   not a mechanical blocker.
 - Creative mode existed as an operating mode but lacked a documented override

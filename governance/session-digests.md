@@ -3,7 +3,6 @@ status: draft
 version: 0.3
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
 executable: false
 ---
 

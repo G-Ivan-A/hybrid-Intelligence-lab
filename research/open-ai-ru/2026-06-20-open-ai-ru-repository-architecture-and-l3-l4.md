@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-20
 temperature: 0.2
-ai-generated: true
 type: internal-analysis
 context: [open-ai.ru, architecture, L1-L4, L3, L4, repository-structure, webportal, comparative-analysis]
 method: comparative-analysis

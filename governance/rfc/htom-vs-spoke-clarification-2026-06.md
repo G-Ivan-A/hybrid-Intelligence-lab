@@ -1,9 +1,10 @@
 ---
-status: canonical
+status: accepted
 version: 1.1
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
+rfc-scope: A
 type: rfc
 context: [hub-and-spoke, htom, spoke, terminology, governance, templates, migration]
 method: creative-analysis + concept-separation + migration-mapping

@@ -3,7 +3,6 @@ status: canonical
 version: 1.0
 updated: 2026-06-02
 temperature: 0.1
-ai-generated: true
 ---
 
 # Ретроспектива AI-collaboration по сессии проектирования шаблонов споков

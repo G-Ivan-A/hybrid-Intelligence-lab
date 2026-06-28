@@ -3,7 +3,6 @@ status: canonical
 version: 1.8
 updated: 2026-06-27
 temperature: 0.1
-ai-generated: false
 ---
 
 # Research: Hub

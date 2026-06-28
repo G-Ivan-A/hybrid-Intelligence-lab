@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-19
 temperature: 0.1
-ai-generated: true
 ---
 
 # RFC: Оптимизация потребления токенов при работе AI с репозиторием `mango_ba_prompts` / Token Consumption Optimization for AI Working with the `mango_ba_prompts` Repository

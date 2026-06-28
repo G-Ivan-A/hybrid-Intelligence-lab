@@ -3,7 +3,8 @@ status: draft
 version: 0.3
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
+rfc-scope: A
 type: rfc
 context: [repository-quality, audit, cleanup, governance, traceability, archive]
 method: repository-audit + validator-baseline + link-scan + duplicate-scan

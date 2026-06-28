@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: {{date}}
 temperature: 0.1
-ai-generated: true
 ---
 
 # Changelog — {{project_name}}

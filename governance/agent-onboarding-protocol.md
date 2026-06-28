@@ -3,7 +3,6 @@ status: canonical
 version: 1.3
 updated: 2026-06-11
 temperature: 0.1
-ai-generated: true
 executable: true
 entrypoint: true
 ---

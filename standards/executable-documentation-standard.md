@@ -1,8 +1,9 @@
 ---
-status: canonical
+status: accepted
 version: 1.2
 updated: 2026-06-15
 temperature: 0.1
+owner: G-Ivan-A
 ---
 
 # Executable Documentation Standard

@@ -3,7 +3,6 @@ status: canonical
 version: 1.1
 updated: 2026-06-04
 temperature: 0.1
-ai-generated: true
 author: Qwen (chat assistant)
 session: mango-migration-design
 self-report: true

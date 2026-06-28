@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-09
 temperature: 0.1
-ai-generated: true
 ---
 
 # Добавление шаблона в Хаб
@@ -60,7 +59,6 @@ git push origin add-template-my-checklist
 status: draft
 version: 0.1
 updated: 2026-06-09
-ai-generated: false
 ---
 ```
 

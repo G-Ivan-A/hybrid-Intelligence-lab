@@ -1,8 +1,10 @@
 ---
-status: canonical
+status: accepted
 version: 1.0
 updated: 2026-06-27
 temperature: 0.1
+owner: G-Ivan-A
+decision-type: methodology
 ---
 
 # ADR-001: Методология инфраструктуры проектов экосистемы

@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-18
 temperature: 0.3
-ai-generated: true
 ---
 
 # Формализация AI-классификаций и интеграция в роадмап Mango

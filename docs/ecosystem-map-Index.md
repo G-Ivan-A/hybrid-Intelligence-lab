@@ -3,7 +3,6 @@ status: draft
 version: 0.2
 updated: 2026-06-15
 temperature: 0.1
-ai-generated: true
 ---
 
 # Экосистемная карта — Index

@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-19
 temperature: 0.1
-ai-generated: true
 ---
 
 # RFC: Независимое видение структуры репозитория(ев) `mango_ba_prompts` (ИБ, внешнее хранилище, экосистема) / Independent Vision of `mango_ba_prompts` Repository Structure

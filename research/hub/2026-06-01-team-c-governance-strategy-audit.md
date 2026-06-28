@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-01
 temperature: 0.1
-ai-generated: true
 type: internal-analysis
 scope: repo-wide
 context: [governance, repository-strategy, research-lifecycle, team-c]

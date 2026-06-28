@@ -1,9 +1,10 @@
 ---
-status: canonical
+status: accepted
 version: 0.3
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
+rfc-scope: A
 type: rfc
 context: [governance, draft-lifecycle, triage, repository-quality, templates, research, education]
 method: "document-audit + relation-scan + exit-planning"

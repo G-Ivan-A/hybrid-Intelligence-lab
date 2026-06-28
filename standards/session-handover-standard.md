@@ -3,7 +3,7 @@ status: draft
 version: 0.2
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
+owner: G-Ivan-A
 executable: false
 ---
 
@@ -61,7 +61,7 @@ Draft-статус означает, что стандарт предложен 
 
 Рекомендуемая структура `AI_SESSION_HANDOVER_PROMPT.md`:
 
-1. Frontmatter (`status`, `version`, `updated`, `ai-generated`, `executable`).
+1. Frontmatter (`status`, `version`, `updated`, `temperature`, `executable`).
 2. Короткая директива: это артефакт для копирования, не справка для пересказа.
 3. `## ▶️ EXECUTION` с готовым prompt-блоком.
 4. Внутри prompt-блока — восемь обязательных разделов из таблицы выше.

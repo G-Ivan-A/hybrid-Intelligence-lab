@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-27
 temperature: 0.1
-ai-generated: true
 type: adr-industry-norms-and-variants-research
 context: [hub, mango, adr, decision-records, industry-norms, archetypes, architecture-decisions]
 method: comparative-analysis

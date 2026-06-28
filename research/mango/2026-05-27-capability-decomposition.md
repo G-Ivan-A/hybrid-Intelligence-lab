@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-05-27
 temperature: 0.1
-ai-generated: false
 type: atomic-functions-reference
 context: [voice-ucaas, contact-center, digital-channels]
 method: international-benchmark + atomic-decomposition + practical-mapping

@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: {{date}}
 temperature: 0.1
-ai-generated: true
 level: L3
 standard: "{{hub_url}}/standards/webportal-solution-concept-standard.md"
 ---

@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-05-26
 temperature: 0.1
-ai-generated: false
 type: process-research
 context: [requirements-lifecycle, uncertainty-handling, telecom-automation]
 method: benchmark-analysis + case-modeling + standard-proposal
