@@ -90,6 +90,7 @@ is_active_file() {
     research/hub/2026-06-27-rfc-industry-norms-and-variants.md | \
     research/hub/2026-06-27-adr-industry-norms-and-variants.md | \
     research/hub/2026-06-28-ripple-effects-282-research.md | \
+    research/hub/2026-06-28-research-analysis-audit-inventory.md | \
     research/README.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
@@ -105,6 +106,10 @@ is_active_file() {
     research/hub/exp-ripple-effects-282/scan-frontmatter.py | \
     research/hub/exp-ripple-effects-282/outputs/frontmatter-scan.json | \
     research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md | \
+    research/hub/exp-research-analysis-audit-288/README.md | \
+    research/hub/exp-research-analysis-audit-288/scan-artifacts.py | \
+    research/hub/exp-research-analysis-audit-288/outputs/artifact-classification.json | \
+    research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -497,6 +502,7 @@ required_files=(
   "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
   "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
   "research/hub/2026-06-28-ripple-effects-282-research.md"
+  "research/hub/2026-06-28-research-analysis-audit-inventory.md"
   "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
   "research/mango/README.md"
   "research/governance/README.md"
@@ -718,6 +724,7 @@ require_text "CHANGELOG.md" "issue #237"
 require_text "CHANGELOG.md" "issue #241"
 require_text "CHANGELOG.md" "issue #240"
 require_text "CHANGELOG.md" "issue #278"
+require_text "CHANGELOG.md" "issue #288"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
@@ -725,6 +732,7 @@ require_text "CHANGELOG.md" "### Removed"
 require_text "mkdocs.yml" "2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "mkdocs.yml" "2026-06-27-adr-industry-norms-and-variants.md"
 require_text "mkdocs.yml" "2026-06-28-ripple-effects-282-research.md"
+require_text "mkdocs.yml" "2026-06-28-research-analysis-audit-inventory.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
@@ -1173,11 +1181,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.51"
+require_text "governance/artifact-map.md" "version: 1.52"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-27"
+require_text "governance/artifact-map.md" "updated: 2026-06-28"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1211,7 +1219,9 @@ require_text "governance/artifact-map.md" "research/hub/2026-06-12-external-prac
 require_text "governance/artifact-map.md" "research/hub/2026-06-12-international-ai-governance-practices.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
+require_text "governance/artifact-map.md" "research/hub/2026-06-28-research-analysis-audit-inventory.md"
 require_text "governance/artifact-map.md" "research/hub/exp-rfc-adr-industry-norms/"
+require_text "governance/artifact-map.md" "research/hub/exp-research-analysis-audit-288/"
 require_text "governance/artifact-map.md" "practices/README.md"
 require_text "governance/artifact-map.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
 require_text "governance/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
@@ -1488,6 +1498,7 @@ require_text "research/README.md" "2026-06-12-external-practice-intake.md"
 require_text "research/README.md" "2026-06-12-international-ai-governance-practices.md"
 require_text "research/README.md" "2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "research/README.md" "2026-06-27-adr-industry-norms-and-variants.md"
+require_text "research/README.md" "2026-06-28-research-analysis-audit-inventory.md"
 require_text "research/README.md" "Размещение файлов исследований в корне каталога"
 
 # Namespacing: no research files allowed in the research/ root except README.md.
@@ -1510,7 +1521,32 @@ require_text "research/hub/README.md" "2026-06-12-external-practice-intake.md"
 require_text "research/hub/README.md" "2026-06-12-international-ai-governance-practices.md"
 require_text "research/hub/README.md" "2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "research/hub/README.md" "2026-06-27-adr-industry-norms-and-variants.md"
+require_text "research/hub/README.md" "2026-06-28-research-analysis-audit-inventory.md"
 require_text "research/hub/README.md" "exp-rfc-adr-industry-norms/"
+require_text "research/hub/README.md" "exp-research-analysis-audit-288/"
+
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "status: draft"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "version: 0.1"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "updated: 2026-06-28"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "temperature: 0.1"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "issue #288"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Research / Analysis / Audit"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Mango"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Clarify"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Analysis -> RFC -> Standard"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "2026-06-28-artifact-classification-matrix.md"
+require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "не создаёт RFC"
+
+require_text "research/hub/exp-research-analysis-audit-288/README.md" "status: draft"
+require_text "research/hub/exp-research-analysis-audit-288/README.md" "type: experiment"
+require_text "research/hub/exp-research-analysis-audit-288/README.md" "scan-artifacts.py"
+require_text "research/hub/exp-research-analysis-audit-288/README.md" "artifact-classification.json"
+require_text "research/hub/exp-research-analysis-audit-288/README.md" "2026-06-28-artifact-classification-matrix.md"
+require_text "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md" "Hub / hybrid-Intelligence-lab"
+require_text "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md" "Mango / mango_ba_prompts"
+require_text "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md" "Clarify / clarify-engine-ai"
+require_text "research/hub/exp-research-analysis-audit-288/outputs/artifact-classification.json" '"scope": ['
+require_text "research/hub/exp-research-analysis-audit-288/outputs/artifact-classification.json" '"records": ['
 
 require_text "research/hub/2026-06-27-rfc-industry-norms-and-variants.md" "status: draft"
 require_text "research/hub/2026-06-27-rfc-industry-norms-and-variants.md" "version: 0.1"

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.18
-updated: 2026-06-27
+version: 1.19
+updated: 2026-06-28
 temperature: 0.1
 ---
 
@@ -22,6 +22,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Research / Analysis / Audit inventory for issue #288. Added
+  `research/hub/2026-06-28-research-analysis-audit-inventory.md` plus a
+  reproducible scan under `research/hub/exp-research-analysis-audit-288/`,
+  classifying Hub, Mango and Clarify artifacts by actual purpose, identifying
+  concept substitutions and duplicate risks, and planning three future
+  `Analysis -> RFC -> Standard` chains without creating RFCs or standards.
 - rfc: ADR/RFC structure standards for issue #280. Added
   `governance/rfc/2026-06-27-rfc-adr-standard.md` and
   `governance/rfc/2026-06-27-rfc-rfc-standard.md` with base contracts,

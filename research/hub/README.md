@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.8
-updated: 2026-06-27
+version: 1.9
+updated: 2026-06-28
 temperature: 0.1
 ---
 
@@ -33,6 +33,7 @@ project bootstrap, governance-стратегии и классификации �
 | [2026-06-27-rfc-industry-norms-and-variants.md](2026-06-27-rfc-industry-norms-and-variants.md) | Research input для issue #278: аудит RFC Hub/Mango, индустриальные RFC-like нормы по архетипам A-D, дельты, lifecycle diagrams и варианты RFC-модели без создания нового RFC. |
 | [2026-06-27-adr-industry-norms-and-variants.md](2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: аудит ADR/decision records Hub/Mango, индустриальные ADR-нормы, дельты, lifecycle diagrams и варианты ADR-модели без создания нового ADR. |
 | [2026-06-28-ripple-effects-282-research.md](2026-06-28-ripple-effects-282-research.md) | Research input для issue #284: ripple effects issue #282 по двойному словарю статусов, validator routing, necessary/sufficient frontmatter, `ai-generated` cleanup, CI modes и migration scenarios без выбора финального варианта. |
+| [2026-06-28-research-analysis-audit-inventory.md](2026-06-28-research-analysis-audit-inventory.md) | Analysis input для issue #288: сквозная классификация Research / Analysis / Audit в Hub, Mango и Clarify, дельты, подмена понятий, дубли и план трёх цепочек `Analysis -> RFC -> Standard`. |
 
 ## Эксперименты
 
@@ -40,6 +41,7 @@ project bootstrap, governance-стратегии и классификации �
 | --- | --- |
 | [exp-rfc-adr-industry-norms/](exp-rfc-adr-industry-norms/) | Воспроизводимый corpus scan для issue #278: local Hub/Mango RFC/ADR audit и external RFC/ADR path-signal summaries по архетипам A-D. |
 | [exp-ripple-effects-282/](exp-ripple-effects-282/) | Воспроизводимый frontmatter scan для issue #284: counts for status values, `ai-generated`, extra fields, path classes and migration examples. |
+| [exp-research-analysis-audit-288/](exp-research-analysis-audit-288/) | Воспроизводимый scan для issue #288: матрица классификации Research / Analysis / Audit / Other по Hub, Mango и Clarify. |
 
 ## Воспроизводимость
 

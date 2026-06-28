@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.18
-updated: 2026-06-27
+version: 1.19
+updated: 2026-06-28
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -59,6 +59,7 @@ source: research/README-old.md
 | [2026-06-25-artifact-inventory-and-classification.md](hub/2026-06-25-artifact-inventory-and-classification.md) | Reviewed research input для issue #276: инвентаризация артефактов экосистемы, классификация по ортогональным осям, routing rules RT-01..RT-10 и source-backed вход для [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) / [ADR-001](../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md). |
 | [2026-06-27-rfc-industry-norms-and-variants.md](hub/2026-06-27-rfc-industry-norms-and-variants.md) | Research input для issue #278: RFC-like индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с воспроизводимым external source corpus. |
 | [2026-06-27-adr-industry-norms-and-variants.md](hub/2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: ADR/decision-record индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с дельтами и критериями применимости. |
+| [2026-06-28-research-analysis-audit-inventory.md](hub/2026-06-28-research-analysis-audit-inventory.md) | Analysis input для issue #288: Research / Analysis / Audit matrix по Hub, Mango и Clarify, concept substitutions, duplicate risks and three `Analysis -> RFC -> Standard` chains. |
 
 ### Подкаталог `open-ai-ru/`
 
