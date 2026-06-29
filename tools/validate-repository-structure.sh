@@ -128,6 +128,7 @@ is_active_file() {
     research/reputation-technologies/2026-06-20-white-paper.en.md | \
     research/reputation-technologies/2026-06-20-executive-summary.ru-en.md | \
     research/reputation-technologies/2026-06-20-glossary.ru-en.md | \
+    research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md | \
     research/mango/2026-05-22-classification.md | \
     research/mango/2026-05-22-classification-tz.md | \
     research/mango/2026-05-22-requirements-flow.md | \
@@ -520,6 +521,7 @@ required_files=(
   "research/mango/2026-05-22-classification-tz.md"
   "research/mango/2026-05-22-requirements-flow.md"
   "research/mango/2026-05-26-rag-mapping-roadmap.md"
+  "research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md"
   "research/external-knowledge/README.md"
   "research/external-knowledge/external-sources-registry.md"
   "research/external-knowledge/external-insights/README.md"
