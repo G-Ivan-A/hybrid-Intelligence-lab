@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.19
-updated: 2026-06-28
+version: 1.20
+updated: 2026-06-29
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -60,6 +60,7 @@ source: research/README-old.md
 | [2026-06-27-rfc-industry-norms-and-variants.md](hub/2026-06-27-rfc-industry-norms-and-variants.md) | Research input для issue #278: RFC-like индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с воспроизводимым external source corpus. |
 | [2026-06-27-adr-industry-norms-and-variants.md](hub/2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: ADR/decision-record индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с дельтами и критериями применимости. |
 | [2026-06-28-research-analysis-audit-inventory.md](hub/2026-06-28-research-analysis-audit-inventory.md) | Analysis input для issue #288: Research / Analysis / Audit matrix по Hub, Mango и Clarify, concept substitutions, duplicate risks and three `Analysis -> RFC -> Standard` chains. |
+| [2026-06-29-research-artifact-format-contract-audit.md](hub/2026-06-29-research-artifact-format-contract-audit.md) | Audit input для issue #290: source of `exp-*` research folders, report-vs-experiment boundary, unresolved `outputs/` vs `runs/` contract, and recommendation. |
 
 ### Подкаталог `open-ai-ru/`
 

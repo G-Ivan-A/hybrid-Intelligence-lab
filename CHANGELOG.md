@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.19
-updated: 2026-06-28
+version: 1.20
+updated: 2026-06-29
 temperature: 0.1
 ---
 
@@ -28,6 +28,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Format-contract audit for issue #290. Added
+  `research/hub/2026-06-29-research-artifact-format-contract-audit.md` to trace
+  the source of `research/hub/exp-*` folders, distinguish report Markdown files
+  from reproducible experiment corpora, identify the unresolved
+  `exp-<slug>/outputs/` vs ADR-002 `runs/` boundary, and recommend preserving the
+  dual report + experiment model until a follow-up standard/ADR clarification.
 - research: Research / Analysis / Audit inventory for issue #288. Added
   `research/hub/2026-06-28-research-analysis-audit-inventory.md` plus a
   reproducible scan under `research/hub/exp-research-analysis-audit-288/`,

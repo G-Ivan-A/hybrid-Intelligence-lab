@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.9
-updated: 2026-06-28
+version: 1.10
+updated: 2026-06-29
 temperature: 0.1
 ---
 
@@ -34,6 +34,7 @@ project bootstrap, governance-стратегии и классификации �
 | [2026-06-27-adr-industry-norms-and-variants.md](2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: аудит ADR/decision records Hub/Mango, индустриальные ADR-нормы, дельты, lifecycle diagrams и варианты ADR-модели без создания нового ADR. |
 | [2026-06-28-ripple-effects-282-research.md](2026-06-28-ripple-effects-282-research.md) | Research input для issue #284: ripple effects issue #282 по двойному словарю статусов, validator routing, necessary/sufficient frontmatter, `ai-generated` cleanup, CI modes и migration scenarios без выбора финального варианта. |
 | [2026-06-28-research-analysis-audit-inventory.md](2026-06-28-research-analysis-audit-inventory.md) | Analysis input для issue #288: сквозная классификация Research / Analysis / Audit в Hub, Mango и Clarify, дельты, подмена понятий, дубли и план трёх цепочек `Analysis -> RFC -> Standard`. |
+| [2026-06-29-research-artifact-format-contract-audit.md](2026-06-29-research-artifact-format-contract-audit.md) | Audit input для issue #290: источник `exp-*` research folders, граница report vs experiment, конфликт `outputs/` vs `runs/` и рекомендация сохранить dual model. |
 
 ## Эксперименты
 
