@@ -188,6 +188,7 @@ is_active_file() {
     governance/rfc/methodology-research-and-proposals.md | \
     governance/rfc/2026-06-27-rfc-adr-standard.md | \
     governance/rfc/2026-06-27-rfc-rfc-standard.md | \
+    governance/rfc/2026-06-30-rfc-research-structure.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -1283,8 +1284,8 @@ require_text "governance/artifact-map.md" "research/external-knowledge/external-
 require_text "governance/artifact-map.md" "governance/rfc/external-knowledge-integration.md"
 
 require_text "governance/rfc/README.md" "status: accepted"
-require_text "governance/rfc/README.md" "version: 1.13"
-require_text "governance/rfc/README.md" "updated: 2026-06-28"
+require_text "governance/rfc/README.md" "version: 1.14"
+require_text "governance/rfc/README.md" "updated: 2026-06-30"
 require_text "governance/rfc/README.md" "owner: G-Ivan-A"
 require_text "governance/rfc/README.md" "adr-structure-standard.md"
 require_text "governance/rfc/README.md" "rfc-structure-standard.md"

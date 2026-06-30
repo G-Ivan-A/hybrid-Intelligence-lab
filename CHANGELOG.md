@@ -28,6 +28,19 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- rfc: Added `governance/rfc/2026-06-30-rfc-research-structure.md` for issue #302
+  (backlog B-016). The RFC proposes the base research-structure contract: a single
+  `research/<domain>/exp/<issue-slug>/` evidence container, a ban on the nested
+  `outputs/` folder (flat package inside `exp/`), the `exp/` (research evidence
+  corpus) vs `runs/` (operational run record) boundary, Research / Analysis /
+  Audit routing by task type with a classification decision tree, transitional
+  handling of legacy `exp-*` until migration (B-022), a Critical Analysis
+  stress-test, and consequences for chain B-017..B-023. It references issues
+  #294/#290/#288 and stays a proposal (status `draft`); the normative standard is
+  delegated to B-018 after the ADR (B-017). Registered the RFC in
+  `governance/rfc/README.md` (version 1.13 -> 1.14), `governance/artifact-map.md`,
+  the structure validator allowlist, and updated backlog B-016 status. No file
+  migration and no research-format enforcement logic were changed.
 - chore: Добавлены задачи B-035..B-037 в бэклог (реорганизация backlog +
   amendment policy + валидатор). Источники: согласование в чате 2026-06-30,
   issue #297.
