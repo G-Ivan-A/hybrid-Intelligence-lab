@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.20
-updated: 2026-06-29
+version: 1.21
+updated: 2026-06-30
 temperature: 0.1
 ---
 
@@ -28,6 +28,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- backlog: Added the issue #294 sprint to `governance/backlog.md` as tasks
+  B-016..B-023. The sprint traces to issues #288 and #290, defines the
+  dependency chain `RFC -> ADR -> standard -> ADR-002 addendum -> glossary ->
+  profile removal`, and records migration/validator follow-ups for the `exp/`
+  research structure without implementing those follow-up tasks in this PR.
+  Updated the structure validator's canonical backlog version check accordingly.
 - audit: Format-contract audit for issue #290. Added
   `docs/audit/2026-06-29-research-artifact-format-contract-audit.md` to trace
   the source of `research/hub/exp-*` folders, distinguish report Markdown files
