@@ -34,6 +34,12 @@ All notable repository governance changes are documented here.
   review, ADR/RFC and ITIL-style change-class practices, and records follow-up
   recommendations without changing `governance/backlog.md` or creating new
   RFC/ADR/standard artifacts.
+- backlog: Added the issue #296 Analysis and Audit standardization sprints to
+  `governance/backlog.md` as tasks B-024..B-033, with five stages each:
+  current-state analysis, RFC, ADR, standard and post-standard cleanup. Added
+  B-034 as the separate Hub migration-plan RFC gate after the Research,
+  Analysis and Audit standards exist, updated `governance/artifact-map.md`, and
+  bumped the structure validator's canonical backlog version check.
 - backlog: Added the issue #294 sprint to `governance/backlog.md` as tasks
   B-016..B-023. The sprint traces to issues #288 and #290, defines the
   dependency chain `RFC -> ADR -> standard -> ADR-002 addendum -> glossary ->

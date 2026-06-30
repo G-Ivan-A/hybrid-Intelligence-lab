@@ -1,10 +1,10 @@
 ---
 status: canonical
-version: 1.6
+version: 1.7
 updated: 2026-06-30
 temperature: 0.1
 type: backlog
-context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents, research-structure]
+context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents, research-structure, analysis-standardization, audit-standardization]
 method: creative-analysis + synthesis + dependency-mapping
 scope: repo-wide
 related_artifacts:
@@ -49,6 +49,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -194,6 +195,17 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-021** | Удалить `standards/research-profile.md` после замены стандартом | **P1** | B-020 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `standards/research-profile.md` | Убирает конкурирующий источник истины; требует CHANGELOG entry и проверки ссылок. |
 | **B-022** | Мигрировать существующие `exp-*` в контейнер `exp/`, убрать `outputs/` | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); текущие `research/hub/exp-*` | Физическая миграция полезна, но должна идти после контракта, чтобы не закрепить новый дрейф. |
 | **B-023** | Обновить валидатор структуры под `exp/` и routing по типам задач | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `tools/validate-repository-structure.sh`; `tools/validate-file-naming.sh` | Делает новый контракт исполнимым после human decision; не должен предвосхищать стандарт. |
+| **B-024** | analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify) | **P0** | B-020 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); B-020 | Даёт входные данные для `analysis-standard.md`: фактические Analysis-артефакты, подмены понятий, дубли и кандидаты на модернизацию. |
+| **B-025** | rfc: Стандарт структуры Analysis | **P0** | B-024 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | Proposal-stage для правил Analysis: frontmatter, секции, lifecycle, routing и отличия от Research/Audit до human decision. |
+| **B-026** | adr: Принятие `analysis-standard` | **P0** | B-025 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий RFC B-025; `standards/adr-structure-standard.md` | Decision gate между RFC-вариантами и нормативным Analysis standard. |
+| **B-027** | chore: Создание `standards/analysis-standard.md` | **P0** | B-026 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий ADR B-026 | Нормативный контракт Analysis; prerequisite для плана миграции репо и cleanup Analysis-артефактов. |
+| **B-028** | chore: Cleanup и модернизация Analysis-артефактов | **P2** | B-027 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); analysis-аудит B-024; `standards/analysis-standard.md` | Пост-standard cleanup: убрать дубли, обновить frontmatter/cross-references и индексы без преждевременной миграции. |
+| **B-029** | analysis: Сквозной анализ артефактов Audit (Хаб, Mango, Clarify) | **P0** | B-020 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); B-020 | Даёт входные данные для `audit-standard.md`: compliance-артефакты, замаскированные аудиты, дубли и candidates for modernization. |
+| **B-030** | rfc: Стандарт структуры Audit | **P0** | B-029 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | Proposal-stage для Audit: критерии соответствия, evidence, routing и отличия от Research/Analysis. |
+| **B-031** | adr: Принятие `audit-standard` | **P0** | B-030 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий RFC B-030; `standards/adr-structure-standard.md` | Decision gate перед нормативным Audit standard и последующей модернизацией audit/report artifacts. |
+| **B-032** | chore: Создание `standards/audit-standard.md` | **P0** | B-031 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий ADR B-031 | Нормативный контракт Audit; prerequisite для плана миграции репо и cleanup Audit-артефактов. |
+| **B-033** | chore: Cleanup и модернизация Audit-артефактов | **P2** | B-032 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); audit-аудит B-029; `standards/audit-standard.md` | Пост-standard cleanup: убрать дубли/конкурирующие файлы, обновить frontmatter, cross-references, artifact-map и индексы. |
+| **B-034** | rfc: План миграции репо Хаба после стандартов Research/Analysis/Audit | **P1** | B-018, B-027, B-032 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); ADR-001/ADR-002; будущие R/A/A standards | Фиксирует, что физическая реструктуризация репо — отдельный RFC после всех трёх стандартов, а не этап стандартизации. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
@@ -1089,6 +1101,485 @@ P2 tech debt: enforcement нужен после стандарта, но не з
 
 ---
 
+### B-024: analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify)
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+[issue #288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288);
+B-020 glossary update
+**Зависимости:** B-020
+**Статус:** TODO
+**Режим работы:** `Analysis`
+
+**Контекст:**
+Analysis standard должен быть независимым стандартом, а не наследником research
+profile. Перед RFC нужно повторно сузить результаты issue #288 именно на
+Analysis: локальный/внутренний контекст, наложение данных на уже существующие
+определения и отсутствие генерации нового внешнего знания.
+
+**Что нужно сделать:**
+1. Просканировать `docs/analysis/`, `docs/reports/`, `docs/audit/`, `research/`
+   и `governance/` в Хабе, Mango и Clarify.
+2. Для каждого кандидата определить фактический тип по содержанию и цели, а не
+   по текущему пути.
+3. Выявить RFC, Audit, convergence-test и report artifacts, которые сейчас
+   замаскированы под Analysis.
+4. Составить список кандидатов на перенос, удаление дублей или модернизацию
+   после принятия standard.
+
+**Ожидаемые артефакты:**
+- `docs/analysis/YYYY-MM-DD-analysis-artifacts-inventory.md` или ближайший
+  approved Analysis path на момент выполнения
+
+**Критерии приёмки (DoD):**
+- [ ] В анализе перечислены Hub, Mango и Clarify candidates with rationale.
+- [ ] Для каждого candidate указан фактический тип: Research / Analysis / Audit
+      / RFC / ADR / Other.
+- [ ] Есть список duplicates, concept substitutions and modernization
+      candidates for B-028.
+- [ ] Результат ссылается на issue #296, issue #288, ADR-001/ADR-002 and B-020.
+
+**Обоснование приоритета:**
+P0: без scoped current-state analysis RFC B-025 будет строиться на непроверенной
+классификации и может закрепить существующее смешение Analysis, Research и Audit.
+
+**Риски и ограничения:**
+Не выполнять cleanup в этом шаге. Stage 1 фиксирует факты и candidates; правки
+existing artifacts идут только после accepted standard.
+
+---
+
+### B-025: rfc: Стандарт структуры Analysis
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+будущий analysis inventory B-024;
+[RFC Structure Standard](../standards/rfc-structure-standard.md)
+**Зависимости:** B-024
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+RFC нужен как proposal-stage перед `analysis-standard.md`: он описывает
+варианты, rejected alternatives, trade-offs и правила routing, но не становится
+нормативным контрактом сам по себе.
+
+**Что нужно сделать:**
+1. Создать `governance/rfc/YYYY-MM-DD-rfc-analysis-standard.md`.
+2. Предложить структуру Analysis artifact: frontmatter, required sections,
+   lifecycle and evidence expectations.
+3. Зафиксировать routing rules for Analysis and clear boundaries with Research,
+   Audit, RFC and ADR.
+4. Добавить матрицу дельт по архетипам A/B/C/D.
+5. Перечислить impacted artifacts from B-024 and consequences for B-026..B-028.
+
+**Ожидаемые артефакты:**
+- `governance/rfc/YYYY-MM-DD-rfc-analysis-standard.md` (new RFC)
+
+**Критерии приёмки (DoD):**
+- [ ] RFC follows `standards/rfc-structure-standard.md`.
+- [ ] RFC states Analysis definition and routing rules without inheriting
+      Research or Audit standard.
+- [ ] RFC includes alternatives, trade-offs, impacted artifacts, A/B/C/D deltas
+      and decision path.
+- [ ] Open Questions are limited to blockers for ADR B-026.
+
+**Обоснование приоритета:**
+P0: это proposal gate для Analysis standard и prerequisite для repo migration
+planning. Прямая запись standard без RFC нарушит agreed chain
+`Analysis -> RFC -> ADR -> Standard`.
+
+**Риски и ограничения:**
+RFC не должен выполнять cleanup и не должен превращаться в accepted norm без ADR.
+
+---
+
+### B-026: adr: Принятие `analysis-standard`
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+будущий RFC B-025;
+[ADR Structure Standard](../standards/adr-structure-standard.md)
+**Зависимости:** B-025
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+ADR фиксирует human decision между RFC proposal и нормативным standard. Без
+него `standards/analysis-standard.md` будет выглядеть как исполнительская
+инициатива, а не принятое governance-решение.
+
+**Что нужно сделать:**
+1. Создать `docs/adr/YYYY-MM-adr-NNN-analysis-standard.md`.
+2. Зафиксировать принятое решение по structure, lifecycle and routing Analysis.
+3. Указать impacted artifacts and consequences for B-027, B-028 and migration
+   RFC B-034.
+
+**Ожидаемые артефакты:**
+- `docs/adr/YYYY-MM-adr-NNN-analysis-standard.md` (new ADR)
+
+**Критерии приёмки (DoD):**
+- [ ] ADR follows `standards/adr-structure-standard.md`.
+- [ ] Decision accepts or explicitly corrects RFC B-025.
+- [ ] Consequences name `standards/analysis-standard.md`, cleanup B-028 and
+      migration RFC B-034.
+- [ ] Supersession and validation expectations are explicit.
+
+**Обоснование приоритета:**
+P0: это required decision gate before the standard. Он защищает chain от
+прямого прыжка из анализа в норму.
+
+**Риски и ограничения:**
+Не дублировать RFC. ADR должен быть коротким decision record with rationale and
+consequences.
+
+---
+
+### B-027: chore: Создание `standards/analysis-standard.md`
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+будущий ADR B-026
+**Зависимости:** B-026
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+После ADR нужен normative contract без proposal-обёртки. Standard должен дать
+исполнителям и reviewers проверяемый формат Analysis artifact and routing rules
+for future migration planning.
+
+**Что нужно сделать:**
+1. Создать `standards/analysis-standard.md`.
+2. Зафиксировать назначение Analysis, frontmatter, required body sections,
+   lifecycle, routing and review criteria.
+3. Описать отличия от Research, Audit, RFC, ADR and Report.
+4. Указать how this standard feeds cleanup B-028 and migration RFC B-034.
+
+**Ожидаемые артефакты:**
+- `standards/analysis-standard.md` (new standard)
+- registry/navigation updates required by current standards process
+
+**Критерии приёмки (DoD):**
+- [ ] Standard references ADR B-026, RFC B-025, issue #296 and issue #288.
+- [ ] Normative body does not include proposal language or unresolved variants.
+- [ ] Routing rules are actionable for future agents and reviewers.
+- [ ] `standards/README.md`, artifact-map and validators are updated if this
+      active standard requires registration.
+
+**Обоснование приоритета:**
+P0: это целевой contract for Analysis. Без него repo migration RFC B-034 не
+имеет правил для routing локального анализа.
+
+**Риски и ограничения:**
+Не выполнять modernization of existing Analysis artifacts in the same step
+unless task scope explicitly includes B-028.
+
+---
+
+### B-028: chore: Cleanup и модернизация Analysis-артефактов
+
+**Приоритет:** P2
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+analysis inventory B-024;
+`standards/analysis-standard.md`
+**Зависимости:** B-027
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+Cleanup is intentionally post-standard work. It applies accepted Analysis rules
+to existing artifacts without folding the broader repository migration into the
+standardization sprint.
+
+**Что нужно сделать:**
+1. Remove or mark duplicate/competing Analysis artifacts according to B-024 and
+   the accepted standard.
+2. Modernize retained artifacts: frontmatter, cross-references, lifecycle status
+   and source links.
+3. Update `governance/artifact-map.md`, relevant indexes and validator
+   references where the standard requires it.
+4. Leave broad physical repository migration to B-034.
+
+**Ожидаемые артефакты:**
+- changed existing Analysis artifacts and navigation/index files
+
+**Критерии приёмки (DoD):**
+- [ ] B-024 candidates are resolved or explicitly deferred.
+- [ ] Retained Analysis artifacts comply with `standards/analysis-standard.md`.
+- [ ] Artifact-map and indexes do not point to obsolete Analysis sources.
+- [ ] Local validation passes.
+
+**Обоснование приоритета:**
+P2: cleanup matters for repo hygiene, but doing it before standard acceptance
+would freeze the wrong routing model.
+
+**Риски и ограничения:**
+Do not rename or move large artifact sets as a hidden migration. Structural repo
+migration remains B-034.
+
+---
+
+### B-029: analysis: Сквозной анализ артефактов Audit (Хаб, Mango, Clarify)
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+[issue #288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288);
+B-020 glossary update
+**Зависимости:** B-020
+**Статус:** TODO
+**Режим работы:** `Analysis`
+
+**Контекст:**
+Audit standard должен описывать compliance/conformance artifacts, а не общий
+analysis или research. Перед RFC нужно выделить фактические audit artifacts,
+включая случаи, где аудит сейчас лежит в `research/` или `docs/analysis/`.
+
+**Что нужно сделать:**
+1. Просканировать `docs/audit/`, `docs/reports/`, `docs/analysis/`, `research/`
+   и `governance/` в Хабе, Mango и Clarify.
+2. Классифицировать artifacts by purpose: conformance check, validation report,
+   review report, local analysis, research or other.
+3. Выявить Audit artifacts, замаскированные под Analysis/Research, and reports
+   that need clearer routing.
+4. Составить candidates for removal, modernization or migration after accepted
+   audit standard.
+
+**Ожидаемые артефакты:**
+- `docs/analysis/YYYY-MM-DD-audit-artifacts-inventory.md` или ближайший approved
+  Analysis path на момент выполнения
+
+**Критерии приёмки (DoD):**
+- [ ] Hub, Mango and Clarify audit candidates are listed with rationale.
+- [ ] Compliance target or checked contract is identified where possible.
+- [ ] Duplicates, concept substitutions and modernization candidates feed B-033.
+- [ ] Result references issue #296, issue #288, ADR-001/ADR-002 and B-020.
+
+**Обоснование приоритета:**
+P0: without this stage, audit-standard RFC would encode assumed compliance
+categories instead of actual ecosystem evidence.
+
+**Риски и ограничения:**
+Stage 1 does not fix existing audit/report files. It classifies and scopes work
+for RFC, ADR, standard and cleanup.
+
+---
+
+### B-030: rfc: Стандарт структуры Audit
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+будущий audit inventory B-029;
+[RFC Structure Standard](../standards/rfc-structure-standard.md)
+**Зависимости:** B-029
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+Audit RFC proposes the shape of conformance-check artifacts: what standard or
+contract is checked, what evidence is required, how deviations are recorded and
+where reports belong.
+
+**Что нужно сделать:**
+1. Создать `governance/rfc/YYYY-MM-DD-rfc-audit-standard.md`.
+2. Define Audit artifact structure: frontmatter, required sections, evidence
+   model, deviation/severity language and lifecycle.
+3. Define routing boundaries with Research, Analysis, Report, RFC and ADR.
+4. Add A/B/C/D delta matrix and impacted artifacts from B-029.
+5. State consequences for B-031..B-033 and migration RFC B-034.
+
+**Ожидаемые артефакты:**
+- `governance/rfc/YYYY-MM-DD-rfc-audit-standard.md` (new RFC)
+
+**Критерии приёмки (DoD):**
+- [ ] RFC follows `standards/rfc-structure-standard.md`.
+- [ ] Audit is defined as compliance/conformance checking against an explicit
+      standard, contract or norm.
+- [ ] RFC distinguishes Audit from Analysis and Research with concrete routing
+      rules.
+- [ ] Alternatives, trade-offs, impacted artifacts and A/B/C/D deltas are
+      complete enough for ADR.
+
+**Обоснование приоритета:**
+P0: Audit standard is a prerequisite for migration planning and for cleaning
+current misplaced audit artifacts.
+
+**Риски и ограничения:**
+Do not make audit-standard a generic report standard. Reports can be an output
+surface, but Audit is defined by conformance checking.
+
+---
+
+### B-031: adr: Принятие `audit-standard`
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+будущий RFC B-030;
+[ADR Structure Standard](../standards/adr-structure-standard.md)
+**Зависимости:** B-030
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+ADR is the human decision gate that accepts or corrects the Audit RFC before the
+normative standard is written.
+
+**Что нужно сделать:**
+1. Создать `docs/adr/YYYY-MM-adr-NNN-audit-standard.md`.
+2. Record the accepted Audit structure, routing, evidence expectations and
+   report boundary.
+3. List impacted artifacts, cleanup implications and migration planning impact.
+
+**Ожидаемые артефакты:**
+- `docs/adr/YYYY-MM-adr-NNN-audit-standard.md` (new ADR)
+
+**Критерии приёмки (DoD):**
+- [ ] ADR follows `standards/adr-structure-standard.md`.
+- [ ] Decision accepts or explicitly corrects RFC B-030.
+- [ ] Consequences name `standards/audit-standard.md`, cleanup B-033 and
+      migration RFC B-034.
+- [ ] Validation and supersession rules are explicit.
+
+**Обоснование приоритета:**
+P0: accepted Audit standard needs a decision record, because it controls routing
+of compliance evidence across current and future repositories.
+
+**Риски и ограничения:**
+Keep rationale concise. The detailed proposal stays in RFC B-030.
+
+---
+
+### B-032: chore: Создание `standards/audit-standard.md`
+
+**Приоритет:** P0
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+будущий ADR B-031
+**Зависимости:** B-031
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+Audit standard becomes the normative contract for conformance-check artifacts:
+what is being checked, what evidence is sufficient and how deviations are
+reported.
+
+**Что нужно сделать:**
+1. Создать `standards/audit-standard.md`.
+2. Define required frontmatter, body sections, evidence expectations, deviation
+   handling, lifecycle and routing.
+3. State boundaries with Research, Analysis, Report, RFC, ADR and operational
+   run records.
+4. Link cleanup B-033 and migration RFC B-034.
+
+**Ожидаемые артефакты:**
+- `standards/audit-standard.md` (new standard)
+- registry/navigation updates required by current standards process
+
+**Критерии приёмки (DoD):**
+- [ ] Standard references ADR B-031, RFC B-030, issue #296 and issue #288.
+- [ ] Normative text does not contain unresolved RFC alternatives.
+- [ ] Audit requires an explicit checked standard/contract/norm or explains
+      why the audit target is unavailable.
+- [ ] `standards/README.md`, artifact-map and validators are updated if this
+      active standard requires registration.
+
+**Обоснование приоритета:**
+P0: this is the accepted contract for Audit routing. Without it, repo migration
+cannot distinguish conformance evidence from general local analysis.
+
+**Риски и ограничения:**
+Do not use Audit standard to retroactively rewrite all reports in the same PR
+unless the task explicitly includes B-033.
+
+---
+
+### B-033: chore: Cleanup и модернизация Audit-артефактов
+
+**Приоритет:** P2
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+audit inventory B-029;
+`standards/audit-standard.md`
+**Зависимости:** B-032
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+After the standard is accepted, existing audit/report artifacts can be cleaned
+without guessing their future format. This is not the broad physical migration
+of the Hub repository.
+
+**Что нужно сделать:**
+1. Resolve duplicates and competing Audit artifacts identified in B-029.
+2. Modernize retained artifacts: frontmatter, checked target, evidence section,
+   deviations, cross-references and lifecycle status.
+3. Update `governance/artifact-map.md`, relevant indexes and validator references
+   where needed.
+4. Defer broader repository restructuring to B-034.
+
+**Ожидаемые артефакты:**
+- changed existing Audit/report artifacts and navigation/index files
+
+**Критерии приёмки (DoD):**
+- [ ] B-029 candidates are resolved or explicitly deferred.
+- [ ] Retained Audit artifacts comply with `standards/audit-standard.md`.
+- [ ] Artifact-map and indexes do not point to obsolete Audit sources.
+- [ ] Local validation passes.
+
+**Обоснование приоритета:**
+P2: cleanup is valuable but should follow the accepted standard; otherwise it
+can create another round of routing drift.
+
+**Риски и ограничения:**
+No hidden repo migration. File moves that affect broad structure belong in the
+separate migration RFC path.
+
+---
+
+### B-034: rfc: План миграции репо Хаба после стандартов Research/Analysis/Audit
+
+**Приоритет:** P1
+**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+ADR-001, ADR-002 and future Research/Analysis/Audit standards
+**Зависимости:** B-018, B-027, B-032
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+Issue #296 explicitly separates standardization from physical repository
+migration. Migration planning becomes valid only after all three artifact-type
+standards exist, because the plan must apply accepted routing rules rather than
+subjective classification.
+
+**Что нужно сделать:**
+1. Создать migration RFC for current Hub repository restructuring.
+2. Apply `research-standard.md`, `analysis-standard.md` and
+   `audit-standard.md` to current repository state.
+3. Define scope, alternatives, trade-offs, impacted artifacts, link rewrite
+   strategy, validator impact and rollback/verification plan.
+4. Keep physical file moves for implementation PRs after the migration RFC and
+   any required ADR.
+
+**Ожидаемые артефакты:**
+- `governance/rfc/YYYY-MM-DD-rfc-hub-repository-migration-plan.md` or accepted
+  migration-RFC path at execution time
+
+**Критерии приёмки (DoD):**
+- [ ] RFC depends on the accepted Research, Analysis and Audit standards.
+- [ ] RFC applies standards to the actual current Hub tree.
+- [ ] RFC separates plan, human decision and physical migration PRs.
+- [ ] Validation, link rewrite and rollback strategy are explicit.
+
+**Обоснование приоритета:**
+P1: it is not part of the standardization sprint, but it is the next critical
+planning gate after the three standards. Recording it prevents accidental
+migration work from being smuggled into Analysis/Audit cleanup.
+
+**Риски и ограничения:**
+Do not start physical migration in the RFC task. It should produce an accepted
+plan and follow-up implementation tasks.
+
+---
+
 ## 4. Анализ рекомендаций команд С и Q
 
 ### 4.1. Сравнение позиций
@@ -1314,11 +1805,12 @@ Human Review:
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Источник задач B-004, B-005, B-011. |
 | [research/hub/2026-06-02-external-governance-patterns-review.md](../research/hub/2026-06-02-external-governance-patterns-review.md) | Источник матрицы С/Q, North Star и триггеров (B-006, B-007, B-011, deferred `approved_by:`). |
 | [research/hub/2026-06-02-ai-collaboration-retrospective.md](../research/hub/2026-06-02-ai-collaboration-retrospective.md) | Системные ошибки, мотивирующие fail-closed, threat awareness и двухкейсовую модель. |
-| [research/hub/2026-06-28-research-analysis-audit-inventory.md](../research/hub/2026-06-28-research-analysis-audit-inventory.md) | Источник разделения Research / Analysis / Audit и плана будущих цепочек стандартизации для B-016..B-020. |
+| [research/hub/2026-06-28-research-analysis-audit-inventory.md](../research/hub/2026-06-28-research-analysis-audit-inventory.md) | Источник разделения Research / Analysis / Audit и плана будущих цепочек стандартизации для B-016..B-020 и B-024..B-033. |
 | [docs/audit/2026-06-29-research-artifact-format-contract-audit.md](../docs/audit/2026-06-29-research-artifact-format-contract-audit.md) | Источник коллизии `exp-<slug>/outputs/` vs `runs/` и rationale для B-016, B-019, B-022. |
 | [standards/research-profile.md](../standards/research-profile.md) | Legacy profile, который должен быть заменён `standards/research-standard.md` и удалён в B-021. |
 | [docs/adr/2026-06-adr-002-artifact-document-methodology.md](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) | Current artifact routing ADR; требует addendum B-019 для границы `exp/` vs `runs/`. |
 | [standards/glossary.md](../standards/glossary.md) | Единый источник терминов для всего бэклога. |
+| [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296) | Источник sprint chains для `analysis-standard.md` и `audit-standard.md`; фиксирует, что migration plan is a separate RFC after all three standards. |
 
 ---
 
@@ -1330,6 +1822,12 @@ Human Review:
 #294 добавляет отдельный критический путь стандартизации research:
 `B-016 → B-017 → B-018 → B-019 → B-020 → B-021`. B-022 и B-023 — tech debt после
 принятого стандарта и addendum.
+
+Issue #296 добавляет два параллельных sprint chains:
+`B-020 → B-024 → B-025 → B-026 → B-027 → B-028` для Analysis и
+`B-020 → B-029 → B-030 → B-031 → B-032 → B-033` для Audit. План физической
+реструктуризации Хаба остаётся отдельным RFC B-034 после появления всех трёх
+standard contracts: `B-018`, `B-027` и `B-032`.
 
 ```mermaid
 flowchart TD
@@ -1355,6 +1853,17 @@ flowchart TD
     B021["B-021 · P1<br/>remove research-profile.md<br/>after replacement"]
     B022["B-022 · P2<br/>migrate exp-*<br/>remove outputs/"]
     B023["B-023 · P2<br/>validator support<br/>exp/ + routing"]
+    B024["B-024 · P0<br/>Analysis artifacts<br/>cross-repo inventory"]
+    B025["B-025 · P0<br/>RFC analysis-standard<br/>structure + routing"]
+    B026["B-026 · P0<br/>ADR analysis-standard<br/>human decision"]
+    B027["B-027 · P0<br/>analysis-standard.md<br/>normative contract"]
+    B028["B-028 · P2<br/>Analysis cleanup<br/>modernization"]
+    B029["B-029 · P0<br/>Audit artifacts<br/>cross-repo inventory"]
+    B030["B-030 · P0<br/>RFC audit-standard<br/>structure + routing"]
+    B031["B-031 · P0<br/>ADR audit-standard<br/>human decision"]
+    B032["B-032 · P0<br/>audit-standard.md<br/>normative contract"]
+    B033["B-033 · P2<br/>Audit cleanup<br/>modernization"]
+    B034["B-034 · P1<br/>Hub migration RFC<br/>after R/A/A standards"]
 
     %% Критический путь
     B001 --> B002
@@ -1364,6 +1873,19 @@ flowchart TD
     B018 --> B019
     B019 --> B020
     B020 --> B021
+    B020 --> B024
+    B024 --> B025
+    B025 --> B026
+    B026 --> B027
+    B027 --> B028
+    B020 --> B029
+    B029 --> B030
+    B030 --> B031
+    B031 --> B032
+    B032 --> B033
+    B018 --> B034
+    B027 --> B034
+    B032 --> B034
 
     %% Прочие зависимости
     B001 --> B003
@@ -1381,11 +1903,13 @@ flowchart TD
     classDef norm fill:#e0f2fe,stroke:#0369a1,color:#0c4a6e;
     classDef done fill:#dcfce7,stroke:#166534,color:#14532d;
 
-    class B001,B002,B005,B016,B017,B018,B019 crit;
-    class B003,B004,B006,B007,B013,B014,B015,B020,B021,B022,B023 norm;
+    class B001,B002,B005,B016,B017,B018,B019,B024,B025,B026,B027,B029,B030,B031,B032,B034 crit;
+    class B003,B004,B006,B007,B013,B014,B015,B020,B021,B022,B023,B028,B033 norm;
     class B008,B010,B011 done;
 ```
 
-Чтение диаграммы: зелёные узлы уже выполнены; жёлтые узлы — активный путь к
-рабочим точкам входа Кейса 1 и Кейса 2; голубые — параллельные задачи. Пунктирные
-стрелки — мягкие зависимости (порядок/апрув), сплошные — жёсткие.
+Чтение диаграммы: зелёные узлы уже выполнены; жёлтые узлы — активные critical
+paths для Runtime-онбординга, Research/Analysis/Audit standardization и
+downstream migration-RFC gate; голубые — параллельные или post-standard cleanup
+tasks. Пунктирные стрелки — мягкие зависимости (порядок/апрув), сплошные —
+жёсткие.
