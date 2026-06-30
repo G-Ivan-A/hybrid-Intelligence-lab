@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-30
 temperature: 0.1
 owner: G-Ivan-A
@@ -276,6 +276,19 @@ flowchart TD
 - **Совместимость.** Решение не ломает текущий репозиторий: ADR-001 сохраняет
   переходный режим Хаба, а валидаторы не меняются в этом RFC.
 
+## Матрица дельт A/B/C/D
+
+Этот RFC имеет `rfc-scope: A`, потому что меняет базовый контракт Хаба. Матрица
+ниже фиксирует, какие части proposal применяются к другим архетипам как
+downstream input, а не как немедленная норма.
+
+| Архетип | Required deltas | Avoid |
+| --- | --- | --- |
+| A. Governance & Knowledge Hub | Принять или отклонить целевой контракт `research/<domain>/exp/<issue-slug>/`, запрет `outputs/`, routing Research / Analysis / Audit и границу `exp/` vs `runs/` через ADR B-017, стандарт B-018 и addendum B-019. | Не выполнять миграцию `exp-*`, не менять валидаторы research-формата и не превращать RFC в норму до human decision. |
+| B. Prompt & Pattern Library | Если prompt library наследует research-контур Хаба, использовать `exp/` только для воспроизводимой evidence base по prompt experiments; локальные prompt runs остаются в operational records проекта. | Не переносить все prompt experiments в Hub `research/` и не требовать RFC для каждой правки prompt wording. |
+| C. Product Spoke / Runtime | Применять distinction `research evidence` vs `operational run` при проектных исследованиях, migration notes и release-impact анализе; runtime pipeline outputs остаются в `runs/` или локальном CI/artifact storage. | Не смешивать customer/runtime artifacts с Hub research evidence и не навязывать Hub-specific path без project-level ADR/standard. |
+| D. Education / Learning Package | Использовать Research / Analysis / Audit routing для curriculum research, learner-impact analysis и проверки учебных материалов; evidence для course-wide claims может ссылаться на `exp/`. | Не RFC-ить отдельные lesson edits и не превращать учебные отчеты в research corpus без воспроизводимой гипотезы. |
+
 ## Critical Analysis
 
 Стресс-тест предложенных границ: каждую гипотезу пытались опровергнуть.
@@ -365,6 +378,22 @@ Post-acceptance делегирование: обязательная норма 
 `standards/research-standard.md` (B-018) и ADR-002 addendum (B-019). Этот RFC
 сохраняет context, alternatives, trade-offs и rationale; он не дублируется в
 стандарте как proposal-обёртка.
+
+## Boundary RFC/ADR
+
+Для цепочки B-016..B-023 граница такая:
+
+| Case | Rule for this research-structure change |
+| --- | --- |
+| Есть открытые альтернативы по структуре `research/`, контейнеру `exp/`, запрету `outputs/` и routing Research / Analysis / Audit. | Нужен RFC: этот документ сохраняет rationale, alternatives, trade-offs и rejected options. |
+| Human decision должен принять или отклонить proposal перед появлением нормы. | Нужен ADR B-017: короткая запись принятого решения, которая ссылается на этот RFC. |
+| Решение становится обязательным правилом размещения и оформления research artifacts. | Нужен стандарт B-018, а не дальнейшее расширение этого RFC. |
+| Граница `exp/` vs `runs/` затрагивает уже принятый ADR-002. | Нужен ADR-002 addendum B-019 после стандарта, чтобы не создать конкурирующий decision source. |
+| Требуется физическая миграция `exp-*` или изменение валидаторов. | Это implementation follow-up B-022/B-023 после human decision и стандарта, не часть RFC. |
+
+Итог: RFC отвечает на вопрос "какую модель стоит принять?", ADR B-017 отвечает
+"что принято человеком?", а стандарт B-018 и валидаторы отвечают "как исполнять
+это правило повторяемо?".
 
 ## Open Questions
 

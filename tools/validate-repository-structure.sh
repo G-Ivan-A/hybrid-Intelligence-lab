@@ -47,6 +47,7 @@ is_active_file() {
     AI_PROJECT_CONTEXT-Summary.md | \
     CHANGELOG.md | \
     LICENSE | \
+    reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
     docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     standards/README.md | \
@@ -815,6 +816,9 @@ require_text "standards/rfc-structure-standard.md" "owner: G-Ivan-A"
 require_text "standards/rfc-structure-standard.md" "frontmatter-docs-standard.md"
 require_text "standards/rfc-structure-standard.md" "rfc-scope"
 require_text "standards/rfc-structure-standard.md" "Open Questions"
+require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Матрица дельт A/B/C/D"
+require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Boundary RFC/ADR"
+require_text "reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "Ошибка генерации RFC не подтверждена"
 
 require_text "standards/executable-documentation-standard.md" "status: accepted"
 require_text "standards/executable-documentation-standard.md" "version: 1.2"

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.24
+version: 1.25
 updated: 2026-06-30
 temperature: 0.1
 ---
@@ -13,6 +13,10 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- rfc: Уточнен `governance/rfc/2026-06-30-rfc-research-structure.md` по issue
+  #306: добавлены явная матрица дельт A/B/C/D и таблица Boundary RFC/ADR для
+  подготовки к ADR B-017. Ошибка генерации PR #303 не подтверждена; гипотеза
+  проблемы признана частично существенной как minor completeness gap.
 - chore: Accepted the ADR/RFC structure RFCs for issue #286 and delegated their
   normative contracts into `standards/adr-structure-standard.md` and
   `standards/rfc-structure-standard.md`. Registered both standards in
@@ -28,6 +32,10 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- report: Added `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md`
+  for issue #306 with a critical analysis of the attached PR #303 hypothesis,
+  the no-generation-error conclusion, the confirmed minor RFC gaps and the
+  applied remediation.
 - chore: Добавлена задача B-038 в бэклог (Reports inventory). Источник: видение
   фаундера §3, согласование в чате 2026-07-01.
 - rfc: Added `governance/rfc/2026-06-30-rfc-research-structure.md` for issue #302
