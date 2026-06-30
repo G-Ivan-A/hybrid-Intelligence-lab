@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.22
+version: 1.23
 updated: 2026-06-30
 temperature: 0.1
 ---
@@ -28,6 +28,9 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- chore: Добавлены задачи B-035..B-037 в бэклог (реорганизация backlog +
+  amendment policy + валидатор). Источники: согласование в чате 2026-06-30,
+  issue #297.
 - analysis: Added `docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md`
   for issue #297. The report confirms backlog role overload and the missing
   tiered amendment policy, compares native tracker, sprint backlog, small-change
