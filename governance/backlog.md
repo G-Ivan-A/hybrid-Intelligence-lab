@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.7
+version: 1.8
 updated: 2026-06-30
 temperature: 0.1
 type: backlog
@@ -206,6 +206,9 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-032** | chore: Создание `standards/audit-standard.md` | **P0** | B-031 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий ADR B-031 | Нормативный контракт Audit; prerequisite для плана миграции репо и cleanup Audit-артефактов. |
 | **B-033** | chore: Cleanup и модернизация Audit-артефактов | **P2** | B-032 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); audit-аудит B-029; `standards/audit-standard.md` | Пост-standard cleanup: убрать дубли/конкурирующие файлы, обновить frontmatter, cross-references, artifact-map и индексы. |
 | **B-034** | rfc: План миграции репо Хаба после стандартов Research/Analysis/Audit | **P1** | B-018, B-027, B-032 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); ADR-001/ADR-002; будущие R/A/A standards | Фиксирует, что физическая реструктуризация репо — отдельный RFC после всех трёх стандартов, а не этап стандартизации. |
+| **B-035** | Реорганизация `backlog.md` в каталог `pr-ops/backlog/` (contract + active + archive) | **P3** | B-016..B-023, B-034 | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297) | Текущий монолитный бэклог функционален. Реорганизация — гигиеническая задача после стабилизации research/analysis/audit цепочек. Триггер повышения до P1 — review pain из-за размера бэклога. |
+| **B-036** | Зафиксировать 3-tier amendment policy в `AI_GOVERNANCE.md` | **P2** | — | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297); [docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md](../docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md) | Блокирует корректное выполнение Tier 1/2 правок без бюрократии. Без policy агент будет либо игнорировать малые правки (дрейф), либо запускать полный цикл RFC→ADR на каждое уточнение (паралич). |
+| **B-037** | Обновить `validate-repository-structure.sh` под каталог `pr-ops/backlog/` (2FA-исключение) | **P3** | B-035 | TODO | — (tech debt) | Согласование в чате 2026-06-30; [tools/validate-repository-structure.sh](../tools/validate-repository-structure.sh) | Делает новую структуру бэклога исполнимой. Выполняется после физической реорганизации. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
