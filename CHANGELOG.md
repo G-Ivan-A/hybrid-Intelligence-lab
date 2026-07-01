@@ -32,6 +32,22 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Added
+  `research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md`
+  for issue #307 (backlog B-038). Source-backed industry benchmark of how
+  Reports artifacts (audit / statistical / general) are classified by Diátaxis,
+  DITA, ISO/IEC/IEEE, ANSI/NISO Z39.18, ГОСТ 7.32/19.101, SDMX/DDI, NIST AI RMF,
+  the EU AI Act and OSS governance repos (Kubernetes/CNCF/OpenTelemetry). Tests
+  hypotheses H1-H4 about standardization scope (H1 confirmed with nuance — Report
+  is a distinct genre that is usually a process output; H2 holds for industry but
+  not at Hub scale; H3 holds in hybrid form; H4 confirmed), maps Reports ↔
+  Analysis/Audit boundary cases by dominant stance, and recommends Variant C
+  (hybrid: one base Report standard + light subtype profiles, "A now, B later").
+  Registered in `governance/artifact-map.md`, `research/README.md`,
+  `research/hub/README.md`, `mkdocs.yml`,
+  `research/external-knowledge/external-sources-registry.md` and the structure
+  validator. Stays research-only: it does not create a Reports standard, does not
+  inventory current reports and does not change directory structure.
 - report: Added `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md`
   for issue #306 with a critical analysis of the attached PR #303 hypothesis,
   the no-generation-error conclusion, the confirmed minor RFC gaps and the

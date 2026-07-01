@@ -94,6 +94,7 @@ is_active_file() {
     research/hub/2026-06-27-adr-industry-norms-and-variants.md | \
     research/hub/2026-06-28-ripple-effects-282-research.md | \
     research/hub/2026-06-28-research-analysis-audit-inventory.md | \
+    research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md | \
     research/README.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
@@ -514,6 +515,7 @@ required_files=(
   "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
   "research/hub/2026-06-28-ripple-effects-282-research.md"
   "research/hub/2026-06-28-research-analysis-audit-inventory.md"
+  "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
   "research/mango/README.md"
@@ -750,6 +752,7 @@ require_text "mkdocs.yml" "2026-06-28-ripple-effects-282-research.md"
 require_text "mkdocs.yml" "2026-06-28-research-analysis-audit-inventory.md"
 require_text "mkdocs.yml" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
 require_text "mkdocs.yml" "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
+require_text "mkdocs.yml" "2026-06-30-reports-industry-norms-and-standardization-scope.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
@@ -1256,6 +1259,7 @@ require_text "governance/artifact-map.md" "research/hub/2026-06-12-international
 require_text "governance/artifact-map.md" "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-28-research-analysis-audit-inventory.md"
+require_text "governance/artifact-map.md" "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "governance/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
 require_text "governance/artifact-map.md" "research/hub/exp-rfc-adr-industry-norms/"
 require_text "governance/artifact-map.md" "research/hub/exp-research-analysis-audit-288/"
@@ -1547,6 +1551,7 @@ require_text "research/README.md" "2026-06-12-international-ai-governance-practi
 require_text "research/README.md" "2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "research/README.md" "2026-06-27-adr-industry-norms-and-variants.md"
 require_text "research/README.md" "2026-06-28-research-analysis-audit-inventory.md"
+require_text "research/README.md" "2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "research/README.md" "Размещение файлов исследований в корне каталога"
 
 # Namespacing: no research files allowed in the research/ root except README.md.
@@ -1570,6 +1575,7 @@ require_text "research/hub/README.md" "2026-06-12-international-ai-governance-pr
 require_text "research/hub/README.md" "2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "research/hub/README.md" "2026-06-27-adr-industry-norms-and-variants.md"
 require_text "research/hub/README.md" "2026-06-28-research-analysis-audit-inventory.md"
+require_text "research/hub/README.md" "2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "research/hub/README.md" "exp-rfc-adr-industry-norms/"
 require_text "research/hub/README.md" "exp-research-analysis-audit-288/"
 
@@ -1584,6 +1590,18 @@ require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Cla
 require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Analysis -> RFC -> Standard"
 require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "2026-06-28-artifact-classification-matrix.md"
 require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "не создаёт RFC"
+
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "status: draft"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "version: 0.1"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "updated: 2026-06-30"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "temperature: 0.1"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "issue #307"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "Diátaxis"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "DITA"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "NIST AI RMF"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "EU AI Act"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "Вариант C"
+require_text "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md" "не создаёт"
 
 require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "status: draft"
 require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "version: 0.1"

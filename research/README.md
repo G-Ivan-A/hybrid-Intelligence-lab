@@ -60,6 +60,7 @@ source: research/README-old.md
 | [2026-06-27-rfc-industry-norms-and-variants.md](hub/2026-06-27-rfc-industry-norms-and-variants.md) | Research input для issue #278: RFC-like индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с воспроизводимым external source corpus. |
 | [2026-06-27-adr-industry-norms-and-variants.md](hub/2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: ADR/decision-record индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с дельтами и критериями применимости. |
 | [2026-06-28-research-analysis-audit-inventory.md](hub/2026-06-28-research-analysis-audit-inventory.md) | Analysis input для issue #288: Research / Analysis / Audit matrix по Hub, Mango и Clarify, concept substitutions, duplicate risks and three `Analysis -> RFC -> Standard` chains. |
+| [2026-06-30-reports-industry-norms-and-standardization-scope.md](hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) | Research input для issue #307 (B-038): индустриальный benchmark норм Reports (Diátaxis, DITA, ISO/IEC/IEEE, ANSI/NISO Z39.18, ГОСТ 7.32/19.101, SDMX/DDI, NIST AI RMF, EU AI Act, Kubernetes/CNCF/OpenTelemetry), проверка гипотез H1-H4, граничные кейсы Reports ↔ Analysis/Audit и рекомендация Вариант C (гибрид) без создания стандарта. |
 
 ### Подкаталог `open-ai-ru/`
 
