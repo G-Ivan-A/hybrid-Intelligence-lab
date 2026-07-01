@@ -1,9 +1,19 @@
 ---
-status: accepted
+status: draft
 version: 1.0
 updated: 2026-07-01
 temperature: 0.1
 owner: G-Ivan-A
+executable: false
+scope: repo-wide
+related_standards:
+  - "frontmatter-docs-standard.md"
+  - "file-naming.md"
+  - "research-profile.md"
+  - "adr-structure-standard.md"
+  - "rfc-structure-standard.md"
+related_issues:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/318"
 ---
 
 # Research Structure Standard
@@ -108,6 +118,17 @@ temperature: 0.3
   (`status`, `version`, `updated`, `temperature`).
 - `ai-generated` ЗАПРЕЩЁН во frontmatter. Provenance фиксируется в issue, PR,
   changelog, audit или session record.
+
+> **Разграничение словарей (lifecycle vs frontmatter).** Правила этой секции
+> нормируют frontmatter **research reports** (объект стандарта, путь
+> `research/`) — они принадлежат классу Knowledge и используют
+> **knowledge-vocabulary**. Сам этот документ — governance-артефакт класса
+> `standards/`, поэтому его собственный `status` использует
+> **governance-vocabulary** (см. [Lifecycle](#lifecycle)). Это не противоречие:
+> `standards/*.md` и `research/*.md` — разные document classes с разными
+> словарями статусов per
+> [Frontmatter Docs Standard](frontmatter-docs-standard.md) (Status
+> Vocabularies). Смешивать словари внутри одного класса ЗАПРЕЩЕНО.
 
 Внешнее research-утверждение (external claim) ОБЯЗАНО в теле отчёта содержать
 источник, автора или организацию, ссылку и границы применимости.
@@ -215,8 +236,16 @@ temperature: 0.3
 
 ## Lifecycle
 
-Этот стандарт подчиняется governance-словарю статусов для `standards/`
+Этот стандарт как governance-артефакт класса `standards/` подчиняется
+**governance-словарю** статусов
 (`draft`, `proposed`, `accepted`, `rejected`, `deprecated`, `superseded`).
+Это отдельный словарь от **knowledge-vocabulary**
+(`draft`, `reviewed`, `canonical`, `superseded`), который стандарт предписывает
+для нормируемых им research reports (см. [Frontmatter](#frontmatter)):
+`standards/*.md` и `research/*.md` — разные document classes, и каждый использует
+свой словарь статусов per
+[Frontmatter Docs Standard](frontmatter-docs-standard.md). Пока идёт review, этот
+стандарт остаётся в `draft`/`proposed`; `accepted` фиксирует human decision gate.
 Он замещает [research-profile.md](research-profile.md) как источник правил
 структуры research; физическое удаление профиля выполняется в B-021.
 

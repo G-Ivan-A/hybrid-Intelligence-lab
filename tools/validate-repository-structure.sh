@@ -842,7 +842,7 @@ require_text "standards/rfc-structure-standard.md" "frontmatter-docs-standard.md
 require_text "standards/rfc-structure-standard.md" "rfc-scope"
 require_text "standards/rfc-structure-standard.md" "Open Questions"
 
-require_text "standards/research-standard.md" "status: accepted"
+require_text "standards/research-standard.md" "status: draft"
 require_text "standards/research-standard.md" "owner: G-Ivan-A"
 require_text "standards/research-standard.md" "frontmatter-docs-standard.md"
 require_text "standards/research-standard.md" "exp/<issue-slug>"

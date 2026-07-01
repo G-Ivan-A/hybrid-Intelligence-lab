@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.28
+version: 1.29
 updated: 2026-07-01
 temperature: 0.1
 ---
@@ -26,7 +26,12 @@ All notable repository governance changes are documented here.
   Зарегистрирован в `standards/README.md`, `governance/artifact-map.md` и
   структурном валидаторе; статус B-018 переведён в review в
   `governance/backlog.md`. Alternatives, trade-offs и rejected options не
-  дублируются — они остаются в RFC B-016.
+  дублируются — они остаются в RFC B-016. По review-фидбэку PR #319 стандарт
+  зарегистрирован в `status: draft` (governance-vocabulary, ещё не accepted —
+  идёт review), frontmatter дополнен полями traceability (`executable`, `scope`,
+  `related_standards`, `related_issues`), и явно разведено противоречие
+  lifecycle vs frontmatter: `standards/*.md` используют governance-vocabulary, а
+  нормируемые research reports (`research/*.md`) — knowledge-vocabulary.
 
 ### Changed
 
