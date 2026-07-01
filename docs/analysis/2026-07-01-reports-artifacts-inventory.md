@@ -15,8 +15,8 @@ related_issues:
 related_artifacts:
   - "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
   - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
-  - "research/hub/exp-reports-inventory-310/outputs/2026-07-01-reports-artifact-matrix.md"
-  - "research/hub/exp-reports-inventory-310/scan-reports.py"
+  - "research/hub/exp/reports-inventory-310/2026-07-01-reports-artifact-matrix.md"
+  - "research/hub/exp/reports-inventory-310/scan-reports.py"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "research/hub/2026-06-23-repository-structure-concept.md"
 external_artifacts:
@@ -67,9 +67,9 @@ Analysis и Audit.
 
 Классификация опиралась на фактическую роль результата, а не только на путь.
 Воспроизводимый scan лежит в
-[exp-reports-inventory-310/outputs/2026-07-01-reports-artifact-matrix.md](exp-reports-inventory-310/outputs/2026-07-01-reports-artifact-matrix.md);
+[reports-inventory-310/2026-07-01-reports-artifact-matrix.md](../../research/hub/exp/reports-inventory-310/2026-07-01-reports-artifact-matrix.md);
 скрипт:
-[exp-reports-inventory-310/scan-reports.py](exp-reports-inventory-310/scan-reports.py).
+[reports-inventory-310/scan-reports.py](../../research/hub/exp/reports-inventory-310/scan-reports.py).
 
 | Поле | Рабочий критерий |
 | --- | --- |
@@ -86,7 +86,7 @@ Analysis и Audit.
 ## 2. Сводная матрица
 
 Полная таблица по каждому найденному артефакту находится в
-[Reports artifact candidate matrix](exp-reports-inventory-310/outputs/2026-07-01-reports-artifact-matrix.md).
+[Reports artifact candidate matrix](../../research/hub/exp/reports-inventory-310/2026-07-01-reports-artifact-matrix.md).
 Она содержит path, текущий path bucket, фактический subtype, relation, routing
 hint и заголовок для каждого кандидата.
 
@@ -184,7 +184,7 @@ Modernization should focus on metadata before physical migration:
 ## 6. Standardization recommendation
 
 The inventory supports the recommendation from
-[Reports industry norms and standardization scope](2026-06-30-reports-industry-norms-and-standardization-scope.md):
+[Reports industry norms and standardization scope](../../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md):
 Variant C, one base Report standard plus light subtype profiles.
 
 Recommended scope for the next standardization chain:
@@ -208,7 +208,7 @@ Open decisions before migration:
 
 | Requirement | Status | Evidence |
 | --- | --- | --- |
-| Matrix across Hub, Mango, Clarify | Done | [2026-07-01-reports-artifact-matrix.md](exp-reports-inventory-310/outputs/2026-07-01-reports-artifact-matrix.md) |
+| Matrix across Hub, Mango, Clarify | Done | [2026-07-01-reports-artifact-matrix.md](../../research/hub/exp/reports-inventory-310/2026-07-01-reports-artifact-matrix.md) |
 | Actual type/subtype per artifact | Done | Matrix fields `Subtype` and `Relation` for 47 candidates. |
 | Duplicates/substitutions/modernization candidates | Done | Sections 4 and 5. |
 | Boundaries Reports vs Analysis vs Audit | Done | Section 3. |

@@ -21,10 +21,10 @@ from pathlib import Path
 SCAN_DATE = date(2026, 7, 1).isoformat()
 TEXT_EXTENSIONS = {".md", ".markdown", ".txt", ".html"}
 SELF_PATHS = {
-    "research/hub/2026-07-01-reports-artifacts-inventory.md",
+    "docs/analysis/2026-07-01-reports-artifacts-inventory.md",
 }
 SELF_PREFIXES = (
-    "research/hub/exp-reports-inventory-310/",
+    "research/hub/exp/reports-inventory-310/",
 )
 
 
@@ -479,7 +479,7 @@ def main() -> None:
     parser.add_argument("--clarify-root", required=True, help="Path to clarify-engine-ai checkout")
     parser.add_argument(
         "--out-dir",
-        default="research/hub/exp-reports-inventory-310/outputs",
+        default="research/hub/exp/reports-inventory-310",
         help="Output directory relative to hub root unless absolute",
     )
     args = parser.parse_args()

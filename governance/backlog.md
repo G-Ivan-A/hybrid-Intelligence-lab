@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.10
+version: 1.11
 updated: 2026-07-01
 temperature: 0.1
 type: backlog
@@ -19,7 +19,8 @@ related_artifacts:
   - "research/hub/2026-06-28-ripple-effects-282-research.md"
   - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
   - "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
-  - "research/hub/2026-07-01-reports-artifacts-inventory.md"
+  - "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
+  - "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   - "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   - "standards/research-profile.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
@@ -213,7 +214,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-035** | Реорганизация `backlog.md` в каталог `pr-ops/backlog/` (contract + active + archive) | **P3** | B-016..B-023, B-034 | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297) | Текущий монолитный бэклог функционален. Реорганизация — гигиеническая задача после стабилизации research/analysis/audit цепочек. Триггер повышения до P1 — review pain из-за размера бэклога. |
 | **B-036** | Зафиксировать 3-tier amendment policy в `AI_GOVERNANCE.md` | **P2** | — | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297); [docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md](../docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md) | Блокирует корректное выполнение Tier 1/2 правок без бюрократии. Без policy агент будет либо игнорировать малые правки (дрейф), либо запускать полный цикл RFC→ADR на каждое уточнение (паралич). |
 | **B-037** | Обновить `validate-repository-structure.sh` под каталог `pr-ops/backlog/` (2FA-исключение) | **P3** | B-035 | TODO | — (tech debt) | Согласование в чате 2026-06-30; [tools/validate-repository-structure.sh](../tools/validate-repository-structure.sh) | Делает новую структуру бэклога исполнимой. Выполняется после физической реорганизации. |
-| **B-038** | analysis: Инвентаризация и границы Reports-артефактов (аудит / отчёт / статистика) | **P1** | B-020 | review | [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310) (PR [#312](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/312)) | Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); согласование в чате 2026-07-01; [Reports inventory](../research/hub/2026-07-01-reports-artifacts-inventory.md) | Reports — базовый подкаталог `docs/` по видению фаундера, но путь Reports ещё не согласован (`docs/report/` vs `docs/reports/` vs текущий `reports/report/`). Inventory готовит границы с Analysis/Audit и scope будущего стандарта перед планом миграции репо (B-034). |
+| **B-038** | analysis: Инвентаризация и границы Reports-артефактов (аудит / отчёт / статистика) | **P1** | B-020 | review | [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310) (PR [#312](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/312)) | Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); согласование в чате 2026-07-01; [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); [placement report](../docs/report/2026-07-01-reports-inventory-placement-analysis.md) | Reports — базовый подкаталог `docs/` по видению фаундера, но путь Reports ещё не согласован (`docs/report/` vs `docs/reports/` vs текущий `reports/report/`). Inventory готовит границы с Analysis/Audit и scope будущего стандарта перед планом миграции репо (B-034). |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).

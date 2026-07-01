@@ -12,7 +12,7 @@ method: repository-scan
 
 Воспроизводимый scan для cross-repo анализа Reports-артефактов в issue #310.
 Скрипт создаёт evidence layer для основного анализа
-[2026-07-01-reports-artifacts-inventory.md](../2026-07-01-reports-artifacts-inventory.md).
+[2026-07-01-reports-artifacts-inventory.md](../../../../docs/analysis/2026-07-01-reports-artifacts-inventory.md).
 
 ## Scope
 
@@ -31,7 +31,7 @@ frontmatter и первый заголовок, чтобы выделить repo
 `output-for-analysis`, `standalone-report`.
 
 Собственные deliverables issue #310 (`2026-07-01-reports-artifacts-inventory.md`
-и `exp-reports-inventory-310/`) исключены из Hub baseline, чтобы повторный
+и `exp/reports-inventory-310/`) исключены из Hub baseline, чтобы повторный
 запуск после merge не менял матрицу из-за добавленных этим PR файлов.
 
 ## Reproduce
@@ -42,14 +42,17 @@ git clone https://github.com/G-Ivan-A/clarify-engine-ai.git /tmp/issue-310-clari
 git -C /tmp/issue-310-mango_ba_prompts checkout 995c16d175f916ae397d0efc2231f8d30f82c518
 git -C /tmp/issue-310-clarify-engine-ai checkout 96c288fd13a2d7cc7c3e3cdd52574944858e6255
 
-python3 research/hub/exp-reports-inventory-310/scan-reports.py \
+python3 research/hub/exp/reports-inventory-310/scan-reports.py \
   --mango-root /tmp/issue-310-mango_ba_prompts \
   --clarify-root /tmp/issue-310-clarify-engine-ai
 ```
 
 ## Outputs
 
+Контейнер `exp/` использует плоскую структуру без вложенного `outputs/`
+(RFC B-016 v0.2, P2): evidence-файлы лежат рядом с `README.md` и скриптом.
+
 | Output | Назначение |
 | --- | --- |
-| [reports-inventory.json](outputs/reports-inventory.json) | Полный machine-readable scan с SHA репозиториев, path buckets, frontmatter signals, subtype, relation and routing hints. |
-| [2026-07-01-reports-artifact-matrix.md](outputs/2026-07-01-reports-artifact-matrix.md) | Markdown-матрица для review и ссылок из основного отчёта. |
+| [reports-inventory.json](reports-inventory.json) | Полный machine-readable scan с SHA репозиториев, path buckets, frontmatter signals, subtype, relation and routing hints. |
+| [2026-07-01-reports-artifact-matrix.md](2026-07-01-reports-artifact-matrix.md) | Markdown-матрица для review и ссылок из основного отчёта. |
