@@ -102,9 +102,9 @@ hint и заголовок для каждого кандидата.
 | Current bucket | Count | Actual subtypes | Interpretation |
 | --- | ---: | --- | --- |
 | `docs/audit` | 2 | audit | Audit reports already placed in an audit path; future move depends on Report/Audit boundary. |
-| `docs/project-summaries` | 3 | report | Standalone project context reports; strong candidates for a general Report profile after path decision. |
+| `docs/project-summaries` | 3 | report | Standalone project context reports; strong candidates for a general Report profile under `docs/report/` after standard approval. |
 | `governance` | 1 | report | `session-digests.md` behaves as a rolling standalone report/log. |
-| `reports` | 1 | report | Already report-like path, but path spelling is unresolved (`reports/report/` vs `docs/report/` / `docs/reports/`). |
+| `reports` | 1 | report | Historical noncanonical report-like path from the fixed scan snapshot; canonical target is `docs/report/` (singular). |
 | `research` | 12 | audit, report, statistics | Research/analysis outputs and evidence matrices; keep as research evidence until a standard defines publishable Report mirrors. |
 
 ### 2.2. Mango
@@ -141,7 +141,7 @@ parent work remains Audit, Analysis or Research.
 
 | Finding | Evidence | Classification |
 | --- | --- | --- |
-| Path spelling is unresolved | Issue #310 and founder vision use `docs/report/`; ADR-002 mentions `docs/reports/`; current Hub has `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md`. | Standardization blocker before any move/rename. |
+| Path drift existed in the scan snapshot | Issue #310 and founder vision use `docs/report/`; ADR-002 mentions `docs/reports/`; the fixed Hub snapshot had `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md`. PR review later fixed the canonical target as `docs/report/` (singular). | No longer a path-choice blocker; future migration should use `docs/report/`. |
 | Audit outputs dominate Reports candidates | 28 of 47 candidates are `audit` subtype; Mango has 15 audit outputs, Clarify has 7. | Report/Audit substitution risk. |
 | Mango mixes audit and statistics under Analysis | `docs/analysis/*inventory*`, `*convergence-test*`, `*audit*`, `*contract-test*`. | Analysis path is being used as generic "work result" container. |
 | Hub research contains report-like evidence outputs | Prior matrices and scans under `research/hub/exp-*` plus retrospectives and inventories under `research/hub/`. | Research evidence vs publishable Report boundary is not standardized. |
@@ -160,11 +160,12 @@ Potential duplicates are mostly semantic overlaps, not safe delete candidates:
 ## 5. Move, delete and modernization candidates
 
 This issue should not move files. The following table records candidates for
-future work after a Reports standard and path decision exist.
+future work after a Reports standard exists; the canonical target path is
+`docs/report/`.
 
 | Candidate class | Examples | Future action |
 | --- | --- | --- |
-| General standalone reports | Hub `docs/project-summaries/*`, Hub/Mango `governance/session-digests.md`, Mango `docs/kb-experiment-report.md`, Clarify sprint execution report. | Candidate for `docs/report/` general profile after path spelling decision. |
+| General standalone reports | Hub `docs/project-summaries/*`, Hub/Mango `governance/session-digests.md`, Mango `docs/kb-experiment-report.md`, Clarify sprint execution report. | Candidate for `docs/report/` general profile after standard approval. |
 | Statistics outputs | Hub/Mango inventory/matrix/scan outputs, Mango sync matrix. | Candidate for statistics profile; experiment outputs may stay in `exp-*` with optional publishable mirror. |
 | Audit reports | Hub/Mango/Clarify audit, validation, verification, review and smoke/E2E outputs. | Do not move before Audit standard boundary; later tag as Report subtype + Audit process output. |
 | Research retrospectives and executive summaries | Hub AI collaboration retrospectives; reputation executive summary. | Candidate for general report profile only if future policy wants reports outside research corpus. |
@@ -176,8 +177,8 @@ Modernization should focus on metadata before physical migration:
    approval: `audit`, `report`, `statistics`.
 2. Add relation metadata: `based_on`, `source`, `scope`, `supersedes`,
    `related_artifacts`.
-3. Normalize title/path conventions only after choosing singular/plural target
-   (`docs/report/` vs `docs/reports/`).
+3. Normalize title/path conventions only after standard approval, using
+   `docs/report/` as the canonical target path.
 4. Keep reproducible experiment outputs attached to their experiment directory
    unless the standard defines a second published Report artifact.
 
@@ -200,7 +201,6 @@ Open decisions before migration:
 
 | Decision | Why it matters |
 | --- | --- |
-| `docs/report/` vs `docs/reports/` vs current `reports/report/` | The issue, founder vision, ADR-002 and current tree disagree. A move before this decision would create churn. |
 | Whether audit outputs live physically under Reports or Audit | The inventory shows audit reports are the largest group, so the boundary must be explicit. |
 | Whether experiment output matrices are Reports | They are report-like, but also reproducible evidence. Moving them can break research traceability. |
 
@@ -219,4 +219,5 @@ Open decisions before migration:
 Conclusion: Reports should be standardized as a durable output/document genre
 with three light profiles (`audit`, `report`, `statistics`). The standard must
 coordinate with Analysis and Audit rather than absorb them. Physical migration
-is a later task after the path spelling and Report/Audit boundary are approved.
+is a later task after the Reports standard and Report/Audit boundary are
+approved; the canonical Reports path is `docs/report/`.

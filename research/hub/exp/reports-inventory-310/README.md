@@ -37,12 +37,15 @@ frontmatter и первый заголовок, чтобы выделить repo
 ## Reproduce
 
 ```bash
+git clone --branch issue-310-9572ad686999 https://github.com/konard/G-Ivan-A-hybrid-Intelligence-lab.git /tmp/issue-310-hub-baseline
 git clone https://github.com/G-Ivan-A/mango_ba_prompts.git /tmp/issue-310-mango_ba_prompts
 git clone https://github.com/G-Ivan-A/clarify-engine-ai.git /tmp/issue-310-clarify-engine-ai
+git -C /tmp/issue-310-hub-baseline checkout d0fd509837a56620b4e0c2100edf01df96fa98af
 git -C /tmp/issue-310-mango_ba_prompts checkout 995c16d175f916ae397d0efc2231f8d30f82c518
 git -C /tmp/issue-310-clarify-engine-ai checkout 96c288fd13a2d7cc7c3e3cdd52574944858e6255
 
 python3 research/hub/exp/reports-inventory-310/scan-reports.py \
+  --hub-root /tmp/issue-310-hub-baseline \
   --mango-root /tmp/issue-310-mango_ba_prompts \
   --clarify-root /tmp/issue-310-clarify-engine-ai
 ```

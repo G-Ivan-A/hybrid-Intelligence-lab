@@ -26,9 +26,9 @@ All notable repository governance changes are documented here.
   Recorded the root-cause analysis in
   `docs/report/2026-07-01-reports-inventory-placement-analysis.md`.
 - backlog: Moved B-038 (Reports inventory and boundaries) from TODO to review,
-  linked issue #310 and PR #312, and recorded the unresolved Reports path
-  spelling decision (`docs/report/` vs `docs/reports/` vs current
-  `reports/report/`) as a blocker for physical migration.
+  linked issue #310 and PR #312, and recorded `docs/report/` (singular) as the
+  canonical Reports path per founder vision §3 and PR review. Physical migration
+  remains deferred to later Reports standardization and cleanup work.
 - chore: Перенесён report по гипотезе PR #303 из корневого
   `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` в canonical
   `docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` по issue #311.
@@ -64,6 +64,20 @@ All notable repository governance changes are documented here.
   confirms Variant C scope: one base Report standard with light subtype profiles.
   The change intentionally does not create a Reports standard, does not move or
   rename files, and does not change directory structure.
+- adr: Added `docs/adr/2026-07-adr-003-research-structure.md` (ADR-003) for issue
+  #314 (backlog B-017). Human decision gate that accepts the RFC B-016 model
+  without changes: single `research/<domain>/exp/<issue-slug>/` evidence
+  container, ban on nested `outputs/` (flat structure), the `exp/` (research
+  evidence corpus) vs `runs/` (operational run record per ADR-002) boundary and
+  Research / Analysis / Audit routing by task type. `Supersedes`
+  `standards/research-profile.md` effective after its removal in B-021; delegates
+  the normative rule to `standards/research-standard.md` (B-018) and an ADR-002
+  addendum (B-019); consequences cover the B-018..B-023 chain. Registered in
+  `governance/artifact-map.md`, `governance/backlog.md` (B-017 → В РАБОТЕ) and the
+  structure validator allowlist. Follows `standards/adr-structure-standard.md`
+  (frontmatter and required body sections). No validator logic or file migration
+  performed (deferred to B-022/B-023).
+
 - research: Added
   `research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md`
   for issue #307 (backlog B-038). Source-backed industry benchmark of how

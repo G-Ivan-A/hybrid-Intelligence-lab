@@ -324,8 +324,10 @@ def classify_report(path: str, fields: dict[str, str], title: str, text: str) ->
 
 
 def canonical_hint(path: str, subtype: str, relation: str) -> str:
-    if path.startswith(("docs/report/", "docs/reports/", "reports/")):
-        return "already-report-path; path spelling unresolved"
+    if path.startswith("docs/report/"):
+        return "already canonical docs/report path"
+    if path.startswith(("docs/reports/", "reports/")):
+        return "noncanonical report-like path; target docs/report"
     if relation == "output-for-audit":
         return "future Report/Audit boundary decision before moving"
     if subtype == "statistics":

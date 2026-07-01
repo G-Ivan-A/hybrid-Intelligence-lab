@@ -13,19 +13,19 @@
   "repo_meta": {
     "hub": {
       "label": "Hub / hybrid-Intelligence-lab",
-      "root": "/tmp/gh-issue-solver-1782891890556",
+      "root": "/tmp/issue-310-hub-baseline",
       "url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
       "sha": "d0fd509837a56620b4e0c2100edf01df96fa98af"
     },
     "mango": {
       "label": "Mango / mango_ba_prompts",
-      "root": "/tmp/gh-issue-solver-1782891890556-external/mango_ba_prompts",
+      "root": "/tmp/issue-310-mango_ba_prompts",
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts",
       "sha": "995c16d175f916ae397d0efc2231f8d30f82c518"
     },
     "clarify": {
       "label": "Clarify / clarify-engine-ai",
-      "root": "/tmp/gh-issue-solver-1782891890556-external/clarify-engine-ai",
+      "root": "/tmp/issue-310-clarify-engine-ai",
       "url": "https://github.com/G-Ivan-A/clarify-engine-ai",
       "sha": "96c288fd13a2d7cc7c3e3cdd52574944858e6255"
     }
@@ -749,7 +749,7 @@
       "relation": "standalone-report",
       "confidence": "high",
       "rationale": "General report/summary/retrospective signal.",
-      "canonical_hint": "already-report-path; path spelling unresolved"
+      "canonical_hint": "noncanonical report-like path; target docs/report"
     },
     {
       "repo": "hub",
