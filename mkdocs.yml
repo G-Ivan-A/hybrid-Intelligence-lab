@@ -79,6 +79,7 @@ nav:
     - Ecosystem Map: docs/ecosystem-map.md
   - Аудиты:
     - "Research artifact format: audit": docs/audit/2026-06-29-research-artifact-format-contract-audit.md
+    - "Documentation boundary audit (RFC/ADR/Standard)": docs/audit/2026-07-01-documentation-boundary-audit.md
   - Анализы:
     - "Backlog and artifact changes": docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md
     - "Reports: инвентаризация артефактов": docs/analysis/2026-07-01-reports-artifacts-inventory.md
