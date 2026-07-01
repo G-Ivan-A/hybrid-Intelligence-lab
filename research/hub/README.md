@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.10
-updated: 2026-06-29
+version: 1.12
+updated: 2026-07-01
 temperature: 0.1
 ---
 
@@ -43,6 +43,7 @@ project bootstrap, governance-стратегии и классификации �
 | [exp-rfc-adr-industry-norms/](exp-rfc-adr-industry-norms/) | Воспроизводимый corpus scan для issue #278: local Hub/Mango RFC/ADR audit и external RFC/ADR path-signal summaries по архетипам A-D. |
 | [exp-ripple-effects-282/](exp-ripple-effects-282/) | Воспроизводимый frontmatter scan для issue #284: counts for status values, `ai-generated`, extra fields, path classes and migration examples. |
 | [exp-research-analysis-audit-288/](exp-research-analysis-audit-288/) | Воспроизводимый scan для issue #288: матрица классификации Research / Analysis / Audit / Other по Hub, Mango и Clarify. |
+| [exp/reports-inventory-310/](exp/reports-inventory-310/) | Воспроизводимый scan для issue #310 в целевом контейнере `exp/` (RFC B-016 v0.2 P1) с плоской структурой без `outputs/` (P2): матрица Reports-кандидатов по Hub, Mango и Clarify с подтипами `audit`, `report`, `statistics` и relation к Analysis/Audit. |
 
 ## Воспроизводимость
 
