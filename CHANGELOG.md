@@ -21,6 +21,22 @@ All notable repository governance changes are documented here.
   оставляет только архитектурные последствия, а список задач B-018..B-023 отдан
   RFC Impacted Artifacts и `governance/backlog.md`. `Decision Drivers` сжаты до
   трёх. RFC B-016 и стандарты ADR/RFC не изменялись (ограничение issue #316).
+- correction: Fixed the placement of the issue #310 deliverables to conform to
+  RFC B-016 v0.2 before merge. Moved the reproducible experiment container from
+  the legacy sibling format `research/hub/exp-reports-inventory-310/` into the
+  target container `research/hub/exp/reports-inventory-310/` (P1) and flattened
+  it — the nested `outputs/` directory was removed so evidence files sit next to
+  the README and script (P2). Moved the inventory itself from
+  `research/hub/2026-07-01-reports-artifacts-inventory.md` to
+  `docs/analysis/2026-07-01-reports-artifacts-inventory.md` because an inventory
+  is an Analysis, not Research (P4 routing). Updated all links, the artifact-map,
+  backlog, research indexes, MkDocs navigation and the structure validator.
+  Recorded the root-cause analysis in
+  `docs/report/2026-07-01-reports-inventory-placement-analysis.md`.
+- backlog: Moved B-038 (Reports inventory and boundaries) from TODO to review,
+  linked issue #310 and PR #312, and recorded `docs/report/` (singular) as the
+  canonical Reports path per founder vision §3 and PR review. Physical migration
+  remains deferred to later Reports standardization and cleanup work.
 - chore: Перенесён report по гипотезе PR #303 из корневого
   `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` в canonical
   `docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` по issue #311.
@@ -55,6 +71,16 @@ All notable repository governance changes are documented here.
   validator backstop), records which contracts the author applied and how, and
   recommends prevention measures. Registered in `governance/artifact-map.md`,
   `mkdocs.yml` and the structure validator.
+- analysis: Added `docs/analysis/2026-07-01-reports-artifacts-inventory.md` for
+  issue #310 (backlog B-038) plus the reproducible evidence package
+  `research/hub/exp/reports-inventory-310/`. The inventory scans Hub, Mango and
+  Clarify at fixed SHAs, classifies 47 Reports candidates by actual subtype
+  (`audit`, `report`, `statistics`) and relation (`output-for-audit`,
+  `output-for-analysis`, `standalone-report`), identifies path drift,
+  substitutions, duplicate-review candidates and modernization candidates, and
+  confirms Variant C scope: one base Report standard with light subtype profiles.
+  The change intentionally does not create a Reports standard, does not move or
+  rename files, and does not change directory structure.
 - adr: Added `docs/adr/2026-07-adr-003-research-structure.md` (ADR-003) for issue
   #314 (backlog B-017). Human decision gate that accepts the RFC B-016 model
   without changes: single `research/<domain>/exp/<issue-slug>/` evidence
