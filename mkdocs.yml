@@ -85,6 +85,7 @@ nav:
   - Отчёты:
     - "PR 303 RFC hypothesis": docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md
     - "Reports inventory placement": docs/report/2026-07-01-reports-inventory-placement-analysis.md
+    - "RFC/ADR duplication analysis": docs/report/2026-07-01-rfc-adr-duplication-analysis.md
   - Гайды:
     - Обзор: guides/README.md
     - Быстрый старт: guides/quick-start.md
