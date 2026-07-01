@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.27
+version: 1.28
 updated: 2026-07-01
 temperature: 0.1
 ---
@@ -13,6 +13,14 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: Устранено дублирование RFC B-016 в `docs/adr/2026-07-adr-003-research-structure.md`
+  по issue #316 (версия ADR `0.1` → `0.2`, решение и статус `proposed` не
+  изменены). Секция `Decision` больше не пересказывает Proposal P1–P4, а кратко
+  фиксирует «принять модель RFC B-016» со ссылками на разделы RFC; `Alternatives
+  Considered` делегирует полный разбор в RFC вместо копии таблицы; `Consequences`
+  оставляет только архитектурные последствия, а список задач B-018..B-023 отдан
+  RFC Impacted Artifacts и `governance/backlog.md`. `Decision Drivers` сжаты до
+  трёх. RFC B-016 и стандарты ADR/RFC не изменялись (ограничение issue #316).
 - correction: Fixed the placement of the issue #310 deliverables to conform to
   RFC B-016 v0.2 before merge. Moved the reproducible experiment container from
   the legacy sibling format `research/hub/exp-reports-inventory-310/` into the
@@ -54,6 +62,15 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- report: Added `docs/report/2026-07-01-rfc-adr-duplication-analysis.md` for issue
+  #316. Root-cause analysis of the RFC B-016 ↔ ADR-003 duplication: it maps the
+  duplicated sections (ADR `Decision` P1–P4, `Alternatives Considered` table,
+  `Consequences` downstream list) against RFC B-016, identifies the cause as a
+  section-level misinterpretation of the RFC/ADR boundary (stated only at document
+  level in the standard, with a template that invites section-filling and no
+  validator backstop), records which contracts the author applied and how, and
+  recommends prevention measures. Registered in `governance/artifact-map.md`,
+  `mkdocs.yml` and the structure validator.
 - analysis: Added `docs/analysis/2026-07-01-reports-artifacts-inventory.md` for
   issue #310 (backlog B-038) plus the reproducible evidence package
   `research/hub/exp/reports-inventory-310/`. The inventory scans Hub, Mango and

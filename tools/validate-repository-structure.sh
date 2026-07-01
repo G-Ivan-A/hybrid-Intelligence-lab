@@ -49,6 +49,7 @@ is_active_file() {
     LICENSE | \
     docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
     docs/report/2026-07-01-reports-inventory-placement-analysis.md | \
+    docs/report/2026-07-01-rfc-adr-duplication-analysis.md | \
     docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     docs/adr/2026-07-adr-003-research-structure.md | \
@@ -493,6 +494,7 @@ required_files=(
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
+  "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
   "standards/README.md"
   "standards/frontmatter-standard.md"
   "standards/file-naming.md"
@@ -771,6 +773,7 @@ require_text "mkdocs.yml" "docs/analysis/2026-06-30-backlog-and-artifact-change-
 require_text "mkdocs.yml" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "mkdocs.yml" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
 require_text "mkdocs.yml" "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
+require_text "mkdocs.yml" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
 require_text "mkdocs.yml" "2026-06-30-reports-industry-norms-and-standardization-scope.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
@@ -1239,7 +1242,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.56"
+require_text "governance/artifact-map.md" "version: 1.57"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1286,6 +1289,7 @@ require_text "governance/artifact-map.md" "research/hub/2026-06-30-reports-indus
 require_text "governance/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
 require_text "governance/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "governance/artifact-map.md" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
+require_text "governance/artifact-map.md" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
 require_text "governance/artifact-map.md" "research/hub/exp-rfc-adr-industry-norms/"
 require_text "governance/artifact-map.md" "research/hub/exp-research-analysis-audit-288/"
 require_text "governance/artifact-map.md" "research/hub/exp/reports-inventory-310/"
@@ -1677,6 +1681,14 @@ require_text "docs/report/2026-07-01-reports-inventory-placement-analysis.md" "i
 require_text "docs/report/2026-07-01-reports-inventory-placement-analysis.md" "RFC B-016"
 require_text "docs/report/2026-07-01-reports-inventory-placement-analysis.md" "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
 require_text "docs/report/2026-07-01-reports-inventory-placement-analysis.md" "research/hub/exp/reports-inventory-310/"
+
+require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "status: draft"
+require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "version: 0.1"
+require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "updated: 2026-07-01"
+require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "temperature: 0.1"
+require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "owner: G-Ivan-A"
+require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "type: report"
+require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "method: root-cause-analysis"
 
 require_text "research/hub/exp-research-analysis-audit-288/README.md" "status: draft"
 require_text "research/hub/exp-research-analysis-audit-288/README.md" "type: experiment"
