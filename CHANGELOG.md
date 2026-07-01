@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.26
+version: 1.27
 updated: 2026-07-01
 temperature: 0.1
 ---
@@ -37,6 +37,20 @@ All notable repository governance changes are documented here.
   more than one file per month.
 
 ### Added
+
+- adr: Added `docs/adr/2026-07-adr-003-research-structure.md` (ADR-003) for issue
+  #314 (backlog B-017). Human decision gate that accepts the RFC B-016 model
+  without changes: single `research/<domain>/exp/<issue-slug>/` evidence
+  container, ban on nested `outputs/` (flat structure), the `exp/` (research
+  evidence corpus) vs `runs/` (operational run record per ADR-002) boundary and
+  Research / Analysis / Audit routing by task type. `Supersedes`
+  `standards/research-profile.md` effective after its removal in B-021; delegates
+  the normative rule to `standards/research-standard.md` (B-018) and an ADR-002
+  addendum (B-019); consequences cover the B-018..B-023 chain. Registered in
+  `governance/artifact-map.md`, `governance/backlog.md` (B-017 → В РАБОТЕ) and the
+  structure validator allowlist. Follows `standards/adr-structure-standard.md`
+  (frontmatter and required body sections). No validator logic or file migration
+  performed (deferred to B-022/B-023).
 
 - research: Added
   `research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md`
