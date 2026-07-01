@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.11
+version: 1.12
 updated: 2026-07-01
 temperature: 0.1
 type: backlog
@@ -194,7 +194,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-015** | RFC: Валидатор frontmatter, миграция статусов и approved list | **P2** | RFC/ADR structure standards | TODO | — (tech debt) | [Ripple Effects 282](../research/hub/2026-06-28-ripple-effects-282-research.md); issue [#286](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/286) | Нужен отдельный RFC/implementation path для routing, status migration, approved fields and CI modes; issue #286 сознательно не меняет validator/migration rules. |
 | **B-016** | RFC: Структура research, контейнер `exp/` и маршрутизация Research/Analysis/Audit | **P0** | — | ЧАСТИЧНО | [#302](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/302) (RFC в review, PR [#303](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/303)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) | Запускает согласованную цепочку Research → RFC → ADR → Standard и снимает текущую неоднозначность `exp-*`/`outputs` vs `runs/`. |
 | **B-017** | ADR: Принять стандарт структуры research | **P0** | B-016 | В РАБОТЕ | [#314](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/314) (ADR-003 в review, PR [#315](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/315)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); RFC B-016 | Фиксирует human decision до появления нормативного стандарта; без ADR стандарт будет преждевременным. |
-| **B-018** | Создать `standards/research-standard.md` как нормативный контракт | **P0** | B-017 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); будущий ADR B-017 | Заменяет профиль полноценным стандартом: `research/`, `exp/`, запрет `outputs/`, routing по типам задач. |
+| **B-018** | Создать `standards/research-standard.md` как нормативный контракт | **P0** | B-017 | review | [#318](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/318) (standard в review, PR [#319](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/319)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); ADR-003 (B-017) | Заменяет профиль полноценным стандартом: `research/`, `exp/`, запрет `outputs/`, routing по типам задач. |
 | **B-019** | ADR-002 addendum: граница `exp/` vs `runs/` | **P0** | B-018 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290) | Устраняет коллизию между research evidence corpus и operational run record. |
 | **B-020** | Обновить `standards/glossary.md`: Research / Analysis / Audit / RFC / ADR / Standard | **P1** | B-019 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) | Закрепляет терминологическую границу, чтобы новые routing-правила не размывались в следующих задачах. |
 | **B-021** | Удалить `standards/research-profile.md` после замены стандартом | **P1** | B-020 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `standards/research-profile.md` | Убирает конкурирующий источник истины; требует CHANGELOG entry и проверки ссылок. |
@@ -859,10 +859,11 @@ P0, потому что это обязательный decision gate перед
 ### B-018: Создать `standards/research-standard.md` как нормативный контракт
 
 **Приоритет:** P0
-**Источник:** 🔗 [issue #294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294);
-будущий ADR B-017
+**Источник:** 🔗 [issue #318](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/318);
+[issue #294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294);
+ADR-003 (B-017)
 **Зависимости:** B-017
-**Статус:** TODO
+**Статус:** review (PR [#319](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/319))
 **Режим работы:** `Structured`
 
 **Контекст:**
@@ -884,11 +885,11 @@ P0, потому что это обязательный decision gate перед
 - обновления навигации и реестров, если required by current standards registry
 
 **Критерии приёмки (DoD):**
-- [ ] Standard ссылается на ADR B-017, RFC B-016 и issues #294/#290/#288.
-- [ ] `exp/` и отказ от `outputs/` описаны нормативно.
-- [ ] Routing по типам задач проверяем и не смешивает Research / Analysis /
+- [x] Standard ссылается на ADR B-017 (ADR-003), RFC B-016 и issues #294/#290/#288.
+- [x] `exp/` и отказ от `outputs/` описаны нормативно.
+- [x] Routing по типам задач проверяем и не смешивает Research / Analysis /
       Audit.
-- [ ] Документ готов стать replacement для `standards/research-profile.md`.
+- [x] Документ готов стать replacement для `standards/research-profile.md`.
 
 **Обоснование приоритета:**
 P0: это целевой нормативный контракт. Без него addendum, glossary, deletion,

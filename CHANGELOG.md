@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.28
+version: 1.29
 updated: 2026-07-01
 temperature: 0.1
 ---
@@ -10,6 +10,28 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Added
+
+- standard: Создан `standards/research-standard.md` — нормативный контракт (IL-3)
+  структуры research-артефактов Хаба (B-018, issue #318). Стандарт принимает
+  модель ADR-003 и RFC B-016 без корректировок и нормативно фиксирует:
+  размещение отчётов `research/<domain>/YYYY-MM-DD-name.md`, единый контейнер
+  воспроизводимой доказательной базы `research/<domain>/exp/<issue-slug>/`,
+  запрет обязательной папки `outputs/` (плоская структура), границу `exp/`
+  (research evidence corpus) vs `runs/` (operational run record per ADR-002),
+  маршрутизацию Research / Analysis / Audit по типу задачи и переходный режим
+  для legacy `exp-*`. Стандарт становится replacement для
+  `standards/research-profile.md` (физическое удаление профиля — B-021).
+  Зарегистрирован в `standards/README.md`, `governance/artifact-map.md` и
+  структурном валидаторе; статус B-018 переведён в review в
+  `governance/backlog.md`. Alternatives, trade-offs и rejected options не
+  дублируются — они остаются в RFC B-016. По review-фидбэку PR #319 стандарт
+  зарегистрирован в `status: draft` (governance-vocabulary, ещё не accepted —
+  идёт review), frontmatter дополнен полями traceability (`executable`, `scope`,
+  `related_standards`, `related_issues`), и явно разведено противоречие
+  lifecycle vs frontmatter: `standards/*.md` используют governance-vocabulary, а
+  нормируемые research reports (`research/*.md`) — knowledge-vocabulary.
 
 ### Changed
 
