@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.7
-updated: 2026-06-25
+version: 1.8
+updated: 2026-07-01
 temperature: 0.1
 ---
 
@@ -118,11 +118,12 @@ sufficient frontmatter из
 
 Новые и мигрируемые хронологические Markdown-артефакты используют date-first
 имена по [standards/file-naming.md](standards/file-naming.md):
-`YYYY-MM-DD-name.md` для Hub `research/` и spoke `docs/analysis/`;
+`YYYY-MM-DD-name.md` для Hub `research/`, Hub `docs/report/` и spoke
+`docs/analysis/`;
 `YYYY-MM-name.md` или `YYYY-name.md` для spoke `docs/rfc/`;
 `YYYY-MM-adr-NNN-name.md` для spoke ADR.
-Проверяемые области: Hub `research/`, spoke `docs/analysis/`, `docs/rfc/` и
-`docs/adr/`.
+Проверяемые области: Hub `research/`, Hub `docs/report/`, spoke
+`docs/analysis/`, `docs/rfc/` и `docs/adr/`.
 
 ## Локальная проверка
 

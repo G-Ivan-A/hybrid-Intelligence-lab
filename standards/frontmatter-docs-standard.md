@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.1
-updated: 2026-06-28
+version: 1.2
+updated: 2026-07-01
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -43,7 +43,7 @@ frontmatter.
 
 | Artifact type | Paths | Status vocabulary | Semantics |
 | --- | --- | --- | --- |
-| Knowledge | `research/`, `docs/analysis/` | `draft`, `reviewed`, `canonical`, `superseded` | Knowledge maturity: written, reviewed, accepted as reusable basis, obsolete. |
+| Knowledge | `research/`, `docs/analysis/`, `docs/report/` | `draft`, `reviewed`, `canonical`, `superseded` | Knowledge maturity: written, reviewed, accepted as reusable basis, obsolete. |
 | Governance | `docs/rfc/`, `governance/rfc/`, `docs/adr/`, `standards/`, `ai-rules/` | `draft`, `proposed`, `accepted`, `rejected`, `deprecated`, `superseded` | Decision process: drafted, proposed for review, accepted/rejected, retired or replaced. |
 
 Mixing vocabularies is invalid for paths covered by these classes. For example,
@@ -57,7 +57,7 @@ Mixing vocabularies is invalid for paths covered by these classes. For example,
 | Standard | `standards/*.md` | `status`, `version`, `updated`, `temperature`, `owner` | `executable`, `entrypoint`, `scope`, `level`, `concept_type`, `related_standards`, `related_templates`, `related_issues` when the validator or standard process consumes them. |
 | RFC | `governance/rfc/*.md`, `docs/rfc/*.md` | `status`, `version`, `updated`, `temperature`, `owner`, `rfc-scope` | `executable`, `entrypoint`, and legacy research-routing fields only when consumed. |
 | ADR | `docs/adr/*.md` | `status`, `version`, `updated`, `temperature`, `owner`, `decision-type` | `supersedes`, `executable`, `entrypoint` only when a local ADR index or validator consumes them. |
-| Research | `research/<domain>/*.md`, `docs/analysis/*.md` | `status`, `version`, `updated`, `temperature` | `source`, `scope`, `type`, `context`, `method`, `related_*`, `external_artifacts`, `stage`, `projects`, `source_id`, `based_on` when they improve traceability and match [research-profile.md](research-profile.md). |
+| Research / report | `research/<domain>/*.md`, `docs/analysis/*.md`, `docs/report/*.md` | `status`, `version`, `updated`, `temperature` | `owner`, `source`, `scope`, `type`, `context`, `method`, `related_*`, `external_artifacts`, `stage`, `projects`, `source_id`, `based_on` when they improve traceability and match [research-profile.md](research-profile.md). |
 | Guide | `guides/*.md` | `status`, `version`, `updated`, `temperature` | `audience`, `entrypoint`, `executable` when navigation or tooling uses it. |
 | Template | `templates/**/*.md` | `status`, `version`, `updated`, `temperature` | `executable`, `entrypoint`, `level`, `standard`, and approved placeholders when Smart Sync or an agent consumes them. |
 | Practice | `practices/**/*.md` | `status`, `version`, `updated`, `temperature` | `source`, `executable`, `entrypoint` when automated provenance or execution checks use them. |

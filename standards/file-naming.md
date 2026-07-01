@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.6
-updated: 2026-06-25
+version: 1.7
+updated: 2026-07-01
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -29,6 +29,7 @@ owner: G-Ivan-A
 | --- | --- | --- |
 | `research/<domain>/` | `YYYY-MM-DD-name.md` | `2026-06-12-ecosystem-governance-audit.md` |
 | `research/<domain>/external-insights/` | `YYYY-MM-DD-name.md` | `2026-06-13-building-effective-agents.md` |
+| Hub `docs/report/` | `YYYY-MM-DD-name.md` | `2026-06-30-pr-303-rfc-hypothesis-analysis.md` |
 | spoke `docs/analysis/` | `YYYY-MM-DD-name.md` | `2026-06-12-repository-structure-analysis.md` |
 | spoke `docs/rfc/` | `YYYY-MM-name.md` или `YYYY-name.md` | `2026-06-api-contract-proposal.md` |
 | spoke `docs/adr/` | `YYYY-MM-adr-NNN-name.md` | `2026-06-adr-001-storage-choice.md` |
@@ -36,10 +37,11 @@ owner: G-Ivan-A
 Дата ставится первой. Суффикс даты в конце (`name-2026-06.md`) запрещён для
 новых и мигрируемых хронологических файлов.
 
-Для `research/` и spoke `docs/analysis/` день обязателен: он сохраняет нативную
-сортировку при частоте больше одного артефакта в месяц и делает имена
-уникальными. При миграции существующих файлов дата берётся из git history
-создания файла; если достоверно известен только месяц, используется день `01`.
+Для `research/`, Hub `docs/report/` и spoke `docs/analysis/` день обязателен:
+он сохраняет нативную сортировку при частоте больше одного артефакта в месяц и
+делает имена уникальными. При миграции существующих файлов дата берётся из git
+history создания файла; если достоверно известен только месяц, используется
+день `01`.
 
 Исключения без даты: `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`,
 `CODE_OF_CONDUCT.md`, `LICENSE`, `LICENSE.md`, `AI_GOVERNANCE.md`,

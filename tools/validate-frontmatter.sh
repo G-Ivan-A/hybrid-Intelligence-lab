@@ -74,7 +74,7 @@ document_class() {
   path="$(normalize_path "$1")"
 
   case "$path" in
-    research/*.md | docs/analysis/*.md)
+    research/*.md | docs/analysis/*.md | docs/report/*.md)
       printf 'knowledge'
       ;;
     governance/rfc/README.md | ai-rules/*.md)
@@ -129,7 +129,7 @@ is_approved_field() {
     *:ai-generated)
       return 1
       ;;
-    knowledge:type | knowledge:context | knowledge:method | knowledge:scope | \
+    knowledge:owner | knowledge:type | knowledge:context | knowledge:method | knowledge:scope | \
     knowledge:source | knowledge:source_id | knowledge:stage | knowledge:projects | \
     knowledge:related_artifacts | knowledge:related_issues | knowledge:related_issue | \
     knowledge:external_artifacts | knowledge:based_on)

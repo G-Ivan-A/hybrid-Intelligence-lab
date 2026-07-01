@@ -81,6 +81,7 @@ validate_tree() {
 
 validate_tree "research" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
 validate_tree "docs/analysis" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
+validate_tree "docs/report" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
 validate_tree "docs/rfc" "is_monthly_chronological_name" "YYYY-MM-name.md or YYYY-name.md"
 validate_tree "docs/adr" "is_adr_chronological_name" "YYYY-MM-adr-NNN-name.md"
 
