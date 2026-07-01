@@ -5,8 +5,13 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
 tmp_dirs=()
+tmp_files=()
 cleanup() {
   local dir
+  local file
+  for file in "${tmp_files[@]}"; do
+    rm -f "$file"
+  done
   for dir in "${tmp_dirs[@]}"; do
     rm -rf "$dir"
   done
@@ -20,6 +25,15 @@ make_tmp_dir() {
   dir="$(mktemp -d "$parent/.frontmatter-test.XXXXXX")"
   tmp_dirs+=("$dir")
   printf -v "$__resultvar" '%s' "$dir"
+}
+
+make_tmp_file() {
+  local __resultvar="$1"
+  local parent="$2"
+  local file
+  file="$(mktemp "$parent/.frontmatter-test.XXXXXX.md")"
+  tmp_files+=("$file")
+  printf -v "$__resultvar" '%s' "$file"
 }
 
 write_doc() {
@@ -66,12 +80,23 @@ make_tmp_dir knowledge_dir research
 make_tmp_dir governance_dir standards
 make_tmp_dir adr_dir docs/adr
 make_tmp_dir rfc_dir governance/rfc
+make_tmp_file report_doc docs/report
 
 write_doc "$knowledge_dir/valid.md" "status: reviewed
 version: 1.0
 updated: 2026-06-28
 temperature: 0.1"
 expect_pass "valid knowledge status" "$knowledge_dir/valid.md"
+
+write_doc "$report_doc" "status: draft
+version: 1.0
+updated: 2026-06-30
+temperature: 0.1
+owner: G-Ivan-A
+type: report
+context: [hub, rfc, review]
+method: hypothesis-testing"
+expect_pass "valid docs/report metadata" "$report_doc"
 
 write_doc "$governance_dir/valid.md" "status: accepted
 version: 1.0

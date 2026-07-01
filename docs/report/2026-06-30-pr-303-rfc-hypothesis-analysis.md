@@ -3,6 +3,17 @@ status: draft
 version: 0.1
 updated: 2026-06-30
 temperature: 0.1
+owner: G-Ivan-A
+type: report
+context: [hub, rfc, review, pr-303, hypothesis-analysis]
+method: hypothesis-testing
+source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/306"
+related_issues:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/306"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/303"
+related_artifacts:
+  - "governance/rfc/2026-06-30-rfc-research-structure.md"
+  - "standards/rfc-structure-standard.md"
 ---
 
 # Отчет по гипотезе проблемы PR #303
