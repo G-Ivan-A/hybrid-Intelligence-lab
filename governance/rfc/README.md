@@ -1,6 +1,6 @@
 ---
 status: accepted
-version: 1.15
+version: 1.16
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
@@ -60,6 +60,7 @@ RFC - это рекомендация или proposal, а не блокирую�
 | [2026-06-27-rfc-adr-standard.md](2026-06-27-rfc-adr-standard.md) | Accepted RFC стандарта структуры ADR: rationale для [ADR Structure Standard](../../standards/adr-structure-standard.md), базовая модель decision record, identification, frontmatter, body sections, lifecycle, A/B/C/D дельты, Critical Analysis и boundary RFC/ADR. |
 | [2026-06-27-rfc-rfc-standard.md](2026-06-27-rfc-rfc-standard.md) | Accepted RFC стандарта структуры RFC: rationale для [RFC Structure Standard](../../standards/rfc-structure-standard.md), proposal structure, frontmatter, metadata, Open Questions cleanup, lifecycle, A/B/C/D дельты, Critical Analysis и boundary RFC/ADR. |
 | [2026-06-30-rfc-research-structure.md](2026-06-30-rfc-research-structure.md) | Accepted RFC структуры research: единый контейнер `exp/`, запрет вложенного `outputs/` (плоская структура внутри `exp/<issue-slug>/`), граница `exp/` (research evidence) vs `runs/` (operational run record), маршрутизация Research / Analysis / Audit по типу задачи, эвристики классификации, переходный режим legacy `exp-*` и последствия для цепочки B-017..B-023. |
+| [2026-07-02-rfc-reports-structure.md](2026-07-02-rfc-reports-structure.md) | Draft RFC структуры Reports-артефактов: базовый стандарт Report + лёгкие профили подтипов (`audit`/`report`/`statistics`) как Вариант C («A сейчас, B потом»), канонический routing `docs/report/` (единственное число) с флагом реконсиляции дрейфа ADR-002 `docs/reports/`, frontmatter с relation-метаданными (`based_on`/`source`/`scope`/`supersedes`/`related_artifacts`), границы Reports ↔ Analysis ↔ Audit ↔ Research evidence и последствия для цепочки B-041..B-044. |
 
 ## Связанные артефакты
 
