@@ -1577,7 +1577,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.15"
+require_text "governance/backlog.md" "version: 1.16"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"
