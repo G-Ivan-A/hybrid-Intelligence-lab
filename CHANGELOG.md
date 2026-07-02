@@ -821,6 +821,10 @@ All notable repository governance changes are documented here.
   `Standard ≠ Contract`; добавлены связи Research → RFC → ADR → Standard и
   routing Research / Analysis / Audit по функции артефакта, а не по имени
   каталога. Routing, ADR-002 и `standards/research-standard.md` не менялись.
+- rfc: Устранена терминологическая конфляция F-01 в
+  `governance/rfc/2026-07-02-rfc-reports-structure.md` по issue #332: две
+  конфликтные формулировки заменены на `общий каркас`, чтобы RFC Reports
+  описывал структуру будущего стандарта Report без смешения Standard и Contract.
 - governance: Синхронизированы `governance/backlog.md` и `CHANGELOG.md` по issue
   #333 после merged PR #303..#331. В backlog статусы B-018, B-019, B-038,
   B-039, B-040, B-041 и B-045 приведены к `DONE`, B-019 связан с issue #326 /
