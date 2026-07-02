@@ -1,6 +1,6 @@
 ---
 status: accepted
-version: 0.1
+version: 0.2
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
@@ -27,98 +27,102 @@ decision-type: methodology
 
 RFC B-041
 ([`governance/rfc/2026-07-02-rfc-reports-structure.md`](../../governance/rfc/2026-07-02-rfc-reports-structure.md))
-completed the proposal-stage work for Reports artifacts after the Reports
-inventory and industry-norms research. It recommends a base Report standard with
-light subtype profiles and asks for a human decision gate before the normative
-standard B-043 is created.
+завершил этап предложения по Reports-артефактам после инвентаризации Reports и
+исследования отраслевых норм. Он рекомендует базовый стандарт Report с лёгкими
+профилями подтипов и требует человеческой точки принятия решения перед созданием
+нормативного стандарта B-043.
 
-The decision is needed now because ADR-002 still contains the routing table row
-`Report -> docs/reports/`, while founder vision, the Reports inventory, and live
-repository practice use `docs/report/`. Without this ADR, B-043 would inherit a
-competing routing source and the Reports standardization chain would remain
-blocked.
+Решение нужно сейчас, потому что ADR-002 всё ещё содержит строку таблицы routing
+`Report -> docs/reports/`, тогда как видение фаундера, инвентаризация Reports и
+живая практика репозитория используют `docs/report/`. Без этого ADR B-043
+унаследовал бы конкурирующий источник routing, а цепочка стандартизации Reports
+осталась бы заблокированной.
 
-This ADR records the accepted decision. It does not create the Report standard,
-does not migrate files, and does not restate the RFC proposal, alternatives, or
-impacted-artifact matrix.
+Этот ADR фиксирует принятое решение. Он не создаёт стандарт Report, не мигрирует
+файлы и не пересказывает предложение, альтернативы или матрицу затронутых
+артефактов из RFC.
 
 ## Decision
 
-Accept **Вариант C (Variant C)** from RFC B-041: one base Report standard with lightweight
-profiles for `audit`, `report`, and `statistics`. The detailed model, subtype
-shape, relation frontmatter, and boundary rationale remain in RFC B-041.
+Принять **Вариант C** из RFC B-041: один базовый стандарт Report с лёгкими
+профилями для `audit`, `report` и `statistics`. Детальная модель, форма
+подтипов, relation-frontmatter и обоснование границ остаются в RFC B-041.
 
-Set the canonical Reports route to **`docs/report/`** (singular). Reconcile the
-ADR-002 routing table drift by treating `docs/reports/` as superseded by
-`docs/report/` for Reports routing. ADR-002 remains the general artifact-routing
-decision record; this ADR is the later decision source for the Reports row.
+Установить канонический маршрут Reports как **`docs/report/`** (единственное
+число). Реконсилировать дрейф таблицы routing ADR-002: для Reports routing
+`docs/reports/` считается замещённым на `docs/report/`. ADR-002 остаётся общим
+decision record для маршрутизации артефактов; этот ADR является более поздним
+источником решения для строки Reports.
 
-Delegate the binding rule text to `standards/report-standard.md` (B-043) and
-physical modernization or migration to B-044. This ADR does not rename or move
-existing files.
+Делегировать обязательный текст правил в `standards/report-standard.md` (B-043),
+а физическую модернизацию или миграцию — в B-044. Этот ADR не переименовывает и
+не перемещает существующие файлы.
 
-Open questions from RFC B-041 are resolved or delegated as follows:
+Открытые вопросы из RFC B-041 решены или делегированы следующим образом:
 
-| Open question | ADR status |
+| Открытый вопрос | Статус в ADR |
 | --- | --- |
-| Физический дом audit reports (`docs/report/` vs `docs/audit/`) | Delegated to B-043 and future Audit standard B-030. Accepted invariant: `report-subtype: audit` identifies audit reports semantically; path enforcement and migration are not done in this ADR. |
-| Statistics vs research evidence | Delegated to B-043 and research-evidence policy. Accepted invariant: reproducible evidence remains in `research/<domain>/exp/*`; a publishable Report mirror is created only when it needs its own lifecycle. |
-| Триггер B for extracting a subtype profile into a separate standard | Accepted as an anti-inflation criterion: extract only when repeated subtype-specific mandatory rules or review pain make the base Report standard unclear. Operational thresholds are specified in B-043. |
+| Физический дом audit reports (`docs/report/` vs `docs/audit/`) | Делегировано в B-043 и будущий стандарт Audit B-030. Зафиксированное соглашение: `report-subtype: audit` семантически идентифицирует audit-отчёты; контроль пути и миграция в этом ADR не выполняются. |
+| Statistics vs research evidence | Делегировано в B-043 и политику research evidence. Зафиксированное решение: воспроизводимая доказательная база остаётся в `research/<domain>/exp/*`; публикуемое Report-зеркало создаётся только тогда, когда ему нужен собственный жизненный цикл. |
+| Триггер B для выделения subtype-профиля в отдельный стандарт | Принят как критерий против инфляции артефактов: выделять профиль только тогда, когда повторяющиеся обязательные правила для подтипа или боль ревью делают базовый стандарт Report неясным. Операционные пороги будут определены в B-043. |
 
 ## Decision Drivers
 
-- Single routing source: `docs/report/` removes the ADR-002 `docs/reports/`
-  drift before the Report standard becomes normative.
-- Anti-Inflation: one base standard with profiles avoids three premature
-  standards while preserving a future split path.
-- Boundary discipline: Report remains a durable output class, while Analysis,
-  Audit, and Research evidence keep their own process or evidence semantics.
-- Decision gate: B-043 should be based on an accepted decision, not only on an
-  RFC proposal.
+- Единый routing-источник: `docs/report/` снимает дрейф ADR-002
+  `docs/reports/` до того, как стандарт Report станет нормативным.
+- Anti-Inflation: один базовый стандарт с профилями избегает трёх преждевременных
+  стандартов и сохраняет путь к будущему разделению.
+- Дисциплина границ: Report остаётся устойчивым классом выходного артефакта, а
+  Analysis, Audit и research evidence сохраняют собственную процессную или
+  доказательную семантику.
+- Decision gate: B-043 должен опираться на принятое решение, а не только на
+  предложение RFC.
 
 ## Alternatives Considered
 
-Full alternatives A/B/C/D, trade-offs, and stress tests are in RFC B-041,
-especially the Alternatives and Critical Analysis sections. This ADR delegates
-that proposal-stage material to the source RFC.
+Полные альтернативы A/B/C/D, trade-offs и stress tests находятся в RFC B-041,
+особенно в разделах Alternatives и Critical Analysis. Этот ADR делегирует
+материал этапа предложения исходному RFC.
 
-The decisive fork closed here is whether to accept Variant C and `docs/report/`
-or leave Reports split between the RFC recommendation and the older ADR-002
-`docs/reports/` row. Variant C and `docs/report/` are accepted.
+Ключевая развилка, которую закрывает это решение: принять Вариант C и
+`docs/report/` или оставить Reports разделёнными между рекомендацией RFC и более
+старой строкой ADR-002 `docs/reports/`. Вариант C и `docs/report/` приняты.
 
 ## Consequences
 
-Architectural consequences:
+Это архитектурные последствия принятого решения.
 
-- `standards/report-standard.md` (B-043) is unblocked and becomes the normative
-  owner of Report structure, relation frontmatter, subtype profiles, lifecycle,
-  and routing.
-- ADR-002 no longer acts as the current source for the Reports routing row; its
-  `docs/reports/` value is reconciled by this later ADR decision.
-- Existing `docs/report/*`, `docs/audit/*`, and research evidence artifacts are
-  not migrated by this ADR. Cleanup and modernization stay downstream.
-- The Audit standardization chain keeps ownership of Audit process semantics;
-  Report standardization owns only the durable report output shape.
+**Архитектурные последствия:**
 
-Trade-offs:
+- `standards/report-standard.md` (B-043) разблокирован и становится нормативным
+  владельцем структуры Report, relation-frontmatter, профилей подтипов,
+  жизненного цикла и routing.
+- ADR-002 больше не является актуальным источником для строки Reports routing;
+  его значение `docs/reports/` реконсилировано этим более поздним решением ADR.
+- Существующие артефакты `docs/report/*`, `docs/audit/*` и research evidence не
+  мигрируются этим ADR. Очистка и модернизация остаются downstream-задачами.
+- Цепочка стандартизации Audit сохраняет владение процессной семантикой Audit;
+  стандартизация Report владеет только устойчивой формой report-выхода.
 
-- Audit-report path enforcement is intentionally delayed to avoid preempting
-  B-043 and B-030.
-- Statistics/report mirrors may still require human judgment until the Report
-  standard codifies the evidence-vs-report decision tree.
+**Компромиссы:**
+
+- Контроль пути для audit-отчётов намеренно отложен, чтобы не предвосхищать B-043
+  и B-030.
+- Statistics/report-зеркала могут всё ещё требовать человеческого выбора, пока
+  стандарт Report не кодифицирует дерево решений evidence-vs-report.
 
 ## Compliance and Validation
 
-- This ADR follows
+- Этот ADR следует
   [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md):
-  required frontmatter, body sections, section-level delegation, and ADR
-  acceptance review rules.
-- The ADR explicitly avoids copying RFC B-041 proposal detail, alternatives
-  table, and downstream task matrix.
-- Repository registration is validated through `governance/artifact-map.md`,
-  `governance/backlog.md`, `CHANGELOG.md`, and
+  обязательный frontmatter, body-секции, section-level delegation и правила
+  acceptance review для ADR.
+- ADR явно избегает копирования proposal-деталей RFC B-041, таблицы альтернатив и
+  матрицы downstream-задач.
+- Регистрация в репозитории валидируется через `governance/artifact-map.md`,
+  `governance/backlog.md`, `CHANGELOG.md` и
   `tools/validate-repository-structure.sh`.
-- Local validation for this PR:
+- Локальная проверка в этом PR:
 
   ```bash
   bash experiments/test-frontmatter-validator.sh
@@ -130,9 +134,9 @@ Trade-offs:
 
 ## Lifecycle
 
-Current status: `accepted`. This ADR records the human decision requested in
+Текущий статус: `accepted`. Этот ADR фиксирует человеческое решение, запрошенное в
 issue [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338);
-repository acceptance is completed through PR
+принятие в репозитории выполнено через PR
 [#339](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/339).
 
 ```mermaid
@@ -141,25 +145,26 @@ flowchart LR
     Accepted --> Superseded[superseded]
 ```
 
-- Review trigger: changes to the accepted Reports model, canonical routing, or
-  ADR-002 reconciliation require a new RFC/ADR or an explicit supersession.
-- Supersession: `superseded` requires a backlink to the replacing ADR/RFC.
-- Normative enforcement is delegated to B-043; file migration is delegated to
+- Триггер пересмотра: изменения принятой модели Reports, канонического routing
+  или реконсиляции ADR-002 требуют нового RFC/ADR или явного замещения.
+- Замещение: `superseded` требует обратную ссылку на заменяющий ADR/RFC.
+- Нормативный контроль делегирован в B-043; миграция файлов делегирована в
   B-044.
 
 ## Related Artifacts
 
 - [RFC B-041: Структура Reports-артефактов](../../governance/rfc/2026-07-02-rfc-reports-structure.md)
-  — source RFC with proposal, alternatives, trade-offs, and boundaries.
+  — исходный RFC с предложением, альтернативами, trade-offs и границами.
 - [ADR-002: Методология создания и управления артефактами](2026-06-adr-002-artifact-document-methodology.md)
-  — earlier artifact-routing decision record with the superseded Reports row.
+  — более ранняя запись решения по маршрутизации артефактов с замещённой строкой
+  Reports.
 - [Reports inventory](../analysis/2026-07-01-reports-artifacts-inventory.md)
-  — inventory and boundary input for Reports artifacts.
+  — инвентаризация и входные данные по границам для Reports-артефактов.
 - [Reports industry norms](../../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md)
-  — source-backed research recommending Variant C.
+  — исследование с источниками, рекомендующее Вариант C.
 - [Repository structure concept](../../research/hub/2026-06-23-repository-structure-concept.md)
-  — founder vision for Reports as a separate type with `docs/report/` routing.
+  — видение фаундера о Reports как отдельном типе с routing `docs/report/`.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md)
-  — ADR structure and section-level delegation rules.
-- [`governance/backlog.md`](../../governance/backlog.md) — Reports chain B-038,
-  B-041, B-042, B-043, and B-044.
+  — структура ADR и правила section-level delegation.
+- [`governance/backlog.md`](../../governance/backlog.md) — цепочка Reports B-038,
+  B-041, B-042, B-043 и B-044.

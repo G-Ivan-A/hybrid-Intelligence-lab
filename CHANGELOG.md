@@ -846,6 +846,13 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: Уточнён `docs/adr/2026-07-adr-004-reports-structure.md` по issue #345:
+  текст ADR-004 приведён к русскому стилю ADR-003, убрана англоязычная
+  дублирующая пометка к Варианту C, будущие пороги B-043 описаны в будущем
+  времени, терминологически неточное свойство заменено на решение/соглашение, а
+  контроль пути для audit-отчётов оставлен в блоке компромиссов. Содержательные
+  решения ADR-004, routing `docs/report/` и делегирование в B-043/B-044 не
+  менялись.
 - glossary: Обновлён `standards/glossary.md` по issue #336 / B-020:
   добавлены определения `Research`, `Analysis`, `Audit`, `RFC` и `ADR`;
   уточнены `Standard` и `Contract` через IL-3 / IL-1 и явное
