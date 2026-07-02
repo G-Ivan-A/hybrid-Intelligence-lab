@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.34
+version: 1.35
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,6 +13,15 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Added `docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md`
+  for issue #344 (B-029). The report uses the B-024 matrix as input, reviews 29
+  Audit candidates across Hub, Mango and Clarify at fixed artifact snapshots,
+  and records for each artifact the compliance target, Audit process/report
+  boundary, evidence model, deviation handling and B-033 modernization
+  candidate. It identifies masked Audit artifacts in `docs/analysis/` and legacy
+  `research/`/`governance/` paths, clarifies Audit ↔ Research ↔ Analysis ↔
+  Report boundaries, and intentionally does not repeat the B-024 scan, does not
+  create an RFC/ADR/Standard, and does not move files.
 - analysis: Added `docs/analysis/2026-07-02-analysis-artifacts-inventory.md`
   for issue #342 (B-024) plus the reproducible evidence package
   `research/hub/exp/analysis-inventory-342/`. The inventory scans Hub, Mango and
