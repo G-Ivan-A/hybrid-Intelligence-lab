@@ -13,6 +13,28 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Создан `research/hub/2026-07-02-task-execution-modes-research.md` —
+  research-отчёт по режимам выполнения задач для ИИ-агентов (B-045, issue #330)
+  в режиме `Research` + `Creative` + `Deep Think` от лица 4 экспертов
+  (промпт-инженер, архитектор ИИ-агентов, исследователь таксономий, инженер
+  процессов). Фаза 1: индустриальные нормы (Anthropic/OpenAI prompt-eng, CoT,
+  few-shot, DSPy; ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/
+  AutoGPT; Cynefin, Bloom revised, Cognitive Load / Cognitive Task Analysis;
+  guardrails/evals/HITL) с указанием источника, автора, ссылки и границ. Фаза 2:
+  шесть паттернов практики Hub/Mango (тип/режим в префиксе, детерминированная
+  маршрутизация по действию, цепочка RFC→ADR→Standard→Chore, смешанные задачи →
+  Hybrid, Audit ≠ Analysis по глаголу, внешнее удержание режима). Фаза 3: пять
+  реальных тестов как воспроизводимый rule-based классификатор
+  `research/hub/exp/task-execution-modes-330/` (тип v1 8/18 → v2 17/18, режим
+  17/18 на бэклоге; 5/5 на практических issue; 3/3 конфликт; 3/3 эволюция; 6/6
+  индустрия). Фаза 4: подтверждение триады Creative/Structured/Hybrid и вывод об
+  action-anchored сигнале как решающем входе; единственный промах (B-016)
+  помечен `under-specified` как находка о недоопределённом одностроч­нике.
+  Отчёт не предлагает решений, не вводит и не меняет режимы, не создаёт
+  стандартов/контрактов. Зарегистрирован в `governance/artifact-map.md`; 21 новый
+  внешний источник (`ext-137`…`ext-157`) добавлен в
+  `research/external-knowledge/external-sources-registry.md`; задача B-041 в
+  `governance/backlog.md` со статусом review.
 - rfc: Создан `governance/rfc/2026-07-02-rfc-reports-structure.md` — Draft RFC
   структуры Reports-артефактов (B-041, issue #328). Режим Hybrid: каркас — из
   `standards/rfc-structure-standard.md`, креативная часть (формулировки

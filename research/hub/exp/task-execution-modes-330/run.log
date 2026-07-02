@@ -1,0 +1,6 @@
+task-execution-modes-330 classify.py run
+Test1 backlog: type v1 8/18 -> v2 17/18, mode 17/18
+Test2 issues:  type 5/5, mode 5/5
+Test3 conflict: Hybrid chosen 3/3
+Test4 evolution: type switched 3/3
+Test5 industry: matched 6/6

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.9
-updated: 2026-06-27
+version: 0.10
+updated: 2026-07-02
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -23,6 +23,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/257"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/274"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330"
 ---
 
 # Реестр внешних источников
@@ -205,6 +206,27 @@ related_issues:
 | `ext-134` | [EU AI Act explorer](https://artificialintelligenceact.eu/) | `standard` | `en` | `conformity-assessment, technical-documentation, incident-report, reports` | `topic: reports-industry-norms` | `research` | `hub` | ✅ [Reports-нормы](../hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) |
 | `ext-135` | [Kubernetes community (SIG annual reports)](https://github.com/kubernetes/community) | `github` | `en` | `annual-report, governance, reports-practice, archetype-a` | `topic: reports-industry-norms` | `observation` | `hub` | ✅ [Reports-нормы](../hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) |
 | `ext-136` | [CNCF TOC (project reviews / due diligence)](https://github.com/cncf/toc) | `github` | `en` | `project-review, due-diligence, reports-practice, archetype-a` | `topic: reports-industry-norms` | `observation` | `hub` | ✅ [Reports-нормы](../hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) |
+| `ext-137` | [Anthropic — Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) | `docs` | `en` | `prompt-engineering, operating-mode, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-138` | [OpenAI — Prompt engineering guide](https://platform.openai.com/docs/guides/prompt-engineering) | `docs` | `en` | `prompt-engineering, roles, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-139` | [Chain-of-Thought Prompting (Wei et al.)](https://arxiv.org/abs/2201.11903) | `paper` | `en` | `chain-of-thought, reasoning-mode, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-140` | [Language Models are Few-Shot Learners (Brown et al.)](https://arxiv.org/abs/2005.14165) | `paper` | `en` | `few-shot, prompt-form, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-141` | [Reflexion (Shinn et al.)](https://arxiv.org/abs/2303.11366) | `paper` | `en` | `agent-loop, self-reflection, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-142` | [Plan-and-Solve Prompting (Wang et al.)](https://arxiv.org/abs/2305.04091) | `paper` | `en` | `plan-execute, agent-mode, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-143` | [CrewAI — Processes (sequential / hierarchical)](https://docs.crewai.com/en/concepts/processes) | `docs` | `en` | `orchestration, process-modes, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-144` | [LangGraph — Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api) | `docs` | `en` | `state-graph, orchestration, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-145` | [MetaGPT (Hong et al.)](https://arxiv.org/abs/2308.00352) | `paper` | `en` | `sop, structured-mode, multi-agent, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-146` | [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | `github` | `en` | `autonomous-agent, creative-mode, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-147` | [Cynefin — A Leader's Framework for Decision Making (Snowden & Boone, HBR)](https://hbr.org/2007/11/a-leaders-framework-for-decision-making) | `paper` | `en` | `cynefin, decision-domains, task-taxonomy, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-148` | [Taxonomy for Learning, Teaching, and Assessing (Anderson & Krathwohl)](https://www.pearson.com/en-us/subject-catalog/p/taxonomy-for-learning-teaching-and-assessing-a-revision-of-blooms-taxonomy-of-educational-objectives/P200000000048) | `paper` | `en` | `blooms-taxonomy, cognitive-levels, task-taxonomy, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-149` | [Cognitive Load During Problem Solving (Sweller)](https://doi.org/10.1207/s15516709cog1202_4) | `paper` | `en` | `cognitive-load, task-complexity, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-150` | [Cognitive Task Analysis (Clark et al.)](https://www.researchgate.net/publication/215915812_Cognitive_Task_Analysis) | `paper` | `en` | `cognitive-task-analysis, expertise, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-151` | [Guardrails AI](https://github.com/guardrails-ai/guardrails) | `github` | `en` | `guardrails, io-validation, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-152` | [NeMo Guardrails (NVIDIA)](https://github.com/NVIDIA/NeMo-Guardrails) | `github` | `en` | `guardrails, dialogue-rails, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-153` | [RAGAS (Es et al.)](https://arxiv.org/abs/2309.15217) | `paper` | `en` | `evaluation, metrics, mode-conformance, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-154` | [DeepEval](https://github.com/confident-ai/deepeval) | `github` | `en` | `evaluation, llm-testing, mode-conformance, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-155` | [LangSmith](https://docs.smith.langchain.com/) | `docs` | `en` | `observability, tracing, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-156` | [Arize Phoenix](https://github.com/Arize-ai/phoenix) | `github` | `en` | `observability, evaluation, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-157` | [LangGraph — Human-in-the-loop](https://docs.langchain.com/oss/python/langgraph/add-human-in-the-loop) | `docs` | `en` | `human-in-the-loop, approval-gate, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

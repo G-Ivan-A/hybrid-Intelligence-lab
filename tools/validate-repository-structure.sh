@@ -99,6 +99,7 @@ is_active_file() {
     research/hub/2026-06-28-ripple-effects-282-research.md | \
     research/hub/2026-06-28-research-analysis-audit-inventory.md | \
     research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md | \
+    research/hub/2026-07-02-task-execution-modes-research.md | \
     research/README.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
@@ -122,6 +123,15 @@ is_active_file() {
     research/hub/exp/reports-inventory-310/scan-reports.py | \
     research/hub/exp/reports-inventory-310/reports-inventory.json | \
     research/hub/exp/reports-inventory-310/2026-07-01-reports-artifact-matrix.md | \
+    research/hub/exp/task-execution-modes-330/README.md | \
+    research/hub/exp/task-execution-modes-330/classify.py | \
+    research/hub/exp/task-execution-modes-330/results.json | \
+    research/hub/exp/task-execution-modes-330/run.log | \
+    research/hub/exp/task-execution-modes-330/2026-07-02-test1-backlog.md | \
+    research/hub/exp/task-execution-modes-330/2026-07-02-test2-issues.md | \
+    research/hub/exp/task-execution-modes-330/2026-07-02-test3-conflict.md | \
+    research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md | \
+    research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -537,6 +547,16 @@ required_files=(
   "research/hub/exp/reports-inventory-310/scan-reports.py"
   "research/hub/exp/reports-inventory-310/reports-inventory.json"
   "research/hub/exp/reports-inventory-310/2026-07-01-reports-artifact-matrix.md"
+  "research/hub/2026-07-02-task-execution-modes-research.md"
+  "research/hub/exp/task-execution-modes-330/README.md"
+  "research/hub/exp/task-execution-modes-330/classify.py"
+  "research/hub/exp/task-execution-modes-330/results.json"
+  "research/hub/exp/task-execution-modes-330/run.log"
+  "research/hub/exp/task-execution-modes-330/2026-07-02-test1-backlog.md"
+  "research/hub/exp/task-execution-modes-330/2026-07-02-test2-issues.md"
+  "research/hub/exp/task-execution-modes-330/2026-07-02-test3-conflict.md"
+  "research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md"
+  "research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
   "research/mango/README.md"
@@ -1371,7 +1391,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.9"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.10"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
