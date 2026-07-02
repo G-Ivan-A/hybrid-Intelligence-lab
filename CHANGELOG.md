@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.33
+version: 1.34
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,6 +13,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Added `docs/analysis/2026-07-02-analysis-artifacts-inventory.md`
+  for issue #342 (B-024) plus the reproducible evidence package
+  `research/hub/exp/analysis-inventory-342/`. The inventory scans Hub, Mango and
+  Clarify at fixed SHAs, classifies 186 text artifacts by actual type
+  (Research / Analysis / Audit / Report / RFC / ADR / Other), identifies masked
+  `docs/analysis/` artifacts in Mango and Clarify, records boundaries Analysis ↔
+  Research ↔ Audit ↔ Report, and lists duplicate-review/modernization
+  candidates for B-028. The change intentionally does not create an Analysis
+  standard, does not create an RFC, does not move files, and does not clean up
+  existing artifacts.
 - research: Создан `research/hub/2026-07-02-task-execution-modes-research.md` —
   research-отчёт по режимам выполнения задач для ИИ-агентов (B-045, issue #330)
   в режиме `Research` + `Creative` + `Deep Think` от лица 4 экспертов

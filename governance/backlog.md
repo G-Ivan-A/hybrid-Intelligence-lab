@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.16
+version: 1.17
 updated: 2026-07-02
 temperature: 0.1
 type: backlog
@@ -210,7 +210,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-021** | Удалить `standards/research-profile.md` после замены стандартом | **P1** | B-020 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `standards/research-profile.md` | Убирает конкурирующий источник истины; требует CHANGELOG entry и проверки ссылок. |
 | **B-022** | Мигрировать существующие `exp-*` в контейнер `exp/`, убрать `outputs/` | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); текущие `research/hub/exp-*` | Физическая миграция полезна, но должна идти после стандарта, чтобы не закрепить новый дрейф. |
 | **B-023** | Обновить валидатор структуры под `exp/` и routing по типам задач | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `tools/validate-repository-structure.sh`; `tools/validate-file-naming.sh` | Делает новый стандарт исполнимым после human decision; не должен предвосхищать стандарт. |
-| **B-024** | analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify) | **P0** | B-020 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); B-020 | Даёт входные данные для `analysis-standard.md`: фактические Analysis-артефакты, подмены понятий, дубли и кандидаты на модернизацию. |
+| **B-024** | analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify) | **P0** | B-020 | DONE | [#342](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/342) (PR [#343](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/343)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); B-020; [Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md); [evidence](../research/hub/exp/analysis-inventory-342/README.md) | Даёт входные данные для `analysis-standard.md`: фактические Analysis-артефакты, подмены понятий, дубли и кандидаты на модернизацию. Готово к review в PR #343; cleanup не выполнялся. |
 | **B-025** | rfc: Стандарт структуры Analysis | **P0** | B-024 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | Proposal-stage для правил Analysis: frontmatter, секции, lifecycle, routing и отличия от Research/Audit до human decision. |
 | **B-026** | adr: Принятие `analysis-standard` | **P0** | B-025 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий RFC B-025; `standards/adr-structure-standard.md` | Decision gate между RFC-вариантами и нормативным Analysis standard. |
 | **B-027** | chore: Создание `standards/analysis-standard.md` | **P0** | B-026 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий ADR B-026 | Стандарт структуры Analysis; prerequisite для плана миграции репо и cleanup Analysis-артефактов. |
@@ -1137,7 +1137,7 @@ P2 tech debt: enforcement нужен после стандарта, но не з
 [issue #288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288);
 B-020 glossary update
 **Зависимости:** B-020
-**Статус:** TODO
+**Статус:** DONE (готово к review в issue #342 / PR #343)
 **Режим работы:** `Analysis`
 
 **Контекст:**
@@ -1157,16 +1157,16 @@ Analysis: локальный/внутренний контекст, наложе
    после принятия standard.
 
 **Ожидаемые артефакты:**
-- `docs/analysis/YYYY-MM-DD-analysis-artifacts-inventory.md` или ближайший
-  approved Analysis path на момент выполнения
+- [docs/analysis/2026-07-02-analysis-artifacts-inventory.md](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md)
+- [research/hub/exp/analysis-inventory-342/](../research/hub/exp/analysis-inventory-342/)
 
 **Критерии приёмки (DoD):**
-- [ ] В анализе перечислены Hub, Mango и Clarify candidates with rationale.
-- [ ] Для каждого candidate указан фактический тип: Research / Analysis / Audit
-      / RFC / ADR / Other.
-- [ ] Есть список duplicates, concept substitutions and modernization
+- [x] В анализе перечислены Hub, Mango и Clarify candidates with rationale.
+- [x] Для каждого candidate указан фактический тип: Research / Analysis / Audit
+      / Report / RFC / ADR / Other.
+- [x] Есть список duplicates, concept substitutions and modernization
       candidates for B-028.
-- [ ] Результат ссылается на issue #296, issue #288, ADR-001/ADR-002 and B-020.
+- [x] Результат ссылается на issue #296, issue #288, ADR-001/ADR-002 and B-020.
 
 **Обоснование приоритета:**
 P0: без scoped current-state analysis RFC B-025 будет строиться на непроверенной

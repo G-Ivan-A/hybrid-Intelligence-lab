@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.13
+version: 1.14
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -45,6 +45,7 @@ project bootstrap, governance-стратегии и классификации �
 | [exp-ripple-effects-282/](exp-ripple-effects-282/) | Воспроизводимый frontmatter scan для issue #284: counts for status values, `ai-generated`, extra fields, path classes and migration examples. |
 | [exp-research-analysis-audit-288/](exp-research-analysis-audit-288/) | Воспроизводимый scan для issue #288: матрица классификации Research / Analysis / Audit / Other по Hub, Mango и Clarify. |
 | [exp/reports-inventory-310/](exp/reports-inventory-310/) | Воспроизводимый scan для issue #310 в целевом контейнере `exp/` (RFC B-016 v0.2 P1) с плоской структурой без `outputs/` (P2): матрица Reports-кандидатов по Hub, Mango и Clarify с подтипами `audit`, `report`, `statistics` и relation к Analysis/Audit. |
+| [exp/analysis-inventory-342/](exp/analysis-inventory-342/) | Воспроизводимый scan для issue #342 (B-024) в целевом контейнере `exp/`: матрица Analysis-adjacent артефактов по Hub, Mango и Clarify с фактическими типами Research / Analysis / Audit / Report / RFC / ADR / Other и relation к Analysis. |
 | [exp/task-execution-modes-330/](exp/task-execution-modes-330/) | Воспроизводимый rule-based классификатор для issue #330 в контейнере `exp/` (RFC B-016 v0.2, плоская структура): `classify.py` (v1 naive vs v2 action-anchored) + 5 таблиц тестов классификации типа/режима задач без контекста. |
 
 ## Воспроизводимость
