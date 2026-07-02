@@ -24,7 +24,7 @@ related_artifacts:
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   - "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/133"
@@ -207,7 +207,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-018** | Создать `standards/research-standard.md` как стандарт структуры research | **P0** | B-017 | DONE | [#318](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/318) (PR [#319](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/319)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); ADR-003 (B-017) | Заменяет профиль полноценным стандартом: `research/`, `exp/`, запрет `outputs`, routing по типам задач. |
 | **B-019** | ADR-002 addendum: граница `exp/` vs `runs/` | **P0** | B-018 | DONE | [#326](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/326) (PR [#327](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/327)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290) | Устраняет коллизию между research evidence corpus и operational run record. |
 | **B-020** | Обновить `standards/glossary.md`: Research / Analysis / Audit / RFC / ADR / Standard | **P1** | B-019 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) | Закрепляет терминологическую границу, чтобы новые routing-правила не размывались в следующих задачах. |
-| **B-021** | Удалить `standards/research-profile.md` после замены стандартом | **P1** | B-020 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `standards/research-profile.md` | Убирает конкурирующий источник истины; требует CHANGELOG entry и проверки ссылок. |
+| **B-021** | Удалить `standards/research-profile.md` после замены стандартом | **P1** | B-020 | DONE | [#340](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/340) (PR [#341](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/341)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); legacy `standards/research-profile.md`, replacement `standards/research-standard.md` | Убирает конкурирующий источник истины; требует CHANGELOG entry и проверки ссылок. |
 | **B-022** | Мигрировать существующие `exp-*` в контейнер `exp/`, убрать `outputs/` | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); текущие `research/hub/exp-*` | Физическая миграция полезна, но должна идти после стандарта, чтобы не закрепить новый дрейф. |
 | **B-023** | Обновить валидатор структуры под `exp/` и routing по типам задач | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `tools/validate-repository-structure.sh`; `tools/validate-file-naming.sh` | Делает новый стандарт исполнимым после human decision; не должен предвосхищать стандарт. |
 | **B-024** | analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify) | **P0** | B-020 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); B-020 | Даёт входные данные для `analysis-standard.md`: фактические Analysis-артефакты, подмены понятий, дубли и кандидаты на модернизацию. |
@@ -1004,9 +1004,10 @@ P1: терминология не блокирует создание станд
 
 **Приоритет:** P1
 **Источник:** 🔗 [issue #294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294);
-[standards/research-profile.md](../standards/research-profile.md)
+legacy `standards/research-profile.md`, replacement
+[standards/research-standard.md](../standards/research-standard.md)
 **Зависимости:** B-020
-**Статус:** TODO
+**Статус:** DONE
 **Режим работы:** `Structured`
 
 **Контекст:**
@@ -1026,10 +1027,10 @@ P1: терминология не блокирует создание станд
 - ссылки/навигация/валидаторы обновлены, если они ссылались на profile
 
 **Критерии приёмки (DoD):**
-- [ ] В репозитории нет активных ссылок на удалённый profile как на normative
+- [x] В репозитории нет активных ссылок на удалённый profile как на normative
       source.
-- [ ] CHANGELOG объясняет замену profile на research standard.
-- [ ] Локальные проверки проходят.
+- [x] CHANGELOG объясняет замену profile на research standard.
+- [x] Локальные проверки проходят.
 
 **Обоснование приоритета:**
 P1: после создания нового стандарта старый profile будет создавать drift. Но
@@ -1836,7 +1837,7 @@ Human Review:
 | [research/hub/2026-06-02-ai-collaboration-retrospective.md](../research/hub/2026-06-02-ai-collaboration-retrospective.md) | Системные ошибки, мотивирующие fail-closed, threat awareness и двухкейсовую модель. |
 | [research/hub/2026-06-28-research-analysis-audit-inventory.md](../research/hub/2026-06-28-research-analysis-audit-inventory.md) | Источник разделения Research / Analysis / Audit и плана будущих цепочек стандартизации для B-016..B-020 и B-024..B-033. |
 | [docs/audit/2026-06-29-research-artifact-format-contract-audit.md](../docs/audit/2026-06-29-research-artifact-format-contract-audit.md) | Источник коллизии `exp-<slug>/outputs/` vs `runs/` и rationale для B-016, B-019, B-022. |
-| [standards/research-profile.md](../standards/research-profile.md) | Legacy profile, который должен быть заменён `standards/research-standard.md` и удалён в B-021. |
+| `standards/research-profile.md` | Legacy profile, заменён `standards/research-standard.md` и удалён в B-021. |
 | [docs/adr/2026-06-adr-002-artifact-document-methodology.md](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) | Current artifact routing ADR; требует addendum B-019 для границы `exp/` vs `runs/`. |
 | [standards/glossary.md](../standards/glossary.md) | Единый источник терминов для всего бэклога. |
 | [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296) | Источник sprint chains для `analysis-standard.md` и `audit-standard.md`; фиксирует, что migration plan is a separate RFC after all three standards. |

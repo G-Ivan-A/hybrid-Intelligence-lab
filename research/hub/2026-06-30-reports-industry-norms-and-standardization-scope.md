@@ -20,7 +20,7 @@ related_artifacts:
   - "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
   - "standards/glossary.md"
   - "governance/backlog.md"
   - "research/external-knowledge/external-sources-registry.md"
@@ -578,7 +578,7 @@ B), сохраняя индустриально доминирующий пат�
 - [2026-06-27-rfc-industry-norms-and-variants.md](2026-06-27-rfc-industry-norms-and-variants.md)
   и [2026-06-27-adr-industry-norms-and-variants.md](2026-06-27-adr-industry-norms-and-variants.md)
   — образец формата industry-norms research и A/B/C/D-вариантов.
-- [standards/research-profile.md](../../standards/research-profile.md) — правила
+- [standards/research-standard.md](../../standards/research-standard.md) — правила
   research-артефактов.
 - [governance/backlog.md](../../governance/backlog.md) — задача B-038 и цепочки
   стандартизации B-024..B-034.

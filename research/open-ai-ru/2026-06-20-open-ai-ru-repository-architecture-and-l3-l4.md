@@ -188,7 +188,7 @@ flowchart TB
 | [`webportal-solution-concept-standard.md`](../../standards/webportal-solution-concept-standard.md) | L3 | Структура Solution Concept: C4, стек, интеграции, данные, NFR, deployment, provider-agnostic AI, риски | draft | **Прямая база для L3 open-ai.ru** |
 | [`templates/webportal-solution-concept-template.md`](../../templates/webportal-solution-concept-template.md) | L3 | Заполняемый шаблон Solution Concept | — | Прямой шаблон для L3 |
 | [`project-structure-inheritance.md`](../../standards/project-structure-inheritance.md) | мета | Правила наследования каталогов проектами без жёстких зависимостей | canonical | Высокая — основа предложения структуры репо |
-| [`research-profile.md`](../../standards/research-profile.md) | мета | Где и как живут исследования (этот отчёт) | canonical | Применён здесь |
+| `research-profile.md` | мета | Где и как живут исследования (этот отчёт) | canonical | Применён здесь |
 | [`docs/ecosystem-map.md`](../../docs/ecosystem-map.md) | методология | Связь L1–L4, принцип Need-to-Know, импорт практик | canonical | Контекст наследования |
 | [`frontmatter-standard.md`](../../standards/frontmatter-standard.md), [`file-naming.md`](../../standards/file-naming.md) | мета | Метаданные и именование | canonical | Наследуются как есть |
 

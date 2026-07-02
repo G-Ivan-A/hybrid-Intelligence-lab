@@ -18,7 +18,7 @@ related_artifacts:
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "research/hub/2026-06-25-artifact-inventory-and-classification.md"
   - "research/external-knowledge/external-sources-registry.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
 external_artifacts:
   - "mango_ba_prompts/governance/rfc/"
   - "mango_ba_prompts/docs/adr/"

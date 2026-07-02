@@ -33,21 +33,21 @@ derived standards without duplicating their rules.
 
 | Layer | Role | Derived standards |
 | --- | --- | --- |
-| Active standards | Normative rules that agents and reviewers apply. | `standards/research-profile.md`, `standards/executable-contract-standard.md`, `standards/contract-documentation-standard.md` |
+| Active standards | Normative rules that agents and reviewers apply. | `standards/research-standard.md`, `standards/executable-contract-standard.md`, `standards/contract-documentation-standard.md` |
 | Source research | Reviewed evidence, comparison matrices, alternatives, and rationale. | The documents listed below; each remains source material unless a standard explicitly imports it. |
 
 ## Документы
 
 | Документ | Назначение |
 | --- | --- |
-| [2026-06-06-research-documentation-format.md](2026-06-06-research-documentation-format.md) | Исследование формата исследований: сравнение ≥6 практик (IMRaD, BLUF, Inverted Pyramid, Minto, IETF RFC Abstract, ADR, Diátaxis) по 6 критериям; выбор схемы **Введение → Результаты → Детализация**. Правила зафиксированы в `research-profile.md`. |
+| [2026-06-06-research-documentation-format.md](2026-06-06-research-documentation-format.md) | Исследование формата исследований: сравнение ≥6 практик (IMRaD, BLUF, Inverted Pyramid, Minto, IETF RFC Abstract, ADR, Diátaxis) по 6 критериям; выбор схемы **Введение → Результаты → Детализация**. Legacy-правила были зафиксированы в `research-profile.md`; текущий нормативный источник — `research-standard.md`. |
 | [2026-06-06-executable-contract-format.md](2026-06-06-executable-contract-format.md) | Исследование формата исполнимых контрактов: системные промпты, runbooks, императивный UX, action-first. Структура **EXECUTION → EXPLANATION**. Источник стандарта `executable-contract-standard.md`. |
 | [2026-06-06-contract-documentation-format.md](2026-06-06-contract-documentation-format.md) | Исследование формата прочих контрактов: OpenAPI, RFC 2119/BCP 14, SLA/SLO, ADR, Pact. Структура «контракт сверху, обоснование под катом». Источник стандарта `contract-documentation-standard.md`. |
 | [2026-06-06-governance-folder-structure-decisions.md](2026-06-06-governance-folder-structure-decisions.md) | Решения по спорным вопросам Q1 (`proposals/` → `rfc/`), Q2 (размещение концепции портала) и Q3 (папка `rfc/` в проектах) с обоснованием и учётом мнения команды Q. |
 
 ## Связанные стандарты
 
-- [standards/research-profile.md](../../standards/research-profile.md) — формат исследований.
+- [standards/research-standard.md](../../standards/research-standard.md) — структура research-артефактов.
 - [standards/executable-contract-standard.md](../../standards/executable-contract-standard.md) — формат исполнимых контрактов.
 - [standards/contract-documentation-standard.md](../../standards/contract-documentation-standard.md) — формат прочих контрактов.
 
@@ -62,6 +62,6 @@ derived standards without duplicating their rules.
 
 ## Связанные артефакты
 
-- [standards/research-profile.md](../../standards/research-profile.md) — правила frontmatter, источников и воспроизводимости исследований.
+- [standards/research-standard.md](../../standards/research-standard.md) — правила структуры, источников и воспроизводимости исследований.
 - [governance/artifact-map.md](../../governance/artifact-map.md) — карта артефактов и связей.
 - [research/README.md](../README.md) — навигация по исследовательским направлениям.

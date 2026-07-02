@@ -181,7 +181,7 @@ B-018 и ADR-002 addendum B-019.
 - [Research / Analysis / Audit inventory](../../research/hub/2026-06-28-research-analysis-audit-inventory.md)
   (issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288)) —
   размытие типов и план трёх цепочек.
-- [`standards/research-profile.md`](../../standards/research-profile.md) — legacy
+- `standards/research-profile.md` — legacy
   source коллизии; этот ADR фиксирует решение о замене, technical replacement задаёт
   [`standards/research-standard.md`](../../standards/research-standard.md), а
   удаление профиля выполняется в B-021.

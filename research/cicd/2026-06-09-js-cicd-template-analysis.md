@@ -19,7 +19,7 @@ method: manual-review
 **Связанные артефакты.**
 - Issue: [G-Ivan-A/hybrid-Intelligence-lab#202](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/202)
 - Источник: [link-foundation/js-ai-driven-development-pipeline-template](https://github.com/link-foundation/js-ai-driven-development-pipeline-template)
-- Стандарт: [standards/research-profile.md](../../standards/research-profile.md)
+- Стандарт: `standards/research-profile.md` (legacy)
 - Backlog: [governance/backlog.md](../../governance/backlog.md)
 
 **Метод.** Manual review: полное дерево файлов, все workflow YAML, конфигурации инструментов, документация `BEST-PRACTICES.md`.
@@ -374,7 +374,7 @@ Pre-commit: ESLint + Prettier только на staged файлах (`.js`, `.md
 | 1 | [link-foundation/js-ai-driven-development-pipeline-template](https://github.com/link-foundation/js-ai-driven-development-pipeline-template) | Анализируемый репозиторий (v0.11.4, январь 2026) |
 | 2 | [docs/BEST-PRACTICES.md](https://github.com/link-foundation/js-ai-driven-development-pipeline-template/blob/main/docs/BEST-PRACTICES.md) | AI-driven dev руководство, 10 практик |
 | 3 | [.github/workflows/release.yml](https://github.com/link-foundation/js-ai-driven-development-pipeline-template/blob/main/.github/workflows/release.yml) | Главный CI/CD workflow |
-| 4 | [standards/research-profile.md](../../standards/research-profile.md) | Стандарт для структуры этого документа |
+| 4 | `standards/research-profile.md` | Legacy-стандарт для структуры этого документа |
 | 5 | [npm — OIDC Trusted Publishing](https://docs.npmjs.com/generating-provenance-statements) | Документация OIDC publishing |
 | 6 | [lychee-action](https://github.com/lycheeverse/lychee-action) | GitHub Action для валидации ссылок |
 | 7 | [@changesets/cli](https://github.com/changesets/changesets) | Инструмент управления версиями |

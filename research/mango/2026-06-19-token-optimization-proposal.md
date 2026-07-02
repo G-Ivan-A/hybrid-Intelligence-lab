@@ -32,7 +32,7 @@ temperature: 0.1
 - Зависимость: [RFC: Независимое видение структуры](2026-06-19-repository-structure-vision.md)
   (PR #254) — целевая архитектура спока, с которой это предложение должно быть
   совместимо.
-- Стандарт-адресат: [`standards/research-profile.md`](../../standards/research-profile.md)
+- Стандарт-адресат: `standards/research-profile.md` (legacy)
   (структура research-документа, frontmatter, цитирование).
 - Anti-Inflation principle Хаба: [`governance/repo-model.md`](../../governance/repo-model.md).
 - Эталон проблемы: [`AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/AI_SESSION_HANDOVER_PROMPT.md).
@@ -364,7 +364,7 @@ baseline) и context caching на стороне SDK.
 **Внутренние (Хаб `hybrid-Intelligence-lab`):**
 
 - [RFC: Независимое видение структуры](2026-06-19-repository-structure-vision.md) (PR #254) — целевая архитектура.
-- [`standards/research-profile.md`](../../standards/research-profile.md) — структура и frontmatter research-документа.
+- `standards/research-profile.md` — legacy-структура и frontmatter research-документа.
 - [`governance/repo-model.md`](../../governance/repo-model.md) — Anti-Inflation principle.
 - Issue [#255](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/255) — постановка задачи (traceability).
 

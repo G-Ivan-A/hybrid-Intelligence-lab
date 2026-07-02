@@ -15,7 +15,7 @@ related_artifacts:
   - "governance/rfc/knowledge-lifecycle-proposal.md"
   - "governance/rfc/repository-archetypes-template-release.md"
   - "governance/rfc/methodology-research-and-proposals.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/227"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/240"
@@ -267,4 +267,4 @@ related_issues:
 - [external-insights/README.md](external-insights/README.md) — механизм инсайтов.
 - [governance/rfc/external-knowledge-integration.md](../../governance/rfc/external-knowledge-integration.md) — RFC интеграции и Base + Local Extension.
 - [governance/rfc/knowledge-lifecycle-proposal.md](../../governance/rfc/knowledge-lifecycle-proposal.md) — жизненный цикл знаний.
-- [standards/research-profile.md](../../standards/research-profile.md) — правила цитирования и frontmatter.
+- [standards/research-standard.md](../../standards/research-standard.md) — правила цитирования и frontmatter.

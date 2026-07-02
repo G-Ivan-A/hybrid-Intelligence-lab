@@ -32,7 +32,7 @@ reviewed result.
 Минимальный результат адаптации:
 
 1. Выбран профиль проекта:
-   [research-profile.md](#research_profilemd),
+   [research-standard.md](#research-standardmd),
    [product-profile.md](#product_profilemd) или
    [education-profile.md](#education_profilemd).
 2. Создан `CONTRIBUTING.md`, который объясняет человеческий workflow.
@@ -50,13 +50,13 @@ reviewed result.
 
 | Профиль | Когда выбирать | Главный риск | Что усиливать в контракте |
 | --- | --- | --- | --- |
-| [research-profile.md](#research_profilemd) | Исследования, reports, experiments, datasets, methods. | Непроверяемые claims, слабая воспроизводимость, sensitive data. | Sources, method, limitations, reproducibility, publication boundary. |
+| [research-standard.md](#research-standardmd) | Исследования, reports, experiments, datasets, methods. | Непроверяемые claims, слабая воспроизводимость, sensitive data. | Sources, method, limitations, reproducibility, publication boundary. |
 | [product-profile.md](#product_profilemd) | Production code, product delivery, integrations, releases. | Regression, security, broken ownership, unreviewed AI output. | CI, code review, CODEOWNERS, release gates, rollback, secrets policy. |
 | [education-profile.md](#education_profilemd) | Courses, lessons, scenarios, open education materials. | Несовпадение с аудиторией, устаревшие материалы, неясные learning outcomes. | Audience, learning goals, review by teacher/domain expert, update cadence. |
 
-### research-profile.md
+### research-standard.md
 
-Создайте этот профиль в проекте, если основной результат - исследование,
+Используйте этот стандарт в проекте, если основной результат - исследование,
 аналитический отчет, corpus, experiment или methodology.
 
 Минимальные поля:
@@ -298,7 +298,7 @@ claim, or the AI would need to operate outside the approved scope.
 
 ### Research project
 
-- `research-profile.md`: research question, dataset policy, reproducibility.
+- `research-standard.md`: research question, dataset policy, reproducibility.
 - `CONTRIBUTING.md`: issue-first changes, source-backed reports, experiment
   folders, review by domain expert.
 - `AI_GOVERNANCE.md`: AI can summarize sources and draft analysis, but must

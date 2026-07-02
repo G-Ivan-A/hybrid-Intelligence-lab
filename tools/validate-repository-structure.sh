@@ -21,6 +21,11 @@ require_file() {
   [[ -f "$path" ]] || fail "missing file: $path"
 }
 
+reject_file() {
+  local path="$1"
+  [[ ! -e "$path" ]] || fail "forbidden legacy file present: $path"
+}
+
 require_text() {
   local path="$1"
   local text="$2"
@@ -57,7 +62,6 @@ is_active_file() {
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
     standards/file-naming-convention.md | \
-    standards/research-profile.md | \
     standards/research-standard.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
@@ -512,7 +516,6 @@ required_files=(
   "standards/frontmatter-standard.md"
   "standards/file-naming.md"
   "standards/file-naming-convention.md"
-  "standards/research-profile.md"
   "standards/research-standard.md"
   "standards/glossary.md"
   "standards/education-profile.md"
@@ -665,6 +668,8 @@ for file in "${required_files[@]}"; do
   require_file "$file"
 done
 
+reject_file "standards/research-profile.md"
+
 for kebab_case_dir in standards governance; do
   validate_kebab_case_file_naming "$kebab_case_dir"
 done
@@ -811,7 +816,6 @@ require_text "standards/README.md" "Как пользоваться"
 require_text "standards/README.md" "frontmatter-standard.md"
 require_text "standards/README.md" "file-naming.md"
 require_text "standards/README.md" "file-naming-convention.md"
-require_text "standards/README.md" "research-profile.md"
 require_text "standards/README.md" "research-standard.md"
 require_text "standards/README.md" "team-contract.md"
 require_text "standards/README.md" "standards/glossary.md"
@@ -924,7 +928,7 @@ require_text "standards/team-contract.md" "Definition of Done"
 require_text "standards/team-contract.md" "operating modes"
 require_text "standards/team-contract.md" "disclosure"
 require_text "standards/team-contract.md" "self-review checklist"
-require_text "standards/team-contract.md" "research-profile.md"
+require_text "standards/team-contract.md" "research-standard.md"
 require_text "standards/team-contract.md" "product-profile.md"
 require_text "standards/team-contract.md" "education-profile.md"
 require_text "standards/team-contract.md" "Источники"
@@ -1011,22 +1015,6 @@ require_text "standards/file-naming-convention.md" "YYYY-MM-adr-NNN-name.md"
 require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
-require_text "standards/research-profile.md" "status: accepted"
-require_text "standards/research-profile.md" "version: 1.3"
-require_text "standards/research-profile.md" "updated: 2026-06-28"
-require_text "standards/research-profile.md" "Назначение"
-require_text "standards/research-profile.md" "Обязательные артефакты"
-require_text "standards/research-profile.md" "YYYY-MM-DD-topic.md"
-require_text "standards/research-profile.md" "exp-<slug>"
-require_text "standards/research-profile.md" "Шаблон frontmatter исследования"
-require_text "standards/research-profile.md" "external-analysis | internal-analysis | experiment"
-require_text "standards/research-profile.md" "Как организовать исследование"
-require_text "standards/research-profile.md" "Body Structure: Введение → Результаты → Детализация"
-require_text "standards/research-profile.md" "Введение → Результаты → Детализация"
-require_text "standards/research-profile.md" "Чек-лист готовности к публикации"
-require_text "standards/research-profile.md" "Правила цитирования источников"
-require_text "standards/research-profile.md" "FAIR Principles"
-
 require_text "standards/glossary.md" "status: accepted"
 require_text "standards/glossary.md" "version: 1.4"
 require_text "standards/glossary.md" "updated: 2026-06-11"
@@ -1055,7 +1043,7 @@ require_text "standards/education-profile.md" "version: 1.0"
 require_text "standards/education-profile.md" "updated: 2026-05-26"
 require_text "standards/education-profile.md" "## Назначение"
 require_text "standards/education-profile.md" "product-profile.md"
-require_text "standards/education-profile.md" "research-profile.md"
+require_text "standards/education-profile.md" "research-standard.md"
 require_text "standards/education-profile.md" "| Артефакт | Назначение | Где размещать | Пример/Шаблон |"
 require_text "standards/education-profile.md" "CONCEPT.md"
 require_text "standards/education-profile.md" "module-XX/"
@@ -1614,7 +1602,7 @@ require_text "governance/backlog.md" "Анализ рекомендаций ко
 reject_text "governance/backlog.md" "Конард"
 
 require_text "research/README.md" "status: canonical"
-require_text "research/README.md" "standards/research-profile.md"
+require_text "research/README.md" "standards/research-standard.md"
 require_text "research/README.md" "research/<domain>/exp-<slug>/"
 require_text "research/README.md" "2026-05-28-project-context-and-bootstrap-patterns.md"
 require_text "research/README.md" "2026-05-28-prompts-classification-audit.md"

@@ -37,8 +37,8 @@ temperature: 0.1
 - **Lifecycle знаний** —
   [governance/rfc/knowledge-lifecycle-proposal.md](../../governance/rfc/knowledge-lifecycle-proposal.md):
   правило перехода `Observation → Research → ... → Standard`.
-- **Профиль исследований** —
-  [standards/research-profile.md](../../standards/research-profile.md):
+- **Стандарт исследований** —
+  [standards/research-standard.md](../../standards/research-standard.md):
   именование, frontmatter и правила цитирования источников.
 - **Fixed practices** — [practices/README.md](../../practices/README.md):
   место, куда инсайт попадает только после валидации.
@@ -101,5 +101,5 @@ temperature: 0.1
   полей можно только при доказанной операционной потребности.
 - **Цитирование.** Каждый инсайт ссылается на запись реестра и на первоисточник
   (см. правила цитирования в
-  [standards/research-profile.md](../../standards/research-profile.md)).
+  [standards/research-standard.md](../../standards/research-standard.md)).
 - **kebab-case** для всех файлов и подкаталогов.

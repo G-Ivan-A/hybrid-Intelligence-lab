@@ -15,7 +15,7 @@ related_artifacts:
   - "governance/rfc/2026-06-30-rfc-research-structure.md"
   - "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   - "research/hub/exp/reports-inventory-310/README.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
   - "governance/backlog.md"
 ---
 
@@ -39,7 +39,7 @@ related_artifacts:
    то есть Analysis, а не Research. По RFC B-016 v0.2 (P4) Analysis
    маршрутизируется в `docs/analysis/YYYY-MM-DD-name.md`.
 
-Нормативные контракты проверки: [`standards/research-profile.md`](../../standards/research-profile.md)
+Нормативные контракты проверки: legacy `standards/research-profile.md`
 (действующий legacy-профиль), [`governance/rfc/2026-06-30-rfc-research-structure.md`](../../governance/rfc/2026-06-30-rfc-research-structure.md)
 (RFC B-016 v0.2, status:draft, но формат контейнера принят в `main` через
 PR #303), [ADR-001](../adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md),

@@ -92,8 +92,9 @@ research/<domain>/
 Перед внешней публикацией нужно добавить английскую пару или зафиксировать
 исключение.
 
-Подробные правила frontmatter, источников и экспериментов зафиксированы в
-[standards/research-profile.md](../standards/research-profile.md). Правила
+Подробные правила структуры research-артефактов, источников и экспериментов
+зафиксированы в
+[standards/research-standard.md](../standards/research-standard.md). Правила
 date-first именования зафиксированы в
 [standards/file-naming.md](../standards/file-naming.md) и проверяются командой
 `./tools/validate-file-naming.sh`.

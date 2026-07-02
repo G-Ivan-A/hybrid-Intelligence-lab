@@ -9,7 +9,6 @@ scope: repo-wide
 related_standards:
   - "frontmatter-docs-standard.md"
   - "file-naming.md"
-  - "research-profile.md"
   - "adr-structure-standard.md"
   - "rfc-structure-standard.md"
 related_issues:
@@ -248,7 +247,7 @@ temperature: 0.3
 свой словарь статусов per
 [Frontmatter Docs Standard](frontmatter-docs-standard.md). Пока идёт review, этот
 стандарт остаётся в `draft`/`proposed`; `accepted` фиксирует human decision gate.
-Он является technical replacement для [research-profile.md](research-profile.md)
+Он является technical replacement для `research-profile.md`
 как источника правил структуры research; физическое удаление профиля выполняется
 в B-021.
 
@@ -290,7 +289,7 @@ frontmatter, naming и registry checks отслеживается как tech de
   rationale, alternatives, trade-offs и rejected options.
 - [ADR-002: Методология создания и управления артефактами](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) —
   routing `runs/` и граница operational run record.
-- [research-profile.md](research-profile.md) — legacy профиль; technical
+- `research-profile.md` — legacy профиль; technical
   replacement задаёт этот стандарт, удаление выполняется в B-021.
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.

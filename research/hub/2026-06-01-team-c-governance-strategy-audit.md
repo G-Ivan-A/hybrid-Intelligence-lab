@@ -11,7 +11,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/87"
 related_artifacts:
   - "research/hub/2026-05-28-project-context-and-bootstrap-patterns.md"
   - "governance/repo-model.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
   - "standards/team-contract.md"
 ---
 

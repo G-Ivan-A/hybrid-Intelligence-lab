@@ -54,5 +54,5 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 
 Скрипты и эксперименты размещаются рядом с направлением как
 `research/reputation-technologies/exp-<slug>/` и связываются с отчётом по
-[standards/research-profile.md](../../standards/research-profile.md). Исходные материалы —
+[standards/research-standard.md](../../standards/research-standard.md). Исходные материалы —
 вложения issue [#260](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260).

@@ -19,7 +19,7 @@ related_artifacts:
   - "research/hub/2026-06-25-artifact-inventory-and-classification.md"
   - "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
   - "research/external-knowledge/external-sources-registry.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
 external_artifacts:
   - "mango_ba_prompts/docs/adr/"
   - "mango_ba_prompts/standards/decisions/"

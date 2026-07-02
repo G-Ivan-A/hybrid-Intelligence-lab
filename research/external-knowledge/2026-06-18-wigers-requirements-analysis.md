@@ -40,7 +40,7 @@ method: comparative-analysis
 | Артефакт | Роль в этом исследовании |
 | --- | --- |
 | issue [#247](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/247) | Источник требований (ФТ‑1…ФТ‑6, НФТ‑1…НФТ‑11, DoD). |
-| [standards/research-profile.md](../../standards/research-profile.md) | Обязательная структура `Введение → Результаты → Детализация → Источники`. |
+| [standards/research-standard.md](../../standards/research-standard.md) | Обязательная структура research-артефактов. |
 | [standards/glossary.md](../../standards/glossary.md) | Целевой словарь для опциональной ФТ‑6. |
 | [research/mango/2026-06-18-requirements-engineering-ai-era.md](../mango/2026-06-18-requirements-engineering-ai-era.md) | RFC сравнения с mango‑ADR и синхронизации (ФТ‑5). |
 | [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) | Модель Knowledge Status и Tier‑1 источников (PR #242). |
@@ -449,7 +449,7 @@ Agent → Tool → Knowledge».
 
 ## 4. Источники
 
-Цитирование по [standards/research-profile.md](../../standards/research-profile.md):
+Цитирование по [standards/research-standard.md](../../standards/research-standard.md):
 автор/организация, название, год, стабильная ссылка. Внутренние источники — путь в
 репозитории. Тип источника по PR #242: **Tier 1** (внешний доверенный) / **Tier
 2** (внутренняя память исследований).

@@ -274,7 +274,7 @@ AI, аналитику, интеграции и compliance.
   размещения и Anti-Inflation principle.
 - [governance/artifact-map.md](../../governance/artifact-map.md) - навигация
   по активным артефактам.
-- [standards/research-profile.md](../../standards/research-profile.md) -
+- `standards/research-profile.md` -
   профиль research-артефактов и правила source-backed analysis.
 - [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) - связь Mango как
   spoke-проекта с лабораторией.

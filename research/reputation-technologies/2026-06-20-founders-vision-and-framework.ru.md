@@ -803,4 +803,4 @@ prescriptive, cross-level standard — GRA's position. Full text in the bilingua
 
 - [research/hub/2026-06-20-ecosystem-architecture-research.md](../hub/2026-06-20-ecosystem-architecture-research.md)
 - [research/hub/2026-06-12-international-ai-governance-practices.md](../hub/2026-06-12-international-ai-governance-practices.md)
-- [standards/research-profile.md](../../standards/research-profile.md)
+- [standards/research-standard.md](../../standards/research-standard.md)

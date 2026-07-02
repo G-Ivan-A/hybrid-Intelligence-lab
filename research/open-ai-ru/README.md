@@ -27,7 +27,7 @@ temperature: 0.1
 ## Эксперименты
 
 Пока нет. Воспроизводимые эксперименты размещаются как `exp-<slug>/` рядом с
-отчётами (см. [standards/research-profile.md](../../standards/research-profile.md)).
+отчётами (см. [standards/research-standard.md](../../standards/research-standard.md)).
 
 ## Политики направления
 

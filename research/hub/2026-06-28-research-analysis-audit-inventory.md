@@ -13,7 +13,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
   - "research/hub/2026-06-25-artifact-inventory-and-classification.md"
   - "research/hub/2026-06-28-ripple-effects-282-research.md"
   - "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md"
@@ -279,7 +279,7 @@ report into an audit.
 - Existing Hub inventory:
   [2026-06-25-artifact-inventory-and-classification.md](2026-06-25-artifact-inventory-and-classification.md)
 - Research profile:
-  [../../standards/research-profile.md](../../standards/research-profile.md)
+  [../../standards/research-standard.md](../../standards/research-standard.md)
 - ADR-001:
   [../../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md](../../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md)
 - ADR-002:

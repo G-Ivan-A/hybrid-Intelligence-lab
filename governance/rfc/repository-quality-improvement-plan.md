@@ -14,7 +14,7 @@ related_artifacts:
   - "governance/backlog.md"
   - "governance/repo-model.md"
   - "standards/file-naming.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
   - "tools/validate-repository-structure.sh"
   - "tools/validate-frontmatter.sh"
 related_issues:

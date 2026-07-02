@@ -1269,6 +1269,12 @@ All notable repository governance changes are documented here.
 
 ### Removed
 
+- chore: Удалён legacy `standards/research-profile.md` по issue #340 / B-021
+  после замены на `standards/research-standard.md` (B-018). Причина — завершение
+  цепочки Research standardization B-016..B-020 и устранение конкурирующего
+  источника правил для research-артефактов; активные ссылки и реестры
+  перенаправлены на `research-standard.md`, исторические упоминания оставлены
+  только как migration/provenance context.
 - Issue #199: removed the active `research/portal/` package, the old mixed
   `standards/webportal-concept-standard.md`, the portal-specific
   `standards/portal-repository-structure.md`, the old

@@ -7,7 +7,7 @@ owner: G-Ivan-A
 executable: false
 scope: repo-wide
 related_standards:
-  - "research-profile.md"
+  - "research-standard.md"
   - "contract-documentation-standard.md"
   - "glossary.md"
   - "file-naming.md"
@@ -45,7 +45,7 @@ related_issues:
 | --- | --- | --- |
 | Агент должен **выполнить** процедуру (онбординг, runbook, handover) | `true` | ✅ этот стандарт |
 | Точка входа агента (единственная «первая» исполнимая инструкция) | `true` + `entrypoint: true` | ✅ этот стандарт |
-| Документ читается для знания/решения | `false`/нет | [research-profile.md](research-profile.md) |
+| Документ читается для знания/решения | `false`/нет | [research-standard.md](research-standard.md) |
 | Документ фиксирует обязательства сторон | `false` | [contract-documentation-standard.md](contract-documentation-standard.md) |
 
 Эталон применения — [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md)
@@ -158,6 +158,6 @@ entrypoint: true        # только для точки входа
 - [governance/rfc/contract-executability-rfc.md](../governance/rfc/contract-executability-rfc.md) — утверждённое «Видение 3» и трёхслойная защита.
 - [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md) — эталонный исполнимый документ.
 - [standards/glossary.md](glossary.md) — «Директивный блок», «Operating Mode», 🚦.
-- [standards/research-profile.md](research-profile.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
+- [standards/research-standard.md](research-standard.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4.

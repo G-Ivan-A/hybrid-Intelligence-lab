@@ -17,7 +17,7 @@ related_artifacts:
   - "governance/repo-model.md"
   - "standards/project-structure-inheritance.md"
   - "standards/file-naming.md"
-  - "standards/research-profile.md"
+  - "standards/research-standard.md"
   - "standards/glossary.md"
   - "templates/htom/.github/ISSUE_TEMPLATE/task.md"
 related_issues:
@@ -1505,7 +1505,7 @@ Issue #269 сам является примером: его `Depends On` (4 ис
 
 Источники приведены по разделам; внешние ссылки и версии помечены как требующие
 проверки перед переводом документа в `reviewed` (политика
-[research-profile.md](../../standards/research-profile.md)).
+`research-profile.md`).
 
 **Фасетная классификация и оси (§17).**
 - Ш. Ранганатан — Colon Classification, фасеты **PMEST** (Personality, Matter, Energy, Space, Time).
