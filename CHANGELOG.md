@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.33
+version: 1.34
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -815,6 +815,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- glossary: Обновлён `standards/glossary.md` по issue #336 / B-020:
+  добавлены определения `Research`, `Analysis`, `Audit`, `RFC` и `ADR`;
+  уточнены `Standard` и `Contract` через IL-3 / IL-1 и явное
+  `Standard ≠ Contract`; добавлены связи Research → RFC → ADR → Standard и
+  routing Research / Analysis / Audit по функции артефакта, а не по имени
+  каталога. Routing, ADR-002 и `standards/research-standard.md` не менялись.
 - rfc: Устранена терминологическая конфляция F-01 в
   `governance/rfc/2026-07-02-rfc-reports-structure.md` по issue #332: две
   конфликтные формулировки заменены на `общий каркас`, чтобы RFC Reports
