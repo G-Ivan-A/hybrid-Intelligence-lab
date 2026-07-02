@@ -264,6 +264,7 @@ is_active_file() {
     docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md | \
     docs/analysis/2026-07-01-reports-artifacts-inventory.md | \
     docs/analysis/2026-07-02-analysis-artifacts-inventory.md | \
+    docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -513,6 +514,7 @@ required_files=(
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
+  "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -811,6 +813,7 @@ require_text "mkdocs.yml" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis
 require_text "mkdocs.yml" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
 require_text "mkdocs.yml" "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
 require_text "mkdocs.yml" "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
+require_text "mkdocs.yml" "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
 require_text "mkdocs.yml" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
 require_text "mkdocs.yml" "2026-06-30-reports-industry-norms-and-standardization-scope.md"
 
@@ -1316,7 +1319,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.61"
+require_text "governance/artifact-map.md" "version: 1.62"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1360,6 +1363,7 @@ require_text "governance/artifact-map.md" "research/hub/2026-06-12-external-prac
 require_text "governance/artifact-map.md" "research/hub/2026-06-12-international-ai-governance-practices.md"
 require_text "governance/artifact-map.md" "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
 require_text "governance/artifact-map.md" "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
+require_text "governance/artifact-map.md" "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
 require_text "governance/artifact-map.md" "research/hub/exp/reports-inventory-310/README.md"
 require_text "governance/artifact-map.md" "research/hub/exp/analysis-inventory-342/README.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
@@ -1616,7 +1620,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.17"
+require_text "governance/backlog.md" "version: 1.18"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"
@@ -1644,6 +1648,9 @@ require_text "governance/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelli
 require_text "governance/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/343"
 require_text "governance/backlog.md" "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
 require_text "governance/backlog.md" "research/hub/exp/analysis-inventory-342/"
+require_text "governance/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/344"
+require_text "governance/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/347"
+require_text "governance/backlog.md" "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
 
 require_text "governance/executable-documents-issues.md" "status: canonical"
 require_text "governance/executable-documents-issues.md" "type: registry"
@@ -1756,6 +1763,24 @@ require_text "docs/analysis/2026-07-02-analysis-artifacts-inventory.md" "2026-07
 require_text "docs/analysis/2026-07-02-analysis-artifacts-inventory.md" "B-028"
 require_text "docs/analysis/2026-07-02-analysis-artifacts-inventory.md" "не создаёт RFC"
 require_text "docs/analysis/2026-07-02-analysis-artifacts-inventory.md" "не переносит файлы"
+
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "status: draft"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "version: 0.1"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "updated: 2026-07-02"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "temperature: 0.1"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "issue #344"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "B-029"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "B-024"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "Hub"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "Mango"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "Clarify"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "Audit ↔ Research ↔ Analysis ↔ Report"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "Compliance target"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "Evidence model"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "Deviation handling"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "B-033"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "не создаёт RFC"
+require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "не переносит файлы"
 
 require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "status: draft"
 require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "version: 0.1"

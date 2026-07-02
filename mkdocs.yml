@@ -84,6 +84,7 @@ nav:
     - "Backlog and artifact changes": docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md
     - "Reports: инвентаризация артефактов": docs/analysis/2026-07-01-reports-artifacts-inventory.md
     - "Analysis: инвентаризация артефактов": docs/analysis/2026-07-02-analysis-artifacts-inventory.md
+    - "Audit: углублённый анализ артефактов": docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md
   - Отчёты:
     - "PR 303 RFC hypothesis": docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md
     - "Reports inventory placement": docs/report/2026-07-01-reports-inventory-placement-analysis.md
