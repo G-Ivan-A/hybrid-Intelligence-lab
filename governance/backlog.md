@@ -1,10 +1,10 @@
 ---
 status: canonical
-version: 1.14
+version: 1.15
 updated: 2026-07-02
 temperature: 0.1
 type: backlog
-context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents, research-structure, analysis-standardization, audit-standardization]
+context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-and-spoke, executable-documents, research-structure, analysis-standardization, audit-standardization, reports-standardization]
 method: creative-analysis + synthesis + dependency-mapping
 scope: repo-wide
 related_artifacts:
@@ -20,6 +20,8 @@ related_artifacts:
   - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
   - "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
   - "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
+  - "governance/rfc/2026-07-02-rfc-reports-structure.md"
+  - "research/hub/2026-06-23-repository-structure-concept.md"
   - "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   - "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   - "standards/research-profile.md"
@@ -56,6 +58,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -218,6 +221,10 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-038** | analysis: Инвентаризация и границы Reports-артефактов (аудит / отчёт / статистика) | **P1** | B-020 | review | [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310) (PR [#312](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/312)) | Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); согласование в чате 2026-07-01; [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); [placement report](../docs/report/2026-07-01-reports-inventory-placement-analysis.md) | Reports — базовый подкаталог `docs/`; канонический путь зафиксирован как `docs/report/` (единственное число) по видению фаундера §3 и review PR #312. Inventory готовит границы с Analysis/Audit и scope будущего стандарта перед планом миграции репо (B-034). |
 | **B-039** | audit: Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard | **P1** | B-017, B-018 | review | [#320](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320) (PR [#321](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/321)) | Root-cause отчёт [docs/report/2026-07-01-rfc-adr-duplication-analysis.md](../docs/report/2026-07-01-rfc-adr-duplication-analysis.md) (issue #316); `standards/adr-structure-standard.md`, `standards/rfc-structure-standard.md`, `standards/glossary.md`; [audit](../docs/audit/2026-07-01-documentation-boundary-audit.md) | Аудит 5 IL-3 артефактов на дублирование, proposal-обёртку и смешение словарей по трём измерениям. Вердикты без блокеров (ADR-003 ремедиирован); зафиксированы причины (смешение терминов Standard/Contract, шаблон ADR, отсутствие overlap-guard) vs последствия и трёхуровневые рекомендации по лечению причин. Правки артефактов/стандартов — отдельные задачи (Tier 2). |
 | **B-040** | adr + standard: Принять ADR-003 и устранить причинные дефекты стандартов | **P0** | B-039, B-017, B-018 | review | [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322) (PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323)) | [audit](../docs/audit/2026-07-01-documentation-boundary-audit.md); ADR-003; RFC B-016; `standards/adr-structure-standard.md`; `standards/rfc-structure-standard.md`; `standards/research-standard.md` | Tier 2 remediation причин F-01/F-07/F-07-parallel/F-08: Standard≠Contract, section-level delegation, Research→RFC delegation, metadata placeholder update rule and ADR acceptance checklist. |
+| **B-041** | rfc: Структура Reports-артефактов (базовый стандарт + профили подтипов + routing) | **P1** | B-038 | review | [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) (PR [#329](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/329)) | [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md) (B-038); [Reports industry norms](../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md); Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/rfc-structure-standard.md` | RFC — proposal-вход цепочки стандартизации Reports после инвентаризации B-038: фиксирует Вариант C (базовый стандарт Report + лёгкие профили `audit`/`report`/`statistics`), канонический routing `docs/report/`, relation-метаданные и границы Reports ↔ Analysis ↔ Audit; выносит decision gate (B-042) человеку перед нормативным стандартом (B-043). Зеркалит цепочки Analysis (B-025) и Audit (B-030). |
+| **B-042** | adr: Принятие структуры Reports + реконсиляция routing ADR-002 (`docs/reports/` → `docs/report/`) | **P1** | B-041 | TODO | — (planned) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); будущий RFC B-041 ([governance/rfc/2026-07-02-rfc-reports-structure.md](rfc/2026-07-02-rfc-reports-structure.md)); [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md); `standards/adr-structure-standard.md` | Human decision gate: принимает/отклоняет Вариант C и канонический `docs/report/`, реконсилирует строку routing ADR-002 (`docs/reports/` → `docs/report/`) как single decision source перед нормативным стандартом. Зеркалит B-026/B-031. |
+| **B-043** | chore: Создание `standards/report-standard.md` (базовый стандарт Report + профили подтипов) | **P1** | B-042 | TODO | — (planned) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); будущий ADR B-042; будущий RFC B-041; [Reports industry norms §12](../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) | Нормативно фиксирует базу + профили `audit`/`report`/`statistics`, frontmatter с relation-метаданными, lifecycle (draft → reviewed → canonical → superseded) и routing; делает предложение RFC исполнимым. Prerequisite для cleanup Reports-артефактов. Зеркалит B-027/B-032. |
+| **B-044** | chore: Cleanup и модернизация Reports-артефактов (миграция кандидатов в `docs/report/`) | **P2** | B-043, B-034 | TODO | — (tech debt) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); [Reports inventory §5](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); будущий standard B-043; план миграции репо B-034 | Пост-standard cleanup: обновить frontmatter (`report-subtype`, relation-поля), убрать дубли/замаскированные отчёты, cross-references, artifact-map и индексы; координируется с планом миграции репо (B-034). Зеркалит B-028/B-033. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).

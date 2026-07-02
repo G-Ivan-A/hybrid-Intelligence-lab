@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.31
+version: 1.32
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -12,6 +12,27 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- rfc: Создан `governance/rfc/2026-07-02-rfc-reports-structure.md` — Draft RFC
+  структуры Reports-артефактов (B-041, issue #328). Режим Hybrid: каркас — из
+  `standards/rfc-structure-standard.md`, креативная часть (формулировки
+  предложения, альтернативы, trade-offs) — авторская в рамках входных данных
+  инвентаризации B-038 и Research industry norms. Предлагает **Вариант C**: единый
+  базовый стандарт Report + лёгкие профили подтипов (`audit`/`report`/`statistics`)
+  как секции («A сейчас, B потом» с явным Trigger B против инфляции артефактов);
+  канонический routing `docs/report/` (единственное число) с флагом реконсиляции
+  дрейфа ADR-002 `docs/reports/` для будущего ADR (B-042); frontmatter Reports с
+  relation-метаданными (`based_on`/`source`/`scope`/`supersedes`/`related_artifacts`).
+  Зафиксированы 4 альтернативы (A плоский единый стандарт — отклонён; B три
+  независимых стандарта — отклонён; C базовый + профили — рекомендован; D Reports
+  как подтип Analysis — отклонён) с rationale и trade-offs, а также границы
+  Reports ↔ Analysis ↔ Audit ↔ Research evidence (через ссылки/cite, без
+  дублирования Research benchmark-норм и Analysis-инвентаря 47 кандидатов). RFC
+  только ПРЕДЛАГАЕТ: decision gate вынесен человеку (будущий ADR B-042),
+  обязательная норма делегирована в будущий `standards/report-standard.md` (B-043),
+  физическая миграция — в B-044. Зарегистрирован в `governance/artifact-map.md`,
+  `governance/rfc/README.md` и структурном валидаторе; задачи B-041..B-044
+  добавлены в `governance/backlog.md` (B-041 — статус review).
 
 - audit: Создан `docs/audit/2026-07-01-documentation-boundary-audit.md` — аудит
   коллизий интерпретации стандартов RFC/ADR/Standard (B-039, issue #320). Аудит
