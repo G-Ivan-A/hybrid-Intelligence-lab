@@ -1,6 +1,6 @@
 ---
-status: draft
-version: 0.1
+status: accepted
+version: 0.2
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
@@ -14,10 +14,10 @@ rfc-scope: A
 | Field | Value |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | draft (narrative summary; машиночитаемый canon — frontmatter `status`) |
-| Source issue | [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); контекст [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310), [#307](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
-| Impacted artifacts | future `standards/report-standard.md` (B-043), future ADR Reports (B-042), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (реконсиляция routing `docs/reports/` → `docs/report/`), `docs/report/*`, `docs/audit/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `governance/backlog.md` (последствия, не правки в этом RFC, кроме постановки на учёт) |
-| Decision record | not yet (future ADR, B-042) |
+| RFC status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
+| Source issue | [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); decision gate [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338); контекст [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310), [#307](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
+| Impacted artifacts | future `standards/report-standard.md` (B-043), [ADR-004](../../docs/adr/2026-07-adr-004-reports-structure.md) (B-042), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (реконсиляция routing `docs/reports/` → `docs/report/`), `docs/report/*`, `docs/audit/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `governance/backlog.md` (регистрация и lifecycle updates) |
+| Decision record | [ADR-004](../../docs/adr/2026-07-adr-004-reports-structure.md) (B-042) |
 | Implementation link | not yet (future `standards/report-standard.md`, B-043) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
 
@@ -33,11 +33,12 @@ stance) плюс **три лёгких профиля подтипов** (`audit
 стойке**: descriptive («что») для Report против causal («почему») для Analysis и
 normative («соответствует ли норме» + вердикт) для Audit.
 
-Это RFC (proposal, IL-3), а не норма. Он — вход для будущего ADR (B-042, human
-decision gate) и `standards/report-standard.md` (B-043). Этот документ **не
-создаёт** стандарт Report, **не создаёт** ADR, **не мигрирует** файлы и **не
-финализирует** реконсиляцию `docs/report/` ↔ `docs/reports/`: последнее — решение
-будущего ADR. Он опирается на исследование индустриальных норм
+Это RFC (proposal/rationale, IL-3), а не норма. Decision record — ADR-004
+(B-042), а обязательное правило делегировано будущему
+`standards/report-standard.md` (B-043). Этот документ **не создаёт** стандарт
+Report, **не мигрирует** файлы и не подменяет ADR-004 как источник принятого
+решения по реконсиляции `docs/report/` ↔ `docs/reports/`. Он опирается на
+исследование индустриальных норм
 ([Reports industry norms](../../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md))
 и инвентаризацию корпуса
 ([Reports inventory](../../docs/analysis/2026-07-01-reports-artifacts-inventory.md)),
@@ -95,15 +96,16 @@ Boundary RFC/ADR). Полный бенчмарк и полная матрица 
 - Зафиксировать границы Reports ↔ Analysis ↔ Audit и Reports ↔ Research evidence,
   цитируя Analysis и Research (link/cite, не restate).
 - Дать альтернативы (A/B/C/D), trade-offs и rationale выбора Варианта C.
-- Подготовить вход для человеческого decision gate (ADR B-042).
+- Служить входом для человеческого decision gate, зафиксированного в ADR-004
+  (B-042).
 
 **Non-goals.**
 
 - ❌ Не писать нормативный стандарт Report — это B-043.
-- ❌ Не создавать ADR — это B-042 (следующая задача, human decision gate).
+- ❌ Не создавать ADR внутри RFC — decision record вынесен в ADR-004 (B-042).
 - ❌ Не создавать директории и не мигрировать/переименовывать файлы — это B-044.
-- ❌ Не финализировать выбор `docs/report/` vs `docs/reports/` и не править
-  ADR-002 — реконсиляция routing table принадлежит ADR B-042.
+- ❌ Не финализировать выбор `docs/report/` vs `docs/reports/` внутри RFC:
+  финализация и точечная правка ADR-002 оформлены через ADR-004 (B-042).
 - ❌ Не дублировать Research (индустриальные нормы, бенчмарк) и Analysis
   (инвентарь 47 кандидатов, evidence-матрица): этот RFC цитирует их, а не
   переписывает.
@@ -174,8 +176,9 @@ Boundary RFC/ADR). Полный бенчмарк и полная матрица 
   в routing table упоминает `docs/reports/` (множественное число), тогда как
   issue #328, видение фаундера §3 и Analysis фиксируют `docs/report/`. Этот RFC
   **предлагает** `docs/report/` и помечает строку ADR-002 как пункт
-  **реконсиляции для ADR B-042**. RFC не правит ADR-002 и не финализирует выбор:
-  это competing decision source было бы нарушением границы RFC/ADR.
+  **реконсиляции для ADR-004 (B-042)**. RFC не является decision source:
+  принятая правка ADR-002 выполняется как следствие ADR-004, иначе это было бы
+  competing decision source и нарушением границы RFC/ADR.
 - **Тип по содержанию, не по каталогу** (content-over-path, issue #288). Audit,
   спрятанный под `docs/analysis/`, остаётся Audit; статистика, спрятанная там же,
   остаётся statistics-report. Классификация — по доминирующей стойке (P5).
@@ -268,10 +271,9 @@ related_artifacts:
 - **Пересечение statistics ↔ research evidence.** Statistics-профиль близок к
   evidence-матрицам в `exp/`. Mitigation: явная граница (P5) — evidence остаётся в
   `exp/`, Report-mirror создаётся только при потребности (Open Question 3).
-- **Отложенная реконсиляция пути.** `docs/report/` vs `docs/reports/` (ADR-002)
-  не финализируется здесь; до ADR B-042 RFC задаёт направление, но не норму.
-  Осознанный долг; риск ограничен, потому что live-практика уже использует
-  `docs/report/`.
+- **Реконсиляция пути вынесена из RFC.** `docs/report/` vs `docs/reports/`
+  (ADR-002) решается в ADR-004, а не внутри proposal. Риск был ограничен, потому
+  что live-практика уже использовала `docs/report/`.
 - **Дисциплина классификации.** Routing по доминирующей стойке
   (descriptive/causal/normative) требует осознанного выбора на старте. Mitigation:
   decision-tree по стойке в будущем стандарте (Research §12.2).
@@ -290,7 +292,7 @@ related_artifacts:
 
 | Архетип | Required deltas | Avoid |
 | --- | --- | --- |
-| A. Governance & Knowledge Hub | Принять/отклонить Вариант C, канонический `docs/report/`, frontmatter + relation-метаданные и границы через ADR B-042 и стандарт B-043; реконсилировать routing ADR-002 в ADR. | Не создавать стандарт/ADR в этом RFC, не мигрировать файлы, не финализировать путь до human decision. |
+| A. Governance & Knowledge Hub | Принять/отклонить Вариант C, канонический `docs/report/`, frontmatter + relation-метаданные и границы через ADR-004 (B-042) и стандарт B-043; реконсилировать routing ADR-002 в ADR. | Не создавать стандарт/ADR в этом RFC, не мигрировать файлы, не финализировать путь внутри proposal. |
 | B. Prompt & Pattern Library | Использовать базовый Report + профили для отчётов об оценке prompt/pattern (eval reports, experiment reports) с relation-метаданными к родительскому эксперименту. | Не заводить отдельные стандарты отчётов на каждый тип prompt-эксперимента; не RFC-ить каждый eval-прогон. |
 | C. Product Spoke / Runtime | Применять `report-subtype` и границу Report ↔ Audit к release/verification/execution reports; runtime metrics-выходы могут быть statistics-profile Reports или оставаться в `runs/`. | Не смешивать customer/runtime artifacts с Hub-нормой; не навязывать `docs/report/` без project-level ADR/standard. |
 | D. Education / Learning Package | Использовать general report profile для learner-progress и course-review отчётов; audit profile — для проверки учебных материалов на норму. | Не превращать каждый lesson-review в отдельный стандарт; не RFC-ить отдельные отчёты об уроках. |
@@ -303,7 +305,7 @@ related_artifacts:
 | --- | --- | --- |
 | Гибрид C лучше плоского A. | A проще и даёт меньше артефактов. | C закладывает шов разделения сразу (триггер B); A требует ретроактивной резки при росте аудиторской специфики. Принято (Research §12.2). |
 | База + профили не размоет границу с Audit/Analysis. | Профиль audit-report может подменить Audit standard. | Профиль описывает только output shape; вердикт-семантика и процесс — в Audit standard (B-030); decision-tree по стойке (P5). Принято. |
-| `docs/report/` (singular) — верный канонический путь. | ADR-002 говорит `docs/reports/`. | Issue #328, видение фаундера §3 и Analysis фиксируют `docs/report/`; путь уже live (существующие файлы). Реконсиляция ADR-002 вынесена в ADR B-042, здесь не финализируется. Принято как proposal. |
+| `docs/report/` (singular) — верный канонический путь. | ADR-002 говорит `docs/reports/`. | Issue #328, видение фаундера §3 и Analysis фиксируют `docs/report/`; путь уже live (существующие файлы). Реконсиляция ADR-002 вынесена в ADR-004 (B-042). Принято как proposal. |
 | Statistics-reports не дублируют research evidence. | Матрицы report-like и живут в `exp/`. | Evidence остаётся в `exp/` (ADR-003); Report-mirror — только при потребности; граница в P5. Принято. |
 | Reports — отдельный тип, а не output surface Analysis (против Варианта D). | Executive summary внутри Analysis — тоже «отчёт». | Output surface (секция без своего lifecycle) ≠ самостоятельный Report (свой frontmatter/имя/статус) — Research §10 BC-4. Принято. |
 | RFC не избыточен — не «сразу стандарт». | Цепочка длиннее. | Стандарт без принятого rationale = правка без decision gate; альтернативы, trade-offs и human gate (B-042) были бы потеряны. Принято: RFC — обязательный вход (зеркалит A6 research-RFC). |
@@ -318,10 +320,10 @@ non-blocking.
 Затронутые артефакты (последствия, не правки в этом RFC, если не указано иное):
 
 - future `standards/report-standard.md` (B-043) — нормативная форма базы + профилей.
-- future ADR Reports (B-042) — human decision gate; реконсиляция routing ADR-002.
+- [ADR-004](../../docs/adr/2026-07-adr-004-reports-structure.md) (B-042) —
+  human decision gate; реконсиляция routing ADR-002.
 - `docs/adr/2026-06-adr-002-artifact-document-methodology.md` — строка routing
-  `docs/reports/` реконсилируется к `docs/report/` в ADR B-042 (в этом RFC только
-  флаг, не правка).
+  `docs/reports/` реконсилируется к `docs/report/` в ADR-004 (B-042).
 - `docs/report/*` — существующие Reports; modernization candidates (Analysis §5).
 - `docs/audit/*` — audit reports; граница с будущим Audit standard (B-030).
 - `research/<domain>/exp/*` — граница statistics ↔ research evidence (без правок).
@@ -340,7 +342,7 @@ non-blocking.
 | --- | --- | --- |
 | B-038 | analysis: инвентаризация и границы Reports | Вход этого RFC (границы, scope, Вариант C). |
 | B-041 | rfc: этот документ | Предлагает Вариант C, routing `docs/report/`, frontmatter + relation-метаданные, границы. |
-| B-042 | adr: принятие структуры Reports + реконсиляция routing ADR-002 | Human decision gate; ссылается на этот RFC. |
+| B-042 | adr: принятие структуры Reports + реконсиляция routing ADR-002 | Human decision gate; ссылается на этот RFC. Выполнено в ADR-004. |
 | B-043 | standard: `standards/report-standard.md` | Нормативно описывает базу + профили; заменяет предложение нормой. |
 | B-044 | cleanup: модернизация метаданных и миграция в `docs/report/` | Физическая работа после стандарта; координация с планом миграции B-034. |
 
@@ -352,7 +354,7 @@ non-blocking.
 - RFC поставлен на учёт: запись в [Governance RFC README](README.md),
   [`governance/artifact-map.md`](../artifact-map.md), allowlist + required-text в
   `tools/validate-repository-structure.sh`, добавление цепочки B-041..B-044 и
-  статус `review` для B-041 в [`governance/backlog.md`](../backlog.md), запись в
+  статус `DONE` для B-041 в [`governance/backlog.md`](../backlog.md), запись в
   `CHANGELOG.md`.
 
 Локальная проверка:
@@ -369,9 +371,8 @@ RFC.
 
 ## Lifecycle and Decision Path
 
-Текущее состояние: `draft`. Переход к `proposed` — после завершения обязательных
-секций и локальной валидации; к `accepted` — только человеческим решением через
-ADR B-042.
+Текущее состояние: `accepted`. Переход к `accepted` выполнен через ADR-004
+(B-042), который фиксирует human decision gate и реконсиляцию routing ADR-002.
 
 ```mermaid
 flowchart LR
@@ -382,8 +383,8 @@ flowchart LR
 ```
 
 Post-acceptance делегирование: обязательная норма переходит в
-`standards/report-standard.md` (B-043); реконсиляция routing ADR-002 — в ADR
-B-042. Этот RFC сохраняет context, alternatives, trade-offs и rationale; он не
+`standards/report-standard.md` (B-043); реконсиляция routing ADR-002 — в
+ADR-004 (B-042). Этот RFC сохраняет context, alternatives, trade-offs и rationale; он не
 дублируется в стандарте как proposal-обёртка.
 
 ## Boundary RFC/ADR
@@ -393,29 +394,30 @@ B-042. Этот RFC сохраняет context, alternatives, trade-offs и rati
 | Case | Rule for this Reports-structure change |
 | --- | --- |
 | Есть открытые альтернативы по scope (A/B/C/D), routing и границам Reports. | Нужен RFC: этот документ сохраняет rationale, alternatives, trade-offs и rejected options. |
-| Человек должен принять/отклонить модель перед появлением нормы. | Нужен ADR B-042: короткая запись принятого решения, ссылается на этот RFC. |
+| Человек должен принять/отклонить модель перед появлением нормы. | ADR-004 (B-042): короткая запись принятого решения, ссылается на этот RFC. |
 | Решение становится обязательным правилом формы и размещения Reports. | Нужен стандарт B-043, а не расширение этого RFC. |
-| Дрейф routing затрагивает уже принятый ADR-002. | Реконсиляция — часть ADR B-042 (single decision source), не отдельная правка ADR-002 в этом RFC. |
+| Дрейф routing затрагивает уже принятый ADR-002. | Реконсиляция — часть ADR-004 (B-042, single decision source), не отдельная правка ADR-002 в этом RFC. |
 | Требуется физическая миграция и модернизация метаданных Reports. | Это implementation follow-up B-044 после human decision и стандарта, не часть RFC. |
 
-Итог: RFC отвечает «какую модель стоит принять?», ADR B-042 — «что принято
+Итог: RFC отвечает «какую модель стоит принять?», ADR-004 (B-042) — «что принято
 человеком?», стандарт B-043 — «как исполнять это правило повторяемо?».
 
 ## Open Questions
 
-Блокирующих вопросов для acceptance нет. Non-blocking follow-up:
+ADR-004 закрыл decision-gate вопросы, которые были открыты в RFC:
 
 1. Финальный канонический путь `docs/report/` (singular) и реконсиляция строки
-   routing ADR-002 (`docs/reports/`). Кандидат: `docs/report/`; финализируется в
-   ADR B-042.
-2. Физический дом audit reports (`docs/report/` vs `docs/audit/`). RFC предлагает
-   тег `report-subtype: audit` независимо от пути; выбор координируется с Audit
-   standard (B-030).
-3. Являются ли statistics-матрицы самостоятельными Reports или остаются research
-   evidence в `exp/` (нужен ли publishable mirror). Research-evidence policy;
-   Analysis §6 open decision.
-4. Когда профиль подтипа (вероятнее audit) выделяется в отдельный стандарт
-   (Триггер B). Критерий финализируется в стандарте B-043.
+   routing ADR-002 (`docs/reports/`) — **решено** в ADR-004: `docs/report/`.
+2. Физический дом audit reports (`docs/report/` vs `docs/audit/`) —
+   **делегировано** в B-043 и будущий Audit standard B-030; инвариант ADR-004:
+   `report-subtype: audit` фиксирует подтип независимо от миграции пути.
+3. Statistics vs research evidence — **делегировано** в B-043 и
+   research-evidence policy; инвариант ADR-004: reproducible evidence остаётся в
+   `research/<domain>/exp/*`, Report-mirror создаётся только при отдельном
+   lifecycle.
+4. Триггер B — **решено на уровне критерия** в ADR-004: профиль выделяется в
+   отдельный стандарт только при повторяющихся subtype-specific mandatory rules
+   или review pain; операционные пороги задаёт B-043.
 
 ## Related Artifacts
 
@@ -424,6 +426,10 @@ B-042. Этот RFC сохраняет context, alternatives, trade-offs и rati
   [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310),
   [#307](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307),
   [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288).
+- [ADR-004](../../docs/adr/2026-07-adr-004-reports-structure.md) / issue
+  [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338) —
+  accepted decision record for Variant C, `docs/report/`, and ADR-002
+  reconciliation.
 - [Reports inventory and boundaries](../../docs/analysis/2026-07-01-reports-artifacts-inventory.md) —
   инвентарь 47 кандидатов, границы §3, рекомендация Варианта C §6 (issue #310, B-038).
 - [Reports industry norms and standardization scope](../../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) —

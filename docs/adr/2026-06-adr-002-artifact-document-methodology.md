@@ -1,6 +1,6 @@
 ---
 status: accepted
-version: 1.2
+version: 1.3
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
@@ -76,7 +76,7 @@ Markdown с RFC 2119/BCP 14, IDL и другие форматы, если они
 | --- | --- | --- |
 | Research Хаба | `research/{domain}/YYYY-MM-DD-name.md` | Evidence и варианты, не норма. |
 | Analysis в проекте/spoke | `docs/analysis/YYYY-MM-DD-name.md` | Исследование локального контекста без статуса решения. |
-| Report | `docs/reports/` | Результат проверки, аудита, статистики или выполнения. |
+| Report | `docs/report/` | Результат проверки, аудита, статистики или выполнения. Реконсилировано ADR-004. |
 | RFC | `docs/rfc/` для новых HTOM/spoke; текущий Хаб сохраняет `governance/rfc/` до миграции | Proposal до решения. |
 | ADR | `docs/adr/YYYY-MM-adr-NNN-name.md` | Принятое решение и rationale. |
 | Standard | `standards/` | Повторяемая норма формата, качества или review-критерия. |

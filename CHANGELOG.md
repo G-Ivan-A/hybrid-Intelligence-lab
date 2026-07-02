@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.33
+version: 1.34
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,6 +13,18 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- adr: Создан `docs/adr/2026-07-adr-004-reports-structure.md` — accepted ADR
+  для B-042 / issue #338. ADR фиксирует human decision по RFC B-041: принят
+  Вариант C (базовый стандарт Report + лёгкие профили `audit`/`report`/
+  `statistics`), канонический routing `docs/report/` (единственное число) и
+  реконсиляция строки ADR-002 `docs/reports/` → `docs/report/` как later single
+  decision source. Open questions из RFC получили явный статус: audit-report path
+  и statistics-vs-evidence policy делегированы в B-043/B-030 и research-evidence
+  policy; Триггер B принят как anti-inflation criterion с операционными порогами
+  в B-043. Стандарт `standards/report-standard.md` не создан, физическая миграция
+  файлов не выполнялась. RFC B-041 переведён в `accepted` и связан с ADR-004;
+  routing row в ADR-002 обновлена на `docs/report/`; `governance/artifact-map.md`,
+  `governance/backlog.md` и структурный валидатор обновлены.
 - research: Создан `research/hub/2026-07-02-task-execution-modes-research.md` —
   research-отчёт по режимам выполнения задач для ИИ-агентов (B-045, issue #330)
   в режиме `Research` + `Creative` + `Deep Think` от лица 4 экспертов
@@ -35,24 +47,24 @@ All notable repository governance changes are documented here.
   внешний источник (`ext-137`…`ext-157`) добавлен в
   `research/external-knowledge/external-sources-registry.md`; задача B-045
   зарегистрирована в `governance/backlog.md`.
-- rfc: Создан `governance/rfc/2026-07-02-rfc-reports-structure.md` — Draft RFC
+- rfc: Создан `governance/rfc/2026-07-02-rfc-reports-structure.md` — Accepted RFC
   структуры Reports-артефактов (B-041, issue #328). Режим Hybrid: каркас — из
   `standards/rfc-structure-standard.md`, креативная часть (формулировки
   предложения, альтернативы, trade-offs) — авторская в рамках входных данных
   инвентаризации B-038 и Research industry norms. Предлагает **Вариант C**: единый
   базовый стандарт Report + лёгкие профили подтипов (`audit`/`report`/`statistics`)
   как секции («A сейчас, B потом» с явным Trigger B против инфляции артефактов);
-  канонический routing `docs/report/` (единственное число) с флагом реконсиляции
-  дрейфа ADR-002 `docs/reports/` для будущего ADR (B-042); frontmatter Reports с
+  канонический routing `docs/report/` (единственное число) с реконсиляцией
+  дрейфа ADR-002 `docs/reports/` через ADR-004 (B-042); frontmatter Reports с
   relation-метаданными (`based_on`/`source`/`scope`/`supersedes`/`related_artifacts`).
   Зафиксированы 4 альтернативы (A плоский единый стандарт — отклонён; B три
   независимых стандарта — отклонён; C базовый + профили — рекомендован; D Reports
   как подтип Analysis — отклонён) с rationale и trade-offs, а также границы
   Reports ↔ Analysis ↔ Audit ↔ Research evidence (через ссылки/cite, без
   дублирования Research benchmark-норм и Analysis-инвентаря 47 кандидатов). RFC
-  только ПРЕДЛАГАЕТ: decision gate вынесен человеку (будущий ADR B-042),
-  обязательная норма делегирована в будущий `standards/report-standard.md` (B-043),
-  физическая миграция — в B-044. Зарегистрирован в `governance/artifact-map.md`,
+  принят через ADR-004: обязательная норма делегирована в будущий
+  `standards/report-standard.md` (B-043), физическая миграция — в B-044.
+  Зарегистрирован в `governance/artifact-map.md`,
   `governance/rfc/README.md` и структурном валидаторе; задачи B-041..B-044
   добавлены в `governance/backlog.md`.
 
@@ -815,6 +827,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- glossary: Обновлён `standards/glossary.md` по issue #336 / B-020:
+  добавлены определения `Research`, `Analysis`, `Audit`, `RFC` и `ADR`;
+  уточнены `Standard` и `Contract` через IL-3 / IL-1 и явное
+  `Standard ≠ Contract`; добавлены связи Research → RFC → ADR → Standard и
+  routing Research / Analysis / Audit по функции артефакта, а не по имени
+  каталога. Routing, ADR-002 и `standards/research-standard.md` не менялись.
 - rfc: Устранена терминологическая конфляция F-01 в
   `governance/rfc/2026-07-02-rfc-reports-structure.md` по issue #332: две
   конфликтные формулировки заменены на `общий каркас`, чтобы RFC Reports
