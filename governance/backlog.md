@@ -213,7 +213,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-022** | Мигрировать существующие `exp-*` в контейнер `exp/`, убрать `outputs/` | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); текущие `research/hub/exp-*` | Физическая миграция полезна, но должна идти после стандарта, чтобы не закрепить новый дрейф. |
 | **B-023** | Обновить валидатор структуры под `exp/` и routing по типам задач | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `tools/validate-repository-structure.sh`; `tools/validate-file-naming.sh` | Делает новый стандарт исполнимым после human decision; не должен предвосхищать стандарт. |
 | **B-024** | analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify) | **P0** | B-020 | DONE | [#342](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/342) (PR [#343](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/343)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); B-020; [Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md); [evidence](../research/hub/exp/analysis-inventory-342/README.md) | Даёт входные данные для `analysis-standard.md`: фактические Analysis-артефакты, подмены понятий, дубли и кандидаты на модернизацию. Готово к review в PR #343; cleanup не выполнялся. |
-| **B-025** | rfc: Стандарт структуры Analysis | **P0** | B-024 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | Proposal-stage для правил Analysis: frontmatter, секции, lifecycle, routing и отличия от Research/Audit до human decision. |
+| **B-025** | rfc: Структура Analysis-артефактов (базовый стандарт + профили подтипов + routing) | **P0** | B-024 | DONE | [#350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350) (PR [#351](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/351)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md) (B-024); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) (B-029); [RFC Reports](rfc/2026-07-02-rfc-reports-structure.md) (B-041); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | RFC ([governance/rfc/2026-07-02-rfc-analysis-structure.md](rfc/2026-07-02-rfc-analysis-structure.md), status `proposed`) — proposal-вход цепочки Analysis после инвентаризации B-024: фиксирует Вариант C (базовый стандарт Analysis + лёгкие профили `inventory`/`matrix`/`options`/`recommendation`), routing `docs/analysis/`, relation-метаданные, knowledge-lifecycle и границы Analysis ↔ Research ↔ Audit ↔ Report ↔ RFC ↔ ADR; выносит decision gate (B-026) человеку. Стандарт/ADR не создаются, миграция не выполняется. Готово к review в PR #351. Зеркалит цепочку Reports (B-041). |
 | **B-026** | adr: Принятие `analysis-standard` | **P0** | B-025 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий RFC B-025; `standards/adr-structure-standard.md` | Decision gate между RFC-вариантами и нормативным Analysis standard. |
 | **B-027** | chore: Создание `standards/analysis-standard.md` | **P0** | B-026 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий ADR B-026 | Стандарт структуры Analysis; prerequisite для плана миграции репо и cleanup Analysis-артефактов. |
 | **B-028** | chore: Cleanup и модернизация Analysis-артефактов | **P2** | B-027 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); analysis-аудит B-024; `standards/analysis-standard.md` | Пост-standard cleanup: убрать дубли, обновить frontmatter/cross-references и индексы без преждевременной миграции. |
@@ -1181,40 +1181,56 @@ existing artifacts идут только после accepted standard.
 
 ---
 
-### B-025: rfc: Стандарт структуры Analysis
+### B-025: rfc: Структура Analysis-артефактов (базовый стандарт + профили подтипов + routing)
 
 **Приоритет:** P0
-**Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
-будущий analysis inventory B-024;
+**Источник:** 🔗 [issue #350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350)
+(PR [#351](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/351)); контекст
+[issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+[Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md) (B-024);
+[Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) (B-029);
+[RFC Reports](rfc/2026-07-02-rfc-reports-structure.md) (B-041);
 [RFC Structure Standard](../standards/rfc-structure-standard.md)
 **Зависимости:** B-024
-**Статус:** TODO
-**Режим работы:** `Structured`
+**Статус:** DONE (готово к review в PR [#351](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/351))
+**Режим работы:** `Hybrid` (структура RFC фиксирована стандартом, содержание — предложение)
 
 **Контекст:**
 RFC нужен как proposal-stage перед `analysis-standard.md`: он описывает
 варианты, rejected alternatives, trade-offs и правила routing, но не становится
-стандартом сам по себе.
+стандартом сам по себе. Опирается на инвентаризацию B-024 (границы, requirements
+§7), границы Analysis ↔ Audit (B-029) и прецедент Reports RFC (B-041, Вариант C),
+делегируя evidence этим источникам, а routing и определения — `research-standard`
+и `glossary`.
 
-**Что нужно сделать:**
-1. Создать `governance/rfc/YYYY-MM-DD-rfc-analysis-standard.md`.
-2. Предложить структуру Analysis artifact: frontmatter, required sections,
-   lifecycle and evidence expectations.
-3. Зафиксировать routing rules for Analysis and clear boundaries with Research,
-   Audit, RFC and ADR.
-4. Добавить матрицу дельт по архетипам A/B/C/D.
-5. Перечислить impacted artifacts from B-024 and consequences for B-026..B-028.
+**Что было сделано:**
+1. Создан `governance/rfc/2026-07-02-rfc-analysis-structure.md` (status `proposed`,
+   rfc-scope A).
+2. Предложена структура Analysis artifact: базовый стандарт + опциональные лёгкие
+   профили подтипов (`inventory`/`matrix`/`options`/`recommendation`), frontmatter
+   с relation-метаданными (`source`/`scope`/`based_on`/`related_artifacts`/
+   `analysis-subtype`), минимальное ядро секций, knowledge-lifecycle
+   (`draft → reviewed → canonical → superseded`) и evidence expectation без
+   research-methodology.
+3. Подтверждён routing `docs/analysis/YYYY-MM-DD-name.md` (делегировано
+   `research-standard`) и зафиксированы границы Analysis ↔ Research ↔ Audit ↔
+   Report ↔ RFC ↔ ADR (link/cite к B-024/B-029/B-041/glossary/research-standard).
+4. Добавлены Alternatives A/B/C/D (Вариант C рекомендован), Trade-offs, матрица
+   дельт A/B/C/D, Critical Analysis и Boundary RFC/ADR.
+5. Перечислены impacted artifacts из B-024 и последствия для цепочки B-026..B-028.
+6. RFC поставлен на учёт: RFC README, `governance/artifact-map.md`, allowlist +
+   required-text валидатора, `CHANGELOG.md`.
 
 **Ожидаемые артефакты:**
-- `governance/rfc/YYYY-MM-DD-rfc-analysis-standard.md` (new RFC)
+- `governance/rfc/2026-07-02-rfc-analysis-structure.md` (new RFC) ✅
 
 **Критерии приёмки (DoD):**
-- [ ] RFC follows `standards/rfc-structure-standard.md`.
-- [ ] RFC states Analysis definition and routing rules without inheriting
+- [x] RFC follows `standards/rfc-structure-standard.md`.
+- [x] RFC states Analysis definition and routing rules without inheriting
       Research or Audit standard.
-- [ ] RFC includes alternatives, trade-offs, impacted artifacts, A/B/C/D deltas
+- [x] RFC includes alternatives, trade-offs, impacted artifacts, A/B/C/D deltas
       and decision path.
-- [ ] Open Questions are limited to blockers for ADR B-026.
+- [x] Open Questions are limited to blockers for ADR B-026.
 
 **Обоснование приоритета:**
 P0: это proposal gate для Analysis standard и prerequisite для repo migration
@@ -1222,7 +1238,8 @@ planning. Прямая запись standard без RFC нарушит agreed ch
 `Analysis -> RFC -> ADR -> Standard`.
 
 **Риски и ограничения:**
-RFC не должен выполнять cleanup и не должен превращаться в accepted norm без ADR.
+RFC не выполняет cleanup, не создаёт ADR (B-026) и стандарт (B-027), не мигрирует
+файлы (B-028) и не превращается в accepted norm без ADR.
 
 ---
 

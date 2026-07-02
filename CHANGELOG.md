@@ -26,6 +26,27 @@ All notable repository governance changes are documented here.
   дублируя их; физическая миграция файлов остаётся за B-044. Обновлены
   `standards/README.md`, `governance/artifact-map.md` и `governance/backlog.md`
   (B-043 → DONE).
+- rfc: Added `governance/rfc/2026-07-02-rfc-analysis-structure.md` (status
+  `proposed`) for issue #350 (B-025). The RFC proposes the structure of Analysis
+  artifacts: a single base Analysis standard plus optional light subtype profiles
+  (`inventory`/`matrix`/`options`/`recommendation`) as Variant C ("A now, B
+  later" with an explicit anti-inflation trigger B), confirms the canonical
+  routing `docs/analysis/YYYY-MM-DD-name.md` (delegated to `research-standard`),
+  proposes Analysis frontmatter with relation metadata
+  (`source`/`scope`/`based_on`/`related_artifacts`/`analysis-subtype`), the
+  knowledge-lifecycle (`draft → reviewed → canonical → superseded`), a minimal
+  core section set (Summary/BLUF, Context/Scope, Findings/Options,
+  Recommendations, Related Artifacts) and the boundaries Analysis ↔ Research ↔
+  Audit ↔ Report ↔ RFC ↔ ADR. It delegates evidence to B-024 (186-artifact
+  inventory and boundaries), B-029 (Analysis ↔ Audit), B-041 (Analysis ↔ Reports
+  precedent), `research-standard` (R/A/A routing) and `glossary` (definitions)
+  instead of restating them, gives Alternatives A/B/C/D with rejection rationale,
+  Trade-offs, delta matrix and Critical Analysis. The change intentionally does
+  not create an Analysis standard (B-027), does not create an ADR (B-026) and
+  does not migrate files (B-028); the decision record stays `not yet` pending the
+  human decision gate. Registered in the RFC README, `governance/artifact-map.md`,
+  the structure validator allowlist/required-text and `governance/backlog.md`
+  (B-025 → review).
 - analysis: Added `docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md`
   for issue #344 (B-029). The report uses the B-024 matrix as input, reviews 29
   Audit candidates across Hub, Mango and Clarify at fixed artifact snapshots,
