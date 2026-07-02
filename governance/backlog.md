@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.21
+version: 1.22
 updated: 2026-07-02
 temperature: 0.1
 type: backlog
@@ -216,14 +216,14 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-022** | Мигрировать существующие `exp-*` в контейнер `exp/`, убрать `outputs/` | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); текущие `research/hub/exp-*` | Физическая миграция полезна, но должна идти после стандарта, чтобы не закрепить новый дрейф. |
 | **B-023** | Обновить валидатор структуры под `exp/` и routing по типам задач | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `tools/validate-repository-structure.sh`; `tools/validate-file-naming.sh` | Делает новый стандарт исполнимым после human decision; не должен предвосхищать стандарт. |
 | **B-024** | analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify) | **P0** | B-020 | DONE | [#342](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/342) (PR [#343](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/343)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); B-020; [Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md); [evidence](../research/hub/exp/analysis-inventory-342/README.md) | Даёт входные данные для `analysis-standard.md`: фактические Analysis-артефакты, подмены понятий, дубли и кандидаты на модернизацию. Готово к review в PR #343; cleanup не выполнялся. |
-| **B-025** | rfc: Структура Analysis-артефактов (базовый стандарт + профили подтипов + routing) | **P0** | B-024 | DONE | [#350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350) (PR [#351](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/351)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md) (B-024); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) (B-029); [RFC Reports](rfc/2026-07-02-rfc-reports-structure.md) (B-041); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | RFC ([governance/rfc/2026-07-02-rfc-analysis-structure.md](rfc/2026-07-02-rfc-analysis-structure.md), status `accepted` через [ADR-005](../docs/adr/2026-07-adr-005-analysis-structure.md)) — proposal-вход цепочки Analysis после инвентаризации B-024: фиксирует Вариант C (базовый стандарт Analysis + лёгкие профили `inventory`/`matrix`/`options`/`recommendation`), routing `docs/analysis/`, relation-метаданные, knowledge-lifecycle и границы Analysis ↔ Research ↔ Audit ↔ Report ↔ RFC ↔ ADR; decision gate (B-026) принят человеком в ADR-005. Стандарт/ADR не создаются, миграция не выполняется. Готово к review в PR #351. Зеркалит цепочку Reports (B-041). |
-| **B-026** | adr: Принятие структуры Analysis (Вариант C RFC B-025) | **P0** | B-025 | DONE | [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357) (PR [#360](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/360)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); RFC B-025 ([governance/rfc/2026-07-02-rfc-analysis-structure.md](rfc/2026-07-02-rfc-analysis-structure.md)); [ADR-005](../docs/adr/2026-07-adr-005-analysis-structure.md); `standards/adr-structure-standard.md` | Human decision gate выполнен: принят Вариант C (базовый стандарт Analysis + лёгкие профили `inventory`/`matrix`/`options`/`recommendation`), подтверждены routing `docs/analysis/`, relation-frontmatter, knowledge-lifecycle и границы Analysis ↔ Research ↔ Audit ↔ Report; Open Questions RFC B-025 закрыты делегированием в B-027/B-028/B-034; разблокирована B-027. Стандарт не создаётся, файлы не мигрируются. Зеркалит B-042/B-031. |
-| **B-027** | chore: Создание `standards/analysis-standard.md` | **P0** | B-026 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [ADR-005](../docs/adr/2026-07-adr-005-analysis-structure.md) (B-026); RFC B-025 ([governance/rfc/2026-07-02-rfc-analysis-structure.md](rfc/2026-07-02-rfc-analysis-structure.md)) | Стандарт структуры Analysis; prerequisite для плана миграции репо и cleanup Analysis-артефактов. Разблокирована после ADR-005. |
+| **B-025** | rfc: Структура Analysis-артефактов (базовый стандарт + профили подтипов + routing) | **P0** | B-024 | DONE | [#350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350) (PR [#351](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/351)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md) (B-024); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) (B-029); [RFC Reports](rfc/2026-07-02-rfc-reports-structure.md) (B-041); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | RFC ([governance/rfc/2026-07-02-rfc-analysis-structure.md](rfc/2026-07-02-rfc-analysis-structure.md), status `accepted` через [ADR-006](../docs/adr/2026-07-adr-006-analysis-structure.md)) — proposal-вход цепочки Analysis после инвентаризации B-024: фиксирует Вариант C (базовый стандарт Analysis + лёгкие профили `inventory`/`matrix`/`options`/`recommendation`), routing `docs/analysis/`, relation-метаданные, knowledge-lifecycle и границы Analysis ↔ Research ↔ Audit ↔ Report ↔ RFC ↔ ADR; decision gate (B-026) принят человеком в ADR-006. Стандарт/ADR не создаются, миграция не выполняется. Готово к review в PR #351. Зеркалит цепочку Reports (B-041). |
+| **B-026** | adr: Принятие структуры Analysis (Вариант C RFC B-025) | **P0** | B-025 | DONE | [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357) (PR [#360](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/360)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); RFC B-025 ([governance/rfc/2026-07-02-rfc-analysis-structure.md](rfc/2026-07-02-rfc-analysis-structure.md)); [ADR-006](../docs/adr/2026-07-adr-006-analysis-structure.md); `standards/adr-structure-standard.md` | Human decision gate выполнен: принят Вариант C (базовый стандарт Analysis + лёгкие профили `inventory`/`matrix`/`options`/`recommendation`), подтверждены routing `docs/analysis/`, relation-frontmatter, knowledge-lifecycle и границы Analysis ↔ Research ↔ Audit ↔ Report; Open Questions RFC B-025 закрыты делегированием в B-027/B-028/B-034; разблокирована B-027. Стандарт не создаётся, файлы не мигрируются. Зеркалит B-042/B-031. |
+| **B-027** | chore: Создание `standards/analysis-standard.md` | **P0** | B-026 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [ADR-006](../docs/adr/2026-07-adr-006-analysis-structure.md) (B-026); RFC B-025 ([governance/rfc/2026-07-02-rfc-analysis-structure.md](rfc/2026-07-02-rfc-analysis-structure.md)) | Стандарт структуры Analysis; prerequisite для плана миграции репо и cleanup Analysis-артефактов. Разблокирована после ADR-006. |
 | **B-028** | chore: Cleanup и модернизация Analysis-артефактов | **P2** | B-027 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); analysis-аудит B-024; `standards/analysis-standard.md` | Пост-standard cleanup: убрать дубли, обновить frontmatter/cross-references и индексы без преждевременной миграции. |
 | **B-029** | analysis: Сквозной анализ артефактов Audit (Хаб, Mango, Clarify) | **P0** | B-020 | DONE | [#344](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/344) (PR [#347](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/347)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); B-020; [B-024 Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md); [B-024 matrix](../research/hub/exp/analysis-inventory-342/2026-07-02-analysis-artifact-matrix.md) | Даёт входные данные для `audit-standard.md`: 29 Audit-кандидатов, compliance targets, evidence/deviation models, masked audits and B-033 modernization candidates. Cleanup не выполнялся. |
 | **B-030** | rfc: Стандарт структуры Audit | **P0** | B-029 | review | [#352](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/352) (PR [#353](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/353)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) (B-029); [RFC](rfc/2026-07-02-rfc-audit-structure.md); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | Proposal-stage для Audit: Вариант C (базовый стандарт Audit + 4-компонентная модель compliance target / evidence model / verdict-finding / deviation handling), routing `docs/audit/`, разграничение Audit-процесс vs audit-report output (координация с Reports B-043) и границы Audit ↔ Research ↔ Analysis ↔ Report (delegate на B-029). Decision gate — future ADR (B-031). Готово к review в PR #353. |
-| **B-031** | adr: Принятие `audit-standard` | **P0** | B-030 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий RFC B-030; `standards/adr-structure-standard.md` | Decision gate перед нормативным Audit standard и последующей модернизацией audit/report artifacts. |
-| **B-032** | chore: Создание `standards/audit-standard.md` | **P0** | B-031 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий ADR B-031 | Стандарт структуры Audit; prerequisite для плана миграции репо и cleanup Audit-артефактов. |
+| **B-031** | adr: Принятие `audit-standard` | **P0** | B-030 | DONE | [#358](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358) (PR [#361](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/361)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md)); [ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md); [ADR-004](../docs/adr/2026-07-adr-004-reports-structure.md); `standards/adr-structure-standard.md` | Human decision gate выполнен: принят Вариант C из RFC B-030 (базовый стандарт Audit + 4-компонентная модель compliance target / evidence model / verdict-finding / deviation handling), подтверждён routing `docs/audit/`, frontmatter с audit-specific метаданными, knowledge-lifecycle и разграничение Audit-процесс (B-032) vs audit-report output (B-043); open questions RFC B-030 закрыты/делегированы (физический дом audit reports уже решён в ADR-004 v0.3). Разблокирована B-032. Зеркалит B-026/B-042. |
+| **B-032** | chore: Создание `standards/audit-standard.md` | **P0** | B-031 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md) (B-031); RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md)) | Стандарт структуры Audit; разблокирован после ADR-005. Prerequisite для плана миграции репо и cleanup Audit-артефактов. Зеркалит B-027/B-043. |
 | **B-033** | chore: Cleanup и модернизация Audit-артефактов | **P2** | B-032 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); audit-аудит B-029; `standards/audit-standard.md` | Пост-standard cleanup: убрать дубли/конкурирующие файлы, обновить frontmatter, cross-references, artifact-map и индексы. |
 | **B-034** | rfc: План миграции репо Хаба после стандартов Research/Analysis/Audit | **P1** | B-018, B-027, B-032 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); ADR-001/ADR-002; будущие R/A/A standards | Фиксирует, что физическая реструктуризация репо — отдельный RFC после всех трёх стандартов, а не этап стандартизации. |
 | **B-035** | Реорганизация `backlog.md` в каталог `pr-ops/backlog/` (contract + active + archive) | **P3** | B-016..B-023, B-034 | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297) | Текущий монолитный бэклог функционален. Реорганизация — гигиеническая задача после стабилизации research/analysis/audit цепочек. Триггер повышения до P1 — review pain из-за размера бэклога. |
@@ -1251,7 +1251,7 @@ RFC не выполняет cleanup, не создаёт ADR (B-026) и стан
 **Приоритет:** P0
 **Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
 issue [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357) (PR [#360](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/360));
-RFC B-025; [ADR-005](../docs/adr/2026-07-adr-005-analysis-structure.md);
+RFC B-025; [ADR-006](../docs/adr/2026-07-adr-006-analysis-structure.md);
 [ADR Structure Standard](../standards/adr-structure-standard.md)
 **Зависимости:** B-025
 **Статус:** DONE
@@ -1263,13 +1263,13 @@ ADR фиксирует human decision между RFC proposal и нормати�
 инициатива, а не принятое governance-решение.
 
 **Что нужно сделать:**
-1. Создать `docs/adr/YYYY-MM-adr-NNN-analysis-structure.md`. ✅ ADR-005.
+1. Создать `docs/adr/YYYY-MM-adr-NNN-analysis-structure.md`. ✅ ADR-006.
 2. Зафиксировать принятое решение по structure, lifecycle and routing Analysis. ✅
 3. Указать impacted artifacts and consequences for B-027, B-028 and migration
    RFC B-034. ✅
 
 **Ожидаемые артефакты:**
-- [`docs/adr/2026-07-adr-005-analysis-structure.md`](../docs/adr/2026-07-adr-005-analysis-structure.md) (new ADR)
+- [`docs/adr/2026-07-adr-006-analysis-structure.md`](../docs/adr/2026-07-adr-006-analysis-structure.md) (new ADR)
 
 **Критерии приёмки (DoD):**
 - [x] ADR follows `standards/adr-structure-standard.md`.
@@ -1478,15 +1478,18 @@ surface, but Audit is defined by conformance checking.
 
 **Приоритет:** P0
 **Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
-будущий RFC B-030;
+[issue #358](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358) (PR [#361](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/361));
+RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md));
+[ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md);
 [ADR Structure Standard](../standards/adr-structure-standard.md)
 **Зависимости:** B-030
-**Статус:** TODO
+**Статус:** DONE
 **Режим работы:** `Structured`
 
 **Контекст:**
 ADR is the human decision gate that accepts or corrects the Audit RFC before the
-normative standard is written.
+normative standard is written. Выполнено в
+[ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md).
 
 **Что нужно сделать:**
 1. Создать `docs/adr/YYYY-MM-adr-NNN-audit-standard.md`.
@@ -1495,14 +1498,14 @@ normative standard is written.
 3. List impacted artifacts, cleanup implications and migration planning impact.
 
 **Ожидаемые артефакты:**
-- `docs/adr/YYYY-MM-adr-NNN-audit-standard.md` (new ADR)
+- `docs/adr/2026-07-adr-005-audit-structure.md` (new ADR)
 
 **Критерии приёмки (DoD):**
-- [ ] ADR follows `standards/adr-structure-standard.md`.
-- [ ] Decision accepts or explicitly corrects RFC B-030.
-- [ ] Consequences name `standards/audit-standard.md`, cleanup B-033 and
+- [x] ADR follows `standards/adr-structure-standard.md`.
+- [x] Decision accepts or explicitly corrects RFC B-030.
+- [x] Consequences name `standards/audit-standard.md`, cleanup B-033 and
       migration RFC B-034.
-- [ ] Validation and supersession rules are explicit.
+- [x] Validation and supersession rules are explicit.
 
 **Обоснование приоритета:**
 P0: accepted Audit standard needs a decision record, because it controls routing
@@ -1517,8 +1520,9 @@ Keep rationale concise. The detailed proposal stays in RFC B-030.
 
 **Приоритет:** P0
 **Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
-будущий ADR B-031
-**Зависимости:** B-031
+[ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md) (B-031);
+RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md))
+**Зависимости:** B-031 (разблокирован ADR-005)
 **Статус:** TODO
 **Режим работы:** `Structured`
 
@@ -1919,7 +1923,7 @@ flowchart TD
     B023["B-023 · P2<br/>validator support<br/>exp/ + routing"]
     B024["B-024 · P0<br/>Analysis artifacts<br/>cross-repo inventory"]
     B025["B-025 · P0<br/>RFC analysis-standard<br/>structure + routing"]
-    B026["B-026 · DONE<br/>ADR-005 analysis structure<br/>human decision"]
+    B026["B-026 · DONE<br/>ADR-006 analysis structure<br/>human decision"]
     B027["B-027 · P0<br/>analysis-standard.md<br/>structure standard"]
     B028["B-028 · P2<br/>Analysis cleanup<br/>modernization"]
     B029["B-029 · P0<br/>Audit artifacts<br/>cross-repo inventory"]

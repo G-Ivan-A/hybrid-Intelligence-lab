@@ -419,19 +419,21 @@ Post-acceptance делегирование: обязательная норма 
 
 ## Open Questions
 
-Только вопросы, блокирующие/уточняющие acceptance (все — non-blocking для этого
-proposal-этапа; закрываются в ADR B-031 или делегируются в B-032/B-033):
+Все вопросы закрыты как resolved/delegated и не блокируют proposal-этап:
 
 1. **Физический дом audit reports** (`docs/audit/` vs `docs/report/` с
-   `report-subtype: audit`) — делегировано в координацию B-032 ↔ B-043; инвариант:
-   4-компонентная модель фиксирует Audit-стойку независимо от итогового пути.
-2. **Судьба evidence/statistics output** (B-029 §2.3, §5.4) — сохранять как
-   evidence links, а не форсировать в audit-report форму; операционное правило —
-   в B-032/B-033.
-3. **Модернизация legacy** (`_v1`, `#`-имена, masked audits) — делегировано в
-   B-033 после того, как стандарт определит required compatibility behavior.
-4. **Governance-audits Mango** (`governance/audit-*.md`) — relation-метаданные vs
-   merge; решается в B-033, не удаляется до стандарта (B-029 §6).
+   `report-subtype: audit`) — закрыто: Решено в ADR-004 v0.3 (routing split).
+   Audit-reports физически размещаются в `docs/audit/`; 4-компонентная модель
+   фиксирует Audit-стойку независимо от пути.
+2. **Судьба evidence/statistics output** (B-029 §2.3, §5.4) — закрыто:
+   Делегировано в B-032/B-033. Сохранять как evidence links, а не форсировать в
+   audit-report форму; операционное правило — в B-032/B-033.
+3. **Модернизация legacy** (`_v1`, `#`-имена, masked audits) — закрыто:
+   Делегировано в B-033 после того, как стандарт определит required compatibility
+   behavior.
+4. **Governance-audits Mango** (`governance/audit-*.md`) — закрыто: Делегировано
+   в B-033. Relation-метаданные vs merge решается там; артефакты не удаляются до
+   стандарта (B-029 §6).
 
 ## Related Artifacts
 

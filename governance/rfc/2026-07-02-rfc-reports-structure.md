@@ -411,17 +411,18 @@ ADR-004 (B-042). Этот RFC сохраняет context, alternatives, trade-of
 ADR-004 закрыл decision-gate вопросы, которые были открыты в RFC:
 
 1. Финальный канонический путь `docs/report/` (singular) и реконсиляция строки
-   routing ADR-002 (`docs/reports/`) — **решено** в ADR-004: `docs/report/`.
-2. Физический дом audit reports (`docs/report/` vs `docs/audit/`) —
-   **делегировано** в B-043 и будущий Audit standard B-030; инвариант ADR-004:
-   `report-subtype: audit` фиксирует подтип независимо от миграции пути.
-3. Statistics vs research evidence — **делегировано** в B-043 и
+   routing ADR-002 (`docs/reports/`) — закрыто: Решено в ADR-004.
+2. Физический дом audit reports (`docs/report/` vs `docs/audit/`) — закрыто:
+   Решено в ADR-004 v0.3. Audit-reports физически размещаются в `docs/audit/`,
+   general/statistics reports — в `docs/report/`; `report-subtype: audit`
+   фиксирует подтип независимо от физического split.
+3. Statistics vs research evidence — закрыто: Делегировано в B-043 и
    research-evidence policy; инвариант ADR-004: reproducible evidence остаётся в
    `research/<domain>/exp/*`, Report-mirror создаётся только при отдельном
    lifecycle.
-4. Триггер B — **решено на уровне критерия** в ADR-004: профиль выделяется в
-   отдельный стандарт только при повторяющихся subtype-specific mandatory rules
-   или review pain; операционные пороги задаёт B-043.
+4. Триггер B — закрыто: Решено в ADR-004. Профиль выделяется в отдельный стандарт
+   только при повторяющихся subtype-specific mandatory rules или review pain;
+   операционные пороги задаёт B-043.
 
 ## Related Artifacts
 

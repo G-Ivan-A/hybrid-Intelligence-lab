@@ -17,7 +17,7 @@ rfc-scope: A
 | RFC status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Source issue | [#350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350); контекст [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296), [#342](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/342), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
 | Impacted artifacts | future `standards/analysis-standard.md` (B-027), future ADR B-026, `docs/analysis/*`, `research/**` (legacy Analysis), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `standards/research-standard.md` (routing R/A/A уже задан), `governance/backlog.md`, `governance/artifact-map.md`, `governance/rfc/README.md`, `CHANGELOG.md`, `tools/validate-repository-structure.sh` (постановка на учёт) |
-| Decision record | [ADR-005](../../docs/adr/2026-07-adr-005-analysis-structure.md) (B-026, issue [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357)) — принят Вариант C |
+| Decision record | [ADR-006](../../docs/adr/2026-07-adr-006-analysis-structure.md) (B-026, issue [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357)) — принят Вариант C |
 | Implementation link | not yet (future `standards/analysis-standard.md`, B-027) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
 
@@ -438,8 +438,8 @@ RFC.
 
 Текущее состояние: `accepted` — required-секции полны, локальная валидация
 проходит, и решение зафиксировано через ADR B-026 (human decision gate),
-[ADR-005](../../docs/adr/2026-07-adr-005-analysis-structure.md). Переход в
-`accepted` выполнен ADR-005; до него RFC оставался proposal.
+[ADR-006](../../docs/adr/2026-07-adr-006-analysis-structure.md). Переход в
+`accepted` выполнен ADR-006; до него RFC оставался proposal.
 
 ```mermaid
 flowchart LR
@@ -470,20 +470,22 @@ Post-acceptance делегирование: обязательная норма 
 
 ## Open Questions
 
-Только non-blocking вопросы, делегированные в ADR B-026 / стандарт B-027:
+Все вопросы закрыты как non-blocking и делегированы в downstream-задачи:
 
-1. **Набор профилей подтипов.** Достаточно ли `inventory | matrix | options |
-   recommendation`, или корпус потребует иных форм? Делегировано в B-027;
-   инвариант: базовый стандарт не зависит от финального набора профилей.
-2. **Физический дом legacy Analysis.** 6 Analysis под `research/` (B-024 §2.2):
-   метаданные in place или перенос в `docs/analysis/`? Делегировано в план миграции
-   B-028/B-034; инвариант: routing `docs/analysis/` каноничен, миграция — после
-   стандарта.
-3. **Пороги триггера B.** Когда именно профиль выделяется в отдельный стандарт?
-   Делегировано в B-027 как anti-inflation criterion (зеркалит Reports Open
-   Question 4).
-4. **`analysis-subtype` обязателен ли для process outputs?** Делегировано в B-027;
-   инвариант: subtype опционален в базе, обязательность — вопрос стандарта.
+1. **Набор профилей подтипов.** Закрыто: Делегировано в B-027 (стандарт).
+   Достаточно ли `inventory | matrix | options | recommendation`, или корпус
+   потребует иных форм, решает стандарт; инвариант: базовый стандарт не зависит от
+   финального набора профилей.
+2. **Физический дом legacy Analysis.** Закрыто: Делегировано в B-028/B-034 (план
+   миграции). Для 6 Analysis под `research/` (B-024 §2.2) план определит
+   метаданные in place или перенос в `docs/analysis/`; инвариант: routing
+   `docs/analysis/` каноничен, миграция — после стандарта.
+3. **Пороги триггера B.** Закрыто: Делегировано в B-027 (стандарт). Когда именно
+   профиль выделяется в отдельный стандарт, B-027 фиксирует как anti-inflation
+   criterion (зеркалит Reports Open Question 4).
+4. **`analysis-subtype` обязателен ли для process outputs?** Закрыто:
+   Делегировано в B-027 (стандарт); инвариант: subtype опционален в базе,
+   обязательность — вопрос стандарта.
 
 Ни один из вопросов не блокирует ADR B-026.
 

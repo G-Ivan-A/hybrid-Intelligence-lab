@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.38
+version: 1.39
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,7 +13,7 @@ All notable repository governance changes are documented here.
 
 ### Added
 
-- adr: Создан `docs/adr/2026-07-adr-005-analysis-structure.md` (accepted) —
+- adr: Создан `docs/adr/2026-07-adr-006-analysis-structure.md` (accepted) —
   human decision gate по структуре Analysis для B-026 / issue #357. ADR
   фиксирует принятое человеком решение принять **Вариант C** из RFC B-025
   (базовый стандарт Analysis + опциональные лёгкие профили подтипов
@@ -30,10 +30,27 @@ All notable repository governance changes are documented here.
   B-028/B-034; пороги триггера B → B-027. ADR применяет section-level delegation
   (не пересказывает proposal/alternatives/trade-offs RFC), разблокирует стандарт
   B-027 и cleanup B-028, но не создаёт стандарт и не мигрирует файлы. RFC B-025
-  переведён в `accepted` (v0.2, decision record — ADR-005). `governance/backlog.md`
+  переведён в `accepted` (v0.2, decision record — ADR-006). `governance/backlog.md`
   (B-026 → DONE, B-027 разблокирована), `governance/artifact-map.md`,
   `governance/rfc/README.md` и структурный валидатор обновлены. Зеркалит цепочку
   Reports (ADR-004 / B-042).
+- adr: Создан `docs/adr/2026-07-adr-005-audit-structure.md` (status `accepted`) —
+  ADR-005 / human decision gate для B-031 / issue #358. ADR фиксирует принятие
+  **Варианта C** из RFC B-030: базовый стандарт Audit + **4-компонентная модель**
+  (`compliance target` / `evidence model` / `verdict-finding` / `deviation
+  handling`), подтверждение routing `docs/audit/YYYY-MM-DD-name.md` (без ADR-002-
+  дрейфа, делегирован в `research-standard.md`), frontmatter с audit-specific
+  метаданными (`audit_target`/`evidence_model`/`verdict` обязательны;
+  `severity_scale`/`follow_up`/`related_norm` опциональны), knowledge-lifecycle
+  (`draft → reviewed → canonical → superseded`) и разграничение Audit-процесс
+  (B-032) vs audit-report output (B-043). Open questions RFC B-030 закрыты или
+  делегированы: физический дом audit reports уже решён в ADR-004 v0.3
+  (`docs/audit/`), а evidence/statistics output, модернизация legacy и
+  governance-audits Mango делегированы в B-032/B-033. ADR применяет section-level
+  delegation (proposal, alternatives A/B/C/D, trade-offs остаются в RFC B-030),
+  не создаёт стандарт (B-032) и не мигрирует файлы (B-033). Разблокирована B-032.
+  Обновлены `governance/artifact-map.md`, `governance/backlog.md` (B-031 → DONE,
+  B-032 разблокирована) и структурный валидатор.
 - rfc: Создан `governance/rfc/2026-07-02-rfc-audit-structure.md` — draft RFC
   для B-030 / issue #352. RFC предлагает (не нормирует) структуру Audit-
   артефактов на входе цепочки стандартизации после инвентаризации B-029:
