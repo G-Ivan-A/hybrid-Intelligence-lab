@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.15
+version: 1.16
 updated: 2026-07-02
 temperature: 0.1
 type: backlog
@@ -55,10 +55,16 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/302"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/314"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/318"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/326"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -196,10 +202,10 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-013** | 💡 Промоут `backlog.md` в `canonical` и завести issues по утверждённым P1 | **P1** | (этот PR) | DONE | [#107](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/107) | Креативное улучшение агента-исполнителя | Замыкает маршрут «бэклог → issues»; без него бэклог остаётся планом без исполнения. |
 | **B-014** | 💡 Лёгкий «governance health»: регулярный прогон валидаторов + мониторинг триггеров | **P3** | — | TODO | — (отложено) | Креативное улучшение агента-исполнителя | Ценно, но боль возникнет позже; внедряется по триггеру, не сейчас. |
 | **B-015** | RFC: Валидатор frontmatter, миграция статусов и approved list | **P2** | RFC/ADR structure standards | TODO | — (tech debt) | [Ripple Effects 282](../research/hub/2026-06-28-ripple-effects-282-research.md); issue [#286](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/286) | Нужен отдельный RFC/implementation path для routing, status migration, approved fields and CI modes; issue #286 сознательно не меняет validator/migration rules. |
-| **B-016** | RFC: Структура research, контейнер `exp/` и маршрутизация Research/Analysis/Audit | **P0** | — | DONE | [#302](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/302) (accepted через ADR-003; issue [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322), PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) | Запустил согласованную цепочку Research → RFC → ADR → Standard и снял неоднозначность `exp-*`/`outputs` vs `runs/` на proposal/decision level. |
-| **B-017** | ADR: Принять стандарт структуры research | **P0** | B-016 | DONE | [#314](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/314) (ADR-003 accepted; issue [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322), PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); RFC B-016 | Фиксирует human decision до стандарта; обязательное правило делегировано в B-018/B-019. |
-| **B-018** | Создать `standards/research-standard.md` как стандарт структуры research | **P0** | B-017 | review | [#318](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/318) (standard в review, PR [#319](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/319)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); ADR-003 (B-017) | Заменяет профиль полноценным стандартом: `research/`, `exp/`, запрет `outputs/`, routing по типам задач. |
-| **B-019** | ADR-002 addendum: граница `exp/` vs `runs/` | **P0** | B-018 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290) | Устраняет коллизию между research evidence corpus и operational run record. |
+| **B-016** | RFC: Структура research, контейнер `exp/` и маршрутизация Research/Analysis/Audit | **P0** | — | DONE | [#302](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/302) (PR [#303](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/303); accepted через ADR-003: issue [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322), PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) | Запустил согласованную цепочку Research → RFC → ADR → Standard и снял неоднозначность `exp-*`/`outputs` vs `runs/` на proposal/decision level. |
+| **B-017** | ADR: Принять стандарт структуры research | **P0** | B-016 | DONE | [#314](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/314) (PR [#315](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/315); ADR-003 accepted: issue [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322), PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); RFC B-016 | Фиксирует human decision до стандарта; обязательное правило делегировано в B-018/B-019. |
+| **B-018** | Создать `standards/research-standard.md` как стандарт структуры research | **P0** | B-017 | DONE | [#318](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/318) (PR [#319](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/319)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); ADR-003 (B-017) | Заменяет профиль полноценным стандартом: `research/`, `exp/`, запрет `outputs`, routing по типам задач. |
+| **B-019** | ADR-002 addendum: граница `exp/` vs `runs/` | **P0** | B-018 | DONE | [#326](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/326) (PR [#327](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/327)) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290) | Устраняет коллизию между research evidence corpus и operational run record. |
 | **B-020** | Обновить `standards/glossary.md`: Research / Analysis / Audit / RFC / ADR / Standard | **P1** | B-019 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) | Закрепляет терминологическую границу, чтобы новые routing-правила не размывались в следующих задачах. |
 | **B-021** | Удалить `standards/research-profile.md` после замены стандартом | **P1** | B-020 | TODO | — (planned) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); `standards/research-profile.md` | Убирает конкурирующий источник истины; требует CHANGELOG entry и проверки ссылок. |
 | **B-022** | Мигрировать существующие `exp-*` в контейнер `exp/`, убрать `outputs/` | **P2** | B-018, B-019 | TODO | — (tech debt) | Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); текущие `research/hub/exp-*` | Физическая миграция полезна, но должна идти после стандарта, чтобы не закрепить новый дрейф. |
@@ -218,14 +224,14 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-035** | Реорганизация `backlog.md` в каталог `pr-ops/backlog/` (contract + active + archive) | **P3** | B-016..B-023, B-034 | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297) | Текущий монолитный бэклог функционален. Реорганизация — гигиеническая задача после стабилизации research/analysis/audit цепочек. Триггер повышения до P1 — review pain из-за размера бэклога. |
 | **B-036** | Зафиксировать 3-tier amendment policy в `AI_GOVERNANCE.md` | **P2** | — | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297); [docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md](../docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md) | Блокирует корректное выполнение Tier 1/2 правок без бюрократии. Без policy агент будет либо игнорировать малые правки (дрейф), либо запускать полный цикл RFC→ADR на каждое уточнение (паралич). |
 | **B-037** | Обновить `validate-repository-structure.sh` под каталог `pr-ops/backlog/` (2FA-исключение) | **P3** | B-035 | TODO | — (tech debt) | Согласование в чате 2026-06-30; [tools/validate-repository-structure.sh](../tools/validate-repository-structure.sh) | Делает новую структуру бэклога исполнимой. Выполняется после физической реорганизации. |
-| **B-038** | analysis: Инвентаризация и границы Reports-артефактов (аудит / отчёт / статистика) | **P1** | B-020 | review | [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310) (PR [#312](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/312)) | Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); согласование в чате 2026-07-01; [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); [placement report](../docs/report/2026-07-01-reports-inventory-placement-analysis.md) | Reports — базовый подкаталог `docs/`; канонический путь зафиксирован как `docs/report/` (единственное число) по видению фаундера §3 и review PR #312. Inventory готовит границы с Analysis/Audit и scope будущего стандарта перед планом миграции репо (B-034). |
-| **B-039** | audit: Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard | **P1** | B-017, B-018 | review | [#320](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320) (PR [#321](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/321)) | Root-cause отчёт [docs/report/2026-07-01-rfc-adr-duplication-analysis.md](../docs/report/2026-07-01-rfc-adr-duplication-analysis.md) (issue #316); `standards/adr-structure-standard.md`, `standards/rfc-structure-standard.md`, `standards/glossary.md`; [audit](../docs/audit/2026-07-01-documentation-boundary-audit.md) | Аудит 5 IL-3 артефактов на дублирование, proposal-обёртку и смешение словарей по трём измерениям. Вердикты без блокеров (ADR-003 ремедиирован); зафиксированы причины (смешение терминов Standard/Contract, шаблон ADR, отсутствие overlap-guard) vs последствия и трёхуровневые рекомендации по лечению причин. Правки артефактов/стандартов — отдельные задачи (Tier 2). |
-| **B-040** | adr + standard: Принять ADR-003 и устранить причинные дефекты стандартов | **P0** | B-039, B-017, B-018 | review | [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322) (PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323)) | [audit](../docs/audit/2026-07-01-documentation-boundary-audit.md); ADR-003; RFC B-016; `standards/adr-structure-standard.md`; `standards/rfc-structure-standard.md`; `standards/research-standard.md` | Tier 2 remediation причин F-01/F-07/F-07-parallel/F-08: Standard≠Contract, section-level delegation, Research→RFC delegation, metadata placeholder update rule and ADR acceptance checklist. |
-| **B-045** | research: Режимы выполнения задач для ИИ-агентов — индустриальные нормы и паттерны классификации | **P1** | B-016, B-018 | review | [#330](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330) (PR [#331](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/331)) | Видение фаундера ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/glossary.md` (Operating Mode); [research-отчёт](../research/hub/2026-07-02-task-execution-modes-research.md); [experiment](../research/hub/exp/task-execution-modes-330/README.md) | Research + Creative + Deep Think от лица 4 экспертов: индустриальные нормы (Cynefin/Bloom/Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL), паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал как решающий вход. Без предложения решений, новых режимов и стандартов — только исследование, паттерны, тесты, выводы. |
-| **B-041** | rfc: Структура Reports-артефактов (базовый стандарт + профили подтипов + routing) | **P1** | B-038 | review | [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) (PR [#329](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/329)) | [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md) (B-038); [Reports industry norms](../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md); Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/rfc-structure-standard.md` | RFC — proposal-вход цепочки стандартизации Reports после инвентаризации B-038: фиксирует Вариант C (базовый стандарт Report + лёгкие профили `audit`/`report`/`statistics`), канонический routing `docs/report/`, relation-метаданные и границы Reports ↔ Analysis ↔ Audit; выносит decision gate (B-042) человеку перед нормативным стандартом (B-043). Зеркалит цепочки Analysis (B-025) и Audit (B-030). |
+| **B-038** | analysis: Инвентаризация и границы Reports-артефактов (аудит / отчёт / статистика) | **P1** | B-020 | DONE | [#307](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307) (PR [#308](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/308)); [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310) (PR [#312](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/312)) | Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); согласование в чате 2026-07-01; [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); [placement report](../docs/report/2026-07-01-reports-inventory-placement-analysis.md) | Reports — базовый подкаталог `docs/`; канонический путь зафиксирован как `docs/report/` (единственное число) по видению фаундера §3 и review PR #312. Inventory готовит границы с Analysis/Audit и scope будущего стандарта перед планом миграции репо (B-034). |
+| **B-039** | audit: Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard | **P1** | B-017, B-018 | DONE | [#320](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320) (PR [#321](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/321)) | Root-cause отчёт [docs/report/2026-07-01-rfc-adr-duplication-analysis.md](../docs/report/2026-07-01-rfc-adr-duplication-analysis.md) (issue #316); `standards/adr-structure-standard.md`, `standards/rfc-structure-standard.md`, `standards/glossary.md`; [audit](../docs/audit/2026-07-01-documentation-boundary-audit.md) | Аудит 5 IL-3 артефактов на дублирование, proposal-обёртку и смешение словарей по трём измерениям. Вердикты без блокеров (ADR-003 ремедиирован); зафиксированы причины (смешение терминов Standard/Contract, шаблон ADR, отсутствие overlap-guard) vs последствия и трёхуровневые рекомендации по лечению причин. Правки артефактов/стандартов — отдельные задачи (Tier 2). |
+| **B-040** | adr + standard: Принять ADR-003 и устранить причинные дефекты стандартов | **P0** | B-039, B-017, B-018 | DONE | [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322) (PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323)) | [audit](../docs/audit/2026-07-01-documentation-boundary-audit.md); ADR-003; RFC B-016; `standards/adr-structure-standard.md`; `standards/rfc-structure-standard.md`; `standards/research-standard.md` | Tier 2 remediation причин F-01/F-07/F-07-parallel/F-08: Standard≠Contract, section-level delegation, Research→RFC delegation, metadata placeholder update rule and ADR acceptance checklist. |
+| **B-041** | rfc: Структура Reports-артефактов (базовый стандарт + профили подтипов + routing) | **P1** | B-038 | DONE | [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) (PR [#329](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/329)) | [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md) (B-038); [Reports industry norms](../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md); Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/rfc-structure-standard.md` | RFC — proposal-вход цепочки стандартизации Reports после инвентаризации B-038: фиксирует Вариант C (базовый стандарт Report + лёгкие профили `audit`/`report`/`statistics`), канонический routing `docs/report/`, relation-метаданные и границы Reports ↔ Analysis ↔ Audit; выносит decision gate (B-042) человеку перед нормативным стандартом (B-043). Зеркалит цепочки Analysis (B-025) и Audit (B-030). |
 | **B-042** | adr: Принятие структуры Reports + реконсиляция routing ADR-002 (`docs/reports/` → `docs/report/`) | **P1** | B-041 | TODO | — (planned) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); будущий RFC B-041 ([governance/rfc/2026-07-02-rfc-reports-structure.md](rfc/2026-07-02-rfc-reports-structure.md)); [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md); `standards/adr-structure-standard.md` | Human decision gate: принимает/отклоняет Вариант C и канонический `docs/report/`, реконсилирует строку routing ADR-002 (`docs/reports/` → `docs/report/`) как single decision source перед нормативным стандартом. Зеркалит B-026/B-031. |
 | **B-043** | chore: Создание `standards/report-standard.md` (базовый стандарт Report + профили подтипов) | **P1** | B-042 | TODO | — (planned) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); будущий ADR B-042; будущий RFC B-041; [Reports industry norms §12](../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) | Нормативно фиксирует базу + профили `audit`/`report`/`statistics`, frontmatter с relation-метаданными, lifecycle (draft → reviewed → canonical → superseded) и routing; делает предложение RFC исполнимым. Prerequisite для cleanup Reports-артефактов. Зеркалит B-027/B-032. |
 | **B-044** | chore: Cleanup и модернизация Reports-артефактов (миграция кандидатов в `docs/report/`) | **P2** | B-043, B-034 | TODO | — (tech debt) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); [Reports inventory §5](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); будущий standard B-043; план миграции репо B-034 | Пост-standard cleanup: обновить frontmatter (`report-subtype`, relation-поля), убрать дубли/замаскированные отчёты, cross-references, artifact-map и индексы; координируется с планом миграции репо (B-034). Зеркалит B-028/B-033. |
+| **B-045** | research: Режимы выполнения задач для ИИ-агентов — индустриальные нормы и паттерны классификации | **P1** | B-016, B-018 | DONE | [#330](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330) (PR [#331](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/331)) | Видение фаундера ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/glossary.md` (Operating Mode); [research-отчёт](../research/hub/2026-07-02-task-execution-modes-research.md); [experiment](../research/hub/exp/task-execution-modes-330/README.md) | Research + Creative + Deep Think от лица 4 экспертов: индустриальные нормы (Cynefin/Bloom/Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL), паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал как решающий вход. Без предложения решений, новых режимов и стандартов — только исследование, паттерны, тесты, выводы. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
@@ -874,7 +880,7 @@ P0, потому что это обязательный decision gate перед
 [issue #294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294);
 ADR-003 (B-017)
 **Зависимости:** B-017
-**Статус:** review (PR [#319](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/319))
+**Статус:** DONE (issue #318 / PR [#319](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/319))
 **Режим работы:** `Structured`
 
 **Контекст:**
@@ -916,10 +922,11 @@ migration и validator не имеют стабильной базы.
 
 **Приоритет:** P0
 **Источник:** 🔗 [issue #294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294);
+[issue #326](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/326);
 [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md);
 [audit issue #290](../docs/audit/2026-06-29-research-artifact-format-contract-audit.md)
 **Зависимости:** B-018
-**Статус:** TODO
+**Статус:** DONE (issue #326 / PR [#327](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/327))
 **Режим работы:** `Structured`
 
 **Контекст:**
@@ -936,12 +943,12 @@ record.
 4. Указать, как читать legacy `exp-*` до миграции B-022.
 
 **Ожидаемые артефакты:**
-- `docs/adr/2026-06-adr-002-addendum-exp-boundary.md` (новый addendum)
+- `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (addendum B-019)
 
 **Критерии приёмки (DoD):**
-- [ ] Addendum ссылается на ADR-002, standard B-018 и audit #290.
-- [ ] Граница `exp/` vs `runs/` описана без противоречия с routing table ADR-002.
-- [ ] Legacy state и future migration path явно названы.
+- [x] Addendum ссылается на ADR-002, standard B-018 и audit #290.
+- [x] Граница `exp/` vs `runs/` описана без противоречия с routing table ADR-002.
+- [x] Legacy state и future migration path явно названы.
 
 **Обоснование приоритета:**
 P0, потому что именно эта коллизия стала корневой причиной issue #290 и sprint
@@ -1754,7 +1761,7 @@ prompt content.
 - **Внешние источники** `[GAP]`, `[EGA]`, `[AID]` не верифицированы независимо;
   используются как контекст рекомендаций команды С (граница анализа повторяет
   external-review).
-- **Статусы отражают факт на 2026-06-30.** Пересмотр — по триггерам раздела 7.
+- **Статусы отражают факт на 2026-07-02.** Пересмотр — по триггерам раздела 7.
 
 ---
 
@@ -1838,12 +1845,12 @@ Human Review:
 
 ## 10. Зависимости и критический путь
 
-Диаграмма зависимостей задач. B-010, B-008 и B-011 уже выполнены. Активный
-критический путь исходного бэклога ведёт к готовности Runtime-онбординга и
-связанной документации Кейса 2: `B-001 → B-002` и `B-001 → B-005`. Sprint issue
-#294 добавляет отдельный критический путь стандартизации research:
-`B-016 → B-017 → B-018 → B-019 → B-020 → B-021`. B-022 и B-023 — tech debt после
-принятого стандарта и addendum.
+Диаграмма зависимостей задач. B-008, B-010, B-011 и B-016..B-019 уже выполнены.
+Активный критический путь исходного бэклога ведёт к готовности
+Runtime-онбординга и связанной документации Кейса 2: `B-001 → B-002` и
+`B-001 → B-005`. Sprint issue #294 теперь продолжается с glossary/profile
+части: `B-020 → B-021`. B-022 и B-023 — tech debt после принятого стандарта и
+addendum.
 
 Issue #296 добавляет два параллельных sprint chains:
 `B-020 → B-024 → B-025 → B-026 → B-027 → B-028` для Analysis и
@@ -1867,10 +1874,10 @@ flowchart TD
     B013["B-013 · P1<br/>Промоут бэклога<br/>→ issues по P1"]
     B014["B-014 · P3<br/>governance health<br/>(по триггеру)"]
     B015["B-015 · P2<br/>frontmatter validator<br/>migration plan"]
-    B016["B-016 · P0<br/>RFC research structure<br/>exp/ + routing"]
-    B017["B-017 · P0<br/>ADR research structure<br/>human decision"]
-    B018["B-018 · P0<br/>research-standard.md<br/>structure standard"]
-    B019["B-019 · P0<br/>ADR-002 addendum<br/>exp/ vs runs/"]
+    B016["B-016 · DONE<br/>RFC research structure<br/>exp/ + routing"]
+    B017["B-017 · DONE<br/>ADR research structure<br/>human decision"]
+    B018["B-018 · DONE<br/>research-standard.md<br/>structure standard"]
+    B019["B-019 · DONE<br/>ADR-002 addendum<br/>exp/ vs runs/"]
     B020["B-020 · P1<br/>glossary terms<br/>R/A/A + RFC/ADR/Standard"]
     B021["B-021 · P1<br/>remove research-profile.md<br/>after replacement"]
     B022["B-022 · P2<br/>migrate exp-*<br/>remove outputs/"]
@@ -1925,9 +1932,9 @@ flowchart TD
     classDef norm fill:#e0f2fe,stroke:#0369a1,color:#0c4a6e;
     classDef done fill:#dcfce7,stroke:#166534,color:#14532d;
 
-    class B001,B002,B005,B016,B017,B018,B019,B024,B025,B026,B027,B029,B030,B031,B032,B034 crit;
+    class B001,B002,B005,B024,B025,B026,B027,B029,B030,B031,B032,B034 crit;
     class B003,B004,B006,B007,B013,B014,B015,B020,B021,B022,B023,B028,B033 norm;
-    class B008,B010,B011 done;
+    class B008,B010,B011,B016,B017,B018,B019 done;
 ```
 
 Чтение диаграммы: зелёные узлы уже выполнены; жёлтые узлы — активные critical

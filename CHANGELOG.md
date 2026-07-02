@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.32
+version: 1.33
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -33,8 +33,8 @@ All notable repository governance changes are documented here.
   Отчёт не предлагает решений, не вводит и не меняет режимы, не создаёт
   стандартов/контрактов. Зарегистрирован в `governance/artifact-map.md`; 21 новый
   внешний источник (`ext-137`…`ext-157`) добавлен в
-  `research/external-knowledge/external-sources-registry.md`; задача B-041 в
-  `governance/backlog.md` со статусом review.
+  `research/external-knowledge/external-sources-registry.md`; задача B-045
+  зарегистрирована в `governance/backlog.md`.
 - rfc: Создан `governance/rfc/2026-07-02-rfc-reports-structure.md` — Draft RFC
   структуры Reports-артефактов (B-041, issue #328). Режим Hybrid: каркас — из
   `standards/rfc-structure-standard.md`, креативная часть (формулировки
@@ -54,7 +54,7 @@ All notable repository governance changes are documented here.
   обязательная норма делегирована в будущий `standards/report-standard.md` (B-043),
   физическая миграция — в B-044. Зарегистрирован в `governance/artifact-map.md`,
   `governance/rfc/README.md` и структурном валидаторе; задачи B-041..B-044
-  добавлены в `governance/backlog.md` (B-041 — статус review).
+  добавлены в `governance/backlog.md`.
 
 - audit: Создан `docs/audit/2026-07-01-documentation-boundary-audit.md` — аудит
   коллизий интерпретации стандартов RFC/ADR/Standard (B-039, issue #320). Аудит
@@ -74,7 +74,7 @@ All notable repository governance changes are documented here.
   относительно canonical глоссария и IL-модели) флагуется для Tier 2 remediation
   в issue #322.
   Зарегистрирован в `governance/artifact-map.md`, `mkdocs.yml` и структурном
-  валидаторе; задача B-039 добавлена в `governance/backlog.md` со статусом review.
+  валидаторе; задача B-039 добавлена в `governance/backlog.md`.
 
 - standard: Создан `standards/research-standard.md` — стандарт (IL-3 reusable
   rule) структуры research-артефактов Хаба (B-018, issue #318). Стандарт принимает
@@ -87,94 +87,14 @@ All notable repository governance changes are documented here.
   для legacy `exp-*`. Стандарт становится replacement для
   `standards/research-profile.md` (физическое удаление профиля — B-021).
   Зарегистрирован в `standards/README.md`, `governance/artifact-map.md` и
-  структурном валидаторе; статус B-018 переведён в review в
+  структурном валидаторе; задача B-018 зарегистрирована в
   `governance/backlog.md`. Alternatives, trade-offs и rejected options не
   дублируются — они остаются в RFC B-016. По review-фидбэку PR #319 стандарт
-  зарегистрирован в `status: draft` (governance-vocabulary, ещё не accepted —
-  идёт review), frontmatter дополнен полями traceability (`executable`, `scope`,
+  зарегистрирован в `status: draft` (governance-vocabulary), frontmatter
+  дополнен полями traceability (`executable`, `scope`,
   `related_standards`, `related_issues`), и явно разведено противоречие
   lifecycle vs frontmatter: `standards/*.md` используют governance-vocabulary, а
   нормируемые research reports (`research/*.md`) — knowledge-vocabulary.
-
-### Changed
-
-- adr: Добавлен addendum B-019 к
-  `docs/adr/2026-06-adr-002-artifact-document-methodology.md` по issue #326.
-  ADR-002 теперь явно фиксирует границу `research/<domain>/exp/<issue-slug>/`
-  (research evidence corpus, всегда связан с parent dated report) vs `runs/`
-  (operational run record, не обязан быть связан с research), включает
-  нормативный критерий «один вопрос исполнителю» и ссылается на ADR-003 как
-  источник решения и RFC B-016 как источник rationale. Routing-таблица ADR-002
-  сохранена без конфликта: строка `Run record` остаётся правилом для
-  operational records, а research evidence routing делегирован
-  `standards/research-standard.md`.
-- adr + standard: Приняты ADR-003 и RFC B-016 по issue #322 / PR #323. Устранены
-  причинные дефекты F-01/F-07/F-07-parallel/F-08 из audit B-039: три structure
-  standards больше не смешивают Standard и Contract; ADR standard получил
-  section-level delegation, минимальный шаблон без invitation to duplicate и
-  acceptance checklist; RFC standard получил Research→RFC delegation и правило
-  обновления `Decision record` / `Implementation link`; backlog, artifact-map,
-  RFC index and CHANGELOG приведены к accepted/status и glossary-aligned
-  terminology.
-- chore: Исправлены точечные последствия audit B-039 по issue #324 после
-  acceptance issue #322. RFC B-016 сохраняет `status: accepted`, `version: 0.3`
-  и `updated: 2026-07-02`; forward-refs `not yet — будущий` заменены
-  фактическими ссылками на ADR-003 и `standards/research-standard.md`. ADR-003
-  сохраняет `status: accepted` и `version: 0.3`; пометка `будущий` у
-  `standards/research-standard.md` убрана. Supersession профиля разграничена:
-  ADR фиксирует human decision, `standards/research-standard.md` задаёт
-  technical replacement, физическое удаление профиля остаётся B-021.
-  `standards/research-standard.md` переведён с `version: 1.1` на draft-aligned
-  `version: 0.1`; `governance/artifact-map.md` синхронизирован с новой
-  формулировкой replacement.
-- adr: Устранено дублирование RFC B-016 в `docs/adr/2026-07-adr-003-research-structure.md`
-  по issue #316 (версия ADR `0.1` → `0.2`, решение и статус `proposed` не
-  изменены). Секция `Decision` больше не пересказывает Proposal P1–P4, а кратко
-  фиксирует «принять модель RFC B-016» со ссылками на разделы RFC; `Alternatives
-  Considered` делегирует полный разбор в RFC вместо копии таблицы; `Consequences`
-  оставляет только архитектурные последствия, а список задач B-018..B-023 отдан
-  RFC Impacted Artifacts и `governance/backlog.md`. `Decision Drivers` сжаты до
-  трёх. RFC B-016 и стандарты ADR/RFC не изменялись (ограничение issue #316).
-- correction: Fixed the placement of the issue #310 deliverables to conform to
-  RFC B-016 v0.2 before merge. Moved the reproducible experiment container from
-  the legacy sibling format `research/hub/exp-reports-inventory-310/` into the
-  target container `research/hub/exp/reports-inventory-310/` (P1) and flattened
-  it — the nested `outputs/` directory was removed so evidence files sit next to
-  the README and script (P2). Moved the inventory itself from
-  `research/hub/2026-07-01-reports-artifacts-inventory.md` to
-  `docs/analysis/2026-07-01-reports-artifacts-inventory.md` because an inventory
-  is an Analysis, not Research (P4 routing). Updated all links, the artifact-map,
-  backlog, research indexes, MkDocs navigation and the structure validator.
-  Recorded the root-cause analysis in
-  `docs/report/2026-07-01-reports-inventory-placement-analysis.md`.
-- backlog: Moved B-038 (Reports inventory and boundaries) from TODO to review,
-  linked issue #310 and PR #312, and recorded `docs/report/` (singular) as the
-  canonical Reports path per founder vision §3 and PR review. Physical migration
-  remains deferred to later Reports standardization and cleanup work.
-- chore: Перенесён report по гипотезе PR #303 из корневого
-  `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` в canonical
-  `docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` по issue #311.
-  Добавлен frontmatter `owner`, `type`, `context`, `method`, source и related
-  links; корневой каталог `reports/` удалён; registry, MkDocs navigation,
-  file-naming/frontmatter validators and standards updated for `docs/report/`.
-- rfc: Уточнен `governance/rfc/2026-06-30-rfc-research-structure.md` по issue
-  #306: добавлены явная матрица дельт A/B/C/D и таблица Boundary RFC/ADR для
-  подготовки к ADR B-017. Ошибка генерации PR #303 не подтверждена; гипотеза
-  проблемы признана частично существенной как minor completeness gap.
-- chore: Accepted the ADR/RFC structure RFCs for issue #286 and delegated their
-  normative standard rules into `standards/adr-structure-standard.md` and
-  `standards/rfc-structure-standard.md`. Registered both standards in
-  `standards/README.md`, `governance/artifact-map.md`,
-  `governance/rfc/README.md` and the structure validator; added backlog tech debt
-  for frontmatter validator routing, status migration and approved-field policy.
-- correction: Normalized Hub research artifact filenames from `YYYY-MM-name.md`
-  / `YYYY-name.md` to `YYYY-MM-DD-name.md` using git creation dates (issue
-  #271). Updated all repository links, MkDocs navigation, artifact-map entries,
-  the file-naming standards, spoke templates, and validation scripts so
-  research and spoke `docs/analysis/` artifacts sort correctly when there is
-  more than one file per month.
-
-### Added
 
 - report: Added `docs/report/2026-07-01-rfc-adr-duplication-analysis.md` for issue
   #316. Root-cause analysis of the RFC B-016 ↔ ADR-003 duplication: it maps the
@@ -230,8 +150,8 @@ All notable repository governance changes are documented here.
   for issue #306 with a critical analysis of the attached PR #303 hypothesis,
   the no-generation-error conclusion, the confirmed minor RFC gaps and the
   applied remediation.
-- chore: Добавлена задача B-038 в бэклог (Reports inventory). Источник: видение
-  фаундера §3, согласование в чате 2026-07-01.
+- chore: Добавлена задача B-038 в бэклог (Reports inventory, issue #304).
+  Источник: видение фаундера §3, согласование в чате 2026-07-01.
 - rfc: Added `governance/rfc/2026-06-30-rfc-research-structure.md` for issue #302
   (backlog B-016). The RFC proposes the base research-structure model: a single
   `research/<domain>/exp/<issue-slug>/` evidence container, a ban on the nested
@@ -642,96 +562,6 @@ All notable repository governance changes are documented here.
   during task execution. Propagates to project repos via Smart
   Sync of the `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` genome.
 
-### Changed
-
-- creative: добавлен раздел «Периодическая суммаризация сессии» в
-  `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` (порог 30 обращений / ~50К
-  токенов; путь `governance/session-digests.md`; структура контекст/решения/
-  открытые вопросы/следующие шаги; агент инициирует вопрос пользователю только
-  при передаче контекста в чат). Обновлена `governance/artifact-map.md`.
-- structured: strengthened governance contracts for issue #228. Added reverse
-  traceability and `traceability` frontmatter fields to the knowledge lifecycle
-  RFC, constrained resolver scope to routing plus missing-upstream checks,
-  added the Framework vs Template contract to
-  `standards/executable-documentation-standard.md`, normalized operational
-  terminology to `Пользователь` / `агент-исполнитель`, and expanded structure
-  validation coverage for these rules.
-- structured: обновить Vision/Concept + создать knowledge-lifecycle + resolver + универсальные шаблоны.
-- fix: откатить автоматический перевод Draft → Canonical, требуется явное подтверждение Пользователя.
-- Issue #217 PR rebuild (Creative mode): added a separate `practices/` KB for
-  fixed practices; extracted Habr agent-work practices with sources/authors;
-  added international AI governance practice analysis (NIST AI RMF, EU AI Act,
-  ISO/IEC 42001, OpenAI, Anthropic, Google SAIF); introduced
-  `frontmatter-docs-standard.md`, `executable-documentation-standard.md` and
-  `htom-documentation-structure.md`; added
-  `templates/sync-project-with-hub-prompt.md`; refined Vision, Product Concept
-  and Ecosystem Map around practice exchange, multi-chat handover and Hub as a
-  connective layer; updated validators, manifest metadata and artifact map.
-- Issue #217 (Creative mode): audited Hub, `mango_ba_prompts`, `open-ai.ru` and
-  `clarify-engine-ai` against current AI governance practices; reframed the Hub
-  as a recommendation source rather than a blocker; added the four-field
-  `standards/frontmatter-standard.md`; documented Creative override records and
-  AI-agent session semantics; split task authoring into structured
-  `task.md` and creative `task-creative.md` templates for root and HTOM genome;
-  updated validators, manifest metadata and artifact map.
-- Issue #218 (Structured mode): removed generated HTML build artifacts from
-  `research/mango/` and obsolete PNG screenshots from `docs/screenshots/`.
-  Added scoped `.gitignore` rules for those artifact paths and removed the
-  deleted files from repository-structure validation.
-- Issue #215 (Creative mode): separated **Runtime-онбординг** from chat-to-chat
-  context handover and synchronized `AI_SESSION_HANDOVER_PROMPT.md` with a new
-  draft standard. Added `standards/session-handover-standard.md`, updated
-  `docs/ecosystem-map.md` with the ecosystem principle, expanded the canonical
-  `governance/agent-onboarding-protocol.md` and
-  `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` with project-type detection,
-  `Контекст чата диалога`, `Канал взаимодействия с репо`, `Проверка шаблонов`
-  and `Формат постановки задач`. Synced Operating Modes by removing the stale
-  `Project` mode from active AI governance contracts in favour of `Creative`
-  for open-ended project-context work. Extended structural validation to assert
-  the new standard and prompt sections.
-- Issue #207 (Creative mode): semantic separation of the onboarding files into
-  **protocol** (process/checklist) and **artefact** (copyable prompt). Renamed
-  (via `git mv`, history preserved):
-  `governance/agent-onboarding.md` -> `governance/agent-onboarding-protocol.md`
-  (1.1 -> 1.2) and
-  `templates/htom/AI_HANDOVER_PROMPT.md` -> `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`
-  (0.2 -> 0.3). Added disambiguation disclaimers — to the protocol
-  «⚠️ ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат.» and to the prompt
-  «⚠️ ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат.» Repointed all live
-  references across `README.md`, `AI_GOVERNANCE.md`, `governance/`, `standards/`,
-  `research/`, `templates/htom/` and both validators. NB: the issue proposed
-  `UPPER_CASE` governance paths and a `templates/spoke/` location; both were
-  adapted to the repository's `standards/file-naming.md` (governance uses
-  kebab-case) and the actual genome layout (the handover prompt lives in
-  `templates/htom/`).
-- Issue #201 (Creative mode): clarified the Hub concept by separating
-  **HTOM-команды** (hybrid human + AI work units that inherit the governance
-  genome) from **spoke-репозитории** (production code repositories with their
-  own lifecycle). The minimal governance genome was renamed
-  `templates/spoke/` -> `templates/htom/` (via `git mv`, history preserved),
-  and a new `templates/spoke/` (README.md, CONTRIBUTING.md,
-  `.github/workflows/ci.yml`) was created as the production-spoke template.
-  Migration map (old -> new) for the genome:
-  `templates/spoke/AI_GOVERNANCE.md` -> `templates/htom/AI_GOVERNANCE.md`,
-  `templates/spoke/AI_QUICK_RULES.md` -> `templates/htom/AI_QUICK_RULES.md`,
-  `templates/spoke/AI_HANDOVER_PROMPT.md` -> `templates/htom/AI_HANDOVER_PROMPT.md`,
-  `templates/spoke/README.md` -> `templates/htom/README.md`,
-  `templates/spoke/CONTRIBUTING.md` -> `templates/htom/CONTRIBUTING.md`,
-  `templates/spoke/CHANGELOG.md` -> `templates/htom/CHANGELOG.md`,
-  `templates/spoke/init.sh` -> `templates/htom/init.sh`,
-  `templates/spoke/.github/ISSUE_TEMPLATE/task.md` -> `templates/htom/.github/ISSUE_TEMPLATE/task.md`,
-  `templates/spoke/tools/validate-repository-structure.sh` -> `templates/htom/tools/validate-repository-structure.sh`.
-  Added `governance/rfc/htom-vs-spoke-clarification-2026-06.md` with the
-  definitions, comparison table and current-project classification
-  (Хаб, `repo-development`, `mango_ba_prompts` -> HTOM-команды; `open-ai.ru`
-  -> first real spoke). Repointed genome references across `README.md`,
-  `AI_GOVERNANCE.md`, `governance/repo-model.md`, `governance/artifact-map.md`
-  (1.24 -> 1.25), `standards/glossary.md` (1.2 -> 1.3),
-  `projects/README.md` (1.1 -> 1.2) and validators; extended
-  `tools/validate-repository-structure.sh` to assert both templates.
-
-### Added
-
 - Issue #209 (Creative mode): ecosystem layer for the Hub. New
   `docs/ecosystem-map.md` (full project graph + the **Need-to-Know** principle —
   the Hub keeps the full graph, each project keeps a partial graph via
@@ -838,96 +668,6 @@ All notable repository governance changes are documented here.
   `standards/README.md`, `research/portal/README.md` и структурном валидаторе
   (`is_active_file` + `required_files`); валидатор проходит (exit 0). Решение о
   переводе стандарта в `reviewed`/`canonical` остаётся за Пользователем.
-
-### Changed
-
-- Issue #199: updated `standards/README.md`, `research/README.md`,
-  `governance/artifact-map.md`, `governance/rfc/README.md`,
-  `research/governance/2026-06-06-governance-folder-structure-decisions.md`,
-  `tools/validate-frontmatter.sh` and `tools/validate-repository-structure.sh`
-  for the new L2/L3 webportal standard split and the removal of the active
-  portal package from the Hub.
-- Issue #173: governance-файлы переименованы в kebab-case, правила порядка
-  изложения из бывшего draft body-standard объединены с
-  `standards/research-profile.md`, архив `archive/projects/mango/` удалён после
-  миграции во внешний `mango_ba_prompts`, `standards/file-naming.md` расширен до
-  версии 1.2 для `governance/`, карта артефактов обновлена до 1.20, а
-  структурный валидатор обновлён под новый целевой набор артефактов.
-- Issue #185 (Structured mode): объединены три дублирующих design/standard
-  артефакта с canonical-документами. Rationale протокола онбординга перенесён в
-  `governance/agent-onboarding.md`, rationale ДНК-шаблона — в
-  `templates/spoke/README.md`, body-structure правила research-документов
-  оформлены как `## Body Structure: Введение → Результаты → Детализация` в
-  `standards/research-profile.md` (v1.1). Удалены superseded RFC drafts; ссылки,
-  карта артефактов и структурный валидатор обновлены под новый canonical-набор.
-- Issue #177 (Structured mode): `governance/rfc/repository-quality-improvement-plan.md`
-  обновлён до v0.2: раздел "Full draft list" заменён 52-строчной таблицей
-  с колонками для номера, файла, строки `status: draft`, summary,
-  рекомендации и обоснования. Добавлен "Триаж по категориям" для canonical,
-  отложенных, доработки, объединения и удаления; структурный валидатор теперь
-  ожидает версию RFC 0.2.
-- Issue #169: файлы стандартов внутри `standards/` переименованы из
-  `CAPS_LOCK`/underscore-стиля в kebab-case, все ссылки на старые имена
-  обновлены. `standards/file-naming.md` обновлён до версии 1.1 с явным правилом
-  для `standards/`; `tools/validate-repository-structure.sh` теперь проверяет,
-  что все файлы в `standards/` используют kebab-case, кроме `README.md`,
-  `LICENSE` и `CHANGELOG.md`.
-- Issue #165 (Creative mode): каталог `governance/proposals/` переименован в
-  `governance/rfc/` (решение Q1): имя `rfc/` соответствует файлам `*-rfc.md` и
-  отраслевому термину IETF «RFC», снимая рассинхрон «proposals vs rfc». `git mv`
-  четырёх RFC; обновлены все живые ссылки (`governance/agent-onboarding.md`,
-  `repo-model.md`, `backlog.md`, `executable-documents-issues.md`,
-  `artifact-map.md`, `standards/glossary.md`, `templates/spoke/README.md`,
-  research-документы Хаба и портала, кросс-ссылки внутри RFC). Концепт-RFC
-  портала перенесён `governance/proposals/` →
-  `research/portal/open-ai-portal-concept-rfc.md` (решение Q2: концепция
-  проекта — это research проекта и живёт в `research/{project}/`, а не в
-  governance Хаба; канонический путь без точки в имени каталога по
-  `standards/file-naming.md`). `governance/rfc/` задокументирован как
-  опциональный, не наследуемый споками каталог (решение Q3,
-  `standards/portal-repository-structure.md`). `AI_GOVERNANCE.md` (1.1 → 1.2):
-  зафиксирован слоган Хаба. `governance/artifact-map.md` (1.16 → 1.17):
-  обновлены пути RFC и добавлены строки новых артефактов. Структурный валидатор
-  обновлён под новые пути и проходит (exit 0). Исторические записи (этот
-  CHANGELOG, §7.4 в `contract-executability-rfc.md`, self-report) сохранены как
-  журнал.
-- Issue #141 (CE-004): `AI_GOVERNANCE.md` converted to the executable-documents
-  standard as a reference contract. Added canonical frontmatter with
-  `executable: false`, bumped version to `1.1` and date to `2026-06-04`, and
-  replaced the pre-flight note with a directive pointer to
-  `governance/agent-onboarding.md`. Roles, Operating Modes, escalation and
-  Definition of Done remain unchanged. Structural validation now checks the new
-  frontmatter/version markers; removed the generated harness `.gitkeep`.
-- Issue #140 (CE-003): `templates/spoke/AI_HANDOVER_PROMPT.md` (версия 0.1 →
-  0.2) переведён в стандарт исполнимых документов: во frontmatter добавлен
-  `executable: true`, сразу после frontmatter добавлен директивный блок
-  «🚦 ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ», готовый prompt с
-  `{{REPO_NAME}}` поднят в блок `▶️ EXECUTION`, а пояснения, источник истины в
-  Хабе и ссылки перенесены в `ℹ️ EXPLANATION` без изменения смысла prompt.
-  Структурный валидатор теперь проверяет CE-003-маркеры и блоки
-  EXECUTION/EXPLANATION; удалён сгенерированный корневой `.gitkeep`, который не
-  является active-файлом репозитория.
-
-- Issue #138 (CE-001): `governance/agent-onboarding.md` (версия 1.0 → 1.1)
-  переведён в стандарт исполнимых документов
-  `governance/proposals/contract-executability-rfc.md` (§5.1, §6.1, §7).
-  Во frontmatter добавлены маркеры `executable: true` и `entrypoint: true`;
-  сразу после frontmatter добавлен директивный блок «🚦 ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ
-  АНАЛИЗИРУЙ, ВЫПОЛНЯЙ»; содержимое разделено на `▶️ EXECUTION` (Handover Prompt
-  и 4-шаговый протокол) и `ℹ️ EXPLANATION` (модель процесса, threat awareness,
-  перекрёстные ссылки) без потери смысла. Структурный валидатор
-  `tools/validate-repository-structure.sh` обновлён под новую версию/дату и
-  проверяет наличие маркеров и блоков EXECUTION/EXPLANATION.
-
-### Removed
-
-- Issue #199: removed the active `research/portal/` package, the old mixed
-  `standards/webportal-concept-standard.md`, the portal-specific
-  `standards/portal-repository-structure.md`, the old
-  `templates/webportal-concept-template.md` and the generated root `.gitkeep`
-  placeholder.
-
-### Added
 
 - Issue #165 (Creative mode): **зафиксирован слоган Хаба** «Человек задаёт
   смысл, AI ускоряет путь — вместе по правилам» в `README.md`,
@@ -1048,7 +788,279 @@ All notable repository governance changes are documented here.
   Удалён сгенерированный харнессом корневой `.gitkeep` (его нет в `main`),
   снимавший FAIL структурного валидатора.
 
+- Issue #109 (B-001): рабочая инструкция `governance/agent-onboarding.md`
+  (`status: canonical`, тип `правило`) — единый входной артефакт *Runtime-онбординга*
+  (Кейс 1) по утверждённому onboarding-дизайну. Содержит:
+  *Handover Prompt* с плейсхолдером `{{REPO_NAME}}`, 4-шаговый протокол агента
+  (чек-лист governance → чек-лист контекста → *Readback* → стоп до апрува), шаблон
+  *Readback* и раздел threat awareness «Что может пойти не так» (5 рисков холодного
+  старта) — реализация рекомендации команды Q без отдельного файла (Anti-Inflation).
+  Все термины — со ссылкой на `standards/glossary.md`; добавлены перекрёстные ссылки
+  на `templates/spoke/README.md` (Кейс 2) и на RFC-манифест двух кейсов. Граница с
+  design rationale позже упрощена: `agent-onboarding.md` стал и рабочей
+  инструкцией, и canonical-историей решений. Файл зарегистрирован как active в
+  `tools/validate-repository-structure.sh` (`is_active_file`, `required_files` и
+  набор `require_text`) и `governance/artifact-map.md` (версия карты 1.9 → 1.10).
+- Issue #99: RFC-манифест `governance/proposals/rfc-two-cases-of-project-initialization.md`
+  — концептуальное разделение двух ортогональных кейсов инициализации проекта:
+  Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Ведущая аналогия
+  «сертификация самолёта ≠ лицензия пилота» + анализ ещё трёх смежных областей
+  (медицина, юриспруденция, DevOps) с выводами для модели; таблица-манифест из 13
+  строк; Mermaid-схема жизненного цикла проекта с явным разделением кейсов;
+  обоснование с трассировкой к `research/hub/2026-06-02-ai-collaboration-retrospective.md`;
+  фиксация будущих README по каждому кейсу и follow-up-список. Манифест
+  намеренно не определяет термины — только использует их со ссылкой на глоссарий.
+  Файл зарегистрирован как active в `tools/validate-repository-structure.sh` и
+  `governance/artifact-map.md` (тип `RFC`, версия карты 1.6 → 1.7).
+
 ### Changed
+
+- governance: Синхронизированы `governance/backlog.md` и `CHANGELOG.md` по issue
+  #333 после merged PR #303..#331. В backlog статусы B-018, B-019, B-038,
+  B-039, B-040, B-041 и B-045 приведены к `DONE`, B-019 связан с issue #326 /
+  PR #327, B-038 связан с issue #307 / PR #308 и issue #310 / PR #312,
+  B-041..B-045 упорядочены по номеру, а `Unreleased` в changelog сведён к
+  единственным секциям `Added`, `Changed` и `Removed` без удаления старых
+  записей.
+- adr: Добавлен addendum B-019 к
+  `docs/adr/2026-06-adr-002-artifact-document-methodology.md` по issue #326.
+  ADR-002 теперь явно фиксирует границу `research/<domain>/exp/<issue-slug>/`
+  (research evidence corpus, всегда связан с parent dated report) vs `runs/`
+  (operational run record, не обязан быть связан с research), включает
+  нормативный критерий «один вопрос исполнителю» и ссылается на ADR-003 как
+  источник решения и RFC B-016 как источник rationale. Routing-таблица ADR-002
+  сохранена без конфликта: строка `Run record` остаётся правилом для
+  operational records, а research evidence routing делегирован
+  `standards/research-standard.md`.
+- adr + standard: Приняты ADR-003 и RFC B-016 по issue #322 / PR #323. Устранены
+  причинные дефекты F-01/F-07/F-07-parallel/F-08 из audit B-039: три structure
+  standards больше не смешивают Standard и Contract; ADR standard получил
+  section-level delegation, минимальный шаблон без invitation to duplicate и
+  acceptance checklist; RFC standard получил Research→RFC delegation и правило
+  обновления `Decision record` / `Implementation link`; backlog, artifact-map,
+  RFC index and CHANGELOG приведены к accepted/status и glossary-aligned
+  terminology.
+- chore: Исправлены точечные последствия audit B-039 по issue #324 после
+  acceptance issue #322. RFC B-016 сохраняет `status: accepted`, `version: 0.3`
+  и `updated: 2026-07-02`; forward-refs `not yet — будущий` заменены
+  фактическими ссылками на ADR-003 и `standards/research-standard.md`. ADR-003
+  сохраняет `status: accepted` и `version: 0.3`; пометка `будущий` у
+  `standards/research-standard.md` убрана. Supersession профиля разграничена:
+  ADR фиксирует human decision, `standards/research-standard.md` задаёт
+  technical replacement, физическое удаление профиля остаётся B-021.
+  `standards/research-standard.md` переведён с `version: 1.1` на draft-aligned
+  `version: 0.1`; `governance/artifact-map.md` синхронизирован с новой
+  формулировкой replacement.
+- adr: Устранено дублирование RFC B-016 в `docs/adr/2026-07-adr-003-research-structure.md`
+  по issue #316 (версия ADR `0.1` → `0.2`, решение и статус `proposed` не
+  изменены). Секция `Decision` больше не пересказывает Proposal P1–P4, а кратко
+  фиксирует «принять модель RFC B-016» со ссылками на разделы RFC; `Alternatives
+  Considered` делегирует полный разбор в RFC вместо копии таблицы; `Consequences`
+  оставляет только архитектурные последствия, а список задач B-018..B-023 отдан
+  RFC Impacted Artifacts и `governance/backlog.md`. `Decision Drivers` сжаты до
+  трёх. RFC B-016 и стандарты ADR/RFC не изменялись (ограничение issue #316).
+- correction: Fixed the placement of the issue #310 deliverables to conform to
+  RFC B-016 v0.2 before merge. Moved the reproducible experiment container from
+  the legacy sibling format `research/hub/exp-reports-inventory-310/` into the
+  target container `research/hub/exp/reports-inventory-310/` (P1) and flattened
+  it — the nested `outputs/` directory was removed so evidence files sit next to
+  the README and script (P2). Moved the inventory itself from
+  `research/hub/2026-07-01-reports-artifacts-inventory.md` to
+  `docs/analysis/2026-07-01-reports-artifacts-inventory.md` because an inventory
+  is an Analysis, not Research (P4 routing). Updated all links, the artifact-map,
+  backlog, research indexes, MkDocs navigation and the structure validator.
+  Recorded the root-cause analysis in
+  `docs/report/2026-07-01-reports-inventory-placement-analysis.md`.
+- backlog: Linked B-038 (Reports inventory and boundaries) to issue #310 and PR
+  #312, and recorded `docs/report/` (singular) as the canonical Reports path per
+  founder vision §3 and PR review. Physical migration remains deferred to later
+  Reports standardization and cleanup work.
+- chore: Перенесён report по гипотезе PR #303 из корневого
+  `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` в canonical
+  `docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` по issue #311.
+  Добавлен frontmatter `owner`, `type`, `context`, `method`, source и related
+  links; корневой каталог `reports/` удалён; registry, MkDocs navigation,
+  file-naming/frontmatter validators and standards updated for `docs/report/`.
+- rfc: Уточнен `governance/rfc/2026-06-30-rfc-research-structure.md` по issue
+  #306: добавлены явная матрица дельт A/B/C/D и таблица Boundary RFC/ADR для
+  подготовки к ADR B-017. Ошибка генерации PR #303 не подтверждена; гипотеза
+  проблемы признана частично существенной как minor completeness gap.
+- chore: Accepted the ADR/RFC structure RFCs for issue #286 and delegated their
+  normative standard rules into `standards/adr-structure-standard.md` and
+  `standards/rfc-structure-standard.md`. Registered both standards in
+  `standards/README.md`, `governance/artifact-map.md`,
+  `governance/rfc/README.md` and the structure validator; added backlog tech debt
+  for frontmatter validator routing, status migration and approved-field policy.
+- correction: Normalized Hub research artifact filenames from `YYYY-MM-name.md`
+  / `YYYY-name.md` to `YYYY-MM-DD-name.md` using git creation dates (issue
+  #271). Updated all repository links, MkDocs navigation, artifact-map entries,
+  the file-naming standards, spoke templates, and validation scripts so
+  research and spoke `docs/analysis/` artifacts sort correctly when there is
+  more than one file per month.
+
+- creative: добавлен раздел «Периодическая суммаризация сессии» в
+  `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` (порог 30 обращений / ~50К
+  токенов; путь `governance/session-digests.md`; структура контекст/решения/
+  открытые вопросы/следующие шаги; агент инициирует вопрос пользователю только
+  при передаче контекста в чат). Обновлена `governance/artifact-map.md`.
+- structured: strengthened governance contracts for issue #228. Added reverse
+  traceability and `traceability` frontmatter fields to the knowledge lifecycle
+  RFC, constrained resolver scope to routing plus missing-upstream checks,
+  added the Framework vs Template contract to
+  `standards/executable-documentation-standard.md`, normalized operational
+  terminology to `Пользователь` / `агент-исполнитель`, and expanded structure
+  validation coverage for these rules.
+- structured: обновить Vision/Concept + создать knowledge-lifecycle + resolver + универсальные шаблоны.
+- fix: откатить автоматический перевод Draft → Canonical, требуется явное подтверждение Пользователя.
+- Issue #217 PR rebuild (Creative mode): added a separate `practices/` KB for
+  fixed practices; extracted Habr agent-work practices with sources/authors;
+  added international AI governance practice analysis (NIST AI RMF, EU AI Act,
+  ISO/IEC 42001, OpenAI, Anthropic, Google SAIF); introduced
+  `frontmatter-docs-standard.md`, `executable-documentation-standard.md` and
+  `htom-documentation-structure.md`; added
+  `templates/sync-project-with-hub-prompt.md`; refined Vision, Product Concept
+  and Ecosystem Map around practice exchange, multi-chat handover and Hub as a
+  connective layer; updated validators, manifest metadata and artifact map.
+- Issue #217 (Creative mode): audited Hub, `mango_ba_prompts`, `open-ai.ru` and
+  `clarify-engine-ai` against current AI governance practices; reframed the Hub
+  as a recommendation source rather than a blocker; added the four-field
+  `standards/frontmatter-standard.md`; documented Creative override records and
+  AI-agent session semantics; split task authoring into structured
+  `task.md` and creative `task-creative.md` templates for root and HTOM genome;
+  updated validators, manifest metadata and artifact map.
+- Issue #218 (Structured mode): removed generated HTML build artifacts from
+  `research/mango/` and obsolete PNG screenshots from `docs/screenshots/`.
+  Added scoped `.gitignore` rules for those artifact paths and removed the
+  deleted files from repository-structure validation.
+- Issue #215 (Creative mode): separated **Runtime-онбординг** from chat-to-chat
+  context handover and synchronized `AI_SESSION_HANDOVER_PROMPT.md` with a new
+  draft standard. Added `standards/session-handover-standard.md`, updated
+  `docs/ecosystem-map.md` with the ecosystem principle, expanded the canonical
+  `governance/agent-onboarding-protocol.md` and
+  `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` with project-type detection,
+  `Контекст чата диалога`, `Канал взаимодействия с репо`, `Проверка шаблонов`
+  and `Формат постановки задач`. Synced Operating Modes by removing the stale
+  `Project` mode from active AI governance contracts in favour of `Creative`
+  for open-ended project-context work. Extended structural validation to assert
+  the new standard and prompt sections.
+- Issue #207 (Creative mode): semantic separation of the onboarding files into
+  **protocol** (process/checklist) and **artefact** (copyable prompt). Renamed
+  (via `git mv`, history preserved):
+  `governance/agent-onboarding.md` -> `governance/agent-onboarding-protocol.md`
+  (1.1 -> 1.2) and
+  `templates/htom/AI_HANDOVER_PROMPT.md` -> `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`
+  (0.2 -> 0.3). Added disambiguation disclaimers — to the protocol
+  «⚠️ ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат.» and to the prompt
+  «⚠️ ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат.» Repointed all live
+  references across `README.md`, `AI_GOVERNANCE.md`, `governance/`, `standards/`,
+  `research/`, `templates/htom/` and both validators. NB: the issue proposed
+  `UPPER_CASE` governance paths and a `templates/spoke/` location; both were
+  adapted to the repository's `standards/file-naming.md` (governance uses
+  kebab-case) and the actual genome layout (the handover prompt lives in
+  `templates/htom/`).
+- Issue #201 (Creative mode): clarified the Hub concept by separating
+  **HTOM-команды** (hybrid human + AI work units that inherit the governance
+  genome) from **spoke-репозитории** (production code repositories with their
+  own lifecycle). The minimal governance genome was renamed
+  `templates/spoke/` -> `templates/htom/` (via `git mv`, history preserved),
+  and a new `templates/spoke/` (README.md, CONTRIBUTING.md,
+  `.github/workflows/ci.yml`) was created as the production-spoke template.
+  Migration map (old -> new) for the genome:
+  `templates/spoke/AI_GOVERNANCE.md` -> `templates/htom/AI_GOVERNANCE.md`,
+  `templates/spoke/AI_QUICK_RULES.md` -> `templates/htom/AI_QUICK_RULES.md`,
+  `templates/spoke/AI_HANDOVER_PROMPT.md` -> `templates/htom/AI_HANDOVER_PROMPT.md`,
+  `templates/spoke/README.md` -> `templates/htom/README.md`,
+  `templates/spoke/CONTRIBUTING.md` -> `templates/htom/CONTRIBUTING.md`,
+  `templates/spoke/CHANGELOG.md` -> `templates/htom/CHANGELOG.md`,
+  `templates/spoke/init.sh` -> `templates/htom/init.sh`,
+  `templates/spoke/.github/ISSUE_TEMPLATE/task.md` -> `templates/htom/.github/ISSUE_TEMPLATE/task.md`,
+  `templates/spoke/tools/validate-repository-structure.sh` -> `templates/htom/tools/validate-repository-structure.sh`.
+  Added `governance/rfc/htom-vs-spoke-clarification-2026-06.md` with the
+  definitions, comparison table and current-project classification
+  (Хаб, `repo-development`, `mango_ba_prompts` -> HTOM-команды; `open-ai.ru`
+  -> first real spoke). Repointed genome references across `README.md`,
+  `AI_GOVERNANCE.md`, `governance/repo-model.md`, `governance/artifact-map.md`
+  (1.24 -> 1.25), `standards/glossary.md` (1.2 -> 1.3),
+  `projects/README.md` (1.1 -> 1.2) and validators; extended
+  `tools/validate-repository-structure.sh` to assert both templates.
+
+- Issue #199: updated `standards/README.md`, `research/README.md`,
+  `governance/artifact-map.md`, `governance/rfc/README.md`,
+  `research/governance/2026-06-06-governance-folder-structure-decisions.md`,
+  `tools/validate-frontmatter.sh` and `tools/validate-repository-structure.sh`
+  for the new L2/L3 webportal standard split and the removal of the active
+  portal package from the Hub.
+- Issue #173: governance-файлы переименованы в kebab-case, правила порядка
+  изложения из бывшего draft body-standard объединены с
+  `standards/research-profile.md`, архив `archive/projects/mango/` удалён после
+  миграции во внешний `mango_ba_prompts`, `standards/file-naming.md` расширен до
+  версии 1.2 для `governance/`, карта артефактов обновлена до 1.20, а
+  структурный валидатор обновлён под новый целевой набор артефактов.
+- Issue #185 (Structured mode): объединены три дублирующих design/standard
+  артефакта с canonical-документами. Rationale протокола онбординга перенесён в
+  `governance/agent-onboarding.md`, rationale ДНК-шаблона — в
+  `templates/spoke/README.md`, body-structure правила research-документов
+  оформлены как `## Body Structure: Введение → Результаты → Детализация` в
+  `standards/research-profile.md` (v1.1). Удалены superseded RFC drafts; ссылки,
+  карта артефактов и структурный валидатор обновлены под новый canonical-набор.
+- Issue #177 (Structured mode): `governance/rfc/repository-quality-improvement-plan.md`
+  обновлён до v0.2: раздел "Full draft list" заменён 52-строчной таблицей
+  с колонками для номера, файла, строки `status: draft`, summary,
+  рекомендации и обоснования. Добавлен "Триаж по категориям" для canonical,
+  отложенных, доработки, объединения и удаления; структурный валидатор теперь
+  ожидает версию RFC 0.2.
+- Issue #169: файлы стандартов внутри `standards/` переименованы из
+  `CAPS_LOCK`/underscore-стиля в kebab-case, все ссылки на старые имена
+  обновлены. `standards/file-naming.md` обновлён до версии 1.1 с явным правилом
+  для `standards/`; `tools/validate-repository-structure.sh` теперь проверяет,
+  что все файлы в `standards/` используют kebab-case, кроме `README.md`,
+  `LICENSE` и `CHANGELOG.md`.
+- Issue #165 (Creative mode): каталог `governance/proposals/` переименован в
+  `governance/rfc/` (решение Q1): имя `rfc/` соответствует файлам `*-rfc.md` и
+  отраслевому термину IETF «RFC», снимая рассинхрон «proposals vs rfc». `git mv`
+  четырёх RFC; обновлены все живые ссылки (`governance/agent-onboarding.md`,
+  `repo-model.md`, `backlog.md`, `executable-documents-issues.md`,
+  `artifact-map.md`, `standards/glossary.md`, `templates/spoke/README.md`,
+  research-документы Хаба и портала, кросс-ссылки внутри RFC). Концепт-RFC
+  портала перенесён `governance/proposals/` →
+  `research/portal/open-ai-portal-concept-rfc.md` (решение Q2: концепция
+  проекта — это research проекта и живёт в `research/{project}/`, а не в
+  governance Хаба; канонический путь без точки в имени каталога по
+  `standards/file-naming.md`). `governance/rfc/` задокументирован как
+  опциональный, не наследуемый споками каталог (решение Q3,
+  `standards/portal-repository-structure.md`). `AI_GOVERNANCE.md` (1.1 → 1.2):
+  зафиксирован слоган Хаба. `governance/artifact-map.md` (1.16 → 1.17):
+  обновлены пути RFC и добавлены строки новых артефактов. Структурный валидатор
+  обновлён под новые пути и проходит (exit 0). Исторические записи (этот
+  CHANGELOG, §7.4 в `contract-executability-rfc.md`, self-report) сохранены как
+  журнал.
+- Issue #141 (CE-004): `AI_GOVERNANCE.md` converted to the executable-documents
+  standard as a reference contract. Added canonical frontmatter with
+  `executable: false`, bumped version to `1.1` and date to `2026-06-04`, and
+  replaced the pre-flight note with a directive pointer to
+  `governance/agent-onboarding.md`. Roles, Operating Modes, escalation and
+  Definition of Done remain unchanged. Structural validation now checks the new
+  frontmatter/version markers; removed the generated harness `.gitkeep`.
+- Issue #140 (CE-003): `templates/spoke/AI_HANDOVER_PROMPT.md` (версия 0.1 →
+  0.2) переведён в стандарт исполнимых документов: во frontmatter добавлен
+  `executable: true`, сразу после frontmatter добавлен директивный блок
+  «🚦 ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ», готовый prompt с
+  `{{REPO_NAME}}` поднят в блок `▶️ EXECUTION`, а пояснения, источник истины в
+  Хабе и ссылки перенесены в `ℹ️ EXPLANATION` без изменения смысла prompt.
+  Структурный валидатор теперь проверяет CE-003-маркеры и блоки
+  EXECUTION/EXPLANATION; удалён сгенерированный корневой `.gitkeep`, который не
+  является active-файлом репозитория.
+
+- Issue #138 (CE-001): `governance/agent-onboarding.md` (версия 1.0 → 1.1)
+  переведён в стандарт исполнимых документов
+  `governance/proposals/contract-executability-rfc.md` (§5.1, §6.1, §7).
+  Во frontmatter добавлены маркеры `executable: true` и `entrypoint: true`;
+  сразу после frontmatter добавлен директивный блок «🚦 ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ
+  АНАЛИЗИРУЙ, ВЫПОЛНЯЙ»; содержимое разделено на `▶️ EXECUTION` (Handover Prompt
+  и 4-шаговый протокол) и `ℹ️ EXPLANATION` (модель процесса, threat awareness,
+  перекрёстные ссылки) без потери смысла. Структурный валидатор
+  `tools/validate-repository-structure.sh` обновлён под новую версию/дату и
+  проверяет наличие маркеров и блоков EXECUTION/EXPLANATION.
 
 - Issue #146 (CE-009): `tools/validate-frontmatter.sh` теперь мягко
   валидирует опциональные маркеры стандарта исполнимых документов:
@@ -1129,35 +1141,6 @@ All notable repository governance changes are documented here.
   разделе 3 (B-013), обновлены `related_issues` во frontmatter и разделы 6/8.
   Удалён сгенерированный харнессом корневой `.gitkeep` (его нет в `main`),
   снимавший FAIL структурного валидатора.
-
-### Added
-
-- Issue #109 (B-001): рабочая инструкция `governance/agent-onboarding.md`
-  (`status: canonical`, тип `правило`) — единый входной артефакт *Runtime-онбординга*
-  (Кейс 1) по утверждённому onboarding-дизайну. Содержит:
-  *Handover Prompt* с плейсхолдером `{{REPO_NAME}}`, 4-шаговый протокол агента
-  (чек-лист governance → чек-лист контекста → *Readback* → стоп до апрува), шаблон
-  *Readback* и раздел threat awareness «Что может пойти не так» (5 рисков холодного
-  старта) — реализация рекомендации команды Q без отдельного файла (Anti-Inflation).
-  Все термины — со ссылкой на `standards/glossary.md`; добавлены перекрёстные ссылки
-  на `templates/spoke/README.md` (Кейс 2) и на RFC-манифест двух кейсов. Граница с
-  design rationale позже упрощена: `agent-onboarding.md` стал и рабочей
-  инструкцией, и canonical-историей решений. Файл зарегистрирован как active в
-  `tools/validate-repository-structure.sh` (`is_active_file`, `required_files` и
-  набор `require_text`) и `governance/artifact-map.md` (версия карты 1.9 → 1.10).
-- Issue #99: RFC-манифест `governance/proposals/rfc-two-cases-of-project-initialization.md`
-  — концептуальное разделение двух ортогональных кейсов инициализации проекта:
-  Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Ведущая аналогия
-  «сертификация самолёта ≠ лицензия пилота» + анализ ещё трёх смежных областей
-  (медицина, юриспруденция, DevOps) с выводами для модели; таблица-манифест из 13
-  строк; Mermaid-схема жизненного цикла проекта с явным разделением кейсов;
-  обоснование с трассировкой к `research/hub/2026-06-02-ai-collaboration-retrospective.md`;
-  фиксация будущих README по каждому кейсу и follow-up-список. Манифест
-  намеренно не определяет термины — только использует их со ссылкой на глоссарий.
-  Файл зарегистрирован как active в `tools/validate-repository-structure.sh` и
-  `governance/artifact-map.md` (тип `RFC`, версия карты 1.6 → 1.7).
-
-### Changed
 
 - Issue #99: уточнён onboarding-дизайн —
   добавлен раздел «Модель процесса» (без блока терминологии, только ссылки на
@@ -1252,8 +1235,6 @@ All notable repository governance changes are documented here.
   промптов и базы знаний. Пустые папки отслеживаются в Git через `.gitkeep` и
   зарегистрированы как active в `tools/validate-repository-structure.sh`.
 
-### Changed
-
 - Issue #91: рефакторинг структуры `research/` (namespacing). Фундаментальные
   (`scope: repo-wide`) исследования перенесены через `git mv` из корня в новый
   подкаталог `research/hub/` (`2026-05-28-project-context-and-bootstrap-patterns.md`,
@@ -1283,6 +1264,12 @@ All notable repository governance changes are documented here.
   placeholder-точки.
 
 ### Removed
+
+- Issue #199: removed the active `research/portal/` package, the old mixed
+  `standards/webportal-concept-standard.md`, the portal-specific
+  `standards/portal-repository-structure.md`, the old
+  `templates/webportal-concept-template.md` and the generated root `.gitkeep`
+  placeholder.
 
 - Issue #81: повторно удалён служебный корневой `.gitkeep`, восстановленный при
   создании PR-ветки, чтобы `tools/validate-repository-structure.sh` проходил
