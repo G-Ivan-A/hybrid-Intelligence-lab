@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.30
-updated: 2026-07-01
+version: 1.31
+updated: 2026-07-02
 temperature: 0.1
 ---
 
@@ -22,19 +22,19 @@ All notable repository governance changes are documented here.
   4 стресс-теста). Вердикты: ни один артефакт не содержит блокирующего нарушения;
   посекционное дублирование ADR-003 ↔ RFC B-016 подтверждено как ремедиированное;
   `research-standard.md` и RFC B-016 проверены чисто. Зафиксированы причины
-  (F-01 терминологическая конфляция «Стандарт = Контракт» в трёх стандартах;
+  (F-01 смешение терминов Standard/Contract в трёх стандартах;
   F-07 шаблон ADR приглашает дублирование; F-08 отсутствие overlap-guard/чеклиста)
   и последствия (F-02/F-03 stale-refs, F-09 семантика версий, F-10 двойная
   supersession) с классификацией причины-vs-последствия и трёхуровневыми
   приоритизированными рекомендациями по лечению причин (стандарты / шаблоны /
   валидация). Терминологический риск (Standard ≠ Contract, category error
-  относительно canonical глоссария и IL-модели) **флагуется**, а не исправляется —
-  правки артефактов и стандартов вне scope (Tier 2 amendment, отдельные задачи).
+  относительно canonical глоссария и IL-модели) флагуется для Tier 2 remediation
+  в issue #322.
   Зарегистрирован в `governance/artifact-map.md`, `mkdocs.yml` и структурном
   валидаторе; задача B-039 добавлена в `governance/backlog.md` со статусом review.
 
-- standard: Создан `standards/research-standard.md` — нормативный контракт (IL-3)
-  структуры research-артефактов Хаба (B-018, issue #318). Стандарт принимает
+- standard: Создан `standards/research-standard.md` — стандарт (IL-3 reusable
+  rule) структуры research-артефактов Хаба (B-018, issue #318). Стандарт принимает
   модель ADR-003 и RFC B-016 без корректировок и нормативно фиксирует:
   размещение отчётов `research/<domain>/YYYY-MM-DD-name.md`, единый контейнер
   воспроизводимой доказательной базы `research/<domain>/exp/<issue-slug>/`,
@@ -55,6 +55,14 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr + standard: Приняты ADR-003 и RFC B-016 по issue #322 / PR #323. Устранены
+  причинные дефекты F-01/F-07/F-07-parallel/F-08 из audit B-039: три structure
+  standards больше не смешивают Standard и Contract; ADR standard получил
+  section-level delegation, минимальный шаблон без invitation to duplicate и
+  acceptance checklist; RFC standard получил Research→RFC delegation и правило
+  обновления `Decision record` / `Implementation link`; backlog, artifact-map,
+  RFC index and CHANGELOG приведены к accepted/status и glossary-aligned
+  terminology.
 - adr: Устранено дублирование RFC B-016 в `docs/adr/2026-07-adr-003-research-structure.md`
   по issue #316 (версия ADR `0.1` → `0.2`, решение и статус `proposed` не
   изменены). Секция `Decision` больше не пересказывает Proposal P1–P4, а кратко
@@ -90,7 +98,7 @@ All notable repository governance changes are documented here.
   подготовки к ADR B-017. Ошибка генерации PR #303 не подтверждена; гипотеза
   проблемы признана частично существенной как minor completeness gap.
 - chore: Accepted the ADR/RFC structure RFCs for issue #286 and delegated their
-  normative contracts into `standards/adr-structure-standard.md` and
+  normative standard rules into `standards/adr-structure-standard.md` and
   `standards/rfc-structure-standard.md`. Registered both standards in
   `standards/README.md`, `governance/artifact-map.md`,
   `governance/rfc/README.md` and the structure validator; added backlog tech debt
@@ -132,7 +140,8 @@ All notable repository governance changes are documented here.
   `standards/research-profile.md` effective after its removal in B-021; delegates
   the normative rule to `standards/research-standard.md` (B-018) and an ADR-002
   addendum (B-019); consequences cover the B-018..B-023 chain. Registered in
-  `governance/artifact-map.md`, `governance/backlog.md` (B-017 → В РАБОТЕ) and the
+  `governance/artifact-map.md`, `governance/backlog.md` (B-017 later accepted
+  by issue #322) and the
   structure validator allowlist. Follows `standards/adr-structure-standard.md`
   (frontmatter and required body sections). No validator logic or file migration
   performed (deferred to B-022/B-023).
@@ -160,7 +169,7 @@ All notable repository governance changes are documented here.
 - chore: Добавлена задача B-038 в бэклог (Reports inventory). Источник: видение
   фаундера §3, согласование в чате 2026-07-01.
 - rfc: Added `governance/rfc/2026-06-30-rfc-research-structure.md` for issue #302
-  (backlog B-016). The RFC proposes the base research-structure contract: a single
+  (backlog B-016). The RFC proposes the base research-structure model: a single
   `research/<domain>/exp/<issue-slug>/` evidence container, a ban on the nested
   `outputs/` folder (flat package inside `exp/`), the `exp/` (research evidence
   corpus) vs `runs/` (operational run record) boundary, Research / Analysis /

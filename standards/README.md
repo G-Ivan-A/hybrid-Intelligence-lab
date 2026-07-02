@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.7
-updated: 2026-07-01
+version: 1.8
+updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -22,10 +22,10 @@ owner: G-Ivan-A
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
 | Repository model | Active | Размещение артефактов и правила создания | [governance/repo-model.md](../governance/repo-model.md) |
-| Frontmatter standard | Canonical | Минимальный metadata contract для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
+| Frontmatter standard | Canonical | Минимальное metadata rule для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
 | Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research/report, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |
-| ADR structure standard | Active | Единый контракт ADR: frontmatter, stable id, required body sections, lifecycle, archetype deltas and Boundary RFC/ADR | [adr-structure-standard.md](adr-structure-standard.md) |
-| RFC structure standard | Active | Единый контракт RFC-like документов: frontmatter, metadata, required body sections, lifecycle, Open Questions and Boundary RFC/ADR | [rfc-structure-standard.md](rfc-structure-standard.md) |
+| ADR structure standard | Active | Единая структура ADR: frontmatter, stable id, required body sections, lifecycle, section-level delegation, archetype deltas and Boundary RFC/ADR | [adr-structure-standard.md](adr-structure-standard.md) |
+| RFC structure standard | Active | Единая структура RFC-like документов: frontmatter, metadata, required body sections, Research→RFC delegation, lifecycle, Open Questions and Boundary RFC/ADR | [rfc-structure-standard.md](rfc-structure-standard.md) |
 | Knowledge lifecycle | Draft RFC (предложен на утверждение) | Переходы Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive | [../governance/rfc/knowledge-lifecycle-proposal.md](../governance/rfc/knowledge-lifecycle-proposal.md) |
 | Research structure standard | Active | `research/<domain>/`: размещение отчётов, контейнер `exp/`, запрет `outputs/`, routing Research / Analysis / Audit и граница `exp/` vs `runs/` | [research-standard.md](research-standard.md) |
 | Профиль исследовательских проектов | Active (legacy, заменяется research-standard.md) | `research/<domain>/` | [research-profile.md](research-profile.md) |

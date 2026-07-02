@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.0
-updated: 2026-06-28
+version: 1.1
+updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -10,13 +10,15 @@ owner: G-Ivan-A
 
 ## Назначение
 
-Этот стандарт задаёт обязательный контракт ADR (Architecture Decision Record)
+Этот стандарт задаёт обязательную структуру ADR (Architecture Decision Record)
 для Хаба и архетипов A/B/C/D. Источник решения:
 [RFC: Стандарт структуры ADR](../governance/rfc/2026-06-27-rfc-adr-standard.md).
 
-Стандарт является нормативным контрактом. Proposal-контекст, alternatives и
-trade-offs остаются в RFC; этот файл фиксирует только то, что нужно применять
-повторяемо.
+Стандарт — это IL-3 reusable rule о форме ADR, минимальных полях и review
+criteria. Он не является Contract: операционные контракты могут ссылаться на
+этот стандарт как на обязательное правило оформления, но не подменяют его
+семантику. Proposal-контекст, alternatives и trade-offs остаются в RFC; этот
+файл фиксирует только то, что нужно применять повторяемо.
 
 Базовые frontmatter-правила наследуются из
 [Frontmatter Docs Standard](frontmatter-docs-standard.md), а имена файлов - из
@@ -120,13 +122,15 @@ One accepted decision, stated directly.
 
 ## Alternatives Considered
 
-| Alternative | Why rejected |
-| --- | --- |
-| ... | ... |
+If a source RFC exists, link to its Alternatives section and name only the
+decisive fork that the ADR closes. If there is no source RFC, list concise local
+alternatives and rejection reasons.
 
 ## Consequences
 
-Positive effects, trade-offs, and follow-up work.
+Architectural consequences of the accepted decision. Link to the source RFC,
+backlog, issue or implementation plan for downstream tasks; do not duplicate a
+task list from the proposal.
 
 ## Compliance and Validation
 
@@ -140,6 +144,31 @@ Transition state, review trigger, deprecation and supersession rules.
 
 Links to RFC, standard, template, validator, implementation PR or research.
 ```
+
+## Section-Level Delegation
+
+When an ADR has a source RFC, the required ADR sections remain present, but the
+ADR MUST delegate proposal detail at section level instead of copying it.
+
+| ADR section | ADR owns | Delegates to source RFC |
+| --- | --- | --- |
+| `Context` | Why a decision record is needed now, and which accepted proposal it records. | Full proposal-stage problem statement and research inventory. |
+| `Decision` | The accepted decision stated directly, with links to RFC sections for the detailed model. | Full `Proposal`, option menus, and implementation detail. |
+| `Decision Drivers` | The short set of drivers that justify acceptance. | Full motivation, benchmark tables, and stress tests. |
+| `Alternatives Considered` | Pointer to RFC alternatives plus the decisive fork, if useful. | Complete alternatives table and rejection analysis. |
+| `Consequences` | Architectural consequences of the accepted decision. | Downstream task lists, impacted-artifact matrices and implementation backlog. |
+
+Negative constraints:
+
+- `Decision` MUST NOT copy the full RFC `Proposal`; it states what was accepted
+  and links to the RFC model.
+- `Alternatives Considered` MUST NOT reproduce a source RFC alternatives table
+  when a source RFC exists.
+- `Consequences` MUST NOT duplicate the RFC impacted-artifact/backlog list; it
+  links to the source RFC or backlog for follow-up work.
+- If the ADR accepts or changes a standard/template/validator/practice, the ADR
+  MUST NOT become a proposal wrapper for that artifact; it records the decision
+  and delegates reusable rule text to the downstream artifact.
 
 ## Lifecycle
 
@@ -184,6 +213,20 @@ Rules:
 
 The invariant: RFC answers "should we accept this change and how?", ADR answers
 "what decision was accepted and why?".
+
+## ADR Acceptance Review Checklist
+
+Before moving an ADR to `accepted`, reviewer checks:
+
+- If a source RFC exists, does `Decision` state the accepted decision without
+  retelling the RFC `Proposal`?
+- Do `Alternatives Considered` and `Consequences` delegate source RFC detail
+  instead of copying RFC alternatives, trade-offs or task lists?
+- If the ADR creates or changes a standard/template/validator/practice, is the
+  reusable rule text kept in the downstream artifact rather than embedded as an
+  ADR proposal wrapper?
+- Are status, decision date, impacted artifacts and source links aligned with
+  the frontmatter canon and current repository state?
 
 ## Validation
 
