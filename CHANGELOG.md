@@ -73,6 +73,17 @@ All notable repository governance changes are documented here.
   обновления `Decision record` / `Implementation link`; backlog, artifact-map,
   RFC index and CHANGELOG приведены к accepted/status и glossary-aligned
   terminology.
+- chore: Исправлены точечные последствия audit B-039 по issue #324 после
+  acceptance issue #322. RFC B-016 сохраняет `status: accepted`, `version: 0.3`
+  и `updated: 2026-07-02`; forward-refs `not yet — будущий` заменены
+  фактическими ссылками на ADR-003 и `standards/research-standard.md`. ADR-003
+  сохраняет `status: accepted` и `version: 0.3`; пометка `будущий` у
+  `standards/research-standard.md` убрана. Supersession профиля разграничена:
+  ADR фиксирует human decision, `standards/research-standard.md` задаёт
+  technical replacement, физическое удаление профиля остаётся B-021.
+  `standards/research-standard.md` переведён с `version: 1.1` на draft-aligned
+  `version: 0.1`; `governance/artifact-map.md` синхронизирован с новой
+  формулировкой replacement.
 - adr: Устранено дублирование RFC B-016 в `docs/adr/2026-07-adr-003-research-structure.md`
   по issue #316 (версия ADR `0.1` → `0.2`, решение и статус `proposed` не
   изменены). Секция `Decision` больше не пересказывает Proposal P1–P4, а кратко

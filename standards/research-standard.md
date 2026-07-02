@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 1.1
+version: 0.1
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
@@ -248,8 +248,9 @@ temperature: 0.3
 свой словарь статусов per
 [Frontmatter Docs Standard](frontmatter-docs-standard.md). Пока идёт review, этот
 стандарт остаётся в `draft`/`proposed`; `accepted` фиксирует human decision gate.
-Он замещает [research-profile.md](research-profile.md) как источник правил
-структуры research; физическое удаление профиля выполняется в B-021.
+Он является technical replacement для [research-profile.md](research-profile.md)
+как источника правил структуры research; физическое удаление профиля выполняется
+в B-021.
 
 ```mermaid
 flowchart LR
@@ -289,8 +290,8 @@ frontmatter, naming и registry checks отслеживается как tech de
   rationale, alternatives, trade-offs и rejected options.
 - [ADR-002: Методология создания и управления артефактами](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) —
   routing `runs/` и граница operational run record.
-- [research-profile.md](research-profile.md) — legacy профиль, заменяемый этим
-  стандартом (удаление — B-021).
+- [research-profile.md](research-profile.md) — legacy профиль; technical
+  replacement задаёт этот стандарт, удаление выполняется в B-021.
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
