@@ -1,13 +1,13 @@
 ---
 status: accepted
-version: 0.2
+version: 0.3
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: methodology
 ---
 
-# ADR-004: Структура Reports и routing `docs/report/`
+# ADR-004: Структура Reports и routing `docs/report/` / `docs/audit/`
 
 ## Decision Metadata
 
@@ -18,9 +18,9 @@ decision-type: methodology
 | Decision status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Decision date | 2026-07-02 |
 | Owner | G-Ivan-A |
-| Source | [RFC B-041](../../governance/rfc/2026-07-02-rfc-reports-structure.md); issue [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338); upstream issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) |
+| Source | [RFC B-041](../../governance/rfc/2026-07-02-rfc-reports-structure.md); issue [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338); clarification issue [#348](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/348); upstream issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) |
 | Impacted artifacts | `standards/report-standard.md` (B-043), `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `docs/report/*`, `docs/audit/*`, `research/<domain>/exp/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `governance/backlog.md`, `governance/artifact-map.md` |
-| Supersedes | ADR-002 routing table row `Report -> docs/reports/` for Reports routing only; replacement route is `docs/report/` |
+| Supersedes | ADR-002 routing table row `Report -> docs/reports/` for Reports routing only; replacement routes are `docs/audit/` for audit-reports and `docs/report/` for general/statistics reports |
 | Superseded by | none |
 
 ## Context
@@ -48,11 +48,19 @@ RFC B-041
 профилями для `audit`, `report` и `statistics`. Детальная модель, форма
 подтипов, relation-frontmatter и обоснование границ остаются в RFC B-041.
 
-Установить канонический маршрут Reports как **`docs/report/`** (единственное
-число). Реконсилировать дрейф таблицы routing ADR-002: для Reports routing
-`docs/reports/` считается замещённым на `docs/report/`. ADR-002 остаётся общим
-decision record для маршрутизации артефактов; этот ADR является более поздним
-источником решения для строки Reports.
+Установить канонический маршрут general reports и statistics reports как
+**`docs/report/`** (единственное число). Реконсилировать дрейф таблицы routing
+ADR-002: прежняя строка `Report -> docs/reports/` считается замещённой split
+routing ниже. ADR-002 остаётся общим decision record для маршрутизации
+артефактов; этот ADR является более поздним источником решения для строк Reports.
+
+Уточнение физического routing: audit-reports физически размещаются в `docs/audit/`,
+а general reports и statistics reports — в `docs/report/`. Это физическое разделение, а не концептуальное:
+audit-report остаётся profile внутри base Report standard (Вариант C сохраняется).
+B-043 описывает все три профиля
+(`audit`/`report`/`statistics`) в одном стандарте, но физическое размещение
+audit-reports — в `docs/audit/` из-за их доминирующей доли (60% кандидатов,
+B-029) и уникальной 4-компонентной модели (target/evidence/verdict/deviation).
 
 Делегировать обязательный текст правил в `standards/report-standard.md` (B-043),
 а физическую модернизацию или миграцию — в B-044. Этот ADR не переименовывает и
@@ -62,14 +70,14 @@ decision record для маршрутизации артефактов; этот
 
 | Открытый вопрос | Статус в ADR |
 | --- | --- |
-| Физический дом audit reports (`docs/report/` vs `docs/audit/`) | Делегировано в B-043 и будущий стандарт Audit B-030. Зафиксированное соглашение: `report-subtype: audit` семантически идентифицирует audit-отчёты; контроль пути и миграция в этом ADR не выполняются. |
+| Физический дом audit reports (`docs/report/` vs `docs/audit/`) | Resolved: audit-reports → `docs/audit/`, general/statistics reports → `docs/report/`. Физическое разделение, не концептуальное. Audit-report остаётся profile в Report standard (B-043). |
 | Statistics vs research evidence | Делегировано в B-043 и политику research evidence. Зафиксированное решение: воспроизводимая доказательная база остаётся в `research/<domain>/exp/*`; публикуемое Report-зеркало создаётся только тогда, когда ему нужен собственный жизненный цикл. |
 | Триггер B для выделения subtype-профиля в отдельный стандарт | Принят как критерий против инфляции артефактов: выделять профиль только тогда, когда повторяющиеся обязательные правила для подтипа или боль ревью делают базовый стандарт Report неясным. Операционные пороги будут определены в B-043. |
 
 ## Decision Drivers
 
-- Единый routing-источник: `docs/report/` снимает дрейф ADR-002
-  `docs/reports/` до того, как стандарт Report станет нормативным.
+- Единый routing-источник: split `docs/audit/` / `docs/report/` снимает дрейф
+  ADR-002 `docs/reports/` до того, как стандарт Report станет нормативным.
 - Anti-Inflation: один базовый стандарт с профилями избегает трёх преждевременных
   стандартов и сохраняет путь к будущему разделению.
 - Дисциплина границ: Report остаётся устойчивым классом выходного артефакта, а
@@ -85,8 +93,9 @@ decision record для маршрутизации артефактов; этот
 материал этапа предложения исходному RFC.
 
 Ключевая развилка, которую закрывает это решение: принять Вариант C и
-`docs/report/` или оставить Reports разделёнными между рекомендацией RFC и более
-старой строкой ADR-002 `docs/reports/`. Вариант C и `docs/report/` приняты.
+реконсилировать physical routing или оставить Reports разделёнными между
+рекомендацией RFC, более старой строкой ADR-002 `docs/reports/` и живой практикой
+`docs/audit/`. Вариант C и split `docs/audit/` / `docs/report/` приняты.
 
 ## Consequences
 
@@ -99,6 +108,12 @@ decision record для маршрутизации артефактов; этот
   жизненного цикла и routing.
 - ADR-002 больше не является актуальным источником для строки Reports routing;
   его значение `docs/reports/` реконсилировано этим более поздним решением ADR.
+- Audit-reports физически размещаются в `docs/audit/`, что упрощает навигацию и
+  отражает их доминирующую долю (60% кандидатов из B-029). General reports и
+  statistics reports остаются в `docs/report/`. Audit process artifacts
+  (чек-листы, критерии, нормы проверки) размещаются в `standards/` или `kb/` как
+  контракты (IL-1), а не в `docs/audit/`. `docs/audit/` содержит только
+  audit-reports (durable output Audit-процесса).
 - Существующие артефакты `docs/report/*`, `docs/audit/*` и research evidence не
   мигрируются этим ADR. Очистка и модернизация остаются downstream-задачами.
 - Цепочка стандартизации Audit сохраняет владение процессной семантикой Audit;
@@ -106,8 +121,9 @@ decision record для маршрутизации артефактов; этот
 
 **Компромиссы:**
 
-- Контроль пути для audit-отчётов намеренно отложен, чтобы не предвосхищать B-043
-  и B-030.
+- Физическое разделение audit-reports и general/statistics reports улучшает
+  навигацию, но требует явной дисциплины в B-043 и B-030: путь `docs/audit/` не
+  превращает audit-report в отдельный концептуальный стандарт.
 - Statistics/report-зеркала могут всё ещё требовать человеческого выбора, пока
   стандарт Report не кодифицирует дерево решений evidence-vs-report.
 
@@ -150,6 +166,10 @@ flowchart LR
 - Замещение: `superseded` требует обратную ссылку на заменяющий ADR/RFC.
 - Нормативный контроль делегирован в B-043; миграция файлов делегирована в
   B-044.
+- Уточнение v0.3 принято через issue
+  [#348](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/348): Open
+  Question #1 закрыт физическим routing split `docs/audit/` /
+  `docs/report/` без изменения Варианта C.
 
 ## Related Artifacts
 
@@ -162,6 +182,9 @@ flowchart LR
   — инвентаризация и входные данные по границам для Reports-артефактов.
 - [Reports industry norms](../../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md)
   — исследование с источниками, рекомендующее Вариант C.
+- [B-029 Audit deep analysis](../analysis/2026-07-02-audit-artifacts-deep-analysis.md)
+  — анализ audit-report output и 4-компонентной модели
+  target/evidence/verdict/deviation.
 - [Repository structure concept](../../research/hub/2026-06-23-repository-structure-concept.md)
   — видение фаундера о Reports как отдельном типе с routing `docs/report/`.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md)

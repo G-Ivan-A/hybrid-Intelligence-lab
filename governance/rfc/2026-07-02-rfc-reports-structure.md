@@ -374,6 +374,10 @@ RFC.
 Текущее состояние: `accepted`. Переход к `accepted` выполнен через ADR-004
 (B-042), который фиксирует human decision gate и реконсиляцию routing ADR-002.
 
+Decision updated by ADR-004 v0.3: physical routing split into `docs/audit/`
+(audit-reports) and `docs/report/` (general/statistics reports). Variant C
+(base standard + profiles) preserved.
+
 ```mermaid
 flowchart LR
     Draft[draft] --> Proposed[proposed]

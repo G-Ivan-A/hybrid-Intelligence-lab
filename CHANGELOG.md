@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.36
+version: 1.37
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -32,6 +32,40 @@ All notable repository governance changes are documented here.
   Standard не создаются, файлы не мигрируются. `governance/rfc/README.md`,
   `governance/artifact-map.md`, `governance/backlog.md` (B-030 → review) и
   структурный валидатор обновлены.
+- standard: Создан `standards/report-standard.md` (draft) — базовый нормативный
+  стандарт Report + лёгкие профили подтипов для B-043 / issue #354. Стандарт
+  фиксирует базовый каркас Report (назначение, frontmatter, naming, lifecycle,
+  минимальные core-секции), профили `audit` / `report` / `statistics`,
+  relation-метаданные frontmatter (`based_on`, `source`, `scope`, `supersedes`,
+  `related_artifacts`, `report-subtype`), routing split `docs/report/` +
+  `docs/audit/` и границы Reports ↔ Analysis ↔ Audit ↔ Research evidence.
+  Отмечает knowledge-vocabulary lifecycle для самих Report-артефактов против
+  governance-vocabulary для документа стандарта. Стандарт делегирует proposal /
+  alternatives / trade-offs в RFC B-041 и принятое решение в ADR-004, не
+  дублируя их; физическая миграция файлов остаётся за B-044. Обновлены
+  `standards/README.md`, `governance/artifact-map.md` и `governance/backlog.md`
+  (B-043 → DONE).
+- rfc: Added `governance/rfc/2026-07-02-rfc-analysis-structure.md` (status
+  `proposed`) for issue #350 (B-025). The RFC proposes the structure of Analysis
+  artifacts: a single base Analysis standard plus optional light subtype profiles
+  (`inventory`/`matrix`/`options`/`recommendation`) as Variant C ("A now, B
+  later" with an explicit anti-inflation trigger B), confirms the canonical
+  routing `docs/analysis/YYYY-MM-DD-name.md` (delegated to `research-standard`),
+  proposes Analysis frontmatter with relation metadata
+  (`source`/`scope`/`based_on`/`related_artifacts`/`analysis-subtype`), the
+  knowledge-lifecycle (`draft → reviewed → canonical → superseded`), a minimal
+  core section set (Summary/BLUF, Context/Scope, Findings/Options,
+  Recommendations, Related Artifacts) and the boundaries Analysis ↔ Research ↔
+  Audit ↔ Report ↔ RFC ↔ ADR. It delegates evidence to B-024 (186-artifact
+  inventory and boundaries), B-029 (Analysis ↔ Audit), B-041 (Analysis ↔ Reports
+  precedent), `research-standard` (R/A/A routing) and `glossary` (definitions)
+  instead of restating them, gives Alternatives A/B/C/D with rejection rationale,
+  Trade-offs, delta matrix and Critical Analysis. The change intentionally does
+  not create an Analysis standard (B-027), does not create an ADR (B-026) and
+  does not migrate files (B-028); the decision record stays `not yet` pending the
+  human decision gate. Registered in the RFC README, `governance/artifact-map.md`,
+  the structure validator allowlist/required-text and `governance/backlog.md`
+  (B-025 → review).
 - analysis: Added `docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md`
   for issue #344 (B-029). The report uses the B-024 matrix as input, reviews 29
   Audit candidates across Hub, Mango and Clarify at fixed artifact snapshots,
@@ -865,6 +899,15 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: Уточнён `docs/adr/2026-07-adr-004-reports-structure.md` по issue #348:
+  ADR-004 повышен до v0.3 и закрывает Open Question #1 физическим routing split
+  `docs/audit/` для audit-reports и `docs/report/` для general/statistics
+  reports. Вариант C сохранён: audit-report остаётся profile внутри base Report
+  standard B-043, а Audit process artifacts остаются контрактами в `standards/`
+  или `kb/`. ADR-002 повышен до v1.4 с отдельной строкой `Audit report` →
+  `docs/audit/`, RFC B-041 получил lifecycle note о решении, artifact-map и
+  структурный валидатор синхронизированы. Физическая миграция файлов не
+  выполнялась.
 - adr: Уточнён `docs/adr/2026-07-adr-004-reports-structure.md` по issue #345:
   текст ADR-004 приведён к русскому стилю ADR-003, убрана англоязычная
   дублирующая пометка к Варианту C, будущие пороги B-043 описаны в будущем
