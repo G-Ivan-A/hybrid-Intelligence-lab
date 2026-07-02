@@ -13,6 +13,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Added `docs/analysis/2026-07-02-analysis-artifacts-inventory.md`
+  for issue #342 (B-024) plus the reproducible evidence package
+  `research/hub/exp/analysis-inventory-342/`. The inventory scans Hub, Mango and
+  Clarify at fixed SHAs, classifies 186 text artifacts by actual type
+  (Research / Analysis / Audit / Report / RFC / ADR / Other), identifies masked
+  `docs/analysis/` artifacts in Mango and Clarify, records boundaries Analysis ↔
+  Research ↔ Audit ↔ Report, and lists duplicate-review/modernization
+  candidates for B-028. The change intentionally does not create an Analysis
+  standard, does not create an RFC, does not move files, and does not clean up
+  existing artifacts.
 - adr: Создан `docs/adr/2026-07-adr-004-reports-structure.md` — accepted ADR
   для B-042 / issue #338. ADR фиксирует human decision по RFC B-041: принят
   Вариант C (базовый стандарт Report + лёгкие профили `audit`/`report`/
