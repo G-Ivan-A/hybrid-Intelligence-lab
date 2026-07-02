@@ -76,6 +76,16 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: Добавлен addendum B-019 к
+  `docs/adr/2026-06-adr-002-artifact-document-methodology.md` по issue #326.
+  ADR-002 теперь явно фиксирует границу `research/<domain>/exp/<issue-slug>/`
+  (research evidence corpus, всегда связан с parent dated report) vs `runs/`
+  (operational run record, не обязан быть связан с research), включает
+  нормативный критерий «один вопрос исполнителю» и ссылается на ADR-003 как
+  источник решения и RFC B-016 как источник rationale. Routing-таблица ADR-002
+  сохранена без конфликта: строка `Run record` остаётся правилом для
+  operational records, а research evidence routing делегирован
+  `standards/research-standard.md`.
 - adr + standard: Приняты ADR-003 и RFC B-016 по issue #322 / PR #323. Устранены
   причинные дефекты F-01/F-07/F-07-parallel/F-08 из audit B-039: три structure
   standards больше не смешивают Standard и Contract; ADR standard получил
