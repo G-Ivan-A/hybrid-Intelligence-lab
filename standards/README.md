@@ -1,6 +1,6 @@
 ---
 status: accepted
-version: 1.8
+version: 1.9
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
@@ -28,6 +28,7 @@ owner: G-Ivan-A
 | RFC structure standard | Active | Единая структура RFC-like документов: frontmatter, metadata, required body sections, Research→RFC delegation, lifecycle, Open Questions and Boundary RFC/ADR | [rfc-structure-standard.md](rfc-structure-standard.md) |
 | Knowledge lifecycle | Draft RFC (предложен на утверждение) | Переходы Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive | [../governance/rfc/knowledge-lifecycle-proposal.md](../governance/rfc/knowledge-lifecycle-proposal.md) |
 | Research structure standard | Active | `research/<domain>/`: размещение отчётов, контейнер `exp/`, запрет `outputs/`, routing Research / Analysis / Audit и граница `exp/` vs `runs/` | [research-standard.md](research-standard.md) |
+| Report standard | Draft (предложен на утверждение) | `docs/report/` и `docs/audit/`: базовый каркас Report, профили `audit`/`report`/`statistics`, relation-frontmatter, routing split, knowledge-lifecycle и границы Reports ↔ Analysis ↔ Audit ↔ Research evidence | [report-standard.md](report-standard.md) |
 | Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [product-profile.md](product-profile.md) |
 | Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [team-contract.md](team-contract.md) |
 | Жизненный цикл задач | Active | Issues, PRs, переходы статусов, AI-assisted task execution | [issue-workflow.md](issue-workflow.md) |

@@ -64,6 +64,7 @@ is_active_file() {
     standards/file-naming.md | \
     standards/file-naming-convention.md | \
     standards/research-standard.md | \
+    standards/report-standard.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
     standards/product-profile.md | \
@@ -527,6 +528,7 @@ required_files=(
   "standards/file-naming.md"
   "standards/file-naming-convention.md"
   "standards/research-standard.md"
+  "standards/report-standard.md"
   "standards/glossary.md"
   "standards/education-profile.md"
   "standards/product-profile.md"
@@ -825,7 +827,7 @@ require_text "mkdocs.yml" "2026-06-30-reports-industry-norms-and-standardization
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.8"
+require_text "standards/README.md" "version: 1.9"
 require_text "standards/README.md" "updated: 2026-07-02"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
@@ -834,6 +836,7 @@ require_text "standards/README.md" "frontmatter-standard.md"
 require_text "standards/README.md" "file-naming.md"
 require_text "standards/README.md" "file-naming-convention.md"
 require_text "standards/README.md" "research-standard.md"
+require_text "standards/README.md" "report-standard.md"
 require_text "standards/README.md" "team-contract.md"
 require_text "standards/README.md" "standards/glossary.md"
 require_text "standards/README.md" "standards/education-profile.md"
@@ -895,6 +898,13 @@ require_text "standards/research-standard.md" "frontmatter-docs-standard.md"
 require_text "standards/research-standard.md" "exp/<issue-slug>"
 require_text "standards/research-standard.md" "запрет"
 require_text "standards/research-standard.md" "Research / Analysis / Audit"
+require_text "standards/report-standard.md" "status: draft"
+require_text "standards/report-standard.md" "owner: G-Ivan-A"
+require_text "standards/report-standard.md" "frontmatter-docs-standard.md"
+require_text "standards/report-standard.md" "report-subtype"
+require_text "standards/report-standard.md" "Subtype Profiles"
+require_text "standards/report-standard.md" "docs/report/"
+require_text "standards/report-standard.md" "docs/audit/"
 require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "version: 1.4"
 require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "updated: 2026-07-02"
 require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" '## Addendum B-019: граница `exp/` vs `runs/`'
@@ -1316,7 +1326,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.63"
+require_text "governance/artifact-map.md" "version: 1.64"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1617,7 +1627,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.18"
+require_text "governance/backlog.md" "version: 1.19"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"

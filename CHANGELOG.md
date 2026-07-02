@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.35
+version: 1.36
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,6 +13,19 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- standard: Создан `standards/report-standard.md` (draft) — базовый нормативный
+  стандарт Report + лёгкие профили подтипов для B-043 / issue #354. Стандарт
+  фиксирует базовый каркас Report (назначение, frontmatter, naming, lifecycle,
+  минимальные core-секции), профили `audit` / `report` / `statistics`,
+  relation-метаданные frontmatter (`based_on`, `source`, `scope`, `supersedes`,
+  `related_artifacts`, `report-subtype`), routing split `docs/report/` +
+  `docs/audit/` и границы Reports ↔ Analysis ↔ Audit ↔ Research evidence.
+  Отмечает knowledge-vocabulary lifecycle для самих Report-артефактов против
+  governance-vocabulary для документа стандарта. Стандарт делегирует proposal /
+  alternatives / trade-offs в RFC B-041 и принятое решение в ADR-004, не
+  дублируя их; физическая миграция файлов остаётся за B-044. Обновлены
+  `standards/README.md`, `governance/artifact-map.md` и `governance/backlog.md`
+  (B-043 → DONE).
 - analysis: Added `docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md`
   for issue #344 (B-029). The report uses the B-024 matrix as input, reviews 29
   Audit candidates across Hub, Mango and Clarify at fixed artifact snapshots,
