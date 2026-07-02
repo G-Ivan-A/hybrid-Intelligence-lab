@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.38
+version: 1.39
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,6 +13,27 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- adr: Создан `docs/adr/2026-07-adr-006-analysis-structure.md` (accepted) —
+  human decision gate по структуре Analysis для B-026 / issue #357. ADR
+  фиксирует принятое человеком решение принять **Вариант C** из RFC B-025
+  (базовый стандарт Analysis + опциональные лёгкие профили подтипов
+  `inventory` / `matrix` / `options` / `recommendation` как секции, «A сейчас,
+  B потом» с триггером B), подтверждает канонический routing
+  `docs/analysis/YYYY-MM-DD-name.md` (уже задан в `research-standard` и ADR-003,
+  без изменения ADR-002/ADR-003), frontmatter Analysis с relation-метаданными
+  (`source` / `scope` / `based_on` / `related_artifacts` и опционально
+  `analysis-subtype`), knowledge-lifecycle (`draft → reviewed → canonical →
+  superseded`) и границы Analysis ↔ Research ↔ Audit ↔ Report ↔ RFC ↔ ADR
+  методом link/cite к B-024/B-029/B-041/glossary/research-standard (без restate).
+  Open Questions RFC B-025 закрыты делегированием: набор профилей и
+  обязательность `analysis-subtype` → B-027; физический дом legacy Analysis →
+  B-028/B-034; пороги триггера B → B-027. ADR применяет section-level delegation
+  (не пересказывает proposal/alternatives/trade-offs RFC), разблокирует стандарт
+  B-027 и cleanup B-028, но не создаёт стандарт и не мигрирует файлы. RFC B-025
+  переведён в `accepted` (v0.2, decision record — ADR-006). `governance/backlog.md`
+  (B-026 → DONE, B-027 разблокирована), `governance/artifact-map.md`,
+  `governance/rfc/README.md` и структурный валидатор обновлены. Зеркалит цепочку
+  Reports (ADR-004 / B-042).
 - adr: Создан `docs/adr/2026-07-adr-005-audit-structure.md` (status `accepted`) —
   ADR-005 / human decision gate для B-031 / issue #358. ADR фиксирует принятие
   **Варианта C** из RFC B-030: базовый стандарт Audit + **4-компонентная модель**
@@ -30,7 +51,6 @@ All notable repository governance changes are documented here.
   не создаёт стандарт (B-032) и не мигрирует файлы (B-033). Разблокирована B-032.
   Обновлены `governance/artifact-map.md`, `governance/backlog.md` (B-031 → DONE,
   B-032 разблокирована) и структурный валидатор.
-
 - rfc: Создан `governance/rfc/2026-07-02-rfc-audit-structure.md` — draft RFC
   для B-030 / issue #352. RFC предлагает (не нормирует) структуру Audit-
   артефактов на входе цепочки стандартизации после инвентаризации B-029:

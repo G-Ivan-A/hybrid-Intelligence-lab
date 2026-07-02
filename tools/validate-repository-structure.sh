@@ -60,6 +60,7 @@ is_active_file() {
     docs/adr/2026-07-adr-003-research-structure.md | \
     docs/adr/2026-07-adr-004-reports-structure.md | \
     docs/adr/2026-07-adr-005-audit-structure.md | \
+    docs/adr/2026-07-adr-006-analysis-structure.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -520,6 +521,7 @@ required_files=(
   "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   "docs/adr/2026-07-adr-004-reports-structure.md"
   "docs/adr/2026-07-adr-005-audit-structure.md"
+  "docs/adr/2026-07-adr-006-analysis-structure.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
@@ -939,6 +941,18 @@ require_text "docs/adr/2026-07-adr-005-audit-structure.md" "compliance target / 
 require_text "docs/adr/2026-07-adr-005-audit-structure.md" 'разграничение Audit-процесс vs audit-report output'
 require_text "docs/adr/2026-07-adr-005-audit-structure.md" 'docs/audit/'
 require_text "docs/adr/2026-07-adr-005-audit-structure.md" "content-over-path"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "ADR-006"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "status: accepted"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "Вариант C"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" 'docs/analysis/'
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "inventory"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "matrix"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "options"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "recommendation"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "analysis-subtype"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "draft → reviewed → canonical → superseded"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "Analysis ↔ Research ↔ Audit ↔ Report"
+require_text "docs/adr/2026-07-adr-006-analysis-structure.md" "Триггер B"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Boundary RFC/ADR"
 require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "status: accepted"
@@ -949,7 +963,8 @@ require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "## Boundary R
 require_text "governance/rfc/2026-07-02-rfc-audit-structure.md" "status: draft"
 require_text "governance/rfc/2026-07-02-rfc-audit-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-07-02-rfc-audit-structure.md" "## Boundary RFC/ADR"
-require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "status: proposed"
+require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "status: accepted"
+require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "Decision record | [ADR-006]"
 require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "rfc-scope: A"
 require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "## Boundary RFC/ADR"
@@ -1344,7 +1359,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.66"
+require_text "governance/artifact-map.md" "version: 1.67"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1354,6 +1369,7 @@ require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-07-adr-004-reports-structure.md"
+require_text "governance/artifact-map.md" "docs/adr/2026-07-adr-006-analysis-structure.md"
 require_text "governance/artifact-map.md" "addendum B-019 / issue #326"
 require_text "governance/artifact-map.md" "routing reconciliation ADR-004 / issues #338/#348"
 require_text "governance/artifact-map.md" "research/<domain>/exp/<issue-slug>/"
@@ -1432,7 +1448,7 @@ require_text "governance/artifact-map.md" "research/external-knowledge/external-
 require_text "governance/artifact-map.md" "governance/rfc/external-knowledge-integration.md"
 
 require_text "governance/rfc/README.md" "status: accepted"
-require_text "governance/rfc/README.md" "version: 1.19"
+require_text "governance/rfc/README.md" "version: 1.20"
 require_text "governance/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "governance/rfc/README.md" "ADR-004"
 require_text "governance/rfc/README.md" "updated: 2026-07-02"
@@ -1645,7 +1661,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.21"
+require_text "governance/backlog.md" "version: 1.22"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"
@@ -1664,6 +1680,7 @@ require_text "governance/backlog.md" "План миграции репо Хаб�
 require_text "governance/backlog.md" "B-038"
 require_text "governance/backlog.md" "Reports-артефактов"
 require_text "governance/backlog.md" "docs/adr/2026-07-adr-004-reports-structure.md"
+require_text "governance/backlog.md" "docs/adr/2026-07-adr-006-analysis-structure.md"
 require_text "governance/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338"
 require_text "governance/backlog.md" "разблокирована после ADR-004"
 require_text "governance/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310"

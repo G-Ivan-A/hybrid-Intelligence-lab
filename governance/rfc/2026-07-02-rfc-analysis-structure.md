@@ -1,6 +1,6 @@
 ---
-status: proposed
-version: 0.1
+status: accepted
+version: 0.2
 updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
@@ -14,10 +14,10 @@ rfc-scope: A
 | Field | Value |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | proposed (narrative summary; машиночитаемый canon — frontmatter `status`) |
+| RFC status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Source issue | [#350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350); контекст [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296), [#342](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/342), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
 | Impacted artifacts | future `standards/analysis-standard.md` (B-027), future ADR B-026, `docs/analysis/*`, `research/**` (legacy Analysis), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `standards/research-standard.md` (routing R/A/A уже задан), `governance/backlog.md`, `governance/artifact-map.md`, `governance/rfc/README.md`, `CHANGELOG.md`, `tools/validate-repository-structure.sh` (постановка на учёт) |
-| Decision record | not yet (future ADR B-026, [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296)) |
+| Decision record | [ADR-006](../../docs/adr/2026-07-adr-006-analysis-structure.md) (B-026, issue [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357)) — принят Вариант C |
 | Implementation link | not yet (future `standards/analysis-standard.md`, B-027) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
 
@@ -436,9 +436,10 @@ RFC.
 
 ## Lifecycle and Decision Path
 
-Текущее состояние: `proposed` — required-секции полны и локальная валидация
-проходит. Переход к `accepted` выполняется **только** через ADR B-026 (human
-decision gate); до него RFC остаётся proposal.
+Текущее состояние: `accepted` — required-секции полны, локальная валидация
+проходит, и решение зафиксировано через ADR B-026 (human decision gate),
+[ADR-006](../../docs/adr/2026-07-adr-006-analysis-structure.md). Переход в
+`accepted` выполнен ADR-006; до него RFC оставался proposal.
 
 ```mermaid
 flowchart LR
