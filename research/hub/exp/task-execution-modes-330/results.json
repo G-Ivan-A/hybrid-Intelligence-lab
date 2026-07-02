@@ -1,0 +1,657 @@
+{
+  "issue": 330,
+  "types": [
+    "ADR",
+    "RFC",
+    "Standard",
+    "Audit",
+    "Research",
+    "Analysis",
+    "Chore"
+  ],
+  "modes": [
+    "Creative",
+    "Structured",
+    "Hybrid"
+  ],
+  "summary": {
+    "test1_backlog": {
+      "type_ok_v2": 17,
+      "type_ok_v1": 8,
+      "mode_ok": 17,
+      "n": 18
+    },
+    "test2_issues": {
+      "type_ok": 5,
+      "mode_ok": 5,
+      "n": 5
+    },
+    "test3_conflict_hybrid_ok": {
+      "mode_ok": 3,
+      "n": 3
+    },
+    "test4_switches": {
+      "switched": 3,
+      "n": 3
+    },
+    "test5_industry_match": {
+      "match": 6,
+      "n": 6
+    }
+  },
+  "tasks": [
+    {
+      "id": "B-016",
+      "source": "backlog",
+      "title_raw": "RFC: Структура research, контейнер exp/ и маршрутизация Research/Analysis/Audit",
+      "input_text": "Структура research, контейнер exp/ и маршрутизация Research/Analysis/Audit",
+      "gt_type": [
+        "RFC"
+      ],
+      "gt_mode": "Creative",
+      "note": "",
+      "pred_type_v1": "Audit",
+      "pred_type": "Audit",
+      "pred_mode": "Structured",
+      "underspecified": true,
+      "type_ok_v1": false,
+      "type_ok": false,
+      "mode_ok": false,
+      "mode_reason": "type=Audit->follow-contract/steps"
+    },
+    {
+      "id": "B-017",
+      "source": "backlog",
+      "title_raw": "ADR: Принять стандарт структуры research",
+      "input_text": "Принять стандарт структуры research",
+      "gt_type": [
+        "ADR"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "",
+      "pred_type_v1": "Research",
+      "pred_type": "ADR",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "mixed-task:two-actions"
+    },
+    {
+      "id": "B-018",
+      "source": "backlog",
+      "title_raw": "Создать standards/research-standard.md как стандарт структуры research",
+      "input_text": "Создать standards/research-standard.md как стандарт структуры research",
+      "gt_type": [
+        "Standard"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "",
+      "pred_type_v1": "Standard",
+      "pred_type": "Standard",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "mixed-task:two-actions"
+    },
+    {
+      "id": "B-020",
+      "source": "backlog",
+      "title_raw": "Обновить standards/glossary.md: Research / Analysis / Audit / RFC / ADR / Standard",
+      "input_text": "Обновить standards/glossary.md: Research / Analysis / Audit / RFC / ADR / Standard",
+      "gt_type": [
+        "Chore"
+      ],
+      "gt_mode": "Structured",
+      "note": "",
+      "pred_type_v1": "Audit",
+      "pred_type": "Chore",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Chore->follow-contract/steps"
+    },
+    {
+      "id": "B-021",
+      "source": "backlog",
+      "title_raw": "Удалить standards/research-profile.md после замены стандартом",
+      "input_text": "Удалить standards/research-profile.md после замены стандартом",
+      "gt_type": [
+        "Chore"
+      ],
+      "gt_mode": "Structured",
+      "note": "",
+      "pred_type_v1": "Research",
+      "pred_type": "Chore",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Chore->follow-contract/steps"
+    },
+    {
+      "id": "B-022",
+      "source": "backlog",
+      "title_raw": "Мигрировать существующие exp-* в контейнер exp/, убрать outputs/",
+      "input_text": "Мигрировать существующие exp-* в контейнер exp/, убрать outputs/",
+      "gt_type": [
+        "Chore"
+      ],
+      "gt_mode": "Structured",
+      "note": "",
+      "pred_type_v1": "Chore",
+      "pred_type": "Chore",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Chore->follow-contract/steps"
+    },
+    {
+      "id": "B-023",
+      "source": "backlog",
+      "title_raw": "Обновить валидатор структуры под exp/ и routing по типам задач",
+      "input_text": "Обновить валидатор структуры под exp/ и routing по типам задач",
+      "gt_type": [
+        "Chore"
+      ],
+      "gt_mode": "Structured",
+      "note": "",
+      "pred_type_v1": "Chore",
+      "pred_type": "Chore",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Chore->follow-contract/steps"
+    },
+    {
+      "id": "B-024",
+      "source": "backlog",
+      "title_raw": "analysis: Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify)",
+      "input_text": "Сквозной анализ артефактов Analysis (Хаб, Mango, Clarify)",
+      "gt_type": [
+        "Analysis"
+      ],
+      "gt_mode": "Creative",
+      "note": "",
+      "pred_type_v1": "Analysis",
+      "pred_type": "Analysis",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Analysis->goal-given-method-open"
+    },
+    {
+      "id": "B-025",
+      "source": "backlog",
+      "title_raw": "rfc: Стандарт структуры Analysis",
+      "input_text": "Стандарт структуры Analysis",
+      "gt_type": [
+        "RFC"
+      ],
+      "gt_mode": "Creative",
+      "note": "",
+      "pred_type_v1": "Analysis",
+      "pred_type": "RFC",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=RFC->goal-given-method-open"
+    },
+    {
+      "id": "B-026",
+      "source": "backlog",
+      "title_raw": "adr: Принятие analysis-standard",
+      "input_text": "Принятие analysis-standard",
+      "gt_type": [
+        "ADR"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "",
+      "pred_type_v1": "Analysis",
+      "pred_type": "ADR",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=ADR->constrained-authoring"
+    },
+    {
+      "id": "B-027",
+      "source": "backlog",
+      "title_raw": "chore: Создание standards/analysis-standard.md",
+      "input_text": "Создание standards/analysis-standard.md",
+      "gt_type": [
+        "Standard",
+        "Chore"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "",
+      "pred_type_v1": "Standard",
+      "pred_type": "Standard",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Standard->constrained-authoring"
+    },
+    {
+      "id": "B-028",
+      "source": "backlog",
+      "title_raw": "chore: Cleanup и модернизация Analysis-артефактов",
+      "input_text": "Cleanup и модернизация Analysis-артефактов",
+      "gt_type": [
+        "Chore"
+      ],
+      "gt_mode": "Structured",
+      "note": "",
+      "pred_type_v1": "Analysis",
+      "pred_type": "Chore",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Chore->follow-contract/steps"
+    },
+    {
+      "id": "B-029",
+      "source": "backlog",
+      "title_raw": "analysis: Сквозной анализ артефактов Audit (Хаб, Mango, Clarify)",
+      "input_text": "Сквозной анализ артефактов Audit (Хаб, Mango, Clarify)",
+      "gt_type": [
+        "Analysis"
+      ],
+      "gt_mode": "Creative",
+      "note": "",
+      "pred_type_v1": "Analysis",
+      "pred_type": "Analysis",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Analysis->goal-given-method-open"
+    },
+    {
+      "id": "B-030",
+      "source": "backlog",
+      "title_raw": "rfc: Стандарт структуры Audit",
+      "input_text": "Стандарт структуры Audit",
+      "gt_type": [
+        "RFC"
+      ],
+      "gt_mode": "Creative",
+      "note": "",
+      "pred_type_v1": "Audit",
+      "pred_type": "RFC",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=RFC->goal-given-method-open"
+    },
+    {
+      "id": "B-032",
+      "source": "backlog",
+      "title_raw": "chore: Создание standards/audit-standard.md",
+      "input_text": "Создание standards/audit-standard.md",
+      "gt_type": [
+        "Standard",
+        "Chore"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "",
+      "pred_type_v1": "Standard",
+      "pred_type": "Standard",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Standard->constrained-authoring"
+    },
+    {
+      "id": "B-034",
+      "source": "backlog",
+      "title_raw": "rfc: План миграции репо Хаба после стандартов Research/Analysis/Audit",
+      "input_text": "План миграции репо Хаба после стандартов Research/Analysis/Audit",
+      "gt_type": [
+        "RFC"
+      ],
+      "gt_mode": "Creative",
+      "note": "",
+      "pred_type_v1": "Audit",
+      "pred_type": "RFC",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=RFC->goal-given-method-open"
+    },
+    {
+      "id": "B-038",
+      "source": "backlog",
+      "title_raw": "analysis: Инвентаризация и границы Reports-артефактов",
+      "input_text": "Инвентаризация и границы Reports-артефактов (аудит / отчёт / статистика)",
+      "gt_type": [
+        "Analysis"
+      ],
+      "gt_mode": "Creative",
+      "note": "",
+      "pred_type_v1": "Audit",
+      "pred_type": "Analysis",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Analysis->goal-given-method-open"
+    },
+    {
+      "id": "B-039",
+      "source": "backlog",
+      "title_raw": "audit: Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard",
+      "input_text": "Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard",
+      "gt_type": [
+        "Audit"
+      ],
+      "gt_mode": "Structured",
+      "note": "",
+      "pred_type_v1": "Audit",
+      "pred_type": "Audit",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Audit->follow-contract/steps"
+    },
+    {
+      "id": "#310",
+      "source": "issue",
+      "title_raw": "analysis: Инвентаризация Reports-артефактов в Хабе, Mango, Clarify",
+      "input_text": "Инвентаризация Reports-артефактов в Хабе, Mango, Clarify",
+      "gt_type": [
+        "Analysis"
+      ],
+      "gt_mode": "Creative",
+      "note": "Executed as docs/analysis/ inventory.",
+      "pred_type_v1": "Analysis",
+      "pred_type": "Analysis",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Analysis->goal-given-method-open"
+    },
+    {
+      "id": "#316",
+      "source": "issue",
+      "title_raw": "analysis + chore: Определить причину дублирования RFC/ADR, сформировать report и исправить ADR-003",
+      "input_text": "Определить причину дублирования RFC/ADR, сформировать report и исправить ADR-003",
+      "gt_type": [
+        "Analysis",
+        "Chore"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "Mixed: root-cause report (Analysis) + fix (Chore).",
+      "pred_type_v1": "ADR",
+      "pred_type": "Chore",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "mixed-task:two-actions"
+    },
+    {
+      "id": "#320",
+      "source": "issue",
+      "title_raw": "audit: Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard",
+      "input_text": "Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard",
+      "gt_type": [
+        "Audit"
+      ],
+      "gt_mode": "Structured",
+      "note": "Executed as docs/audit/.",
+      "pred_type_v1": "Audit",
+      "pred_type": "Audit",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Audit->follow-contract/steps"
+    },
+    {
+      "id": "#322",
+      "source": "issue",
+      "title_raw": "adr + standard: Принять ADR-003 и устранить причинные дефекты стандартов",
+      "input_text": "Принять ADR-003 и устранить причинные дефекты стандартов",
+      "gt_type": [
+        "ADR",
+        "Standard"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "Mixed: decision (ADR) + standard edits.",
+      "pred_type_v1": "ADR",
+      "pred_type": "ADR",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "mixed-task:two-actions"
+    },
+    {
+      "id": "#324",
+      "source": "issue",
+      "title_raw": "chore: Исправить точечные последствия аудита B-039",
+      "input_text": "Исправить точечные последствия аудита B-039",
+      "gt_type": [
+        "Chore"
+      ],
+      "gt_mode": "Structured",
+      "note": "Point fixes only.",
+      "pred_type_v1": "Audit",
+      "pred_type": "Chore",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Chore->follow-contract/steps"
+    },
+    {
+      "id": "C-1",
+      "source": "constructed",
+      "title_raw": "Создать ADR, но строго по шаблону adr-structure-standard",
+      "input_text": "Создать ADR, но строго по шаблону adr-structure-standard",
+      "gt_type": [
+        "ADR"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "Creative decision content inside a fixed template box -> Hybrid.",
+      "pred_type_v1": "Chore",
+      "pred_type": "ADR",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=ADR->constrained-authoring"
+    },
+    {
+      "id": "C-2",
+      "source": "constructed",
+      "title_raw": "Исследовать варианты структуры Audit и сразу оформить как RFC по rfc-structure-standard",
+      "input_text": "Исследовать варианты структуры Audit и сразу оформить как RFC по rfc-structure-standard",
+      "gt_type": [
+        "RFC",
+        "Research"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "Open research + strict RFC container -> Hybrid.",
+      "pred_type_v1": "Audit",
+      "pred_type": "RFC",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "mixed-task:two-actions"
+    },
+    {
+      "id": "C-3",
+      "source": "constructed",
+      "title_raw": "Провести аудит на соответствие, но предложить креативные варианты ремедиации",
+      "input_text": "Провести аудит на соответствие, но предложить креативные варианты ремедиации",
+      "gt_type": [
+        "Audit"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "Structured check + creative remediation options -> Hybrid.",
+      "pred_type_v1": "Audit",
+      "pred_type": "Audit",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Audit+creativity->freedom-in-box"
+    },
+    {
+      "id": "E-1a",
+      "source": "evolution",
+      "title_raw": "Создать RFC со структурой Audit",
+      "input_text": "Создать RFC со структурой Audit",
+      "gt_type": [
+        "RFC"
+      ],
+      "gt_mode": "Creative",
+      "note": "before",
+      "pred_type_v1": "Audit",
+      "pred_type": "RFC",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=RFC->goal-given-method-open"
+    },
+    {
+      "id": "E-1b",
+      "source": "evolution",
+      "title_raw": "Оказывается, нужен ADR: принять структуру Audit",
+      "input_text": "Оказывается, нужен ADR: принять структуру Audit",
+      "gt_type": [
+        "ADR"
+      ],
+      "gt_mode": "Hybrid",
+      "note": "after",
+      "pred_type_v1": "Audit",
+      "pred_type": "ADR",
+      "pred_mode": "Hybrid",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=ADR->constrained-authoring"
+    },
+    {
+      "id": "E-2a",
+      "source": "evolution",
+      "title_raw": "Проанализировать Reports-артефакты",
+      "input_text": "Проанализировать Reports-артефакты",
+      "gt_type": [
+        "Analysis"
+      ],
+      "gt_mode": "Creative",
+      "note": "before",
+      "pred_type_v1": "Chore",
+      "pred_type": "Analysis",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": false,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Analysis->goal-given-method-open"
+    },
+    {
+      "id": "E-2b",
+      "source": "evolution",
+      "title_raw": "Оказывается, это аудит на соответствие стандарту Reports",
+      "input_text": "Оказывается, это аудит на соответствие стандарту Reports",
+      "gt_type": [
+        "Audit"
+      ],
+      "gt_mode": "Structured",
+      "note": "after",
+      "pred_type_v1": "Audit",
+      "pred_type": "Audit",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Audit->follow-contract/steps"
+    },
+    {
+      "id": "E-3a",
+      "source": "evolution",
+      "title_raw": "Исследовать индустриальные нормы режимов выполнения",
+      "input_text": "Исследовать индустриальные нормы режимов выполнения",
+      "gt_type": [
+        "Research"
+      ],
+      "gt_mode": "Creative",
+      "note": "before",
+      "pred_type_v1": "Research",
+      "pred_type": "Research",
+      "pred_mode": "Creative",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Research->goal-given-method-open"
+    },
+    {
+      "id": "E-3b",
+      "source": "evolution",
+      "title_raw": "Оказывается, нужно обновить glossary под новые режимы",
+      "input_text": "Оказывается, нужно обновить glossary под новые режимы",
+      "gt_type": [
+        "Chore"
+      ],
+      "gt_mode": "Structured",
+      "note": "after",
+      "pred_type_v1": "Chore",
+      "pred_type": "Chore",
+      "pred_mode": "Structured",
+      "underspecified": false,
+      "type_ok_v1": true,
+      "type_ok": true,
+      "mode_ok": true,
+      "mode_reason": "type=Chore->follow-contract/steps"
+    }
+  ]
+}
