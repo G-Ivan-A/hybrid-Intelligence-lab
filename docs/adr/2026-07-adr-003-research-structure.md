@@ -1,7 +1,7 @@
 ---
-status: proposed
-version: 0.2
-updated: 2026-07-01
+status: accepted
+version: 0.3
+updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: methodology
@@ -15,11 +15,11 @@ decision-type: methodology
 | --- | --- |
 | ADR id | ADR-003 |
 | Decision type | methodology |
-| Decision status | proposed (narrative summary; машиночитаемый canon — frontmatter `status`) |
-| Decision date | 2026-07-01 |
+| Decision status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
+| Decision date | 2026-07-02 |
 | Owner | G-Ivan-A |
 | Source | [RFC B-016](../../governance/rfc/2026-06-30-rfc-research-structure.md); issues [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294), [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
-| Impacted artifacts | `standards/research-profile.md`, `standards/research-standard.md` (B-018, будущий), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (addendum B-019), `standards/glossary.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*` |
+| Impacted artifacts | `standards/research-profile.md`, `standards/research-standard.md` (B-018, standard in review), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (addendum B-019), `standards/glossary.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*` |
 | Supersedes | `standards/research-profile.md` (effective после удаления профиля в B-021; до этого профиль остаётся legacy-compatible) |
 | Superseded by | none |
 
@@ -27,9 +27,9 @@ decision-type: methodology
 
 RFC B-016 (v0.2,
 [`governance/rfc/2026-06-30-rfc-research-structure.md`](../../governance/rfc/2026-06-30-rfc-research-structure.md))
-завершён и прошёл локальную валидацию. Он предлагает единый базовый контракт
+завершён и прошёл локальную валидацию. Он предлагает единую базовую модель
 структуры research-артефактов Хаба и является входом для этого ADR (B-017) и
-будущего нормативного стандарта `standards/research-standard.md` (B-018).
+стандарта `standards/research-standard.md` (B-018).
 
 Два входящих документа зафиксировали проблемы, которые нельзя устранить точечной
 правкой профиля:
@@ -47,7 +47,7 @@ RFC B-016 (v0.2,
   показала **размытие типов**: Audit, Research и RFC/proposal часто прячутся под
   `analysis/` и нормируются одним профилем.
 
-Перед созданием нормативного стандарта (B-018) требуется явный **human decision
+Перед созданием стандарта (B-018) требуется явный **human decision
 gate**. Без ADR стандарт `standards/research-standard.md` выглядел бы как прямое
 продолжение исполнительской инициативы без принятого решения. Этот ADR фиксирует,
 что именно принято из RFC, почему (rationale) и какие архитектурные последствия
@@ -79,7 +79,7 @@ B-016, разделы Proposal P1–P6):
   поверхность конфликта с run-семантикой ADR-002.
 - Разделение зон: единый контейнер `exp/` изолирует машинный evidence от отчётов,
   а три цепочки Research / Analysis / Audit снимают перегрузку `analysis`.
-- Human decision gate: изменение публичного контракта структуры Хаба не должно
+- Human decision gate: изменение публичного правила структуры Хаба не должно
   становиться нормой без явного решения (граница RFC → ADR → standard).
 
 ## Alternatives Considered
@@ -102,13 +102,13 @@ RFC.
 
 **Положительные:**
 
-- `research/<domain>/` получает единый предсказуемый контракт: один носитель
-  знания (dated report) плюс опциональный контейнер evidence (`exp/`).
+- `research/<domain>/` получает единое предсказуемое правило структуры: один
+  носитель знания (dated report) плюс опциональный контейнер evidence (`exp/`).
 - Токен `outputs/` перестаёт конкурировать с `runs/`; граница «знание vs
   операция» становится однозначной.
 - Три типа (Research / Analysis / Audit) получают независимые дома и перестают
   маскироваться под `analysis/`.
-- Появляется принятое rationale, на которое сможет опереться нормативный стандарт
+- Появляется принятое rationale, на которое сможет опереться стандарт
   B-018 без вида исполнительской инициативы.
 
 **Компромиссы:**
@@ -148,10 +148,11 @@ B-022, валидаторы B-023). Состав и последовательн
 
 ## Lifecycle
 
-Текущий статус: `proposed`. Переход в `accepted` — только по явному human
-review/merge решению owner'а (см. lifecycle
+Текущий статус: `accepted`. Переход из `proposed` в `accepted` выполнен по
+issue [#322](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/322) /
+PR [#323](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/323) как
+явный human review/merge gate B-017 (см. lifecycle
 [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md)).
-Merge этого PR фиксирует human decision gate B-017.
 
 ```mermaid
 flowchart LR
@@ -166,7 +167,7 @@ flowchart LR
   RFC/ADR, а не правки этого record.
 - Supersession: `superseded` требует backlink на заменяющий ADR/RFC.
 
-После acceptance RFC B-016 переводится в `accepted` (он остаётся носителем
+RFC B-016 переведён в `accepted` вместе с этим ADR (он остаётся носителем
 context, alternatives и trade-offs), а обязательная норма делегируется стандарту
 B-018 и ADR-002 addendum B-019.
 
@@ -185,7 +186,7 @@ B-018 и ADR-002 addendum B-019.
 - [ADR-002: Методология создания и управления артефактами](2026-06-adr-002-artifact-document-methodology.md) —
   routing `runs/` и lifecycle артефактов; получает addendum B-019.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md) —
-  контракт ADR.
+  стандарт структуры ADR.
 - [`governance/backlog.md`](../../governance/backlog.md) — цепочка B-016..B-023.
 - Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294) —
   зонтичная задача стандартизации research.

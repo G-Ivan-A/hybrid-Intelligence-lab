@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.0
-updated: 2026-06-28
+version: 1.1
+updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -10,13 +10,15 @@ owner: G-Ivan-A
 
 ## Назначение
 
-Этот стандарт задаёт обязательный контракт RFC-like документов для Хаба и
+Этот стандарт задаёт обязательную структуру RFC-like документов для Хаба и
 архетипов A/B/C/D. Источник решения:
 [RFC: Стандарт структуры RFC](../governance/rfc/2026-06-27-rfc-rfc-standard.md).
 
-Стандарт является нормативным контрактом. Proposal-контекст, alternatives и
-trade-offs остаются в RFC; этот файл фиксирует только то, что нужно применять
-повторяемо.
+Стандарт — это IL-3 reusable rule о форме RFC-like proposal, минимальных полях
+и review criteria. Он не является Contract: операционные контракты могут
+ссылаться на этот стандарт как на обязательное правило оформления, но не
+подменяют его семантику. Proposal-контекст, alternatives и trade-offs остаются
+в RFC; этот файл фиксирует только то, что нужно применять повторяемо.
 
 Базовые frontmatter-правила наследуются из
 [Frontmatter Docs Standard](frontmatter-docs-standard.md), а имена файлов - из
@@ -106,8 +108,8 @@ RFC ДОЛЖЕН содержать секции в таком порядке:
 | RFC status | same as frontmatter status; narrative summary only |
 | Source issue | Issue link |
 | Impacted artifacts | Paths or "none" |
-| Decision record | ADR/RFC link or "not yet" |
-| Implementation link | PR/tool/standard link or "not yet" |
+| Decision record | ADR/RFC link, or "not yet" only until the decision record exists |
+| Implementation link | PR/tool/standard link, or "not yet" only until implementation exists |
 | Archetype scope | A / B / C / D / multi |
 
 ## Summary
@@ -155,6 +157,29 @@ Only questions that block acceptance or implementation.
 Research, ADRs, standards, PRs and issue links.
 ```
 
+## Research to RFC Delegation
+
+When an RFC has source research, analysis or audit, the required RFC sections
+remain present, but the RFC MUST delegate evidence detail instead of copying the
+source artifact.
+
+| RFC section | RFC owns | Delegates to source artifact |
+| --- | --- | --- |
+| `Motivation` | The problem, current pain, and why a proposal-stage decision is needed now. | Full benchmark, inventory, audit evidence and source tables. |
+| `Proposal` | The selected solution draft and governance change being proposed. | Raw research data, scans, long classifications and evidence corpora. |
+| `Alternatives` | Rejected options relevant to the proposed decision. | Complete research option catalog, if already captured upstream. |
+| `Trade-offs` | Costs, risks and operational impact of accepting the proposal. | Detailed stress tests and external-source analysis. |
+| `Impacted Artifacts` | Files and downstream artifacts affected by acceptance. | Source artifact inventory except where direct impact must be named. |
+
+Negative constraints:
+
+- `Motivation` MUST NOT reproduce benchmark or inventory tables when they exist
+  in source research, analysis or audit.
+- `Proposal` MUST NOT copy raw research data; it states the proposed change and
+  links to the source artifact for evidence.
+- `Alternatives` and `Trade-offs` SHOULD summarize only the decision-relevant
+  branch when an upstream artifact already carries the full comparison.
+
 ## Lifecycle
 
 Allowed RFC transitions:
@@ -179,6 +204,15 @@ Rules:
 - Record implementation state in `Implementation and Validation` after impacted
   artifacts, validators or docs are updated.
 - Move to `superseded` only with a replacement link.
+
+## Metadata Reference Updates
+
+`not yet` in `Decision record` or `Implementation link` is a temporary
+placeholder. When the referenced ADR, accepted RFC, implementation PR, standard,
+template, tool or validator exists, the next PR that touches the RFC MUST replace
+the placeholder with a concrete link. An RFC moving to `accepted` MUST NOT keep a
+stale `not yet` value for an already existing decision record or implementation
+artifact.
 
 ## Archetype Deltas
 
