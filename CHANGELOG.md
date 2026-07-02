@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.29
+version: 1.30
 updated: 2026-07-01
 temperature: 0.1
 ---
@@ -12,6 +12,26 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- audit: Создан `docs/audit/2026-07-01-documentation-boundary-audit.md` — аудит
+  коллизий интерпретации стандартов RFC/ADR/Standard (B-039, issue #320). Аудит
+  проверяет 5 IL-3 артефактов (`standards/research-standard.md`, RFC B-016,
+  ADR-003, `standards/adr-structure-standard.md`, `standards/rfc-structure-standard.md`)
+  по трём измерениям (внутри артефактов, на переходах RFC→ADR / ADR→Standard /
+  Research→RFC / Analysis→RFC, cross-cutting) в режиме Deep Think (4 эксперта,
+  4 стресс-теста). Вердикты: ни один артефакт не содержит блокирующего нарушения;
+  посекционное дублирование ADR-003 ↔ RFC B-016 подтверждено как ремедиированное;
+  `research-standard.md` и RFC B-016 проверены чисто. Зафиксированы причины
+  (F-01 терминологическая конфляция «Стандарт = Контракт» в трёх стандартах;
+  F-07 шаблон ADR приглашает дублирование; F-08 отсутствие overlap-guard/чеклиста)
+  и последствия (F-02/F-03 stale-refs, F-09 семантика версий, F-10 двойная
+  supersession) с классификацией причины-vs-последствия и трёхуровневыми
+  приоритизированными рекомендациями по лечению причин (стандарты / шаблоны /
+  валидация). Терминологический риск (Standard ≠ Contract, category error
+  относительно canonical глоссария и IL-модели) **флагуется**, а не исправляется —
+  правки артефактов и стандартов вне scope (Tier 2 amendment, отдельные задачи).
+  Зарегистрирован в `governance/artifact-map.md`, `mkdocs.yml` и структурном
+  валидаторе; задача B-039 добавлена в `governance/backlog.md` со статусом review.
 
 - standard: Создан `standards/research-standard.md` — нормативный контракт (IL-3)
   структуры research-артефактов Хаба (B-018, issue #318). Стандарт принимает

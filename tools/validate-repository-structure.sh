@@ -213,6 +213,7 @@ is_active_file() {
     docs/project-summaries/clarify-engine-ai-context-Summary.md | \
     docs/audit/task-execution-audit-2026-06.md | \
     docs/audit/2026-06-29-research-artifact-format-contract-audit.md | \
+    docs/audit/2026-07-01-documentation-boundary-audit.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -1252,7 +1253,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.57"
+require_text "governance/artifact-map.md" "version: 1.58"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1543,7 +1544,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.12"
+require_text "governance/backlog.md" "version: 1.13"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"

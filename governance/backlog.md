@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.12
+version: 1.13
 updated: 2026-07-01
 temperature: 0.1
 type: backlog
@@ -215,6 +215,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-036** | Зафиксировать 3-tier amendment policy в `AI_GOVERNANCE.md` | **P2** | — | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297); [docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md](../docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md) | Блокирует корректное выполнение Tier 1/2 правок без бюрократии. Без policy агент будет либо игнорировать малые правки (дрейф), либо запускать полный цикл RFC→ADR на каждое уточнение (паралич). |
 | **B-037** | Обновить `validate-repository-structure.sh` под каталог `pr-ops/backlog/` (2FA-исключение) | **P3** | B-035 | TODO | — (tech debt) | Согласование в чате 2026-06-30; [tools/validate-repository-structure.sh](../tools/validate-repository-structure.sh) | Делает новую структуру бэклога исполнимой. Выполняется после физической реорганизации. |
 | **B-038** | analysis: Инвентаризация и границы Reports-артефактов (аудит / отчёт / статистика) | **P1** | B-020 | review | [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310) (PR [#312](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/312)) | Видение фаундера §3 ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); согласование в чате 2026-07-01; [Reports inventory](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); [placement report](../docs/report/2026-07-01-reports-inventory-placement-analysis.md) | Reports — базовый подкаталог `docs/`; канонический путь зафиксирован как `docs/report/` (единственное число) по видению фаундера §3 и review PR #312. Inventory готовит границы с Analysis/Audit и scope будущего стандарта перед планом миграции репо (B-034). |
+| **B-039** | audit: Проверка документации на коллизии интерпретации стандартов RFC/ADR/Standard | **P1** | B-017, B-018 | review | [#320](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320) (PR [#321](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/321)) | Root-cause отчёт [docs/report/2026-07-01-rfc-adr-duplication-analysis.md](../docs/report/2026-07-01-rfc-adr-duplication-analysis.md) (issue #316); `standards/adr-structure-standard.md`, `standards/rfc-structure-standard.md`, `standards/glossary.md`; [audit](../docs/audit/2026-07-01-documentation-boundary-audit.md) | Аудит 5 IL-3 артефактов на дублирование, proposal-обёртку и смешение словарей по трём измерениям. Вердикты без блокеров (ADR-003 ремедиирован); зафиксированы причины (терминологическая конфляция Standard=Contract, шаблон ADR, отсутствие overlap-guard) vs последствия и трёхуровневые рекомендации по лечению причин. Правки артефактов/стандартов — отдельные задачи (Tier 2). |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
