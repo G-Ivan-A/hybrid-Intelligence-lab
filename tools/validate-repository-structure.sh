@@ -220,6 +220,7 @@ is_active_file() {
     governance/rfc/2026-06-27-rfc-rfc-standard.md | \
     governance/rfc/2026-06-30-rfc-research-structure.md | \
     governance/rfc/2026-07-02-rfc-reports-structure.md | \
+    governance/rfc/2026-07-02-rfc-audit-structure.md | \
     governance/rfc/2026-07-02-rfc-analysis-structure.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
@@ -936,6 +937,9 @@ require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "Decision reco
 require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" 'Decision updated by ADR-004 v0.3: physical routing split into `docs/audit/`'
 require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "## Boundary RFC/ADR"
+require_text "governance/rfc/2026-07-02-rfc-audit-structure.md" "status: draft"
+require_text "governance/rfc/2026-07-02-rfc-audit-structure.md" "## Матрица дельт A/B/C/D"
+require_text "governance/rfc/2026-07-02-rfc-audit-structure.md" "## Boundary RFC/ADR"
 require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "status: proposed"
 require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "rfc-scope: A"
 require_text "governance/rfc/2026-07-02-rfc-analysis-structure.md" "## Матрица дельт A/B/C/D"
@@ -1331,7 +1335,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.64"
+require_text "governance/artifact-map.md" "version: 1.65"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1419,7 +1423,7 @@ require_text "governance/artifact-map.md" "research/external-knowledge/external-
 require_text "governance/artifact-map.md" "governance/rfc/external-knowledge-integration.md"
 
 require_text "governance/rfc/README.md" "status: accepted"
-require_text "governance/rfc/README.md" "version: 1.18"
+require_text "governance/rfc/README.md" "version: 1.19"
 require_text "governance/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "governance/rfc/README.md" "ADR-004"
 require_text "governance/rfc/README.md" "updated: 2026-07-02"
@@ -1632,7 +1636,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.19"
+require_text "governance/backlog.md" "version: 1.20"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"

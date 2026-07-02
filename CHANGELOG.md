@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.36
+version: 1.37
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,6 +13,25 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- rfc: Создан `governance/rfc/2026-07-02-rfc-audit-structure.md` — draft RFC
+  для B-030 / issue #352. RFC предлагает (не нормирует) структуру Audit-
+  артефактов на входе цепочки стандартизации после инвентаризации B-029:
+  фиксирует Вариант C (базовый стандарт Audit + **4-компонентная модель**
+  `compliance target` / `evidence model` / `verdict-finding` / `deviation
+  handling`), канонический routing `docs/audit/YYYY-MM-DD-name.md` (без ADR-002-
+  дрейфа, в отличие от Reports), Audit-frontmatter с audit-specific
+  метаданными (`audit_target`/`evidence_model`/`verdict` обязательны;
+  `severity_scale`/`follow_up`/`related_norm` опциональны) и relation-полями
+  (`source`/`scope`/`based_on`/`related_artifacts`), разграничение Audit-процесс
+  vs audit-report output (координация с Reports B-043) и границы Audit ↔ Research
+  ↔ Analysis ↔ Report (link/cite на B-029, без restate). Приведены альтернативы
+  A/B/C/D с матрицей дельт (C рекомендован), trade-offs, Critical Analysis,
+  lifecycle `draft → reviewed → canonical → superseded` и последствия для цепочки
+  B-030..B-033. RFC — proposal (IL-3); decision gate вынесен в future ADR (B-031),
+  обязательная норма делегируется в `standards/audit-standard.md` (B-032); ADR/
+  Standard не создаются, файлы не мигрируются. `governance/rfc/README.md`,
+  `governance/artifact-map.md`, `governance/backlog.md` (B-030 → review) и
+  структурный валидатор обновлены.
 - standard: Создан `standards/report-standard.md` (draft) — базовый нормативный
   стандарт Report + лёгкие профили подтипов для B-043 / issue #354. Стандарт
   фиксирует базовый каркас Report (назначение, frontmatter, naming, lifecycle,
