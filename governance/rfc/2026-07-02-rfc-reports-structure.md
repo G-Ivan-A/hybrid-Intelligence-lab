@@ -24,7 +24,7 @@ rfc-scope: A
 ## Summary
 
 Предлагается базовая модель структуры Reports-артефактов Хаба: **один базовый
-стандарт Report** (общий контракт — frontmatter, naming, lifecycle, evidentiary
+стандарт Report** (общий каркас — frontmatter, naming, lifecycle, evidentiary
 stance) плюс **три лёгких профиля подтипов** (`audit`, `report`, `statistics`)
 как секции этого стандарта. Канонический путь размещения — `docs/report/`
 (единственное число). Reports получают frontmatter с relation-метаданными
@@ -121,7 +121,7 @@ Boundary RFC/ADR). Полный бенчмарк и полная матрица 
 ### P1. Базовый стандарт Report (общий каркас)
 
 Предлагается один базовый стандарт `standards/report-standard.md`, фиксирующий
-**общий контракт** durable record of results:
+**общий каркас** durable record of results:
 
 - **Назначение и стойка.** Report — самостоятельный класс по форме (record of
   results) с доминирующей стойкой descriptive («что произошло / что измерено /
