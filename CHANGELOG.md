@@ -846,6 +846,15 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: Уточнён `docs/adr/2026-07-adr-004-reports-structure.md` по issue #348:
+  ADR-004 повышен до v0.3 и закрывает Open Question #1 физическим routing split
+  `docs/audit/` для audit-reports и `docs/report/` для general/statistics
+  reports. Вариант C сохранён: audit-report остаётся profile внутри base Report
+  standard B-043, а Audit process artifacts остаются контрактами в `standards/`
+  или `kb/`. ADR-002 повышен до v1.4 с отдельной строкой `Audit report` →
+  `docs/audit/`, RFC B-041 получил lifecycle note о решении, artifact-map и
+  структурный валидатор синхронизированы. Физическая миграция файлов не
+  выполнялась.
 - adr: Уточнён `docs/adr/2026-07-adr-004-reports-structure.md` по issue #345:
   текст ADR-004 приведён к русскому стилю ADR-003, убрана англоязычная
   дублирующая пометка к Варианту C, будущие пороги B-043 описаны в будущем
