@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.37
+version: 1.38
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -12,6 +12,24 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- adr: Создан `docs/adr/2026-07-adr-005-audit-structure.md` (status `accepted`) —
+  ADR-005 / human decision gate для B-031 / issue #358. ADR фиксирует принятие
+  **Варианта C** из RFC B-030: базовый стандарт Audit + **4-компонентная модель**
+  (`compliance target` / `evidence model` / `verdict-finding` / `deviation
+  handling`), подтверждение routing `docs/audit/YYYY-MM-DD-name.md` (без ADR-002-
+  дрейфа, делегирован в `research-standard.md`), frontmatter с audit-specific
+  метаданными (`audit_target`/`evidence_model`/`verdict` обязательны;
+  `severity_scale`/`follow_up`/`related_norm` опциональны), knowledge-lifecycle
+  (`draft → reviewed → canonical → superseded`) и разграничение Audit-процесс
+  (B-032) vs audit-report output (B-043). Open questions RFC B-030 закрыты или
+  делегированы: физический дом audit reports уже решён в ADR-004 v0.3
+  (`docs/audit/`), а evidence/statistics output, модернизация legacy и
+  governance-audits Mango делегированы в B-032/B-033. ADR применяет section-level
+  delegation (proposal, alternatives A/B/C/D, trade-offs остаются в RFC B-030),
+  не создаёт стандарт (B-032) и не мигрирует файлы (B-033). Разблокирована B-032.
+  Обновлены `governance/artifact-map.md`, `governance/backlog.md` (B-031 → DONE,
+  B-032 разблокирована) и структурный валидатор.
 
 - rfc: Создан `governance/rfc/2026-07-02-rfc-audit-structure.md` — draft RFC
   для B-030 / issue #352. RFC предлагает (не нормирует) структуру Audit-

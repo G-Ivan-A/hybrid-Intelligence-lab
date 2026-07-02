@@ -59,6 +59,7 @@ is_active_file() {
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     docs/adr/2026-07-adr-003-research-structure.md | \
     docs/adr/2026-07-adr-004-reports-structure.md | \
+    docs/adr/2026-07-adr-005-audit-structure.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -518,6 +519,7 @@ required_files=(
   "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   "docs/adr/2026-07-adr-004-reports-structure.md"
+  "docs/adr/2026-07-adr-005-audit-structure.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
@@ -930,6 +932,13 @@ require_text "docs/adr/2026-07-adr-004-reports-structure.md" "60% кандида
 require_text "docs/adr/2026-07-adr-004-reports-structure.md" "target/evidence/verdict/deviation"
 require_text "docs/adr/2026-07-adr-004-reports-structure.md" "Statistics vs research evidence"
 require_text "docs/adr/2026-07-adr-004-reports-structure.md" "Триггер B"
+require_text "docs/adr/2026-07-adr-005-audit-structure.md" "ADR-005"
+require_text "docs/adr/2026-07-adr-005-audit-structure.md" "status: accepted"
+require_text "docs/adr/2026-07-adr-005-audit-structure.md" "Вариант C"
+require_text "docs/adr/2026-07-adr-005-audit-structure.md" "compliance target / evidence model / verdict-finding / deviation handling"
+require_text "docs/adr/2026-07-adr-005-audit-structure.md" 'разграничение Audit-процесс vs audit-report output'
+require_text "docs/adr/2026-07-adr-005-audit-structure.md" 'docs/audit/'
+require_text "docs/adr/2026-07-adr-005-audit-structure.md" "content-over-path"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Boundary RFC/ADR"
 require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "status: accepted"
@@ -1335,7 +1344,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.65"
+require_text "governance/artifact-map.md" "version: 1.66"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1636,7 +1645,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.20"
+require_text "governance/backlog.md" "version: 1.21"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"

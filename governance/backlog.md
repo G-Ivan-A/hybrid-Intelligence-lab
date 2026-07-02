@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.20
+version: 1.21
 updated: 2026-07-02
 temperature: 0.1
 type: backlog
@@ -222,8 +222,8 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-028** | chore: Cleanup и модернизация Analysis-артефактов | **P2** | B-027 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); analysis-аудит B-024; `standards/analysis-standard.md` | Пост-standard cleanup: убрать дубли, обновить frontmatter/cross-references и индексы без преждевременной миграции. |
 | **B-029** | analysis: Сквозной анализ артефактов Audit (Хаб, Mango, Clarify) | **P0** | B-020 | DONE | [#344](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/344) (PR [#347](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/347)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288); issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); B-020; [B-024 Analysis inventory](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md); [B-024 matrix](../research/hub/exp/analysis-inventory-342/2026-07-02-analysis-artifact-matrix.md) | Даёт входные данные для `audit-standard.md`: 29 Audit-кандидатов, compliance targets, evidence/deviation models, masked audits and B-033 modernization candidates. Cleanup не выполнялся. |
 | **B-030** | rfc: Стандарт структуры Audit | **P0** | B-029 | review | [#352](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/352) (PR [#353](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/353)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) (B-029); [RFC](rfc/2026-07-02-rfc-audit-structure.md); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | Proposal-stage для Audit: Вариант C (базовый стандарт Audit + 4-компонентная модель compliance target / evidence model / verdict-finding / deviation handling), routing `docs/audit/`, разграничение Audit-процесс vs audit-report output (координация с Reports B-043) и границы Audit ↔ Research ↔ Analysis ↔ Report (delegate на B-029). Decision gate — future ADR (B-031). Готово к review в PR #353. |
-| **B-031** | adr: Принятие `audit-standard` | **P0** | B-030 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий RFC B-030; `standards/adr-structure-standard.md` | Decision gate перед нормативным Audit standard и последующей модернизацией audit/report artifacts. |
-| **B-032** | chore: Создание `standards/audit-standard.md` | **P0** | B-031 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); будущий ADR B-031 | Стандарт структуры Audit; prerequisite для плана миграции репо и cleanup Audit-артефактов. |
+| **B-031** | adr: Принятие `audit-standard` | **P0** | B-030 | DONE | [#358](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358) (PR [#361](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/361)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md)); [ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md); [ADR-004](../docs/adr/2026-07-adr-004-reports-structure.md); `standards/adr-structure-standard.md` | Human decision gate выполнен: принят Вариант C из RFC B-030 (базовый стандарт Audit + 4-компонентная модель compliance target / evidence model / verdict-finding / deviation handling), подтверждён routing `docs/audit/`, frontmatter с audit-specific метаданными, knowledge-lifecycle и разграничение Audit-процесс (B-032) vs audit-report output (B-043); open questions RFC B-030 закрыты/делегированы (физический дом audit reports уже решён в ADR-004 v0.3). Разблокирована B-032. Зеркалит B-026/B-042. |
+| **B-032** | chore: Создание `standards/audit-standard.md` | **P0** | B-031 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md) (B-031); RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md)) | Стандарт структуры Audit; разблокирован после ADR-005. Prerequisite для плана миграции репо и cleanup Audit-артефактов. Зеркалит B-027/B-043. |
 | **B-033** | chore: Cleanup и модернизация Audit-артефактов | **P2** | B-032 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); audit-аудит B-029; `standards/audit-standard.md` | Пост-standard cleanup: убрать дубли/конкурирующие файлы, обновить frontmatter, cross-references, artifact-map и индексы. |
 | **B-034** | rfc: План миграции репо Хаба после стандартов Research/Analysis/Audit | **P1** | B-018, B-027, B-032 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); ADR-001/ADR-002; будущие R/A/A standards | Фиксирует, что физическая реструктуризация репо — отдельный RFC после всех трёх стандартов, а не этап стандартизации. |
 | **B-035** | Реорганизация `backlog.md` в каталог `pr-ops/backlog/` (contract + active + archive) | **P3** | B-016..B-023, B-034 | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297) | Текущий монолитный бэклог функционален. Реорганизация — гигиеническая задача после стабилизации research/analysis/audit цепочек. Триггер повышения до P1 — review pain из-за размера бэклога. |
@@ -1477,15 +1477,18 @@ surface, but Audit is defined by conformance checking.
 
 **Приоритет:** P0
 **Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
-будущий RFC B-030;
+[issue #358](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358) (PR [#361](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/361));
+RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md));
+[ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md);
 [ADR Structure Standard](../standards/adr-structure-standard.md)
 **Зависимости:** B-030
-**Статус:** TODO
+**Статус:** DONE
 **Режим работы:** `Structured`
 
 **Контекст:**
 ADR is the human decision gate that accepts or corrects the Audit RFC before the
-normative standard is written.
+normative standard is written. Выполнено в
+[ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md).
 
 **Что нужно сделать:**
 1. Создать `docs/adr/YYYY-MM-adr-NNN-audit-standard.md`.
@@ -1494,14 +1497,14 @@ normative standard is written.
 3. List impacted artifacts, cleanup implications and migration planning impact.
 
 **Ожидаемые артефакты:**
-- `docs/adr/YYYY-MM-adr-NNN-audit-standard.md` (new ADR)
+- `docs/adr/2026-07-adr-005-audit-structure.md` (new ADR)
 
 **Критерии приёмки (DoD):**
-- [ ] ADR follows `standards/adr-structure-standard.md`.
-- [ ] Decision accepts or explicitly corrects RFC B-030.
-- [ ] Consequences name `standards/audit-standard.md`, cleanup B-033 and
+- [x] ADR follows `standards/adr-structure-standard.md`.
+- [x] Decision accepts or explicitly corrects RFC B-030.
+- [x] Consequences name `standards/audit-standard.md`, cleanup B-033 and
       migration RFC B-034.
-- [ ] Validation and supersession rules are explicit.
+- [x] Validation and supersession rules are explicit.
 
 **Обоснование приоритета:**
 P0: accepted Audit standard needs a decision record, because it controls routing
@@ -1516,8 +1519,9 @@ Keep rationale concise. The detailed proposal stays in RFC B-030.
 
 **Приоритет:** P0
 **Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
-будущий ADR B-031
-**Зависимости:** B-031
+[ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md) (B-031);
+RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md))
+**Зависимости:** B-031 (разблокирован ADR-005)
 **Статус:** TODO
 **Режим работы:** `Structured`
 
