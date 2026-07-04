@@ -1,6 +1,6 @@
 ---
 status: accepted
-version: 0.2
+version: 0.3
 updated: 2026-07-04
 temperature: 0.1
 owner: G-Ivan-A
@@ -20,7 +20,7 @@ decision-type: methodology
 | Decision date | 2026-07-04 |
 | Owner | G-Ivan-A |
 | Source issue | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) |
-| Refinement issue | [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382) |
+| Refinement issue | [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382), [#385](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/385) |
 | Primary input | [B-034 migration and root structure plan](../analysis/2026-07-04-hub-migration-and-root-structure-plan.md) |
 | Upstream decisions | [ADR-001](2026-06-adr-001-ecosystem-infrastructure-methodology.md), [ADR-002](2026-06-adr-002-artifact-document-methodology.md) |
 | Impacted artifacts | `governance/backlog.md`, `governance/artifact-map.md`, `governance/repo-model.md`, `tools/validate-repository-structure.sh`, future B-048 migration PR |
@@ -29,37 +29,47 @@ decision-type: methodology
 
 ## Context
 
-B-034 produced an upstream analysis/plan for the current Hub root structure after
-Research, Analysis and Audit standardization. That analysis intentionally left
-several root-level targets as ambiguous because they needed founder decision.
+B-034 подготовил входящий analysis/plan текущей структуры корня Хаба после
+стандартизации Research, Analysis и Audit. Тот analysis намеренно оставил
+несколько корневых целей неоднозначными, потому что они требовали решения
+фаундера.
 
-Issue #378 closes those ambiguities. The decision is already made by the
-founder, so this ADR records the accepted target and downstream consequences
-instead of proposing an RFC with alternatives. This ADR does not physically move
-files, rewrite links or cancel current entry points. Physical migration remains
-the scope of B-048 after ADR-007 acceptance.
+Issue #378 закрывает эти неоднозначности. Решение уже принято фаундером, поэтому
+этот ADR фиксирует принятую цель и downstream-последствия, а не предлагает RFC с
+альтернативами. Этот ADR не выполняет физического переноса файлов, не переписывает
+ссылки и не отменяет текущие точки входа. Физическая миграция остаётся в scope
+B-048 после принятия ADR-007.
 
-ADR-001 and ADR-002 remain the source of truth for ecosystem infrastructure and
-artifact routing. The Research/Analysis/Audit standards are not a source of root
-repository structure. The Hub remains Archetype A; Hub != Portal.
+ADR-001 и ADR-002 остаются источником истины для инфраструктуры экосистемы и
+маршрутизации артефактов. Стандарты Research/Analysis/Audit не являются источником
+структуры корня репозитория. Хаб остаётся archetype A; Hub != Portal.
 
-PR #379 merged this ADR as the B-047 decision gate. Issue #382 refines the
-record by making the final target tree readable without opening ADR-001 in
-parallel; it does not change the accepted architecture and does not perform
-physical migration.
+PR #379 замержил этот ADR как decision gate B-047. Issue #382 доработал запись,
+сделав финальное целевое дерево читаемым без параллельного открытия ADR-001; он не
+менял принятую архитектуру и не выполнял физической миграции. Issue #385
+доработал запись до версии 0.3: он приводит целевое дерево в соответствие с
+решениями фаундера (изъятие `kb/` и `runs/` с явной фиксацией расхождения с
+ADR-001, уточнение `docs/guides/`, сохранение `GOVERNANCE.md`) и переводит
+документ на русский для консистентности с ADR-001/002/003–006. Принятая
+архитектура при этом не переоткрывается, а физическая миграция не выполняется.
 
 ## Decision
 
 Полная структура Хаба = ADR-001 (универсальное ядро) + ADR-007 (дельта для архетипа A).
 Ниже приведена полная целевая структура (To-Be) с комментариями.
 
-Adopt the following To-Be root decisions for the Hub repository.
+Принять следующие To-Be решения по корню репозитория Хаба.
+
+**Расхождение с ADR-001:** Универсальное ядро ADR-001 содержит `kb/` и `runs/`.
+Для Хаба эти каталоги **не вводятся** до явного указания. Обоснование:
+анти-инфляция, отсутствие операционной боли. Исследование целесообразности —
+отдельная задача в бэклоге.
 
 ### Full To-Be Repository Structure
 
-This tree is the consolidated B-048 target. It lists structural homes and
-stable anchors, not every current file. Current paths remain active until the
-physical migration PR rewrites links and registries.
+Это дерево — консолидированная цель B-048. Оно перечисляет структурные дома и
+стабильные якоря, а не каждый текущий файл. Текущие пути остаются активными до
+момента, когда PR физической миграции перепишет ссылки и реестры.
 
 ```text
 hybrid-Intelligence-lab/
@@ -73,15 +83,8 @@ hybrid-Intelligence-lab/
 │   ├── analysis/                  # Analysis-артефакты
 │   ├── audit/                     # Audit-отчёты и conformance checks
 │   ├── report/                    # General reports and statistics
-│   ├── guides/                    # Человеко-ориентированные руководства; target from ADR-007
+│   ├── guides/                    # Зарезервирован как потенциальный единый дом руководств; целесообразность определяется в задаче B-054
 │   └── concept.md                 # Target for current root CONCEPT.md
-├── kb/                            # Операционно применимые знания; вводится по факту боли
-│   ├── taxonomy/                  # Operational taxonomies
-│   ├── roles/                     # Role definitions used during execution
-│   ├── rules/                     # Reusable operational rules that are not AI-agent behavior rules
-│   ├── processes/{name}/          # Process-specific operational knowledge
-│   └── patterns/                  # Reusable execution patterns
-├── runs/                          # Execution records and reproducible run outputs
 ├── research/                      # Доменный research; базовое расширение archetype A
 │   ├── hub/                       # Hub methodology and governance research
 │   ├── mango/                     # Mango domain research
@@ -112,161 +115,171 @@ hybrid-Intelligence-lab/
 ├── .gitignore                     # Git ignore rules
 └── .gitattributes                 # Optional git attributes anchor if introduced
 
+# Не вводятся в Хаб до явного указания (расхождение с ADR-001): kb/, runs/
 # Удалено при миграции: website/, mkdocs.yml, experiments/
 ```
 
 | Target | Decision |
 | --- | --- |
-| `projects-sink/` | Create a Hub-specific flat management intake buffer for incoming material from ecosystem projects. Move `AI_PROJECT_CONTEXT-Summary.md` there during physical migration. |
-| `ai-governance/` | Use for policies: state constraints, business rules, information security, external compliance and other policy-level obligations. |
-| `ai-rules/` | Use for agent behavior rules and fast synchronization of an external agent with project context. |
-| `practices/` | Keep at the repository root as a Hub-specific divergence from ADR-001 `docs/practice/`. |
-| `docs/guides/` | Use as the unified home for guides. A missing backlog task for guide migration is not a blocker; it can be added or renumbered after migration. |
-| `education/` | Use for cross-project education materials. A follow-up standard for archetype D can be added or renumbered after migration. |
-| `frameworks/` | Reserve as the future home for frameworks after the research -> standard path confirms framework scope. |
-| `docs/concept.md` | Use as the target for current root `CONCEPT.md`. |
+| `projects-sink/` | Создать специфичный для Хаба плоский управленческий буфер приёма материалов из проектов экосистемы. Перенести `AI_PROJECT_CONTEXT-Summary.md` туда при физической миграции. |
+| `ai-governance/` | Использовать для политик: ограничения государства, бизнес-правила, информационная безопасность, внешний compliance и другие обязательства уровня политики. |
+| `ai-rules/` | Использовать для правил поведения агента и быстрой синхронизации внешнего агента с контекстом проекта. |
+| `practices/` | Оставить в корне репозитория как специфичное для Хаба расхождение с ADR-001 `docs/practice/`. |
+| `docs/guides/` | Зарезервировать как потенциальный единый дом руководств; целесообразность определяется в задаче B-054. |
+| `education/` | Использовать для cross-project education-материалов. Follow-up-стандарт для archetype D может быть добавлен или перенумерован после миграции. |
+| `frameworks/` | Зарезервировать как будущий дом для frameworks после подтверждения scope через путь research -> standard. |
+| `docs/concept.md` | Использовать как цель для текущего корневого `CONCEPT.md`. |
+| `kb/`, `runs/` | Не вводить в Хаб. Универсальное ядро ADR-001 содержит эти каталоги, но для Хаба они не вводятся до явного указания (анти-инфляция, отсутствие операционной боли). Исследование целесообразности — отдельная задача в бэклоге. |
 
-Delete or retire the following root artifacts during physical migration:
+Удалить или вывести из эксплуатации следующие корневые артефакты при физической
+миграции:
 
 | Current artifact | Decision |
 | --- | --- |
-| `website/` | Retire because the Hub web strategy is cancelled. The Hub must not be turned into Portal. |
-| `mkdocs.yml` | Retire as a consequence of cancelling the Hub website strategy. |
-| `experiments/` | Retire as a root directory. Validator tests move to `tools/`; no other experiment corpus remains there. |
+| `website/` | Вывести из эксплуатации, потому что веб-стратегия Хаба отменена. Хаб не должен превращаться в Portal. |
+| `mkdocs.yml` | Вывести из эксплуатации как следствие отмены веб-стратегии Хаба. |
+| `experiments/` | Вывести как корневой каталог. Тесты валидаторов переезжают в `tools/`; иного experiment-корпуса там не остаётся. |
 
-Split the current `governance/` area as follows:
+Разделить текущую область `governance/` следующим образом:
 
 | Current area | To-Be route |
 | --- | --- |
-| policy, compliance and external constraints | `ai-governance/` |
-| PR/task/review operations | `pr-ops/` |
-| RFC documents | `docs/rfc/` |
+| политики, compliance и внешние ограничения | `ai-governance/` |
+| операции PR/task/review | `pr-ops/` |
+| RFC-документы | `docs/rfc/` |
 | `governance/rfc/` | `docs/rfc/` |
 
-Use lifecycle status as the provisional-standard mechanism:
+Использовать lifecycle-статус как механизм provisional-стандарта:
 
-- `draft` and `proposed` status mark provisional standards.
-- Do not create `standards/provisional/` now.
-- Create `standards/provisional/` only if review pain proves that lifecycle
-  status is insufficient.
+- статусы `draft` и `proposed` отмечают provisional-стандарты;
+- не создавать `standards/provisional/` сейчас;
+- создавать `standards/provisional/` только если review-боль докажет, что
+  lifecycle-статуса недостаточно.
 
-Adopt the following implementation strategy for B-048:
+Принять следующую стратегию реализации для B-048:
 
-1. Phase 0: accept this ADR as B-047 decision gate.
-2. Phase 1: introduce neutral target anchors without changing semantics.
-3. Phase 2: move `governance/rfc/` to `docs/rfc/` with link rewrites.
-4. Phase 3: split `governance/` into `ai-governance/`, `ai-rules/`, `pr-ops/`
-   and `docs/rfc/`.
-5. Phase 4: reconcile all previously ambiguous entities as one task/PR, not as
-   one PR per catalog. The executor runs validators and cross-reference
-   stress-tests inside the PR before review.
-6. Phase 5: synchronize validators, artifact-map, repo-model, manifest and
-   navigation in the same PR as the structural changes.
-7. Phase 6: stabilize aliases and remove transitional compatibility only after
-   links and registries are proven stable.
+1. Phase 0: принять этот ADR как decision gate B-047.
+2. Phase 1: ввести нейтральные целевые якоря без изменения семантики.
+3. Phase 2: перенести `governance/rfc/` в `docs/rfc/` с переписыванием ссылок.
+4. Phase 3: разделить `governance/` на `ai-governance/`, `ai-rules/`, `pr-ops/`
+   и `docs/rfc/`.
+5. Phase 4: согласовать все ранее неоднозначные сущности как one task/PR, а не как
+   один PR на каталог. Исполнитель запускает валидаторы и cross-reference
+   stress-тесты внутри PR до review.
+6. Phase 5: синхронизировать валидаторы, artifact-map, repo-model, manifest и
+   навигацию в том же PR, что и структурные изменения.
+7. Phase 6: стабилизировать алиасы и удалять переходную совместимость только после
+   того, как ссылки и реестры доказали стабильность.
 
-Link rewrite strategy:
+Стратегия переписывания ссылок:
 
-- Rewrite links in the same PR as the physical move.
-- Keep aliases or compatibility notes until cross-references stabilize.
-- Use named anchors, not section numbers.
-- Update artifact-map, repo-model, validators and other synchronous registries
-  in the same PR as path changes.
+- переписывать ссылки в том же PR, что и физический перенос;
+- сохранять алиасы или compatibility-заметки до стабилизации cross-references;
+- использовать именованные якоря, а не номера разделов;
+- обновлять artifact-map, repo-model, валидаторы и другие синхронные реестры в том
+  же PR, что и изменения путей.
 
 ## Decision Drivers
 
-- B-034 identified the root-structure source of truth as ADR-001 plus ADR-002,
-  not Research/Analysis/Audit standards.
-- The founder decision already exists; an RFC would reopen a closed decision and
-  add review overhead.
-- The Hub must remain an ecosystem infrastructure Hub and must not drift into a
-  Web Portal profile.
-- `ai-governance/` and `ai-rules/` need a stable semantic boundary before file
-  moves, otherwise policy/compliance material and agent behavior rules will
-  collapse back into one bucket.
-- Provisional standards need a low-inflation mechanism; lifecycle status is
-  enough until proven otherwise.
-- B-048 needs a single implementation strategy that combines moves, link
-  rewrites, aliases and registry synchronization.
+- B-034 определил источник истины структуры корня как ADR-001 плюс ADR-002, а не
+  стандарты Research/Analysis/Audit.
+- Решение фаундера уже существует; RFC переоткрыл бы закрытое решение и добавил бы
+  review-накладные расходы.
+- Хаб должен оставаться инфраструктурным Хабом экосистемы и не должен дрейфовать в
+  профиль Web Portal.
+- `ai-governance/` и `ai-rules/` нуждаются в стабильной семантической границе до
+  переноса файлов, иначе policy/compliance-материал и правила поведения агента
+  снова схлопнутся в один bucket.
+- Provisional-стандартам нужен механизм с низкой инфляцией; lifecycle-статуса
+  достаточно, пока не доказано обратное.
+- B-048 нужна единая стратегия реализации, объединяющая переносы, переписывание
+  ссылок, алиасы и синхронизацию реестров.
 
 ## Alternatives Considered
 
-This ADR intentionally does not propose alternatives or trade-offs. B-034
-recorded the open options and issue #378 records the founder decision that closes
-them. No alternative is under review in this ADR.
+Этот ADR намеренно не предлагает альтернатив или trade-offs. B-034 зафиксировал
+открытые опции, а issue #378 фиксирует решение фаундера, которое их закрывает. В
+этом ADR ни одна альтернатива не находится на рассмотрении.
 
 ## Consequences
 
 | Backlog item | Consequence |
 | --- | --- |
-| B-048 | Is the physical migration task after ADR-007/B-047 acceptance. It implements this target structure and performs the integrity stress-test before review. |
-| B-054 | Remains deferred until after migration and standard-desync repair; the B-048 stress-test is execution evidence, not the future process standard itself. |
-| B-055 | Is absorbed by ADR-007/B-047 for the `ai-governance/` vs `ai-rules/` boundary. A separate post-migration ADR is not needed unless this ADR is later superseded. |
-| B-056 | Uses this ADR as the policy/rule split source when physically separating current governance material. |
-| B-057 | Reserved logical follow-up for `docs/guides/` routing if migration work needs a separate backlog item. |
-| B-058 | Reserved logical follow-up for `education/` and archetype D education standardization. |
-| B-059 | Reserved logical follow-up for `frameworks/` research -> standard confirmation. |
-| B-060 | Reserved logical follow-up for `CONCEPT.md` -> `docs/concept.md`. |
-| B-061 | Reserved logical follow-up for `AI_PROJECT_CONTEXT-Summary.md` -> `projects-sink/`. |
-| B-062 | Reserved logical follow-up for retiring `website/`, `mkdocs.yml` and root `experiments/`. |
+| B-048 | Задача физической миграции после принятия ADR-007/B-047. Она реализует эту целевую структуру и выполняет integrity stress-тест до review. |
+| B-054 | Остаётся отложенной до момента после миграции и ремонта standard-desync; stress-тест B-048 — это execution evidence, а не сам будущий стандарт процесса. Также включает исследование целесообразности `docs/guides/` как единого дома руководств. |
+| B-055 | Поглощается ADR-007/B-047 для границы `ai-governance/` vs `ai-rules/`. Отдельный post-migration ADR не нужен, если этот ADR позже не будет superseded. |
+| B-056 | Использует этот ADR как источник разделения policy/rule при физическом разделении текущего governance-материала. |
+| B-057 | Зарезервированный логический follow-up для маршрутизации `docs/guides/`, если миграционная работа потребует отдельной backlog-задачи. |
+| B-058 | Зарезервированный логический follow-up для `education/` и стандартизации education archetype D. |
+| B-059 | Зарезервированный логический follow-up для подтверждения `frameworks/` через research -> standard. |
+| B-060 | Зарезервированный логический follow-up для `CONCEPT.md` -> `docs/concept.md`. |
+| B-061 | Зарезервированный логический follow-up для `AI_PROJECT_CONTEXT-Summary.md` -> `projects-sink/`. |
+| B-062 | Зарезервированный логический follow-up для вывода из эксплуатации `website/`, `mkdocs.yml` и корневого `experiments/`. |
+| research: kb/, runs/ | Отдельная backlog-задача исследования целесообразности `kb/` и `runs/` в Хабе (расхождение с ADR-001). Триггер — фиксация расхождения в этом ADR v0.3. |
 
-B-057..B-062 are named here as consequence slots, not as created backlog rows.
-If current backlog numbering differs at migration time, they may be created or
-renumbered without blocking B-048.
+B-057..B-062 названы здесь как слоты последствий, а не как созданные строки
+бэклога. Если текущая нумерация бэклога отличается на момент миграции, они могут
+быть созданы или перенумерованы без блокировки B-048.
 
-Current repository paths remain active until B-048 performs the physical
-migration. This ADR changes decision state and registries only.
+Текущие пути репозитория остаются активными до того, как B-048 выполнит
+физическую миграцию. Этот ADR меняет только состояние решения и реестры.
 
 ## Impacted Artifacts
 
 | As-Is | To-Be | Impact |
 | --- | --- | --- |
-| `governance/backlog.md` | future `pr-ops/` backlog area | Current backlog marks B-047 as the accepted ADR gate and B-048 as the physical migration task. |
-| `governance/artifact-map.md` | future registry location governed by B-048 | Current artifact-map registers this ADR and remains the active map until migration. |
-| `governance/repo-model.md` | future synchronized repo model | B-048 updates it with accepted target paths. |
-| `governance/rfc/` | `docs/rfc/` | RFC path migration happens in B-048. |
-| `AI_GOVERNANCE.md` and policy material | `ai-governance/` | Policy/compliance material moves according to the boundary in this ADR. |
-| agent behavior and sync material | `ai-rules/` | Agent behavior rules and quick-sync context move according to the boundary in this ADR. |
-| `practices/` | `practices/` | Root location remains accepted for Hub-specific practices. |
-| guide material | `docs/guides/` | Unified guide home is accepted; backlog task may be added later. |
-| education material | `education/` | Cross-project education home is accepted; archetype D standardization remains follow-up. |
-| framework material | `frameworks/` | Future framework home is accepted after research -> standard confirmation. |
-| `CONCEPT.md` | `docs/concept.md` | Physical move remains B-048 or downstream consequence task. |
-| `AI_PROJECT_CONTEXT-Summary.md` | `projects-sink/` | Physical move remains B-048 or downstream consequence task. |
-| `website/` | removed | Hub web strategy is cancelled. |
-| `mkdocs.yml` | removed | Removed as website cancellation consequence. |
-| `experiments/` | removed; validator tests in `tools/` | Root experiments directory is retired. |
-| provisional standards | lifecycle status `draft` or `proposed` | `standards/provisional/` is not created unless review pain appears. |
+| `governance/backlog.md` | future `pr-ops/` backlog area | Текущий бэклог отмечает B-047 как принятый ADR-gate и B-048 как задачу физической миграции. |
+| `governance/artifact-map.md` | future registry location governed by B-048 | Текущий artifact-map регистрирует этот ADR и остаётся активной картой до миграции. |
+| `governance/repo-model.md` | future synchronized repo model | B-048 обновляет его принятыми целевыми путями. |
+| `governance/rfc/` | `docs/rfc/` | Миграция пути RFC происходит в B-048. |
+| `AI_GOVERNANCE.md` and policy material | `ai-governance/` | Policy/compliance-материал переносится согласно границе в этом ADR. |
+| agent behavior and sync material | `ai-rules/` | Правила поведения агента и quick-sync-контекст переносятся согласно границе в этом ADR. |
+| `practices/` | `practices/` | Корневое расположение остаётся принятым для специфичных для Хаба практик. |
+| guide material | `docs/guides/` | `docs/guides/` зарезервирован как потенциальный единый дом руководств; целесообразность определяется в задаче B-054. |
+| education material | `education/` | Cross-project education-дом принят; стандартизация archetype D остаётся follow-up. |
+| framework material | `frameworks/` | Будущий framework-дом принят после подтверждения research -> standard. |
+| `CONCEPT.md` | `docs/concept.md` | Физический перенос остаётся B-048 или downstream consequence-задачей. |
+| `AI_PROJECT_CONTEXT-Summary.md` | `projects-sink/` | Физический перенос остаётся B-048 или downstream consequence-задачей. |
+| `kb/`, `runs/` (ADR-001 core) | не вводятся в Хаб | Расхождение с ADR-001: каталоги универсального ядра не вводятся в Хаб до явного указания. Исследование целесообразности — отдельная backlog-задача. |
+| `website/` | removed | Веб-стратегия Хаба отменена. |
+| `mkdocs.yml` | removed | Удалён как следствие отмены website. |
+| `experiments/` | removed; validator tests in `tools/` | Корневой каталог experiments выводится из эксплуатации. |
+| provisional standards | lifecycle status `draft` or `proposed` | `standards/provisional/` не создаётся, пока не появится review-боль. |
 
 ## Compliance and Validation
 
-This ADR complies with `standards/adr-structure-standard.md` by using ADR
-frontmatter, required sections, decision metadata, lifecycle and related
-artifacts. The `Alternatives Considered` section is intentionally closed because
-the founder decision has already been made.
+Этот ADR соответствует `standards/adr-structure-standard.md`, используя ADR
+frontmatter, обязательные разделы, decision metadata, lifecycle и related
+artifacts. Раздел `Alternatives Considered` намеренно закрыт, потому что решение
+фаундера уже принято.
 
-This PR validates the decision record and registry synchronization with:
+Этот PR валидирует decision record и синхронизацию реестров через:
 
 - `./tools/validate-frontmatter.sh .`
 - `./tools/validate-file-naming.sh`
 - `./tools/validate-repository-structure.sh`
 
-B-048 must additionally validate moved links, aliases, artifact-map,
-repo-model, validators, manifest and navigation in the same PR as the physical
-migration.
+B-048 должен дополнительно валидировать перенесённые ссылки, алиасы, artifact-map,
+repo-model, валидаторы, manifest и навигацию в том же PR, что и физическая
+миграция.
 
 ## Lifecycle
 
-This ADR is `accepted` after PR #379 was merged by the repository owner on
-2026-07-04. B-047 is complete, and B-048 is the next physical migration task.
-Issue #382 is an accepted-ADR refinement: it adds the consolidated To-Be tree
-for readability and AI-agent execution, without reopening the decision. Future
-ADRs may supersede this decision only by naming the scope they replace.
+Этот ADR находится в статусе `accepted` после того, как PR #379 был замержен
+владельцем репозитория 2026-07-04. B-047 завершён, а B-048 — следующая задача
+физической миграции. Issue #382 — доработка принятого ADR: он добавляет
+консолидированное To-Be дерево для читаемости и исполнения AI-агентом, не
+переоткрывая решение. Issue #385 — доработка v0.3: она приводит целевое дерево в
+соответствие с решениями фаундера (изъятие `kb/` и `runs/` с фиксацией расхождения
+с ADR-001, уточнение `docs/guides/`, сохранение `GOVERNANCE.md`) и переводит
+документ на русский; принятая архитектура не переоткрывается. Будущие ADR могут
+superseded это решение, только называя scope, который они заменяют.
 
 ## Related Artifacts
 
 - [Issue #378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378)
 - [Issue #382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382)
+- [Issue #385](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/385)
 - [B-034 migration and root structure plan](../analysis/2026-07-04-hub-migration-and-root-structure-plan.md)
 - [ADR-001: Ecosystem infrastructure methodology](2026-06-adr-001-ecosystem-infrastructure-methodology.md)
 - [ADR-002: Artifact/document methodology](2026-06-adr-002-artifact-document-methodology.md)
