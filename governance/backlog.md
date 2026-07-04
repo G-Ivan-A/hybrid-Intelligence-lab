@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.24
+version: 1.25
 updated: 2026-07-04
 temperature: 0.1
 type: backlog
@@ -91,6 +91,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/372"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -261,16 +262,22 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-044** | chore: Cleanup и модернизация Reports-артефактов (миграция кандидатов в `docs/report/`) | **P2** | B-043, B-034 | TODO | — (tech debt) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); [Reports inventory §5](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); будущий standard B-043; план миграции репо B-034 | Пост-standard cleanup: обновить frontmatter (`report-subtype`, relation-поля), убрать дубли/замаскированные отчёты, cross-references, artifact-map и индексы; координируется с планом миграции репо (B-034). Зеркалит B-028/B-033. |
 | **B-045** | research: Режимы выполнения задач для ИИ-агентов — индустриальные нормы и паттерны классификации | **P1** | B-016, B-018 | DONE (artifact: draft) | [#330](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330) (PR [#331](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/331)) | Видение фаундера ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/glossary.md` (Operating Mode); [research-отчёт](../research/hub/2026-07-02-task-execution-modes-research.md); [experiment](../research/hub/exp/task-execution-modes-330/README.md) | Research + Creative + Deep Think от лица 4 экспертов: индустриальные нормы (Cynefin/Bloom/Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL), паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал как решающий вход. Без предложения решений, новых режимов и стандартов — только исследование, паттерны, тесты, выводы. |
 | **B-046** | chore: Синхронизировать `governance/backlog.md` с фактическими статусами артефактов | **P1** | — | DONE (artifact: canonical) | [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364) (PR [#365](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/365)) | Issue [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364); artifact frontmatter statuses; this backlog | Предыдущий sync закрыт: статусы на момент PR #365 сверены с artifact frontmatter and merged PRs, без миграции файлов и без изменения внешних артефактов. |
-| **B-047** | rfc: RFC плана миграции репо Хаба | **P1** | B-034 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); B-034 document-plan | Proposal-stage перед физической миграцией: переводит analysis-plan B-034 в RFC with alternatives, trade-offs, decision path, validation/link rewrite/rollback strategy, explicit human decision gate, and final decisions on `ai-governance/` vs `ai-rules/` plus Phase 4 strategy. |
-| **B-048** | chore: Физическая миграция репо Хаба по принятому RFC | **P1** | B-047 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); future migration RFC B-047 | Implementation path after accepted migration RFC: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Phase 4 (Reconcile 🟡) is one task, not "one catalog = one PR"; integrity stress-test happens inside that PR before review. |
+| **B-047** | rfc: RFC плана миграции репо Хаба | **P1** | B-034 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 document-plan | Proposal-stage перед физической миграцией: переводит analysis-plan B-034 в RFC with alternatives, trade-offs, decision path, validation/link rewrite/rollback strategy, explicit human decision gate, and final decisions on root ambiguity groups. |
+| **B-048** | chore: Физическая миграция репо Хаба по принятому RFC | **P1** | B-047, B-057, B-058 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); future migration RFC B-047 | Implementation path after accepted migration RFC and migration-specific ADRs: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Phase 4 (Reconcile 🟡) is one task, not "one catalog = one PR"; integrity stress-test happens inside that PR before review. |
 | **B-049** | audit: Переместить отчёт кросс-стресс-тестов в `docs/audit/` и модернизировать frontmatter | **P1** | B-033, B-043 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370); [cross-standard stress-tests](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Отчёт имеет audit-природу (conformance/stress test against standards), но сейчас лежит в `docs/report/` как generic report. Нужен перенос/модернизация с audit-specific frontmatter and indexes. |
 | **B-050** | analysis: Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); stress-test findings #370 | Исследует варианты: Subtype Profiles везде vs 4-компонентная модель vs явное отсутствие профилей, унификация vs разделение, impact on validators and review pain. |
 | **B-051** | adr: Принять мета-структуру стандартов | **P1** | B-050 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future options analysis B-050 | Human decision gate: принимает/корректирует вариант мета-структуры перед созданием стандарта стандартов и массовой правкой R/A/A/Report. |
 | **B-052** | standard: Создать мета-стандарт структуры стандартов | **P1** | B-051 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future ADR B-051 | Нормирует единый инвариантный skeleton для стандартов: разделы, порядок, profile/model block policy, frontmatter convention, boundary delegation and validation expectations. |
 | **B-053** | chore: Привести Research/Analysis/Audit/Report standards к мета-стандарту | **P1** | B-052 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future meta-standard B-052 | Исправляет рассинхрон четырёх стандартов по принятому invariant skeleton без повторного обсуждения решений, с обновлением validators/navigation where required. |
-| **B-054** | standard: Стандарт процесса стресс-тестирования связанных документов | **P3** | B-048, B-053 | TODO | — (deferred) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370) | Отложенная мета-задача после миграции: нормирует периодичность, методологию и критерии проверки комплексов связанных документов. Не делать до завершения migration implementation path. |
-| **B-055** | adr: Зафиксировать разделение `ai-governance/` и `ai-rules/` как экосистемную политику | **P1** | B-048 | TODO | — (planned) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); B-034 document-plan; future migration B-048 | Human decision после физической миграции: закрепить invariant для всей экосистемы — `ai-governance/` хранит политики/внешние ограничения, `ai-rules/` хранит правила поведения агента and quick-sync context for external agents. |
-| **B-056** | chore: Физически разделить `governance/` на `ai-governance/` и `ai-rules/` | **P1** | B-048, B-055 | TODO | — (planned) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); B-034 Phase 3; future ADR B-055 | Downstream implementation of the accepted split: extract policy/compliance material into `ai-governance/`, agent behavior/sync rules into `ai-rules/`, update links/validators/navigation, and preserve rollback-safe sequencing. |
+| **B-054** | standard: Стандарт процесса стресс-тестирования связанных документов | **P3** | B-048, B-053 | TODO | — (deferred) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370); issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380) | Отложенная мета-задача после миграции: нормирует периодичность, методологию и критерии проверки комплексов связанных документов. Не делать до завершения migration implementation path and standard-desync repair. |
+| **B-055** | adr: Зафиксировать разделение `ai-governance/` и `ai-rules/` как экосистемную политику | **P1** | B-048 | TODO | — (planned) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 document-plan; future migration B-048 | Human decision после физической миграции: закрепить invariant для всей экосистемы — `ai-governance/` хранит политики/внешние ограничения, `ai-rules/` хранит правила поведения агента and quick-sync context for external agents. |
+| **B-056** | chore: Физически разнести остатки `governance/` по `ai-governance/`, `ai-rules/`, `pr-ops/` и `docs/rfc/` | **P1** | B-048, B-055 | TODO | — (planned) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 Phase 3; future ADR B-055 | Downstream implementation of the accepted split: extract policy/compliance material into `ai-governance/`, agent behavior/sync rules into `ai-rules/`, PR/backlog operations into `pr-ops/`, RFCs into `docs/rfc/`, update links/validators/navigation, and preserve rollback-safe sequencing. |
+| **B-057** | adr: Зафиксировать специфичность Хаба — корневой `practices/` vs `docs/practice/` | **P1** | B-047 | TODO | — (planned) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 document-plan | Human decision for the practice-routing ambiguity: keep `practices/` as Archetype A root extension or reconcile into `docs/practice/`, with consequences for B-048 Phase 4. |
+| **B-058** | adr: Отменить или подтвердить веб-стратегию Хаба (`website/`, `mkdocs.yml`) | **P1** | B-047 | TODO | — (planned) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 document-plan; current `mkdocs.yml` | Human decision for published-site strategy: explicitly cancel the Hub website path and plan removal of `website/`/`mkdocs.yml`, or confirm it as infrastructure; no physical deletion in the ADR. |
+| **B-059** | analysis: Проверить целесообразность `docs/guides/` как единого дома руководств | **P3** | B-048 | TODO | — (deferred) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 §4.3/§6; current `guides/` | Triggered research for guide routing once `guides/` vs `docs/` causes review pain or Phase 4 reconcile requires a decision. |
+| **B-060** | analysis: Структура и правила наполнения `projects-sink/` | **P3** | B-048 | TODO | — (deferred) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 Phase 4; `projects/` intake pain | Triggered research for a managed intake buffer from ecosystem projects; do not create the directory until repeated intake ambiguity appears. |
+| **B-061** | standard: Learning Profile архетипа D для `education/` | **P3** | B-048 | TODO | — (deferred) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 §4.3; `standards/education-profile.md` | Deferred until founder initiates an actual course project; then standardize education/Learning Profile boundaries before filling `education/`. |
+| **B-062** | standard: Стандарт фреймворков (архетип A/B) для `frameworks/` | **P3** | B-048 | TODO | — (deferred) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 §4.3; current `frameworks/` placeholder | Deferred until the first reusable framework emerges from project methodology; then decide whether `frameworks/` is a Hub capability or spoke/product artifact. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
@@ -1712,6 +1719,8 @@ B-048 performs implementation PRs after the RFC is accepted.
 
 **Приоритет:** P1
 **Источник:** 🔗 [issue #374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374);
+[issue #376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376);
+[issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
 B-034 document-plan
 **Зависимости:** B-034
 **Статус:** TODO
@@ -1729,7 +1738,10 @@ boundaries.
    Research/Analysis/Audit/Report standards.
 3. Define alternatives, trade-offs, impacted artifacts, link rewrite strategy,
    validator impact, sequencing, rollback and verification.
-4. State the human decision gate before any physical migration.
+4. Explicitly route root ambiguity groups into migration-specific ADRs:
+   `practices/` vs `docs/practice/` (B-057), `website/`/`mkdocs.yml` strategy
+   (B-058) and post-migration `ai-governance/` vs `ai-rules/` boundary (B-055).
+5. State the human decision gate before any physical migration.
 
 **Ожидаемые артефакты:**
 - `governance/rfc/YYYY-MM-DD-rfc-hub-repository-migration-plan.md` or accepted
@@ -1739,6 +1751,8 @@ boundaries.
 - [ ] RFC cites B-034 and separates plan, decision and implementation.
 - [ ] RFC applies accepted standards to the actual current Hub tree.
 - [ ] Alternatives/trade-offs and ambiguous human decisions are explicit.
+- [ ] Follow-up ADRs B-057/B-058/B-055 are named or intentionally collapsed into
+      the accepted migration decision.
 - [ ] Validation, link rewrite and rollback strategy are explicit.
 
 **Обоснование приоритета:**
@@ -1754,21 +1768,26 @@ Do not move files or update validators as implementation in the RFC PR.
 
 **Приоритет:** P1
 **Источник:** 🔗 [issue #374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374);
-future migration RFC B-047
-**Зависимости:** B-047
+[issue #376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376);
+[issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
+future migration RFC B-047; migration ADRs B-057/B-058
+**Зависимости:** B-047, B-057, B-058
 **Статус:** TODO
 **Режим работы:** `Structured`
 
 **Контекст:**
-Physical migration is implementation work after the migration RFC is accepted.
-The accepted RFC controls sequencing, but issue #376 fixes one implementation
-constraint in advance: Phase 4 (Reconcile 🟡) is executed as **one task**, not as
-"one catalog = one PR". The executor performs an integrity stress-test
-(validators + link/cross-reference check) inside that PR before requesting
-review.
+Physical migration is implementation work after the migration RFC is accepted
+and the migration-specific ADRs have fixed the highest-impact ambiguous routes
+(`practices/` and the published-site strategy). The accepted RFC controls
+sequencing, but issue #376 fixes one implementation constraint in advance:
+Phase 4 (Reconcile 🟡) is executed as **one task**, not as "one catalog = one
+PR". The executor performs an integrity stress-test (validators +
+link/cross-reference check) inside that PR before requesting review.
 
 **Рекомендуемые фазы:**
-1. Phase 0: decision gate in B-047 (migration RFC and human decision).
+1. Phase 0: decision gate in B-047 (migration RFC and human decision) plus
+   migration-specific ADRs B-057/B-058 when they are not fully decided inside
+   B-047.
 2. Phase 1: neutral target introductions such as `kb/`, `runs/`, `ai-rules/`
    and `GOVERNANCE.md` anchors.
 3. Phase 2: `governance/rfc/` → `docs/rfc/` move with link rewrites.
@@ -2014,7 +2033,8 @@ Do not smuggle physical repository migration or artifact cleanup into this task.
 
 **Приоритет:** P3
 **Источник:** 🔗 [issue #374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374);
-[issue #370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370)
+[issue #370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370);
+[issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380)
 **Зависимости:** B-048, B-053
 **Статус:** TODO
 **Режим работы:** `Structured`
@@ -2023,6 +2043,8 @@ Do not smuggle physical repository migration or artifact cleanup into this task.
 The stress-test report from issue #370 exposed the value of periodically checking
 sets of related documents, but process standardization is intentionally delayed
 until after migration and after the current R/A/A/Report desync is repaired.
+Issue #380 keeps this as a separate deferred meta-task rather than part of the
+current backlog-maintenance PR.
 
 **Что нужно сделать:**
 1. Define when cross-document stress tests are required.
@@ -2052,6 +2074,7 @@ Do not create this standard before B-048 and B-053.
 
 **Приоритет:** P1
 **Источник:** 🔗 [issue #376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376);
+[issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
 B-034 document-plan; future physical migration B-048
 **Зависимости:** B-048
 **Статус:** TODO
@@ -2092,10 +2115,11 @@ Do not perform physical file moves in the ADR task.
 
 ---
 
-### B-056: chore: Физически разделить `governance/` на `ai-governance/` и `ai-rules/`
+### B-056: chore: Физически разнести остатки `governance/` по `ai-governance/`, `ai-rules/`, `pr-ops/` и `docs/rfc/`
 
 **Приоритет:** P1
 **Источник:** 🔗 [issue #376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376);
+[issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
 B-034 Phase 3; future ADR B-055
 **Зависимости:** B-048, B-055
 **Статус:** TODO
@@ -2103,28 +2127,37 @@ B-034 Phase 3; future ADR B-055
 
 **Контекст:**
 После accepted migration path and ADR B-055 the repository needs the physical
-split that makes the policy/rule boundary executable. This task covers the
-follow-up extraction of remaining policy/compliance material into
-`ai-governance/` and agent behavior/synchronization rules into `ai-rules/`.
-It is downstream from B-048 because it must reflect the actual migrated tree and
-not pre-empt the accepted migration sequence.
+split that makes the policy/rule boundary executable and drains the legacy
+`governance/` bucket. This task covers the follow-up extraction of remaining
+policy/compliance material into `ai-governance/`, agent behavior/synchronization
+rules into `ai-rules/`, PR/backlog operations into `pr-ops/`, and RFC proposals
+into `docs/rfc/`. It is downstream from B-048 because it must reflect the actual
+migrated tree and not pre-empt the accepted migration sequence. It must also
+coordinate with B-035/B-037 instead of silently leaving a second backlog
+reorganization path.
 
 **Что нужно сделать:**
-1. Inventory current `governance/`, `AI_GOVERNANCE.md`, `practices/ai-governance/`
-   and `practices/agent-work/` material against the B-055 boundary.
-2. Move or split files into `ai-governance/` and `ai-rules/` according to the
-   accepted ADR and migration state.
-3. Update links, MkDocs/navigation, validators, artifact-map, README-style entry
+1. Inventory current `governance/`, `governance/rfc/`, `AI_GOVERNANCE.md`,
+   `practices/ai-governance/` and `practices/agent-work/` material against the
+   B-055 boundary and B-034 migration matrix.
+2. Move or split files into `ai-governance/`, `ai-rules/`, `pr-ops/` and
+   `docs/rfc/` according to the accepted ADR and migration state.
+3. Reconcile B-035/B-037 with the accepted `pr-ops/` destination for backlog and
+   validator work.
+4. Update links, MkDocs/navigation, validators, artifact-map, README-style entry
    points and changelog as required by the moved paths.
-4. Keep aliases/rollback path explicit until cross-references stabilize.
+5. Keep aliases/rollback path explicit until cross-references stabilize.
 
 **Ожидаемые артефакты:**
-- migrated `ai-governance/` and `ai-rules/` contents
+- migrated `ai-governance/`, `ai-rules/`, `pr-ops/` and `docs/rfc/` contents
 - updated links, validators/navigation and governance indexes
 
 **Критерии приёмки (DoD):**
 - [ ] Policy/compliance material is routed to `ai-governance/`.
 - [ ] Agent behavior and quick-sync rules are routed to `ai-rules/`.
+- [ ] PR/backlog/review operations are routed to `pr-ops/`.
+- [ ] RFC proposal artifacts are routed to `docs/rfc/` or intentionally retained
+      with a transition rationale.
 - [ ] Old `governance/` leftovers are either migrated, intentionally retained or
       documented with rationale.
 - [ ] Validators, links and navigation pass after the split.
@@ -2136,6 +2169,273 @@ and reduces onboarding/review ambiguity for humans and external agents.
 
 **Риски и ограничения:**
 Do not reopen the B-055 decision or combine this with unrelated root cleanup.
+
+---
+
+### B-057: adr: Зафиксировать специфичность Хаба — корневой `practices/` vs `docs/practice/`
+
+**Приоритет:** P1
+**Источник:** 🔗 [issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
+B-034 document-plan
+**Зависимости:** B-047
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+B-034 explicitly marks `practices/` vs `docs/practice/` as a human-decision
+ambiguity. ADR-001 treats `practices/` as an Archetype A root extension, while
+the universal root sketch also mentions `docs/practice/`. Before physical
+Phase 4 reconciliation, the Hub needs a narrow decision record for whether
+`practices/` remains a Hub-specific root or gets reconciled into `docs/`.
+
+**Что нужно сделать:**
+1. Create an ADR/addendum that compares root `practices/` and `docs/practice/`
+   for Hub usage.
+2. Explicitly state whether Hub-specific practices stay at root as Archetype A
+   capability or move under `docs/practice/`.
+3. Name link rewrite, validator, MkDocs and artifact-map consequences for B-048.
+4. Preserve the anti-inflation rule: no directory move inside the ADR task.
+
+**Ожидаемые артефакты:**
+- accepted ADR/addendum path selected at execution time
+
+**Критерии приёмки (DoD):**
+- [ ] Decision cites B-034 and ADR-001/ADR-002.
+- [ ] Root `practices/` vs `docs/practice/` outcome is explicit.
+- [ ] Consequences for B-048 Phase 4 are named.
+- [ ] No practice files are moved in the ADR PR.
+
+**Обоснование приоритета:**
+P1: this decision controls an existing populated root catalog and should not be
+left implicit during migration.
+
+**Риски и ограничения:**
+Do not broaden the ADR into a full practice standard or documentation-site
+restructure.
+
+---
+
+### B-058: adr: Отменить или подтвердить веб-стратегию Хаба (`website/`, `mkdocs.yml`)
+
+**Приоритет:** P1
+**Источник:** 🔗 [issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
+B-034 document-plan; current `mkdocs.yml`
+**Зависимости:** B-047
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+B-034 clarifies that `website/` and `mkdocs.yml` do not make the Hub a Portal,
+but the issue #380 follow-up asks to explicitly decide whether the Hub web
+strategy is cancelled and whether `website/`/`mkdocs.yml` should be removed.
+That decision should be recorded before any physical deletion.
+
+**Что нужно сделать:**
+1. Create an ADR/addendum that decides the Hub published-site strategy:
+   preserve current MkDocs infrastructure, freeze it, or cancel it and remove
+   `website/` plus `mkdocs.yml` in a later implementation PR.
+2. Separate "Hub is not Portal" from "Hub may still publish documentation".
+3. State consequences for B-048, CI, MkDocs validation, README links and
+   published GitHub Pages behavior.
+4. If cancellation is accepted, define rollback and archival expectations for
+   removed publishing files.
+
+**Ожидаемые артефакты:**
+- accepted ADR/addendum path selected at execution time
+
+**Критерии приёмки (DoD):**
+- [ ] Decision explicitly covers `website/` and `mkdocs.yml`.
+- [ ] Portal-vs-Hub rationale remains clear and traceable to B-034.
+- [ ] Physical removal, if accepted, is delegated to B-048 or a scoped follow-up.
+- [ ] Validation/CI consequences are named.
+
+**Обоснование приоритета:**
+P1: website removal changes public documentation behavior and CI surface, so it
+requires a decision gate before implementation.
+
+**Риски и ограничения:**
+Do not delete `website/` or `mkdocs.yml` in the ADR task.
+
+---
+
+### B-059: analysis: Проверить целесообразность `docs/guides/` как единого дома руководств
+
+**Приоритет:** P3
+**Источник:** 🔗 [issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
+B-034 §4.3/§6; current `guides/`
+**Зависимости:** B-048
+**Статус:** TODO
+**Режим работы:** `Analysis`
+
+**Контекст:**
+The current root `guides/` catalog is useful and populated, but B-034 marks
+`guides/` vs `docs/` as an unresolved root question. Issue #380 asks to track a
+future analysis of `docs/guides/` as a unified guide home, triggered by real
+review/navigation pain rather than architectural tidiness.
+
+**Триггер внедрения:**
+- Phase 4 reconciliation in B-048 needs a guide-routing decision; or
+- repeated review/navigation confusion appears between `guides/`, `docs/` and
+  published-site paths.
+
+**Что нужно сделать:**
+1. Inventory current guide artifacts and their consumers (README, MkDocs,
+   validators, cross-links).
+2. Compare `guides/` root, `docs/guides/` and status quo with explicit
+   trade-offs.
+3. Recommend whether to migrate, preserve or alias guide paths.
+4. Name validation and link rewrite impact; do not move files in this analysis.
+
+**Ожидаемые артефакты:**
+- future analysis artifact path selected at execution time
+
+**Критерии приёмки (DoD):**
+- [ ] Trigger evidence is recorded.
+- [ ] Recommendation covers GitHub readability, MkDocs publishing and
+      repository validators.
+- [ ] Any proposed move is delegated to a follow-up implementation task.
+
+**Обоснование приоритета:**
+P3: current `guides/` works; this should activate only when migration or review
+pain makes the location materially costly.
+
+**Риски и ограничения:**
+Do not introduce `docs/guides/` as an empty target without evidence.
+
+---
+
+### B-060: analysis: Структура и правила наполнения `projects-sink/`
+
+**Приоритет:** P3
+**Источник:** 🔗 [issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
+B-034 Phase 4; current `projects/`
+**Зависимости:** B-048
+**Статус:** TODO
+**Режим работы:** `Analysis`
+
+**Контекст:**
+`projects/` is the canonical project area, but ecosystem synchronization may
+produce incoming material that is not yet ready to become a managed project
+artifact. Issue #380 asks to track research for `projects-sink/` as a managed
+intake buffer, only when intake ambiguity becomes real.
+
+**Триггер внедрения:**
+- first repeated import from ecosystem projects that does not fit
+  `projects/{project}/`; or
+- review pain caused by mixing untriaged project intake with accepted project
+  materials.
+
+**Что нужно сделать:**
+1. Define the problem boundary: intake buffer vs canonical `projects/` content.
+2. Compare `projects-sink/`, `projects/_incoming/`, `runs/` and issue-only
+   tracking.
+3. Propose naming, retention, promotion and cleanup rules if a sink is justified.
+4. Identify validator and sync-script consequences.
+
+**Ожидаемые артефакты:**
+- future analysis artifact path selected at execution time
+
+**Критерии приёмки (DoD):**
+- [ ] Trigger evidence demonstrates real intake pain.
+- [ ] Sink rules include promotion, deletion/archival and ownership.
+- [ ] Directory creation is delegated to an implementation task only if justified.
+
+**Обоснование приоритета:**
+P3: without repeated intake pain, `projects-sink/` would be a speculative
+holding area and risks becoming unmanaged debt.
+
+**Риски и ограничения:**
+Do not create `projects-sink/` preemptively.
+
+---
+
+### B-061: standard: Learning Profile архетипа D для `education/`
+
+**Приоритет:** P3
+**Источник:** 🔗 [issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
+B-034 §4.3; `standards/education-profile.md`; current `education/`
+**Зависимости:** B-048
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+`education/` currently exists as a placeholder, while ADR-001 separates
+Education / Learning Platform as Archetype D. Issue #380 asks to track a future
+Learning Profile standardization task that should activate when the founder
+starts a real course project, not while `education/` is empty.
+
+**Триггер внедрения:**
+- founder initiates an actual course/learning project; or
+- educational content begins accumulating in the Hub and needs routing rules.
+
+**Что нужно сделать:**
+1. Review `standards/education-profile.md`, ADR-001 and the actual course
+   project context available at trigger time.
+2. Decide whether `education/` in the Hub is a profile area, a pointer to an
+   Archetype D spoke, or a temporary index.
+3. Create/update the Learning Profile standard or implementation guidance
+   required by the triggered course work.
+4. Name validation and project-structure consequences.
+
+**Ожидаемые артефакты:**
+- updated/created Learning Profile standard or scoped guidance selected at
+  execution time
+
+**Критерии приёмки (DoD):**
+- [ ] Triggering course context is cited.
+- [ ] Hub `education/` boundary vs Archetype D spoke boundary is explicit.
+- [ ] Standard/guidance is based on actual course needs.
+
+**Обоснование приоритета:**
+P3: a Learning Profile without a live course would be premature standardization.
+
+**Риски и ограничения:**
+Do not fill `education/` with placeholder process material before the trigger.
+
+---
+
+### B-062: standard: Стандарт фреймворков (архетип A/B) для `frameworks/`
+
+**Приоритет:** P3
+**Источник:** 🔗 [issue #380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380);
+B-034 §4.3; current `frameworks/`
+**Зависимости:** B-048
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+`frameworks/` is currently a placeholder. B-034 marks it as an unresolved root
+question, and issue #380 asks to track a future standard for frameworks across
+Archetype A/B only when a real reusable methodology/framework appears.
+
+**Триггер внедрения:**
+- first framework emerges from project methodology and is reused outside one
+  local project; or
+- review pain appears because framework-like material is split between
+  `research/`, `standards/`, `projects/` and `frameworks/`.
+
+**Что нужно сделать:**
+1. Inventory the triggering framework candidate and its consumers.
+2. Decide whether the artifact belongs in Hub `frameworks/`, a spoke repository,
+   `standards/` or another existing route.
+3. Define the framework standard: expected sections, evidence of reuse,
+   lifecycle, ownership and relation to standards/research.
+4. Update validators/navigation only if the route becomes active.
+
+**Ожидаемые артефакты:**
+- future framework standard or ADR/analysis path selected at execution time
+
+**Критерии приёмки (DoD):**
+- [ ] Trigger evidence shows a real reusable framework, not a placeholder.
+- [ ] Archetype A/B boundary is explicit.
+- [ ] Routing and validation consequences are defined.
+
+**Обоснование приоритета:**
+P3: `frameworks/` should become active only after reusable methodology exists.
+
+**Риски и ограничения:**
+Do not turn `frameworks/README.md` into a standard before there is framework
+content to govern.
 
 ---
 
@@ -2371,7 +2671,7 @@ Human Review:
 | [standards/glossary.md](../standards/glossary.md) | Единый источник терминов для всего бэклога. |
 | [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296) | Источник sprint chains для `analysis-standard.md` и `audit-standard.md`; фиксирует, что migration plan is a separate RFC after all three standards. |
 | [standards/analysis-standard.md](../standards/analysis-standard.md) | Закрывает B-027 и разблокирует cleanup Analysis (B-028), migration planning (B-034) and standard-desync repair chain. |
-| [docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md](../docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md) | Результат B-034: upstream analysis/plan for future migration RFC B-047 and physical migration B-048. |
+| [docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md](../docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md) | Результат B-034: upstream analysis/plan for future migration RFC B-047, physical migration B-048, migration ADRs B-055/B-057/B-058 and trigger-based root-catalog research B-059..B-062. |
 | [docs/report/2026-07-04-cross-standard-stress-tests.md](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Source findings for the standard-desync repair chain B-049..B-054; current route is intentionally captured as a follow-up issue in B-049. |
 
 ---
@@ -2379,7 +2679,7 @@ Human Review:
 ## 10. Зависимости и критический путь
 
 Диаграмма фокусируется на историческом critical path B-001..B-034 и новых
-downstream chains B-047..B-056. Строки B-035..B-046 остаются в сводной таблице
+downstream chains B-047..B-062. Строки B-035..B-046 остаются в сводной таблице
 раздела 2, но B-046 уже закрыта как предыдущая синхронизация. B-001..B-008,
 B-010, B-011, B-013, B-016..B-021, B-024..B-027, B-029..B-034, B-038..B-043,
 B-045 and B-046 уже выполнены.
@@ -2389,15 +2689,18 @@ Issue #296 довёл цепочки Analysis и Audit до стандартов
 `B-020 → B-029 → B-030 → B-031 → B-032 → B-033` для Audit. Открытым остаётся
 post-standard cleanup Analysis B-028 and technical cleanup B-022/B-023.
 
-B-034 теперь явно закрыт как **analysis/plan**. Следующий migration path:
-`B-034 → B-047 → B-048`, где B-047 creates migration RFC, and B-048 performs
-physical migration after acceptance. B-048 explicitly keeps Phase 4 Reconcile as
-one task with validator + cross-reference stress-test before review. The
-post-migration ecosystem policy split is:
-`B-048 → B-055 → B-056`. Cross-standard stress-test follow-ups form a separate
-repair chain:
+B-034 теперь явно закрыт как **analysis/plan**. Следующий migration path starts
+with `B-034 → B-047`, where B-047 creates the migration RFC. Migration-specific
+ADR gates B-057 (`practices/` vs `docs/practice/`) and B-058 (`website/` /
+`mkdocs.yml`) feed physical migration B-048. B-048 explicitly keeps Phase 4
+Reconcile as one task with validator + cross-reference stress-test before
+review. The post-migration ecosystem policy split is:
+`B-048 → B-055 → B-056`, with B-056 covering the remaining `governance/` split
+across `ai-governance/`, `ai-rules/`, `pr-ops/` and `docs/rfc/`.
+Cross-standard stress-test follow-ups form a separate repair chain:
 `B-049 → B-050 → B-051 → B-052 → B-053`, with deferred process standard B-054
-after migration and desync repair.
+after migration and desync repair. Root-catalog research tasks B-059..B-062 are
+P3 trigger-based follow-ups for guides, project intake, education and frameworks.
 
 ```mermaid
 flowchart TD
@@ -2443,7 +2746,13 @@ flowchart TD
     B053["B-053 · P1<br/>Align R/A/A/Report<br/>to meta-standard"]
     B054["B-054 · P3<br/>Stress-test process<br/>after migration"]
     B055["B-055 · P1<br/>ADR ai-governance<br/>vs ai-rules"]
-    B056["B-056 · P1<br/>Physical split<br/>ai-governance + ai-rules"]
+    B056["B-056 · P1<br/>Drain governance/<br/>to target roots"]
+    B057["B-057 · P1<br/>ADR practices/<br/>vs docs/practice"]
+    B058["B-058 · P1<br/>ADR website strategy<br/>website + mkdocs"]
+    B059["B-059 · P3<br/>docs/guides/<br/>route analysis"]
+    B060["B-060 · P3<br/>projects-sink/<br/>intake rules"]
+    B061["B-061 · P3<br/>Learning Profile<br/>education/"]
+    B062["B-062 · P3<br/>Framework standard<br/>frameworks/"]
 
     %% Критический путь
     B001 --> B002
@@ -2467,6 +2776,10 @@ flowchart TD
     B027 --> B034
     B032 --> B034
     B034 --> B047
+    B047 --> B057
+    B047 --> B058
+    B057 --> B048
+    B058 --> B048
     B047 --> B048
     B033 --> B049
     B043["B-043 · DONE<br/>report-standard.md<br/>structure standard"] --> B049
@@ -2479,6 +2792,10 @@ flowchart TD
     B048 --> B055
     B055 --> B056
     B048 --> B056
+    B048 -. "по триггеру" .-> B059
+    B048 -. "по триггеру" .-> B060
+    B048 -. "по триггеру" .-> B061
+    B048 -. "по триггеру" .-> B062
 
     %% Прочие зависимости
     B001 --> B003
@@ -2496,8 +2813,8 @@ flowchart TD
     classDef norm fill:#e0f2fe,stroke:#0369a1,color:#0c4a6e;
     classDef done fill:#dcfce7,stroke:#166534,color:#14532d;
 
-    class B047,B048,B049,B050,B051,B052,B053,B055,B056 crit;
-    class B014,B015,B022,B023,B028,B054 norm;
+    class B047,B048,B049,B050,B051,B052,B053,B055,B056,B057,B058 crit;
+    class B014,B015,B022,B023,B028,B054,B059,B060,B061,B062 norm;
     class B001,B002,B003,B004,B005,B006,B007,B008,B010,B011,B013,B016,B017,B018,B019,B020,B021,B024,B025,B026,B027,B029,B030,B031,B032,B033,B034,B043 done;
 ```
 

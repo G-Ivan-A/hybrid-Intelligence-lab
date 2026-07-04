@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.43
+version: 1.44
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -12,6 +12,15 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- backlog: Обновлён `governance/backlog.md` по issue #380: добавлены недостающие
+  downstream-задачи B-057..B-062 для migration-specific ADRs (`practices/` vs
+  `docs/practice/`, стратегия `website/`/`mkdocs.yml`) и trigger-based research
+  по корневым каталогам (`docs/guides/`, `projects-sink/`, `education/`,
+  `frameworks/`). B-056 расширен до полного физического разнесения legacy
+  `governance/` по `ai-governance/`, `ai-rules/`, `pr-ops/` и `docs/rfc/`.
+  B-047/B-048, dependency diagram, related artifacts and backlog frontmatter
+  updated. Новые GitHub issues не создавались, файлы не перемещались.
 
 - backlog: Обновлён `governance/backlog.md` по issue #376: добавлены новые
   downstream-задачи B-055/B-056 для ADR по границе `ai-governance/` vs
