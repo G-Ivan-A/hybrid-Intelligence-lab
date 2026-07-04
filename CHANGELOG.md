@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.46
+version: 1.47
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -13,6 +13,22 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- chore: Физическая миграция корня Хаба по принятой ADR-007 для issue #384 /
+  B-048 (PR #388). Каталог `governance/` физически разделён на `ai-governance/`
+  (якорь границ AI-governance слоя), `ai-rules/` (исполнимые runtime-правила
+  агента: `agent-onboarding-protocol.md`), `pr-ops/` (repo model, artifact map,
+  backlog, реестры, session digests) и `docs/rfc/` (RFC-предложения). Созданы
+  якорные каталоги `projects-sink/` и `docs/guides/`. `CONCEPT.md` перенесён в
+  `docs/concept.md`, `AI_PROJECT_CONTEXT-Summary.md` — в `projects-sink/`.
+  Удалены `website/`, `mkdocs.yml`, `.github/workflows/deploy-docs.yml` и
+  `experiments/` (validator-регрессионные тесты перенесены в `tools/`). Все
+  кросс-ссылки переписаны на новые пути по именованным якорям; валидаторы,
+  манифест-проверки, `README.md`, `CONTRIBUTING.md`, `.github/workflows/validate.yml`,
+  `pr-ops/repo-model.md` и `pr-ops/artifact-map.md` синхронизированы с фактической
+  структурой. Внутри PR проведён обязательный integrity stress-test (все
+  валидаторы зелёные, все кросс-ссылки резолвятся, реестры синхронизированы).
+  `AI_GOVERNANCE.md` оставлен в корне, стандарты R/A/A и логика валидаторов не
+  менялись, новые ADR/RFC не создавались. B-048 отмечена DONE.
 - adr: Доработан `docs/adr/2026-07-adr-007-hub-root-structure.md` до v0.3
   для issue #385 / PR #387. `kb/` и `runs/` удалены из целевого To-Be дерева с
   явной фиксацией расхождения с ADR-001 (каталоги универсального ядра не вводятся

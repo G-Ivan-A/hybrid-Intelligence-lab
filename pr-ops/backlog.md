@@ -266,7 +266,7 @@ principle ([pr-ops/repo-model.md](repo-model.md)): **артефакт созда
 | **B-045** | research: Режимы выполнения задач для ИИ-агентов — индустриальные нормы и паттерны классификации | **P1** | B-016, B-018 | DONE (artifact: draft) | [#330](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330) (PR [#331](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/331)) | Видение фаундера ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/glossary.md` (Operating Mode); [research-отчёт](../research/hub/2026-07-02-task-execution-modes-research.md); [experiment](../research/hub/exp/task-execution-modes-330/README.md) | Research + Creative + Deep Think от лица 4 экспертов: индустриальные нормы (Cynefin/Bloom/Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL), паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал как решающий вход. Без предложения решений, новых режимов и стандартов — только исследование, паттерны, тесты, выводы. |
 | **B-046** | chore: Синхронизировать `pr-ops/backlog.md` с фактическими статусами артефактов | **P1** | — | DONE (artifact: canonical) | [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364) (PR [#365](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/365)) | Issue [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364); artifact frontmatter statuses; this backlog | Предыдущий sync закрыт: статусы на момент PR #365 сверены с artifact frontmatter and merged PRs, без миграции файлов и без изменения внешних артефактов. |
 | **B-047** | adr: Целевая структура корня Хаба и provisional-механизм | **P1** | B-034 | DONE (artifact: accepted) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) (PR [#379](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/379)); refinement [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382) (PR [#383](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/383)) | Issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); issue [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382); B-034 document-plan; ADR-001/ADR-002; founder decision 2026-07-04; [ADR-007](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Decision gate перед физической миграцией: ADR-007 фиксирует целевую структуру корня Хаба, `projects-sink/`, границу `ai-governance/` vs `ai-rules/`, root `practices/`, `docs/guides/`, `education/`, `frameworks/`, `docs/concept.md`, retirement `website/`/`mkdocs.yml`/`experiments/`, provisional-standards через lifecycle и стратегию B-048. Issue #382 adds the full To-Be tree (ADR-001 core + ADR-007 delta) without physical migration. |
-| **B-048** | chore: Физическая миграция репо Хаба по принятой ADR-007 | **P1** | B-047 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); accepted ADR-007/B-047 | Implementation path after accepted ADR-007: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Phase 4 (Reconcile 🟡) is one task, not "one catalog = one PR"; integrity stress-test happens inside that PR before review. |
+| **B-048** | chore: Физическая миграция репо Хаба по принятой ADR-007 | **P1** | B-047 | DONE | [#384](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/384) (PR [#388](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/388)) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); accepted ADR-007/B-047 | Implementation path after accepted ADR-007: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Phase 4 (Reconcile 🟡) is one task, not "one catalog = one PR"; integrity stress-test happens inside that PR before review. Выполнено: `governance/` разделён на `ai-governance/`/`ai-rules/`/`pr-ops/`/`docs/rfc/`, созданы `projects-sink/` и `docs/guides/`, `CONCEPT.md` → `docs/concept.md`, удалены `website/`/`mkdocs.yml`/`deploy-docs.yml`/`experiments/` (тесты → `tools/`), ссылки и валидаторы синхронизированы, integrity stress-test пройден внутри PR. |
 | **B-049** | audit: Переместить отчёт кросс-стресс-тестов в `docs/audit/` и модернизировать frontmatter | **P1** | B-033, B-043 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370); [cross-standard stress-tests](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Отчёт имеет audit-природу (conformance/stress test against standards), но сейчас лежит в `docs/report/` как generic report. Нужен перенос/модернизация с audit-specific frontmatter and indexes. |
 | **B-050** | analysis: Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); stress-test findings #370 | Исследует варианты: Subtype Profiles везде vs 4-компонентная модель vs явное отсутствие профилей, унификация vs разделение, impact on validators and review pain. |
 | **B-051** | adr: Принять мета-структуру стандартов | **P1** | B-050 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future options analysis B-050 | Human decision gate: принимает/корректирует вариант мета-структуры перед созданием стандарта стандартов и массовой правкой R/A/A/Report. |
@@ -1788,7 +1788,7 @@ Do not move files or turn the Hub into Portal in this ADR PR.
 issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378);
 accepted ADR-007/B-047
 **Зависимости:** B-047
-**Статус:** TODO
+**Статус:** DONE (PR [#388](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/388))
 **Режим работы:** `Structured`
 
 **Контекст:**
@@ -1825,12 +1825,13 @@ PR before requesting review.
 - updated validators, navigation and changelog entries
 
 **Критерии приёмки (DoD):**
-- [ ] Physical structure matches accepted ADR-007/B-047.
-- [ ] Links and mkdocs navigation resolve after moves.
-- [ ] Repository validators pass after migration.
-- [ ] Phase 4 Reconcile is one task/PR and includes validator + cross-reference
+- [x] Physical structure matches accepted ADR-007/B-047.
+- [x] Links resolve after moves (MkDocs navigation retired per ADR-007: `website/`,
+      `mkdocs.yml` и `deploy-docs.yml` удалены).
+- [x] Repository validators pass after migration.
+- [x] Phase 4 Reconcile is one task/PR and includes validator + cross-reference
       stress-test evidence before review.
-- [ ] PR sequencing is rollback-safe and documented.
+- [x] PR sequencing is rollback-safe and documented.
 
 **Обоснование приоритета:**
 P1: implementation unlocks the target architecture, but only after the ADR human

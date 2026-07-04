@@ -21,7 +21,11 @@ executable: false
 | `frameworks/` | Методологии для hybrid human + AI teams. | Создавать только после comparison, показывающего недостаточность existing approaches. |
 | `projects/` | Project knowledge bases, prompts, process context и spoke links. | Использовать, когда работа относится к scoped initiative, но не к production code. Наследование структуры в проектах — см. `standards/project-structure-inheritance.md`. |
 | `education/` | Open education programs, course materials и teaching scenarios. | Использовать для материалов, пригодных для обучения или partner delivery. |
-| `governance/` | Repository model и cross-cutting operating decisions. | Добавлять governance files только когда они уточняют active decision-making. |
+| `ai-governance/` | Якорь AI-governance слоя: границы и точки входа (сквозные правила — в `AI_GOVERNANCE.md`). | Добавлять файлы только когда они уточняют границы AI-governance слоя. |
+| `ai-rules/` | Исполнимые правила рантайма AI-агента: протокол онбординга и операционные инструкции. | Добавлять правило только когда оно исполнимо агентом и уточняет runtime-поведение. |
+| `pr-ops/` | Операции над репозиторием и PR: repo model, artifact map, backlog, реестры и session digests. | Добавлять operating files только когда они уточняют active decision-making. |
+| `projects-sink/` | Приёмник контекста spoke-проектов, синхронизируемого в Хаб. | Добавлять только синхронизируемый из spoke контекст, не production-код. |
+| `docs/rfc/` | RFC-предложения об изменении структуры, lifecycle и правил Хаба. | Создавать RFC только для активно обсуждаемого изменения, требующего review. |
 | `tools/` | Локальные validation и maintenance scripts. | Добавлять scripts, которые делают проверки воспроизводимыми. |
 | `.github/ISSUE_TEMPLATE/` | GitHub-native task intake. | Держать templates focused на качестве issue и reviewability. |
 
