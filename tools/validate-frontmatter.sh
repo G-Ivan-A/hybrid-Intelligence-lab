@@ -74,6 +74,9 @@ document_class() {
   path="$(normalize_path "$1")"
 
   case "$path" in
+    docs/audit/*.md)
+      printf 'audit'
+      ;;
     research/*.md | docs/analysis/*.md | docs/report/*.md)
       printf 'knowledge'
       ;;
@@ -118,6 +121,17 @@ is_governance_class() {
   esac
 }
 
+is_knowledge_class() {
+  case "$1" in
+    knowledge | audit)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
 is_approved_field() {
   local class="$1"
   local key="$2"
@@ -133,6 +147,14 @@ is_approved_field() {
     knowledge:source | knowledge:source_id | knowledge:stage | knowledge:projects | \
     knowledge:related_artifacts | knowledge:related_issues | knowledge:related_issue | \
     knowledge:external_artifacts | knowledge:based_on)
+      return 0
+      ;;
+    audit:owner | audit:type | audit:context | audit:method | audit:scope | \
+    audit:source | audit:source_id | audit:stage | audit:projects | \
+    audit:related_artifacts | audit:related_issues | audit:related_issue | \
+    audit:external_artifacts | audit:based_on | audit:audit_target | \
+    audit:evidence_model | audit:verdict | audit:severity_scale | \
+    audit:follow_up | audit:related_norm)
       return 0
       ;;
     governance:owner | governance:executable | governance:entrypoint)
@@ -183,7 +205,7 @@ validate_status() {
   local line="$3"
   local value="$4"
 
-  if [[ "$class" == "knowledge" ]]; then
+  if is_knowledge_class "$class"; then
     case "$value" in
       draft | reviewed | canonical | superseded)
         ;;
@@ -269,6 +291,11 @@ validate_field() {
         error "$path" "$line" "invalid owner '$value' (expected non-empty owner)"
       fi
       ;;
+    audit_target | evidence_model | verdict)
+      if [[ -z "$value" ]]; then
+        error "$path" "$line" "invalid $field '$value' (expected non-empty audit metadata)"
+      fi
+      ;;
     decision-type)
       case "$value" in
         governance | methodology | product | curriculum | runtime)
@@ -288,6 +315,34 @@ validate_field() {
       esac
       ;;
   esac
+}
+
+validate_audit_body_sections() {
+  local path="$1"
+
+  local labels=(
+    "Summary / BLUF"
+    "Scope / Target"
+    "Method / Evidence"
+    "Findings / Verdict"
+    "Remediation / Deviation"
+    "Related Artifacts"
+  )
+  local patterns=(
+    "Summary|BLUF"
+    "Scope|Target"
+    "Method|Evidence"
+    "Findings|Verdict"
+    "Remediation|Deviation"
+    "Related Artifacts"
+  )
+
+  local i
+  for i in "${!labels[@]}"; do
+    if ! grep -Eiq "^##[[:space:]].*(${patterns[$i]})" "$path"; then
+      error "$path" 1 "missing required Audit body section: ${labels[$i]}"
+    fi
+  done
 }
 
 validate_file() {
@@ -384,6 +439,16 @@ validate_file() {
 
   if [[ "$class" == "rfc" && -z "${lines[rfc-scope]+set}" ]]; then
     error "$path" 1 "missing required frontmatter field for RFC artifact: rfc-scope"
+  fi
+
+  if [[ "$class" == "audit" ]]; then
+    for field in audit_target evidence_model verdict; do
+      if [[ -z "${lines[$field]+set}" ]]; then
+        error "$path" 1 "missing required frontmatter field for Audit artifact: $field"
+      fi
+    done
+
+    validate_audit_body_sections "$path"
   fi
 }
 

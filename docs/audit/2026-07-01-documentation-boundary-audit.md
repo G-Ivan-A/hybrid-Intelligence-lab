@@ -7,6 +7,14 @@ type: audit
 context: [hub, rfc, adr, standard, il-3, ssot, governance, boundary, terminology]
 method: manual-review
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320"
+scope: repo
+based_on: "issue #320; standards/adr-structure-standard.md; standards/rfc-structure-standard.md; standards/glossary.md"
+audit_target: "RFC/ADR/Standard boundary and SSOT conformance for five IL-3 governance artifacts named in issue #320"
+evidence_model: "manual-review + deep-think stress-tests + local grep validation"
+verdict: conditional
+severity_scale: "blocker/cause/consequence/observation"
+follow_up: "Tier 2 remediation tracked by issue #322 / PR #323; no blocking residual violations in audited artifacts"
+related_norm: "standards/adr-structure-standard.md; standards/rfc-structure-standard.md; standards/glossary.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/316"
@@ -22,6 +30,60 @@ related_artifacts:
 ---
 
 # Аудит: коллизии интерпретации стандартов RFC/ADR/Standard (B-039)
+
+## Summary / BLUF
+
+Вердикт: **conditional**. Пять проверенных IL-3 артефактов не содержат
+блокирующих остаточных нарушений, а цепочка `research-standard` / RFC B-016 /
+ADR-003 проверена чисто на дублирование. Условность verdict связана с
+причинными дефектами в шаблонах ADR/RFC и терминологическими рисками, которые
+вынесены в follow-up remediation.
+
+## Scope / Target
+
+Audit target: соответствие пяти артефактов issue #320 стандартам структуры,
+SSOT-дисциплине и границам RFC/ADR/Standard:
+`standards/research-standard.md`,
+`governance/rfc/2026-06-30-rfc-research-structure.md`,
+`docs/adr/2026-07-adr-003-research-structure.md`,
+`standards/adr-structure-standard.md` and
+`standards/rfc-structure-standard.md`.
+
+## Method / Evidence
+
+Evidence model: manual section-by-section review, Deep Think stress-tests,
+expert-role simulation and local grep checks. Reproducible command snippets are
+listed in [7. Проверка (воспроизводимо)](#7-проверка-воспроизводимо).
+
+## Findings / Verdict
+
+Findings:
+
+- No audited artifact has a blocker-level residual violation.
+- ADR-003 duplication against RFC B-016 is remediated.
+- ADR/RFC structure standards remain valid documents, but carry cause-level
+  template risks that can reproduce duplication or stale references.
+
+Final verdict: **conditional**, with no acceptance blockers and explicit
+follow-up for cause remediation.
+
+## Remediation / Deviation
+
+Deviation handling: treat F-07/F-07-parallel/F-01 as cause-level remediation,
+not as blockers for the audited artifacts. Tier 2 remediation is tracked by
+issue #322 / PR #323; no file migration or deletion is performed by this audit.
+
+## Related Artifacts
+
+- Issue [#320](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/320)
+  and root-cause report
+  [`docs/report/2026-07-01-rfc-adr-duplication-analysis.md`](../report/2026-07-01-rfc-adr-duplication-analysis.md).
+- `standards/research-standard.md`,
+  `governance/rfc/2026-06-30-rfc-research-structure.md`,
+  `docs/adr/2026-07-adr-003-research-structure.md`,
+  `standards/adr-structure-standard.md`,
+  `standards/rfc-structure-standard.md`.
+- `standards/glossary.md`.
 
 ## 1. Введение
 

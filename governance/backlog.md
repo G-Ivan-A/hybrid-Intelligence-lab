@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.22
+version: 1.23
 updated: 2026-07-03
 temperature: 0.1
 type: backlog
@@ -24,9 +24,11 @@ related_artifacts:
   - "docs/adr/2026-07-adr-004-reports-structure.md"
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
+  - "docs/audit/2026-06-11-task-execution-audit.md"
   - "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   - "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
   - "governance/rfc/2026-07-02-rfc-audit-structure.md"
+  - "standards/audit-standard.md"
   - "standards/research-standard.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
 related_issues:
@@ -79,6 +81,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/362"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/367"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -235,7 +238,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-030** | rfc: Стандарт структуры Audit | **P0** | B-029 | DONE (artifact: draft) | [#352](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/352) (PR [#353](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/353)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) (B-029); [RFC](rfc/2026-07-02-rfc-audit-structure.md); `standards/rfc-structure-standard.md`; ADR-001/ADR-002 | Proposal-stage для Audit: Вариант C (базовый стандарт Audit + 4-компонентная модель compliance target / evidence model / verdict-finding / deviation handling), routing `docs/audit/`, разграничение Audit-процесс vs audit-report output (координация с Reports B-043) и границы Audit ↔ Research ↔ Analysis ↔ Report (delegate на B-029). PR #353 merged; decision gate выполнен в B-031. |
 | **B-031** | adr: Принятие `audit-standard` | **P0** | B-030 | DONE (artifact: accepted) | [#358](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358) (PR [#361](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/361)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md)); [ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md); [ADR-004](../docs/adr/2026-07-adr-004-reports-structure.md); `standards/adr-structure-standard.md` | Human decision gate выполнен: принят Вариант C из RFC B-030 (базовый стандарт Audit + 4-компонентная модель compliance target / evidence model / verdict-finding / deviation handling), подтверждён routing `docs/audit/`, frontmatter с audit-specific метаданными, knowledge-lifecycle и разграничение Audit-процесс (B-032) vs audit-report output (B-043); open questions RFC B-030 закрыты/делегированы (физический дом audit reports уже решён в ADR-004 v0.3). Разблокирована B-032. Зеркалит B-026/B-042. |
 | **B-032** | chore: Создание `standards/audit-standard.md` | **P0** | B-031 | DONE (artifact: draft) | [#362](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/362) (PR [#363](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/363)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); [ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md) (B-031); RFC B-030 ([governance/rfc/2026-07-02-rfc-audit-structure.md](rfc/2026-07-02-rfc-audit-structure.md)) | Нормативно фиксирует базовый каркас Audit + **4-компонентную модель** (`compliance target`/`evidence model`/`verdict-finding`/`deviation handling`), audit-specific frontmatter (`audit_target`/`evidence_model`/`verdict` обязательны; `severity_scale`/`follow_up`/`related_norm` опциональны), routing `docs/audit/`, knowledge-lifecycle (`draft → reviewed → canonical → superseded`), разграничение Audit-процесс vs audit-report output (B-043) и границы Audit ↔ Research ↔ Analysis ↔ Report; разблокирован после ADR-005. Prerequisite для плана миграции репо (B-034) и cleanup Audit-артефактов (B-033). PR #363 merged. Зеркалит B-027/B-043. |
-| **B-033** | chore: Cleanup и модернизация Audit-артефактов | **P2** | B-032 | TODO | — (tech debt) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); audit-аудит B-029; `standards/audit-standard.md` | Пост-standard cleanup: убрать дубли/конкурирующие файлы, обновить frontmatter, cross-references, artifact-map и индексы. |
+| **B-033** | chore: Cleanup и модернизация Audit-артефактов | **P2** | B-032 | review | [#367](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/367) (PR [#368](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/368)) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); audit-аудит B-029; `standards/audit-standard.md` | Пост-standard cleanup: local Hub `docs/audit/` artifacts модернизированы под Audit-frontmatter/section core, legacy suffix-date filename переименован, validators and indexes updated; broad repo migration and external Mango/Clarify snapshots deferred. |
 | **B-034** | rfc: План миграции репо Хаба после стандартов Research/Analysis/Audit | **P1** | B-018, B-027, B-032 | TODO | — (planned) | Issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296); ADR-001/ADR-002; будущие R/A/A standards | Фиксирует, что физическая реструктуризация репо — отдельный RFC после всех трёх стандартов, а не этап стандартизации. |
 | **B-035** | Реорганизация `backlog.md` в каталог `pr-ops/backlog/` (contract + active + archive) | **P3** | B-016..B-023, B-034 | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297) | Текущий монолитный бэклог функционален. Реорганизация — гигиеническая задача после стабилизации research/analysis/audit цепочек. Триггер повышения до P1 — review pain из-за размера бэклога. |
 | **B-036** | Зафиксировать 3-tier amendment policy в `AI_GOVERNANCE.md` | **P2** | — | TODO | — (tech debt) | Согласование в чате 2026-06-30; issue [#297](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297); [docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md](../docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md) | Блокирует корректное выполнение Tier 1/2 правок без бюрократии. Без policy агент будет либо игнорировать малые правки (дрейф), либо запускать полный цикл RFC→ADR на каждое уточнение (паралич). |
@@ -1583,19 +1586,24 @@ unless the task explicitly includes B-033.
 
 **Приоритет:** P2
 **Источник:** 🔗 [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296);
+[issue #367](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/367);
 audit inventory B-029;
 `standards/audit-standard.md`
 **Зависимости:** B-032
-**Статус:** TODO
+**Статус:** review
 **Режим работы:** `Structured`
 
 **Контекст:**
 After the standard is accepted, existing audit/report artifacts can be cleaned
-without guessing their future format. This is not the broad physical migration
-of the Hub repository.
+without guessing their future format. This implementation handles the local Hub
+`docs/audit/` scope and explicitly avoids the broad physical migration of the
+Hub repository.
 
 **Что нужно сделать:**
-1. Resolve duplicates and competing Audit artifacts identified in B-029.
+1. Resolve or defer duplicates and competing Audit artifacts identified in B-029.
+   Local Hub `docs/audit/` artifacts are retained and modernized; external
+   Mango/Clarify governance-audit snapshots remain evidence links, not files to
+   delete or migrate here.
 2. Modernize retained artifacts: frontmatter, checked target, evidence section,
    deviations, cross-references and lifecycle status.
 3. Update `governance/artifact-map.md`, relevant indexes and validator references
@@ -1603,13 +1611,17 @@ of the Hub repository.
 4. Defer broader repository restructuring to B-034.
 
 **Ожидаемые артефакты:**
-- changed existing Audit/report artifacts and navigation/index files
+- `docs/audit/2026-06-11-task-execution-audit.md` (renamed from legacy
+  suffix-date filename and modernized)
+- modernized existing Audit artifacts in `docs/audit/`
+- validator, navigation, artifact-map, changelog and backlog updates
 
 **Критерии приёмки (DoD):**
-- [ ] B-029 candidates are resolved or explicitly deferred.
-- [ ] Retained Audit artifacts comply with `standards/audit-standard.md`.
-- [ ] Artifact-map and indexes do not point to obsolete Audit sources.
-- [ ] Local validation passes.
+- [x] B-029 candidates are resolved or explicitly deferred for the local Hub
+      cleanup scope.
+- [x] Retained Audit artifacts comply with `standards/audit-standard.md`.
+- [x] Artifact-map and indexes do not point to obsolete active Audit sources.
+- [x] Local validation passes in PR #368.
 
 **Обоснование приоритета:**
 P2: cleanup is valuable but should follow the accepted standard; otherwise it

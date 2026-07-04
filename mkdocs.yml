@@ -78,6 +78,7 @@ nav:
     - Concept: docs/product-concept.md
     - Ecosystem Map: docs/ecosystem-map.md
   - Аудиты:
+    - "Task execution audit (issues 201-213)": docs/audit/2026-06-11-task-execution-audit.md
     - "Research artifact format: audit": docs/audit/2026-06-29-research-artifact-format-contract-audit.md
     - "Documentation boundary audit (RFC/ADR/Standard)": docs/audit/2026-07-01-documentation-boundary-audit.md
   - Анализы:

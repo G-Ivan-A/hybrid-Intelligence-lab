@@ -39,12 +39,13 @@ make_tmp_file() {
 write_doc() {
   local path="$1"
   local frontmatter="$2"
+  local body="${3:-# Fixture}"
 
   {
     printf '%s\n' '---'
     printf '%s\n' "$frontmatter"
     printf '%s\n' '---'
-    printf '%s\n' '# Fixture'
+    printf '%s\n' "$body"
   } > "$path"
 }
 
@@ -81,6 +82,10 @@ make_tmp_dir governance_dir standards
 make_tmp_dir adr_dir docs/adr
 make_tmp_dir rfc_dir governance/rfc
 make_tmp_file report_doc docs/report
+make_tmp_file audit_doc docs/audit
+make_tmp_file audit_missing_target_doc docs/audit
+make_tmp_file audit_invalid_status_doc docs/audit
+make_tmp_file audit_missing_sections_doc docs/audit
 
 write_doc "$knowledge_dir/valid.md" "status: reviewed
 version: 1.0
@@ -98,6 +103,43 @@ context: [hub, rfc, review]
 method: hypothesis-testing"
 expect_pass "valid docs/report metadata" "$report_doc"
 
+audit_body="# Fixture
+
+## Summary / BLUF
+Pass.
+
+## Scope / Target
+Repo audit target.
+
+## Method / Evidence
+Manual review.
+
+## Findings / Verdict
+No blockers.
+
+## Remediation / Deviation
+Explicit no-op.
+
+## Related Artifacts
+None."
+
+write_doc "$audit_doc" "status: draft
+version: 1.0
+updated: 2026-07-03
+temperature: 0.1
+type: audit
+method: manual-review
+source: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/367
+scope: repo
+based_on: standards/audit-standard.md
+audit_target: standards/audit-standard.md
+evidence_model: manual-review
+verdict: pass
+severity_scale: Critical/Major/Minor/Info
+follow_up: none
+related_norm: standards/audit-standard.md" "$audit_body"
+expect_pass "valid docs/audit metadata" "$audit_doc"
+
 write_doc "$governance_dir/valid.md" "status: accepted
 version: 1.0
 updated: 2026-06-28
@@ -110,6 +152,15 @@ version: 1.0
 updated: 2026-06-28
 temperature: 0.1"
 expect_fail "knowledge vocabulary" "$knowledge_dir/invalid-status.md" "invalid knowledge status 'accepted'"
+
+write_doc "$audit_invalid_status_doc" "status: accepted
+version: 1.0
+updated: 2026-07-03
+temperature: 0.1
+audit_target: standards/audit-standard.md
+evidence_model: manual-review
+verdict: pass" "$audit_body"
+expect_fail "audit knowledge vocabulary" "$audit_invalid_status_doc" "invalid knowledge status 'accepted'"
 
 write_doc "$governance_dir/invalid-status.md" "status: canonical
 version: 1.0
@@ -151,5 +202,22 @@ updated: 2026-06-28
 temperature: 0.1
 unexpected: value"
 expect_fail "approved field list" "$knowledge_dir/unknown-field.md" "frontmatter field is not approved for this document class: unexpected"
+
+write_doc "$audit_missing_target_doc" "status: draft
+version: 1.0
+updated: 2026-07-03
+temperature: 0.1
+evidence_model: manual-review
+verdict: pass" "$audit_body"
+expect_fail "audit required target" "$audit_missing_target_doc" "missing required frontmatter field for Audit artifact: audit_target"
+
+write_doc "$audit_missing_sections_doc" "status: draft
+version: 1.0
+updated: 2026-07-03
+temperature: 0.1
+audit_target: standards/audit-standard.md
+evidence_model: manual-review
+verdict: pass" "# Fixture"
+expect_fail "audit required body sections" "$audit_missing_sections_doc" "missing required Audit body section: Summary / BLUF"
 
 printf 'Frontmatter validator regression tests passed.\n'

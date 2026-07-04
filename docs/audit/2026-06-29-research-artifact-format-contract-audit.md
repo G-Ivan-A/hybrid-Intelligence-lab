@@ -6,9 +6,72 @@ temperature: 0.1
 type: audit
 context: [hub, research, audit, artifacts, experiments, governance]
 method: manual-review
+source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290"
+scope: repo
+based_on: "standards/research-profile.md; docs/adr/2026-06-adr-002-artifact-document-methodology.md; issue #290 DoD"
+audit_target: "Research artifact format contract: standards/research-profile.md, ADR-001/ADR-002, file naming standards and issue #290 DoD"
+evidence_model: "manual-review + git-history + issue-pr-review"
+verdict: conditional
+severity_scale: "P0/P1/P2/P3"
+follow_up: "Clarify exp-<slug>/outputs/ vs runs/ boundary in downstream governance cleanup"
+related_norm: "standards/research-profile.md; standards/file-naming.md; docs/adr/2026-06-adr-002-artifact-document-methodology.md"
+related_artifacts:
+  - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
+  - "research/hub/exp-research-analysis-audit-288/"
+  - "governance/rfc/2026-06-30-rfc-research-structure.md"
 ---
 
 # Audit: Research artifact format contract
+
+## Summary / BLUF
+
+Вердикт: **conditional**. Аудит не нашёл единого решения "research-артефакт:
+Markdown -> папка"; действующая практика соответствует dual report + experiment
+model. Отклонение остаётся в границе `exp-<slug>/outputs/` vs `runs/`: это не
+ломает текущий репозиторий, но требует явного downstream-уточнения.
+
+## Scope / Target
+
+Проверка выполнена против issue #290, `standards/research-profile.md`,
+`standards/file-naming.md`, `standards/file-naming-convention.md`, ADR-001,
+ADR-002, AI governance, README/index files and PR/issue history for first
+`research/hub/exp-*` usages. Scope: Hub repository and its research artifact
+format contract.
+
+## Method / Evidence
+
+Evidence model: manual review, git history search, issue/PR review and local
+repository inspection. Reproducible commands are listed in
+[3.3. Evidence commands](#33-evidence-commands); the evidence corpus includes PR
+#279, PR #285, PR #289 and issue #290.
+
+## Findings / Verdict
+
+Основные findings:
+
+- Report file + experiment corpus is an intentional model inherited from the
+  historical research profile.
+- The real drift is not "folder instead of Markdown", but unclear ownership of
+  curated experiment outputs vs operational run records.
+- No immediate rollback to md-only is recommended.
+
+Итоговый verdict: **conditional** until the `exp-<slug>/outputs/` vs `runs/`
+boundary is clarified.
+
+## Remediation / Deviation
+
+Deviation handling: preserve the dual model as an accepted current practice and
+route the unresolved boundary into follow-up governance work. No immediate file
+migration is required by this audit.
+
+## Related Artifacts
+
+- Issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290).
+- `standards/research-profile.md`, `standards/file-naming.md`,
+  `standards/file-naming-convention.md`.
+- `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md` and
+  `docs/adr/2026-06-adr-002-artifact-document-methodology.md`.
+- PR #279, PR #285 and PR #289.
 
 ## 1. Введение
 

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-07-02
+version: 0.2
+updated: 2026-07-03
 temperature: 0.1
 type: internal-analysis
 context: [hub, mango, clarify, audit, inventory, issue-344, b-029]
@@ -13,10 +13,12 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/367"
 related_artifacts:
   - "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
   - "research/hub/exp/analysis-inventory-342/2026-07-02-analysis-artifact-matrix.md"
   - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
+  - "docs/audit/2026-06-11-task-execution-audit.md"
   - "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   - "standards/glossary.md"
   - "standards/research-standard.md"
@@ -101,7 +103,7 @@ report. Они полезны для Audit, но сами по себе не з�
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Hub `docs/audit/2026-06-29-research-artifact-format-contract-audit.md` | Research artifact format contract from `standards/research-profile.md`, ADR-002 and RFC B-016. | True Audit process with audit-report output. | Manual file-shape and frontmatter review, validator-style checks, contract comparison. | Findings, recommendations and follow-up for issue #290. | Keep as exemplar; modernize metadata to future Audit standard. |
 | 2 | Hub `docs/audit/2026-07-01-documentation-boundary-audit.md` | Research/RFC/ADR/Standard boundaries from glossary, research standard and repository governance. | True audit-report. | Multi-expert manual review, section-level comparison, stress tests and local commands. | `F-*` findings with criticality, root cause and recommendations. | Keep; reuse severity/root-cause pattern in Audit standard. |
-| 3 | Hub `docs/audit/task-execution-audit-2026-06.md` | Issue #213 completed task DoD, PR state and current repository state. | True audit-report. | Issue/PR review, current-state inspection and local validation checks. | Numbered findings, priorities and tech-debt recommendations. | Modernize legacy frontmatter/date conventions later. |
+| 3 | Hub `docs/audit/2026-06-11-task-execution-audit.md` | Issue #213 completed task DoD, PR state and current repository state. | True audit-report. | Issue/PR review, current-state inspection and local validation checks. | Numbered findings, priorities and tech-debt recommendations. | Modernized in B-033 / issue #367 from legacy `task-execution-audit-2026-06.md`: date-first filename, Audit frontmatter and section core. |
 | 4 | Hub `research/hub/2026-05-28-prompts-classification-audit.md` | Prompt classification readiness and issue #79, but norm is weak. | Audit-labeled Analysis / weak Audit. | Prompt corpus scan and comparative manual review. | Gaps and recommendations without stable severity scale. | Either reclassify as Analysis or add explicit audit target and severity model. |
 | 5 | Hub `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Team C governance proposals and issue #87 input. | Analysis with audit title, not independent compliance Audit. | Manual synthesis of proposals and repository context. | Risks, recommendations and human-review questions. | Likely Analysis; do not route as Audit unless a concrete norm is introduced. |
 | 6 | Hub `research/hub/2026-06-12-ecosystem-governance-audit.md` | Ecosystem governance applicability across Hub/downstreams and issue #217 context. | Audit / Research hybrid. | Cross-repo review plus external practice comparison. | Gaps, decisions and follow-up candidates. | Split stance: research benchmarking vs compliance audit target. |
