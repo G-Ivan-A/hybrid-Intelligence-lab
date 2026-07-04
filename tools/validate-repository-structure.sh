@@ -55,6 +55,7 @@ is_active_file() {
     docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
     docs/report/2026-07-01-reports-inventory-placement-analysis.md | \
     docs/report/2026-07-01-rfc-adr-duplication-analysis.md | \
+    docs/report/2026-07-04-cross-standard-stress-tests.md | \
     docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     docs/adr/2026-07-adr-003-research-structure.md | \
