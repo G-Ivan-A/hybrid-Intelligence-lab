@@ -68,6 +68,7 @@ is_active_file() {
     standards/research-standard.md | \
     standards/report-standard.md | \
     standards/audit-standard.md | \
+    standards/analysis-standard.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
     standards/product-profile.md | \
@@ -537,6 +538,7 @@ required_files=(
   "standards/research-standard.md"
   "standards/report-standard.md"
   "standards/audit-standard.md"
+  "standards/analysis-standard.md"
   "standards/glossary.md"
   "standards/education-profile.md"
   "standards/product-profile.md"
@@ -850,6 +852,7 @@ require_text "standards/README.md" "file-naming-convention.md"
 require_text "standards/README.md" "research-standard.md"
 require_text "standards/README.md" "report-standard.md"
 require_text "standards/README.md" "audit-standard.md"
+require_text "standards/README.md" "analysis-standard.md"
 require_text "standards/README.md" "team-contract.md"
 require_text "standards/README.md" "standards/glossary.md"
 require_text "standards/README.md" "standards/education-profile.md"
@@ -927,6 +930,14 @@ require_text "standards/audit-standard.md" "evidence_model"
 require_text "standards/audit-standard.md" "verdict"
 require_text "standards/audit-standard.md" "docs/audit/"
 require_text "standards/audit-standard.md" "Audit-процесс vs audit-report output"
+require_text "standards/analysis-standard.md" "status: draft"
+require_text "standards/analysis-standard.md" "owner: G-Ivan-A"
+require_text "standards/analysis-standard.md" "frontmatter-docs-standard.md"
+require_text "standards/analysis-standard.md" "analysis-subtype"
+require_text "standards/analysis-standard.md" "Subtype Profiles"
+require_text "standards/analysis-standard.md" "docs/analysis/"
+require_text "standards/analysis-standard.md" "Anti-Inflation Trigger"
+require_text "standards/analysis-standard.md" "interpretation layer"
 require_text "standards/frontmatter-docs-standard.md" 'Audit | `docs/audit/*.md`'
 require_text "standards/frontmatter-docs-standard.md" "audit_target"
 require_text "standards/frontmatter-docs-standard.md" "evidence_model"

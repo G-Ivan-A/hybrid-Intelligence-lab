@@ -13,6 +13,24 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- standard: Создан `standards/analysis-standard.md` (draft) — базовый нормативный
+  стандарт Analysis для B-027 / issue #366. Стандарт фиксирует базовый каркас
+  Analysis как **interpretation layer** (назначение, frontmatter, naming,
+  lifecycle, минимальное ядро секций), опциональные лёгкие профили подтипов
+  (`inventory` / `matrix` / `options` / `recommendation`) как секции, frontmatter
+  с relation-метаданными (`analysis-subtype` опционален; `source` / `scope`
+  обязательны; `based_on` / `related_artifacts` опциональны), минимальное ядро
+  секций (Summary/BLUF, Context/Scope, Findings/Options, Recommendations, Related
+  Artifacts), routing `docs/analysis/YYYY-MM-DD-name.md` (content-over-path),
+  knowledge-lifecycle (`draft → reviewed → canonical → superseded`), триггер B
+  (anti-inflation) выделения профиля в отдельный стандарт и границы Analysis ↔
+  Research ↔ Audit ↔ Report ↔ RFC ↔ ADR. Стандарт принимает Вариант C из ADR-006
+  и RFC B-025, применяет section-level delegation (proposal, alternatives
+  A/B/C/D, trade-offs остаются в RFC B-025; инвентаризация 186 кандидатов — в
+  B-024; decision rationale — в ADR-006) и не мигрирует файлы (это B-028).
+  Обновлены `standards/README.md`, `governance/artifact-map.md`,
+  `governance/backlog.md` (B-027 → review) и структурный валидатор.
+
 - audit: Modernized local Hub Audit artifacts for B-033 / issue #367. Renamed
   legacy `docs/audit/task-execution-audit-2026-06.md` to canonical date-first
   `docs/audit/2026-06-11-task-execution-audit.md`, added
