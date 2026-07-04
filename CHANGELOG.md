@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.41
+version: 1.42
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -1004,6 +1004,16 @@ All notable repository governance changes are documented here.
   `governance/artifact-map.md` (тип `RFC`, версия карты 1.6 → 1.7).
 
 ### Changed
+
+- governance: Синхронизирован `governance/backlog.md` по issue #374 с
+  фактическим состоянием после merged PR #337, #365, #368, #369, #371 and #373:
+  B-020, B-027, B-033, B-034 and B-046 переведены в `DONE`; B-034 уточнён как
+  analysis/plan only; добавлены downstream migration tasks B-047/B-048 and
+  standard-desync repair chain B-049..B-054 based on the cross-standard
+  stress-test report from issue #370. Frontmatter backlog version raised to
+  1.24, related issues/artifacts updated, dependency diagram refreshed, and the
+  generated PR placeholder `.gitkeep` removed so structure validation reflects
+  the real tree.
 
 - adr: Уточнён `docs/adr/2026-07-adr-004-reports-structure.md` по issue #348:
   ADR-004 повышен до v0.3 и закрывает Open Question #1 физическим routing split
