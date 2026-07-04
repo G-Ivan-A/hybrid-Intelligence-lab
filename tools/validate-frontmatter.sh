@@ -98,7 +98,7 @@ document_class() {
     templates/*.md | templates/*/*.md | templates/*/*/*.md)
       printf 'template'
       ;;
-    guides/*.md)
+    guides/*.md | docs/guides/*.md)
       printf 'guide'
       ;;
     practices/*.md | practices/*/*.md)

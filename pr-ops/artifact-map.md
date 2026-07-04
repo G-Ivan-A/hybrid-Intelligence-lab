@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.69
+version: 1.70
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -177,10 +177,11 @@ temperature: 0.1
 | `/standards/education-profile.md` | профиль | — | Профиль образовательных проектов: модули, уроки, упражнения и адаптация форматов. | ✅ Да | `standards/README.md`, `standards/team-contract.md` |
 | `/tools/validate-frontmatter.sh` | утилита | — | Soft-проверка обязательных полей frontmatter в Markdown; для `docs/audit/*.md` дополнительно проверяет knowledge lifecycle, audit-specific поля (`audit_target`/`evidence_model`/`verdict`) и минимальные body-секции. | ✅ Да | `CONTRIBUTING.md`, `standards/README.md`, `standards/frontmatter-docs-standard.md`, `standards/audit-standard.md` |
 | `/tools/validate-file-naming.sh` | утилита | — | Проверка date-first именования Hub `research/`, Hub `docs/report/`, Hub `docs/audit/` и, если они есть, spoke-каталогов `docs/analysis/`, `docs/rfc/`, `docs/adr/`. | ✅ Да | `standards/file-naming.md`, `standards/file-naming-convention.md`, `.github/workflows/validate.yml` |
-| `/tools/validate-repository-structure.sh` | утилита | — | Проверка активной структуры, навигационных ссылок и `-old` миграции. | ✅ Да | `pr-ops/repo-model.md`, `pr-ops/artifact-map.md` |
+| `/tools/validate-repository-structure.sh` | утилита | — | Проверка активной структуры, навигационных ссылок, retired root paths и `-old` миграции. | ✅ Да | `pr-ops/repo-model.md`, `pr-ops/artifact-map.md`, `tools/test-post-migration-validator.sh` |
+| `/tools/test-post-migration-validator.sh` | утилита | — | Регрессионный тест post-B-048: проверяет запрет retired root paths (`governance/`, `website/`, `experiments/`, `mkdocs.yml`) и отсутствие stale validator-assertions на старые пути. | ✅ Да | `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `.github/workflows/validate.yml`, `docs/adr/2026-07-adr-007-hub-root-structure.md` |
 | `/tools/generate-manifest.py` | утилита | — | Генератор `templates/manifest.json` из дерева `templates/` и `sync-metadata.json`; режимы `--write` (перегенерация) и `--check` (контроль дрейфа). | ✅ Да | `templates/manifest.json`, `templates/sync-metadata.json`, `.github/workflows/update-manifest.yml` |
 | `/tools/sync-from-hub.sh` | утилита | — | Smart Sync клиент: фильтрация шаблонов по `.hub-profile.json` (target_type/stack/min_phase), отчёт и безопасное применение (`.hub-new.*`) либо `--force`-перезапись; `--init` создаёт профиль. | ✅ Да | `templates/manifest.json`, `guides/sync-from-hub.md`, `guides/rollback-sync.md` |
-| `/.github/workflows/validate.yml` | утилита | — | GitHub Action локальных проверок репозитория: bash syntax, frontmatter/smart-sync regression tests, frontmatter, file naming, repository structure и manifest drift. | ✅ Да | `tools/validate-file-naming.sh`, `tools/validate-repository-structure.sh`, `tools/test-frontmatter-validator.sh`, `tools/test-smart-sync.sh` |
+| `/.github/workflows/validate.yml` | утилита | — | GitHub Action локальных проверок репозитория: bash syntax, frontmatter/smart-sync/post-migration regression tests, frontmatter, file naming, repository structure и manifest drift. | ✅ Да | `tools/validate-file-naming.sh`, `tools/validate-repository-structure.sh`, `tools/test-frontmatter-validator.sh`, `tools/test-smart-sync.sh`, `tools/test-post-migration-validator.sh` |
 | `/.github/workflows/update-manifest.yml` | утилита | — | GitHub Action авто-обновления `templates/manifest.json` при push в `main`, затрагивающем `templates/` (коммит `chore: update manifest.json`). | ⚠️ По необходимости | `tools/generate-manifest.py`, `templates/manifest.json` |
 | `/.github/ISSUE_TEMPLATE/task.yml` | шаблон | — | GitHub-native структура постановки задач с operating mode. | ✅ Да | `AI_GOVERNANCE.md`, `standards/glossary.md` |
 | `/.github/ISSUE_TEMPLATE/task.md` | шаблон | — | Structured Markdown-шаблон задачи Хаба для issue, PR и AI-agent traceability. | ✅ Да | `standards/issue-workflow.md`, `AI_GOVERNANCE.md`, `CONTRIBUTING.md` |
@@ -268,7 +269,7 @@ temperature: 0.1
 | `/projects-sink/` | каталог | — | Приёмник контекста spoke-проектов: сводки контекста внешних проектов, синхронизируемые в Хаб. | ✅ Да | `projects-sink/README.md`, `pr-ops/repo-model.md` |
 | `/docs/rfc/` | каталог | — | Корпус RFC Хаба (proposals до human decision); мигрирован из `governance/rfc/` по ADR-007 (B-048). | ✅ Да | `docs/rfc/README.md`, `pr-ops/artifact-map.md`, `standards/rfc-structure-standard.md` |
 | `/docs/guides/` | каталог | — | Зарезервированный якорь для руководств Хаба (ADR-007); наполнение — отдельная задача. | ✅ Да | `docs/guides/README.md`, `pr-ops/repo-model.md` |
-| `/tools/` | каталог | — | Локальные validation и maintenance скрипты. | ✅ Да | `tools/validate-frontmatter.sh`, `tools/validate-repository-structure.sh` |
+| `/tools/` | каталог | — | Локальные validation и maintenance скрипты. | ✅ Да | `tools/validate-frontmatter.sh`, `tools/validate-repository-structure.sh`, `tools/test-post-migration-validator.sh` |
 | `/research/` | каталог | — | Доменные исследования и source-backed analysis; файлы размещаются только в тематических подкаталогах (`hub/`, `mango/`, `governance/`), корень содержит лишь `README.md`. | ✅ Да | `research/README.md`, `standards/research-standard.md`, `pr-ops/repo-model.md` |
 | `/research/hub/` | каталог | — | Фундаментальные исследования работы Хаба (`scope: repo-wide`): bootstrap, governance-стратегия, классификация промптов, RFC/ADR industry norms и архетипные варианты. | ✅ Да | `research/hub/README.md`, `standards/research-standard.md`, `pr-ops/repo-model.md` |
 | `/research/mango/` | каталог | — | Доменные исследования MANGO OFFICE (`scope: mango-only`). | ✅ Да | `research/mango/README.md`, `standards/research-standard.md`, `pr-ops/repo-model.md` |

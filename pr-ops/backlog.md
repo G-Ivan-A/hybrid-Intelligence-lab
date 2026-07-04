@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.26
+version: 1.27
 updated: 2026-07-04
 temperature: 0.1
 type: backlog
@@ -281,6 +281,7 @@ principle ([pr-ops/repo-model.md](repo-model.md)): **артефакт созда
 | **B-060** | analysis: Структура и правила наполнения `projects-sink/` | **P3** | B-048 | TODO | — (deferred) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 Phase 4; ADR-007; `projects/` intake pain | Triggered research for a managed intake buffer from ecosystem projects; do not create the directory until repeated intake ambiguity appears. |
 | **B-061** | standard: Learning Profile архетипа D для `education/` | **P3** | B-048 | TODO | — (deferred) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 §4.3; ADR-007; `standards/education-profile.md` | Deferred until founder initiates an actual course project; then standardize education/Learning Profile boundaries before filling `education/`. |
 | **B-062** | standard: Стандарт фреймворков (архетип A/B) для `frameworks/` | **P3** | B-048 | TODO | — (deferred) | Issue [#380](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/380); B-034 §4.3; ADR-007; current `frameworks/` placeholder | Deferred until the first reusable framework emerges from project methodology; then decide whether `frameworks/` is a Hub capability or spoke/product artifact. |
+| **B-063** | chore: Ревизия валидаторов после физической миграции Хаба | **P2** | B-048 | review | [#390](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/390) (PR [#391](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/391)) | ADR-007/B-048; [artifact map](artifact-map.md); [repo model](repo-model.md); validators | Post-migration audit closes stale validator references to retired root paths, adds regression coverage, and keeps validator registry files synced with the actual ADR-007 tree. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
@@ -2286,6 +2287,37 @@ B-034 §4.3; ADR-007; current `frameworks/` placeholder
 ADR-007 keeps `frameworks/` as a future reusable-framework route. Standardize it
 only after a real framework emerges from Hub methodology and the repository must
 decide whether it is Hub capability material or spoke/product material.
+
+---
+
+### B-063: chore: Ревизия валидаторов после физической миграции Хаба
+
+**Приоритет:** P2
+**Источник:** 🔗 [issue #390](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/390);
+ADR-007/B-048; [pr-ops/artifact-map.md](artifact-map.md);
+[pr-ops/repo-model.md](repo-model.md)
+**Зависимости:** B-048
+**Статус:** review (PR [#391](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/391))
+**Режим работы:** `Structured`
+
+**Контекст:**
+После физической миграции B-048 валидаторы должны отражать новую структуру Хаба:
+`ai-governance/`, `ai-rules/`, `pr-ops/`, `projects-sink/`, `docs/rfc/` и
+`docs/guides/` являются целевыми путями, а root `governance/`, `website/`,
+`experiments/` и `mkdocs.yml` не должны возвращаться как active paths.
+
+**Что сделано в PR #391:**
+- [x] Добавлен regression-test `tools/test-post-migration-validator.sh`.
+- [x] `tools/validate-repository-structure.sh` явно запрещает retired root paths.
+- [x] Stale HTOM/self-check references moved from `governance/` to `ai-rules/`
+      and `pr-ops/`.
+- [x] `docs/guides/*.md` покрыт guide-class frontmatter routing and tests.
+- [x] `CHANGELOG.md`, `pr-ops/artifact-map.md` и этот backlog синхронизированы.
+
+**Критерии приёмки (DoD):**
+- [x] All local validators pass.
+- [x] CI includes the post-migration regression test.
+- [x] No validator self-check requires migrated root `governance/` paths.
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-07-04",
   "templates": [
     {
       "id": "htom-issue-template-task-creative",
@@ -81,7 +81,7 @@
     {
       "id": "htom-ai-session-handover-prompt",
       "path": "templates/htom/AI_SESSION_HANDOVER_PROMPT.md",
-      "version": "0.7.0",
+      "version": "0.8.0",
       "target_type": [
         "HTOM",
         "Spoke"
@@ -136,7 +136,7 @@
     {
       "id": "htom-readme",
       "path": "templates/htom/README.md",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "target_type": [
         "HTOM"
       ],
