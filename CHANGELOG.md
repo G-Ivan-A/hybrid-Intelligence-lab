@@ -21,6 +21,16 @@ All notable repository governance changes are documented here.
   archetype A exception из ADR-001 core и trigger-based условия пересмотра;
   ADR-007 синхронизирован до v0.4. Файлы физически не перемещались, root
   `kb/`/`runs/` не создавались.
+- chore: Проведена post-B-048 ревизия валидаторов для issue #390 / B-063
+  (PR #391). `tools/validate-repository-structure.sh` теперь явно отклоняет
+  возвращение retired root paths `governance/`, `website/`, `experiments/` и
+  `mkdocs.yml`; stale self-checks на старые Hub paths заменены на `ai-rules/`
+  и `pr-ops/`. Добавлен `tools/test-post-migration-validator.sh` и отдельный
+  CI-шаг, проверяющий эти инварианты. `tools/validate-frontmatter.sh` и его
+  regression-test покрывают `docs/guides/*.md` как guide-class артефакты.
+  `pr-ops/artifact-map.md`, `pr-ops/backlog.md` и HTOM handover template
+  синхронизированы с ADR-007/B-048 routing.
+
 - chore: Физическая миграция корня Хаба по принятой ADR-007 для issue #384 /
   B-048 (PR #388). Каталог `governance/` физически разделён на `ai-governance/`
   (якорь границ AI-governance слоя), `ai-rules/` (исполнимые runtime-правила

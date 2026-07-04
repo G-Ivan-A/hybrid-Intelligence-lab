@@ -81,6 +81,7 @@ make_tmp_dir knowledge_dir research
 make_tmp_dir governance_dir standards
 make_tmp_dir adr_dir docs/adr
 make_tmp_dir rfc_dir docs/rfc
+make_tmp_file guide_doc docs/guides
 make_tmp_file report_doc docs/report
 make_tmp_file audit_doc docs/audit
 make_tmp_file audit_missing_target_doc docs/audit
@@ -139,6 +140,15 @@ severity_scale: Critical/Major/Minor/Info
 follow_up: none
 related_norm: standards/audit-standard.md" "$audit_body"
 expect_pass "valid docs/audit metadata" "$audit_doc"
+
+write_doc "$guide_doc" "status: draft
+version: 1.0
+updated: 2026-07-04
+temperature: 0.1
+audience: maintainers
+entrypoint: true
+executable: false"
+expect_pass "valid docs/guides metadata" "$guide_doc"
 
 write_doc "$governance_dir/valid.md" "status: accepted
 version: 1.0

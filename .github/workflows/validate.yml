@@ -28,6 +28,9 @@ jobs:
       - name: Test smart sync
         run: bash tools/test-smart-sync.sh
 
+      - name: Test post-migration validator invariants
+        run: bash tools/test-post-migration-validator.sh
+
       - name: Validate frontmatter
         run: ./tools/validate-frontmatter.sh .
 

@@ -26,6 +26,11 @@ reject_file() {
   [[ ! -e "$path" ]] || fail "forbidden legacy file present: $path"
 }
 
+reject_path() {
+  local path="$1"
+  [[ ! -e "$path" ]] || fail "forbidden legacy path present: $path"
+}
+
 require_text() {
   local path="$1"
   local text="$2"
@@ -296,6 +301,7 @@ is_active_file() {
     tools/sync-from-hub.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-smart-sync.sh | \
+    tools/test-post-migration-validator.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-file-naming.sh | \
     tools/validate-repository-structure.sh)
@@ -378,7 +384,7 @@ validate_metadata_single_source() {
     ' "$file"; then
       fail "Metadata duplicated in body of $file. Keep it only in frontmatter."
     fi
-  done < <(find standards pr-ops ai-rules ai-governance docs/rfc research -type f -name '*.md' | sort)
+  done < <(find standards pr-ops ai-rules ai-governance projects-sink docs/rfc docs/guides research -type f -name '*.md' | sort)
 }
 
 validate_internal_markdown_links() {
@@ -696,6 +702,7 @@ required_files=(
   "tools/sync-from-hub.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-smart-sync.sh"
+  "tools/test-post-migration-validator.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-file-naming.sh"
   "tools/validate-repository-structure.sh"
@@ -710,8 +717,12 @@ for file in "${required_files[@]}"; do
 done
 
 reject_file "standards/research-profile.md"
+reject_path "governance"
+reject_path "website"
+reject_path "experiments"
+reject_path "mkdocs.yml"
 
-for kebab_case_dir in standards pr-ops ai-rules docs/rfc; do
+for kebab_case_dir in standards pr-ops ai-rules ai-governance docs/rfc docs/guides; do
   validate_kebab_case_file_naming "$kebab_case_dir"
 done
 
@@ -1482,6 +1493,7 @@ require_text "pr-ops/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/tas
 require_text "pr-ops/artifact-map.md" "templates/spoke/docs/README.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/tools/validate-file-naming.sh"
 require_text "pr-ops/artifact-map.md" "templates/sync-project-with-hub-prompt.md"
+require_text "pr-ops/artifact-map.md" "tools/test-post-migration-validator.sh"
 require_text "pr-ops/artifact-map.md" "tools/validate-file-naming.sh"
 require_text "pr-ops/artifact-map.md" ".github/workflows/validate.yml"
 require_text "pr-ops/artifact-map.md" "Уровни документации: Framework vs Methodology"
@@ -1716,7 +1728,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.26"
+require_text "pr-ops/backlog.md" "version: 1.27"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "standards/glossary.md"
 require_text "pr-ops/backlog.md" "## Открытые вопросы"
@@ -1731,6 +1743,8 @@ require_text "pr-ops/backlog.md" "analysis-standard.md"
 require_text "pr-ops/backlog.md" "audit-standard.md"
 require_text "pr-ops/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296"
 require_text "pr-ops/backlog.md" "B-034"
+require_text "pr-ops/backlog.md" "B-063"
+require_text "pr-ops/backlog.md" "issue #390"
 require_text "pr-ops/backlog.md" "План миграции репо Хаба"
 require_text "pr-ops/backlog.md" "B-038"
 require_text "pr-ops/backlog.md" "Reports-артефактов"
@@ -2239,7 +2253,6 @@ require_text "projects/repo-development/docs/mango-ba-prompts-repository-migrati
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "GitHub Flow + trunk discipline"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Scenario A"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "Scenario B"
-require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "governance/BACKLOG.md"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "scripts/validation/"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "prompts/experiments/"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "PR #90"
@@ -2299,11 +2312,11 @@ require_text "templates/htom/AI_GOVERNANCE.md" "Обоснованный обх�
 require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/agent-onboarding-protocol.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.7"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ai-rules/agent-onboarding-protocol.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.8"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/session-digests.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/BACKLOG.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "pr-ops/session-digests.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "pr-ops/backlog.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "executable: true"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат."
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"
@@ -2316,7 +2329,7 @@ require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "standards/session-h
 reject_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Конард"
 require_text "templates/htom/README.md" "AI_SESSION_HANDOVER_PROMPT.md"
 require_text "templates/htom/README.md" "status: canonical"
-require_text "templates/htom/README.md" "version: 0.4"
+require_text "templates/htom/README.md" "version: 0.5"
 require_text "templates/htom/README.md" "## Template Placeholder Policy"
 require_text "templates/htom/README.md" "Source templates may contain placeholders"
 require_text "templates/htom/README.md" "Generated repositories must not keep unresolved source placeholders"
@@ -2324,7 +2337,7 @@ require_text "templates/htom/README.md" "{{date}}"
 require_text "templates/htom/README.md" "{{project_name}}"
 require_text "templates/htom/README.md" "{{hub_url}}"
 require_text "templates/htom/README.md" "{{REPO_NAME}}"
-require_text "templates/htom/README.md" "governance/agent-onboarding-protocol.md"
+require_text "templates/htom/README.md" "ai-rules/agent-onboarding-protocol.md"
 require_text "templates/htom/README.md" "Как валидировать структуру"
 require_text "templates/htom/README.md" "Design Decisions & Rationale"
 require_text "templates/htom/README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
@@ -2379,8 +2392,11 @@ require_text "tools/test-frontmatter-validator.sh" "knowledge vocabulary"
 require_text "tools/test-frontmatter-validator.sh" "valid governance status and owner"
 require_text "tools/test-frontmatter-validator.sh" "valid docs/audit metadata"
 require_text "tools/test-frontmatter-validator.sh" "audit required target"
+require_text "tools/test-frontmatter-validator.sh" "valid docs/guides metadata"
+require_text "tools/test-post-migration-validator.sh" "legacy root paths"
 require_text "tools/generate-manifest.py" "templates/manifest.json"
 require_text "tools/validate-frontmatter.sh" "invalid knowledge status"
+require_text "tools/validate-frontmatter.sh" "docs/guides/*.md"
 require_text "tools/validate-frontmatter.sh" "invalid governance status"
 require_text "tools/validate-frontmatter.sh" "frontmatter field is forbidden: ai-generated"
 require_text "tools/validate-frontmatter.sh" "missing required frontmatter field for ADR artifact: decision-type"
@@ -2391,6 +2407,8 @@ require_text ".github/workflows/validate.yml" "Validate file naming"
 require_text ".github/workflows/validate.yml" "./tools/validate-file-naming.sh"
 require_text ".github/workflows/validate.yml" "Test frontmatter validator"
 require_text ".github/workflows/validate.yml" "bash tools/test-frontmatter-validator.sh"
+require_text ".github/workflows/validate.yml" "Test post-migration validator invariants"
+require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

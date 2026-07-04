@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.7
+version: 0.8
 updated: {{date}}
 temperature: 0.1
 executable: true
@@ -10,7 +10,7 @@ executable: true
 > Этот файл — *артефакт* (готовый промпт), а не процесс. Скопируйте блок
 > EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
 > Runtime-онбординг агента. Сам **протокол** (чек-лист и обоснование) живёт
-> отдельно: [governance/agent-onboarding-protocol.md]({{hub_url}}/blob/main/governance/agent-onboarding-protocol.md).
+> отдельно: [ai-rules/agent-onboarding-protocol.md]({{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md).
 
 > 🚦 **ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ.**
 > Я как ИИ-агент в HTOM-команде {{project_name}} должен выполнить готовый Handover
@@ -31,7 +31,7 @@ executable: true
 `hybrid-Intelligence-lab` — источник общих governance-правил, а тип текущего
 проекта нужно определить отдельно: `HTOM-команда` или `Spoke-репозиторий`.
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
+(ai-rules/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
 файлов запрещено до моего апрува.
 
 Контекст чата диалога:
@@ -52,11 +52,11 @@ executable: true
   в новый чат. Вопрос инициируешь ты, решение — за пользователем.
 - При согласии собери суммарию по структуре: Контекст, Решения, Открытые
   вопросы, Следующие шаги — и предложи сохранить её в
-  governance/session-digests.md (через issue → PR → review, не коммить напрямую).
-- Если в суммарии есть открытые вопросы, добавь их в governance/BACKLOG.md
+  pr-ops/session-digests.md (через issue → PR → review, не коммить напрямую).
+- Если в суммарии есть открытые вопросы, добавь их в pr-ops/backlog.md
   (секция «Открытые вопросы»). Если вопрос уже есть в BACKLOG — не дублируй,
   добавь ссылку на дайджест в секцию/колонку «Связанные дайджесты».
-- При старте нового чата читай сначала индекс governance/session-digests.md,
+- При старте нового чата читай сначала индекс pr-ops/session-digests.md,
   полные суммарии — по необходимости. Не пересказывай контекст из памяти,
   ссылайся на артефакты репозитория.
 
@@ -65,8 +65,8 @@ executable: true
    Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
    явного основания.
 2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md, CONTRIBUTING.md и
-   README.md. Если доступны, прочитай governance/repo-model.md,
-   governance/artifact-map.md, standards/project-structure-inheritance.md и
+   README.md. Если доступны, прочитай pr-ops/repo-model.md,
+   pr-ops/artifact-map.md, standards/project-structure-inheritance.md и
    standards/session-handover-standard.md в Хабе или текущем репозитории.
 3. Чек-лист контекста. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/команды) и блок «Быстрый контекст»,
@@ -113,10 +113,10 @@ executable: true
 | Периодическая суммаризация сессии | Отдельный блок перед шагами EXECUTION (только для передачи контекста в чат; не влияет на агента-исполнителя). |
 | Проверка шаблонов | Шаг 4. |
 | Формат постановки задач | Шаг 5. |
-| Протокол бесшовной передачи проекта | Шаги 2-7 и ссылка на `governance/agent-onboarding-protocol.md`. |
+| Протокол бесшовной передачи проекта | Шаги 2-7 и ссылка на `ai-rules/agent-onboarding-protocol.md`. |
 
 > **Источник истины — Хаб.** Канонический *Handover Prompt* и полный 4-шаговый
-> протокол живут в Хабе: [`governance/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/governance/agent-onboarding-protocol.md)
+> протокол живут в Хабе: [`ai-rules/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md)
 > (Хаб `hybrid-Intelligence-lab`, [{{hub_url}}]({{hub_url}})). Этот файл — **копия
 > шаблона** для удобства HTOM-команды. При расхождении приоритет у хабовой версии
 > и draft-стандарта `standards/session-handover-standard.md`; правки вносятся
@@ -140,8 +140,8 @@ executable: true
   выживанию» агента в этой HTOM-команде.
 - [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) — конституция проекта: роли, правила,
   эскалация, DoD.
-- Хаб [`governance/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/governance/agent-onboarding-protocol.md)
+- Хаб [`ai-rules/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md)
   — полный 4-шаговый протокол и канонический *Handover Prompt* (источник истины).
-- Хаб [`governance/session-digests.md`]({{hub_url}}/blob/main/governance/session-digests.md)
+- Хаб [`pr-ops/session-digests.md`]({{hub_url}}/blob/main/pr-ops/session-digests.md)
   — единая точка хранения суммарий сессий для передачи контекста между чатами.
   Механизм только для внешних агентов; агент-исполнитель его не использует.
