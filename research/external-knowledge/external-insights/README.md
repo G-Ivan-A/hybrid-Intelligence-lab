@@ -46,7 +46,7 @@ context: [tag1, tag2]
 ## Стадии жизненного цикла инсайта
 
 Подмножество цепочки из
-[governance/rfc/knowledge-lifecycle-proposal.md](../../../governance/rfc/knowledge-lifecycle-proposal.md),
+[docs/rfc/knowledge-lifecycle-proposal.md](../../../docs/rfc/knowledge-lifecycle-proposal.md),
 ограниченное стадиями, за которые отвечает `research/`:
 
 | `stage` | Что означает | Что нужно для перехода дальше |

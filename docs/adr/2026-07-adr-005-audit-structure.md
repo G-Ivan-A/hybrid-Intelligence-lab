@@ -18,15 +18,15 @@ decision-type: methodology
 | Decision status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Decision date | 2026-07-02 |
 | Owner | G-Ivan-A |
-| Source | [RFC B-030](../../governance/rfc/2026-07-02-rfc-audit-structure.md); issue [#358](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358); upstream issue [#352](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/352); контекст [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296) |
-| Impacted artifacts | `standards/audit-standard.md` (B-032), `standards/report-standard.md` (B-043, профиль audit-report), `docs/audit/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `docs/adr/2026-07-adr-004-reports-structure.md`, `governance/backlog.md`, `governance/artifact-map.md` |
+| Source | [RFC B-030](../rfc/2026-07-02-rfc-audit-structure.md); issue [#358](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/358); upstream issue [#352](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/352); контекст [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296) |
+| Impacted artifacts | `standards/audit-standard.md` (B-032), `standards/report-standard.md` (B-043, профиль audit-report), `docs/audit/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `docs/adr/2026-07-adr-004-reports-structure.md`, `pr-ops/backlog.md`, `pr-ops/artifact-map.md` |
 | Supersedes | none |
 | Superseded by | none |
 
 ## Context
 
 RFC B-030
-([`governance/rfc/2026-07-02-rfc-audit-structure.md`](../../governance/rfc/2026-07-02-rfc-audit-structure.md))
+([`docs/rfc/2026-07-02-rfc-audit-structure.md`](../rfc/2026-07-02-rfc-audit-structure.md))
 завершил proposal-этап цепочки стандартизации Audit после углублённого анализа
 корпуса B-029
 ([`docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md`](../analysis/2026-07-02-audit-artifacts-deep-analysis.md)).
@@ -158,8 +158,8 @@ Trade-offs, Critical Analysis).
   acceptance review для ADR.
 - ADR явно избегает копирования proposal-деталей RFC B-030, таблицы альтернатив
   A/B/C/D и матрицы downstream-задач.
-- Регистрация в репозитории валидируется через `governance/artifact-map.md`,
-  `governance/backlog.md`, `CHANGELOG.md` и
+- Регистрация в репозитории валидируется через `pr-ops/artifact-map.md`,
+  `pr-ops/backlog.md`, `CHANGELOG.md` и
   `tools/validate-repository-structure.sh`.
 - Локальная проверка в этом PR:
 
@@ -191,7 +191,7 @@ flowchart LR
 
 ## Related Artifacts
 
-- [RFC B-030: Структура Audit-артефактов](../../governance/rfc/2026-07-02-rfc-audit-structure.md)
+- [RFC B-030: Структура Audit-артефактов](../rfc/2026-07-02-rfc-audit-structure.md)
   — исходный RFC с предложением Варианта C, альтернативами A/B/C/D, trade-offs,
   Critical Analysis и границами.
 - [B-029 Audit deep analysis](../analysis/2026-07-02-audit-artifacts-deep-analysis.md)
@@ -211,5 +211,5 @@ flowchart LR
   Audit standard (B-032).
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md)
   — структура ADR и правила section-level delegation.
-- [`governance/backlog.md`](../../governance/backlog.md) — цепочка Audit B-029,
+- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка Audit B-029,
   B-030, B-031, B-032, B-033.

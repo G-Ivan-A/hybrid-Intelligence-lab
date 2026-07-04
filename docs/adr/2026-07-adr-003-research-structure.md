@@ -18,7 +18,7 @@ decision-type: methodology
 | Decision status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Decision date | 2026-07-02 |
 | Owner | G-Ivan-A |
-| Source | [RFC B-016](../../governance/rfc/2026-06-30-rfc-research-structure.md); issues [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294), [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
+| Source | [RFC B-016](../rfc/2026-06-30-rfc-research-structure.md); issues [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294), [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
 | Impacted artifacts | `standards/research-profile.md`, `standards/research-standard.md` (B-018, standard in review), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (addendum B-019), `standards/glossary.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*` |
 | Supersedes | `standards/research-profile.md` как human decision; technical replacement профиля задаёт `standards/research-standard.md`, физическое удаление выполняется в B-021 |
 | Superseded by | none |
@@ -26,7 +26,7 @@ decision-type: methodology
 ## Context
 
 RFC B-016 (v0.3,
-[`governance/rfc/2026-06-30-rfc-research-structure.md`](../../governance/rfc/2026-06-30-rfc-research-structure.md))
+[`docs/rfc/2026-06-30-rfc-research-structure.md`](../rfc/2026-06-30-rfc-research-structure.md))
 завершён и прошёл локальную валидацию. Он предлагает единую базовую модель
 структуры research-артефактов Хаба и является входом для этого ADR (B-017) и
 стандарта `standards/research-standard.md` (B-018).
@@ -85,7 +85,7 @@ B-016, разделы Proposal P1–P6):
 ## Alternatives Considered
 
 Полный разбор альтернатив (A1–A6), стресс-тест гипотез и trade-offs — в RFC B-016
-(разделы [Alternatives](../../governance/rfc/2026-06-30-rfc-research-structure.md#alternatives)
+(разделы [Alternatives](../rfc/2026-06-30-rfc-research-structure.md#alternatives)
 и Critical Analysis). Этот ADR не дублирует их таблицей, а делегирует в source
 RFC.
 
@@ -97,7 +97,7 @@ RFC.
 ## Consequences
 
 Это архитектурные последствия принятого решения. Конкретный список задач живёт в
-[`governance/backlog.md`](../../governance/backlog.md) (цепочка B-018..B-023) и
+[`pr-ops/backlog.md`](../../pr-ops/backlog.md) (цепочка B-018..B-023) и
 здесь не дублируется как план работ.
 
 **Положительные:**
@@ -124,7 +124,7 @@ RFC.
 ADR-002 addendum B-019, glossary B-020, удаление профиля B-021, миграция `exp-*`
 B-022, валидаторы B-023). Состав и последовательность этих задач — в RFC B-016
 (раздел Impacted Artifacts, таблица downstream chain) и
-[`governance/backlog.md`](../../governance/backlog.md); здесь они не дублируются
+[`pr-ops/backlog.md`](../../pr-ops/backlog.md); здесь они не дублируются
 как план работ.
 
 ## Compliance and Validation
@@ -173,7 +173,7 @@ B-018 и ADR-002 addendum B-019.
 
 ## Related Artifacts
 
-- [RFC B-016: Структура research, контейнер `exp/` и маршрутизация](../../governance/rfc/2026-06-30-rfc-research-structure.md) —
+- [RFC B-016: Структура research, контейнер `exp/` и маршрутизация](../rfc/2026-06-30-rfc-research-structure.md) —
   источник этого решения; сохраняет alternatives, trade-offs и rationale.
 - [Audit: Research artifact format contract](../audit/2026-06-29-research-artifact-format-contract-audit.md)
   (issue [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290)) —
@@ -189,6 +189,6 @@ B-018 и ADR-002 addendum B-019.
   routing `runs/` и lifecycle артефактов; получает addendum B-019.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md) —
   стандарт структуры ADR.
-- [`governance/backlog.md`](../../governance/backlog.md) — цепочка B-016..B-023.
+- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка B-016..B-023.
 - Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294) —
   зонтичная задача стандартизации research.

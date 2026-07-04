@@ -14,13 +14,13 @@ related_issues:
 related_artifacts:
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-  - "governance/rfc/README.md"
+  - "docs/rfc/README.md"
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "research/hub/2026-06-25-artifact-inventory-and-classification.md"
   - "research/external-knowledge/external-sources-registry.md"
   - "standards/research-standard.md"
 external_artifacts:
-  - "mango_ba_prompts/governance/rfc/"
+  - "mango_ba_prompts/docs/rfc/"
   - "mango_ba_prompts/docs/adr/"
   - "mango_ba_prompts/standards/decisions/"
 ---
@@ -74,7 +74,7 @@ OTEP, BEP, proposal или design document. Термин "RFC-like" исполь
 
 ### 1.2. Что не входит в документ
 
-Документ не решает, должен ли Хаб переехать из `governance/rfc/` в `docs/rfc/`,
+Документ не решает, должен ли Хаб переехать из `docs/rfc/` в `docs/rfc/`,
 не переименовывает существующие RFC, не объявляет новые статусы обязательными и
 не нормирует Mango. Эти действия требуют отдельного RFC/ADR или явного human
 approval. Задача здесь: дать проверяемую основу для такого решения.
@@ -101,13 +101,13 @@ approval. Задача здесь: дать проверяемую основу 
    Образовательные проекты чаще используют contributor docs, curriculum PRs,
    issues и roadmap files. RFC подходит только для крупных учебных рамок:
    taxonomy курса, assessment model, public curriculum contract.
-5. Hub уже ближе к архетипу A: есть `governance/rfc/`, индекс и 16 RFC-like
+5. Hub уже ближе к архетипу A: есть `docs/rfc/`, индекс и 16 RFC-like
    документов без README. Mango ближе к архетипу B: 4 RFC-like proposal-документа
-   в `governance/rfc/`.
+   в `docs/rfc/`.
 6. Главные дельты Hub/Mango против сильных индустриальных RFC-практик:
    lifecycle vocabulary не унифицирован, numbering отсутствует или нестабилен,
    связь RFC -> implementation/ADR не формализована, template fields разнородны,
-   а `governance/rfc/` vs `docs/rfc/` остаётся архитектурным выбором.
+   а `docs/rfc/` vs `docs/rfc/` остаётся архитектурным выбором.
 7. Лучший дальнейший ход: не копировать один стандарт, а выбрать вариант по
    архетипу. Для Hub полезна тяжёлая governance RFC-модель; для Mango и prompt
    libraries нужна облегчённая micro-RFC модель; для product spokes нужен BEP-like
@@ -162,7 +162,7 @@ issues, discussions, docs или внешних системах.
 
 | Область | Количество | Статусы |
 | --- | ---: | --- |
-| `governance/rfc/*.md`, включая `README.md` | 17 | `draft`: 12, `canonical`: 4, `reviewed`: 1 |
+| `docs/rfc/*.md`, включая `README.md` | 17 | `draft`: 12, `canonical`: 4, `reviewed`: 1 |
 | RFC-документы без `README.md` | 16 | `draft`: 12, `canonical`: 3, `reviewed`: 1 |
 | `docs/rfc/` | 0 | каталог отсутствует |
 
@@ -180,7 +180,7 @@ issues, discussions, docs или внешних системах.
   описаны как state machine;
 - не в каждом RFC одинаково видны owner, stakeholders, alternatives, unresolved
   questions, implementation link, ADR link;
-- `governance/rfc/` выбран исторически, а ADR-001/002 задают вопрос о `docs/rfc/`
+- `docs/rfc/` выбран исторически, а ADR-001/002 задают вопрос о `docs/rfc/`
   как возможном target для решений инфраструктуры.
 
 ### 4.2. Mango
@@ -189,7 +189,7 @@ issues, discussions, docs или внешних системах.
 
 | Область | Количество | Статусы |
 | --- | ---: | --- |
-| `governance/rfc/*.md` | 4 | `proposed`: 3, `draft`: 1 |
+| `docs/rfc/*.md` | 4 | `proposed`: 3, `draft`: 1 |
 | `docs/rfc/` | 0 | каталог отсутствует |
 
 Mango RFC выглядят как practical prompt/process proposals: BCREQ scope rules,
@@ -369,7 +369,7 @@ For lesson-level edits, PR review and content style guides are enough.
 
 | Delta | Hub/Mango now | Industry norm | Impact |
 | --- | --- | --- | --- |
-| Location | Hub and Mango use `governance/rfc/`; `docs/rfc/` absent | Varied: root RFC repos, `keps/`, `beps/`, `text/`, `design/`, `legacy_rfcs/` | Location is not the problem by itself; semantics must be explicit |
+| Location | Hub and Mango use `docs/rfc/`; `docs/rfc/` absent | Varied: root RFC repos, `keps/`, `beps/`, `text/`, `design/`, `legacy_rfcs/` | Location is not the problem by itself; semantics must be explicit |
 | Numbering | Semantic filenames, some date suffixes | Strong RFC ecosystems use stable numeric identity | Harder to cite "RFC-012" across docs |
 | Status vocabulary | `draft`, `reviewed`, `canonical`, `proposed` across repos | Explicit lifecycle vocabularies and transition criteria | Reader cannot infer decision force uniformly |
 | Template | Inconsistent sections | Templates include motivation, design, alternatives, drawbacks, unresolved questions, owners | Quality varies and review questions repeat |
@@ -379,9 +379,9 @@ For lesson-level edits, PR review and content style guides are enough.
 
 ### 10.2. The important non-delta
 
-`governance/rfc/` is not automatically "wrong" because industry uses varied
+`docs/rfc/` is not automatically "wrong" because industry uses varied
 locations. The true question is whether Hub wants RFCs as governance artifacts
-or product/docs artifacts. For current Hub, `governance/rfc/` matches the
+or product/docs artifacts. For current Hub, `docs/rfc/` matches the
 meaning: proposals about methodology, repository governance and artifact
 lifecycle. If a future standard chooses `docs/rfc/`, the migration reason should
 be semantic consistency with ADR-001/002, not "industry requires docs/rfc".
@@ -393,7 +393,7 @@ be semantic consistency with ADR-001/002, not "industry requires docs/rfc".
 | Field | Proposed shape |
 | --- | --- |
 | Scope | Cross-repository governance, standards, templates, artifact lifecycle |
-| Location | Keep `governance/rfc/` or migrate to `docs/rfc/` only by separate ADR |
+| Location | Keep `docs/rfc/` or migrate to `docs/rfc/` only by separate ADR |
 | Naming | Either current semantic names or future `NNNN-short-title.md` |
 | Statuses | `draft`, `proposed`, `accepted`, `rejected`, `withdrawn`, `superseded`, `implemented` |
 | Required sections | Summary, Context, Problem, Goals, Non-goals, Proposal, Alternatives, Trade-offs, Impacted artifacts, Review/decision path, Open questions |
@@ -407,7 +407,7 @@ Cons: too heavy for prompt and lesson edits.
 | Field | Proposed shape |
 | --- | --- |
 | Scope | Prompt/process/pattern changes with reusable or cross-prompt impact |
-| Location | `governance/rfc/` in Mango or `docs/analysis/` until canonical |
+| Location | `docs/rfc/` in Mango or `docs/analysis/` until canonical |
 | Naming | Semantic filename with optional issue/experiment id |
 | Statuses | `draft`, `proposed`, `accepted`, `rejected`, `superseded` |
 | Required sections | Problem, Evidence, Affected prompts, Proposed change, Evaluation, Rollout, Open questions |
@@ -539,7 +539,7 @@ flowchart LR
   - Hub/Mango RFC/ADR audit.
 - [2026-06-27-rfc-external-tree-summary.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-rfc-external-tree-summary.md)
   - external RFC-like tree signals.
-- [Governance RFC README](../../governance/rfc/README.md) - текущий индекс RFC
+- [Governance RFC README](../../docs/rfc/README.md) - текущий индекс RFC
   Hub.
 - [ADR-001](../../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md)
   and [ADR-002](../../docs/adr/2026-06-adr-002-artifact-document-methodology.md)

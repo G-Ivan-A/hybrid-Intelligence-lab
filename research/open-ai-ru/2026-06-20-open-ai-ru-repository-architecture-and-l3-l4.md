@@ -52,7 +52,7 @@ placeholders. Значит, задача попадает точно в разр
    `project-structure-inheritance.md`, `research-profile.md`, `docs/ecosystem-map.md`.
 2. **Артефакты самого репозитория open-ai.ru** (прочитаны через GitHub API):
    `README.md`, `AI_GOVERNANCE.md`, `docs/vision.md`, `docs/product-concept.md`,
-   `docs/solution-concept.md` (placeholder), дерево каталогов, `governance/rfc/`,
+   `docs/solution-concept.md` (placeholder), дерево каталогов, `docs/rfc/`,
    `team/`.
 3. **Международные проекты** с публичными репозиториями: Supabase, Next.js
    (Vercel), Ghost, Directus, Appwrite, Strapi, Backstage, Cal.com. Их
@@ -206,7 +206,7 @@ open-ai.ru. Уровень L4 (ADR) описан тоньше: стандарт 
 - **Геном управления:** `AI_GOVERNANCE.md` (human-in-control, provider-agnostic,
   scope-first, traceability, minimal structure, flagship-first).
 - **Frontmatter и file-naming** Хаба.
-- **Модель hub-and-spoke** (`governance/repo-model.md` Хаба).
+- **Модель hub-and-spoke** (`pr-ops/repo-model.md` Хаба).
 - **Жизненный цикл знаний** для входящих идей.
 - **Anti-Inflation principle** — не вводить инфраструктуру «на вырост».
 
@@ -611,7 +611,7 @@ open-ai.ru/
 │   ├── adr/  (README.md + NNNN-*.md)
 │   ├── ecosystem-context.md          # NEW (Need-to-Know)
 │   └── .hub-ecosystem.json           # NEW (машиночитаемый частичный граф)
-├── governance/rfc/
+├── docs/rfc/
 ├── team/
 ├── examples/                          # NEW (по триггеру adoption)
 └── src/.gitkeep
@@ -654,7 +654,7 @@ open-ai.ru/
 │   ├── adr/{README.md, NNNN-*.md}
 │   ├── ecosystem-context.md  .hub-ecosystem.json
 │   └── (Diátaxis: tutorials/ how-to/ reference/ explanation/ — по мере роста)
-├── governance/rfc/
+├── docs/rfc/
 ├── team/
 ├── examples/
 ├── .github/{workflows, ISSUE_TEMPLATE, CODEOWNERS}   # при первом коде
@@ -807,7 +807,7 @@ flowchart LR
 
 **Репозиторий open-ai.ru** (через GitHub API, 2026-06-20):
 - `README.md`, `AI_GOVERNANCE.md`, `docs/vision.md`, `docs/product-concept.md`,
-  `docs/solution-concept.md`, дерево каталогов, `governance/rfc/`, `team/`
+  `docs/solution-concept.md`, дерево каталогов, `docs/rfc/`, `team/`
 
 **Международные проекты** (top-level дерево проверено через GitHub API, 2026-06-20):
 - Supabase, Next.js/Vercel, Ghost, Directus, Appwrite, Strapi, Backstage, Cal.com

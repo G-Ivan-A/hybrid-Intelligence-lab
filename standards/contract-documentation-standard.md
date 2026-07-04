@@ -32,7 +32,7 @@ related_issues:
 
 Стандарт описывает структуру контракта из пяти элементов и единый нормативный
 словарь. Он применяется к governance-контрактам Хаба (например,
-[AI_GOVERNANCE.md](../AI_GOVERNANCE.md), [governance/repo-model.md](../governance/repo-model.md),
+[AI_GOVERNANCE.md](../AI_GOVERNANCE.md), [pr-ops/repo-model.md](../pr-ops/repo-model.md),
 [standards/team-contract.md](team-contract.md), [standards/issue-workflow.md](issue-workflow.md),
 профили) и наследуется споками.
 

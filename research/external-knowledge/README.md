@@ -19,7 +19,7 @@ temperature: 0.1
 > 🧭 **Назначение в одну строку.** Внешние источники — это
 > Observation/Research, а не практика: они живут в `research/`, пока не пройдут
 > валидацию и не будут переведены в `practices/`/`standards/` по
-> [governance/rfc/knowledge-lifecycle-proposal.md](../../governance/rfc/knowledge-lifecycle-proposal.md).
+> [docs/rfc/knowledge-lifecycle-proposal.md](../../docs/rfc/knowledge-lifecycle-proposal.md).
 
 ## Документы
 
@@ -32,10 +32,10 @@ temperature: 0.1
 ## Как это связано
 
 - **RFC интеграции** —
-  [governance/rfc/external-knowledge-integration.md](../../governance/rfc/external-knowledge-integration.md):
+  [docs/rfc/external-knowledge-integration.md](../../docs/rfc/external-knowledge-integration.md):
   модель Base Registry + Local Extension, Smart Sync, применение для 4 проектов.
 - **Lifecycle знаний** —
-  [governance/rfc/knowledge-lifecycle-proposal.md](../../governance/rfc/knowledge-lifecycle-proposal.md):
+  [docs/rfc/knowledge-lifecycle-proposal.md](../../docs/rfc/knowledge-lifecycle-proposal.md):
   правило перехода `Observation → Research → ... → Standard`.
 - **Стандарт исследований** —
   [standards/research-standard.md](../../standards/research-standard.md):

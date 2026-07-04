@@ -78,7 +78,7 @@ Markdown с RFC 2119/BCP 14, IDL и другие форматы, если они
 | Analysis в проекте/spoke | `docs/analysis/YYYY-MM-DD-name.md` | Исследование локального контекста без статуса решения. |
 | Audit report | `docs/audit/` | Durable output Audit-процесса (4-компонентная модель: target/evidence/verdict/deviation). Физическое разделение от `docs/report/` по ADR-004 v0.3. |
 | Report | `docs/report/` | General reports и statistics reports. Реконсилировано ADR-004. |
-| RFC | `docs/rfc/` для новых HTOM/spoke; текущий Хаб сохраняет `governance/rfc/` до миграции | Proposal до решения. |
+| RFC | `docs/rfc/` для новых HTOM/spoke; текущий Хаб сохраняет `docs/rfc/` до миграции | Proposal до решения. |
 | ADR | `docs/adr/YYYY-MM-adr-NNN-name.md` | Принятое решение и rationale. |
 | Standard | `standards/` | Повторяемая норма формата, качества или review-критерия. |
 | AI rule | `ai-rules/` | Правило поведения AI-агента; плоско, если нет 2FA-обоснования. |
@@ -98,7 +98,7 @@ Markdown с RFC 2119/BCP 14, IDL и другие форматы, если они
 [ADR-003](2026-07-adr-003-research-structure.md) по границе между
 research evidence corpus и operational run record. Rationale, альтернативы и
 trade-offs остаются в
-[RFC B-016](../../governance/rfc/2026-06-30-rfc-research-structure.md), раздел
+[RFC B-016](../rfc/2026-06-30-rfc-research-structure.md), раздел
 P3; здесь они не дублируются.
 
 Routing-таблица выше сохраняет строку `Run record` для `runs/`: это контейнер
@@ -187,7 +187,7 @@ AI-авторство не является обязательным полем 
 
 Компромиссы:
 
-- часть текущих RFC Хаба пока остается в `governance/rfc/`, а новые целевые
+- часть текущих RFC Хаба пока остается в `docs/rfc/`, а новые целевые
   правила называют `docs/rfc/`;
 - физическая миграция existing artifacts требует отдельного плана;
 - валидаторы должны обновляться вместе с появлением новых accepted governance

@@ -12,7 +12,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/306"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/303"
 related_artifacts:
-  - "governance/rfc/2026-06-30-rfc-research-structure.md"
+  - "docs/rfc/2026-06-30-rfc-research-structure.md"
   - "standards/rfc-structure-standard.md"
 ---
 
@@ -25,7 +25,7 @@ related_artifacts:
 Гипотеза: приложенный к issue файл `clarify_error_pr_303.txt`.
 
 Проверяемый артефакт PR #303:
-[`governance/rfc/2026-06-30-rfc-research-structure.md`](../../governance/rfc/2026-06-30-rfc-research-structure.md).
+[`docs/rfc/2026-06-30-rfc-research-structure.md`](../rfc/2026-06-30-rfc-research-structure.md).
 Нормативный контракт проверки:
 [`standards/rfc-structure-standard.md`](../../standards/rfc-structure-standard.md).
 
@@ -65,7 +65,7 @@ lifecycle.
 
 ## Внесенная доработка
 
-В RFC `governance/rfc/2026-06-30-rfc-research-structure.md`:
+В RFC `docs/rfc/2026-06-30-rfc-research-structure.md`:
 
 - версия draft повышена с `0.1` до `0.2`;
 - добавлена матрица дельт A/B/C/D с границами применения proposal для Hub,

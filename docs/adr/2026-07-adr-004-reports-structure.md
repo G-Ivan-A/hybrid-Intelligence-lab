@@ -18,15 +18,15 @@ decision-type: methodology
 | Decision status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Decision date | 2026-07-02 |
 | Owner | G-Ivan-A |
-| Source | [RFC B-041](../../governance/rfc/2026-07-02-rfc-reports-structure.md); issue [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338); clarification issue [#348](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/348); upstream issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) |
-| Impacted artifacts | `standards/report-standard.md` (B-043), `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `docs/report/*`, `docs/audit/*`, `research/<domain>/exp/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `governance/backlog.md`, `governance/artifact-map.md` |
+| Source | [RFC B-041](../rfc/2026-07-02-rfc-reports-structure.md); issue [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338); clarification issue [#348](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/348); upstream issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) |
+| Impacted artifacts | `standards/report-standard.md` (B-043), `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `docs/report/*`, `docs/audit/*`, `research/<domain>/exp/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `pr-ops/backlog.md`, `pr-ops/artifact-map.md` |
 | Supersedes | ADR-002 routing table row `Report -> docs/reports/` for Reports routing only; replacement routes are `docs/audit/` for audit-reports and `docs/report/` for general/statistics reports |
 | Superseded by | none |
 
 ## Context
 
 RFC B-041
-([`governance/rfc/2026-07-02-rfc-reports-structure.md`](../../governance/rfc/2026-07-02-rfc-reports-structure.md))
+([`docs/rfc/2026-07-02-rfc-reports-structure.md`](../rfc/2026-07-02-rfc-reports-structure.md))
 завершил этап предложения по Reports-артефактам после инвентаризации Reports и
 исследования отраслевых норм. Он рекомендует базовый стандарт Report с лёгкими
 профилями подтипов и требует человеческой точки принятия решения перед созданием
@@ -135,8 +135,8 @@ B-029) и уникальной 4-компонентной модели (target/e
   acceptance review для ADR.
 - ADR явно избегает копирования proposal-деталей RFC B-041, таблицы альтернатив и
   матрицы downstream-задач.
-- Регистрация в репозитории валидируется через `governance/artifact-map.md`,
-  `governance/backlog.md`, `CHANGELOG.md` и
+- Регистрация в репозитории валидируется через `pr-ops/artifact-map.md`,
+  `pr-ops/backlog.md`, `CHANGELOG.md` и
   `tools/validate-repository-structure.sh`.
 - Локальная проверка в этом PR:
 
@@ -173,7 +173,7 @@ flowchart LR
 
 ## Related Artifacts
 
-- [RFC B-041: Структура Reports-артефактов](../../governance/rfc/2026-07-02-rfc-reports-structure.md)
+- [RFC B-041: Структура Reports-артефактов](../rfc/2026-07-02-rfc-reports-structure.md)
   — исходный RFC с предложением, альтернативами, trade-offs и границами.
 - [ADR-002: Методология создания и управления артефактами](2026-06-adr-002-artifact-document-methodology.md)
   — более ранняя запись решения по маршрутизации артефактов с замещённой строкой
@@ -189,5 +189,5 @@ flowchart LR
   — видение фаундера о Reports как отдельном типе с routing `docs/report/`.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md)
   — структура ADR и правила section-level delegation.
-- [`governance/backlog.md`](../../governance/backlog.md) — цепочка Reports B-038,
+- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка Reports B-038,
   B-041, B-042, B-043 и B-044.

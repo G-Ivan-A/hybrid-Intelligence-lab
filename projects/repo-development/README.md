@@ -18,7 +18,7 @@ temperature: 0.1
 миграцию.
 
 Файл является навигацией, а не контрактом: обязательные правила остаются в
-[CONCEPT.md](../../CONCEPT.md), [governance/repo-model.md](../../governance/repo-model.md)
+[docs/concept.md](../../docs/concept.md), [pr-ops/repo-model.md](../../pr-ops/repo-model.md)
 и [standards/README.md](../../standards/README.md).
 
 ## 🎯 Назначение
@@ -39,11 +39,11 @@ temperature: 0.1
 
 | Документ | Назначение |
 | --- | --- |
-| [docs/migration-audit-2026-05.md](docs/migration-audit-2026-05.md) | Отчёт аудита миграции: согласованность с `CONCEPT.md`, матрица ссылок, таблица `-old`, рекомендации. |
+| [docs/migration-audit-2026-05.md](docs/migration-audit-2026-05.md) | Отчёт аудита миграции: согласованность с `docs/concept.md`, матрица ссылок, таблица `-old`, рекомендации. |
 | [docs/contract-violations-self-report-2026-06.md](docs/contract-violations-self-report-2026-06.md) | Self-report (`type: audit`) ошибок исполнения контрактов в сессии миграции Mango: обоснование таргета, 6 нарушений, системные выводы и анализ размещения ретроспектив. |
 | [docs/mango-ba-prompts-repository-migration-plan-2026-06.md](docs/mango-ba-prompts-repository-migration-plan-2026-06.md) | План миграции `mango_ba_prompts` к Repository Archetype Standard: применение merged Task 2 RFC, gap analysis, сравнение сценариев, рекомендация и checklist исполнения. |
-| [governance/repo-model.md](../../governance/repo-model.md) | Модель структуры репозитория и Anti-Inflation principle. |
-| [governance/artifact-map.md](../../governance/artifact-map.md) | Карта артефактов: где что лежит и как связано. |
+| [pr-ops/repo-model.md](../../pr-ops/repo-model.md) | Модель структуры репозитория и Anti-Inflation principle. |
+| [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) | Карта артефактов: где что лежит и как связано. |
 | [standards/issue-workflow.md](../../standards/issue-workflow.md) | Жизненный цикл задач: статусы и правила переходов. |
 | [.github/ISSUE_TEMPLATE/task.yml](../../.github/ISSUE_TEMPLATE/task.yml) | Предложить улучшение через Issue. |
 
@@ -63,9 +63,9 @@ temperature: 0.1
 
 ## Связанные артефакты
 
-- [CONCEPT.md](../../CONCEPT.md)
-- [governance/repo-model.md](../../governance/repo-model.md)
-- [governance/artifact-map.md](../../governance/artifact-map.md)
+- [docs/concept.md](../../docs/concept.md)
+- [pr-ops/repo-model.md](../../pr-ops/repo-model.md)
+- [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md)
 - [standards/README.md](../../standards/README.md)
 - [standards/issue-workflow.md](../../standards/issue-workflow.md)
 - [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts)

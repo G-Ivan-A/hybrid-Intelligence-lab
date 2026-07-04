@@ -14,7 +14,7 @@ temperature: 0.1
 > ([docs/ecosystem-map.md](../ecosystem-map.md)) Хаб держит полный граф
 > экосистемы. Карта `-Summary` каждого спока создаётся здесь как источник истины,
 > а её **каноническое место — корень соответствующего репозитория** под именем
-> `AI_PROJECT_CONTEXT-Summary.md`. Распространение в споки идёт через
+> `projects-sink/AI_PROJECT_CONTEXT-Summary.md`. Распространение в споки идёт через
 > human-in-control Smart Sync (Хаб предлагает → человек подтверждает в споке),
 > как описано в [docs/ecosystem-map.md](../ecosystem-map.md), раздел
 > «Принцип Need-to-Know».
@@ -23,15 +23,15 @@ temperature: 0.1
 > Применение в корни внешних репозиториев `mango_ba_prompts`, `open-ai.ru`,
 > `clarify-engine-ai` выполняется отдельными PR в этих репозиториях (у задачи в
 > Хабе нет прав записи в них). Карта Хаба живёт в корне Хаба:
-> [AI_PROJECT_CONTEXT-Summary.md](../../AI_PROJECT_CONTEXT-Summary.md).
+> [projects-sink/AI_PROJECT_CONTEXT-Summary.md](../../projects-sink/AI_PROJECT_CONTEXT-Summary.md).
 
 ## Сопоставление staging → каноническое место
 
 | Staging-файл (Хаб) | Каноническое место (спок) |
 | --- | --- |
-| [mango-ba-prompts-context-Summary.md](mango-ba-prompts-context-Summary.md) | `mango_ba_prompts/AI_PROJECT_CONTEXT-Summary.md` |
-| [open-ai-ru-context-Summary.md](open-ai-ru-context-Summary.md) | `open-ai.ru/AI_PROJECT_CONTEXT-Summary.md` |
-| [clarify-engine-ai-context-Summary.md](clarify-engine-ai-context-Summary.md) | `clarify-engine-ai/AI_PROJECT_CONTEXT-Summary.md` |
+| [mango-ba-prompts-context-Summary.md](mango-ba-prompts-context-Summary.md) | `mango_ba_prompts/projects-sink/AI_PROJECT_CONTEXT-Summary.md` |
+| [open-ai-ru-context-Summary.md](open-ai-ru-context-Summary.md) | `open-ai.ru/projects-sink/AI_PROJECT_CONTEXT-Summary.md` |
+| [clarify-engine-ai-context-Summary.md](clarify-engine-ai-context-Summary.md) | `clarify-engine-ai/projects-sink/AI_PROJECT_CONTEXT-Summary.md` |
 
 Имена staging-файлов следуют правилу вложенных файлов
 ([standards/file-naming.md](../../standards/file-naming.md)): `lowercase` базовое

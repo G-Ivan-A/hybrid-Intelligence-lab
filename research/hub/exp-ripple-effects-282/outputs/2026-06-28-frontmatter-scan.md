@@ -112,8 +112,8 @@ Fields outside `status`, `version`, `updated` and `temperature`:
 
 ## Sample `ai-generated` Paths
 
-- `AI_PROJECT_CONTEXT-Summary.md`
-- `CONCEPT.md`
+- `projects-sink/AI_PROJECT_CONTEXT-Summary.md`
+- `docs/concept.md`
 - `docs/ecosystem-map-Index.md`
 - `docs/ecosystem-map.md`
 - `docs/product-concept.md`
@@ -125,9 +125,9 @@ Fields outside `status`, `version`, `updated` and `temperature`:
 
 - `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`
 - `docs/adr/2026-06-adr-002-artifact-document-methodology.md`
-- `governance/agent-onboarding-protocol.md`
-- `governance/artifact-map.md`
-- `governance/backlog.md`
-- `governance/executable-documents-issues.md`
-- `governance/repo-model.md`
-- `governance/rfc/README.md`
+- `ai-rules/agent-onboarding-protocol.md`
+- `pr-ops/artifact-map.md`
+- `pr-ops/backlog.md`
+- `pr-ops/executable-documents-issues.md`
+- `pr-ops/repo-model.md`
+- `docs/rfc/README.md`

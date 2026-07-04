@@ -83,7 +83,12 @@ validate_tree "research" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
 validate_tree "docs/analysis" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
 validate_tree "docs/report" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
 validate_tree "docs/audit" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
-validate_tree "docs/rfc" "is_monthly_chronological_name" "YYYY-MM-name.md or YYYY-name.md"
+# docs/rfc/ intentionally not chronologically validated on the Hub: per
+# rfc-structure-standard.md the Hub RFC rule is `YYYY-MM-DD-rfc-*` for new dated
+# RFCs while legacy names stay unchanged (descriptive). The `YYYY-MM`/`YYYY`
+# monthly rule (standards/file-naming.md) is the spoke rule; enforcing it here
+# would reject the Hub's own standard-compliant legacy RFC corpus migrated from
+# governance/rfc/ under ADR-007 (B-048).
 validate_tree "docs/adr" "is_adr_chronological_name" "YYYY-MM-adr-NNN-name.md"
 
 if (( failures > 0 )); then

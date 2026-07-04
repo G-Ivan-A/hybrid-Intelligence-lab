@@ -23,7 +23,7 @@ Draft-статус означает, что стандарт предложен 
 
 Стандарт применяется к файлам с ролью `AI_SESSION_HANDOVER_PROMPT.md`: это
 копируемый prompt-артефакт для старта нового чата и запуска *Runtime-онбординга*
-по [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md).
+по [ai-rules/agent-onboarding-protocol.md](../ai-rules/agent-onboarding-protocol.md).
 
 Стандарт не заменяет сам протокол онбординга. Он определяет, какие блоки должны
 быть в prompt-артефакте, чтобы пользователь мог безопасно передать контекст в
@@ -76,7 +76,7 @@ Draft-статус означает, что стандарт предложен 
 - Файл явно требует определить тип проекта перед применением правил.
 - Файл содержит блок `Контекст чата диалога`.
 - Файл содержит блок `Проверка шаблонов`.
-- Файл ссылается на `governance/agent-onboarding-protocol.md` как canonical
+- Файл ссылается на `ai-rules/agent-onboarding-protocol.md` как canonical
   протокол Runtime-онбординга.
 - Файл ссылается на этот стандарт как на критерий структуры.
 - Файл оставляет финальные решения за человеком и останавливается до апрува.
@@ -95,7 +95,7 @@ Draft-статус означает, что стандарт предложен 
 
 | Документ | Роль |
 | --- | --- |
-| [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md) | Canonical протокол Runtime-онбординга. |
+| [ai-rules/agent-onboarding-protocol.md](../ai-rules/agent-onboarding-protocol.md) | Canonical протокол Runtime-онбординга. |
 | [templates/htom/AI_SESSION_HANDOVER_PROMPT.md](../templates/htom/AI_SESSION_HANDOVER_PROMPT.md) | Первый шаблон, синхронизированный с этим стандартом. |
 | [docs/ecosystem-map.md](../docs/ecosystem-map.md) | Экосистемный принцип разделения онбординга и передачи контекста. |
 | [standards/glossary.md](glossary.md) | Термины Runtime-онбординг, Handover Prompt, HTOM-команда, Spoke-репозиторий. |

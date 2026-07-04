@@ -80,10 +80,10 @@ document_class() {
     research/*.md | docs/analysis/*.md | docs/report/*.md)
       printf 'knowledge'
       ;;
-    governance/rfc/README.md | ai-rules/*.md)
+    docs/rfc/README.md)
       printf 'governance'
       ;;
-    governance/rfc/*.md | docs/rfc/*.md)
+    docs/rfc/*.md)
       printf 'rfc'
       ;;
     docs/adr/*.md)

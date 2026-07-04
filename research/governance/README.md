@@ -63,5 +63,5 @@ derived standards without duplicating their rules.
 ## Связанные артефакты
 
 - [standards/research-standard.md](../../standards/research-standard.md) — правила структуры, источников и воспроизводимости исследований.
-- [governance/artifact-map.md](../../governance/artifact-map.md) — карта артефактов и связей.
+- [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) — карта артефактов и связей.
 - [research/README.md](../README.md) — навигация по исследовательским направлениям.

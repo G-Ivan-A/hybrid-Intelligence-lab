@@ -14,7 +14,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-  - "governance/rfc/README.md"
+  - "docs/rfc/README.md"
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "research/hub/2026-06-25-artifact-inventory-and-classification.md"
   - "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
@@ -23,7 +23,7 @@ related_artifacts:
 external_artifacts:
   - "mango_ba_prompts/docs/adr/"
   - "mango_ba_prompts/standards/decisions/"
-  - "mango_ba_prompts/governance/rfc/"
+  - "mango_ba_prompts/docs/rfc/"
 ---
 
 # ADR: индустриальные нормы, дельты и варианты для Hub / Mango

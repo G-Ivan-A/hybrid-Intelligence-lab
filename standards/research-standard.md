@@ -25,7 +25,7 @@ related_issues:
 Источник принятого решения:
 [ADR-003](../docs/adr/2026-07-adr-003-research-structure.md); rationale,
 альтернативы и trade-offs:
-[RFC B-016](../governance/rfc/2026-06-30-rfc-research-structure.md).
+[RFC B-016](../docs/rfc/2026-06-30-rfc-research-structure.md).
 
 Стандарт — это IL-3 reusable rule о форме research-артефактов, размещении
 evidence и routing-критериях. Он не является Contract: операционные контракты
@@ -149,7 +149,7 @@ temperature: 0.3
   по роли данных (например, `data/`), но обязательная папка `outputs/`
   ЗАПРЕЩЕНА в любом случае. Дефолт — плоско; группировка появляется только при
   реальной операционной боли (Anti-Inflation principle,
-  [governance/repo-model.md](../governance/repo-model.md)).
+  [pr-ops/repo-model.md](../pr-ops/repo-model.md)).
 
 ## Граница `exp/` vs `runs/`
 
@@ -279,13 +279,13 @@ Local checks:
 Нормативный enforcement принятой модели (`exp/`, запрет `outputs/`, routing)
 делегирован обновлению валидаторов (B-023). Расширение валидаторов за пределы
 frontmatter, naming и registry checks отслеживается как tech debt в
-[governance/backlog.md](../governance/backlog.md).
+[pr-ops/backlog.md](../pr-ops/backlog.md).
 
 ## Related Artifacts
 
 - [ADR-003: Структура research, контейнер `exp/` и маршрутизация](../docs/adr/2026-07-adr-003-research-structure.md) —
   источник принятого решения.
-- [RFC B-016: Структура research, контейнер `exp/` и маршрутизация](../governance/rfc/2026-06-30-rfc-research-structure.md) —
+- [RFC B-016: Структура research, контейнер `exp/` и маршрутизация](../docs/rfc/2026-06-30-rfc-research-structure.md) —
   rationale, alternatives, trade-offs и rejected options.
 - [ADR-002: Методология создания и управления артефактами](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) —
   routing `runs/` и граница operational run record.
@@ -294,7 +294,7 @@ frontmatter, naming и registry checks отслеживается как tech de
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [governance/backlog.md](../governance/backlog.md) — цепочка B-016..B-023.
+- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка B-016..B-023.
 - Issues
   [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294) (зонтичная
   задача стандартизации research),

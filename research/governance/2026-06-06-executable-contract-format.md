@@ -10,8 +10,8 @@ scope: repo-wide
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 related_artifacts:
   - "standards/executable-contract-standard.md"
-  - "governance/rfc/contract-executability-rfc.md"
-  - "governance/agent-onboarding-protocol.md"
+  - "docs/rfc/contract-executability-rfc.md"
+  - "ai-rules/agent-onboarding-protocol.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 ---
@@ -23,7 +23,7 @@ related_issues:
 **Причина.** Issue #165, Блок 2: «Модель и человек сразу должны понимать, как
 запускается и что надо делать». Зафиксированный антипаттерн (см. инцидент
 «анализ вместо исполнения» в
-[governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md)):
+[docs/rfc/contract-executability-rfc.md](../../docs/rfc/contract-executability-rfc.md)):
 агент читает исполнимый документ как описание и начинает *анализировать* вместо
 *исполнять*. Нужен формат, в котором **первая строка — команда к действию, а не
 заголовок**.
@@ -33,8 +33,8 @@ related_issues:
 [standards/executable-contract-standard.md](../../standards/executable-contract-standard.md).
 
 **Связанные артефакты.**
-- [governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md) — утверждённое фаундером «Видение 3» и трёхслойная защита; этот стандарт **кодифицирует** RFC в нормативную форму.
-- [governance/agent-onboarding-protocol.md](../../governance/agent-onboarding-protocol.md) — действующий эталонный исполнимый документ (`executable: true`, `entrypoint: true`).
+- [docs/rfc/contract-executability-rfc.md](../../docs/rfc/contract-executability-rfc.md) — утверждённое фаундером «Видение 3» и трёхслойная защита; этот стандарт **кодифицирует** RFC в нормативную форму.
+- [ai-rules/agent-onboarding-protocol.md](../../ai-rules/agent-onboarding-protocol.md) — действующий эталонный исполнимый документ (`executable: true`, `entrypoint: true`).
 - [research/governance/2026-06-06-research-documentation-format.md](2026-06-06-research-documentation-format.md) — формат **описательных** исследований (зеркальная противоположность: там «выводы вперёд», здесь «команда вперёд»).
 
 **Метод.** Сравнительный анализ практик императивного интерфейса (system prompts,
@@ -64,7 +64,7 @@ SRE runbooks, CLI man-page SYNOPSIS, README Quick Start, Makefile) и сопос
 | R3 | Далее — **▶️ EXECUTION**: первая строка = императивная команда; шаги по порядку, без «контекста». | стандарт |
 | R4 | Ниже — **ℹ️ EXPLANATION**: контекст, обоснование, краевые случаи (всё, что *не* нужно для немедленного исполнения). | стандарт |
 | R5 | Человеческий слой навигации: README-легенда 🚦 объясняет смысл значка исполнимости. | стандарт, §навигация |
-| R6 | Применить формат к `governance/agent-onboarding-protocol.md` как к эталону; шаблоны спока (`AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md`) уже несут 🚦. | стандарт, §миграция |
+| R6 | Применить формат к `ai-rules/agent-onboarding-protocol.md` как к эталону; шаблоны спока (`AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md`) уже несут 🚦. | стандарт, §миграция |
 
 ### 2.3. Открытые вопросы
 
@@ -142,7 +142,7 @@ SRE runbooks, CLI man-page SYNOPSIS, README Quick Start, Makefile) и сопос
   оформляется только выделенная процедура (или она выносится в отдельный
   `executable: true` файл).
 - **Точка входа.** `entrypoint: true` — единственный «первый» исполнимый документ
-  (в Хабе это `governance/agent-onboarding-protocol.md`); валидатор frontmatter допускает
+  (в Хабе это `ai-rules/agent-onboarding-protocol.md`); валидатор frontmatter допускает
   значение только `true`.
 
 ### 3.6. Зеркальность с форматом исследований
@@ -163,7 +163,7 @@ SRE runbooks, CLI man-page SYNOPSIS, README Quick Start, Makefile) и сопос
 - Google SRE Workbook — runbook как упорядоченная последовательность действий.
 - POSIX/`man(7)` — порядок секций: `NAME` → `SYNOPSIS` → `DESCRIPTION`.
 - Практика README «Quick Start» — команда запуска до архитектуры.
-- Внутренние: [governance/rfc/contract-executability-rfc.md](../../governance/rfc/contract-executability-rfc.md) (§4.2, §7), [governance/agent-onboarding-protocol.md](../../governance/agent-onboarding-protocol.md), [standards/glossary.md](../../standards/glossary.md), issue #165 (Блок 2).
+- Внутренние: [docs/rfc/contract-executability-rfc.md](../../docs/rfc/contract-executability-rfc.md) (§4.2, §7), [ai-rules/agent-onboarding-protocol.md](../../ai-rules/agent-onboarding-protocol.md), [standards/glossary.md](../../standards/glossary.md), issue #165 (Блок 2).
 
 > Внешние ссылки на гайды промптинга версионно-чувствительны и помечены как
 > требующие проверки перед переводом документа в `reviewed`.

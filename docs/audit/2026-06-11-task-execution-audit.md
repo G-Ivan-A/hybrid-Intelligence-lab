@@ -24,7 +24,7 @@ related_issues:
 related_artifacts:
   - "docs/vision.md"
   - "docs/product-concept.md"
-  - "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
+  - "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
   - "research/cicd/2026-06-09-js-cicd-template-analysis.md"
 ---
 
@@ -72,7 +72,7 @@ is removed by this audit.
 - Issue [#213](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/213).
 - Issues #203, #209, #211, #201 and #202 with their merged PRs.
 - `docs/vision.md`, `docs/product-concept.md`,
-  `governance/rfc/htom-vs-spoke-clarification-2026-06.md`,
+  `docs/rfc/htom-vs-spoke-clarification-2026-06.md`,
   `research/cicd/2026-06-09-js-cicd-template-analysis.md`.
 
 **Дата:** 2026-06-11
@@ -105,7 +105,7 @@ is removed by this audit.
 - [x] `docs/vision.md` создан и опубликован в MkDocs-навигации.
 - [x] `docs/product-concept.md` создан и опубликован в MkDocs-навигации.
 - [x] `docs/ecosystem-map.md` создан follow-up PR #210.
-- [x] RFC `governance/rfc/hub-vision-concept-proposal-2026-06.md` присутствует.
+- [x] RFC `docs/rfc/hub-vision-concept-proposal-2026-06.md` присутствует.
 - [x] Каталог `guides/` создан и подключён в `mkdocs.yml`.
 - [x] MkDocs-конфигурация есть, сайт собирается из `website/`.
 - [x] GitHub Pages workflow есть: `.github/workflows/deploy-docs.yml`.
@@ -181,7 +181,7 @@ is removed by this audit.
 
 ### Проверка Definition of Done
 
-- [x] Создан RFC `governance/rfc/htom-vs-spoke-clarification-2026-06.md`.
+- [x] Создан RFC `docs/rfc/htom-vs-spoke-clarification-2026-06.md`.
 - [x] `templates/spoke/` переосмыслен как шаблон production-spoke.
 - [x] HTOM-геном перенесён в `templates/htom/`.
 - [x] Основные ссылки в governance, standards, templates и README обновлены.
@@ -193,7 +193,7 @@ is removed by this audit.
   Текущая структура различает HTOM-команды (`templates/htom/`) и настоящие
   spoke-репозитории (`templates/spoke/`).
 - **F3.2: техдолг "типы передачи контекста" частично снят, но не закрыт
-  полностью.** Файлы `governance/agent-onboarding-protocol.md` и
+  полностью.** Файлы `ai-rules/agent-onboarding-protocol.md` и
   `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` уже разделены, но нет отдельного
   стандарта требований к handover prompt.
 - **F3.3: downstream-навигация зависит от Smart Sync.** После переименований
@@ -250,7 +250,7 @@ is removed by this audit.
 | 3 | Стандарт требований к `AI_SESSION_HANDOVER_PROMPT.md` | Не найден | P1 |
 | 4 | Проверка шаблонов в spoke-репо через Smart Sync | Частично покрыто `experiments/test-smart-sync.sh`, нет fixture-spoke CI | P1 |
 | 5 | Политика generated HTML/PNG artifacts | Не формализована | P2 |
-| 6 | Актуализация `governance/backlog.md` после закрытых CE-задач | Требует отдельной проверки: в видимом фрагменте есть TODO для уже закрытых CE issues | P2 |
+| 6 | Актуализация `pr-ops/backlog.md` после закрытых CE-задач | Требует отдельной проверки: в видимом фрагменте есть TODO для уже закрытых CE issues | P2 |
 
 ## Проверка MkDocs и generated artifacts
 

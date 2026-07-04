@@ -34,7 +34,7 @@ source: projects/README-old.md
 ## Классификация: HTOM-команда vs Spoke
 
 Слово «проект» раньше смешивало два разных типа. Их различает
-[RFC htom-vs-spoke](../governance/rfc/htom-vs-spoke-clarification-2026-06.md):
+[RFC htom-vs-spoke](../docs/rfc/htom-vs-spoke-clarification-2026-06.md):
 
 - **HTOM-команда** — гибридная human + AI рабочая единица, наследующая
   governance-геном [`templates/htom/`](../templates/htom/). Сюда относятся

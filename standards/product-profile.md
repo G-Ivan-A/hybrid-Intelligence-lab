@@ -26,7 +26,7 @@ governance репозитория.
 
 Профиль рассчитан на размещение продукта в отдельном spoke-репозитории или в
 каталоге `projects/` лаборатории (правила выбора — в
-[governance/repo-model.md](../governance/repo-model.md)). Лаборатория остается
+[pr-ops/repo-model.md](../pr-ops/repo-model.md)). Лаборатория остается
 knowledge hub: канонический `PRODUCT_VISION.md` живет в корне продуктового
 проекта, а **не** в корне лаборатории.
 
@@ -63,7 +63,7 @@ knowledge hub: канонический `PRODUCT_VISION.md` живет в кор
 | `CHANGELOG.md` | История версий продукта | Корень проекта | Формат [Keep a Changelog](https://keepachangelog.com) + [SemVer](https://semver.org); см. [CHANGELOG.md](../CHANGELOG.md) |
 
 > `team-contract.md` — планируемый общий шаблон командного соглашения
-> (см. [CONCEPT.md](../CONCEPT.md)). Пока он не создан и не принят review,
+> (см. [docs/concept.md](../docs/concept.md)). Пока он не создан и не принят review,
 > `CONTRIBUTING.md` и `AI_GOVERNANCE.md` продукта адаптируются из активных
 > контрактов лаборатории.
 
@@ -71,7 +71,7 @@ knowledge hub: канонический `PRODUCT_VISION.md` живет в кор
 
 Добавляются по мере роста продукта и только при операционной боли, которую они
 снижают (Anti-Inflation principle из
-[governance/repo-model.md](../governance/repo-model.md)).
+[pr-ops/repo-model.md](../pr-ops/repo-model.md)).
 
 | Артефакт | Когда добавлять |
 | --- | --- |
@@ -211,8 +211,8 @@ governance:
 
 | Документ | Роль |
 | --- | --- |
-| [CONCEPT.md](../CONCEPT.md) | Концепция hub-and-spoke и обязательность traceability. |
-| [governance/repo-model.md](../governance/repo-model.md) | Anti-Inflation principle и правила размещения артефактов. |
+| [docs/concept.md](../docs/concept.md) | Концепция hub-and-spoke и обязательность traceability. |
+| [pr-ops/repo-model.md](../pr-ops/repo-model.md) | Anti-Inflation principle и правила размещения артефактов. |
 | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) | Роли, operating modes и Definition of Done для AI-assisted work. |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | Workflow вклада и PR checklist. |
 | [standards/README.md](README.md) | Реестр активных и планируемых стандартов. |
