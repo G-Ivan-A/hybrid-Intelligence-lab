@@ -20,7 +20,7 @@ executable: false
 работе гибридных команд. Он не вводит enterprise-процесс ради полноты дерева
 статусов: каждый статус и переход существует, потому что снижает конкретную
 операционную боль (см. Anti-Inflation principle в
-[governance/repo-model.md](../governance/repo-model.md)).
+[pr-ops/repo-model.md](../pr-ops/repo-model.md)).
 
 Терминология сверяется с [standards/glossary.md](glossary.md). Важно различать
 несколько независимых понятий:
@@ -143,12 +143,12 @@ stateDiagram-v2
 но ответственность за формулировку остаётся за исполнителем, потому что
 changelog объясняет смысл изменения, а не только факт коммита.
 
-### Связь с `governance/artifact-map.md`
+### Связь с `pr-ops/artifact-map.md`
 
-Карта артефактов (`governance/artifact-map.md`) - активная навигационная точка
+Карта артефактов (`pr-ops/artifact-map.md`) - активная навигационная точка
 для traceability. Она дополняет:
 
-- [governance/repo-model.md](../governance/repo-model.md) - где размещается
+- [pr-ops/repo-model.md](../pr-ops/repo-model.md) - где размещается
   артефакт и по какому правилу он создаётся;
 - [standards/README.md](README.md) - реестр активных и планируемых стандартов.
 
@@ -157,7 +157,7 @@ changelog объясняет смысл изменения, а не только
 
 1. размещает артефакт в каталоге по `repo-model.md`;
 2. регистрирует его в реестре `standards/README.md` (для стандартов);
-3. добавляет или обновляет строку в `governance/artifact-map.md`;
+3. добавляет или обновляет строку в `pr-ops/artifact-map.md`;
 4. обновляет навигацию в `README.md`, если артефакт становится частью
    публичного контракта.
 
@@ -203,7 +203,7 @@ changelog объясняет смысл изменения, а не только
 
 - [standards/README.md](README.md)
 - [standards/glossary.md](glossary.md)
-- [governance/repo-model.md](../governance/repo-model.md)
+- [pr-ops/repo-model.md](../pr-ops/repo-model.md)
 - [AI_GOVERNANCE.md](../AI_GOVERNANCE.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [CHANGELOG.md](../CHANGELOG.md)

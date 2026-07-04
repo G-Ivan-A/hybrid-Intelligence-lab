@@ -1,0 +1,312 @@
+---
+status: accepted
+version: 1.0
+updated: 2026-06-28
+temperature: 0.1
+owner: G-Ivan-A
+rfc-scope: A
+---
+
+# RFC: Стандарт структуры RFC
+
+## Summary
+
+Принять единый базовый контракт RFC-like документов для Хаба и архетипов
+A/B/C/D: proposal с владельцем, `rfc-scope`, мотивацией, решением,
+альтернативами, trade-offs, impacted artifacts, открытыми вопросами и
+lifecycle.
+
+Этот RFC принят как governance decision record. Обязательная норма делегирована
+в [RFC Structure Standard](../../standards/rfc-structure-standard.md). Даже
+accepted RFC остаётся rationale/proposal record: downstream-репозитории
+исполняют standard, template, validator, practice или ADR, а не proposal-текст.
+Это сохраняет границу из [Governance RFC](README.md) и
+[ADR-002](../adr/2026-06-adr-002-artifact-document-methodology.md).
+
+Входные источники:
+
+- [RFC industry norms research](../../research/hub/2026-06-27-rfc-industry-norms-and-variants.md);
+- [ADR industry norms research](../../research/hub/2026-06-27-adr-industry-norms-and-variants.md);
+- [ADR-001](../adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md);
+- [ADR-002](../adr/2026-06-adr-002-artifact-document-methodology.md);
+- [Frontmatter Docs Standard](../../standards/frontmatter-docs-standard.md);
+- [File Naming](../../standards/file-naming.md).
+
+## Decision
+
+1. RFC отвечает на вопрос "стоит ли принять это значимое изменение и как именно?"
+   до финального решения.
+2. Текущий Хаб продолжает хранить governance RFC в `docs/rfc/` до
+   отдельной миграции. Для новых HTOM/spoke репозиториев целевой путь из ADR-002
+   остается `docs/rfc/`.
+3. Новый Hub governance RFC, создаваемый из issue/research, использует
+   `YYYY-MM-DD-rfc-short-title.md`. Существующие semantic filenames не
+   переименовываются.
+4. Frontmatter RFC содержит поля, необходимые и достаточные для governance:
+   `status`, `version`, `updated`, `temperature`, `owner`, `rfc-scope`.
+   Frontmatter `status` является единственным machine-readable canon; body-level
+   RFC status остается narrative summary.
+5. Базовый RFC contract общий для A/B/C/D, но weight and required evidence
+   меняются по архетипу.
+
+## Base Contract
+
+### Identification and Placement
+
+| Элемент | Решение |
+| --- | --- |
+| Current Hub path | `docs/rfc/` |
+| Future HTOM/spoke path | `docs/rfc/`, если repo follows ADR-002 target structure |
+| Hub filename | `YYYY-MM-DD-rfc-short-title.md` for new dated governance RFCs; legacy names stay unchanged |
+| Spoke filename | `YYYY-MM-name.md` or `YYYY-name.md` until local validator says otherwise |
+| Stable reference | Link path plus heading; future numeric RFC ids require index/tooling |
+| Canonical delegation | Standard/template/validator/practice/ADR after human decision, not automatic |
+
+Location decision: `docs/rfc/` is semantically correct for the current
+Hub because these are governance proposals. `docs/rfc/` is the target for new
+HTOM/spoke structures, but moving the current Hub requires a separate migration
+PR with link rewrites and validator changes.
+
+### Frontmatter
+
+Обязательный frontmatter:
+
+```yaml
+---
+status: draft
+version: 0.1
+updated: YYYY-MM-DD
+temperature: 0.1
+owner: Human owner or owning group
+rfc-scope: A | B | C | D | multi
+---
+```
+
+`owner` and `rfc-scope` are mandatory YAML because validator and governance
+routing consume them. `impacted-artifacts`, decision links and implementation
+links remain in body-level `RFC Metadata` unless a future index consumes them.
+`ai-generated` is forbidden; provenance belongs in issue, PR, changelog or audit.
+
+### Required Body Sections
+
+RFC должен содержать секции в таком порядке:
+
+1. `RFC Metadata`
+2. `Summary`
+3. `Motivation`
+4. `Goals and Non-goals`
+5. `Proposal`
+6. `Alternatives`
+7. `Trade-offs`
+8. `Impacted Artifacts`
+9. `Implementation and Validation`
+10. `Lifecycle and Decision Path`
+11. `Open Questions`
+12. `Related Artifacts`
+
+Минимальный шаблон:
+
+```markdown
+# RFC: Short proposal title
+
+## RFC Metadata
+
+| Field | Value |
+| --- | --- |
+| Owner | Human owner or owning group |
+| RFC status | same as frontmatter status; narrative summary only |
+| Source issue | Issue link |
+| Impacted artifacts | Paths or "none" |
+| Decision record | ADR/RFC link or "not yet" |
+| Implementation link | PR/tool/standard link or "not yet" |
+| Archetype scope | A / B / C / D / multi |
+
+## Summary
+
+One-paragraph proposal.
+
+## Motivation
+
+Problem, current pain, and why issue/PR text is insufficient.
+
+## Goals and Non-goals
+
+What this RFC decides and explicitly does not decide.
+
+## Proposal
+
+The selected solution, stated as a decision draft rather than a menu.
+
+## Alternatives
+
+Rejected alternatives and the reason each one fails.
+
+## Trade-offs
+
+Costs, risks, compatibility and operational impact.
+
+## Impacted Artifacts
+
+Files, standards, templates, validators, docs, projects or "none".
+
+## Implementation and Validation
+
+How the proposal is applied and how local checks prove it.
+
+## Lifecycle and Decision Path
+
+Current state, required human gate, and post-acceptance delegation.
+
+## Open Questions
+
+Only questions that block acceptance or implementation.
+
+## Related Artifacts
+
+Research, ADRs, standards, PRs and issue links.
+```
+
+## Lifecycle
+
+RFC lifecycle uses the Governance frontmatter vocabulary from
+[Frontmatter Docs Standard](../../standards/frontmatter-docs-standard.md):
+
+```mermaid
+flowchart LR
+    Draft[draft] --> Proposed[proposed]
+    Proposed --> Accepted[accepted]
+    Proposed --> Rejected[rejected]
+    Accepted --> Deprecated[deprecated]
+    Accepted --> Superseded[superseded]
+    Deprecated --> Superseded
+```
+
+Body-level `RFC status` may repeat the frontmatter status for readability, but
+frontmatter is canonical.
+
+| Frontmatter status | Meaning |
+| --- | --- |
+| `draft` | Proposal is being written. |
+| `proposed` | Ready for human review or in active review. |
+| `accepted` | Human decision accepted the proposal. |
+| `rejected` | Proposal rejected but preserved for rationale. |
+| `deprecated` | Accepted proposal should no longer guide new work. |
+| `superseded` | Later RFC/ADR replaces this proposal or decision. |
+
+Rules:
+
+- Move to `proposed` only when required sections are complete and local
+  validation passes.
+- Move to `accepted` only by human decision.
+- Move to `accepted` only when `Open Questions` is empty or contains only
+  explicitly non-blocking questions.
+- Record implementation state in `Implementation and Validation` after impacted
+  artifacts, validators or docs are updated.
+- Move to `superseded` only with a replacement link.
+
+## Матрица дельт A/B/C/D
+
+| Архетип | RFC role | Required deltas | Avoid |
+| --- | --- | --- | --- |
+| A. Governance & Knowledge Hub | Formal governance proposal for standards, lifecycle, artifact routing, AI contracts and cross-repository methodology. | Require owner, impacted artifacts, alternatives, trade-offs, decision path, validation and RFC/ADR boundary. | Do not require RFC for typo fixes, link-only cleanup or small local implementation changes. |
+| B. Prompt & Pattern Library | Micro-RFC / Design Note for reusable prompt patterns, taxonomy, evaluation and workflow governance. | Require failed case or experiment evidence, affected prompts/patterns, evaluation and rollout/backout. | Do not RFC every prompt wording change or temporary experiment. |
+| C. Product Spoke / Runtime | BEP-like / Product Design Proposal for public API, plugin contracts, migrations, compatibility and product architecture. Library/SDK is a profile of archetype C, not a separate archetype. | Require release impact, backward compatibility, migration, testing and owner. | Do not duplicate feature specs or sprint tickets. |
+| D. Education / Learning Package | Curriculum RFC for course-wide taxonomy, outcomes, assessment model and contribution policy. | Require learner impact, curriculum migration, assessment impact and review cycle. | Do not RFC individual lesson edits or small content corrections. |
+
+## Appendix: Minimal Archetype Examples
+
+### B. Prompt & Pattern Library RFC
+
+```yaml
+---
+status: draft
+version: 0.1
+updated: YYYY-MM-DD
+temperature: 0.1
+owner: Prompt library owner
+rfc-scope: B
+---
+```
+
+Minimum body emphasis: failed case or experiment evidence, affected prompts or
+patterns, evaluation method, rollout and backout.
+
+### C. Product Spoke / Runtime RFC
+
+```yaml
+---
+status: draft
+version: 0.1
+updated: YYYY-MM-DD
+temperature: 0.1
+owner: Product or engineering owner
+rfc-scope: C
+---
+```
+
+Minimum body emphasis: release impact, compatibility, migration, testing and
+runtime validation. Library/SDK proposals use this same C profile.
+
+## Boundary RFC/ADR
+
+| Case | Rule |
+| --- | --- |
+| Proposal has open alternatives, high governance impact or cross-repository consequences. | RFC first. |
+| Accepted proposal needs a concise accepted decision record before becoming standard/template/tool/practice. | RFC -> ADR. |
+| Accepted RFC already has final decision, rationale, alternatives and consequences, and no separate standard is produced. | Accepted RFC itself is the decision record. |
+| Decision is narrow, already accepted or primarily records "why" after a choice. | ADR without RFC. |
+| Change is implementation-local and reversible. | Issue/PR is enough; no RFC or ADR. |
+
+The boundary is intentionally functional, not folder-based. A document in
+`docs/rfc/` is still a proposal unless its status and human decision say
+otherwise.
+
+## Critical Analysis
+
+| Hypothesis under attack | Refutation attempt | Decision |
+| --- | --- | --- |
+| Hub must immediately move RFCs from `docs/rfc/` to `docs/rfc/` because ADR-002 names `docs/rfc/`. | ADR-002 explicitly says current Hub keeps `docs/rfc/` until a separate migration. Immediate move would change many links and validator assumptions outside issue #280. | Keep current Hub RFCs in `docs/rfc/`; document `docs/rfc/` as target for new HTOM/spoke structures. |
+| RFCs should require numeric IDs now. | Strong ecosystems use numeric IDs, but current Hub has semantic filenames and no RFC index allocator. Adding numbers without tooling creates false precision and migration churn. | Use date-first filenames for new dated Hub RFCs; leave numeric ids for a future index/tool decision. |
+| Owner and `rfc-scope` should stay in body metadata only. | Issue #282 makes both fields governance-critical: validators and routing need them without reading prose. | Require `owner` and `rfc-scope` in frontmatter; keep impacted artifacts and links in the body. |
+| One heavy Rust/KEP-like RFC process should apply to all archetypes. | Research shows strong formal RFC signals for A, mixed signals for C, weak signals for B/D. Uniform weight would slow prompt and education workflows. | Use base contract plus archetype-specific deltas. |
+| Every accepted RFC must become a standard. | Some accepted RFCs are decision records or rationale only. Forcing standards would violate Anti-Inflation and create norms without operational consumers. | Delegate only when downstream behavior must be repeated or validated. |
+| Open Questions should always remain in RFCs for transparency. | Open questions are useful during review, but accepted RFCs with stale questions confuse future agents. | Require Open Questions, but clear or convert blockers before acceptance. |
+
+Confirmation threshold: the selected rules survived the refutation pass because
+their remaining costs are bounded and explicitly delegated to future validator or
+migration work. Alternatives that failed would introduce immediate migration,
+frontmatter drift, duplicate decision records or over-process for B/D.
+
+## Impacted Artifacts
+
+Accepted impact:
+
+- promote this RFC to `accepted` governance status;
+- create [RFC Structure Standard](../../standards/rfc-structure-standard.md);
+- register the RFC and standard in [Governance RFC README](README.md),
+  [Standards README](../../standards/README.md), [Artifact Map](../../pr-ops/artifact-map.md)
+  and `tools/validate-repository-structure.sh`;
+- keep `tools/validate-frontmatter.sh` as-is because it already enforces RFC
+  `owner`, `rfc-scope` and governance status vocabulary from
+  [Frontmatter Docs Standard](../../standards/frontmatter-docs-standard.md).
+
+Future work after acceptance:
+
+- add an RFC template if repeated creation continues;
+- evaluate numeric RFC id allocation after RFC-020; if adopted, migrate with
+  backlink preservation;
+- extend validators only if additional RFC metadata must become machine-enforced;
+- decide separately whether current Hub RFCs migrate to `docs/rfc/`.
+
+## Open Questions
+
+No blocking Open Questions remain for acceptance. Non-blocking follow-up work is
+limited to future templates, numeric id allocation, validator expansion and a
+separate migration decision for current Hub RFC paths.
+
+## Review Status
+
+Accepted for issue #286 as the rationale source for
+[RFC Structure Standard](../../standards/rfc-structure-standard.md). The
+mandatory contract lives in the standard; this RFC preserves context,
+alternatives, trade-offs and boundary reasoning.

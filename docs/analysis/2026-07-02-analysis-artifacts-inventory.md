@@ -23,7 +23,7 @@ related_artifacts:
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "docs/adr/2026-07-adr-003-research-structure.md"
-  - "governance/backlog.md#b-024-analysis-сквозной-анализ-артефактов-analysis-хаб-mango-clarify"
+  - "pr-ops/backlog.md#b-024-analysis-сквозной-анализ-артефактов-analysis-хаб-mango-clarify"
 external_artifacts:
   - "G-Ivan-A/mango_ba_prompts@52bc8b72419abb9548d9b6091623f18c080efae4"
   - "G-Ivan-A/clarify-engine-ai@96c288fd13a2d7cc7c3e3cdd52574944858e6255"
@@ -95,7 +95,7 @@ B-028.
 | `Analysis` | Интерпретация локального/внутреннего контекста, inventory, matrix, options или recommendation без доминирующей внешней research-части и без проверки на норму. |
 | `Audit` | Проверка соответствия стандарту, contract, checklist, expected behavior или convergence condition; pass/fail stance и remediation. |
 | `Report` | Описание выполненной работы, состояния, запуска, kickoff, execution summary, retrospective или другой "что произошло" результат. |
-| `RFC` | Proposal/change record до decision gate, включая файлы с RFC intent даже при размещении вне `governance/rfc/`. |
+| `RFC` | Proposal/change record до decision gate, включая файлы с RFC intent даже при размещении вне `docs/rfc/`. |
 | `ADR` | Accepted decision record. В просканированном scope ADR не найдено, потому что `docs/adr/**` не входит в issue #342. |
 | `Other` | Navigation, template, policy, registry, contract, README или иной справочный артефакт. |
 

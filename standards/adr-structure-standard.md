@@ -12,7 +12,7 @@ owner: G-Ivan-A
 
 Этот стандарт задаёт обязательную структуру ADR (Architecture Decision Record)
 для Хаба и архетипов A/B/C/D. Источник решения:
-[RFC: Стандарт структуры ADR](../governance/rfc/2026-06-27-rfc-adr-standard.md).
+[RFC: Стандарт структуры ADR](../docs/rfc/2026-06-27-rfc-adr-standard.md).
 
 Стандарт — это IL-3 reusable rule о форме ADR, минимальных полях и review
 criteria. Он не является Contract: операционные контракты могут ссылаться на
@@ -239,4 +239,4 @@ Local checks:
 ```
 
 Validator expansion beyond frontmatter, naming and registry checks is tracked as
-tech debt in [governance/backlog.md](../governance/backlog.md).
+tech debt in [pr-ops/backlog.md](../pr-ops/backlog.md).

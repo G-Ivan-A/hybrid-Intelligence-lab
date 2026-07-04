@@ -35,7 +35,7 @@ related template, or validator.
 ## Output
 
 The implementation should name the contract it follows: for example,
-`tools/validate-repository-structure.sh`, `governance/artifact-map.md`, or a
+`tools/validate-repository-structure.sh`, `pr-ops/artifact-map.md`, or a
 specific standard.
 
 ## Limits

@@ -27,7 +27,7 @@ related_issues:
 границы Reports ↔ Analysis ↔ Audit ↔ Research evidence. Источник принятого
 решения: [ADR-004](../docs/adr/2026-07-adr-004-reports-structure.md); rationale,
 альтернативы (A/B/C/D) и trade-offs:
-[RFC B-041](../governance/rfc/2026-07-02-rfc-reports-structure.md).
+[RFC B-041](../docs/rfc/2026-07-02-rfc-reports-structure.md).
 
 Стандарт — это IL-3 reusable rule о форме Report-выхода, его размещении и
 relation-метаданных. Он не является Contract: операционные контракты могут
@@ -176,7 +176,7 @@ related_artifacts:
 | `statistics` | период, **методология**, источник данных, единицы | SDMX (ISO 17369) / DDI | inventory / matrix / scan / sync outputs, machine-readable evidence summaries | `docs/report/` |
 
 **Триггер выделения профиля (Anti-Inflation,
-[`governance/repo-model.md`](../governance/repo-model.md)).** Профиль выделяется в
+[`pr-ops/repo-model.md`](../pr-ops/repo-model.md)).** Профиль выделяется в
 отдельный стандарт (`audit-report-standard.md` и т.п.) **только** когда накопит
 достаточно собственных повторяющихся обязательных правил или когда review pain
 делает базовый Report standard неясным (критерий ADR-004). До этого порога
@@ -264,14 +264,14 @@ Local checks:
 routing split `docs/report/` / `docs/audit/`, knowledge-lifecycle) кодифицируется
 обновлением валидаторов в цепочке cleanup B-044, не в этом стандарте. Расширение
 валидаторов за пределы frontmatter, naming и registry checks отслеживается как
-tech debt в [governance/backlog.md](../governance/backlog.md).
+tech debt в [pr-ops/backlog.md](../pr-ops/backlog.md).
 
 ## Related Artifacts
 
 - [ADR-004: Структура Reports и routing](../docs/adr/2026-07-adr-004-reports-structure.md)
   (B-042) — источник принятого решения (Вариант C, routing split, реконсиляция
   ADR-002).
-- [RFC B-041: Структура Reports-артефактов](../governance/rfc/2026-07-02-rfc-reports-structure.md) —
+- [RFC B-041: Структура Reports-артефактов](../docs/rfc/2026-07-02-rfc-reports-structure.md) —
   rationale, alternatives (A/B/C/D), trade-offs и rejected options.
 - [Reports inventory and boundaries (B-038)](../docs/analysis/2026-07-01-reports-artifacts-inventory.md) —
   инвентарь 47 кандидатов, границы §3, рекомендация Варианта C §6.
@@ -284,7 +284,7 @@ tech debt в [governance/backlog.md](../governance/backlog.md).
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [governance/backlog.md](../governance/backlog.md) — цепочка Reports B-038,
+- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка Reports B-038,
   B-041, B-042, B-043 (этот стандарт), B-044.
 - Issues
   [#354](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/354)

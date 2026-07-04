@@ -10,8 +10,8 @@ temperature: 0.1
 > 🧭 **Уровень детализации: Summary.** Сжатый контекст для оценки задач и внешних
 > источников. Каноническое место карты — корень репозитория
 > [clarify-engine-ai](https://github.com/G-Ivan-A/clarify-engine-ai) под именем
-> `AI_PROJECT_CONTEXT-Summary.md`; здесь — hub-side staging (см.
-> [README](README.md)). Источники: `README.md`, `CONCEPT.md`,
+> `projects-sink/AI_PROJECT_CONTEXT-Summary.md`; здесь — hub-side staging (см.
+> [README](README.md)). Источники: `README.md`, `docs/concept.md`,
 > `AI_GOVERNANCE.md` на 2026-06-15.
 
 - **Цель:** RAG-инструмент анализа тендерных ТЗ — классифицирует требования
@@ -21,7 +21,7 @@ temperature: 0.1
   BM25 + BGE-M3 + RRF, маскирование данных, Human-in-the-Loop проверка, аудит по
   RunID.
 - **Активные стандарты:** наследует геном Хаба (`AI_GOVERNANCE.md`), frontmatter
-  и file-naming Хаба, жизненный цикл знаний; продуктовые контракты — `CONCEPT.md`
+  и file-naming Хаба, жизненный цикл знаний; продуктовые контракты — `docs/concept.md`
   и архитектура поиска.
 - **Границы (НЕ делаем сейчас):** инструмент не автономен — финальное решение
   утверждает бизнес-аналитик (Human-in-the-Loop); первоисточник никогда не

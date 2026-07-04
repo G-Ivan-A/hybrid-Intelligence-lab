@@ -12,7 +12,7 @@ owner: G-Ivan-A
 
 Этот стандарт задаёт обязательную структуру RFC-like документов для Хаба и
 архетипов A/B/C/D. Источник решения:
-[RFC: Стандарт структуры RFC](../governance/rfc/2026-06-27-rfc-rfc-standard.md).
+[RFC: Стандарт структуры RFC](../docs/rfc/2026-06-27-rfc-rfc-standard.md).
 
 Стандарт — это IL-3 reusable rule о форме RFC-like proposal, минимальных полях
 и review criteria. Он не является Contract: операционные контракты могут
@@ -42,7 +42,7 @@ Library/SDK относится к профилю архетипа C, а не к 
 
 | Элемент | Правило |
 | --- | --- |
-| Current Hub path | `governance/rfc/`. |
+| Current Hub path | `docs/rfc/`. |
 | Future HTOM/spoke path | `docs/rfc/`, если repo follows ADR-002 target structure. |
 | Hub filename | `YYYY-MM-DD-rfc-short-title.md` for new dated governance RFCs; legacy names stay unchanged. |
 | Spoke filename | `YYYY-MM-name.md` or `YYYY-name.md` until local validator says otherwise. |
@@ -233,7 +233,7 @@ artifact.
 | Decision is narrow, already accepted or primarily records "why" after a choice. | ADR without RFC. |
 | Change is implementation-local and reversible. | Issue/PR is enough; no RFC or ADR. |
 
-The boundary is functional, not folder-based. A document in `governance/rfc/`
+The boundary is functional, not folder-based. A document in `docs/rfc/`
 is still a proposal unless its status and human decision say otherwise.
 
 ## Validation
@@ -247,4 +247,4 @@ Local checks:
 ```
 
 Validator expansion beyond frontmatter, naming and registry checks is tracked as
-tech debt in [governance/backlog.md](../governance/backlog.md).
+tech debt in [pr-ops/backlog.md](../pr-ops/backlog.md).

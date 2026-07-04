@@ -19,14 +19,14 @@ owner: G-Ivan-A
 | Единый глоссарий терминов | Active | Issues, standards, governance, AI-assisted work | [standards/glossary.md](glossary.md) |
 | File naming convention | Active | Правило именования файлов, включая date-first research/analysis/audit/report/RFC/ADR артефакты | [standards/file-naming.md](file-naming.md), [standards/file-naming-convention.md](file-naming-convention.md) |
 | Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/education-profile.md](education-profile.md) |
-| Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
+| Концепция репозитория | Active | Root concept и назначение репозитория | [docs/concept.md](../docs/concept.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
-| Repository model | Active | Размещение артефактов и правила создания | [governance/repo-model.md](../governance/repo-model.md) |
+| Repository model | Active | Размещение артефактов и правила создания | [pr-ops/repo-model.md](../pr-ops/repo-model.md) |
 | Frontmatter standard | Canonical | Минимальное metadata rule для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
 | Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research/report, Audit, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |
 | ADR structure standard | Active | Единая структура ADR: frontmatter, stable id, required body sections, lifecycle, section-level delegation, archetype deltas and Boundary RFC/ADR | [adr-structure-standard.md](adr-structure-standard.md) |
 | RFC structure standard | Active | Единая структура RFC-like документов: frontmatter, metadata, required body sections, Research→RFC delegation, lifecycle, Open Questions and Boundary RFC/ADR | [rfc-structure-standard.md](rfc-structure-standard.md) |
-| Knowledge lifecycle | Draft RFC (предложен на утверждение) | Переходы Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive | [../governance/rfc/knowledge-lifecycle-proposal.md](../governance/rfc/knowledge-lifecycle-proposal.md) |
+| Knowledge lifecycle | Draft RFC (предложен на утверждение) | Переходы Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive | [../docs/rfc/knowledge-lifecycle-proposal.md](../docs/rfc/knowledge-lifecycle-proposal.md) |
 | Research structure standard | Active | `research/<domain>/`: размещение отчётов, контейнер `exp/`, запрет `outputs/`, routing Research / Analysis / Audit и граница `exp/` vs `runs/` | [research-standard.md](research-standard.md) |
 | Report standard | Draft (предложен на утверждение) | `docs/report/` и `docs/audit/`: базовый каркас Report, профили `audit`/`report`/`statistics`, relation-frontmatter, routing split, knowledge-lifecycle и границы Reports ↔ Analysis ↔ Audit ↔ Research evidence | [report-standard.md](report-standard.md) |
 | Audit standard | Draft (предложен на утверждение) | `docs/audit/`: базовый каркас Audit, 4-компонентная модель (target/evidence/verdict/deviation), audit-specific frontmatter, разграничение Audit-процесс vs audit-report output, knowledge-lifecycle и границы Audit ↔ Research ↔ Analysis ↔ Report | [audit-standard.md](audit-standard.md) |
@@ -45,14 +45,14 @@ owner: G-Ivan-A
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
 | Project knowledge base | Planned | `projects/` | Создать после повторяющейся потребности в project context. |
-| Artifact location resolver | Draft RFC (предложен на утверждение) | Выбор каталога и lifecycle stage для нового артефакта | [../governance/rfc/resolve-artifact-location-proposal.md](../governance/rfc/resolve-artifact-location-proposal.md) |
+| Artifact location resolver | Draft RFC (предложен на утверждение) | Выбор каталога и lifecycle stage для нового артефакта | [../docs/rfc/resolve-artifact-location-proposal.md](../docs/rfc/resolve-artifact-location-proposal.md) |
 
 ## Как пользоваться
 
 1. Определите тип артефакта и целевой каталог по
-   [governance/repo-model.md](../governance/repo-model.md). Для навигации по
+   [pr-ops/repo-model.md](../pr-ops/repo-model.md). Для навигации по
    существующим артефактам и их связям используйте
-   [governance/artifact-map.md](../governance/artifact-map.md).
+   [pr-ops/artifact-map.md](../pr-ops/artifact-map.md).
 2. Выберите имя файла или каталога по
    [standards/file-naming.md](file-naming.md); compatibility entry для
    date-first правила — [standards/file-naming-convention.md](file-naming-convention.md).

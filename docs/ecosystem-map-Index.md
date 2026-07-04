@@ -18,15 +18,15 @@ temperature: 0.1
 
 | Проект | URL | Текущая фаза | Дата актуализации фазы | Ключевые теги | Ссылка на Summary |
 | --- | --- | --- | --- | --- | --- |
-| hybrid-Intelligence-lab (Хаб) | [github](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) | Sprint 3 «Hybrid Minimum Bootstrap» | 2026-06-15 | `hub`, `governance`, `knowledge-lifecycle`, `external-knowledge` | [AI_PROJECT_CONTEXT-Summary.md](../AI_PROJECT_CONTEXT-Summary.md) |
-| mango_ba_prompts | [github](https://github.com/G-Ivan-A/mango_ba_prompts) | Фаза 1 — миграция в standalone-спок | 2026-06-15 | `ba-prompts`, `mango`, `taxonomy`, `github-pages` | [staging](project-summaries/mango-ba-prompts-context-Summary.md) → `mango_ba_prompts/AI_PROJECT_CONTEXT-Summary.md` |
-| open-ai.ru | [github](https://github.com/G-Ivan-A/open-ai.ru) | Phase 0 — Planning & Vision | 2026-06-15 | `ai-native`, `hybrid-teams`, `product`, `bootstrap` | [staging](project-summaries/open-ai-ru-context-Summary.md) → `open-ai.ru/AI_PROJECT_CONTEXT-Summary.md` |
-| clarify-engine-ai | [github](https://github.com/G-Ivan-A/clarify-engine-ai) | MVP/Pilot — CONCEPT v2.6 Approved | 2026-06-15 | `rag`, `tender-analysis`, `human-in-the-loop`, `hybrid-search` | [staging](project-summaries/clarify-engine-ai-context-Summary.md) → `clarify-engine-ai/AI_PROJECT_CONTEXT-Summary.md` |
+| hybrid-Intelligence-lab (Хаб) | [github](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) | Sprint 3 «Hybrid Minimum Bootstrap» | 2026-06-15 | `hub`, `governance`, `knowledge-lifecycle`, `external-knowledge` | [projects-sink/AI_PROJECT_CONTEXT-Summary.md](../projects-sink/AI_PROJECT_CONTEXT-Summary.md) |
+| mango_ba_prompts | [github](https://github.com/G-Ivan-A/mango_ba_prompts) | Фаза 1 — миграция в standalone-спок | 2026-06-15 | `ba-prompts`, `mango`, `taxonomy`, `github-pages` | [staging](project-summaries/mango-ba-prompts-context-Summary.md) → `mango_ba_prompts/projects-sink/AI_PROJECT_CONTEXT-Summary.md` |
+| open-ai.ru | [github](https://github.com/G-Ivan-A/open-ai.ru) | Phase 0 — Planning & Vision | 2026-06-15 | `ai-native`, `hybrid-teams`, `product`, `bootstrap` | [staging](project-summaries/open-ai-ru-context-Summary.md) → `open-ai.ru/projects-sink/AI_PROJECT_CONTEXT-Summary.md` |
+| clarify-engine-ai | [github](https://github.com/G-Ivan-A/clarify-engine-ai) | MVP/Pilot — CONCEPT v2.6 Approved | 2026-06-15 | `rag`, `tender-analysis`, `human-in-the-loop`, `hybrid-search` | [staging](project-summaries/clarify-engine-ai-context-Summary.md) → `clarify-engine-ai/projects-sink/AI_PROJECT_CONTEXT-Summary.md` |
 
 > ⚠️ **Staging vs канон.** Карты `-Summary` спок-проектов созданы в Хабе как
 > источник истины и физически лежат в
 > [docs/project-summaries/](project-summaries/README.md). Их каноническое место —
-> корень соответствующего репозитория (`AI_PROJECT_CONTEXT-Summary.md`);
+> корень соответствующего репозитория (`projects-sink/AI_PROJECT_CONTEXT-Summary.md`);
 > распространение туда идёт отдельными PR (у задачи в Хабе нет прав записи в
 > споки). Карта Хаба уже живёт в корне Хаба.
 

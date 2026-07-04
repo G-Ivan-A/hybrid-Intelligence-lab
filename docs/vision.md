@@ -99,10 +99,10 @@ standards/ и templates/ дают правила и готовые формы
 
 Vision — это уровень **L1**: он задаёт границы и смысл Framework-слоя Хаба.
 Переход к **L2** описан в [Product Concept](product-concept.md), а переход к
-Methodology **L3-L4** проходит через [governance/](../governance/artifact-map.md),
+Methodology **L3-L4** проходит через [governance/](../pr-ops/artifact-map.md),
 [standards/](../standards/README.md),
-[Knowledge Lifecycle proposal](../governance/rfc/knowledge-lifecycle-proposal.md) и
-[Resolve Artifact Location proposal](../governance/rfc/resolve-artifact-location-proposal.md).
+[Knowledge Lifecycle proposal](rfc/knowledge-lifecycle-proposal.md) и
+[Resolve Artifact Location proposal](rfc/resolve-artifact-location-proposal.md).
 
 ---
 

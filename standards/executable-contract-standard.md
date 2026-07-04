@@ -28,7 +28,7 @@ related_issues:
 Обоснование, сравнение практик и источники:
 [research/governance/2026-06-06-executable-contract-format.md](../research/governance/2026-06-06-executable-contract-format.md).
 Кодифицирует утверждённое Пользователем «Видение 3» из
-[governance/rfc/contract-executability-rfc.md](../governance/rfc/contract-executability-rfc.md).
+[docs/rfc/contract-executability-rfc.md](../docs/rfc/contract-executability-rfc.md).
 
 ## Назначение
 
@@ -48,7 +48,7 @@ related_issues:
 | Документ читается для знания/решения | `false`/нет | [research-standard.md](research-standard.md) |
 | Документ фиксирует обязательства сторон | `false` | [contract-documentation-standard.md](contract-documentation-standard.md) |
 
-Эталон применения — [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md)
+Эталон применения — [ai-rules/agent-onboarding-protocol.md](../ai-rules/agent-onboarding-protocol.md)
 (`executable: true`, `entrypoint: true`).
 
 ## Три слоя (defense in depth)
@@ -120,7 +120,7 @@ entrypoint: true        # только для точки входа
   исполнимой делать только выделенную процедуру (или выносить её в отдельный
   `executable: true` файл).
 - **Точка входа единственна.** `entrypoint: true` **ДОЛЖЕН** быть ровно у одного
-  документа (в Хабе — `governance/agent-onboarding-protocol.md`); валидатор frontmatter
+  документа (в Хабе — `ai-rules/agent-onboarding-protocol.md`); валидатор frontmatter
   допускает только значение `true`.
 
 ## Зеркальность с форматом исследований
@@ -137,7 +137,7 @@ entrypoint: true        # только для точки входа
 ## Миграция
 
 Существующие исполнимые документы **НЕ ДОЛЖНЫ** переписываться массово
-(Anti-Inflation). `governance/agent-onboarding-protocol.md` — эталон; шаблоны спока
+(Anti-Inflation). `ai-rules/agent-onboarding-protocol.md` — эталон; шаблоны спока
 (`AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md`) уже несут 🚦. Прочие приводятся к
 формату при следующем существенном изменении.
 
@@ -155,8 +155,8 @@ entrypoint: true        # только для точки входа
 ## Источники
 
 - [research/governance/2026-06-06-executable-contract-format.md](../research/governance/2026-06-06-executable-contract-format.md) — исследование-обоснование (system prompts, SRE runbooks, man SYNOPSIS, README Quick Start).
-- [governance/rfc/contract-executability-rfc.md](../governance/rfc/contract-executability-rfc.md) — утверждённое «Видение 3» и трёхслойная защита.
-- [governance/agent-onboarding-protocol.md](../governance/agent-onboarding-protocol.md) — эталонный исполнимый документ.
+- [docs/rfc/contract-executability-rfc.md](../docs/rfc/contract-executability-rfc.md) — утверждённое «Видение 3» и трёхслойная защита.
+- [ai-rules/agent-onboarding-protocol.md](../ai-rules/agent-onboarding-protocol.md) — эталонный исполнимый документ.
 - [standards/glossary.md](glossary.md) — «Директивный блок», «Operating Mode», 🚦.
 - [standards/research-standard.md](research-standard.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.

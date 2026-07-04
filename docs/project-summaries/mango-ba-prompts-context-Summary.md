@@ -10,7 +10,7 @@ temperature: 0.1
 > 🧭 **Уровень детализации: Summary.** Сжатый контекст для оценки задач и внешних
 > источников. Каноническое место карты — корень репозитория
 > [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) под именем
-> `AI_PROJECT_CONTEXT-Summary.md`; здесь — hub-side staging (см.
+> `projects-sink/AI_PROJECT_CONTEXT-Summary.md`; здесь — hub-side staging (см.
 > [README](README.md)). Источники: `README.md`, `AI_GOVERNANCE.md`,
 > `governance/BACKLOG.md`, `docs/taxonomy.md` на 2026-06-15.
 

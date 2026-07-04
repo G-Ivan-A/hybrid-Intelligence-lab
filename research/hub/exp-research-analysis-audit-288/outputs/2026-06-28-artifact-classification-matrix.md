@@ -179,7 +179,7 @@ directory are excluded from the Hub scan so reruns preserve the baseline.
 | `docs/ADR/008-data-export.md` | `docs` | Other | decision-record | `-` | ADR-008: Context-Dependent UI Export |
 | `docs/ADR/009-parent-document-retrieval.md` | `docs` | Other | decision-record | `-` | ADR-009: Parent Document Retrieval |
 | `docs/ADR/README.md` | `docs` | Other | decision-record | `-` | Architecture Decision Records |
-| `docs/CONCEPT.md` | `docs` | Other | reference-or-concept | `-` | 📘 Концепция внедрения ИИ-анализатора тендерных ТЗ (MVP) |
+| `docs/concept.md` | `docs` | Other | reference-or-concept | `-` | 📘 Концепция внедрения ИИ-анализатора тендерных ТЗ (MVP) |
 | `docs/DEV_NOTES.md` | `docs` | Other | documentation | `-` | DEV_NOTES — issue #73 (RAG-пайплайн) |
 | `docs/RAG_OPTIMIZATION_ANALYSIS.md` | `docs` | Analysis | local-context-analysis | `-` | RAG Pipeline Analysis & Optimization Roadmap |
 | `docs/README.md` | `docs` | Other | navigation | `-` | Документация `clarify-engine-ai` |

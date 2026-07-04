@@ -54,7 +54,7 @@ document performs the final human-readable synthesis and recommendations.
 | `docs/project-summaries/clarify-engine-ai-context-Summary.md` | `docs/project-summaries` | report | standalone-report | candidate for docs/report general report profile after standard | Контекст проекта clarify-engine-ai (Summary) |
 | `docs/project-summaries/mango-ba-prompts-context-Summary.md` | `docs/project-summaries` | report | standalone-report | candidate for docs/report general report profile after standard | Контекст проекта mango_ba_prompts (Summary) |
 | `docs/project-summaries/open-ai-ru-context-Summary.md` | `docs/project-summaries` | report | standalone-report | candidate for docs/report general report profile after standard | Контекст проекта open-ai.ru (Summary) |
-| `governance/session-digests.md` | `governance` | report | standalone-report | candidate for docs/report general report profile after standard | Session Digests — суммарии сессий |
+| `pr-ops/session-digests.md` | `governance` | report | standalone-report | candidate for docs/report general report profile after standard | Session Digests — суммарии сессий |
 | `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` | `reports` | report | standalone-report | noncanonical report-like path; target docs/report | Отчет по гипотезе проблемы PR #303 |
 | `research/hub/2026-05-28-prompts-classification-audit.md` | `research` | audit | output-for-audit | future Report/Audit boundary decision before moving | Аудит входных данных для классификации промптов |
 | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | `research` | audit | output-for-audit | future Report/Audit boundary decision before moving | Интерпретация аудита стратегии governance от команды C |
@@ -91,7 +91,7 @@ document performs the final human-readable synthesis and recommendations.
 | `governance/audit-contracts-mango-2026-06-17.md` | `governance` | audit | output-for-audit | future Report/Audit boundary decision before moving | Аудит контрактов mango_ba_prompts (2026-06-17) |
 | `governance/audit-hub-2026-06-17.md` | `governance` | audit | output-for-audit | future Report/Audit boundary decision before moving | Аудит документов Хаба для mango_ba_prompts (2026-06-17) |
 | `governance/audit-research-1027.md` | `governance` | audit | output-for-audit | future Report/Audit boundary decision before moving | Аудит исследования — эксперимент «Задача 1027» (issue #101) |
-| `governance/session-digests.md` | `governance` | report | standalone-report | candidate for docs/report general report profile after standard | Session Digests — Mango BA Prompts |
+| `pr-ops/session-digests.md` | `governance` | report | standalone-report | candidate for docs/report general report profile after standard | Session Digests — Mango BA Prompts |
 | `governance/sync-matrix-2026-06-17.md` | `governance` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | Матрица синхронизации mango_ba_prompts ↔ Хаб (2026-06-17) |
 
 ## Clarify / clarify-engine-ai

@@ -23,7 +23,7 @@ Related artifacts:
 - Task 2 RFC PR #243:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/243>
 - Task 2 RFC file:
-  `governance/rfc/repository-archetypes-template-release.md`
+  `docs/rfc/repository-archetypes-template-release.md`
 - Completed dependency PR #238:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/238>
 - Target repository:
@@ -37,7 +37,7 @@ Status checked on 2026-06-15:
 | --- | --- | --- |
 | PR #238 | Merged on 2026-06-15 | Dependency satisfied. |
 | Task 2 RFC issue #240 | Closed on 2026-06-15 | Dependency satisfied. |
-| Task 2 RFC PR #243 | Merged on 2026-06-15 as `d4d9f39` | This plan uses the merged file `governance/rfc/repository-archetypes-template-release.md` as its source input. |
+| Task 2 RFC PR #243 | Merged on 2026-06-15 as `d4d9f39` | This plan uses the merged file `docs/rfc/repository-archetypes-template-release.md` as its source input. |
 
 Execution gate:
 
@@ -101,7 +101,7 @@ template requirements map to Mango as follows:
 | `AI_GOVERNANCE.md` | Yes | Present | Keep. Mark sync provenance against Hub during the Mango migration PR. |
 | `CONTRIBUTING.md` | Yes | Present | Keep. Update if validation paths move. |
 | `CHANGELOG.md` | Yes | Present | Keep. Record migration phases. |
-| `governance/artifact-map.md` | Yes | Present | Keep. Fill missing path ownership after moves. |
+| `pr-ops/artifact-map.md` | Yes | Present | Keep. Fill missing path ownership after moves. |
 | `prompts/` | If prompts exist | Present | Keep as primary library surface. |
 | `patterns/` | If pattern-backed | Present | Keep as primary pattern surface. |
 | `docs/` | If domain context supports prompt selection | Present | Keep. `docs/ba-processes/00-index.md` is justified because it is populated. |
@@ -124,7 +124,7 @@ template requirements map to Mango as follows:
 | Match | `docs/ba-processes/00-index.md` | Keep | File is populated and supports prompt selection; it is not an empty placeholder. |
 | Match | `docs/hub-research-dependencies.md` | Keep | Documents Hub-to-project knowledge boundary. |
 | Match | `scripts/generate-pages-data.mjs`, `site/`, `.github/workflows/github-pages.yml` | Keep | Existing site pipeline supports the optional `site/` part of the archetype. |
-| Rename / normalize | `governance/BACKLOG.md` | Consider rename to `governance/backlog.md` only in the execution PR | Hub naming convention favors lowercase kebab-case in nested governance paths. Rename requires link audit. |
+| Rename / normalize | `governance/BACKLOG.md` | Consider rename to `pr-ops/backlog.md` only in the execution PR | Hub naming convention favors lowercase kebab-case in nested governance paths. Rename requires link audit. |
 | Rename / normalize | `standards/GLOSSARY.md` | Consider rename to `standards/glossary.md` only if sync provenance is preserved | Hub standard path is lowercase. This is a potentially disruptive path change and needs explicit review. |
 | Move | `experiments/validate_issue_*.py` | Move to `scripts/validation/` or `tests/validation/`; recommended target is `scripts/validation/` | These are executable repository checks invoked by workflows, not research experiments or prompt-run evidence. |
 | Keep in place | `prompts/experiments/*.md` | Keep under `prompts/experiments/` and add a short README/index | These files are prompt-specific run evidence and promotion provenance, which the RFC explicitly allows in prompt-local experiments. |
@@ -132,7 +132,7 @@ template requirements map to Mango as follows:
 | Create | `prompts/experiments/README.md` | Create or update | Makes the prompt-run evidence boundary explicit and removes reliance on `.gitkeep`. |
 | Fill or delete | `kb/` | Fill with real reusable context or remove placeholder | RFC allows `kb/`, but empty placeholders violate Anti-Inflation. |
 | Delete | Placeholder `.gitkeep` files in non-empty directories | Delete during execution PR | Once content exists, placeholder files add noise. |
-| Fill | `governance/artifact-map.md` | Update after every move/rename | Must remain the source for local path ownership. |
+| Fill | `pr-ops/artifact-map.md` | Update after every move/rename | Must remain the source for local path ownership. |
 | Governance sync | `AI_GOVERNANCE.md`, `AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md`, `CONTRIBUTING.md`, `standards/*` | Mark each as Hub-synced, forked, or local, with source SHA or rationale | Required by the RFC Governance Sync Rule. |
 | Release strategy | `.github/workflows/github-pages.yml` deploys to `gh-pages` only from `main` | Keep this production rule; update validator paths if scripts move | This matches GitHub Flow + trunk discipline. |
 
@@ -283,7 +283,7 @@ Release Engineering Strategy, revisit the recommendation before touching Mango.
 6. Update `.github/workflows/github-pages.yml` to call validators from their new
    paths.
 7. If approved, rename uppercase nested files and update every reference:
-   - `governance/BACKLOG.md` -> `governance/backlog.md`
+   - `governance/BACKLOG.md` -> `pr-ops/backlog.md`
    - `standards/GLOSSARY.md` -> `standards/glossary.md`
 
 ### Phase 3 - Documentation and Governance
@@ -291,7 +291,7 @@ Release Engineering Strategy, revisit the recommendation before touching Mango.
 1. Update Mango `README.md` navigation for any moved paths.
 2. Update Mango `CONTRIBUTING.md` validation commands.
 3. Update Mango `CHANGELOG.md` with the migration entry.
-4. Update Mango `governance/artifact-map.md` with every new, moved, renamed, or
+4. Update Mango `pr-ops/artifact-map.md` with every new, moved, renamed, or
    removed artifact.
 5. Update or close the migration manifest if the old migration phase is done.
 6. Add an ADR under `docs/adr/` if reviewers approve a non-trivial naming or

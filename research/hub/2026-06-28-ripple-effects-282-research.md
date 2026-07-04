@@ -15,8 +15,8 @@ related_artifacts:
   - "standards/frontmatter-standard.md"
   - "standards/frontmatter-docs-standard.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-  - "governance/rfc/2026-06-27-rfc-rfc-standard.md"
-  - "governance/rfc/2026-06-27-rfc-adr-standard.md"
+  - "docs/rfc/2026-06-27-rfc-rfc-standard.md"
+  - "docs/rfc/2026-06-27-rfc-adr-standard.md"
   - "tools/validate-frontmatter.sh"
   - "research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md"
 ---
@@ -48,8 +48,8 @@ frontmatter-полей, стратегию миграции, CI-режимы и 
   текущая специализация по классам документов.
 - [ADR-002](../../docs/adr/2026-06-adr-002-artifact-document-methodology.md) -
   текущая методология цепочки research -> RFC -> ADR -> standard/template/tool.
-- [RFC structure draft](../../governance/rfc/2026-06-27-rfc-rfc-standard.md) и
-  [ADR structure draft](../../governance/rfc/2026-06-27-rfc-adr-standard.md) -
+- [RFC structure draft](../../docs/rfc/2026-06-27-rfc-rfc-standard.md) и
+  [ADR structure draft](../../docs/rfc/2026-06-27-rfc-adr-standard.md) -
   свежие RFC issue #280, ещё не обязательные стандарты.
 - [Frontmatter scan](exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md) -
   воспроизводимый снимок текущего состояния frontmatter.
@@ -191,7 +191,7 @@ Issue #282 формулирует path-based routing:
 - `research/`, `docs/analysis/` -> Knowledge;
 - `docs/rfc/`, `docs/adr/`, `standards/`, `ai-rules/` -> Governance.
 
-Текущий Хаб имеет важную поправку: active RFC находятся в `governance/rfc/`, а
+Текущий Хаб имеет важную поправку: active RFC находятся в `docs/rfc/`, а
 не в `docs/rfc/`. Кроме того, `templates/`, `practices/`, `guides/` и корневые
 документы не попадают в простую бинарную схему.
 
@@ -199,7 +199,7 @@ Issue #282 формулирует path-based routing:
 
 | Вариант | Как работает | Когда целесообразен | Риски |
 | --- | --- | --- | --- |
-| A. Path-first | Словарь и approved fields выбираются только по пути. | Простая структура, легко реализовать в shell. | Конфликты при legacy-путях (`governance/rfc/`), templates и переездах. |
+| A. Path-first | Словарь и approved fields выбираются только по пути. | Простая структура, легко реализовать в shell. | Конфликты при legacy-путях (`docs/rfc/`), templates и переездах. |
 | B. Type-first | Словарь выбирается по `type` в frontmatter. | Гибко при переносах и mixed catalogs. | Требует `type` почти везде, увеличивает metadata и ломает "минимальный" подход. |
 | C. Hybrid path + optional type | Path даёт default; `type` уточняет только там, где path неоднозначен. | Баланс между простотой и mixed artifacts. | Нужно правило конфликта path vs type. |
 | D. Manifest registry | Отдельный YAML/JSON manifest описывает path globs, artifact classes, allowed fields and status vocabularies. | Хорошо для CI/CD, schema generation и downstream sync. | Новый artifact и новый owner; риск over-engineering для малого repo. |
@@ -209,12 +209,12 @@ Issue #282 формулирует path-based routing:
 | Conflict case | Варианты реакции |
 | --- | --- |
 | `research/...` + `type: rfc` | fail / warn and classify by path / classify by type only with explicit override |
-| `governance/rfc/...` + `status: canonical` | fail after migration / warn during bridge / auto-suggest `accepted` |
+| `docs/rfc/...` + `status: canonical` | fail after migration / warn during bridge / auto-suggest `accepted` |
 | `templates/...` with placeholder values | validate source-template profile / skip rendered-only fields / require template-specific schema |
 | Root docs (`README`, `CONCEPT`, `AI_GOVERNANCE`) | governance default / root-doc profile / explicit allowlist |
 
 Если выбран path-first или hybrid, current Hub должен явно добавить
-`governance/rfc/` в governance paths, иначе собственные RFC Хаба выпадут из
+`docs/rfc/` в governance paths, иначе собственные RFC Хаба выпадут из
 новой схемы.
 
 ### 3.3. Ripple 3: approved list полей
@@ -352,7 +352,7 @@ Ripple effects:
 | Open Questions | Does validator inspect section content or reviewer checklist only? |
 | Examples B/C | Are examples in RFC drafts, templates, or future standards? |
 | Numeric RFC IDs | Issue #282 says evaluate after RFC-020; no tooling now. What creates the threshold counter? |
-| RFC path | Current Hub uses `governance/rfc/`; target HTOM/spoke may use `docs/rfc/`. Both must be recognized during transition. |
+| RFC path | Current Hub uses `docs/rfc/`; target HTOM/spoke may use `docs/rfc/`. Both must be recognized during transition. |
 
 ### 3.8. Ripple 8: templates and downstream sync
 
@@ -457,6 +457,6 @@ Whatever option is selected, issue #282 implementation should be able to answer:
 - [Frontmatter Standard](../../standards/frontmatter-standard.md).
 - [Frontmatter Docs Standard](../../standards/frontmatter-docs-standard.md).
 - [ADR-002: Методология создания и управления артефактами](../../docs/adr/2026-06-adr-002-artifact-document-methodology.md).
-- [RFC: Стандарт структуры RFC](../../governance/rfc/2026-06-27-rfc-rfc-standard.md).
-- [RFC: Стандарт структуры ADR](../../governance/rfc/2026-06-27-rfc-adr-standard.md).
+- [RFC: Стандарт структуры RFC](../../docs/rfc/2026-06-27-rfc-rfc-standard.md).
+- [RFC: Стандарт структуры ADR](../../docs/rfc/2026-06-27-rfc-adr-standard.md).
 - [Frontmatter scan for issue 284](exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md).

@@ -24,14 +24,14 @@ temperature: 0.1
    **(a) настоящий велосипед/пробел**, **(b) нужен мост (alias)**,
    **(c) обоснованная локализация** (не велосипед).
 3. Предлагает синхронизацию **под реальную операционную боль** (Anti-Inflation,
-   [governance/repo-model.md](../../governance/repo-model.md)): какие понятия Вигерса стоит
+   [pr-ops/repo-model.md](../../pr-ops/repo-model.md)): какие понятия Вигерса стоит
    добавить как явную ось/тип, какие — только как crosswalk, какие — оставить как
    есть.
 
 RFC фиксирует исследование, сравнение и rationale. Любая обязательная норма после
 решения человека делегируется в active artifact (`standards/`, либо в issue
 проекта `mango_ba_prompts`) — до этого документ остаётся draft-рекомендацией
-([governance/rfc/README.md](../../governance/rfc/README.md)). RFC **сам по себе не меняет** ни один
+([docs/rfc/README.md](../../docs/rfc/README.md)). RFC **сам по себе не меняет** ни один
 mango-ADR: эти ADR живут в отдельном репозитории и редактируются там.
 
 ## Decision Scope
@@ -44,7 +44,7 @@ mango-ADR: эти ADR живут в отдельном репозитории и
   как замена BABOK / ISO 29148 / ГОСТ 34.602, на которых mango построен осознанно.
 - Это **не** ввод AI-трендов как норм. Утверждения AI-эры (§«AI-слой») имеют
   доверие E1–E2 и статус `Candidate`; они фиксируются как наблюдение, не как
-  стандарт (НФТ Trust & Evidence, [research-memory RFC](../../governance/rfc/research-memory-source-intelligence.md)).
+  стандарт (НФТ Trust & Evidence, [research-memory RFC](../../docs/rfc/research-memory-source-intelligence.md)).
 - Это **не** немедленное создание артефактов в Хабе. Целевые изменения (если
   приняты) делаются пофазно под боль, а не этим PR.
 - Это **не** замена решений человека. Принятие/отклонение рекомендаций,
@@ -116,7 +116,7 @@ SRS). Это граница данного RFC.
 (`requirement_level ∈ {business, user, functional, non-functional}`) поверх
 существующей классификации функциональности — **не заменяя** `Domain→…→Atomic
 Function`. Это даёт семантику без сноса принятой модели (по образцу того, как
-[methodology RFC](../../governance/rfc/methodology-research-and-proposals.md) ввёл ось E0–E4
+[methodology RFC](../../docs/rfc/methodology-research-and-proposals.md) ввёл ось E0–E4
 ортогонально Knowledge Status).
 
 ### В2 — Бизнес-правила как тип отсутствуют (🔴, главный пробел)
@@ -402,13 +402,13 @@ mango — НФТ совместимости mango):
 
 - [research/external-knowledge/2026-06-18-wigers-requirements-analysis.md](../../research/external-knowledge/2026-06-18-wigers-requirements-analysis.md)
   — независимое извлечение Вигерса (ФТ-1…ФТ-4), доказательная база этого RFC.
-- [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md)
+- [docs/rfc/research-memory-source-intelligence.md](../../docs/rfc/research-memory-source-intelligence.md)
   — PR #242: Knowledge Status (`Candidate`/`Applied`), source intelligence (для
   разметки AI-практик).
-- [governance/rfc/methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md)
+- [docs/rfc/methodology-research-and-proposals.md](../../docs/rfc/methodology-research-and-proposals.md)
   — PR #246: 5-слойная модель и ось доверия E0–E4 (использованы для классификации).
 - [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — Operating Modes, правило 4 (решения
   за человеком), Creative-mode.
-- [governance/repo-model.md](../../governance/repo-model.md) — Anti-Inflation principle.
+- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
 - [standards/glossary.md](../../standards/glossary.md) — цель опциональной ФТ-6
   (синхронизация терминов С4).

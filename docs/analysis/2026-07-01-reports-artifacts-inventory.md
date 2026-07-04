@@ -165,7 +165,7 @@ future work after a Reports standard exists; the canonical target path is
 
 | Candidate class | Examples | Future action |
 | --- | --- | --- |
-| General standalone reports | Hub `docs/project-summaries/*`, Hub/Mango `governance/session-digests.md`, Mango `docs/kb-experiment-report.md`, Clarify sprint execution report. | Candidate for `docs/report/` general profile after standard approval. |
+| General standalone reports | Hub `docs/project-summaries/*`, Hub/Mango `pr-ops/session-digests.md`, Mango `docs/kb-experiment-report.md`, Clarify sprint execution report. | Candidate for `docs/report/` general profile after standard approval. |
 | Statistics outputs | Hub/Mango inventory/matrix/scan outputs, Mango sync matrix. | Candidate for statistics profile; experiment outputs may stay in `exp-*` with optional publishable mirror. |
 | Audit reports | Hub/Mango/Clarify audit, validation, verification, review and smoke/E2E outputs. | Do not move before Audit standard boundary; later tag as Report subtype + Audit process output. |
 | Research retrospectives and executive summaries | Hub AI collaboration retrospectives; reputation executive summary. | Candidate for general report profile only if future policy wants reports outside research corpus. |
@@ -214,7 +214,7 @@ Open decisions before migration:
 | Boundaries Reports vs Analysis vs Audit | Done | Section 3. |
 | Move/delete/modernization candidates | Done | Section 5; no physical moves in this PR. |
 | Recommendation on standardization scope | Done | Section 6; Variant C confirmed for this corpus. |
-| Task status review | Done | B-038 should move from TODO to review in `governance/backlog.md`; PR #312 contains this analysis and evidence. |
+| Task status review | Done | B-038 should move from TODO to review in `pr-ops/backlog.md`; PR #312 contains this analysis and evidence. |
 
 Conclusion: Reports should be standardized as a durable output/document genre
 with three light profiles (`audit`, `report`, `statistics`). The standard must

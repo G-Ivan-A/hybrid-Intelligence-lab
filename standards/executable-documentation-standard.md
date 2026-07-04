@@ -80,7 +80,7 @@ reject, or adapt one practice without taking an entire research report.
 
 When the same concept exists at several **detail levels** — the
 `Index → Summary → Full` framing from
-[../governance/rfc/documentation-architecture-balance.md](../governance/rfc/documentation-architecture-balance.md)
+[../docs/rfc/documentation-architecture-balance.md](../docs/rfc/documentation-architecture-balance.md)
 — the files use a base name plus a level suffix so the level is visible in the
 file name itself and lazy loading is predictable: an agent opens `-Index` to
 select, `-Summary` for task context, and `-Full` only when the shallower slice

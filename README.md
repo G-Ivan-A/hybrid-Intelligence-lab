@@ -20,7 +20,7 @@ temperature: 0.1
 в отдельных spoke-репозиториях и ссылаться сюда как на источник переиспользуемых
 знаний и правил работы.
 
-> **🛫 Новый агент? Начни здесь → [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md).**
+> **🛫 Новый агент? Начни здесь → [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md).**
 > Это обязательный предполётный чек-лист *Runtime-онбординга* (Кейс 1): любой
 > ИИ-агент проходит его, получив ссылку на репозиторий, **до** первого изменения
 > файлов.
@@ -29,7 +29,7 @@ temperature: 0.1
 
 | Документ | Назначение |
 | --- | --- |
-| [CONCEPT.md](CONCEPT.md) | Актуальная концепция репозитория, аудитории, границы и модель hub-and-spoke. |
+| [docs/concept.md](docs/concept.md) | Актуальная концепция репозитория, аудитории, границы и модель hub-and-spoke. |
 | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) | Операционный контракт для Founder & PO, reviewers, contributors и AI-агентов. |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Правила участия, локальные проверки и ожидания к review. |
 | [CHANGELOG.md](CHANGELOG.md) | Date-based журнал governance-изменений репозитория. |
@@ -40,11 +40,11 @@ temperature: 0.1
 | [standards/frontmatter-standard.md](standards/frontmatter-standard.md) | Минимальный frontmatter для Markdown-артефактов: `status`, `version`, `updated`, `temperature`. |
 | [practices/README.md](practices/README.md) | Каталог фиксированных практик: отдельный KB-слой между research, templates и проектными адаптациями. |
 | [standards/team-contract.md](standards/team-contract.md) | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. |
-| [governance/agent-onboarding-protocol.md](governance/agent-onboarding-protocol.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
-| [governance/repo-model.md](governance/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
-| [governance/artifact-map.md](governance/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
+| [ai-rules/agent-onboarding-protocol.md](ai-rules/agent-onboarding-protocol.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
+| [pr-ops/repo-model.md](pr-ops/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
+| [pr-ops/artifact-map.md](pr-ops/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
 | [templates/htom/](templates/htom/) | Геном **HTOM-команды** — минимальный governance-скелет для гибридной human + AI работы (*Bootstrap-клонирование*, Кейс 2). Точка входа: `templates/htom/README.md`. |
-| [templates/spoke/](templates/spoke/) | Шаблон **production-спока** — репозитория с собственным кодом и жизненным циклом. Точка входа: `templates/spoke/README.md`. Различие HTOM-команда vs spoke — в [RFC](governance/rfc/htom-vs-spoke-clarification-2026-06.md). |
+| [templates/spoke/](templates/spoke/) | Шаблон **production-спока** — репозитория с собственным кодом и жизненным циклом. Точка входа: `templates/spoke/README.md`. Различие HTOM-команда vs spoke — в [RFC](docs/rfc/htom-vs-spoke-clarification-2026-06.md). |
 
 ## Продукт и гайды
 

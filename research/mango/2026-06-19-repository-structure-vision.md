@@ -23,7 +23,7 @@ information security)**, **внешнего хранилища (external storage
 обязательная норма после решения Пользователя (human decision) должна быть
 делегирована в active artifact самого спока (`standards/`, validators,
 операционный контракт), а до этого остаётся рекомендацией
-([governance/rfc/README.md](../../governance/rfc/README.md)).
+([docs/rfc/README.md](../../docs/rfc/README.md)).
 
 ## Decision Scope / Границы решения
 
@@ -223,7 +223,7 @@ Private: `runs/`, feedback, артефакты, аудит. Object Storage: сы
 **Вариант C — мульти-репо «по доменам» (framework + operations + knowledge-vault
 как отдельный repo) или монорепо с строгими CODEOWNERS.**
 - *Минусы:* избыточная дробность (нарушает Anti-Inflation,
-  [governance/repo-model.md](../../governance/repo-model.md)); knowledge-vault логичнее как
+  [pr-ops/repo-model.md](../../pr-ops/repo-model.md)); knowledge-vault логичнее как
   Object Storage, а не Git-репо (бинарные PDF/DOCX/транскрипты).
 
 ### 3.2. Независимое решение / Decision
@@ -331,7 +331,7 @@ mango_ba_framework/                 # (текущий mango_ba_prompts; пере
 `governance/sync-matrix-*`, `governance/migration-*` → в Private (`audit/`) или в
 историю PR; `governance/knowledge-transfer-to-hub/`, `rfc-to-hub-*` → заменяются
 одним мостом `docs/hub-research-dependencies.md` + ручной инициацией через
-`governance/rfc/`; root `experiments/*.mjs` → `scripts/` (это инструменты, не
+`docs/rfc/`; root `experiments/*.mjs` → `scripts/` (это инструменты, не
 эксперименты — устранение P6).
 
 ### 4.2. `mango_ba_operations` (Private) — целевое дерево
@@ -372,7 +372,7 @@ s3://mango-vault/                   # доступ по аутентификац
   «выше для доступа — результат (Standard), а не причина (ADR)» (решение
   фаундера). Цепочка `Анализ → RFC → ADR → Standard` сохраняется без разрастания
   подкаталогов: в `standards/decisions/` живёт только ADR, RFC остаётся в
-  `governance/rfc/`.
+  `docs/rfc/`.
 - **`experiment` vs `run`:** Experiment (серия прогонов под гипотезу) —
   метаданные в Public `experiments/EXP-*`; Run (единичное выполнение) — в Private
   `runs/`. Семантика команды Q сохранена.
@@ -388,12 +388,12 @@ s3://mango-vault/                   # доступ по аутентификац
   `sync-matrix`, `audit-hub`, `knowledge-transfer-to-hub`, `rfc-to-hub-*`
   (Вывод 1 фаундера; принцип «проекты независимы»).
 - **Ручная инициация передачи опыта:** опыт спока → Хаб только через RFC,
-  заводимый человеком; в споке — `governance/rfc/`, в Хабе — соответствующий
-  `research/mango/` или [governance/rfc/](../../governance/rfc/README.md). Автосинхронизации нет.
+  заводимый человеком; в споке — `docs/rfc/`, в Хабе — соответствующий
+  `research/mango/` или [docs/rfc/](../../docs/rfc/README.md). Автосинхронизации нет.
 - **Служебный промпт синхронизации:** `governance/prompts/hub-sync-prompt.md` —
   governance-инструмент, **не** в каталоге `prompts/` (там только БА-методология).
 - Хаб остаётся источником рекомендаций, а не блокирующих правил
-  ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), [governance/repo-model.md](../../governance/repo-model.md)).
+  ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), [pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
 
 ### 5.2. Связь с порталом `open-ai.ru` / Portal Integration (последовательно)
 
@@ -508,7 +508,7 @@ status: success | partial | failed
 **Зависимость:** оптимизация документации по токенам (full vs executable,
 Index/Summary/Full уровни) — следующая задача, опирающаяся на принятую здесь
 структуру. Прямая аналогия с уже существующей в Хабе рамкой баланса
-[governance/rfc/documentation-architecture-balance.md](../../governance/rfc/documentation-architecture-balance.md).
+[docs/rfc/documentation-architecture-balance.md](../../docs/rfc/documentation-architecture-balance.md).
 
 ---
 
@@ -546,8 +546,8 @@ Index/Summary/Full уровни) — следующая задача, опира
 - Дерево `G-Ivan-A/mango_ba_prompts@main` (снимок 2026-06-19).
 - 4 видения: команды C, Q, G, фаундера (вложения issue
   [#253](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/253)).
-- Hub-контекст: [governance/repo-model.md](../../governance/repo-model.md) (Anti-Inflation),
-  [governance/rfc/README.md](../../governance/rfc/README.md) (статус RFC),
+- Hub-контекст: [pr-ops/repo-model.md](../../pr-ops/repo-model.md) (Anti-Inflation),
+  [docs/rfc/README.md](../../docs/rfc/README.md) (статус RFC),
   [research/mango/README.md](README.md),
   [projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md](../../projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md),
   [docs/project-summaries/mango-ba-prompts-context-Summary.md](../../docs/project-summaries/mango-ba-prompts-context-Summary.md).

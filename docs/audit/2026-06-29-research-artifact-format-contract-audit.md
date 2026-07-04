@@ -18,7 +18,7 @@ related_norm: "standards/research-profile.md; standards/file-naming.md; docs/adr
 related_artifacts:
   - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
   - "research/hub/exp-research-analysis-audit-288/"
-  - "governance/rfc/2026-06-30-rfc-research-structure.md"
+  - "docs/rfc/2026-06-30-rfc-research-structure.md"
 ---
 
 # Audit: Research artifact format contract
@@ -91,7 +91,7 @@ ADR-001/002 и `standards/file-naming.md` говорят о хронологич
 `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`,
 `docs/adr/2026-06-adr-002-artifact-document-methodology.md`,
 `AI_GOVERNANCE.md`, `research/README.md`, `research/hub/README.md`,
-`governance/artifact-map.md`, issue #278, issue #284, issue #288, PR #279,
+`pr-ops/artifact-map.md`, issue #278, issue #284, issue #288, PR #279,
 PR #285 and PR #289.
 
 **Метод.** Manual review of active standards, templates, AI governance files, ADR,
@@ -138,7 +138,7 @@ the PR/issue bodies that introduced the current experiment folders.
 | `docs/adr/2026-06-adr-002...` | Для Research Hub указывает `research/{domain}/YYYY-MM-DD-name.md`, а для run record - `runs/`. Не описывает, как это соотносится с `research-profile.md` `exp-<slug>/outputs/`. |
 | `templates/` | Issue templates требуют traceability, frontmatter, navigation/artifact-map/changelog updates. HTOM templates запрещают создавать `research/` и `experiments/` "на вырост" в командах без operational pain. Прямого правила "создавать research-папку вместо md" нет. |
 | `ai-rules/` и `AI_GOVERNANCE.md` | В текущем Хабе каталога `ai-rules/` нет; ADR-001 называет его целевым каталогом для будущей структуры. `AI_GOVERNANCE.md` требует связывать значимые claims с sources, experiments, issues, PRs или migration records. |
-| `governance/rfc/` | Не найден RFC, который отдельно меняет формат research artifacts с md на папки. `resolve-artifact-location-proposal.md` маршрутизирует source-backed analysis в `research/<domain>/`, но не решает report-vs-experiment boundary. |
+| `docs/rfc/` | Не найден RFC, который отдельно меняет формат research artifacts с md на папки. `resolve-artifact-location-proposal.md` маршрутизирует source-backed analysis в `research/<domain>/`, но не решает report-vs-experiment boundary. |
 | `CHANGELOG.md` | Отражает добавление experiment folders в PR #279/#285/#289 как reproducible evidence/baseline/scan, рядом с основными dated reports. |
 | История `research/hub/` | До 2026-06-27 Hub research был в основном набором dated Markdown reports; после PR #279 появились повторяемые experiment folders для задач с reproducible scan/evidence. |
 | Issue #288 и связанные | #288/PR #289 продолжили уже возникший паттерн: основной artifact - dated Markdown inventory; папка - воспроизводимый scan corpus. |
@@ -245,6 +245,6 @@ gh pr view 289 --repo G-Ivan-A/hybrid-Intelligence-lab --json number,title,body,
   lifecycle and routing rules.
 - `AI_GOVERNANCE.md` - AI-assisted work traceability and source/experiment
   requirements.
-- `research/README.md`, `research/hub/README.md` and `governance/artifact-map.md`
+- `research/README.md`, `research/hub/README.md` and `pr-ops/artifact-map.md`
   - active repository navigation and artifact registry.
 - PR #279, PR #285 and PR #289 - first concrete Hub uses of `research/hub/exp-*`.

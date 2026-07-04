@@ -17,7 +17,7 @@ related_artifacts:
   - "research/mango/2026-05-26-rag-mapping-roadmap.md"
   - "research/hub/2026-06-01-team-c-governance-strategy-audit.md"
   - "standards/project-structure-inheritance.md"
-  - "governance/repo-model.md"
+  - "pr-ops/repo-model.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/81"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/87"
@@ -78,7 +78,7 @@ workflow и операционную боль, а не через заранее
 | Результат | Как это влияет на bootstrap и context handoff |
 | --- | --- |
 | Репозиторий уже выглядит как governed hybrid intelligence repository ecosystem, а не как набор разрозненных промптов. | Новый проект должен получать контекст через существующие README, governance contracts и research links, а не через копирование большого шаблона папок. |
-| Governance становится first-class architecture layer. | AI-агент при bootstrap должен читать `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `governance/repo-model.md` и ближайший README до создания артефактов. |
+| Governance становится first-class architecture layer. | AI-агент при bootstrap должен читать `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `pr-ops/repo-model.md` и ближайший README до создания артефактов. |
 | Переход `framework-first -> practice-first` снижает abstraction inflation. | Не создавать framework или новый standard из одного кейса; сначала фиксировать recommendation и проверять ее на втором workflow. |
 | Модель `research -> recommendation -> standard` сильна, если evidence отделено от идеи. | Таблица recommendations должна показывать источник, боль, статус, next action и критерий перевода в issue. |
 | README-driven architecture остается правильным паттерном. | Блок "Быстрый контекст" лучше сначала пилотировать в README проекта, а не выносить в новый обязательный документ. |
@@ -280,7 +280,7 @@ governance быстрее, чем появляются operational scenarios.
 | ID | Источник | Рекомендация | Scope | Польза | Усилие | Статус | Следующее действие | Issue |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `TC-GOV-001` | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Закрепить принцип "нет governance artifact без operational pain". | repo-wide | high | small | idea | согласовать формулировку с Founder & PO | - |
-| `TC-GOV-002` | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Описать lightweight governance hierarchy. | repo-wide | high | medium | idea | подготовить issue на `governance/repo-model.md` или отдельный раздел в existing governance | - |
+| `TC-GOV-002` | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Описать lightweight governance hierarchy. | repo-wide | high | medium | idea | подготовить issue на `pr-ops/repo-model.md` или отдельный раздел в existing governance | - |
 | `TC-GOV-003` | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Провести semantic cleanup audit для `framework/practice/policy/profile/contract`. | repo-wide | medium | medium | idea | собрать термины и конфликтующие места без переименований | - |
 | `TC-GOV-004` | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Согласовать lifecycle transitions для research. | research | high | medium | idea | определить критерии `draft -> reviewed` и `reviewed -> standard/practice` | - |
 | `TC-GOV-005` | `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Провести 2-3 pilot cycles перед новыми standards/frameworks. | repo-wide | high | medium | idea | выбрать pilot workflow и метрики использования артефактов | - |
@@ -301,7 +301,7 @@ governance быстрее, чем появляются operational scenarios.
 6. Согласуем ли принцип "нет governance artifact без operational pain" как
    обязательный decision rule?
 7. Нужна ли отдельная governance hierarchy сейчас, или достаточно встроить ее в
-   существующий `governance/repo-model.md`?
+   существующий `pr-ops/repo-model.md`?
 8. Какие lifecycle statuses применять к research после human review:
    `draft/reviewed/published`, `draft/reviewed/canonical/superseded` или иной
    минимальный набор?

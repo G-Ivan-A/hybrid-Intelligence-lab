@@ -429,11 +429,11 @@ Product Concept — это уровень **L2** Framework-слоя: он опи
 | --- | --- | --- |
 | L1 Vision | [vision.md](vision.md) | Зачем существует Хаб и что означает «Связь миров». |
 | L2 Product Concept | Этот документ и [ecosystem-map.md](ecosystem-map.md) | Что делает Хаб и как проекты обмениваются практиками. |
-| L3 Governance / Standards / Practices | [governance/artifact-map.md](../governance/artifact-map.md), [standards/README.md](../standards/README.md), [practices/README.md](../practices/README.md) | Как принимать решения, оформлять знания и применять практики. |
-| L4 Templates / Tools | [governance/rfc/resolve-artifact-location-proposal.md](../governance/rfc/resolve-artifact-location-proposal.md), [governance/rfc/product-concept-template-proposal.md](../governance/rfc/product-concept-template-proposal.md), `tools/` | Как запускать, синхронизировать и проверять работу. |
+| L3 Governance / Standards / Practices | [pr-ops/artifact-map.md](../pr-ops/artifact-map.md), [standards/README.md](../standards/README.md), [practices/README.md](../practices/README.md) | Как принимать решения, оформлять знания и применять практики. |
+| L4 Templates / Tools | [docs/rfc/resolve-artifact-location-proposal.md](rfc/resolve-artifact-location-proposal.md), [docs/rfc/product-concept-template-proposal.md](rfc/product-concept-template-proposal.md), `tools/` | Как запускать, синхронизировать и проверять работу. |
 
 Жизненный цикл переходов между уровнями описан в
-[Knowledge Lifecycle proposal](../governance/rfc/knowledge-lifecycle-proposal.md).
+[Knowledge Lifecycle proposal](rfc/knowledge-lifecycle-proposal.md).
 
 ---
 

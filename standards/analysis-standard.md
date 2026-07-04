@@ -31,7 +31,7 @@ related_issues:
 ↔ Report ↔ RFC ↔ ADR. Источник принятого решения:
 [ADR-006](../docs/adr/2026-07-adr-006-analysis-structure.md); rationale,
 альтернативы (A/B/C/D) и trade-offs:
-[RFC B-025](../governance/rfc/2026-07-02-rfc-analysis-structure.md).
+[RFC B-025](../docs/rfc/2026-07-02-rfc-analysis-structure.md).
 
 Стандарт — это IL-3 reusable rule о форме Analysis как **interpretation layer**:
 интерпретации локального/внутреннего контекста, его размещении и
@@ -258,7 +258,7 @@ flowchart LR
 | Analysis ↔ Research | Research генерирует новое внешнее/доменное знание (source-backed benchmark, гипотеза); Analysis интерпретирует локальный/внутренний контекст. Analysis может **цитировать** Research как вход, но **не наследует** research-evidence rules и не требует внешних источников. | `docs/analysis/` vs `research/<domain>/` |
 | Analysis ↔ Audit | Audit проверяет соответствие норме/контракту с pass/fail и remediation; Analysis объясняет состояние и опции **без вердикта**. Analysis становится Audit при добавлении compliance target и вердиктов (B-029). | `docs/analysis/` vs `docs/audit/` |
 | Analysis ↔ Report | Report фиксирует «что произошло» (descriptive: execution log, kickoff, retrospective); Analysis объясняет, что состояние **значит** и какие опции следуют. Analysis допускает evidence-ссылки на Reports, но не поглощает Report-профили (B-041 P5). | `docs/analysis/` vs `docs/report/` |
-| Analysis ↔ RFC | RFC предлагает изменение до decision gate (alternatives + acceptance path); Analysis может готовить options и evidence как **вход** для RFC, но proposal с decision-альтернативами — это RFC. | `docs/analysis/` vs `governance/rfc/` |
+| Analysis ↔ RFC | RFC предлагает изменение до decision gate (alternatives + acceptance path); Analysis может готовить options и evidence как **вход** для RFC, но proposal с decision-альтернативами — это RFC. | `docs/analysis/` vs `docs/rfc/` |
 | Analysis ↔ ADR | ADR фиксирует принятое решение; Analysis — upstream evidence для ADR (recommendation), но сам **не decision record**. | `docs/analysis/` vs `docs/adr/` |
 
 Нормативный тай-брейкер для граничных кейсов — один вопрос исполнителю:
@@ -278,7 +278,7 @@ flowchart LR
 
 Профили подтипов остаются **секциями** этого базового стандарта до явного порога
 выделения. **Триггер B (Anti-Inflation,
-[`governance/repo-model.md`](../governance/repo-model.md)).** Профиль выделяется
+[`pr-ops/repo-model.md`](../pr-ops/repo-model.md)).** Профиль выделяется
 в отдельный стандарт (`analysis-inventory-standard.md` и т.п.) **только** когда:
 
 - профиль накопил достаточно **собственных повторяющихся обязательных правил**
@@ -306,14 +306,14 @@ relation-метаданные, routing `docs/analysis/`, knowledge-lifecycle)
 кодифицируется обновлением валидаторов в цепочке cleanup B-028, не в этом
 стандарте. Расширение валидаторов за пределы frontmatter, naming и registry
 checks отслеживается как tech debt в
-[governance/backlog.md](../governance/backlog.md).
+[pr-ops/backlog.md](../pr-ops/backlog.md).
 
 ## Related Artifacts
 
 - [ADR-006: Структура Analysis-артефактов и принятие Варианта C](../docs/adr/2026-07-adr-006-analysis-structure.md)
   (B-026) — источник принятого решения (Вариант C, routing `docs/analysis/`,
   relation-frontmatter, knowledge-lifecycle, границы).
-- [RFC B-025: Структура Analysis-артефактов](../governance/rfc/2026-07-02-rfc-analysis-structure.md) —
+- [RFC B-025: Структура Analysis-артефактов](../docs/rfc/2026-07-02-rfc-analysis-structure.md) —
   rationale, alternatives (A/B/C/D), trade-offs и rejected options.
 - [Analysis inventory and boundaries (B-024)](../docs/analysis/2026-07-02-analysis-artifacts-inventory.md) —
   инвентарь 186 кандидатов (19 фактических Analysis), границы §4, requirements
@@ -337,7 +337,7 @@ checks отслеживается как tech debt в
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [governance/backlog.md](../governance/backlog.md) — цепочка Analysis B-024,
+- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка Analysis B-024,
   B-025, B-026, B-027 (этот стандарт), B-028 и координация с B-034.
 - Issues
   [#366](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/366)

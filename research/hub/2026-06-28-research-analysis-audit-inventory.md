@@ -125,7 +125,7 @@ the corpus:
 | Research home | root `research/` by domain | mostly `docs/analysis/`; no root `research/` in scanned corpus | `docs/research/` | Need one routing rule per archetype, not one global path rule. |
 | Analysis home | no dedicated `docs/analysis/` corpus in Hub | `docs/analysis/` is a catch-all | `docs/analysis/` is sprint/report/analysis area | Analysis needs a profile independent from folder name. |
 | Audit home | small `docs/audit/` plus historical research-side audits | `docs/audit/` and audit files in `docs/analysis/` | explicit `docs/audit/` with verification reports | Audit needs a standard evidence/remediation model and routing exceptions. |
-| RFC/proposal adjacency | canonical governance in `governance/rfc/`; research docs may prepare RFCs | RFC-like docs appear in `docs/analysis/` and `docs/` | ADR-like decisions live in `docs/ADR/` | RFC/proposal must stay out of R/A/A standards except as downstream dependency. |
+| RFC/proposal adjacency | canonical governance in `docs/rfc/`; research docs may prepare RFCs | RFC-like docs appear in `docs/analysis/` and `docs/` | ADR-like decisions live in `docs/ADR/` | RFC/proposal must stay out of R/A/A standards except as downstream dependency. |
 | Frontmatter | Hub-style four required fields plus research metadata | partial Hub-aligned frontmatter in newer docs | many older docs without Hub frontmatter | Future standards need migration mode, not immediate hard enforcement. |
 
 ## 4. Подмена понятий и дубли

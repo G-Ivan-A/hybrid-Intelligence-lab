@@ -43,8 +43,8 @@ method: comparative-analysis
 | [standards/research-standard.md](../../standards/research-standard.md) | Обязательная структура research-артефактов. |
 | [standards/glossary.md](../../standards/glossary.md) | Целевой словарь для опциональной ФТ‑6. |
 | [research/mango/2026-06-18-requirements-engineering-ai-era.md](../mango/2026-06-18-requirements-engineering-ai-era.md) | RFC сравнения с mango‑ADR и синхронизации (ФТ‑5). |
-| [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) | Модель Knowledge Status и Tier‑1 источников (PR #242). |
-| [governance/rfc/methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md) | 5‑слойная модель и ось доверия E0–E4 (PR #246). |
+| [docs/rfc/research-memory-source-intelligence.md](../../docs/rfc/research-memory-source-intelligence.md) | Модель Knowledge Status и Tier‑1 источников (PR #242). |
+| [docs/rfc/methodology-research-and-proposals.md](../../docs/rfc/methodology-research-and-proposals.md) | 5‑слойная модель и ось доверия E0–E4 (PR #246). |
 
 **Метод.** Структурированное извлечение по главам книги (использованы точные
 постраничные якоря из issue #247) с перекрёстной проверкой по доверенным
@@ -99,7 +99,7 @@ method: comparative-analysis
 | --- | --- | --- |
 | Р1 | Принять 4‑мерную рамку Вигерса (уровни / типы / процессы / артефакты) как общий словарь инженерии требований Хаба, двуязычно. | Этот документ §3.1–3.4; опционально [standards/glossary.md](../../standards/glossary.md) (ФТ‑6). |
 | Р2 | Зафиксировать соответствие операций Вигерса 5‑слойной модели (Analysis/Solution — слабые слои экосистемы). | §3.3.2; RFC §«5‑слойная карта». |
-| Р3 | Зафиксировать `prompt engineering` / инжиниринг промптов как **подпроцесс** разработки AI‑решения (НЕ тип требования; Prompt = интерфейс к Tool), с доверием E1–E2 и статусом `Candidate`. | §3.3.3; [RFC §«Классификация AI‑разработки»](../mango/2026-06-18-requirements-engineering-ai-era.md); [research-memory RFC](../../governance/rfc/research-memory-source-intelligence.md). |
+| Р3 | Зафиксировать `prompt engineering` / инжиниринг промптов как **подпроцесс** разработки AI‑решения (НЕ тип требования; Prompt = интерфейс к Tool), с доверием E1–E2 и статусом `Candidate`. | §3.3.3; [RFC §«Классификация AI‑разработки»](../mango/2026-06-18-requirements-engineering-ai-era.md); [research-memory RFC](../../docs/rfc/research-memory-source-intelligence.md). |
 | Р4 | Различать полную и локальную цепочку производства артефакта по явным критериям выбора. | §3.4; RFC §«Вариативность». |
 | Р5 | Сравнить извлечённую систему с mango‑ADR #003–#010, выявить «велосипеды» и предложить синхронизацию. | [RFC 2026-06-18-requirements-engineering-ai-era](../mango/2026-06-18-requirements-engineering-ai-era.md) (ФТ‑5). |
 
@@ -464,8 +464,8 @@ Agent → Tool → Knowledge».
 | И6 | Wake, B. *INVEST in Good Stories, and SMART Tasks*, 2003 — [xp123.com/articles/invest-in-good-stories-and-smart-tasks](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/) | Tier 1 | Современный (2026) тренд: критерии хороших User Stories. |
 | И7 | DSDM Consortium. *MoSCoW Prioritisation* — [agilebusiness.org/dsdm-project-framework/moscow-prioritision.html](https://www.agilebusiness.org/dsdm-project-framework/moscow-prioritision.html) | Tier 1 | Приоритизация требований (Гл. 16 Вигерса, актуализация). |
 | И8 | issue [#247](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/247) | Tier 2 | ФТ/НФТ/DoD, постраничные якоря, примеры цепочек. |
-| И9 | [governance/rfc/methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md) | Tier 2 | 5‑слойная модель, ось доверия E0–E4. |
-| И10 | [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md) | Tier 2 | Статусы знания `Observed/Candidate/Applied/Rejected/Superseded`. |
+| И9 | [docs/rfc/methodology-research-and-proposals.md](../../docs/rfc/methodology-research-and-proposals.md) | Tier 2 | 5‑слойная модель, ось доверия E0–E4. |
+| И10 | [docs/rfc/research-memory-source-intelligence.md](../../docs/rfc/research-memory-source-intelligence.md) | Tier 2 | Статусы знания `Observed/Candidate/Applied/Rejected/Superseded`. |
 | И11 | LangChain — фреймворк разработки LLM‑приложений (RAG, агенты, оркестрация) — [github.com/langchain-ai/langchain](https://github.com/langchain-ai/langchain) | Tier 1 | AI‑подпроцессы: RAG configuration, prompt engineering, agent orchestration (§3.6). |
 | И12 | CrewAI — фреймворк мультиагентной оркестрации — [github.com/crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | Tier 1 | AI‑подпроцессы: оркестрация ролей агентов, координация (§3.6, сравнение классификаций). |
 

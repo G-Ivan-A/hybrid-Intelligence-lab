@@ -33,7 +33,7 @@ context: [context-engineering, agent-memory, token-budget, mcp, project-rules]
   ([research/external-knowledge/README.md](../README.md)): реестр — это «карта»,
   а не «зеркало контента».
 - Идея «правил проекта» как отдельного артефакта памяти перекликается с нашим
-  `AI_PROJECT_CONTEXT-Summary.md` и геномом управления в споках.
+  `projects-sink/AI_PROJECT_CONTEXT-Summary.md` и геномом управления в споках.
 
 ## Аргументы за/против
 

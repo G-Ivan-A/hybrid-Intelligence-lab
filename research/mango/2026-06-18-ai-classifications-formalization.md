@@ -48,7 +48,7 @@ AI-подпроцессы устроены внутри (операции / ар
   Хаба и заготовки для issue, не правки.
 - **Не** заменяет классические операции AI-версиями (см. §«Что мы отвергли»).
 - **Не** создаёт новые каталоги или стандарты «впрок» (Anti-Inflation,
-  [governance/repo-model.md](../../governance/repo-model.md)).
+  [pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
 
 ## Терминологическая рамка (двуязычие)
 
@@ -61,8 +61,8 @@ AI-подпроцессы устроены внутри (операции / ар
 | Инжиниринг промптов | Prompt engineering | Подпроцесс, а не тип требования и не операция верхнего уровня. |
 | Спецификация промпта | Prompt specification | **Описательный** документ промпта (назначение, контекст, критерии), не исполнимый артефакт. |
 | AI-ассистированная операция | AI-assisted operation | Классическая операция, усиленная AI, с обязательной валидацией вывода (E0–E4). |
-| Доверие вывода | Trust & Evidence | Ось E0–E4 разметки уверенности AI-вывода ([methodology RFC](../../governance/rfc/methodology-research-and-proposals.md)). |
-| Статус знания | Knowledge Status | `Candidate` → `Applied`: зрелость практики ([research-memory RFC](../../governance/rfc/research-memory-source-intelligence.md)). |
+| Доверие вывода | Trust & Evidence | Ось E0–E4 разметки уверенности AI-вывода ([methodology RFC](../../docs/rfc/methodology-research-and-proposals.md)). |
+| Статус знания | Knowledge Status | `Candidate` → `Applied`: зрелость практики ([research-memory RFC](../../docs/rfc/research-memory-source-intelligence.md)). |
 
 > **Якорь классификации (из Этапа 3).** `Prompt = интерфейс к Tool` (не сам Tool);
 > `Prompt engineering = подпроцесс` (не операция, не тип требования);
@@ -463,11 +463,11 @@ AI-ассистированная операция требует осознан
   — RFC синхронизации Вигерс ↔ mango (С1–С5); базовый контракт этого документа.
 - [research/external-knowledge/2026-06-18-wigers-requirements-analysis.md](../external-knowledge/2026-06-18-wigers-requirements-analysis.md)
   — независимое извлечение системы Вигерса (доказательная база).
-- [governance/rfc/research-memory-source-intelligence.md](../../governance/rfc/research-memory-source-intelligence.md)
+- [docs/rfc/research-memory-source-intelligence.md](../../docs/rfc/research-memory-source-intelligence.md)
   — Knowledge Status (`Candidate`/`Applied`) для разметки AI-практик.
-- [governance/rfc/methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md)
+- [docs/rfc/methodology-research-and-proposals.md](../../docs/rfc/methodology-research-and-proposals.md)
   — ось доверия E0–E4.
 - [research/mango/2026-05-26-rag-mapping-roadmap.md](2026-05-26-rag-mapping-roadmap.md)
   — roadmap автоматизации БА и RAG-навигатор Mango (контекст RAG-подпроцесса).
-- [governance/repo-model.md](../../governance/repo-model.md) — Anti-Inflation
+- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation
   principle.

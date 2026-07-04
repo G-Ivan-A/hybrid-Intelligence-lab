@@ -29,7 +29,7 @@ Audit (назначение, **4-компонентная модель**, frontm
 Analysis ↔ Report. Источник принятого решения:
 [ADR-005](../docs/adr/2026-07-adr-005-audit-structure.md); rationale, альтернативы
 (A/B/C/D) и trade-offs:
-[RFC B-030](../governance/rfc/2026-07-02-rfc-audit-structure.md).
+[RFC B-030](../docs/rfc/2026-07-02-rfc-audit-structure.md).
 
 Стандарт — это IL-3 reusable rule о **процессной семантике** Audit: против чего
 проверяют, какое доказательство достаточно, как выносится вердикт и как
@@ -305,14 +305,14 @@ Local checks:
 `docs/audit/`, knowledge-lifecycle) кодифицируется обновлением валидаторов в
 цепочке cleanup B-033, не в этом стандарте. Расширение валидаторов за пределы
 frontmatter, naming и registry checks отслеживается как tech debt в
-[governance/backlog.md](../governance/backlog.md).
+[pr-ops/backlog.md](../pr-ops/backlog.md).
 
 ## Related Artifacts
 
 - [ADR-005: Структура Audit-артефактов и 4-компонентная модель](../docs/adr/2026-07-adr-005-audit-structure.md)
   (B-031) — источник принятого решения (Вариант C, 4-компонентная модель, routing
   `docs/audit/`, разграничение процесс/output).
-- [RFC B-030: Структура Audit-артефактов](../governance/rfc/2026-07-02-rfc-audit-structure.md) —
+- [RFC B-030: Структура Audit-артефактов](../docs/rfc/2026-07-02-rfc-audit-structure.md) —
   rationale, alternatives (A/B/C/D), trade-offs и rejected options.
 - [B-029 Audit deep analysis](../docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md) —
   инвентарь 29 Audit-кандидатов, 4-компонентная модель §2/§8, masked audits §4,
@@ -332,7 +332,7 @@ frontmatter, naming и registry checks отслеживается как tech de
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [governance/backlog.md](../governance/backlog.md) — цепочка Audit B-029, B-030,
+- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка Audit B-029, B-030,
   B-031, B-032 (этот стандарт), B-033.
 - Issues
   [#362](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/362)

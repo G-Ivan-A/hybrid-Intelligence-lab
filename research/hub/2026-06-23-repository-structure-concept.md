@@ -14,7 +14,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-  - "governance/rfc/repository-archetypes-template-release.md"
+  - "docs/rfc/repository-archetypes-template-release.md"
   - "research/mango/2026-06-19-repository-structure-vision.md"
   - "research/hub/2026-06-20-ecosystem-architecture-research.md"
   - "research/hub/2026-06-25-artifact-inventory-and-classification.md"
@@ -22,8 +22,8 @@ related_artifacts:
   - "research/governance/2026-06-06-contract-documentation-format.md"
   - "research/external-knowledge/external-sources-registry.md"
   - "standards/project-structure-inheritance.md"
-  - "governance/repo-model.md"
-  - "governance/artifact-map.md"
+  - "pr-ops/repo-model.md"
+  - "pr-ops/artifact-map.md"
 ---
 
 # Концепция базовых каталогов для архетипов проектов (дополнение к mango-исследованию)
@@ -231,7 +231,7 @@ related_artifacts:
 ## 5. Архетипы PR #243 как база
 
 Согласно задаче, архетипы **берутся из PR #243** (не изобретаются). PR #243
-([`governance/rfc/repository-archetypes-template-release.md`](../../governance/rfc/repository-archetypes-template-release.md))
+([`docs/rfc/repository-archetypes-template-release.md`](../../docs/rfc/repository-archetypes-template-release.md))
 определяет **4 архетипа**:
 
 | Архетип PR #243 | Назначение | Критерий отнесения | Обязательные свойства (PR #243) | Текущий маппинг |
@@ -678,7 +678,7 @@ flowchart LR
 
 | Аспект | Где живёт | Правило синхронизации |
 | --- | --- | --- |
-| Архетипическая классификация (4 архетипа PR #243) | **Хаб** (`governance/rfc/repository-archetypes-template-release.md`) | Канон; споки наследуют как базу шаблона |
+| Архетипическая классификация (4 архетипа PR #243) | **Хаб** (`docs/rfc/repository-archetypes-template-release.md`) | Канон; споки наследуют как базу шаблона |
 | Универсальное базовое ядро (§9.1) | **Хаб** даёт скелет | Спок инициализирует, удаляет ненужное вручную |
 | Профили архетипа C (Web Portal/Library) | **Хаб** как профили, не отдельные архетипы | Спок выбирает профиль при создании |
 | `research/` | **Только корень Хаба** | Жёсткое исключение: спок не создаёт `research/`; ссылается reference-only на SHA |
@@ -724,11 +724,11 @@ flowchart LR
 
 **Внутренние (Хаб):**
 
-- [governance/rfc/repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) — PR #243, 4 архетипа.
+- [docs/rfc/repository-archetypes-template-release.md](../../docs/rfc/repository-archetypes-template-release.md) — PR #243, 4 архетипа.
 - [research/mango/2026-06-19-repository-structure-vision.md](../mango/2026-06-19-repository-structure-vision.md) — видение структуры спока mango.
 - [research/hub/2026-06-20-ecosystem-architecture-research.md](2026-06-20-ecosystem-architecture-research.md) — архитектура экосистемы (PR #258).
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md) — наследование структуры.
-- [governance/repo-model.md](../../governance/repo-model.md), [governance/artifact-map.md](../../governance/artifact-map.md).
+- [pr-ops/repo-model.md](../../pr-ops/repo-model.md), [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md).
 - [standards/glossary.md](../../standards/glossary.md) — термины.
 
 **Внешние (приложены к issue #263):**
