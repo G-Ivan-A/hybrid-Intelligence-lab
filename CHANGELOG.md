@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.48
+version: 1.49
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -13,6 +13,18 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Создан
+  `research/hub/2026-07-04-hub-as-agent-system-global-analysis.md` для issue #394.
+  Глобальный анализ Хаба как прообраза агентной системы методом Deep Think
+  (панель из 8 экспертов): 27 гипотез по направлениям A–H с 157 стресс-тестами
+  (86 ✅ / 54 ⚠️ / 17 ❌), матрица гипотез × тестов, таксономия, методологический
+  вектор «от описательного репозитория знаний — к исполнимой агентной среде с
+  человеком в петле», рекомендации R1–R11, индустриальный анализ норм (EU AI Act,
+  OWASP LLM Top-10:2025, NIST AI RMF/600-1, ISO/IEC 42001/23894, IEEE 7000,
+  Anthropic RSP и «Building Effective Agents», Constitutional AI) с явной
+  фиксацией неприменимого и почему, реестр из 11 пробелов (3 P1) и входные данные
+  для 4 будущих стандартов. Все выводы исследовательские, решение — за человеком
+  (`AI_GOVERNANCE.md` Rule 4). `research/README.md` обновлён (v1.23).
 - analysis: Создан
   `docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md` для issue #386.
   Анализ текущих артефактов Хаба, research evidence и экосистемных репозиториев
