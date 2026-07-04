@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.40
-updated: 2026-07-03
+version: 1.41
+updated: 2026-07-04
 temperature: 0.1
 ---
 
@@ -12,6 +12,22 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- analysis: Создан `docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md`
+  (draft) — upstream document-plan для issue #372 / B-034 в режиме Deep Think
+  (Ecosystem Architect / Data Migration Specialist / Governance Auditor).
+  Независимо найден «крайний документ» о структуре каталогов архетипов
+  (ADR-001, спутник — ADR-002; зафиксировано, что R/A/A-стандарты **не** являются
+  источником решения о физической структуре репо), выведена целевая архитектура
+  корня как дельта от универсального ядра без смешения Hub/Portal, спроектирован
+  механизм provisional-стандартов (lifecycle-статус вместо нового подкаталога,
+  anti-inflation/2FA), построена матрица миграции As-Is → To-Be с обоснованием по
+  источнику и явной пометкой неоднозначных целей (🟡) на человеческое решение,
+  рекомендованы фазы внедрения и стратегия обновления перекрёстных ссылок. Файлы
+  не перемещались, валидаторы не переделывались, RFC/ADR не создавались.
+  Зарегистрирован в `is_active_file()` / `required_files`
+  (`tools/validate-repository-structure.sh`), `governance/artifact-map.md` и
+  mkdocs nav; B-034 переведён в `review`.
 
 - standard: Создан `standards/analysis-standard.md` (draft) — базовый нормативный
   стандарт Analysis для B-027 / issue #366. Стандарт фиксирует базовый каркас
