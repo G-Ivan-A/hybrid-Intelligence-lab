@@ -90,6 +90,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/372"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -260,14 +261,16 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-044** | chore: Cleanup и модернизация Reports-артефактов (миграция кандидатов в `docs/report/`) | **P2** | B-043, B-034 | TODO | — (tech debt) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); [Reports inventory §5](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); будущий standard B-043; план миграции репо B-034 | Пост-standard cleanup: обновить frontmatter (`report-subtype`, relation-поля), убрать дубли/замаскированные отчёты, cross-references, artifact-map и индексы; координируется с планом миграции репо (B-034). Зеркалит B-028/B-033. |
 | **B-045** | research: Режимы выполнения задач для ИИ-агентов — индустриальные нормы и паттерны классификации | **P1** | B-016, B-018 | DONE (artifact: draft) | [#330](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330) (PR [#331](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/331)) | Видение фаундера ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/glossary.md` (Operating Mode); [research-отчёт](../research/hub/2026-07-02-task-execution-modes-research.md); [experiment](../research/hub/exp/task-execution-modes-330/README.md) | Research + Creative + Deep Think от лица 4 экспертов: индустриальные нормы (Cynefin/Bloom/Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL), паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал как решающий вход. Без предложения решений, новых режимов и стандартов — только исследование, паттерны, тесты, выводы. |
 | **B-046** | chore: Синхронизировать `governance/backlog.md` с фактическими статусами артефактов | **P1** | — | DONE (artifact: canonical) | [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364) (PR [#365](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/365)) | Issue [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364); artifact frontmatter statuses; this backlog | Предыдущий sync закрыт: статусы на момент PR #365 сверены с artifact frontmatter and merged PRs, без миграции файлов и без изменения внешних артефактов. |
-| **B-047** | rfc: RFC плана миграции репо Хаба | **P1** | B-034 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); B-034 document-plan | Proposal-stage перед физической миграцией: переводит analysis-plan B-034 в RFC с alternatives, trade-offs, decision path, validation/link rewrite/rollback strategy and explicit human decision gate. |
-| **B-048** | chore: Физическая миграция репо Хаба по принятому RFC | **P1** | B-047 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future migration RFC B-047 | Implementation PR chain after accepted migration RFC: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Не стартует до принятого RFC. |
+| **B-047** | rfc: RFC плана миграции репо Хаба | **P1** | B-034 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); B-034 document-plan | Proposal-stage перед физической миграцией: переводит analysis-plan B-034 в RFC with alternatives, trade-offs, decision path, validation/link rewrite/rollback strategy, explicit human decision gate, and final decisions on `ai-governance/` vs `ai-rules/` plus Phase 4 strategy. |
+| **B-048** | chore: Физическая миграция репо Хаба по принятому RFC | **P1** | B-047 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); future migration RFC B-047 | Implementation path after accepted migration RFC: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Phase 4 (Reconcile 🟡) is one task, not "one catalog = one PR"; integrity stress-test happens inside that PR before review. |
 | **B-049** | audit: Переместить отчёт кросс-стресс-тестов в `docs/audit/` и модернизировать frontmatter | **P1** | B-033, B-043 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370); [cross-standard stress-tests](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Отчёт имеет audit-природу (conformance/stress test against standards), но сейчас лежит в `docs/report/` как generic report. Нужен перенос/модернизация с audit-specific frontmatter and indexes. |
 | **B-050** | analysis: Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); stress-test findings #370 | Исследует варианты: Subtype Profiles везде vs 4-компонентная модель vs явное отсутствие профилей, унификация vs разделение, impact on validators and review pain. |
 | **B-051** | adr: Принять мета-структуру стандартов | **P1** | B-050 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future options analysis B-050 | Human decision gate: принимает/корректирует вариант мета-структуры перед созданием стандарта стандартов и массовой правкой R/A/A/Report. |
 | **B-052** | standard: Создать мета-стандарт структуры стандартов | **P1** | B-051 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future ADR B-051 | Нормирует единый инвариантный skeleton для стандартов: разделы, порядок, profile/model block policy, frontmatter convention, boundary delegation and validation expectations. |
 | **B-053** | chore: Привести Research/Analysis/Audit/Report standards к мета-стандарту | **P1** | B-052 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future meta-standard B-052 | Исправляет рассинхрон четырёх стандартов по принятому invariant skeleton без повторного обсуждения решений, с обновлением validators/navigation where required. |
 | **B-054** | standard: Стандарт процесса стресс-тестирования связанных документов | **P3** | B-048, B-053 | TODO | — (deferred) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370) | Отложенная мета-задача после миграции: нормирует периодичность, методологию и критерии проверки комплексов связанных документов. Не делать до завершения migration implementation path. |
+| **B-055** | adr: Зафиксировать разделение `ai-governance/` и `ai-rules/` как экосистемную политику | **P1** | B-048 | TODO | — (planned) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); B-034 document-plan; future migration B-048 | Human decision после физической миграции: закрепить invariant для всей экосистемы — `ai-governance/` хранит политики/внешние ограничения, `ai-rules/` хранит правила поведения агента and quick-sync context for external agents. |
+| **B-056** | chore: Физически разделить `governance/` на `ai-governance/` и `ai-rules/` | **P1** | B-048, B-055 | TODO | — (planned) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); B-034 Phase 3; future ADR B-055 | Downstream implementation of the accepted split: extract policy/compliance material into `ai-governance/`, agent behavior/sync rules into `ai-rules/`, update links/validators/navigation, and preserve rollback-safe sequencing. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
 контексте напрямую (обоснование — в их детальных описаниях).
@@ -1758,14 +1761,31 @@ future migration RFC B-047
 
 **Контекст:**
 Physical migration is implementation work after the migration RFC is accepted.
-It can require more than one PR to keep link rewrites, validator changes and
-artifact moves reviewable.
+The accepted RFC controls sequencing, but issue #376 fixes one implementation
+constraint in advance: Phase 4 (Reconcile 🟡) is executed as **one task**, not as
+"one catalog = one PR". The executor performs an integrity stress-test
+(validators + link/cross-reference check) inside that PR before requesting
+review.
+
+**Рекомендуемые фазы:**
+1. Phase 0: decision gate in B-047 (migration RFC and human decision).
+2. Phase 1: neutral target introductions such as `kb/`, `runs/`, `ai-rules/`
+   and `GOVERNANCE.md` anchors.
+3. Phase 2: `governance/rfc/` → `docs/rfc/` move with link rewrites.
+4. Phase 3: governance split (`ai-governance/`, `ai-rules/`, `pr-ops/`) under
+   the accepted RFC constraints.
+5. Phase 4: Reconcile 🟡 entities in one task/PR, with integrity stress-test
+   before review.
+6. Phase 5: validators, maps, `repo-model.md` and MkDocs/navigation alignment
+   after structure changes.
 
 **Что нужно сделать:**
 1. Execute file moves according to accepted B-047 sequencing.
 2. Rewrite links and navigation atomically with moved files.
 3. Update validators, allowlists and required-text checks to the new structure.
-4. Preserve rollback path and avoid mixing unrelated cleanup.
+4. Execute Phase 4 as one Reconcile task and record the stress-test result before
+   review.
+5. Preserve rollback path and avoid mixing unrelated cleanup.
 
 **Ожидаемые артефакты:**
 - moved files/directories according to B-047
@@ -1775,6 +1795,8 @@ artifact moves reviewable.
 - [ ] Physical structure matches accepted migration RFC.
 - [ ] Links and mkdocs navigation resolve after moves.
 - [ ] Repository validators pass after migration.
+- [ ] Phase 4 Reconcile is one task/PR and includes validator + cross-reference
+      stress-test evidence before review.
 - [ ] PR sequencing is rollback-safe and documented.
 
 **Обоснование приоритета:**
@@ -2026,6 +2048,97 @@ Do not create this standard before B-048 and B-053.
 
 ---
 
+### B-055: adr: Зафиксировать разделение `ai-governance/` и `ai-rules/` как экосистемную политику
+
+**Приоритет:** P1
+**Источник:** 🔗 [issue #376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376);
+B-034 document-plan; future physical migration B-048
+**Зависимости:** B-048
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+B-034 выводит `ai-governance/` and `ai-rules/` from ADR-001/ADR-002 as target
+root directories, but issue #376 fixes the semantic boundary explicitly:
+`ai-governance/` = policies (state constraints, business rules, information
+security, external compliance); `ai-rules/` = agent behavior rules and fast
+external-agent synchronization with project context. После физической миграции
+граница должна стать ecosystem-wide invariant, not a local naming convention.
+
+**Что нужно сделать:**
+1. Create ADR/addendum that records the `ai-governance/` vs `ai-rules/` boundary
+   as an ecosystem policy.
+2. State examples and non-goals so future agents do not move policy/compliance
+   material into behavior-rule files, or vice versa.
+3. Link B-034, B-048 and the accepted migration decision as provenance.
+4. Name consequences for B-056 and future spoke/hub synchronization.
+
+**Ожидаемые артефакты:**
+- accepted ADR or accepted addendum path selected at execution time
+
+**Критерии приёмки (DoD):**
+- [ ] ADR/addendum explicitly defines `ai-governance/` and `ai-rules/`.
+- [ ] Boundary is stated as ecosystem policy, not only Hub cleanup.
+- [ ] Decision traces to issue #376, B-034 and completed B-048 migration state.
+- [ ] B-056 is clearly unblocked and scoped by the decision.
+
+**Обоснование приоритета:**
+P1: this prevents a high-probability post-migration drift where policies,
+security/compliance constraints and operational agent rules collapse back into a
+single governance bucket.
+
+**Риски и ограничения:**
+Do not perform physical file moves in the ADR task.
+
+---
+
+### B-056: chore: Физически разделить `governance/` на `ai-governance/` и `ai-rules/`
+
+**Приоритет:** P1
+**Источник:** 🔗 [issue #376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376);
+B-034 Phase 3; future ADR B-055
+**Зависимости:** B-048, B-055
+**Статус:** TODO
+**Режим работы:** `Structured`
+
+**Контекст:**
+После accepted migration path and ADR B-055 the repository needs the physical
+split that makes the policy/rule boundary executable. This task covers the
+follow-up extraction of remaining policy/compliance material into
+`ai-governance/` and agent behavior/synchronization rules into `ai-rules/`.
+It is downstream from B-048 because it must reflect the actual migrated tree and
+not pre-empt the accepted migration sequence.
+
+**Что нужно сделать:**
+1. Inventory current `governance/`, `AI_GOVERNANCE.md`, `practices/ai-governance/`
+   and `practices/agent-work/` material against the B-055 boundary.
+2. Move or split files into `ai-governance/` and `ai-rules/` according to the
+   accepted ADR and migration state.
+3. Update links, MkDocs/navigation, validators, artifact-map, README-style entry
+   points and changelog as required by the moved paths.
+4. Keep aliases/rollback path explicit until cross-references stabilize.
+
+**Ожидаемые артефакты:**
+- migrated `ai-governance/` and `ai-rules/` contents
+- updated links, validators/navigation and governance indexes
+
+**Критерии приёмки (DoD):**
+- [ ] Policy/compliance material is routed to `ai-governance/`.
+- [ ] Agent behavior and quick-sync rules are routed to `ai-rules/`.
+- [ ] Old `governance/` leftovers are either migrated, intentionally retained or
+      documented with rationale.
+- [ ] Validators, links and navigation pass after the split.
+- [ ] Rollback path and transition aliases are documented.
+
+**Обоснование приоритета:**
+P1: the split turns the accepted ecosystem boundary into a repository invariant
+and reduces onboarding/review ambiguity for humans and external agents.
+
+**Риски и ограничения:**
+Do not reopen the B-055 decision or combine this with unrelated root cleanup.
+
+---
+
 ## 4. Анализ рекомендаций команд С и Q
 
 ### 4.1. Сравнение позиций
@@ -2266,7 +2379,7 @@ Human Review:
 ## 10. Зависимости и критический путь
 
 Диаграмма фокусируется на историческом critical path B-001..B-034 и новых
-downstream chains B-047..B-054. Строки B-035..B-046 остаются в сводной таблице
+downstream chains B-047..B-056. Строки B-035..B-046 остаются в сводной таблице
 раздела 2, но B-046 уже закрыта как предыдущая синхронизация. B-001..B-008,
 B-010, B-011, B-013, B-016..B-021, B-024..B-027, B-029..B-034, B-038..B-043,
 B-045 and B-046 уже выполнены.
@@ -2278,8 +2391,11 @@ post-standard cleanup Analysis B-028 and technical cleanup B-022/B-023.
 
 B-034 теперь явно закрыт как **analysis/plan**. Следующий migration path:
 `B-034 → B-047 → B-048`, где B-047 creates migration RFC, and B-048 performs
-physical migration after acceptance. Cross-standard stress-test follow-ups form a
-separate repair chain:
+physical migration after acceptance. B-048 explicitly keeps Phase 4 Reconcile as
+one task with validator + cross-reference stress-test before review. The
+post-migration ecosystem policy split is:
+`B-048 → B-055 → B-056`. Cross-standard stress-test follow-ups form a separate
+repair chain:
 `B-049 → B-050 → B-051 → B-052 → B-053`, with deferred process standard B-054
 after migration and desync repair.
 
@@ -2326,6 +2442,8 @@ flowchart TD
     B052["B-052 · P1<br/>Meta-standard<br/>standard skeleton"]
     B053["B-053 · P1<br/>Align R/A/A/Report<br/>to meta-standard"]
     B054["B-054 · P3<br/>Stress-test process<br/>after migration"]
+    B055["B-055 · P1<br/>ADR ai-governance<br/>vs ai-rules"]
+    B056["B-056 · P1<br/>Physical split<br/>ai-governance + ai-rules"]
 
     %% Критический путь
     B001 --> B002
@@ -2358,6 +2476,9 @@ flowchart TD
     B052 --> B053
     B048 --> B054
     B053 --> B054
+    B048 --> B055
+    B055 --> B056
+    B048 --> B056
 
     %% Прочие зависимости
     B001 --> B003
@@ -2375,7 +2496,7 @@ flowchart TD
     classDef norm fill:#e0f2fe,stroke:#0369a1,color:#0c4a6e;
     classDef done fill:#dcfce7,stroke:#166534,color:#14532d;
 
-    class B047,B048,B049,B050,B051,B052,B053 crit;
+    class B047,B048,B049,B050,B051,B052,B053,B055,B056 crit;
     class B014,B015,B022,B023,B028,B054 norm;
     class B001,B002,B003,B004,B005,B006,B007,B008,B010,B011,B013,B016,B017,B018,B019,B020,B021,B024,B025,B026,B027,B029,B030,B031,B032,B033,B034,B043 done;
 ```

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.42
+version: 1.43
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -12,6 +12,15 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- backlog: Обновлён `governance/backlog.md` по issue #376: добавлены новые
+  downstream-задачи B-055/B-056 для ADR по границе `ai-governance/` vs
+  `ai-rules/` и последующего физического разделения; B-047/B-048 уточнены с
+  учётом финальных решений по migration path. B-048 теперь явно фиксирует, что
+  Phase 4 Reconcile выполняется одной задачей, with validator +
+  cross-reference stress-test before review. Обновлены сводная таблица,
+  детальные описания and dependency diagram. Новые GitHub issues не создавались,
+  артефакты не перемещались.
 
 - analysis: Создан `docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md`
   (draft) — upstream document-plan для issue #372 / B-034 в режиме Deep Think
