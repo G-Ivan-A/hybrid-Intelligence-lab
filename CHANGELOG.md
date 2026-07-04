@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.47
+version: 1.48
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -13,6 +13,14 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Создан
+  `docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md` для issue #386.
+  Анализ текущих артефактов Хаба, research evidence и экосистемных репозиториев
+  (`mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai`) рекомендует не вводить
+  root `kb/` и `runs/` сейчас. `pr-ops/repo-model.md` фиксирует explicit
+  archetype A exception из ADR-001 core и trigger-based условия пересмотра;
+  ADR-007 синхронизирован до v0.4. Файлы физически не перемещались, root
+  `kb/`/`runs/` не создавались.
 - chore: Физическая миграция корня Хаба по принятой ADR-007 для issue #384 /
   B-048 (PR #388). Каталог `governance/` физически разделён на `ai-governance/`
   (якорь границ AI-governance слоя), `ai-rules/` (исполнимые runtime-правила
