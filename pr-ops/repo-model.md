@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-06-12
+version: 1.3
+updated: 2026-07-04
 temperature: 0.1
 executable: false
 ---
@@ -41,6 +41,23 @@ executable: false
 неясную ownership, нестабильные links или unverifiable work.
 
 Артефакт не оправдан, если он только делает дерево визуально полным.
+
+## Исключения архетипа A из универсального ядра ADR-001
+
+ADR-001 задает универсальное ядро экосистемы, включая `kb/` и `runs/`. Для
+текущего Хаба эти каталоги не создаются в корне: issue #386 не нашел
+операционной боли, которую они решают лучше существующих домов. Это явное
+исключение архетипа A из физической структуры, а не отмена семантики ADR-001 для
+других репозиториев экосистемы.
+
+| Каталог ADR-001 | Статус в текущем Хабе | Активные дома в Хабе | Триггер пересмотра |
+| --- | --- | --- | --- |
+| `kb/` | Не создается в корне Хаба. | `ai-rules/`, `pr-ops/`, `standards/`, `practices/`, `docs/guides/`; при необходимости проект-специфичный `projects/<project>/kb/`. | Появились как минимум 2-3 reusable operational knowledge artifacts, которые регулярно потребляет агент/процесс и которые нельзя без дублирования разместить в существующих домах. |
+| `runs/` | Не создается в корне Хаба. | GitHub issue/PR/CI records, `pr-ops/session-digests.md`, `docs/report/`, `research/<domain>/exp/<issue-slug>/` для research evidence. | Появились повторяющиеся non-research operational/business/pipeline runs, которым нужны стабильные repo-hosted metadata, inputs, outputs, feedback и logs. |
+
+Обоснование и сравнение с экосистемными репозиториями зафиксированы в
+[docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md](../docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md).
+ADR-007 остается ближайшим decision record для целевой структуры корня Хаба.
 
 ## Decision Rules — исполнимая часть справочного документа
 

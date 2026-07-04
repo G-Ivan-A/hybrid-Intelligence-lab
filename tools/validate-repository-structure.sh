@@ -282,6 +282,7 @@ is_active_file() {
     docs/analysis/2026-07-02-analysis-artifacts-inventory.md | \
     docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md | \
     docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md | \
+    docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -545,6 +546,7 @@ required_files=(
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
   "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
   "docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md"
+  "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -1293,8 +1295,8 @@ require_text "pr-ops/repo-model.md" "Anti-Inflation"
 require_text "pr-ops/repo-model.md" "tools/"
 require_text "pr-ops/repo-model.md" "practices/"
 require_text "pr-ops/repo-model.md" "status: canonical"
-require_text "pr-ops/repo-model.md" "version: 1.2"
-require_text "pr-ops/repo-model.md" "updated: 2026-06-12"
+require_text "pr-ops/repo-model.md" "version: 1.3"
+require_text "pr-ops/repo-model.md" "updated: 2026-07-04"
 require_text "pr-ops/repo-model.md" "executable: false"
 require_text "pr-ops/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
 
@@ -1467,6 +1469,7 @@ require_text "pr-ops/artifact-map.md" "research/hub/2026-06-12-international-ai-
 require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
 require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
 require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
+require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
 require_text "pr-ops/artifact-map.md" "research/hub/exp/reports-inventory-310/README.md"
 require_text "pr-ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/README.md"
 require_text "pr-ops/artifact-map.md" "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
@@ -1895,6 +1898,19 @@ require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "B-033"
 require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "docs/audit/2026-06-11-task-execution-audit.md"
 require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "не создаёт RFC"
 require_text "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md" "не переносит файлы"
+
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "status: draft"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "version: 0.1"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "updated: 2026-07-04"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "temperature: 0.1"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "issue #386"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "ADR-001"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "ADR-007"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "Anti-Inflation"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "Mango"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "Clarify"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "не вводить"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "pr-ops/repo-model.md"
 
 require_text "docs/audit/2026-06-11-task-execution-audit.md" "audit_target:"
 require_text "docs/audit/2026-06-11-task-execution-audit.md" "evidence_model:"

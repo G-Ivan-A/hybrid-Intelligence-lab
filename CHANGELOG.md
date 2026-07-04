@@ -13,6 +13,14 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Создан
+  `docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md` для issue #386.
+  Анализ текущих артефактов Хаба, research evidence и экосистемных репозиториев
+  (`mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai`) рекомендует не вводить
+  root `kb/` и `runs/` сейчас. `pr-ops/repo-model.md` фиксирует explicit
+  archetype A exception из ADR-001 core и trigger-based условия пересмотра;
+  ADR-007 синхронизирован до v0.4. Файлы физически не перемещались, root
+  `kb/`/`runs/` не создавались.
 - chore: Проведена post-B-048 ревизия валидаторов для issue #390 / B-063
   (PR #391). `tools/validate-repository-structure.sh` теперь явно отклоняет
   возвращение retired root paths `governance/`, `website/`, `experiments/` и
