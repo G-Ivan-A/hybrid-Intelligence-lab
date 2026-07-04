@@ -13,6 +13,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- backlog: Обновлён `governance/backlog.md` по issue #380 после ADR-007:
+  добавлены downstream-задачи B-057..B-062 for migration follow-ups and
+  trigger-based root-catalog research (`docs/guides/`, `projects-sink/`,
+  `education/`, `frameworks/`). Новые GitHub issues не создавались, файлы не
+  перемещались.
+
 - adr: Создан `docs/adr/2026-07-adr-007-hub-root-structure.md` (proposed)
   для issue #378 / B-047. ADR фиксирует founder decision по целевой структуре
   корня Хаба после B-034, границу `ai-governance/` vs `ai-rules/`, механизм
