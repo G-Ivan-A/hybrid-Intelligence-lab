@@ -7,8 +7,9 @@ temperature: 0.1
 
 # PR-Ops
 
-Дом операционного управления задачами, pull request'ами и review: backlog,
-карта артефактов, модель репозитория и операционные реестры. Граница
+Дом операционного управления задачами, pull request'ами и review: active
+backlog, правила его ведения, карта артефактов, модель репозитория и
+операционные реестры. Граница
 `pr-ops/` зафиксирована в
 [ADR-007](../docs/adr/2026-07-adr-007-hub-root-structure.md).
 
@@ -16,7 +17,8 @@ temperature: 0.1
 
 | Артефакт | Назначение |
 | --- | --- |
-| [backlog.md](backlog.md) | Реестр задач (B-XXX) и их статусов. |
+| [backlog.md](backlog.md) | Active backlog: незавершённые задачи (B-XXX), сгруппированные в логические спринты. |
+| [backlog-instruction.md](backlog-instruction.md) | Правила ведения backlog, статусы, lifecycle, sprint format и policy отсутствующих фактов. |
 | [artifact-map.md](artifact-map.md) | Карта артефактов репозитория. |
 | [repo-model.md](repo-model.md) | Правила структуры и Anti-Inflation principle. |
 | [session-digests.md](session-digests.md) | Дайджесты рабочих сессий. |
@@ -27,4 +29,4 @@ temperature: 0.1
 | Сюда | Не сюда |
 | --- | --- |
 | Управление задачами, PR и review; операционные реестры Hub. | Политики уровня организации — они в [ai-governance/](../ai-governance/README.md). |
-| Backlog, artifact-map, repo-model, дайджесты. | Правила поведения AI-агента — они в [ai-rules/](../ai-rules/README.md). |
+| Backlog, backlog instruction, artifact-map, repo-model, дайджесты. | Правила поведения AI-агента — они в [ai-rules/](../ai-rules/README.md). |

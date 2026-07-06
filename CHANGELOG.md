@@ -13,6 +13,15 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- backlog: Реструктурирован `pr-ops/backlog.md` по issue #392 / B-035:
+  active backlog теперь содержит только незавершённые задачи, сгруппированные
+  в логические спринты, и таблицы с колонками `Краткое содержание` и `Режим
+  запуска`. Правила ведения, lifecycle, sprint format, `null` policy и правила
+  закрытия спринтов вынесены в новый `pr-ops/backlog-instruction.md`. Отдельный
+  архивный файл бэклога не создаётся: история остаётся в GitHub Issues/PR,
+  `CHANGELOG.md` и артефактах. Синхронизированы `pr-ops/artifact-map.md`,
+  `pr-ops/README.md`, analysis addendum issue #297/#392 и структурный
+  валидатор; B-035 переведена в `review`.
 - analysis: Создан
   `docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md` для issue #386.
   Анализ текущих артефактов Хаба, research evidence и экосистемных репозиториев
