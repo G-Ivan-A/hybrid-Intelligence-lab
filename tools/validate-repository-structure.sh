@@ -129,6 +129,7 @@ is_active_file() {
     research/hub/2026-06-28-research-analysis-audit-inventory.md | \
     research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md | \
     research/hub/2026-07-02-task-execution-modes-research.md | \
+    research/hub/2026-07-04-hub-as-agent-system-global-analysis.md | \
     research/README.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
@@ -1428,7 +1429,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.70"
+require_text "pr-ops/artifact-map.md" "version: 1.71"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"

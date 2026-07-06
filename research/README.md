@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.22
-updated: 2026-07-01
+version: 1.23
+updated: 2026-07-04
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -61,6 +61,7 @@ source: research/README-old.md
 | [2026-06-27-adr-industry-norms-and-variants.md](hub/2026-06-27-adr-industry-norms-and-variants.md) | Research input для issue #278: ADR/decision-record индустриальные нормы и варианты для Hub/Mango по архетипам A-D, с дельтами и критериями применимости. |
 | [2026-06-28-research-analysis-audit-inventory.md](hub/2026-06-28-research-analysis-audit-inventory.md) | Analysis input для issue #288: Research / Analysis / Audit matrix по Hub, Mango и Clarify, concept substitutions, duplicate risks and three `Analysis -> RFC -> Standard` chains. |
 | [2026-06-30-reports-industry-norms-and-standardization-scope.md](hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) | Research input для issue #307 (B-038): индустриальный benchmark норм Reports (Diátaxis, DITA, ISO/IEC/IEEE, ANSI/NISO Z39.18, ГОСТ 7.32/19.101, SDMX/DDI, NIST AI RMF, EU AI Act, Kubernetes/CNCF/OpenTelemetry), проверка гипотез H1-H4, граничные кейсы Reports ↔ Analysis/Audit и рекомендация Вариант C (гибрид) без создания стандарта. |
+| [2026-07-04-hub-as-agent-system-global-analysis.md](hub/2026-07-04-hub-as-agent-system-global-analysis.md) | Глобальный анализ Хаба как прообраза агентной системы для issue #394 (Deep Think, панель из 8 экспертов): 27 гипотез по направлениям A–H, 157 стресс-тестов (86 ✅ / 54 ⚠️ / 17 ❌), матрица, таксономия, методологический вектор, рекомендации R1–R11, индустриальные нормы (EU AI Act, OWASP LLM Top-10:2025, NIST AI RMF/600-1, ISO/IEC 42001/23894, Anthropic «Building Effective Agents») с явным разбором неприменимого, реестр из 11 пробелов и входные данные для 4 стандартов. |
 
 ### Подкаталог `open-ai-ru/`
 
