@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.49
-updated: 2026-07-04
+version: 1.50
+updated: 2026-07-06
 temperature: 0.1
 ---
 
@@ -13,7 +13,7 @@ All notable repository governance changes are documented here.
 
 ### Added
 
-- audit: Синхронизирован `standards/glossary.md` (v1.5 → v1.6) и перемещён отчёт
+- audit: Синхронизирован `standards/glossary.md` (v1.5 -> v1.6) и перемещён отчёт
   кросс-стресс-тестов для issue #396 / B-049 (PR #397). Глоссарий пополнен
   терминами из стандартов R/A/A/Report (Профиль подтипа / Subtype Profile,
   4-компонентная модель Audit, Evidence-контейнер, Границы / Boundaries,
@@ -24,12 +24,32 @@ All notable repository governance changes are documented here.
   `docs/report/2026-07-04-cross-standard-stress-tests.md` перемещён в
   `docs/audit/2026-07-04-cross-standard-stress-tests.md` с audit-specific
   frontmatter (`audit_target`, `evidence_model`, `verdict: conditional`,
-  `severity_scale`, `follow_up`, `related_norm`) и добавленной секцией
-  Remediation / Deviation; содержание findings не менялось. Синхронизированы
+  `severity_scale`, `follow_up`, `related_norm`) и секцией Remediation /
+  Deviation; содержание findings не менялось. Синхронизированы
   `pr-ops/artifact-map.md`, `pr-ops/backlog.md` и allowlists
   `tools/validate-repository-structure.sh`. Стандарты R/A/A/Report не менялись,
   новые стандарты не создавались.
-
+- research: Создан
+  `research/hub/2026-07-04-hub-as-agent-system-global-analysis.md` для issue #394.
+  Глобальный анализ Хаба как прообраза агентной системы методом Deep Think
+  (панель из 8 экспертов): 27 гипотез по направлениям A–H с 157 стресс-тестами
+  (86 ✅ / 54 ⚠️ / 17 ❌), матрица гипотез × тестов, таксономия, методологический
+  вектор «от описательного репозитория знаний — к исполнимой агентной среде с
+  человеком в петле», рекомендации R1–R11, индустриальный анализ норм (EU AI Act,
+  OWASP LLM Top-10:2025, NIST AI RMF/600-1, ISO/IEC 42001/23894, IEEE 7000,
+  Anthropic RSP и «Building Effective Agents», Constitutional AI) с явной
+  фиксацией неприменимого и почему, реестр из 11 пробелов (3 P1) и входные данные
+  для 4 будущих стандартов. Все выводы исследовательские, решение — за человеком
+  (`AI_GOVERNANCE.md` Rule 4). `research/README.md` обновлён (v1.23).
+- backlog: Реструктурирован `pr-ops/backlog.md` по issue #392 / B-035:
+  active backlog теперь содержит только незавершённые задачи, сгруппированные
+  в логические спринты, и таблицы с колонками `Краткое содержание` и `Режим
+  запуска`. Правила ведения, lifecycle, sprint format, `null` policy и правила
+  закрытия спринтов вынесены в новый `pr-ops/backlog-instruction.md`. Отдельный
+  архивный файл бэклога не создаётся: история остаётся в GitHub Issues/PR,
+  `CHANGELOG.md` и артефактах. Синхронизированы `pr-ops/artifact-map.md`,
+  `pr-ops/README.md`, analysis addendum issue #297/#392 и структурный
+  валидатор; B-035 переведена в `review`.
 - analysis: Создан
   `docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md` для issue #386.
   Анализ текущих артефактов Хаба, research evidence и экосистемных репозиториев
