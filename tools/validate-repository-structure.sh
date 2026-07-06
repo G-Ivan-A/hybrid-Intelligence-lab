@@ -72,7 +72,6 @@ is_active_file() {
     docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
     docs/report/2026-07-01-reports-inventory-placement-analysis.md | \
     docs/report/2026-07-01-rfc-adr-duplication-analysis.md | \
-    docs/report/2026-07-04-cross-standard-stress-tests.md | \
     docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     docs/adr/2026-07-adr-003-research-structure.md | \
@@ -255,6 +254,7 @@ is_active_file() {
     docs/audit/2026-06-11-task-execution-audit.md | \
     docs/audit/2026-06-29-research-artifact-format-contract-audit.md | \
     docs/audit/2026-07-01-documentation-boundary-audit.md | \
+    docs/audit/2026-07-04-cross-standard-stress-tests.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -1165,8 +1165,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 1.5"
-require_text "standards/glossary.md" "updated: 2026-07-02"
+require_text "standards/glossary.md" "version: 1.6"
+require_text "standards/glossary.md" "updated: 2026-07-04"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"
@@ -1429,11 +1429,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.71"
+require_text "pr-ops/artifact-map.md" "version: 1.72"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-07-04"
+require_text "pr-ops/artifact-map.md" "updated: 2026-07-06"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "ai-rules/agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1736,7 +1736,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.27"
+require_text "pr-ops/backlog.md" "version: 1.28"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"

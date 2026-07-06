@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.49
-updated: 2026-07-04
+version: 1.50
+updated: 2026-07-06
 temperature: 0.1
 ---
 
@@ -13,6 +13,22 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- audit: Синхронизирован `standards/glossary.md` (v1.5 -> v1.6) и перемещён отчёт
+  кросс-стресс-тестов для issue #396 / B-049 (PR #397). Глоссарий пополнен
+  терминами из стандартов R/A/A/Report (Профиль подтипа / Subtype Profile,
+  4-компонентная модель Audit, Evidence-контейнер, Границы / Boundaries,
+  Маршрутизация / Routing, content-over-path), из ADR-007 (Целевая структура
+  корня, `projects-sink/`, `ai-governance/`, `ai-rules/`, Provisional-стандарт,
+  Lifecycle-статус) и из кросс-стресс-тестов (Структурный рассинхрон, Competing
+  sources), с соответствующими строками в «Связи терминов». Отчёт
+  `docs/report/2026-07-04-cross-standard-stress-tests.md` перемещён в
+  `docs/audit/2026-07-04-cross-standard-stress-tests.md` с audit-specific
+  frontmatter (`audit_target`, `evidence_model`, `verdict: conditional`,
+  `severity_scale`, `follow_up`, `related_norm`) и секцией Remediation /
+  Deviation; содержание findings не менялось. Синхронизированы
+  `pr-ops/artifact-map.md`, `pr-ops/backlog.md` и allowlists
+  `tools/validate-repository-structure.sh`. Стандарты R/A/A/Report не менялись,
+  новые стандарты не создавались.
 - research: Создан
   `research/hub/2026-07-04-hub-as-agent-system-global-analysis.md` для issue #394.
   Глобальный анализ Хаба как прообраза агентной системы методом Deep Think
