@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.53
+version: 1.54
 updated: 2026-07-10
 temperature: 0.1
 ---
@@ -19,6 +19,18 @@ All notable repository governance changes are documented here.
   оставшимися активными задачами; `pr-ops/backlog.md` обновлён с v1.29 до v1.30.
 
 ### Added
+
+- analysis: Создан
+  `docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md` для issue
+  #407 / B-050. Сравнены варианты meta-structure A/B/C/D/F по полноте решения
+  findings #370, validator impact, review ergonomics, сложности и соответствию
+  принципу «инвариантный скелет + специфичные разделы снизу + creative mode
+  внутри». Recommendation для human decision gate B-051 — Вариант F: единый
+  каркас из 10 разделов, один `Type Model` slot (`profiles` / `model` / N/A) и
+  разрешённый specific tail. Зафиксированы accepted trade-offs, риски,
+  downstream migration/validator plan и открытые пункты решения. R/A/A/Report
+  standards и ADR не менялись; B-050 переведена в `review`, синхронизированы
+  `pr-ops/artifact-map.md` и pinned metadata assertions структурного валидатора.
 
 - chore: Внесены в `pr-ops/backlog.md` (v1.28 -> v1.29) задачи из глобального
   анализа Хаба как агентной системы v0.4 (issues #394/#398/#400) — issue #402.

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.30
+version: 1.31
 updated: 2026-07-10
 temperature: 0.1
 type: backlog
@@ -128,7 +128,7 @@ B-050/B-051 приняли решение, B-052 создал meta-standard, B-0
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-050** | Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | TODO | - (planned) | Issue #374; findings issue #370 | Сравнить варианты meta-structure: профили, model block, allowed differences, validator impact и review ergonomics. Результат - recommendation для ADR B-051, без правки стандартов. | `null` |
+| **B-050** | Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | review | [#407](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/407) | Issue #374; findings issue #370; [analysis B-050](../docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md) | Сравнены profiles, model block, allowed differences, hybrid и Вариант F. Recommendation для ADR B-051: invariant skeleton + единый type slot + specific tail; стандарты и валидаторы не менялись. | Hybrid |
 | **B-051** | Принять мета-структуру стандартов | **P1** | B-050 | TODO | - (planned) | Issue #374; future analysis B-050 | Human decision gate: принять или скорректировать recommendation B-050, зафиксировать invariant skeleton, frontmatter convention и boundary-delegation rule. | Structured |
 | **B-052** | Создать мета-стандарт структуры стандартов | **P1** | B-051 | TODO | - (planned) | Issue #374; future ADR B-051 | Нормативно описать структуру стандартов: обязательные секции, порядок, profile/model slot policy, frontmatter conventions and validation expectations. | Structured |
 | **B-053** | Привести Research/Analysis/Audit/Report standards к мета-стандарту | **P1** | B-052 | TODO | - (planned) | Issue #374; future meta-standard B-052 | Обновить четыре стандарта по принятому skeleton без переоткрытия смысловых решений. Синхронизировать validators/navigation where required. | Structured |
