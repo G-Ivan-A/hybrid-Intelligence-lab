@@ -13,6 +13,14 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- analysis: Доработан B-050 по review issue #415: обязательный принцип вынесен
+  из weighted matrix в constraint, добавлены baseline E и варианты skeleton
+  F8/F10/F12 для human decision gate B-051, `Type Model` упрощён до
+  `model`/`N/A`, specific tail связан с `Purpose`/`Scope`, owner общей
+  routing/boundary-нормы закреплён за ADR-002, а B-053 разделён на mechanical и
+  semantic migration. R/A/A/Report standards, ADR и физическая миграция не
+  изменялись; синхронизированы backlog, artifact map и pinned validator metadata.
+
 - chore: Спринт 5 закрыл три P1-пробела агентной модели (issue #406): UI-форма
   `.github/ISSUE_TEMPLATE/task.yml` теперь предлагает режимы `hybrid` и
   `deep-think`; `ai-rules/adversarial-stress-testing.md` нормирует повторяемую
