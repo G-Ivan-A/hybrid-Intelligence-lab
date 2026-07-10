@@ -1493,7 +1493,7 @@ require_text "pr-ops/artifact-map.md" "research/hub/2026-06-28-research-analysis
 require_text "pr-ops/artifact-map.md" "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-11-task-execution-audit.md"
 require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
-require_text "pr-ops/artifact-map.md" "| `/docs/audit/2026-07-04-cross-standard-stress-tests.md` | аудит | — |"
+require_text "pr-ops/artifact-map.md" '| `/docs/audit/2026-07-04-cross-standard-stress-tests.md` | аудит | — |'
 require_text "pr-ops/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
