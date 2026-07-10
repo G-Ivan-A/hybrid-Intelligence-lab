@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.52
+version: 1.53
 updated: 2026-07-10
 temperature: 0.1
 ---
@@ -10,6 +10,13 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Changed
+
+- backlog: B-035, B-049 и B-063 архивированы из active backlog после
+  подтверждённых merge PR #393, #397 и #391 соответственно (issue #404).
+  Связанные story, цели и критерии закрытия спринтов синхронизированы с
+  оставшимися активными задачами; `pr-ops/backlog.md` обновлён с v1.29 до v1.30.
 
 ### Added
 
