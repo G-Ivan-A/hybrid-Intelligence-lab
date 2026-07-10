@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.54
+version: 1.55
 updated: 2026-07-10
 temperature: 0.1
 ---
@@ -29,6 +29,20 @@ All notable repository governance changes are documented here.
   оставшимися активными задачами; `pr-ops/backlog.md` обновлён с v1.29 до v1.30.
 
 ### Added
+
+- backlog: Внесены в `pr-ops/backlog.md` (v1.30 -> v1.31) Спринт 8 «Разделение
+  Mango на два репозитория» и задачи B-079..B-084 — issue #411 (решение
+  фаундера от 2026-07-10). B-079 фиксирует решение через ADR («сначала Хаб,
+  потом Mango»), B-080 составляет план миграции, B-081/B-082 создают публичный
+  `ai-ba-playbooks` и приватный `mango-ba-prompt-library` репозитории, B-083
+  выполняет физическую миграцию артефактов из `mango_ba_prompts`, а B-084
+  настраивает и тестирует одностороннюю синхронизацию приватный → публичный.
+  GitHub issues не создавались (только строки бэклога), приоритеты/зависимости
+  проставлены по issue #411, а факты без источника оставлены `null`.
+  Синхронизированы таблица источников и frontmatter `related_issues`.
+  Дополнительно зарегистрирован самостоятельной строкой в artifact map ранее
+  перемещённый audit-отчёт
+  `docs/audit/2026-07-04-cross-standard-stress-tests.md`.
 
 - analysis: Создан
   `docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md` для issue

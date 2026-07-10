@@ -1493,6 +1493,7 @@ require_text "pr-ops/artifact-map.md" "research/hub/2026-06-28-research-analysis
 require_text "pr-ops/artifact-map.md" "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-11-task-execution-audit.md"
 require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
+require_text "pr-ops/artifact-map.md" '| `/docs/audit/2026-07-04-cross-standard-stress-tests.md` | аудит | — |'
 require_text "pr-ops/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -1774,6 +1775,10 @@ require_text "pr-ops/backlog.md" "issue #378"
 require_text "pr-ops/backlog.md" "absorbed by ADR-007/B-047"
 require_text "pr-ops/backlog.md" "**B-062**"
 require_text "pr-ops/backlog.md" '`null`'
+require_text "pr-ops/backlog.md" "## Спринт 8: Разделение Mango на два репозитория"
+require_text "pr-ops/backlog.md" "**B-079**"
+require_text "pr-ops/backlog.md" "**B-084**"
+require_text "pr-ops/backlog.md" "issue #411"
 
 require_text "pr-ops/backlog-instruction.md" "status: canonical"
 require_text "pr-ops/backlog-instruction.md" "version: 1.0"
