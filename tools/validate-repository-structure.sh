@@ -81,6 +81,7 @@ is_active_file() {
     docs/adr/2026-07-adr-005-audit-structure.md | \
     docs/adr/2026-07-adr-006-analysis-structure.md | \
     docs/adr/2026-07-adr-007-hub-root-structure.md | \
+    docs/adr/2026-07-adr-008-standard-meta-structure.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -549,6 +550,7 @@ required_files=(
   "docs/adr/2026-07-adr-005-audit-structure.md"
   "docs/adr/2026-07-adr-006-analysis-structure.md"
   "docs/adr/2026-07-adr-007-hub-root-structure.md"
+  "docs/adr/2026-07-adr-008-standard-meta-structure.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
