@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-06-25
+version: 1.3
+updated: 2026-07-16
 temperature: 0.1
 ---
 
@@ -33,7 +33,7 @@ temperature: 0.1
 | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) | Операционный контракт для Founder & PO, reviewers, contributors и AI-агентов. |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Правила участия, локальные проверки и ожидания к review. |
 | [CHANGELOG.md](CHANGELOG.md) | Date-based журнал governance-изменений репозитория. |
-| [LICENSE](LICENSE) | Текущий статус лицензии и pending-решение Founder & PO. |
+| [LICENSE](LICENSE) | Гибридная лицензия: CC BY 4.0 для текстовых артефактов, Apache-2.0 для скриптов. |
 | [standards/README.md](standards/README.md) | Таблица активных и планируемых стандартов. |
 | [standards/file-naming.md](standards/file-naming.md) | Правила именования файлов, включая date-first research/analysis/RFC/ADR артефакты. |
 | [standards/glossary.md](standards/glossary.md) | Единый словарь терминов для standards, governance и AI-assisted work. |
@@ -114,3 +114,29 @@ frontmatter. Исторический контекст и решение по к
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
 ```
+
+## 📜 License
+
+Репозиторий открыт под двумя стандартными лицензиями, разделёнными по типу
+файла. Полные тексты и точные условия — в [LICENSE](LICENSE).
+
+| Что вы берёте | Признак файла | Лицензия |
+| --- | --- | --- |
+| Стандарты, промпты, ADR/RFC, исследования, гайды, governance, шаблоны | любой файл, кроме скриптов | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Валидаторы, служебные скрипты, CI/CD | `*.sh`, `*.py`, `.github/workflows/` | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+
+**Что это значит на практике.** Берите, меняйте под себя, используйте в
+коммерческих проектах и обучении — разрешение уже дано, спрашивать не нужно.
+Единственное неснимаемое условие: **укажите авторство** и, если вы изменили
+материал, отметьте это. Скрипты дополнительно идут с явным патентным грантом
+Apache-2.0 — он защищает вас как пользователя.
+
+Минимальная форма указания источника для текста:
+
+> Источник: hybrid-Intelligence-lab
+> (https://github.com/G-Ivan-A/hybrid-Intelligence-lab), лицензия CC BY 4.0.
+> Изменения: <перечислить, если материал изменён>.
+
+Отправляя PR, вы лицензируете свой вклад на тех же условиях (inbound =
+outbound); отдельный CLA не требуется. Лицензии не дают прав на товарные знаки
+и названия проектов.
