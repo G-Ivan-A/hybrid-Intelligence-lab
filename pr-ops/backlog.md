@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.33
+version: 1.34
 updated: 2026-07-16
 temperature: 0.1
 type: backlog
@@ -42,6 +42,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/413"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/419"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/417"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/427"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -380,6 +381,16 @@ Apache-2.0.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **B-085** | Гибридная лицензия репозитория Хаба | **P2** | - | review | [#419](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/419) / [PR #422](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/422) | Обсуждение с фаундером (2026-07-10); issue #419; ADR-007 | Заменить license placeholder на гибридную модель CC BY 4.0 (текстовые артефакты) + Apache-2.0 (скрипты) с разделением по признаку файла, обновить `README.md`, artifact map и changelog. | Hybrid |
 
+## Отложенные задачи с триггером
+
+Задачи этого блока не запускаются по факту регистрации. Они переходят в работу
+только после появления указанной операционной боли, чтобы соблюдать принцип
+Anti-Inflation.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-088** | Зафиксировать многоуровневую иерархию SSOT (ADR vs Стандарт) | **P3** | - | deferred (triggered) | - (tech debt) | Обсуждение 2026-07-16; B-050 v0.2 §2; [issue #427](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/427) | Текущая формулировка «ADR имеет приоритет» слишком общая. Необходимо чётко разграничить компетенции: ADR = SSOT для решений, Стандарт = SSOT для исполнения. Задача стартует **только** при появлении боли: повторяющиеся конфликты между свежим ADR и устоявшейся практикой в стандарте. | Creative |
+
 
 ---
 
@@ -396,4 +407,5 @@ Apache-2.0.
 | Issue [#411](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/411) / [#413](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/413) (обсуждение 2026-07-10, решение фаундера) | Источник задач B-079..B-084 (Спринт 8): разделение Mango на публичный `ai-ba-playbooks` и приватный `mango-ba-prompt-library` репозитории. |
 | Issue [#419](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/419) (обсуждение 2026-07-10, решение фаундера) | Источник задачи B-085 (Спринт 9): гибридная лицензия CC BY 4.0 + Apache-2.0 и свобода исполнителя предложить альтернативу. |
 | Issue [#418](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/418) (постановка фаундера) | Источник задач B-085..B-087 (Спринт 9): научно-теоретическое исследование retrieval-стратегий как вход для RFC-F и теоретическая основа образовательного модуля. |
+| Issue [#427](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/427) (обсуждение 2026-07-16; B-050 v0.2 §2) | Источник triggered-задачи B-088: разграничение ADR как SSOT для решений и Стандарта как SSOT для исполнения только после появления повторяющейся операционной боли. |
 | GitHub Issues/PR | История выполненных задач, review discussion and implementation evidence. |

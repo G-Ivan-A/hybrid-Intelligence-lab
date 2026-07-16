@@ -1748,7 +1748,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.33"
+require_text "pr-ops/backlog.md" "version: 1.34"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
@@ -1783,6 +1783,9 @@ require_text "pr-ops/backlog.md" "## Спринт 8: Разделение Mango 
 require_text "pr-ops/backlog.md" "**B-079**"
 require_text "pr-ops/backlog.md" "**B-084**"
 require_text "pr-ops/backlog.md" "issues #411, #413"
+require_text "pr-ops/backlog.md" "**B-088**"
+require_text "pr-ops/backlog.md" "deferred (triggered)"
+require_text "pr-ops/backlog.md" "issues/427"
 
 require_text "pr-ops/backlog-instruction.md" "status: canonical"
 require_text "pr-ops/backlog-instruction.md" "version: 1.0"

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.57
+version: 1.58
 updated: 2026-07-16
 temperature: 0.1
 ---
@@ -12,6 +12,14 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- backlog: В `pr-ops/backlog.md` (v1.33 -> v1.34) добавлена triggered-задача
+  B-088 о многоуровневой иерархии SSOT (issue #427): ADR отвечает за решения,
+  Стандарт — за исполнение. Задача имеет статус `deferred (triggered)` и не
+  запускается до повторяющихся конфликтов между свежим ADR и устоявшейся
+  практикой в стандарте; тем самым сохранён принцип Anti-Inflation. Источник
+  обсуждения 2026-07-16 и B-050 v0.2 §2 зарегистрирован в таблице активного
+  порядка; исследования, ADR и стандарты не изменялись.
 
 - research: Заведено направление `research/education/` — теоретическая основа
   для образовательных модулей Хаба, с явной границей: research отвечает «что
