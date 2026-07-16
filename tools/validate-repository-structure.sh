@@ -81,6 +81,7 @@ is_active_file() {
     docs/adr/2026-07-adr-005-audit-structure.md | \
     docs/adr/2026-07-adr-006-analysis-structure.md | \
     docs/adr/2026-07-adr-007-hub-root-structure.md | \
+    docs/adr/2026-07-adr-008-standard-meta-structure.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -132,6 +133,8 @@ is_active_file() {
     research/hub/2026-07-02-task-execution-modes-research.md | \
     research/hub/2026-07-04-hub-as-agent-system-global-analysis.md | \
     research/README.md | \
+    research/education/README.md | \
+    research/education/2026-07-16-retrieval-strategies-survey.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
     research/hub/exp-rfc-adr-industry-norms/collect-evidence.py | \
@@ -549,6 +552,7 @@ required_files=(
   "docs/adr/2026-07-adr-005-audit-structure.md"
   "docs/adr/2026-07-adr-006-analysis-structure.md"
   "docs/adr/2026-07-adr-007-hub-root-structure.md"
+  "docs/adr/2026-07-adr-008-standard-meta-structure.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"

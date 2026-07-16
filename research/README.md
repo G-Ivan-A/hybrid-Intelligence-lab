@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.24
-updated: 2026-07-09
+version: 1.25
+updated: 2026-07-16
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -40,6 +40,7 @@ source: research/README-old.md
 | [external-knowledge/](external-knowledge/) | Интеграция внешних знаний: Base Registry внешних источников, механизм инсайтов и привязка к knowledge lifecycle (`scope: repo-wide`). |
 | [cicd/](cicd/) | Исследования практик и стандартов CI/CD для AI-native проектов: анализ шаблонов, паттернов автоматизации и применимости к нашим репозиториям (`scope: repo-wide`). |
 | [reputation-technologies/](reputation-technologies/) | Фреймворк репутационных технологий **GRA**: видение фаундера, концептуальная модель, международный стандарт, словарь, white paper, архитектура отдельного репозитория в экосистеме (`scope: repo-wide`). |
+| [education/](education/) | Теоретическая основа для образовательных модулей Хаба: source-backed survey предметных областей, таксономии и матрицы принятия решений (`scope: repo-wide`). Учебный продукт на их основе живёт в [education/](../education/). |
 
 ### Подкаталог `hub/`
 
@@ -78,6 +79,12 @@ source: research/README-old.md
 | [2026-06-20-white-paper.en.md](reputation-technologies/2026-06-20-white-paper.en.md) | White paper (EN, 10–15 c.) для международной аудитории. |
 | [2026-06-20-executive-summary.ru-en.md](reputation-technologies/2026-06-20-executive-summary.ru-en.md) | Executive summary (RU + EN, 2–3 c.). |
 | [2026-06-20-glossary.ru-en.md](reputation-technologies/2026-06-20-glossary.ru-en.md) | Терминологический словарь (RU↔EN) с международными аналогами. |
+
+### Подкаталог `education/`
+
+| Файл | Назначение |
+| --- | --- |
+| [2026-07-16-retrieval-strategies-survey.md](education/2026-07-16-retrieval-strategies-survey.md) | Научно-теоретическое исследование retrieval-стратегий для AI-агентов (issue #418): 30 research questions, объектная модель из 10 сущностей, граф зависимостей, 9 точек принятия решений, 20 провокационных гипотез (7 от фаундера + 13 из международных практик), таксономии БЗ/запросов/стратегий, матрица «БЗ × Запрос → Стратегия», chunking, embeddings и similarity metrics, reranking, evaluation, readiness levels L0–L5, индустриальные кейсы и тренды 2024–2026, связь с архитектурой памяти агента. Теоретическая база для образовательного модуля (RFC-F). |
 
 ## Рекомендуемая структура
 
