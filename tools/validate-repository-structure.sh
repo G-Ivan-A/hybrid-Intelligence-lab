@@ -110,6 +110,7 @@ is_active_file() {
     standards/htom-documentation-structure.md | \
     standards/webportal-product-concept-standard.md | \
     standards/webportal-solution-concept-standard.md | \
+    standards/evals-contract-standard.md | \
     research/mango/2026-05-26-taxonomy-concept.md | \
     research/mango/2026-05-26-requirements-lifecycle-uncertainty.md | \
     research/mango/2026-05-26-rag-mapping-roadmap.md | \
@@ -595,6 +596,7 @@ required_files=(
   "standards/htom-documentation-structure.md"
   "standards/webportal-product-concept-standard.md"
   "standards/webportal-solution-concept-standard.md"
+  "standards/evals-contract-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/hub/2026-06-12-ecosystem-governance-audit.md"
@@ -895,6 +897,7 @@ require_text "standards/README.md" "rfc-structure-standard.md"
 require_text "standards/README.md" "standard-meta-structure.md"
 require_text "standards/README.md" "executable-documentation-standard.md"
 require_text "standards/README.md" "htom-documentation-structure.md"
+require_text "standards/README.md" "evals-contract-standard.md"
 require_text "standards/README.md" "artifact-map.md"
 require_text "standards/README.md" "issue-workflow.md"
 require_text "standards/README.md" "session-handover-standard.md"
