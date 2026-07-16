@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.57
+version: 1.58
 updated: 2026-07-16
 temperature: 0.1
 ---
@@ -12,6 +12,17 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- standard: Создан `standards/standard-meta-structure.md` для issue #423 /
+  B-052. Мета-стандарт нормативно кодифицирует решение ADR-008 F10 explicit:
+  десять уникальных инвариантных H2-секций в строгом порядке, `N/A +
+  rationale` для любого неприменимого раздела, `Type Model` только в формах
+  `model`/`N/A`, specific tail только после `Related Artifacts` с формально
+  проверяемой Purpose/Scope cross-reference в первом абзаце и ADR-002 как
+  canonical owner общей routing/boundary table. Зафиксирована граница
+  validator/human review; миграция Research/Analysis/Audit/Report standards
+  оставлена B-053. Синхронизированы artifact map и backlog; B-052 переведена в
+  `review`.
 
 - research: Заведено направление `research/education/` — теоретическая основа
   для образовательных модулей Хаба, с явной границей: research отвечает «что
