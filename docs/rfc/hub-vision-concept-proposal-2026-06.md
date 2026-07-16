@@ -19,7 +19,7 @@ related_issues:
 > [библиотекой гайдов](../../guides/README.md).
 >
 > Решение по RFC (принять / отклонить / доработать) — за человеком
-> ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), правило 4).
+> ([AI Governance](../../ai-governance/ai-governance.md), правило 4).
 
 ## Executive Summary
 
@@ -224,4 +224,4 @@ Human-in-control, Separation of concerns.
 - [guides/sync-with-projects.md](../../guides/sync-with-projects.md) — гайд синхронизации с проектами (Draft).
 - [docs/concept.md](../concept.md) — canonical концепция репозитория.
 - [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — модель структуры и Anti-Inflation.
-- [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — правила AI-assisted work и решение человеком.
+- [AI Governance](../../ai-governance/ai-governance.md) — правила AI-assisted work и решение человеком.

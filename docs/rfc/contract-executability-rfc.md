@@ -184,7 +184,7 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 | Файл | Тип (исполнимый/описательный) | Текущий маркер исполнимости | Где находится исполнимая часть | Оценка риска некорректного выполнения |
 | --- | --- | --- | --- | --- |
 | [`ai-rules/agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol.md) | **Исполнимый** (рабочая инструкция, *Runtime-онбординг*) | Машинного маркера нет. Прозой в шапке: «рабочая инструкция… до первого изменения файлов»; есть Handover Prompt в блоке ` ```text `. | Часть A (Handover Prompt) и Часть B (4-шаговый протокол), **после** ~40 строк пояснений (frontmatter → заголовок → 2 вводных абзаца → «Модель процесса» → лишь затем Часть A). | **Высокий.** Ровно этот инцидент: пояснительный текст идёт раньше команды; агент принял документ за объект анализа. |
-| [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) | **Смешанный**: описательный контракт + исполнимый pre-flight | Блок-цитата сверху «🛫 Pre-flight (обязательно перед любой работой)» со ссылкой на онбординг. **Frontmatter отсутствует.** | Pre-flight-нота сверху (команда «пройди онбординг»); остальное — описательный контракт (роли, правила, Operating Modes, эскалация, DoD). | **Средний.** Pre-flight можно прочитать как справку, а не как команду немедленно перейти к онбордингу; нет машинного маркера и frontmatter-якоря. |
+| [`GOVERNANCE.md`](../../ai-governance/ai-governance.md) | **Смешанный**: описательный контракт + исполнимый pre-flight | Блок-цитата сверху «🛫 Pre-flight (обязательно перед любой работой)» со ссылкой на онбординг. **Frontmatter отсутствует.** | Pre-flight-нота сверху (команда «пройди онбординг»); остальное — описательный контракт (роли, правила, Operating Modes, эскалация, DoD). | **Средний.** Pre-flight можно прочитать как справку, а не как команду немедленно перейти к онбордингу; нет машинного маркера и frontmatter-якоря. |
 | [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md) | **Описательный** (правило-референс) с исполнимыми Decision Rules | Маркера нет. **Frontmatter отсутствует.** | Раздел «Decision Rules» (если ситуация → действие) и команда валидации структуры. | **Низкий–средний.** По природе справочный, но Decision Rules фактически исполнимы и никак не помечены. |
 | [`standards/project-structure-inheritance.md`](../../standards/project-structure-inheritance.md) | **Описательный** (стандарт) с исполнимыми проверками | `frontmatter status: canonical`; маркера исполнимости нет. | Раздел «Проверка» (если X → действие в ревью). | **Низкий.** Стандарт-референс; проверки исполнимы, но риск перепутать «учесть» и «выполнить» невелик. |
 | [`standards/issue-workflow.md`](../../standards/issue-workflow.md) | **Описательный** (стандарт процесса) | `frontmatter status: canonical`; маркера исполнимости нет. | «Точки автоматизации» + команды локальной проверки перед `review`. | **Низкий.** Справочник жизненного цикла задач; исполнимый только в части локальных проверок. |
@@ -196,7 +196,7 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 1. **Нет ни одного машиночитаемого маркера исполнимости** ни в одном файле — агент
    различает «исполнить» и «прочитать» только по неявным человеко-ориентированным
    подсказкам.
-2. **Два контракта (`AI_GOVERNANCE.md`, `repo-model.md`) вообще без frontmatter** —
+2. **Два контракта (`GOVERNANCE.md`, `repo-model.md`) вообще без frontmatter** —
    значит, маркер во frontmatter (идея Видения 2) к ним напрямую не применить без
    предварительного добавления frontmatter.
 3. **Самый высокий риск — у входных исполнимых артефактов** (`agent-onboarding-protocol.md` и
@@ -293,7 +293,7 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 | Анти-аналитический стоп-сигнал | ❌ | ❌ | ✅ **добавлен** — закрывает корневую причину инцидента |
 | Человеко-навигация (README-разметка) | ✅ | ❌ | ✅ берёт у Видения 1 |
 | Единый источник Handover Prompt | риск дублирования | риск дублирования (первая строка = промпт) | ✅ **один канон**: директивный заголовок ≠ перенос/копия промпта |
-| Совместимость с файлами без frontmatter | — | проблема (`AI_GOVERNANCE.md`, `repo-model.md`) | ✅ план: сначала добавить frontmatter, маркер — отдельным шагом |
+| Совместимость с файлами без frontmatter | — | проблема (`GOVERNANCE.md`, `repo-model.md`) | ✅ план: сначала добавить frontmatter, маркер — отдельным шагом |
 | Anti-Inflation | — | риск разрастания полей | ✅ **минимум**: одно булево поле + один блок + одна колонка README |
 
 Ключевое улучшение: **корневая причина инцидента — не «где лежит промпт», а
@@ -457,7 +457,7 @@ executable: true
 | 1 | `ai-rules/agent-onboarding-protocol.md` | Добавить `executable: true`, `entrypoint: true`; директивный блок; разделить EXECUTION/EXPLANATION (пример 5.1). Bump версии. | P0 (источник инцидента) |
 | 2 | `templates/htom/AI_QUICK_RULES.md` | Маркер `executable: true` + директивный блок + EXECUTION/EXPLANATION (пример 5.2). | P0 (наследуется споками) |
 | 3 | `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` | Маркер `executable: true` + директивный блок над «🛂 Готовый промпт». | P1 |
-| 4 | `AI_GOVERNANCE.md` | Сначала **добавить frontmatter** (сейчас отсутствует); затем `executable: false` (контракт-справка) и оформить pre-flight как директиву-указатель на онбординг. | P1 |
+| 4 | `GOVERNANCE.md` | Сначала **добавить frontmatter** (сейчас отсутствует); затем `executable: false` (контракт-справка) и оформить pre-flight как директиву-указатель на онбординг. | P1 |
 | 5 | `pr-ops/repo-model.md` | Добавить frontmatter; пометить `executable: false`; пометить раздел Decision Rules как исполнимую часть. | P2 |
 | 6 | `standards/project-structure-inheritance.md`, `standards/issue-workflow.md` | `executable: false` (стандарты-справки) — для единообразия. | P3 |
 | 7 | `standards/glossary.md` | Добавить термины **«Исполнимый документ» (Executable Contract)** и **«Директивный блок»**; bump версии. | P1 |
@@ -539,7 +539,7 @@ entrypoint: true
 ## Связанные артефакты
 
 - [ai-rules/agent-onboarding-protocol.md](../../ai-rules/agent-onboarding-protocol.md) — контракт в центре инцидента.
-- [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — операционный контракт и pre-flight.
+- [AI Governance](../../ai-governance/ai-governance.md) — операционный контракт и pre-flight.
 - [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md), [standards/issue-workflow.md](../../standards/issue-workflow.md) — стандарты-справки.
 - [templates/htom/AI_QUICK_RULES.md](../../templates/htom/AI_QUICK_RULES.md), [templates/htom/AI_SESSION_HANDOVER_PROMPT.md](../../templates/htom/AI_SESSION_HANDOVER_PROMPT.md) — наследуемые споками исполнимые артефакты.

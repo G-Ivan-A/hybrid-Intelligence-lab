@@ -168,7 +168,7 @@ source-backed analysis**, а не для операционных отчётов
 Источник — кейсы №8–№11 выше. Это предложения для будущего proposal или human
 review; governance-файлы в рамках этой задачи **не меняются**.
 
-**Для [`AI_GOVERNANCE.md`](../../../AI_GOVERNANCE.md):**
+**Для [`AI_GOVERNANCE.md`](../../../ai-governance/ai-governance.md):**
 
 6. **Контракт первичен.** Зафиксировать правило: если задача противоречит
    контракту репозитория ([`pr-ops/artifact-map.md`](../../../pr-ops/artifact-map.md),

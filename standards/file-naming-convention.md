@@ -31,7 +31,7 @@ owner: G-Ivan-A
 достоверно известен только месяц, используется день `01`.
 
 Исключения без даты: `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`,
-`CODE_OF_CONDUCT.md`, `LICENSE`, `LICENSE.md`, `AI_GOVERNANCE.md`,
+`CODE_OF_CONDUCT.md`, `LICENSE`, `LICENSE.md`, `GOVERNANCE.md`,
 `*-registry.md`, `*-index.md` и существующий суффикс уровня `*-Index.md`.
 
 Проверка:

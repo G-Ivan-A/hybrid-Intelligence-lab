@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-07-04
+version: 1.4
+updated: 2026-07-16
 temperature: 0.1
 executable: false
 ---
@@ -21,8 +21,8 @@ executable: false
 | `frameworks/` | Методологии для hybrid human + AI teams. | Создавать только после comparison, показывающего недостаточность existing approaches. |
 | `projects/` | Project knowledge bases, prompts, process context и spoke links. | Использовать, когда работа относится к scoped initiative, но не к production code. Наследование структуры в проектах — см. `standards/project-structure-inheritance.md`. |
 | `education/` | Open education programs, course materials и teaching scenarios. | Использовать для материалов, пригодных для обучения или partner delivery. |
-| `ai-governance/` | Якорь AI-governance слоя: границы и точки входа (сквозные правила — в `AI_GOVERNANCE.md`). | Добавлять файлы только когда они уточняют границы AI-governance слоя. |
-| `ai-rules/` | Исполнимые правила рантайма AI-агента: протокол онбординга и операционные инструкции. | Добавлять правило только когда оно исполнимо агентом и уточняет runtime-поведение. |
+| `ai-governance/` | Policy bucket: human decision rights, security/compliance, внешние ограничения и эскалация. | Добавлять только обязательства уровня политики по границе ADR-007. |
+| `ai-rules/` | Правила поведения агента и быстрой синхронизации с контекстом проекта. | Добавлять только правила, которые уточняют поведение или quick-sync агента. |
 | `pr-ops/` | Операции над репозиторием и PR: repo model, artifact map, backlog, реестры и session digests. | Добавлять operating files только когда они уточняют active decision-making. |
 | `projects-sink/` | Приёмник контекста spoke-проектов, синхронизируемого в Хаб. | Добавлять только синхронизируемый из spoke контекст, не production-код. |
 | `docs/rfc/` | RFC-предложения об изменении структуры, lifecycle и правил Хаба. | Создавать RFC только для активно обсуждаемого изменения, требующего review. |

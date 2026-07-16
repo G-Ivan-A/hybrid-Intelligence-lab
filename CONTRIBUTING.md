@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.8
-updated: 2026-07-01
+version: 1.9
+updated: 2026-07-16
 temperature: 0.1
 ---
 
@@ -35,7 +35,9 @@ traceability и практическую полезность для hybrid huma
 
 ## AI-Assisted Work
 
-AI agents следуют [AI_GOVERNANCE.md](AI_GOVERNANCE.md): читают issue и
+AI agents начинают с [GOVERNANCE.md](GOVERNANCE.md), затем применяют
+[AI Governance](ai-governance/ai-governance.md) и
+[Agent Work Rules](ai-rules/agent-work-rules.md): читают issue и
 последние комментарии, сохраняют human decision rights, не публикуют sensitive
 data и работают внутри requested scope.
 

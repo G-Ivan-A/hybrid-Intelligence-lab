@@ -76,7 +76,7 @@ temperature: 0.1
 
 ## Источники контроля
 
-- [AI_GOVERNANCE.md: Rules 4–6 и fail-closed](../AI_GOVERNANCE.md)
+- [AI_GOVERNANCE.md: Rules 4–6 и fail-closed](../ai-governance/ai-governance.md)
 - [Runtime onboarding: Readback и clearance](../ai-rules/agent-onboarding-protocol.md)
 - [Google SAIF practice](../practices/ai-governance/google-saif-agent-security.md)
 - [Token-budget practice](../practices/agent-work/skill-catalog-token-budget.md)

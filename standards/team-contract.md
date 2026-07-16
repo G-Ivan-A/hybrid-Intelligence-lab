@@ -21,7 +21,7 @@ owner: G-Ivan-A
 | Файл в проекте | Что фиксирует |
 | --- | --- |
 | `CONTRIBUTING.md` | Роли, процесс внесения изменений, code review, Definition of Done и ожидания к PR. |
-| `AI_GOVERNANCE.md` | Правила работы ИИ, operating modes, disclosure, self-review checklist, data boundaries и escalation rules. |
+| `GOVERNANCE.md` | Правила работы ИИ, operating modes, disclosure, self-review checklist, data boundaries и escalation rules. |
 
 Хороший team contract отвечает на практический вопрос: как human contributors,
 reviewers и AI agents безопасно и предсказуемо двигают проект от issue до
@@ -36,7 +36,7 @@ reviewed result.
    [product-profile.md](#product_profilemd) или
    [education-profile.md](#education_profilemd).
 2. Создан `CONTRIBUTING.md`, который объясняет человеческий workflow.
-3. Создан `AI_GOVERNANCE.md`, который объясняет AI-assisted workflow.
+3. Создан `GOVERNANCE.md`, который объясняет AI-assisted workflow.
 4. PR template или issue template ссылается на оба файла, если проект
    принимает внешние или cross-team contributions.
 5. Branch protection, required checks, CODEOWNERS и security policy включены
@@ -44,7 +44,7 @@ reviewed result.
 
 ## Выбор профиля проекта
 
-Профиль нужен до написания `CONTRIBUTING.md` и `AI_GOVERNANCE.md`: он задает
+Профиль нужен до написания `CONTRIBUTING.md` и `GOVERNANCE.md`: он задает
 контекст, в котором команда выбирает обязательные проверки, review roles и
 уровень строгости.
 
@@ -209,7 +209,7 @@ training scenario, rubric or public learning material.
 
 ## Шаблон для AI_GOVERNANCE.md
 
-`AI_GOVERNANCE.md` должен объяснять, как AI может помогать команде без потери
+`GOVERNANCE.md` должен объяснять, как AI может помогать команде без потери
 human decision rights, traceability and safety.
 
 Рекомендуемая структура:
@@ -301,7 +301,7 @@ claim, or the AI would need to operate outside the approved scope.
 - `research-standard.md`: research question, dataset policy, reproducibility.
 - `CONTRIBUTING.md`: issue-first changes, source-backed reports, experiment
   folders, review by domain expert.
-- `AI_GOVERNANCE.md`: AI can summarize sources and draft analysis, but must
+- `GOVERNANCE.md`: AI can summarize sources and draft analysis, but must
   link sources and mark unverifiable claims.
 - Definition of Done: method described, sources linked, limitations stated,
   reproducibility artifacts included or limitations explained.
@@ -312,7 +312,7 @@ claim, or the AI would need to operate outside the approved scope.
   boundaries.
 - `CONTRIBUTING.md`: branch from `main`, PR template, required checks,
   CODEOWNERS for critical paths.
-- `AI_GOVERNANCE.md`: AI may draft code and tests; secrets, customer data,
+- `GOVERNANCE.md`: AI may draft code and tests; secrets, customer data,
   release actions and destructive operations require human approval.
 - Definition of Done: tests pass, docs updated, security-sensitive paths
   reviewed, rollback risk understood.
@@ -323,7 +323,7 @@ claim, or the AI would need to operate outside the approved scope.
   accessibility and localization.
 - `CONTRIBUTING.md`: lesson changes require learning objective and teacher
   review; examples must be runnable or clearly marked as conceptual.
-- `AI_GOVERNANCE.md`: AI may draft exercises and translations; human reviewer
+- `GOVERNANCE.md`: AI may draft exercises and translations; human reviewer
   checks correctness, tone, bias and audience fit.
 - Definition of Done: lesson outcome clear, examples validated, outdated
   references removed or dated.

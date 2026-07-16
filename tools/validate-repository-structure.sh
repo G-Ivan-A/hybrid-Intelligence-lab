@@ -53,10 +53,12 @@ is_active_file() {
     .gitignore | \
     docs/concept.md | \
     CONTRIBUTING.md | \
-    AI_GOVERNANCE.md | \
+    GOVERNANCE.md | \
     ai-governance/README.md | \
+    ai-governance/ai-governance.md | \
     ai-governance/agent-security-checklist.md | \
     ai-rules/README.md | \
+    ai-rules/agent-work-rules.md | \
     ai-rules/agent-onboarding-protocol.md | \
     ai-rules/adversarial-stress-testing.md | \
     pr-ops/README.md | \
@@ -82,6 +84,7 @@ is_active_file() {
     docs/adr/2026-07-adr-006-analysis-structure.md | \
     docs/adr/2026-07-adr-007-hub-root-structure.md | \
     docs/adr/2026-07-adr-008-standard-meta-structure.md | \
+    docs/adr/2026-07-adr-009-mango-repo-split.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -90,6 +93,7 @@ is_active_file() {
     standards/report-standard.md | \
     standards/audit-standard.md | \
     standards/analysis-standard.md | \
+    standards/standard-meta-structure.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
     standards/product-profile.md | \
@@ -106,6 +110,7 @@ is_active_file() {
     standards/htom-documentation-structure.md | \
     standards/webportal-product-concept-standard.md | \
     standards/webportal-solution-concept-standard.md | \
+    standards/evals-contract-standard.md | \
     research/mango/2026-05-26-taxonomy-concept.md | \
     research/mango/2026-05-26-requirements-lifecycle-uncertainty.md | \
     research/mango/2026-05-26-rag-mapping-roadmap.md | \
@@ -536,10 +541,12 @@ required_files=(
   "README.md"
   "docs/concept.md"
   "CONTRIBUTING.md"
-  "AI_GOVERNANCE.md"
+  "GOVERNANCE.md"
   "ai-governance/README.md"
+  "ai-governance/ai-governance.md"
   "ai-governance/agent-security-checklist.md"
   "ai-rules/README.md"
+  "ai-rules/agent-work-rules.md"
   "ai-rules/adversarial-stress-testing.md"
   "pr-ops/README.md"
   "projects-sink/README.md"
@@ -553,6 +560,7 @@ required_files=(
   "docs/adr/2026-07-adr-006-analysis-structure.md"
   "docs/adr/2026-07-adr-007-hub-root-structure.md"
   "docs/adr/2026-07-adr-008-standard-meta-structure.md"
+  "docs/adr/2026-07-adr-009-mango-repo-split.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
@@ -571,6 +579,7 @@ required_files=(
   "standards/report-standard.md"
   "standards/audit-standard.md"
   "standards/analysis-standard.md"
+  "standards/standard-meta-structure.md"
   "standards/glossary.md"
   "standards/education-profile.md"
   "standards/product-profile.md"
@@ -587,6 +596,7 @@ required_files=(
   "standards/htom-documentation-structure.md"
   "standards/webportal-product-concept-standard.md"
   "standards/webportal-solution-concept-standard.md"
+  "standards/evals-contract-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/hub/2026-06-12-ecosystem-governance-audit.md"
@@ -735,6 +745,7 @@ reject_file "pr-ops/backlog-archive.md"
 reject_file "pr-ops/backlog/archive.md"
 reject_file "pr-ops/backlog/archive"
 reject_path "governance"
+reject_file "AI_GOVERNANCE.md"
 reject_path "website"
 reject_path "experiments"
 reject_path "mkdocs.yml"
@@ -777,7 +788,7 @@ require_text "README.md" "standards/README.md"
 require_text "README.md" "standards/file-naming.md"
 require_text "README.md" "standards/glossary.md"
 require_text "README.md" "standards/team-contract.md"
-require_text "README.md" "ai-rules/agent-onboarding-protocol.md"
+require_text "README.md" "agent-onboarding-protocol.md"
 require_text "README.md" "pr-ops/repo-model.md"
 require_text "README.md" "pr-ops/artifact-map.md"
 require_text "README.md" "projects/education-ba-prompt/README.md"
@@ -802,14 +813,14 @@ require_text "docs/concept.md" "Шаблон командного соглаше
 require_text "docs/concept.md" "glossary.md"
 require_text "docs/concept.md" "единой терминологии"
 
-require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
+require_text "CONTRIBUTING.md" "GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.8"
+require_text "CONTRIBUTING.md" "version: 1.9"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-07-01"
+require_text "CONTRIBUTING.md" "updated: 2026-07-16"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -828,26 +839,19 @@ require_text "CONTRIBUTING.md" "topic: Y"
 require_text "CONTRIBUTING.md" "Повторный анализ инициирует только Пользователь"
 require_text "CONTRIBUTING.md" "отклонено"
 
-require_text "AI_GOVERNANCE.md" "status: canonical"
-require_text "AI_GOVERNANCE.md" "version: 1.6"
-require_text "AI_GOVERNANCE.md" "updated: 2026-06-13"
-require_text "AI_GOVERNANCE.md" "temperature: 0.1"
-require_text "AI_GOVERNANCE.md" "executable: false"
-require_text "AI_GOVERNANCE.md" "Директива pre-flight"
-require_text "AI_GOVERNANCE.md" "Пользователь"
-require_text "AI_GOVERNANCE.md" "Human reviewer"
-require_text "AI_GOVERNANCE.md" "Creative"
-require_text "AI_GOVERNANCE.md" "Хаб является источником рекомендаций"
-require_text "AI_GOVERNANCE.md" "Обоснованный обход в Creative Mode"
-require_text "AI_GOVERNANCE.md" "Специфика работы с AI-агентами"
-require_text "AI_GOVERNANCE.md" "standards/frontmatter-standard.md"
-require_text "AI_GOVERNANCE.md" "standards/README.md"
-require_text "AI_GOVERNANCE.md" "docs/rfc/knowledge-lifecycle-proposal.md"
-require_text "AI_GOVERNANCE.md" "docs/rfc/resolve-artifact-location-proposal.md"
-require_text "AI_GOVERNANCE.md" "Правило авто-заполнения Мета"
-require_text "AI_GOVERNANCE.md" "Разделение Framework vs Methodology"
-require_text "AI_GOVERNANCE.md" "ai-rules/agent-onboarding-protocol.md"
-require_text "AI_GOVERNANCE.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
+require_text "GOVERNANCE.md" "ai-governance/ai-governance.md"
+require_text "GOVERNANCE.md" "ai-rules/agent-work-rules.md"
+require_text "ai-governance/ai-governance.md" "status: canonical"
+require_text "ai-governance/ai-governance.md" "Пользователь"
+require_text "ai-governance/ai-governance.md" "Human reviewer"
+require_text "ai-governance/ai-governance.md" "Хаб является источником рекомендаций"
+require_text "ai-governance/ai-governance.md" "Обоснованный обход в Creative Mode"
+require_text "ai-governance/ai-governance.md" "standards/frontmatter-standard.md"
+require_text "ai-governance/ai-governance.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
+require_text "ai-rules/agent-work-rules.md" "status: canonical"
+require_text "ai-rules/agent-work-rules.md" "Директива pre-flight"
+require_text "ai-rules/agent-work-rules.md" "Специфика работы с AI-агентами"
+require_text "ai-rules/agent-work-rules.md" "agent-onboarding-protocol.md"
 
 require_text "CHANGELOG.md" "## Unreleased"
 require_text "CHANGELOG.md" "issue #237"
@@ -870,8 +874,8 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.10"
-require_text "standards/README.md" "updated: 2026-07-03"
+require_text "standards/README.md" "version: 1.11"
+require_text "standards/README.md" "updated: 2026-07-16"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -890,8 +894,10 @@ require_text "standards/README.md" "project-structure-inheritance.md"
 require_text "standards/README.md" "frontmatter-docs-standard.md"
 require_text "standards/README.md" "adr-structure-standard.md"
 require_text "standards/README.md" "rfc-structure-standard.md"
+require_text "standards/README.md" "standard-meta-structure.md"
 require_text "standards/README.md" "executable-documentation-standard.md"
 require_text "standards/README.md" "htom-documentation-structure.md"
+require_text "standards/README.md" "evals-contract-standard.md"
 require_text "standards/README.md" "artifact-map.md"
 require_text "standards/README.md" "issue-workflow.md"
 require_text "standards/README.md" "session-handover-standard.md"
@@ -967,6 +973,21 @@ require_text "standards/analysis-standard.md" "Subtype Profiles"
 require_text "standards/analysis-standard.md" "docs/analysis/"
 require_text "standards/analysis-standard.md" "Anti-Inflation Trigger"
 require_text "standards/analysis-standard.md" "interpretation layer"
+require_text "standards/standard-meta-structure.md" "status: proposed"
+require_text "standards/standard-meta-structure.md" "owner: G-Ivan-A"
+require_text "standards/standard-meta-structure.md" "## Purpose"
+require_text "standards/standard-meta-structure.md" "## Scope"
+require_text "standards/standard-meta-structure.md" "## Identification and Placement"
+require_text "standards/standard-meta-structure.md" "## Frontmatter"
+require_text "standards/standard-meta-structure.md" "## Minimum Body Sections"
+require_text "standards/standard-meta-structure.md" "## Type Model"
+require_text "standards/standard-meta-structure.md" "## Lifecycle"
+require_text "standards/standard-meta-structure.md" "## Boundaries"
+require_text "standards/standard-meta-structure.md" "## Validation"
+require_text "standards/standard-meta-structure.md" "## Related Artifacts"
+require_text "standards/standard-meta-structure.md" '`N/A`'
+require_text "standards/standard-meta-structure.md" "specific tail"
+require_text "standards/standard-meta-structure.md" "ADR-002"
 require_text "standards/frontmatter-docs-standard.md" 'Audit | `docs/audit/*.md`'
 require_text "standards/frontmatter-docs-standard.md" "audit_target"
 require_text "standards/frontmatter-docs-standard.md" "evidence_model"
@@ -1313,8 +1334,8 @@ require_text "pr-ops/repo-model.md" "Anti-Inflation"
 require_text "pr-ops/repo-model.md" "tools/"
 require_text "pr-ops/repo-model.md" "practices/"
 require_text "pr-ops/repo-model.md" "status: canonical"
-require_text "pr-ops/repo-model.md" "version: 1.3"
-require_text "pr-ops/repo-model.md" "updated: 2026-07-04"
+require_text "pr-ops/repo-model.md" "version: 1.4"
+require_text "pr-ops/repo-model.md" "updated: 2026-07-16"
 require_text "pr-ops/repo-model.md" "executable: false"
 require_text "pr-ops/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
 
@@ -1327,7 +1348,7 @@ require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "Runtime-он
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "Bootstrap-клонирование"
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "standards/glossary.md"
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "2026-06-02-ai-collaboration-retrospective.md"
-require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "ai-rules/agent-onboarding-protocol.md"
+require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "agent-onboarding-protocol.md"
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "templates/htom/README.md"
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" '```mermaid'
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "Follow-up"
@@ -1440,13 +1461,13 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.76"
+require_text "pr-ops/artifact-map.md" "version: 1.77"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
 require_text "pr-ops/artifact-map.md" "updated: 2026-07-16"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
-require_text "pr-ops/artifact-map.md" "ai-rules/agent-onboarding-protocol.md"
+require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-07-adr-004-reports-structure.md"
@@ -2339,7 +2360,7 @@ require_text "templates/htom/AI_GOVERNANCE.md" "Обоснованный обх�
 require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ai-rules/agent-onboarding-protocol.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "agent-onboarding-protocol.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.8"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "pr-ops/session-digests.md"
@@ -2364,7 +2385,7 @@ require_text "templates/htom/README.md" "{{date}}"
 require_text "templates/htom/README.md" "{{project_name}}"
 require_text "templates/htom/README.md" "{{hub_url}}"
 require_text "templates/htom/README.md" "{{REPO_NAME}}"
-require_text "templates/htom/README.md" "ai-rules/agent-onboarding-protocol.md"
+require_text "templates/htom/README.md" "agent-onboarding-protocol.md"
 require_text "templates/htom/README.md" "Как валидировать структуру"
 require_text "templates/htom/README.md" "Design Decisions & Rationale"
 require_text "templates/htom/README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"

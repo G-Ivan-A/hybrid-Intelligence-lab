@@ -20,6 +20,60 @@ All notable repository governance changes are documented here.
   практикой в стандарте; тем самым сохранён принцип Anti-Inflation. Источник
   обсуждения 2026-07-16 и B-050 v0.2 §2 зарегистрирован в таблице активного
   порядка; исследования, ADR и стандарты не изменялись.
+- standards: Создан `standards/evals-contract-standard.md` (B-067, issue #426) —
+  контракт `evals`/golden-sets для спока, закрывающий пробел RO3 «форма evals не
+  стандартизована» (Global analysis v0.4 §15.8.1) и делающий операбельным разрыв
+  ПГ4.3. Стандарт нормирует **форму** перевода качества агента в число: состав
+  golden-set (стабильный `case-id`, вход, эталонный вердикт, класс дефекта,
+  обоснование эталона, обязательные негативные кейсы без дефектов, 5–10 кейсов
+  для старта по §15.1.6), бинарную рубрику приёмки с базовым набором критериев из
+  эскиза §15.5.1, модель трёх слоёв (offline нормируется; LLM-as-judge допустим
+  как совещательный вход с обязательной калибровкой на человеческих метках —
+  §2.2, LLM06; online вне scope), семь офлайн-проверок до прогона, метрики
+  (% успеха + обязательный профиль провалов) и форму записи порога «критерий →
+  значение → кто и когда утвердил». Ключевые инварианты: golden-set ЗАПРЕЩЕНО
+  подгонять под выход агента, а изменение состава кейсов требует bump `version`,
+  иначе число несравнимо между прогонами. Стандарт решений за человека не
+  принимает (Rule 4): значения порогов и минимальное N остаются за B-068,
+  инфраструктура — за B-069, выбор физического каталога evals в споке (`evals/`
+  vs раздел паттерна, §15.6.1 A3) вынесен в открытый вопрос Q1. Routing/boundary
+  ADR-002 не дублируется — только локальная delta. Документ добровольно применяет
+  F10-скелет ADR-008 (статус `proposed`) как forward-compatible форму до
+  мета-стандарта B-052; область F10 вне R/A/A/Report вынесена в открытый вопрос
+  Q5. Статус `draft` до подтверждения фаундером. Зарегистрирован в
+  `standards/README.md` (версия 1.11) и карте артефактов; бэклог обновлён (B-067
+  → `review`); allowlist, `required_files` и pinned metadata в
+  `tools/validate-repository-structure.sh` синхронизированы.
+- adr: Добавлен ADR-009 «Разделение Mango на публичный и приватный
+  репозитории» (issue #424 / B-079) — нормативная фиксация решения фаундера от
+  2026-07-10 о разделении `mango_ba_prompts`, совмещающего операционку с
+  приватными данными и переиспользуемую методологию. ADR фиксирует четыре
+  нормы: публичное репо `ai-ba-playbooks` (архетип B, универсальное имя без
+  бренда «Mango», каталоги `prompt-library/` начиная с `telecom/`, `patterns/`,
+  `standards/`, `examples/` только обезличенные, `docs/`, `templates/`,
+  опционально `app/`, при категорическом отсутствии `education/`, который
+  остаётся в Хабе по ADR-007); приватное репо `mango-ba-prompt-library`
+  (`prompts/`, `kb/processes/`, `runs/`, `evals/`, `internal-rfc/`,
+  `internal-docs/`, без GitHub Actions — только локальные валидаторы);
+  строго односторонняя синхронизация приватный → публичный с ручным отбором
+  фаундером на старте и Smart Sync только под доказанную операционную боль;
+  импорт методологии из Хаба с возвратом зрелых практик через RFC. Новых
+  архитектурных решений не принимается, стандарты Хаба (ADR-001, ADR-002,
+  ADR-007) не меняются; физические репозитории не создаются и файлы не
+  мигрируются — это остаётся B-080..B-084. Документ в статусе `proposed` до
+  acceptance gate на merge. Зарегистрирован в карте артефактов, бэклог обновлён
+  (B-079 → `review`), allowlist и pinned metadata в
+  `tools/validate-repository-structure.sh` синхронизированы.
+- standard: Создан `standards/standard-meta-structure.md` для issue #423 /
+  B-052. Мета-стандарт нормативно кодифицирует решение ADR-008 F10 explicit:
+  десять уникальных инвариантных H2-секций в строгом порядке, `N/A +
+  rationale` для любого неприменимого раздела, `Type Model` только в формах
+  `model`/`N/A`, specific tail только после `Related Artifacts` с формально
+  проверяемой Purpose/Scope cross-reference в первом абзаце и ADR-002 как
+  canonical owner общей routing/boundary table. Зафиксирована граница
+  validator/human review; миграция Research/Analysis/Audit/Report standards
+  оставлена B-053. Синхронизированы artifact map и backlog; B-052 переведена в
+  `review`.
 
 - research: Заведено направление `research/education/` — теоретическая основа
   для образовательных модулей Хаба, с явной границей: research отвечает «что
@@ -44,6 +98,14 @@ All notable repository governance changes are documented here.
   `tools/validate-repository-structure.sh` синхронизированы.
 
 ### Changed
+
+- chore(B-056): remaining policy/rule material физически разделён по ADR-007.
+  Root `AI_GOVERNANCE.md` заменён policy-контрактом
+  `ai-governance/ai-governance.md` и правилами поведения агента
+  `ai-rules/agent-work-rules.md`; обязательный root `GOVERNANCE.md` остаётся
+  тонкой навигационной точкой входа. Активные ссылки, directory READMEs,
+  repository model, artifact map и validator синхронизированы; локальные
+  `templates/htom/AI_GOVERNANCE.md` сохранены как project-template contract.
 
 - analysis: Доработан B-050 по review issue #415: обязательный принцип вынесен
   из weighted matrix в constraint, добавлены baseline E и варианты skeleton
@@ -1896,7 +1958,7 @@ All notable repository governance changes are documented here.
 
 - [README.md](README.md)
 - [docs/concept.md](docs/concept.md)
-- [AI_GOVERNANCE.md](AI_GOVERNANCE.md)
+- [AI Governance](ai-governance/ai-governance.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [standards/README.md](standards/README.md)
 - [standards/glossary.md](standards/glossary.md)

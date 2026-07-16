@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.10
-updated: 2026-07-03
+version: 1.11
+updated: 2026-07-16
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -20,12 +20,13 @@ owner: G-Ivan-A
 | File naming convention | Active | Правило именования файлов, включая date-first research/analysis/audit/report/RFC/ADR артефакты | [standards/file-naming.md](file-naming.md), [standards/file-naming-convention.md](file-naming-convention.md) |
 | Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/education-profile.md](education-profile.md) |
 | Концепция репозитория | Active | Root concept и назначение репозитория | [docs/concept.md](../docs/concept.md) |
-| AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
+| AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI Governance](../ai-governance/ai-governance.md) |
 | Repository model | Active | Размещение артефактов и правила создания | [pr-ops/repo-model.md](../pr-ops/repo-model.md) |
 | Frontmatter standard | Canonical | Минимальное metadata rule для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
 | Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research/report, Audit, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |
 | ADR structure standard | Active | Единая структура ADR: frontmatter, stable id, required body sections, lifecycle, section-level delegation, archetype deltas and Boundary RFC/ADR | [adr-structure-standard.md](adr-structure-standard.md) |
 | RFC structure standard | Active | Единая структура RFC-like документов: frontmatter, metadata, required body sections, Research→RFC delegation, lifecycle, Open Questions and Boundary RFC/ADR | [rfc-structure-standard.md](rfc-structure-standard.md) |
+| Standard meta-structure | Proposed | F10 explicit для Research/Analysis/Audit/Report standards: десять инвариантных секций, `N/A + rationale`, `Type Model` = `model`/`N/A`, specific tail и validation boundary | [standard-meta-structure.md](standard-meta-structure.md) |
 | Knowledge lifecycle | Draft RFC (предложен на утверждение) | Переходы Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive | [../docs/rfc/knowledge-lifecycle-proposal.md](../docs/rfc/knowledge-lifecycle-proposal.md) |
 | Research structure standard | Active | `research/<domain>/`: размещение отчётов, контейнер `exp/`, запрет `outputs/`, routing Research / Analysis / Audit и граница `exp/` vs `runs/` | [research-standard.md](research-standard.md) |
 | Report standard | Draft (предложен на утверждение) | `docs/report/` и `docs/audit/`: базовый каркас Report, профили `audit`/`report`/`statistics`, relation-frontmatter, routing split, knowledge-lifecycle и границы Reports ↔ Analysis ↔ Audit ↔ Research evidence | [report-standard.md](report-standard.md) |
@@ -42,6 +43,7 @@ owner: G-Ivan-A
 | htom-documentation-structure.md | Canonical | Стандарт структуры `docs/` для HTOM-репозиториев и разбор Mango docs error pattern | [htom-documentation-structure.md](htom-documentation-structure.md) |
 | webportal-product-concept-standard.md | Draft (L2, предложен на утверждение) | Product Concept веб-портала: personas, jobs-to-be-done, MVP scope, user flows, success metrics и high-level roadmap | [webportal-product-concept-standard.md](webportal-product-concept-standard.md) |
 | webportal-solution-concept-standard.md | Draft (L3, предложен на утверждение) | Solution Concept веб-портала: C4 architecture, technology stack, integrations, data model, NFR, deployment и risks | [webportal-solution-concept-standard.md](webportal-solution-concept-standard.md) |
+| Evals contract standard | Draft (предложен на утверждение) | Контракт `evals`/golden-sets спока (B-067, закрывает RO3): форма golden-set (кейс, эталонный вердикт, класс дефекта, обоснование, негативные кейсы), бинарная рубрика приёмки, слои offline/LLM-as-judge/online с правилом «судья — вход, не решение», офлайн-проверки до прогона, метрики (% успеха + профиль провалов) и форма записи порога без назначения его значения (Rule 4; значения — B-068) | [evals-contract-standard.md](evals-contract-standard.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
 | Project knowledge base | Planned | `projects/` | Создать после повторяющейся потребности в project context. |

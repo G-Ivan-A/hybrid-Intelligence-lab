@@ -52,7 +52,7 @@ spoke Хаба — портал `open-ai.ru`.
 людей и ИИ-агентов**, которая работает итеративно по governance-контрактам Хаба.
 Это **команда, а не продукт**.
 
-- **Артефакты-ядро (HTOM-контракты).** `AI_GOVERNANCE.md` (конституция команды),
+- **Артефакты-ядро (HTOM-контракты).** `GOVERNANCE.md` (конституция команды),
   `AI_SESSION_HANDOVER_PROMPT.md` (готовая «доверенность» для запуска агента),
   `AI_QUICK_RULES.md` (одностраничные правила агента).
 - **Цикл.** Итеративный; минимальная структура «по запросу» (Anti-Inflation):
@@ -91,7 +91,7 @@ spoke Хаба — портал `open-ai.ru`.
 | **Команда** | Команда и есть сущность | Над продуктом работает (HTOM-)команда |
 | **Цикл** | Итеративный, минимальная структура «по запросу» | Полный SDLC: ветки, релизы, деплой |
 | **Структура** | Минимальный геном: HTOM-контракты, README/CONTRIBUTING/CHANGELOG, каркасы docs | Полная: `src/`, `tests/`, `docs/`, CI/CD |
-| **Ядро-артефакты** | `AI_GOVERNANCE.md`, `AI_SESSION_HANDOVER_PROMPT.md`, `AI_QUICK_RULES.md` | `src/`, `tests/`, `.github/workflows/` (CI/CD) |
+| **Ядро-артефакты** | `GOVERNANCE.md`, `AI_SESSION_HANDOVER_PROMPT.md`, `AI_QUICK_RULES.md` | `src/`, `tests/`, `.github/workflows/` (CI/CD) |
 | **Код** | Кода нет (или вспомогательный) | Production-код с первого дня |
 | **Шаблон** | `templates/htom/` | `templates/spoke/` |
 | **Примеры** | `mango_ba_prompts`, `repo-development`, Хаб | `open-ai.ru` |
