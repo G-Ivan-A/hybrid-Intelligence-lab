@@ -16,6 +16,7 @@ related_artifacts:
   - "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   - "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
   - "docs/adr/2026-07-adr-007-hub-root-structure.md"
+  - "docs/adr/2026-07-adr-008-standard-meta-structure.md"
   - "docs/audit/2026-07-04-cross-standard-stress-tests.md"
   - "research/hub/2026-07-04-hub-as-agent-system-global-analysis.md"
   - "tools/test-post-migration-validator.sh"
@@ -38,6 +39,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/402"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/411"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/413"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/417"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -131,8 +133,8 @@ B-050/B-051 приняли решение, B-052 создал meta-standard, B-0
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **B-050** | Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | review | [#407](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/407), [#415](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/415) | Issue #374; findings issue #370; [analysis B-050](../docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md) | Review amendment устранил circular scoring и вынес в B-051 явный выбор: baseline E либо skeleton F8/F10/F12; `Type Model` = `model`/`N/A`, specific tail связан с Purpose/Scope, routing owner = ADR-002, миграция разделена на mechanical/semantic. Стандарты и валидаторы не менялись. | Hybrid |
-| **B-051** | Принять мета-структуру стандартов | **P1** | B-050 | TODO | - (planned) | Issue #374; [analysis B-050](../docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md) | Human decision gate: выбрать baseline E либо skeleton F8/F10/F12; при выборе F зафиксировать headings/order, `model`/`N/A`, Purpose/Scope extension rule и ADR-002 как routing owner. | Structured |
-| **B-052** | Создать мета-стандарт структуры стандартов | **P1** | B-051 | TODO | - (planned) | Issue #374; future ADR B-051 | Нормативно описать выбранную структуру: обязательные секции, порядок, `model`/`N/A`, frontmatter conventions, specific-tail cross-reference и validation expectations. | Structured |
+| **B-051** | Принять мета-структуру стандартов | **P1** | B-050 | review | [#417](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/417) | Issue #374; [analysis B-050](../docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md); [ADR-008](../docs/adr/2026-07-adr-008-standard-meta-structure.md) | Founder decision принят: F10 explicit с точным порядком 10 секций, `N/A + rationale` для всех пустых invariant sections, `Type Model` = `model`/`N/A`, Purpose/Scope cross-reference для specific tail и ADR-002 как canonical routing owner. | Hybrid |
+| **B-052** | Создать мета-стандарт структуры стандартов | **P1** | B-051 | TODO | - (planned) | Issue #374; [ADR-008](../docs/adr/2026-07-adr-008-standard-meta-structure.md) | Нормативно описать выбранную F10-структуру: обязательные секции, порядок, `model`/`N/A`, frontmatter conventions, specific-tail cross-reference и validation expectations. | Structured |
 | **B-053** | Привести Research/Analysis/Audit/Report standards к мета-стандарту | **P1** | B-052 | TODO | - (planned) | Issue #374; future meta-standard B-052 | Если B-051 выберет изменение, обновить четыре стандарта двумя reviewable слоями: mechanical block moves и отдельно обоснованные semantic deltas. Синхронизировать validators/navigation where required. | Structured |
 | **B-054** | Стандарт процесса стресс-тестирования связанных документов | **P3** | B-048, B-053 | TODO | - (deferred) | Issue #374; issue #370 | Отложенная process-задача: описать триггеры, метод, severity/output route и критерии acceptance для повторяемых cross-document stress tests. Не делать до B-053. | Structured |
 
