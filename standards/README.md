@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.10
-updated: 2026-07-03
+version: 1.11
+updated: 2026-07-16
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -26,6 +26,7 @@ owner: G-Ivan-A
 | Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research/report, Audit, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |
 | ADR structure standard | Active | Единая структура ADR: frontmatter, stable id, required body sections, lifecycle, section-level delegation, archetype deltas and Boundary RFC/ADR | [adr-structure-standard.md](adr-structure-standard.md) |
 | RFC structure standard | Active | Единая структура RFC-like документов: frontmatter, metadata, required body sections, Research→RFC delegation, lifecycle, Open Questions and Boundary RFC/ADR | [rfc-structure-standard.md](rfc-structure-standard.md) |
+| Standard meta-structure | Proposed | F10 explicit для Research/Analysis/Audit/Report standards: десять инвариантных секций, `N/A + rationale`, `Type Model` = `model`/`N/A`, specific tail и validation boundary | [standard-meta-structure.md](standard-meta-structure.md) |
 | Knowledge lifecycle | Draft RFC (предложен на утверждение) | Переходы Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive | [../docs/rfc/knowledge-lifecycle-proposal.md](../docs/rfc/knowledge-lifecycle-proposal.md) |
 | Research structure standard | Active | `research/<domain>/`: размещение отчётов, контейнер `exp/`, запрет `outputs/`, routing Research / Analysis / Audit и граница `exp/` vs `runs/` | [research-standard.md](research-standard.md) |
 | Report standard | Draft (предложен на утверждение) | `docs/report/` и `docs/audit/`: базовый каркас Report, профили `audit`/`report`/`statistics`, relation-frontmatter, routing split, knowledge-lifecycle и границы Reports ↔ Analysis ↔ Audit ↔ Research evidence | [report-standard.md](report-standard.md) |
