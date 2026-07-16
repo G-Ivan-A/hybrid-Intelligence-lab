@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.33
+version: 1.34
 updated: 2026-07-16
 temperature: 0.1
 type: backlog
@@ -164,7 +164,7 @@ absorbed ADR-007 задачи закрыты; B-059..B-062 стартуют то
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-056** | Физически разделить remaining policy/rule material между `ai-governance/` и `ai-rules/` | **P1** | B-048, B-047 | TODO | - (planned) | Issue #376; issue #378; B-034 Phase 3; ADR-007/B-047 | Проверить оставшийся policy/compliance and agent-rule material, маршрутизировать его по ADR-007, обновить ссылки, validators, artifact-map и transition notes. | Structured |
+| **B-056** | Физически разделить remaining policy/rule material между `ai-governance/` и `ai-rules/` | **P1** | B-048, B-047 | review | [#425](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/425) | Issue #376; issue #378; B-034 Phase 3; ADR-007/B-047 | Root `AI_GOVERNANCE.md` разделён на policy-контракт `ai-governance/ai-governance.md` и agent rules `ai-rules/agent-work-rules.md`; `GOVERNANCE.md` оставлен thin root-anchor по ADR-007. Ссылки, validator и artifact map синхронизированы. | Hybrid |
 | **B-057** | Зафиксировать специфичность Хаба: root `practices/` vs `docs/practice/` | **P1** | B-047 | review (absorbed by ADR-007/B-047) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) | Issue #380; B-034 document-plan; ADR-007 | ADR-007 уже оставляет root `practices/` как Hub-specific Archetype A extension. Строка нужна для traceability; отдельный ADR не нужен, если ADR-007 не superseded. | Structured |
 | **B-058** | Отменить или подтвердить веб-стратегию Хаба (`website/`, `mkdocs.yml`) | **P1** | B-047 | review (absorbed by ADR-007/B-047) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) | Issue #380; B-034 document-plan; ADR-007; former `mkdocs.yml` | ADR-007 retired `website/` and `mkdocs.yml`; PR #388 physically removed them. Строка остаётся review-traceability до финального закрытия. | Structured |
 | **B-059** | Проверить целесообразность `docs/guides/` как единого дома руководств | **P3** | B-048 | TODO | - (deferred) | Issue #380; B-034; ADR-007; current `guides/` | Triggered research for guide routing when `guides/` vs `docs/guides/` creates review pain or a reconcile task needs a decision. | Creative |

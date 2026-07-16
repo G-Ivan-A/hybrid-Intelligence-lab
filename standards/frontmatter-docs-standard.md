@@ -91,7 +91,7 @@ RFC artifacts also require `rfc-scope`:
 | Condition | Required companion |
 | --- | --- |
 | `executable: true` | Body must follow [executable-documentation-standard.md](executable-documentation-standard.md) or [executable-contract-standard.md](executable-contract-standard.md). |
-| `entrypoint: true` | Artifact must be listed from a known navigation entry such as `README.md`, `AI_GOVERNANCE.md`, or `pr-ops/artifact-map.md`. |
+| `entrypoint: true` | Artifact must be listed from a known navigation entry such as `README.md`, `GOVERNANCE.md`, or `pr-ops/artifact-map.md`. |
 | Template placeholders such as `{{project_name}}` | Placeholder must be allowed by `tools/validate-repository-structure.sh` and documented in the template or template README. |
 | External research claim | Body must contain source, author or organization, link, and applicability notes. |
 

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-07-10
+version: 1.2
+updated: 2026-07-16
 temperature: 0.1
 ---
 
@@ -23,9 +23,10 @@ temperature: 0.1
 
 | Артефакт | Назначение |
 | --- | --- |
+| [ai-governance.md](ai-governance.md) | Основной policy-контракт: роли, human decision rights, ограничения и эскалация. |
 | [agent-security-checklist.md](agent-security-checklist.md) | Единый risk-based checklist и трасса покрытия OWASP LLM Top 10:2025 / SAIF для agent work. |
 
 ## Статус
 
-Каталог создан как якорь по ADR-007 (B-048). Политический материал добавляется
-сюда по мере появления через issue -> PR -> review.
+Policy/compliance-материал физически размещается здесь по ADR-007. Новые
+политики добавляются через issue -> PR -> human review.

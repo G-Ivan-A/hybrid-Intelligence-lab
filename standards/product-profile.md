@@ -59,12 +59,12 @@ knowledge hub: канонический `PRODUCT_VISION.md` живет в кор
 | --- | --- | --- | --- |
 | `PRODUCT_VISION.md` | Границы, аудитория, ценность, метрики | Корень проекта | [Шаблон ниже](#шаблон-product_visionmd) |
 | `CONTRIBUTING.md` | Правила внесения изменений | Корень проекта | Адаптировать из планируемого `team-contract.md`; до его принятия — из [CONTRIBUTING.md](../CONTRIBUTING.md) лаборатории |
-| `AI_GOVERNANCE.md` | Правила работы ИИ-агентов | Корень проекта | Адаптировать из планируемого `team-contract.md`; до его принятия — из [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) лаборатории |
+| `GOVERNANCE.md` | Правила работы ИИ-агентов | Корень проекта | Адаптировать из планируемого `team-contract.md`; до его принятия — из [AI Governance](../ai-governance/ai-governance.md) лаборатории |
 | `CHANGELOG.md` | История версий продукта | Корень проекта | Формат [Keep a Changelog](https://keepachangelog.com) + [SemVer](https://semver.org); см. [CHANGELOG.md](../CHANGELOG.md) |
 
 > `team-contract.md` — планируемый общий шаблон командного соглашения
 > (см. [docs/concept.md](../docs/concept.md)). Пока он не создан и не принят review,
-> `CONTRIBUTING.md` и `AI_GOVERNANCE.md` продукта адаптируются из активных
+> `CONTRIBUTING.md` и `GOVERNANCE.md` продукта адаптируются из активных
 > контрактов лаборатории.
 
 ## Рекомендуемые артефакты
@@ -165,7 +165,7 @@ referral).
 3. Какая одна метрика лучше всего отражает создаваемую ценность (North Star)?
 4. На какой стадии продукт: MVP, Pilot или Production?
 5. Будут ли внешние пользователи, и нужны ли `LICENSE` и `SECURITY.md`?
-6. Какие ИИ-агенты участвуют и какие у них границы (см. `AI_GOVERNANCE.md`)?
+6. Какие ИИ-агенты участвуют и какие у них границы (см. `GOVERNANCE.md`)?
 7. Где живет продукт: в `projects/` лаборатории или в отдельном
    spoke-репозитории?
 
@@ -180,7 +180,7 @@ Teresa Torres, «Continuous Discovery Habits»).
 | `README.md` | Обязателен | Обязателен | Обязателен |
 | `CHANGELOG.md` | Рекомендуется | Обязателен | Обязателен |
 | `CONTRIBUTING.md` | Опционально | Обязателен | Обязателен |
-| `AI_GOVERNANCE.md` | Обязателен, если есть ИИ-агенты | Обязателен | Обязателен |
+| `GOVERNANCE.md` | Обязателен, если есть ИИ-агенты | Обязателен | Обязателен |
 | `ROADMAP.md` | Опционально | Рекомендуется | Обязателен |
 | `docs/metrics.md` | Рекомендуется | Обязателен | Обязателен |
 | `docs/adr/` | Опционально | Рекомендуется | Обязателен |
@@ -213,6 +213,6 @@ governance:
 | --- | --- |
 | [docs/concept.md](../docs/concept.md) | Концепция hub-and-spoke и обязательность traceability. |
 | [pr-ops/repo-model.md](../pr-ops/repo-model.md) | Anti-Inflation principle и правила размещения артефактов. |
-| [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) | Роли, operating modes и Definition of Done для AI-assisted work. |
+| [AI Governance](../ai-governance/ai-governance.md) | Роли, operating modes и Definition of Done для AI-assisted work. |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | Workflow вклада и PR checklist. |
 | [standards/README.md](README.md) | Реестр активных и планируемых стандартов. |

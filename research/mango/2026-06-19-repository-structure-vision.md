@@ -393,7 +393,7 @@ s3://mango-vault/                   # доступ по аутентификац
 - **Служебный промпт синхронизации:** `governance/prompts/hub-sync-prompt.md` —
   governance-инструмент, **не** в каталоге `prompts/` (там только БА-методология).
 - Хаб остаётся источником рекомендаций, а не блокирующих правил
-  ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), [pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
+  ([AI_GOVERNANCE.md](../../ai-governance/ai-governance.md), [pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
 
 ### 5.2. Связь с порталом `open-ai.ru` / Portal Integration (последовательно)
 

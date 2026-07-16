@@ -59,7 +59,7 @@ context: [tag1, tag2]
 > ⛔ **Стоп-правило.** Инсайт не переводит сам себя в практику. `candidate-practice`
 > — это максимум, что делает `research/`; дальше требуется reviewable PR в
 > `practices/`/`standards/` и решение человека
-> ([AI_GOVERNANCE.md](../../../AI_GOVERNANCE.md)).
+> ([AI_GOVERNANCE.md](../../../ai-governance/ai-governance.md)).
 
 ## Текущие инсайты
 

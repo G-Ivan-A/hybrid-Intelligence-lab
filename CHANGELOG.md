@@ -37,6 +37,14 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- chore(B-056): remaining policy/rule material физически разделён по ADR-007.
+  Root `AI_GOVERNANCE.md` заменён policy-контрактом
+  `ai-governance/ai-governance.md` и правилами поведения агента
+  `ai-rules/agent-work-rules.md`; обязательный root `GOVERNANCE.md` остаётся
+  тонкой навигационной точкой входа. Активные ссылки, directory READMEs,
+  repository model, artifact map и validator синхронизированы; локальные
+  `templates/htom/AI_GOVERNANCE.md` сохранены как project-template contract.
+
 - analysis: Доработан B-050 по review issue #415: обязательный принцип вынесен
   из weighted matrix в constraint, добавлены baseline E и варианты skeleton
   F8/F10/F12 для human decision gate B-051, `Type Model` упрощён до
@@ -1888,7 +1896,7 @@ All notable repository governance changes are documented here.
 
 - [README.md](README.md)
 - [docs/concept.md](docs/concept.md)
-- [AI_GOVERNANCE.md](AI_GOVERNANCE.md)
+- [AI Governance](ai-governance/ai-governance.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [standards/README.md](standards/README.md)
 - [standards/glossary.md](standards/glossary.md)

@@ -127,7 +127,7 @@ artifact — RAG application runtime, значит это Product Spoke.
 | Путь | Назначение | Условие обязательности |
 | --- | --- | --- |
 | `README.md` | Product/library entrypoint, scope, quickstart, navigation. | Всегда. |
-| `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `CHANGELOG.md` | Inherited HTOM governance, contribution workflow, change history. | Всегда для самостоятельного repo. |
+| `GOVERNANCE.md`, `CONTRIBUTING.md`, `CHANGELOG.md` | Inherited HTOM governance, contribution workflow, change history. | Всегда для самостоятельного repo. |
 | `pr-ops/artifact-map.md` | Local map of active artifacts and sync state. | Всегда после выделения в standalone repo. |
 | `prompts/` | Active prompt assets. `drafts/` and `archive/` are subareas, not root peers. | Если библиотека поставляет prompts. |
 | `patterns/` | Reusable patterns/classes of work used by prompts. | Если prompts are pattern-backed. |
@@ -189,7 +189,7 @@ from Hub + Local Extension in project**.
 
 | Группа | Источник истины | Правило |
 | --- | --- | --- |
-| HTOM genome | `templates/htom/` in Hub | `AI_GOVERNANCE.md`, quick rules, handover/onboarding prompts and base CONTRIBUTING patterns sync through Smart Sync or reviewed manual copy. |
+| HTOM genome | `templates/htom/` in Hub | `GOVERNANCE.md`, quick rules, handover/onboarding prompts and base CONTRIBUTING patterns sync through Smart Sync or reviewed manual copy. |
 | Shared standards | `standards/` in Hub | Frontmatter, file naming, issue workflow, executable documentation and other cross-project standards are Hub-owned unless explicitly forked. |
 | Issue/PR intake | `.github/ISSUE_TEMPLATE/` in Hub | Projects may adapt labels/text, but structural changes to common workflow originate in Hub. |
 | Sync tooling metadata | `templates/manifest.json`, `templates/sync-metadata.json`, `tools/sync-from-hub.sh` | Hub controls the sync protocol; projects keep local profile and acceptance history. |

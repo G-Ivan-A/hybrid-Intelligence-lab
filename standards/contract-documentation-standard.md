@@ -32,7 +32,7 @@ related_issues:
 
 Стандарт описывает структуру контракта из пяти элементов и единый нормативный
 словарь. Он применяется к governance-контрактам Хаба (например,
-[AI_GOVERNANCE.md](../AI_GOVERNANCE.md), [pr-ops/repo-model.md](../pr-ops/repo-model.md),
+[AI Governance](../ai-governance/ai-governance.md), [pr-ops/repo-model.md](../pr-ops/repo-model.md),
 [standards/team-contract.md](team-contract.md), [standards/issue-workflow.md](issue-workflow.md),
 профили) и наследуется споками.
 
@@ -136,4 +136,4 @@ related_issues:
 - [standards/glossary.md](glossary.md) — нормативные термины Хаба (single source of truth).
 - [standards/research-standard.md](research-standard.md), [standards/executable-contract-standard.md](executable-contract-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.
-- [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4 (утверждение стандарта — за человеком).
+- [AI Governance](../ai-governance/ai-governance.md) — правило 4 (утверждение стандарта — за человеком).

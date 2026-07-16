@@ -160,4 +160,4 @@ entrypoint: true        # только для точки входа
 - [standards/glossary.md](glossary.md) — «Директивный блок», «Operating Mode», 🚦.
 - [standards/research-standard.md](research-standard.md), [standards/contract-documentation-standard.md](contract-documentation-standard.md) — смежные форматы.
 - IETF RFC 2119 / BCP 14 — нормативные ключевые слова.
-- [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) — правило 4.
+- [AI Governance](../ai-governance/ai-governance.md) — правило 4.

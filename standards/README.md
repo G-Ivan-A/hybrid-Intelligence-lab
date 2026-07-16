@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.10
-updated: 2026-07-03
+version: 1.11
+updated: 2026-07-16
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -20,7 +20,7 @@ owner: G-Ivan-A
 | File naming convention | Active | Правило именования файлов, включая date-first research/analysis/audit/report/RFC/ADR артефакты | [standards/file-naming.md](file-naming.md), [standards/file-naming-convention.md](file-naming-convention.md) |
 | Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/education-profile.md](education-profile.md) |
 | Концепция репозитория | Active | Root concept и назначение репозитория | [docs/concept.md](../docs/concept.md) |
-| AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
+| AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI Governance](../ai-governance/ai-governance.md) |
 | Repository model | Active | Размещение артефактов и правила создания | [pr-ops/repo-model.md](../pr-ops/repo-model.md) |
 | Frontmatter standard | Canonical | Минимальное metadata rule для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
 | Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research/report, Audit, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |

@@ -112,7 +112,7 @@ external source (registry)
 
 - `research/` отвечает за стадии до `candidate-practice` включительно.
 - Переход в `practices/`/`standards/` требует reviewable PR и **решения
-  человека** ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md)). Инсайт не повышает свой
+  человека** ([AI Governance](../../ai-governance/ai-governance.md)). Инсайт не повышает свой
   статус сам.
 
 ## Применение для 4 проектов экосистемы

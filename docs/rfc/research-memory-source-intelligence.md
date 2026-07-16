@@ -59,7 +59,7 @@ RFC описывает **рамку и правила применения**. О
   а уточняет, как его source-centric механизм превращается в object-centric
   Research Memory;
 - НЕ продвигает draft-модель в canonical standard без human decision
-  ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md));
+  ([AI Governance](../../ai-governance/ai-governance.md));
 - НЕ требует отдельного каталога Research Memory на Phase 0: текущие
   `external-insights/` могут быть носителем Knowledge Objects, пока второй
   независимый use case не докажет потребность в новом формате или шаблоне.

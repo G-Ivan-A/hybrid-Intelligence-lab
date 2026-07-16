@@ -312,7 +312,7 @@ flowchart TD
 ## 🙋 Решение за человеком
 
 Этот документ — предложение, а не финальное решение
-([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md): humans принимают финальные решения по
+([AI Governance](../../ai-governance/ai-governance.md): humans принимают финальные решения по
 governance). Прошу:
 
 1. **Принять разделение** на Кейс 1 (Runtime-онбординг) и Кейс 2
@@ -354,7 +354,7 @@ Bootstrap-клонирование (Кейс 2) утверждено как ко
 - ✅ Создать `ai-rules/agent-onboarding-protocol.md` — выполнено (v1.1, 2026-06-04)
 - ✅ Создать `templates/htom/README.md` — выполнено
 - ✅ Обновить `pr-ops/repo-model.md` — выполнено (v1.1, 2026-06-04)
-- ⚠️ Добавить ссылки из `README.md` и `AI_GOVERNANCE.md` — выполняется в
+- ⚠️ Добавить ссылки из `README.md` и `GOVERNANCE.md` — выполняется в
   рамках текущей задачи
 - ✅ Создать дубль промпта в `templates/htom/` — выполнено
   (`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`)

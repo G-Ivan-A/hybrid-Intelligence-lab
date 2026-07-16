@@ -53,7 +53,7 @@ executable: false
 
 Роль исполнителя может выполнять человек или AI-агент, но право на финальные
 решения по vision, publication и merge остаётся за человеком согласно
-[AI_GOVERNANCE.md](../AI_GOVERNANCE.md). Поэтому переходы в `ready` и `merged`
+[AI Governance](../ai-governance/ai-governance.md). Поэтому переходы в `ready` и `merged`
 всегда подтверждаются человеком-ревьюером.
 
 ### Технические носители статуса
@@ -173,7 +173,7 @@ changelog объясняет смысл изменения, а не только
 | Вход в `review` | Frontmatter активных `.md` валиден | Скрипт | `./tools/validate-frontmatter.sh .` |
 | Вход в `review` | Активные артефакты в нужных каталогах и зарегистрированы | Скрипт | `./tools/validate-repository-structure.sh` |
 | Вход в `review` | PR связан с issue | Ручная проверка | PR checklist в [CONTRIBUTING.md](../CONTRIBUTING.md) |
-| Вход в `merged` | `CHANGELOG.md` и навигация обновлены | Ручная проверка ревьюера | Definition of Done в [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
+| Вход в `merged` | `CHANGELOG.md` и навигация обновлены | Ручная проверка ревьюера | Definition of Done в [AI Governance](../ai-governance/ai-governance.md) |
 | Поле `updated` | Проставление даты изменения в frontmatter | Вручную | Кандидат на скрипт-хук (pre-commit / CI) |
 
 Локальные проверки, которые исполнитель запускает перед переходом в `review`:
@@ -204,7 +204,7 @@ changelog объясняет смысл изменения, а не только
 - [standards/README.md](README.md)
 - [standards/glossary.md](glossary.md)
 - [pr-ops/repo-model.md](../pr-ops/repo-model.md)
-- [AI_GOVERNANCE.md](../AI_GOVERNANCE.md)
+- [AI Governance](../ai-governance/ai-governance.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [CHANGELOG.md](../CHANGELOG.md)
 - [.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md)

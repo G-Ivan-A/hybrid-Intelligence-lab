@@ -30,7 +30,7 @@ context: [agents, production, prompt-ownership, human-in-the-loop]
   ([standards/executable-contract-standard.md](../../../standards/executable-contract-standard.md)),
   а не «магию» внутри инструментов.
 - «Человек в петле» = наш hard rule **«Человек > Команда Q > Исполнитель»** и
-  «решение за человеком» ([AI_GOVERNANCE.md](../../../AI_GOVERNANCE.md)).
+  «решение за человеком» ([AI_GOVERNANCE.md](../../../ai-governance/ai-governance.md)).
 - «Own your context window» резонирует с token-budget практикой
   ([practices/agent-work/skill-catalog-token-budget.md](../../../practices/agent-work/skill-catalog-token-budget.md)).
 
