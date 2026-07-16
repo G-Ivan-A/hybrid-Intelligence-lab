@@ -90,6 +90,7 @@ is_active_file() {
     standards/report-standard.md | \
     standards/audit-standard.md | \
     standards/analysis-standard.md | \
+    standards/standard-meta-structure.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
     standards/product-profile.md | \
