@@ -128,7 +128,7 @@ Semantic overlap:
 | `standards/research-profile.md` + бывший draft body-standard | Не exact duplicate. `research-profile.md:45-84` задаёт артефакты, naming, frontmatter и воспроизводимость; бывший отдельный draft отвечал только за порядок body. | P1 | Решение Phase 1: слить правила порядка изложения в `research-profile.md` и удалить отдельный draft. |
 | `research/governance/*-format-2026-06.md` + `standards/*-standard.md` | Ожидаемая пара research -> standard. | P2 | Оставить, но добавить явное правило "research source не является duplicate standard". |
 | `standards/webportal-concept-standard.md` + `templates/webportal-concept-template.md` | Ожидаемая пара standard -> copyable template. | P2 | Оставить; в template frontmatter решить placeholder-warning отдельно. |
-| `AI_GOVERNANCE.md` + `templates/htom/AI_GOVERNANCE.md` | Ожидаемая hub contract -> spoke template пара. | P2 | Оставить; relation должна быть описана как inheritance/template, не duplicate. |
+| `ai-governance/ai-governance.md` + `templates/htom/AI_GOVERNANCE.md` | Ожидаемая hub policy -> spoke template пара. | P2 | Оставить; relation должна быть описана как inheritance/template, не duplicate. |
 | `research/hub/2026-06-02-ai-collaboration-retrospective.md` + `research/hub/2026-06-02-ai-collaboration-retrospective-mango-migration.md` | Высокое пересечение темы ретроспектив, но разные события. | P2 | При следующем изменении добавить cross-link "общая ретроспектива / Mango migration retrospective", не объединять автоматически. |
 
 ### 2.3. Дублирование метаданных

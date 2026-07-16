@@ -30,7 +30,7 @@ temperature: 0.1
 | Документ | Назначение |
 | --- | --- |
 | [docs/concept.md](docs/concept.md) | Актуальная концепция репозитория, аудитории, границы и модель hub-and-spoke. |
-| [AI_GOVERNANCE.md](AI_GOVERNANCE.md) | Операционный контракт для Founder & PO, reviewers, contributors и AI-агентов. |
+| [GOVERNANCE.md](GOVERNANCE.md) | Операционный контракт для Founder & PO, reviewers, contributors и AI-агентов. |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Правила участия, локальные проверки и ожидания к review. |
 | [CHANGELOG.md](CHANGELOG.md) | Date-based журнал governance-изменений репозитория. |
 | [LICENSE](LICENSE) | Гибридная лицензия: CC BY 4.0 для текстовых артефактов, Apache-2.0 для скриптов. |
@@ -65,8 +65,8 @@ temperature: 0.1
 | `frameworks/` | Методологии, создаваемые только после доказанного gap с существующими подходами. |
 | `projects/` | Project knowledge bases, промпты, процессы и контекст spoke-репозиториев. |
 | `education/` | Open education: программы, учебные материалы и сценарии занятий. |
-| `ai-governance/` | Якорь AI-governance слоя: границы и точки входа (сквозные правила — в `AI_GOVERNANCE.md`). |
-| `ai-rules/` | Исполнимые правила рантайма AI-агента: протокол онбординга и операционные инструкции. |
+| `ai-governance/` | Политики: human decision rights, security/compliance и эскалация. |
+| `ai-rules/` | Правила поведения AI-агента: operating modes, онбординг и операционные инструкции. |
 | `pr-ops/` | Операции над репозиторием и PR: модель репозитория, карта артефактов, бэклог, реестры и журнал сессий. |
 | `projects-sink/` | Приёмник контекста spoke-проектов, синхронизируемого в Хаб. |
 | `tools/` | Локальные проверки и служебные скрипты сопровождения репозитория. |

@@ -49,7 +49,7 @@ mango-ADR: эти ADR живут в отдельном репозитории и
   приняты) делаются пофазно под боль, а не этим PR.
 - Это **не** замена решений человека. Принятие/отклонение рекомендаций,
   публикация, синхронизация с mango остаются за Пользователем
-  ([AI_GOVERNANCE.md](../../AI_GOVERNANCE.md), правило 4).
+  ([AI_GOVERNANCE.md](../../ai-governance/ai-governance.md), правило 4).
 
 ## Почему текущей ситуации недостаточно
 
@@ -407,7 +407,7 @@ mango — НФТ совместимости mango):
   разметки AI-практик).
 - [docs/rfc/methodology-research-and-proposals.md](../../docs/rfc/methodology-research-and-proposals.md)
   — PR #246: 5-слойная модель и ось доверия E0–E4 (использованы для классификации).
-- [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — Operating Modes, правило 4 (решения
+- [AI_GOVERNANCE.md](../../ai-governance/ai-governance.md) — Operating Modes, правило 4 (решения
   за человеком), Creative-mode.
 - [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
 - [standards/glossary.md](../../standards/glossary.md) — цель опциональной ФТ-6

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.57
+version: 1.58
 updated: 2026-07-16
 temperature: 0.1
 ---
@@ -37,6 +37,36 @@ All notable repository governance changes are documented here.
   `standards/README.md` (версия 1.11) и карте артефактов; бэклог обновлён (B-067
   → `review`); allowlist, `required_files` и pinned metadata в
   `tools/validate-repository-structure.sh` синхронизированы.
+- adr: Добавлен ADR-009 «Разделение Mango на публичный и приватный
+  репозитории» (issue #424 / B-079) — нормативная фиксация решения фаундера от
+  2026-07-10 о разделении `mango_ba_prompts`, совмещающего операционку с
+  приватными данными и переиспользуемую методологию. ADR фиксирует четыре
+  нормы: публичное репо `ai-ba-playbooks` (архетип B, универсальное имя без
+  бренда «Mango», каталоги `prompt-library/` начиная с `telecom/`, `patterns/`,
+  `standards/`, `examples/` только обезличенные, `docs/`, `templates/`,
+  опционально `app/`, при категорическом отсутствии `education/`, который
+  остаётся в Хабе по ADR-007); приватное репо `mango-ba-prompt-library`
+  (`prompts/`, `kb/processes/`, `runs/`, `evals/`, `internal-rfc/`,
+  `internal-docs/`, без GitHub Actions — только локальные валидаторы);
+  строго односторонняя синхронизация приватный → публичный с ручным отбором
+  фаундером на старте и Smart Sync только под доказанную операционную боль;
+  импорт методологии из Хаба с возвратом зрелых практик через RFC. Новых
+  архитектурных решений не принимается, стандарты Хаба (ADR-001, ADR-002,
+  ADR-007) не меняются; физические репозитории не создаются и файлы не
+  мигрируются — это остаётся B-080..B-084. Документ в статусе `proposed` до
+  acceptance gate на merge. Зарегистрирован в карте артефактов, бэклог обновлён
+  (B-079 → `review`), allowlist и pinned metadata в
+  `tools/validate-repository-structure.sh` синхронизированы.
+- standard: Создан `standards/standard-meta-structure.md` для issue #423 /
+  B-052. Мета-стандарт нормативно кодифицирует решение ADR-008 F10 explicit:
+  десять уникальных инвариантных H2-секций в строгом порядке, `N/A +
+  rationale` для любого неприменимого раздела, `Type Model` только в формах
+  `model`/`N/A`, specific tail только после `Related Artifacts` с формально
+  проверяемой Purpose/Scope cross-reference в первом абзаце и ADR-002 как
+  canonical owner общей routing/boundary table. Зафиксирована граница
+  validator/human review; миграция Research/Analysis/Audit/Report standards
+  оставлена B-053. Синхронизированы artifact map и backlog; B-052 переведена в
+  `review`.
 
 - research: Заведено направление `research/education/` — теоретическая основа
   для образовательных модулей Хаба, с явной границей: research отвечает «что
@@ -61,6 +91,14 @@ All notable repository governance changes are documented here.
   `tools/validate-repository-structure.sh` синхронизированы.
 
 ### Changed
+
+- chore(B-056): remaining policy/rule material физически разделён по ADR-007.
+  Root `AI_GOVERNANCE.md` заменён policy-контрактом
+  `ai-governance/ai-governance.md` и правилами поведения агента
+  `ai-rules/agent-work-rules.md`; обязательный root `GOVERNANCE.md` остаётся
+  тонкой навигационной точкой входа. Активные ссылки, directory READMEs,
+  repository model, artifact map и validator синхронизированы; локальные
+  `templates/htom/AI_GOVERNANCE.md` сохранены как project-template contract.
 
 - analysis: Доработан B-050 по review issue #415: обязательный принцип вынесен
   из weighted matrix в constraint, добавлены baseline E и варианты skeleton
@@ -1913,7 +1951,7 @@ All notable repository governance changes are documented here.
 
 - [README.md](README.md)
 - [docs/concept.md](docs/concept.md)
-- [AI_GOVERNANCE.md](AI_GOVERNANCE.md)
+- [AI Governance](ai-governance/ai-governance.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [standards/README.md](standards/README.md)
 - [standards/glossary.md](standards/glossary.md)
