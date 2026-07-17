@@ -14,4 +14,9 @@ grep -Fq '| `kb/` (включая `processed/`, `sources/`, `fragments/`, `pract
 grep -Fq 'Весь каталог `kb/` мигрирует в **Priv** как единое дерево' "$plan"
 grep -Fq '| `kb/` (5 077; включая `processed/`, `sources/`, `fragments/`, `practices/`) | **Priv** | `kb/` | Перенос целиком as-is' "$plan"
 
+if grep -Eq 'Q1 и Q2 фаундером|Q1 и Q2 сформулированы|Закрыть Q1 .* и Q2|Q1–Q4 остаются' "$plan"; then
+  echo "ERROR: migration plan still describes resolved Q2 as open" >&2
+  exit 1
+fi
+
 echo "Mango kb migration contract test passed."
