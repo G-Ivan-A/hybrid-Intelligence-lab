@@ -13,6 +13,20 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- governance: В `ai-governance/ai-governance.md` (v2.0 -> v2.1) зафиксирована
+  **3-tier amendment policy** (B-036, issue #438) — раздел «Amendment policy
+  (3 tier)». Политика задаёт церемонию для правки canonical
+  governance-артефакта: Tier 1 (mechanical: typo, frontmatter, ссылки,
+  changelog, validator allowlist) — без RFC, PR с описанием; Tier 2 (limited:
+  уточнение внутри одного раздела без изменения структуры) — lightweight RFC
+  в теле PR + human review; Tier 3 (structural: новый раздел, изменение
+  скелета, удаление артефакта, сдвиг decision boundary) — полный
+  analysis → RFC → ADR → standard path без обхода. Tier выбирается по
+  максимальному признаку, сомнение разрешается в пользу более высокого, hard
+  bans и Эскалация не отменяются ни одним tier. Источник — §3.4
+  `docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md`.
+  Новых governance-документов не создано, остальное содержимое контракта не
+  изменялось.
 - backlog: В `pr-ops/backlog.md` (v1.33 -> v1.34) добавлена triggered-задача
   B-088 о многоуровневой иерархии SSOT (issue #427): ADR отвечает за решения,
   Стандарт — за исполнение. Задача имеет статус `deferred (triggered)` и не
@@ -99,6 +113,15 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) задача B-036 исправлена после
+  B-056: целевой путь `AI_GOVERNANCE.md` (удалён в PR #430) заменён на
+  `ai-governance/ai-governance.md`, добавлена зависимость B-056, проставлен
+  issue #438, статус `TODO` -> `review`. До правки задача ссылалась на
+  несуществующий артефакт и была неисполнима.
+- artifact-map: В `pr-ops/artifact-map.md` (v1.77 -> v1.78) строка
+  `/ai-governance/ai-governance.md` дополнена 3-tier amendment policy (B-036)
+  и связью с source-анализом. Строка `/ai-rules/agent-work-rules.md` уже
+  отражала разделение по B-056 и не менялась.
 - Expanded ADR-008 scope to all ecosystem standards; closed B-051 and B-067
   backlog cycles (issue #434). Added `standards/evals-contract-standard.md` to
   ADR-008 impacted and related artifacts and synchronized the artifact map.

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.0
-updated: 2026-07-16
+version: 2.1
+updated: 2026-07-17
 temperature: 0.1
 executable: false
 ---
@@ -54,6 +54,32 @@ vision, publication, license и sensitive context.
 Минимальный frontmatter для активных Markdown-артефактов задан
 [стандартом frontmatter](../standards/frontmatter-standard.md). Остальные
 нормативные контракты перечислены в [Standards](../standards/README.md).
+
+## Amendment policy (3 tier)
+
+Политика задаёт, какая церемония нужна для правки canonical governance-артефакта
+(policy, standard, template, ADR/RFC, backlog, artifact map). Обоснование —
+[анализ backlog and artifact change policy](../docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md)
+(§3.4). Tier выбирается по **максимальному** признаку изменения: если правка
+попадает хотя бы под один критерий более высокого tier, применяется он.
+
+| Tier | Что покрывает | Процесс | Переход выше |
+| --- | --- | --- | --- |
+| **Tier 1: Mechanical** | Исполнение уже принятого решения: typo, frontmatter update, обновление ссылок и путей, changelog-запись, validator allowlist. | RFC не нужен. Agent выполняет ripple scan затронутых ссылок, вносит правку, запускает валидаторы, оформляет PR с описанием. Human review при merge. | Обнаружено изменение смысла, путь вне accepted structure или меняется semantics валидатора → Tier 2/3. |
+| **Tier 2: Limited** | Уточнение правила внутри уже принятого контракта: формулировка, пример, локальное исключение. Затрагивает один раздел и не меняет структуру артефакта. | Lightweight RFC: короткое описание изменения + rationale + список затронутых артефактов в теле PR (отдельный файл в `docs/rfc/` не обязателен). Обязателен human review. | Затронуто больше трёх active artifacts, добавляется новое поле frontmatter/status/тип артефакта, меняется routing или lifecycle → Tier 3. |
+| **Tier 3: Structural** | Изменение смысла, новый раздел или каталог, изменение скелета, замена стандарта, удаление артефакта, сдвиг decision boundary. | Полный path: analysis → RFC/proposal → ADR/decision → standard/policy/template/validator → миграция. | Обхода нет: решение принимает человек. |
+
+Правила применения:
+
+1. Tier фиксируется в описании PR явно (`Tier 1` / `Tier 2` / `Tier 3`).
+2. Сомнение между двумя tier разрешается в пользу более высокого.
+3. Ни один tier не отменяет hard bans из раздела Политики и Эскалацию.
+4. Обновление валидаторов входит в каждый tier, но само по себе не принимает
+   governance decision.
+
+Примеры: перенос ссылок после accepted ADR — Tier 1; добавление примера к
+существующему правилу — Tier 2; введение нового типа артефакта или изменение
+модели управления задачами — Tier 3.
 
 ## Обоснованный обход в Creative Mode
 
