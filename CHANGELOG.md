@@ -153,6 +153,11 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: В ADR-009 исправлен несуществующий путь `kb/processes/` на полное дерево
+  `kb/` (`processed/`, `sources/`, `fragments/`, `practices/`); план миграции
+  B-080 синхронизирован: каталог переносится целиком в приватный
+  `mango-ba-prompt-library` с сохранением внутренней структуры; активные ссылки
+  в artifact map и backlog B-080/B-082 приведены к тому же контракту (issue #446).
 - backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) задача B-036 исправлена после
   B-056: целевой путь `AI_GOVERNANCE.md` (удалён в PR #430) заменён на
   `ai-governance/ai-governance.md`, добавлена зависимость B-056, проставлен

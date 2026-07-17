@@ -1,7 +1,7 @@
 ---
 status: proposed
-version: 0.1
-updated: 2026-07-16
+version: 0.2
+updated: 2026-07-17
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: governance
@@ -84,7 +84,7 @@ scope этого ADR.
 | Каталог | Назначение |
 | --- | --- |
 | `prompts/` | Боевые промпты. |
-| `kb/processes/` | Операционные знания и process prompts. |
+| `kb/` (включая `processed/`, `sources/`, `fragments/`, `practices/`) | Операционная база знаний, обработанные данные и внутренние практики. |
 | `runs/` | Записи прогонов. |
 | `evals/` | Golden-sets и оценки на реальных кейсах. |
 | `internal-rfc/` | Внутренние предложения. |
