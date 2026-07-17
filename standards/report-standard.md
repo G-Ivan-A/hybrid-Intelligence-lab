@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-07-02
+version: 0.2
+updated: 2026-07-17
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
 scope: repo-wide
 related_standards:
+  - "standard-meta-structure.md"
   - "frontmatter-docs-standard.md"
   - "file-naming.md"
   - "research-standard.md"
@@ -15,11 +16,12 @@ related_standards:
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/354"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/451"
 ---
 
 # Report Standard
 
-## Назначение
+## Purpose
 
 Этот стандарт задаёт обязательную структуру Reports-артефактов Хаба: базовый
 каркас Report (назначение, frontmatter, naming, lifecycle, минимальное ядро
@@ -43,9 +45,9 @@ relation-метаданных. Он не является Contract: операц
 [Frontmatter Docs Standard](frontmatter-docs-standard.md), а имена файлов — из
 [File Naming](file-naming.md). Модель Report реализует **Вариант C** ADR-004:
 один базовый стандарт + профили подтипов, «A сейчас, B потом» с явным триггером
-выделения профиля (см. [Subtype Profiles](#subtype-profiles)).
+выделения профиля (см. [Type Model](#type-model)).
 
-## Область применения
+## Scope
 
 Стандарт применяется к работе, которая производит **durable record of results** —
 самостоятельный документ, фиксирующий «что произошло / что измерено / что
@@ -163,11 +165,13 @@ related_artifacts:
 разбор «почему», методология Audit-процесса и research-метод НЕ входят в Report —
 они делегируются Analysis / Audit / Research.
 
-## Subtype Profiles
+## Type Model
 
-Подтипы входят как **лёгкие профили-секции** одного базового стандарта, а не как
-три независимых стандарта (Вариант C). Каждый профиль добавляет обязательное ядро
-поверх базы:
+`model`. Модель типа Report реализует **Вариант C** ADR-004: один базовый
+стандарт + лёгкие профили подтипов. Подтипы входят как **профили-секции** одного
+базового стандарта, а не как три независимых стандарта. Таблица subtype profiles
+ниже является частью этой формы `model`. Каждый профиль добавляет обязательное
+ядро поверх базы:
 
 | Профиль | Обязательное ядро (сверх базы) | Индустриальный якорь | Покрывает | Canonical path |
 | --- | --- | --- | --- | --- |
@@ -228,6 +232,11 @@ flowchart LR
 
 ## Boundaries
 
+[ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) остаётся
+canonical owner общей таблицы artifact boundary и routing; этот стандарт НЕ
+дублирует и не переопределяет её. Ниже — только локальная delta Report: граничные
+кейсы, где стойку определяет доминирующий deliverable.
+
 Границы **фиксируются ссылкой**, а не переписыванием: полные таблицы — в Analysis
 §3 и Research §10. Тип артефакта определяется доминирующей стойкой:
 
@@ -278,7 +287,12 @@ tech debt в [pr-ops/backlog.md](../pr-ops/backlog.md).
 - [Reports industry norms and standardization scope](../research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) —
   индустриальные нормы, варианты §11, рекомендация §12, граничные кейсы §10.
 - [ADR-002: Методология создания и управления артефактами](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) —
-  routing и knowledge-lifecycle артефактов; реконсилированная строка Reports.
+  routing и knowledge-lifecycle артефактов; реконсилированная строка Reports;
+  canonical owner общей artifact boundary/routing table.
+- [`standards/standard-meta-structure.md`](standard-meta-structure.md) —
+  мета-стандарт F10, задающий инвариантный каркас этого стандарта.
+- [ADR-008: Мета-структура стандартов R/A/A/Report](../docs/adr/2026-07-adr-008-standard-meta-structure.md) —
+  решение о едином F10-каркасе и specific-tail rule.
 - [research-standard.md](research-standard.md) — sibling standard той же цепочки
   (граница `exp/` vs `runs/`, routing по типу задачи).
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт

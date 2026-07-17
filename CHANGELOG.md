@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.60
+version: 1.61
 updated: 2026-07-17
 temperature: 0.1
 ---
@@ -13,6 +13,23 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- standards: Четыре sibling standards (`research-standard.md`,
+  `analysis-standard.md`, `audit-standard.md`, `report-standard.md`) приведены к
+  мета-стандарту F10 (B-053, issue #451). Все четыре теперь содержат ровно десять
+  инвариантных H2-секций в строгом порядке (Purpose, Scope, Identification and
+  Placement, Frontmatter, Minimum Body Sections, Type Model, Lifecycle,
+  Boundaries, Validation, Related Artifacts); `Type Model` использует одну из двух
+  форм (`model` или `N/A + rationale`); каждый specific-tail раздел получил
+  формально проверяемую cross-reference на `Purpose`/`Scope` в первом абзаце;
+  `Boundaries` больше не дублирует общую routing-таблицу, а ссылается на ADR-002
+  как canonical owner. Изменения **структурные**: определения, процессы и примеры
+  перенесены без изменений — только порядок, каркас и форма specific tail. Версии
+  четырёх стандартов подняты до v0.2.
+- standards: Закрыт открытый вопрос Q5 `evals-contract-standard.md` (v0.2): по
+  мета-стандарту F10 (B-052) скелет распространяется на **каждый** стандарт
+  экосистемы, включая Evals Contract; смягчённое specific-tail правило (ADR-008
+  v0.2) допускает code-span-ссылку `Scope`, поэтому рабочие ссылки не переводятся
+  принудительно в anchor-форму.
 - research: Исследование retrieval-стратегий реорганизовано из монолита
   `research/education/2026-07-16-retrieval-strategies-survey.md` (1854 строки,
   теперь `status: superseded` со ссылкой на актуальную версию) в модуль

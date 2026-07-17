@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-07-03
+version: 0.2
+updated: 2026-07-17
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
 scope: repo-wide
 related_standards:
+  - "standard-meta-structure.md"
   - "frontmatter-docs-standard.md"
   - "file-naming.md"
   - "research-standard.md"
@@ -18,11 +19,12 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/366"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/451"
 ---
 
 # Analysis Standard
 
-## Назначение
+## Purpose
 
 Этот стандарт задаёт обязательную структуру Analysis-артефактов Хаба: базовый
 каркас Analysis (назначение, frontmatter, naming, lifecycle, минимальное ядро
@@ -51,10 +53,10 @@ relation-метаданных. Он не является Contract: операц
 внешнего знания») живёт в [glossary](glossary.md) (B-020) и не переписывается
 здесь. Модель Analysis реализует **Вариант C** ADR-006: один базовый стандарт
 Analysis + опциональные профили подтипов, «A сейчас, B потом» с явным триггером
-выделения профиля (см. [Subtype Profiles](#subtype-profiles) и
+выделения профиля (см. [Type Model](#type-model) и
 [Anti-Inflation Trigger](#anti-inflation-trigger-триггер-b)).
 
-## Область применения
+## Scope
 
 Стандарт применяется к работе, которая **интерпретирует локальный или внутренний
 контекст** — разбирает текущие артефакты, данные, backlog, PR-гипотезы, границы
@@ -182,7 +184,14 @@ descriptive «что произошло»):
 §7.3). Причинный разбор с вердиктом pass/fail и compliance target делегируются
 Audit, а descriptive execution log — Report.
 
-## Subtype Profiles
+## Type Model
+
+`model`. Модель типа Analysis реализует **Вариант C** ADR-006: один базовый
+стандарт Analysis + опциональные профили подтипов
+(`inventory | matrix | options | recommendation`). Таблица subtype profiles ниже
+— часть этой формы `model`; отдельная форма `profiles` или пустой раздел не
+используются. Anti-inflation trigger выделения профиля вынесен в specific tail
+(см. [Anti-Inflation Trigger](#anti-inflation-trigger-триггер-b)).
 
 Подтипы входят как **лёгкие профили-секции** одного базового стандарта, а не как
 четыре независимых стандарта (Вариант C). Профиль включается только когда форма
@@ -249,9 +258,12 @@ flowchart LR
 
 ## Boundaries
 
-Границы **фиксируются ссылкой**, а не переписыванием: полные таблицы — в B-024
-§4, B-029, B-041 и глоссарии. Тип артефакта определяется доминирующей стойкой
-(совместимо с content-over-path, issue #288):
+Canonical owner общей таблицы artifact boundary и routing —
+[ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md); этот
+раздел её не дублирует и не переопределяет, а фиксирует только локальную delta
+Analysis. Границы **фиксируются ссылкой**, а не переписыванием: полные таблицы —
+в B-024 §4, B-029, B-041 и глоссарии. Тип артефакта определяется доминирующей
+стойкой (совместимо с content-over-path, issue #288):
 
 | Граница | Правило | Дом артефакта |
 | --- | --- | --- |
@@ -274,23 +286,6 @@ flowchart LR
 классифицирован по доминирующему deliverable. Один артефакт ЗАПРЕЩЕНО нормировать
 как два типа сразу.
 
-## Anti-Inflation Trigger (Триггер B)
-
-Профили подтипов остаются **секциями** этого базового стандарта до явного порога
-выделения. **Триггер B (Anti-Inflation,
-[`pr-ops/repo-model.md`](../pr-ops/repo-model.md)).** Профиль выделяется
-в отдельный стандарт (`analysis-inventory-standard.md` и т.п.) **только** когда:
-
-- профиль накопил достаточно **собственных повторяющихся обязательных правил**
-  (own recurring MUST-rules подтипа), которых нет у остальных профилей; либо
-- **review pain** делает базовый Analysis standard неясным (критерий ADR-006).
-
-До этого порога подтип остаётся секцией-профилем базового стандарта. Это даёт
-минимальную поверхность сейчас (как A) и путь к разделению потом (как B) — по
-тому же принципу, по которому Reports standard (B-043) и Audit standard (B-032)
-откладывают выделение своих профилей. Выделение профиля в отдельный стандарт —
-изменение принятой модели и требует нового RFC/ADR, а не правки этого стандарта.
-
 ## Validation
 
 Local checks:
@@ -310,6 +305,10 @@ checks отслеживается как tech debt в
 
 ## Related Artifacts
 
+- [Standard Meta-Structure Standard](standard-meta-structure.md) — F10-скелет,
+  которому соответствует структура этого стандарта (B-052/B-053).
+- [ADR-008: Мета-структура стандартов](../docs/adr/2026-07-adr-008-standard-meta-structure.md) —
+  источник правила F10 и смягчённого правила specific-tail cross-reference.
 - [ADR-006: Структура Analysis-артефактов и принятие Варианта C](../docs/adr/2026-07-adr-006-analysis-structure.md)
   (B-026) — источник принятого решения (Вариант C, routing `docs/analysis/`,
   relation-frontmatter, knowledge-lifecycle, границы).
@@ -346,4 +345,23 @@ checks отслеживается как tech debt в
   (зонтичная задача стандартизации Research / Analysis / Audit),
   [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288)
   (размытие типов Research / Analysis / Audit).
+
+## Anti-Inflation Trigger (Триггер B)
+
+Этот раздел уточняет anti-inflation trigger для модели типа, заявленной в
+[Type Model](#type-model) и в границах [Scope](#scope): профили подтипов остаются
+**секциями** этого базового стандарта до явного порога выделения. **Триггер B
+(Anti-Inflation, [`pr-ops/repo-model.md`](../pr-ops/repo-model.md)).** Профиль
+выделяется в отдельный стандарт (`analysis-inventory-standard.md` и т.п.)
+**только** когда:
+
+- профиль накопил достаточно **собственных повторяющихся обязательных правил**
+  (own recurring MUST-rules подтипа), которых нет у остальных профилей; либо
+- **review pain** делает базовый Analysis standard неясным (критерий ADR-006).
+
+До этого порога подтип остаётся секцией-профилем базового стандарта. Это даёт
+минимальную поверхность сейчас (как A) и путь к разделению потом (как B) — по
+тому же принципу, по которому Reports standard (B-043) и Audit standard (B-032)
+откладывают выделение своих профилей. Выделение профиля в отдельный стандарт —
+изменение принятой модели и требует нового RFC/ADR, а не правки этого стандарта.
 </content>
