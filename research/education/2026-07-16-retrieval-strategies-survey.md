@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.3
-updated: 2026-07-16
+status: superseded
+version: 0.4
+updated: 2026-07-17
 temperature: 0.7
 type: research
 context: [retrieval, rag, reranking, chunking, embeddings, evaluation, agent-memory, education, taxonomy, decision-matrix, survey]
@@ -12,12 +12,31 @@ based_on:
   - research/hub/2026-07-04-hub-as-agent-system-global-analysis.md
   - docs/vision.md
 related_artifacts:
+  - "research/ai-education/retrieval/00-introduction.md"
+  - "research/ai-education/retrieval/10-theory.md"
+  - "research/ai-education/retrieval/20-taxonomy.md"
+  - "research/ai-education/retrieval/30-decision-framework.md"
+  - "research/ai-education/retrieval/40-practice-and-cases.md"
+  - "research/ai-education/retrieval/50-open-research.md"
+  - "docs/rfc/2026-07-17-rfc-reference-research-pattern.md"
   - "research/education/README.md"
   - "education/README.md"
   - "research/hub/2026-07-04-hub-as-agent-system-global-analysis.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/418"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437"
 ---
+
+> **Этот документ реорганизован в Reference Research Pattern в
+> [`research/ai-education/retrieval/`](../ai-education/retrieval/00-introduction.md).
+> Актуальная версия находится там.**
+>
+> Реорганизация (issue #437) — структурная: содержание перенесено без сокращений,
+> изменены только членение, нумерация разделов и внутренние ссылки. Этот файл
+> сохранён как источник и историческая запись; `status: superseded`. Паттерн
+> реорганизации предложен в
+> [RFC: Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md)
+> (статус паттерна: Experimental).
 
 # Retrieval-стратегии для AI-агентов: научно-теоретическое исследование
 
