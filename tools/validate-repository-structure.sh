@@ -141,7 +141,14 @@ is_active_file() {
     research/hub/2026-07-04-hub-as-agent-system-global-analysis.md | \
     research/README.md | \
     research/education/README.md | \
+    research/ai-education/README.md | \
     research/education/2026-07-16-retrieval-strategies-survey.md | \
+    research/ai-education/retrieval/00-introduction.md | \
+    research/ai-education/retrieval/10-theory.md | \
+    research/ai-education/retrieval/20-taxonomy.md | \
+    research/ai-education/retrieval/30-decision-framework.md | \
+    research/ai-education/retrieval/40-practice-and-cases.md | \
+    research/ai-education/retrieval/50-open-research.md | \
     research/hub/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \
@@ -248,6 +255,7 @@ is_active_file() {
     docs/rfc/2026-06-27-rfc-adr-standard.md | \
     docs/rfc/2026-06-27-rfc-rfc-standard.md | \
     docs/rfc/2026-06-30-rfc-research-structure.md | \
+    docs/rfc/2026-07-17-rfc-reference-research-pattern.md | \
     docs/rfc/2026-07-02-rfc-reports-structure.md | \
     docs/rfc/2026-07-02-rfc-audit-structure.md | \
     docs/rfc/2026-07-02-rfc-analysis-structure.md | \
@@ -884,8 +892,8 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.11"
-require_text "standards/README.md" "updated: 2026-07-16"
+require_text "standards/README.md" "version: 1.12"
+require_text "standards/README.md" "updated: 2026-07-17"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -998,6 +1006,13 @@ require_text "standards/standard-meta-structure.md" "## Related Artifacts"
 require_text "standards/standard-meta-structure.md" '`N/A`'
 require_text "standards/standard-meta-structure.md" "specific tail"
 require_text "standards/standard-meta-structure.md" "ADR-002"
+require_text "standards/standard-meta-structure.md" "version: 0.2"
+require_text "standards/standard-meta-structure.md" "executable: false"
+require_text "standards/standard-meta-structure.md" "scope: repo-wide"
+require_text "standards/standard-meta-structure.md" "related_standards:"
+require_text "standards/standard-meta-structure.md" "related_issues:"
+require_text "standards/standard-meta-structure.md" "Все стандарты экосистемы"
+require_text "standards/standard-meta-structure.md" "evals-contract-standard.md"
 require_text "standards/frontmatter-docs-standard.md" 'Audit | `docs/audit/*.md`'
 require_text "standards/frontmatter-docs-standard.md" "audit_target"
 require_text "standards/frontmatter-docs-standard.md" "evidence_model"

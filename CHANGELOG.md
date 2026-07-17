@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.59
+version: 1.60
 updated: 2026-07-17
 temperature: 0.1
 ---
@@ -13,6 +13,38 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Исследование retrieval-стратегий реорганизовано из монолита
+  `research/education/2026-07-16-retrieval-strategies-survey.md` (1854 строки,
+  теперь `status: superseded` со ссылкой на актуальную версию) в модуль
+  `research/ai-education/retrieval/` из шести файлов (B-089, issue #437):
+  `00-introduction.md` (BLUF, карта чтения по аудиториям, граф зависимостей
+  разделов), `10-theory.md` (Conceptual Framing с формальной сигнатурой
+  `S = Decision(KB, Query, Constraints)` и расшифровкой переменных, объектная
+  модель E1–E11, точки решений D1–D9, гипотезы H1–H20), `20-taxonomy.md`
+  (K1–K6, Q1–Q10, S0–S6), `30-decision-framework.md` (матрица «БЗ × Запрос →
+  Стратегия», chunking, embeddings, reranking, evaluation, L0–L5),
+  `40-practice-and-cases.md` (индустриальные кейсы, тренды 2024–2026, память
+  агента, ДНК-метафора) и `50-open-research.md` (зависимости выбора, вход для
+  RFC-F, ранжирование гипотез, глоссарий, источники, самоаудит). Рефакторинг
+  **структурный**: содержание перенесено без сокращений, изменены только
+  членение, нумерация разделов и внутренние ссылки — `§`-ссылки заменены на
+  cross-references между файлами, ветка «Практика» явно опирается на «Теорию» и
+  рамку решений.
+- rfc: Создан `docs/rfc/2026-07-17-rfc-reference-research-pattern.md` (B-089,
+  issue #437) — предложение **Reference Research Pattern** (статус паттерна:
+  Experimental) как формы многофайлового research-модуля в
+  `research/ai-education/<domain>/`. RFC фиксирует разделение **Research Method**
+  (как мы исследуем — предмет RFC) и **Domain Methodology** (как устроен объект
+  исследования — не предмет RFC), критерий повышения статуса (validated on:
+  Retrieval; planned: Memory, Agents; ≥3 независимых домена), механизм обратной
+  связи «практика → теория» и коллизию имён модуля с
+  `tools/validate-file-naming.sh` с тремя вариантами разрешения. RFC остаётся
+  `draft`: governance-решение за фаундером (Rule 4).
+- backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) добавлена задача B-089
+  (Спринт 9, статус `review`) и зарегистрирован источник — issue #437.
+- artifact-map: В `pr-ops/artifact-map.md` удалена строка монолита
+  retrieval-survey, добавлены индекс `research/ai-education/`, шесть строк
+  модуля `research/ai-education/retrieval/` и строка нового RFC.
 - analysis: Создан `docs/analysis/2026-07-17-mango-artifacts-migration-plan.md`
   (B-080, issue #436) — детальный план миграции артефактов Mango при разделении
   репозиториев по ADR-009, исполнимый контракт для B-081/B-082/B-083. План
@@ -158,6 +190,27 @@ All notable repository governance changes are documented here.
   B-080 синхронизирован: каталог переносится целиком в приватный
   `mango-ba-prompt-library` с сохранением внутренней структуры; активные ссылки
   в artifact map и backlog B-080/B-082 приведены к тому же контракту (issue #446).
+- standard: `standards/standard-meta-structure.md` (v0.1 -> v0.2) расширен с
+  Research/Analysis/Audit/Report на **все стандарты экосистемы** для issue #435
+  / B-052. Основание — ADR-008 v0.2 и решение фаундера (2026-07-16): F10
+  explicit применяется к каждому файлу класса `Standard` в `standards/`, а не
+  только к четырём sibling standards. `Scope` получил таблицу применимости
+  (четыре мигрируемых стандарта B-053; `evals-contract-standard.md`, уже
+  применивший F10 добровольно; прочие стандарты — при следующем существенном
+  изменении; новые стандарты — с первой версии) и явную границу «нормируется
+  структура, а не содержание». `Type Model` теперь объявляет собственную форму
+  мета-стандарта — `model` — перед нормативным правилом двух форм для governed
+  standards. `Lifecycle` разделил governance-словарь самого стандарта и
+  knowledge-словарь нормируемых артефактов; `Validation` зафиксировал, что
+  включение структурной проверки происходит вместе с миграцией файла, иначе
+  validator блокирует незапланированную работу. Frontmatter дополнен
+  consumed-полями `executable`, `scope`, `related_standards`, `related_issues`.
+  Расширение области закрывает открытый вопрос Q5 в
+  `standards/evals-contract-standard.md`. Новых архитектурных решений не
+  принимается; четыре sibling standards не меняются — это остаётся B-053.
+  Синхронизированы `standards/README.md` (v1.11 -> v1.12), artifact map
+  (v1.78 -> v1.79), backlog (v1.35 -> v1.36) и pinned metadata в
+  `tools/validate-repository-structure.sh`.
 - backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) задача B-036 исправлена после
   B-056: целевой путь `AI_GOVERNANCE.md` (удалён в PR #430) заменён на
   `ai-governance/ai-governance.md`, добавлена зависимость B-056, проставлен
