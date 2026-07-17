@@ -122,6 +122,10 @@ All notable repository governance changes are documented here.
   `/ai-governance/ai-governance.md` дополнена 3-tier amendment policy (B-036)
   и связью с source-анализом. Строка `/ai-rules/agent-work-rules.md` уже
   отражала разделение по B-056 и не менялась.
+- Expanded ADR-008 scope to all ecosystem standards; closed B-051 and B-067
+  backlog cycles (issue #434). Added `standards/evals-contract-standard.md` to
+  ADR-008 impacted and related artifacts and synchronized the artifact map.
+
 - chore(B-056): remaining policy/rule material физически разделён по ADR-007.
   Root `AI_GOVERNANCE.md` заменён policy-контрактом
   `ai-governance/ai-governance.md` и правилами поведения агента
