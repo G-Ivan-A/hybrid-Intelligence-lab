@@ -33,6 +33,23 @@ is_exception() {
   esac
 }
 
+# Reference Research Pattern (Experimental, docs/rfc/2026-07-17-rfc-reference-research-pattern.md):
+# a multi-file research module lives in research/<direction>/<domain>/ and numbers
+# its files by reading order (00, 10, 20, ...), not by date. The module's files have
+# no single meaningful date — they are updated on different cycles by design — so the
+# chronology stays in frontmatter `updated`. The exception is deliberately narrow: it
+# applies only inside a directory that declares itself a module by holding a 00-*.md
+# entry point. Scope of the exception is an open question for the founder (RFC P6).
+is_reference_pattern_module_file() {
+  local file="$1"
+  local basename="${file##*/}"
+  local dir="${file%/*}"
+
+  [[ "$basename" =~ ^(00|10|20|30|40|50)-[a-z0-9]+(-[a-z0-9]+)*\.md$ ]] || return 1
+  compgen -G "$dir/00-*.md" >/dev/null || return 1
+  return 0
+}
+
 is_daily_chronological_name() {
   local basename="$1"
 
@@ -59,6 +76,10 @@ validate_file() {
   local basename="${file##*/}"
 
   if is_exception "$basename"; then
+    return
+  fi
+
+  if [[ "$file" == research/* ]] && is_reference_pattern_module_file "$file"; then
     return
   fi
 
