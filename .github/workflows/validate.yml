@@ -25,6 +25,9 @@ jobs:
       - name: Test frontmatter validator
         run: bash tools/test-frontmatter-validator.sh
 
+      - name: Test Mango kb migration contract
+        run: bash tools/test-mango-kb-migration-contract.sh
+
       - name: Test evidence structure validator
         run: bash tools/test-evidence-structure-validator.sh
 

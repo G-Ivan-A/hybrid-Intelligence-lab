@@ -317,6 +317,7 @@ is_active_file() {
     tools/sync-from-hub.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-evidence-structure-validator.sh | \
+    tools/test-mango-kb-migration-contract.sh | \
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
@@ -732,6 +733,7 @@ required_files=(
   "tools/sync-from-hub.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
+  "tools/test-mango-kb-migration-contract.sh"
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/validate-frontmatter.sh"
@@ -1777,7 +1779,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.35"
+require_text "pr-ops/backlog.md" "version: 1.36"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
