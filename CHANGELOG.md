@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.59
+version: 1.60
 updated: 2026-07-17
 temperature: 0.1
 ---
@@ -185,6 +185,27 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- standard: `standards/standard-meta-structure.md` (v0.1 -> v0.2) расширен с
+  Research/Analysis/Audit/Report на **все стандарты экосистемы** для issue #435
+  / B-052. Основание — ADR-008 v0.2 и решение фаундера (2026-07-16): F10
+  explicit применяется к каждому файлу класса `Standard` в `standards/`, а не
+  только к четырём sibling standards. `Scope` получил таблицу применимости
+  (четыре мигрируемых стандарта B-053; `evals-contract-standard.md`, уже
+  применивший F10 добровольно; прочие стандарты — при следующем существенном
+  изменении; новые стандарты — с первой версии) и явную границу «нормируется
+  структура, а не содержание». `Type Model` теперь объявляет собственную форму
+  мета-стандарта — `model` — перед нормативным правилом двух форм для governed
+  standards. `Lifecycle` разделил governance-словарь самого стандарта и
+  knowledge-словарь нормируемых артефактов; `Validation` зафиксировал, что
+  включение структурной проверки происходит вместе с миграцией файла, иначе
+  validator блокирует незапланированную работу. Frontmatter дополнен
+  consumed-полями `executable`, `scope`, `related_standards`, `related_issues`.
+  Расширение области закрывает открытый вопрос Q5 в
+  `standards/evals-contract-standard.md`. Новых архитектурных решений не
+  принимается; четыре sibling standards не меняются — это остаётся B-053.
+  Синхронизированы `standards/README.md` (v1.11 -> v1.12), artifact map
+  (v1.78 -> v1.79), backlog (v1.35 -> v1.36) и pinned metadata в
+  `tools/validate-repository-structure.sh`.
 - backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) задача B-036 исправлена после
   B-056: целевой путь `AI_GOVERNANCE.md` (удалён в PR #430) заменён на
   `ai-governance/ai-governance.md`, добавлена зависимость B-056, проставлен
