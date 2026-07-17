@@ -146,7 +146,8 @@ is_approved_field() {
     knowledge:owner | knowledge:type | knowledge:context | knowledge:method | knowledge:scope | \
     knowledge:source | knowledge:source_id | knowledge:stage | knowledge:projects | \
     knowledge:related_artifacts | knowledge:related_issues | knowledge:related_issue | \
-    knowledge:external_artifacts | knowledge:based_on)
+    knowledge:external_artifacts | knowledge:based_on | knowledge:report-subtype | \
+    knowledge:analysis-subtype | knowledge:supersedes)
       return 0
       ;;
     audit:owner | audit:type | audit:context | audit:method | audit:scope | \

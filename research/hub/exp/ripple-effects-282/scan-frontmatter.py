@@ -10,11 +10,11 @@ from datetime import date
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[3]
-OUT_DIR = ROOT / "research/hub/exp-ripple-effects-282/outputs"
+ROOT = Path(__file__).resolve().parents[4]
+OUT_DIR = Path(__file__).resolve().parent
 SCAN_DATE = date(2026, 6, 28).isoformat()
 EXCLUDED_PATHS = {"research/hub/2026-06-28-ripple-effects-282-research.md"}
-EXCLUDED_PREFIXES = ("research/hub/exp-ripple-effects-282/",)
+EXCLUDED_PREFIXES = ("research/hub/exp/ripple-effects-282/",)
 
 
 def git_files() -> list[Path]:

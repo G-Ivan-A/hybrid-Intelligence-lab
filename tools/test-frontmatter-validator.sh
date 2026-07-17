@@ -98,6 +98,9 @@ write_doc "$report_doc" "status: draft
 version: 1.0
 updated: 2026-06-30
 temperature: 0.1
+report-subtype: report
+scope: repo
+based_on: docs/rfc/example.md
 owner: G-Ivan-A
 type: report
 context: [hub, rfc, review]

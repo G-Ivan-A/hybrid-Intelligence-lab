@@ -136,11 +136,11 @@ The ADR analysis uses:
 
 Reproducible files:
 
-- [2026-06-27-local-rfc-adr-audit.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md)
+- [2026-06-27-local-rfc-adr-audit.md](exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md)
   - current Hub/Mango ADR/RFC inventory.
-- [2026-06-27-adr-external-tree-summary.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-adr-external-tree-summary.md)
+- [2026-06-27-adr-external-tree-summary.md](exp/rfc-adr-industry-norms-278/2026-06-27-adr-external-tree-summary.md)
   - external ADR-like path signals.
-- [exp-rfc-adr-industry-norms/README.md](exp-rfc-adr-industry-norms/README.md)
+- [exp/rfc-adr-industry-norms-278/README.md](exp/rfc-adr-industry-norms-278/README.md)
   - method and rerun instructions.
 
 ### 3.2. Reading rule
@@ -530,11 +530,11 @@ flowchart LR
 
 - [Issue #278](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278)
   - постановка задачи.
-- [exp-rfc-adr-industry-norms/README.md](exp-rfc-adr-industry-norms/README.md)
+- [exp/rfc-adr-industry-norms-278/README.md](exp/rfc-adr-industry-norms-278/README.md)
   - воспроизводимый эксперимент и команды запуска.
-- [2026-06-27-local-rfc-adr-audit.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md)
+- [2026-06-27-local-rfc-adr-audit.md](exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md)
   - Hub/Mango RFC/ADR audit.
-- [2026-06-27-adr-external-tree-summary.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-adr-external-tree-summary.md)
+- [2026-06-27-adr-external-tree-summary.md](exp/rfc-adr-industry-norms-278/2026-06-27-adr-external-tree-summary.md)
   - external ADR-like tree signals.
 - [ADR-001](../../docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md)
   and [ADR-002](../../docs/adr/2026-06-adr-002-artifact-document-methodology.md)

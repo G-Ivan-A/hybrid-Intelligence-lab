@@ -17,7 +17,7 @@ follow_up: "Clarify exp-<slug>/outputs/ vs runs/ boundary in downstream governan
 related_norm: "standards/research-profile.md; standards/file-naming.md; docs/adr/2026-06-adr-002-artifact-document-methodology.md"
 related_artifacts:
   - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
-  - "research/hub/exp-research-analysis-audit-288/"
+  - "research/hub/exp/research-analysis-audit-288/"
   - "docs/rfc/2026-06-30-rfc-research-structure.md"
 ---
 
@@ -123,9 +123,9 @@ the PR/issue bodies that introduced the current experiment folders.
 | --- | --- | --- |
 | 2026-05-26 | `a7760da` | Добавлен `standards/RESEARCH_PROFILE.md` с моделью report file + `exp-<slug>/outputs/`. |
 | 2026-06-25 | PR #268 / PR #272 | Хронологические research-файлы нормализованы к date-first `YYYY-MM-DD-name.md`; experiment folders не отменены. |
-| 2026-06-27 | `8d76658`, PR #279 | Первое visible применение в `research/hub/`: `exp-rfc-adr-industry-norms/` как reproducible evidence corpus для issue #278. |
-| 2026-06-28 | `6d0aae1`, PR #285 | Повторение паттерна: `exp-ripple-effects-282/` для baseline frontmatter scan. |
-| 2026-06-28 | `1329169`, PR #289 | Повторение паттерна: `exp-research-analysis-audit-288/` для матрицы Research / Analysis / Audit. |
+| 2026-06-27 | `8d76658`, PR #279 | Первое visible применение в `research/hub/`: `exp/rfc-adr-industry-norms-278/` как reproducible evidence corpus для issue #278. |
+| 2026-06-28 | `6d0aae1`, PR #285 | Повторение паттерна: `exp/ripple-effects-282/` для baseline frontmatter scan. |
+| 2026-06-28 | `1329169`, PR #289 | Повторение паттерна: `exp/research-analysis-audit-288/` для матрицы Research / Analysis / Audit. |
 | 2026-06-28 | `3b3b655` | `standards/research-profile.md` переведен в `status: accepted`, но `exp-<slug>/` был в профиле уже раньше. |
 
 ### 2.2. Что именно зафиксировано контрактами
@@ -190,9 +190,9 @@ future contract.
 
 | Issue / PR | Main report | Experiment folder |
 | --- | --- | --- |
-| #278 / #279 | `2026-06-27-rfc-industry-norms-and-variants.md`, `2026-06-27-adr-industry-norms-and-variants.md` | `exp-rfc-adr-industry-norms/` |
-| #284 / #285 | `2026-06-28-ripple-effects-282-research.md` | `exp-ripple-effects-282/` |
-| #288 / #289 | `2026-06-28-research-analysis-audit-inventory.md` | `exp-research-analysis-audit-288/` |
+| #278 / #279 | `2026-06-27-rfc-industry-norms-and-variants.md`, `2026-06-27-adr-industry-norms-and-variants.md` | `exp/rfc-adr-industry-norms-278/` |
+| #284 / #285 | `2026-06-28-ripple-effects-282-research.md` | `exp/ripple-effects-282/` |
+| #288 / #289 | `2026-06-28-research-analysis-audit-inventory.md` | `exp/research-analysis-audit-288/` |
 
 Поэтому наблюдаемая практика - не замена report file на folder artifact, а
 добавление sibling evidence corpus. Если future work создает только папку без

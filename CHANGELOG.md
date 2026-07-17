@@ -45,6 +45,28 @@ All notable repository governance changes are documented here.
   ADR-009 и стандарты не изменялись. Бэклог обновлён (B-080 → `review`, режим
   уточнён на `Hybrid`); артефакт зарегистрирован в карте артефактов, allowlist и
   `required_files` в `tools/validate-repository-structure.sh` синхронизированы.
+- cleanup: Выполнен комплексный alignment Спринта 2 (issue #439): три legacy
+  `research/hub/exp-*` корпуса перенесены в канонический
+  `research/hub/exp/<issue-slug>/` и flattened без `outputs/`; добавлен
+  regression-tested validator evidence structure с проверкой parent links;
+  Analysis/Reports frontmatter и cross-references приведены к принятым
+  стандартам без изменения содержательных выводов; B-022/B-023/B-028/B-044
+  переведены в `review`, artifact map синхронизирован.
+
+- governance: В `ai-governance/ai-governance.md` (v2.0 -> v2.1) зафиксирована
+  **3-tier amendment policy** (B-036, issue #438) — раздел «Amendment policy
+  (3 tier)». Политика задаёт церемонию для правки canonical
+  governance-артефакта: Tier 1 (mechanical: typo, frontmatter, ссылки,
+  changelog, validator allowlist) — без RFC, PR с описанием; Tier 2 (limited:
+  уточнение внутри одного раздела без изменения структуры) — lightweight RFC
+  в теле PR + human review; Tier 3 (structural: новый раздел, изменение
+  скелета, удаление артефакта, сдвиг decision boundary) — полный
+  analysis → RFC → ADR → standard path без обхода. Tier выбирается по
+  максимальному признаку, сомнение разрешается в пользу более высокого, hard
+  bans и Эскалация не отменяются ни одним tier. Источник — §3.4
+  `docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md`.
+  Новых governance-документов не создано, остальное содержимое контракта не
+  изменялось.
 - backlog: В `pr-ops/backlog.md` (v1.33 -> v1.34) добавлена triggered-задача
   B-088 о многоуровневой иерархии SSOT (issue #427): ADR отвечает за решения,
   Стандарт — за исполнение. Задача имеет статус `deferred (triggered)` и не
@@ -130,6 +152,19 @@ All notable repository governance changes are documented here.
   `tools/validate-repository-structure.sh` синхронизированы.
 
 ### Changed
+
+- backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) задача B-036 исправлена после
+  B-056: целевой путь `AI_GOVERNANCE.md` (удалён в PR #430) заменён на
+  `ai-governance/ai-governance.md`, добавлена зависимость B-056, проставлен
+  issue #438, статус `TODO` -> `review`. До правки задача ссылалась на
+  несуществующий артефакт и была неисполнима.
+- artifact-map: В `pr-ops/artifact-map.md` (v1.77 -> v1.78) строка
+  `/ai-governance/ai-governance.md` дополнена 3-tier amendment policy (B-036)
+  и связью с source-анализом. Строка `/ai-rules/agent-work-rules.md` уже
+  отражала разделение по B-056 и не менялась.
+- Expanded ADR-008 scope to all ecosystem standards; closed B-051 and B-067
+  backlog cycles (issue #434). Added `standards/evals-contract-standard.md` to
+  ADR-008 impacted and related artifacts and synchronized the artifact map.
 
 - chore(B-056): remaining policy/rule material физически разделён по ADR-007.
   Root `AI_GOVERNANCE.md` заменён policy-контрактом
@@ -768,7 +803,7 @@ All notable repository governance changes are documented here.
   dual report + experiment model until a follow-up standard/ADR clarification.
 - research: Research / Analysis / Audit inventory for issue #288. Added
   `research/hub/2026-06-28-research-analysis-audit-inventory.md` plus a
-  reproducible scan under `research/hub/exp-research-analysis-audit-288/`,
+  reproducible scan under `research/hub/exp/research-analysis-audit-288/`,
   classifying Hub, Mango and Clarify artifacts by actual purpose, identifying
   concept substitutions and duplicate risks, and planning three future
   `Analysis -> RFC -> Standard` chains without creating RFCs or standards.
@@ -781,7 +816,7 @@ All notable repository governance changes are documented here.
 - research: RFC/ADR industry norms and variants for issue #278. Added separate
   Hub research reports for RFC-like proposal processes and ADR/decision-record
   processes, plus a reproducible evidence experiment under
-  `research/hub/exp-rfc-adr-industry-norms/`, external-source registry entries
+  `research/hub/exp/rfc-adr-industry-norms-278/`, external-source registry entries
   `ext-075`..`ext-126`, MkDocs navigation, and artifact-map/index wiring. The
   change intentionally does not create a new RFC or ADR; it preserves the result
   as research input for later founder decisions.
