@@ -13,8 +13,8 @@ scope: evidence
 
 This experiment supports:
 
-- [2026-06-27-rfc-industry-norms-and-variants.md](../2026-06-27-rfc-industry-norms-and-variants.md)
-- [2026-06-27-adr-industry-norms-and-variants.md](../2026-06-27-adr-industry-norms-and-variants.md)
+- [2026-06-27-rfc-industry-norms-and-variants.md](../../2026-06-27-rfc-industry-norms-and-variants.md)
+- [2026-06-27-adr-industry-norms-and-variants.md](../../2026-06-27-adr-industry-norms-and-variants.md)
 
 It collects a compact, reproducible evidence corpus for issue
 [#278](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278). The
@@ -33,9 +33,9 @@ not mirror external repositories.
 ## Command
 
 ```bash
-python3 research/hub/exp-rfc-adr-industry-norms/collect-evidence.py \
+python3 research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py \
   --mango-path /tmp/mango_ba_prompts_issue278 \
-  > research/hub/exp-rfc-adr-industry-norms/outputs/collect-evidence.log 2>&1
+  > research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.log 2>&1
 ```
 
 If `gh auth token` is available, the script uses it for GitHub API requests.
@@ -45,13 +45,13 @@ Without a token, GitHub may rate-limit the tree scan.
 
 | Output | Purpose |
 | --- | --- |
-| [outputs/2026-06-27-local-rfc-adr-audit.md](outputs/2026-06-27-local-rfc-adr-audit.md) | Human-readable Hub/Mango RFC/ADR inventory |
-| [outputs/local-rfc-adr-audit.json](outputs/local-rfc-adr-audit.json) | Machine-readable Hub/Mango RFC/ADR inventory |
-| [outputs/2026-06-27-rfc-external-tree-summary.md](outputs/2026-06-27-rfc-external-tree-summary.md) | Human-readable RFC-like source tree summary |
-| [outputs/rfc-external-tree-summary.json](outputs/rfc-external-tree-summary.json) | Machine-readable RFC-like source tree summary |
-| [outputs/2026-06-27-adr-external-tree-summary.md](outputs/2026-06-27-adr-external-tree-summary.md) | Human-readable ADR-like source tree summary |
-| [outputs/adr-external-tree-summary.json](outputs/adr-external-tree-summary.json) | Machine-readable ADR-like source tree summary |
-| [outputs/collect-evidence.log](outputs/collect-evidence.log) | Last run log |
+| [2026-06-27-local-rfc-adr-audit.md](2026-06-27-local-rfc-adr-audit.md) | Human-readable Hub/Mango RFC/ADR inventory |
+| [local-rfc-adr-audit.json](local-rfc-adr-audit.json) | Machine-readable Hub/Mango RFC/ADR inventory |
+| [2026-06-27-rfc-external-tree-summary.md](2026-06-27-rfc-external-tree-summary.md) | Human-readable RFC-like source tree summary |
+| [rfc-external-tree-summary.json](rfc-external-tree-summary.json) | Machine-readable RFC-like source tree summary |
+| [2026-06-27-adr-external-tree-summary.md](2026-06-27-adr-external-tree-summary.md) | Human-readable ADR-like source tree summary |
+| [adr-external-tree-summary.json](adr-external-tree-summary.json) | Machine-readable ADR-like source tree summary |
+| [collect-evidence.log](collect-evidence.log) | Last run log |
 
 ## Method notes
 

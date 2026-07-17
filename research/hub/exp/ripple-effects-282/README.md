@@ -12,7 +12,7 @@ scope: evidence
 # Experiment: Ripple effects 282 frontmatter scan
 
 This experiment supports
-[2026-06-28-ripple-effects-282-research.md](../2026-06-28-ripple-effects-282-research.md)
+[2026-06-28-ripple-effects-282-research.md](../../2026-06-28-ripple-effects-282-research.md)
 for issue [#284](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/284).
 It scans the current repository checkout and captures concrete evidence for
 frontmatter migration questions raised by issue
@@ -29,15 +29,15 @@ frontmatter migration questions raised by issue
 ## Command
 
 ```bash
-python3 research/hub/exp-ripple-effects-282/scan-frontmatter.py
+python3 research/hub/exp/ripple-effects-282/scan-frontmatter.py
 ```
 
 ## Outputs
 
 | Output | Purpose |
 | --- | --- |
-| [outputs/frontmatter-scan.json](outputs/frontmatter-scan.json) | Machine-readable counts and examples |
-| [outputs/2026-06-28-frontmatter-scan.md](outputs/2026-06-28-frontmatter-scan.md) | Human-readable summary |
+| [frontmatter-scan.json](frontmatter-scan.json) | Machine-readable counts and examples |
+| [2026-06-28-frontmatter-scan.md](2026-06-28-frontmatter-scan.md) | Human-readable summary |
 
 ## Method notes
 

@@ -718,7 +718,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/README.md",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/README.md",
       "scan_bucket": "research",
       "extension": ".md",
       "text_like": true,
@@ -733,7 +733,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/collect-evidence.py",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py",
       "scan_bucket": "research",
       "extension": ".py",
       "text_like": false,
@@ -748,7 +748,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-adr-external-tree-summary.md",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-adr-external-tree-summary.md",
       "scan_bucket": "research",
       "extension": ".md",
       "text_like": true,
@@ -763,7 +763,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md",
       "scan_bucket": "research",
       "extension": ".md",
       "text_like": true,
@@ -778,7 +778,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-rfc-external-tree-summary.md",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-rfc-external-tree-summary.md",
       "scan_bucket": "research",
       "extension": ".md",
       "text_like": true,
@@ -793,7 +793,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/outputs/adr-external-tree-summary.json",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/adr-external-tree-summary.json",
       "scan_bucket": "research",
       "extension": ".json",
       "text_like": false,
@@ -808,7 +808,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/outputs/collect-evidence.log",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.log",
       "scan_bucket": "research",
       "extension": ".log",
       "text_like": false,
@@ -823,7 +823,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/outputs/local-rfc-adr-audit.json",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/local-rfc-adr-audit.json",
       "scan_bucket": "research",
       "extension": ".json",
       "text_like": false,
@@ -838,7 +838,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-rfc-adr-industry-norms/outputs/rfc-external-tree-summary.json",
+      "path": "research/hub/exp/rfc-adr-industry-norms-278/rfc-external-tree-summary.json",
       "scan_bucket": "research",
       "extension": ".json",
       "text_like": false,
@@ -853,7 +853,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-ripple-effects-282/README.md",
+      "path": "research/hub/exp/ripple-effects-282/README.md",
       "scan_bucket": "research",
       "extension": ".md",
       "text_like": true,
@@ -868,7 +868,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md",
+      "path": "research/hub/exp/ripple-effects-282/2026-06-28-frontmatter-scan.md",
       "scan_bucket": "research",
       "extension": ".md",
       "text_like": true,
@@ -883,7 +883,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-ripple-effects-282/outputs/frontmatter-scan.json",
+      "path": "research/hub/exp/ripple-effects-282/frontmatter-scan.json",
       "scan_bucket": "research",
       "extension": ".json",
       "text_like": false,
@@ -898,7 +898,7 @@
     {
       "repo": "hub",
       "repo_label": "Hub / hybrid-Intelligence-lab",
-      "path": "research/hub/exp-ripple-effects-282/scan-frontmatter.py",
+      "path": "research/hub/exp/ripple-effects-282/scan-frontmatter.py",
       "scan_bucket": "research",
       "extension": ".py",
       "text_like": false,

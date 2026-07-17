@@ -3,6 +3,9 @@ status: draft
 version: 0.1
 updated: 2026-06-30
 temperature: 0.1
+report-subtype: report
+scope: repo
+based_on: "docs/rfc/2026-06-30-rfc-research-structure.md + standards/rfc-structure-standard.md"
 owner: G-Ivan-A
 type: report
 context: [hub, rfc, review, pr-303, hypothesis-analysis]
@@ -14,6 +17,7 @@ related_issues:
 related_artifacts:
   - "docs/rfc/2026-06-30-rfc-research-structure.md"
   - "standards/rfc-structure-standard.md"
+  - "standards/report-standard.md"
 ---
 
 # Отчет по гипотезе проблемы PR #303

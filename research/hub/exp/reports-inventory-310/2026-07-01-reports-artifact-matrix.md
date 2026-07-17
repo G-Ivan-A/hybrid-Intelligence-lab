@@ -63,10 +63,10 @@ document performs the final human-readable synthesis and recommendations.
 | `research/hub/2026-06-12-ecosystem-governance-audit.md` | `research` | audit | output-for-audit | future Report/Audit boundary decision before moving | Ecosystem Governance Audit |
 | `research/hub/2026-06-25-artifact-inventory-and-classification.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | Инвентаризация и классификация артефактов экосистемы (mango_ba_prompts + hybrid-Intelligence-lab) |
 | `research/hub/2026-06-28-research-analysis-audit-inventory.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | Research / Analysis / Audit: инвентаризация и план стандартизации |
-| `research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | Research/Analysis/Audit artifact classification matrix |
-| `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-adr-external-tree-summary.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | ADR external source tree summary |
-| `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md` | `research` | audit | output-for-audit | future Report/Audit boundary decision before moving | Local ecosystem RFC/ADR audit |
-| `research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | Frontmatter scan for issue 284 |
+| `research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | Research/Analysis/Audit artifact classification matrix |
+| `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-adr-external-tree-summary.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | ADR external source tree summary |
+| `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md` | `research` | audit | output-for-audit | future Report/Audit boundary decision before moving | Local ecosystem RFC/ADR audit |
+| `research/hub/exp/ripple-effects-282/2026-06-28-frontmatter-scan.md` | `research` | statistics | output-for-analysis | candidate for docs/report statistics profile after standard | Frontmatter scan for issue 284 |
 | `research/reputation-technologies/2026-06-20-executive-summary.ru-en.md` | `research` | report | output-for-analysis | candidate for docs/report general report profile after standard | Executive Summary — GRA Reputation Framework (RU + EN) |
 
 ## Mango / mango_ba_prompts

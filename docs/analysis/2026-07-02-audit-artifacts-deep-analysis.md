@@ -95,7 +95,7 @@ standard может описывать форму отчёта, lifecycle, front
 Некоторые артефакты являются evidence/statistics output, а не полным audit
 report. Они полезны для Audit, но сами по себе не задают remediation model.
 Пример из B-024 - generated RFC/ADR statistics output under
-`research/hub/exp-rfc-adr-industry-norms/outputs/`.
+`research/hub/exp/rfc-adr-industry-norms-278/`.
 
 ## 3. Candidate matrix
 
@@ -107,7 +107,7 @@ report. Они полезны для Audit, но сами по себе не з�
 | 4 | Hub `research/hub/2026-05-28-prompts-classification-audit.md` | Prompt classification readiness and issue #79, but norm is weak. | Audit-labeled Analysis / weak Audit. | Prompt corpus scan and comparative manual review. | Gaps and recommendations without stable severity scale. | Either reclassify as Analysis or add explicit audit target and severity model. |
 | 5 | Hub `research/hub/2026-06-01-team-c-governance-strategy-audit.md` | Team C governance proposals and issue #87 input. | Analysis with audit title, not independent compliance Audit. | Manual synthesis of proposals and repository context. | Risks, recommendations and human-review questions. | Likely Analysis; do not route as Audit unless a concrete norm is introduced. |
 | 6 | Hub `research/hub/2026-06-12-ecosystem-governance-audit.md` | Ecosystem governance applicability across Hub/downstreams and issue #217 context. | Audit / Research hybrid. | Cross-repo review plus external practice comparison. | Gaps, decisions and follow-up candidates. | Split stance: research benchmarking vs compliance audit target. |
-| 7 | Hub `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md` | Local RFC/ADR corpus extraction and status inventory. | Evidence/statistics output, not full audit-report. | Generated table/script output. | No independent severity or remediation process. | Classify as evidence output for Audit/Analysis, not primary audit report. |
+| 7 | Hub `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md` | Local RFC/ADR corpus extraction and status inventory. | Evidence/statistics output, not full audit-report. | Generated table/script output. | No independent severity or remediation process. | Classify as evidence output for Audit/Analysis, not primary audit report. |
 | 8 | Hub/Mango `research/mango/2026-05-27-capability-decomposition.md` | Capability atomicity criteria C1-C5 and product decomposition model. | Norm source / Research reference, not current audit-report. | Vendor, standard and TZ examples with criteria. | Split or SME-confirm items that violate C5. | Reclassify as Research/reference or future checklist source. |
 | 9 | Mango `docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md` | Mango and Industry taxonomy standards, registries, ADR-011/ADR-012. | Masked Audit under `docs/analysis/`; audit-report output. | Blind AI mapping, six sessions, score artifacts and manual review. | Root-cause groups A-D, repeat-test criteria and remediation recommendations. | Route after B-030/B-033; add Audit metadata and relation to taxonomy standard. |
 | 10 | Mango `docs/analysis/2026-06-22-taxonomy-convergence-test.md` | Industry taxonomy standard/registry and Mango mapping rules. | Masked Audit under `docs/analysis/`; audit-report output. | Blind inter-rater reliability test and scoring script. | Structural findings and root-cause recommendations. | Same as #9; preserve as distinct convergence test. |
@@ -158,7 +158,7 @@ Hub and Mango also contain Audit-like artifacts outside `docs/audit/`:
   treated as Analysis unless a concrete audit target is added.
 - `research/hub/2026-06-12-ecosystem-governance-audit.md` mixes Research
   benchmarking with governance audit stance.
-- `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md`
+- `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md`
   is evidence/statistics output.
 - `research/mango/2026-05-27-capability-decomposition.md` is a reference or
   future checklist source, not a completed audit report.
@@ -215,7 +215,7 @@ evidence links instead of forcing them into audit-report form.
    alignment. This B-029 analysis не переносит файлы.
 3. Review legacy `research/` audit-titled files. Some need reclassification to
    Analysis/Research; some need explicit norm/severity fields if kept as Audit.
-4. Treat `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md`
+4. Treat `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md`
    as evidence output, not a standalone audit-report.
 5. Treat `research/mango/2026-05-27-capability-decomposition.md` as a
    Research/reference or checklist source unless a later audit applies it to a

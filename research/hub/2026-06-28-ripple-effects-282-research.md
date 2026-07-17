@@ -18,7 +18,7 @@ related_artifacts:
   - "docs/rfc/2026-06-27-rfc-rfc-standard.md"
   - "docs/rfc/2026-06-27-rfc-adr-standard.md"
   - "tools/validate-frontmatter.sh"
-  - "research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md"
+  - "research/hub/exp/ripple-effects-282/2026-06-28-frontmatter-scan.md"
 ---
 
 # Исследование: Ripple Effects issue 282
@@ -51,7 +51,7 @@ frontmatter-полей, стратегию миграции, CI-режимы и 
 - [RFC structure draft](../../docs/rfc/2026-06-27-rfc-rfc-standard.md) и
   [ADR structure draft](../../docs/rfc/2026-06-27-rfc-adr-standard.md) -
   свежие RFC issue #280, ещё не обязательные стандарты.
-- [Frontmatter scan](exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md) -
+- [Frontmatter scan](exp/ripple-effects-282/2026-06-28-frontmatter-scan.md) -
   воспроизводимый снимок текущего состояния frontmatter.
 
 **Метод.** Сопоставление issue #282/#284, текущих стандартов, ADR-002, RFC/ADR
@@ -106,7 +106,7 @@ Issue #282 затрагивает не один валидатор, а четы�
 ### 2.3. Evidence snapshot
 
 Скан текущего checkout-а зафиксирован в
-[exp-ripple-effects-282](exp-ripple-effects-282/README.md):
+[exp-ripple-effects-282](exp/ripple-effects-282/README.md):
 
 | Метрика | Значение |
 | --- | ---: |
@@ -459,4 +459,4 @@ Whatever option is selected, issue #282 implementation should be able to answer:
 - [ADR-002: Методология создания и управления артефактами](../../docs/adr/2026-06-adr-002-artifact-document-methodology.md).
 - [RFC: Стандарт структуры RFC](../../docs/rfc/2026-06-27-rfc-rfc-standard.md).
 - [RFC: Стандарт структуры ADR](../../docs/rfc/2026-06-27-rfc-adr-standard.md).
-- [Frontmatter scan for issue 284](exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md).
+- [Frontmatter scan for issue 284](exp/ripple-effects-282/2026-06-28-frontmatter-scan.md).

@@ -22,8 +22,8 @@ from pathlib import Path
 from typing import Iterable
 
 
-ROOT = Path(__file__).resolve().parents[3]
-OUT_DIR = ROOT / "research/hub/exp-rfc-adr-industry-norms/outputs"
+ROOT = Path(__file__).resolve().parents[4]
+OUT_DIR = Path(__file__).resolve().parent
 
 
 @dataclass(frozen=True)

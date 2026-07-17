@@ -91,6 +91,10 @@ validate_tree "docs/audit" "is_daily_chronological_name" "YYYY-MM-DD-name.md"
 # ADR-007/B-048 migration.
 validate_tree "docs/adr" "is_adr_chronological_name" "YYYY-MM-adr-NNN-name.md"
 
+# Evidence files under the canonical exp/<issue-slug>/ container are snapshots,
+# not standalone research reports, so their names are intentionally excluded
+# from the chronological report rule. Structure is enforced separately.
+
 if (( failures > 0 )); then
   printf 'File naming validation failed with %d error(s).\n' "$failures" >&2
   exit 1
