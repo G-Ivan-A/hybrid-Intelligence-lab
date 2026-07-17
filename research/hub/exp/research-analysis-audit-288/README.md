@@ -13,6 +13,8 @@ method: repository-scan
 Воспроизводимый scan для cross-repo анализа Research / Analysis / Audit
 артефактов в issue #288.
 
+Parent report: [Research/Analysis/Audit inventory](../../2026-06-28-research-analysis-audit-inventory.md).
+
 ## Scope
 
 Сканируются tracked artifacts из:
@@ -27,7 +29,7 @@ frontmatter, первый заголовок и начальные content signa
 подмены понятий и план стандартизации.
 
 Собственные deliverables issue #288 (`2026-06-28-research-analysis-audit-inventory.md`
-и `exp-research-analysis-audit-288/`) исключены из Hub baseline, чтобы повторный
+и `exp/research-analysis-audit-288/`) исключены из Hub baseline, чтобы повторный
 запуск после merge не менял матрицу из-за добавленных этим PR файлов.
 
 ## Reproduce
@@ -35,7 +37,7 @@ frontmatter, первый заголовок и начальные content signa
 ```bash
 git clone --depth 1 https://github.com/G-Ivan-A/mango_ba_prompts.git /tmp/issue-288-mango_ba_prompts
 git clone --depth 1 https://github.com/G-Ivan-A/clarify-engine-ai.git /tmp/issue-288-clarify-engine-ai
-python3 research/hub/exp-research-analysis-audit-288/scan-artifacts.py \
+python3 research/hub/exp/research-analysis-audit-288/scan-artifacts.py \
   --mango-root /tmp/issue-288-mango_ba_prompts \
   --clarify-root /tmp/issue-288-clarify-engine-ai
 ```
@@ -44,5 +46,5 @@ python3 research/hub/exp-research-analysis-audit-288/scan-artifacts.py \
 
 | Output | Назначение |
 | --- | --- |
-| [artifact-classification.json](outputs/artifact-classification.json) | Полный machine-readable scan с SHA репозиториев, путями, source signals и классификацией. |
-| [2026-06-28-artifact-classification-matrix.md](outputs/2026-06-28-artifact-classification-matrix.md) | Markdown-матрица для review и ссылок из основного отчёта. |
+| [artifact-classification.json](artifact-classification.json) | Полный machine-readable scan с SHA репозиториев, путями, source signals и классификацией. |
+| [2026-06-28-artifact-classification-matrix.md](2026-06-28-artifact-classification-matrix.md) | Markdown-матрица для review и ссылок из основного отчёта. |

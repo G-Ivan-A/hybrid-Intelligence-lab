@@ -79,12 +79,12 @@ directory are excluded from the Hub scan so reruns preserve the baseline.
 | `research/hub/2026-06-27-rfc-industry-norms-and-variants.md` | `research` | Research | proposal-adjacent-research | `rfc-industry-norms-and-variants-research` | RFC: индустриальные нормы, дельты и варианты для Hub / Mango |
 | `research/hub/2026-06-28-ripple-effects-282-research.md` | `research` | Research | knowledge-generation | `internal-analysis` | Исследование: Ripple Effects issue 282 |
 | `research/hub/README.md` | `research` | Other | navigation | `canonical` | Research: Hub |
-| `research/hub/exp-rfc-adr-industry-norms/README.md` | `research` | Other | navigation | `experiment` | Experiment: RFC/ADR industry norms evidence |
-| `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-adr-external-tree-summary.md` | `research` | Research | knowledge-generation | `adr-external-tree-summary` | ADR external source tree summary |
-| `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md` | `research` | Audit | conformance-check | `local-rfc-adr-audit` | Local ecosystem RFC/ADR audit |
-| `research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-rfc-external-tree-summary.md` | `research` | Research | proposal-adjacent-research | `rfc-external-tree-summary` | RFC external source tree summary |
-| `research/hub/exp-ripple-effects-282/README.md` | `research` | Other | navigation | `experiment` | Experiment: Ripple effects 282 frontmatter scan |
-| `research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md` | `research` | Research | knowledge-generation | `draft` | Frontmatter scan for issue 284 |
+| `research/hub/exp/rfc-adr-industry-norms-278/README.md` | `research` | Other | navigation | `experiment` | Experiment: RFC/ADR industry norms evidence |
+| `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-adr-external-tree-summary.md` | `research` | Research | knowledge-generation | `adr-external-tree-summary` | ADR external source tree summary |
+| `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md` | `research` | Audit | conformance-check | `local-rfc-adr-audit` | Local ecosystem RFC/ADR audit |
+| `research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-rfc-external-tree-summary.md` | `research` | Research | proposal-adjacent-research | `rfc-external-tree-summary` | RFC external source tree summary |
+| `research/hub/exp/ripple-effects-282/README.md` | `research` | Other | navigation | `experiment` | Experiment: Ripple effects 282 frontmatter scan |
+| `research/hub/exp/ripple-effects-282/2026-06-28-frontmatter-scan.md` | `research` | Research | knowledge-generation | `draft` | Frontmatter scan for issue 284 |
 | `research/mango/2026-05-22-classification-tz.md` | `research` | Research | knowledge-generation | `internal-analysis` | Классификация требований по корпусу ТЗ (classification (TZ)) |
 | `research/mango/2026-05-22-classification.md` | `research` | Research | knowledge-generation | `external-analysis` | Классификация IT/Telecom SaaS-продуктов MANGO OFFICE |
 | `research/mango/2026-05-22-requirements-flow.md` | `research` | Research | knowledge-generation | `internal-analysis` | Flow требований для AI-анализа тендерных ТЗ MANGO OFFICE |

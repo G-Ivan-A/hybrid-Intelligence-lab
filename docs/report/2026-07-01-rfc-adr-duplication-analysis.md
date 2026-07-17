@@ -3,6 +3,9 @@ status: draft
 version: 0.1
 updated: 2026-07-01
 temperature: 0.1
+report-subtype: report
+scope: repo
+based_on: "docs/adr/2026-07-adr-003-research-structure.md + docs/rfc/2026-06-30-rfc-research-structure.md"
 owner: G-Ivan-A
 type: report
 context: [hub, adr, rfc, governance, ssot, root-cause-analysis]
@@ -16,6 +19,7 @@ related_artifacts:
   - "docs/rfc/2026-06-30-rfc-research-structure.md"
   - "standards/adr-structure-standard.md"
   - "standards/rfc-structure-standard.md"
+  - "standards/report-standard.md"
 ---
 
 # Отчёт: анализ причины дублирования RFC B-016 ↔ ADR-003

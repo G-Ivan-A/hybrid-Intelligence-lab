@@ -136,12 +136,12 @@ approval. Задача здесь: дать проверяемую основу 
    сильным сигналом.
 
 Воспроизводимый эксперимент находится в
-[exp-rfc-adr-industry-norms/](exp-rfc-adr-industry-norms/). Основные выводы по
+[exp/rfc-adr-industry-norms-278/](exp/rfc-adr-industry-norms-278/). Основные выводы по
 деревьям:
 
-- [2026-06-27-local-rfc-adr-audit.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md)
+- [2026-06-27-local-rfc-adr-audit.md](exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md)
   фиксирует текущий Hub и локальный clone Mango на дату анализа.
-- [2026-06-27-rfc-external-tree-summary.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-rfc-external-tree-summary.md)
+- [2026-06-27-rfc-external-tree-summary.md](exp/rfc-adr-industry-norms-278/2026-06-27-rfc-external-tree-summary.md)
   фиксирует RFC-like path signals по внешним репозиториям.
 - JSON-выгрузки в `outputs/` сохраняют полный machine-readable результат.
 
@@ -533,11 +533,11 @@ flowchart LR
 
 - [Issue #278](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278)
   - постановка задачи.
-- [exp-rfc-adr-industry-norms/README.md](exp-rfc-adr-industry-norms/README.md)
+- [exp/rfc-adr-industry-norms-278/README.md](exp/rfc-adr-industry-norms-278/README.md)
   - воспроизводимый эксперимент и команды запуска.
-- [2026-06-27-local-rfc-adr-audit.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md)
+- [2026-06-27-local-rfc-adr-audit.md](exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md)
   - Hub/Mango RFC/ADR audit.
-- [2026-06-27-rfc-external-tree-summary.md](exp-rfc-adr-industry-norms/outputs/2026-06-27-rfc-external-tree-summary.md)
+- [2026-06-27-rfc-external-tree-summary.md](exp/rfc-adr-industry-norms-278/2026-06-27-rfc-external-tree-summary.md)
   - external RFC-like tree signals.
 - [Governance RFC README](../../docs/rfc/README.md) - текущий индекс RFC
   Hub.

@@ -16,7 +16,7 @@ related_artifacts:
   - "standards/research-standard.md"
   - "research/hub/2026-06-25-artifact-inventory-and-classification.md"
   - "research/hub/2026-06-28-ripple-effects-282-research.md"
-  - "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md"
+  - "research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md"
 external_artifacts:
   - "G-Ivan-A/mango_ba_prompts@ed636a38a762e848907fcaf607fecf764dcbb9c8"
   - "G-Ivan-A/clarify-engine-ai@96c288fd13a2d7cc7c3e3cdd52574944858e6255"
@@ -72,9 +72,9 @@ Audit в трёх репозиториях и план запуска трёх �
 | Other | ADR, RFC/proposal, standard, navigation, guide, concept, template, screenshot или продуктовая справка |
 
 Воспроизводимый снимок лежит в
-[exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md](exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md).
+[exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md](exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md).
 Скрипт:
-[exp-research-analysis-audit-288/scan-artifacts.py](exp-research-analysis-audit-288/scan-artifacts.py).
+[exp/research-analysis-audit-288/scan-artifacts.py](exp/research-analysis-audit-288/scan-artifacts.py).
 Матрица является эвристическим evidence layer; этот документ фиксирует
 человеческую интерпретацию и план.
 
@@ -275,7 +275,7 @@ report into an audit.
 - Issue #288:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288>
 - Matrix:
-  [exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md](exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md)
+  [exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md](exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md)
 - Existing Hub inventory:
   [2026-06-25-artifact-inventory-and-classification.md](2026-06-25-artifact-inventory-and-classification.md)
 - Research profile:

@@ -20,7 +20,7 @@ SELF_PATHS = {
     "research/hub/2026-06-28-research-analysis-audit-inventory.md",
 }
 SELF_PREFIXES = (
-    "research/hub/exp-research-analysis-audit-288/",
+    "research/hub/exp/research-analysis-audit-288/",
 )
 
 
@@ -365,7 +365,7 @@ def main() -> None:
     parser.add_argument("--clarify-root", required=True, help="Path to clarify-engine-ai checkout")
     parser.add_argument(
         "--out-dir",
-        default="research/hub/exp-research-analysis-audit-288/outputs",
+        default="research/hub/exp/research-analysis-audit-288",
         help="Output directory relative to hub root unless absolute",
     )
     args = parser.parse_args()

@@ -4,6 +4,8 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
+./tools/validate-evidence-structure.sh
+
 failures=0
 
 fail() {
@@ -139,6 +141,7 @@ is_active_file() {
     research/hub/2026-07-04-hub-as-agent-system-global-analysis.md | \
     research/README.md | \
     research/education/README.md | \
+    research/ai-education/README.md | \
     research/education/2026-07-16-retrieval-strategies-survey.md | \
     research/ai-education/retrieval/00-introduction.md | \
     research/ai-education/retrieval/10-theory.md | \
@@ -147,23 +150,23 @@ is_active_file() {
     research/ai-education/retrieval/40-practice-and-cases.md | \
     research/ai-education/retrieval/50-open-research.md | \
     research/hub/README.md | \
-    research/hub/exp-rfc-adr-industry-norms/README.md | \
-    research/hub/exp-rfc-adr-industry-norms/collect-evidence.py | \
-    research/hub/exp-rfc-adr-industry-norms/outputs/collect-evidence.log | \
-    research/hub/exp-rfc-adr-industry-norms/outputs/local-rfc-adr-audit.json | \
-    research/hub/exp-rfc-adr-industry-norms/outputs/rfc-external-tree-summary.json | \
-    research/hub/exp-rfc-adr-industry-norms/outputs/adr-external-tree-summary.json | \
-    research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-local-rfc-adr-audit.md | \
-    research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-rfc-external-tree-summary.md | \
-    research/hub/exp-rfc-adr-industry-norms/outputs/2026-06-27-adr-external-tree-summary.md | \
-    research/hub/exp-ripple-effects-282/README.md | \
-    research/hub/exp-ripple-effects-282/scan-frontmatter.py | \
-    research/hub/exp-ripple-effects-282/outputs/frontmatter-scan.json | \
-    research/hub/exp-ripple-effects-282/outputs/2026-06-28-frontmatter-scan.md | \
-    research/hub/exp-research-analysis-audit-288/README.md | \
-    research/hub/exp-research-analysis-audit-288/scan-artifacts.py | \
-    research/hub/exp-research-analysis-audit-288/outputs/artifact-classification.json | \
-    research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md | \
+    research/hub/exp/rfc-adr-industry-norms-278/README.md | \
+    research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \
+    research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.log | \
+    research/hub/exp/rfc-adr-industry-norms-278/local-rfc-adr-audit.json | \
+    research/hub/exp/rfc-adr-industry-norms-278/rfc-external-tree-summary.json | \
+    research/hub/exp/rfc-adr-industry-norms-278/adr-external-tree-summary.json | \
+    research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-local-rfc-adr-audit.md | \
+    research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-rfc-external-tree-summary.md | \
+    research/hub/exp/rfc-adr-industry-norms-278/2026-06-27-adr-external-tree-summary.md | \
+    research/hub/exp/ripple-effects-282/README.md | \
+    research/hub/exp/ripple-effects-282/scan-frontmatter.py | \
+    research/hub/exp/ripple-effects-282/frontmatter-scan.json | \
+    research/hub/exp/ripple-effects-282/2026-06-28-frontmatter-scan.md | \
+    research/hub/exp/research-analysis-audit-288/README.md | \
+    research/hub/exp/research-analysis-audit-288/scan-artifacts.py | \
+    research/hub/exp/research-analysis-audit-288/artifact-classification.json | \
+    research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md | \
     research/hub/exp/reports-inventory-310/README.md | \
     research/hub/exp/reports-inventory-310/scan-reports.py | \
     research/hub/exp/reports-inventory-310/reports-inventory.json | \
@@ -303,6 +306,7 @@ is_active_file() {
     docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md | \
     docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md | \
     docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md | \
+    docs/analysis/2026-07-17-mango-artifacts-migration-plan.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -320,10 +324,12 @@ is_active_file() {
     tools/generate-manifest.py | \
     tools/sync-from-hub.sh | \
     tools/test-frontmatter-validator.sh | \
+    tools/test-evidence-structure-validator.sh | \
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
     tools/validate-frontmatter.sh | \
+    tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
     tools/validate-repository-structure.sh)
       return 0
@@ -575,6 +581,7 @@ required_files=(
   "docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md"
   "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
   "docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md"
+  "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -732,9 +739,11 @@ required_files=(
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
   "tools/test-frontmatter-validator.sh"
+  "tools/test-evidence-structure-validator.sh"
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/validate-frontmatter.sh"
+  "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
   "tools/validate-repository-structure.sh"
 )
@@ -1529,8 +1538,8 @@ require_text "pr-ops/artifact-map.md" '| `/docs/audit/2026-07-04-cross-standard-
 require_text "pr-ops/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
-require_text "pr-ops/artifact-map.md" "research/hub/exp-rfc-adr-industry-norms/"
-require_text "pr-ops/artifact-map.md" "research/hub/exp-research-analysis-audit-288/"
+require_text "pr-ops/artifact-map.md" "research/hub/exp/rfc-adr-industry-norms-278/"
+require_text "pr-ops/artifact-map.md" "research/hub/exp/research-analysis-audit-288/"
 require_text "pr-ops/artifact-map.md" "research/hub/exp/reports-inventory-310/"
 require_text "pr-ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/"
 require_text "pr-ops/artifact-map.md" "practices/README.md"
@@ -1877,8 +1886,8 @@ require_text "research/hub/README.md" "2026-06-27-rfc-industry-norms-and-variant
 require_text "research/hub/README.md" "2026-06-27-adr-industry-norms-and-variants.md"
 require_text "research/hub/README.md" "2026-06-28-research-analysis-audit-inventory.md"
 require_text "research/hub/README.md" "2026-06-30-reports-industry-norms-and-standardization-scope.md"
-require_text "research/hub/README.md" "exp-rfc-adr-industry-norms/"
-require_text "research/hub/README.md" "exp-research-analysis-audit-288/"
+require_text "research/hub/README.md" "exp/rfc-adr-industry-norms-278/"
+require_text "research/hub/README.md" "exp/research-analysis-audit-288/"
 require_text "research/hub/README.md" "exp/reports-inventory-310/"
 require_text "research/hub/README.md" "exp/analysis-inventory-342/"
 
@@ -2027,16 +2036,16 @@ require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "owner: G-
 require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "type: report"
 require_text "docs/report/2026-07-01-rfc-adr-duplication-analysis.md" "method: root-cause-analysis"
 
-require_text "research/hub/exp-research-analysis-audit-288/README.md" "status: draft"
-require_text "research/hub/exp-research-analysis-audit-288/README.md" "type: experiment"
-require_text "research/hub/exp-research-analysis-audit-288/README.md" "scan-artifacts.py"
-require_text "research/hub/exp-research-analysis-audit-288/README.md" "artifact-classification.json"
-require_text "research/hub/exp-research-analysis-audit-288/README.md" "2026-06-28-artifact-classification-matrix.md"
-require_text "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md" "Hub / hybrid-Intelligence-lab"
-require_text "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md" "Mango / mango_ba_prompts"
-require_text "research/hub/exp-research-analysis-audit-288/outputs/2026-06-28-artifact-classification-matrix.md" "Clarify / clarify-engine-ai"
-require_text "research/hub/exp-research-analysis-audit-288/outputs/artifact-classification.json" '"scope": ['
-require_text "research/hub/exp-research-analysis-audit-288/outputs/artifact-classification.json" '"records": ['
+require_text "research/hub/exp/research-analysis-audit-288/README.md" "status: draft"
+require_text "research/hub/exp/research-analysis-audit-288/README.md" "type: experiment"
+require_text "research/hub/exp/research-analysis-audit-288/README.md" "scan-artifacts.py"
+require_text "research/hub/exp/research-analysis-audit-288/README.md" "artifact-classification.json"
+require_text "research/hub/exp/research-analysis-audit-288/README.md" "2026-06-28-artifact-classification-matrix.md"
+require_text "research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md" "Hub / hybrid-Intelligence-lab"
+require_text "research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md" "Mango / mango_ba_prompts"
+require_text "research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md" "Clarify / clarify-engine-ai"
+require_text "research/hub/exp/research-analysis-audit-288/artifact-classification.json" '"scope": ['
+require_text "research/hub/exp/research-analysis-audit-288/artifact-classification.json" '"records": ['
 
 require_text "research/hub/exp/reports-inventory-310/README.md" "status: draft"
 require_text "research/hub/exp/reports-inventory-310/README.md" "type: experiment"
@@ -2090,12 +2099,12 @@ require_text "research/hub/2026-06-27-adr-industry-norms-and-variants.md" "MADR"
 require_text "research/hub/2026-06-27-adr-industry-norms-and-variants.md" "Backstage"
 require_text "research/hub/2026-06-27-adr-industry-norms-and-variants.md" "2026-06-27-adr-external-tree-summary.md"
 
-require_text "research/hub/exp-rfc-adr-industry-norms/README.md" "status: draft"
-require_text "research/hub/exp-rfc-adr-industry-norms/README.md" "type: experiment"
-require_text "research/hub/exp-rfc-adr-industry-norms/README.md" "collect-evidence.py"
-require_text "research/hub/exp-rfc-adr-industry-norms/README.md" "2026-06-27-local-rfc-adr-audit.md"
-require_text "research/hub/exp-rfc-adr-industry-norms/README.md" "2026-06-27-rfc-external-tree-summary.md"
-require_text "research/hub/exp-rfc-adr-industry-norms/README.md" "2026-06-27-adr-external-tree-summary.md"
+require_text "research/hub/exp/rfc-adr-industry-norms-278/README.md" "status: draft"
+require_text "research/hub/exp/rfc-adr-industry-norms-278/README.md" "type: experiment"
+require_text "research/hub/exp/rfc-adr-industry-norms-278/README.md" "collect-evidence.py"
+require_text "research/hub/exp/rfc-adr-industry-norms-278/README.md" "2026-06-27-local-rfc-adr-audit.md"
+require_text "research/hub/exp/rfc-adr-industry-norms-278/README.md" "2026-06-27-rfc-external-tree-summary.md"
+require_text "research/hub/exp/rfc-adr-industry-norms-278/README.md" "2026-06-27-adr-external-tree-summary.md"
 
 require_text "research/hub/2026-06-12-ecosystem-governance-audit.md" "status: draft"
 require_text "research/hub/2026-06-12-ecosystem-governance-audit.md" "version: 0.1"
@@ -2463,6 +2472,7 @@ require_text ".github/workflows/validate.yml" "Validate file naming"
 require_text ".github/workflows/validate.yml" "./tools/validate-file-naming.sh"
 require_text ".github/workflows/validate.yml" "Test frontmatter validator"
 require_text ".github/workflows/validate.yml" "bash tools/test-frontmatter-validator.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-evidence-structure-validator.sh"
 require_text ".github/workflows/validate.yml" "Test post-migration validator invariants"
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"

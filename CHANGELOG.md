@@ -42,9 +42,63 @@ All notable repository governance changes are documented here.
   `draft`: governance-решение за фаундером (Rule 4).
 - backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) добавлена задача B-089
   (Спринт 9, статус `review`) и зарегистрирован источник — issue #437.
-- artifact-map: В `pr-ops/artifact-map.md` (v1.77 -> v1.78) удалена строка
-  монолита retrieval-survey, добавлены шесть строк модуля
-  `research/ai-education/retrieval/` и строка нового RFC.
+- artifact-map: В `pr-ops/artifact-map.md` удалена строка монолита
+  retrieval-survey, добавлены индекс `research/ai-education/`, шесть строк
+  модуля `research/ai-education/retrieval/` и строка нового RFC.
+- analysis: Создан `docs/analysis/2026-07-17-mango-artifacts-migration-plan.md`
+  (B-080, issue #436) — детальный план миграции артефактов Mango при разделении
+  репозиториев по ADR-009, исполнимый контракт для B-081/B-082/B-083. План
+  построен на **фактическом снимке** `G-Ivan-A/mango_ba_prompts@295b65d`
+  (5 346 файлов, из них 1 337 упоминают бренд «Mango»), а не на концептуальном
+  списке каталогов: маппинг покрывает все 11 корневых каталогов и 13 корневых
+  файлов. Зафиксированы правила классификации R1–R8 с fail-safe по умолчанию
+  (сомнение → приватный), процесс обезличивания A1–A8 с обязательным gate
+  «полнотекстовый скан → 0 совпадений **до первого push**», таблица миграции,
+  фазы 0–5 (необратимый публичный push — последним; обезличивание выполняется
+  внутри приватного периметра) и шесть рисков, включая Git LFS на 138 МБ `kb/` и
+  бинарные файлы, которые не ловятся грепом. Пограничный кейс `GLOSSARY.md`
+  разрешён **расщеплением по признаку приватности**: граница проходит внутри
+  глоссария, а не по нему; копирование в оба репо, ссылка на приватный SSOT и
+  shared-модуль отклонены с обоснованием (последний — прямой отсылкой к
+  отклонению submodules в ADR-009). Fail-safe подтверждён количественно: 98,6%
+  объёма уходит в приватное репо, публичных кандидатов ~60 файлов. План выявил
+  два блокирующих расхождения с ADR-009 и вынес их как Open Questions фаундеру:
+  **Q1** — репозиторий `mango_ba_prompts` фактически **публичный**
+  (`visibility: public`, проверено через GitHub API 2026-07-17), тогда как
+  Context ADR-009 исходит из того, что он «вынужденно остаётся закрытым», что
+  меняет модель угрозы с превентивной на реакцию на состоявшуюся публикацию;
+  **Q2** — целевой каталог `kb/processes/` в Mango не существует, а фактические
+  `kb/processed/` (5 041 файл), `kb/sources/`, `kb/fragments/`, `kb/practices/`
+  (95% объёма) не имеют целевого дома. Также зафиксировано, что `evals/`,
+  `internal-rfc/`, `internal-docs/`, `templates/`, `app/` и
+  `prompt-library/telecom/` — greenfield, а не миграция, а запрет `education/` в
+  публичном репо превентивен (каталога в Mango нет). Репозитории не создаются,
+  файлы не переносятся, решения не принимаются (Q1–Q4 остаются за фаундером);
+  ADR-009 и стандарты не изменялись. Бэклог обновлён (B-080 → `review`, режим
+  уточнён на `Hybrid`); артефакт зарегистрирован в карте артефактов, allowlist и
+  `required_files` в `tools/validate-repository-structure.sh` синхронизированы.
+- cleanup: Выполнен комплексный alignment Спринта 2 (issue #439): три legacy
+  `research/hub/exp-*` корпуса перенесены в канонический
+  `research/hub/exp/<issue-slug>/` и flattened без `outputs/`; добавлен
+  regression-tested validator evidence structure с проверкой parent links;
+  Analysis/Reports frontmatter и cross-references приведены к принятым
+  стандартам без изменения содержательных выводов; B-022/B-023/B-028/B-044
+  переведены в `review`, artifact map синхронизирован.
+
+- governance: В `ai-governance/ai-governance.md` (v2.0 -> v2.1) зафиксирована
+  **3-tier amendment policy** (B-036, issue #438) — раздел «Amendment policy
+  (3 tier)». Политика задаёт церемонию для правки canonical
+  governance-артефакта: Tier 1 (mechanical: typo, frontmatter, ссылки,
+  changelog, validator allowlist) — без RFC, PR с описанием; Tier 2 (limited:
+  уточнение внутри одного раздела без изменения структуры) — lightweight RFC
+  в теле PR + human review; Tier 3 (structural: новый раздел, изменение
+  скелета, удаление артефакта, сдвиг decision boundary) — полный
+  analysis → RFC → ADR → standard path без обхода. Tier выбирается по
+  максимальному признаку, сомнение разрешается в пользу более высокого, hard
+  bans и Эскалация не отменяются ни одним tier. Источник — §3.4
+  `docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md`.
+  Новых governance-документов не создано, остальное содержимое контракта не
+  изменялось.
 - backlog: В `pr-ops/backlog.md` (v1.33 -> v1.34) добавлена triggered-задача
   B-088 о многоуровневой иерархии SSOT (issue #427): ADR отвечает за решения,
   Стандарт — за исполнение. Задача имеет статус `deferred (triggered)` и не
@@ -130,6 +184,19 @@ All notable repository governance changes are documented here.
   `tools/validate-repository-structure.sh` синхронизированы.
 
 ### Changed
+
+- backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) задача B-036 исправлена после
+  B-056: целевой путь `AI_GOVERNANCE.md` (удалён в PR #430) заменён на
+  `ai-governance/ai-governance.md`, добавлена зависимость B-056, проставлен
+  issue #438, статус `TODO` -> `review`. До правки задача ссылалась на
+  несуществующий артефакт и была неисполнима.
+- artifact-map: В `pr-ops/artifact-map.md` (v1.77 -> v1.78) строка
+  `/ai-governance/ai-governance.md` дополнена 3-tier amendment policy (B-036)
+  и связью с source-анализом. Строка `/ai-rules/agent-work-rules.md` уже
+  отражала разделение по B-056 и не менялась.
+- Expanded ADR-008 scope to all ecosystem standards; closed B-051 and B-067
+  backlog cycles (issue #434). Added `standards/evals-contract-standard.md` to
+  ADR-008 impacted and related artifacts and synchronized the artifact map.
 
 - chore(B-056): remaining policy/rule material физически разделён по ADR-007.
   Root `AI_GOVERNANCE.md` заменён policy-контрактом
@@ -768,7 +835,7 @@ All notable repository governance changes are documented here.
   dual report + experiment model until a follow-up standard/ADR clarification.
 - research: Research / Analysis / Audit inventory for issue #288. Added
   `research/hub/2026-06-28-research-analysis-audit-inventory.md` plus a
-  reproducible scan under `research/hub/exp-research-analysis-audit-288/`,
+  reproducible scan under `research/hub/exp/research-analysis-audit-288/`,
   classifying Hub, Mango and Clarify artifacts by actual purpose, identifying
   concept substitutions and duplicate risks, and planning three future
   `Analysis -> RFC -> Standard` chains without creating RFCs or standards.
@@ -781,7 +848,7 @@ All notable repository governance changes are documented here.
 - research: RFC/ADR industry norms and variants for issue #278. Added separate
   Hub research reports for RFC-like proposal processes and ADR/decision-record
   processes, plus a reproducible evidence experiment under
-  `research/hub/exp-rfc-adr-industry-norms/`, external-source registry entries
+  `research/hub/exp/rfc-adr-industry-norms-278/`, external-source registry entries
   `ext-075`..`ext-126`, MkDocs navigation, and artifact-map/index wiring. The
   change intentionally does not create a new RFC or ADR; it preserves the result
   as research input for later founder decisions.

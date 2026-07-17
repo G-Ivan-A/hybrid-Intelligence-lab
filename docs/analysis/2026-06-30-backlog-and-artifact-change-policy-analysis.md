@@ -3,6 +3,7 @@ status: draft
 version: 0.2
 updated: 2026-07-04
 temperature: 0.1
+scope: repo
 type: internal-analysis
 context: [hub, backlog, pr-ops, governance, artifact-lifecycle, issue-297, issue-392]
 method: dialogue-analysis + repository-review + industry-practice-comparison
