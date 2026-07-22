@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-07-16
+version: 0.2
+updated: 2026-07-17
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
 scope: repo-wide
 related_standards:
+  - "standard-meta-structure.md"
   - "frontmatter-docs-standard.md"
   - "file-naming.md"
   - "glossary.md"
@@ -16,6 +17,7 @@ related_standards:
   - "rfc-structure-standard.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/426"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/451"
 ---
 
 # Evals Contract Standard
@@ -358,11 +360,14 @@ flowchart LR
 | Q2 | Значения порогов приёмки и минимальное N прогонов | Человек; B-068 |
 | Q3 | Обязателен ли слой LLM-as-judge для первого Агента или достаточно человеческой разметки | B-069 |
 | Q4 | Нужен ли машинный формат (YAML/JSON) golden-set вместо Markdown | Открыт до доказанной боли ручной проверки |
-| Q5 | Применяется ли F10-скелет (ADR-008, статус `proposed`) к стандартам вне R/A/A/Report | B-052; см. примечание ниже |
+| Q5 | ~~Применяется ли F10-скелет (ADR-008) к стандартам вне R/A/A/Report~~ **ЗАКРЫТ**: применяется — см. примечание ниже | B-052 (закрыт) |
 
-> **Примечание к Q5.** [ADR-008](../docs/adr/2026-07-adr-008-standard-meta-structure.md)
-> вводит F10-скелет для стандартов Research/Analysis/Audit/Report и находится в
-> статусе `proposed`. Этот документ применяет F10 добровольно — как
-> forward-compatible форму до появления мета-стандарта B-052. Если B-052 сузит
-> область F10 или изменит скелет, документ приводится в соответствие вместе с
-> остальными стандартами (B-053).
+> **Примечание к Q5 (закрыт).**
+> [Мета-стандарт F10](standard-meta-structure.md) (B-052) распространяет
+> F10-скелет на **каждый стандарт экосистемы** — любой файл класса `Standard` в
+> `standards/`, а не только R/A/A/Report. Его `Scope` прямо включает Evals
+> Contract и объявляет вопрос Q5 этого документа закрытым. Поэтому добровольное
+> применение F10 здесь теперь является нормой, а не forward-compatible опережением:
+> смягчённое specific-tail правило (ADR-008 v0.2) допускает code-span-ссылку
+> `Scope`, и первый абзац этой секции ему соответствует. Дальнейшая физическая
+> миграция четырёх sibling standards выполнена в B-053.
