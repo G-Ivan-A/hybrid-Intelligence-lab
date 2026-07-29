@@ -20,7 +20,8 @@ All notable repository governance changes are documented here.
   Experimental RFC Reference Research Pattern, фиксирует внедрение Conceptual
   Framing и сигнатуры `S = Decision(KB, Query, Constraints)`, а superseded
   draft-монолит больше не назван результатом. B-090 не изменялась. Версия
-  backlog поднята с v1.38 до v1.39, validator pin синхронизирован.
+  backlog поднята с v1.38 до v1.39, validator pin и regression assertions
+  синхронизированы.
 
 ### Added
 
