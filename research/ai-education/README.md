@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-07-17
+version: 0.2
+updated: 2026-07-30
 temperature: 0.1
 ---
 
@@ -18,7 +18,10 @@ temperature: 0.1
 ## Модули
 
 - [`retrieval/`](retrieval/00-introduction.md) — первая валидация паттерна;
-- планируемая валидация — Memory и Agents.
+- [`task-processing/`](task-processing/00-introduction.md) — вторая валидация
+  паттерна: агентное исполнение задач (мандаты, автономное планирование,
+  guardrails);
+- планируемая валидация — Memory.
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).
