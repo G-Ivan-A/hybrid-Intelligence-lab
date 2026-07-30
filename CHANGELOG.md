@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.61
-updated: 2026-07-17
+version: 1.62
+updated: 2026-07-29
 temperature: 0.1
 ---
 
@@ -10,6 +10,18 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Changed
+
+- backlog: `pr-ops/backlog.md` синхронизирован с фактическим состоянием
+  репозитория после пустого PR #454 (issue #455): B-053 переведена из `review`
+  в `DONE`, потому что реализация смержена в PR #452; результат B-085 теперь
+  указывает на шестифайловый модуль `research/ai-education/retrieval/` и
+  Experimental RFC Reference Research Pattern, фиксирует внедрение Conceptual
+  Framing и сигнатуры `S = Decision(KB, Query, Constraints)`, а superseded
+  draft-монолит больше не назван результатом. B-090 не изменялась. Версия
+  backlog поднята с v1.38 до v1.39, validator pin и regression assertions
+  синхронизированы.
 
 ### Added
 

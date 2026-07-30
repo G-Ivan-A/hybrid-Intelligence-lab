@@ -71,4 +71,30 @@ for required_path in \
   fi
 done
 
+backlog_file="pr-ops/backlog.md"
+
+b053_line="$(grep -F '| **B-053** |' "$backlog_file")"
+[[ "$b053_line" == *'| DONE |'* ]] ||
+  fail "B-053 must be DONE after merged PR #452"
+
+b085_line="$(grep -F '| **B-085** |' "$backlog_file")"
+for expected in \
+  "research/ai-education/retrieval/" \
+  "docs/rfc/2026-07-17-rfc-reference-research-pattern.md" \
+  "Conceptual Framing" \
+  "S = Decision(KB, Query, Constraints)"; do
+  if [[ "$b085_line" != *"$expected"* ]]; then
+    fail "B-085 must contain current-state evidence: $expected"
+  fi
+done
+
+if grep -Fq \
+  'Результат: `research/education/2026-07-16-retrieval-strategies-survey.md`' \
+  "$backlog_file"; then
+  fail "B-085 must not name the superseded monolith as its result"
+fi
+
+grep -Fq '| **B-090** |' "$backlog_file" ||
+  fail "B-090 must remain in the active backlog"
+
 printf 'Post-migration validator regression tests passed.\n'
