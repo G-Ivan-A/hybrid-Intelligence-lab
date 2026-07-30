@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.10
-updated: 2026-07-02
+version: 0.11
+updated: 2026-07-30
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -24,6 +24,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/274"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457"
 ---
 
 # Реестр внешних источников
@@ -227,6 +228,21 @@ related_issues:
 | `ext-155` | [LangSmith](https://docs.smith.langchain.com/) | `docs` | `en` | `observability, tracing, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
 | `ext-156` | [Arize Phoenix](https://github.com/Arize-ai/phoenix) | `github` | `en` | `observability, evaluation, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `observation` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
 | `ext-157` | [LangGraph — Human-in-the-loop](https://docs.langchain.com/oss/python/langgraph/add-human-in-the-loop) | `docs` | `en` | `human-in-the-loop, approval-gate, mode-enforcement, task-execution-modes` | `topic: task-execution-modes` | `research` | `hub` | ✅ [Режимы-330](../hub/2026-07-02-task-execution-modes-research.md) |
+| `ext-158` | [LangChain — Human-in-the-loop middleware](https://docs.langchain.com/oss/python/langchain/human-in-the-loop) | `docs` | `en` | `human-in-the-loop, guardrails, agent-execution, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-159` | [OpenAI Agents SDK — Guardrails](https://openai.github.io/openai-agents-python/guardrails/) | `docs` | `en` | `guardrails, tripwire, agent-execution, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-160` | [Model Context Protocol — Server Tools (spec 2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) | `standard` | `en` | `tool-use, human-in-the-loop, security, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-161` | [CrewAI — Processes](https://docs.crewai.com/en/concepts/processes) | `docs` | `en` | `multi-agent, orchestration, hierarchical, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-162` | [AutoGen — Handoffs design pattern](https://microsoft.github.io/autogen/stable/user-guide/core-user-guide/design-patterns/handoffs.html) | `docs` | `en` | `multi-agent, handoff, routing, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-163` | [OpenTelemetry — AI Agent Observability](https://opentelemetry.io/blog/2025/ai-agent-observability/) | `docs` | `en` | `observability, telemetry, semconv, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-164` | [OpenTelemetry — Inside the LLM Call: GenAI Observability](https://opentelemetry.io/blog/2026/genai-observability/) | `docs` | `en` | `observability, tracing, semconv, task-processing` | `topic: agent-execution` | `observation` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-165` | [LLMs Cannot Self-Correct Reasoning Yet (Huang et al., ICLR 2024)](https://arxiv.org/abs/2310.01798) | `paper` | `en` | `self-correction, critique, planning, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-166` | [LLMs Can’t Plan, But Can Help Planning in LLM-Modulo Frameworks (Kambhampati et al., ICML 2024)](https://proceedings.mlr.press/v235/kambhampati24a.html) | `paper` | `en` | `planning, verification, llm-modulo, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-167` | [Why Do Multi-Agent LLM Systems Fail? (MAST)](https://arxiv.org/abs/2503.13657) | `paper` | `en` | `failure-taxonomy, multi-agent, reliability, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-168` | [Robust Planning with LLM-Modulo Framework: Travel Planning](https://arxiv.org/abs/2405.20625) | `paper` | `en` | `planning, external-critics, task-processing` | `topic: agent-execution` | `observation` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-169` | [Understanding the Planning of LLM Agents: A Survey](https://arxiv.org/abs/2402.02716) | `paper` | `en` | `planning, taxonomy, survey, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-170` | [τ-bench: Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) | `paper` | `en` | `benchmark, policy-compliance, reliability, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-171` | [Anthropic — How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) | `blog` | `en` | `orchestrator-worker, delegation, multi-agent, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-172` | [Sierra — τ-bench: Benchmarking AI agents for the real world](https://sierra.ai/blog/benchmarking-ai-agents) | `blog` | `en` | `benchmark, reliability, task-processing` | `topic: agent-execution` | `observation` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

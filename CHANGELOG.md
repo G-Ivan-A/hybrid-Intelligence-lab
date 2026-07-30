@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.62
-updated: 2026-07-29
+version: 1.63
+updated: 2026-07-30
 temperature: 0.1
 ---
 
@@ -11,7 +11,38 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- research: Модуль `research/ai-education/task-processing/` (issue #457) — вторая
+  валидация Reference Research Pattern, на домене agentic task execution. Шесть
+  файлов по паттерну: Conceptual Framing с сигнатурой `A = Policy(M, S, T, C)`,
+  объектная модель E1–E12, точки решений D1–D10 и гипотезы H1–H16; три
+  ортогональные таксономии (мандаты M0–M5, подходы к планированию P0–P7,
+  механизмы контроля G1–G7); матрица «класс мандата × цена ошибки», правило
+  размещения guardrail по обратимости действия и шкала автономии A0–A5;
+  индустриальная практика с явной маркировкой классов источников S1–S5
+  (LangChain HITL middleware, OpenAI Agents SDK guardrails, MCP, CrewAI,
+  AutoGen handoffs, OpenTelemetry GenAI, таксономия отказов MAST) и описательный
+  разбор прецедентов PR #454/#456; открытые вопросы O1–O8, исправленный перечень
+  смежных модулей знаний и самоаудит. Исследование не вводит и не изменяет
+  правил репозитория и не содержит рекомендаций по Хабу — по ограничениям
+  постановки (Rule 4).
+- registry: `research/external-knowledge/external-sources-registry.md` v0.11 —
+  зарегистрированы 15 внешних источников `ext-158`..`ext-172`, изученных в
+  рамках issue #457.
+
 ### Changed
+
+- backlog: `pr-ops/backlog.md` v1.40 — добавлены B-092 (исследование по issue
+  #457, статус `review`) и B-093 (RFC по архитектуре постановки задач, `TODO`,
+  зависит от B-092), а также строка источника активного порядка для issue #457.
+- artifact-map: `pr-ops/artifact-map.md` v1.81 — зарегистрированы шесть файлов
+  модуля `task-processing/`; описание индекса `research/ai-education/README.md`
+  обновлено.
+- tools: `tools/validate-repository-structure.sh` — шесть файлов нового модуля
+  добавлены в allowlist `is_active_file()`, pin-строки версий backlog,
+  artifact-map и реестра внешних источников синхронизированы. Механическая
+  регистрация артефактов, правила валидации не менялись.
 
 - backlog: `pr-ops/backlog.md` синхронизирован с фактическим состоянием
   репозитория после пустого PR #454 (issue #455): B-053 переведена из `review`
