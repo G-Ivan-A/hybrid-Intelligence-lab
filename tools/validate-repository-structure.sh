@@ -196,6 +196,23 @@ is_active_file() {
     research/hub/exp/task-execution-modes-330/2026-07-02-test3-conflict.md | \
     research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md | \
     research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md | \
+    research/hub/2026-07-31-ops-task-strategy-validation.md | \
+    research/hub/exp/ops-task-strategy-461/README.md | \
+    research/hub/exp/ops-task-strategy-461/collect-evidence.py | \
+    research/hub/exp/ops-task-strategy-461/collect-evidence.log | \
+    research/hub/exp/ops-task-strategy-461/corpus-metrics.json | \
+    research/hub/exp/ops-task-strategy-461/analyze-outcomes.py | \
+    research/hub/exp/ops-task-strategy-461/analyze-outcomes.log | \
+    research/hub/exp/ops-task-strategy-461/analysis-outcomes.json | \
+    research/hub/exp/ops-task-strategy-461/experiment-references.py | \
+    research/hub/exp/ops-task-strategy-461/experiment-references.log | \
+    research/hub/exp/ops-task-strategy-461/experiment-references.json | \
+    research/hub/exp/ops-task-strategy-461/experiment-closure.py | \
+    research/hub/exp/ops-task-strategy-461/experiment-closure.log | \
+    research/hub/exp/ops-task-strategy-461/experiment-closure.json | \
+    research/hub/exp/ops-task-strategy-461/model-contract-index.py | \
+    research/hub/exp/ops-task-strategy-461/model-contract-index.log | \
+    research/hub/exp/ops-task-strategy-461/model-contract-index.json | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -655,6 +672,23 @@ required_files=(
   "research/hub/exp/task-execution-modes-330/2026-07-02-test3-conflict.md"
   "research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md"
   "research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md"
+  "research/hub/2026-07-31-ops-task-strategy-validation.md"
+  "research/hub/exp/ops-task-strategy-461/README.md"
+  "research/hub/exp/ops-task-strategy-461/collect-evidence.py"
+  "research/hub/exp/ops-task-strategy-461/collect-evidence.log"
+  "research/hub/exp/ops-task-strategy-461/corpus-metrics.json"
+  "research/hub/exp/ops-task-strategy-461/analyze-outcomes.py"
+  "research/hub/exp/ops-task-strategy-461/analyze-outcomes.log"
+  "research/hub/exp/ops-task-strategy-461/analysis-outcomes.json"
+  "research/hub/exp/ops-task-strategy-461/experiment-references.py"
+  "research/hub/exp/ops-task-strategy-461/experiment-references.log"
+  "research/hub/exp/ops-task-strategy-461/experiment-references.json"
+  "research/hub/exp/ops-task-strategy-461/experiment-closure.py"
+  "research/hub/exp/ops-task-strategy-461/experiment-closure.log"
+  "research/hub/exp/ops-task-strategy-461/experiment-closure.json"
+  "research/hub/exp/ops-task-strategy-461/model-contract-index.py"
+  "research/hub/exp/ops-task-strategy-461/model-contract-index.log"
+  "research/hub/exp/ops-task-strategy-461/model-contract-index.json"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
