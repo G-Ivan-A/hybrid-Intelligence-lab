@@ -359,6 +359,7 @@ is_active_file() {
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
+    tools/test-agent-onboarding-authorization.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -792,6 +793,7 @@ required_files=(
   "tools/test-mango-kb-migration-contract.sh"
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
+  "tools/test-agent-onboarding-authorization.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -2521,6 +2523,7 @@ require_text "tools/test-reference-research-terminology.sh" "canonical Research 
 require_text "tools/test-reference-research-terminology.sh" "canonical Domain Methodology sequence"
 require_text "tools/test-post-migration-validator.sh" "legacy root paths"
 require_text "tools/test-sprint-5-agent-model.sh" "Sprint 5 agent-model regression tests passed."
+require_text "tools/test-agent-onboarding-authorization.sh" "Мерж PR = согласование результата"
 require_text "tools/generate-manifest.py" "templates/manifest.json"
 require_text "tools/validate-frontmatter.sh" "invalid knowledge status"
 require_text "tools/validate-frontmatter.sh" "docs/guides/*.md"
@@ -2539,6 +2542,7 @@ require_text ".github/workflows/validate.yml" "bash tools/test-reference-researc
 require_text ".github/workflows/validate.yml" "Test post-migration validator invariants"
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-authorization.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

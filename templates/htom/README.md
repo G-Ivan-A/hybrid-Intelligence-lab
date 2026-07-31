@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 0.5
+version: 0.6
 updated: {{date}}
 temperature: 0.1
 ---
@@ -133,7 +133,7 @@ grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно остаться �
 
 | Куда | Зачем |
 | --- | --- |
-| Хаб [`ai-rules/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md) | **Кейс 1**: протокол *Runtime-онбординга* агента (Handover Prompt, Readback, стоп до апрува). |
+| Хаб [`ai-rules/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md) | **Кейс 1**: протокол *Runtime-онбординга* агента (Handover Prompt, Readback, исполнение мандата issue и согласование результата через PR). |
 | Хаб [`standards/session-handover-standard.md`]({{hub_url}}/blob/main/standards/session-handover-standard.md) | Draft-стандарт структуры `AI_SESSION_HANDOVER_PROMPT.md`: контекст проекта, чат-диалог, канал репо и проверка шаблонов. |
 | Хаб [`rfc-two-cases-of-project-initialization.md`]({{hub_url}}/blob/main/docs/rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 2 (этот файл) отличается от Кейса 1. |
 | Этот README, раздел [Design Decisions & Rationale](#design-decisions--rationale) | Дизайн «ДНК-шаблона» HTOM-команды: почему геном именно такой. |
