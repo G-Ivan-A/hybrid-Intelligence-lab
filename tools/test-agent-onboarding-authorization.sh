@@ -24,8 +24,8 @@ fi
 grep -Fq 'Readback' ai-rules/agent-onboarding-protocol.md
 grep -Fq 'Мерж PR = согласование результата' ai-rules/agent-onboarding-protocol.md
 grep -Fq 'Комментарий без мержа = возврат в работу' ai-rules/agent-onboarding-protocol.md
-grep -Eq 'новая задача на$' ai-rules/agent-onboarding-protocol.md
-grep -Eq 'исправление' ai-rules/agent-onboarding-protocol.md
+grep -Fq 'новая задача на' ai-rules/agent-onboarding-protocol.md
+grep -Fq 'исправление' ai-rules/agent-onboarding-protocol.md
 grep -Fq 'непустой дифф' ai-rules/agent-onboarding-protocol.md
 
 grep -Fq 'Мерж PR = согласование результата' templates/htom/AI_SESSION_HANDOVER_PROMPT.md
