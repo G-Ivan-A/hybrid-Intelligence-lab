@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.6
-updated: 2026-07-04
+version: 1.7
+updated: 2026-07-31
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -36,6 +36,8 @@ owner: G-Ivan-A
 | Contract | Операционное соглашение IL-1 между ролями, системами или репозиториями: обязанности, входы, выходы, lifecycle и критерии готовности. | Используется, когда важно зафиксировать взаимные ожидания, а не только отдельное правило. Contract может включать policies, standards и escalation rules, но не подменяет их семантику. | [AI Governance](../ai-governance/ai-governance.md), [team-contract.md](team-contract.md) |
 | Practice | Повторяемый способ работы, который помогает достигать качества или скорости, но может адаптироваться к контексту. | Используется для описания привычек команды: локальная проверка, source-backed analysis, review checklist. Practice может стать guideline или standard, если повторяется и дает устойчивую пользу. | [CONTRIBUTING.md](../CONTRIBUTING.md), [tools/validate-repository-structure.sh](../tools/validate-repository-structure.sh) |
 | Framework | Структурированная методология для класса задач: понятия, роли, workflow, decision points, ограничения и примеры применения. | Создается только после сравнения с существующими подходами и выявленного gap. Отличается от `Practice`: framework связывает несколько practices и concepts в целостную модель. | `frameworks/<slug>/README.md` по правилу [pr-ops/repo-model.md](../pr-ops/repo-model.md) |
+| Conceptual Framing | Явная понятийная рамка домена: границы, ключевые понятия и отношения, из которых выводятся Object Model и Decision Space. | Используется в Domain Methodology как проверяемое описание объекта исследования. Отличается от субъективной удобной картины: рамка должна объяснять, какие выводы следуют из её структуры. | [Reference Research Pattern](../docs/rfc/2026-07-17-rfc-reference-research-pattern.md), [Retrieval: теория](../research/ai-education/retrieval/10-theory.md) |
+| Mental Model | **Deprecated:** прежнее название `Conceptual Framing`; сохраняется только в историческом контексте и пояснениях миграции. | В новых и актуализируемых артефактах использовать `Conceptual Framing`. Deprecated-термин не обозначает отдельную сущность и не должен появляться как активный заголовок или методологический этап. | [Retrieval: теория](../research/ai-education/retrieval/10-theory.md) |
 | Guideline | Рекомендация с объяснением, как действовать в типовом случае, без статуса жесткого правила. | Используется, когда полезен общий ориентир, но допустимы локальные исключения с объяснением в issue или PR. Отличается от `Policy`: guideline можно обоснованно обойти. | [CONTRIBUTING.md](../CONTRIBUTING.md), [standards/README.md](README.md) |
 | Artifact | Проверяемый объект репозитория, который хранит знание, решение, шаблон, правило, эксперимент или вспомогательную проверку. | Используется как единица review и traceability. Artifact не обязан быть документом: validation script тоже artifact, если он поддерживает governance. | [docs/concept.md](../docs/concept.md), [tools/validate-repository-structure.sh](../tools/validate-repository-structure.sh) |
 | Canonical | Текущий утвержденный источник истины для темы. Canonical artifact используется по умолчанию в issues, reviews и AI context. | Отличается от `Draft`: canonical можно применять как действующее правило или reference. Если canonical artifact изменяется, нужна reviewable причина и обновление навигации. | [docs/concept.md](../docs/concept.md) с `status: canonical` |

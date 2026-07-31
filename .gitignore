@@ -13,3 +13,4 @@ docs/screenshots/*.png
 # Python bytecode caches
 __pycache__/
 *.pyc
+ci-logs/
