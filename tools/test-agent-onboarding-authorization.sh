@@ -16,19 +16,28 @@ files=(
 
 forbidden='стоп до апрува|до апрува человека|до моего апрува|до явного апрува|approve / поехали|останавливается до апрува'
 
+require_text() {
+  local file="$1"
+  local expected="$2"
+  if ! grep -Fq "$expected" "$file"; then
+    echo "ERROR: $file must contain: $expected" >&2
+    exit 1
+  fi
+}
+
 if grep -Eni "$forbidden" "${files[@]}"; then
   echo "ERROR: active onboarding contracts still require separate approval" >&2
   exit 1
 fi
 
-grep -Fq 'Readback' ai-rules/agent-onboarding-protocol.md
-grep -Fq 'Мерж PR = согласование результата' ai-rules/agent-onboarding-protocol.md
-grep -Fq 'Комментарий без мержа = возврат в работу' ai-rules/agent-onboarding-protocol.md
-grep -Fq 'новая задача на' ai-rules/agent-onboarding-protocol.md
-grep -Fq 'исправление' ai-rules/agent-onboarding-protocol.md
-grep -Fq 'непустой дифф' ai-rules/agent-onboarding-protocol.md
+require_text ai-rules/agent-onboarding-protocol.md 'Readback'
+require_text ai-rules/agent-onboarding-protocol.md 'Мерж PR = согласование результата'
+require_text ai-rules/agent-onboarding-protocol.md 'Комментарий без мержа = возврат в работу'
+require_text ai-rules/agent-onboarding-protocol.md 'новая задача на'
+require_text ai-rules/agent-onboarding-protocol.md 'исправление'
+require_text ai-rules/agent-onboarding-protocol.md 'непустой дифф'
 
-grep -Fq 'Мерж PR = согласование результата' templates/htom/AI_SESSION_HANDOVER_PROMPT.md
-grep -Fq 'непустой дифф' templates/htom/AI_SESSION_HANDOVER_PROMPT.md
+require_text templates/htom/AI_SESSION_HANDOVER_PROMPT.md 'Мерж PR = согласование результата'
+require_text templates/htom/AI_SESSION_HANDOVER_PROMPT.md 'непустой дифф'
 
 echo "Agent onboarding authorization contract test passed."
