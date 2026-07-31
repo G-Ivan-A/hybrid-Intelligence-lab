@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.63
-updated: 2026-07-30
+version: 1.64
+updated: 2026-07-31
 temperature: 0.1
 ---
 
@@ -13,6 +13,25 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Модуль `research/ai-education/memory/` (issue #459) — третья
+  валидация Reference Research Pattern, на домене памяти AI-агентов. Шесть
+  файлов по паттерну: Conceptual Framing с двумя контурами — чтения
+  `C_t = Assemble(W_t, Sel(L_t, q_t, τ), P)` и записи
+  `L_{t+1} = Update(L_t, Extract(...), τ)` — объектная модель E1–E14, точки
+  решений D1–D12 и гипотезы H1–H16; четыре ортогональные таксономии (виды
+  памяти F1–F6, субстраты хранения T1–T7, операции жизненного цикла O1–O8,
+  политики чтения R1–R5); матрица «горизонт × цена ошибочного факта»,
+  лестница сжатия C0–C5, би-темпоральность и механизмы забывания, граница
+  доверия к записи и шкала зрелости M0–M5; индустриальная практика с явной
+  маркировкой классов источников S1–S5 (LangGraph checkpointer/Store, OpenAI
+  Agents SDK Sessions, CrewAI unified Memory, AutoGen Memory protocol,
+  Anthropic memory tool и context editing, MCP Resources, MemGPT/Letta, Mem0,
+  Zep/Graphiti, A-MEM) и разбор публичного спора вендоров о бенчмарке LOCOMO;
+  открытые вопросы O1–O10, расширенный перечень смежных модулей и самоаудит.
+  Отдельно — Приложение A с образовательным срезом для бизнес-аналитиков
+  (8 тезисов, словарь, чек-лист постановки задачи, типичные ошибки требований).
+  Исследование не вводит и не изменяет правил репозитория и не содержит
+  рекомендаций по Хабу — по ограничениям постановки (Rule 4).
 - research: Модуль `research/ai-education/task-processing/` (issue #457) — вторая
   валидация Reference Research Pattern, на домене agentic task execution. Шесть
   файлов по паттерну: Conceptual Framing с сигнатурой `A = Policy(M, S, T, C)`,
