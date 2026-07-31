@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.11
-updated: 2026-07-30
+version: 0.12
+updated: 2026-07-31
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -25,6 +25,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459"
 ---
 
 # Реестр внешних источников
@@ -243,6 +244,29 @@ related_issues:
 | `ext-170` | [τ-bench: Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) | `paper` | `en` | `benchmark, policy-compliance, reliability, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
 | `ext-171` | [Anthropic — How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) | `blog` | `en` | `orchestrator-worker, delegation, multi-agent, task-processing` | `topic: agent-execution` | `research` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
 | `ext-172` | [Sierra — τ-bench: Benchmarking AI agents for the real world](https://sierra.ai/blog/benchmarking-ai-agents) | `blog` | `en` | `benchmark, reliability, task-processing` | `topic: agent-execution` | `observation` | `hub` | ✅ [Task Processing-457](../ai-education/task-processing/40-practice-and-cases.md) |
+| `ext-173` | [LangGraph — Persistence (checkpointers, threads)](https://docs.langchain.com/oss/python/langgraph/persistence) | `docs` | `en` | `memory, short-term-memory, state, checkpointer` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-174` | [LangChain — Long-term memory (Store, namespaces)](https://docs.langchain.com/oss/python/langchain/long-term-memory) | `docs` | `en` | `memory, long-term-memory, namespace` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-175` | [OpenAI Agents SDK — Sessions](https://openai.github.io/openai-agents-python/sessions/) | `docs` | `en` | `memory, session, conversation-history` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-176` | [CrewAI — Memory (unified memory, recency/importance weights)](https://docs.crewai.com/en/concepts/memory) | `docs` | `en` | `memory, consolidation, salience, decay` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-177` | [AutoGen — Memory protocol](https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/memory.html) | `docs` | `en` | `memory, protocol, context-update` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-178` | [Anthropic — Memory tool (`memory_20250818`)](https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool) | `docs` | `en` | `memory, file-based-memory, self-editing` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-179` | [Anthropic — Context editing and compaction](https://platform.claude.com/docs/en/build-with-claude/context-editing) | `docs` | `en` | `context-management, compaction, tool-result-clearing` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-180` | [Model Context Protocol — Server Resources (spec 2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/resources) | `standard` | `en` | `mcp, resources, context-transport, memory` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-181` | [Anthropic — Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | `blog` | `en` | `context-engineering, context-rot, just-in-time` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-182` | [Lost in the Middle: How Language Models Use Long Contexts (TACL 2023)](https://arxiv.org/abs/2307.03172) | `paper` | `en` | `long-context, positional-bias, memory` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-183` | [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560) | `paper` | `en` | `memory, virtual-context, self-editing` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-184` | [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | `paper` | `en` | `memory-stream, recency-importance-relevance, reflection` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-185` | [LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://arxiv.org/abs/2410.10813) | `paper` | `en` | `benchmark, knowledge-update, abstention, memory` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-186` | [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956) | `paper` | `en` | `temporal-knowledge-graph, bi-temporal, invalidation` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-187` | [Mem0: Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413) | `paper` | `en` | `memory-extraction, consolidation, memory` | `topic: agent-memory` | `observation` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-188` | [A-MEM: Agentic Memory for LLM Agents](https://arxiv.org/abs/2502.12110) | `paper` | `en` | `self-organizing-memory, linking, memory` | `topic: agent-memory` | `observation` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-189` | [Memory Injection Attacks on LLM Agents via Query-Only Interaction](https://arxiv.org/abs/2503.03704) | `paper` | `en` | `memory-poisoning, security, trust-boundary` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-190` | [Evaluating Very Long-Term Conversational Memory of LLM Agents (LOCOMO)](https://arxiv.org/abs/2402.17753) | `paper` | `en` | `benchmark, long-term-memory, contested-methodology` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-191` | [LLMs Get Lost In Multi-Turn Conversation](https://arxiv.org/abs/2505.06120) | `paper` | `en` | `context-clash, multi-turn, reliability` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-192` | [Zep — Lies, Damn Lies, & Statistics: Is Mem0 Really SOTA in Agent Memory?](https://www.zep.com/blog/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory) | `blog` | `en` | `benchmark-critique, vendor-dispute, memory` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-193` | [Letta — документация (stateful agents, memory blocks)](https://docs.letta.com/) | `docs` | `en` | `stateful-agents, memory-blocks, memgpt` | `topic: agent-memory` | `observation` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
+| `ext-194` | [Qdrant — vector-db-benchmark](https://github.com/qdrant/vector-db-benchmark) | `docs` | `en` | `vector-db, benchmark, vendor-bias` | `topic: agent-memory` | `observation` | `hub` | ✅ [Memory-459](../ai-education/memory/20-taxonomy.md) |
+| `ext-195` | [GDPR — Art. 17, право на стирание](https://gdpr-info.eu/art-17-gdpr/) | `standard` | `en` | `privacy, right-to-erasure, forgetting` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/30-decision-framework.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
