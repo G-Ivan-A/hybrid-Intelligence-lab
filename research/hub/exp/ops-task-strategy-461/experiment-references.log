@@ -1,0 +1,13 @@
+detail_score <= 3 (short)        n= 72 refs~  6.36 unresolved~ 0.92 rate=0.095 any=0.361
+detail_score 4-5 (medium)        n= 67 refs~  8.61 unresolved~ 2.06 rate=0.223 any=0.672
+detail_score >= 6 (detailed)     n= 80 refs~  8.94 unresolved~ 0.78 rate=0.095 any=0.438
+non-productive outcome           n=  5 refs~  9.20 unresolved~ 0.80 rate=0.081 any=0.600
+all                              n=219 refs~  7.99 unresolved~ 1.21 rate=0.134 any=0.484
+
+2026-05 n= 39 refs~ 5.03 unresolved_rate~0.054
+2026-06 n=107 refs~ 8.59 unresolved_rate~0.218
+2026-07 n= 73 refs~ 8.70 unresolved_rate~0.054
+2026-06 within-month detail>=5 (34) 0.341 vs detail<=4 (73) 0.161  p=0.001
+
+corr(detail, refs) = {'pearson_detail_vs_refs': 0.2025, 'n': 219}
+wrote /tmp/gh-issue-solver-1785532149354/research/hub/exp/ops-task-strategy-461/experiment-references.json

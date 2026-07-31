@@ -1,0 +1,352 @@
+{
+  "experiment": "entry-point link closure and context budget",
+  "token_estimate": "bytes / 3.2, order-of-magnitude only; Cyrillic Markdown tokenises less efficiently than English",
+  "repository": {
+    "markdown_files": 253,
+    "markdown_bytes": 5353965,
+    "markdown_tokens_approx": 1673114
+  },
+  "entry_points": [
+    {
+      "entry": "ai-rules/agent-onboarding-protocol.md",
+      "exists": true,
+      "affordable_depth_by_budget": {
+        "50000": 0,
+        "200000": 1,
+        "1000000": 3
+      },
+      "closure_files": 232,
+      "closure_bytes": 5149712,
+      "closure_tokens_approx": 1609285,
+      "max_depth": 6,
+      "entry_bytes": 21614,
+      "entry_tokens_approx": 6754,
+      "non_markdown_reachable": 39,
+      "broken_links": [
+        "docs/rfc/repository-archetypes-template-release.md -> ../../.github/workflows/deploy-docs.yml",
+        "standards/education-profile.md -> module-01/"
+      ],
+      "depth_profile": [
+        {
+          "depth": 0,
+          "files": 1,
+          "bytes": 21614,
+          "cumulative_bytes": 21614,
+          "cumulative_tokens_approx": 6754
+        },
+        {
+          "depth": 1,
+          "files": 13,
+          "bytes": 372886,
+          "cumulative_bytes": 394500,
+          "cumulative_tokens_approx": 123281
+        },
+        {
+          "depth": 2,
+          "files": 45,
+          "bytes": 786041,
+          "cumulative_bytes": 1180541,
+          "cumulative_tokens_approx": 368919
+        },
+        {
+          "depth": 3,
+          "files": 80,
+          "bytes": 1833002,
+          "cumulative_bytes": 3013543,
+          "cumulative_tokens_approx": 941732
+        },
+        {
+          "depth": 4,
+          "files": 65,
+          "bytes": 1927782,
+          "cumulative_bytes": 4941325,
+          "cumulative_tokens_approx": 1544164
+        },
+        {
+          "depth": 5,
+          "files": 22,
+          "bytes": 201462,
+          "cumulative_bytes": 5142787,
+          "cumulative_tokens_approx": 1607121
+        },
+        {
+          "depth": 6,
+          "files": 6,
+          "bytes": 6925,
+          "cumulative_bytes": 5149712,
+          "cumulative_tokens_approx": 1609285
+        }
+      ]
+    },
+    {
+      "entry": "ai-rules/agent-work-rules.md",
+      "exists": true,
+      "affordable_depth_by_budget": {
+        "50000": 0,
+        "200000": 1,
+        "1000000": 3
+      },
+      "closure_files": 232,
+      "closure_bytes": 5149712,
+      "closure_tokens_approx": 1609285,
+      "max_depth": 5,
+      "entry_bytes": 5534,
+      "entry_tokens_approx": 1729,
+      "non_markdown_reachable": 39,
+      "broken_links": [
+        "docs/rfc/repository-archetypes-template-release.md -> ../../.github/workflows/deploy-docs.yml",
+        "standards/education-profile.md -> module-01/"
+      ],
+      "depth_profile": [
+        {
+          "depth": 0,
+          "files": 1,
+          "bytes": 5534,
+          "cumulative_bytes": 5534,
+          "cumulative_tokens_approx": 1729
+        },
+        {
+          "depth": 1,
+          "files": 11,
+          "bytes": 264715,
+          "cumulative_bytes": 270249,
+          "cumulative_tokens_approx": 84453
+        },
+        {
+          "depth": 2,
+          "files": 45,
+          "bytes": 786998,
+          "cumulative_bytes": 1057247,
+          "cumulative_tokens_approx": 330390
+        },
+        {
+          "depth": 3,
+          "files": 73,
+          "bytes": 1823936,
+          "cumulative_bytes": 2881183,
+          "cumulative_tokens_approx": 900370
+        },
+        {
+          "depth": 4,
+          "files": 75,
+          "bytes": 2016981,
+          "cumulative_bytes": 4898164,
+          "cumulative_tokens_approx": 1530676
+        },
+        {
+          "depth": 5,
+          "files": 27,
+          "bytes": 251548,
+          "cumulative_bytes": 5149712,
+          "cumulative_tokens_approx": 1609285
+        }
+      ]
+    },
+    {
+      "entry": "GOVERNANCE.md",
+      "exists": true,
+      "affordable_depth_by_budget": {
+        "50000": 1,
+        "200000": 1,
+        "1000000": 3
+      },
+      "closure_files": 232,
+      "closure_bytes": 5149712,
+      "closure_tokens_approx": 1609285,
+      "max_depth": 6,
+      "entry_bytes": 1128,
+      "entry_tokens_approx": 352,
+      "non_markdown_reachable": 39,
+      "broken_links": [
+        "docs/rfc/repository-archetypes-template-release.md -> ../../.github/workflows/deploy-docs.yml",
+        "standards/education-profile.md -> module-01/"
+      ],
+      "depth_profile": [
+        {
+          "depth": 0,
+          "files": 1,
+          "bytes": 1128,
+          "cumulative_bytes": 1128,
+          "cumulative_tokens_approx": 352
+        },
+        {
+          "depth": 1,
+          "files": 5,
+          "bytes": 53671,
+          "cumulative_bytes": 54799,
+          "cumulative_tokens_approx": 17125
+        },
+        {
+          "depth": 2,
+          "files": 48,
+          "bytes": 859818,
+          "cumulative_bytes": 914617,
+          "cumulative_tokens_approx": 285818
+        },
+        {
+          "depth": 3,
+          "files": 54,
+          "bytes": 1768076,
+          "cumulative_bytes": 2682693,
+          "cumulative_tokens_approx": 838342
+        },
+        {
+          "depth": 4,
+          "files": 66,
+          "bytes": 1476666,
+          "cumulative_bytes": 4159359,
+          "cumulative_tokens_approx": 1299800
+        },
+        {
+          "depth": 5,
+          "files": 44,
+          "bytes": 898824,
+          "cumulative_bytes": 5058183,
+          "cumulative_tokens_approx": 1580682
+        },
+        {
+          "depth": 6,
+          "files": 14,
+          "bytes": 91529,
+          "cumulative_bytes": 5149712,
+          "cumulative_tokens_approx": 1609285
+        }
+      ]
+    },
+    {
+      "entry": "CONTRIBUTING.md",
+      "exists": true,
+      "affordable_depth_by_budget": {
+        "50000": 0,
+        "200000": 1,
+        "1000000": 2
+      },
+      "closure_files": 232,
+      "closure_bytes": 5149712,
+      "closure_tokens_approx": 1609285,
+      "max_depth": 6,
+      "entry_bytes": 9432,
+      "entry_tokens_approx": 2948,
+      "non_markdown_reachable": 39,
+      "broken_links": [
+        "docs/rfc/repository-archetypes-template-release.md -> ../../.github/workflows/deploy-docs.yml",
+        "standards/education-profile.md -> module-01/"
+      ],
+      "depth_profile": [
+        {
+          "depth": 0,
+          "files": 1,
+          "bytes": 9432,
+          "cumulative_bytes": 9432,
+          "cumulative_tokens_approx": 2948
+        },
+        {
+          "depth": 1,
+          "files": 15,
+          "bytes": 206955,
+          "cumulative_bytes": 216387,
+          "cumulative_tokens_approx": 67621
+        },
+        {
+          "depth": 2,
+          "files": 59,
+          "bytes": 1593807,
+          "cumulative_bytes": 1810194,
+          "cumulative_tokens_approx": 565686
+        },
+        {
+          "depth": 3,
+          "files": 78,
+          "bytes": 2080645,
+          "cumulative_bytes": 3890839,
+          "cumulative_tokens_approx": 1215887
+        },
+        {
+          "depth": 4,
+          "files": 54,
+          "bytes": 927493,
+          "cumulative_bytes": 4818332,
+          "cumulative_tokens_approx": 1505729
+        },
+        {
+          "depth": 5,
+          "files": 23,
+          "bytes": 326755,
+          "cumulative_bytes": 5145087,
+          "cumulative_tokens_approx": 1607840
+        },
+        {
+          "depth": 6,
+          "files": 2,
+          "bytes": 4625,
+          "cumulative_bytes": 5149712,
+          "cumulative_tokens_approx": 1609285
+        }
+      ]
+    },
+    {
+      "entry": "README.md",
+      "exists": true,
+      "affordable_depth_by_budget": {
+        "50000": 0,
+        "200000": 0,
+        "1000000": 1
+      },
+      "closure_files": 232,
+      "closure_bytes": 5149712,
+      "closure_tokens_approx": 1609285,
+      "max_depth": 5,
+      "entry_bytes": 12648,
+      "entry_tokens_approx": 3952,
+      "non_markdown_reachable": 39,
+      "broken_links": [
+        "docs/rfc/repository-archetypes-template-release.md -> ../../.github/workflows/deploy-docs.yml",
+        "standards/education-profile.md -> module-01/"
+      ],
+      "depth_profile": [
+        {
+          "depth": 0,
+          "files": 1,
+          "bytes": 12648,
+          "cumulative_bytes": 12648,
+          "cumulative_tokens_approx": 3952
+        },
+        {
+          "depth": 1,
+          "files": 27,
+          "bytes": 669802,
+          "cumulative_bytes": 682450,
+          "cumulative_tokens_approx": 213266
+        },
+        {
+          "depth": 2,
+          "files": 98,
+          "bytes": 2829937,
+          "cumulative_bytes": 3512387,
+          "cumulative_tokens_approx": 1097621
+        },
+        {
+          "depth": 3,
+          "files": 66,
+          "bytes": 1032658,
+          "cumulative_bytes": 4545045,
+          "cumulative_tokens_approx": 1420327
+        },
+        {
+          "depth": 4,
+          "files": 26,
+          "bytes": 554434,
+          "cumulative_bytes": 5099479,
+          "cumulative_tokens_approx": 1593587
+        },
+        {
+          "depth": 5,
+          "files": 14,
+          "bytes": 50233,
+          "cumulative_bytes": 5149712,
+          "cumulative_tokens_approx": 1609285
+        }
+      ]
+    }
+  ]
+}
