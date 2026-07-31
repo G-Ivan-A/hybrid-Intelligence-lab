@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.65
-updated: 2026-07-31
+version: 1.66
+updated: 2026-08-01
 temperature: 0.1
 ---
 
@@ -13,6 +13,17 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- audit: Отчёт `docs/audit/2026-08-01-ops-artifact-placement-review.md`
+  (issue #465) — перепроверка размещения артефактов PR #462
+  (`research/hub/` vs `docs/analysis/` / `docs/audit/`) против контрактов
+  маршрутизации Research / Analysis / Audit. Вердикт `pass`: работа
+  классифицирована как Research по тай-брейкеру `research-standard.md`
+  («наличие внешних источников, индустриального сравнения или проверки
+  гипотезы относит документ к Research») и по evidence-контейнеру `exp/`,
+  который нормируется только research-стандартом; перенос не требуется и
+  разорвал бы обязательную связь `exp/<issue-slug>/` → parent dated report.
+  Прецедент `research/hub/2026-07-04-hub-as-agent-system-global-analysis.md`
+  подтверждает логику. Артефакты PR #462 не перемещались и не изменялись.
 - research: Отчёт `research/hub/2026-07-31-ops-task-strategy-validation.md`
   и контейнер `research/hub/exp/ops-task-strategy-461/` (issue #461) —
   эмпирическая валидация стратегии постановки задач для AI-агентов по 479 PR и
@@ -73,6 +84,17 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- artifact-map: `pr-ops/artifact-map.md` v1.83 — устранён Minor-finding аудита
+  issue #465: зарегистрированы отчёт
+  `research/hub/2026-07-31-ops-task-strategy-validation.md`, evidence-контейнер
+  `research/hub/exp/ops-task-strategy-461/` (оба созданы в PR #462 без строки в
+  карте) и новый аудит
+  `docs/audit/2026-08-01-ops-artifact-placement-review.md`.
+- tools: `tools/validate-repository-structure.sh` — аудит issue #465 добавлен в
+  allowlist `is_active_file()`; добавлены проверки его 4-компонентного
+  frontmatter (`audit_target`, `evidence_model`, `verdict: pass`) и
+  обязательных секций Audit standard, а также проверки трёх новых строк
+  artifact-map; pin-строки версии artifact-map обновлены до v1.83.
 - backlog: `pr-ops/backlog.md` v1.40 — добавлены B-092 (исследование по issue
   #457, статус `review`) и B-093 (RFC по архитектуре постановки задач, `TODO`,
   зависит от B-092), а также строка источника активного порядка для issue #457.

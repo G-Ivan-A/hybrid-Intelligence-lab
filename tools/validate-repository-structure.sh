@@ -304,6 +304,7 @@ is_active_file() {
     docs/audit/2026-06-29-research-artifact-format-contract-audit.md | \
     docs/audit/2026-07-01-documentation-boundary-audit.md | \
     docs/audit/2026-07-04-cross-standard-stress-tests.md | \
+    docs/audit/2026-08-01-ops-artifact-placement-review.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -1534,11 +1535,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.82"
+require_text "pr-ops/artifact-map.md" "version: 1.83"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-07-31"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-01"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2068,6 +2069,22 @@ require_text "docs/audit/2026-07-01-documentation-boundary-audit.md" "evidence_m
 require_text "docs/audit/2026-07-01-documentation-boundary-audit.md" "verdict: conditional"
 require_text "docs/audit/2026-07-01-documentation-boundary-audit.md" "## Summary / BLUF"
 require_text "docs/audit/2026-07-01-documentation-boundary-audit.md" "## Related Artifacts"
+
+audit_465="docs/audit/2026-08-01-ops-artifact-placement-review.md"
+require_text "$audit_465" "audit_target:"
+require_text "$audit_465" "evidence_model:"
+require_text "$audit_465" "verdict: pass"
+require_text "$audit_465" "## Summary / BLUF"
+require_text "$audit_465" "## Scope / Target"
+require_text "$audit_465" "## Method / Evidence"
+require_text "$audit_465" "## Findings / Verdict"
+require_text "$audit_465" "## Remediation / Deviation"
+require_text "$audit_465" "## Related Artifacts"
+require_text "$audit_465" "research/hub/2026-07-31-ops-task-strategy-validation.md"
+require_text "$audit_465" "research/hub/exp/ops-task-strategy-461/"
+require_text "pr-ops/artifact-map.md" '| `/research/hub/2026-07-31-ops-task-strategy-validation.md` | исследование | — |'
+require_text "pr-ops/artifact-map.md" '| `/research/hub/exp/ops-task-strategy-461/` | исследование | — |'
+require_text "pr-ops/artifact-map.md" '| `/docs/audit/2026-08-01-ops-artifact-placement-review.md` | аудит | — |'
 
 require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "status: draft"
 require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "version: 0.1"
