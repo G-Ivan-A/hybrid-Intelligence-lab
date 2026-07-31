@@ -1,0 +1,22 @@
+validate	Validate repository structure	﻿2026-07-31T09:07:24.2271759Z ##[group]Run ./tools/validate-repository-structure.sh
+validate	Validate repository structure	2026-07-31T09:07:24.2272194Z ^[[36;1m./tools/validate-repository-structure.sh^[[0m
+validate	Validate repository structure	2026-07-31T09:07:24.2320497Z shell: /usr/bin/bash -e {0}
+validate	Validate repository structure	2026-07-31T09:07:24.2320776Z env:
+validate	Validate repository structure	2026-07-31T09:07:24.2321056Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+validate	Validate repository structure	2026-07-31T09:07:24.2321494Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+validate	Validate repository structure	2026-07-31T09:07:24.2321921Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+validate	Validate repository structure	2026-07-31T09:07:24.2322295Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+validate	Validate repository structure	2026-07-31T09:07:24.2322675Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+validate	Validate repository structure	2026-07-31T09:07:24.2323240Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+validate	Validate repository structure	2026-07-31T09:07:24.2323566Z ##[endgroup]
+validate	Validate repository structure	2026-07-31T09:07:24.2687425Z Evidence structure validation passed.
+validate	Validate repository structure	2026-07-31T09:07:26.0528831Z File naming validation passed.
+validate	Validate repository structure	2026-07-31T09:07:26.0860818Z ERROR: tracked legacy file without -old suffix: research/ai-education/memory/00-introduction.md
+validate	Validate repository structure	2026-07-31T09:07:26.0864594Z ERROR: tracked legacy file without -old suffix: research/ai-education/memory/10-theory.md
+validate	Validate repository structure	2026-07-31T09:07:26.0869070Z ERROR: tracked legacy file without -old suffix: research/ai-education/memory/20-taxonomy.md
+validate	Validate repository structure	2026-07-31T09:07:26.0874417Z ERROR: tracked legacy file without -old suffix: research/ai-education/memory/30-decision-framework.md
+validate	Validate repository structure	2026-07-31T09:07:26.0879024Z ERROR: tracked legacy file without -old suffix: research/ai-education/memory/40-practice-and-cases.md
+validate	Validate repository structure	2026-07-31T09:07:26.0883936Z ERROR: tracked legacy file without -old suffix: research/ai-education/memory/50-open-research.md
+validate	Validate repository structure	2026-07-31T09:07:28.4712628Z 
+validate	Validate repository structure	2026-07-31T09:07:28.4713384Z Repository structure validation failed with 6 issue(s).
+validate	Validate repository structure	2026-07-31T09:07:28.4730969Z ##[error]Process completed with exit code 1.
