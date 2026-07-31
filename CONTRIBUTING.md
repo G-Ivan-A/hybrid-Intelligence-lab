@@ -132,6 +132,7 @@ sufficient frontmatter из
 ```bash
 bash tools/test-frontmatter-validator.sh
 bash tools/test-smart-sync.sh
+bash tools/test-reference-research-terminology.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh

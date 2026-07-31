@@ -31,6 +31,9 @@ jobs:
       - name: Test evidence structure validator
         run: bash tools/test-evidence-structure-validator.sh
 
+      - name: Test reference research terminology
+        run: bash tools/test-reference-research-terminology.sh
+
       - name: Test smart sync
         run: bash tools/test-smart-sync.sh
 

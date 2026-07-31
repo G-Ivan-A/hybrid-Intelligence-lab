@@ -354,6 +354,7 @@ is_active_file() {
     tools/sync-from-hub.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-evidence-structure-validator.sh | \
+    tools/test-reference-research-terminology.sh | \
     tools/test-mango-kb-migration-contract.sh | \
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
@@ -787,6 +788,7 @@ required_files=(
   "tools/sync-from-hub.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
+  "tools/test-reference-research-terminology.sh"
   "tools/test-mango-kb-migration-contract.sh"
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
@@ -1268,8 +1270,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 1.6"
-require_text "standards/glossary.md" "updated: 2026-07-04"
+require_text "standards/glossary.md" "version: 1.7"
+require_text "standards/glossary.md" "updated: 2026-07-31"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"
@@ -1876,6 +1878,10 @@ require_text "pr-ops/backlog.md" "**B-089**"
 require_text "pr-ops/backlog.md" "**B-090**"
 require_text "pr-ops/backlog.md" "**B-091**"
 require_text "pr-ops/backlog.md" "Conceptual Framing"
+require_text "docs/rfc/2026-07-17-rfc-reference-research-pattern.md" "Theory → Taxonomy → Decision Framework → Practice"
+require_text "docs/rfc/2026-07-17-rfc-reference-research-pattern.md" "Conceptual Framing → Object Model → Decision Space"
+require_text "standards/glossary.md" "| Conceptual Framing |"
+require_text "standards/glossary.md" "| Mental Model | **Deprecated:**"
 require_text "pr-ops/backlog.md" "Reference Pattern (Experimental)"
 
 require_text "pr-ops/backlog-instruction.md" "status: canonical"
@@ -2511,6 +2517,8 @@ require_text "tools/test-frontmatter-validator.sh" "valid governance status and 
 require_text "tools/test-frontmatter-validator.sh" "valid docs/audit metadata"
 require_text "tools/test-frontmatter-validator.sh" "audit required target"
 require_text "tools/test-frontmatter-validator.sh" "valid docs/guides metadata"
+require_text "tools/test-reference-research-terminology.sh" "canonical Research Method sequence"
+require_text "tools/test-reference-research-terminology.sh" "canonical Domain Methodology sequence"
 require_text "tools/test-post-migration-validator.sh" "legacy root paths"
 require_text "tools/test-sprint-5-agent-model.sh" "Sprint 5 agent-model regression tests passed."
 require_text "tools/generate-manifest.py" "templates/manifest.json"
@@ -2527,6 +2535,7 @@ require_text ".github/workflows/validate.yml" "./tools/validate-file-naming.sh"
 require_text ".github/workflows/validate.yml" "Test frontmatter validator"
 require_text ".github/workflows/validate.yml" "bash tools/test-frontmatter-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-evidence-structure-validator.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-reference-research-terminology.sh"
 require_text ".github/workflows/validate.yml" "Test post-migration validator invariants"
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"

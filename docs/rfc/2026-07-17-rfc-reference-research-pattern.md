@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-07-17
+version: 0.2
+updated: 2026-07-31
 temperature: 0.2
 owner: G-Ivan-A
 rfc-scope: A
@@ -158,6 +158,15 @@ RFC **не принимает** решение: он фиксирует набл
 
 Это **центральное** различение RFC, и его смешение — главный способ применить
 паттерн неправильно.
+
+- **Research Method** описывает, как Хаб проводит исследование:
+  **Theory → Taxonomy → Decision Framework → Practice**.
+- **Domain Methodology** описывает устройство конкретного объекта исследования:
+  **Conceptual Framing → Object Model → Decision Space**.
+
+Первая последовательность универсальна для Reference Research Pattern и задаёт
+маршрут работы. Вторая наполняется заново для каждого домена и задаёт содержание,
+но не порядок проведения исследования.
 
 | | **Research Method** | **Domain Methodology** |
 | --- | --- | --- |
