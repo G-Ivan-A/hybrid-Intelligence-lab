@@ -1,0 +1,260 @@
+{
+  "model": "contract index — issue-time gate vs PR-time postcondition",
+  "corpus": {
+    "pull_requests": 479,
+    "non_productive": 10
+  },
+  "issue_time_gates": [
+    {
+      "required_any_of": [
+        "nonempty_rule"
+      ],
+      "evaluated": 466,
+      "flagged": 464,
+      "flag_rate": 0.9957,
+      "failures_total": 10,
+      "failures_caught": 10,
+      "recall": 1.0,
+      "false_positives": 454,
+      "precision": 0.0216,
+      "precision_ci95": [
+        0.0117,
+        0.0392
+      ],
+      "human_interruptions_per_failure_caught": 45.4
+    },
+    {
+      "required_any_of": [
+        "autonomy_rule",
+        "escalation_rule"
+      ],
+      "evaluated": 466,
+      "flagged": 453,
+      "flag_rate": 0.9721,
+      "failures_total": 10,
+      "failures_caught": 9,
+      "recall": 0.9,
+      "false_positives": 444,
+      "precision": 0.0199,
+      "precision_ci95": [
+        0.0105,
+        0.0373
+      ],
+      "human_interruptions_per_failure_caught": 49.3
+    },
+    {
+      "required_any_of": [
+        "verification_rule",
+        "escalation_rule",
+        "autonomy_rule",
+        "nonempty_rule"
+      ],
+      "evaluated": 466,
+      "flagged": 419,
+      "flag_rate": 0.8991,
+      "failures_total": 10,
+      "failures_caught": 9,
+      "recall": 0.9,
+      "false_positives": 410,
+      "precision": 0.0215,
+      "precision_ci95": [
+        0.0113,
+        0.0403
+      ],
+      "human_interruptions_per_failure_caught": 45.6
+    }
+  ],
+  "pr_time_postcondition": {
+    "rule": "a merged PR closing an issue must change at least one file",
+    "evaluated": 472,
+    "flagged": 4,
+    "flag_rate": 0.0085,
+    "false_positives_by_construction": 0,
+    "flagged_prs": [
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 39,
+        "issue": 37,
+        "changed_files": 0,
+        "churn": 0,
+        "detail_score": 4,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/mango_ba_prompts",
+        "pr": 51,
+        "issue": 50,
+        "changed_files": 0,
+        "churn": 0,
+        "detail_score": 5,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 440,
+        "issue": 433,
+        "changed_files": 0,
+        "churn": 0,
+        "detail_score": 8,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 454,
+        "issue": 453,
+        "changed_files": 0,
+        "churn": 0,
+        "detail_score": 8,
+        "contracts_present": [
+          "escalation_rule",
+          "verification_rule"
+        ]
+      }
+    ],
+    "share_of_all_non_productive": 0.4
+  },
+  "pr_time_zero_diff_at_close": {
+    "rule": "a closed PR linked to an issue changed no file",
+    "caveat": "Six of the ten non-productive pull requests changed no file at all — four\nmerged empty, two closed empty. Widening the check from `merged` to `closed`\ntherefore raises coverage by half again. Unlike the merge-time variant this\none is not free of false positives: a task can be cancelled deliberately,\nand a deliberately cancelled task also closes with an empty diff. The check\ncannot tell the two apart, so it is a signal for review, not a gate.",
+    "evaluated": 478,
+    "flagged": 6,
+    "flag_rate": 0.0126,
+    "cases": [
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 39,
+        "issue": 37,
+        "outcome": "empty-merge",
+        "detail_score": 4
+      },
+      {
+        "repo": "G-Ivan-A/mango_ba_prompts",
+        "pr": 51,
+        "issue": 50,
+        "outcome": "empty-merge",
+        "detail_score": 5
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 84,
+        "issue": 83,
+        "outcome": "abandoned",
+        "detail_score": 4
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 408,
+        "issue": 404,
+        "outcome": "abandoned",
+        "detail_score": 1
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 440,
+        "issue": 433,
+        "outcome": "empty-merge",
+        "detail_score": 8
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 454,
+        "issue": 453,
+        "outcome": "empty-merge",
+        "detail_score": 8
+      }
+    ]
+  },
+  "residual_not_covered": {
+    "abandoned": 6,
+    "note": "A PR-time postcondition only fires on merges. Abandoned pull requests close without merging, so they pass every artifact check by never producing an artifact. This is the residual the postcondition does not address and the reason it is a floor, not a complete answer.",
+    "cases": [
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 84,
+        "issue": 83,
+        "churn": 0,
+        "detail_score": 4,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/clarify-engine-ai",
+        "pr": 96,
+        "issue": 90,
+        "churn": 1256,
+        "detail_score": 2,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/mango_ba_prompts",
+        "pr": 114,
+        "issue": 113,
+        "churn": 961,
+        "detail_score": 4,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 179,
+        "issue": 176,
+        "churn": 2212,
+        "detail_score": 4,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 190,
+        "issue": 189,
+        "churn": 1,
+        "detail_score": 4,
+        "contracts_present": []
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 408,
+        "issue": 404,
+        "churn": 0,
+        "detail_score": 1,
+        "contracts_present": []
+      }
+    ]
+  },
+  "adoption_cost": {
+    "evaluated": 466,
+    "clauses": [
+      {
+        "clause": "verification_rule",
+        "present_in": 37,
+        "share_of_corpus": 0.0794,
+        "would_interrupt": 429
+      },
+      {
+        "clause": "escalation_rule",
+        "present_in": 7,
+        "share_of_corpus": 0.015,
+        "would_interrupt": 459
+      },
+      {
+        "clause": "autonomy_rule",
+        "present_in": 7,
+        "share_of_corpus": 0.015,
+        "would_interrupt": 459
+      },
+      {
+        "clause": "nonempty_rule",
+        "present_in": 2,
+        "share_of_corpus": 0.0043,
+        "would_interrupt": 464
+      },
+      {
+        "clause": "any_contract",
+        "present_in": 47,
+        "share_of_corpus": 0.1009,
+        "would_interrupt": 419
+      }
+    ]
+  },
+  "conclusion_inputs": {
+    "why_gates_are_expensive": "Decision contracts appear in a small minority of task statements, so a fail-closed precondition on their presence flags most of the corpus. Its recall on real failures is high only because it flags nearly everything, which is not detection.",
+    "why_the_postcondition_is_cheap": "It fires on an arithmetic property of the delivered diff, needs no wording in the task, and cannot misread prose."
+  }
+}

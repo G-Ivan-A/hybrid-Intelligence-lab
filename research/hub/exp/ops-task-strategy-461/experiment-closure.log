@@ -1,0 +1,9 @@
+repository markdown: 253 files, 5228 KiB, ~1673114 tokens
+
+ai-rules/agent-onboarding-protocol.md         entry~  6754tok  closure 232 files ~1609285tok  depth=6  broken=2  affordable_depth@200k=1
+ai-rules/agent-work-rules.md                  entry~  1729tok  closure 232 files ~1609285tok  depth=5  broken=2  affordable_depth@200k=1
+GOVERNANCE.md                                 entry~   352tok  closure 232 files ~1609285tok  depth=6  broken=2  affordable_depth@200k=1
+CONTRIBUTING.md                               entry~  2948tok  closure 232 files ~1609285tok  depth=6  broken=2  affordable_depth@200k=1
+README.md                                     entry~  3952tok  closure 232 files ~1609285tok  depth=5  broken=2  affordable_depth@200k=0
+
+wrote /tmp/gh-issue-solver-1785532149354/research/hub/exp/ops-task-strategy-461/experiment-closure.json

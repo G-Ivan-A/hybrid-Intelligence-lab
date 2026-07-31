@@ -1,0 +1,19 @@
+corpus: 479 PRs, 10 non-productive
+
+issue-time gates (fail-closed on missing contract):
+  require any of nonempty_rule                                          
+    flags 464/466 (99.6%)  recall=1.0  precision=0.0216  interruptions per catch=45.4
+  require any of autonomy_rule+escalation_rule                          
+    flags 453/466 (97.2%)  recall=0.9  precision=0.0199  interruptions per catch=49.3
+  require any of verification_rule+escalation_rule+autonomy_rule+nonempty_rule
+    flags 419/466 (89.9%)  recall=0.9  precision=0.0215  interruptions per catch=45.6
+
+PR-time postcondition (non-empty diff):
+  flags 4/472 (0.85%)  false positives=0  covers 40% of non-productive PRs
+
+PR-time zero diff at close (merged or closed):
+  flags 6/478 (1.26%)  covers 60% of non-productive PRs, but cannot distinguish a cancelled task
+
+residual: 6 abandoned PRs no artifact check can see
+
+wrote /tmp/gh-issue-solver-1785532149354/research/hub/exp/ops-task-strategy-461/model-contract-index.json

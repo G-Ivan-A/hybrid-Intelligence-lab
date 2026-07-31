@@ -1,0 +1,516 @@
+{
+  "source": "corpus-metrics.json",
+  "collected_at": "2026-07-31T21:18:27+00:00",
+  "seed": 20260731,
+  "outcomes": {
+    "per_repo": {
+      "G-Ivan-A/hybrid-Intelligence-lab": {
+        "merged": 224,
+        "empty-merge": 3,
+        "abandoned": 4,
+        "open": 1
+      },
+      "G-Ivan-A/clarify-engine-ai": {
+        "merged": 118,
+        "abandoned": 1
+      },
+      "G-Ivan-A/mango_ba_prompts": {
+        "merged": 126,
+        "empty-merge": 1,
+        "abandoned": 1
+      }
+    },
+    "total": {
+      "merged": 468,
+      "empty-merge": 4,
+      "abandoned": 6,
+      "open": 1
+    },
+    "linked_to_issue": 467,
+    "unlinked_prs": 12
+  },
+  "failure_cases": {
+    "linked": [
+      {
+        "repo": "G-Ivan-A/clarify-engine-ai",
+        "pr": 96,
+        "issue": 90,
+        "outcome": "abandoned",
+        "issue_title": "knowledge_base/indexing`: Fix low metadata coverage (13.56% → ≥65%) via Section Propagation & robust fallbacks  ",
+        "detail_score": 2,
+        "contract_score": 0,
+        "length_chars": 4348,
+        "features": [
+          "context",
+          "dod"
+        ],
+        "commit_count": 2,
+        "has_revert": false
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 39,
+        "issue": 37,
+        "outcome": "empty-merge",
+        "issue_title": "[tools] Точечные правки к задаче #35: чекбоксы, статус, приоритет",
+        "detail_score": 4,
+        "contract_score": 0,
+        "length_chars": 1957,
+        "features": [
+          "goal",
+          "context",
+          "operating_mode",
+          "validation"
+        ],
+        "commit_count": 2,
+        "has_revert": true
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 84,
+        "issue": 83,
+        "outcome": "abandoned",
+        "issue_title": "[research] Анализ промптов пользователя: применение стандарта классификации и оценка актуальности",
+        "detail_score": 4,
+        "contract_score": 0,
+        "length_chars": 6503,
+        "features": [
+          "goal",
+          "context",
+          "constraints",
+          "operating_mode"
+        ],
+        "commit_count": 2,
+        "has_revert": true
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 179,
+        "issue": 176,
+        "outcome": "abandoned",
+        "issue_title": "cleanup: удалить устаревшие файлы и empty directories по результатам аудита",
+        "detail_score": 4,
+        "contract_score": 0,
+        "length_chars": 3761,
+        "features": [
+          "context",
+          "constraints",
+          "operating_mode",
+          "validation"
+        ],
+        "commit_count": 3,
+        "has_revert": false
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 190,
+        "issue": 189,
+        "outcome": "abandoned",
+        "issue_title": "research: создать интерактивный документ для согласования 10 portal-документов (MD + HTML)",
+        "detail_score": 4,
+        "contract_score": 0,
+        "length_chars": 2862,
+        "features": [
+          "goal",
+          "dod",
+          "constraints",
+          "operating_mode"
+        ],
+        "commit_count": 1,
+        "has_revert": false
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 408,
+        "issue": 404,
+        "outcome": "abandoned",
+        "issue_title": "backlog: перевести в DONE",
+        "detail_score": 1,
+        "contract_score": 0,
+        "length_chars": 197,
+        "features": [
+          "validation"
+        ],
+        "commit_count": 2,
+        "has_revert": false
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 440,
+        "issue": 433,
+        "outcome": "empty-merge",
+        "issue_title": "chore/adr: Исправить ссылку в evals-contract и расширить scope ADR-008 на все стандарты (B-067 post-merge)",
+        "detail_score": 8,
+        "contract_score": 0,
+        "length_chars": 4817,
+        "features": [
+          "goal",
+          "context",
+          "dod",
+          "sources",
+          "steps",
+          "constraints",
+          "operating_mode",
+          "validation"
+        ],
+        "commit_count": 2,
+        "has_revert": true
+      },
+      {
+        "repo": "G-Ivan-A/hybrid-Intelligence-lab",
+        "pr": 454,
+        "issue": 453,
+        "outcome": "empty-merge",
+        "issue_title": "chore: Актуализация активного бэклога по валидированным PR (#452, #443) и исправление устаревших путей в описаниях",
+        "detail_score": 8,
+        "contract_score": 2,
+        "length_chars": 6676,
+        "features": [
+          "goal",
+          "context",
+          "dod",
+          "sources",
+          "steps",
+          "constraints",
+          "operating_mode",
+          "validation",
+          "verification_rule",
+          "escalation_rule"
+        ],
+        "commit_count": 2,
+        "has_revert": true
+      },
+      {
+        "repo": "G-Ivan-A/mango_ba_prompts",
+        "pr": 51,
+        "issue": 50,
+        "outcome": "empty-merge",
+        "issue_title": "creative: create draft prompts from prompts-list.txtвое создание файлов для текущих внешних промптов",
+        "detail_score": 5,
+        "contract_score": 0,
+        "length_chars": 4769,
+        "features": [
+          "goal",
+          "dod",
+          "steps",
+          "constraints",
+          "operating_mode"
+        ],
+        "commit_count": 2,
+        "has_revert": true
+      },
+      {
+        "repo": "G-Ivan-A/mango_ba_prompts",
+        "pr": 114,
+        "issue": 113,
+        "outcome": "abandoned",
+        "issue_title": "research: анализ боевого эксперимента BCREQ-1059 (цепочка промптов для ТЗ по email-маршрутизации)",
+        "detail_score": 4,
+        "contract_score": 0,
+        "length_chars": 20518,
+        "features": [
+          "goal",
+          "dod",
+          "constraints",
+          "operating_mode"
+        ],
+        "commit_count": 4,
+        "has_revert": true
+      }
+    ],
+    "unlinked": []
+  },
+  "detail_vs_outcome": {
+    "detail_score": {
+      "n_a": 10,
+      "n_b": 456,
+      "mean_a": 4.4,
+      "mean_b": 4.061,
+      "observed_diff": 0.339,
+      "permutations": 20000,
+      "p_value": 0.6478
+    },
+    "length_chars": {
+      "n_a": 10,
+      "n_b": 456,
+      "mean_a": 5640.8,
+      "mean_b": 6384.998,
+      "observed_diff": -744.198,
+      "permutations": 20000,
+      "p_value": 0.6169
+    },
+    "contract_score": {
+      "n_a": 10,
+      "n_b": 456,
+      "mean_a": 0.2,
+      "mean_b": 0.112,
+      "observed_diff": 0.088,
+      "permutations": 20000,
+      "p_value": 0.6416
+    },
+    "note": "group_a = non-productive (empty-merge + abandoned), group_b = merged with a real diff"
+  },
+  "feature_association": {
+    "goal": {
+      "kind": "detail",
+      "failures_with": 7,
+      "failures_without": 3,
+      "productive_with": 332,
+      "productive_without": 124,
+      "rate_failures": 0.7,
+      "rate_productive": 0.728,
+      "fisher_p": 1.0
+    },
+    "context": {
+      "kind": "detail",
+      "failures_with": 6,
+      "failures_without": 4,
+      "productive_with": 350,
+      "productive_without": 106,
+      "rate_failures": 0.6,
+      "rate_productive": 0.768,
+      "fisher_p": 0.2561
+    },
+    "dod": {
+      "kind": "detail",
+      "failures_with": 6,
+      "failures_without": 4,
+      "productive_with": 293,
+      "productive_without": 163,
+      "rate_failures": 0.6,
+      "rate_productive": 0.643,
+      "fisher_p": 0.7506
+    },
+    "sources": {
+      "kind": "detail",
+      "failures_with": 2,
+      "failures_without": 8,
+      "productive_with": 78,
+      "productive_without": 378,
+      "rate_failures": 0.2,
+      "rate_productive": 0.171,
+      "fisher_p": 0.6838
+    },
+    "steps": {
+      "kind": "detail",
+      "failures_with": 3,
+      "failures_without": 7,
+      "productive_with": 70,
+      "productive_without": 386,
+      "rate_failures": 0.3,
+      "rate_productive": 0.154,
+      "fisher_p": 0.1956
+    },
+    "constraints": {
+      "kind": "detail",
+      "failures_with": 7,
+      "failures_without": 3,
+      "productive_with": 225,
+      "productive_without": 231,
+      "rate_failures": 0.7,
+      "rate_productive": 0.493,
+      "fisher_p": 0.22
+    },
+    "operating_mode": {
+      "kind": "detail",
+      "failures_with": 8,
+      "failures_without": 2,
+      "productive_with": 301,
+      "productive_without": 155,
+      "rate_failures": 0.8,
+      "rate_productive": 0.66,
+      "fisher_p": 0.5066
+    },
+    "validation": {
+      "kind": "detail",
+      "failures_with": 5,
+      "failures_without": 5,
+      "productive_with": 203,
+      "productive_without": 253,
+      "rate_failures": 0.5,
+      "rate_productive": 0.445,
+      "fisher_p": 0.7576
+    },
+    "verification_rule": {
+      "kind": "contract",
+      "failures_with": 1,
+      "failures_without": 9,
+      "productive_with": 36,
+      "productive_without": 420,
+      "rate_failures": 0.1,
+      "rate_productive": 0.079,
+      "fisher_p": 0.5664
+    },
+    "escalation_rule": {
+      "kind": "contract",
+      "failures_with": 1,
+      "failures_without": 9,
+      "productive_with": 6,
+      "productive_without": 450,
+      "rate_failures": 0.1,
+      "rate_productive": 0.013,
+      "fisher_p": 0.1417
+    },
+    "autonomy_rule": {
+      "kind": "contract",
+      "failures_with": 0,
+      "failures_without": 10,
+      "productive_with": 7,
+      "productive_without": 449,
+      "rate_failures": 0.0,
+      "rate_productive": 0.015,
+      "fisher_p": 1.0
+    },
+    "nonempty_rule": {
+      "kind": "contract",
+      "failures_with": 0,
+      "failures_without": 10,
+      "productive_with": 2,
+      "productive_without": 454,
+      "rate_failures": 0.0,
+      "rate_productive": 0.004,
+      "fisher_p": 1.0
+    }
+  },
+  "detail_vs_delivered_work": {
+    "detail_score_vs_churn": {
+      "n": 456,
+      "rho": 0.1416,
+      "permutations": 20000,
+      "p_value": 0.0035
+    },
+    "length_vs_churn": {
+      "n": 456,
+      "rho": 0.3774,
+      "permutations": 20000,
+      "p_value": 0.0
+    },
+    "note": "churn = additions + deletions of the merged PR, log10 scale"
+  },
+  "contract_prevalence": {
+    "issues_total": 475,
+    "per_feature": {
+      "verification_rule": {
+        "count": 38,
+        "share": 0.08
+      },
+      "escalation_rule": {
+        "count": 7,
+        "share": 0.015
+      },
+      "autonomy_rule": {
+        "count": 8,
+        "share": 0.017
+      },
+      "nonempty_rule": {
+        "count": 3,
+        "share": 0.006
+      },
+      "goal": {
+        "count": 344,
+        "share": 0.724
+      },
+      "context": {
+        "count": 362,
+        "share": 0.762
+      },
+      "dod": {
+        "count": 306,
+        "share": 0.644
+      },
+      "sources": {
+        "count": 81,
+        "share": 0.171
+      },
+      "steps": {
+        "count": 74,
+        "share": 0.156
+      },
+      "constraints": {
+        "count": 237,
+        "share": 0.499
+      },
+      "operating_mode": {
+        "count": 314,
+        "share": 0.661
+      },
+      "validation": {
+        "count": 212,
+        "share": 0.446
+      }
+    },
+    "issues_with_zero_contracts": 426,
+    "issues_with_full_detail_zero_contracts": 104
+  },
+  "quadrants": {
+    "detail-low/contract-absent": {
+      "n": 315,
+      "failures": 8,
+      "prs": [
+        39,
+        84,
+        179,
+        190,
+        408,
+        96,
+        51,
+        114
+      ],
+      "failure_rate": 0.0254,
+      "failure_rate_ci95": [
+        0.0129,
+        0.0493
+      ]
+    },
+    "detail-low/contract-present": {
+      "n": 28,
+      "failures": 0,
+      "prs": [],
+      "failure_rate": 0.0,
+      "failure_rate_ci95": [
+        0.0,
+        0.1206
+      ]
+    },
+    "detail-high/contract-absent": {
+      "n": 104,
+      "failures": 1,
+      "prs": [
+        440
+      ],
+      "failure_rate": 0.0096,
+      "failure_rate_ci95": [
+        0.0017,
+        0.0525
+      ]
+    },
+    "detail-high/contract-present": {
+      "n": 19,
+      "failures": 1,
+      "prs": [
+        454
+      ],
+      "failure_rate": 0.0526,
+      "failure_rate_ci95": [
+        0.0094,
+        0.2464
+      ]
+    }
+  },
+  "power": {
+    "failures": 10,
+    "linked_prs": 467,
+    "failure_rate": 0.0214,
+    "failure_rate_ci95": [
+      0.0117,
+      0.039
+    ],
+    "min_detectable_share_gap": {
+      "success_share_0.02": 0.2,
+      "success_share_0.05": 0.3,
+      "success_share_0.1": 0.4,
+      "success_share_0.2": 0.5
+    },
+    "caveat": "With 10 non-productive PRs the corpus can only reveal large differences. A feature present in, say, half the failures and a tenth of the successes would be detectable; anything subtler would not be. Non-significant results here mean 'not resolved by this corpus', not 'no effect'."
+  }
+}

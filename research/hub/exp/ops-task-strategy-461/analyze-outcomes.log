@@ -1,0 +1,17 @@
+outcomes: {'merged': 468, 'empty-merge': 4, 'abandoned': 6, 'open': 1}
+linked PR->issue: 467 (unlinked 12)
+failure set: 10 linked, 0 unlinked
+  detail_score: failures 4.4 vs merged 4.061 (p=0.6478, n=10/456)
+  length_chars: failures 5640.8 vs merged 6384.998 (p=0.6169, n=10/456)
+  contract_score: failures 0.2 vs merged 0.112 (p=0.6416, n=10/456)
+feature association (p < 0.2 shown):
+  [contract] escalation_rule: failures 0.1 vs productive 0.013 (p=0.1417)
+  [detail] steps: failures 0.3 vs productive 0.154 (p=0.1956)
+detail_score vs churn: {'n': 456, 'rho': 0.1416, 'permutations': 20000, 'p_value': 0.0035}
+quadrants (failure rate):
+  detail-high/contract-absent        n=104 failures=1 rate=0.0096 ci95=[0.0017, 0.0525]
+  detail-high/contract-present       n= 19 failures=1 rate=0.0526 ci95=[0.0094, 0.2464]
+  detail-low/contract-absent         n=315 failures=8 rate=0.0254 ci95=[0.0129, 0.0493]
+  detail-low/contract-present        n= 28 failures=0 rate=0.0 ci95=[0.0, 0.1206]
+power: 0.0214 ci95=[0.0117, 0.039] mde={'success_share_0.02': 0.2, 'success_share_0.05': 0.3, 'success_share_0.1': 0.4, 'success_share_0.2': 0.5}
+wrote /tmp/gh-issue-solver-1785532149354/research/hub/exp/ops-task-strategy-461/analysis-outcomes.json
