@@ -288,6 +288,7 @@ is_active_file() {
     docs/rfc/2026-07-02-rfc-reports-structure.md | \
     docs/rfc/2026-07-02-rfc-audit-structure.md | \
     docs/rfc/2026-07-02-rfc-analysis-structure.md | \
+    docs/rfc/2026-08-06-rfc-task-statement-architecture.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -1541,7 +1542,7 @@ require_text "pr-ops/artifact-map.md" "version: 1.83"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-01"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-06"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1632,13 +1633,34 @@ require_text "pr-ops/artifact-map.md" "research/external-knowledge/external-insi
 require_text "pr-ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.20"
+require_text "docs/rfc/README.md" "version: 1.21"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-07-02"
+require_text "docs/rfc/README.md" "updated: 2026-08-06"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
+
+rfc_469="docs/rfc/2026-08-06-rfc-task-statement-architecture.md"
+require_text "$rfc_469" "status: draft"
+require_text "$rfc_469" "rfc-scope: A"
+require_text "$rfc_469" "owner: G-Ivan-A"
+require_text "$rfc_469" "## RFC Metadata"
+require_text "$rfc_469" "## Summary"
+require_text "$rfc_469" "## Motivation"
+require_text "$rfc_469" "## Goals and Non-goals"
+require_text "$rfc_469" "## Proposal"
+require_text "$rfc_469" "## Alternatives"
+require_text "$rfc_469" "## Trade-offs"
+require_text "$rfc_469" "## Expert Review"
+require_text "$rfc_469" "## Impacted Artifacts"
+require_text "$rfc_469" "## Implementation and Validation"
+require_text "$rfc_469" "## Lifecycle and Decision Path"
+require_text "$rfc_469" "## Open Questions"
+require_text "$rfc_469" "## Related Artifacts"
+require_text "$rfc_469" "research/hub/2026-07-31-ops-task-strategy-validation.md"
+require_text "docs/rfc/README.md" "2026-08-06-rfc-task-statement-architecture.md"
+require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-06-rfc-task-statement-architecture.md` | RFC | справка |'
 
 # External knowledge integration (issue #227): Base Registry + insights + RFC.
 require_text "research/external-knowledge/README.md" "status: draft"
