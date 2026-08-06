@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-07-31
+version: 0.4
+updated: 2026-08-06
 temperature: 0.1
 ---
 
@@ -25,6 +25,11 @@ temperature: 0.1
   AI-агентов (контуры чтения и записи, жизненный цикл, забывание,
   темпоральность). Модуль содержит образовательный срез для бизнес-аналитиков
   (Приложение A в [`40-practice-and-cases.md`](memory/40-practice-and-cases.md)).
+- [`information-extraction-graph-modeling/`](information-extraction-graph-modeling/00-introduction.md)
+  — четвёртая валидация паттерна: извлечение структурированных знаний,
+  нормализация сущностей и моделирование графа. Модуль содержит образовательный
+  срез для бизнес-аналитиков (Приложение A в
+  [`40-practice-and-cases.md`](information-extraction-graph-modeling/40-practice-and-cases.md)).
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).

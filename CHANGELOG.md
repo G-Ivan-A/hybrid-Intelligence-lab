@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.67
+version: 1.68
 updated: 2026-08-06
 temperature: 0.1
 ---
@@ -22,6 +22,23 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Модуль `research/ai-education/information-extraction-graph-modeling/`
+  (issue #471) — четвёртая валидация Reference Research Pattern. Шесть файлов
+  описывают конвейер `Detect → Extract → Resolve → Validate → Commit`,
+  таксономии задач, методов, оркестрации и строгости схемы, матрицы выбора,
+  entity resolution, кореференцию, графовые представления и лестницу
+  верификации V0–V6. Практическая часть сопоставляет LangChain, LlamaIndex,
+  OpenAI Agents SDK и Anthropic, JSON/Pydantic/онтологии,
+  NetworkX/Neo4j/pgvector, академические бенчмарки и содержит образовательное
+  приложение для бизнес-аналитиков. Открытые вопросы связывают модуль с
+  Retrieval, Memory и Task Processing. Исследование не меняет правил или
+  архитектуры репозитория.
+- registry: `research/external-knowledge/external-sources-registry.md` v0.13 —
+  зарегистрированы 22 источника `ext-196`..`ext-217`, использованные в issue
+  #471.
+- artifact-map: `pr-ops/artifact-map.md` v1.84 — зарегистрированы шесть файлов
+  модуля Information Extraction & Graph Modeling; индекс AI Education и
+  validator allowlist синхронизированы.
 - rfc: Draft `docs/rfc/2026-08-06-rfc-task-statement-architecture.md`
   (issue #469) — архитектура постановки задач для AI-агентов на основе
   эмпирической валидации PR #462. Предлагает комбинацию C+D+E из матрицы
