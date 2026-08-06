@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.20
-updated: 2026-07-02
+version: 1.21
+updated: 2026-08-06
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -63,6 +63,7 @@ RFC - это рекомендация или proposal, а не блокирую�
 | [2026-07-02-rfc-reports-structure.md](2026-07-02-rfc-reports-structure.md) | Accepted RFC структуры Reports-артефактов: базовый стандарт Report + лёгкие профили подтипов (`audit`/`report`/`statistics`) как Вариант C («A сейчас, B потом»), канонический routing `docs/report/` (единственное число), frontmatter с relation-метаданными (`based_on`/`source`/`scope`/`supersedes`/`related_artifacts`), границы Reports ↔ Analysis ↔ Audit ↔ Research evidence и последствия для цепочки B-041..B-044. Decision record — [ADR-004](../adr/2026-07-adr-004-reports-structure.md). |
 | [2026-07-02-rfc-audit-structure.md](2026-07-02-rfc-audit-structure.md) | Draft RFC структуры Audit-артефактов: базовый стандарт Audit + **4-компонентная модель** (compliance target / evidence model / verdict-finding / deviation handling) как Вариант C, разграничение Audit-процесс vs audit-report output (координация с Reports B-043), канонический routing `docs/audit/` (без ADR-002-дрейфа), frontmatter Audit с audit-specific метаданными (`audit_target`/`evidence_model`/`verdict` обязательны; `severity_scale`/`follow_up`/`related_norm` опциональны) и relation-полями, границы Audit ↔ Research ↔ Analysis ↔ Report (link/cite на B-029) и последствия для цепочки B-030..B-033. Decision record — future ADR (B-031). |
 | [2026-07-02-rfc-analysis-structure.md](2026-07-02-rfc-analysis-structure.md) | Accepted RFC структуры Analysis-артефактов (issue #350, B-025): базовый стандарт Analysis + опциональные лёгкие профили подтипов (`inventory`/`matrix`/`options`/`recommendation`) как Вариант C («A сейчас, B потом»), подтверждение routing `docs/analysis/YYYY-MM-DD-name.md` (делегировано research-standard), frontmatter с relation-метаданными (`source`/`scope`/`based_on`/`related_artifacts`), knowledge-lifecycle (`draft → reviewed → canonical → superseded`) и границы Analysis ↔ Research ↔ Audit ↔ Report ↔ RFC ↔ ADR (link/cite к B-024/B-029/B-041/glossary, не restate). Decision record — [ADR-006](../adr/2026-07-adr-006-analysis-structure.md) (B-026, issue #357). |
+| [2026-08-06-rfc-task-statement-architecture.md](2026-08-06-rfc-task-statement-architecture.md) | Draft RFC архитектуры постановки задач для AI-агентов (issue #469): три универсальных контракта (автономии, эскалации, верификации) секциями в `ai-rules/agent-work-rules.md` на глубине 0, постусловие «непустой дифф» в CI и правило легального выхода — комбинация C+D+E из матрицы решений эмпирической валидации PR #462. Сужает тезис «указание пользователя — рекомендация» до оси «как исполнять» с закрытым перечнем непереопределяемых классов решений (блокирующий вопрос Q-1 фаундеру), определяет уровень `agent-work-rules.md` как L3 Methodology с `executable: false`, отвечает на вопросы Creative-режима (команда vs эксперт, эксперимент vs однопроходное исследование, проверка SSOT на момент исполнения, смежные источники и конфликты) и предлагает пятисекционный шаблон задачи. Содержит независимую экспертную панель из трёх перспектив и 12 стресс-тестов. Внедрение не выполняется. |
 
 ## Связанные артефакты
 
