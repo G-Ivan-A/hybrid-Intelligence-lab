@@ -1,14 +1,14 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-07-16
+version: 1.1
+updated: 2026-08-01
 temperature: 0.1
 executable: false
 ---
 
 > **🛫 Директива pre-flight.** Перед любой работой ИИ-агент выполняет
 > [Runtime-онбординг](agent-onboarding-protocol.md): governance checklist →
-> context checklist → Readback → стоп до апрува человека.
+> context checklist → Readback → исполнение мандата issue → review через PR.
 
 # Agent Work Rules
 
@@ -77,7 +77,8 @@ Structured mode работает fail-closed: при противоречии и
 - каждый запуск — новая сессия без памяти прошлых чатов, если контекст не передан;
 - comments, reviews и CI не мониторятся после остановки автоматически;
 - comment без manual restart не является поручением остановленному агенту;
-- merge означает принятие, comment + restart — итерацию, close — отмену;
+- мерж PR означает согласование результата; комментарий без мержа + restart —
+  возврат в работу; мерж несогласованного результата исправляется новой задачей;
 - агент не заполняет пустые поля выдуманными значениями, а фиксирует gap.
 
 ## Definition of Done
@@ -89,4 +90,5 @@ Structured mode работает fail-closed: при противоречии и
 - новые или существенно изменённые Markdown-файлы имеют необходимый frontmatter;
 - Creative override, если был, записан;
 - локальные validators запущены;
+- PR имеет непустой дифф перед мержем;
 - PR описывает implementation, validation и remaining risks.

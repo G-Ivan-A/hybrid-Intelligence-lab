@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.65
-updated: 2026-07-31
+version: 1.66
+updated: 2026-08-01
 temperature: 0.1
 ---
 
@@ -10,6 +10,15 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Changed
+
+- ai-rules: Runtime-онбординг сохраняет обязательный Readback, но больше не
+  требует отдельного approval перед исполнением однозначного мандата issue.
+  Мерж PR означает согласование результата, комментарий без мержа — возврат в
+  работу, а для уже смерженного несогласованного результата создаётся новая
+  задача на исправление. Непустой дифф закреплён как PR-time postcondition
+  (issue #466).
 
 ### Added
 

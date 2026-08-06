@@ -43,6 +43,9 @@ jobs:
       - name: Test Sprint 5 agent-model contracts
         run: bash tools/test-sprint-5-agent-model.sh
 
+      - name: Test agent onboarding authorization contract
+        run: bash tools/test-agent-onboarding-authorization.sh
+
       - name: Validate frontmatter
         run: ./tools/validate-frontmatter.sh .
 

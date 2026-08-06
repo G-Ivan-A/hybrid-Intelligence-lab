@@ -359,6 +359,7 @@ is_active_file() {
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
+    tools/test-agent-onboarding-authorization.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -792,6 +793,7 @@ required_files=(
   "tools/test-mango-kb-migration-contract.sh"
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
+  "tools/test-agent-onboarding-authorization.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -1206,8 +1208,8 @@ require_text "standards/issue-workflow.md" '`closed`'
 require_text "standards/issue-workflow.md" '`blocked`'
 
 require_text "standards/session-handover-standard.md" "status: draft"
-require_text "standards/session-handover-standard.md" "version: 0.2"
-require_text "standards/session-handover-standard.md" "updated: 2026-06-13"
+require_text "standards/session-handover-standard.md" "version: 0.3"
+require_text "standards/session-handover-standard.md" "updated: 2026-08-01"
 require_text "standards/session-handover-standard.md" "AI_SESSION_HANDOVER_PROMPT.md"
 require_text "standards/session-handover-standard.md" "Контекст проекта"
 require_text "standards/session-handover-standard.md" "Ключевые решения"
@@ -1270,8 +1272,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 1.7"
-require_text "standards/glossary.md" "updated: 2026-07-31"
+require_text "standards/glossary.md" "version: 1.8"
+require_text "standards/glossary.md" "updated: 2026-08-01"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"
@@ -1512,8 +1514,8 @@ require_text "docs/rfc/solution-concept-template-proposal.md" "L3 Methodology-la
 require_text "docs/rfc/solution-concept-template-proposal.md" "explicit User approval"
 
 require_text "ai-rules/agent-onboarding-protocol.md" "status: canonical"
-require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.3"
-require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-06-11"
+require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.4"
+require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-08-01"
 require_text "ai-rules/agent-onboarding-protocol.md" "executable: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "entrypoint: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат."
@@ -2437,7 +2439,7 @@ require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "agent-onboarding-protocol.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.8"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.9"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "pr-ops/session-digests.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "pr-ops/backlog.md"
@@ -2453,7 +2455,7 @@ require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "standards/session-h
 reject_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Конард"
 require_text "templates/htom/README.md" "AI_SESSION_HANDOVER_PROMPT.md"
 require_text "templates/htom/README.md" "status: canonical"
-require_text "templates/htom/README.md" "version: 0.5"
+require_text "templates/htom/README.md" "version: 0.6"
 require_text "templates/htom/README.md" "## Template Placeholder Policy"
 require_text "templates/htom/README.md" "Source templates may contain placeholders"
 require_text "templates/htom/README.md" "Generated repositories must not keep unresolved source placeholders"
@@ -2521,6 +2523,7 @@ require_text "tools/test-reference-research-terminology.sh" "canonical Research 
 require_text "tools/test-reference-research-terminology.sh" "canonical Domain Methodology sequence"
 require_text "tools/test-post-migration-validator.sh" "legacy root paths"
 require_text "tools/test-sprint-5-agent-model.sh" "Sprint 5 agent-model regression tests passed."
+require_text "tools/test-agent-onboarding-authorization.sh" "Мерж PR = согласование результата"
 require_text "tools/generate-manifest.py" "templates/manifest.json"
 require_text "tools/validate-frontmatter.sh" "invalid knowledge status"
 require_text "tools/validate-frontmatter.sh" "docs/guides/*.md"
@@ -2539,6 +2542,7 @@ require_text ".github/workflows/validate.yml" "bash tools/test-reference-researc
 require_text ".github/workflows/validate.yml" "Test post-migration validator invariants"
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-authorization.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

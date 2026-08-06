@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-07-16
+version: 1.4
+updated: 2026-08-01
 temperature: 0.1
 ---
 
@@ -40,7 +40,7 @@ temperature: 0.1
 | [standards/frontmatter-standard.md](standards/frontmatter-standard.md) | Минимальный frontmatter для Markdown-артефактов: `status`, `version`, `updated`, `temperature`. |
 | [practices/README.md](practices/README.md) | Каталог фиксированных практик: отдельный KB-слой между research, templates и проектными адаптациями. |
 | [standards/team-contract.md](standards/team-contract.md) | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. |
-| [ai-rules/agent-onboarding-protocol.md](ai-rules/agent-onboarding-protocol.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
+| [ai-rules/agent-onboarding-protocol.md](ai-rules/agent-onboarding-protocol.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, Readback, исполнение мандата issue и согласование результата через PR. |
 | [pr-ops/repo-model.md](pr-ops/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
 | [pr-ops/artifact-map.md](pr-ops/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
 | [templates/htom/](templates/htom/) | Геном **HTOM-команды** — минимальный governance-скелет для гибридной human + AI работы (*Bootstrap-клонирование*, Кейс 2). Точка входа: `templates/htom/README.md`. |
