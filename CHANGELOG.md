@@ -30,6 +30,13 @@ All notable repository governance changes are documented here.
   `pr-ops/artifact-map.md` v1.85, `standards/education-profile.md`,
   `docs/rfc/repository-archetypes-template-release.md` v0.2).
 
+- pr-ops: `pr-ops/backlog.md` актуализирован по итогам согласования ОПС
+  (issue #475). B-090 переведён в `DONE` (PR #464), B-093 — в `review`
+  (RFC PR #470) с уточнённым названием. В блок отложенных задач добавлены
+  B-094 (Knowledge Integrity Auditor), B-095 (проспективный замер эффекта
+  RFC #470), B-096 (инструкция по меткам GitHub) и B-097 (автоматизация
+  переноса неактивных PR-с-вопросами). Секция «Источники активного порядка»
+  дополнена RFC #470, issue #466 и PR #467.
 - ai-rules: Runtime-онбординг сохраняет обязательный Readback, но больше не
   требует отдельного approval перед исполнением однозначного мандата issue.
   Мерж PR означает согласование результата, комментарий без мержа — возврат в
@@ -49,6 +56,29 @@ All notable repository governance changes are documented here.
   скрипта зарегистрированы в allowlist и required-списке
   `tools/validate-repository-structure.sh` и в `pr-ops/artifact-map.md`.
 
+- adr: Proposed `docs/adr/2026-08-adr-010-agent-autonomy-principles.md`
+  (issue #476) — decision record, фиксирующий решение фаундера от 2026-08-01/06,
+  которое закрыло блокирующий вопрос Q-1 RFC #470. ADR становится SSOT трёх
+  принципов автономии агента: Принцип 1 «Экспертное исполнение (Justified
+  Deviation)» — право скорректировать *способ* достижения цели с обязательной
+  записью отклонения в теле PR; Принцип 2 «Абсолютные границы (Hard Limits)» —
+  закрытый перечень шести непереопределяемых классов решений; Принцип 3
+  «Operating Mode как мета-контракт» — `Structured` сужает право на корректировку,
+  не расширяя абсолютные границы. Проработаны последствия (ripple scan по
+  одиннадцати артефактам, зависящим от словаря Operating Modes), одиннадцать
+  проверок соблюдения с честным разделением автоматизируемого и `human-only`, а
+  также Decision Boundary Map по признаку обратимости действия. ADR описывает
+  целевое, а не текущее состояние: канонизация Принципа 3 и его машинная
+  проверка возможны только после устранения рассинхрона Operating Modes
+  (issue #473). Правила, шаблоны задач и CI этим ADR не меняются, RFC #470
+  остаётся историческим снимком стадии proposal.
+- navigation: `docs/adr/README.md` — индекс каталога ADR Хаба: назначение ADR как
+  decision record в отличие от proposal-стадии RFC, ссылка на обязательную форму
+  `standards/adr-structure-standard.md`, допустимые переходы статусов и таблица
+  ADR-001..ADR-010.
+- artifact-map: `pr-ops/artifact-map.md` v1.85 — зарегистрированы
+  `docs/adr/2026-08-adr-010-agent-autonomy-principles.md` и `docs/adr/README.md`;
+  строка каталога `/docs/adr/` получила точку входа.
 - research: Модуль `research/ai-education/information-extraction-graph-modeling/`
   (issue #471) — четвёртая валидация Reference Research Pattern. Шесть файлов
   описывают конвейер `Detect → Extract → Resolve → Validate → Commit`,

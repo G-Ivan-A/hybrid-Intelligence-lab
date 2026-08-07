@@ -86,6 +86,9 @@ document_class() {
     docs/rfc/*.md)
       printf 'rfc'
       ;;
+    docs/adr/README.md)
+      printf 'governance'
+      ;;
     docs/adr/*.md)
       printf 'adr'
       ;;

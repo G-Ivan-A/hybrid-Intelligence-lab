@@ -87,6 +87,8 @@ is_active_file() {
     docs/adr/2026-07-adr-007-hub-root-structure.md | \
     docs/adr/2026-07-adr-008-standard-meta-structure.md | \
     docs/adr/2026-07-adr-009-mango-repo-split.md | \
+    docs/adr/2026-08-adr-010-agent-autonomy-principles.md | \
+    docs/adr/README.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -616,6 +618,8 @@ required_files=(
   "docs/adr/2026-07-adr-007-hub-root-structure.md"
   "docs/adr/2026-07-adr-008-standard-meta-structure.md"
   "docs/adr/2026-07-adr-009-mango-repo-split.md"
+  "docs/adr/2026-08-adr-010-agent-autonomy-principles.md"
+  "docs/adr/README.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
@@ -1877,7 +1881,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.40"
+require_text "pr-ops/backlog.md" "version: 1.41"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
