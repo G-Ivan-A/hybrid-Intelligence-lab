@@ -87,6 +87,8 @@ is_active_file() {
     docs/adr/2026-07-adr-007-hub-root-structure.md | \
     docs/adr/2026-07-adr-008-standard-meta-structure.md | \
     docs/adr/2026-07-adr-009-mango-repo-split.md | \
+    docs/adr/2026-08-adr-010-agent-autonomy-principles.md | \
+    docs/adr/README.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
