@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-08-01
+version: 1.2
+updated: 2026-08-07
 temperature: 0.1
 executable: false
 ---
@@ -38,12 +38,13 @@ guidance. Неполный контекст записывается как до
 
 ## Разделение Framework vs Methodology
 
-| Слой | Уровень | Где живёт | Назначение |
-| --- | --- | --- | --- |
-| Framework | L1-L2 | `docs/vision.md`, `docs/product-concept.md`, `docs/ecosystem-map.md` | Границы, видение и продуктовая роль. |
-| Methodology | L3-L4 | `ai-governance/`, `ai-rules/`, `pr-ops/`, `standards/`, `practices/`, `templates/`, `tools/` | Policies, rules, lifecycle, reusable practices и проверки. |
+Framework (L1-L2) задаёт границы, видение и продуктовую роль; Methodology
+(L3-L4) — policies, rules, lifecycle, reusable practices и проверки. Framework
+указывает переход к Methodology; Methodology не переопределяет L1-L2.
 
-Framework указывает переход к Methodology; Methodology не переопределяет L1-L2.
+Канонический источник соответствия уровней и артефактов — один:
+[Уровни документации: Framework vs Methodology](../pr-ops/artifact-map.md#уровни-документации-framework-vs-methodology).
+Таблица здесь не дублируется.
 
 ## Правила
 

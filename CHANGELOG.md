@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.67
-updated: 2026-08-06
+version: 1.68
+updated: 2026-08-07
 temperature: 0.1
 ---
 
@@ -13,6 +13,23 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- ops: устранены пять мелких дефектов, обнаруженных при подготовке RFC
+  `docs/rfc/2026-08-06-rfc-task-statement-architecture.md` (§P.9, Expert Review)
+  (issue #474). Висячая ссылка на «Rule 4 и Rule 5» AI Governance в
+  `ai-rules/adversarial-stress-testing.md` заменена на ссылку на существующие
+  политики 1 и 3. Таблица уровней L1–L4 в `ai-rules/agent-work-rules.md`
+  заменена на ссылку: канонический источник — только
+  `pr-ops/artifact-map.md` (перечень L3-каталогов там приведён к фактическому
+  состоянию репозитория). Битая ссылка на удалённый
+  `.github/workflows/deploy-docs.yml` в
+  `docs/rfc/repository-archetypes-template-release.md` и битая ссылка на
+  несуществующий `module-01/` в `standards/education-profile.md` устранены.
+  Содержание контрактов автономии, эскалации и верификации не изменялось.
+  Pin-строки версий и дат затронутых файлов в
+  `tools/validate-repository-structure.sh` обновлены (`CONTRIBUTING.md` v1.10,
+  `pr-ops/artifact-map.md` v1.84, `standards/education-profile.md`,
+  `docs/rfc/repository-archetypes-template-release.md` v0.2).
+
 - ai-rules: Runtime-онбординг сохраняет обязательный Readback, но больше не
   требует отдельного approval перед исполнением однозначного мандата issue.
   Мерж PR означает согласование результата, комментарий без мержа — возврат в
@@ -21,6 +38,14 @@ All notable repository governance changes are documented here.
   (issue #466).
 
 ### Added
+
+- tools: `tools/check-agent-work-rules-size.sh` — валидатор бюджетного
+  инварианта точки входа. Оценивает размер `ai-rules/agent-work-rules.md` в
+  токенах (байты / 3.2) и падает при превышении ~9k токенов, предупреждая
+  при ~7k. Регрессионный тест `tools/test-check-agent-work-rules-size.sh`
+  доказывает оба порога, fail-closed на отсутствующем файле и проход на
+  реальном файле. Оба шага добавлены в `.github/workflows/validate.yml`
+  (issue #474, источник порогов — RFC постановки задач §P.9, шаг 2).
 
 - rfc: Draft `docs/rfc/2026-08-06-rfc-task-statement-architecture.md`
   (issue #469) — архитектура постановки задач для AI-агентов на основе
