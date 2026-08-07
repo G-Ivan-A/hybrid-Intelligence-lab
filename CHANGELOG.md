@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.68
-updated: 2026-08-06
+version: 1.69
+updated: 2026-08-07
 temperature: 0.1
 ---
 
@@ -22,6 +22,29 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- adr: Proposed `docs/adr/2026-08-adr-010-agent-autonomy-principles.md`
+  (issue #476) — decision record, фиксирующий решение фаундера от 2026-08-01/06,
+  которое закрыло блокирующий вопрос Q-1 RFC #470. ADR становится SSOT трёх
+  принципов автономии агента: Принцип 1 «Экспертное исполнение (Justified
+  Deviation)» — право скорректировать *способ* достижения цели с обязательной
+  записью отклонения в теле PR; Принцип 2 «Абсолютные границы (Hard Limits)» —
+  закрытый перечень шести непереопределяемых классов решений; Принцип 3
+  «Operating Mode как мета-контракт» — `Structured` сужает право на корректировку,
+  не расширяя абсолютные границы. Проработаны последствия (ripple scan по
+  одиннадцати артефактам, зависящим от словаря Operating Modes), одиннадцать
+  проверок соблюдения с честным разделением автоматизируемого и `human-only`, а
+  также Decision Boundary Map по признаку обратимости действия. ADR описывает
+  целевое, а не текущее состояние: канонизация Принципа 3 и его машинная
+  проверка возможны только после устранения рассинхрона Operating Modes
+  (issue #473). Правила, шаблоны задач и CI этим ADR не меняются, RFC #470
+  остаётся историческим снимком стадии proposal.
+- navigation: `docs/adr/README.md` — индекс каталога ADR Хаба: назначение ADR как
+  decision record в отличие от proposal-стадии RFC, ссылка на обязательную форму
+  `standards/adr-structure-standard.md`, допустимые переходы статусов и таблица
+  ADR-001..ADR-010.
+- artifact-map: `pr-ops/artifact-map.md` v1.85 — зарегистрированы
+  `docs/adr/2026-08-adr-010-agent-autonomy-principles.md` и `docs/adr/README.md`;
+  строка каталога `/docs/adr/` получила точку входа.
 - research: Модуль `research/ai-education/information-extraction-graph-modeling/`
   (issue #471) — четвёртая валидация Reference Research Pattern. Шесть файлов
   описывают конвейер `Detect → Extract → Resolve → Validate → Commit`,

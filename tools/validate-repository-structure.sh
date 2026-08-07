@@ -87,6 +87,8 @@ is_active_file() {
     docs/adr/2026-07-adr-007-hub-root-structure.md | \
     docs/adr/2026-07-adr-008-standard-meta-structure.md | \
     docs/adr/2026-07-adr-009-mango-repo-split.md | \
+    docs/adr/2026-08-adr-010-agent-autonomy-principles.md | \
+    docs/adr/README.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -614,6 +616,8 @@ required_files=(
   "docs/adr/2026-07-adr-007-hub-root-structure.md"
   "docs/adr/2026-07-adr-008-standard-meta-structure.md"
   "docs/adr/2026-07-adr-009-mango-repo-split.md"
+  "docs/adr/2026-08-adr-010-agent-autonomy-principles.md"
+  "docs/adr/README.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
@@ -1544,11 +1548,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.84"
+require_text "pr-ops/artifact-map.md" "version: 1.85"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-06"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-07"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
