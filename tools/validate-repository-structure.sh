@@ -370,6 +370,8 @@ is_active_file() {
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
     tools/test-agent-onboarding-authorization.sh | \
+    tools/test-check-agent-work-rules-size.sh | \
+    tools/check-agent-work-rules-size.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -806,6 +808,8 @@ required_files=(
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/test-agent-onboarding-authorization.sh"
+  "tools/test-check-agent-work-rules-size.sh"
+  "tools/check-agent-work-rules-size.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -896,11 +900,11 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.9"
+require_text "CONTRIBUTING.md" "version: 1.10"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-07-16"
+require_text "CONTRIBUTING.md" "updated: 2026-08-07"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -1316,7 +1320,7 @@ require_text "standards/glossary.md" "Источники"
 
 require_text "standards/education-profile.md" "status: accepted"
 require_text "standards/education-profile.md" "version: 1.0"
-require_text "standards/education-profile.md" "updated: 2026-05-26"
+require_text "standards/education-profile.md" "updated: 2026-08-07"
 require_text "standards/education-profile.md" "## Назначение"
 require_text "standards/education-profile.md" "product-profile.md"
 require_text "standards/education-profile.md" "research-standard.md"
@@ -1760,7 +1764,7 @@ require_text "docs/rfc/research-memory-source-intelligence.md" "Open Decisions"
 require_text "pr-ops/artifact-map.md" "docs/rfc/repository-archetypes-template-release.md"
 require_text "docs/rfc/README.md" "repository-archetypes-template-release.md"
 require_text "docs/rfc/repository-archetypes-template-release.md" "status: draft"
-require_text "docs/rfc/repository-archetypes-template-release.md" "version: 0.1"
+require_text "docs/rfc/repository-archetypes-template-release.md" "version: 0.2"
 require_text "docs/rfc/repository-archetypes-template-release.md" "Почему текущей ситуации недостаточно"
 require_text "docs/rfc/repository-archetypes-template-release.md" "Анализ внешних эталонов структуры"
 require_text "docs/rfc/repository-archetypes-template-release.md" "Анализ моделей Release Engineering"
@@ -2592,6 +2596,8 @@ require_text ".github/workflows/validate.yml" "Test post-migration validator inv
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-authorization.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
+require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

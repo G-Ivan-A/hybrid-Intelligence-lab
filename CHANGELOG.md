@@ -13,6 +13,23 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- ops: устранены пять мелких дефектов, обнаруженных при подготовке RFC
+  `docs/rfc/2026-08-06-rfc-task-statement-architecture.md` (§P.9, Expert Review)
+  (issue #474). Висячая ссылка на «Rule 4 и Rule 5» AI Governance в
+  `ai-rules/adversarial-stress-testing.md` заменена на ссылку на существующие
+  политики 1 и 3. Таблица уровней L1–L4 в `ai-rules/agent-work-rules.md`
+  заменена на ссылку: канонический источник — только
+  `pr-ops/artifact-map.md` (перечень L3-каталогов там приведён к фактическому
+  состоянию репозитория). Битая ссылка на удалённый
+  `.github/workflows/deploy-docs.yml` в
+  `docs/rfc/repository-archetypes-template-release.md` и битая ссылка на
+  несуществующий `module-01/` в `standards/education-profile.md` устранены.
+  Содержание контрактов автономии, эскалации и верификации не изменялось.
+  Pin-строки версий и дат затронутых файлов в
+  `tools/validate-repository-structure.sh` обновлены (`CONTRIBUTING.md` v1.10,
+  `pr-ops/artifact-map.md` v1.85, `standards/education-profile.md`,
+  `docs/rfc/repository-archetypes-template-release.md` v0.2).
+
 - pr-ops: `pr-ops/backlog.md` актуализирован по итогам согласования ОПС
   (issue #475). B-090 переведён в `DONE` (PR #464), B-093 — в `review`
   (RFC PR #470) с уточнённым названием. В блок отложенных задач добавлены
@@ -28,6 +45,16 @@ All notable repository governance changes are documented here.
   (issue #466).
 
 ### Added
+
+- tools: `tools/check-agent-work-rules-size.sh` — валидатор бюджетного
+  инварианта точки входа. Оценивает размер `ai-rules/agent-work-rules.md` в
+  токенах (байты / 3.2) и падает при превышении ~9k токенов, предупреждая
+  при ~7k. Регрессионный тест `tools/test-check-agent-work-rules-size.sh`
+  доказывает оба порога, fail-closed на отсутствующем файле и проход на
+  реальном файле. Оба шага добавлены в `.github/workflows/validate.yml`
+  (issue #474, источник порогов — RFC постановки задач §P.9, шаг 2). Оба
+  скрипта зарегистрированы в allowlist и required-списке
+  `tools/validate-repository-structure.sh` и в `pr-ops/artifact-map.md`.
 
 - adr: Proposed `docs/adr/2026-08-adr-010-agent-autonomy-principles.md`
   (issue #476) — decision record, фиксирующий решение фаундера от 2026-08-01/06,

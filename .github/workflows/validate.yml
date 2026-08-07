@@ -46,6 +46,12 @@ jobs:
       - name: Test agent onboarding authorization contract
         run: bash tools/test-agent-onboarding-authorization.sh
 
+      - name: Test agent work rules size check
+        run: bash tools/test-check-agent-work-rules-size.sh
+
+      - name: Check agent work rules size budget
+        run: ./tools/check-agent-work-rules-size.sh
+
       - name: Validate frontmatter
         run: ./tools/validate-frontmatter.sh .
 

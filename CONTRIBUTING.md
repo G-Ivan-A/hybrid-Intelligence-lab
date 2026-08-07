@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.9
-updated: 2026-07-16
+version: 1.10
+updated: 2026-08-07
 temperature: 0.1
 ---
 
@@ -134,6 +134,8 @@ bash tools/test-frontmatter-validator.sh
 bash tools/test-smart-sync.sh
 bash tools/test-reference-research-terminology.sh
 bash tools/test-agent-onboarding-authorization.sh
+bash tools/test-check-agent-work-rules-size.sh
+./tools/check-agent-work-rules-size.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
