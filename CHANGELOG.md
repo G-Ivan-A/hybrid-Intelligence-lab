@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.68
+version: 1.69
 updated: 2026-08-07
 temperature: 0.1
 ---
@@ -27,7 +27,7 @@ All notable repository governance changes are documented here.
   Содержание контрактов автономии, эскалации и верификации не изменялось.
   Pin-строки версий и дат затронутых файлов в
   `tools/validate-repository-structure.sh` обновлены (`CONTRIBUTING.md` v1.10,
-  `pr-ops/artifact-map.md` v1.84, `standards/education-profile.md`,
+  `pr-ops/artifact-map.md` v1.85, `standards/education-profile.md`,
   `docs/rfc/repository-archetypes-template-release.md` v0.2).
 
 - ai-rules: Runtime-онбординг сохраняет обязательный Readback, но больше не
@@ -45,8 +45,27 @@ All notable repository governance changes are documented here.
   при ~7k. Регрессионный тест `tools/test-check-agent-work-rules-size.sh`
   доказывает оба порога, fail-closed на отсутствующем файле и проход на
   реальном файле. Оба шага добавлены в `.github/workflows/validate.yml`
-  (issue #474, источник порогов — RFC постановки задач §P.9, шаг 2).
+  (issue #474, источник порогов — RFC постановки задач §P.9, шаг 2). Оба
+  скрипта зарегистрированы в allowlist и required-списке
+  `tools/validate-repository-structure.sh` и в `pr-ops/artifact-map.md`.
 
+- research: Модуль `research/ai-education/information-extraction-graph-modeling/`
+  (issue #471) — четвёртая валидация Reference Research Pattern. Шесть файлов
+  описывают конвейер `Detect → Extract → Resolve → Validate → Commit`,
+  таксономии задач, методов, оркестрации и строгости схемы, матрицы выбора,
+  entity resolution, кореференцию, графовые представления и лестницу
+  верификации V0–V6. Практическая часть сопоставляет LangChain, LlamaIndex,
+  OpenAI Agents SDK и Anthropic, JSON/Pydantic/онтологии,
+  NetworkX/Neo4j/pgvector, академические бенчмарки и содержит образовательное
+  приложение для бизнес-аналитиков. Открытые вопросы связывают модуль с
+  Retrieval, Memory и Task Processing. Исследование не меняет правил или
+  архитектуры репозитория.
+- registry: `research/external-knowledge/external-sources-registry.md` v0.13 —
+  зарегистрированы 22 источника `ext-196`..`ext-217`, использованные в issue
+  #471.
+- artifact-map: `pr-ops/artifact-map.md` v1.84 — зарегистрированы шесть файлов
+  модуля Information Extraction & Graph Modeling; индекс AI Education и
+  validator allowlist синхронизированы.
 - rfc: Draft `docs/rfc/2026-08-06-rfc-task-statement-architecture.md`
   (issue #469) — архитектура постановки задач для AI-агентов на основе
   эмпирической валидации PR #462. Предлагает комбинацию C+D+E из матрицы

@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.12
+version: 0.13
 updated: 2026-07-31
 temperature: 0.1
 type: external-analysis
@@ -26,6 +26,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471"
 ---
 
 # Реестр внешних источников
@@ -267,6 +268,28 @@ related_issues:
 | `ext-193` | [Letta — документация (stateful agents, memory blocks)](https://docs.letta.com/) | `docs` | `en` | `stateful-agents, memory-blocks, memgpt` | `topic: agent-memory` | `observation` | `hub` | ✅ [Memory-459](../ai-education/memory/40-practice-and-cases.md) |
 | `ext-194` | [Qdrant — vector-db-benchmark](https://github.com/qdrant/vector-db-benchmark) | `docs` | `en` | `vector-db, benchmark, vendor-bias` | `topic: agent-memory` | `observation` | `hub` | ✅ [Memory-459](../ai-education/memory/20-taxonomy.md) |
 | `ext-195` | [GDPR — Art. 17, право на стирание](https://gdpr-info.eu/art-17-gdpr/) | `standard` | `en` | `privacy, right-to-erasure, forgetting` | `topic: agent-memory` | `research` | `hub` | ✅ [Memory-459](../ai-education/memory/30-decision-framework.md) |
+| `ext-196` | [OpenAI — Structured model outputs](https://platform.openai.com/docs/guides/structured-outputs) | `docs` | `en` | `structured-output, json-schema, extraction` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-197` | [OpenAI Agents SDK — Agents and output types](https://openai.github.io/openai-agents-python/agents/) | `docs` | `en` | `agents-sdk, output-type, pydantic, extraction` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-198` | [Anthropic — Structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) | `docs` | `en` | `structured-output, json-schema, constrained-decoding` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-199` | [LangChain — Structured output](https://docs.langchain.com/oss/python/langchain/structured-output) | `docs` | `en` | `langchain, structured-output, provider-strategy` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-200` | [LangChain — LLMGraphTransformer](https://python.langchain.com/api_reference/experimental/graph_transformers/langchain_experimental.graph_transformers.llm.LLMGraphTransformer.html) | `docs` | `en` | `langchain, graph-transformer, entity-relation-extraction` | `topic: graph-modeling` | `observation` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-201` | [LlamaIndex — Property Graph Index](https://docs.llamaindex.ai/en/stable/module_guides/indexing/lpg_index_guide/) | `docs` | `en` | `llamaindex, property-graph, schema-extractor` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-202` | [W3C — RDF 1.2 Concepts and Abstract Syntax](https://www.w3.org/TR/rdf12-concepts/) | `standard` | `en` | `rdf, knowledge-graph, semantics` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/20-taxonomy.md) |
+| `ext-203` | [W3C — SHACL 1.2 Core](https://www.w3.org/TR/shacl12-core/) | `standard` | `en` | `shacl, graph-validation, constraints` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/30-decision-framework.md) |
+| `ext-204` | [NetworkX — Introduction](https://networkx.org/documentation/stable/reference/introduction.html) | `docs` | `en` | `networkx, in-memory-graph, prototyping` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-205` | [Neo4j — Constraints](https://neo4j.com/docs/cypher-manual/current/schema/constraints/) | `docs` | `en` | `neo4j, constraints, graph-database` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-206` | [pgvector — Open-source vector similarity search for Postgres](https://github.com/pgvector/pgvector) | `github` | `en` | `pgvector, postgres, vector-search, hybrid-storage` | `topic: graph-modeling` | `observation` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-207` | [Wadhwa et al. — Revisiting Relation Extraction in the era of Large Language Models](https://aclanthology.org/2023.acl-long.868/) | `paper` | `en` | `relation-extraction, benchmark, llm` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-208` | [Jiang et al. — GenRES](https://aclanthology.org/2024.naacl-long.155/) | `paper` | `en` | `generative-relation-extraction, evaluation, benchmark` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-209` | [Li et al. — Generate-and-Organize structured information extraction](https://arxiv.org/abs/2402.13364) | `paper` | `en` | `text-to-graph, schema-induction, llm` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-210` | [Xu et al. — Realistic Low-resource Relation Extraction](https://aclanthology.org/2022.findings-emnlp.29/) | `paper` | `en` | `relation-extraction, low-resource, benchmark` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/20-taxonomy.md) |
+| `ext-211` | [Taillé et al. — LLMs Underperform Graph-Based Parsers on Complex Graphs](https://aclanthology.org/2026.acl-short.17/) | `paper` | `en` | `graph-parsing, complex-knowledge-graph, llm` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-212` | [Brokman et al. — End-to-end zero-shot biomedical relation extraction](https://aclanthology.org/2025.wasp-main.6/) | `paper` | `en` | `biomedical, relation-extraction, llm` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-213` | [Gong et al. — EventRelBench](https://aclanthology.org/2025.findings-emnlp.482/) | `paper` | `en` | `event-relation, benchmark, reasoning` | `topic: information-extraction` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/40-practice-and-cases.md) |
+| `ext-214` | [Bohnet et al. — Seq2seq Coreference Resolution](https://aclanthology.org/2023.tacl-1.13/) | `paper` | `en` | `coreference, entity-resolution, seq2seq` | `topic: identity-resolution` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/20-taxonomy.md) |
+| `ext-215` | [Bast et al. — Fair Evaluation of Entity Linking Systems](https://aclanthology.org/2023.emnlp-main.411/) | `paper` | `en` | `entity-linking, evaluation, normalization` | `topic: identity-resolution` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/20-taxonomy.md) |
+| `ext-216` | [Zhu et al. — Large Language Models for Knowledge Graph Construction and Reasoning](https://arxiv.org/abs/2305.13168) | `paper` | `en` | `knowledge-graph, construction, reasoning, survey` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/50-open-research.md) |
+| `ext-217` | [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956) | `paper` | `en` | `temporal-knowledge-graph, entity-resolution, agent-memory` | `topic: graph-modeling` | `observation` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/50-open-research.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

@@ -161,6 +161,12 @@ is_active_file() {
     research/ai-education/memory/30-decision-framework.md | \
     research/ai-education/memory/40-practice-and-cases.md | \
     research/ai-education/memory/50-open-research.md | \
+    research/ai-education/information-extraction-graph-modeling/00-introduction.md | \
+    research/ai-education/information-extraction-graph-modeling/10-theory.md | \
+    research/ai-education/information-extraction-graph-modeling/20-taxonomy.md | \
+    research/ai-education/information-extraction-graph-modeling/30-decision-framework.md | \
+    research/ai-education/information-extraction-graph-modeling/40-practice-and-cases.md | \
+    research/ai-education/information-extraction-graph-modeling/50-open-research.md | \
     research/hub/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \
@@ -362,6 +368,8 @@ is_active_file() {
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
     tools/test-agent-onboarding-authorization.sh | \
+    tools/test-check-agent-work-rules-size.sh | \
+    tools/check-agent-work-rules-size.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -796,6 +804,8 @@ required_files=(
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/test-agent-onboarding-authorization.sh"
+  "tools/test-check-agent-work-rules-size.sh"
+  "tools/check-agent-work-rules-size.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -1538,7 +1548,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.84"
+require_text "pr-ops/artifact-map.md" "version: 1.85"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1681,7 +1691,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.12"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.13"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
@@ -2582,6 +2592,8 @@ require_text ".github/workflows/validate.yml" "Test post-migration validator inv
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-authorization.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
+require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"
