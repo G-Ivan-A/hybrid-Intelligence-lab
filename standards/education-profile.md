@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-08-07
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -150,7 +150,7 @@ updated: YYYY-MM-DD
 
 | Модуль | Цель | Время | Практика | Проверка |
 | --- | --- | --- | --- | --- |
-| [module-01](module-01/) | {цель} | {время} | `exercise-01.md` | `solution.md` |
+| `module-01/` | {цель} | {время} | `exercise-01.md` | `solution.md` |
 
 ## Для преподавателя
 

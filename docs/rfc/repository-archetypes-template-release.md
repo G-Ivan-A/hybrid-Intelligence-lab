@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-15
+version: 0.2
+updated: 2026-08-07
 temperature: 0.1
 owner: G-Ivan-A
 rfc-scope: A
@@ -286,8 +286,8 @@ jobs:
 ```
 
 For repositories that use Python/MkDocs, replace the Node build steps with the
-existing pattern from
-[.github/workflows/deploy-docs.yml](../../.github/workflows/deploy-docs.yml).
+equivalent `mkdocs build` invocation (the Hub's own `deploy-docs.yml` workflow
+was removed together with `website/` and `mkdocs.yml`, see [CHANGELOG.md](../../CHANGELOG.md)).
 For generic product spokes, start from
 [templates/spoke/.github/workflows/ci.yml](../../templates/spoke/.github/workflows/ci.yml)
 and add deploy only after product readiness is explicit.

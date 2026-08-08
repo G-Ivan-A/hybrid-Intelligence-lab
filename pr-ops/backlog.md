@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.40
-updated: 2026-07-30
+version: 1.41
+updated: 2026-08-07
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -20,6 +20,8 @@ related_artifacts:
   - "standards/standard-meta-structure.md"
   - "docs/audit/2026-07-04-cross-standard-stress-tests.md"
   - "research/hub/2026-07-04-hub-as-agent-system-global-analysis.md"
+  - "docs/rfc/2026-08-06-rfc-task-statement-architecture.md"
+  - "research/hub/2026-07-31-ops-task-strategy-validation.md"
   - "tools/test-post-migration-validator.sh"
   - "LICENSE"
 related_issues:
@@ -49,6 +51,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/436"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/449"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/475"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -326,9 +329,9 @@ triggered-задача.
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **B-089** | Зафиксировать модель зрелости Reference Pattern | **P1** | B-085 | DONE | [#437](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437) / [PR #443](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/443) | Ревью Retrieval и методологическое обсуждение 2026-07-16 | Градация `Discussion Paper → Reference Pattern (Experimental) → Experimental RFC → RFC → Standard` зафиксирована в RFC Reference Research Pattern. Статус паттерна — `Experimental`; критерий продвижения — проверка минимум в трёх независимых доменах. Монолит B-085 реорганизован в модульный retrieval-корпус без потери содержания. | Hybrid |
-| **B-090** | Разделить Research Method и Domain Methodology | **P1** | B-089 | TODO | - (planned) | Ревью Retrieval и методологическое обсуждение 2026-07-16 | Явно разделить в документации Хаба Research Method — как исследуем (`Theory → Taxonomy → Decision Framework → Practice`) — и Domain Methodology — как устроен объект (`Conceptual Framing → Object Model → Decision Space`). Заменить термин `Mental Model` на `Conceptual Framing`. | Structured |
+| **B-090** | Разделить Research Method и Domain Methodology | **P1** | B-089 | DONE | [PR #464](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/464) | Ревью Retrieval и методологическое обсуждение 2026-07-16 | Явно разделить в документации Хаба Research Method — как исследуем (`Theory → Taxonomy → Decision Framework → Practice`) — и Domain Methodology — как устроен объект (`Conceptual Framing → Object Model → Decision Space`). Заменить термин `Mental Model` на `Conceptual Framing`. | Structured |
 | **B-092** | Исследование промышленных практик агентного исполнения задач | **P1** | B-089 | review | [#457](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457) | Issue #457 (постановка фаундера, гипотеза о мандате) | Вторая валидация Reference Research Pattern — на домене agentic task execution. Модуль [`research/ai-education/task-processing/`](../research/ai-education/task-processing/00-introduction.md) из шести файлов: сигнатура `A = Policy(M, S, T, C)`, объектная модель E1–E12, точки решений D1–D10, гипотезы H1–H16; таксономии мандатов M0–M5, подходов к планированию P0–P7 и механизмов контроля G1–G7; матрица «мандат × цена ошибки», правило размещения guardrail по обратимости, шкала автономии A0–A5; индустриальная практика (LangChain, OpenAI Agents SDK, MCP, CrewAI, AutoGen, OTel GenAI, MAST) и описательный разбор прецедентов #454/#456. Без внедрения правил и без RFC — по ограничениям постановки. | Creative |
-| **B-093** | RFC по архитектуре постановки задач для Konard | **P2** | B-092 | TODO | - (planned) | Issue #457 (явное вынесение RFC в отдельную задачу) | На фактической базе B-092 подготовить RFC об архитектуре постановки задач исполнителю. Запускается только после приёмки B-092 фаундером. | Creative |
+| **B-093** | RFC по архитектуре постановки задач для AI-агентов | **P2** | B-092 | review | [PR #470](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/470) | Issue #457 (явное вынесение RFC в отдельную задачу) | На фактической базе B-092 подготовлен [RFC об архитектуре постановки задач для AI-агентов](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md). Следствия RFC остаются в статусе `experimental` до проспективного замера эффекта (B-095). | Creative |
 
 ## Отложенные задачи с триггером
 
@@ -340,6 +343,10 @@ Anti-Inflation.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **B-088** | Зафиксировать многоуровневую иерархию SSOT (ADR vs Стандарт) | **P3** | - | deferred (triggered) | - (tech debt) | Обсуждение 2026-07-16; B-050 v0.2 §2; [issue #427](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/427) | Текущая формулировка «ADR имеет приоритет» слишком общая. Необходимо чётко разграничить компетенции: ADR = SSOT для решений, Стандарт = SSOT для исполнения. Задача стартует **только** при появлении боли: повторяющиеся конфликты между свежим ADR и устоявшейся практикой в стандарте. | Creative |
 | **B-091** | Проверить Reference Pattern на не-AI доменах | **P2** | B-089, B-090 | deferred (triggered) | - (deferred) | Ревью Retrieval и методологическое обсуждение 2026-07-16 | Проверить гипотезу Reference Pattern за пределами AI на Business Analysis, Requirements Engineering и Prompt Engineering. Запускать только после успешной валидации на Memory и Agents. | Creative |
+| **B-094** | Knowledge Integrity Auditor — агент периодического аудита целостности знаний | **P2** | - | deferred (regular) | [#475](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/475) | Согласование ОПС с фаундером (RFC [#470](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/470)) | Регулярная задача вне спринтов: автономный агент по расписанию сканирует исторические документы (RFC, ADR) на упоминания дефектов и проверяет, устранены ли они в замерженных PR; добавляет блок `Status Update` со ссылкой на закрывающий PR. Триггер автоматизации — явная боль от ручного аудита; до неё задача не автоматизируется. | Structured |
+| **B-095** | Проспективный замер эффекта RFC #470 | **P2** | B-093 | deferred (regular) | [#475](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/475) | RFC [#470](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/470); [валидация стратегии постановки задач](../research/hub/2026-07-31-ops-task-strategy-validation.md); PR [#462](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/462) | Регулярная задача вне спринтов, запуск через 3 месяца после внедрения RFC #470: повторный прогон скриптов из `research/hub/exp/ops-task-strategy-461/` для измерения доли непродуктивных PR, `contract_score` и доли PR-с-вопросами. Основание для перевода следствий RFC в canonical или их корректировки. | Structured |
+| **B-096** | Создание инструкции по меткам GitHub | **P3** | - | deferred (triggered) | [#475](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/475) | Согласование ОПС с фаундером; PR [#467](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/467) | Документировать допустимые метки (`no-diff-expected`, `needs-human-decision`, `incomplete-dod` и другие) как часть общей инструкции по Хабу, чтобы пользователи не забывали, какие метки можно использовать. Триггер — повторяющиеся ошибки в разметке issues/PR. | Structured |
+| **B-097** | Автоматизация переноса неактивных PR-с-вопросами в `pr-ops/backlog.md` | **P3** | B-096 | deferred (triggered) | [#475](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/475) | Согласование ОПС с фаундером; RFC [#470](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/470) | Скрипт, который по расписанию или триггеру находит PR с меткой `needs-human-decision` старше N дней, переносит описание вопроса в `backlog.md` и закрывает PR с комментарием. Запуск по запросу; не автоматизировать до явной боли от ручного разбора зависших PR. | Structured |
 
 
 ---
@@ -359,4 +366,6 @@ Anti-Inflation.
 | Issue [#427](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/427) (обсуждение 2026-07-16; B-050 v0.2 §2) | Источник triggered-задачи B-088: разграничение ADR как SSOT для решений и Стандарта как SSOT для исполнения только после появления повторяющейся операционной боли. |
 | Issue [#437](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437) и методологическое обсуждение 2026-07-16 | Источник задач B-089..B-091 (Спринт 10): модель зрелости Reference Pattern, разделение Research Method и Domain Methodology, валидация на не-AI доменах. |
 | Issue [#457](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457) (постановка фаундера) | Источник задач B-092..B-093: исследование промышленных практик агентного исполнения задач как вторая валидация Reference Research Pattern и фактическая база для будущего RFC по архитектуре постановки задач. |
+| [docs/rfc/2026-08-06-rfc-task-statement-architecture.md](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md) (RFC [#470](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/470)) | Источник задач ОПС B-094..B-097 и статуса B-093: архитектура постановки задач для AI-агентов, следствия которой требуют проспективного замера эффекта. |
+| Issue [#466](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/466) и PR [#467](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/467) | Источник обновления правил работы агентов (`ai-rules/`) и практики разметки артефактов ОПС: вход для B-096 (инструкция по меткам GitHub). |
 | GitHub Issues/PR | История выполненных задач, review discussion and implementation evidence. |

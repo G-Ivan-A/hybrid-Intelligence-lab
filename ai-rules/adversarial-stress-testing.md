@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.0
-updated: 2026-07-10
+version: 1.1
+updated: 2026-08-07
 temperature: 0.1
 executable: true
 ---
@@ -97,5 +97,5 @@ executable: true
 ## Связанные источники
 
 - [ADR-002: маршрутизация артефактов](../docs/adr/2026-06-adr-002-artifact-document-methodology.md)
-- [AI Governance: Rule 4 и Rule 5](../ai-governance/ai-governance.md)
+- [AI Governance: политики 1 и 3](../ai-governance/ai-governance.md#политики)
 - [Глобальный анализ, §1.2, H27 и §11-C1](../research/hub/2026-07-04-hub-as-agent-system-global-analysis.md)

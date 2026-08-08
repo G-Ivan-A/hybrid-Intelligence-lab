@@ -87,6 +87,8 @@ is_active_file() {
     docs/adr/2026-07-adr-007-hub-root-structure.md | \
     docs/adr/2026-07-adr-008-standard-meta-structure.md | \
     docs/adr/2026-07-adr-009-mango-repo-split.md | \
+    docs/adr/2026-08-adr-010-agent-autonomy-principles.md | \
+    docs/adr/README.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
@@ -368,6 +370,8 @@ is_active_file() {
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
     tools/test-agent-onboarding-authorization.sh | \
+    tools/test-check-agent-work-rules-size.sh | \
+    tools/check-agent-work-rules-size.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -614,6 +618,8 @@ required_files=(
   "docs/adr/2026-07-adr-007-hub-root-structure.md"
   "docs/adr/2026-07-adr-008-standard-meta-structure.md"
   "docs/adr/2026-07-adr-009-mango-repo-split.md"
+  "docs/adr/2026-08-adr-010-agent-autonomy-principles.md"
+  "docs/adr/README.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
@@ -802,6 +808,8 @@ required_files=(
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/test-agent-onboarding-authorization.sh"
+  "tools/test-check-agent-work-rules-size.sh"
+  "tools/check-agent-work-rules-size.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -892,11 +900,11 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.9"
+require_text "CONTRIBUTING.md" "version: 1.10"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-07-16"
+require_text "CONTRIBUTING.md" "updated: 2026-08-07"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -1312,7 +1320,7 @@ require_text "standards/glossary.md" "Источники"
 
 require_text "standards/education-profile.md" "status: accepted"
 require_text "standards/education-profile.md" "version: 1.0"
-require_text "standards/education-profile.md" "updated: 2026-05-26"
+require_text "standards/education-profile.md" "updated: 2026-08-07"
 require_text "standards/education-profile.md" "## Назначение"
 require_text "standards/education-profile.md" "product-profile.md"
 require_text "standards/education-profile.md" "research-standard.md"
@@ -1544,11 +1552,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.84"
+require_text "pr-ops/artifact-map.md" "version: 1.85"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-06"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-07"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1756,7 +1764,7 @@ require_text "docs/rfc/research-memory-source-intelligence.md" "Open Decisions"
 require_text "pr-ops/artifact-map.md" "docs/rfc/repository-archetypes-template-release.md"
 require_text "docs/rfc/README.md" "repository-archetypes-template-release.md"
 require_text "docs/rfc/repository-archetypes-template-release.md" "status: draft"
-require_text "docs/rfc/repository-archetypes-template-release.md" "version: 0.1"
+require_text "docs/rfc/repository-archetypes-template-release.md" "version: 0.2"
 require_text "docs/rfc/repository-archetypes-template-release.md" "Почему текущей ситуации недостаточно"
 require_text "docs/rfc/repository-archetypes-template-release.md" "Анализ внешних эталонов структуры"
 require_text "docs/rfc/repository-archetypes-template-release.md" "Анализ моделей Release Engineering"
@@ -1873,7 +1881,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.40"
+require_text "pr-ops/backlog.md" "version: 1.41"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
@@ -2588,6 +2596,8 @@ require_text ".github/workflows/validate.yml" "Test post-migration validator inv
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-authorization.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
+require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"
