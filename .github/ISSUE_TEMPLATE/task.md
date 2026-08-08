@@ -5,8 +5,8 @@ title: "[scope] Краткое описание задачи"
 labels: "tools, governance"
 assignees: ""
 status: canonical
-version: 1.0
-updated: 2026-06-12
+version: 1.1
+updated: 2026-08-08
 temperature: 0.1
 ---
 
@@ -23,7 +23,8 @@ temperature: 0.1
 - User Story / ФТ: `-`
 - Linked Backlog: `-`
 - Depends On: `-`
-- Operating Mode: `Structured`
+- Operating Mode: `Structured / Creative / Hybrid`
+- Task Type (optional): `Research / Education / Implementation / Audit / Analysis / RFC / ADR`
 
 ## Контекст
 

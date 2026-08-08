@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-08-07
+version: 1.3
+updated: 2026-08-08
 temperature: 0.1
 executable: false
 ---
@@ -62,12 +62,11 @@ Framework (L1-L2) задаёт границы, видение и продукт�
 
 ## Operating Modes
 
-| Mode | Когда использовать |
+| Mode | Профиль контрактов по умолчанию |
 | --- | --- |
-| Structured | По умолчанию для governance, структуры, standards и migration work. |
-| Creative | Когда задана цель и разрешён выбор структуры или варианта решения. |
-| Research | Для source-backed analysis, methods, limitations и reproducibility. |
-| Education | Для programs, lessons, scenarios и teaching artifacts. |
+| Structured | Низкая автономия: агент следует явно заданным контрактам и эскалирует противоречия или пробелы. |
+| Creative | Высокая автономия в пределах разрешённого перечня действий и неизменных hard constraints. |
+| Hybrid | Смешанная автономия: отдельные части задачи явно назначаются Structured или Creative. |
 
 Structured mode работает fail-closed: при противоречии или отсутствии
 необходимого правила агент запрашивает human guidance. Creative override

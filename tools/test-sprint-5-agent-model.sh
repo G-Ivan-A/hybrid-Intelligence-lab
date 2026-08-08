@@ -16,7 +16,7 @@ require_text() {
 }
 
 require_text ".github/ISSUE_TEMPLATE/task.yml" "- hybrid"
-require_text ".github/ISSUE_TEMPLATE/task.yml" "- deep-think"
+require_text "tools/test-operating-mode-contract.sh" "expected_modes"
 
 stress_test="ai-rules/adversarial-stress-testing.md"
 [[ -f "$stress_test" ]] || fail "missing stress-test procedure: $stress_test"
