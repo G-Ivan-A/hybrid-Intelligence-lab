@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-08-06
+version: 0.5
+updated: 2026-08-08
 temperature: 0.1
 ---
 
@@ -30,6 +30,10 @@ temperature: 0.1
   нормализация сущностей и моделирование графа. Модуль содержит образовательный
   срез для бизнес-аналитиков (Приложение A в
   [`40-practice-and-cases.md`](information-extraction-graph-modeling/40-practice-and-cases.md)).
+- [`evaluation/`](evaluation/00-introduction.md) — пятая валидация паттерна:
+  метрики RAG/extraction/graph/agent tasks, LLM-as-judge, golden sets,
+  risk-based thresholds, сравнение eval-фреймворков и образовательный срез для
+  бизнес-аналитика.
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).

@@ -46,6 +46,18 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Модуль `research/ai-education/evaluation/` (issue #479) — пятая
+  валидация Reference Research Pattern. Шесть файлов покрывают таксономию
+  RAG/extraction/graph/agent metrics, калибровку и biases LLM-as-judge,
+  lifecycle golden sets, risk-based thresholds, рекомендуемый вход для B-067,
+  сравнение Ragas/DeepEval/TruLens/LangSmith/Braintrust/Promptfoo и
+  образовательный срез для бизнес-аналитиков. Численные пороги не назначены без
+  локального корпуса; исследование не меняет правила или архитектуру Хаба.
+- registry: `research/external-knowledge/external-sources-registry.md` v0.14 —
+  зарегистрированы источники `ext-218`..`ext-231`, использованные в issue #479.
+- artifact-map: `pr-ops/artifact-map.md` v1.86 — зарегистрированы шесть файлов
+  Evaluation; индекс AI Education и validator allowlist синхронизированы.
+
 - tools: `tools/check-agent-work-rules-size.sh` — валидатор бюджетного
   инварианта точки входа. Оценивает размер `ai-rules/agent-work-rules.md` в
   токенах (байты / 3.2) и падает при превышении ~9k токенов, предупреждая

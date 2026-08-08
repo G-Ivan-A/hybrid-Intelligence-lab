@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.13
-updated: 2026-07-31
+version: 0.14
+updated: 2026-08-08
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -290,6 +290,20 @@ related_issues:
 | `ext-215` | [Bast et al. — Fair Evaluation of Entity Linking Systems](https://aclanthology.org/2023.emnlp-main.411/) | `paper` | `en` | `entity-linking, evaluation, normalization` | `topic: identity-resolution` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/20-taxonomy.md) |
 | `ext-216` | [Zhu et al. — Large Language Models for Knowledge Graph Construction and Reasoning](https://arxiv.org/abs/2305.13168) | `paper` | `en` | `knowledge-graph, construction, reasoning, survey` | `topic: graph-modeling` | `research` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/50-open-research.md) |
 | `ext-217` | [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956) | `paper` | `en` | `temporal-knowledge-graph, entity-resolution, agent-memory` | `topic: graph-modeling` | `observation` | `hub` | ✅ [IEGM-471](../ai-education/information-extraction-graph-modeling/50-open-research.md) |
+| `ext-218` | [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) | `paper` | `en` | `llm-as-judge, bias, human-agreement, evaluation` | `topic: agent-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/10-theory.md) |
+| `ext-219` | [RAGAS: Automated Evaluation of Retrieval Augmented Generation](https://aclanthology.org/2024.eacl-demo.16/) | `paper` | `en` | `rag, faithfulness, relevance, evaluation` | `topic: agent-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/20-taxonomy.md) |
+| `ext-220` | [ARES: An Automated Evaluation Framework for RAG Systems](https://aclanthology.org/2024.naacl-long.20/) | `paper` | `en` | `rag, judge, confidence-interval, evaluation` | `topic: agent-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/20-taxonomy.md) |
+| `ext-221` | [LegalBench](https://arxiv.org/abs/2308.11462) | `paper` | `en` | `golden-set, legal, domain-experts, benchmark` | `topic: golden-sets` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/10-theory.md) |
+| `ext-222` | [Large language models encode clinical knowledge (MultiMedQA)](https://www.nature.com/articles/s41586-023-06291-2) | `paper` | `en` | `golden-set, medical, human-evaluation, benchmark` | `topic: golden-sets` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/10-theory.md) |
+| `ext-223` | [FinQA](https://aclanthology.org/2021.emnlp-main.300/) | `paper` | `en` | `golden-set, financial, evidence, executable-reasoning` | `topic: golden-sets` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/10-theory.md) |
+| `ext-224` | [BERTScore](https://openreview.net/forum?id=SkeHuCVFDr) | `paper` | `en` | `semantic-similarity, generation, metric` | `topic: agent-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/20-taxonomy.md) |
+| `ext-225` | [Ragas documentation](https://docs.ragas.io/) | `docs` | `en` | `ragas, metrics, experiments` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
+| `ext-226` | [DeepEval documentation](https://deepeval.com/docs/getting-started) | `docs` | `en` | `deepeval, pytest, metrics` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
+| `ext-227` | [TruLens documentation](https://www.trulens.org/getting_started/) | `docs` | `en` | `trulens, feedback, tracing` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
+| `ext-228` | [LangSmith evaluation documentation](https://docs.langchain.com/langsmith/evaluation) | `docs` | `en` | `langsmith, datasets, offline-online-evaluation` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
+| `ext-229` | [Braintrust eval documentation](https://www.braintrust.dev/docs/guides/evals) | `docs` | `en` | `braintrust, scorers, experiments, tracing` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
+| `ext-230` | [Promptfoo documentation](https://www.promptfoo.dev/docs/intro/) | `docs` | `en` | `promptfoo, assertions, red-team, ci` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
+| `ext-231` | [NetworkX graph edit distance](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.similarity.graph_edit_distance.html) | `docs` | `en` | `graph-edit-distance, graph-evaluation, metric` | `topic: graph-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/20-taxonomy.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
