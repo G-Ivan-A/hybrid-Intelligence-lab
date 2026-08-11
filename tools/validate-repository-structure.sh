@@ -175,6 +175,7 @@ is_active_file() {
     research/ai-education/evaluation/30-decision-framework.md | \
     research/ai-education/evaluation/40-practice-and-cases.md | \
     research/ai-education/evaluation/50-open-research.md | \
+    research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md | \
     research/hub/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \
@@ -1562,11 +1563,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.86"
+require_text "pr-ops/artifact-map.md" "version: 1.87"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-08"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-11"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"

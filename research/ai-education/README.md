@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-08
+version: 0.6
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -33,7 +33,10 @@ temperature: 0.1
 - [`evaluation/`](evaluation/00-introduction.md) — пятая валидация паттерна:
   метрики RAG/extraction/graph/agent tasks, LLM-as-judge, golden sets,
   risk-based thresholds, сравнение eval-фреймворков и образовательный срез для
-  бизнес-аналитика.
+  бизнес-аналитика. Прикладной [evals-контракт Source Intelligence
+  Engine](evaluation/2026-08-11-source-intelligence-evals-contract.md)
+  переводит модуль в план локального эксперимента и handoff для B-068 без
+  назначения числовых acceptance thresholds.
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).

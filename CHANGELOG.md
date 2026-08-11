@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.69
-updated: 2026-08-07
+version: 1.70
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -46,6 +46,10 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Прикладной evals-контракт Source Intelligence Engine (issue #483):
+  stage metrics, golden set на 30–50 cases, калибровка LLM-as-Judge, DeepEval
+  runner, пошаговый эксперимент и статистический handoff в B-068 без назначения
+  acceptance thresholds.
 - research: Модуль `research/ai-education/evaluation/` (issue #479) — пятая
   валидация Reference Research Pattern. Шесть файлов покрывают таксономию
   RAG/extraction/graph/agent metrics, калибровку и biases LLM-as-judge,
