@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-08
+version: 0.6
+updated: 2026-08-11
 temperature: 0.1
 ---
 
