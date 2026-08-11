@@ -115,6 +115,7 @@ is_active_file() {
     standards/webportal-product-concept-standard.md | \
     standards/webportal-solution-concept-standard.md | \
     standards/evals-contract-standard.md | \
+    standards/artifact-deprecation-standard.md | \
     research/mango/2026-05-26-taxonomy-concept.md | \
     research/mango/2026-05-26-requirements-lifecycle-uncertainty.md | \
     research/mango/2026-05-26-rag-mapping-roadmap.md | \
@@ -686,6 +687,7 @@ required_files=(
   "standards/webportal-product-concept-standard.md"
   "standards/webportal-solution-concept-standard.md"
   "standards/evals-contract-standard.md"
+  "standards/artifact-deprecation-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/hub/2026-06-12-ecosystem-governance-audit.md"
@@ -997,8 +999,8 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.12"
-require_text "standards/README.md" "updated: 2026-07-17"
+require_text "standards/README.md" "version: 1.13"
+require_text "standards/README.md" "updated: 2026-08-11"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -1021,6 +1023,7 @@ require_text "standards/README.md" "standard-meta-structure.md"
 require_text "standards/README.md" "executable-documentation-standard.md"
 require_text "standards/README.md" "htom-documentation-structure.md"
 require_text "standards/README.md" "evals-contract-standard.md"
+require_text "standards/README.md" "artifact-deprecation-standard.md"
 require_text "standards/README.md" "artifact-map.md"
 require_text "standards/README.md" "issue-workflow.md"
 require_text "standards/README.md" "session-handover-standard.md"
@@ -1593,7 +1596,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.89"
+require_text "pr-ops/artifact-map.md" "version: 1.90"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
