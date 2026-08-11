@@ -400,6 +400,8 @@ is_active_file() {
     tools/check-agent-work-rules-size.sh | \
     tools/test-nonempty-diff.sh | \
     tools/validate-nonempty-diff.sh | \
+    tools/test-historical-immutable.sh | \
+    tools/validate-historical-immutable.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -841,6 +843,8 @@ required_files=(
   "tools/check-agent-work-rules-size.sh"
   "tools/test-nonempty-diff.sh"
   "tools/validate-nonempty-diff.sh"
+  "tools/test-historical-immutable.sh"
+  "tools/validate-historical-immutable.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -2666,6 +2670,8 @@ require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
+require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "fetch-depth: 0"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
