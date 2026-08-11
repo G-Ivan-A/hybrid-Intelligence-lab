@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.4
+version: 1.5
 updated: 2026-08-11
 temperature: 0.1
 executable: false
@@ -19,6 +19,35 @@ executable: false
 Для новой HTOM-команды используется геном [`templates/htom/`](../templates/htom/),
 для production-спока — [`templates/spoke/`](../templates/spoke/). Различие
 определено в [RFC htom-vs-spoke](../docs/rfc/htom-vs-spoke-clarification-2026-06.md).
+
+## Универсальные SSOT по осям
+
+Перечисленные ниже артефакты действуют для **любой** задачи и **не дублируются**
+в постановке ([RFC #470 §P.9](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md):
+универсальные контракты не повторяются в тексте задачи). Секция `SSOT` в issue
+содержит только якоря, специфичные для конкретной задачи: PR, issue, permalink с
+SHA или конкретный файл-результат предыдущей работы.
+
+| Ось | Артефакт | Путь | Что фиксирует |
+| --- | --- | --- | --- |
+| Права решений | AI Governance | [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md) | Human decision rights, hard bans, tiers и amendment policy. |
+| Права решений | ADR-010 | [`docs/adr/2026-08-adr-010-agent-autonomy-principles.md`](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) | Принципы автономии агента и абсолютные границы. |
+| Поведение агента | Agent Work Rules | [`ai-rules/agent-work-rules.md`](agent-work-rules.md) | Контракты автономии, эскалации и верификации; Operating Modes. |
+| Поведение агента | Agent Onboarding Protocol | [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) | Обязательный pre-flight: checklists, Readback, мандат issue. |
+| Постановка задач | RFC #470 | [`docs/rfc/2026-08-06-rfc-task-statement-architecture.md`](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md) | Архитектура постановки: 5-блочный шаблон, размещение правил, бюджет точки входа. |
+| Процесс | GOVERNANCE.md | [`GOVERNANCE.md`](../GOVERNANCE.md) | Операционный контракт ролей и порядок принятия изменений. |
+| Процесс | CONTRIBUTING.md | [`CONTRIBUTING.md`](../CONTRIBUTING.md) | Правила участия, локальные валидаторы, ожидания к review. |
+| Структура репозитория | Repo Model | [`pr-ops/repo-model.md`](../pr-ops/repo-model.md) | Модель каталогов и Anti-Inflation правило. |
+| Структура репозитория | Artifact Map | [`pr-ops/artifact-map.md`](../pr-ops/artifact-map.md) | Где живёт артефакт и уровни L1–L4 (Framework vs Methodology). |
+| Артефакты | ADR-002 | [`docs/adr/2026-06-adr-002-artifact-document-methodology.md`](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) | Методология артефактных документов. |
+| Артефакты | ADR-008 | [`docs/adr/2026-07-adr-008-standard-meta-structure.md`](../docs/adr/2026-07-adr-008-standard-meta-structure.md) | Стандартная Мета-структура документа. |
+| Артефакты | Standards | [`standards/README.md`](../standards/README.md) | Точка входа в стандарты, включая file naming и frontmatter. |
+| Жизненный цикл | Knowledge Lifecycle | [`docs/rfc/knowledge-lifecycle-proposal.md`](../docs/rfc/knowledge-lifecycle-proposal.md) | Lifecycle stages и переходы между ними. |
+| Продукт | Concept | [`docs/concept.md`](../docs/concept.md) | Концепция Хаба, границы и модель hub-and-spoke. |
+
+Таблица даёт путь и назначение, но **не** дублирует `status`, `version` и
+`updated`: они читаются из frontmatter самого артефакта на момент исполнения
+(проверка SSOT по RFC #470 §P.7). Неразрешимый якорь фиксируется как gap.
 
 ## Правило авто-заполнения Мета
 
