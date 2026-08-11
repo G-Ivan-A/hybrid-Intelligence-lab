@@ -37,6 +37,9 @@ temperature: 0.1
   Engine](evaluation/2026-08-11-source-intelligence-evals-contract.md)
   переводит модуль в план локального эксперимента и handoff для B-068 без
   назначения числовых acceptance thresholds.
+- [`tool-use/`](tool-use/00-introduction.md) — шестая валидация паттерна:
+  typed function calling, MCP, execution/recovery patterns, planner/executor,
+  framework comparison и интеграция в Source Intelligence Engine.
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).
