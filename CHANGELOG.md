@@ -17,8 +17,32 @@ All notable repository governance changes are documented here.
   таксономия function calling и MCP, execution/recovery patterns,
   planner/executor trade-offs, сравнение фреймворков и рекомендации для Source
   Intelligence Engine в формате Reference Research Pattern.
+- ci: постусловие «непустой полезный дифф» перенесено из текста правил на ярус
+  CI (шаг 1 внедрения RFC #470, issue #484). Добавлены
+  `tools/validate-nonempty-diff.sh` (three-dot diff от `merge-base`, отсев
+  служебных файлов-заглушек, escape-метка `no-diff-expected` только от
+  owner/admin) и регрессионный тест `tools/test-nonempty-diff.sh`,
+  доказывающий падение валидатора на пустом диффе (стресс-тест S5).
+  `.github/workflows/validate.yml` получил `fetch-depth: 0`, шаг проверки на
+  событии `pull_request` и шаг определения авторизации escape-метки;
+  `CONTRIBUTING.md` описывает постусловие и правила метки.
+
+### Removed
+
+- templates: `.github/ISSUE_TEMPLATE/task-creative.md` удалён как superseded
+  (issue #484). Creative-режим задаётся полем `operating_mode` единого шаблона.
 
 ### Changed
+
+- templates: шаблон задачи консолидирован в единый 5-блочный формат RFC #470
+  §P.9 (issue #484): Контекст, Цель, SSOT, Контракты задачи, Готово когда;
+  опционально одной строкой user story, ФТ, НФТ и Operating Mode.
+  `.github/ISSUE_TEMPLATE/task.md` (v2.0) и `task.yml` синхронизированы,
+  универсальные контракты и списки путей из шаблона убраны.
+  `standards/glossary.md` (v1.10) определяет 5-блочный шаблон и фиксирует
+  `operating_mode` и `task_type` как независимые оси;
+  `pr-ops/artifact-map.md` (v1.87) описывает новые утилиты и убирает строку
+  удалённого шаблона.
 
 - ops: устранены пять мелких дефектов, обнаруженных при подготовке RFC
   `docs/rfc/2026-08-06-rfc-task-statement-architecture.md` (§P.9, Expert Review)
