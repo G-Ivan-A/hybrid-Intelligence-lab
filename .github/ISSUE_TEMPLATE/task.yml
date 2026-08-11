@@ -99,3 +99,21 @@ body:
         - [ ] ...
     validations:
       required: true
+
+  - type: textarea
+    id: deviations
+    attributes:
+      label: "Отклонения от постановки"
+      description: "Если агент отклоняется от явного указания о способе исполнения: что изменено, почему и как проверено. Если отклонений нет — `Нет`."
+      placeholder: "Нет"
+    validations:
+      required: false
+
+  - type: textarea
+    id: incomplete_and_questions
+    attributes:
+      label: "Не выполнено и вопросы"
+      description: "Для легального выхода: что не сделано, почему, варианты решения и рекомендация агента. Если блок не применим — `Нет`."
+      placeholder: "Нет"
+    validations:
+      required: false

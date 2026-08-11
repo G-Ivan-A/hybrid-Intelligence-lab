@@ -869,6 +869,12 @@ while IFS= read -r file; do
     continue
   fi
 
+  # Historical links in RFC/ADR snapshots still target this path. PR #491
+  # keeps it as a disabled compatibility redirect, not an active template.
+  if [[ "$file" == ".github/ISSUE_TEMPLATE/task-creative.md" ]]; then
+    continue
+  fi
+
   if is_old_file "$file"; then
     fail "tracked legacy -old file after migration cleanup: $file"
     continue
@@ -897,11 +903,11 @@ require_text "docs/concept.md" "pr-ops/repo-model.md"
 require_text "docs/concept.md" "standards/README.md"
 require_text "docs/concept.md" "Anti-Inflation"
 require_text "docs/concept.md" "status: canonical"
-require_text "docs/concept.md" "version: 1.0"
-require_text "docs/concept.md" "updated: 2026-05-26"
+require_text "docs/concept.md" "version: 1.1"
+require_text "docs/concept.md" "updated: 2026-08-11"
 require_text "docs/concept.md" "Operating Mode"
-require_text "docs/concept.md" "structured mode"
-require_text "docs/concept.md" "creative mode"
+require_text "docs/concept.md" 'Structured'
+require_text "docs/concept.md" 'Creative'
 require_text "docs/concept.md" "standards/team-contract.md"
 require_text "docs/concept.md" "Шаблон командного соглашения"
 require_text "docs/concept.md" "glossary.md"
@@ -940,7 +946,7 @@ require_text "ai-governance/ai-governance.md" "status: canonical"
 require_text "ai-governance/ai-governance.md" "Пользователь"
 require_text "ai-governance/ai-governance.md" "Human reviewer"
 require_text "ai-governance/ai-governance.md" "Хаб является источником рекомендаций"
-require_text "ai-governance/ai-governance.md" "Обоснованный обход в Creative Mode"
+require_text "ai-governance/ai-governance.md" "Обоснованное отклонение при экспертном исполнении"
 require_text "ai-governance/ai-governance.md" "standards/frontmatter-standard.md"
 require_text "ai-governance/ai-governance.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 require_text "ai-rules/agent-work-rules.md" "status: canonical"
@@ -1201,8 +1207,8 @@ require_text "standards/htom-documentation-structure.md" "templates/sync-project
 
 
 require_text "standards/team-contract.md" "status: accepted"
-require_text "standards/team-contract.md" "version: 1.1"
-require_text "standards/team-contract.md" "updated: 2026-06-13"
+require_text "standards/team-contract.md" "version: 1.2"
+require_text "standards/team-contract.md" "updated: 2026-08-11"
 require_text "standards/team-contract.md" "Назначение"
 require_text "standards/team-contract.md" "не является контрактом для прямого использования"
 require_text "standards/team-contract.md" "CONTRIBUTING.md"
@@ -1217,8 +1223,8 @@ require_text "standards/team-contract.md" "education-profile.md"
 require_text "standards/team-contract.md" "Источники"
 
 require_text "standards/issue-workflow.md" "status: accepted"
-require_text "standards/issue-workflow.md" "version: 1.2"
-require_text "standards/issue-workflow.md" "updated: 2026-06-12"
+require_text "standards/issue-workflow.md" "version: 1.3"
+require_text "standards/issue-workflow.md" "updated: 2026-08-11"
 require_text "standards/issue-workflow.md" "temperature: 0.1"
 require_text "standards/issue-workflow.md" "executable: false"
 require_text "standards/issue-workflow.md" "## Назначение"
@@ -1299,7 +1305,7 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 1.10"
+require_text "standards/glossary.md" "version: 2.0"
 require_text "standards/glossary.md" "updated: 2026-08-11"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
@@ -1439,8 +1445,8 @@ require_text "pr-ops/repo-model.md" "Anti-Inflation"
 require_text "pr-ops/repo-model.md" "tools/"
 require_text "pr-ops/repo-model.md" "practices/"
 require_text "pr-ops/repo-model.md" "status: canonical"
-require_text "pr-ops/repo-model.md" "version: 1.4"
-require_text "pr-ops/repo-model.md" "updated: 2026-07-16"
+require_text "pr-ops/repo-model.md" "version: 1.5"
+require_text "pr-ops/repo-model.md" "updated: 2026-08-11"
 require_text "pr-ops/repo-model.md" "executable: false"
 require_text "pr-ops/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
 
@@ -1544,8 +1550,8 @@ require_text "docs/rfc/solution-concept-template-proposal.md" "L3 Methodology-la
 require_text "docs/rfc/solution-concept-template-proposal.md" "explicit User approval"
 
 require_text "ai-rules/agent-onboarding-protocol.md" "status: canonical"
-require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.4"
-require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-08-01"
+require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.5"
+require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-08-11"
 require_text "ai-rules/agent-onboarding-protocol.md" "executable: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "entrypoint: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат."
@@ -2497,6 +2503,10 @@ require_text ".github/ISSUE_TEMPLATE/task.md" "## Контракты задач�
 require_text ".github/ISSUE_TEMPLATE/task.md" "## Готово, когда"
 reject_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
 
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" 'name: ""'
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "status: deprecated"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "unified task template"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Creative Task (consolidated)"
 
 # HTOM-команда "ДНК-шаблон" (templates/htom/): минимальный геном для клонирования.
 # HTOM-контракты (AI_GOVERNANCE / AI_QUICK_RULES / AI_HANDOVER_PROMPT) обязательны.

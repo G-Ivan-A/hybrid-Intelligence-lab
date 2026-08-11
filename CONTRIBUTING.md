@@ -47,6 +47,10 @@ data и работают внутри requested scope.
 Автор задачи может указать только цель и Operating Mode. AI-агент обязан
 достроить рабочую Мета из активных контрактов:
 
+Operating Mode одновременно регулирует ширину автономии по
+[Принципу 3 ADR-010](docs/adr/2026-08-adr-010-agent-autonomy-principles.md):
+`Structured`, `Creative` и `Hybrid` не меняют цель и абсолютные границы.
+
 | Что отсутствует | Как достраивается |
 | --- | --- |
 | Target artifact | По `pr-ops/artifact-map.md`, `pr-ops/repo-model.md` и resolver prompt. |
@@ -56,6 +60,10 @@ data и работают внутри requested scope.
 
 Явная Мета в issue имеет приоритет, если она не нарушает hard rules. Если
 правило нарушено, агент фиксирует конфликт и запрашивает guidance.
+
+Метка `no-diff-expected` — человеческое документированное исключение для PR,
+который намеренно не должен содержать дифф (например, обсуждение или retarget).
+Агент не ставит её самостоятельно; обычный PR обязан содержать полезный дифф.
 
 Historical migration material используется только как source context через
 audit, PR history или явно указанный `source` path. Новый active artifact должен

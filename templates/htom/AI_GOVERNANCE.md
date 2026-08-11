@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.4
+version: 0.5
 updated: {{date}}
 temperature: 0.1
 ---
@@ -64,6 +64,11 @@ temperature: 0.1
   по vision, license и publication.
 
 ## Operating Modes
+
+Канонический словарь Хаба и принципы автономии задаёт
+[`ADR-010`]({{hub_url}}/blob/main/docs/adr/2026-08-adr-010-agent-autonomy-principles.md).
+Локальные `Research` ниже — task profile, а не режим Хаба; миграцию словаря
+нужно оформить отдельным human-reviewed решением команды.
 
 | Mode | Когда использовать |
 | --- | --- |
