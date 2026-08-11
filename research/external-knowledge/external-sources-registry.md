@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.14
-updated: 2026-08-08
+version: 0.15
+updated: 2026-08-11
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -27,6 +27,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/487"
 ---
 
 # Реестр внешних источников
@@ -304,6 +305,24 @@ related_issues:
 | `ext-229` | [Braintrust eval documentation](https://www.braintrust.dev/docs/guides/evals) | `docs` | `en` | `braintrust, scorers, experiments, tracing` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
 | `ext-230` | [Promptfoo documentation](https://www.promptfoo.dev/docs/intro/) | `docs` | `en` | `promptfoo, assertions, red-team, ci` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
 | `ext-231` | [NetworkX graph edit distance](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.similarity.graph_edit_distance.html) | `docs` | `en` | `graph-edit-distance, graph-evaluation, metric` | `topic: graph-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/20-taxonomy.md) |
+| `ext-232` | [Cemri et al. — Why Do Multi-Agent LLM Systems Fail? (MAST)](https://arxiv.org/abs/2503.13657) | `paper` | `en` | `multi-agent, failure-taxonomy, misalignment, verification` | `topic: multi-agent-orchestration` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/10-theory.md) |
+| `ext-233` | [Anthropic — How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) | `blog` | `en` | `orchestrator-worker, token-cost, parallelism, case-study` | `topic: multi-agent-orchestration` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/30-decision-framework.md) |
+| `ext-234` | [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) | `blog` | `en` | `workflow-patterns, orchestrator-workers, simplicity` | `topic: multi-agent-orchestration` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/20-taxonomy.md) |
+| `ext-235` | [Cognition — Don't Build Multi-Agents](https://cognition.com/blog/dont-build-multi-agents) | `blog` | `en` | `context-engineering, single-threaded-agent, counter-case` | `topic: multi-agent-orchestration` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/10-theory.md) |
+| `ext-236` | [Du et al. — Improving Factuality and Reasoning through Multiagent Debate](https://arxiv.org/abs/2305.14325) | `paper` | `en` | `multi-agent-debate, factuality, reasoning` | `topic: multi-agent-orchestration` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/10-theory.md) |
+| `ext-237` | [Smit et al. — Should we be going MAD?](https://arxiv.org/abs/2311.17371) | `paper` | `en` | `debate-strategies, self-consistency, cost-accuracy-tradeoff` | `topic: multi-agent-orchestration` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/30-decision-framework.md) |
+| `ext-238` | [OWL: Optimized Workforce Learning](https://proceedings.neurips.cc/paper_files/paper/2025/file/48dcc43a534c5b582f9d0fdb778e9b84-Paper-Conference.pdf) | `paper` | `en` | `workforce, planning-execution-decoupling, gaia` | `topic: multi-agent-orchestration` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/40-practice-and-cases.md) |
+| `ext-239` | [Erman et al. — The Hearsay-II Speech-Understanding System](https://mas.cs.umass.edu/Documents/Erman_Hearsay80.pdf) | `paper` | `en` | `blackboard, knowledge-sources, classic-architecture` | `topic: coordination-mechanisms` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/20-taxonomy.md) |
+| `ext-240` | [LangGraph documentation](https://langchain-ai.github.io/langgraph/) | `docs` | `en` | `graph-state, reducers, checkpointing, supervisor` | `topic: orchestration-frameworks` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/40-practice-and-cases.md) |
+| `ext-241` | [CrewAI documentation](https://docs.crewai.com/en/introduction) | `docs` | `en` | `crews, flows, state-management, roles` | `topic: orchestration-frameworks` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/40-practice-and-cases.md) |
+| `ext-242` | [Microsoft Agent Framework overview](https://learn.microsoft.com/en-us/agent-framework/overview/) | `docs` | `en` | `autogen, semantic-kernel, workflows, consolidation` | `topic: orchestration-frameworks` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/40-practice-and-cases.md) |
+| `ext-243` | [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | `github` | `en` | `handoffs, guardrails, tracing, swarm-successor` | `topic: orchestration-frameworks` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/40-practice-and-cases.md) |
+| `ext-244` | [MetaGPT](https://github.com/FoundationAgents/MetaGPT) | `github` | `en` | `sop, role-pipeline, software-engineering` | `topic: orchestration-frameworks` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/40-practice-and-cases.md) |
+| `ext-245` | [CAMEL-AI](https://www.camel-ai.org/) / [OWL repo](https://github.com/camel-ai/owl) | `docs` | `en` | `role-playing, workforce, open-source-agents` | `topic: orchestration-frameworks` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/40-practice-and-cases.md) |
+| `ext-246` | [A2A Protocol](https://github.com/a2aproject/A2A) | `github` | `en` | `agent-to-agent, interoperability, agent-card` | `topic: agent-protocols` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/20-taxonomy.md) |
+| `ext-247` | [Model Context Protocol](https://modelcontextprotocol.io/) | `docs` | `en` | `tools, resources, agent-capability-interface` | `topic: agent-protocols` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/20-taxonomy.md) |
+| `ext-248` | [OpenTelemetry GenAI semantic conventions for agentic systems](https://github.com/open-telemetry/semantic-conventions-genai/issues/35) | `github` | `en` | `otel, tracing, agent-spans, multi-agent-observability` | `topic: agent-protocols` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/10-theory.md) |
+| `ext-249` | [Linux Foundation — A2A Protocol first-year adoption](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year) | `blog` | `en` | `a2a, adoption, governance, enterprise` | `topic: agent-protocols` | `observation` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/20-taxonomy.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

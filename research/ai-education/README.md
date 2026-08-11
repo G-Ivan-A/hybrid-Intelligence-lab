@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-08
+version: 0.6
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -34,6 +34,12 @@ temperature: 0.1
   метрики RAG/extraction/graph/agent tasks, LLM-as-judge, golden sets,
   risk-based thresholds, сравнение eval-фреймворков и образовательный срез для
   бизнес-аналитика.
+- [`multi-agent-orchestration/`](multi-agent-orchestration/00-introduction.md) —
+  шестая валидация паттерна: таксономия паттернов оркестрации, механизмы
+  координации и разрешения конфликтов, cost-benefit мультиагентности,
+  сравнение фреймворков и протоколов, встраивание в конвейер Source
+  Intelligence Engine. Образовательный срез — общий для всех ролей
+  (§2 в [`50-open-research.md`](multi-agent-orchestration/50-open-research.md)).
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).
