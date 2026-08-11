@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-08-08
+version: 0.2
+updated: 2026-08-11
 temperature: 0.5
 ---
 
@@ -16,6 +16,7 @@ temperature: 0.5
 | [`30-decision-framework.md`](30-decision-framework.md) | Как собрать risk-based контракт качества и golden set? |
 | [`40-practice-and-cases.md`](40-practice-and-cases.md) | Что поддерживают Ragas, DeepEval, TruLens, LangSmith, Braintrust и Promptfoo? |
 | [`50-open-research.md`](50-open-research.md) | Что остаётся проверить локально и чему учить бизнес-аналитика? |
+| [`2026-08-11-source-intelligence-evals-contract.md`](2026-08-11-source-intelligence-evals-contract.md) | Как провести первый прикладной evals-эксперимент Source Intelligence Engine без преждевременных порогов? |
 
 ## BLUF
 

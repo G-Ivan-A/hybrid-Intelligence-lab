@@ -181,6 +181,19 @@ is_active_file() {
     research/ai-education/multi-agent-orchestration/30-decision-framework.md | \
     research/ai-education/multi-agent-orchestration/40-practice-and-cases.md | \
     research/ai-education/multi-agent-orchestration/50-open-research.md | \
+    research/ai-education/observability/00-introduction.md | \
+    research/ai-education/observability/10-theory.md | \
+    research/ai-education/observability/20-taxonomy.md | \
+    research/ai-education/observability/30-decision-framework.md | \
+    research/ai-education/observability/40-practice-and-cases.md | \
+    research/ai-education/observability/50-open-research.md | \
+    research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md | \
+    research/ai-education/tool-use/00-introduction.md | \
+    research/ai-education/tool-use/10-theory.md | \
+    research/ai-education/tool-use/20-taxonomy.md | \
+    research/ai-education/tool-use/30-decision-framework.md | \
+    research/ai-education/tool-use/40-practice-and-cases.md | \
+    research/ai-education/tool-use/50-open-research.md | \
     research/hub/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \
@@ -341,7 +354,6 @@ is_active_file() {
     .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
     .github/ISSUE_TEMPLATE/task.md | \
-    .github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/AI_GOVERNANCE.md | \
     templates/htom/AI_QUICK_RULES.md | \
     templates/htom/AI_SESSION_HANDOVER_PROMPT.md | \
@@ -358,6 +370,7 @@ is_active_file() {
     docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md | \
     docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md | \
     docs/analysis/2026-07-17-mango-artifacts-migration-plan.md | \
+    docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -385,6 +398,8 @@ is_active_file() {
     tools/test-operating-mode-contract.sh | \
     tools/test-check-agent-work-rules-size.sh | \
     tools/check-agent-work-rules-size.sh | \
+    tools/test-nonempty-diff.sh | \
+    tools/validate-nonempty-diff.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -641,6 +656,7 @@ required_files=(
   "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
   "docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md"
   "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
+  "docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -787,7 +803,6 @@ required_files=(
   "research/mango/2026-06-19-repository-structure-vision.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
-  ".github/ISSUE_TEMPLATE/task-creative.md"
   "templates/htom/AI_GOVERNANCE.md"
   "templates/htom/AI_QUICK_RULES.md"
   "templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
@@ -824,6 +839,8 @@ required_files=(
   "tools/test-operating-mode-contract.sh"
   "tools/test-check-agent-work-rules-size.sh"
   "tools/check-agent-work-rules-size.sh"
+  "tools/test-nonempty-diff.sh"
+  "tools/validate-nonempty-diff.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -873,6 +890,12 @@ while IFS= read -r file; do
     continue
   fi
 
+  # Historical links in RFC/ADR snapshots still target this path. PR #491
+  # keeps it as a disabled compatibility redirect, not an active template.
+  if [[ "$file" == ".github/ISSUE_TEMPLATE/task-creative.md" ]]; then
+    continue
+  fi
+
   if is_old_file "$file"; then
     fail "tracked legacy -old file after migration cleanup: $file"
     continue
@@ -901,11 +924,11 @@ require_text "docs/concept.md" "pr-ops/repo-model.md"
 require_text "docs/concept.md" "standards/README.md"
 require_text "docs/concept.md" "Anti-Inflation"
 require_text "docs/concept.md" "status: canonical"
-require_text "docs/concept.md" "version: 1.0"
-require_text "docs/concept.md" "updated: 2026-05-26"
+require_text "docs/concept.md" "version: 1.1"
+require_text "docs/concept.md" "updated: 2026-08-11"
 require_text "docs/concept.md" "Operating Mode"
-require_text "docs/concept.md" "structured mode"
-require_text "docs/concept.md" "creative mode"
+require_text "docs/concept.md" 'Structured'
+require_text "docs/concept.md" 'Creative'
 require_text "docs/concept.md" "standards/team-contract.md"
 require_text "docs/concept.md" "Шаблон командного соглашения"
 require_text "docs/concept.md" "glossary.md"
@@ -914,14 +937,15 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.10"
+require_text "CONTRIBUTING.md" "version: 1.11"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-08-07"
+require_text "CONTRIBUTING.md" "updated: 2026-08-11"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
-require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
+require_text "CONTRIBUTING.md" "no-diff-expected"
+require_text "CONTRIBUTING.md" "tools/validate-nonempty-diff.sh"
 require_text "CONTRIBUTING.md" "Специфика работы с AI-агентами"
 require_text "CONTRIBUTING.md" "manual restart"
 require_text "CONTRIBUTING.md" "standards/frontmatter-standard.md"
@@ -943,7 +967,7 @@ require_text "ai-governance/ai-governance.md" "status: canonical"
 require_text "ai-governance/ai-governance.md" "Пользователь"
 require_text "ai-governance/ai-governance.md" "Human reviewer"
 require_text "ai-governance/ai-governance.md" "Хаб является источником рекомендаций"
-require_text "ai-governance/ai-governance.md" "Обоснованный обход в Creative Mode"
+require_text "ai-governance/ai-governance.md" "Обоснованное отклонение при экспертном исполнении"
 require_text "ai-governance/ai-governance.md" "standards/frontmatter-standard.md"
 require_text "ai-governance/ai-governance.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 require_text "ai-rules/agent-work-rules.md" "status: canonical"
@@ -952,6 +976,7 @@ require_text "ai-rules/agent-work-rules.md" "Специфика работы с 
 require_text "ai-rules/agent-work-rules.md" "agent-onboarding-protocol.md"
 
 require_text "CHANGELOG.md" "## Unreleased"
+require_text "CHANGELOG.md" "issue #484"
 require_text "CHANGELOG.md" "issue #237"
 require_text "CHANGELOG.md" "issue #241"
 require_text "CHANGELOG.md" "issue #240"
@@ -1203,8 +1228,8 @@ require_text "standards/htom-documentation-structure.md" "templates/sync-project
 
 
 require_text "standards/team-contract.md" "status: accepted"
-require_text "standards/team-contract.md" "version: 1.1"
-require_text "standards/team-contract.md" "updated: 2026-06-13"
+require_text "standards/team-contract.md" "version: 1.2"
+require_text "standards/team-contract.md" "updated: 2026-08-11"
 require_text "standards/team-contract.md" "Назначение"
 require_text "standards/team-contract.md" "не является контрактом для прямого использования"
 require_text "standards/team-contract.md" "CONTRIBUTING.md"
@@ -1219,8 +1244,8 @@ require_text "standards/team-contract.md" "education-profile.md"
 require_text "standards/team-contract.md" "Источники"
 
 require_text "standards/issue-workflow.md" "status: accepted"
-require_text "standards/issue-workflow.md" "version: 1.2"
-require_text "standards/issue-workflow.md" "updated: 2026-06-12"
+require_text "standards/issue-workflow.md" "version: 1.3"
+require_text "standards/issue-workflow.md" "updated: 2026-08-11"
 require_text "standards/issue-workflow.md" "temperature: 0.1"
 require_text "standards/issue-workflow.md" "executable: false"
 require_text "standards/issue-workflow.md" "## Назначение"
@@ -1261,7 +1286,6 @@ require_text "standards/project-structure-inheritance.md" "Пример стру
 require_text "standards/project-structure-inheritance.md" "Репозиторий-широкий стандарт НЕ должен ссылаться на проектный"
 require_text "standards/issue-workflow.md" "User Story / ФТ"
 require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task.md"
-require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task-creative.md"
 require_text "standards/issue-workflow.md" "CHANGELOG.md"
 require_text "standards/issue-workflow.md" "pr-ops/artifact-map.md"
 require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
@@ -1302,8 +1326,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 1.9"
-require_text "standards/glossary.md" "updated: 2026-08-08"
+require_text "standards/glossary.md" "version: 2.0"
+require_text "standards/glossary.md" "updated: 2026-08-11"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"
@@ -1330,6 +1354,7 @@ require_text "standards/glossary.md" "Исполнимый документ"
 require_text "standards/glossary.md" "Директивный блок"
 require_text "standards/glossary.md" "HTOM-команда"
 require_text "standards/glossary.md" "Spoke-репозиторий"
+require_text "standards/glossary.md" "5-блочный шаблон задачи"
 require_text "standards/glossary.md" "Как использовать"
 require_text "standards/glossary.md" "Связи терминов"
 require_text "standards/glossary.md" "Источники"
@@ -1441,8 +1466,8 @@ require_text "pr-ops/repo-model.md" "Anti-Inflation"
 require_text "pr-ops/repo-model.md" "tools/"
 require_text "pr-ops/repo-model.md" "practices/"
 require_text "pr-ops/repo-model.md" "status: canonical"
-require_text "pr-ops/repo-model.md" "version: 1.4"
-require_text "pr-ops/repo-model.md" "updated: 2026-07-16"
+require_text "pr-ops/repo-model.md" "version: 1.5"
+require_text "pr-ops/repo-model.md" "updated: 2026-08-11"
 require_text "pr-ops/repo-model.md" "executable: false"
 require_text "pr-ops/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
 
@@ -1546,8 +1571,8 @@ require_text "docs/rfc/solution-concept-template-proposal.md" "L3 Methodology-la
 require_text "docs/rfc/solution-concept-template-proposal.md" "explicit User approval"
 
 require_text "ai-rules/agent-onboarding-protocol.md" "status: canonical"
-require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.4"
-require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-08-01"
+require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.5"
+require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-08-11"
 require_text "ai-rules/agent-onboarding-protocol.md" "executable: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "entrypoint: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат."
@@ -1568,7 +1593,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.87"
+require_text "pr-ops/artifact-map.md" "version: 1.89"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1636,7 +1661,6 @@ require_text "pr-ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/"
 require_text "pr-ops/artifact-map.md" "practices/README.md"
 require_text "pr-ops/artifact-map.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
 require_text "pr-ops/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
-require_text "pr-ops/artifact-map.md" ".github/ISSUE_TEMPLATE/task-creative.md"
 require_text "pr-ops/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/docs/README.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/tools/validate-file-naming.sh"
@@ -1711,7 +1735,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.15"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.16"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
@@ -2429,6 +2453,20 @@ require_text "practices/ai-governance/iso-42001-management-loop.md" "status: can
 require_text "practices/ai-governance/iso-42001-management-loop.md" "management system"
 require_text "practices/ai-governance/openai-evaluation-and-feedback-loop.md" "status: canonical"
 require_text "practices/ai-governance/openai-evaluation-and-feedback-loop.md" "evaluations"
+
+# Reference Research Pattern module introduced by issue #485.
+for tool_use_file in \
+  00-introduction.md \
+  10-theory.md \
+  20-taxonomy.md \
+  30-decision-framework.md \
+  40-practice-and-cases.md \
+  50-open-research.md; do
+  require_file "research/ai-education/tool-use/$tool_use_file"
+done
+require_text "research/ai-education/README.md" "tool-use/00-introduction.md"
+require_text "pr-ops/artifact-map.md" "/research/ai-education/tool-use/00-introduction.md"
+require_text "CHANGELOG.md" "research/ai-education/tool-use/"
 require_text "practices/ai-governance/anthropic-capability-thresholds.md" "status: canonical"
 require_text "practices/ai-governance/anthropic-capability-thresholds.md" "Responsible Scaling Policy"
 require_text "practices/ai-governance/google-saif-agent-security.md" "status: canonical"
@@ -2477,28 +2515,33 @@ require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Иде
 require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Форматы подачи"
 require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Вопросы для обсуждения"
 
-require_text ".github/ISSUE_TEMPLATE/task.yml" "📋 Task Implementation"
+# Единый 5-блочный шаблон задачи (RFC #470, §P.9): Контекст, Цель, SSOT,
+# Контракты задачи, Готово когда. Creative-режим поглощён полем operating_mode.
+require_text ".github/ISSUE_TEMPLATE/task.yml" "📋 Task"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "structured"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "creative"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "⚠️ **Для ИИ**"
-require_text ".github/ISSUE_TEMPLATE/task.yml" "🎯 Контекст"
-require_text ".github/ISSUE_TEMPLATE/task.yml" "📄 Артефакты для создания/изменения"
-require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "1. Контекст"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "2. Цель"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "3. SSOT"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "4. Контракты задачи"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "5. Готово, когда"
 
 require_text ".github/ISSUE_TEMPLATE/task.md" "status: canonical"
 require_text ".github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
 require_text ".github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured / Creative / Hybrid`'
 require_text ".github/ISSUE_TEMPLATE/task.md" 'Task Type (optional):'
-require_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
-require_text ".github/ISSUE_TEMPLATE/task.md" "Готово, когда"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Контекст"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Цель"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## SSOT"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Контракты задачи"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Готово, когда"
+reject_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
 
-require_text ".github/ISSUE_TEMPLATE/task-creative.md" "status: canonical"
-require_text ".github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
-require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
-require_text ".github/ISSUE_TEMPLATE/task-creative.md" 'Operating Mode: `Structured / Creative / Hybrid`'
-require_text ".github/ISSUE_TEMPLATE/task-creative.md" 'Task Type (optional):'
-require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Не писать, как именно реализовывать задачу"
-require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" 'name: ""'
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "status: deprecated"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "unified task template"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Creative Task (consolidated)"
 
 # HTOM-команда "ДНК-шаблон" (templates/htom/): минимальный геном для клонирования.
 # HTOM-контракты (AI_GOVERNANCE / AI_QUICK_RULES / AI_HANDOVER_PROMPT) обязательны.
@@ -2619,6 +2662,9 @@ require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-
 require_text ".github/workflows/validate.yml" "bash tools/test-operating-mode-contract.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
+require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
+require_text ".github/workflows/validate.yml" "fetch-depth: 0"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

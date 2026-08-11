@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-07-31",
+  "last_updated": "2026-08-11",
   "templates": [
     {
       "id": "htom-issue-template-task-creative",
@@ -44,7 +44,7 @@
     {
       "id": "htom-ai-governance",
       "path": "templates/htom/AI_GOVERNANCE.md",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "target_type": [
         "HTOM"
       ],

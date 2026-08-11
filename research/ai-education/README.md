@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.6
+version: 0.8
 updated: 2026-08-11
 temperature: 0.1
 ---
@@ -33,9 +33,20 @@ temperature: 0.1
 - [`evaluation/`](evaluation/00-introduction.md) — пятая валидация паттерна:
   метрики RAG/extraction/graph/agent tasks, LLM-as-judge, golden sets,
   risk-based thresholds, сравнение eval-фреймворков и образовательный срез для
-  бизнес-аналитика.
+  бизнес-аналитика. Прикладной [evals-контракт Source Intelligence
+  Engine](evaluation/2026-08-11-source-intelligence-evals-contract.md)
+  переводит модуль в план локального эксперимента и handoff для B-068 без
+  назначения числовых acceptance thresholds.
+- [`tool-use/`](tool-use/00-introduction.md) — шестая валидация паттерна:
+  typed function calling, MCP, execution/recovery patterns, planner/executor,
+  framework comparison и интеграция в Source Intelligence Engine.
+- [`observability/`](observability/00-introduction.md) — седьмая валидация
+  паттерна: наблюдаемость и трейсинг AI-агентов (таксономия сигналов, паттерны
+  трейсинга многошаговых выполнений, стоимость наблюдения против стоимости
+  отладки, сравнение платформ, интеграция в конвейер Source Intelligence Engine
+  и общеобразовательный разрез для всех ролей).
 - [`multi-agent-orchestration/`](multi-agent-orchestration/00-introduction.md) —
-  шестая валидация паттерна: таксономия паттернов оркестрации, механизмы
+  восьмая валидация паттерна: таксономия паттернов оркестрации, механизмы
   координации и разрешения конфликтов, cost-benefit мультиагентности,
   сравнение фреймворков и протоколов, встраивание в конвейер Source
   Intelligence Engine. Образовательный срез — общий для всех ролей

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-08-08
+version: 1.5
+updated: 2026-08-11
 temperature: 0.1
 executable: false
 ---
@@ -19,6 +19,35 @@ executable: false
 Для новой HTOM-команды используется геном [`templates/htom/`](../templates/htom/),
 для production-спока — [`templates/spoke/`](../templates/spoke/). Различие
 определено в [RFC htom-vs-spoke](../docs/rfc/htom-vs-spoke-clarification-2026-06.md).
+
+## Универсальные SSOT по осям
+
+Перечисленные ниже артефакты действуют для **любой** задачи и **не дублируются**
+в постановке ([RFC #470 §P.9](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md):
+универсальные контракты не повторяются в тексте задачи). Секция `SSOT` в issue
+содержит только якоря, специфичные для конкретной задачи: PR, issue, permalink с
+SHA или конкретный файл-результат предыдущей работы.
+
+| Ось | Артефакт | Путь | Что фиксирует |
+| --- | --- | --- | --- |
+| Права решений | AI Governance | [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md) | Human decision rights, hard bans, tiers и amendment policy. |
+| Права решений | ADR-010 | [`docs/adr/2026-08-adr-010-agent-autonomy-principles.md`](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) | Принципы автономии агента и абсолютные границы. |
+| Поведение агента | Agent Work Rules | [`ai-rules/agent-work-rules.md`](agent-work-rules.md) | Контракты автономии, эскалации и верификации; Operating Modes. |
+| Поведение агента | Agent Onboarding Protocol | [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) | Обязательный pre-flight: checklists, Readback, мандат issue. |
+| Постановка задач | RFC #470 | [`docs/rfc/2026-08-06-rfc-task-statement-architecture.md`](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md) | Архитектура постановки: 5-блочный шаблон, размещение правил, бюджет точки входа. |
+| Процесс | GOVERNANCE.md | [`GOVERNANCE.md`](../GOVERNANCE.md) | Операционный контракт ролей и порядок принятия изменений. |
+| Процесс | CONTRIBUTING.md | [`CONTRIBUTING.md`](../CONTRIBUTING.md) | Правила участия, локальные валидаторы, ожидания к review. |
+| Структура репозитория | Repo Model | [`pr-ops/repo-model.md`](../pr-ops/repo-model.md) | Модель каталогов и Anti-Inflation правило. |
+| Структура репозитория | Artifact Map | [`pr-ops/artifact-map.md`](../pr-ops/artifact-map.md) | Где живёт артефакт и уровни L1–L4 (Framework vs Methodology). |
+| Артефакты | ADR-002 | [`docs/adr/2026-06-adr-002-artifact-document-methodology.md`](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) | Методология артефактных документов. |
+| Артефакты | ADR-008 | [`docs/adr/2026-07-adr-008-standard-meta-structure.md`](../docs/adr/2026-07-adr-008-standard-meta-structure.md) | Стандартная Мета-структура документа. |
+| Артефакты | Standards | [`standards/README.md`](../standards/README.md) | Точка входа в стандарты, включая file naming и frontmatter. |
+| Жизненный цикл | Knowledge Lifecycle | [`docs/rfc/knowledge-lifecycle-proposal.md`](../docs/rfc/knowledge-lifecycle-proposal.md) | Lifecycle stages и переходы между ними. |
+| Продукт | Concept | [`docs/concept.md`](../docs/concept.md) | Концепция Хаба, границы и модель hub-and-spoke. |
+
+Таблица даёт путь и назначение, но **не** дублирует `status`, `version` и
+`updated`: они читаются из frontmatter самого артефакта на момент исполнения
+(проверка SSOT по RFC #470 §P.7). Неразрешимый якорь фиксируется как gap.
 
 ## Правило авто-заполнения Мета
 
@@ -69,8 +98,66 @@ Framework (L1-L2) задаёт границы, видение и продукт�
 | Hybrid | Смешанная автономия: отдельные части задачи явно назначаются Structured или Creative. |
 
 Structured mode работает fail-closed: при противоречии или отсутствии
-необходимого правила агент запрашивает human guidance. Creative override
-выполняется только по условиям [AI Governance](../ai-governance/ai-governance.md).
+необходимого правила агент не переопределяет решение человека, но и не
+останавливается с пустым результатом — он выполняет легальный выход ниже.
+Operating Mode сужает автономию, но не расширяет абсолютные границы
+[ADR-010](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md).
+
+## Контракт автономии
+
+Агент принимает решения об исполнении самостоятельно. Указание пользователя о
+**способе** исполнения — структура решения, порядок работ, формат артефактов,
+выбор источников и инструментов — имеет статус рекомендации: обоснованное
+отклонение допустимо и фиксируется в PR по правилам
+[обоснованного обхода](../ai-governance/ai-governance.md).
+
+Не переопределяются никогда (перечень закрытый):
+
+1. hard bans: secrets, private data, credentials, несанитизированные
+   production-промпты;
+2. решения о vision, приоритетах, publication, license и правах на
+   пользовательский контент;
+3. явный запрет в постановке («не делать X», «не менять Y»);
+4. удаление или перезапись существующей человеческой работы;
+5. изменения Tier 3 и присвоение статуса `canonical`;
+6. merge собственного PR и любое действие, снимающее человеческий контроль
+   (правка самих контрактов автономии, CI-гейтов, permissions).
+
+Ожидание подтверждения не является допустимым состоянием завершения работы:
+при нехватке решения агент использует легальный выход, а не остановку.
+
+**Как проверяется:** наличие блока отклонений — PR-template grep; обоснованность
+отклонения и соблюдение закрытого перечня — human-only review.
+
+## Контракт эскалации
+
+Если решение, необходимое для завершения, принадлежит человеку по закрытому
+перечню или требования противоречат друг другу, агент не останавливается молча,
+а выполняет легальный выход:
+
+1. делает максимальную часть работы, не затрагивающую спорное решение;
+2. открывает PR с непустым полезным диффом;
+3. в теле PR фиксирует блок «Не выполнено и вопросы»: что не сделано, почему,
+   варианты решения и рекомендацию агента;
+4. помечает PR как неполный по DoD машиночитаемо.
+
+Комментарий + manual restart возвращает результат в работу; revert отклоняет;
+merge принимает как есть. Вопрос без вариантов и рекомендации не считается
+эскалацией.
+
+**Как проверяется:** наличие блока — PR-template grep; непустой дифф — CI;
+полнота вариантов и рекомендации — human-only review.
+
+## Контракт верификации
+
+| Ярус | Формулировка | Кто исполняет | Как проверяется |
+| --- | --- | --- | --- |
+| **V-1. Агентская часть** | Перед PR агент запускает локальные валидаторы из [CONTRIBUTING](../CONTRIBUTING.md) и описывает implementation, validation и остаточные риски. | агент | PR-template grep + human-only review достаточности |
+| **V-2. Постусловие результата** | PR, закрывающий issue, обязан содержать непустой дифф, относящийся к цели. | CI | CI; полезность диффа — human-only review |
+
+V-2 остаётся нормой на ярусе CI: текстовый контракт не заменяет независимую
+проверку. Намеренно пустой PR допускается только по документированному
+человеческому исключению `no-diff-expected`.
 
 ## Специфика работы с AI-агентами
 

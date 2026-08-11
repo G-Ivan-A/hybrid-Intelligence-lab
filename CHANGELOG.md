@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.70
+version: 1.72
 updated: 2026-08-11
 temperature: 0.1
 ---
@@ -11,7 +11,44 @@ All notable repository governance changes are documented here.
 
 ## Unreleased
 
+### Added
+
+- analysis: добавлен отчёт по issue #495 о нормативных пробелах при
+  последовательных задачах внедрения. На примере PR #491/#492 выделен пробел
+  композиции норм и transition semantics, проверены ADR-010, RFC #470, AI
+  Governance, Agent Work Rules, ADR-002, ADR-008 и ADR Structure Standard,
+  обобщены сопутствующие паттерны и сформулированы вопросы для будущего
+  normative этапа без предложения конкретных стандартов или валидаторов.
+- research: добавлен модуль `research/ai-education/tool-use/` по issue #485 —
+  таксономия function calling и MCP, execution/recovery patterns,
+  planner/executor trade-offs, сравнение фреймворков и рекомендации для Source
+  Intelligence Engine в формате Reference Research Pattern.
+- ci: постусловие «непустой полезный дифф» перенесено из текста правил на ярус
+  CI (шаг 1 внедрения RFC #470, issue #484). Добавлены
+  `tools/validate-nonempty-diff.sh` (three-dot diff от `merge-base`, отсев
+  служебных файлов-заглушек, escape-метка `no-diff-expected` только от
+  owner/admin) и регрессионный тест `tools/test-nonempty-diff.sh`,
+  доказывающий падение валидатора на пустом диффе (стресс-тест S5).
+  `.github/workflows/validate.yml` получил `fetch-depth: 0`, шаг проверки на
+  событии `pull_request` и шаг определения авторизации escape-метки;
+  `CONTRIBUTING.md` описывает постусловие и правила метки.
+
+### Removed
+
+- templates: `.github/ISSUE_TEMPLATE/task-creative.md` удалён как superseded
+  (issue #484). Creative-режим задаётся полем `operating_mode` единого шаблона.
+
 ### Changed
+
+- templates: шаблон задачи консолидирован в единый 5-блочный формат RFC #470
+  §P.9 (issue #484): Контекст, Цель, SSOT, Контракты задачи, Готово когда;
+  опционально одной строкой user story, ФТ, НФТ и Operating Mode.
+  `.github/ISSUE_TEMPLATE/task.md` (v2.0) и `task.yml` синхронизированы,
+  универсальные контракты и списки путей из шаблона убраны.
+  `standards/glossary.md` (v1.10) определяет 5-блочный шаблон и фиксирует
+  `operating_mode` и `task_type` как независимые оси;
+  `pr-ops/artifact-map.md` (v1.87) описывает новые утилиты и убирает строку
+  удалённого шаблона.
 
 - ops: устранены пять мелких дефектов, обнаруженных при подготовке RFC
   `docs/rfc/2026-08-06-rfc-task-statement-architecture.md` (§P.9, Expert Review)
@@ -47,7 +84,7 @@ All notable repository governance changes are documented here.
 ### Added
 
 - research: Модуль `research/ai-education/multi-agent-orchestration/`
-  (issue #487) — шестая валидация Reference Research Pattern. Шесть файлов
+  (issue #487) — восьмая валидация Reference Research Pattern. Шесть файлов
   покрывают таксономию паттернов оркестрации (sequential, routing, parallel,
   hierarchical, debate, swarm, blackboard), механизмы координации и разрешения
   конфликтов, протоколы MCP/A2A/OpenTelemetry GenAI, cost-benefit
@@ -58,15 +95,34 @@ All notable repository governance changes are documented here.
   («команда — покупка за конкретную цену») подтверждён четырьмя независимыми
   типами свидетельств и расширен четырьмя уточнениями. Исследование не
   предписывает изменений правил или архитектуры Хаба.
-- registry: `research/external-knowledge/external-sources-registry.md` v0.15 —
-  добавлены источники `ext-232`…`ext-249` по теме multi-agent orchestration
+- registry: `research/external-knowledge/external-sources-registry.md` v0.16 —
+  добавлены источники `ext-267`…`ext-284` по теме multi-agent orchestration
   (MAST, Anthropic, Cognition, Smit et al., Du et al., OWL/NeurIPS 2025,
   Hearsay-II, документация шести фреймворков, MCP, A2A, OTel GenAI).
-- pr-ops: `pr-ops/artifact-map.md` v1.87 — зарегистрированы шесть файлов
+- pr-ops: `pr-ops/artifact-map.md` v1.89 — зарегистрированы шесть файлов
   модуля Multi-Agent Orchestration; строка `research/ai-education/README.md`
-  обновлена до шести валидаций паттерна. Allowlist и pin-строки версий в
+  обновлена до восьми валидаций паттерна. Allowlist и pin-строки версий в
   `tools/validate-repository-structure.sh` синхронизированы.
+- research: Модуль `research/ai-education/observability/` (issue #486) — седьмая
+  валидация Reference Research Pattern. Шесть файлов покрывают таксономию
+  сигналов (logging/metrics/tracing/profiling) и уровни данных L0–L5, паттерны
+  трейсинга многошаговых выполнений (sequential/parallel/hierarchical/agentic/
+  multi-agent) и различие agentic против workflow tracing, стоимость наблюдения
+  против стоимости отладки со стратегиями sampling и retention, сравнение
+  Langfuse/LangSmith/OpenTelemetry/Phoenix/Braintrust/Helicone/W&B Weave с
+  разбором vendor lock-in, рекомендации по шагам конвейера Source Intelligence
+  Engine, подготовку данных для проспективного замера Q-11 RFC #470 и
+  общеобразовательный разрез для всех ролей (ролевая специализация вынесена в
+  downstream). Исследование не меняет правила и архитектуру Хаба.
+- registry: `research/external-knowledge/external-sources-registry.md` v0.15 —
+  зарегистрированы источники `ext-247`..`ext-266`, использованные в issue #486.
+- artifact-map: `pr-ops/artifact-map.md` v1.88 — зарегистрированы шесть файлов
+  Observability; индекс AI Education и validator allowlist синхронизированы.
 
+- research: Прикладной evals-контракт Source Intelligence Engine (issue #483):
+  stage metrics, golden set на 30–50 cases, калибровка LLM-as-Judge, DeepEval
+  runner, пошаговый эксперимент и статистический handoff в B-068 без назначения
+  acceptance thresholds.
 - research: Модуль `research/ai-education/evaluation/` (issue #479) — пятая
   валидация Reference Research Pattern. Шесть файлов покрывают таксономию
   RAG/extraction/graph/agent metrics, калибровку и biases LLM-as-judge,
