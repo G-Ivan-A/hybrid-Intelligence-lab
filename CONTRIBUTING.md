@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.10
-updated: 2026-08-07
+version: 1.11
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -17,10 +17,10 @@ traceability и практическую полезность для hybrid huma
 2. Для обычных задач используйте
    [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) или
    GitHub-native форму [.github/ISSUE_TEMPLATE/task.yml](.github/ISSUE_TEMPLATE/task.yml).
-3. Для Creative mode используйте
-   [.github/ISSUE_TEMPLATE/task-creative.md](.github/ISSUE_TEMPLATE/task-creative.md):
-   описывайте цель, constraints и Definition of Done, не предписывая исполнителю
-   лишние шаги реализации.
+3. Для Creative mode используйте единый
+   [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) со значением
+   `Operating Mode: Creative`: описывайте цель, constraints и Definition of Done,
+   не предписывая исполнителю лишние шаги реализации.
 4. Выбирайте целевой каталог по
    [pr-ops/repo-model.md](pr-ops/repo-model.md),
    [docs/rfc/knowledge-lifecycle-proposal.md](docs/rfc/knowledge-lifecycle-proposal.md) и
@@ -46,6 +46,10 @@ data и работают внутри requested scope.
 Автор задачи может указать только цель и Operating Mode. AI-агент обязан
 достроить рабочую Мета из активных контрактов:
 
+Operating Mode одновременно регулирует ширину автономии по
+[Принципу 3 ADR-010](docs/adr/2026-08-adr-010-agent-autonomy-principles.md):
+`Structured`, `Creative` и `Hybrid` не меняют цель и абсолютные границы.
+
 | Что отсутствует | Как достраивается |
 | --- | --- |
 | Target artifact | По `pr-ops/artifact-map.md`, `pr-ops/repo-model.md` и resolver prompt. |
@@ -55,6 +59,10 @@ data и работают внутри requested scope.
 
 Явная Мета в issue имеет приоритет, если она не нарушает hard rules. Если
 правило нарушено, агент фиксирует конфликт и запрашивает guidance.
+
+Метка `no-diff-expected` — человеческое документированное исключение для PR,
+который намеренно не должен содержать дифф (например, обсуждение или retarget).
+Агент не ставит её самостоятельно; обычный PR обязан содержать полезный дифф.
 
 Historical migration material используется только как source context через
 audit, PR history или явно указанный `source` path. Новый active artifact должен

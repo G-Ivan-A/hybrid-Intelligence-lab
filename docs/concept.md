@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -38,7 +38,7 @@ traceable.
 | Separation of concerns | Research, education, frameworks, projects, standards и governance имеют разные дома. |
 | Existing frameworks first | Новый framework появляется только после сравнения и выявленного gap. |
 | Traceability | Важные утверждения связаны с issue, PR, источниками, экспериментами или прежними артефактами. |
-| Operating Mode | Работа ведется в structured mode по умолчанию; creative mode используется только там, где задача явно требует исследовательской генерации вариантов. |
+| Operating Mode | `Structured`, `Creative` или `Hybrid` действует как мета-контракт: регулирует ширину автономии для задачи, не изменяя цель и абсолютные границы. |
 | Human-in-control | AI может готовить черновики и проверки, но решения остаются за Founder & PO и reviewers. |
 | Safe publication | Secrets, клиентский sensitive context и несанитизированные production-промпты не публикуются. |
 | Anti-Inflation | Артефакт добавляется только при операционной боли, которую он снижает. |
