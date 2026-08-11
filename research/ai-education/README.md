@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-08
+version: 0.6
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -34,6 +34,9 @@ temperature: 0.1
   метрики RAG/extraction/graph/agent tasks, LLM-as-judge, golden sets,
   risk-based thresholds, сравнение eval-фреймворков и образовательный срез для
   бизнес-аналитика.
+- [`tool-use/`](tool-use/00-introduction.md) — шестая валидация паттерна:
+  typed function calling, MCP, execution/recovery patterns, planner/executor,
+  framework comparison и интеграция в Source Intelligence Engine.
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).

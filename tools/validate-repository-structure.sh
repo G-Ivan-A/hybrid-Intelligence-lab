@@ -175,6 +175,12 @@ is_active_file() {
     research/ai-education/evaluation/30-decision-framework.md | \
     research/ai-education/evaluation/40-practice-and-cases.md | \
     research/ai-education/evaluation/50-open-research.md | \
+    research/ai-education/tool-use/00-introduction.md | \
+    research/ai-education/tool-use/10-theory.md | \
+    research/ai-education/tool-use/20-taxonomy.md | \
+    research/ai-education/tool-use/30-decision-framework.md | \
+    research/ai-education/tool-use/40-practice-and-cases.md | \
+    research/ai-education/tool-use/50-open-research.md | \
     research/hub/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \
@@ -2432,6 +2438,20 @@ require_text "practices/ai-governance/iso-42001-management-loop.md" "status: can
 require_text "practices/ai-governance/iso-42001-management-loop.md" "management system"
 require_text "practices/ai-governance/openai-evaluation-and-feedback-loop.md" "status: canonical"
 require_text "practices/ai-governance/openai-evaluation-and-feedback-loop.md" "evaluations"
+
+# Reference Research Pattern module introduced by issue #485.
+for tool_use_file in \
+  00-introduction.md \
+  10-theory.md \
+  20-taxonomy.md \
+  30-decision-framework.md \
+  40-practice-and-cases.md \
+  50-open-research.md; do
+  require_file "research/ai-education/tool-use/$tool_use_file"
+done
+require_text "research/ai-education/README.md" "tool-use/00-introduction.md"
+require_text "pr-ops/artifact-map.md" "/research/ai-education/tool-use/00-introduction.md"
+require_text "CHANGELOG.md" "research/ai-education/tool-use/"
 require_text "practices/ai-governance/anthropic-capability-thresholds.md" "status: canonical"
 require_text "practices/ai-governance/anthropic-capability-thresholds.md" "Responsible Scaling Policy"
 require_text "practices/ai-governance/google-saif-agent-security.md" "status: canonical"

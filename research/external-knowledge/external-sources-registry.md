@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.14
-updated: 2026-08-08
+updated: 2026-08-11
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -304,6 +304,21 @@ related_issues:
 | `ext-229` | [Braintrust eval documentation](https://www.braintrust.dev/docs/guides/evals) | `docs` | `en` | `braintrust, scorers, experiments, tracing` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
 | `ext-230` | [Promptfoo documentation](https://www.promptfoo.dev/docs/intro/) | `docs` | `en` | `promptfoo, assertions, red-team, ci` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
 | `ext-231` | [NetworkX graph edit distance](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.similarity.graph_edit_distance.html) | `docs` | `en` | `graph-edit-distance, graph-evaluation, metric` | `topic: graph-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/20-taxonomy.md) |
+| `ext-232` | [OpenAI — Function calling](https://platform.openai.com/docs/guides/function-calling) | `docs` | `en` | `function-calling, structured-tools, parallel-calls` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-233` | [Anthropic — Implement tool use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/implement-tool-use) | `docs` | `en` | `tool-use, tool-result, parallel-calls` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-234` | [Model Context Protocol — Architecture](https://modelcontextprotocol.io/specification/2025-06-18/architecture/index) | `standard` | `en` | `mcp, architecture, security-boundary` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/10-theory.md) |
+| `ext-235` | [Model Context Protocol — Tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) | `standard` | `en` | `mcp, tools, structured-result, trust` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/10-theory.md) |
+| `ext-236` | [LangGraph — ToolNode source](https://github.com/langchain-ai/langgraph/blob/main/libs/prebuilt/langgraph/prebuilt/tool_node.py) | `github` | `en` | `langgraph, tool-node, parallelism, errors` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-237` | [LlamaIndex — Tools](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/tools/) | `docs` | `en` | `llamaindex, tools, agents` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-238` | [CrewAI — Tools](https://docs.crewai.com/en/concepts/tools) | `docs` | `en` | `crewai, tools, orchestration` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-239` | [ReAct (Yao et al.)](https://openreview.net/forum?id=WE_vluYUL-X) | `paper` | `en` | `react, reasoning, acting, tool-use` | `topic: tool-use` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/10-theory.md) |
+| `ext-240` | [Berkeley Function Calling Leaderboard](https://proceedings.mlr.press/v267/patil25a.html) | `paper` | `en` | `bfcl, benchmark, function-calling` | `topic: tool-use-evaluation` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/20-taxonomy.md) |
+| `ext-241` | [ToolBench](https://openreview.net/forum?id=dHng2O0Jjr) | `paper` | `en` | `toolbench, real-api, planning` | `topic: tool-use-evaluation` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-242` | [StableToolBench](https://arxiv.org/abs/2403.07714) | `paper` | `en` | `stabletoolbench, virtual-api, reproducibility` | `topic: tool-use-evaluation` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/20-taxonomy.md) |
+| `ext-243` | [AWS — Timeouts, retries and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) | `docs` | `en` | `timeouts, retries, jitter, distributed-systems` | `topic: tool-reliability` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-244` | [OWASP — LLM06 Excessive Agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) | `standard` | `en` | `excessive-agency, permissions, security` | `topic: tool-security` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
+| `ext-245` | [Stripe — Idempotent requests](https://docs.stripe.com/api/idempotent_requests) | `docs` | `en` | `idempotency, retries, write-safety` | `topic: tool-reliability` | `research` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/10-theory.md) |
+| `ext-246` | [ToolBench-X: Tool-Using Agents under Tool-Environment Unreliability](https://arxiv.org/abs/2606.25819) | `paper` | `en` | `toolbench-x, unreliable-tools, recovery, benchmark` | `topic: tool-use-evaluation` | `observation` | `hub` | ✅ [Tool Use-485](../ai-education/tool-use/40-practice-and-cases.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

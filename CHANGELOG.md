@@ -13,6 +13,10 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: добавлен модуль `research/ai-education/tool-use/` по issue #485 —
+  таксономия function calling и MCP, execution/recovery patterns,
+  planner/executor trade-offs, сравнение фреймворков и рекомендации для Source
+  Intelligence Engine в формате Reference Research Pattern.
 - ci: постусловие «непустой полезный дифф» перенесено из текста правил на ярус
   CI (шаг 1 внедрения RFC #470, issue #484). Добавлены
   `tools/validate-nonempty-diff.sh` (three-dot diff от `merge-base`, отсев
