@@ -235,7 +235,7 @@ Ripple scan по репозиторию (без `research/`, `projects/` и `CHA
 | --- | --- | --- |
 | [`ai-rules/agent-work-rules.md`](../../ai-rules/agent-work-rules.md) | Секции контрактов автономии и эскалации; приведение таблицы Operating Modes к трём значениям; согласование текущей формулировки «Structured mode работает fail-closed… агент запрашивает human guidance» с легальным выходом §P.2 (сейчас она читается как разрешение на остановку). | #473 + задача внедрения |
 | [`ai-governance/ai-governance.md`](../../ai-governance/ai-governance.md) | Связка раздела «Обоснованный обход в Creative Mode» с Принципом 1: обход сейчас привязан к режиму Creative, а экспертное исполнение действует во всех режимах с разной шириной. Раздел «Эскалация» получает backlink на закрытый перечень. | задача внедрения |
-| [`.github/ISSUE_TEMPLATE/task.yml`](../../.github/ISSUE_TEMPLATE/task.yml), [`task.md`](../../.github/ISSUE_TEMPLATE/task.md), [`task-creative.md`](../../.github/ISSUE_TEMPLATE/task-creative.md) | Три значения Operating Mode; поле/секция для блока отклонений и блока «Не выполнено и вопросы». | #473 + задача внедрения |
+| [`.github/ISSUE_TEMPLATE/task.yml`](../../.github/ISSUE_TEMPLATE/task.yml), [`task.md`](../../.github/ISSUE_TEMPLATE/task.md), `task-creative.md` (удалён задачей #484) | Три значения Operating Mode; поле/секция для блока отклонений и блока «Не выполнено и вопросы». | #473 + задача внедрения |
 | [`standards/glossary.md`](../../standards/glossary.md) | Определение Operating Mode перечисляет `research`/`education`; требуется синхронизация со словарём и упоминание роли мета-контракта. | #473 |
 | [`standards/issue-workflow.md`](../../standards/issue-workflow.md) | Критерий готовности `ready` требует «выбран Operating Mode» — критерий станет проверяемым только после фиксации словаря. | #473 |
 | [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md) | Значение `Project` в таблице кейсов инициализации не входит ни в один словарь режимов. | #473 |
@@ -354,7 +354,7 @@ ADR находится в статусе `proposed`. Решение фаунде
 
 - [`.github/ISSUE_TEMPLATE/task.yml`](../../.github/ISSUE_TEMPLATE/task.yml),
   [`task.md`](../../.github/ISSUE_TEMPLATE/task.md),
-  [`task-creative.md`](../../.github/ISSUE_TEMPLATE/task-creative.md);
+  `task-creative.md` (удалён задачей #484);
 - [`standards/glossary.md`](../../standards/glossary.md),
   [`standards/issue-workflow.md`](../../standards/issue-workflow.md),
   [`standards/executable-contract-standard.md`](../../standards/executable-contract-standard.md)

@@ -14,11 +14,12 @@ traceability и практическую полезность для hybrid huma
 
 1. Начинайте с GitHub issue, где есть context, scope, язык результата,
    acceptance criteria и forbidden changes.
-2. Для обычных задач используйте
+2. Используйте единый 5-блочный шаблон
    [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) или
-   GitHub-native форму [.github/ISSUE_TEMPLATE/task.yml](.github/ISSUE_TEMPLATE/task.yml).
-3. Для Creative mode используйте
-   [.github/ISSUE_TEMPLATE/task-creative.md](.github/ISSUE_TEMPLATE/task-creative.md):
+   GitHub-native форму [.github/ISSUE_TEMPLATE/task.yml](.github/ISSUE_TEMPLATE/task.yml):
+   Контекст, Цель, SSOT, Контракты задачи, Готово когда.
+3. Режим работы задаётся полем `Operating Mode`
+   (`Structured` / `Creative` / `Hybrid`), а не отдельным шаблоном. В Creative
    описывайте цель, constraints и Definition of Done, не предписывая исполнителю
    лишние шаги реализации.
 4. Выбирайте целевой каталог по

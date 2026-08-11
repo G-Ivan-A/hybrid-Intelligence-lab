@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.9
-updated: 2026-08-08
+version: 1.10
+updated: 2026-08-11
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -30,8 +30,9 @@ owner: G-Ivan-A
 
 | Термин | Краткое определение | Контекст использования | Пример артефакта |
 | --- | --- | --- | --- |
-| Operating Mode | Уровень автономии агента при выполнении задачи: `Structured`, `Creative` или `Hybrid`. | Определяет профиль контрактов и степень свободы, но не тип результата и не глубину обработки. | [agent-work-rules.md](../ai-rules/agent-work-rules.md), [task.yml](../.github/ISSUE_TEMPLATE/task.yml) |
+| Operating Mode | Уровень автономии агента при выполнении задачи: `Structured`, `Creative` или `Hybrid`. | Определяет профиль контрактов и степень свободы, но не тип результата и не глубину обработки. Независимая ось по отношению к `Task Type`. | [agent-work-rules.md](../ai-rules/agent-work-rules.md), [task.yml](../.github/ISSUE_TEMPLATE/task.yml) |
 | Task Type | Методологический тип задачи: `Research`, `Education`, `Implementation`, `Audit`, `Analysis`, `RFC` или `ADR`. | Определяет, что делает агент и какой методологический контракт применять. `Research` и `Education` — типы задач, а не Operating Modes. | [task.yml](../.github/ISSUE_TEMPLATE/task.yml), [artifact-map.md](../pr-ops/artifact-map.md) |
+| 5-блочный шаблон задачи | Единый шаблон постановки задачи из пяти блоков: Контекст, Цель, SSOT, Контракты задачи, Готово когда (RFC #470, §P.9). Опционально одной строкой: user story, ФТ, НФТ, Operating Mode. | Один шаблон на все задачи: `operating_mode` и `task_type` — независимые оси, отдельного Creative-шаблона нет. Универсальные контракты не дублируются в issue, список файлов не перечисляется. | [task.md](../.github/ISSUE_TEMPLATE/task.md), [task.yml](../.github/ISSUE_TEMPLATE/task.yml), [RFC #470](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md) |
 | Method | Глубина или способ обработки задачи: `Standard`, `Deep-Think` или `Adversarial`. | Выбирается независимо от Operating Mode и Task Type; `Deep-Think` — метод, а не Operating Mode. | [adversarial-stress-testing.md](../ai-rules/adversarial-stress-testing.md) |
 | Standard | Переиспользуемое IL-3 правило о форме, качестве или review-критериях для класса артефактов. Standard создается только при повторяющейся coordination или review problem. | Отличается от `Guideline` обязательностью, от `Policy` - фокусом на форме артефакта, а от `Contract` - тем, что не является операционным соглашением IL-1. Contract может ссылаться на Standard как на обязательное правило, но не тождественен ему. | [standards/README.md](README.md), [research-standard.md](research-standard.md), [adr-structure-standard.md](adr-structure-standard.md), [rfc-structure-standard.md](rfc-structure-standard.md) |
 | Concept | Базовое описание цели, границ, аудитории и операционной модели решения. Concept объясняет, почему репозиторий или область устроены именно так. | Используется как смысловой источник для standards и policies. Отличается от `Framework`: concept фиксирует назначение и границы, framework задает метод работы. | [docs/concept.md](../docs/concept.md) |
