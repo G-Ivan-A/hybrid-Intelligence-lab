@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.86
-updated: 2026-08-08
+version: 1.87
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -79,7 +79,7 @@ temperature: 0.1
 | `/README.md` | навигация | — | Визитка репозитория, ключевые документы и структура. | ✅ Да | `docs/concept.md`, `standards/README.md`, `pr-ops/artifact-map.md`, `ai-rules/agent-onboarding-protocol.md` |
 | `/docs/concept.md` | концепция | — | Актуальная концепция, аудитории, границы и модель hub-and-spoke. | ✅ Да | `pr-ops/repo-model.md`, `standards/README.md` |
 | `/GOVERNANCE.md` | навигация | — | Root-anchor ADR-007: маршрутизирует к policy, agent rules, PR operations и standards без дублирования нормативного текста. | ✅ Да | `ai-governance/ai-governance.md`, `ai-rules/agent-work-rules.md`, `pr-ops/README.md`, `standards/README.md` |
-| `/CONTRIBUTING.md` | руководство | — | Workflow вклада, task templates, локальные проверки и PR checklist. | ✅ Да | `GOVERNANCE.md`, `pr-ops/repo-model.md`, `standards/README.md`, `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task-creative.md` |
+| `/CONTRIBUTING.md` | руководство | — | Workflow вклада, единый task template, локальные проверки и PR checklist. | ✅ Да | `GOVERNANCE.md`, `pr-ops/repo-model.md`, `standards/README.md`, `.github/ISSUE_TEMPLATE/task.md` |
 | `/CHANGELOG.md` | журнал | — | Date-based журнал governance-изменений репозитория. | ✅ Да | `README.md`, `docs/concept.md` |
 | `/LICENSE` | лицензия | — | Гибридная лицензия репозитория (issue #419, B-085): CC BY 4.0 для текстовых артефактов и Apache-2.0 для скриптов (`*.sh`, `*.py`, `.github/workflows/`), разделение по признаку файла, обязательное указание авторства, inbound = outbound для вкладов. Заменил license placeholder. | ✅ Да | `README.md`, `docs/concept.md`, `ai-governance/ai-governance.md`, `CONTRIBUTING.md` |
 | `/docs/adr/README.md` | навигация | Canonical | Индекс каталога ADR Хаба: назначение ADR как decision record (в отличие от proposal-стадии RFC), ссылка на обязательную форму `ADR Structure Standard`, допустимые переходы статусов и таблица ADR-001..ADR-010 с их статусами и назначением. | ✅ Да | `standards/adr-structure-standard.md`, `docs/rfc/README.md`, `pr-ops/artifact-map.md`, `ai-governance/ai-governance.md` |
@@ -202,7 +202,7 @@ temperature: 0.1
 | `/.github/workflows/update-manifest.yml` | утилита | — | GitHub Action авто-обновления `templates/manifest.json` при push в `main`, затрагивающем `templates/` (коммит `chore: update manifest.json`). | ⚠️ По необходимости | `tools/generate-manifest.py`, `templates/manifest.json` |
 | `/.github/ISSUE_TEMPLATE/task.yml` | шаблон | — | GitHub-native структура постановки задач с независимыми полями Operating Mode и Task Type. | ✅ Да | `ai-rules/agent-work-rules.md`, `standards/glossary.md`, `tools/test-operating-mode-contract.sh` |
 | `/.github/ISSUE_TEMPLATE/task.md` | шаблон | — | Structured Markdown-шаблон задачи Хаба для issue, PR и AI-agent traceability. | ✅ Да | `standards/issue-workflow.md`, `AI_GOVERNANCE.md`, `CONTRIBUTING.md` |
-| `/.github/ISSUE_TEMPLATE/task-creative.md` | шаблон | — | Creative Markdown-шаблон задачи Хаба: цель и критерии качества без лишнего предписания способа реализации. | ✅ Да | `standards/issue-workflow.md`, `AI_GOVERNANCE.md`, `CONTRIBUTING.md` |
+| `/.github/ISSUE_TEMPLATE/task-creative.md` | compatibility redirect | — | Deprecated path: Creative-задачи консолидированы в `task.md` с `Operating Mode: Creative`. | ⚠️ Совместимость | `.github/ISSUE_TEMPLATE/task.md`, `docs/adr/2026-08-adr-010-agent-autonomy-principles.md` |
 | `/research/mango/2026-05-26-taxonomy-concept.md` | концепция | — | Draft-концепция Unified Capability Taxonomy для Mango: мета-модель, mapping фич, процесс нормализации, интерфейс команд, метрики, пилот и риски. | ⚠️ По необходимости | `research/mango/2026-05-22-classification.md`, `research/mango/2026-05-22-classification-tz.md`, `research/mango/2026-05-22-requirements-flow.md`, `mango_ba_prompts`, `standards/glossary.md`, `pr-ops/repo-model.md` |
 | `/research/mango/2026-05-26-requirements-lifecycle-uncertainty.md` | исследование | — | Жизненный цикл требования на доработку Mango: бенчмарк международной практики, моделирование кейсов (`0 → 1`), обработка неопределенности, декомпозиция и рекомендации для стандарта процесса БА. | ⚠️ По необходимости | `research/mango/2026-05-22-requirements-flow.md`, `research/mango/2026-05-26-taxonomy-concept.md`, `research/mango/2026-05-22-classification.md`, `mango_ba_prompts`, `standards/glossary.md` |
 | `/research/mango/2026-05-26-rag-mapping-roadmap.md` | исследование | — | Маппинг продуктов/фич Mango как RAG-навигатор: структура `kb/product-matrix.md`, оценка источников документации, roadmap автоматизации БА и карта PlantUML-диаграмм. | ⚠️ По необходимости | `research/mango/2026-05-26-taxonomy-concept.md`, `research/mango/2026-05-26-requirements-lifecycle-uncertainty.md`, `mango_ba_prompts`, `standards/research-standard.md` |
@@ -337,7 +337,7 @@ temperature: 0.1
 | `/frameworks/` | каталог | — | Методологии, создаваемые только после доказанного gap; сейчас содержит active navigation. | ✅ Да | `frameworks/README.md`, `pr-ops/repo-model.md`, `standards/README.md` |
 | `/projects/` | каталог | — | Project knowledge bases и контекст spoke-репозиториев; сейчас содержит активные project areas и реестр мигрировавших проектов. | ✅ Да | `projects/README.md`, `standards/product-profile.md`, `pr-ops/repo-model.md`, `mango_ba_prompts` |
 | `/education/` | каталог | — | Open education: программы и учебные материалы; сейчас содержит active navigation. | ✅ Да | `education/README.md`, `standards/education-profile.md`, `pr-ops/repo-model.md` |
-| `/.github/ISSUE_TEMPLATE/` | каталог | — | GitHub-native и Markdown-структура постановки задач: structured, creative и UI form. | ✅ Да | `.github/ISSUE_TEMPLATE/task.yml`, `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task-creative.md` |
+| `/.github/ISSUE_TEMPLATE/` | каталог | — | Единая Markdown- и GitHub-native форма постановки задач для трёх Operating Modes. | ✅ Да | `.github/ISSUE_TEMPLATE/task.yml`, `.github/ISSUE_TEMPLATE/task.md` |
 | `/templates/` | каталог | — | Образцы («ДНК-шаблоны») для клонирования новых проектов из Хаба: геном HTOM-команды (`htom/`) и шаблон spoke-репозитория (`spoke/`). | ⚠️ По необходимости | `templates/htom/README.md`, `templates/spoke/README.md` |
 | `/templates/htom/` | каталог | — | Минимальный геном HTOM-команды (гибридная команда людей+ИИ): базовые артефакты, HTOM-контракты, structured/creative шаблоны задач, валидатор и `init.sh`. Без `research/` (фундаментальные знания живут в Хабе). | ⚠️ По необходимости | `templates/htom/AI_GOVERNANCE.md`, `templates/htom/init.sh`, `pr-ops/repo-model.md` |
 | `/templates/spoke/` | каталог | — | Шаблон spoke-репозитория (production-продукт): целевая структура `src/`/`tests/`/`docs/` и CI/CD. Отличие от HTOM-команды описано в `docs/rfc/htom-vs-spoke-clarification-2026-06.md`. | ⚠️ По необходимости | `templates/spoke/README.md`, `templates/spoke/.github/workflows/ci.yml`, `pr-ops/repo-model.md` |

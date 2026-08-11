@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.9
-updated: 2026-08-08
+version: 2.0
+updated: 2026-08-11
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -30,7 +30,10 @@ owner: G-Ivan-A
 
 | Термин | Краткое определение | Контекст использования | Пример артефакта |
 | --- | --- | --- | --- |
-| Operating Mode | Уровень автономии агента при выполнении задачи: `Structured`, `Creative` или `Hybrid`. | Определяет профиль контрактов и степень свободы, но не тип результата и не глубину обработки. | [agent-work-rules.md](../ai-rules/agent-work-rules.md), [task.yml](../.github/ISSUE_TEMPLATE/task.yml) |
+| Operating Mode | мета-контракт уровня автономии агента: `Structured`, `Creative` или `Hybrid`. | Сужает допустимую ширину экспертного исполнения для всей задачи, но не расширяет абсолютные границы, не определяет тип результата и глубину обработки. | [agent-work-rules.md](../ai-rules/agent-work-rules.md), [ADR-010](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) |
+| Экспертное исполнение (Justified Deviation) | Самостоятельный выбор агентом способа исполнения с обязательным обоснованием отклонения в PR. | Допустимо в ширине, заданной Operating Mode; цель задачи и абсолютные границы не переопределяются. | [ADR-010, Принцип 1](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) |
+| Абсолютные границы (Hard Limits) | Закрытый перечень из шести классов действий, которые агент не переопределяет. | При упоре в границу применяется легальный выход, а не молчаливая остановка или нарушение. | [ADR-010, Принцип 2](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) |
+| Легальный выход (Legal Exit) | Максимальная безопасная часть работы, непустой PR и блок «Не выполнено и вопросы» с вариантами и рекомендацией агента. | Используется, когда завершение требует human decision или требования противоречат друг другу. | [agent-work-rules.md](../ai-rules/agent-work-rules.md) |
 | Task Type | Методологический тип задачи: `Research`, `Education`, `Implementation`, `Audit`, `Analysis`, `RFC` или `ADR`. | Определяет, что делает агент и какой методологический контракт применять. `Research` и `Education` — типы задач, а не Operating Modes. | [task.yml](../.github/ISSUE_TEMPLATE/task.yml), [artifact-map.md](../pr-ops/artifact-map.md) |
 | Method | Глубина или способ обработки задачи: `Standard`, `Deep-Think` или `Adversarial`. | Выбирается независимо от Operating Mode и Task Type; `Deep-Think` — метод, а не Operating Mode. | [adversarial-stress-testing.md](../ai-rules/adversarial-stress-testing.md) |
 | Standard | Переиспользуемое IL-3 правило о форме, качестве или review-критериях для класса артефактов. Standard создается только при повторяющейся coordination или review problem. | Отличается от `Guideline` обязательностью, от `Policy` - фокусом на форме артефакта, а от `Contract` - тем, что не является операционным соглашением IL-1. Contract может ссылаться на Standard как на обязательное правило, но не тождественен ему. | [standards/README.md](README.md), [research-standard.md](research-standard.md), [adr-structure-standard.md](adr-structure-standard.md), [rfc-structure-standard.md](rfc-structure-standard.md) |

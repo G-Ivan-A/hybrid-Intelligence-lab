@@ -10,6 +10,11 @@ import re
 
 rules_path = Path("ai-rules/agent-work-rules.md")
 template_path = Path(".github/ISSUE_TEMPLATE/task.yml")
+markdown_template_path = Path(".github/ISSUE_TEMPLATE/task.md")
+governance_path = Path("ai-governance/ai-governance.md")
+glossary_path = Path("standards/glossary.md")
+workflow_path = Path("standards/issue-workflow.md")
+onboarding_path = Path("ai-rules/agent-onboarding-protocol.md")
 
 
 def fail(message: str) -> None:
@@ -87,6 +92,48 @@ if task_types != expected_task_types:
 for forbidden in ("research", "education", "deep-think"):
     if forbidden in template_modes:
         fail(f"{forbidden} must not be an operating_mode option")
+
+
+def require_text(path: Path, needles: list[str]) -> None:
+    text = path.read_text(encoding="utf-8")
+    for needle in needles:
+        if needle not in text:
+            fail(f"{path} must contain {needle!r}")
+
+
+require_text(
+    rules_path,
+    [
+        "## Контракт автономии",
+        "перечень закрытый",
+        "## Контракт эскалации",
+        "Не выполнено и вопросы",
+        "## Контракт верификации",
+        "V-1",
+        "V-2",
+        "Как проверяется",
+    ],
+)
+for path in (template_path, markdown_template_path):
+    require_text(path, ["Отклонения от постановки", "Не выполнено и вопросы"])
+require_text(governance_path, ["ADR-010", "закрытый перечень"])
+require_text(
+    glossary_path,
+    [
+        "мета-контракт",
+        "| Экспертное исполнение (Justified Deviation) |",
+        "| Абсолютные границы (Hard Limits) |",
+        "| Легальный выход (Legal Exit) |",
+    ],
+)
+require_text(workflow_path, ["Отклонения от постановки", "Не выполнено и вопросы"])
+require_text(
+    onboarding_path,
+    ["Принцип 1", "Принцип 2", "Принцип 3", "2026-08-adr-010-agent-autonomy-principles.md"],
+)
+
+legacy_template = Path(".github/ISSUE_TEMPLATE/task-creative.md")
+require_text(legacy_template, ['name: ""', "Creative Task (consolidated)"])
 
 print("Operating mode contract regression tests passed.")
 PY

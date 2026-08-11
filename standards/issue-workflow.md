@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.2
-updated: 2026-06-12
+version: 1.3
+updated: 2026-08-11
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
@@ -100,7 +100,7 @@ stateDiagram-v2
 | `draft` | `ready` | Контекст полон, DoD измерим, зависимости ясны, выбран Operating Mode | Автор + ревьюер |
 | `draft` | `closed` | Задача отменена до начала работы | Автор |
 | `ready` | `in-progress` | Исполнитель начал работу | Исполнитель |
-| `in-progress` | `review` | Артефакты готовы, локальные проверки пройдены, открыт PR | Исполнитель |
+| `in-progress` | `review` | Артефакты готовы, локальные проверки пройдены, открыт PR; отклонения и «Не выполнено и вопросы» заполнены либо явно отмечены как неприменимые | Исполнитель |
 | `in-progress` | `blocked` | Появилась внешняя блокирующая зависимость | Исполнитель |
 | `blocked` | `in-progress` / `ready` | Блокирующая зависимость снята | Исполнитель |
 | `review` | `merged` | Ревью пройдено, изменения влиты в `main` | Ревьюер |
@@ -125,14 +125,19 @@ stateDiagram-v2
 ### Связь с `User Story / ФТ`
 
 Шаблоны задач
-[.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md),
-[.github/ISSUE_TEMPLATE/task-creative.md](../.github/ISSUE_TEMPLATE/task-creative.md)
-и GitHub-native форма
+[.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md) и GitHub-native форма
 [.github/ISSUE_TEMPLATE/task.yml](../.github/ISSUE_TEMPLATE/task.yml)
 содержат поле `User Story / ФТ`. Задача ссылается на родительскую user story
 или функциональное требование по его идентификатору/ссылке. Если связи нет,
 поле остаётся `-` (AI-агент не генерирует значение для пустого поля). Это даёт
 двустороннюю прослеживаемость: от требования к задачам и обратно.
+
+### Готовность PR
+
+Перед переходом в `review` PR фиксирует «Отклонения от постановки» для каждого
+изменения способа исполнения и блок «Не выполнено и вопросы» для легального
+выхода. Если блок не применим, это отмечается явно; вопрос содержит причины,
+варианты решения и рекомендацию агента.
 
 ### Связь с `CHANGELOG.md`
 
@@ -208,5 +213,4 @@ changelog объясняет смысл изменения, а не только
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [CHANGELOG.md](../CHANGELOG.md)
 - [.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md)
-- [.github/ISSUE_TEMPLATE/task-creative.md](../.github/ISSUE_TEMPLATE/task-creative.md)
 - [.github/ISSUE_TEMPLATE/task.yml](../.github/ISSUE_TEMPLATE/task.yml)
