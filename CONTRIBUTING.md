@@ -134,6 +134,7 @@ bash tools/test-frontmatter-validator.sh
 bash tools/test-smart-sync.sh
 bash tools/test-reference-research-terminology.sh
 bash tools/test-agent-onboarding-authorization.sh
+bash tools/test-operating-mode-contract.sh
 bash tools/test-check-agent-work-rules-size.sh
 ./tools/check-agent-work-rules-size.sh
 ./tools/validate-file-naming.sh

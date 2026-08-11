@@ -64,10 +64,25 @@ body:
         - structured
         - creative
         - hybrid
-        - deep-think
       default: 0
     validations:
       required: true
+
+  - type: dropdown
+    id: task_type
+    attributes:
+      label: "Task Type"
+      description: "Опциональный тип задачи; не определяет уровень автономии."
+      options:
+        - research
+        - education
+        - implementation
+        - audit
+        - analysis
+        - rfc
+        - adr
+    validations:
+      required: false
 
   - type: textarea
     id: context

@@ -370,6 +370,7 @@ is_active_file() {
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
     tools/test-agent-onboarding-authorization.sh | \
+    tools/test-operating-mode-contract.sh | \
     tools/test-check-agent-work-rules-size.sh | \
     tools/check-agent-work-rules-size.sh | \
     tools/validate-frontmatter.sh | \
@@ -808,6 +809,7 @@ required_files=(
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/test-agent-onboarding-authorization.sh"
+  "tools/test-operating-mode-contract.sh"
   "tools/test-check-agent-work-rules-size.sh"
   "tools/check-agent-work-rules-size.sh"
   "tools/validate-frontmatter.sh"
@@ -1288,8 +1290,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 1.8"
-require_text "standards/glossary.md" "updated: 2026-08-01"
+require_text "standards/glossary.md" "version: 1.9"
+require_text "standards/glossary.md" "updated: 2026-08-08"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"
@@ -1309,6 +1311,8 @@ require_text "standards/glossary.md" "Standard ≠ Contract"
 require_text "standards/glossary.md" "IL-3"
 require_text "standards/glossary.md" "IL-1"
 require_text "standards/glossary.md" "Operating Mode"
+require_text "standards/glossary.md" "Task Type"
+require_text "standards/glossary.md" "Method"
 require_text "standards/glossary.md" "Profile"
 require_text "standards/glossary.md" "Исполнимый документ"
 require_text "standards/glossary.md" "Директивный блок"
@@ -2471,13 +2475,16 @@ require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
 
 require_text ".github/ISSUE_TEMPLATE/task.md" "status: canonical"
 require_text ".github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
-require_text ".github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured`'
+require_text ".github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured / Creative / Hybrid`'
+require_text ".github/ISSUE_TEMPLATE/task.md" 'Task Type (optional):'
 require_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
 require_text ".github/ISSUE_TEMPLATE/task.md" "Готово, когда"
 
 require_text ".github/ISSUE_TEMPLATE/task-creative.md" "status: canonical"
 require_text ".github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
 require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" 'Operating Mode: `Structured / Creative / Hybrid`'
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" 'Task Type (optional):'
 require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Не писать, как именно реализовывать задачу"
 require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
 
@@ -2577,6 +2584,7 @@ require_text "tools/test-reference-research-terminology.sh" "canonical Domain Me
 require_text "tools/test-post-migration-validator.sh" "legacy root paths"
 require_text "tools/test-sprint-5-agent-model.sh" "Sprint 5 agent-model regression tests passed."
 require_text "tools/test-agent-onboarding-authorization.sh" "Мерж PR = согласование результата"
+require_text "tools/test-operating-mode-contract.sh" "Operating mode contract regression tests passed."
 require_text "tools/generate-manifest.py" "templates/manifest.json"
 require_text "tools/validate-frontmatter.sh" "invalid knowledge status"
 require_text "tools/validate-frontmatter.sh" "docs/guides/*.md"
@@ -2596,6 +2604,7 @@ require_text ".github/workflows/validate.yml" "Test post-migration validator inv
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-authorization.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-operating-mode-contract.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"

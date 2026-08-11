@@ -46,6 +46,9 @@ jobs:
       - name: Test agent onboarding authorization contract
         run: bash tools/test-agent-onboarding-authorization.sh
 
+      - name: Test operating mode contract
+        run: bash tools/test-operating-mode-contract.sh
+
       - name: Test agent work rules size check
         run: bash tools/test-check-agent-work-rules-size.sh
 

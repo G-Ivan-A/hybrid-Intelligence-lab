@@ -5,8 +5,8 @@ title: "[creative] Краткое описание задачи"
 labels: "creative"
 assignees: ""
 status: canonical
-version: 1.0
-updated: 2026-06-12
+version: 1.1
+updated: 2026-08-08
 temperature: 0.7
 ---
 
@@ -15,6 +15,11 @@ temperature: 0.7
 и не придумывай отсутствующие факты. Решай, как достичь цели, но фиксируй
 обоснованные обходы рекомендаций Хаба.
 -->
+
+## Мета
+
+- Operating Mode: `Structured / Creative / Hybrid`
+- Task Type (optional): `Research / Education / Implementation / Audit / Analysis / RFC / ADR`
 
 ## Контекст
 
