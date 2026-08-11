@@ -175,6 +175,12 @@ is_active_file() {
     research/ai-education/evaluation/30-decision-framework.md | \
     research/ai-education/evaluation/40-practice-and-cases.md | \
     research/ai-education/evaluation/50-open-research.md | \
+    research/ai-education/tool-use/00-introduction.md | \
+    research/ai-education/tool-use/10-theory.md | \
+    research/ai-education/tool-use/20-taxonomy.md | \
+    research/ai-education/tool-use/30-decision-framework.md | \
+    research/ai-education/tool-use/40-practice-and-cases.md | \
+    research/ai-education/tool-use/50-open-research.md | \
     research/hub/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \

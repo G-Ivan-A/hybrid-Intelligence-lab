@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.69
-updated: 2026-08-07
+version: 1.70
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -10,6 +10,13 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Added
+
+- research: добавлен модуль `research/ai-education/tool-use/` по issue #485 —
+  таксономия function calling и MCP, execution/recovery patterns,
+  planner/executor trade-offs, сравнение фреймворков и рекомендации для Source
+  Intelligence Engine в формате Reference Research Pattern.
 
 ### Changed
 
