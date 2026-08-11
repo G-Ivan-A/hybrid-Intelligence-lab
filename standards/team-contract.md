@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.1
-updated: 2026-06-13
+version: 1.2
+updated: 2026-08-11
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -247,6 +247,11 @@ human decision rights, traceability and safety.
    explicit human approval.
 
 ## Operating Modes
+
+При адаптации сверяйте режимы с тремя значениями Хаба (`Structured`, `Creative`,
+`Hybrid`) и [ADR-010](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md).
+`Research` здесь является профилем задачи, а `Incident` — допустимым локальным
+расширением для аварийной работы; они не изменяют словарь Operating Modes Хаба.
 
 | Mode | Когда использовать | Ожидаемое поведение |
 | --- | --- | --- |
