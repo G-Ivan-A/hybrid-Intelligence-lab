@@ -175,6 +175,12 @@ is_active_file() {
     research/ai-education/evaluation/30-decision-framework.md | \
     research/ai-education/evaluation/40-practice-and-cases.md | \
     research/ai-education/evaluation/50-open-research.md | \
+    research/ai-education/observability/00-introduction.md | \
+    research/ai-education/observability/10-theory.md | \
+    research/ai-education/observability/20-taxonomy.md | \
+    research/ai-education/observability/30-decision-framework.md | \
+    research/ai-education/observability/40-practice-and-cases.md | \
+    research/ai-education/observability/50-open-research.md | \
     research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md | \
     research/ai-education/tool-use/00-introduction.md | \
     research/ai-education/tool-use/10-theory.md | \
@@ -1581,7 +1587,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.87"
+require_text "pr-ops/artifact-map.md" "version: 1.88"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1723,7 +1729,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.14"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.15"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"

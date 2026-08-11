@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.6
+version: 0.7
 updated: 2026-08-11
 temperature: 0.1
 ---
@@ -40,6 +40,11 @@ temperature: 0.1
 - [`tool-use/`](tool-use/00-introduction.md) — шестая валидация паттерна:
   typed function calling, MCP, execution/recovery patterns, planner/executor,
   framework comparison и интеграция в Source Intelligence Engine.
+- [`observability/`](observability/00-introduction.md) — седьмая валидация
+  паттерна: наблюдаемость и трейсинг AI-агентов (таксономия сигналов, паттерны
+  трейсинга многошаговых выполнений, стоимость наблюдения против стоимости
+  отладки, сравнение платформ, интеграция в конвейер Source Intelligence Engine
+  и общеобразовательный разрез для всех ролей).
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).
