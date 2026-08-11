@@ -13,6 +13,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: добавлен отчёт по issue #495 о нормативных пробелах при
+  последовательных задачах внедрения. На примере PR #491/#492 выделен пробел
+  композиции норм и transition semantics, проверены ADR-010, RFC #470, AI
+  Governance, Agent Work Rules, ADR-002, ADR-008 и ADR Structure Standard,
+  обобщены сопутствующие паттерны и сформулированы вопросы для будущего
+  normative этапа без предложения конкретных стандартов или валидаторов.
 - research: добавлен модуль `research/ai-education/tool-use/` по issue #485 —
   таксономия function calling и MCP, execution/recovery patterns,
   planner/executor trade-offs, сравнение фреймворков и рекомендации для Source
