@@ -14,13 +14,14 @@ traceability и практическую полезность для hybrid huma
 
 1. Начинайте с GitHub issue, где есть context, scope, язык результата,
    acceptance criteria и forbidden changes.
-2. Для обычных задач используйте
+2. Используйте единый 5-блочный шаблон
    [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) или
-   GitHub-native форму [.github/ISSUE_TEMPLATE/task.yml](.github/ISSUE_TEMPLATE/task.yml).
-3. Для Creative mode используйте единый
-   [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) со значением
-   `Operating Mode: Creative`: описывайте цель, constraints и Definition of Done,
-   не предписывая исполнителю лишние шаги реализации.
+   GitHub-native форму [.github/ISSUE_TEMPLATE/task.yml](.github/ISSUE_TEMPLATE/task.yml):
+   Контекст, Цель, SSOT, Контракты задачи, Готово когда.
+3. Режим работы задаётся полем `Operating Mode`
+   (`Structured` / `Creative` / `Hybrid`), а не отдельным шаблоном. В Creative
+   описывайте цель, constraints и Definition of Done, не предписывая исполнителю
+   лишние шаги реализации.
 4. Выбирайте целевой каталог по
    [pr-ops/repo-model.md](pr-ops/repo-model.md),
    [docs/rfc/knowledge-lifecycle-proposal.md](docs/rfc/knowledge-lifecycle-proposal.md) и
@@ -144,12 +145,39 @@ bash tools/test-reference-research-terminology.sh
 bash tools/test-agent-onboarding-authorization.sh
 bash tools/test-operating-mode-contract.sh
 bash tools/test-check-agent-work-rules-size.sh
+bash tools/test-nonempty-diff.sh
 ./tools/check-agent-work-rules-size.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
 python3 tools/generate-manifest.py --check
 ```
+
+## Постусловие непустого диффа
+
+Каждый pull request обязан содержать непустой полезный дифф. Постусловие
+проверяется механически: шаг `Validate nonempty diff` в
+[.github/workflows/validate.yml](.github/workflows/validate.yml) запускает
+[tools/validate-nonempty-diff.sh](tools/validate-nonempty-diff.sh) на событии
+`pull_request`. Дифф считается three-dot от `merge-base`, поэтому проверка
+устойчива к движению base-ветки и к merge-коммитам. Изменения исключительно в
+служебных файлах-заглушках полезным диффом не считаются; тело PR в git не
+хранится и в дифф не входит.
+
+Источник правила — [RFC #470](docs/rfc/2026-08-06-rfc-task-statement-architecture.md),
+раздел «Implementation and Validation», шаг 1.
+
+### Escape-метка `no-diff-expected`
+
+Если PR намеренно не содержит изменений кода или документов (например, PR с
+вопросом к человеку), проверка пропускается меткой `no-diff-expected`.
+
+- Метку ставит **только owner или admin репозитория**. Метка, поставленная
+  любым другим пользователем, проверку не пропускает: CI падает с явным
+  сообщением о неавторизованной метке.
+- Агент **не ставит** эту метку сам и не просит её как способ обойти пустой
+  результат работы; вместо этого он фиксирует, что именно не выполнено, и
+  задаёт вопрос в PR.
 
 ## Pull Request Checklist
 

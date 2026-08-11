@@ -1,5 +1,5 @@
-name: "📋 Task Implementation"
-description: "Structured task for implementation, documentation, tooling, or governance work."
+name: "📋 Task"
+description: "Универсальный 5-блочный шаблон задачи: Structured, Creative или Hybrid."
 title: "[scope] Краткое описание задачи"
 labels:
   - tools
@@ -8,58 +8,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        ⚠️ **Для ИИ**: если поле пустое, не генерируй значение. Работай в режиме `structured` по умолчанию. Не добавляй лишние поля, не меняй структуру задачи и явно сохраняй traceability между контекстом, артефактами и DoD.
-
-  - type: input
-    id: labels
-    attributes:
-      label: "Labels"
-      description: "Метки задачи через `|` или запятую."
-      placeholder: "tools | governance | priority:P1 | sprint:1"
-    validations:
-      required: false
-
-  - type: input
-    id: milestone
-    attributes:
-      label: "Milestone"
-      description: "Целевой milestone или спринт."
-      placeholder: "Sprint 1 — Structure Migration"
-    validations:
-      required: false
-
-  - type: input
-    id: user_story
-    attributes:
-      label: "User Story / ФТ"
-      description: "Связанная user story, функциональное требование или `—`."
-      placeholder: "—"
-    validations:
-      required: false
-
-  - type: input
-    id: linked_backlog
-    attributes:
-      label: "Linked Backlog"
-      description: "Ссылка на backlog item или `—`."
-      placeholder: "—"
-    validations:
-      required: false
-
-  - type: input
-    id: depends_on
-    attributes:
-      label: "Depends On"
-      description: "Зависимости по issue, PR, документам или `—`."
-      placeholder: "—"
-    validations:
-      required: false
+        ⚠️ **Для ИИ**: пустое поле не заполняется выдуманным значением. Универсальные контракты автономии, эскалации и верификации живут в `ai-rules/agent-work-rules.md` и здесь не дублируются. Список файлов не перечисляется: место артефакта разрешается на момент исполнения. Источник шаблона — RFC #470, §P.9.
 
   - type: dropdown
     id: operating_mode
     attributes:
       label: "Operating Mode"
-      description: "Default: structured, если не указано."
+      description: "Уровень автономии. Default: structured, если не указано."
       options:
         - structured
         - creative
@@ -72,7 +27,7 @@ body:
     id: task_type
     attributes:
       label: "Task Type"
-      description: "Опциональный тип задачи; не определяет уровень автономии."
+      description: "Опциональный тип задачи; независимая ось, не определяет уровень автономии."
       options:
         - research
         - education
@@ -84,36 +39,64 @@ body:
     validations:
       required: false
 
+  - type: input
+    id: user_story
+    attributes:
+      label: "User Story / ФТ / НФТ"
+      description: "Одной строкой, опционально. Пусто — оставьте `—`."
+      placeholder: "—"
+    validations:
+      required: false
+
   - type: textarea
     id: context
     attributes:
-      label: "🎯 Контекст"
-      description: "Почему задача нужна, какие решения и ограничения уже заданы."
+      label: "1. Контекст"
+      description: "Зачем это делается, какие решения уже приняты, что НЕ входит в задачу."
       placeholder: |
-        Опишите проблему, цель, границы и связанные документы / issue / PR.
+        Принятые решения, границы, связанные issue / PR / документы.
     validations:
       required: true
 
   - type: textarea
-    id: artifacts
+    id: goal
     attributes:
-      label: "📄 Артефакты для создания/изменения"
-      description: "Конкретные файлы, документы, проверки или UI-сценарии."
+      label: "2. Цель"
+      description: "Какое состояние станет правдой после выполнения. Без описания реализации."
       placeholder: |
-        - [ ] Создать или изменить ...
-        - [ ] Проверить ...
+        После выполнения ...
     validations:
       required: true
+
+  - type: textarea
+    id: ssot
+    attributes:
+      label: "3. SSOT"
+      description: "1–3 якоря: путь, issue/PR или permalink с SHA. Неразрешимый якорь фиксируется как gap."
+      placeholder: |
+        - ai-rules/agent-work-rules.md
+        - #470
+    validations:
+      required: true
+
+  - type: textarea
+    id: contracts
+    attributes:
+      label: "4. Контракты задачи"
+      description: "Только отклонения от универсальных контрактов `agent-work-rules.md` (автономия / эскалация / верификация). Пусто = действуют универсальные."
+      placeholder: |
+        —
+    validations:
+      required: false
 
   - type: textarea
     id: dod
     attributes:
-      label: "✅ Готово, когда"
-      description: "Измеримые acceptance criteria и проверки."
+      label: "5. Готово, когда"
+      description: "3–5 пунктов, каждый проверяем."
       placeholder: |
         - [ ] ...
-        - [ ] Локальная проверка проходит без ошибок
-        - [ ] Изменения закоммичены и отправлены в PR
+        - [ ] ...
     validations:
       required: true
 

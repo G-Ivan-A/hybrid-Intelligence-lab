@@ -335,7 +335,6 @@ is_active_file() {
     .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
     .github/ISSUE_TEMPLATE/task.md | \
-    .github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/AI_GOVERNANCE.md | \
     templates/htom/AI_QUICK_RULES.md | \
     templates/htom/AI_SESSION_HANDOVER_PROMPT.md | \
@@ -379,6 +378,8 @@ is_active_file() {
     tools/test-operating-mode-contract.sh | \
     tools/test-check-agent-work-rules-size.sh | \
     tools/check-agent-work-rules-size.sh | \
+    tools/test-nonempty-diff.sh | \
+    tools/validate-nonempty-diff.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -781,7 +782,6 @@ required_files=(
   "research/mango/2026-06-19-repository-structure-vision.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
-  ".github/ISSUE_TEMPLATE/task-creative.md"
   "templates/htom/AI_GOVERNANCE.md"
   "templates/htom/AI_QUICK_RULES.md"
   "templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
@@ -818,6 +818,8 @@ required_files=(
   "tools/test-operating-mode-contract.sh"
   "tools/test-check-agent-work-rules-size.sh"
   "tools/check-agent-work-rules-size.sh"
+  "tools/test-nonempty-diff.sh"
+  "tools/validate-nonempty-diff.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -864,6 +866,12 @@ while IFS= read -r file; do
   fi
 
   if [[ "${file##*/}" == ".gitkeep" ]]; then
+    continue
+  fi
+
+  # Historical links in RFC/ADR snapshots still target this path. PR #491
+  # keeps it as a disabled compatibility redirect, not an active template.
+  if [[ "$file" == ".github/ISSUE_TEMPLATE/task-creative.md" ]]; then
     continue
   fi
 
@@ -915,6 +923,8 @@ require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
 require_text "CONTRIBUTING.md" "updated: 2026-08-11"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "CONTRIBUTING.md" "no-diff-expected"
+require_text "CONTRIBUTING.md" "tools/validate-nonempty-diff.sh"
 require_text "CONTRIBUTING.md" "Специфика работы с AI-агентами"
 require_text "CONTRIBUTING.md" "manual restart"
 require_text "CONTRIBUTING.md" "standards/frontmatter-standard.md"
@@ -945,6 +955,7 @@ require_text "ai-rules/agent-work-rules.md" "Специфика работы с 
 require_text "ai-rules/agent-work-rules.md" "agent-onboarding-protocol.md"
 
 require_text "CHANGELOG.md" "## Unreleased"
+require_text "CHANGELOG.md" "issue #484"
 require_text "CHANGELOG.md" "issue #237"
 require_text "CHANGELOG.md" "issue #241"
 require_text "CHANGELOG.md" "issue #240"
@@ -1322,6 +1333,7 @@ require_text "standards/glossary.md" "Исполнимый документ"
 require_text "standards/glossary.md" "Директивный блок"
 require_text "standards/glossary.md" "HTOM-команда"
 require_text "standards/glossary.md" "Spoke-репозиторий"
+require_text "standards/glossary.md" "5-блочный шаблон задачи"
 require_text "standards/glossary.md" "Как использовать"
 require_text "standards/glossary.md" "Связи терминов"
 require_text "standards/glossary.md" "Источники"
@@ -1628,7 +1640,6 @@ require_text "pr-ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/"
 require_text "pr-ops/artifact-map.md" "practices/README.md"
 require_text "pr-ops/artifact-map.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
 require_text "pr-ops/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
-require_text "pr-ops/artifact-map.md" ".github/ISSUE_TEMPLATE/task-creative.md"
 require_text "pr-ops/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/docs/README.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/tools/validate-file-naming.sh"
@@ -2469,20 +2480,28 @@ require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Иде
 require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Форматы подачи"
 require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Вопросы для обсуждения"
 
-require_text ".github/ISSUE_TEMPLATE/task.yml" "📋 Task Implementation"
+# Единый 5-блочный шаблон задачи (RFC #470, §P.9): Контекст, Цель, SSOT,
+# Контракты задачи, Готово когда. Creative-режим поглощён полем operating_mode.
+require_text ".github/ISSUE_TEMPLATE/task.yml" "📋 Task"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "structured"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "creative"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "⚠️ **Для ИИ**"
-require_text ".github/ISSUE_TEMPLATE/task.yml" "🎯 Контекст"
-require_text ".github/ISSUE_TEMPLATE/task.yml" "📄 Артефакты для создания/изменения"
-require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "1. Контекст"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "2. Цель"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "3. SSOT"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "4. Контракты задачи"
+require_text ".github/ISSUE_TEMPLATE/task.yml" "5. Готово, когда"
 
 require_text ".github/ISSUE_TEMPLATE/task.md" "status: canonical"
 require_text ".github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
 require_text ".github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured / Creative / Hybrid`'
 require_text ".github/ISSUE_TEMPLATE/task.md" 'Task Type (optional):'
-require_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
-require_text ".github/ISSUE_TEMPLATE/task.md" "Готово, когда"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Контекст"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Цель"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## SSOT"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Контракты задачи"
+require_text ".github/ISSUE_TEMPLATE/task.md" "## Готово, когда"
+reject_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
 
 require_text ".github/ISSUE_TEMPLATE/task-creative.md" 'name: ""'
 require_text ".github/ISSUE_TEMPLATE/task-creative.md" "status: deprecated"
@@ -2608,6 +2627,9 @@ require_text ".github/workflows/validate.yml" "bash tools/test-agent-onboarding-
 require_text ".github/workflows/validate.yml" "bash tools/test-operating-mode-contract.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
+require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
+require_text ".github/workflows/validate.yml" "fetch-depth: 0"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

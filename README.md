@@ -76,7 +76,7 @@ temperature: 0.1
 
 | Шаблон | Когда использовать |
 | --- | --- |
-| [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) | Structured task: понятный scope, артефакты, ограничения и измеримый Definition of Done. |
+| [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) | Универсальный 5-блочный шаблон: Контекст, Цель, SSOT, Контракты задачи, Готово когда. Режим задаётся полем `Operating Mode` (`Structured` / `Creative` / `Hybrid`). |
 | [.github/ISSUE_TEMPLATE/task.yml](.github/ISSUE_TEMPLATE/task.yml) | GitHub-native форма для задач в UI. |
 
 ## Проекты

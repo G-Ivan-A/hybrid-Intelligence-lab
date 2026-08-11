@@ -124,8 +124,9 @@ stateDiagram-v2
 
 ### Связь с `User Story / ФТ`
 
-Шаблоны задач
-[.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md) и GitHub-native форма
+Единый шаблон задачи
+[.github/ISSUE_TEMPLATE/task.md](../.github/ISSUE_TEMPLATE/task.md)
+и GitHub-native форма
 [.github/ISSUE_TEMPLATE/task.yml](../.github/ISSUE_TEMPLATE/task.yml)
 содержат поле `User Story / ФТ`. Задача ссылается на родительскую user story
 или функциональное требование по его идентификатору/ссылке. Если связи нет,
