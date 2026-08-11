@@ -6,6 +6,9 @@ on:
 
 permissions:
   contents: read
+  # Нужны для чтения timeline PR: кто поставил escape-метку no-diff-expected.
+  issues: read
+  pull-requests: read
 
 jobs:
   validate:
@@ -13,6 +16,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Полная история обязательна: без неё нет merge-base и three-dot diff невозможен.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -51,6 +57,41 @@ jobs:
 
       - name: Test agent work rules size check
         run: bash tools/test-check-agent-work-rules-size.sh
+
+      - name: Test nonempty diff validator
+        run: bash tools/test-nonempty-diff.sh
+
+      - name: Resolve no-diff-expected label authorization
+        if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          labeler="$(gh api "repos/$REPO/issues/$PR_NUMBER/timeline" --paginate \
+            --jq '[.[] | select(.event == "labeled" and .label.name == "no-diff-expected")] | last | .actor.login' \
+            2>/dev/null || true)"
+          role=""
+          if [ -n "$labeler" ] && [ "$labeler" != "null" ]; then
+            if [ "$labeler" = "$REPO_OWNER" ]; then
+              role="OWNER"
+            else
+              permission="$(gh api "repos/$REPO/collaborators/$labeler/permission" --jq '.permission' 2>/dev/null || true)"
+              [ "$permission" = "admin" ] && role="ADMIN"
+            fi
+          fi
+          echo "Метку no-diff-expected поставил: ${labeler:-неизвестно} (роль: ${role:-не авторизована})"
+          echo "NO_DIFF_LABEL_ACTOR_ROLE=$role" >>"$GITHUB_ENV"
+
+      - name: Validate nonempty diff
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.sha }}
+          PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+        run: ./tools/validate-nonempty-diff.sh
 
       - name: Check agent work rules size budget
         run: ./tools/check-agent-work-rules-size.sh

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.10
-updated: 2026-08-07
+version: 1.11
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -136,12 +136,39 @@ bash tools/test-reference-research-terminology.sh
 bash tools/test-agent-onboarding-authorization.sh
 bash tools/test-operating-mode-contract.sh
 bash tools/test-check-agent-work-rules-size.sh
+bash tools/test-nonempty-diff.sh
 ./tools/check-agent-work-rules-size.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
 python3 tools/generate-manifest.py --check
 ```
+
+## Постусловие непустого диффа
+
+Каждый pull request обязан содержать непустой полезный дифф. Постусловие
+проверяется механически: шаг `Validate nonempty diff` в
+[.github/workflows/validate.yml](.github/workflows/validate.yml) запускает
+[tools/validate-nonempty-diff.sh](tools/validate-nonempty-diff.sh) на событии
+`pull_request`. Дифф считается three-dot от `merge-base`, поэтому проверка
+устойчива к движению base-ветки и к merge-коммитам. Изменения исключительно в
+служебных файлах-заглушках полезным диффом не считаются; тело PR в git не
+хранится и в дифф не входит.
+
+Источник правила — [RFC #470](docs/rfc/2026-08-06-rfc-task-statement-architecture.md),
+раздел «Implementation and Validation», шаг 1.
+
+### Escape-метка `no-diff-expected`
+
+Если PR намеренно не содержит изменений кода или документов (например, PR с
+вопросом к человеку), проверка пропускается меткой `no-diff-expected`.
+
+- Метку ставит **только owner или admin репозитория**. Метка, поставленная
+  любым другим пользователем, проверку не пропускает: CI падает с явным
+  сообщением о неавторизованной метке.
+- Агент **не ставит** эту метку сам и не просит её как способ обойти пустой
+  результат работы; вместо этого он фиксирует, что именно не выполнено, и
+  задаёт вопрос в PR.
 
 ## Pull Request Checklist
 
