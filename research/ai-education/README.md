@@ -33,7 +33,10 @@ temperature: 0.1
 - [`evaluation/`](evaluation/00-introduction.md) — пятая валидация паттерна:
   метрики RAG/extraction/graph/agent tasks, LLM-as-judge, golden sets,
   risk-based thresholds, сравнение eval-фреймворков и образовательный срез для
-  бизнес-аналитика.
+  бизнес-аналитика. Прикладной [evals-контракт Source Intelligence
+  Engine](evaluation/2026-08-11-source-intelligence-evals-contract.md)
+  переводит модуль в план локального эксперимента и handoff для B-068 без
+  назначения числовых acceptance thresholds.
 - [`tool-use/`](tool-use/00-introduction.md) — шестая валидация паттерна:
   typed function calling, MCP, execution/recovery patterns, planner/executor,
   framework comparison и интеграция в Source Intelligence Engine.

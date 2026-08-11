@@ -175,6 +175,7 @@ is_active_file() {
     research/ai-education/evaluation/30-decision-framework.md | \
     research/ai-education/evaluation/40-practice-and-cases.md | \
     research/ai-education/evaluation/50-open-research.md | \
+    research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md | \
     research/ai-education/tool-use/00-introduction.md | \
     research/ai-education/tool-use/10-theory.md | \
     research/ai-education/tool-use/20-taxonomy.md | \
