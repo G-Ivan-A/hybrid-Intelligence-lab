@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.14
-updated: 2026-07-02
+version: 1.15
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -49,6 +49,7 @@ project bootstrap, governance-стратегии и классификации �
 | [exp/analysis-inventory-342/](exp/analysis-inventory-342/) | Воспроизводимый scan для issue #342 (B-024) в целевом контейнере `exp/`: матрица Analysis-adjacent артефактов по Hub, Mango и Clarify с фактическими типами Research / Analysis / Audit / Report / RFC / ADR / Other и relation к Analysis. |
 | [exp/task-execution-modes-330/](exp/task-execution-modes-330/) | Воспроизводимый rule-based классификатор для issue #330 в контейнере `exp/` (RFC B-016 v0.2, плоская структура): `classify.py` (v1 naive vs v2 action-anchored) + 5 таблиц тестов классификации типа/режима задач без контекста. |
 | [exp/ops-task-strategy-461/](exp/ops-task-strategy-461/) | Контейнер доказательств для issue #461: сбор корпуса PR и issue трёх репозиториев (`collect-evidence.py`), статистика исходов на чистой stdlib (`analyze-outcomes.py`), разрешимость путей против дерева на дату постановки с контролем на период миграции (`experiment-references.py`), замыкание ссылок и бюджет контекста точек входа (`experiment-closure.py`) и контракты решений как исполнимая проверка в двух размещениях (`model-contract-index.py`). |
+| [exp/research-methodology-validation-499/](exp/research-methodology-validation-499/) | Контейнер доказательств для issue #499: формальная инвентаризация всего корпуса `research/` (`scan-research.py`) — разделение на модули `00…50` и одиночные датированные отчёты по структуре дерева, объёмы, статусы, ссылки на issue, даты создания из git history и перечень контейнеров `exp/`. Родительский отчёт — [docs/analysis/2026-08-11-research-methodology-validation.md](../../docs/analysis/2026-08-11-research-methodology-validation.md). |
 
 ## Воспроизводимость
 

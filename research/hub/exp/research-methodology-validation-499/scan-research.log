@@ -1,0 +1,7 @@
+repo sha: f0a53268aebe54dbd9addf8ad78e02fdad5b1ffc
+modules: 8 (canonical six files: 8, with extra files: 1)
+module files: 48, lines: 9932
+singles: 54, lines: 24922, hub singles: 22
+singles without date-first name: ['research/external-knowledge/external-sources-registry.md']
+singles by domain: {'ai-education': 1, 'cicd': 1, 'education': 1, 'external-knowledge': 7, 'governance': 4, 'hub': 22, 'mango': 11, 'open-ai-ru': 1, 'reputation-technologies': 6}
+experiments: 7 (with scripts: 7)

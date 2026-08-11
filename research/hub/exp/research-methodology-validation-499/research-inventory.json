@@ -1,0 +1,2813 @@
+{
+  "repo_sha": "f0a53268aebe54dbd9addf8ad78e02fdad5b1ffc",
+  "source_issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/499",
+  "summary": {
+    "modules": 8,
+    "modules_canonical_six": 8,
+    "modules_with_extra_files": 1,
+    "module_files_total": 48,
+    "module_lines_total": 9932,
+    "singles": 54,
+    "singles_lines_total": 24922,
+    "singles_not_date_first": [
+      "research/external-knowledge/external-sources-registry.md"
+    ],
+    "singles_by_domain": {
+      "ai-education": 1,
+      "cicd": 1,
+      "education": 1,
+      "external-knowledge": 7,
+      "governance": 4,
+      "hub": 22,
+      "mango": 11,
+      "open-ai-ru": 1,
+      "reputation-technologies": 6
+    },
+    "hub_singles": 22,
+    "experiments": 7,
+    "experiments_with_scripts": 7
+  },
+  "modules": [
+    {
+      "kind": "module",
+      "path": "research/ai-education/evaluation",
+      "domain": "evaluation",
+      "module_files": 6,
+      "extra_files": [
+        "research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md"
+      ],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 499,
+      "total_lines_with_extra": 764,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-08-08",
+        "2026-08-11"
+      ],
+      "methods": [],
+      "issues": [],
+      "created": {
+        "sha": "cebdd9b",
+        "date": "2026-08-08",
+        "subject": "research: study agentic evaluation practices"
+      },
+      "last_touched": {
+        "sha": "ea29672",
+        "date": "2026-08-11",
+        "subject": "research: design source intelligence evals"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/evaluation/00-introduction.md",
+          "lines": 77,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.2",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/evaluation/10-theory.md",
+          "lines": 97,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-08",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/evaluation/20-taxonomy.md",
+          "lines": 85,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-08",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/evaluation/30-decision-framework.md",
+          "lines": 80,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-08",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/evaluation/40-practice-and-cases.md",
+          "lines": 77,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-08",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/evaluation/50-open-research.md",
+          "lines": 83,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-08",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md",
+          "lines": 265,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.3"
+          },
+          "issues": []
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "path": "research/ai-education/information-extraction-graph-modeling",
+      "domain": "information-extraction-graph-modeling",
+      "module_files": 6,
+      "extra_files": [],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 1202,
+      "total_lines_with_extra": 1202,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-08-06"
+      ],
+      "methods": [
+        "comparative-analysis + decision-matrix",
+        "conceptual-analysis + adversarial-hypotheses",
+        "framework-comparison + case-analysis",
+        "literature-survey + framework-comparison + adversarial-hypotheses",
+        "synthesis + evidence-audit",
+        "taxonomy-building + comparative-analysis"
+      ],
+      "issues": [
+        "471"
+      ],
+      "created": {
+        "sha": "9da9c22",
+        "date": "2026-08-06",
+        "subject": "research: add information extraction graph modeling study"
+      },
+      "last_touched": {
+        "sha": "9da9c22",
+        "date": "2026-08-06",
+        "subject": "research: add information extraction graph modeling study"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/information-extraction-graph-modeling/00-introduction.md",
+          "lines": 165,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-06",
+            "temperature": "0.5",
+            "type": "research",
+            "context": "[information-extraction, graph-modeling, knowledge-graph, education]",
+            "method": "literature-survey + framework-comparison + adversarial-hypotheses",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "471"
+          ]
+        },
+        {
+          "path": "research/ai-education/information-extraction-graph-modeling/10-theory.md",
+          "lines": 168,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-06",
+            "temperature": "0.5",
+            "type": "research",
+            "context": "[information-extraction, graph-modeling, theory, object-model]",
+            "method": "conceptual-analysis + adversarial-hypotheses",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "471"
+          ]
+        },
+        {
+          "path": "research/ai-education/information-extraction-graph-modeling/20-taxonomy.md",
+          "lines": 179,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-06",
+            "temperature": "0.5",
+            "type": "research",
+            "context": "[information-extraction, graph-modeling, taxonomy]",
+            "method": "taxonomy-building + comparative-analysis",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "471"
+          ]
+        },
+        {
+          "path": "research/ai-education/information-extraction-graph-modeling/30-decision-framework.md",
+          "lines": 194,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-06",
+            "temperature": "0.5",
+            "type": "research",
+            "context": "[information-extraction, graph-modeling, decision-framework, evaluation]",
+            "method": "comparative-analysis + decision-matrix",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "471"
+          ]
+        },
+        {
+          "path": "research/ai-education/information-extraction-graph-modeling/40-practice-and-cases.md",
+          "lines": 271,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-06",
+            "temperature": "0.5",
+            "type": "research",
+            "context": "[information-extraction, graph-modeling, frameworks, industry-cases, education]",
+            "method": "framework-comparison + case-analysis",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "471"
+          ]
+        },
+        {
+          "path": "research/ai-education/information-extraction-graph-modeling/50-open-research.md",
+          "lines": 225,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-06",
+            "temperature": "0.5",
+            "type": "research",
+            "context": "[information-extraction, graph-modeling, open-research, integration, sources]",
+            "method": "synthesis + evidence-audit",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "471"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "path": "research/ai-education/memory",
+      "domain": "memory",
+      "module_files": 6,
+      "extra_files": [],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 1915,
+      "total_lines_with_extra": 1915,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-07-31"
+      ],
+      "methods": [
+        "conceptual-framing + adversarial-hypotheses",
+        "decision-framework-building + framework-documentation-audit",
+        "framework-documentation-audit + case-analysis",
+        "gap-analysis + self-audit",
+        "literature-survey + framework-documentation-audit + taxonomy-building + adversarial-hypotheses",
+        "taxonomy-building + framework-documentation-audit"
+      ],
+      "issues": [
+        "437",
+        "457",
+        "459"
+      ],
+      "created": {
+        "sha": "c724299",
+        "date": "2026-07-31",
+        "subject": "research(memory): исследование индустриальных практик памяти AI-агентов"
+      },
+      "last_touched": {
+        "sha": "c724299",
+        "date": "2026-07-31",
+        "subject": "research(memory): исследование индустриальных практик памяти AI-агентов"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/memory/00-introduction.md",
+          "lines": 332,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-31",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[memory, agent-state, context-engineering, forgetting, temporal-knowledge, introduction, reading-map]",
+            "method": "literature-survey + framework-documentation-audit + taxonomy-building + adversarial-hypotheses",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "437",
+            "457",
+            "459"
+          ]
+        },
+        {
+          "path": "research/ai-education/memory/10-theory.md",
+          "lines": 293,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-31",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[memory, conceptual-framing, object-model, decision-points, hypotheses, write-path, temporal-knowledge]",
+            "method": "conceptual-framing + adversarial-hypotheses",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "459"
+          ]
+        },
+        {
+          "path": "research/ai-education/memory/20-taxonomy.md",
+          "lines": 163,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-31",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[memory, taxonomy, memory-types, storage-substrates, lifecycle, read-policies]",
+            "method": "taxonomy-building + framework-documentation-audit",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "459"
+          ]
+        },
+        {
+          "path": "research/ai-education/memory/30-decision-framework.md",
+          "lines": 291,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-31",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[memory, decision-framework, compression, forgetting, trust-boundary, evaluation, maturity-model]",
+            "method": "decision-framework-building + framework-documentation-audit",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "459"
+          ]
+        },
+        {
+          "path": "research/ai-education/memory/40-practice-and-cases.md",
+          "lines": 455,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-31",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[memory, practice, case-study, langgraph, crewai, autogen, anthropic, mcp, letta, mem0, zep, education]",
+            "method": "framework-documentation-audit + case-analysis",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "459"
+          ]
+        },
+        {
+          "path": "research/ai-education/memory/50-open-research.md",
+          "lines": 381,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-31",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[memory, open-questions, module-links, glossary, sources, self-audit, reference-research-pattern]",
+            "method": "gap-analysis + self-audit",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "457",
+            "459"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "path": "research/ai-education/multi-agent-orchestration",
+      "domain": "multi-agent-orchestration",
+      "module_files": 6,
+      "extra_files": [],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 893,
+      "total_lines_with_extra": 893,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-08-11"
+      ],
+      "methods": [],
+      "issues": [
+        "35"
+      ],
+      "created": {
+        "sha": "fe9cac2",
+        "date": "2026-08-11",
+        "subject": "research: multi-agent orchestration study (issue #487)"
+      },
+      "last_touched": {
+        "sha": "fe9cac2",
+        "date": "2026-08-11",
+        "subject": "research: multi-agent orchestration study (issue #487)"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/multi-agent-orchestration/00-introduction.md",
+          "lines": 116,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": [
+            "35"
+          ]
+        },
+        {
+          "path": "research/ai-education/multi-agent-orchestration/10-theory.md",
+          "lines": 166,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": [
+            "35"
+          ]
+        },
+        {
+          "path": "research/ai-education/multi-agent-orchestration/20-taxonomy.md",
+          "lines": 145,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": [
+            "35"
+          ]
+        },
+        {
+          "path": "research/ai-education/multi-agent-orchestration/30-decision-framework.md",
+          "lines": 176,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/multi-agent-orchestration/40-practice-and-cases.md",
+          "lines": 112,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/multi-agent-orchestration/50-open-research.md",
+          "lines": 178,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": [
+            "35"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "path": "research/ai-education/observability",
+      "domain": "observability",
+      "module_files": 6,
+      "extra_files": [],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 983,
+      "total_lines_with_extra": 983,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-08-11"
+      ],
+      "methods": [],
+      "issues": [],
+      "created": {
+        "sha": "0f8de25",
+        "date": "2026-08-11",
+        "subject": "research: наблюдаемость и трейсинг AI-агентов (issue #486)"
+      },
+      "last_touched": {
+        "sha": "0f8de25",
+        "date": "2026-08-11",
+        "subject": "research: наблюдаемость и трейсинг AI-агентов (issue #486)"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/observability/00-introduction.md",
+          "lines": 107,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/observability/10-theory.md",
+          "lines": 178,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/observability/20-taxonomy.md",
+          "lines": 142,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/observability/30-decision-framework.md",
+          "lines": 247,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/observability/40-practice-and-cases.md",
+          "lines": 161,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/observability/50-open-research.md",
+          "lines": 148,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "path": "research/ai-education/retrieval",
+      "domain": "retrieval",
+      "module_files": 6,
+      "extra_files": [],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 2176,
+      "total_lines_with_extra": 2176,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-07-17"
+      ],
+      "methods": [
+        "literature-survey + adversarial-hypotheses + taxonomy-building"
+      ],
+      "issues": [
+        "418",
+        "437"
+      ],
+      "created": {
+        "sha": "80659a5",
+        "date": "2026-07-17",
+        "subject": "research: реорганизация retrieval-исследования в Reference Research Pattern"
+      },
+      "last_touched": {
+        "sha": "c56a0c0",
+        "date": "2026-07-17",
+        "subject": "docs: clean retrieval table formatting"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/retrieval/00-introduction.md",
+          "lines": 345,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.3",
+            "updated": "2026-07-17",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[retrieval, rag, education, survey, introduction, reading-map]",
+            "method": "literature-survey + adversarial-hypotheses + taxonomy-building",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "418",
+            "437"
+          ]
+        },
+        {
+          "path": "research/ai-education/retrieval/10-theory.md",
+          "lines": 341,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.3",
+            "updated": "2026-07-17",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[retrieval, rag, education, theory, conceptual-framing, object-model, hypotheses]",
+            "method": "literature-survey + adversarial-hypotheses + taxonomy-building",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "418",
+            "437"
+          ]
+        },
+        {
+          "path": "research/ai-education/retrieval/20-taxonomy.md",
+          "lines": 294,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.3",
+            "updated": "2026-07-17",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[retrieval, rag, education, taxonomy, knowledge-base, queries, strategies]",
+            "method": "literature-survey + adversarial-hypotheses + taxonomy-building",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "418",
+            "437"
+          ]
+        },
+        {
+          "path": "research/ai-education/retrieval/30-decision-framework.md",
+          "lines": 568,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.3",
+            "updated": "2026-07-17",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[retrieval, rag, decision-matrix, chunking, embeddings, reranking, evaluation, readiness-levels]",
+            "method": "literature-survey + adversarial-hypotheses + taxonomy-building",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "418",
+            "437"
+          ]
+        },
+        {
+          "path": "research/ai-education/retrieval/40-practice-and-cases.md",
+          "lines": 315,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.3",
+            "updated": "2026-07-17",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[retrieval, rag, practice, industrial-cases, trends, agent-memory, dna-metaphor]",
+            "method": "literature-survey + adversarial-hypotheses + taxonomy-building",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "418",
+            "437"
+          ]
+        },
+        {
+          "path": "research/ai-education/retrieval/50-open-research.md",
+          "lines": 313,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.3",
+            "updated": "2026-07-17",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[retrieval, rag, open-questions, rfc-input, hypotheses-ranking, glossary, sources, self-audit]",
+            "method": "literature-survey + adversarial-hypotheses + taxonomy-building",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "418",
+            "437"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "path": "research/ai-education/task-processing",
+      "domain": "task-processing",
+      "module_files": 6,
+      "extra_files": [],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 1493,
+      "total_lines_with_extra": 1493,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-07-30"
+      ],
+      "methods": [
+        "conceptual-framing + object-modelling + adversarial-hypotheses",
+        "decision-matrix + framework-documentation-audit + evaluation-review",
+        "framework-documentation-audit + industry-case-review",
+        "gap-analysis + hypothesis-ranking + self-audit",
+        "literature-survey + framework-documentation-audit + taxonomy-building + adversarial-hypotheses",
+        "taxonomy-building + framework-documentation-audit"
+      ],
+      "issues": [
+        "437",
+        "457"
+      ],
+      "created": {
+        "sha": "6df1dea",
+        "date": "2026-07-30",
+        "subject": "research(task-processing): исследование промышленных практик агентного исполнения задач"
+      },
+      "last_touched": {
+        "sha": "6df1dea",
+        "date": "2026-07-30",
+        "subject": "research(task-processing): исследование промышленных практик агентного исполнения задач"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/task-processing/00-introduction.md",
+          "lines": 276,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-30",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[task-processing, agent-execution, multi-agent, planning, guardrails, autonomy, introduction, reading-map]",
+            "method": "literature-survey + framework-documentation-audit + taxonomy-building + adversarial-hypotheses",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "437",
+            "457"
+          ]
+        },
+        {
+          "path": "research/ai-education/task-processing/10-theory.md",
+          "lines": 288,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-30",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[task-processing, agent-execution, conceptual-framing, object-model, decision-points, hypotheses]",
+            "method": "conceptual-framing + object-modelling + adversarial-hypotheses",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "457"
+          ]
+        },
+        {
+          "path": "research/ai-education/task-processing/20-taxonomy.md",
+          "lines": 179,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-30",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[task-processing, taxonomy, mandate, planning, guardrails, autonomy]",
+            "method": "taxonomy-building + framework-documentation-audit",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "457"
+          ]
+        },
+        {
+          "path": "research/ai-education/task-processing/30-decision-framework.md",
+          "lines": 221,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-30",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[task-processing, decision-framework, guardrails, pre-flight, evaluation, autonomy-levels]",
+            "method": "decision-matrix + framework-documentation-audit + evaluation-review",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "457"
+          ]
+        },
+        {
+          "path": "research/ai-education/task-processing/40-practice-and-cases.md",
+          "lines": 296,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-30",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[task-processing, industry-cases, autogen, crewai, langgraph, openai-agents-sdk, mcp, opentelemetry, trends]",
+            "method": "framework-documentation-audit + industry-case-review",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "457"
+          ]
+        },
+        {
+          "path": "research/ai-education/task-processing/50-open-research.md",
+          "lines": 233,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-07-30",
+            "temperature": "0.7",
+            "type": "research",
+            "context": "[task-processing, open-questions, module-links, retrieval, memory, glossary, sources, self-audit]",
+            "method": "gap-analysis + hypothesis-ranking + self-audit",
+            "scope": "repo-wide",
+            "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457",
+            "based_on": "",
+            "related_artifacts": "",
+            "related_issues": ""
+          },
+          "issues": [
+            "437",
+            "457"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "path": "research/ai-education/tool-use",
+      "domain": "tool-use",
+      "module_files": 6,
+      "extra_files": [],
+      "prefixes": [
+        "00",
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "canonical_six": true,
+      "total_lines": 771,
+      "total_lines_with_extra": 771,
+      "statuses": [
+        "draft"
+      ],
+      "updated": [
+        "2026-08-11"
+      ],
+      "methods": [],
+      "issues": [],
+      "created": {
+        "sha": "7d4f450",
+        "date": "2026-08-11",
+        "subject": "research: study agent tool use practices"
+      },
+      "last_touched": {
+        "sha": "7d4f450",
+        "date": "2026-08-11",
+        "subject": "research: study agent tool use practices"
+      },
+      "files": [
+        {
+          "path": "research/ai-education/tool-use/00-introduction.md",
+          "lines": 104,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/tool-use/10-theory.md",
+          "lines": 128,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/tool-use/20-taxonomy.md",
+          "lines": 124,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/tool-use/30-decision-framework.md",
+          "lines": 128,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/tool-use/40-practice-and-cases.md",
+          "lines": 145,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        },
+        {
+          "path": "research/ai-education/tool-use/50-open-research.md",
+          "lines": 142,
+          "frontmatter": {
+            "status": "draft",
+            "version": "0.1",
+            "updated": "2026-08-11",
+            "temperature": "0.5"
+          },
+          "issues": []
+        }
+      ]
+    }
+  ],
+  "singles": [
+    {
+      "kind": "single",
+      "path": "research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md",
+      "domain": "ai-education/evaluation",
+      "in_module_dir": true,
+      "date_first_name": true,
+      "name_date": "2026-08-11",
+      "lines": 265,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-08-11",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "ea29672",
+        "date": "2026-08-11",
+        "subject": "research: design source intelligence evals"
+      },
+      "last_touched": {
+        "sha": "ea29672",
+        "date": "2026-08-11",
+        "subject": "research: design source intelligence evals"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/cicd/2026-06-09-js-cicd-template-analysis.md",
+      "domain": "cicd",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-09",
+      "lines": 387,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-09",
+      "type": "external-analysis",
+      "method": "manual-review",
+      "scope": "",
+      "source": "",
+      "issues": [
+        "202"
+      ],
+      "created": {
+        "sha": "fd42234",
+        "date": "2026-06-09",
+        "subject": "research: analyze JS CI/CD template from link-foundation"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/education/2026-07-16-retrieval-strategies-survey.md",
+      "domain": "education",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-07-16",
+      "lines": 1873,
+      "status": "superseded",
+      "version": "0.4",
+      "updated": "2026-07-17",
+      "type": "research",
+      "method": "literature-survey + adversarial-hypotheses + taxonomy-building",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/418",
+      "issues": [
+        "418",
+        "437"
+      ],
+      "created": {
+        "sha": "c3163ee",
+        "date": "2026-07-16",
+        "subject": "research(education): Этап 1 исследования retrieval-стратегий (issue #418)"
+      },
+      "last_touched": {
+        "sha": "80659a5",
+        "date": "2026-07-17",
+        "subject": "research: реорганизация retrieval-исследования в Reference Research Pattern"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md",
+      "domain": "external-knowledge",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-18",
+      "lines": 506,
+      "status": "draft",
+      "version": "0.2",
+      "updated": "2026-06-18",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "",
+      "source": "",
+      "issues": [
+        "247"
+      ],
+      "created": {
+        "sha": "e6fe8ed",
+        "date": "2026-06-18",
+        "subject": "creative: Research Wigers book with AI-era actualization"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/external-knowledge/external-insights/2026-06-13-12-factor-agents.md",
+      "domain": "external-knowledge/external-insights",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-13",
+      "lines": 56,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-13",
+      "type": "external-analysis",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "4f1b0ba",
+        "date": "2026-06-13",
+        "subject": "creative: external knowledge integration research and RFC"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/external-knowledge/external-insights/2026-06-13-building-effective-agents.md",
+      "domain": "external-knowledge/external-insights",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-13",
+      "lines": 55,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-13",
+      "type": "external-analysis",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "4f1b0ba",
+        "date": "2026-06-13",
+        "subject": "creative: external knowledge integration research and RFC"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/external-knowledge/external-insights/2026-06-13-spec-driven-development.md",
+      "domain": "external-knowledge/external-insights",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-13",
+      "lines": 57,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-13",
+      "type": "external-analysis",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "4f1b0ba",
+        "date": "2026-06-13",
+        "subject": "creative: external knowledge integration research and RFC"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/external-knowledge/external-insights/2026-06-15-agent-local-memory-context.md",
+      "domain": "external-knowledge/external-insights",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-15",
+      "lines": 57,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-15",
+      "type": "external-analysis",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "1590b81",
+        "date": "2026-06-15",
+        "subject": "creative: external sources rules + Index/Summary maps + Habr test"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/external-knowledge/external-insights/2026-06-15-structured-prompt-driven-development.md",
+      "domain": "external-knowledge/external-insights",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-15",
+      "lines": 56,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-15",
+      "type": "external-analysis",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "1590b81",
+        "date": "2026-06-15",
+        "subject": "creative: external sources rules + Index/Summary maps + Habr test"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/external-knowledge/external-sources-registry.md",
+      "domain": "external-knowledge",
+      "in_module_dir": false,
+      "date_first_name": false,
+      "name_date": "",
+      "lines": 400,
+      "status": "draft",
+      "version": "0.16",
+      "updated": "2026-08-11",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/227",
+      "issues": [
+        "35",
+        "227",
+        "240",
+        "245",
+        "257",
+        "274",
+        "278",
+        "330",
+        "457",
+        "459",
+        "471"
+      ],
+      "created": {
+        "sha": "4f1b0ba",
+        "date": "2026-06-13",
+        "subject": "creative: external knowledge integration research and RFC"
+      },
+      "last_touched": {
+        "sha": "a83c564",
+        "date": "2026-08-11",
+        "subject": "merge: resolve issue 487 conflicts with main"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/governance/2026-06-06-contract-documentation-format.md",
+      "domain": "governance",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-06",
+      "lines": 171,
+      "status": "canonical",
+      "version": "1.0",
+      "updated": "2026-06-07",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165",
+      "issues": [
+        "165"
+      ],
+      "created": {
+        "sha": "bb63c0b",
+        "date": "2026-06-06",
+        "subject": "creative: add research format, executable-contract and contract documentation standards (#165)"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/governance/2026-06-06-executable-contract-format.md",
+      "domain": "governance",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-06",
+      "lines": 169,
+      "status": "canonical",
+      "version": "1.0",
+      "updated": "2026-06-07",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165",
+      "issues": [
+        "165"
+      ],
+      "created": {
+        "sha": "bb63c0b",
+        "date": "2026-06-06",
+        "subject": "creative: add research format, executable-contract and contract documentation standards (#165)"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/governance/2026-06-06-governance-folder-structure-decisions.md",
+      "domain": "governance",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-06",
+      "lines": 200,
+      "status": "canonical",
+      "version": "1.1",
+      "updated": "2026-06-08",
+      "type": "decision-record",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165",
+      "issues": [
+        "165"
+      ],
+      "created": {
+        "sha": "bb63c0b",
+        "date": "2026-06-06",
+        "subject": "creative: add research format, executable-contract and contract documentation standards (#165)"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/governance/2026-06-06-research-documentation-format.md",
+      "domain": "governance",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-06",
+      "lines": 175,
+      "status": "canonical",
+      "version": "1.0",
+      "updated": "2026-06-07",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165",
+      "issues": [
+        "165"
+      ],
+      "created": {
+        "sha": "bb63c0b",
+        "date": "2026-06-06",
+        "subject": "creative: add research format, executable-contract and contract documentation standards (#165)"
+      },
+      "last_touched": {
+        "sha": "f44bd05",
+        "date": "2026-07-02",
+        "subject": "chore: remove legacy research profile"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-05-28-project-context-and-bootstrap-patterns.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-28",
+      "lines": 311,
+      "status": "draft",
+      "version": "0.2",
+      "updated": "2026-06-01",
+      "type": "internal-analysis",
+      "method": "retrospective-analysis + minimal-pattern-design + interpretive-synthesis",
+      "scope": "repo-wide",
+      "source": "",
+      "issues": [
+        "81",
+        "87"
+      ],
+      "created": {
+        "sha": "ad9b374",
+        "date": "2026-05-28",
+        "subject": "research: add project-context-and-bootstrap-patterns-2026-05.md based on Mango experience"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-05-28-prompts-classification-audit.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-28",
+      "lines": 182,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-05-28",
+      "type": "internal-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "d347d49",
+        "date": "2026-05-28",
+        "subject": "research: add prompts-classification-standard-2026-05.md with maturity matrix and templates"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-05-28-prompts-classification-standard.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-28",
+      "lines": 509,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-05-28",
+      "type": "classification-standard",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "d347d49",
+        "date": "2026-05-28",
+        "subject": "research: add prompts-classification-standard-2026-05.md with maturity matrix and templates"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-05-28-user-prompts-analysis.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-28",
+      "lines": 182,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-05-26",
+      "type": "prompt-analysis",
+      "method": "",
+      "scope": "user-specific + repo-integration",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "30d7717",
+        "date": "2026-05-28",
+        "subject": "research: add user-prompts-analysis-2026-05.md applying classification standard to 18 user prompts"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-01-team-c-governance-strategy-audit.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-01",
+      "lines": 150,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-01",
+      "type": "internal-analysis",
+      "method": "interpretive-synthesis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/87",
+      "issues": [
+        "87"
+      ],
+      "created": {
+        "sha": "b1329ad",
+        "date": "2026-06-01",
+        "subject": "research: add team C governance strategy audit"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-02-ai-collaboration-retrospective-mango-migration.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-02",
+      "lines": 85,
+      "status": "canonical",
+      "version": "1.0",
+      "updated": "2026-06-02",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "bd4b8d0",
+        "date": "2026-06-02",
+        "subject": "research: add ai-collaboration-retrospective-2026-06 based on mango migration design session"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-02-ai-collaboration-retrospective.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-02",
+      "lines": 57,
+      "status": "canonical",
+      "version": "1.0",
+      "updated": "2026-06-02",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "4672461",
+        "date": "2026-06-02",
+        "subject": "research: add ai-collaboration-retrospective-2026-06 based on template design session"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-02-external-governance-patterns-review.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-02",
+      "lines": 257,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-02",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/101",
+      "issues": [
+        "101"
+      ],
+      "created": {
+        "sha": "1dbb20b",
+        "date": "2026-06-02",
+        "subject": "research: add external-governance-patterns-review-2026-06 with applicability matrix"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-12-ecosystem-governance-audit.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-12",
+      "lines": 163,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-12",
+      "type": "internal-analysis",
+      "method": "repository-audit",
+      "scope": "",
+      "source": "",
+      "issues": [
+        "217"
+      ],
+      "created": {
+        "sha": "a1609bc",
+        "date": "2026-06-12",
+        "subject": "docs: improve AI governance task standards"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-12-external-practice-intake.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-12",
+      "lines": 97,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-12",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "c086dec",
+        "date": "2026-06-12",
+        "subject": "docs: refine Hub Vision, Concept, and documentation architecture"
+      },
+      "last_touched": {
+        "sha": "c395593",
+        "date": "2026-06-25",
+        "subject": "correction: Fix analytics artifact naming to YYYY-MM-DD for correct chronological sorting"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-12-international-ai-governance-practices.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-12",
+      "lines": 60,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-12",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "c086dec",
+        "date": "2026-06-12",
+        "subject": "docs: refine Hub Vision, Concept, and documentation architecture"
+      },
+      "last_touched": {
+        "sha": "c395593",
+        "date": "2026-06-25",
+        "subject": "correction: Fix analytics artifact naming to YYYY-MM-DD for correct chronological sorting"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-20-ecosystem-architecture-research.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-20",
+      "lines": 669,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "type": "ecosystem-architecture-research",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/257",
+      "issues": [
+        "257"
+      ],
+      "created": {
+        "sha": "b045ff4",
+        "date": "2026-06-20",
+        "subject": "creative: Comprehensive ecosystem architecture research (Hub, open-ai.ru, reputational technologies)"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-23-repository-structure-concept.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-23",
+      "lines": 1122,
+      "status": "reviewed",
+      "version": "0.3",
+      "updated": "2026-06-27",
+      "type": "repository-structure-concept-research",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/263",
+      "issues": [
+        "192",
+        "263",
+        "274",
+        "276"
+      ],
+      "created": {
+        "sha": "aef9de0",
+        "date": "2026-06-23",
+        "subject": "research: Repository structure concept for project archetypes (addendum to mango research)"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-25-artifact-inventory-and-classification.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-25",
+      "lines": 1562,
+      "status": "reviewed",
+      "version": "0.3",
+      "updated": "2026-06-27",
+      "type": "artifact-inventory-and-classification-research",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/265",
+      "issues": [
+        "265",
+        "267",
+        "269",
+        "276"
+      ],
+      "created": {
+        "sha": "269274d",
+        "date": "2026-06-25",
+        "subject": "research: Artifact inventory and classification (mango_ba_prompts + hybrid-Intelligence-lab)"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-27-adr-industry-norms-and-variants.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-27",
+      "lines": 563,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-27",
+      "type": "adr-industry-norms-and-variants-research",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278",
+      "issues": [
+        "276",
+        "278"
+      ],
+      "created": {
+        "sha": "8d76658",
+        "date": "2026-06-27",
+        "subject": "research: document RFC and ADR industry norms"
+      },
+      "last_touched": {
+        "sha": "57f7c7e",
+        "date": "2026-07-17",
+        "subject": "chore: align Sprint 2 evidence artifacts"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-27-rfc-industry-norms-and-variants.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-27",
+      "lines": 568,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-27",
+      "type": "rfc-industry-norms-and-variants-research",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/278",
+      "issues": [
+        "276",
+        "278"
+      ],
+      "created": {
+        "sha": "8d76658",
+        "date": "2026-06-27",
+        "subject": "research: document RFC and ADR industry norms"
+      },
+      "last_touched": {
+        "sha": "57f7c7e",
+        "date": "2026-07-17",
+        "subject": "chore: align Sprint 2 evidence artifacts"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-28-research-analysis-audit-inventory.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-28",
+      "lines": 286,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-28",
+      "type": "internal-analysis",
+      "method": "repository-scan",
+      "scope": "ecosystem",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288",
+      "issues": [
+        "288"
+      ],
+      "created": {
+        "sha": "1329169",
+        "date": "2026-06-28",
+        "subject": "research: classify research analysis audit artifacts"
+      },
+      "last_touched": {
+        "sha": "57f7c7e",
+        "date": "2026-07-17",
+        "subject": "chore: align Sprint 2 evidence artifacts"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-28-ripple-effects-282-research.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-28",
+      "lines": 462,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-28",
+      "type": "internal-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/284",
+      "issues": [
+        "282",
+        "284"
+      ],
+      "created": {
+        "sha": "6d0aae1",
+        "date": "2026-06-28",
+        "subject": "research: document ripple effects for issue 282"
+      },
+      "last_touched": {
+        "sha": "57f7c7e",
+        "date": "2026-07-17",
+        "subject": "chore: align Sprint 2 evidence artifacts"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-30",
+      "lines": 616,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-30",
+      "type": "reports-industry-norms-and-standardization-scope-research",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307",
+      "issues": [
+        "276",
+        "288",
+        "307"
+      ],
+      "created": {
+        "sha": "34b9318",
+        "date": "2026-06-30",
+        "subject": "research: industry norms for Reports artifacts and standardization scope (#307)"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-07-02-task-execution-modes-research.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-07-02",
+      "lines": 452,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-07-02",
+      "type": "task-execution-modes-research",
+      "method": "comparative-analysis-and-experiment",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330",
+      "issues": [
+        "310",
+        "316",
+        "320",
+        "322",
+        "324",
+        "330"
+      ],
+      "created": {
+        "sha": "160a559",
+        "date": "2026-07-02",
+        "subject": "Add task-execution-modes research report for #330"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-07-04-hub-as-agent-system-global-analysis.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-07-04",
+      "lines": 2713,
+      "status": "draft",
+      "version": "0.4",
+      "updated": "2026-07-09",
+      "type": "research",
+      "method": "deep-think-expert-panel",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/394",
+      "issues": [
+        "394",
+        "398"
+      ],
+      "created": {
+        "sha": "9f1e367",
+        "date": "2026-07-04",
+        "subject": "research: Hub as agent-system global analysis for issue #394"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/hub/2026-07-31-ops-task-strategy-validation.md",
+      "domain": "hub",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-07-31",
+      "lines": 432,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-07-31",
+      "type": "ops-task-strategy-validation",
+      "method": "historical-analysis-and-experiment",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/461",
+      "issues": [
+        "453",
+        "455",
+        "461"
+      ],
+      "created": {
+        "sha": "d5655da",
+        "date": "2026-07-31",
+        "subject": "research(ops): отчёт по валидации стратегии постановки задач и регистрация артефактов"
+      },
+      "last_touched": {
+        "sha": "d5655da",
+        "date": "2026-07-31",
+        "subject": "research(ops): отчёт по валидации стратегии постановки задач и регистрация артефактов"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-05-22-classification-tz.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-22",
+      "lines": 336,
+      "status": "reviewed",
+      "version": "1.0",
+      "updated": "2026-05-26",
+      "type": "internal-analysis",
+      "method": "corpus-analysis",
+      "scope": "",
+      "source": "git history before migration to research/mango/2026-05-22-classification-tz.md",
+      "issues": [
+        "9"
+      ],
+      "created": {
+        "sha": "8a207c8",
+        "date": "2026-05-22",
+        "subject": "Add classification (TZ) research based on 30-TZ corpus analysis"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-05-22-classification.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-22",
+      "lines": 794,
+      "status": "reviewed",
+      "version": "3.0",
+      "updated": "2026-05-27",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "",
+      "source": "git history before migration to research/mango/2026-05-22-classification.md",
+      "issues": [],
+      "created": {
+        "sha": "ef606bc",
+        "date": "2026-05-22",
+        "subject": "Add Mango Office product classification research"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-05-22-requirements-flow.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-22",
+      "lines": 347,
+      "status": "reviewed",
+      "version": "1.0",
+      "updated": "2026-05-26",
+      "type": "internal-analysis",
+      "method": "system-analysis",
+      "scope": "",
+      "source": "git history before migration to research/mango/2026-05-22-requirements-flow.md",
+      "issues": [],
+      "created": {
+        "sha": "e054218",
+        "date": "2026-05-22",
+        "subject": "Add Mango tender requirements flow research"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-05-26-rag-mapping-roadmap.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-26",
+      "lines": 574,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-05-26",
+      "type": "process-research",
+      "method": "structural-proposal + source-assessment + planning",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "be1baaa",
+        "date": "2026-05-26",
+        "subject": "research: add rag-mapping-roadmap-2026-05.md for documentation strategy and diagram usage"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-05-26-requirements-lifecycle-uncertainty.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-26",
+      "lines": 492,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-05-26",
+      "type": "process-research",
+      "method": "benchmark-analysis + case-modeling + standard-proposal",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "e8e8e11",
+        "date": "2026-05-26",
+        "subject": "research: add requirements-lifecycle-uncertainty-2026-05.md for BA process standardization"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-05-26-taxonomy-concept.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-26",
+      "lines": 306,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-05-26",
+      "type": "concept-proposal",
+      "method": "standards-analysis + gap-mapping",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "53daab0",
+        "date": "2026-05-26",
+        "subject": "research: add taxonomy-concept-2026-05.md for Unified Capability Taxonomy proposal"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-05-27-capability-decomposition.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-05-27",
+      "lines": 1773,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-05-27",
+      "type": "atomic-functions-reference",
+      "method": "international-benchmark + atomic-decomposition + practical-mapping",
+      "scope": "mango-only",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "c02c830",
+        "date": "2026-05-27",
+        "subject": "research/mango: add capability-decomposition-2026-05.md with atomic functions reference for pilot domains"
+      },
+      "last_touched": {
+        "sha": "f44bd05",
+        "date": "2026-07-02",
+        "subject": "chore: remove legacy research profile"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-06-18-ai-classifications-formalization.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-18",
+      "lines": 473,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-18",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "03a4959",
+        "date": "2026-06-18",
+        "subject": "Auto-commit: Changes made by Claude during problem-solving session"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-06-18-requirements-engineering-ai-era.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-18",
+      "lines": 414,
+      "status": "draft",
+      "version": "0.2",
+      "updated": "2026-06-18",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [],
+      "created": {
+        "sha": "e6fe8ed",
+        "date": "2026-06-18",
+        "subject": "creative: Research Wigers book with AI-era actualization"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-06-19-repository-structure-vision.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-19",
+      "lines": 553,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-19",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [
+        "253"
+      ],
+      "created": {
+        "sha": "b4f8fcb",
+        "date": "2026-06-19",
+        "subject": "creative: RFC Independent vision of mango_ba_prompts repository structure"
+      },
+      "last_touched": {
+        "sha": "7d3f1da",
+        "date": "2026-07-16",
+        "subject": "chore(governance): split policy and agent rules (B-056)"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/mango/2026-06-19-token-optimization-proposal.md",
+      "domain": "mango",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-19",
+      "lines": 379,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-19",
+      "type": "",
+      "method": "",
+      "scope": "",
+      "source": "",
+      "issues": [
+        "255"
+      ],
+      "created": {
+        "sha": "af65b97",
+        "date": "2026-06-19",
+        "subject": "creative: RFC Token optimization proposal for mango_ba_prompts"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/open-ai-ru/2026-06-20-open-ai-ru-repository-architecture-and-l3-l4.md",
+      "domain": "open-ai-ru",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-20",
+      "lines": 823,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "type": "internal-analysis",
+      "method": "comparative-analysis",
+      "scope": "open-ai-ru",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/259",
+      "issues": [
+        "257",
+        "259"
+      ],
+      "created": {
+        "sha": "a55b0f7",
+        "date": "2026-06-20",
+        "subject": "creative: open-ai.ru repository architecture and L3-L4 levels research"
+      },
+      "last_touched": {
+        "sha": "fa3a0a6",
+        "date": "2026-07-04",
+        "subject": "B-048: physical Hub migration per ADR-007 + validator/registry sync"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/reputation-technologies/2026-06-20-executive-summary.ru-en.md",
+      "domain": "reputation-technologies",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-20",
+      "lines": 117,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "type": "external-analysis",
+      "method": "source-synthesis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260",
+      "issues": [
+        "260"
+      ],
+      "created": {
+        "sha": "a8e7534",
+        "date": "2026-06-20",
+        "subject": "creative: Reputation technologies framework research (founder's vision, international standard, ecosystem architecture)"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md",
+      "domain": "reputation-technologies",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-20",
+      "lines": 806,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "type": "external-analysis",
+      "method": "source-synthesis + comparative-analysis + standards-mapping",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260",
+      "issues": [
+        "257",
+        "260"
+      ],
+      "created": {
+        "sha": "a8e7534",
+        "date": "2026-06-20",
+        "subject": "creative: Reputation technologies framework research (founder's vision, international standard, ecosystem architecture)"
+      },
+      "last_touched": {
+        "sha": "f44bd05",
+        "date": "2026-07-02",
+        "subject": "chore: remove legacy research profile"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/reputation-technologies/2026-06-20-framework-standard.en.md",
+      "domain": "reputation-technologies",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-20",
+      "lines": 196,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "type": "external-analysis",
+      "method": "standards-mapping",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260",
+      "issues": [
+        "260"
+      ],
+      "created": {
+        "sha": "a8e7534",
+        "date": "2026-06-20",
+        "subject": "creative: Reputation technologies framework research (founder's vision, international standard, ecosystem architecture)"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/reputation-technologies/2026-06-20-glossary.ru-en.md",
+      "domain": "reputation-technologies",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-20",
+      "lines": 104,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "type": "external-analysis",
+      "method": "source-synthesis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260",
+      "issues": [
+        "260"
+      ],
+      "created": {
+        "sha": "a8e7534",
+        "date": "2026-06-20",
+        "subject": "creative: Reputation technologies framework research (founder's vision, international standard, ecosystem architecture)"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/reputation-technologies/2026-06-20-white-paper.en.md",
+      "domain": "reputation-technologies",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-20",
+      "lines": 181,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "type": "external-analysis",
+      "method": "comparative-analysis",
+      "scope": "repo-wide",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260",
+      "issues": [
+        "260"
+      ],
+      "created": {
+        "sha": "a8e7534",
+        "date": "2026-06-20",
+        "subject": "creative: Reputation technologies framework research (founder's vision, international standard, ecosystem architecture)"
+      },
+      "last_touched": {
+        "sha": "3b3b655",
+        "date": "2026-06-28",
+        "subject": "chore: enforce frontmatter governance contract"
+      }
+    },
+    {
+      "kind": "single",
+      "path": "research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md",
+      "domain": "reputation-technologies",
+      "in_module_dir": false,
+      "date_first_name": true,
+      "name_date": "2026-06-29",
+      "lines": 329,
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-29",
+      "type": "external-analysis",
+      "method": "source-synthesis + market-segmentation + scoring-model",
+      "scope": "",
+      "source": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/292",
+      "issues": [
+        "292"
+      ],
+      "created": {
+        "sha": "5d2965c",
+        "date": "2026-06-29",
+        "subject": "research: add reputation course partner strategy"
+      },
+      "last_touched": {
+        "sha": "5d2965c",
+        "date": "2026-06-29",
+        "subject": "research: add reputation course partner strategy"
+      }
+    }
+  ],
+  "experiments": [
+    {
+      "path": "research/hub/exp/analysis-inventory-342",
+      "files": 4,
+      "scripts": 1,
+      "datasets": 1,
+      "logs": 0,
+      "created": {
+        "sha": "2628fb7",
+        "date": "2026-07-02",
+        "subject": "analysis: inventory Analysis artifacts"
+      }
+    },
+    {
+      "path": "research/hub/exp/ops-task-strategy-461",
+      "files": 16,
+      "scripts": 5,
+      "datasets": 5,
+      "logs": 5,
+      "created": {
+        "sha": "8cb409f",
+        "date": "2026-07-31",
+        "subject": "research(ops): собрать эмпирическую базу и провести эксперименты по постановке задач"
+      }
+    },
+    {
+      "path": "research/hub/exp/reports-inventory-310",
+      "files": 4,
+      "scripts": 1,
+      "datasets": 1,
+      "logs": 0,
+      "created": {
+        "sha": "6bf75ab",
+        "date": "2026-07-01",
+        "subject": "fix(issue-310): correct placement of Reports inventory deliverables"
+      }
+    },
+    {
+      "path": "research/hub/exp/research-analysis-audit-288",
+      "files": 4,
+      "scripts": 1,
+      "datasets": 1,
+      "logs": 0,
+      "created": {
+        "sha": "57f7c7e",
+        "date": "2026-07-17",
+        "subject": "chore: align Sprint 2 evidence artifacts"
+      }
+    },
+    {
+      "path": "research/hub/exp/rfc-adr-industry-norms-278",
+      "files": 9,
+      "scripts": 1,
+      "datasets": 3,
+      "logs": 1,
+      "created": {
+        "sha": "57f7c7e",
+        "date": "2026-07-17",
+        "subject": "chore: align Sprint 2 evidence artifacts"
+      }
+    },
+    {
+      "path": "research/hub/exp/ripple-effects-282",
+      "files": 4,
+      "scripts": 1,
+      "datasets": 1,
+      "logs": 0,
+      "created": {
+        "sha": "57f7c7e",
+        "date": "2026-07-17",
+        "subject": "chore: align Sprint 2 evidence artifacts"
+      }
+    },
+    {
+      "path": "research/hub/exp/task-execution-modes-330",
+      "files": 9,
+      "scripts": 1,
+      "datasets": 1,
+      "logs": 1,
+      "created": {
+        "sha": "365f3e5",
+        "date": "2026-07-02",
+        "subject": "Add reproducible task-classification experiment for #330"
+      }
+    }
+  ]
+}
