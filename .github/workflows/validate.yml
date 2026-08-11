@@ -61,6 +61,9 @@ jobs:
       - name: Test nonempty diff validator
         run: bash tools/test-nonempty-diff.sh
 
+      - name: Test historical immutability validator
+        run: bash tools/test-historical-immutable.sh
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:
@@ -92,6 +95,13 @@ jobs:
           HEAD_REF: ${{ github.event.pull_request.head.sha }}
           PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
         run: ./tools/validate-nonempty-diff.sh
+
+      - name: Validate historical documents immutability
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.sha }}
+        run: ./tools/validate-historical-immutable.sh
 
       - name: Check agent work rules size budget
         run: ./tools/check-agent-work-rules-size.sh
