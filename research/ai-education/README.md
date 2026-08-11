@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.7
+version: 0.8
 updated: 2026-08-11
 temperature: 0.1
 ---
@@ -45,6 +45,12 @@ temperature: 0.1
   трейсинга многошаговых выполнений, стоимость наблюдения против стоимости
   отладки, сравнение платформ, интеграция в конвейер Source Intelligence Engine
   и общеобразовательный разрез для всех ролей).
+- [`multi-agent-orchestration/`](multi-agent-orchestration/00-introduction.md) —
+  восьмая валидация паттерна: таксономия паттернов оркестрации, механизмы
+  координации и разрешения конфликтов, cost-benefit мультиагентности,
+  сравнение фреймворков и протоколов, встраивание в конвейер Source
+  Intelligence Engine. Образовательный срез — общий для всех ролей
+  (§2 в [`50-open-research.md`](multi-agent-orchestration/50-open-research.md)).
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).

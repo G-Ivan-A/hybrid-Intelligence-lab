@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.71
+version: 1.72
 updated: 2026-08-11
 temperature: 0.1
 ---
@@ -83,6 +83,26 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Модуль `research/ai-education/multi-agent-orchestration/`
+  (issue #487) — восьмая валидация Reference Research Pattern. Шесть файлов
+  покрывают таксономию паттернов оркестрации (sequential, routing, parallel,
+  hierarchical, debate, swarm, blackboard), механизмы координации и разрешения
+  конфликтов, протоколы MCP/A2A/OpenTelemetry GenAI, cost-benefit
+  мультиагентности (≈×4/×15 токенов, MAST: 41.77% / 36.94% / 21.30%),
+  сравнение LangGraph, CrewAI, Microsoft Agent Framework, OpenAI Agents SDK,
+  MetaGPT и CAMEL/OWL, постадийное встраивание в конвейер Source Intelligence
+  Engine и общий для всех ролей образовательный срез. Принцип RFC #470 §P.5
+  («команда — покупка за конкретную цену») подтверждён четырьмя независимыми
+  типами свидетельств и расширен четырьмя уточнениями. Исследование не
+  предписывает изменений правил или архитектуры Хаба.
+- registry: `research/external-knowledge/external-sources-registry.md` v0.16 —
+  добавлены источники `ext-267`…`ext-284` по теме multi-agent orchestration
+  (MAST, Anthropic, Cognition, Smit et al., Du et al., OWL/NeurIPS 2025,
+  Hearsay-II, документация шести фреймворков, MCP, A2A, OTel GenAI).
+- pr-ops: `pr-ops/artifact-map.md` v1.89 — зарегистрированы шесть файлов
+  модуля Multi-Agent Orchestration; строка `research/ai-education/README.md`
+  обновлена до восьми валидаций паттерна. Allowlist и pin-строки версий в
+  `tools/validate-repository-structure.sh` синхронизированы.
 - research: Модуль `research/ai-education/observability/` (issue #486) — седьмая
   валидация Reference Research Pattern. Шесть файлов покрывают таксономию
   сигналов (logging/metrics/tracing/profiling) и уровни данных L0–L5, паттерны
