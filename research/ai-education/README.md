@@ -34,6 +34,11 @@ temperature: 0.1
   метрики RAG/extraction/graph/agent tasks, LLM-as-judge, golden sets,
   risk-based thresholds, сравнение eval-фреймворков и образовательный срез для
   бизнес-аналитика.
+- [`observability/`](observability/00-introduction.md) — шестая валидация
+  паттерна: наблюдаемость и трейсинг AI-агентов (таксономия сигналов, паттерны
+  трейсинга многошаговых выполнений, стоимость наблюдения против стоимости
+  отладки, сравнение платформ, интеграция в конвейер Source Intelligence Engine
+  и общеобразовательный разрез для всех ролей).
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).

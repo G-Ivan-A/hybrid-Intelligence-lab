@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.14
-updated: 2026-08-08
+version: 0.15
+updated: 2026-08-11
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -304,6 +304,26 @@ related_issues:
 | `ext-229` | [Braintrust eval documentation](https://www.braintrust.dev/docs/guides/evals) | `docs` | `en` | `braintrust, scorers, experiments, tracing` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
 | `ext-230` | [Promptfoo documentation](https://www.promptfoo.dev/docs/intro/) | `docs` | `en` | `promptfoo, assertions, red-team, ci` | `topic: evaluation-frameworks` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/40-practice-and-cases.md) |
 | `ext-231` | [NetworkX graph edit distance](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.similarity.graph_edit_distance.html) | `docs` | `en` | `graph-edit-distance, graph-evaluation, metric` | `topic: graph-evaluation` | `research` | `hub` | ✅ [Evaluation-479](../ai-education/evaluation/20-taxonomy.md) |
+| `ext-232` | [Dapper, a Large-Scale Distributed Systems Tracing Infrastructure](https://research.google/pubs/dapper-a-large-scale-distributed-systems-tracing-infrastructure/) | `paper` | `en` | `tracing, sampling, overhead, distributed-systems` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/30-decision-framework.md) |
+| `ext-233` | [W3C Trace Context](https://www.w3.org/TR/trace-context/) | `standard` | `en` | `traceparent, context-propagation, w3c` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/10-theory.md) |
+| `ext-234` | [OpenTelemetry — Traces](https://opentelemetry.io/docs/concepts/signals/traces/) | `docs` | `en` | `spans, traces, signals` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/10-theory.md) |
+| `ext-235` | [OpenTelemetry — Sampling](https://opentelemetry.io/docs/concepts/sampling/) | `docs` | `en` | `head-sampling, tail-sampling, cost` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/30-decision-framework.md) |
+| `ext-236` | [OpenTelemetry Collector — tail sampling processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/tailsamplingprocessor/README.md) | `github` | `en` | `tail-sampling, collector, policies` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/20-taxonomy.md) |
+| `ext-237` | [OpenTelemetry semantic-conventions-genai](https://github.com/open-telemetry/semantic-conventions-genai) | `github` | `en` | `semconv, gen-ai, standardization` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/00-introduction.md) |
+| `ext-238` | [GenAI semantic conventions — spans](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-spans.md) | `docs` | `en` | `gen-ai-spans, content-capture, opt-in` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/10-theory.md) |
+| `ext-239` | [GenAI semantic conventions — agent spans](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md) | `docs` | `en` | `invoke-agent, execute-tool, agentic-tracing` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/10-theory.md) |
+| `ext-240` | [GenAI semantic conventions — metrics](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-metrics.md) | `docs` | `en` | `token-usage, latency, agent-metrics` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/10-theory.md) |
+| `ext-241` | [OpenInference](https://github.com/Arize-ai/openinference) | `github` | `en` | `instrumentation-spec, alternative-vocabulary, phoenix` | `topic: observability-tracing` | `observation` | `hub` | ✅ [Observability-486](../ai-education/observability/10-theory.md) |
+| `ext-242` | [TRAIL: Trace Reasoning and Agentic Issue Localization](https://arxiv.org/abs/2505.08638) | `paper` | `en` | `trace-analysis, error-localization, benchmark` | `topic: observability-tracing` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/10-theory.md) |
+| `ext-243` | [Langfuse](https://github.com/langfuse/langfuse) | `github` | `en` | `open-core, self-host, tracing-backend` | `topic: observability-platforms` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/40-practice-and-cases.md) |
+| `ext-244` | [Langfuse pricing](https://langfuse.com/pricing) | `docs` | `en` | `pricing, retention, units` | `topic: observability-platforms` | `observation` | `hub` | ✅ [Observability-486](../ai-education/observability/30-decision-framework.md) |
+| `ext-245` | [LangSmith observability quickstart](https://docs.langchain.com/langsmith/observability-quickstart) | `docs` | `en` | `langsmith, tracing, quickstart` | `topic: observability-platforms` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/40-practice-and-cases.md) |
+| `ext-246` | [LangSmith administration и retention](https://docs.langchain.com/langsmith/administration-overview) | `docs` | `en` | `retention, data-tiers, deletion` | `topic: observability-platforms` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/30-decision-framework.md) |
+| `ext-247` | [LangSmith pricing](https://www.langchain.com/pricing-langsmith) | `docs` | `en` | `pricing, lcu, lsu` | `topic: observability-platforms` | `observation` | `hub` | ✅ [Observability-486](../ai-education/observability/30-decision-framework.md) |
+| `ext-248` | [Braintrust — traces](https://www.braintrust.dev/docs/guides/traces) | `docs` | `en` | `braintrust, span-types, eval-first` | `topic: observability-platforms` | `research` | `hub` | ✅ [Observability-486](../ai-education/observability/40-practice-and-cases.md) |
+| `ext-249` | [Braintrust — OpenTelemetry integration](https://www.braintrust.dev/docs/integrations/sdk-integrations/opentelemetry) | `docs` | `en` | `otlp, gen-ai-semconv, attribute-mapping` | `topic: observability-platforms` | `observation` | `hub` | ✅ [Observability-486](../ai-education/observability/40-practice-and-cases.md) |
+| `ext-250` | [Helicone](https://github.com/Helicone/helicone) | `github` | `en` | `gateway, proxy, cost-tracking` | `topic: observability-platforms` | `observation` | `hub` | ✅ [Observability-486](../ai-education/observability/40-practice-and-cases.md) |
+| `ext-251` | [W&B Weave](https://github.com/wandb/weave) | `github` | `en` | `weave, decorators, tracing, evaluation` | `topic: observability-platforms` | `observation` | `hub` | ✅ [Observability-486](../ai-education/observability/40-practice-and-cases.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

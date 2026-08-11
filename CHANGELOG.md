@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.69
-updated: 2026-08-07
+version: 1.70
+updated: 2026-08-11
 temperature: 0.1
 ---
 
@@ -45,6 +45,22 @@ All notable repository governance changes are documented here.
   (issue #466).
 
 ### Added
+
+- research: Модуль `research/ai-education/observability/` (issue #486) — шестая
+  валидация Reference Research Pattern. Шесть файлов покрывают таксономию
+  сигналов (logging/metrics/tracing/profiling) и уровни данных L0–L5, паттерны
+  трейсинга многошаговых выполнений (sequential/parallel/hierarchical/agentic/
+  multi-agent) и различие agentic против workflow tracing, стоимость наблюдения
+  против стоимости отладки со стратегиями sampling и retention, сравнение
+  Langfuse/LangSmith/OpenTelemetry/Phoenix/Braintrust/Helicone/W&B Weave с
+  разбором vendor lock-in, рекомендации по шагам конвейера Source Intelligence
+  Engine, подготовку данных для проспективного замера Q-11 RFC #470 и
+  общеобразовательный разрез для всех ролей (ролевая специализация вынесена в
+  downstream). Исследование не меняет правила и архитектуру Хаба.
+- registry: `research/external-knowledge/external-sources-registry.md` v0.15 —
+  зарегистрированы источники `ext-232`..`ext-251`, использованные в issue #486.
+- artifact-map: `pr-ops/artifact-map.md` v1.87 — зарегистрированы шесть файлов
+  Observability; индекс AI Education и validator allowlist синхронизированы.
 
 - research: Модуль `research/ai-education/evaluation/` (issue #479) — пятая
   валидация Reference Research Pattern. Шесть файлов покрывают таксономию
