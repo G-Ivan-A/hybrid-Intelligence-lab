@@ -1,0 +1,315 @@
+{
+  "source_issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/499",
+  "summary": {
+    "repos": 2,
+    "documents_total": 23,
+    "lines_total": 10014,
+    "modules_total": 0,
+    "exp_containers_total": 0,
+    "hub_form_documents": 0
+  },
+  "repos": [
+    {
+      "repo": "G-Ivan-A/mango_ba_prompts",
+      "sha": "295b65d46078acae939425679f78d2d27128f0ca",
+      "documents": 2,
+      "lines_total": 1202,
+      "kinds": {
+        "undated": 2
+      },
+      "modules": 0,
+      "with_frontmatter": 2,
+      "with_version_suffix": 0,
+      "with_backlog_id": 0,
+      "exp_containers": [],
+      "research_code_files": [],
+      "directories": [
+        "docs/analysis"
+      ],
+      "files": [
+        {
+          "path": "docs/analysis/experiment-1027-analysis.md",
+          "kind": "undated",
+          "lines": 674,
+          "has_frontmatter": true,
+          "status": "draft",
+          "version_frontmatter": "0.1",
+          "version_in_filename": "",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/migration-strategy-rfc.md",
+          "kind": "undated",
+          "lines": 528,
+          "has_frontmatter": true,
+          "status": "draft",
+          "version_frontmatter": "0.3",
+          "version_in_filename": "",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        }
+      ]
+    },
+    {
+      "repo": "G-Ivan-A/clarify-engine-ai",
+      "sha": "96c288fd13a2d7cc7c3e3cdd52574944858e6255",
+      "documents": 21,
+      "lines_total": 8812,
+      "kinds": {
+        "spoke-single": 19,
+        "undated": 2
+      },
+      "modules": 0,
+      "with_frontmatter": 0,
+      "with_version_suffix": 19,
+      "with_backlog_id": 9,
+      "exp_containers": [],
+      "research_code_files": [
+        "docs/research/html/2026-05-21_bl-61_market-research_ru-education_v1.html",
+        "docs/research/html/2026-05-21_bl-61_market-research_ru-education_v2.html",
+        "scripts/research/__init__.py",
+        "scripts/research/retrieval_experiments.py",
+        "tests/research/__init__.py",
+        "tests/research/test_retrieval_experiments.py"
+      ],
+      "directories": [
+        "docs/analysis",
+        "docs/research"
+      ],
+      "files": [
+        {
+          "path": "docs/analysis/2026-05-12_review_mvp-context_v1.md",
+          "kind": "spoke-single",
+          "lines": 87,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-13_analysis_next-docs-implementation-task_v1.md",
+          "kind": "spoke-single",
+          "lines": 152,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-15_analysis_repo-state-and-mvp-recommendations_v1.md",
+          "kind": "spoke-single",
+          "lines": 418,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-17_analysis_tz-structure_samples.md",
+          "kind": "spoke-single",
+          "lines": 310,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-17_sprint-1-execution-report_v1.md",
+          "kind": "spoke-single",
+          "lines": 106,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-19_code-review-triage_v1.md",
+          "kind": "spoke-single",
+          "lines": 24,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-19_sprint-5-kickoff_v1.md",
+          "kind": "spoke-single",
+          "lines": 287,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-20_sprint-4-kickoff_v1.md",
+          "kind": "spoke-single",
+          "lines": 464,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/2026-05-20_sprint-4-parallel-kickoff_v1.md",
+          "kind": "spoke-single",
+          "lines": 341,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/metadata-coverage-fix_v1.md",
+          "kind": "undated",
+          "lines": 151,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/analysis/sprint-execution-report_template.md",
+          "kind": "undated",
+          "lines": 113,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "",
+          "backlog_id_in_filename": false,
+          "directory": "docs/analysis"
+        },
+        {
+          "path": "docs/research/2026-05-20_bl-47_arm-installer-cloud-research_v1.md",
+          "kind": "spoke-single",
+          "lines": 722,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-20_bl-59_requirement-parsing_v1.md",
+          "kind": "spoke-single",
+          "lines": 479,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-20_bl-60_next-gen-architecture_v1.md",
+          "kind": "spoke-single",
+          "lines": 1083,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-21_bl-57_retrieval-architecture_v1.md",
+          "kind": "spoke-single",
+          "lines": 459,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-21_bl-61_market-research_ru-education_v1.md",
+          "kind": "spoke-single",
+          "lines": 1013,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-21_bl-61_market-research_ru-education_v2.md",
+          "kind": "spoke-single",
+          "lines": 1136,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "2",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-21_bl-61_market-research_v1.md",
+          "kind": "spoke-single",
+          "lines": 786,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-21_bl-62_synthesis-optimized-architectures_v1.md",
+          "kind": "spoke-single",
+          "lines": 406,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-21_bl-68_breakthrough-team-vision_v1.md",
+          "kind": "spoke-single",
+          "lines": 114,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": true,
+          "directory": "docs/research"
+        },
+        {
+          "path": "docs/research/2026-05-21_support-team_mvp-architecture-proposal_v1.md",
+          "kind": "spoke-single",
+          "lines": 161,
+          "has_frontmatter": false,
+          "status": "",
+          "version_frontmatter": "",
+          "version_in_filename": "1",
+          "backlog_id_in_filename": false,
+          "directory": "docs/research"
+        }
+      ]
+    }
+  ]
+}
