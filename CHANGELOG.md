@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.73
-updated: 2026-08-11
+version: 1.74
+updated: 2026-08-12
 temperature: 0.1
 ---
 
@@ -12,6 +12,37 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- standards: Создан `standards/artifact-deprecation-standard.md` (issue #500) —
+  стандарт жизненного цикла артефактов, закрывающий пробел transition semantics,
+  выявленный анализом по issue #495 на конфликте PR #491 и PR #492. Стандарт
+  определяет пять наблюдаемых состояний (`active`, `deprecated`, `superseded`,
+  `archived`, `deleted`) и шесть представлений идентичности артефакта
+  (содержимое, путь, `status`, навигация, входящие ссылки, changelog/history),
+  задаёт таблицу легитимных переходов с триггерами и preconditions и закрытый
+  перечень запрещённых, включая прямой `active → deleted` и любой переход без
+  синхронизации навигации. Механизмы совместимости разведены по назначению:
+  compatibility redirect сохраняет адрес, superseding record — связь решений,
+  validator allowlist — проверяемость репозитория, а historical link policy
+  запрещает переписывать ссылки в accepted ADR/RFC ради прохождения проверки
+  (адаптируется проверка, а не исторический текст). Физическое удаление
+  разрешено только при выполнении всех шести условий, включая явный мандат по
+  п.4 Принципа 2 ADR-010 или подтверждение через §P.2 RFC #470; при
+  непроверяемом условии выбирается обратимый исход — `deprecated` с redirect, а
+  вопрос выносится человеку. Составной переход классифицируется целиком по
+  максимальному весу входящей части, а результат недавно merged PR по тому же
+  пути объявлен обязательным входом задачи. Ось Deprecation явно разведена с
+  осью `Lifecycle status` ADR-002: `active` и `archived` являются
+  downstream-расширением многомерной модели, но не новыми значениями
+  frontmatter `status`; допустимы комбинации вроде `canonical + deprecated`.
+  Действующие контракты не изменены, вокабуляр поля `status` не расширен,
+  CI-валидаторы не внедрены (отдельная задача) —
+  раздел `Validation` только разделяет механически наблюдаемые и human-only
+  свойства перехода как спецификацию для будущей автоматизации. Применён F10
+  explicit ADR-008. Статус `draft` до подтверждения фаундером. Зарегистрирован в
+  `standards/README.md` (версия 1.13) и `pr-ops/artifact-map.md`; allowlist,
+  `required_files` и pinned metadata в `tools/validate-repository-structure.sh`
+  синхронизированы.
 
 - ci: иммутабельность исторических документов перенесена на ярус CI (issue
   #501). Добавлены `tools/validate-historical-immutable.sh` (three-dot diff от

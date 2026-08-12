@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.12
-updated: 2026-07-17
+version: 1.13
+updated: 2026-08-11
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -44,6 +44,7 @@ owner: G-Ivan-A
 | webportal-product-concept-standard.md | Draft (L2, предложен на утверждение) | Product Concept веб-портала: personas, jobs-to-be-done, MVP scope, user flows, success metrics и high-level roadmap | [webportal-product-concept-standard.md](webportal-product-concept-standard.md) |
 | webportal-solution-concept-standard.md | Draft (L3, предложен на утверждение) | Solution Concept веб-портала: C4 architecture, technology stack, integrations, data model, NFR, deployment и risks | [webportal-solution-concept-standard.md](webportal-solution-concept-standard.md) |
 | Evals contract standard | Draft (предложен на утверждение) | Контракт `evals`/golden-sets спока (B-067, закрывает RO3): форма golden-set (кейс, эталонный вердикт, класс дефекта, обоснование, негативные кейсы), бинарная рубрика приёмки, слои offline/LLM-as-judge/online с правилом «судья — вход, не решение», офлайн-проверки до прогона, метрики (% успеха + профиль провалов) и форма записи порога без назначения его значения (Rule 4; значения — B-068) | [evals-contract-standard.md](evals-contract-standard.md) |
+| Artifact deprecation standard | Draft (предложен на утверждение) | Ортогональная ADR-002 ось Deprecation для артефакта во времени (issue #500): состояния `active`/`deprecated`/`superseded`/`archived`/`deleted`, легитимные и запрещённые переходы, механизмы совместимости (compatibility redirect, superseding record, validator allowlist, historical link policy), preconditions физического удаления и классификация составного перехода целиком по максимальному весу | [artifact-deprecation-standard.md](artifact-deprecation-standard.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
 | Project knowledge base | Planned | `projects/` | Создать после повторяющейся потребности в project context. |
