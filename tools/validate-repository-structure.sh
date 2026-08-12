@@ -115,6 +115,7 @@ is_active_file() {
     standards/webportal-product-concept-standard.md | \
     standards/webportal-solution-concept-standard.md | \
     standards/evals-contract-standard.md | \
+    standards/artifact-deprecation-standard.md | \
     research/mango/2026-05-26-taxonomy-concept.md | \
     research/mango/2026-05-26-requirements-lifecycle-uncertainty.md | \
     research/mango/2026-05-26-rag-mapping-roadmap.md | \
@@ -697,6 +698,7 @@ required_files=(
   "standards/webportal-product-concept-standard.md"
   "standards/webportal-solution-concept-standard.md"
   "standards/evals-contract-standard.md"
+  "standards/artifact-deprecation-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/hub/2026-06-12-ecosystem-governance-audit.md"
@@ -1019,8 +1021,8 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.12"
-require_text "standards/README.md" "updated: 2026-07-17"
+require_text "standards/README.md" "version: 1.13"
+require_text "standards/README.md" "updated: 2026-08-11"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -1043,6 +1045,12 @@ require_text "standards/README.md" "standard-meta-structure.md"
 require_text "standards/README.md" "executable-documentation-standard.md"
 require_text "standards/README.md" "htom-documentation-structure.md"
 require_text "standards/README.md" "evals-contract-standard.md"
+require_text "standards/README.md" "artifact-deprecation-standard.md"
+require_text "standards/artifact-deprecation-standard.md" "Lifecycle status"
+require_text "standards/artifact-deprecation-standard.md" "Deprecation state"
+require_text "standards/artifact-deprecation-standard.md" "downstream-расширением"
+require_text "standards/artifact-deprecation-standard.md" "canonical + deprecated"
+require_text "standards/artifact-deprecation-standard.md" 'не записывается в поле `status`'
 require_text "standards/README.md" "artifact-map.md"
 require_text "standards/README.md" "issue-workflow.md"
 require_text "standards/README.md" "session-handover-standard.md"
