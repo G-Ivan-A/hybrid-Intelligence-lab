@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-08-11
+version: 0.2
+updated: 2026-08-12
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
@@ -109,6 +109,29 @@ governance-решений, не меняет
 traceability-проверкой, по образцу
 [Standard Meta-Structure](standard-meta-structure.md).
 
+ADR-002 определяет ось `Lifecycle status`: степень зрелости или принятия решения
+в vocabulary класса артефакта. Настоящий стандарт вводит отдельную ось
+`Deprecation state`: доступность существующего артефакта и его пути для текущих
+и исторических ссылок. `active` и `archived` являются downstream-расширением
+многомерной модели ADR-002 на этой отдельной оси, а не новыми значениями
+frontmatter `status`.
+
+| Ось | Что описывает | Значения | Canonical source |
+| --- | --- | --- | --- |
+| `Lifecycle status` | Стадия зрелости или принятия решения. | Vocabulary класса: knowledge `draft`/`reviewed`/`canonical`/`superseded`; governance `draft`/`proposed`/`accepted`/`rejected`/`deprecated`/`superseded`. | [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) и [Frontmatter Docs Standard](frontmatter-docs-standard.md). |
+| `Deprecation state` | Доступность артефакта и его path identity для использования и ссылок. | `active`, `deprecated`, `superseded`, `archived`, `deleted`. | Настоящий стандарт. |
+
+Оси ортогональны: lifecycle status не выводится из deprecation state и
+наоборот. Например, knowledge-артефакт может быть `canonical + deprecated`, а
+accepted governance record — `accepted + archived`. Комбинация допустима,
+только если значение `status` остаётся в vocabulary класса, а состояние
+Deprecation соблюдает наблюдаемые признаки и переходы настоящего стандарта.
+Deprecation state `active` или `archived` не записывается в поле `status`: оно
+выводится из совокупности frontmatter, блока перехода, режима содержимого,
+навигации и наличия пути. Для состояний `deprecated` и `superseded` одноимённое
+значение `status` одновременно выражает lifecycle-решение класса и
+машиночитаемый сигнал Deprecation.
+
 Нормативные требования к frontmatter **управляемого** артефакта при переходе:
 
 | Состояние | `status` | Дополнительно |
@@ -119,7 +142,7 @@ traceability-проверкой, по образцу
 | archived | `deprecated` или `superseded` | вокабуляр не расширяется; archived фиксируется в теле артефакта и в `artifact-map`, а не новым значением `status`. |
 | deleted | — | файла нет; состояние фиксируется записью в `CHANGELOG.md`. |
 
-Вокабуляр `status` **НЕ расширяется** этим стандартом: используются значения
+Вокабуляр поля `status` **НЕ расширяется** этим стандартом: используются значения
 governance (`draft`, `proposed`, `accepted`, `rejected`, `deprecated`,
 `superseded`) и knowledge (`draft`, `reviewed`, `canonical`, `superseded`) из
 Frontmatter Docs Standard. Смешивать вокабуляры в одном поле ЗАПРЕЩЕНО.
@@ -151,7 +174,9 @@ frontmatter, тело даёт человеку контекст.
 
 ## Type Model
 
-`model`. Модель типа этого стандарта — **конечный автомат состояний артефакта**.
+`model`. Модель типа этого стандарта — **конечный автомат состояний оси
+Deprecation**. Он ортогонален оси `Lifecycle status` из ADR-002, как определено
+в разделе [Frontmatter](#frontmatter), и не заменяет её.
 Она имеет одну форму и не разделяется на subtype profiles: разные классы
 артефактов (standard, ADR, template, tool) проходят один и тот же набор
 состояний, отличаясь только применимыми механизмами совместимости из раздела
@@ -224,7 +249,7 @@ flowchart LR
 
 | Норма | Canonical owner | Что этот стандарт делает |
 | --- | --- | --- |
-| Artifact classes, routing, status vocabularies | [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) | Использует как есть; новых значений `status` и новых каталогов не вводит. |
+| Artifact classes, routing, Lifecycle status vocabularies | [ADR-002](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) | Использует vocabulary поля `status` как есть; добавляет ортогональную ось Deprecation как downstream-расширение модели, не вводя новых значений `status` или каталогов. |
 | Граница автономии и hard limits | [ADR-010](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) | Операционализирует применимость п.4 Принципа 2 к lifecycle-переходу, не меняя формулировку. |
 | Уровень изменения и human decision rights | [AI Governance](../ai-governance/ai-governance.md) | Даёт составному переходу один класс (см. [Composite Transition Classification](#composite-transition-classification)), не переписывая tiers. |
 | Форма escalation и верификации | [RFC #470](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md) §P.2, §P.3, §P.7 | Ссылается как на легальный выход при упоре в границу. |
