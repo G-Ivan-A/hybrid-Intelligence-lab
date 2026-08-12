@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.73
-updated: 2026-08-11
+version: 1.74
+updated: 2026-08-12
 temperature: 0.1
 ---
 
@@ -13,6 +13,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- ci: иммутабельность исторических документов перенесена на ярус CI (issue
+  #501). Добавлены `tools/validate-historical-immutable.sh` (three-dot diff от
+  `merge-base`; в `docs/rfc/` и `docs/adr/` разрешено только добавление новых
+  файлов; allowlist для совместимых редиректов `deprecated`/`superseded` и
+  glob-исключений через `HISTORICAL_IMMUTABLE_ALLOWLIST`) и регрессионный тест
+  `tools/test-historical-immutable.sh`, доказывающий падение валидатора на
+  изменении, удалении и переименовании существующего RFC/ADR.
+  `.github/workflows/validate.yml` получил шаг проверки на событии
+  `pull_request` и шаг прогона теста; `CONTRIBUTING.md` описывает правило и
+  allowlist.
 - analysis: добавлен отчёт по issue #499 — валидация методологий исследований
   на всём корпусе `research/` (8 модулей и 54 одиночных отчёта на `f0a5326`).
   Инвентаризация, разбор применимости форм, реконструкция фактических критериев
