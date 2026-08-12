@@ -250,6 +250,9 @@ is_active_file() {
     research/hub/exp/research-methodology-validation-499/scan-research.py | \
     research/hub/exp/research-methodology-validation-499/scan-research.log | \
     research/hub/exp/research-methodology-validation-499/research-inventory.json | \
+    research/hub/exp/research-methodology-validation-499/scan-spokes.py | \
+    research/hub/exp/research-methodology-validation-499/scan-spokes.log | \
+    research/hub/exp/research-methodology-validation-499/spoke-inventory.json | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -746,6 +749,9 @@ required_files=(
   "research/hub/exp/research-methodology-validation-499/scan-research.py"
   "research/hub/exp/research-methodology-validation-499/scan-research.log"
   "research/hub/exp/research-methodology-validation-499/research-inventory.json"
+  "research/hub/exp/research-methodology-validation-499/scan-spokes.py"
+  "research/hub/exp/research-methodology-validation-499/scan-spokes.log"
+  "research/hub/exp/research-methodology-validation-499/spoke-inventory.json"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -1609,11 +1615,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.90"
+require_text "pr-ops/artifact-map.md" "version: 1.91"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-11"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-12"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"

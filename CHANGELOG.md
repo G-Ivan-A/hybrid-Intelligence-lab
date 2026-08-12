@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.74
+version: 1.75
 updated: 2026-08-12
 temperature: 0.1
 ---
@@ -37,6 +37,17 @@ All notable repository governance changes are documented here.
   снимок корпуса `research-inventory.json` и лог прогона; новые файлы внесены в
   allowlist `tools/validate-repository-structure.sh`, навигацию
   `research/hub/README.md` и `pr-ops/artifact-map.md`.
+- analysis: отчёт по issue #499 расширен до v0.2 по замечаниям к PR #502. Охват
+  распространён на spoke-репозитории (`scan-spokes.py`, `spoke-inventory.json`,
+  `scan-spokes.log`): в `mango_ba_prompts` и `clarify-engine-ai` 23 документа и
+  10 014 строк, и ни один не написан ни в форме модуля, ни в датированной форме
+  Хаба, поэтому ответ о достаточности двух методологий зависит от предмета
+  вопроса. Исполнение Reference Research Pattern проверено по существу: P1
+  соблюдён в 8 модулях из 8, P2 — в 3 из 8, P5 не срабатывал ни разу. Добавлены
+  сопоставление с индустриальными практиками в пяти областях, проверка гипотез
+  H0–H6, разбор замечания о «противоречии стандартов», перечень областей для
+  прогнозирующих исследований и разбор стратегии стандартизации A/B. Правок
+  стандартов и Reference Research Pattern отчёт по-прежнему не предлагает.
 - analysis: добавлен отчёт по issue #495 о нормативных пробелах при
   последовательных задачах внедрения. На примере PR #491/#492 выделен пробел
   композиции норм и transition semantics, проверены ADR-010, RFC #470, AI
