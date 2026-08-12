@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.11
+version: 1.12
 updated: 2026-08-11
 temperature: 0.1
 ---
@@ -146,6 +146,7 @@ bash tools/test-agent-onboarding-authorization.sh
 bash tools/test-operating-mode-contract.sh
 bash tools/test-check-agent-work-rules-size.sh
 bash tools/test-nonempty-diff.sh
+bash tools/test-historical-immutable.sh
 ./tools/check-agent-work-rules-size.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
@@ -178,6 +179,46 @@ python3 tools/generate-manifest.py --check
 - Агент **не ставит** эту метку сам и не просит её как способ обойти пустой
   результат работы; вместо этого он фиксирует, что именно не выполнено, и
   задаёт вопрос в PR.
+
+## Иммутабельность исторических документов
+
+Исторические документы иммутабельны: RFC в `docs/rfc/` и ADR в `docs/adr/`
+фиксируют решение на момент принятия. PR внедрения **не переписывает** их —
+устаревшее решение заменяется **новым** RFC/ADR, который ссылается на
+предыдущий.
+
+Постусловие проверяется механически: шаг
+`Validate historical documents immutability` в
+[.github/workflows/validate.yml](.github/workflows/validate.yml) запускает
+[tools/validate-historical-immutable.sh](tools/validate-historical-immutable.sh)
+на событии `pull_request`. Дифф считается three-dot от `merge-base`, поэтому
+проверка устойчива к движению base-ветки и к merge-коммитам.
+
+- ✅ Разрешено: добавление новых файлов в `docs/rfc/` и `docs/adr/`.
+- ❌ Запрещено: изменение, удаление и переименование существующих файлов в этих
+  каталогах.
+
+### Allowlist для deprecated артефактов
+
+Единственное автоматическое исключение — **совместимый редирект**: существующий
+файл допускается изменить, если после изменения он одновременно
+
+1. имеет во frontmatter `status: deprecated` или `status: superseded`;
+2. содержит не более 40 непустых строк тела;
+3. содержит markdown-ссылку на актуальный артефакт.
+
+Такой редирект сохраняет входящие ссылки живыми, не переписывая содержательное
+историческое решение. Попытка переписать документ, пометив его `deprecated`,
+валидатором не пропускается: длинное тело нарушает условие 2.
+
+Разовое исключение вне этого правила оформляется человеком через переменную
+окружения `HISTORICAL_IMMUTABLE_ALLOWLIST` (glob-шаблоны путей через запятую) в
+шаге workflow с явным обоснованием в PR. Агент такое исключение самостоятельно
+не вводит.
+
+Источник правила — [анализ пробелов контрактов](docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md)
+(конфликт PR #492: исторические документы были переписаны ради прохождения
+валидатора ссылок).
 
 ## Pull Request Checklist
 
