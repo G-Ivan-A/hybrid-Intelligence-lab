@@ -231,6 +231,7 @@ is_active_file() {
     research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md | \
     research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md | \
     research/hub/2026-07-31-ops-task-strategy-validation.md | \
+    research/hub/2026-08-13-rrp-cross-validation-codex.md | \
     research/hub/exp/ops-task-strategy-461/README.md | \
     research/hub/exp/ops-task-strategy-461/collect-evidence.py | \
     research/hub/exp/ops-task-strategy-461/collect-evidence.log | \
@@ -731,6 +732,7 @@ required_files=(
   "research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md"
   "research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md"
   "research/hub/2026-07-31-ops-task-strategy-validation.md"
+  "research/hub/2026-08-13-rrp-cross-validation-codex.md"
   "research/hub/exp/ops-task-strategy-461/README.md"
   "research/hub/exp/ops-task-strategy-461/collect-evidence.py"
   "research/hub/exp/ops-task-strategy-461/collect-evidence.log"
