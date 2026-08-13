@@ -383,6 +383,7 @@ is_active_file() {
     docs/analysis/2026-07-17-mango-artifacts-migration-plan.md | \
     docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md | \
     docs/analysis/2026-08-11-research-methodology-validation.md | \
+    docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -672,6 +673,7 @@ required_files=(
   "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
   "docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md"
   "docs/analysis/2026-08-11-research-methodology-validation.md"
+  "docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
