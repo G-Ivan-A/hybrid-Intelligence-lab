@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.75
-updated: 2026-08-12
+version: 1.76
+updated: 2026-08-13
 temperature: 0.1
 ---
 
@@ -12,6 +12,34 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- research: Создан `research/hub/2026-08-13-rrp-cross-validation-codex.md`
+  (issue #505) — независимая перекрёстная проверка модулей Reference Research
+  Pattern, выполненных моделью Codex, против правил P2 и P5 RFC. Атрибуция
+  исполнителя восстановлена для всех восьми модулей корпуса по коммиту создания
+  каталога и полю «Model» в Solution Draft Log: модули Codex — `evaluation`
+  (PR #482/#489), `information-extraction-graph-modeling` (PR #472) и
+  `tool-use` (PR #490); пробел данных, зафиксированный отчётом по issue #499 как
+  невосстановимый, закрыт. P2 не соблюдён ни в одном из трёх (ноль
+  markdown-ссылок из `40-practice-and-cases.md` внутрь модуля; у
+  `information-extraction-graph-modeling` основание объявлено только во
+  frontmatter), P5 не срабатывал ни разу — ни обратных ссылок `10 → 40`, ни
+  задач по триггеру в `pr-ops/backlog.md`. Гипотеза «отклонение объясняется
+  моделью-исполнителем» не подтверждается: P2 нарушен и в двух модулях
+  Claude Opus 5, при этом режим работы и модель на восьми наблюдениях не
+  разделяются, поэтому выборка выдерживает только отрицание. Главное
+  расхождение — утверждение
+  `information-extraction-graph-modeling/50-open-research.md` §4 о сработавшей
+  обратной связи «практика → теория», не подтверждаемое артефактами. Отчёт
+  фиксирует девять рекомендаций R1–R9 для будущего стандарта RRP, ключевая из
+  которых — сделать P2 машинно проверяемым, и не меняет стандарты, RFC,
+  контракты и текст модулей.
+- research: В шесть файлов трёх модулей `research/ai-education/`, выполненных
+  Codex, внесено 11 комментариев формата
+  `<!-- CROSS-REVIEW [Codex-validation]: ... -->` (issue #505, Этап 4) без
+  изменения текста модулей: P2, P5, traceability, разделение веток P4 и
+  альтернативные мнения о самооценке исполнителя. Решение по каждому
+  отклонению остаётся за человеком.
 
 - standards: Создан `standards/artifact-deprecation-standard.md` (issue #500) —
   стандарт жизненного цикла артефактов, закрывающий пробел transition semantics,
