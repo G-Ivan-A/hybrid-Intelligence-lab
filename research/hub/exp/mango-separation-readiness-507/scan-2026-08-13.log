@@ -1,0 +1,148 @@
+=== 0. Снимок ===
+mango HEAD: 295b65d (2026-07-14)
+hub   HEAD: f10c927 (2026-08-13)
+
+=== 1. Инвентаризация: файлы и бренд по каталогам верхнего уровня ===
+.gitattributes   файлов=1      с упоминанием бренда=0
+.github          файлов=3      с упоминанием бренда=2
+.gitignore       файлов=1      с упоминанием бренда=0
+.gitkeep         файлов=1      с упоминанием бренда=1
+.hub-profile.json файлов=1      с упоминанием бренда=1
+AI_GOVERNANCE.md файлов=1      с упоминанием бренда=1
+AI_QUICK_RULES.md файлов=1      с упоминанием бренда=1
+AI_SESSION_HANDOVER_PROMPT.executable.md файлов=1      с упоминанием бренда=1
+AI_SESSION_HANDOVER_PROMPT.md файлов=1      с упоминанием бренда=1
+CHANGELOG.md     файлов=1      с упоминанием бренда=1
+CONTRIBUTING.md  файлов=1      с упоминанием бренда=1
+LICENSE          файлов=1      с упоминанием бренда=0
+Makefile         файлов=1      с упоминанием бренда=1
+README.md        файлов=1      с упоминанием бренда=1
+docs             файлов=48     с упоминанием бренда=28
+experiments      файлов=2      с упоминанием бренда=1
+governance       файлов=26     с упоминанием бренда=25
+kb               файлов=5077   с упоминанием бренда=1156
+patterns         файлов=15     с упоминанием бренда=9
+prompts          файлов=33     с упоминанием бренда=32
+runs             файлов=78     с упоминанием бренда=37
+scripts          файлов=25     с упоминанием бренда=14
+site             файлов=11     с упоминанием бренда=9
+standards        файлов=15     с упоминанием бренда=14
+ИТОГО: файлов=5346, с упоминанием бренда=1337
+
+=== 2. Контракт прогонов: обязательные поля metadata.yaml и наполнение ===
+RUN-0001   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0002   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0003   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0004   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0005   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0006   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0007   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0008   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0009   missing=[ нет] model=not-recorded   feedback=0 logs=0
+RUN-0010   missing=[ нет] model=qwen3.7 plus   feedback=0 logs=0
+RUN-0011   missing=[ нет] model=not-recorded   feedback=0 logs=1
+RUN-0012   missing=[ нет] model=claude-opus-4-8 feedback=0 logs=1
+
+=== 3. Контракт промптов: ровно 6 обязательных полей frontmatter ===
+ЛИШНИЕ ПОЛЯ: prompts/README.executable.md ->ai-generated type layer full_version related_standard related_issue 
+ЛИШНИЕ ПОЛЯ: prompts/README.md ->ai-generated type scope related_issues 
+ЛИШНИЕ ПОЛЯ: prompts/archive/tz-stats-generator-legacy.md ->ai-generated type variant scope output_format glossary_ref research_dep source_hub source_sha based_on migration_status selftest_ref selftest_result 
+ЛИШНИЕ ПОЛЯ: prompts/archive/tz-stats-generator-simple-legacy.md ->ai-generated type variant scope output_format glossary_ref research_dep source_hub source_sha based_on migration_status selftest_ref selftest_result 
+ЛИШНИЕ ПОЛЯ: prompts/archive/usecase-stepwise-generator-legacy.md ->ai-generated type variant scope output_format glossary_ref research_dep source_hub source_sha based_on migration_status selftest_ref selftest_result 
+ЛИШНИЕ ПОЛЯ: prompts/archive/usecase-stepwise-generator-simple-legacy.md ->ai-generated type variant scope output_format glossary_ref research_dep source_hub source_sha based_on migration_status selftest_ref selftest_result 
+ЛИШНИЕ ПОЛЯ: prompts/archive/user-story-generator-legacy.md ->ai-generated type variant scope output_format glossary_ref research_dep source_hub source_sha based_on migration_status selftest_ref selftest_result 
+ЛИШНИЕ ПОЛЯ: prompts/archive/user-story-generator-simple-legacy.md ->ai-generated type variant scope output_format glossary_ref research_dep source_hub source_sha based_on migration_status selftest_ref selftest_result 
+
+=== 4. Битые относительные ссылки в markdown ===
+(ссылки-плейсхолдеры вида <path> и ... считаются отдельно и не являются дефектом)
+БИТАЯ: CHANGELOG.md -> prompts/experiments
+БИТАЯ: CHANGELOG.md -> prompts/drafts/
+БИТАЯ: docs/adr/003-ba-ontology.md -> ba-processes/00-index.md
+БИТАЯ: docs/adr/003-ba-ontology.md -> ba-processes/00-index.md
+БИТАЯ: docs/adr/003-ba-ontology.md -> ba-processes/00-index.md
+БИТАЯ: docs/adr/003-ba-ontology.md -> ba-processes/00-index.md
+БИТАЯ: docs/adr/007-kb-standard.md -> standards/GLOSSARY.md#<anchor>
+БИТАЯ: docs/adr/007-kb-standard.md -> kb/practices/source-backed-analysis.md#правило
+БИТАЯ: docs/adr/007-kb-standard.md -> standards/GLOSSARY.md#термины
+БИТАЯ: governance/migration-manifest.md -> ../prompts/tz-stats-generator.md
+БИТАЯ: governance/migration-manifest.md -> ../prompts/tz-stats-generator-simple.md
+БИТАЯ: governance/migration-manifest.md -> ../prompts/usecase-stepwise-generator.md
+БИТАЯ: governance/migration-manifest.md -> ../prompts/usecase-stepwise-generator-simple.md
+БИТАЯ: governance/migration-manifest.md -> ../prompts/user-story-generator.md
+БИТАЯ: governance/migration-manifest.md -> ../prompts/user-story-generator-simple.md
+БИТАЯ: governance/migration-phase1-issues.md -> hub-research-dependencies.md
+БИТАЯ: governance/migration-phase1-issues.md -> hub-research-dependencies.md
+БИТАЯ: kb/USAGE.md -> ../images/04-obrabotka-obrascheniy-1.png
+БИТАЯ: kb/processed/mtalker/android-user-guide/index.md -> ../../../standards/kb-standard.md
+БИТАЯ: kb/processed/mtalker/android-user-guide/index.md -> ../../../docs/adr/007-kb-standard.md
+БИТАЯ: kb/processed/mtalker/quick-start/index.md -> ../../../standards/kb-standard.md
+БИТАЯ: kb/processed/mtalker/quick-start/index.md -> ../../../docs/adr/007-kb-standard.md
+БИТАЯ: kb/processed/mtalker/windows-mac-admin/index.md -> ../../../standards/kb-standard.md
+БИТАЯ: kb/processed/mtalker/windows-mac-admin/index.md -> ../../../docs/adr/007-kb-standard.md
+БИТАЯ: kb/processed/mtalker/windows-mac-settings/index.md -> ../../../standards/kb-standard.md
+БИТАЯ: kb/processed/mtalker/windows-mac-settings/index.md -> ../../../docs/adr/007-kb-standard.md
+БИТАЯ: kb/processed/mtalker/windows-mac-working/index.md -> ../../../standards/kb-standard.md
+БИТАЯ: kb/processed/mtalker/windows-mac-working/index.md -> ../../../docs/adr/007-kb-standard.md
+БИТАЯ: kb/sources/contact-center-manual/source.md -> ../contact-center-manual-sample/
+БИТАЯ: runs/2026/RUN-0011/inputs/raw-requirement.md -> ../steps/step-2-normalization.md
+БИТАЯ: runs/2026/RUN-0011/inputs/raw-requirement.md -> ../steps/step-2-normalization.md
+БИТАЯ: standards/GLOSSARY.md -> README.md
+БИТАЯ: standards/GLOSSARY.md -> ../CONCEPT.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/REPO_MODEL.md
+БИТАЯ: standards/GLOSSARY.md -> ../tools/validate-repository-structure.sh
+БИТАЯ: standards/GLOSSARY.md -> ../governance/REPO_MODEL.md
+БИТАЯ: standards/GLOSSARY.md -> README.md
+БИТАЯ: standards/GLOSSARY.md -> ../CONCEPT.md
+БИТАЯ: standards/GLOSSARY.md -> ../tools/validate-repository-structure.sh
+БИТАЯ: standards/GLOSSARY.md -> ../CONCEPT.md
+БИТАЯ: standards/GLOSSARY.md -> ../.github/ISSUE_TEMPLATE/task.yml
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-two-cases-of-project-initialization.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-creative-template-design.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-agent-onboarding-protocol.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-two-cases-of-project-initialization.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-agent-onboarding-protocol.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-agent-onboarding-protocol.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-two-cases-of-project-initialization.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-two-cases-of-project-initialization.md
+БИТАЯ: standards/GLOSSARY.md -> ../research/hub/external-governance-patterns-review-2026-06.md
+БИТАЯ: standards/GLOSSARY.md -> ../research/hub/external-governance-patterns-review-2026-06.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/REPO_MODEL.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/proposals/rfc-two-cases-of-project-initialization.md
+БИТАЯ: standards/GLOSSARY.md -> ../governance/REPO_MODEL.md
+БИТАЯ: standards/kb-standard.md -> standards/GLOSSARY.md#<anchor>
+БИТАЯ: standards/kb-standard.md -> URL
+БИТАЯ: standards/prompt-standard.md -> standards/GLOSSARY.md
+ВСЕГО битых относительных ссылок: 57 (плейсхолдеров, исключённых из счёта: 9)
+
+=== 5. Дрейф Хаба относительно последней синхронизации mango ===
+last_sync: 2026-06-13 @ b683341
+коммитов в Хабе с момента синхронизации: 610
+--- новые каталоги методологии в Хабе:
+ai-governance/README.md
+ai-governance/agent-security-checklist.md
+ai-governance/ai-governance.md
+ai-rules/README.md
+ai-rules/adversarial-stress-testing.md
+ai-rules/agent-onboarding-protocol.md
+ai-rules/agent-work-rules.md
+
+=== 6a. Модули research/ai-education: базовые модули и прикладные артефакты ===
+evaluation                                 базовых модулей=6 прикладных артефактов=1
+information-extraction-graph-modeling      базовых модулей=6 прикладных артефактов=0
+memory                                     базовых модулей=6 прикладных артефактов=0
+multi-agent-orchestration                  базовых модулей=6 прикладных артефактов=0
+observability                              базовых модулей=6 прикладных артефактов=0
+retrieval                                  базовых модулей=6 прикладных артефактов=0
+task-processing                            базовых модулей=6 прикладных артефактов=0
+tool-use                                   базовых модулей=6 прикладных артефактов=0
+
+=== 6. Наличие целевых каталогов ADR-009 в mango ===
+есть        prompts/
+есть        kb/
+есть        runs/
+ОТСУТСТВУЕТ evals/
+ОТСУТСТВУЕТ internal-rfc/
+ОТСУТСТВУЕТ internal-docs/
+ОТСУТСТВУЕТ education/
+есть        site/
+есть        .github/

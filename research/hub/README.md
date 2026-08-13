@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.16
-updated: 2026-08-12
+version: 1.17
+updated: 2026-08-13
 temperature: 0.1
 ---
 
@@ -50,6 +50,7 @@ project bootstrap, governance-стратегии и классификации �
 | [exp/task-execution-modes-330/](exp/task-execution-modes-330/) | Воспроизводимый rule-based классификатор для issue #330 в контейнере `exp/` (RFC B-016 v0.2, плоская структура): `classify.py` (v1 naive vs v2 action-anchored) + 5 таблиц тестов классификации типа/режима задач без контекста. |
 | [exp/ops-task-strategy-461/](exp/ops-task-strategy-461/) | Контейнер доказательств для issue #461: сбор корпуса PR и issue трёх репозиториев (`collect-evidence.py`), статистика исходов на чистой stdlib (`analyze-outcomes.py`), разрешимость путей против дерева на дату постановки с контролем на период миграции (`experiment-references.py`), замыкание ссылок и бюджет контекста точек входа (`experiment-closure.py`) и контракты решений как исполнимая проверка в двух размещениях (`model-contract-index.py`). |
 | [exp/research-methodology-validation-499/](exp/research-methodology-validation-499/) | Контейнер доказательств для issue #499: формальная инвентаризация всего корпуса `research/` (`scan-research.py`) — разделение на модули `00…50` и одиночные датированные отчёты по структуре дерева, объёмы, статусы, ссылки на issue, даты создания из git history и перечень контейнеров `exp/`; `scan-spokes.py` через GitHub API снимает research-практики spoke-репозиториев `mango_ba_prompts` и `clarify-engine-ai` (`spoke-inventory.json`). Родительский отчёт — [docs/analysis/2026-08-11-research-methodology-validation.md](../../docs/analysis/2026-08-11-research-methodology-validation.md). |
+| [exp/mango-separation-readiness-507/](exp/mango-separation-readiness-507/) | Контейнер доказательств для issue #507: сканер готовности `mango_ba_prompts` к разделению репозиториев и к серии BA-прогонов (`scan-mango-readiness.sh`) — инвентаризация файлов и упоминаний бренда по каталогам, соблюдение контракта прогонов (обязательные поля `metadata.yaml`, наполнение `feedback/` и `logs/`) и контракта промптов, битые относительные ссылки, дрейф Хаба относительно `last_sync` спицы и наличие целевых каталогов ADR-009. Родительский отчёт — [docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md](../../docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md). |
 
 ## Воспроизводимость
 
