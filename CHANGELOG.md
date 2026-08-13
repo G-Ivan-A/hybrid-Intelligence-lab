@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.75
-updated: 2026-08-12
+version: 1.76
+updated: 2026-08-13
 temperature: 0.1
 ---
 
@@ -12,6 +12,16 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- research: добавлен датированный отчёт cross-validation по issue #506.
+  По merged PR и публичным Solution Draft metadata определён единственный
+  RRP-модуль Claude Opus 4.8 — `retrieval` (PR #443). P2 соблюдён через
+  адресные ссылки практики на теорию, таксономию и рамку решений; механизм P5
+  присутствует и применяется, воспроизводимых расхождений и сработавших
+  триггеров не найдено. Зафиксировано ограничение воспроизводимости `n = 1` и
+  предложено различать отсутствие механизма P5, несработавший триггер и
+  сработавший trigger с follow-up. Оригинальные execution logs не открывались;
+  CROSS-REVIEW-комментарии не внесены за отсутствием отклонений.
 
 - standards: Создан `standards/artifact-deprecation-standard.md` (issue #500) —
   стандарт жизненного цикла артефактов, закрывающий пробел transition semantics,

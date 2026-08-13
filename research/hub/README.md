@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.16
-updated: 2026-08-12
+version: 1.17
+updated: 2026-08-13
 temperature: 0.1
 ---
 
@@ -37,6 +37,7 @@ project bootstrap, governance-стратегии и классификации �
 | [2026-06-30-reports-industry-norms-and-standardization-scope.md](2026-06-30-reports-industry-norms-and-standardization-scope.md) | Research input для issue #307 (B-038): индустриальный benchmark норм Reports (Diátaxis, DITA, ISO/IEC/IEEE, ANSI/NISO Z39.18, ГОСТ 7.32/19.101, SDMX/DDI, NIST AI RMF, EU AI Act, Kubernetes/CNCF/OpenTelemetry), проверка гипотез H1-H4, граничные кейсы Reports ↔ Analysis/Audit и рекомендация Вариант C (гибрид) без создания стандарта Reports. |
 | [2026-07-02-task-execution-modes-research.md](2026-07-02-task-execution-modes-research.md) | Research input для issue #330 (B-041): индустриальные нормы режимов выполнения задач для ИИ-агентов (Cynefin, Bloom, Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL) от лица 4 экспертов, паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал без предложения решений, новых режимов и стандартов. |
 | [2026-07-31-ops-task-strategy-validation.md](2026-07-31-ops-task-strategy-validation.md) | Research input для issue #461: эмпирическая валидация стратегии постановки задач по 479 PR и 475 issue Хаба, Clarify и Mango. Детализация постановки не отделяет отказы от успехов (p = 0.65) и связана только с объёмом работы (ρ = 0.14); все четыре пустых мержа имеют одну подпись «ожидание approval → revert»; замыкание ссылок от любой точки входа — 232 файла (~1.6M токенов); гейт по формулировке даёт precision 0.022 против постусловия на диффе с нулём ложных срабатываний. Сравнительная матрица «практика × эксперименты × индустрия» и пять вариантов решения без RFC и без изменения действующих правил. |
+| [2026-08-13-rrp-cross-validation-claude-opus-4-8.md](2026-08-13-rrp-cross-validation-claude-opus-4-8.md) | Cross-validation для issue #506: атрибуция единственного RRP-модуля Claude Opus 4.8 (`retrieval`, PR #443), проверка P2/P5, разграничение наличия механизма P5 и нулевого числа сработавших триггеров, вывод о воспроизводимости при `n = 1` и рекомендации будущему стандарту. |
 
 ## Эксперименты
 

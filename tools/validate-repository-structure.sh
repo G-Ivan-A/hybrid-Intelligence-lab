@@ -231,6 +231,7 @@ is_active_file() {
     research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md | \
     research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md | \
     research/hub/2026-07-31-ops-task-strategy-validation.md | \
+    research/hub/2026-08-13-rrp-cross-validation-claude-opus-4-8.md | \
     research/hub/exp/ops-task-strategy-461/README.md | \
     research/hub/exp/ops-task-strategy-461/collect-evidence.py | \
     research/hub/exp/ops-task-strategy-461/collect-evidence.log | \
@@ -1623,11 +1624,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.91"
+require_text "pr-ops/artifact-map.md" "version: 1.92"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-12"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-13"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
