@@ -339,6 +339,7 @@ is_active_file() {
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
     research/mango/2026-06-19-token-optimization-proposal.md | \
+    research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
@@ -385,7 +386,6 @@ is_active_file() {
     docs/analysis/2026-07-17-mango-artifacts-migration-plan.md | \
     docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md | \
     docs/analysis/2026-08-11-research-methodology-validation.md | \
-    research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md | \
     docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
@@ -678,7 +678,6 @@ required_files=(
   "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
   "docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md"
   "docs/analysis/2026-08-11-research-methodology-validation.md"
-  "research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md"
   "docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
@@ -836,6 +835,7 @@ required_files=(
   "docs/rfc/solution-concept-template-proposal.md"
   "research/mango/2026-06-18-requirements-engineering-ai-era.md"
   "research/mango/2026-06-19-repository-structure-vision.md"
+  "research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
   "templates/htom/AI_GOVERNANCE.md"
