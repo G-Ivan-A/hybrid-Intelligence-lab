@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-07-31
+version: 0.3
+updated: 2026-08-17
 temperature: 0.2
 owner: G-Ivan-A
 rfc-scope: A
@@ -35,8 +35,8 @@ related_issues:
 | RFC status | draft (предложение; решение принимает фаундер) |
 | Source issue | [#437](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437); [#418](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/418) |
 | Impacted artifacts | `research/ai-education/<domain>/`, `tools/validate-file-naming.sh`, `tools/validate-repository-structure.sh`, `pr-ops/artifact-map.md`, `docs/rfc/2026-06-30-rfc-research-structure.md` (соотношение, не правка) |
-| Decision record | отсутствует (RFC в статусе `draft`; ADR не предлагается до валидации на ≥3 доменах) |
-| Implementation link | [`research/ai-education/retrieval/`](../../research/ai-education/retrieval/00-introduction.md) — первая и единственная реализация (B-089) |
+| Decision record | [ADR-011](../adr/2026-08-adr-011-research-models.md) — фиксирует RRP как модель M2 и повышает статус паттерна до `Validated` (D6, 2026-08-17). Сам RFC остаётся `draft` как rationale-документ |
+| Implementation link | [`research/ai-education/retrieval/`](../../research/ai-education/retrieval/00-introduction.md) — первая реализация (B-089); на 2026-08-17 реализаций восемь (см. «Validation status») |
 | Archetype scope | A (Governance & Knowledge Hub) |
 
 ## Summary
@@ -49,10 +49,12 @@ research-артефакта, разбивающая исследование о�
 [00-introduction, 10-theory, 20-taxonomy, 30-decision-framework, 40-practice, 50-open-research]
 ```
 
-**Статус паттерна: Experimental.** Это именно референсный паттерн — образец, на
-который можно опереться, — а не норма и не требование к другим доменам. Паттерн
-предъявлен на одной реализации и не имеет права предписывать что-либо, пока не
-проверен на нескольких независимых доменах (см. «Validation status»).
+**Статус паттерна на момент написания RFC: Experimental** — образец, на который
+можно опереться, а не норма: паттерн был предъявлен на одной реализации и не
+имел права предписывать что-либо, пока не проверен на нескольких независимых
+доменах. Критерий достигнут в августе 2026 года, и статус паттерна повышен до
+`Validated` решением [ADR-011](../adr/2026-08-adr-011-research-models.md) (D6);
+актуальное состояние — в разделе «Validation status» ниже.
 
 RFC **не принимает** решение: он фиксирует наблюдение, показывает единственную
 реализацию и предлагает критерий, по которому паттерн может быть впоследствии
@@ -60,15 +62,30 @@ RFC **не принимает** решение: он фиксирует набл
 
 ## Validation status
 
-> **Validated on:** Retrieval.
-> **Planned validation:** Memory, Agents.
-> **Criteria for promotion:** >= 3 independent domains.
+> **Статус паттерна: `Validated`** (с 2026-08-17, решение
+> [ADR-011](../adr/2026-08-adr-011-research-models.md), D6; на момент написания
+> этого RFC — `Experimental`).
+> **Validated on:** Retrieval, Memory, Evaluation, Observability,
+> Multi-agent orchestration, Task processing, Tool use,
+> Information extraction & graph modeling — 8 модулей в `research/ai-education/`.
+> **Criteria for promotion:** >= 3 independent domains — выполнен.
 
 Расшифровка критерия: **независимый** домен — тот, чьё исследование ведёт другой
 исполнитель или другой метод, а не тот же корпус под другим названием. Три
 реализации на одном корпусе — это одна реализация, повторённая трижды, и она
-ничего не подтверждает. До достижения критерия паттерн остаётся `Experimental`,
-и ссылаться на него как на обязательный нельзя.
+ничего не подтверждает. До достижения критерия паттерн оставался
+`Experimental`, и ссылаться на него как на обязательный было нельзя.
+
+Критерий закрыт: 8 модулей выполнены по восьми разным предметным доменам и
+разными исполнителями (3 модуля — Codex, 5 — Claude, атрибуция восстановлена в
+[перекрёстной проверке](../../research/hub/2026-08-13-rrp-cross-validation-codex.md)),
+форма воспроизведена в 8 случаях из 8
+([инвентаризация корпуса](../analysis/2026-08-11-research-methodology-validation.md)).
+Решение о повышении принято в [ADR-011](../adr/2026-08-adr-011-research-models.md)
+(D6): `Validated` подтверждает воспроизводимость **формы** и разрешает ссылаться
+на RRP как на нормативную модель зрелого исследования (M2); обязательной для
+любого research модель не становится — выбор задаёт Decision Tree в
+[`standards/research-standard.md`](../../standards/research-standard.md).
 
 ## Motivation
 

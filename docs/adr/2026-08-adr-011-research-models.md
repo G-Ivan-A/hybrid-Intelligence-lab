@@ -1,6 +1,6 @@
 ---
-status: proposed
-version: 0.1
+status: accepted
+version: 0.2
 updated: 2026-08-17
 temperature: 0.1
 owner: G-Ivan-A
@@ -15,11 +15,11 @@ decision-type: methodology
 | --- | --- |
 | ADR id | ADR-011 |
 | Decision type | methodology |
-| Decision status | proposed (narrative summary; машиночитаемый canon — frontmatter `status`) |
-| Decision date | — (решение принимает фаундер при переводе в `accepted`) |
+| Decision status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
+| Decision date | 2026-08-17 (решение фаундера в issue [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523): внедрение моделей в стандарт и повышение статуса RRP) |
 | Owner | G-Ivan-A |
-| Source | Issue [#515](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515); [ADR-003](2026-07-adr-003-research-structure.md); [RFC Reference Research Pattern](../rfc/2026-07-17-rfc-reference-research-pattern.md) |
-| Impacted artifacts | `standards/research-standard.md` (правка — отдельная задача **после** мержа этого ADR), `standards/glossary.md`, `docs/rfc/2026-07-17-rfc-reference-research-pattern.md` (соотношение, не правка), `pr-ops/backlog.md` |
+| Source | Issue [#515](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515); Issue [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523) (амендмент D6); [ADR-003](2026-07-adr-003-research-structure.md); [RFC Reference Research Pattern](../rfc/2026-07-17-rfc-reference-research-pattern.md) |
+| Impacted artifacts | `standards/research-standard.md` (внедрение моделей — B-104, issue #523), `standards/glossary.md`, `docs/rfc/2026-07-17-rfc-reference-research-pattern.md` (`Validation status` — статус паттерна, D6), `tools/test-reference-research-terminology.sh`, `pr-ops/backlog.md` |
 | Supersedes | none |
 | Superseded by | none |
 
@@ -82,10 +82,11 @@ Taxonomy, Decision Framework, Practice и Open Questions. RFC осознанно
 | Модель | Что это | Обязательные элементы | Форма выхода | SSOT формы |
 | --- | --- | --- | --- | --- |
 | **M1. Базовый research-отчёт** | Действующая модель по умолчанию: изучение внешнего вопроса с собственной доказательной базой (сравнение, benchmark, prompt-эксперимент, разбор корпуса) | Датированный отчёт с источниками и границами применимости внешних claim; воспроизводимость выводов | `research/<domain>/YYYY-MM-DD-name.md` + опц. `exp/<issue-slug>/` | [`standards/research-standard.md`](../../standards/research-standard.md), принят [ADR-003](2026-07-adr-003-research-structure.md) / [RFC B-016](../rfc/2026-06-30-rfc-research-structure.md) |
-| **M2. Reference Research Pattern (RRP)** | Зрелое исследование домена, результат которого обязан быть воспроизводимой методологией | Theory, Taxonomy, **Decision Framework**, Practice, Open Questions — модуль из шести файлов | `research/<domain>/00-introduction.md` … `50-open-research.md` | [RFC Reference Research Pattern](../rfc/2026-07-17-rfc-reference-research-pattern.md), статус паттерна `Experimental` |
+| **M2. Reference Research Pattern (RRP)** | Зрелое исследование домена, результат которого обязан быть воспроизводимой методологией | Theory, Taxonomy, **Decision Framework**, Practice, Open Questions — модуль из шести файлов | `research/<domain>/00-introduction.md` … `50-open-research.md` | [RFC Reference Research Pattern](../rfc/2026-07-17-rfc-reference-research-pattern.md), статус паттерна `Validated` (см. [D6](#d6)) |
 
-Ни структура шести файлов, ни статус `Experimental`, ни базовая форма M1 этим
-ADR не изменяются. SSOT каждой формы остаётся там, где он есть.
+Ни структура шести файлов, ни базовая форма M1 этим ADR не изменяются. SSOT
+каждой формы остаётся там, где он есть. Статус паттерна M2 повышается решением
+D6 — по критерию, который сформулирован в самом RFC, и без изменения формы.
 
 **D2. Принять третью модель — Discussion Paper / Survey (M3).**
 
@@ -118,7 +119,43 @@ M2, ни к M3 без искажения смысла, — и только че�
 `standards/research-standard.md` (включая перевод раздела `Type Model` из `N/A`
 в форму модели) выполняется **отдельной задачей после мержа этого ADR** (B-104 в
 [`pr-ops/backlog.md`](../../pr-ops/backlog.md)). До этого момента нормой остаётся
-действующая редакция стандарта.
+действующая редакция стандарта. B-104 выполнена по issue
+[#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523) вместе с
+переводом этого ADR в `accepted`.
+
+<a id="d6"></a>
+**D6. Повысить статус RRP (M2) с `Experimental` до `Validated`.** (Амендмент от
+2026-08-17, issue [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523).)
+
+Критерий повышения, заданный самим
+[RFC Reference Research Pattern](../rfc/2026-07-17-rfc-reference-research-pattern.md)
+(«Validation status»), — воспроизведение формы на ≥ 3 **независимых** доменах,
+где независимость означает другого исполнителя или другой метод, а не тот же
+корпус под другим названием. Доказательная база на 2026-08-17:
+
+| Что подтверждено | Доказательство |
+| --- | --- |
+| 8 завершённых модулей вместо требуемых 3 | `research/ai-education/`: `retrieval`, `memory`, `evaluation`, `observability`, `multi-agent-orchestration`, `task-processing`, `tool-use`, `information-extraction-graph-modeling` |
+| Форма воспроизводима: 8 из 8 модулей имеют ровно шесть канонических файлов `00…50` | [Валидация методологий исследований](../analysis/2026-08-11-research-methodology-validation.md) (инвентаризация всего корпуса `research/`) |
+| Независимость исполнителей: 3 модуля выполнены Codex, 5 — Claude; отклонения не объясняются моделью-исполнителем | [Перекрёстная проверка модулей RRP (Codex)](../../research/hub/2026-08-13-rrp-cross-validation-codex.md) |
+| Известный дефект паттерна (правило P2 «практика ссылается на своё основание») стал машинно-проверяемым, а не остался наблюдением | [`tools/validate-rrp-links.sh`](../../tools/validate-rrp-links.sh) с ratchet-списком исторических нарушений |
+
+`Validated` означает: форма паттерна воспроизводима и на неё **разрешено**
+ссылаться как на нормативную модель зрелого исследования (M2). Он **не**
+означает, что RRP обязателен для любого research: выбор модели остаётся за
+Decision Tree стандарта, а M1 остаётся моделью по умолчанию.
+
+Границы решения фиксируются явно, потому что доказательная база неоднородна:
+
+- все 8 модулей лежат в одном контейнере `research/ai-education/`; независимость
+  подтверждается разными исполнителями и разными предметными доменами, а не
+  разными каталогами верхнего уровня;
+- наполнение модулей падает от 362 строк на файл у `retrieval` до 83–128 у трёх
+  последних (замер в анализе выше): воспроизводится форма, за качеством
+  наполнения `Validated` не ручается. Это предмет отдельных проверок, а не
+  статуса паттерна.
+
+Обратного перехода нет: понижение статуса требует нового ADR или amendment.
 
 ## Decision Drivers
 
@@ -170,8 +207,10 @@ M2, ни к M3 без искажения смысла, — и только че�
 - Признак «Decision Framework выведен, а не выдуман» требует экспертного
   суждения; остаточная субъективность принимается осознанно и вынесена как
   триггер пересмотра в D4.
-- RRP остаётся `Experimental`: пока паттерн не валидирован на ≥3 доменах, M2
-  описан как форма, но не как обязательная норма зрелости.
+- RRP переходит в `Validated` (D6): на него разрешено ссылаться как на
+  нормативную форму M2. Компромисс — статус подтверждает воспроизводимость
+  **формы**, а не качество наполнения модулей; последнее остаётся предметом
+  отдельных проверок (`tools/validate-rrp-links.sh`, cross-validation-отчёты).
 
 **Архитектурное следствие для downstream:** нормативный enforcement делегируется
 вниз по цепочке — правка `standards/research-standard.md` и `standards/glossary.md`
@@ -226,12 +265,14 @@ flowchart LR
 
 - `accepted` requires explicit human review or merge decision.
 - Review trigger: срабатывание Anti-Inflation-триггера D4 (две и более задачи
-  подряд вне M1/M2/M3) либо повышение статуса RRP из `Experimental` после
-  валидации на ≥3 доменах.
+  подряд вне M1/M2/M3). Триггер «повышение статуса RRP после валидации на ≥3
+  доменах» отработан амендментом D6 от 2026-08-17.
 - Supersession: `superseded` требует backlink на замещающий ADR/RFC.
 
 Этот ADR не переводит RFC Reference Research Pattern в другой статус: RFC
-остаётся `draft`, а паттерн — `Experimental`.
+остаётся `draft` как rationale-документ. Статус самого **паттерна** повышен до
+`Validated` решением D6; раздел `Validation status` RFC синхронизирован с этим
+решением и ссылается на него как на decision record.
 
 ## Related Artifacts
 
@@ -255,5 +296,10 @@ flowchart LR
   стандарт структуры ADR.
 - [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — задачи B-103 (этот ADR) и
   B-104 (внесение моделей в стандарт).
+- [Валидация методологий исследований на корпусе завершённых кейсов](../analysis/2026-08-11-research-methodology-validation.md)
+  и [перекрёстная проверка модулей RRP](../../research/hub/2026-08-13-rrp-cross-validation-codex.md) —
+  доказательная база амендмента D6.
 - Issue [#515](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515) —
   постановка и корректирующие контракты.
+- Issue [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523) —
+  амендмент D6 (статус RRP `Validated`) и внедрение моделей в стандарт (B-104).
