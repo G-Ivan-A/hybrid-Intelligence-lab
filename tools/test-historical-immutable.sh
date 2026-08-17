@@ -262,6 +262,32 @@ git_in commit --quiet -am "accept proposed adr"
 
 expect_pass "перевод proposed → accepted разрешён" "$repo" BASE_REF=main
 
+# 9f. Индекс каталога (README.md) правится вместе с добавлением нового ADR.
+git_in checkout --quiet main
+cat >"$repo/docs/adr/README.md" <<'EOF'
+# Индекс ADR
+
+| ADR | Статус |
+| --- | --- |
+| [ADR-001](2026-01-adr-001-historical.md) | accepted |
+EOF
+git_in add docs/adr/README.md
+git_in commit --quiet -m "add adr index to base"
+
+git_in checkout --quiet -b index-update main
+cat >"$repo/docs/adr/2026-04-adr-003-new.md" <<'EOF'
+---
+status: proposed
+---
+
+# ADR-003: новое решение
+EOF
+printf '| [ADR-003](2026-04-adr-003-new.md) | proposed |\n' >>"$repo/docs/adr/README.md"
+git_in add docs/adr/2026-04-adr-003-new.md docs/adr/README.md
+git_in commit --quiet -m "add adr and update index"
+
+expect_pass "правка индекса README.md при добавлении ADR разрешена" "$repo" BASE_REF=main
+
 # 10. three-dot дифф устойчив к движению base-ветки.
 git_in checkout --quiet main
 printf '\nБаза ушла вперёд.\n' >>"$repo/docs/rfc/2026-01-01-rfc-historical.md"

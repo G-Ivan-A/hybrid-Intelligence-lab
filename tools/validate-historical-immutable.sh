@@ -18,6 +18,10 @@
 # переписывая содержательное историческое решение. Дополнительные пути
 # исключаются glob-шаблонами через HISTORICAL_IMMUTABLE_ALLOWLIST.
 #
+# Индексы каталогов (`docs/rfc/README.md`, `docs/adr/README.md`) под правило не
+# попадают: это навигационная таблица, а не зафиксированное решение, и добавление
+# нового RFC/ADR обязано добавить в неё строку.
+#
 # Второе исключение — документ до decision gate: иммутабельность защищает
 # «решение на момент принятия», а запись со статусом `draft` или `proposed`
 # такого момента ещё не имеет (см. docs/adr/README.md: переходы
@@ -64,6 +68,9 @@ resolve_base_commit() {
 
 is_protected() {
   local path="$1" prefix
+  # Индекс каталога (README.md) — навигация, а не решение на момент принятия:
+  # добавление нового RFC/ADR обязано добавить строку в таблицу индекса.
+  [[ "$(basename "$path")" == "README.md" ]] && return 1
   for prefix in "${protected_prefixes[@]}"; do
     prefix="$(printf '%s' "$prefix" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')"
     [[ -z "$prefix" ]] && continue
