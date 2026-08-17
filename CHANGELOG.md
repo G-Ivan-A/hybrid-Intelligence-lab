@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.77
+version: 1.78
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -200,6 +200,46 @@ All notable repository governance changes are documented here.
   (issue #484). Creative-режим задаётся полем `operating_mode` единого шаблона.
 
 ### Changed
+
+- tools: `tools/validate-historical-immutable.sh` — иммутабельность RFC/ADR
+  распространена только на **принятые** решения. Правка записи, у которой в
+  base-ревизии стоит `status: draft` или `status: proposed`, разрешена: по
+  `docs/adr/README.md` допустимые переходы — `draft → proposed → accepted`, а
+  перевод в `accepted` требует human review, поэтому у pre-decision записи ещё
+  нет «момента принятия», который правило защищает (issue #511: контракты
+  предписывали править ADR-009 в статусе `proposed` на месте). Условие читается
+  из base-ревизии, поэтому понижение `accepted → proposed` в том же PR проверку
+  не обходит; переход `proposed → accepted` допускается, так как сам merge и
+  есть decision gate. Инварианты не ослаблены: изменение, удаление и
+  переименование `accepted`/`deprecated`/`superseded` документов по-прежнему
+  запрещены. Поведение закреплено тремя регрессионными кейсами в
+  `tools/test-historical-immutable.sh`; правило описано в CONTRIBUTING (v1.14).
+- decision: `docs/adr/2026-07-adr-009-mango-repo-split.md` (v0.3) скорректирован
+  под финальную модель двух репозиториев (issue #511). Новый приватный
+  репозиторий `mango-ba-prompt-library` **не создаётся**: существующий
+  `mango_ba_prompts` сохраняет имя и переводится в режим Private, оставаясь
+  хранилищем операционных артефактов, — переход дешевле создания нового
+  репозитория и сохраняет историю, issues и ссылки. Новым создаётся только
+  публичный `ai-ba-playbooks`. §2 переписан, упоминания создания репозитория с
+  именем `mango-ba-prompt-library` убраны из Decision Metadata, Context,
+  Consequences и Compliance. Норма о CI уточнена: запрет касается
+  GitHub-hosted runners, а допустимой альтернативой локальным валидаторам
+  объявлен self-hosted GitHub Runner в Docker — он сохраняет периметр владельца
+  и даёт автоматизацию проверок. Уточнение снимает Q1 плана миграции B-080 о
+  фактической публичности исходного репозитория. Нормы разделения ролей,
+  каталогов и односторонней синхронизации не менялись.
+  `pr-ops/backlog.md` (v1.42) переформулировал B-082 как «Перевод
+  `mango_ba_prompts` в режим Private» и синхронизировал story, цель и критерий
+  закрытия Спринта 8; `pr-ops/artifact-map.md` (v1.93) обновил описание ADR-009.
+  План миграции `docs/analysis/2026-07-17-mango-artifacts-migration-plan.md`
+  (v0.2) зафиксировал Q1 как закрытый по варианту V1 и переписал Фазу 2 с
+  создания репозитория на смену видимости — по образцу того, как issue #446
+  закрыл Q2. `tools/test-mango-kb-migration-contract.sh` расширен четырьмя
+  проверками модели двух репозиториев: имя `mango-ba-prompt-library` больше не
+  встречается в ADR и плане, §2 ADR называет `mango_ba_prompts` и Private,
+  локальный runner упомянут, а прежний безусловный запрет GitHub Actions не
+  вернулся; `tools/validate-repository-structure.sh` обновил закреплённые версии
+  бэклога и карты артефактов.
 
 - templates: шаблон задачи консолидирован в единый 5-блочный формат RFC #470
   §P.9 (issue #484): Контекст, Цель, SSOT, Контракты задачи, Готово когда;
