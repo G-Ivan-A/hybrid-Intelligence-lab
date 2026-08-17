@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.78
+version: 1.79
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -10,6 +10,34 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Changed
+
+- standards: `standards/glossary.md` синхронизирован с методологическими
+  определениями Хаба (issue #517, B-098). Добавлены термины `Research Method`
+  (`Theory → Taxonomy → Decision Framework → Practice → Open Questions`),
+  `Domain Methodology` (`Conceptual Framing → Object Model → Decision Space`),
+  зонтичный термин `Модель исследования (Research Model)` и две из трёх моделей —
+  `Reference Research Pattern (RRP)` и `Discussion Paper / Survey`; третья модель
+  зафиксирована уточнением существующего термина `Analysis` (инвентаризация фактов
+  без генерации новых гипотез), чтобы не плодить конкурирующую строку. `Conceptual
+  Framing` помечен как первый шаг Domain Methodology; дубль строки `Mental Model`,
+  возникший в глоссарии, удалён — термин остаётся единственной deprecated-записью.
+  В разделе «Связи терминов» добавлены четыре связи: ортогональность Research
+  Method и Domain Methodology, разворачивание Domain Methodology в три шага,
+  различие трёх моделей по полноте прохождения Research Method и независимость
+  модели исследования от Task Type и Operating Mode. Определения краткие и
+  ссылаются на [research-standard.md](standards/research-standard.md) и
+  [RFC Reference Research Pattern](docs/rfc/2026-07-17-rfc-reference-research-pattern.md)
+  как на SSOT, а не дублируют их содержание; сам research-стандарт не изменялся —
+  исполнимые критерии выбора модели вносит смежная задача #515. Новых
+  governance-файлов не создано (Anti-Inflation).
+- ops: `tools/test-reference-research-terminology.sh` расширен регрессионными
+  проверками: наличие терминов `Research Method`, `Domain Methodology`, трёх
+  моделей исследований, формулировки `Analysis` как инвентаризации без гипотез,
+  обязательной cross-reference каждого нового термина на research-стандарт или RFC
+  и связи «Research Method ⟂ Domain Methodology». До правки глоссария тест падает,
+  после — проходит.
 
 ### Added
 
