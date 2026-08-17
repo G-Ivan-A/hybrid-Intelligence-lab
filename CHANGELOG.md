@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.79
+version: 1.81
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -13,34 +13,98 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
-- standards: `standards/glossary.md` синхронизирован с методологическими
-  определениями Хаба (issue #517, B-098). Добавлены термины `Research Method`
-  (`Theory → Taxonomy → Decision Framework → Practice → Open Questions`),
-  `Domain Methodology` (`Conceptual Framing → Object Model → Decision Space`),
-  зонтичный термин `Модель исследования (Research Model)` и две из трёх моделей —
-  `Reference Research Pattern (RRP)` и `Discussion Paper / Survey`; третья модель
-  зафиксирована уточнением существующего термина `Analysis` (инвентаризация фактов
-  без генерации новых гипотез), чтобы не плодить конкурирующую строку. `Conceptual
-  Framing` помечен как первый шаг Domain Methodology; дубль строки `Mental Model`,
-  возникший в глоссарии, удалён — термин остаётся единственной deprecated-записью.
-  В разделе «Связи терминов» добавлены четыре связи: ортогональность Research
-  Method и Domain Methodology, разворачивание Domain Methodology в три шага,
-  различие трёх моделей по полноте прохождения Research Method и независимость
-  модели исследования от Task Type и Operating Mode. Определения краткие и
-  ссылаются на [research-standard.md](standards/research-standard.md) и
+- standards: `standards/glossary.md` (v2.1 → v2.2) приведён в строгое соответствие
+  с онтологией [ADR-011](docs/adr/2026-08-adr-011-research-models.md) (issue #517,
+  B-098). Термин `Analysis` переопределён как **отдельный тип артефакта, а не
+  модель research**: инвентаризация существующих фактов без генерации новых
+  гипотез, со своим decision record ([ADR-006](docs/adr/2026-07-adr-006-analysis-structure.md)),
+  своим стандартом ([analysis-standard.md](standards/analysis-standard.md)), своим
+  домом `docs/analysis/`, именованием и frontmatter; ряд форм research его не
+  включает — это граница маршрутизации между типами, а не ступень глубины одного
+  ряда. В «Связи терминов» добавлена связь `Analysis ≠ модель research`, явно
+  запрещающая зонтичный термин над Analysis и RRP. Зонтичный термин
+  `Модель исследования (Research Model)` и термин `Discussion Paper / Survey` в
+  глоссарий **не вводятся**: соответствующая модель находится в статусе `proposed`
+  в ADR-011 и легитимируется только после перевода ADR в `accepted` (задача B-104).
+  В глоссарии остаются `Research Method`, `Domain Methodology`,
+  `Conceptual Framing` и `Reference Research Pattern (RRP)` (статус паттерна
+  `Experimental`) с cross-reference на
   [RFC Reference Research Pattern](docs/rfc/2026-07-17-rfc-reference-research-pattern.md)
-  как на SSOT, а не дублируют их содержание; сам research-стандарт не изменялся —
-  исполнимые критерии выбора модели вносит смежная задача #515. Новых
+  как на SSOT. `standards/research-standard.md` не изменялся. Новых
   governance-файлов не создано (Anti-Inflation).
-- ops: `tools/test-reference-research-terminology.sh` расширен регрессионными
-  проверками: наличие терминов `Research Method`, `Domain Methodology`, трёх
-  моделей исследований, формулировки `Analysis` как инвентаризации без гипотез,
-  обязательной cross-reference каждого нового термина на research-стандарт или RFC
-  и связи «Research Method ⟂ Domain Methodology». До правки глоссария тест падает,
-  после — проходит.
+- ops: `tools/test-reference-research-terminology.sh` переведён на проверку
+  ADR-011-совместимой онтологии: требует определения `Research Method`,
+  `Domain Methodology` и `Reference Research Pattern (RRP)` со статусом
+  `Experimental` и cross-reference на RFC/стандарт, требует формулировки `Analysis`
+  как отдельного типа артефакта со ссылками на собственный стандарт и каталог и
+  **запрещает** появление в глоссарии терминов `Модель исследования`,
+  `Research Model` и `Discussion Paper` до принятия ADR-011. На предыдущем
+  состоянии глоссария тест падает, на текущем — проходит.
 
 ### Added
 
+- adr: Создан [ADR-011](docs/adr/2026-08-adr-011-research-models.md) `proposed` —
+  модели формы research-артефакта (issue #515, B-103). ADR подготовлен на базе
+  ADR-003 и фиксирует **без изменений** две существующие модели: базовый
+  датированный research-отчёт `research/<domain>/YYYY-MM-DD-name.md` с
+  опциональным контейнером `exp/<issue-slug>/` (SSOT — `standards/research-standard.md`,
+  принят ADR-003 / RFC B-016) и Reference Research Pattern из шести файлов с
+  обязательным Decision Framework (SSOT формы и статуса `Experimental` —
+  `docs/rfc/2026-07-17-rfc-reference-research-pattern.md`). Между ними назван
+  пробел ранней стадии — исследование опирается на внешние индустриальные
+  источники и порождает гипотезы, но пространство решений в теме ещё не выделено,
+  поэтому таксономии и Decision Framework у него нет и быть не должно, — и для
+  него предложена третья модель `Discussion Paper / Survey` с тремя обязательными
+  элементами: явная маркировка предварительного статуса, обзор индустриальных
+  практик с источником у каждого claim и явно сформулированные гипотезы,
+  отделённые от фактов. Критерии выведены из индустриальных практик ранних стадий
+  (IETF Internet-Draft, W3C Working Draft, survey article ACM Computing Surveys,
+  academic position paper) и публичных обзоров практик построения AI-агентов, а
+  не из формы исторических неклассифицированных артефактов. Зафиксированы правило
+  промоушена `Discussion Paper → RRP` (`status: superseded` + backlink),
+  решающий признак выбора (наличие выведенного Decision Framework, а не объём) и
+  anti-inflation-триггер для четвёртой модели. **Analysis исключён из ряда моделей
+  research**: это отдельный тип артефакта со своим ADR-006, стандартом, домом
+  `docs/analysis/`, именованием и frontmatter; в ADR он присутствует только как
+  граница маршрутизации. **Стандарт этим PR не изменяется**: по цепочке
+  Исследование → RFC → ADR → Стандарт правка `standards/research-standard.md`
+  вынесена в отдельную задачу B-104 после мержа и перевода ADR-011 в `accepted`.
+  В `standards/glossary.md` (v2.0 → v2.1) добавлены термины `Research Method`,
+  `Domain Methodology` и `Reference Research Pattern (RRP)` с cross-reference на
+  RFC как SSOT структуры RRP и две связи терминов
+  (`Research Method ⟂ Domain Methodology`, `Domain Methodology -> Conceptual Framing`);
+  `Mental Model` остаётся deprecated и в роли вводной концептуальной рамки не
+  используется — регрессия закрыта существующим
+  `tools/test-reference-research-terminology.sh`. ADR зарегистрирован как active
+  artifact (allowlist структуры, `docs/adr/README.md` v0.1 → v0.2,
+  `pr-ops/artifact-map.md`), правила закреплены ratchet-проверками в
+  `tools/validate-repository-structure.sh`. `pr-ops/backlog.md` v1.43 → v1.44.
+  В `tools/validate-historical-immutable.sh` исключены из правила иммутабельности
+  индексы каталогов (`docs/rfc/README.md`, `docs/adr/README.md`): индекс — это
+  навигационная таблица, а не решение на момент принятия, и добавление нового
+  RFC/ADR обязано добавить в неё строку. Регрессия закрыта тестом в
+  `tools/test-historical-immutable.sh`.
+
+- analysis: Создан `research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md`
+  (issue #512) — inventory Analysis базовой онтологии процессов БА, операций и
+  требований к ДОД в споке `mango_ba_prompts` на снимке `295b65d`. Реестр
+  собран без чтения приватного контента: только по hub-артефактам, которые
+  цитируют структуру спока. Зафиксированы три слоя — 13 когнитивных операций с
+  маппингом на области BABOK и подпроцессы BCREQ П1–П6, девять процессов БА
+  (пять заземлены поимённо на реестр `docs/ba-processes/00-index.md`, четыре
+  реконструированы по паттернам и промптам) и цепочка артефактов
+  «правила → контракты → паттерн → промпт → реестр → прогон». Сводная таблица
+  связывает каждый процесс с операциями, ожидаемым входом, выходом и местом
+  записи результата (`runs/YYYY/RUN-XXXX/outputs/`). Требования к ДОД в споке
+  единым документом не существуют, поэтому собран общий чек-лист D1–D10 из
+  действующих контрактов (`patterns/` с 8 обязательными полями, frontmatter
+  промпта, критерии готовности промпта, контракт `runs/`, правило
+  `draft→canonical` при наличии прогона, human gate для статусов
+  `covered/validated/approved/released`) с усилениями по группам операций.
+  Отдельно зафиксированы шесть пробелов G1–G6, включая отсутствие поимённого
+  списка девяти процессов в Хабе, привязку семантики операций к более ранним
+  снимкам, чем `295b65d`, и отсутствие в репозитории документа «план СПЛИТ».
+  Новые процессы не предлагаются, контракты и стандарты не меняются.
 - analysis: Создан `docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md`
   (issue #507) — анализ готовности `mango_ba_prompts` к разделению репозиториев
   по ADR-009 и к серии из 20+ BA-прогонов на снимке спицы `295b65d` и Хаба
@@ -229,6 +293,13 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- analysis: Артефакт `2026-08-17-mango-ba-processes-and-dod-ontology.md` перенесён
+  из `docs/analysis/` в `research/mango/` (issue #519). `docs/analysis/`
+  предназначен строго для анализа архитектуры и процессов самого Хаба, а анализ
+  предметной области спок-проекта Mango относится к `research/<domain>/`.
+  Содержание отчёта не изменено — обновлены только относительные ссылки внутри
+  документа и перекрёстные ссылки в `pr-ops/artifact-map.md`,
+  `tools/validate-repository-structure.sh` и `research/mango/README.md`.
 - tools: `tools/validate-historical-immutable.sh` — иммутабельность RFC/ADR
   распространена только на **принятые** решения. Правка записи, у которой в
   base-ревизии стоит `status: draft` или `status: proposed`, разрешена: по

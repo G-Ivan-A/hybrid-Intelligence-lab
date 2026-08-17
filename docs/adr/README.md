@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 0.1
-updated: 2026-08-07
+version: 0.2
+updated: 2026-08-17
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -38,6 +38,7 @@ frontmatter и девять обязательных секций. Машино�
 | [ADR-008](2026-07-adr-008-standard-meta-structure.md) | proposed | Мета-структура стандартов: F10 explicit, десять инвариантных секций и specific tail. |
 | [ADR-009](2026-07-adr-009-mango-repo-split.md) | proposed | Разделение Mango на публичный и приватный репозитории. |
 | [ADR-010](2026-08-adr-010-agent-autonomy-principles.md) | proposed | Три принципа автономии агента: экспертное исполнение, абсолютные границы и роль Operating Mode как мета-контракта. |
+| [ADR-011](2026-08-adr-011-research-models.md) | proposed | Модели research-артефакта: фиксация базового отчёта и RRP, предложение модели Discussion Paper / Survey для ранней стадии. |
 
 ## Related Artifacts
 
