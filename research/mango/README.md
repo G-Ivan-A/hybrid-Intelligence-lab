@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-08-17
 temperature: 0.1
 source: research/mango/README-old.md
 ---
@@ -25,6 +25,7 @@ source: research/mango/README-old.md
 | [2026-06-18-ai-classifications-formalization.md](2026-06-18-ai-classifications-formalization.md) | Формализация 4 новых AI-подпроцессов (инжиниринг промптов, RAG, оркестрация агентов, тестирование AI), эволюция операций в роадмапе Mango (4 фазы) и подготовка синхронизации с `mango_ba_prompts` (С1/С2/С3). |
 | [2026-06-19-token-optimization-proposal.md](2026-06-19-token-optimization-proposal.md) | RFC для спок-проекта `mango_ba_prompts` (issue #255, Creative + Research): независимые предложения по оптимизации потребления токенов. Аудит сценариев A/B/D/F и топ-5 точек кипения (handover ~6000 токенов перерасхода, кластер `ba-ontology` ~63 KB в 3 местах, bootstrap-набор ~46k), сравнение подходов к разделению Full/Executable (файлы/слои/ссылки/динамическая загрузка/frontmatter-разметка), стратегии устранения дублирования с сохранением истории (SSOT через `artifact-map`, намеренный split ADR↔Standard), контентные/процессные/технические меры, метрики успеха и план сбора baseline. Совместимо с PR #254. Только RFC — файлы спока не меняются, решение за человеком. |
 | [2026-06-19-repository-structure-vision.md](2026-06-19-repository-structure-vision.md) | RFC для спок-проекта `mango_ba_prompts` (issue #253, Creative): независимое видение оптимальной структуры репозитория(ев). Аудит реального репозитория (коллизия `ba-process`/`ba-processes`, смешение Definition/Run, свалка в `governance/`, непоследовательная нумерация ADR), синтез 4 командных видений (C/Q/G/founder) с таблицей сравнения, варианты A/B/C и независимое решение — Вариант B фазово (Public `mango_ba_framework` + Private `mango_ba_operations` + Yandex Object Storage). Деревья каталогов, три уровня ИБ (Public/Private/Confidential), единый контракт записи прогонов (`runs/RUN-XXXX/` + `metadata.yaml`) для 3 сценариев, один мост к Хабу, переиспользование портала open-ai.ru и фиксация токеновой инфляции без оптимизации. Решение за человеком. |
+| [2026-08-17-mango-ba-processes-and-dod-ontology.md](2026-08-17-mango-ba-processes-and-dod-ontology.md) | Inventory Analysis для issue #512: базовая онтология процессов БА, когнитивных операций и требований к ДОД в споке `mango_ba_prompts` на снимке `295b65d`. 13 операций с маппингом на BABOK и BCREQ П1–П6, девять процессов БА, цепочка артефактов «правила → контракты → паттерн → промпт → реестр → прогон», чек-лист ДОД D1–D10 и пробелы G1–G6. |
 
 ## Воспроизводимость
 
