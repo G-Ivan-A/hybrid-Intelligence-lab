@@ -256,6 +256,9 @@ is_active_file() {
     research/hub/exp/research-methodology-validation-499/scan-spokes.py | \
     research/hub/exp/research-methodology-validation-499/scan-spokes.log | \
     research/hub/exp/research-methodology-validation-499/spoke-inventory.json | \
+    research/hub/exp/mango-separation-readiness-507/README.md | \
+    research/hub/exp/mango-separation-readiness-507/scan-mango-readiness.sh | \
+    research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -383,6 +386,7 @@ is_active_file() {
     docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md | \
     docs/analysis/2026-08-11-research-methodology-validation.md | \
     docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md | \
+    docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -675,6 +679,7 @@ required_files=(
   "docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md"
   "docs/analysis/2026-08-11-research-methodology-validation.md"
   "docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md"
+  "docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -761,6 +766,9 @@ required_files=(
   "research/hub/exp/research-methodology-validation-499/scan-spokes.py"
   "research/hub/exp/research-methodology-validation-499/scan-spokes.log"
   "research/hub/exp/research-methodology-validation-499/spoke-inventory.json"
+  "research/hub/exp/mango-separation-readiness-507/README.md"
+  "research/hub/exp/mango-separation-readiness-507/scan-mango-readiness.sh"
+  "research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -968,7 +976,7 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.13"
+require_text "CONTRIBUTING.md" "version: 1.14"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
@@ -1961,7 +1969,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.41"
+require_text "pr-ops/backlog.md" "version: 1.42"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
