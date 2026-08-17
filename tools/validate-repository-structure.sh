@@ -231,6 +231,7 @@ is_active_file() {
     research/hub/exp/task-execution-modes-330/2026-07-02-test4-evolution.md | \
     research/hub/exp/task-execution-modes-330/2026-07-02-test5-industry.md | \
     research/hub/2026-07-31-ops-task-strategy-validation.md | \
+    research/hub/2026-08-13-rrp-cross-validation-claude-opus-4-8.md | \
     research/hub/2026-08-13-rrp-cross-validation-codex.md | \
     research/hub/exp/ops-task-strategy-461/README.md | \
     research/hub/exp/ops-task-strategy-461/collect-evidence.py | \
@@ -412,6 +413,8 @@ is_active_file() {
     tools/validate-nonempty-diff.sh | \
     tools/test-historical-immutable.sh | \
     tools/validate-historical-immutable.sh | \
+    tools/test-validate-rrp-links.sh | \
+    tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
@@ -865,6 +868,8 @@ required_files=(
   "tools/validate-nonempty-diff.sh"
   "tools/test-historical-immutable.sh"
   "tools/validate-historical-immutable.sh"
+  "tools/test-validate-rrp-links.sh"
+  "tools/validate-rrp-links.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
@@ -961,16 +966,17 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.12"
+require_text "CONTRIBUTING.md" "version: 1.13"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-08-11"
+require_text "CONTRIBUTING.md" "updated: 2026-08-17"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" "no-diff-expected"
 require_text "CONTRIBUTING.md" "tools/validate-nonempty-diff.sh"
 require_text "CONTRIBUTING.md" "tools/validate-historical-immutable.sh"
+require_text "CONTRIBUTING.md" "tools/validate-rrp-links.sh"
 require_text "CONTRIBUTING.md" "Иммутабельность исторических документов"
 require_text "CONTRIBUTING.md" "Специфика работы с AI-агентами"
 require_text "CONTRIBUTING.md" "manual restart"
@@ -1625,11 +1631,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.92"
+require_text "pr-ops/artifact-map.md" "version: 1.93"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-13"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-17"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2698,6 +2704,8 @@ require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-validate-rrp-links.sh"
+require_text ".github/workflows/validate.yml" "./tools/validate-rrp-links.sh"
 require_text ".github/workflows/validate.yml" "fetch-depth: 0"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"

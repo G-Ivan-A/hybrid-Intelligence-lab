@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.76
-updated: 2026-08-13
+version: 1.77
+updated: 2026-08-17
 temperature: 0.1
 ---
 
@@ -13,6 +13,31 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- tools: Добавлен `tools/validate-rrp-links.sh` — машинная проверка правила P2
+  Reference Research Pattern («практика ссылается на своё основание»),
+  закрывающая рекомендацию R1 отчёта
+  `research/hub/2026-08-13-rrp-cross-validation-codex.md` (issue #505). Каталог
+  опознаётся как модуль по наличию `00-*.md`; критерий — хотя бы одна
+  относительная markdown-ссылка из файла практики (`40-*.md`) на файл ветки
+  теории того же модуля (`10-*.md`, `20-*.md`, `30-*.md`). Реализация без
+  AST-парсинга (Anti-Inflation), текст существующих модулей не изменялся:
+  четыре известных отклонения (`evaluation`,
+  `information-extraction-graph-modeling`, `observability`, `tool-use`) внесены
+  в список `BASELINE_VIOLATIONS` и сообщаются как warning, решение об их правке
+  остаётся за человеком. Список работает как храповик — новый модуль обязан
+  удовлетворять P2, а модуль из baseline, который начал ему удовлетворять,
+  должен быть из списка удалён. Проверка и её регрессионные тесты
+  `tools/test-validate-rrp-links.sh` включены в локальный пайплайн CONTRIBUTING
+  и в `.github/workflows/validate.yml`.
+- research: добавлен датированный отчёт cross-validation по issue #506.
+  По merged PR и публичным Solution Draft metadata определён единственный
+  RRP-модуль Claude Opus 4.8 — `retrieval` (PR #443). P2 соблюдён через
+  адресные ссылки практики на теорию, таксономию и рамку решений; механизм P5
+  присутствует и применяется, воспроизводимых расхождений и сработавших
+  триггеров не найдено. Зафиксировано ограничение воспроизводимости `n = 1` и
+  предложено различать отсутствие механизма P5, несработавший триггер и
+  сработавший trigger с follow-up. Оригинальные execution logs не открывались;
+  CROSS-REVIEW-комментарии не внесены за отсутствием отклонений.
 - research: Создан `research/hub/2026-08-13-rrp-cross-validation-codex.md`
   (issue #505) — независимая перекрёстная проверка модулей Reference Research
   Pattern, выполненных моделью Codex, против правил P2 и P5 RFC. Атрибуция
