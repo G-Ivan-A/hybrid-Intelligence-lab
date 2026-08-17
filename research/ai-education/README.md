@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.8
-updated: 2026-08-11
+version: 0.9
+updated: 2026-08-17
 temperature: 0.1
 ---
 
@@ -51,6 +51,11 @@ temperature: 0.1
   сравнение фреймворков и протоколов, встраивание в конвейер Source
   Intelligence Engine. Образовательный срез — общий для всех ролей
   (§2 в [`50-open-research.md`](multi-agent-orchestration/50-open-research.md)).
+- [`agent-context-engineering/`](agent-context-engineering/00-introduction.md) —
+  девятая валидация паттерна: граница «Человек → Агент». Контекст как конечный
+  бюджет окна, блоки входа B1–B7, таксономия приёмов инструкции, стратегий
+  подачи знаний и вытеснения, измеримые пороги выбора подхода, ландшафт
+  фреймворков и зрелость работы с промптом как артефактом.
 
 Описание паттерна, его ограничений и критерия повышения статуса находится в
 [RFC Reference Research Pattern](../../docs/rfc/2026-07-17-rfc-reference-research-pattern.md).
