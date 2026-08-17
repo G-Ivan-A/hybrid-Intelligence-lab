@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.77
+version: 1.78
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -159,6 +159,19 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- tools: `tools/validate-historical-immutable.sh` — иммутабельность RFC/ADR
+  распространена только на **принятые** решения. Правка записи, у которой в
+  base-ревизии стоит `status: draft` или `status: proposed`, разрешена: по
+  `docs/adr/README.md` допустимые переходы — `draft → proposed → accepted`, а
+  перевод в `accepted` требует human review, поэтому у pre-decision записи ещё
+  нет «момента принятия», который правило защищает (issue #511: контракты
+  предписывали править ADR-009 в статусе `proposed` на месте). Условие читается
+  из base-ревизии, поэтому понижение `accepted → proposed` в том же PR проверку
+  не обходит; переход `proposed → accepted` допускается, так как сам merge и
+  есть decision gate. Инварианты не ослаблены: изменение, удаление и
+  переименование `accepted`/`deprecated`/`superseded` документов по-прежнему
+  запрещены. Поведение закреплено тремя регрессионными кейсами в
+  `tools/test-historical-immutable.sh`; правило описано в CONTRIBUTING (v1.14).
 - decision: `docs/adr/2026-07-adr-009-mango-repo-split.md` (v0.3) скорректирован
   под финальную модель двух репозиториев (issue #511). Новый приватный
   репозиторий `mango-ba-prompt-library` **не создаётся**: существующий

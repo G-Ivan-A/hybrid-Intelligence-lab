@@ -18,6 +18,13 @@
 # переписывая содержательное историческое решение. Дополнительные пути
 # исключаются glob-шаблонами через HISTORICAL_IMMUTABLE_ALLOWLIST.
 #
+# Второе исключение — документ до decision gate: иммутабельность защищает
+# «решение на момент принятия», а запись со статусом `draft` или `proposed`
+# такого момента ещё не имеет (см. docs/adr/README.md: переходы
+# `draft → proposed → accepted`, перевод в `accepted` требует human review).
+# Правка допускается, только если запись была pre-decision и в base-ревизии:
+# понизить статус уже принятого решения и тем обойти проверку нельзя.
+#
 # Переменные окружения:
 #   BASE_REF                        — base-ветка PR (по умолчанию GITHUB_BASE_REF или main)
 #   HEAD_REF                        — head-ревизия PR (по умолчанию HEAD)
@@ -77,6 +84,26 @@ is_allowlisted_path() {
   return 1
 }
 
+# Статус из frontmatter указанной ревизии; пустая строка, если его нет.
+frontmatter_status() {
+  local rev="$1" path="$2" content
+  content="$(git show "$rev:$path" 2>/dev/null)" || return 0
+  [[ "$(printf '%s\n' "$content" | head -n 1)" == "---" ]] || return 0
+  printf '%s\n' "$content" | sed -n '2,/^---$/p' |
+    sed -n 's/^status:[[:space:]]*\([a-zA-Z-]*\).*/\1/p' | head -n 1
+}
+
+# Документ до decision gate: статус draft|proposed и в base, и в head.
+is_pre_decision_record() {
+  local path="$1" base_status head_status
+  base_status="$(frontmatter_status "$merge_base" "$path")"
+  [[ "$base_status" == "draft" || "$base_status" == "proposed" ]] || return 1
+  head_status="$(frontmatter_status "$head_ref" "$path")"
+  [[ "$head_status" == "draft" || "$head_status" == "proposed" ||
+    "$head_status" == "accepted" ]] || return 1
+  return 0
+}
+
 # Совместимый редирект: deprecated/superseded frontmatter + короткое тело со ссылкой.
 is_compatibility_redirect() {
   local path="$1" content status body
@@ -121,6 +148,8 @@ while IFS=$'\t' read -r status path rename_target; do
       M)
         if is_allowlisted_path "$candidate"; then
           allowed+=("$candidate (явный allowlist)")
+        elif is_pre_decision_record "$candidate"; then
+          allowed+=("$candidate (запись до decision gate)")
         elif is_compatibility_redirect "$candidate"; then
           allowed+=("$candidate (совместимый редирект)")
         else
@@ -170,6 +199,7 @@ if ((${#violations[@]} > 0)); then
   printf 'Исключение — совместимый редирект: frontmatter status: deprecated|superseded,\n' >&2
   printf 'тело не длиннее %s непустых строк и содержит ссылку на актуальный артефакт.\n' \
     "$DEPRECATED_REDIRECT_MAX_BODY_LINES" >&2
+  printf 'Второе исключение — запись до decision gate: status draft|proposed в base-ревизии.\n' >&2
   exit 1
 fi
 
