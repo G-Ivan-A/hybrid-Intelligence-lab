@@ -266,12 +266,12 @@ hub-артефактах отсутствует** — это зафиксиро�
 
 ## Related Artifacts
 
-- [План миграции артефактов Mango (снимок 295b65d)](2026-07-17-mango-artifacts-migration-plan.md) — источник as-is структуры и количеств
-- [ADR-009. Разделение репозитория Mango](../adr/2026-07-adr-009-mango-repo-split.md) — целевая структура public/private
+- [План миграции артефактов Mango (снимок 295b65d)](../../docs/analysis/2026-07-17-mango-artifacts-migration-plan.md) — источник as-is структуры и количеств
+- [ADR-009. Разделение репозитория Mango](../../docs/adr/2026-07-adr-009-mango-repo-split.md) — целевая структура public/private
 - [Инвентаризация и классификация артефактов](../../research/hub/2026-06-25-artifact-inventory-and-classification.md) — пофайловый разбор спока (иная база подсчёта)
 - [Видение структуры репозитория Mango](../../research/mango/2026-06-19-repository-structure-vision.md) — проблемы P1–P11, контракт `runs/`, DoD-трассировка
 - [Требования в эпоху AI](../../research/mango/2026-06-18-requirements-engineering-ai-era.md) — маппинг операций на BABOK и BCREQ П1–П6
 - [Хаб как агентная система](../../research/hub/2026-07-04-hub-as-agent-system-global-analysis.md) — §14 (13 операций, ворота, каскад контекста), §ПГ-6 (процессы-кандидаты)
 - [Аудит классификации промптов](../../research/hub/2026-05-28-prompts-classification-audit.md) — критерии готовности промпта
-- [Контекст mango_ba_prompts](../project-summaries/mango-ba-prompts-context-Summary.md) — «13 операций × 9 процессов»
+- [Контекст mango_ba_prompts](../../docs/project-summaries/mango-ba-prompts-context-Summary.md) — «13 операций × 9 процессов»
 - [Analysis standard](../../standards/analysis-standard.md) — нормативная форма документа
