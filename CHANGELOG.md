@@ -49,6 +49,11 @@ All notable repository governance changes are documented here.
   artifact (allowlist структуры, `docs/adr/README.md` v0.1 → v0.2,
   `pr-ops/artifact-map.md`), правила закреплены ratchet-проверками в
   `tools/validate-repository-structure.sh`. `pr-ops/backlog.md` v1.43 → v1.44.
+  В `tools/validate-historical-immutable.sh` исключены из правила иммутабельности
+  индексы каталогов (`docs/rfc/README.md`, `docs/adr/README.md`): индекс — это
+  навигационная таблица, а не решение на момент принятия, и добавление нового
+  RFC/ADR обязано добавить в неё строку. Регрессия закрыта тестом в
+  `tools/test-historical-immutable.sh`.
 
 - analysis: Создан `research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md`
   (issue #512) — inventory Analysis базовой онтологии процессов БА, операций и
