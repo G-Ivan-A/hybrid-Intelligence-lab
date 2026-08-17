@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.92
-updated: 2026-08-13
+version: 1.93
+updated: 2026-08-17
 temperature: 0.1
 ---
 
@@ -196,6 +196,8 @@ temperature: 0.1
 | `/tools/validate-frontmatter.sh` | утилита | — | Soft-проверка обязательных полей frontmatter в Markdown; для `docs/audit/*.md` дополнительно проверяет knowledge lifecycle, audit-specific поля (`audit_target`/`evidence_model`/`verdict`) и минимальные body-секции. | ✅ Да | `CONTRIBUTING.md`, `standards/README.md`, `standards/frontmatter-docs-standard.md`, `standards/audit-standard.md` |
 | `/tools/validate-file-naming.sh` | утилита | — | Проверка date-first именования Hub `research/`, Hub `docs/report/`, Hub `docs/audit/` и, если они есть, spoke-каталогов `docs/analysis/`, `docs/rfc/`, `docs/adr/`. | ✅ Да | `standards/file-naming.md`, `standards/file-naming-convention.md`, `.github/workflows/validate.yml` |
 | `/tools/validate-repository-structure.sh` | утилита | — | Проверка активной структуры, навигационных ссылок, retired root paths и `-old` миграции. | ✅ Да | `pr-ops/repo-model.md`, `pr-ops/artifact-map.md`, `tools/test-post-migration-validator.sh` |
+| `/tools/validate-rrp-links.sh` | утилита | — | Машинная проверка правила P2 Reference Research Pattern: файл практики модуля (`40-*.md`) обязан содержать хотя бы одну относительную markdown-ссылку на файл ветки теории того же модуля (`10-*.md`, `20-*.md`, `30-*.md`). Каталог опознаётся как модуль по наличию `00-*.md`. Известные отклонения зафиксированы в `BASELINE_VIOLATIONS` как warning (текст модулей не меняется, решение за человеком), список работает как храповик. | ✅ Да | `docs/rfc/2026-07-17-rfc-reference-research-pattern.md`, `research/hub/2026-08-13-rrp-cross-validation-codex.md`, `research/hub/2026-08-13-rrp-cross-validation-claude-opus-4-8.md`, `tools/test-validate-rrp-links.sh`, `.github/workflows/validate.yml` |
+| `/tools/test-validate-rrp-links.sh` | утилита | — | Регрессионные тесты валидатора P2 на временных фикстурах: ссылка на `10-`/`20-`/`30-` засчитывается, упоминание имени файла без ссылки — нет, baseline-модуль остаётся warning, храповик требует удаления модуля из baseline после исправления, модуль без файла практики сообщается явно. | ✅ Да | `tools/validate-rrp-links.sh`, `.github/workflows/validate.yml`, `CONTRIBUTING.md` |
 | `/tools/test-post-migration-validator.sh` | утилита | — | Регрессионный тест post-B-048: проверяет запрет retired root paths (`governance/`, `website/`, `experiments/`, `mkdocs.yml`) и отсутствие stale validator-assertions на старые пути. | ✅ Да | `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `.github/workflows/validate.yml`, `docs/adr/2026-07-adr-007-hub-root-structure.md` |
 | `/tools/check-agent-work-rules-size.sh` | утилита | — | Бюджетный инвариант точки входа: оценка размера `ai-rules/agent-work-rules.md` в токенах (байты / 3.2) с warning при ~7k и error при ~9k. Источник порогов — RFC постановки задач, §P.9. | ✅ Да | `ai-rules/agent-work-rules.md`, `tools/test-check-agent-work-rules-size.sh`, `.github/workflows/validate.yml`, `docs/rfc/2026-08-06-rfc-task-statement-architecture.md` |
 | `/tools/test-operating-mode-contract.sh` | утилита | — | Regression test согласованности Operating Mode между `task.yml` и `agent-work-rules.md`, отдельного набора Task Type и запрета смешения осей. | ✅ Да | `.github/ISSUE_TEMPLATE/task.yml`, `ai-rules/agent-work-rules.md`, `.github/workflows/validate.yml` |
