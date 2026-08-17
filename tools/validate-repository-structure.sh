@@ -88,6 +88,7 @@ is_active_file() {
     docs/adr/2026-07-adr-008-standard-meta-structure.md | \
     docs/adr/2026-07-adr-009-mango-repo-split.md | \
     docs/adr/2026-08-adr-010-agent-autonomy-principles.md | \
+    docs/adr/2026-08-adr-011-research-models.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
@@ -667,6 +668,7 @@ required_files=(
   "docs/adr/2026-07-adr-008-standard-meta-structure.md"
   "docs/adr/2026-07-adr-009-mango-repo-split.md"
   "docs/adr/2026-08-adr-010-agent-autonomy-principles.md"
+  "docs/adr/2026-08-adr-011-research-models.md"
   "docs/adr/README.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
@@ -1120,6 +1122,20 @@ require_text "standards/research-standard.md" "frontmatter-docs-standard.md"
 require_text "standards/research-standard.md" "exp/<issue-slug>"
 require_text "standards/research-standard.md" "запрет"
 require_text "standards/research-standard.md" "Research / Analysis / Audit"
+require_text "standards/glossary.md" "| Research Method |"
+require_text "standards/glossary.md" "| Domain Methodology |"
+require_text "standards/glossary.md" "| Reference Research Pattern (RRP) |"
+# ADR-011 (issue #515): research models are decided in an ADR, not written
+# directly into the standard. The proposal must keep Analysis out of the model
+# row and must delegate the standard edit to a follow-up task.
+require_text "docs/adr/2026-08-adr-011-research-models.md" "status: proposed"
+require_text "docs/adr/2026-08-adr-011-research-models.md" "decision-type: methodology"
+require_text "docs/adr/2026-08-adr-011-research-models.md" "# ADR-011:"
+require_text "docs/adr/2026-08-adr-011-research-models.md" "Discussion Paper / Survey"
+require_text "docs/adr/2026-08-adr-011-research-models.md" "2026-07-adr-003-research-structure.md"
+require_text "docs/adr/2026-08-adr-011-research-models.md" "2026-07-17-rfc-reference-research-pattern.md"
+require_text "docs/adr/2026-08-adr-011-research-models.md" "Analysis не является моделью research"
+require_text "docs/adr/2026-08-adr-011-research-models.md" "отдельной задачей после мержа этого ADR"
 require_text "standards/report-standard.md" "status: draft"
 require_text "standards/report-standard.md" "owner: G-Ivan-A"
 require_text "standards/report-standard.md" "frontmatter-docs-standard.md"
@@ -1374,8 +1390,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 2.0"
-require_text "standards/glossary.md" "updated: 2026-08-11"
+require_text "standards/glossary.md" "version: 2.1"
+require_text "standards/glossary.md" "updated: 2026-08-17"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"
@@ -1969,7 +1985,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.42"
+require_text "pr-ops/backlog.md" "version: 1.44"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
