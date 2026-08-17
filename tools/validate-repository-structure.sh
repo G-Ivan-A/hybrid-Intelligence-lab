@@ -385,7 +385,7 @@ is_active_file() {
     docs/analysis/2026-07-17-mango-artifacts-migration-plan.md | \
     docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md | \
     docs/analysis/2026-08-11-research-methodology-validation.md | \
-    docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md | \
+    research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md | \
     docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
@@ -678,7 +678,7 @@ required_files=(
   "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
   "docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md"
   "docs/analysis/2026-08-11-research-methodology-validation.md"
-  "docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md"
+  "research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md"
   "docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
@@ -1641,7 +1641,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.93"
+require_text "pr-ops/artifact-map.md" "version: 1.94"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"

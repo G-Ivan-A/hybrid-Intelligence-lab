@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.78
+version: 1.79
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -13,7 +13,7 @@ All notable repository governance changes are documented here.
 
 ### Added
 
-- analysis: Создан `docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md`
+- analysis: Создан `research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md`
   (issue #512) — inventory Analysis базовой онтологии процессов БА, операций и
   требований к ДОД в споке `mango_ba_prompts` на снимке `295b65d`. Реестр
   собран без чтения приватного контента: только по hub-артефактам, которые
@@ -221,6 +221,13 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- analysis: Артефакт `2026-08-17-mango-ba-processes-and-dod-ontology.md` перенесён
+  из `docs/analysis/` в `research/mango/` (issue #519). `docs/analysis/`
+  предназначен строго для анализа архитектуры и процессов самого Хаба, а анализ
+  предметной области спок-проекта Mango относится к `research/<domain>/`.
+  Содержание отчёта не изменено — обновлены только относительные ссылки внутри
+  документа и перекрёстные ссылки в `pr-ops/artifact-map.md`,
+  `tools/validate-repository-structure.sh` и `research/mango/README.md`.
 - tools: `tools/validate-historical-immutable.sh` — иммутабельность RFC/ADR
   распространена только на **принятые** решения. Правка записи, у которой в
   base-ревизии стоит `status: draft` или `status: proposed`, разрешена: по
