@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.12
-updated: 2026-08-11
+version: 1.13
+updated: 2026-08-17
 temperature: 0.1
 ---
 
@@ -147,10 +147,12 @@ bash tools/test-operating-mode-contract.sh
 bash tools/test-check-agent-work-rules-size.sh
 bash tools/test-nonempty-diff.sh
 bash tools/test-historical-immutable.sh
+bash tools/test-validate-rrp-links.sh
 ./tools/check-agent-work-rules-size.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
+./tools/validate-rrp-links.sh
 python3 tools/generate-manifest.py --check
 ```
 
@@ -179,6 +181,32 @@ python3 tools/generate-manifest.py --check
 - Агент **не ставит** эту метку сам и не просит её как способ обойти пустой
   результат работы; вместо этого он фиксирует, что именно не выполнено, и
   задаёт вопрос в PR.
+
+## Связь практики с теорией в модулях RRP
+
+Правило **P2** Reference Research Pattern
+([RFC](docs/rfc/2026-07-17-rfc-reference-research-pattern.md)) требует, чтобы
+ветка практики модуля **явно** ссылалась на своё основание. Перекрёстные
+проверки по issue #505 и issue #506 показали, что без машинной проверки правило
+соблюдалось в 3 из 8 модулей независимо от модели-исполнителя: соблюдается ровно
+то, что проверяет CI.
+
+Постусловие проверяется механически: шаг
+`Validate RRP practice-to-theory links` в
+[.github/workflows/validate.yml](.github/workflows/validate.yml) запускает
+[tools/validate-rrp-links.sh](tools/validate-rrp-links.sh). Каталог опознаётся
+как модуль по наличию `00-*.md` — тот же признак, что использует
+`validate-file-naming.sh`. Критерий: в файле практики (`40-*.md`) есть хотя бы
+одна относительная markdown-ссылка на файл ветки теории того же модуля
+(`10-*.md`, `20-*.md`, `30-*.md`). Упоминание имени файла без ссылки не
+засчитывается.
+
+Существующие отклонения внесены в список `BASELINE_VIOLATIONS` внутри скрипта:
+текст модулей — research-материал, и решение о его правке остаётся за человеком,
+поэтому отклонение фиксируется как warning, а не переписывается автоматически.
+Список работает как храповик: новый модуль обязан удовлетворять P2, а модуль из
+baseline, который начал ему удовлетворять, должен быть из списка удалён — иначе
+проверка падает.
 
 ## Иммутабельность исторических документов
 
