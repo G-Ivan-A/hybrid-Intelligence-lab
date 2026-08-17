@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.77
+version: 1.78
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -12,6 +12,39 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- standards: Легитимизированы три модели исследования (issue #515, B-103).
+  В `standards/research-standard.md` добавлен раздел specific tail
+  «Три модели исследования: RRP, Discussion Paper и Analysis» со сравнительной
+  таблицей моделей, детерминированным порядком выбора и тремя тай-брейкерами
+  (Discussion Paper vs Analysis, Discussion Paper vs RRP, промоушен
+  Discussion Paper → RRP). Закрыта «серая зона» между быстрой инвентаризацией и
+  зрелым модульным исследованием: research ранней стадии, который опирается на
+  индустриальные источники и порождает гипотезы, но ещё не имеет таксономии и
+  Decision Framework, получил легитимный класс и перестал зависеть от точки входа
+  исполнителя. Критерии Discussion Paper выведены из индустриальных практик
+  ранних стадий исследования — IETF Internet-Draft (RFC 2026 §2.2), W3C Working
+  Draft, академический position paper и survey article, — а не из формы
+  существующих неклассифицированных артефактов; отсюда три обязательных элемента
+  модели: явная маркировка предварительного статуса, обзор индустриальных практик
+  с источниками и явно сформулированные гипотезы. Раздел `Type Model` стандарта
+  переведён из `N/A` в форму `model`: Research получил две формы выхода
+  (Discussion Paper / Survey и RRP), различающиеся зрелостью темы, а не типом
+  артефакта; решающий признак выбора — наличие Decision Framework, а не объём.
+  Базовый метод стандарта не отменён (дата-первый отчёт + опциональный `exp/`
+  остаётся формой по умолчанию), структура RRP из шести файлов не изменялась, и
+  SSOT её формы и статуса `Experimental` остаётся
+  `docs/rfc/2026-07-17-rfc-reference-research-pattern.md`. В
+  `standards/glossary.md` (v2.0 → v2.1) добавлены термины `Research Method`,
+  `Domain Methodology`, `Reference Research Pattern (RRP)` и
+  `Discussion Paper / Survey` с cross-reference на RFC, а также четыре связи
+  терминов, включая `Research Method ⟂ Domain Methodology` и
+  `Discussion Paper / Survey ≠ Analysis`. Прежнее название `Conceptual Framing`
+  остаётся deprecated и в роли вводной концептуальной рамки не используется —
+  регрессия закрыта существующим `tools/test-reference-research-terminology.sh`.
+  Новых governance-файлов не создано (Anti-Inflation); правила закреплены как
+  ratchet-проверки в `tools/validate-repository-structure.sh`.
+  `standards/research-standard.md` v0.2 → v0.3, `pr-ops/backlog.md` v1.41 → v1.42.
 
 - analysis: Создан `docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md`
   (issue #507) — анализ готовности `mango_ba_prompts` к разделению репозиториев

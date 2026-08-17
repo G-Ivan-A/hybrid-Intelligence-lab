@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.41
-updated: 2026-08-07
+version: 1.42
+updated: 2026-08-17
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -52,6 +52,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/449"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/475"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -332,6 +333,7 @@ triggered-задача.
 | **B-090** | Разделить Research Method и Domain Methodology | **P1** | B-089 | DONE | [PR #464](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/464) | Ревью Retrieval и методологическое обсуждение 2026-07-16 | Явно разделить в документации Хаба Research Method — как исследуем (`Theory → Taxonomy → Decision Framework → Practice`) — и Domain Methodology — как устроен объект (`Conceptual Framing → Object Model → Decision Space`). Заменить термин `Mental Model` на `Conceptual Framing`. | Structured |
 | **B-092** | Исследование промышленных практик агентного исполнения задач | **P1** | B-089 | review | [#457](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/457) | Issue #457 (постановка фаундера, гипотеза о мандате) | Вторая валидация Reference Research Pattern — на домене agentic task execution. Модуль [`research/ai-education/task-processing/`](../research/ai-education/task-processing/00-introduction.md) из шести файлов: сигнатура `A = Policy(M, S, T, C)`, объектная модель E1–E12, точки решений D1–D10, гипотезы H1–H16; таксономии мандатов M0–M5, подходов к планированию P0–P7 и механизмов контроля G1–G7; матрица «мандат × цена ошибки», правило размещения guardrail по обратимости, шкала автономии A0–A5; индустриальная практика (LangChain, OpenAI Agents SDK, MCP, CrewAI, AutoGen, OTel GenAI, MAST) и описательный разбор прецедентов #454/#456. Без внедрения правил и без RFC — по ограничениям постановки. | Creative |
 | **B-093** | RFC по архитектуре постановки задач для AI-агентов | **P2** | B-092 | review | [PR #470](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/470) | Issue #457 (явное вынесение RFC в отдельную задачу) | На фактической базе B-092 подготовлен [RFC об архитектуре постановки задач для AI-агентов](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md). Следствия RFC остаются в статусе `experimental` до проспективного замера эффекта (B-095). | Creative |
+| **B-103** | Легитимизировать три модели исследования (RRP, Discussion Paper, Analysis) | **P1** | B-089, B-090 | review | [#515](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515) / [PR #516](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/516) | Issue #515 (пробел маршрутизации: артефакты Clarify не попадают ни в базовый стандарт, ни в RRP) | В [research-standard.md](../standards/research-standard.md) добавлен раздел «Три модели исследования»: сравнительная таблица RRP / Discussion Paper / Analysis, детерминированный порядок выбора и тай-брейкеры. `Type Model` стандарта переведён из `N/A` в `model` (две формы выхода типа Research). Критерии Discussion Paper выведены из индустриальных практик ранних стадий (IETF Internet-Draft, W3C Working Draft, position paper, survey article), а не из формы неклассифицированных артефактов. В [glossary.md](../standards/glossary.md) добавлены `Research Method`, `Domain Methodology`, `Reference Research Pattern (RRP)`, `Discussion Paper / Survey` с cross-reference на RFC как SSOT структуры RRP. Новых governance-файлов не создано; структура RRP не изменялась. | Creative |
 
 ## Отложенные задачи с триггером
 
