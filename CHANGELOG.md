@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.80
+version: 1.81
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -10,6 +10,36 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Changed
+
+- standards: `standards/glossary.md` (v2.1 → v2.2) приведён в строгое соответствие
+  с онтологией [ADR-011](docs/adr/2026-08-adr-011-research-models.md) (issue #517,
+  B-098). Термин `Analysis` переопределён как **отдельный тип артефакта, а не
+  модель research**: инвентаризация существующих фактов без генерации новых
+  гипотез, со своим decision record ([ADR-006](docs/adr/2026-07-adr-006-analysis-structure.md)),
+  своим стандартом ([analysis-standard.md](standards/analysis-standard.md)), своим
+  домом `docs/analysis/`, именованием и frontmatter; ряд форм research его не
+  включает — это граница маршрутизации между типами, а не ступень глубины одного
+  ряда. В «Связи терминов» добавлена связь `Analysis ≠ модель research`, явно
+  запрещающая зонтичный термин над Analysis и RRP. Зонтичный термин
+  `Модель исследования (Research Model)` и термин `Discussion Paper / Survey` в
+  глоссарий **не вводятся**: соответствующая модель находится в статусе `proposed`
+  в ADR-011 и легитимируется только после перевода ADR в `accepted` (задача B-104).
+  В глоссарии остаются `Research Method`, `Domain Methodology`,
+  `Conceptual Framing` и `Reference Research Pattern (RRP)` (статус паттерна
+  `Experimental`) с cross-reference на
+  [RFC Reference Research Pattern](docs/rfc/2026-07-17-rfc-reference-research-pattern.md)
+  как на SSOT. `standards/research-standard.md` не изменялся. Новых
+  governance-файлов не создано (Anti-Inflation).
+- ops: `tools/test-reference-research-terminology.sh` переведён на проверку
+  ADR-011-совместимой онтологии: требует определения `Research Method`,
+  `Domain Methodology` и `Reference Research Pattern (RRP)` со статусом
+  `Experimental` и cross-reference на RFC/стандарт, требует формулировки `Analysis`
+  как отдельного типа артефакта со ссылками на собственный стандарт и каталог и
+  **запрещает** появление в глоссарии терминов `Модель исследования`,
+  `Research Model` и `Discussion Paper` до принятия ADR-011. На предыдущем
+  состоянии глоссария тест падает, на текущем — проходит.
 
 ### Added
 
