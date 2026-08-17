@@ -19,4 +19,19 @@ if grep -Eq 'Q1 и Q2 фаундером|Q1 и Q2 сформулированы|�
   exit 1
 fi
 
+# Two-repository model (issue #511): no new private repository is created.
+if grep -Fq 'mango-ba-prompt-library' "$adr" "$plan"; then
+  echo "ERROR: obsolete repository name mango-ba-prompt-library remains in the Mango migration contract" >&2
+  exit 1
+fi
+
+grep -Fq '### 2. Приватный репозиторий `mango_ba_prompts`' "$adr"
+grep -Fq 'меняет видимость на Private' "$adr"
+grep -Fq 'self-hosted GitHub Runner, поднятый локально в' "$adr"
+
+if grep -Fq 'Репозиторий работает **без GitHub Actions**' "$adr"; then
+  echo "ERROR: ADR-009 still bans GitHub Actions outright instead of GitHub-hosted runners" >&2
+  exit 1
+fi
+
 echo "Mango kb migration contract test passed."

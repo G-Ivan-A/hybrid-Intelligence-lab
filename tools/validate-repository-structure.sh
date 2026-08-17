@@ -385,6 +385,7 @@ is_active_file() {
     docs/analysis/2026-07-17-mango-artifacts-migration-plan.md | \
     docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md | \
     docs/analysis/2026-08-11-research-methodology-validation.md | \
+    docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md | \
     docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
@@ -677,6 +678,7 @@ required_files=(
   "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
   "docs/analysis/2026-08-11-sequential-task-contract-ambiguity-analysis.md"
   "docs/analysis/2026-08-11-research-methodology-validation.md"
+  "docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md"
   "docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
@@ -974,7 +976,7 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.13"
+require_text "CONTRIBUTING.md" "version: 1.14"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "pr-ops/backlog.md"

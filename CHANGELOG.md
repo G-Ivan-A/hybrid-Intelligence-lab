@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.78
+version: 1.79
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -39,13 +39,33 @@ All notable repository governance changes are documented here.
   `Domain Methodology`, `Reference Research Pattern (RRP)` и
   `Discussion Paper / Survey` с cross-reference на RFC, а также четыре связи
   терминов, включая `Research Method ⟂ Domain Methodology` и
-  `Discussion Paper / Survey ≠ Analysis`. Прежнее название `Conceptual Framing`
+  `Discussion Paper / Survey ≠ Analysis`. Прежнее название `Mental Model`
   остаётся deprecated и в роли вводной концептуальной рамки не используется —
   регрессия закрыта существующим `tools/test-reference-research-terminology.sh`.
   Новых governance-файлов не создано (Anti-Inflation); правила закреплены как
   ratchet-проверки в `tools/validate-repository-structure.sh`.
-  `standards/research-standard.md` v0.2 → v0.3, `pr-ops/backlog.md` v1.41 → v1.42.
+  `standards/research-standard.md` v0.2 → v0.3, `pr-ops/backlog.md` v1.41 → v1.43.
 
+- analysis: Создан `docs/analysis/2026-08-17-mango-ba-processes-and-dod-ontology.md`
+  (issue #512) — inventory Analysis базовой онтологии процессов БА, операций и
+  требований к ДОД в споке `mango_ba_prompts` на снимке `295b65d`. Реестр
+  собран без чтения приватного контента: только по hub-артефактам, которые
+  цитируют структуру спока. Зафиксированы три слоя — 13 когнитивных операций с
+  маппингом на области BABOK и подпроцессы BCREQ П1–П6, девять процессов БА
+  (пять заземлены поимённо на реестр `docs/ba-processes/00-index.md`, четыре
+  реконструированы по паттернам и промптам) и цепочка артефактов
+  «правила → контракты → паттерн → промпт → реестр → прогон». Сводная таблица
+  связывает каждый процесс с операциями, ожидаемым входом, выходом и местом
+  записи результата (`runs/YYYY/RUN-XXXX/outputs/`). Требования к ДОД в споке
+  единым документом не существуют, поэтому собран общий чек-лист D1–D10 из
+  действующих контрактов (`patterns/` с 8 обязательными полями, frontmatter
+  промпта, критерии готовности промпта, контракт `runs/`, правило
+  `draft→canonical` при наличии прогона, human gate для статусов
+  `covered/validated/approved/released`) с усилениями по группам операций.
+  Отдельно зафиксированы шесть пробелов G1–G6, включая отсутствие поимённого
+  списка девяти процессов в Хабе, привязку семантики операций к более ранним
+  снимкам, чем `295b65d`, и отсутствие в репозитории документа «план СПЛИТ».
+  Новые процессы не предлагаются, контракты и стандарты не меняются.
 - analysis: Создан `docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md`
   (issue #507) — анализ готовности `mango_ba_prompts` к разделению репозиториев
   по ADR-009 и к серии из 20+ BA-прогонов на снимке спицы `295b65d` и Хаба
@@ -233,6 +253,46 @@ All notable repository governance changes are documented here.
   (issue #484). Creative-режим задаётся полем `operating_mode` единого шаблона.
 
 ### Changed
+
+- tools: `tools/validate-historical-immutable.sh` — иммутабельность RFC/ADR
+  распространена только на **принятые** решения. Правка записи, у которой в
+  base-ревизии стоит `status: draft` или `status: proposed`, разрешена: по
+  `docs/adr/README.md` допустимые переходы — `draft → proposed → accepted`, а
+  перевод в `accepted` требует human review, поэтому у pre-decision записи ещё
+  нет «момента принятия», который правило защищает (issue #511: контракты
+  предписывали править ADR-009 в статусе `proposed` на месте). Условие читается
+  из base-ревизии, поэтому понижение `accepted → proposed` в том же PR проверку
+  не обходит; переход `proposed → accepted` допускается, так как сам merge и
+  есть decision gate. Инварианты не ослаблены: изменение, удаление и
+  переименование `accepted`/`deprecated`/`superseded` документов по-прежнему
+  запрещены. Поведение закреплено тремя регрессионными кейсами в
+  `tools/test-historical-immutable.sh`; правило описано в CONTRIBUTING (v1.14).
+- decision: `docs/adr/2026-07-adr-009-mango-repo-split.md` (v0.3) скорректирован
+  под финальную модель двух репозиториев (issue #511). Новый приватный
+  репозиторий `mango-ba-prompt-library` **не создаётся**: существующий
+  `mango_ba_prompts` сохраняет имя и переводится в режим Private, оставаясь
+  хранилищем операционных артефактов, — переход дешевле создания нового
+  репозитория и сохраняет историю, issues и ссылки. Новым создаётся только
+  публичный `ai-ba-playbooks`. §2 переписан, упоминания создания репозитория с
+  именем `mango-ba-prompt-library` убраны из Decision Metadata, Context,
+  Consequences и Compliance. Норма о CI уточнена: запрет касается
+  GitHub-hosted runners, а допустимой альтернативой локальным валидаторам
+  объявлен self-hosted GitHub Runner в Docker — он сохраняет периметр владельца
+  и даёт автоматизацию проверок. Уточнение снимает Q1 плана миграции B-080 о
+  фактической публичности исходного репозитория. Нормы разделения ролей,
+  каталогов и односторонней синхронизации не менялись.
+  `pr-ops/backlog.md` (v1.42) переформулировал B-082 как «Перевод
+  `mango_ba_prompts` в режим Private» и синхронизировал story, цель и критерий
+  закрытия Спринта 8; `pr-ops/artifact-map.md` (v1.93) обновил описание ADR-009.
+  План миграции `docs/analysis/2026-07-17-mango-artifacts-migration-plan.md`
+  (v0.2) зафиксировал Q1 как закрытый по варианту V1 и переписал Фазу 2 с
+  создания репозитория на смену видимости — по образцу того, как issue #446
+  закрыл Q2. `tools/test-mango-kb-migration-contract.sh` расширен четырьмя
+  проверками модели двух репозиториев: имя `mango-ba-prompt-library` больше не
+  встречается в ADR и плане, §2 ADR называет `mango_ba_prompts` и Private,
+  локальный runner упомянут, а прежний безусловный запрет GitHub Actions не
+  вернулся; `tools/validate-repository-structure.sh` обновил закреплённые версии
+  бэклога и карты артефактов.
 
 - templates: шаблон задачи консолидирован в единый 5-блочный формат RFC #470
   §P.9 (issue #484): Контекст, Цель, SSOT, Контракты задачи, Готово когда;

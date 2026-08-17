@@ -211,6 +211,57 @@ git_in commit --quiet -m "rename historical rfc"
 expect_fail "валидатор падает на переименовании существующего RFC" "$repo" \
   "переименование существующего исторического документа" BASE_REF=main
 
+# 9c. Запись до decision gate (status: proposed в base) правится на месте.
+git_in checkout --quiet main
+cat >"$repo/docs/adr/2026-03-adr-002-proposed.md" <<'EOF'
+---
+status: proposed
+---
+
+# ADR-002: решение на стадии proposal
+
+Первая редакция текста.
+EOF
+git_in add docs/adr/2026-03-adr-002-proposed.md
+git_in commit --quiet -m "add proposed adr to base"
+
+git_in checkout --quiet -b edit-proposed main
+printf '\nУточнённый абзац.\n' >>"$repo/docs/adr/2026-03-adr-002-proposed.md"
+git_in commit --quiet -am "edit proposed adr"
+
+expect_pass "правка записи со статусом proposed разрешена" "$repo" BASE_REF=main
+
+# 9d. Понижение статуса принятого решения не обходит проверку.
+git_in checkout --quiet -b downgrade-accepted main
+cat >"$repo/docs/adr/2026-01-adr-001-historical.md" <<'EOF'
+---
+status: proposed
+---
+
+# ADR-001: историческое решение
+
+Переписанное тело уже принятого решения.
+EOF
+git_in commit --quiet -am "downgrade accepted adr to proposed"
+
+expect_fail "понижение accepted → proposed не обходит проверку" "$repo" \
+  "изменение существующего исторического документа" BASE_REF=main
+
+# 9e. Promotion proposed → accepted разрешён (human decision gate в merge).
+git_in checkout --quiet -b accept-proposed main
+cat >"$repo/docs/adr/2026-03-adr-002-proposed.md" <<'EOF'
+---
+status: accepted
+---
+
+# ADR-002: принятое решение
+
+Первая редакция текста.
+EOF
+git_in commit --quiet -am "accept proposed adr"
+
+expect_pass "перевод proposed → accepted разрешён" "$repo" BASE_REF=main
+
 # 10. three-dot дифф устойчив к движению base-ветки.
 git_in checkout --quiet main
 printf '\nБаза ушла вперёд.\n' >>"$repo/docs/rfc/2026-01-01-rfc-historical.md"

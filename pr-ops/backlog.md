@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.42
+version: 1.43
 updated: 2026-08-17
 temperature: 0.1
 type: backlog
@@ -52,6 +52,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/449"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/475"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/511"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515"
 ---
 
@@ -252,30 +253,34 @@ watch-item внешних норм (R10) и учебный актив (RFC-F). �
 витриной, разные темпы изменений требуют разных ревью-процессов. Фаундер
 принял решение (обсуждение 2026-07-10) разделить Mango на публичный репо
 `ai-ba-playbooks` (продукт-методология, архетип B, без привязки к бренду
-Mango) и приватный репо `mango-ba-prompt-library` (операционка Mango).
+Mango), а существующий `mango_ba_prompts` перевести в режим Private, оставив
+его операционкой Mango (уточнение issue #511: новый приватный репозиторий не
+создаётся).
 
 Спринт собран как причинная цепочка: сначала ADR фиксирует решение в Хабе
 (принцип «сначала Хаб, потом Mango»), затем план миграции определяет, что
-куда переносится, затем создаются оба репозитория, затем выполняется
+куда переносится, затем создаётся публичный репозиторий и переводится в Private приватный, затем выполняется
 физическая миграция артефактов, и в конце настраивается и тестируется
 односторонняя синхронизация приватный → публичный.
 
 **Цель.**
-Создать два репозитория с разными жизненными циклами и аудиториями,
-мигрировать артефакты из `mango_ba_prompts` и настроить одностороннюю
-синхронизацию приватный → публичный.
+Получить два репозитория с разными жизненными циклами и аудиториями —
+новый публичный `ai-ba-playbooks` и переведённый в Private
+`mango_ba_prompts`, — распределить между ними артефакты и настроить
+одностороннюю синхронизацию приватный → публичный.
 
 **Критерий закрытия.**
 Спринт закрывается, когда ADR B-079 принят, план миграции B-080 составлен,
-оба репозитория созданы (B-081, B-082), артефакты мигрированы (B-083), а
-синхронизация настроена и протестирована (B-084).
+публичный репозиторий создан (B-081), `mango_ba_prompts` переведён в Private
+(B-082), артефакты мигрированы (B-083), а синхронизация настроена и
+протестирована (B-084).
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-079** | ADR о разделении Mango на два репозитория | **P1** | - | DONE | [#424](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/424) / [PR #429](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/429) | Обсуждение 2026-07-10 (решение фаундера); issues #411, #413 | Решение фаундера о разделении Mango на публичный (`ai-ba-playbooks`) и приватный (`mango-ba-prompt-library`) репозитории зафиксировано в ADR-009. | Hybrid |
+| **B-079** | ADR о разделении Mango на два репозитория | **P1** | - | DONE | [#424](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/424) / [PR #429](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/429) | Обсуждение 2026-07-10 (решение фаундера); issues #411, #413 | Решение фаундера о разделении Mango на публичный (`ai-ba-playbooks`) и приватный (`mango_ba_prompts` в режиме Private) репозитории зафиксировано в ADR-009; уточнение модели двух репозиториев внесено по issue #511. | Hybrid |
 | **B-080** | План миграции Mango | **P2** | B-079 | DONE | [#436](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/436) / [PR #442](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/442) / [PR #447](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/447) | ADR-009 (B-079); issues #411, #413, #446; снимок `mango_ba_prompts@295b65d` | Детальный план миграции построен на фактическом снимке: правила классификации и обезличивания, таблица маршрутизации, фазы и риски. PR #447 зафиксировал решение Q2: всё дерево `kb/` переносится в приватный репозиторий; до B-083 остаётся закрыть Q1 о фактической публичности исходного репозитория. | Hybrid |
 | **B-081** | Создание публичного репо `ai-ba-playbooks` | **P2** | B-079, B-080 | TODO | - (planned) | ADR B-079; план миграции B-080; issues #411, #413 | Создать публичный репозиторий `ai-ba-playbooks` с базовой структурой архетипа B (`prompt-library/`, `patterns/`, `standards/`, `examples/`, `docs/`, `templates/`) и настроить GitHub Pages для презентационного слоя. | Structured |
-| **B-082** | Создание приватного репо `mango-ba-prompt-library` | **P2** | B-079, B-080 | TODO | - (planned) | ADR B-079; план миграции B-080; issues #411, #413, #446 | Создать приватный репозиторий `mango-ba-prompt-library` со структурой операционки (`prompts/`, полное дерево `kb/`, `runs/`, `evals/`, `internal-rfc/`, `internal-docs/`) и настроить локальные валидаторы без GitHub Actions. | Structured |
+| **B-082** | Перевод `mango_ba_prompts` в режим Private | **P2** | B-079, B-080 | TODO | - (planned) | ADR B-079; план миграции B-080; issues #411, #413, #446, #511 | Перевести существующий репозиторий `mango_ba_prompts` в режим Private с сохранением имени, привести структуру операционки к ADR-009 (`prompts/`, полное дерево `kb/`, `runs/`, `evals/`, `internal-rfc/`, `internal-docs/`) и настроить проверки без GitHub-hosted runners: локальные валидаторы либо self-hosted runner в Docker. | Structured |
 | **B-083** | Физическая миграция артефактов из `mango_ba_prompts` | **P2** | B-081, B-082 | TODO | - (planned) | План миграции B-080; issues #411, #413 | Перенести артефакты из `mango_ba_prompts` в новые репозитории согласно плану миграции B-080, обновить ссылки и реестры, прогнать валидаторы. | Structured |
 | **B-084** | Синхронизация и тестирование | **P2** | B-083 | TODO | - (planned) | ADR B-079; issues #411, #413 | Настроить одностороннюю синхронизацию приватный → публичный (ручной отбор на старте), протестировать workflow и задокументировать lessons learned. | Structured |
 
@@ -363,7 +368,7 @@ Anti-Inflation.
 | [docs/adr/2026-07-adr-007-hub-root-structure.md](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Decision source for post-migration root boundaries and B-056..B-063. |
 | [docs/audit/2026-07-04-cross-standard-stress-tests.md](../docs/audit/2026-07-04-cross-standard-stress-tests.md) | Source findings for the standard-structure repair chain B-049..B-054 after B-049 routing to Audit. |
 | [research/hub/2026-07-04-hub-as-agent-system-global-analysis.md](../research/hub/2026-07-04-hub-as-agent-system-global-analysis.md) | Global analysis v0.4 (issues #394/#398/#400): §8 рекомендации, §11 реестр пробелов, §15.8 входы RFC/ADR — источник задач B-064..B-078 (Спринты 5–7). |
-| Issue [#411](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/411) / [#413](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/413) (обсуждение 2026-07-10, решение фаундера) | Источник задач B-079..B-084 (Спринт 8): разделение Mango на публичный `ai-ba-playbooks` и приватный `mango-ba-prompt-library` репозитории. |
+| Issue [#411](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/411) / [#413](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/413) (обсуждение 2026-07-10, решение фаундера) | Источник задач B-079..B-084 (Спринт 8): разделение Mango на публичный `ai-ba-playbooks` и приватный `mango_ba_prompts` (существующий репозиторий переводится в режим Private по уточнению issue [#511](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/511)). |
 | Issue [#418](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/418) (постановка фаундера) | Источник задач B-085..B-087 (Спринт 9): научно-теоретическое исследование retrieval-стратегий как вход для RFC-F и теоретическая основа образовательного модуля. |
 | Issue [#427](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/427) (обсуждение 2026-07-16; B-050 v0.2 §2) | Источник triggered-задачи B-088: разграничение ADR как SSOT для решений и Стандарта как SSOT для исполнения только после появления повторяющейся операционной боли. |
 | Issue [#437](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437) и методологическое обсуждение 2026-07-16 | Источник задач B-089..B-091 (Спринт 10): модель зрелости Reference Pattern, разделение Research Method и Domain Methodology, валидация на не-AI доменах. |
