@@ -7,6 +7,8 @@ temperature: 0.5
 
 # Tool Use & Function Calling: индустриальные реализации и кейсы
 
+<!-- CROSS-REVIEW [Codex-validation]: P2 RFC Reference Research Pattern не выполнен: в файле нет ни одной markdown-ссылки на 10-theory.md, 20-taxonomy.md или 30-decision-framework.md, все ссылки внешние (OpenAI, Anthropic, MCP, frameworks). Отклонение здесь особенно заметно содержательно: 10-theory.md вводит конечный автомат вызова и контракт инструмента, 30-decision-framework.md — risk matrix и retry decision, и разделы этого файла прямо продолжают обе конструкции, но основание не адресовано. Frontmatter тоже не содержит related_artifacts, поэтому связь не восстанавливается и машинно. Текст не изменяется. -->
+
 ## 1. Сравнение protocol/framework layers
 
 Состояние проверено по официальной документации и репозиториям на 2026-08-11.

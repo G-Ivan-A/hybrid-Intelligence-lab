@@ -7,6 +7,8 @@ temperature: 0.5
 
 # Tool Use & Function Calling: введение и карта чтения
 
+<!-- CROSS-REVIEW [Codex-validation]: traceability. Ни в одном из шести файлов модуля нет frontmatter-полей source, related_artifacts и related_issues, поэтому ни постановка (issue #485), ни взаимные ссылки модуля не восстанавливаются машинно. Валидатор tools/validate-frontmatter.sh для класса knowledge требует только status, version, updated и temperature, поэтому отклонение проходит CI. Сравнение внутри корпуса: у модуля information-extraction-graph-modeling эти поля заполнены во всех шести файлах, у модулей evaluation и tool-use — ни в одном. -->
+
 ## Карта чтения
 
 | Файл | Главный вопрос |

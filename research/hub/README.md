@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.16
-updated: 2026-08-12
+version: 1.17
+updated: 2026-08-13
 temperature: 0.1
 ---
 
@@ -37,6 +37,7 @@ project bootstrap, governance-стратегии и классификации �
 | [2026-06-30-reports-industry-norms-and-standardization-scope.md](2026-06-30-reports-industry-norms-and-standardization-scope.md) | Research input для issue #307 (B-038): индустриальный benchmark норм Reports (Diátaxis, DITA, ISO/IEC/IEEE, ANSI/NISO Z39.18, ГОСТ 7.32/19.101, SDMX/DDI, NIST AI RMF, EU AI Act, Kubernetes/CNCF/OpenTelemetry), проверка гипотез H1-H4, граничные кейсы Reports ↔ Analysis/Audit и рекомендация Вариант C (гибрид) без создания стандарта Reports. |
 | [2026-07-02-task-execution-modes-research.md](2026-07-02-task-execution-modes-research.md) | Research input для issue #330 (B-041): индустриальные нормы режимов выполнения задач для ИИ-агентов (Cynefin, Bloom, Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL) от лица 4 экспертов, паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал без предложения решений, новых режимов и стандартов. |
 | [2026-07-31-ops-task-strategy-validation.md](2026-07-31-ops-task-strategy-validation.md) | Research input для issue #461: эмпирическая валидация стратегии постановки задач по 479 PR и 475 issue Хаба, Clarify и Mango. Детализация постановки не отделяет отказы от успехов (p = 0.65) и связана только с объёмом работы (ρ = 0.14); все четыре пустых мержа имеют одну подпись «ожидание approval → revert»; замыкание ссылок от любой точки входа — 232 файла (~1.6M токенов); гейт по формулировке даёт precision 0.022 против постусловия на диффе с нулём ложных срабатываний. Сравнительная матрица «практика × эксперименты × индустрия» и пять вариантов решения без RFC и без изменения действующих правил. |
+| [2026-08-13-rrp-cross-validation-codex.md](2026-08-13-rrp-cross-validation-codex.md) | Перекрёстная проверка по issue #505: независимая валидация модулей Reference Research Pattern, выполненных моделью Codex (`evaluation`, `information-extraction-graph-modeling`, `tool-use`), против правил P2 и P5 RFC. Атрибуция всех восьми модулей корпуса восстановлена по коммитам создания каталогов и полю «Model» в Solution Draft Log — пробел данных отчёта #499 закрыт. P2 не соблюдён ни в одном из трёх модулей Codex (ноль markdown-ссылок из `40-practice-and-cases.md` внутрь модуля), P5 не срабатывал ни разу. Гипотеза «отклонение объясняется моделью» не подтверждается: P2 нарушен и в двух модулях Claude. Главное расхождение — заявленная в `information-extraction-graph-modeling/50-open-research.md` §4 обратная связь «практика → теория», не подтверждаемая артефактами. 11 комментариев `<!-- CROSS-REVIEW [Codex-validation]: ... -->` внесены без изменения текста модулей; девять рекомендаций R1–R9 для будущего стандарта RRP. |
 
 ## Эксперименты
 
