@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.81
+version: 1.82
 updated: 2026-08-17
 temperature: 0.1
 ---
@@ -13,6 +13,62 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: [ADR-011](docs/adr/2026-08-adr-011-research-models.md) (v0.1 `proposed` →
+  v0.2 `accepted`) — human decision gate пройден решением фаундера в issue #523.
+  Добавлен амендмент **D6**: статус паттерна
+  [Reference Research Pattern](docs/rfc/2026-07-17-rfc-reference-research-pattern.md)
+  повышен `Experimental` → `Validated`. Критерий повышения задан самим RFC
+  (≥ 3 независимых домена, где независимость — другой исполнитель или другой
+  метод) и закрыт восемью завершёнными модулями `research/ai-education/`
+  (`retrieval`, `memory`, `evaluation`, `observability`,
+  `multi-agent-orchestration`, `task-processing`, `tool-use`,
+  `information-extraction-graph-modeling`): форма воспроизведена 8 из 8 по
+  [инвентаризации корпуса](docs/analysis/2026-08-11-research-methodology-validation.md),
+  независимость исполнителей подтверждена атрибуцией 3 Codex / 5 Claude в
+  [перекрёстной проверке](research/hub/2026-08-13-rrp-cross-validation-codex.md),
+  правило P2 стало машинно-проверяемым в `tools/validate-rrp-links.sh`. Границы
+  решения зафиксированы явно: `Validated` подтверждает воспроизводимость **формы**,
+  а не качество наполнения модулей, и не делает RRP обязательным для любого
+  research.
+- rfc: в [RFC Reference Research Pattern](docs/rfc/2026-07-17-rfc-reference-research-pattern.md)
+  (v0.2 → v0.3) синхронизирован раздел `Validation status`: статус паттерна
+  `Validated` с 2026-08-17 со ссылкой на ADR-011 (D6) как на decision record,
+  список валидации расширен с одного домена до восьми. Rationale, риски и
+  наблюдения RFC не переписываются: RFC остаётся `draft`-документом обоснования.
+- standards: [research-standard.md](standards/research-standard.md) (v0.2 → v0.3,
+  B-104, issue #523) внедряет модели ADR-011 на ярусе L3. Раздел `Type Model`
+  переведён из `N/A` в **модель зрелости**: M1 базовый датированный отчёт,
+  M2 Reference Research Pattern (`Validated`), M3 Discussion Paper / Survey.
+  Добавлены два раздела: «Три модели research-артефакта» (обязательные элементы,
+  форма выхода, правило промоушена M3 → M2, запрет достраивать неполный RRP
+  «ради формы») и «Gate выбора модели исследования» с явным **Decision Tree**
+  (инвентаризация фактов → M1 и не исследование; зрелая тема с выведенным
+  Decision Framework → M2; поисковая тема с гипотезами и обзором практик → M3) и
+  mermaid-схемой. Тай-брейкер M2/M3 — выведен ли Decision Framework из материала
+  или его пришлось бы выдумать. `Analysis` в дерево не входит: это отдельный тип
+  артефакта (ADR-006), а не ступень глубины. Явно зафиксировано **правило
+  маршрутизации для исполнителя**: параметр `research_model` берётся из Контракта
+  в доме реализации (каталог проекта или направления исследования), при
+  отсутствии Контракта — из шаблона задачи; если параметр не заполнен или не
+  определён, исполнитель выбирает модель сам по Decision Tree и **обязан
+  обосновать выбор в описании PR**.
+- standards: [glossary.md](standards/glossary.md) (v2.2 → v2.3) — у термина
+  `Reference Research Pattern (RRP)` статус паттерна изменён `Experimental` →
+  `Validated` с указанием доказательной базы; введён термин
+  `Discussion Paper / Survey` (легитимен после перевода ADR-011 в `accepted`) и
+  связь `Discussion Paper / Survey -> Reference Research Pattern` как моделей
+  зрелости с односторонним промоушеном. Зонтичный термин
+  `Модель исследования (Research Model)` по-прежнему не вводится, `Analysis`
+  остаётся отдельным типом артефакта.
+- ops: ratchet-проверки перенесены на новое состояние —
+  `tools/test-reference-research-terminology.sh` требует статус `Validated`,
+  запрещает возврат к `Experimental`, требует термин `Discussion Paper / Survey`
+  и наличие в стандарте разделов моделей, Decision Tree и правила `research_model`;
+  `tools/validate-repository-structure.sh` обновлён под ADR-011 `accepted`,
+  glossary v2.3, artifact-map v1.95 и backlog v1.46.
+- ops: метаданные синхронизированы — [artifact-map.md](pr-ops/artifact-map.md)
+  (v1.94 → v1.95) и [backlog.md](pr-ops/backlog.md) (v1.45 → v1.46, B-104 → `review`).
+  Новых governance-файлов не создано (Anti-Inflation).
 - standards: `standards/glossary.md` (v2.1 → v2.2) приведён в строгое соответствие
   с онтологией [ADR-011](docs/adr/2026-08-adr-011-research-models.md) (issue #517,
   B-098). Термин `Analysis` переопределён как **отдельный тип артефакта, а не
