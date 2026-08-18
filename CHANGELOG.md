@@ -99,6 +99,26 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Создан модуль
+  [`research/ai-education/agent-context-engineering/`](research/ai-education/agent-context-engineering/00-introduction.md)
+  (`draft`, девятая валидация Reference Research Pattern) — issue #525. Закрывает
+  критический пробел **L2 «Промпт и контекст агента»** из
+  [gap-анализа](docs/analysis/2026-08-17-agent-lifecycle-rrp-gap-analysis.md)
+  (issue #521). Шесть канонических файлов 00–50 на границе «Человек → Агент»:
+  объектная модель входа B1–B7 и четыре независимых свидетельства деградации на
+  длинном контексте (`10-theory.md`); шесть осей таксономии, выведенных из
+  индустриальных источников, с явной границей от
+  [стандарта классификации промптов](research/hub/2026-05-28-prompts-classification-standard.md)
+  (`20-taxonomy.md`); измеримые пороги выбора подхода — бюджет окна, стратегия
+  подачи знаний по размеру корпуса, правило переноса требования из промпта на
+  ярусы G2–G7 по доле соблюдения, порядок блоков под кэширование префикса
+  (`30-decision-framework.md`); ландшафт фреймворков и воспроизводимые контекстные
+  сбои (`40-practice-and-cases.md`); разграничение с deferred-триггером B-091 и
+  открытые вопросы O1–O7 (`50-open-research.md`). Модуль не дублирует `memory/`
+  (хранение), `task-processing/` (исполнение внутри цикла) и `retrieval/`
+  (релевантность). Числа, не имеющие источника, помечены как инженерные дефолты
+  Хаба, подлежащие замеру. Новых governance-файлов не создано (Anti-Inflation).
+
 - analysis: Подготовлен
   [Gap-анализ покрытия жизненного цикла AI-агента модулями RRP](docs/analysis/2026-08-17-agent-lifecycle-rrp-gap-analysis.md)
   (`draft`, subtype `recommendation`) для issue #521. Опорный цикл из 12 этапов

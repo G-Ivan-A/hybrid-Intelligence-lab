@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.16
-updated: 2026-08-11
+version: 0.17
+updated: 2026-08-17
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -357,6 +357,23 @@ related_issues:
 | `ext-282` | [Model Context Protocol](https://modelcontextprotocol.io/) | `docs` | `en` | `tools, resources, agent-capability-interface` | `topic: agent-protocols` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/20-taxonomy.md) |
 | `ext-283` | [OpenTelemetry GenAI semantic conventions for agentic systems](https://github.com/open-telemetry/semantic-conventions-genai/issues/35) | `github` | `en` | `otel, tracing, agent-spans, multi-agent-observability` | `topic: agent-protocols` | `research` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/10-theory.md) |
 | `ext-284` | [Linux Foundation — A2A Protocol first-year adoption](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year) | `blog` | `en` | `a2a, adoption, governance, enterprise` | `topic: agent-protocols` | `observation` | `hub` | ✅ [MAO-487](../ai-education/multi-agent-orchestration/20-taxonomy.md) |
+| `ext-285` | [RULER: What's the Real Context Size of Your Long-Context Language Models?](https://arxiv.org/abs/2404.06654) | `paper` | `en` | `long-context, benchmark, effective-window` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/10-theory.md) |
+| `ext-286` | [NoLiMa: Long-Context Evaluation Beyond Literal Matching](https://arxiv.org/abs/2502.05167) | `paper` | `en` | `long-context, degradation, benchmark` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/10-theory.md) |
+| `ext-287` | [Chroma — Context Rot: How Increasing Input Tokens Impacts LLM Performance](https://research.trychroma.com/context-rot) | `blog` | `en` | `context-rot, long-context, degradation` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/10-theory.md) |
+| `ext-288` | [Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design (FormatSpread)](https://arxiv.org/abs/2310.11324) | `paper` | `en` | `prompt-format, sensitivity, evaluation` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/10-theory.md) |
+| `ext-289` | [The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions](https://arxiv.org/abs/2404.13208) | `paper` | `en` | `instruction-hierarchy, privilege, injection` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/10-theory.md) |
+| `ext-290` | [OpenAI Model Spec](https://model-spec.openai.com/) | `docs` | `en` | `instruction-hierarchy, roles, model-behavior` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/10-theory.md) |
+| `ext-291` | [The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608) | `paper` | `en` | `prompt-engineering, survey, taxonomy` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/20-taxonomy.md) |
+| `ext-292` | [A Systematic Survey of Prompt Engineering in LLMs](https://arxiv.org/abs/2402.07927) | `paper` | `en` | `prompt-engineering, survey` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/20-taxonomy.md) |
+| `ext-293` | [The Rise and Potential of LLM Based Agents: A Survey](https://arxiv.org/abs/2309.07864) | `paper` | `en` | `llm-agents, survey, agent-architecture` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/10-theory.md) |
+| `ext-294` | [OpenAI — GPT-4.1 prompting guide](https://cookbook.openai.com/examples/gpt4-1_prompting_guide) | `docs` | `en` | `prompt-placement, agentic-reminders, tools-field` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/30-decision-framework.md) |
+| `ext-295` | [OpenAI — A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) | `docs` | `en` | `agents, instructions, guardrails` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/00-introduction.md) |
+| `ext-296` | [Anthropic — Prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching) | `docs` | `en` | `prompt-caching, cost, prefix` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/30-decision-framework.md) |
+| `ext-297` | [OpenAI — Prompt caching](https://platform.openai.com/docs/guides/prompt-caching) | `docs` | `en` | `prompt-caching, cost, prefix` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/30-decision-framework.md) |
+| `ext-298` | [Anthropic — Published system prompts for Claude apps](https://docs.claude.com/en/release-notes/system-prompts) | `docs` | `en` | `system-prompt, published-artifact` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/40-practice-and-cases.md) |
+| `ext-299` | [LangChain — The rise of context engineering](https://blog.langchain.com/the-rise-of-context-engineering/) | `blog` | `en` | `context-engineering, frameworks` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/00-introduction.md) |
+| `ext-300` | [LangSmith — Prompt management](https://docs.langchain.com/langsmith/manage-prompts) | `docs` | `en` | `prompt-versioning, prompt-governance` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/40-practice-and-cases.md) |
+| `ext-301` | [DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | `paper` | `en` | `prompt-optimization, dspy, pipelines` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/20-taxonomy.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
