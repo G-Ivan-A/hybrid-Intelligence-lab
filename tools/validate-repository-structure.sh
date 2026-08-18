@@ -189,6 +189,12 @@ is_active_file() {
     research/ai-education/agent-context-engineering/30-decision-framework.md | \
     research/ai-education/agent-context-engineering/40-practice-and-cases.md | \
     research/ai-education/agent-context-engineering/50-open-research.md | \
+    research/ai-education/agent-delivery-and-release/00-introduction.md | \
+    research/ai-education/agent-delivery-and-release/10-theory.md | \
+    research/ai-education/agent-delivery-and-release/20-taxonomy.md | \
+    research/ai-education/agent-delivery-and-release/30-decision-framework.md | \
+    research/ai-education/agent-delivery-and-release/40-practice-and-cases.md | \
+    research/ai-education/agent-delivery-and-release/50-open-research.md | \
     research/ai-education/observability/00-introduction.md | \
     research/ai-education/observability/10-theory.md | \
     research/ai-education/observability/20-taxonomy.md | \
@@ -1670,11 +1676,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.96"
+require_text "pr-ops/artifact-map.md" "version: 1.97"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-17"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-18"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1812,7 +1818,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.17"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.18"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"

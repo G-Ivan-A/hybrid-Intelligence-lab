@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.17
-updated: 2026-08-17
+version: 0.18
+updated: 2026-08-18
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -374,6 +374,27 @@ related_issues:
 | `ext-299` | [LangChain — The rise of context engineering](https://blog.langchain.com/the-rise-of-context-engineering/) | `blog` | `en` | `context-engineering, frameworks` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/00-introduction.md) |
 | `ext-300` | [LangSmith — Prompt management](https://docs.langchain.com/langsmith/manage-prompts) | `docs` | `en` | `prompt-versioning, prompt-governance` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/40-practice-and-cases.md) |
 | `ext-301` | [DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines](https://arxiv.org/abs/2310.03714) | `paper` | `en` | `prompt-optimization, dspy, pipelines` | `topic: context-engineering` | `research` | `hub` | ✅ [ACE-525](../ai-education/agent-context-engineering/20-taxonomy.md) |
+| `ext-302` | [Google SRE Book — Release Engineering](https://sre.google/sre-book/release-engineering/) | `docs` | `en` | `release-engineering, sre, deployment` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/10-theory.md) |
+| `ext-303` | [Google SRE Book — Postmortem Culture](https://sre.google/sre-book/postmortem-culture/) | `docs` | `en` | `incident-review, blameless, feedback-loop` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/10-theory.md) |
+| `ext-304` | [Google SRE Workbook — Canarying Releases](https://sre.google/workbook/canarying-releases/) | `docs` | `en` | `canary, progressive-delivery, release-gates` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/30-decision-framework.md) |
+| `ext-305` | [Anthropic — Model deprecations](https://docs.claude.com/en/docs/about-claude/model-deprecations) | `docs` | `en` | `model-versioning, deprecation, pinning` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/30-decision-framework.md) |
+| `ext-306` | [OpenAI — Deprecations](https://platform.openai.com/docs/deprecations) | `docs` | `en` | `model-versioning, deprecation, pinning` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/30-decision-framework.md) |
+| `ext-307` | [Fowler — BlueGreenDeployment](https://martinfowler.com/bliki/BlueGreenDeployment.html) | `article` | `en` | `blue-green, rollback, mttr` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/20-taxonomy.md) |
+| `ext-308` | [Fowler — CanaryRelease](https://martinfowler.com/bliki/CanaryRelease.html) | `article` | `en` | `canary, exposure` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/20-taxonomy.md) |
+| `ext-309` | [Hodgson — Feature Toggles](https://martinfowler.com/articles/feature-toggles.html) | `article` | `en` | `feature-flags, kill-switch, rollback` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/20-taxonomy.md) |
+| `ext-310` | [LaunchDarkly — Flags](https://docs.launchdarkly.com/home/flags) | `docs` | `en` | `feature-flags, progressive-rollout` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
+| `ext-311` | [Unleash — Activation strategies](https://docs.getunleash.io/reference/activation-strategies) | `docs` | `en` | `feature-flags, gradual-rollout` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
+| `ext-312` | [Kubernetes — Rolling update deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#rolling-update-deployment) | `docs` | `en` | `rolling-update, deployment` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/20-taxonomy.md) |
+| `ext-313` | [Istio — Traffic shifting](https://istio.io/latest/docs/tasks/traffic-management/traffic-shifting/) | `docs` | `en` | `traffic-weights, canary, mirroring` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
+| `ext-314` | [Argo Rollouts](https://argoproj.github.io/argo-rollouts/) | `docs` | `en` | `progressive-delivery, auto-rollback` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
+| `ext-315` | [Flagger](https://docs.flagger.app/) | `docs` | `en` | `progressive-delivery, canary-analysis, auto-rollback` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
+| `ext-316` | [DORA — Four keys metrics](https://dora.dev/guides/dora-metrics-four-keys/) | `docs` | `en` | `dora, mttr, change-failure-rate` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/30-decision-framework.md) |
+| `ext-317` | [Evidently — Drift metrics explainer](https://docs.evidentlyai.com/metrics/explainer_drift) | `docs` | `en` | `drift-detection, psi, ks-test` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/30-decision-framework.md) |
+| `ext-318` | [Huyen — Data Distribution Shifts and Monitoring](https://huyenchip.com/2022/02/07/data-distribution-shifts-and-monitoring.html) | `article` | `en` | `drift, monitoring, distribution-shift` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/10-theory.md) |
+| `ext-319` | [Sculley et al. — Hidden Technical Debt in Machine Learning Systems](https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems) | `paper` | `en` | `cace, technical-debt, entanglement` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/10-theory.md) |
+| `ext-320` | [Breck et al. — The ML Test Score](https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt-reduction/) | `paper` | `en` | `production-readiness, ml-testing, monitoring` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/10-theory.md) |
+| `ext-321` | [Braintrust — Documentation](https://www.braintrust.dev/docs) | `docs` | `en` | `evals, online-evaluation, release-gates` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
+| `ext-322` | [W&B Weave — Documentation](https://weave-docs.wandb.ai/) | `docs` | `en` | `evals, tracing, experiment-history` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

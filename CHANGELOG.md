@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.82
-updated: 2026-08-17
+version: 1.83
+updated: 2026-08-18
 temperature: 0.1
 ---
 
@@ -98,6 +98,32 @@ All notable repository governance changes are documented here.
   состоянии глоссария тест падает, на текущем — проходит.
 
 ### Added
+
+- research: Создан модуль
+  [`research/ai-education/agent-delivery-and-release/`](research/ai-education/agent-delivery-and-release/00-introduction.md)
+  (`draft`, десятая валидация Reference Research Pattern) — issue #527. Закрывает
+  критический пробел **L10 + L12 «Доставка, релиз и обратная связь агента»** из
+  [gap-анализа](docs/analysis/2026-08-17-agent-lifecycle-rrp-gap-analysis.md)
+  (issue #521). Шесть канонических файлов 00–50: релизная единица агента как
+  связка версий U1–U7 и CACE как основание её неделимости, релизы, инициированные
+  провайдером через депрекации моделей, три класса дрейфа со статистиками
+  обнаружения (`10-theory.md`); семь осей таксономии, выведенных из индустриальных
+  источников, — единицы выпуска, стратегии выката S1–S7, механизмы экспозиции
+  C1–C5, классы дрейфа D1–D5, классы отката R1–R5, типы обратной связи F1–F5,
+  зрелость контура M0–M5 (`20-taxonomy.md`); измеримые пороги — выбор стратегии
+  по MTTR (менее 5 минут → blue-green) и бюджету ресурсов (ограничен → rolling
+  update), ворота выпуска W1–W5, отдельные ворота изменения промпта и модели,
+  стоп-правило мощности для canary, правила отката «триггер → класс → бюджет
+  времени», пороги дрейфа (`30-decision-framework.md`); ландшафт 2026 в двух
+  слоях и воспроизводимые релизные сбои (`40-practice-and-cases.md`); открытые
+  вопросы O1–O8 и минимальный следующий эксперимент (`50-open-research.md`).
+  Модуль не дублирует `evaluation/` (пороги качества), `observability/`
+  (внутренняя трассировка) и `research/cicd/` (пайплайн сборки кода) — границы
+  зафиксированы таблицей в `00-introduction.md`. Числа, не имеющие источника,
+  помечены как инженерные дефолты Хаба, подлежащие замеру. Доказательная база
+  оформлена по образцу `agent-context-engineering/` (§7 `50-open-research.md` +
+  реестр внешних источников) вместо каталога `evidence/`, которого в корпусе не
+  существует. Новых governance-файлов не создано (Anti-Inflation).
 
 - research: Создан модуль
   [`research/ai-education/agent-context-engineering/`](research/ai-education/agent-context-engineering/00-introduction.md)
