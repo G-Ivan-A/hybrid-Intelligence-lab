@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.84
+version: 1.85
 updated: 2026-08-21
 temperature: 0.1
 ---
@@ -16,6 +16,27 @@ All notable repository governance changes are documented here.
 - audit: [Аудит структурных, нормативных и терминологических противоречий Хаба](docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md) (v0.1 `draft`, issue #529) — Gap-Report из 12 находок после реструктуризации B-048/B-056: 2 Critical, 5 Major, 5 Minor. Вердикт `fail`. Ключевое расхождение — геном `templates/htom/tools/validate-repository-structure.sh` требует `AI_GOVERNANCE.md` в корне HTOM-команды, тогда как сам Хаб (HTOM-команда по `standards/glossary.md`) вынес файл в `ai-governance/` и `ai-rules/`; это прямая причина отказа в mango PR #292. Зафиксировано, что все валидаторы Хаба и генома проходят с exit 0, то есть ни одна находка сейчас не видна CI. Evidence-контейнер: `research/hub/exp/hub-contradictions-audit-529/`. Аудит фиксирует расхождения и не исправляет их: решения по Critical-находкам требуют RFC и human decision gate.
 
 ### Changed
+
+- chore: микро-правки по Gap-Report аудита #529 (issue #533) — устранены пять
+  подтверждённых Major/Minor-находок: **G-03** ссылка на RFC в
+  [`templates/spoke/README.md`](templates/spoke/README.md) переведена с
+  несуществующего `governance/rfc/` на `docs/rfc/`; **G-04** исполнимый контракт
+  [`templates/sync-project-with-hub-prompt.md`](templates/sync-project-with-hub-prompt.md)
+  указывает точки входа `pr-ops/artifact-map.md` и `pr-ops/repo-model.md` вместо
+  устаревшего `governance/`; **G-05** тихий no-op в
+  [`guides/sync-from-hub.md`](guides/sync-from-hub.md) исправлен — pathspec
+  `governance/` заменён на `ai-governance/ ai-rules/ pr-ops/`; **G-08**
+  [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) (v1.98 → v1.99) больше не
+  ссылается на удалённый root `AI_GOVERNANCE.md` — 13 строк колонки «Связи»
+  переведены на `ai-governance/ai-governance.md` или
+  `ai-rules/agent-work-rules.md`, а итог B-056 в
+  [`pr-ops/backlog.md`](pr-ops/backlog.md) (v1.46 → v1.47) приведён в
+  соответствие с фактами; **G-11** цитата «(AI_GOVERNANCE, правило 4)» в
+  `standards/executable-contract-standard.md`,
+  `standards/contract-documentation-standard.md` и
+  `standards/evals-contract-standard.md` заменена на резолвимую ссылку
+  `ai-governance/ai-governance.md`, §«Политики», п. 4. Каталог
+  `templates/htom/` не затронут: G-01/G-02 — предмет отдельного RFC.
 
 - adr: [ADR-011](docs/adr/2026-08-adr-011-research-models.md) (v0.1 `proposed` →
   v0.2 `accepted`) — human decision gate пройден решением фаундера в issue #523.
