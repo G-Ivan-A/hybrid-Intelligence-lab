@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.83
-updated: 2026-08-18
+version: 1.84
+updated: 2026-08-21
 temperature: 0.1
 ---
 
@@ -10,6 +10,10 @@ temperature: 0.1
 All notable repository governance changes are documented here.
 
 ## Unreleased
+
+### Added
+
+- audit: [Аудит структурных, нормативных и терминологических противоречий Хаба](docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md) (v0.1 `draft`, issue #529) — Gap-Report из 12 находок после реструктуризации B-048/B-056: 2 Critical, 5 Major, 5 Minor. Вердикт `fail`. Ключевое расхождение — геном `templates/htom/tools/validate-repository-structure.sh` требует `AI_GOVERNANCE.md` в корне HTOM-команды, тогда как сам Хаб (HTOM-команда по `standards/glossary.md`) вынес файл в `ai-governance/` и `ai-rules/`; это прямая причина отказа в mango PR #292. Зафиксировано, что все валидаторы Хаба и генома проходят с exit 0, то есть ни одна находка сейчас не видна CI. Evidence-контейнер: `research/hub/exp/hub-contradictions-audit-529/`. Аудит фиксирует расхождения и не исправляет их: решения по Critical-находкам требуют RFC и human decision gate.
 
 ### Changed
 

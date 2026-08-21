@@ -209,6 +209,11 @@ is_active_file() {
     research/ai-education/tool-use/40-practice-and-cases.md | \
     research/ai-education/tool-use/50-open-research.md | \
     research/hub/README.md | \
+    research/hub/exp/hub-contradictions-audit-529/README.md | \
+    research/hub/exp/hub-contradictions-audit-529/link-check.py | \
+    research/hub/exp/hub-contradictions-audit-529/link-check.log | \
+    research/hub/exp/hub-contradictions-audit-529/artifact-map-coverage.py | \
+    research/hub/exp/hub-contradictions-audit-529/artifact-map-coverage.log | \
     research/hub/exp/rfc-adr-industry-norms-278/README.md | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.py | \
     research/hub/exp/rfc-adr-industry-norms-278/collect-evidence.log | \
@@ -366,6 +371,7 @@ is_active_file() {
     docs/audit/2026-07-01-documentation-boundary-audit.md | \
     docs/audit/2026-07-04-cross-standard-stress-tests.md | \
     docs/audit/2026-08-01-ops-artifact-placement-review.md | \
+    docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -1676,11 +1682,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.97"
+require_text "pr-ops/artifact-map.md" "version: 1.98"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-18"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-21"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
