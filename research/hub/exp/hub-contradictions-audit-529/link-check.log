@@ -1,0 +1,21 @@
+
+BROKEN=19 FILES=313
+templates/htom/AI_GOVERNANCE.md:16: {{hub_url}}
+templates/htom/AI_GOVERNANCE.md:69: {{hub_url}}/blob/main/docs/adr/2026-08-adr-010-agent-autonomy-principles.md
+templates/htom/AI_QUICK_RULES.md:26: {{hub_url}}
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:13: {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:108: {{hub_url}}/blob/main/standards/session-handover-standard.md
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:123: {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:124: {{hub_url}}
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:137: {{hub_url}}
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:147: {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:149: {{hub_url}}/blob/main/pr-ops/session-digests.md
+templates/htom/README.md:27: {{hub_url}}
+templates/htom/README.md:136: {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md
+templates/htom/README.md:137: {{hub_url}}/blob/main/standards/session-handover-standard.md
+templates/htom/README.md:138: {{hub_url}}/blob/main/docs/rfc/rfc-two-cases-of-project-initialization.md
+templates/htom/README.md:162: {{hub_url}}/blob/main/standards/file-naming.md
+templates/spoke/README.md:29: {{hub_url}}/blob/main/governance/rfc/htom-vs-spoke-clarification-2026-06.md
+templates/spoke/README.md:35: {{hub_url}}
+templates/webportal-product-concept-template.md:13: {{hub_url}}/standards/webportal-product-concept-standard.md
+templates/webportal-solution-concept-template.md:13: {{hub_url}}/standards/webportal-solution-concept-standard.md
