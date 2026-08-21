@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.46
-updated: 2026-08-17
+version: 1.47
+updated: 2026-08-21
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -341,6 +341,31 @@ triggered-задача.
 | **B-093** | RFC по архитектуре постановки задач для AI-агентов | **P2** | B-092 | review | [PR #470](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/470) | Issue #457 (явное вынесение RFC в отдельную задачу) | На фактической базе B-092 подготовлен [RFC об архитектуре постановки задач для AI-агентов](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md). Следствия RFC остаются в статусе `experimental` до проспективного замера эффекта (B-095). | Creative |
 | **B-103** | ADR: модели research-артефакта (базовый отчёт, RRP, Discussion Paper / Survey) | **P1** | B-089, B-090 | review | [#515](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515) / [PR #516](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/516) | Issue #515 (пробел маршрутизации: исследования ранней стадии не попадают ни в базовый стандарт, ни в RRP) + корректирующие контракты фаундера в PR #516 | Подготовлен [ADR-011](../docs/adr/2026-08-adr-011-research-models.md) (`proposed`) на базе ADR-003: фиксирует без изменений две существующие модели (базовый датированный отчёт + опц. `exp/`; Reference Research Pattern из шести файлов, SSOT — RFC от 2026-07-17) и предлагает третью — `Discussion Paper / Survey` для ранней стадии, с критериями, выведенными из индустриальных практик (IETF Internet-Draft, W3C Working Draft, ACM Computing Surveys, position paper, публичные обзоры практик построения AI-агентов). Analysis из ряда моделей research исключён как отдельный тип артефакта (ADR-006). `standards/research-standard.md` этим PR не изменяется — правка вынесена в B-104. В [glossary.md](../standards/glossary.md) добавлены `Research Method`, `Domain Methodology`, `Reference Research Pattern (RRP)` с cross-reference на RFC как SSOT структуры RRP. | Creative |
 | **B-104** | Внести модели research в `standards/research-standard.md` + статус RRP `Validated` | **P2** | B-103 | review | [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523) / [PR #524](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/524) | ADR-011, решение D5; амендмент D6 по issue #523 | [ADR-011](../docs/adr/2026-08-adr-011-research-models.md) переведён в `accepted` (human decision gate — issue #523) и дополнен амендментом **D6**: статус паттерна RRP повышен `Experimental` → `Validated` по критерию самого RFC (≥ 3 независимых домена), доказательная база — 8 завершённых модулей `research/ai-education/`, выполненных разными исполнителями (3 Codex / 5 Claude по [перекрёстной проверке](../research/hub/2026-08-13-rrp-cross-validation-codex.md)) при 8/8 соблюдении формы по [инвентаризации корпуса](../docs/analysis/2026-08-11-research-methodology-validation.md). В [research-standard.md](../standards/research-standard.md) (v0.2 → v0.3) раздел `Type Model` переведён из `N/A` в модель зрелости M1–M3 и добавлены разделы «Три модели research-артефакта» и «Gate выбора модели исследования» с Decision Tree и правилом: если `research_model` в Контракте дома реализации (или в шаблоне задачи при отсутствии Контракта) не заполнен, исполнитель выбирает модель сам и обосновывает выбор в описании PR. В [glossary.md](../standards/glossary.md) (v2.2 → v2.3) RRP получил статус `Validated` и введён термин `Discussion Paper / Survey`. `Validation status` RFC синхронизирован с D6. Ratchet перенесён в `tools/test-reference-research-terminology.sh` и `tools/validate-repository-structure.sh`. Новых governance-файлов не создано (Anti-Inflation). | Creative |
+
+## Спринт 11: Синхронизация генома HTOM с фактической структурой Хаба
+
+**Story.**
+Аудит противоречий Хаба (issue #529) зафиксировал две Critical-находки в геноме
+`templates/htom/`: валидатор требует `AI_GOVERNANCE.md` в корне HTOM-команды,
+хотя сам Хаб — HTOM-команда — вынес этот материал в `ai-governance/` и
+`ai-rules/` по B-056 и ADR-007, и при этом геном не содержит CI-воркфлоу, из-за
+чего противоречие не видно ни одной машине. Пока расхождение живо, каждая новая
+спица наследует правило, которому не следует его автор: в mango PR #292
+исполнитель остановился и вынес вопрос владельцу.
+
+**Цель.**
+Вынести на решение фаундера правило размещения управляющих контрактов
+HTOM-команды и сделать структурную валидацию генома автоматической, не ломая
+существующие спицы.
+
+**Критерий закрытия.**
+RFC с исполнимым и проверенным черновиком правок, явным impact на спицы и планом
+миграции подготовлен, зарегистрирован в реестрах и переведён в `review` для
+human decision gate; внедрение вынесено в отдельную задачу.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-105** | RFC: геном HTOM — размещение управляющих контрактов и CI-валидация | **P1** | — | review | [#531](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/531) / [PR #532](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/532) | Находки G-01 и G-02 [аудита противоречий Хаба](../docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md) (issue #529); отказ в [mango PR #292](https://github.com/G-Ivan-A/mango_ba_prompts/pull/292) | Подготовлен [RFC](../docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md) (`draft`): нормируется наличие управляющего контракта, а не его размещение — закрытый перечень домов (корень, `governance/`, раскладка Хаба `ai-governance/` + `ai-rules/`) плюс отказ при наличии контракта в двух домах сразу; в геном добавляется `.github/workflows/validate.yml` на `push`/`pull_request`, а criticality валидатора структуры в Smart Sync поднимается `RECOMMENDED` → `CORE` с регенерацией манифеста. Impact на спицы разобран по шагам: по правилу размещения breaking change отсутствует, единственный breaking-элемент — требование CI-воркфлоу, закрытый планом миграции M0–M4 (валидатор и воркфлоу доставляются одним PR). Черновик исполним и проверен гарнитурой из семи сценариев в [evidence-контейнере](../research/hub/exp/htom-genome-rfc-531/README.md) — `Draft validation passed: 7/7`. Блокирующие вопросы фаундеру: Q-1 (инвариант «наличие, а не размещение») и Q-2 (остаётся ли `governance/` в перечне). `templates/htom/`, `templates/sync-metadata.json` и `templates/manifest.json` этим PR не изменяются — внедрение вынесено в отдельную задачу после решения. | Creative |
 
 ## Отложенные задачи с триггером
 

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.84
+version: 1.85
 updated: 2026-08-21
 temperature: 0.1
 ---
@@ -13,6 +13,8 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- rfc: [RFC: Геном HTOM — размещение управляющих контрактов и CI-валидация](docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md) (v0.1 `draft`, issue #531, B-105) — предложение по Critical-находкам G-01 и G-02 аудита противоречий Хаба. Требование к *месту* управляющих контрактов HTOM-команды заменяется требованием к их *наличию* в закрытом перечне домов (корень, `governance/`, раскладка Хаба `ai-governance/` + `ai-rules/`) с отказом при наличии контракта в двух домах сразу; в геном добавляется `.github/workflows/validate.yml`, а criticality `templates/htom/tools/validate-repository-structure.sh` в Smart Sync поднимается `RECOMMENDED` → `CORE`. Impact на существующие спицы разобран по шагам: по правилу размещения breaking change отсутствует, единственный breaking-элемент — требование CI-воркфлоу, для него дан план миграции M0–M4 с правилом «валидатор и воркфлоу одним PR». Черновик правок исполним и проверен гарнитурой из семи сценариев (`Draft validation passed: 7/7`). Два блокирующих вопроса фаундеру. `templates/htom/`, `templates/sync-metadata.json` и `templates/manifest.json` этим PR не изменяются: внедрение — отдельная задача после human decision gate.
+- research: evidence-контейнер [`research/hub/exp/htom-genome-rfc-531/`](research/hub/exp/htom-genome-rfc-531/README.md) — исполнимый черновик валидатора генома и CI-воркфлоу, гарнитура `validate-draft.sh` из семи синтетических HTOM-команд и лог прогона.
 - audit: [Аудит структурных, нормативных и терминологических противоречий Хаба](docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md) (v0.1 `draft`, issue #529) — Gap-Report из 12 находок после реструктуризации B-048/B-056: 2 Critical, 5 Major, 5 Minor. Вердикт `fail`. Ключевое расхождение — геном `templates/htom/tools/validate-repository-structure.sh` требует `AI_GOVERNANCE.md` в корне HTOM-команды, тогда как сам Хаб (HTOM-команда по `standards/glossary.md`) вынес файл в `ai-governance/` и `ai-rules/`; это прямая причина отказа в mango PR #292. Зафиксировано, что все валидаторы Хаба и генома проходят с exit 0, то есть ни одна находка сейчас не видна CI. Evidence-контейнер: `research/hub/exp/hub-contradictions-audit-529/`. Аудит фиксирует расхождения и не исправляет их: решения по Critical-находкам требуют RFC и human decision gate.
 
 ### Changed

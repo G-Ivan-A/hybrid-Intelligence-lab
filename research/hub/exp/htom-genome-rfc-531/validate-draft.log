@@ -1,0 +1,60 @@
+
+=== A. Корневая раскладка (текущие спицы, как mango сейчас) (ожидаем exit=0) ===
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+HTOM-team structure validation passed.
+OK: exit=0
+
+=== B. Раскладка governance/ (целевая в mango PR #292) (ожидаем exit=0) ===
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+HTOM-team structure validation passed.
+OK: exit=0
+
+=== C. Раскладка ai-governance/ + ai-rules/ (фактическая раскладка Хаба, B-056) (ожидаем exit=0) ===
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+HTOM-team structure validation passed.
+OK: exit=0
+
+=== D. Управляющий контракт отсутствует везде (ожидаем exit=1) ===
+FAIL: missing governance contract: ожидался один из AI_GOVERNANCE.md, governance/AI_GOVERNANCE.md, ai-governance/ai-governance.md
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 1 issue(s).
+OK: exit=1
+
+=== E. Два дома у одного контракта (два SSOT) (ожидаем exit=1) ===
+FAIL: duplicate governance contract: AI_GOVERNANCE.md governance/AI_GOVERNANCE.md — оставьте ровно одно размещение
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 1 issue(s).
+OK: exit=1
+
+=== F. Геном без CI-воркфлоу (собственно G-02) (ожидаем exit=1) ===
+FAIL: missing directory: .github/workflows
+FAIL: missing file: .github/workflows/validate.yml
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 2 issue(s).
+OK: exit=1
+
+=== G. Handover потерял {{REPO_NAME}} в новом доме (ожидаем exit=1) ===
+FAIL: ai-rules/AI_SESSION_HANDOVER_PROMPT.md must keep the {{REPO_NAME}} placeholder
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 1 issue(s).
+OK: exit=1
+
+Draft validation passed: 7/7 сценариев совпали с ожиданием.
