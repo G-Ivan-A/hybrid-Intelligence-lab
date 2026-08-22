@@ -417,6 +417,7 @@ is_active_file() {
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
+    templates/htom/.github/workflows/validate.yml | \
     templates/htom/init.sh | \
     templates/spoke/README.md | \
     templates/spoke/CONTRIBUTING.md | \
@@ -878,6 +879,7 @@ required_files=(
   "templates/htom/.github/ISSUE_TEMPLATE/task.md"
   "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
   "templates/htom/tools/validate-repository-structure.sh"
+  "templates/htom/.github/workflows/validate.yml"
   "templates/htom/init.sh"
   "templates/spoke/README.md"
   "templates/spoke/CONTRIBUTING.md"
