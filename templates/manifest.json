@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-08-11",
+  "last_updated": "2026-08-22",
   "templates": [
     {
       "id": "htom-issue-template-task-creative",
@@ -40,6 +40,24 @@
         "task"
       ],
       "description": "Structured шаблон задачи: мета, контекст, артефакты, ограничения, AI-agent specifics, DoD."
+    },
+    {
+      "id": "htom-validate-workflow",
+      "path": "templates/htom/.github/workflows/validate.yml",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "ci",
+        "validation"
+      ],
+      "description": "CI-воркфлоу HTOM-команды: запуск валидатора структуры на pull_request."
     },
     {
       "id": "htom-ai-governance",
@@ -172,7 +190,7 @@
     {
       "id": "htom-validate-repository-structure",
       "path": "templates/htom/tools/validate-repository-structure.sh",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "target_type": [
         "HTOM"
       ],
@@ -180,7 +198,7 @@
         "all"
       ],
       "min_phase": 0,
-      "criticality": "RECOMMENDED",
+      "criticality": "CORE",
       "tags": [
         "validation",
         "tooling"
