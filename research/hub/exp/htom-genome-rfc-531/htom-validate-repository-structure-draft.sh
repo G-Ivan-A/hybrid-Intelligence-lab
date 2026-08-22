@@ -120,6 +120,146 @@ for pair in \
   fi
 done
 
+# --- Классификация каталогов верхнего уровня (RFC v0.2, issue #535) ----------
+#
+# Каталог HTOM-команды принадлежит ровно одному из четырёх классов:
+#
+#   1. канонический      — из структуры генома (список canonical_directories);
+#   2. специфичный       — бизнес-логика и доменные данные проекта; легитимен
+#                          только если явно задекларирован в .hub-profile.json
+#                          (поле project_specific_directories);
+#   3. переходный        — не канонический и не задекларированный: остаток
+#                          реструктуризации (limbo state), это ошибка;
+#   4. архивный          — .archive/, легитимен при наличии README.md с причиной.
+#
+# Правило существует, чтобы реструктуризация не теряла ценные каталоги проекта
+# (класс 2 сохраняется по декларации) и одновременно не накапливала «мусорные»
+# переходные каталоги (класс 3 виден машине, а не только человеку на ревью).
+
+PROFILE_FILE=".hub-profile.json"
+
+canonical_directories=(
+  ".git"
+  ".github"
+  "docs"
+  "tools"
+  "governance"
+  "ai-governance"
+  "ai-rules"
+)
+
+# Читает из .hub-profile.json декларации специфичных каталогов и льготный срок.
+# Формат вывода: строки "declared<TAB>path", "invalid<TAB>path", "grandfather<TAB>date".
+read_profile() {
+  local py=""
+  if command -v python3 >/dev/null 2>&1; then
+    py="python3"
+  elif command -v python >/dev/null 2>&1; then
+    py="python"
+  else
+    return 2
+  fi
+  "$py" - "$PROFILE_FILE" <<'PYEOF'
+import json, sys
+try:
+    with open(sys.argv[1], encoding="utf-8") as fh:
+        profile = json.load(fh)
+except Exception as exc:  # noqa: BLE001 - сообщение уходит в валидатор как FAIL
+    print("error\t%s" % exc)
+    sys.exit(0)
+until = profile.get("structure_grandfather_until")
+if until:
+    print("grandfather\t%s" % until)
+for entry in profile.get("project_specific_directories", []) or []:
+    if isinstance(entry, str):
+        # Строка без причины — декларация без обоснования: не принимается.
+        print("invalid\t%s" % entry)
+        continue
+    path = (entry.get("path") or "").strip().strip("/")
+    reason = (entry.get("reason") or "").strip()
+    if not path or not reason:
+        print("invalid\t%s" % (path or "<empty>"))
+        continue
+    print("declared\t%s" % path)
+PYEOF
+}
+
+declared_directories=()
+grandfather_until=""
+profile_readable=1
+
+if [[ -f "$PROFILE_FILE" ]]; then
+  profile_output="$(read_profile)" || profile_readable=0
+  if [[ "$profile_readable" -eq 1 ]]; then
+    while IFS=$'\t' read -r kind value; do
+      [[ -n "$kind" ]] || continue
+      case "$kind" in
+        declared) declared_directories+=("$value") ;;
+        grandfather) grandfather_until="$value" ;;
+        invalid)
+          fail "$PROFILE_FILE: декларация каталога '$value' неполна — нужны непустые поля path и reason"
+          ;;
+        error)
+          fail "$PROFILE_FILE не разбирается как JSON: $value"
+          ;;
+      esac
+    done <<<"$profile_output"
+  else
+    warn "python не найден: декларации $PROFILE_FILE не проверены, классификация каталогов пропущена."
+  fi
+fi
+
+in_list() {
+  local needle="$1"
+  shift
+  local item
+  for item in "$@"; do
+    [[ "$item" == "$needle" ]] && return 0
+  done
+  return 1
+}
+
+# Льготный период (grandfathering): существующие специфичные каталоги не ломают
+# CI сразу, но обязаны быть задекларированы до указанной даты — один цикл
+# синхронизации. После даты недекларированный каталог становится FAIL.
+grandfather_active=0
+if [[ -n "$grandfather_until" ]]; then
+  today="$(date -u +%F)"
+  if [[ "$today" < "$grandfather_until" || "$today" == "$grandfather_until" ]]; then
+    grandfather_active=1
+  fi
+fi
+
+if [[ "$profile_readable" -eq 1 ]]; then
+  while IFS= read -r dir; do
+    name="${dir#./}"
+    [[ -n "$name" && "$name" != "." ]] || continue
+    in_list "$name" "${canonical_directories[@]}" && continue
+    [[ "$name" == ".archive" ]] && continue
+    if in_list "$name" ${declared_directories[@]+"${declared_directories[@]}"}; then
+      continue
+    fi
+    message="недекларированный каталог: $name/ — он не входит в каноническую структуру генома. Либо задекларируйте его как специфичный для проекта в $PROFILE_FILE (project_specific_directories: path + reason), либо перенесите содержимое в канонический дом, либо перенесите каталог в .archive/ с README.md. Переходные каталоги (limbo state) не сохраняются."
+    if [[ "$grandfather_active" -eq 1 ]]; then
+      warn "$message (льготный период до $grandfather_until)"
+    else
+      fail "$message"
+    fi
+  done < <(find . -maxdepth 1 -type d ! -name '.')
+
+  # Декларация, потерявшая свой каталог, — мёртвая запись конфигурации.
+  for declared in ${declared_directories[@]+"${declared_directories[@]}"}; do
+    if [[ ! -d "$declared" ]]; then
+      warn "$PROFILE_FILE декларирует каталог '$declared', которого нет в репозитории — удалите запись."
+    fi
+  done
+fi
+
+# Архив легитимен, но обязан объяснять себя: README.md с причиной архивации.
+if [[ -d ".archive" ]] && [[ ! -f ".archive/README.md" ]]; then
+  fail ".archive/ существует без README.md: архив обязан объяснять, что и почему в нём лежит."
+fi
+
 # Negative check: research/ по умолчанию не создаётся в HTOM-команде.
 # Фундаментальные знания живут в research/ Хаба. Если папка появилась — это
 # должно быть осознанным решением, зафиксированным как ADR (см. AI_QUICK_RULES.md).

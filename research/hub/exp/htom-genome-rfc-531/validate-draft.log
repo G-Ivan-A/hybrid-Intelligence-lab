@@ -57,4 +57,63 @@ WARN: найдены незаменённые плейсхолдеры шабл�
 HTOM-team structure validation failed with 1 issue(s).
 OK: exit=1
 
-Draft validation passed: 7/7 сценариев совпали с ожиданием.
+=== H. Недекларированный каталог проекта (limbo state после реструктуризации) (ожидаем exit=1) ===
+FAIL: недекларированный каталог: mango-research/ — он не входит в каноническую структуру генома. Либо задекларируйте его как специфичный для проекта в .hub-profile.json (project_specific_directories: path + reason), либо перенесите содержимое в канонический дом, либо перенесите каталог в .archive/ с README.md. Переходные каталоги (limbo state) не сохраняются.
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 1 issue(s).
+OK: exit=1
+
+=== I. Тот же каталог задекларирован как специфичный (ожидаем exit=0) ===
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+HTOM-team structure validation passed.
+OK: exit=0
+
+=== J. Декларация без причины (reason) — не принимается (ожидаем exit=1) ===
+FAIL: .hub-profile.json: декларация каталога 'mango-research' неполна — нужны непустые поля path и reason
+FAIL: недекларированный каталог: mango-research/ — он не входит в каноническую структуру генома. Либо задекларируйте его как специфичный для проекта в .hub-profile.json (project_specific_directories: path + reason), либо перенесите содержимое в канонический дом, либо перенесите каталог в .archive/ с README.md. Переходные каталоги (limbo state) не сохраняются.
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 2 issue(s).
+OK: exit=1
+
+=== K. Льготный период (grandfathering) активен — warn, а не fail (ожидаем exit=0) ===
+WARN: недекларированный каталог: mango-research/ — он не входит в каноническую структуру генома. Либо задекларируйте его как специфичный для проекта в .hub-profile.json (project_specific_directories: path + reason), либо перенесите содержимое в канонический дом, либо перенесите каталог в .archive/ с README.md. Переходные каталоги (limbo state) не сохраняются. (льготный период до 2026-09-21)
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+2 warning(s) — не блокируют, но требуют внимания.
+HTOM-team structure validation passed.
+OK: exit=0
+
+=== L. Льготный период истёк — недекларированный каталог падает (ожидаем exit=1) ===
+FAIL: недекларированный каталог: mango-research/ — он не входит в каноническую структуру генома. Либо задекларируйте его как специфичный для проекта в .hub-profile.json (project_specific_directories: path + reason), либо перенесите содержимое в канонический дом, либо перенесите каталог в .archive/ с README.md. Переходные каталоги (limbo state) не сохраняются.
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 1 issue(s).
+OK: exit=1
+
+=== M. .archive/ без README.md (архив не объясняет себя) (ожидаем exit=1) ===
+FAIL: .archive/ существует без README.md: архив обязан объяснять, что и почему в нём лежит.
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+
+HTOM-team structure validation failed with 1 issue(s).
+OK: exit=1
+
+=== N. .archive/ с README.md — легитимный архив переходного каталога (ожидаем exit=0) ===
+WARN: найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды.
+
+1 warning(s) — не блокируют, но требуют внимания.
+HTOM-team structure validation passed.
+OK: exit=0
+
+Draft validation passed: 13/13 сценариев совпали с ожиданием.

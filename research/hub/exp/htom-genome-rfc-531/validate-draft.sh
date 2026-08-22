@@ -3,7 +3,7 @@
 # Проверка черновика правок генома HTOM (issue #531, находки G-01 и G-02 аудита
 # docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md).
 #
-# Скрипт ничего не меняет в репозитории: он собирает во временном каталоге семь
+# Скрипт ничего не меняет в репозитории: он собирает во временном каталоге тринадцать
 # синтетических HTOM-команд из текущего генома `templates/htom/`, подкладывает в
 # них черновой валидатор (`htom-validate-repository-structure-draft.sh`) и
 # черновой CI-воркфлоу, после чего сверяет фактический exit code с ожидаемым.
@@ -95,10 +95,74 @@ g="$(clone_case c g)"
 sed -i 's/{{REPO_NAME}}/mango_ba_prompts/g' "$g/ai-rules/AI_SESSION_HANDOVER_PROMPT.md"
 check "G. Handover потерял {{REPO_NAME}} в новом доме" "$g" 1
 
+# --- Классификация каталогов (RFC v0.2, issue #535) --------------------------
+#
+# Сценарии H–M проверяют баланс: специфичный для проекта каталог сохраняется по
+# декларации, а недекларированный переходный каталог становится ошибкой.
+
+write_profile() {
+  local dest="$1"
+  shift
+  cat >"$dest/.hub-profile.json" <<PROFILE
+{
+  "project_name": "synthetic-htom-team",
+  "target_type": "HTOM",
+  "stack": "all",
+  "phase": 1,
+  "hub_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
+$*
+  "last_sync": {}
+}
+PROFILE
+}
+
+h="$(clone_case a h)"
+mkdir -p "$h/mango-research"
+touch "$h/mango-research/.gitkeep"
+check "H. Недекларированный каталог проекта (limbo state после реструктуризации)" "$h" 1
+
+i="$(clone_case a i)"
+mkdir -p "$i/mango-research"
+touch "$i/mango-research/.gitkeep"
+write_profile "$i" '  "project_specific_directories": [
+    { "path": "mango-research", "reason": "Доменные исследования Mango: не входят в геном, но несут ценность проекта." }
+  ],'
+check "I. Тот же каталог задекларирован как специфичный" "$i" 0
+
+j="$(clone_case a j)"
+mkdir -p "$j/mango-research"
+touch "$j/mango-research/.gitkeep"
+write_profile "$j" '  "project_specific_directories": [
+    { "path": "mango-research" }
+  ],'
+check "J. Декларация без причины (reason) — не принимается" "$j" 1
+
+k="$(clone_case a k)"
+mkdir -p "$k/mango-research"
+touch "$k/mango-research/.gitkeep"
+write_profile "$k" "  \"structure_grandfather_until\": \"$(date -u -d '+30 days' +%F 2>/dev/null || date -u -v+30d +%F)\","
+check "K. Льготный период (grandfathering) активен — warn, а не fail" "$k" 0
+
+l="$(clone_case a l)"
+mkdir -p "$l/mango-research"
+touch "$l/mango-research/.gitkeep"
+write_profile "$l" "  \"structure_grandfather_until\": \"$(date -u -d '-1 day' +%F 2>/dev/null || date -u -v-1d +%F)\","
+check "L. Льготный период истёк — недекларированный каталог падает" "$l" 1
+
+m="$(clone_case a m)"
+mkdir -p "$m/.archive/governance"
+touch "$m/.archive/governance/.gitkeep"
+check "M. .archive/ без README.md (архив не объясняет себя)" "$m" 1
+
+n="$(clone_case a n)"
+mkdir -p "$n/.archive/governance"
+printf '# Archive\n\nПереходный каталог governance/ после реструктуризации.\n' >"$n/.archive/README.md"
+check "N. .archive/ с README.md — легитимный архив переходного каталога" "$n" 0
+
 printf '\n'
 if (( failures > 0 )); then
   printf 'Draft validation failed: %d сценарий(ев) разошлись с ожиданием.\n' "$failures" >&2
   exit 1
 fi
 
-printf 'Draft validation passed: 7/7 сценариев совпали с ожиданием.\n'
+printf 'Draft validation passed: 13/13 сценариев совпали с ожиданием.\n'
