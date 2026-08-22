@@ -1,0 +1,19 @@
+{
+  "project_name": "mango_ba_prompts",
+  "target_type": "HTOM",
+  "stack": "all",
+  "phase": 2,
+  "hub_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
+  "structure_grandfather_until": "2026-09-21",
+  "project_specific_directories": [
+    {
+      "path": "research",
+      "reason": "Доменные исследования Mango: предметная область BA-промптов, не переносится в research/ Хаба."
+    },
+    {
+      "path": "prompts",
+      "reason": "Продуктовые промпты Mango — основной бизнес-артефакт проекта."
+    }
+  ],
+  "last_sync": {}
+}

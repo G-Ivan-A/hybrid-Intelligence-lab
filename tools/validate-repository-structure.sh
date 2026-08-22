@@ -214,6 +214,7 @@ is_active_file() {
     research/hub/exp/htom-genome-rfc-531/htom-validate-workflow-draft.yml | \
     research/hub/exp/htom-genome-rfc-531/validate-draft.sh | \
     research/hub/exp/htom-genome-rfc-531/validate-draft.log | \
+    research/hub/exp/htom-genome-rfc-531/hub-profile-example.json | \
     research/hub/exp/hub-contradictions-audit-529/README.md | \
     research/hub/exp/hub-contradictions-audit-529/link-check.py | \
     research/hub/exp/hub-contradictions-audit-529/link-check.log | \
@@ -1688,11 +1689,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.99"
+require_text "pr-ops/artifact-map.md" "version: 2.0"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-21"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-22"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1782,10 +1783,10 @@ require_text "pr-ops/artifact-map.md" "research/external-knowledge/external-insi
 require_text "pr-ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.22"
+require_text "docs/rfc/README.md" "version: 1.23"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-08-21"
+require_text "docs/rfc/README.md" "updated: 2026-08-22"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
@@ -1832,7 +1833,12 @@ require_text "$rfc_531" "research/hub/exp/htom-genome-rfc-531/"
 require_text "docs/rfc/README.md" "2026-08-21-rfc-htom-genome-structure-and-ci.md"
 require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md` | RFC | справка |'
 require_text "pr-ops/backlog.md" "**B-105**"
-require_text "research/hub/exp/htom-genome-rfc-531/README.md" "Draft validation passed: 7/7"
+require_text "research/hub/exp/htom-genome-rfc-531/README.md" "Draft validation passed: 13/13"
+# RFC v0.2 (issue #535): классификация каталогов и декларация специфичных каталогов проекта.
+require_text "$rfc_531" "### P.7. Классификация каталогов"
+require_text "$rfc_531" "project_specific_directories"
+require_text "$rfc_531" "structure_grandfather_until"
+require_text "research/hub/exp/htom-genome-rfc-531/hub-profile-example.json" "project_specific_directories"
 
 # External knowledge integration (issue #227): Base Registry + insights + RFC.
 require_text "research/external-knowledge/README.md" "status: draft"
@@ -2039,7 +2045,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.47"
+require_text "pr-ops/backlog.md" "version: 1.48"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
