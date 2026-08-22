@@ -75,11 +75,19 @@
     },
     "templates/htom/tools/validate-repository-structure.sh": {
       "id": "htom-validate-repository-structure",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "target_type": ["HTOM"],
-      "criticality": "RECOMMENDED",
+      "criticality": "CORE",
       "tags": ["validation", "tooling"],
       "description": "Валидатор структуры HTOM-репозитория."
+    },
+    "templates/htom/.github/workflows/validate.yml": {
+      "id": "htom-validate-workflow",
+      "version": "1.0.0",
+      "target_type": ["HTOM"],
+      "criticality": "CORE",
+      "tags": ["ci", "validation"],
+      "description": "CI-воркфлоу HTOM-команды: запуск валидатора структуры на pull_request."
     },
     "templates/htom/.github/ISSUE_TEMPLATE/task.md": {
       "id": "htom-issue-template-task",

@@ -42,6 +42,7 @@ TODO: добавьте краткое описание проекта после
 | `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |
 | `docs/audit/` | Ревизии, аудиты и проверки соответствия. |
 | `.github/ISSUE_TEMPLATE/` | Шаблоны постановки задач: structured `task.md` и creative `task-creative.md` (язык Хаба). |
+| `.github/workflows/validate.yml` | CI генома: запускает валидатор структуры на каждый `pull_request` и push в `main` (RFC #532, G-02). |
 | `tools/` | Локальные проверки структуры репозитория. |
 
 Каталоги создаются по запросу, при появлении операционной боли (Anti-Inflation
@@ -123,6 +124,46 @@ grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно остаться �
 
 Скрипт завершается с ненулевым кодом и печатает `FAIL: …` при нарушениях —
 почините их **до** отправки PR (Definition of Done из [CONTRIBUTING.md](CONTRIBUTING.md)).
+Тот же валидатор запускается автоматически в CI (`.github/workflows/validate.yml`),
+поэтому пропуск локального прогона не остаётся незамеченным.
+
+### Где живут управляющие контракты
+
+Геном нормирует **наличие** управляющего контракта, а не его физическое
+размещение (RFC #532, P.1–P.3). Каждый из трёх контрактов должен существовать
+ровно в одном из допустимых домов:
+
+| Контракт | Допустимые дома |
+| --- | --- |
+| Конституция | `AI_GOVERNANCE.md`, `governance/AI_GOVERNANCE.md`, `ai-governance/ai-governance.md` |
+| Быстрые правила | `AI_QUICK_RULES.md`, `governance/AI_QUICK_RULES.md`, `ai-rules/ai-quick-rules.md` |
+| Handover Prompt | `AI_SESSION_HANDOVER_PROMPT.md`, `governance/AI_SESSION_HANDOVER_PROMPT.md`, `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` |
+
+Копия контракта в двух домах сразу — это два SSOT, и валидатор даёт `FAIL`.
+Каталог `governance/` считается **переходным**: он допустим для обратной
+совместимости существующих команд, но новые команды разворачиваются с корневой
+раскладкой либо с парой `ai-governance/` + `ai-rules/`.
+
+### Каталоги, специфичные для проекта
+
+Каталог верхнего уровня, которого нет в каноническом перечне генома, должен быть
+явно задекларирован в `.hub-profile.json` — иначе это переходный остаток
+реструктуризации (limbo state) и валидатор даёт `FAIL` (RFC #532, P.7–P.9):
+
+```json
+{
+  "project_specific_directories": [
+    { "path": "prompts", "reason": "Продуктовые промпты — основной бизнес-артефакт проекта." }
+  ],
+  "structure_grandfather_until": "2026-09-21"
+}
+```
+
+Декларация без непустого `reason` не считается декларацией. Поле
+`structure_grandfather_until` даёт существующей команде **один** цикл
+синхронизации: до этой даты недекларированные каталоги выводятся как `WARN`,
+после — как `FAIL`. Альтернативные легальные выходы — перенести содержимое в
+канонический дом или перенести каталог в `.archive/` с `README.md`.
 
 ## 🧭 Две точки входа (Кейс 1 ↔ Кейс 2)
 
@@ -179,6 +220,7 @@ canonical-точкой входа для bootstrap-клонирования HTOM
 | `docs/adr/.gitkeep` | Каркас для решений: почему выбран путь, а не только что изменено. |
 | `docs/audit/.gitkeep` | Каркас для ревизий и проверок соответствия. |
 | `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task-creative.md` и `tools/validate-repository-structure.sh` | Единый язык structured/creative задач и локальная защита от структурного разрастания. |
+| `.github/workflows/validate.yml` | Валидатор запускается сам на каждый PR, а не по памяти автора: структурный контракт становится машинно наблюдаемым. |
 
 ### Антипаттерны bootstrap
 

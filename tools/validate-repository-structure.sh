@@ -1689,7 +1689,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.0"
+require_text "pr-ops/artifact-map.md" "version: 2.1"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1814,7 +1814,7 @@ require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-06-rfc-task-statemen
 
 # RFC генома HTOM (issue #531, B-105): размещение управляющих контрактов и CI.
 rfc_531="docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md"
-require_text "$rfc_531" "status: draft"
+require_text "$rfc_531" "status: accepted"
 require_text "$rfc_531" "rfc-scope: A"
 require_text "$rfc_531" "owner: G-Ivan-A"
 require_text "$rfc_531" "## RFC Metadata"
@@ -1833,6 +1833,21 @@ require_text "$rfc_531" "research/hub/exp/htom-genome-rfc-531/"
 require_text "docs/rfc/README.md" "2026-08-21-rfc-htom-genome-structure-and-ci.md"
 require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md` | RFC | справка |'
 require_text "pr-ops/backlog.md" "**B-105**"
+
+# Реализация RFC #532 (issue #537, B-106): геном получил resolve_one_of, запрет
+# дубликатов управляющих контрактов, классификацию каталогов и собственный CI.
+htom_validator="templates/htom/tools/validate-repository-structure.sh"
+require_file "$htom_validator"
+require_text "$htom_validator" "resolve_one_of"
+require_text "$htom_validator" "duplicate governance contract"
+require_text "$htom_validator" "project_specific_directories"
+require_text "$htom_validator" "structure_grandfather_until"
+require_text "$htom_validator" ".github/workflows/validate.yml"
+require_file "templates/htom/.github/workflows/validate.yml"
+require_text "templates/htom/.github/workflows/validate.yml" "./tools/validate-repository-structure.sh"
+require_text "templates/sync-metadata.json" '"htom-validate-workflow"'
+require_text "pr-ops/backlog.md" "**B-106**"
+require_text "pr-ops/artifact-map.md" '`/templates/htom/.github/workflows/validate.yml`'
 require_text "research/hub/exp/htom-genome-rfc-531/README.md" "Draft validation passed: 13/13"
 # RFC v0.2 (issue #535): классификация каталогов и декларация специфичных каталогов проекта.
 require_text "$rfc_531" "### P.7. Классификация каталогов"
@@ -2045,7 +2060,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.48"
+require_text "pr-ops/backlog.md" "version: 1.49"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"

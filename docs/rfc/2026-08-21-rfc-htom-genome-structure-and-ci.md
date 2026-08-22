@@ -1,5 +1,5 @@
 ---
-status: draft
+status: accepted
 version: 0.2
 updated: 2026-08-22
 temperature: 0.1
@@ -37,12 +37,12 @@ related_issues:
 | Field | Value |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | draft — предложение, решение за фаундером |
+| RFC status | accepted — принят фаундером без замечаний (issue [#537](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/537)); технические изменения применены к геному |
 | Source issue | [#531](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/531); доработка — [#535](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/535) |
 | Version history | v0.1 (2026-08-21, issue #531) — P.1–P.6: размещение управляющих контрактов и CI-валидация. **v0.2 (2026-08-22, issue #535) — P.7–P.10: классификация каталогов, декларация специфичных каталогов проекта в `.hub-profile.json`, правило валидации и grandfathering.** |
-| Impacted artifacts | При принятии: `templates/htom/tools/validate-repository-structure.sh`, новый `templates/htom/.github/workflows/validate.yml`, `templates/sync-metadata.json`, `templates/manifest.json`, `templates/htom/README.md`, `templates/htom/CHANGELOG.md`, `tools/sync-from-hub.sh` (схема `.hub-profile.json`), `pr-ops/backlog.md`. **В рамках этого PR не изменяется ничего из перечисленного**; готовые к применению правки лежат черновиком в [`research/hub/exp/htom-genome-rfc-531/`](../../research/hub/exp/htom-genome-rfc-531/README.md). |
-| Decision record | not yet |
-| Implementation link | not yet |
+| Impacted artifacts | Применено реализацией (PR [#538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538)): `templates/htom/tools/validate-repository-structure.sh`, новый `templates/htom/.github/workflows/validate.yml`, `templates/sync-metadata.json`, `templates/manifest.json`, `templates/htom/README.md`, `templates/htom/CHANGELOG.md`, `tools/sync-from-hub.sh` (схема `.hub-profile.json`), `pr-ops/backlog.md`. Исходные исполнимые черновики остаются в [`research/hub/exp/htom-genome-rfc-531/`](../../research/hub/exp/htom-genome-rfc-531/README.md). |
+| Decision record | Принятие без изменений — сам этот `accepted` RFC является решением (`standards/rfc-structure-standard.md`, boundary RFC/ADR). Ответы фаундера на Q-1 — Q-5 зафиксированы в разделе [Open Questions](#open-questions). |
+| Implementation link | Issue [#537](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/537), PR [#538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538) |
 | Archetype scope | A |
 
 ## Summary
@@ -702,44 +702,75 @@ Draft validation passed: 13/13 сценариев совпали с ожидан
 
 ## Lifecycle and Decision Path
 
-**Текущее состояние.** `draft`. Геном не изменён; изменения этого PR
-ограничены самим RFC, его evidence-контейнером и регистрацией в реестрах.
+**Текущее состояние.** `accepted`. Фаундер принял P.1–P.10 без замечаний
+(ревью PR #536) и ответил на Q-1 — Q-5; технические изменения применены к геному
+задачей реализации — issue [#537](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/537),
+PR [#538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538).
 
 **Требуемый human gate.** Фаундер принимает или отклоняет P.1–P.10 и отвечает на
 Q-1, Q-2 и Q-4. Аудит прямо классифицировал G-01 как выбор архитектуры, а не как
 микро-правку, поэтому автоматическое применение исключено.
 
-**После принятия.** Шаги M1–M3a–M4 плана миграции выполняются отдельной задачей
-бэклога. Decision record: при принятии без изменений сам accepted RFC является
+**Выполнено при принятии (M1).** Геном обновлён: `resolve_one_of` и запрет
+дубликатов в `templates/htom/tools/validate-repository-structure.sh`, блок
+классификации каталогов, новый `templates/htom/.github/workflows/validate.yml`,
+`criticality: CORE` для обоих артефактов в `templates/sync-metadata.json` и
+перегенерированный `templates/manifest.json`.
+
+**После принятия.** Шаги M2–M3–M3a–M4 плана миграции выполняются отдельными
+задачами бэклога; спицы (в том числе `mango_ba_prompts`) в PR реализации не
+трогаются. Decision record: при принятии без изменений сам accepted RFC является
 решением (`standards/rfc-structure-standard.md`, boundary RFC/ADR); если фаундер
 выберет A2 или сузит перечень P.2, потребуется ADR, поскольку это меняет
 структурное решение ADR-007 для класса HTOM-команд.
 
-**Метаданные.** Поля `Decision record` и `Implementation link` содержат
-`not yet` и должны быть заменены конкретными ссылками первым же PR, который
-тронет этот RFC после появления решения и реализации.
+**Метаданные.** Поля `Decision record` и `Implementation link` заполнены
+ссылками на решение и реализацию (issue #537, PR #538).
 
 ## Open Questions
+
+Все вопросы закрыты фаундером при принятии RFC (issue #537). Ответы приведены
+курсивом под каждым вопросом; сами формулировки вопросов сохранены как есть —
+это история решения, а не рабочий список.
 
 - **Q-1 (блокирующий).** Принимается ли инвариант P.1 «нормируется наличие, а не
   размещение», или геном должен остаться источником единственной обязательной
   раскладки? Ответ определяет выбор между этим предложением и альтернативами A1/A2.
+  - **Ответ (2026-08-22): да.** Инвариант P.1 принят; предложение принимается
+    целиком, альтернативы A1/A2 отклонены.
 - **Q-2 (блокирующий).** Остаётся ли `governance/` в закрытом перечне P.2 как
   переходный дом, при том что Хаб отверг это имя у себя (`reject_path "governance"`)?
   Исключение варианта делает mango PR #292 снова заблокированным до переезда на
   раскладку Хаба.
+  - **Ответ (2026-08-22): `governance/` исключается из канонического перечня.**
+    Он считается **переходным** каталогом (limbo state) и подлежит архивации или
+    миграции в `ai-governance/` + `ai-rules/`. Для обратной совместимости
+    валидатор продолжает принимать контракт, лежащий в `governance/` (иначе
+    существующие спицы ломаются в момент доставки), но новые команды обязаны
+    использовать корневую раскладку либо `ai-governance/` + `ai-rules/`; переезд
+    `governance/` выполняется шагом M3a плана миграции.
 - **Q-3 (неблокирующий).** Нужен ли для спиц льготный период по требованию
   CI-воркфлоу (сначала `warn`, через один цикл синхронизации — `fail`), или шаг
   M3 «валидатор и воркфлоу одним PR» уже закрывает риск?
+  - **Ответ (2026-08-22): отдельный льготный период не вводится** — шаг M3
+    (валидатор и воркфлоу приходят одним PR) закрывает риск, а для каталогов
+    действует механизм P.10.
 - **Q-4 (блокирующий, v0.2).** Принимается ли остаточный принцип P.7 —
   «недекларированный неканонический каталог = ошибка»? Ответ «нет» возвращает
   классификацию человеческому gate (альтернатива A7) и оставляет G-13 открытым.
   Ответ «да» означает, что первая же синхронизация спицы потребует шага M3a.
+  - **Ответ (2026-08-22): да, инвариант P.7 (остаточный принцип) подтверждён.**
+    Недекларированный неканонический каталог = `FAIL`. Первая же синхронизация
+    спицы требует шага M3a.
 - **Q-5 (неблокирующий, v0.2).** Ограничивается ли grandfathering P.10 сверху —
   например, «не более одного цикла синхронизации от даты доставки валидатора», с
   проверкой на стороне Хаба в шаге M4? Сейчас дату назначает сама спица, и
   механизм полагается на видимость `WARN` в каждом прогоне CI, а не на
   формальный предел.
+  - **Ответ (2026-08-22): механизм P.10 подтверждён в предложенном виде** —
+    один цикл синхронизации, явная дата в `structure_grandfather_until` и
+    поименный `WARN` по каждому недекларированному каталогу. Дополнительный
+    предел на стороне Хаба не вводится; ревизия остаётся шагом M4.
 
 ## Related Artifacts
 
