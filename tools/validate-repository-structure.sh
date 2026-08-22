@@ -209,6 +209,11 @@ is_active_file() {
     research/ai-education/tool-use/40-practice-and-cases.md | \
     research/ai-education/tool-use/50-open-research.md | \
     research/hub/README.md | \
+    research/hub/exp/htom-genome-rfc-531/README.md | \
+    research/hub/exp/htom-genome-rfc-531/htom-validate-repository-structure-draft.sh | \
+    research/hub/exp/htom-genome-rfc-531/htom-validate-workflow-draft.yml | \
+    research/hub/exp/htom-genome-rfc-531/validate-draft.sh | \
+    research/hub/exp/htom-genome-rfc-531/validate-draft.log | \
     research/hub/exp/hub-contradictions-audit-529/README.md | \
     research/hub/exp/hub-contradictions-audit-529/link-check.py | \
     research/hub/exp/hub-contradictions-audit-529/link-check.log | \
@@ -353,6 +358,7 @@ is_active_file() {
     docs/rfc/2026-07-02-rfc-audit-structure.md | \
     docs/rfc/2026-07-02-rfc-analysis-structure.md | \
     docs/rfc/2026-08-06-rfc-task-statement-architecture.md | \
+    docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -1776,10 +1782,10 @@ require_text "pr-ops/artifact-map.md" "research/external-knowledge/external-insi
 require_text "pr-ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.21"
+require_text "docs/rfc/README.md" "version: 1.22"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-08-06"
+require_text "docs/rfc/README.md" "updated: 2026-08-21"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
@@ -1804,6 +1810,29 @@ require_text "$rfc_469" "## Related Artifacts"
 require_text "$rfc_469" "research/hub/2026-07-31-ops-task-strategy-validation.md"
 require_text "docs/rfc/README.md" "2026-08-06-rfc-task-statement-architecture.md"
 require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-06-rfc-task-statement-architecture.md` | RFC | справка |'
+
+# RFC генома HTOM (issue #531, B-105): размещение управляющих контрактов и CI.
+rfc_531="docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md"
+require_text "$rfc_531" "status: draft"
+require_text "$rfc_531" "rfc-scope: A"
+require_text "$rfc_531" "owner: G-Ivan-A"
+require_text "$rfc_531" "## RFC Metadata"
+require_text "$rfc_531" "## Summary"
+require_text "$rfc_531" "## Motivation"
+require_text "$rfc_531" "## Goals and Non-goals"
+require_text "$rfc_531" "## Proposal"
+require_text "$rfc_531" "## Alternatives"
+require_text "$rfc_531" "## Trade-offs"
+require_text "$rfc_531" "## Impacted Artifacts"
+require_text "$rfc_531" "## Implementation and Validation"
+require_text "$rfc_531" "## Lifecycle and Decision Path"
+require_text "$rfc_531" "## Open Questions"
+require_text "$rfc_531" "## Related Artifacts"
+require_text "$rfc_531" "research/hub/exp/htom-genome-rfc-531/"
+require_text "docs/rfc/README.md" "2026-08-21-rfc-htom-genome-structure-and-ci.md"
+require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md` | RFC | справка |'
+require_text "pr-ops/backlog.md" "**B-105**"
+require_text "research/hub/exp/htom-genome-rfc-531/README.md" "Draft validation passed: 7/7"
 
 # External knowledge integration (issue #227): Base Registry + insights + RFC.
 require_text "research/external-knowledge/README.md" "status: draft"
