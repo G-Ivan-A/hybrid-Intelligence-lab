@@ -26,7 +26,7 @@ TODO: добавьте краткое описание продукта посл
 | Пример | `mango_ba_prompts`, `repo-development` | `open-ai.ru` |
 
 Полное обоснование различия — в RFC Хаба
-[`governance/rfc/htom-vs-spoke-clarification-2026-06.md`]({{hub_url}}/blob/main/governance/rfc/htom-vs-spoke-clarification-2026-06.md).
+[`docs/rfc/htom-vs-spoke-clarification-2026-06.md`]({{hub_url}}/blob/main/docs/rfc/htom-vs-spoke-clarification-2026-06.md).
 
 ## 🔗 Связь с Хабом
 

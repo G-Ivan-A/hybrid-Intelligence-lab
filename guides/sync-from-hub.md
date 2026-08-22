@@ -50,7 +50,7 @@ git remote add hub https://github.com/G-Ivan-A/hybrid-Intelligence-lab.git
 git fetch hub
 
 # Посмотреть, какие правила/шаблоны изменились
-git diff HEAD hub/main -- templates/ standards/ governance/
+git diff HEAD hub/main -- templates/ standards/ ai-governance/ ai-rules/ pr-ops/
 ```
 
 **Подтянуть обновления и просмотреть их перед принятием:**

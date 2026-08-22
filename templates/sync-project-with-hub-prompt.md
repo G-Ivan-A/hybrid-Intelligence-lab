@@ -24,8 +24,8 @@ governance recommendations. Propose only imports that fit this project.
 Inputs to read first:
 1. Local README, CONTRIBUTING, AI_GOVERNANCE, task templates, docs index, and
    available validators.
-2. Hub entry points: README.md, governance/artifact-map.md,
-   governance/repo-model.md, standards/README.md, practices/README.md,
+2. Hub entry points: README.md, pr-ops/artifact-map.md,
+   pr-ops/repo-model.md, standards/README.md, practices/README.md,
    templates/manifest.json.
 3. Project-specific constraints, product type, audience, and current lifecycle.
 
