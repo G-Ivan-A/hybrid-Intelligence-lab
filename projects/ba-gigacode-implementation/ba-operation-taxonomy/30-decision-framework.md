@@ -9,7 +9,7 @@ method: decision-procedure-design
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
-  - research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md
   - research/ai-education/task-processing/20-taxonomy.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
@@ -20,7 +20,7 @@ related_issues:
 ## 1. Тест уровня: операция, навык или процесс
 
 Тест применяется к описанию работы и даёт ровно один уровень. Он вызывается из
-[`ba-process-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/30-decision-framework.md), §2.
+[`ba-process-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md), §2.
 
 | Шаг | Вопрос | Да | Нет |
 | --- | --- | --- | --- |
@@ -99,4 +99,4 @@ related_issues:
    контрактом шести полей и классом. Использовать значение до внесения в
    каталог запрещено (`T-1`).
 4. Записать случай в
-   [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/50-open-research.md), §2.
+   [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/50-open-research.md), §2.

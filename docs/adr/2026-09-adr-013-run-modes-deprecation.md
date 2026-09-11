@@ -19,7 +19,7 @@ decision-type: methodology
 | Decision date | 2026-09-08 |
 | Owner | G-Ivan-A |
 | Source | issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563) (постановка и решение фаундера); доказательная база — [снимок входов BA Meta-Model](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md) |
-| Impacted artifacts | [`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model), [`research/ba-requirements/orchestration/00-introduction.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/orchestration/00-introduction.md), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), [`mango_ba_prompts/prompts/`](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/prompts), [`mango_ba_prompts/docs/ba-processes/00-index.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md) |
+| Impacted artifacts | [`projects/ba-gigacode-implementation/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model), [`research/ba-requirements/orchestration/00-introduction.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/orchestration/00-introduction.md), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), [`mango_ba_prompts/prompts/`](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/prompts), [`mango_ba_prompts/docs/ba-processes/00-index.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md) |
 | Supersedes | none |
 | Дополнено | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md): режимы — только одна ось влияния наследия; правила `LG-1`…`LG-6` закрывают вторую (перенос **содержания** и формы старых промптов и прогонов в новую норму). |
 | Superseded by | none |
@@ -155,7 +155,7 @@ decision-type: methodology
 
 - [`research/ba-requirements/2026-09-08-meta-model-inputs-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md)
   — датированный замер, на котором основано решение.
-- [`research/ba-requirements/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md)
+- [`projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md)
   — канонические таксономии, в которых режим отсутствует как класс.
 - [`standards/artifact-deprecation-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/artifact-deprecation-standard.md)
   — ось депрекации артефакта во времени.

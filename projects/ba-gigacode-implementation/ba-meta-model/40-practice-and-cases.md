@@ -9,9 +9,9 @@ method: production-model-visualization + slice-planning + case-modeling
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
 based_on:
-  - research/ba-requirements/ba-meta-model/10-theory.md
-  - research/ba-requirements/ba-meta-model/20-taxonomy.md
-  - research/ba-requirements/ba-meta-model/30-decision-framework.md
+  - projects/ba-gigacode-implementation/ba-meta-model/10-theory.md
+  - projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
@@ -157,9 +157,9 @@ flowchart TD
 
 К пяти метрикам пакета версия 0.2 добавляет метрики новых таксономий:
 `MP-1`…`MP-6` для процессов и навыков
-([`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md))
+([`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md))
 и `MO-1`…`MO-5` для операций
-([`ba-operation-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/40-practice-and-cases.md)).
+([`ba-operation-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/40-practice-and-cases.md)).
 Пересечения нет: `M-1`…`M-5` измеряют прогон пакета, `MP-*` и `MO-*` — качество
 самой таксономии.
 

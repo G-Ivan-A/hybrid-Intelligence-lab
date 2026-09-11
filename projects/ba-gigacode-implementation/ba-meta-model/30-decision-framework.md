@@ -9,7 +9,7 @@ method: package-design + contract-modeling + environment-documentation
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
 based_on:
-  - research/ba-requirements/ba-meta-model/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md
   - research/ba-requirements/2026-09-10-gigacode-environment-facts.md
   - research/ba-requirements/artifact-micro-structure/30-decision-framework.md
   - research/ba-requirements/methodology-unification/30-decision-framework.md
@@ -60,7 +60,7 @@ ADR/RFC, бэклога, карт дублирований, обосновани
 жизненным циклом. Его дом — исполняющая среда (репозиторий спицы или отдельный
 release-каталог), а Хаб хранит **спецификацию** пакета, то есть настоящий
 модуль. Обоснование выбора и альтернативы —
-[`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md), §2.
+[`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md), §2.
 
 ## 3. Контракт скомпилированного `SKILL.md`
 

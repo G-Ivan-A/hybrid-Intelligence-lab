@@ -11,7 +11,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
   - research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-defects.json
 related_artifacts:
-  - "research/ba-requirements/ba-meta-model/20-taxonomy.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md"
   - "research/ba-requirements/exp/ba-process-taxonomy-571/README.md"
   - "docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md"
 related_issues:
@@ -24,9 +24,9 @@ related_issues:
 > **Назначение.** Датированное **измерение** восьми конкретных дефектов, из-за
 > которых действующая таксономия процессов и операций не может быть исполнена
 > AI-агентом. Интерпретация и новая норма — в модулях
-> [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/00-introduction.md)
+> [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md)
 > и
-> [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/00-introduction.md).
+> [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md).
 > Снимок отделён от модулей, потому что корпус растёт: на другом коммите числа
 > будут другими.
 
@@ -34,7 +34,7 @@ related_issues:
 на коммите `8cbf82aa73129ec5747af07f790aaf438b0fb6e9` (67 прогонов `runs/`,
 `docs/taxonomy.md`, `standards/ba-ontology.md`, `docs/adr/009-*`) и Хаб на
 коммите `15aa76f88987511312cbf7cdb2c87b8912fb53f5` (модуль
-[`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model)).
+[`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model)).
 
 **Измеритель.**
 [`exp/ba-process-taxonomy-571/audit-taxonomy-defects.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py),
@@ -67,7 +67,7 @@ related_issues:
 
 Конструкция `ФТ/ТЗ` встречается в корпусе **29 раз**, в том числе в определении
 процесса №1 `docs/taxonomy.md:69` и в перенесённой в Хаб строке
-`research/ba-requirements/ba-meta-model/20-taxonomy.md:93`:
+`projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md:93`:
 
 ```
 | `fr-generation` | от сырого запроса до черновика ФТ/ТЗ | ingestion, understanding, documentation, solution_design | A-FR, A-TZ |
@@ -145,11 +145,11 @@ related_issues:
 | --- | --- |
 | `standards/ba-ontology.md`, §1 | сущность `Подпроцесс` объявлена; ребро `R1`: `Процесс → Подпроцесс`, 1→N |
 | `docs/adr/009-bcreq-formation-process.md` | шесть именованных подпроцессов `П1`…`П6` с человеческими гейтами `G1`, `G2`, `G3` |
-| `research/ba-requirements/ba-meta-model/*.md` | **0** упоминаний подпроцесса |
+| `projects/ba-gigacode-implementation/ba-meta-model/*.md` | **0** упоминаний подпроцесса |
 
 Хаб вместо уровня подпроцесса объявил `Skill` «единственной исполнимой
 реализацией `Operation`»
-([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §2),
+([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md), §2),
 то есть свёл трёхуровневую иерархию к двум уровням и потерял узел, к которому в
 споке привязаны человеческие гейты.
 
@@ -163,7 +163,7 @@ related_issues:
 `Operation`, `Process`, `Route`, `Actor`, `Gate`, `Contract`, `Trace`); `Skill`
 записан в таблице десятой строкой, но явно объявлен реализацией `Operation`, а
 не самостоятельной сущностью
-([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §2).
+([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md), §2).
 Отсутствуют:
 
 - **Система** — целевая система, к которой предъявляются требования;

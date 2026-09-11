@@ -26,10 +26,10 @@ related_issues:
 
 | Контракт issue #563 | Артефакт | Подтверждение |
 | --- | --- | --- |
-| 1. Депрекация режимов | [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §6 | замер: 13 пар вариантов, средний Жаккар скелетов 0.077, ни одной идентичной пары |
-| 2. Четыре канонические таксономии | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §2–§5 + [`standards/product-taxonomy-reference.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/product-taxonomy-reference.md) | покрытие операций и процессов измерено, а не объявлено |
-| 3. Визуализация модели производства | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md) §1–§2 | граф BCREQ с предусловиями, гейтами и следом |
-| 4. Состав Execution Package | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) §2–§5 | семь классов файлов, контракт `SKILL.md`, граф маршрута и лист прогона, Golden Set |
+| 1. Депрекация режимов | [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §6 | замер: 13 пар вариантов, средний Жаккар скелетов 0.077, ни одной идентичной пары |
+| 2. Четыре канонические таксономии | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §2–§5 + [`standards/product-taxonomy-reference.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/product-taxonomy-reference.md) | покрытие операций и процессов измерено, а не объявлено |
+| 3. Визуализация модели производства | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md) §1–§2 | граф BCREQ с предусловиями, гейтами и следом |
+| 4. Состав Execution Package | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md) §2–§5 | семь классов файлов, контракт `SKILL.md`, граф маршрута и лист прогона, Golden Set |
 | 5. Выбор артефактов и их дома | настоящий файл, §2 | обоснование ниже |
 
 ## 2. Обоснование выбора артефактов и их «дома»
@@ -41,7 +41,7 @@ Issue #563 оставляет выбор исполнителю по SSOT и Ant
 | --- | --- | --- |
 | Продуктовая таксономия | `standards/` | Issue требует «чистого справочного артефакта в Хабе». `research/` версионируется как знание и имеет статус исследования; норма, на которую ссылается исполнение, не может лежать в исследовательском каталоге. Форма подчинена F10 `standards/standard-meta-structure.md`. |
 | Решение о депрекации | новый файл в `docs/adr/` | Решение с последствиями для маршрутизации — ADR по определению. Валидатор исторической неизменности разрешает **добавление** файлов в `docs/adr/`, но не правку, поэтому депрекация оформлена новым ADR-013, а не изменением существующих. |
-| Мета-модель (шесть файлов RRP) | `research/ba-requirements/ba-meta-model/` | Мета-модель ещё не проверена прогоном; до эмпирики она исследование, а не норма. Переход в норму — задачами бэклога. |
+| Мета-модель (шесть файлов RRP) | `projects/ba-gigacode-implementation/ba-meta-model/` | Мета-модель ещё не проверена прогоном; до эмпирики она исследование, а не норма. Переход в норму — задачами бэклога. |
 | Замер и измеритель | `research/ba-requirements/exp/ba-meta-model-563/` + датированный отчёт | Установленная в репозитории форма доказательной базы: воспроизводимый скрипт рядом с сырым результатом, интерпретация — в датированном отчёте. |
 | Сам Execution Package | **вне Хаба** | SSOT: Хаб хранит спецификацию пакета, исполняющая среда — его скомпилированный экземпляр. Хранение обоих в Хабе создало бы два источника истины и нарушило `EP-C5`. |
 

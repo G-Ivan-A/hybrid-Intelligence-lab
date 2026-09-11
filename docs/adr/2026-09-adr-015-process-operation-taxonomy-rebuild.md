@@ -19,7 +19,7 @@ decision-type: methodology
 | Decision date | 2026-09-10 |
 | Owner | G-Ivan-A |
 | Source | issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571) и приложенный к ней диалог; доказательная база — [замер дефектов таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md) |
-| Impacted artifacts | [`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model), [`research/ba-requirements/ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-process-taxonomy), [`research/ba-requirements/ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-operation-taxonomy), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), будущий Execution Package |
+| Impacted artifacts | [`projects/ba-gigacode-implementation/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model), [`projects/ba-gigacode-implementation/ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-process-taxonomy), [`projects/ba-gigacode-implementation/ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-operation-taxonomy), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), будущий Execution Package |
 | Supersedes | none |
 | Superseded by | none |
 | Дополняет | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md) — первое применение правил `LG-1`…`LG-6` к содержательной таксономии |
@@ -70,10 +70,10 @@ decision-type: methodology
 **Что сделано по этому решению.**
 
 1. Аудит исторического корпуса и датированный отчёт о восьми дефектах.
-2. Модуль [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-process-taxonomy):
+2. Модуль [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-process-taxonomy):
    `L0` — шесть областей знаний BABOK, `L1` — пять семейств работ, `L2` — десять
    процессов `P-01`…`P-10`, `L3` — 33 навыка с ярусами контроля `G1`–`G7`.
-3. Модуль [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-operation-taxonomy):
+3. Модуль [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-operation-taxonomy):
    31 операция в пяти классах (`extract`, `transform`, `generate`, `check`,
    `assess`), шестиполевой контракт операции, разложение всех 33 навыков.
 4. Реестры депрекации девяти процессов и тринадцати операций с указанием замены
@@ -148,13 +148,13 @@ decision-type: methodology
 
 - [`research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md)
   — замер восьми дефектов, на котором основано решение.
-- [`research/ba-requirements/ba-process-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md)
+- [`projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md)
   — уровни `L0`–`L3` и реестр депрекации процессов.
-- [`research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md)
+- [`projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md)
   — каталог операций, разложение навыков и реестр депрекации операций.
 - [`research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md)
   — семь синтетических кейсов и эталоны.
 - [`docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md)
   — правила `LG-1`…`LG-6`, по которым унаследованный словарь не мог остаться базисом.
-- [`research/ba-requirements/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md)
+- [`projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md)
   — версия 0.2 мета-модели: контракты артефактов и указатели на новые таксономии.

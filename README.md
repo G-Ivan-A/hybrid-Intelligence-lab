@@ -85,6 +85,7 @@ temperature: 0.1
 | Проект | Назначение |
 | --- | --- |
 | [projects/README.md](projects/README.md) | Навигация по проектным рабочим областям и правило выбора `/projects` vs spoke-репозиторий. |
+| [projects/ba-gigacode-implementation/README.md](projects/ba-gigacode-implementation/README.md) | Дом мета-модели БА и таксономий процессов и операций: реализация БА-процессов КК Манго в среде GigaCode. |
 | [projects/repo-development/README.md](projects/repo-development/README.md) | Развитие самого репозитория: аудит миграции, согласованность и предложения по оптимизации. |
 | [projects/education-ba-prompt/README.md](projects/education-ba-prompt/README.md) | Песочница идей, терминов, кейсов и шаблонов для будущего курса БА по промпт-инжинирингу. |
 | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | Мигрировавший spoke-репозиторий Mango; прежняя архивная копия удалена из Хаба, история доступна через git. |

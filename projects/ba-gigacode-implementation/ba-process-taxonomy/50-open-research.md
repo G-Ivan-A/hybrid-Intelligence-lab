@@ -9,7 +9,7 @@ method: gap-listing
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
-  - research/ba-requirements/ba-process-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---
@@ -42,7 +42,7 @@ BABOK, то при смене предметной области меняютс
 | --- | --- |
 | `B-155` | Перенос дома мета-модели и таксономий в `projects/<направление>/` вслед за правилом 2 `<project_specific_rules>` |
 | `B-156` | Стандарт мета-модели: перевод исследовательских правил в норму `standards/` после первого вертикального среза |
-| `B-157` | Сбор эмпирики по `MP-1`–`MP-6` на первых прогонах и пересмотр ярусов `G1`–`G7` в §5 [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md) |
+| `B-157` | Сбор эмпирики по `MP-1`–`MP-6` на первых прогонах и пересмотр ярусов `G1`–`G7` в §5 [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) |
 | `B-158` | Сопоставление `L0` с IREB CPRE и SWEBOK, проверка вопроса 1 |
 
 ## 4. Что сознательно не сделано

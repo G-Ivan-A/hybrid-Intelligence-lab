@@ -10,11 +10,11 @@ scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
   - research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md
-  - research/ba-requirements/ba-meta-model/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md
   - research/ai-education/task-processing/20-taxonomy.md
 related_artifacts:
-  - "research/ba-requirements/ba-operation-taxonomy/00-introduction.md"
-  - "research/ba-requirements/ba-meta-model/00-introduction.md"
+  - "projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md"
   - "docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
@@ -32,14 +32,14 @@ related_issues:
 > `50` — незакрытое.
 > **Ссылки абсолютные** (требование issue #571). Единственное исключение —
 > внутримодульные ссылки в
-> [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md):
+> [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md):
 > правило `P2` требует относительной ссылки и проверяется машинно
 > ([`tools/validate-rrp-links.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-rrp-links.sh)).
 
 ## Зачем модуль существует
 
 Действующая таксономия процессов в
-[`ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md), §4
+[`ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md), §4
 унаследована из спицы целиком, по правилу `T-4` («значение наследуется, если у
 него есть индустриальный источник»). Проверка показала, что условие правила не
 выполнялось: у унаследованных девяти процессов индустриального источника нет, а
@@ -64,10 +64,10 @@ related_issues:
 1. **Таксономия процессов четырёхуровневая: `L0 → L1 → L2 → L3`.** `L0` —
    области знаний BABOK Guide v3, `L1` — семейства работ ИТ/телеком, `L2` —
    процессы Манго КК, `L3` — навыки (подпроцессы), которыми процесс исполняется
-   ([`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md), §2–§5).
+   ([`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md), §2–§5).
 2. **`L0` и `L1` не изобретаются.** Шесть областей знаний BABOK — внешняя
    норма; отклонение от неё требует основания, а не наоборот
-   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/10-theory.md), §2).
+   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md), §2).
 3. **`L2` — дельта, а не копия.** Десять процессов Манго КК объявлены как
    различие между индустриальным базисом и практикой контакт-центра;
    у каждого указана область знаний-родитель и причина существования отдельно
@@ -82,12 +82,12 @@ related_issues:
    Operation (1:N)`: навык оркеструет атомарные операции, имеет собственные
    вход, выход и гейт и является наименьшей единицей, которую можно поручить
    актору целиком
-   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/10-theory.md), §4).
+   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md), §4).
 7. **Маршрут — ориентированный граф.** Процесс задаёт множество допустимых
    переходов, условия которых вычисляются на гейтах; прогон — одна конкретная
    траектория в этом графе. Обнаружение неоднозначности, переводящее работу в
    `clarification-management`, — исполнение маршрута, а не его изменение
-   ([`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/30-decision-framework.md), §3).
+   ([`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md), §3).
 8. **Исполнимость агентом — критерий, а не пожелание.** Процесс включается в
    `L2`, только если для каждого его навыка объявлены вход, выход, гейт и ярус
    контроля по шкале `G1`–`G7`
@@ -97,19 +97,19 @@ related_issues:
 9. **Прежние девять процессов не удаляются, а разбираются поимённо.** Реестр
    депрекации указывает для каждого: подтверждён, переименован, разделён,
    поглощён или депрекирован — с основанием
-   ([`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md), §6).
+   ([`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md), §6).
 
 ## Что закрывают файлы модуля
 
 | Контракт issue #571 | Где закрыт |
 | --- | --- |
-| 1. Индустриальный базис BABOK/CBAP + дельта Манго | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/10-theory.md) §2–§3, [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md) §2–§4 |
-| 1. Разделение ФТ / ТЗ / BCREQ | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md) §4, [`ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §2 |
-| 2. Заземление на реальность AI-агента | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/30-decision-framework.md) §4 (ярусы `G1`–`G7`), §5 (контракт исполнимости) |
-| 3. Гранулярность: навык как подпроцесс | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/10-theory.md) §4, [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md) §5 |
-| 4. Синтетические кейсы вместо загрязнённой истории | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md) §2–§3 |
-| Аудит наследия и депрекация ошибочных определений | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md) §6 |
-| Не выполнено и вопросы | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/50-open-research.md) |
+| 1. Индустриальный базис BABOK/CBAP + дельта Манго | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md) §2–§3, [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) §2–§4 |
+| 1. Разделение ФТ / ТЗ / BCREQ | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) §4, [`ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §2 |
+| 2. Заземление на реальность AI-агента | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md) §4 (ярусы `G1`–`G7`), §5 (контракт исполнимости) |
+| 3. Гранулярность: навык как подпроцесс | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md) §4, [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) §5 |
+| 4. Синтетические кейсы вместо загрязнённой истории | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md) §2–§3 |
+| Аудит наследия и депрекация ошибочных определений | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) §6 |
+| Не выполнено и вопросы | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/50-open-research.md) |
 
 ## Доказательная база
 
@@ -127,8 +127,8 @@ related_issues:
 - **Нет каталога значений предметной области.** Домены, capability и features
   остаются в споке (`T-5`); модуль владеет формой уровней и именами процессов.
 - **Нет словаря операций.** Он вынесен в отдельный модуль
-  [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/00-introduction.md),
+  [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md),
   потому что критерий атомарности — самостоятельный предмет.
 - **Нет универсальности.** Уровни `L2` и `L3` специализированы под предметную
   область Манго КК и среду GigaCode. Переносимость — гипотеза, а не свойство
-  ([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/50-open-research.md), §1).
+  ([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/50-open-research.md), §1).

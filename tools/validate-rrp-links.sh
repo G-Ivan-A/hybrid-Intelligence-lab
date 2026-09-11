@@ -20,7 +20,11 @@ set -euo pipefail
 ROOT_DIR="${1:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 cd "$ROOT_DIR"
 
-SEARCH_ROOT="${RRP_SEARCH_ROOT:-research}"
+# Модули Reference Research Pattern живут не только в `research/`: проектные
+# направления держат свои модули в `projects/<направление>/` (issue #573,
+# перенос мета-модели и таксономий БА). Правило P2 не зависит от каталога,
+# поэтому проверка идёт по всем корням, где модуль может лежать.
+read -r -a SEARCH_ROOTS <<< "${RRP_SEARCH_ROOT:-research projects}"
 
 # Modules that violated P2 before the rule became machine-checkable.
 # Attribution and evidence: research/hub/2026-08-13-rrp-cross-validation-codex.md
@@ -76,7 +80,12 @@ count_foundation_links() {
 
 modules_checked=0
 
-if [[ -d "$SEARCH_ROOT" ]]; then
+existing_roots=()
+for root in "${SEARCH_ROOTS[@]}"; do
+  [[ -d "$root" ]] && existing_roots+=("$root")
+done
+
+if ((${#existing_roots[@]} > 0)); then
   while IFS= read -r intro_file; do
     module="${intro_file%/*}"
     modules_checked=$((modules_checked + 1))
@@ -109,7 +118,7 @@ if [[ -d "$SEARCH_ROOT" ]]; then
     fi
 
     fail "P2 violated: $practice_file has no markdown link to a theory-branch file (10-*.md, 20-*.md, 30-*.md) of its own module"
-  done < <(find "$SEARCH_ROOT" -type f -name '00-*.md' | sort)
+  done < <(find "${existing_roots[@]}" -type f -name '00-*.md' | sort)
 fi
 
 if (( failures > 0 )); then

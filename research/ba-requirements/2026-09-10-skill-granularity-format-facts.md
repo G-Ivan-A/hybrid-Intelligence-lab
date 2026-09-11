@@ -12,9 +12,9 @@ based_on:
   - research/ba-requirements/exp/ba-process-taxonomy-571/skill-format.json
   - research/ba-requirements/exp/ba-process-taxonomy-571/gigacode-docs.json
 related_artifacts:
-  - "research/ba-requirements/ba-process-taxonomy/10-theory.md"
-  - "research/ba-requirements/ba-operation-taxonomy/10-theory.md"
-  - "research/ba-requirements/ba-meta-model/30-decision-framework.md"
+  - "projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md"
+  - "projects/ba-gigacode-implementation/ba-operation-taxonomy/10-theory.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---

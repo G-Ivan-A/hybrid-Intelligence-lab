@@ -16,8 +16,8 @@ based_on:
 related_artifacts:
   - "docs/adr/2026-09-adr-013-run-modes-deprecation.md"
   - "docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md"
-  - "research/ba-requirements/ba-process-taxonomy/20-taxonomy.md"
-  - "research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md"
+  - "projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md"
+  - "projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md"
   - "standards/product-taxonomy-reference.md"
   - "research/ba-requirements/orchestration/00-introduction.md"
   - "ops/backlog.md"
@@ -38,7 +38,7 @@ related_issues:
 > BCREQ, вертикальный срез и метрики, `50` — незакрытое и бэклог.
 > **Ссылки абсолютные** (требование issue #563). Единственное исключение —
 > внутримодульные ссылки в
-> [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md):
+> [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md):
 > правило `P2` требует относительной ссылки и проверяется машинно
 > ([`tools/validate-rrp-links.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-rrp-links.sh)).
 
@@ -63,7 +63,7 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 утверждается**: `L0` и `L1` процессной таксономии унаследованы из BABOK Guide v3
 и переносимы по построению, а `L2`, `L3` и словарь операций выведены из одной
 предметной области. Переносимость на другой домен — гипотеза дорожной карты
-([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md)),
+([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md)),
 а не свойство модели.
 
 **Что изменила версия 0.2**
@@ -82,7 +82,7 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
    которому предъявляются требования, — и перевела `Skill` из реализации
    операции в самостоятельную сущность. Всё остальное в накопленных модулях —
    проекция, а не новая сущность
-   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §2).
+   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md), §2).
 2. **Идентичность работы задаётся парой «операция + продуктовый класс».**
    Режим запуска (`stepwise`, `oneshot`, `legacy`) идентичностью не является и
    переведён в `deprecated`
@@ -95,7 +95,7 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
    один класс результата. Три сущности, слитые в корпусе спицы в один артефакт
    (промпт), разведены и связаны цепочкой вложения, а не отображением «многие к
    одному»
-   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §4).
+   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md), §4).
 4. **Гейт — одна сущность с тремя исполнителями.** `G-self` (агент проверяет
    себя), `G-mach` (валидатор), `G-human` (человек) — не три типологии из трёх
    модулей, а три значения поля `executor` одной сущности. Человеческие гейты
@@ -111,7 +111,7 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 7. **Четыре таксономии канонические, пятая — служебная.** Артефакты,
    операции, процессы, продукты — канонические. Таксономия гейтов и контрактов
    служебная: она описывает не предмет работы, а её контроль
-   ([`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md), §7).
+   ([`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md), §7).
 8. **Продуктовая таксономия унаследована, а не изобретена.** Уровни
    `Domain → Capability → Feature → Atomic Function` перенесены в Хаб чистым
    справочником
@@ -121,11 +121,11 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
    классов файлов; исследовательские тексты не переносятся. Скомпилированный
    `SKILL.md` самодостаточен: активных ссылок, по которым агент должен ходить во
    время исполнения, в нём нет, а версия слоёв объявлена во frontmatter
-   ([`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md), §3).
+   ([`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md), §3).
 10. **Вертикальный срез запускается на одном артефакте.** MVP — `BCREQ` для
     одного продуктового класса: один маршрут, четыре навыка, три гейта, пять
     метрик. Расширение начинается только после накопления эмпирики на нём
-    ([`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md), §4).
+    ([`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md), §4).
 
 11. **Историческое наследие — свидетельство о прошлом, а не базис новой
     нормы.** Промпты и прогоны дают факты о практике и не задают структуру и
@@ -142,20 +142,20 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
     `extract-actors` и фиксируется в `A-CORE`; артефакт-проекция (диаграмма
     вариантов использования, пользовательская история) берёт акторов только
     оттуда. `Система` при этом — объект требований, а не исполнитель шага
-    ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §2.1–§2.2).
+    ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md), §2.1–§2.2).
 
 ## Что закрывают файлы модуля
 
 | Контракт issue #563 | Где закрыт |
 | --- | --- |
-| 1. Депрекация `stepwise`/`oneshot`/`legacy` | [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §6 |
-| 2. Синтез четырёх канонических таксономий | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §2–§5, [`standards/product-taxonomy-reference.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/product-taxonomy-reference.md) |
-| 3. Визуализация модели производства артефакта | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md) §2–§3 |
-| 4. Состав Execution Package для GigaCode | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) §2–§5 |
-| 5. Автономия исполнителя: выбор артефактов и их дома | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md) §2 |
-| План вертикального среза и сбора эмпирики | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md) §4–§5 |
-| Защита новой нормы от диктата наследия ([комментарий фаундера к PR #564](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/564)) | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md), §6.1 [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md), §7 [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), `EP-C6`/`SK-7` [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) |
-| Не выполнено и вопросы | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md) §4 |
+| 1. Депрекация `stepwise`/`oneshot`/`legacy` | [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §6 |
+| 2. Синтез четырёх канонических таксономий | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §2–§5, [`standards/product-taxonomy-reference.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/product-taxonomy-reference.md) |
+| 3. Визуализация модели производства артефакта | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md) §2–§3 |
+| 4. Состав Execution Package для GigaCode | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md) §2–§5 |
+| 5. Автономия исполнителя: выбор артефактов и их дома | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md) §2 |
+| План вертикального среза и сбора эмпирики | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md) §4–§5 |
+| Защита новой нормы от диктата наследия ([комментарий фаундера к PR #564](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/564)) | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md), §6.1 [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md), §7 [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md), `EP-C6`/`SK-7` [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md) |
+| Не выполнено и вопросы | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md) §4 |
 
 Контракты [issue #571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)
 закрываются версией 0.2 и двумя новыми модулями.
@@ -163,12 +163,12 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 | Контракт issue #571 | Где закрыт |
 | --- | --- |
 | Глубокий разбор дефектов действующей таксономии | [`2026-09-10-process-taxonomy-defects-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md) |
-| Индустриальный базис процессов и дельта КК Манго | [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-process-taxonomy) |
-| Гранулярность операций и связь с навыками | [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-operation-taxonomy) |
-| Однозначные определения артефактов (`A-CORE`, `A-TZ`, `A-BCREQ`, `A-REP`, `A-TRACE`) | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §2 |
-| Сущности `Система`, `Пользователь`, `Актор`, навык как подпроцесс | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md) §2, §4 |
-| Маршрут как граф с ветвлениями по гейтам | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md) §6, [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) §6.1 |
-| Обязательная ссылка на источник в контракте человеческого гейта | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §7, `GT-5` |
+| Индустриальный базис процессов и дельта КК Манго | [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-process-taxonomy) |
+| Гранулярность операций и связь с навыками | [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-operation-taxonomy) |
+| Однозначные определения артефактов (`A-CORE`, `A-TZ`, `A-BCREQ`, `A-REP`, `A-TRACE`) | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §2 |
+| Сущности `Система`, `Пользователь`, `Актор`, навык как подпроцесс | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md) §2, §4 |
+| Маршрут как граф с ветвлениями по гейтам | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md) §6, [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md) §6.1 |
+| Обязательная ссылка на источник в контракте человеческого гейта | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §7, `GT-5` |
 | Синтетические кейсы и эталоны | [`exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md) |
 | Решение о пересборке | [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md) |
 
@@ -195,10 +195,10 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 - **Нет реализации пакета.** Модуль задаёт состав и контракты Execution
   Package, но не создаёт его файлы: их дом — исполняющая среда, а не
   исследовательский модуль Хаба
-  ([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md), §2).
+  ([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md), §2).
 - **Нет переписывания модулей `M0`–`M4` и обеих осей.** Расхождения
   зафиксированы как отображение сущностей
-  ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §5)
+  ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md), §5)
   и вынесены в бэклог, а не устранены правкой исторических текстов.
 - **Нет продуктового каталога.** Домены, capability и features остаются в
   споке; Хаб владеет формой уровней.

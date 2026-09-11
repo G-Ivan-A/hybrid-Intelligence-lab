@@ -9,7 +9,7 @@ method: decision-tree-design + gate-mapping
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
-  - research/ba-requirements/ba-process-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md
   - research/ba-requirements/2026-09-10-gigacode-environment-facts.md
   - research/ai-education/task-processing/20-taxonomy.md
 related_issues:
@@ -57,7 +57,7 @@ related_issues:
 Если результат предъявляется следующему шагу и проверяется гейтом — навык.
 Если результат — элемент, у которого есть контракт формы, но нет отдельной
 проверки, — операция
-([`ba-operation-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/30-decision-framework.md), §1).
+([`ba-operation-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/30-decision-framework.md), §1).
 
 ## 3. Маршрут: граф, а не список
 

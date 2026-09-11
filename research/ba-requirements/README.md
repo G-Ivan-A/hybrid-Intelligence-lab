@@ -67,7 +67,19 @@ temperature: 0.1
   Модуль `methodology-unification/` намеренно **не переписывается**: поправки
   к нему оформлены как `П-1`…`П-5` и заведены задачей `B-141`.
 
-- [`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/00-introduction.md)
+## Перенесённые модули
+
+Три модуля этого направления описывают реализацию БА-процессов КК Манго в среде
+GigaCode, то есть являются артефактами конкретного направления, а не переносимой
+рамкой. По правилу размещения проектных артефактов
+([`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md))
+их дом — [`projects/ba-gigacode-implementation/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/README.md)
+(задача `B-155`, issue [#573](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573)).
+Доказательная база — датированные снимки и эксперименты ниже — осталась здесь:
+снимок фиксирует состояние корпуса на дату замера и принадлежит направлению
+исследования, а не проекту.
+
+- [`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md)
   — синтез накопленной базы в каноническую мета-модель БА (issue
   [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)):
   девять канонических сущностей и закон производства `MM-1`…`MM-4`, четыре
@@ -89,7 +101,7 @@ temperature: 0.1
   требует ссылок на источник (`GT-5`); заявка на универсальность снята и
   заменена проверяемой гипотезой переносимости (`scope: mango-only`).
 
-- [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/00-introduction.md)
+- [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md)
   — таксономия процессов БА на индустриальном базисе (issue
   [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)):
   четыре уровня `L0` (шесть областей знаний BABOK v3) → `L1` (шесть семейств
@@ -101,7 +113,7 @@ temperature: 0.1
   распадается на три процесса. Ярусы контроля `G1`–`G7` заимствованы из
   [`research/ai-education/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/task-processing/00-introduction.md),
   метрики `MP-1`…`MP-6`.
-- [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/00-introduction.md)
+- [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md)
   — таксономия операций той же пересборки: операция как **атомарное, но
   семантически завершённое** когнитивное действие с шестиполевым контрактом,
   31 операция в пяти классах (`extract`, `transform`, `generate`, `check`,

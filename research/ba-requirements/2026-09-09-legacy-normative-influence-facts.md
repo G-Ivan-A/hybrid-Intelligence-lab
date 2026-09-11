@@ -12,8 +12,8 @@ based_on:
   - research/ba-requirements/exp/ba-meta-model-563/legacy-normative-influence.json
 related_artifacts:
   - "research/ba-requirements/2026-09-08-meta-model-inputs-facts.md"
-  - "research/ba-requirements/ba-meta-model/10-theory.md"
-  - "research/ba-requirements/ba-meta-model/20-taxonomy.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/10-theory.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md"
   - "docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
@@ -90,7 +90,7 @@ related_issues:
 ## 3. Аудит происхождения принятых решений PR #564
 
 Сплошная проверка: для каждого нормативного блока модуля
-[`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/00-introduction.md)
+[`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md)
 указано, чем он порождён и в какой роли использовано наследие.
 
 | Нормативный блок | Источник формы | Роль наследия | Класс по `LG-1` |

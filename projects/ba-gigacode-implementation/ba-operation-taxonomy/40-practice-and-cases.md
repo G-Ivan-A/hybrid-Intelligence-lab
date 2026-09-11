@@ -9,7 +9,7 @@ method: synthetic-case-design + metric-design
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
-  - research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md
   - research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"

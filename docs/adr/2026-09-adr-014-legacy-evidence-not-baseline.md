@@ -19,7 +19,7 @@ decision-type: methodology
 | Decision date | 2026-09-09 |
 | Owner | G-Ivan-A |
 | Source | комментарий фаундера к PR [#564](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/564) по issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563); доказательная база — [замер влияния наследия](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-09-legacy-normative-influence-facts.md) |
-| Impacted artifacts | [`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model), [`docs/adr/2026-09-adr-013-run-modes-deprecation.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), будущий Execution Package |
+| Impacted artifacts | [`projects/ba-gigacode-implementation/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model), [`docs/adr/2026-09-adr-013-run-modes-deprecation.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), будущий Execution Package |
 | Supersedes | none |
 | Superseded by | none |
 | Дополняет | [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md) — расширяет предмет с имён режимов на **содержание** исторических артефактов |
@@ -153,9 +153,9 @@ ADR-014 добавляет к нему второй, недостающий ко
   — замер и аудит происхождения, на которых основано решение.
 - [`docs/adr/2026-09-adr-013-run-modes-deprecation.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md)
   — депрекация режимов запуска; ADR-014 дополняет его вторым контуром.
-- [`research/ba-requirements/ba-meta-model/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md)
+- [`projects/ba-gigacode-implementation/ba-meta-model/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md)
   — §8: место правил `LG-*` в теории мета-модели.
-- [`research/ba-requirements/ba-meta-model/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md)
+- [`projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md)
   — правило компиляции `EP-C6` и поле `derived_from`.
 - [`standards/artifact-deprecation-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/artifact-deprecation-standard.md)
   — ось депрекации артефакта во времени.

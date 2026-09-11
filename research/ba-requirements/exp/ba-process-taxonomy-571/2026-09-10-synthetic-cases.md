@@ -9,8 +9,8 @@ method: synthetic-case-design + golden-reference
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
-  - research/ba-requirements/ba-process-taxonomy/20-taxonomy.md
-  - research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---

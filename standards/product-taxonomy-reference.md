@@ -190,7 +190,7 @@ atomic function плюс overlay, а не новый domain.
   [модуле микро-структуры](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/20-taxonomy.md).
 - **Справочник ↔ мета-модель.** Продукт как сущность мета-модели и его связь с
   артефактом описаны в
-  [`research/ba-requirements/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md).
+  [`projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md).
 
 ## Validation
 
@@ -206,7 +206,7 @@ atomic function плюс overlay, а не новый domain.
 
 - [`mango_ba_prompts/standards/product-classification-contract.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md)
   — источник уровней и каталог значений.
-- [`research/ba-requirements/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md)
+- [`projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md)
   — четыре канонические таксономии мета-модели, включая продуктовую.
 - [`standards/product-profile.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/product-profile.md)
   — профиль продуктового spoke-проекта.

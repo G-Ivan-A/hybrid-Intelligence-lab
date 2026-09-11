@@ -207,12 +207,6 @@ is_active_file() {
     research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-bcreq-document-skeleton.md | \
     research/ba-requirements/2026-09-08-meta-model-inputs-facts.md | \
     research/ba-requirements/2026-09-09-legacy-normative-influence-facts.md | \
-    research/ba-requirements/ba-meta-model/00-introduction.md | \
-    research/ba-requirements/ba-meta-model/10-theory.md | \
-    research/ba-requirements/ba-meta-model/20-taxonomy.md | \
-    research/ba-requirements/ba-meta-model/30-decision-framework.md | \
-    research/ba-requirements/ba-meta-model/40-practice-and-cases.md | \
-    research/ba-requirements/ba-meta-model/50-open-research.md | \
     research/ba-requirements/exp/ba-meta-model-563/README.md | \
     research/ba-requirements/exp/ba-meta-model-563/measure-meta-model-inputs.py | \
     research/ba-requirements/exp/ba-meta-model-563/measure-meta-model-inputs.log | \
@@ -237,18 +231,6 @@ is_active_file() {
     research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.py | \
     research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.log | \
     research/ba-requirements/exp/ba-process-taxonomy-571/skill-format.json | \
-    research/ba-requirements/ba-process-taxonomy/00-introduction.md | \
-    research/ba-requirements/ba-process-taxonomy/10-theory.md | \
-    research/ba-requirements/ba-process-taxonomy/20-taxonomy.md | \
-    research/ba-requirements/ba-process-taxonomy/30-decision-framework.md | \
-    research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md | \
-    research/ba-requirements/ba-process-taxonomy/50-open-research.md | \
-    research/ba-requirements/ba-operation-taxonomy/00-introduction.md | \
-    research/ba-requirements/ba-operation-taxonomy/10-theory.md | \
-    research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md | \
-    research/ba-requirements/ba-operation-taxonomy/30-decision-framework.md | \
-    research/ba-requirements/ba-operation-taxonomy/40-practice-and-cases.md | \
-    research/ba-requirements/ba-operation-taxonomy/50-open-research.md | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \
@@ -477,6 +459,25 @@ is_active_file() {
     projects/repo-development/docs/migration-audit-2026-05.md | \
     projects/repo-development/docs/contract-violations-self-report-2026-06.md | \
     projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md | \
+    projects/ba-gigacode-implementation/README.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/10-theory.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md | \
+    projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md | \
+    projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md | \
+    projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md | \
+    projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md | \
+    projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md | \
+    projects/ba-gigacode-implementation/ba-process-taxonomy/50-open-research.md | \
+    projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md | \
+    projects/ba-gigacode-implementation/ba-operation-taxonomy/10-theory.md | \
+    projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md | \
+    projects/ba-gigacode-implementation/ba-operation-taxonomy/30-decision-framework.md | \
+    projects/ba-gigacode-implementation/ba-operation-taxonomy/40-practice-and-cases.md | \
+    projects/ba-gigacode-implementation/ba-operation-taxonomy/50-open-research.md | \
     docs/rfc/README.md | \
     docs/rfc/rfc-two-cases-of-project-initialization.md | \
     docs/rfc/contract-executability-rfc.md | \
@@ -1023,6 +1024,10 @@ required_files=(
   "education/README.md"
   "projects/README.md"
   "projects/repo-development/README.md"
+  "projects/ba-gigacode-implementation/README.md"
+  "projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md"
+  "projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md"
+  "projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md"
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
   "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"

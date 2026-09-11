@@ -146,7 +146,7 @@ OP_RE = re.compile(r"`([a-z][a-z0-9-]+)`")
 
 
 def measure_catalogue(hub: Path) -> dict:
-    source = hub / "research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md"
+    source = hub / "projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md"
     text = source.read_text(encoding="utf-8")
     skills = {}
     for name, process, cell in SKILL_ROW_RE.findall(text):

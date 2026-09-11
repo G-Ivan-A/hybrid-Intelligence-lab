@@ -9,8 +9,8 @@ method: contract-design + closed-vocabulary + per-item-verification
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
-  - research/ba-requirements/ba-operation-taxonomy/10-theory.md
-  - research/ba-requirements/ba-process-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-operation-taxonomy/10-theory.md
+  - projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---
@@ -22,7 +22,7 @@ related_issues:
 | Правило | Формулировка |
 | --- | --- |
 | `OC-1` | Словарь закрыт. Значение вне каталога не используется; потребность в новом значении открывает задачу с непокрытым случаем (`T-2`). |
-| `OC-2` | Каждая операция объявляет шесть полей контракта ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/10-theory.md), §4). Ниже приведены пять; шестое — ярус — вынесено в отдельную колонку. |
+| `OC-2` | Каждая операция объявляет шесть полей контракта ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/10-theory.md), §4). Ниже приведены пять; шестое — ярус — вынесено в отдельную колонку. |
 | `OC-3` | Операция не привязана к процессу: она вызывается любым навыком, чей вход удовлетворяет контракту. |
 | `OC-4` | Имя операции — глагол предметной области, а не действие с интерфейсом. `read-file` не является операцией. |
 | `OC-5` | Ярус в каталоге — нижняя граница. Навык может поднять ярус, но не опустить. |
@@ -134,7 +134,7 @@ related_issues:
 ## 4. Разложение навыков на операции
 
 Каждый из 33 навыков
-[таксономии процессов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md)
+[таксономии процессов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md)
 разложен на операции этого каталога. Порядок в колонке значим: он и есть тело
 подпроцесса.
 
@@ -180,7 +180,7 @@ related_issues:
 
 **Как читать строку.** Стрелка — порядок, а не ветвление: ветвление живёт на
 уровне маршрута между навыками
-([`ba-process-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/30-decision-framework.md), §3).
+([`ba-process-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md), §3).
 Отказ любой операции прерывает навык и уводит прогон по ребру отказа.
 
 ## 5. Реестр депрекации прежних тринадцати значений

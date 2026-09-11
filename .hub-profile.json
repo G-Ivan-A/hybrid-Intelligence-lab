@@ -9,6 +9,21 @@
       "from": "pr-ops/",
       "to": "ops/",
       "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/567"
+    },
+    {
+      "from": "research/ba-requirements/ba-meta-model/",
+      "to": "projects/ba-gigacode-implementation/ba-meta-model/",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573"
+    },
+    {
+      "from": "research/ba-requirements/ba-process-taxonomy/",
+      "to": "projects/ba-gigacode-implementation/ba-process-taxonomy/",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573"
+    },
+    {
+      "from": "research/ba-requirements/ba-operation-taxonomy/",
+      "to": "projects/ba-gigacode-implementation/ba-operation-taxonomy/",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573"
     }
   ]
 }

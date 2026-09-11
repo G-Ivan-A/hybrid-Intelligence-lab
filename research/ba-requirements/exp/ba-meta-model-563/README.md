@@ -11,7 +11,7 @@ type: experiment
 Evidence container для датированного замера
 [`../../2026-09-08-meta-model-inputs-facts.md`](../../2026-09-08-meta-model-inputs-facts.md)
 и модуля
-[`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model),
+[`projects/ba-gigacode-implementation/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model),
 issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563).
 
 > **Ссылки.** Issue #563 требует абсолютных ссылок. Относительная ссылка на

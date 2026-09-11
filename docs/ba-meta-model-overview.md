@@ -10,7 +10,7 @@ temperature: 0.3
 > Материал для обсуждения с бизнес-аналитиками, разработчиками и владельцами
 > продукта. Это понятная проекция исследовательской модели, а не новый
 > нормативный источник. Канонические определения находятся в
-> [модуле BA Meta-Model](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/00-introduction.md).
+> [модуле BA Meta-Model](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md).
 
 ## 1. Executive Summary
 
@@ -100,7 +100,7 @@ flowchart LR
 
 Пятый, служебный словарь описывает гейты и контракты. Он контролирует работу,
 но не классифицирует её предмет. Подробные значения и границы словарей:
-[канонические таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md).
+[канонические таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md).
 
 ## 5. Artifact Production Model
 
@@ -197,7 +197,7 @@ Operation → Skill → Agent/Subagent → Tool
 внутри GigaCode, что Subagents имеют отдельный контекст или что предложенный
 `SKILL.md` обнаруживается автоматически. Спецификация Execution Package честно
 обозначает форму навыка как аналог:
-[рамка решений](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md).
+[рамка решений](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md).
 
 ## 9. Evidence Map
 
@@ -205,8 +205,8 @@ Operation → Skill → Agent/Subagent → Tool
 | --- | --- | --- |
 | `FACT` | исследовательский корпус содержит 67 прогонов и 17 результирующих документов | воспроизводимые отчёты на зафиксированном коммите корпуса |
 | `OBSERVATION` | 17 документов имеют 17 разных скелетов; 50 прогонов не ссылаются на промпт | [замеры корпуса](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-meta-model-563) |
-| `DESIGN DECISION` | работа описывается через Product, Artifact, Operation, Process, Route, Actor, Gate, Contract и Trace | [теория модели](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md); требует human review |
-| `DESIGN DECISION` | гейты идут в порядке `G-self → G-mach → G-human` и работают fail-closed | [таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) |
+| `DESIGN DECISION` | работа описывается через Product, Artifact, Operation, Process, Route, Actor, Gate, Contract и Trace | [теория модели](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md); требует human review |
+| `DESIGN DECISION` | гейты идут в порядке `G-self → G-mach → G-human` и работают fail-closed | [таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) |
 | `DESIGN DECISION` | наследие даёт evidence, но не диктует форму нового | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md) |
 | `HYPOTHESIS` | Execution Package повысит структурную воспроизводимость и снизит человеческие правки | сравнение baseline и MVP на одних и тех же 10 задачах |
 | `HYPOTHESIS` | сущности модели напрямую реализуемы средствами GigaCode | первый сквозной прогон и сверка с официальной спецификацией |
@@ -248,7 +248,7 @@ flowchart LR
 - Каковы baseline и итоговые значения метрик первого среза.
 
 Полный реестр ограничений находится в
-[открытых вопросах исследования](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md).
+[открытых вопросах исследования](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md).
 
 ## 12. Первый MVP
 

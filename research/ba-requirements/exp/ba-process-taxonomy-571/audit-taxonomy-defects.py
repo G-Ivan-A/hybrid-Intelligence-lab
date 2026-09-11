@@ -5,7 +5,7 @@ Issue #571 требует пересобрать таксономию проце
 делать это «по тексту»: дефекты действующих словарей должны быть предъявлены
 замером, а не мнением. Скрипт отвечает на восемь вопросов, каждый из которых
 соответствует одному оспариваемому месту действующей мета-модели Хаба
-(research/ba-requirements/ba-meta-model/) и её источника — корпуса спицы
+(projects/ba-gigacode-implementation/ba-meta-model/) и её источника — корпуса спицы
 mango_ba_prompts.
 
 D1. Слияние ФТ и ТЗ. Сколько раз действующие определения процессов называют
@@ -51,12 +51,12 @@ SPOKE_PROCESS_FILES = (
 
 # Файлы мета-модели Хаба, унаследовавшие эти определения (issue #563).
 HUB_META_MODEL_FILES = (
-    "research/ba-requirements/ba-meta-model/00-introduction.md",
-    "research/ba-requirements/ba-meta-model/10-theory.md",
-    "research/ba-requirements/ba-meta-model/20-taxonomy.md",
-    "research/ba-requirements/ba-meta-model/30-decision-framework.md",
-    "research/ba-requirements/ba-meta-model/40-practice-and-cases.md",
-    "research/ba-requirements/ba-meta-model/50-open-research.md",
+    "projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md",
+    "projects/ba-gigacode-implementation/ba-meta-model/10-theory.md",
+    "projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md",
+    "projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md",
+    "projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md",
+    "projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md",
 )
 
 # Тринадцать операций действующего словаря спицы (docs/taxonomy.md §1).
@@ -271,7 +271,7 @@ def d5_subprocess_level(spoke: Path, hub: Path) -> dict:
 
 
 def d6_missing_entities(spoke: Path, hub: Path) -> dict:
-    theory = read(hub / "research/ba-requirements/ba-meta-model/10-theory.md")
+    theory = read(hub / "projects/ba-gigacode-implementation/ba-meta-model/10-theory.md")
     rows = table_rows(theory, "Ключ идентичности")
     declared = [cells[0].strip() for cells in rows if cells and cells[0].strip()]
     declared_plain = [re.sub(r"[`*]", "", d) for d in declared]
@@ -320,8 +320,8 @@ def d7_process_vocabulary_usage(spoke: Path) -> dict:
 
 
 def d8_route_without_branching(hub: Path) -> dict:
-    framework = read(hub / "research/ba-requirements/ba-meta-model/30-decision-framework.md")
-    theory = read(hub / "research/ba-requirements/ba-meta-model/10-theory.md")
+    framework = read(hub / "projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md")
+    theory = read(hub / "projects/ba-gigacode-implementation/ba-meta-model/10-theory.md")
     branch_hits = sum(
         len(re.findall(re.escape(token), framework + theory, flags=re.IGNORECASE))
         for token in BRANCH_TOKENS

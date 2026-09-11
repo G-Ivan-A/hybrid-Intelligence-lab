@@ -146,12 +146,12 @@
         },
         {
           "repo": "hybrid-Intelligence-lab",
-          "file": "research/ba-requirements/ba-meta-model/20-taxonomy.md",
+          "file": "projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md",
           "line": 93
         },
         {
           "repo": "hybrid-Intelligence-lab",
-          "file": "research/ba-requirements/ba-meta-model/20-taxonomy.md",
+          "file": "projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md",
           "line": 94
         }
       ],
@@ -185,7 +185,7 @@
         },
         {
           "repo": "hybrid-Intelligence-lab",
-          "file": "research/ba-requirements/ba-meta-model/20-taxonomy.md",
+          "file": "projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md",
           "line": 93,
           "text": "| `fr-generation` | от сырого запроса до черновика ФТ/ТЗ | `ingestion`, `understanding`, `documentation`, `solution_design` | `A-FR`, `A-TZ` |"
         }

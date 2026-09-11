@@ -11,9 +11,9 @@ source: "https://gitverse.ru/docs/ai/ai-development"
 based_on:
   - research/ba-requirements/exp/ba-process-taxonomy-571/gigacode-docs.json
 related_artifacts:
-  - "research/ba-requirements/ba-meta-model/30-decision-framework.md"
-  - "research/ba-requirements/ba-meta-model/50-open-research.md"
-  - "research/ba-requirements/ba-process-taxonomy/30-decision-framework.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md"
+  - "projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---
@@ -22,7 +22,7 @@ related_issues:
 
 > **Назначение.** Датированный снимок **фактов о среде**, в которой предстоит
 > исполнять навыки и операции таксономии БА. До этого замера модуль
-> [`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model)
+> [`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model)
 > утверждал, что детальной документации GigaCode нет и что форма `SKILL.md`
 > выведена **по аналогии** с практикой навыков агентов Claude. Постановка
 > issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)

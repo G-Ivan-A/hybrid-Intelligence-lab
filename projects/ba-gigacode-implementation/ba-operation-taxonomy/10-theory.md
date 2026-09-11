@@ -90,7 +90,7 @@ related_issues:
 ## 5. Отношение к навыку
 
 Правила `SB-0`–`SB-9`
-([`ba-process-taxonomy/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/10-theory.md), §4)
+([`ba-process-taxonomy/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md), §4)
 задают `Процесс → Подпроцесс (1:N) → Операция (1:N)`. Из них для этого модуля
 важны два следствия.
 

@@ -115,7 +115,7 @@ UML и сценариев брала действующих лиц из объя
 | `SB-6` | `Skill` — **форма поставки** контракта в среду, а не уровень: навык упаковывает либо подпроцесс, либо одну операцию ([ADR-016](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-016-skill-form-and-contract-format.md), `SF-1`, `SF-2`). |
 
 Полные правила `SB-0`–`SB-9` и правила формата `FM-1`–`FM-5` —
-[`ba-process-taxonomy/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/10-theory.md), §4.
+[`ba-process-taxonomy/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md), §4.
 
 ## 3. Закон производства артефакта
 
@@ -232,7 +232,7 @@ N:M через порядок вызова, и именно поэтому на�
 Правила `LG-1`…`LG-6`, разграничивающие эти роли, объявлены
 [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md)
 и сведены в реестр §6.1
-[`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md).
+[`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md).
 Практическое следствие для §5: карта дублирований отображает исторические
 описания на канонические сущности, но **направление отображения одностороннее** —
 имя берётся из мета-модели, а не из наследия.

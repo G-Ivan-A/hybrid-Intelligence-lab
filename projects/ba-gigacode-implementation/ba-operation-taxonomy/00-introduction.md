@@ -10,7 +10,7 @@ scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 based_on:
   - research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md
-  - research/ba-requirements/ba-process-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---
@@ -47,29 +47,29 @@ related_issues:
    собственного предмета анализа.
 9. Словарь специализирован под предметную область Манго КК и среду GigaCode.
    Переносимость — гипотеза
-   ([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/50-open-research.md), §1).
+   ([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/50-open-research.md), §1).
 
 ## Что закрывает модуль
 
 | Контракт issue #571 | Где закрыт |
 | --- | --- |
-| Новая таксономия операций с корректной гранулярностью | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md), §2–§3 |
-| Привязка операций к навыкам и подпроцессам | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md), §4 |
-| Критерии атомарности вместо интуиции | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/10-theory.md), §2 |
-| Разграничение «операция / навык / процесс» | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/30-decision-framework.md), §1 |
-| Исполнимость агентом, а не только человеком | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/30-decision-framework.md), §3 |
-| Проверка на синтетических кейсах | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/40-practice-and-cases.md), §2 |
-| Депрекация прежних тринадцати значений | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md), §5 |
+| Новая таксономия операций с корректной гранулярностью | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md), §2–§3 |
+| Привязка операций к навыкам и подпроцессам | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md), §4 |
+| Критерии атомарности вместо интуиции | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/10-theory.md), §2 |
+| Разграничение «операция / навык / процесс» | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/30-decision-framework.md), §1 |
+| Исполнимость агентом, а не только человеком | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/30-decision-framework.md), §3 |
+| Проверка на синтетических кейсах | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/40-practice-and-cases.md), §2 |
+| Депрекация прежних тринадцати значений | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md), §5 |
 
 ## Основания
 
 | Источник | Что взято |
 | --- | --- |
 | [Измерение дефектов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md) | `D3`, `D4` — числовое основание для пересборки словаря |
-| [Таксономия процессов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md) | 10 процессов и 33 навыка, которые разлагаются на операции |
+| [Таксономия процессов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) | 10 процессов и 33 навыка, которые разлагаются на операции |
 | [Механизмы контроля `G1`–`G7`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/task-processing/20-taxonomy.md) | шкала ярусов и правило «необратимое действие не удерживается ниже `G5`» |
 | [ISO/IEC/IEEE 29148:2018](https://www.iso.org/standard/72089.html) | характеристики качества требования — предмет операций класса «проверка» |
-| [Мета-модель БА](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) | правила словаря `T-1`–`T-5`, классы артефактов, контракты `C-*` |
+| [Мета-модель БА](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) | правила словаря `T-1`–`T-5`, классы артефактов, контракты `C-*` |
 
 ## Чего в модуле нет
 

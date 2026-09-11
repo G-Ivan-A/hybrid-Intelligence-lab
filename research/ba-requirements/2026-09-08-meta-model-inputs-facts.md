@@ -11,8 +11,8 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
 based_on:
   - research/ba-requirements/exp/ba-meta-model-563/meta-model-inputs.json
 related_artifacts:
-  - "research/ba-requirements/ba-meta-model/00-introduction.md"
-  - "research/ba-requirements/ba-meta-model/20-taxonomy.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md"
   - "research/ba-requirements/exp/ba-meta-model-563/README.md"
   - "docs/adr/2026-09-adr-013-run-modes-deprecation.md"
 related_issues:
@@ -25,7 +25,7 @@ related_issues:
 > **Назначение.** Датированное **измерение** того, из чего собирается
 > каноническая мета-модель: режимы запуска промптов, покрытие словарей операций
 > и процессов, продуктовая привязка прогонов. Интерпретация и решения — в модуле
-> [`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/00-introduction.md)
+> [`projects/ba-gigacode-implementation/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md)
 > и в
 > [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md).
 > Снимок отделён от модуля, потому что корпус растёт: на другом коммите числа

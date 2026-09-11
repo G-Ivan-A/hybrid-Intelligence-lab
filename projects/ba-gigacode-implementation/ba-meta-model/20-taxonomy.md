@@ -11,8 +11,8 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
 based_on:
   - research/ba-requirements/2026-09-08-meta-model-inputs-facts.md
   - research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md
-  - research/ba-requirements/ba-process-taxonomy/20-taxonomy.md
-  - research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md
+  - projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md
   - research/ba-requirements/artifact-rendering/20-taxonomy.md
   - standards/product-taxonomy-reference.md
 related_issues:
@@ -83,17 +83,17 @@ related_issues:
 это рубрика.
 
 **Действующий словарь операций:**
-[`ba-operation-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md) — 31 операция в
+[`ba-operation-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md) — 31 операция в
 пяти когнитивных классах (`extract`, `transform`, `generate`, `check`,
 `assess`), каждая с контрактом из шести полей, включая обязательное условие
 отказа. Критерии атомарности `OA-1`–`OA-6` —
-[`ba-operation-taxonomy/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/10-theory.md).
+[`ba-operation-taxonomy/10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/10-theory.md).
 
 | Правило | Формулировка |
 | --- | --- |
 | `OP-1` | Операция — атомарное, но семантически завершённое когнитивное действие с одним контрактом выхода. Микродействие («прочитать», «нажать») операцией не является. |
 | `OP-2` | Работа, требующая последовательности или ветвления, — навык или процесс, а не операция. |
-| `OP-3` | Прежние тринадцать значений сохраняют статус свидетельства (`LG-1`) и не используются в новых артефактах. Пореестровое соответствие — [`ba-operation-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md), §5. |
+| `OP-3` | Прежние тринадцать значений сохраняют статус свидетельства (`LG-1`) и не используются в новых артефактах. Пореестровое соответствие — [`ba-operation-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md), §5. |
 
 **Факт, определяющий приоритет, сохраняется.** Семь прежних операций из
 тринадцати не имели ни одного промпта. В новой модели этот факт выражен иначе:
@@ -109,7 +109,7 @@ related_issues:
 и назначал границей процесса состояние жизненного цикла (`D2`).
 
 **Действующий словарь процессов:**
-[`ba-process-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/20-taxonomy.md) — четыре уровня:
+[`ba-process-taxonomy/20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) — четыре уровня:
 `L0` области знаний BABOK Guide v3, `L1` семейства работ, `L2` десять процессов
 КК Манго как объявленная дельта, `L3` тридцать три навыка-подпроцесса.
 
@@ -121,7 +121,7 @@ related_issues:
 | `uc-us-modeling` | подтверждён | `P-06` моделирование сценариев |
 | `uml-bpmn-visualization` | поглощён | `P-06`: диаграмма — проекция модели, а не самостоятельный целевой выход |
 | `po-pm-support` | разделён | вопросы → `P-02`, резюме встречи → побочный продукт `P-01` |
-| `statistics` | депрекирован | метрики `MP-1`–`MP-6` ([`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md)) |
+| `statistics` | депрекирован | метрики `MP-1`–`MP-6` ([`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md)) |
 | `impact-analysis` | подтверждён | `P-09`, с `A-TRACE` как обязательным входом |
 | `risk-analysis` | депрекирован как процесс | риск — атрибут элемента; операции `score-item`, `classify-severity` |
 
@@ -133,7 +133,7 @@ related_issues:
 (`D7`). Словарь существовал, но не использовался для идентификации работы,
 поэтому первым машинным правилом Execution Package остаётся обязательность
 поля `process` из закрытого словаря (`EP-R1`,
-[`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md)).
+[`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md)).
 
 ## 5. Таксономия продуктов
 
@@ -242,9 +242,9 @@ L0  Индустриальный базис (TM Forum SID/eTOM, BABOK, IREB, UNS
 машинно операцией `check-source-evidence` на ярусе `G6`, а соответствие цитаты
 утверждению — человеком на `G5`. Доля принятых утверждений со ссылкой измеряется
 метрикой `MP-2` покрытия источниками
-([`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md)).
+([`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md)).
 Полная формулировка контракта — `HGC-1`–`HGC-4`
-([`ba-process-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/30-decision-framework.md), §4.1).
+([`ba-process-taxonomy/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md), §4.1).
 
 | Контракт | Предмет | Источник |
 | --- | --- | --- |
@@ -260,7 +260,7 @@ L0  Индустриальный базис (TM Forum SID/eTOM, BABOK, IREB, UNS
   Универсальность не заявляется: `L0` и `L1` взяты из BABOK и потому переносимы
   по построению, а `L2`, `L3` и словарь операций выведены из одной предметной
   области. Переносимость — проверяемая гипотеза
-  ([`ba-process-taxonomy/50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/50-open-research.md), §1).
+  ([`ba-process-taxonomy/50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/50-open-research.md), §1).
 - Классы `A-*` покрывают артефакты БА-конвейера и не покрывают артефакты
   смежных ролей (архитектура, тестирование, поддержка). `A-SPEC` лежит на
   границе и сохранён как унаследованный класс.
