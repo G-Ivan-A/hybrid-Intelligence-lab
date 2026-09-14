@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-09-10
+version: 0.2
+updated: 2026-09-14
 temperature: 0.3
 type: research
 context: [ba, taxonomy, process, subprocess, skill, babok, mango, deprecation, issue-571]
@@ -13,9 +13,10 @@ based_on:
   - research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
 ---
 
-# Таксономия процессов: `L0` → `L1` → `L2` → `L3`
+# Таксономия процессов проектной мета-модели БА КК Манго: `L0` → `L1` → `L2` → `L3`
 
 ## 1. Правила словаря
 
@@ -34,6 +35,9 @@ related_issues:
 Уровень унаследован целиком. Источник:
 <https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/>.
 Области знаний не являются фазами: они выполняются параллельно и итеративно.
+`P-03` (формирование `A-BCREQ`) соотнесён с RADD: он переводит потребность и
+ценность в проверяемые business requirements. Это сопоставление области
+знаний, а не утверждение, что BABOK предписывает внутренний документ BCREQ.
 
 | Код | Область знаний | Предмет | Что даёт таксономии Манго |
 | --- | --- | --- | --- |
