@@ -443,6 +443,8 @@ is_active_file() {
     practices/agent-work/plan-verify-ship-loop.md | \
     practices/agent-work/skills-as-reusable-workflows.md | \
     practices/agent-work/skill-catalog-token-budget.md | \
+    practices/ai-engineering/README.md | \
+    practices/ai-engineering/2026-09-14-ai-pdlc-industry-alignment.md | \
     practices/ai-governance/README.md | \
     practices/ai-governance/nist-ai-rmf-profile-loop.md | \
     practices/ai-governance/eu-ai-act-risk-tiering.md | \
@@ -841,6 +843,7 @@ required_directories=(
   "research/external-knowledge/external-insights"
   "practices"
   "practices/agent-work"
+  "practices/ai-engineering"
   "practices/ai-governance"
   "frameworks"
   "projects"
@@ -1013,6 +1016,8 @@ required_files=(
   "practices/agent-work/plan-verify-ship-loop.md"
   "practices/agent-work/skills-as-reusable-workflows.md"
   "practices/agent-work/skill-catalog-token-budget.md"
+  "practices/ai-engineering/README.md"
+  "practices/ai-engineering/2026-09-14-ai-pdlc-industry-alignment.md"
   "practices/ai-governance/README.md"
   "practices/ai-governance/nist-ai-rmf-profile-loop.md"
   "practices/ai-governance/eu-ai-act-risk-tiering.md"

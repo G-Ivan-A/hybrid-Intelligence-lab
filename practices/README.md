@@ -27,6 +27,7 @@ Research can recommend. A practice node fixes. A sync prompt or issue imports.
 | --- | --- | --- |
 | Agent work | [agent-work/](agent-work/) | [2026-06-12-external-practice-intake.md](../research/hub/2026-06-12-external-practice-intake.md) |
 | AI governance | [ai-governance/](ai-governance/) | [2026-06-12-international-ai-governance-practices.md](../research/hub/2026-06-12-international-ai-governance-practices.md) |
+| AI engineering | [ai-engineering/](ai-engineering/) | Отчёт Ассоциации ФинТех «ИИ-трансформация разработки 2026» ([issue #575](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/575)) |
 
 ## Node Requirements
 
