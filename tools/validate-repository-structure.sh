@@ -249,6 +249,8 @@ is_active_file() {
     research/ba-requirements/exp/ba-meta-model-cross-check-587/validate-instances.log | \
     research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-1059/a-in.json | \
     research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-1059/a-out.json | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-1059-routed/a-in.json | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-1059-routed/a-out.json | \
     research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-975/a-in.json | \
     research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-975/a-out.json | \
     research/ba-requirements/solution-modeling/00-introduction.md | \

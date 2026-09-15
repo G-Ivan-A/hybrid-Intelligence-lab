@@ -27,6 +27,8 @@ CASES = [
     ("runs/bcreq-975/a-in.json", "c-in.schema.json"),
     ("runs/bcreq-1059/a-out.json", "c-out-bcreq.schema.json"),
     ("runs/bcreq-975/a-out.json", "c-out-bcreq.schema.json"),
+    ("runs/bcreq-1059-routed/a-in.json", "c-in.schema.json"),
+    ("runs/bcreq-1059-routed/a-out.json", "c-out-bcreq.schema.json"),
 ]
 
 

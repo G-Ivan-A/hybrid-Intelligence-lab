@@ -2,4 +2,6 @@ PASS runs/bcreq-1059/a-in.json против c-in.schema.json
 PASS runs/bcreq-975/a-in.json против c-in.schema.json
 PASS runs/bcreq-1059/a-out.json против c-out-bcreq.schema.json
 PASS runs/bcreq-975/a-out.json против c-out-bcreq.schema.json
+PASS runs/bcreq-1059-routed/a-in.json против c-in.schema.json
+PASS runs/bcreq-1059-routed/a-out.json против c-out-bcreq.schema.json
 все собранные экземпляры проходят контракты
