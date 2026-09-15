@@ -17,15 +17,11 @@ assert_file() {
   [[ -f "$ROOT_DIR/$path" ]] || fail "required integration artifact is missing: $path"
 }
 
-assert_deprecated_pointer_only() {
+# The compatibility cycle for the pr-ops/ -> ops/ migration is over (issue #585):
+# the deprecated pointer must be gone, not merely reduced to a single README.md.
+assert_removed_legacy_directory() {
   local path="$1"
-  local entries
-  [[ -d "$ROOT_DIR/$path" ]] || {
-    fail "deprecated compatibility directory is missing: $path"
-    return
-  }
-  entries="$(find "$ROOT_DIR/$path" -mindepth 1 -maxdepth 1 -printf '%f\n' | sort)"
-  [[ "$entries" == "README.md" ]] || fail "$path must contain only README.md during the compatibility cycle"
+  [[ ! -e "$ROOT_DIR/$path" ]] || fail "legacy compatibility directory must be removed after the sync cycle: $path"
 }
 
 expect_validator_failure() {
@@ -50,7 +46,7 @@ assert_file "templates/htom/AGENTS.md"
 assert_file "templates/htom/.hub-profile.json"
 assert_file "templates/spoke/AGENTS.md"
 assert_file "templates/spoke/.hub-profile.json"
-assert_deprecated_pointer_only "pr-ops"
+assert_removed_legacy_directory "pr-ops"
 
 if ! "$ROOT_DIR/tools/validate-repository-structure.sh" \
   >"$TMP_DIR/repository-structure.log" 2>&1; then
@@ -178,7 +174,6 @@ fi
 if [[ -d "$ROOT_DIR/ops" ]]; then
   if git -C "$ROOT_DIR" grep -n 'pr-ops/' -- . \
     ':(exclude)CHANGELOG.md' \
-    ':(exclude)pr-ops/README.md' \
     ':(exclude)docs/superpowers/plans/2026-09-09-agents-md-physical-integration.md' \
     ':(exclude)docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md' \
     ':(exclude)docs/rfc/2026-09-03-rfc-agents-md-root-contract.md' \
