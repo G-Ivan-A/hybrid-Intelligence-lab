@@ -25,6 +25,11 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Install Python dependencies
+        # Валидатор пакета исполнения читает машиночитаемые словари пакета.
+        run: pip install pyyaml
+
+
       - name: Validate shell syntax
         run: bash -n tools/*.sh templates/htom/tools/*.sh templates/spoke/tools/*.sh
 
@@ -72,6 +77,9 @@ jobs:
 
       - name: Test AGENTS.md physical integration
         run: bash tools/test-agents-md-integration.sh
+
+      - name: Test execution package gate
+        run: bash tools/test-execution-package.sh
 
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
@@ -129,3 +137,6 @@ jobs:
 
       - name: Validate template manifest
         run: python3 tools/generate-manifest.py --check
+
+      - name: Validate MVP BCREQ execution package (G-mach)
+        run: python3 projects/ba-gigacode-implementation/execution-package-mvp-bcreq/tools/validate-package.py

@@ -52,6 +52,12 @@ reject_text() {
 
 is_active_file() {
   case "$1" in
+    # Пакет исполнения перечислен шаблоном, а не пофайлово: его состав
+    # задаётся компиляцией и меняется целиком, а полноту состава проверяет
+    # собственный валидатор пакета (tools/validate-package.py).
+    projects/ba-gigacode-implementation/execution-package-mvp-bcreq/*)
+      return 0
+      ;;
     README.md | \
     AGENTS.md | \
     .hub-profile.json | \
