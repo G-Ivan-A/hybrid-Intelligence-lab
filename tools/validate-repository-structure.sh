@@ -237,6 +237,20 @@ is_active_file() {
     research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.py | \
     research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.log | \
     research/ba-requirements/exp/ba-process-taxonomy-571/skill-format.json | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/README.md | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/2026-09-15-historical-vs-new-comparison.md | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/historical-structure.yaml | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/measure-research-coverage.sh | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/measure-research-coverage.log | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/measure-slot-coverage.py | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/measure-slot-coverage.log | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/slot-coverage.json | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/validate-instances.py | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/validate-instances.log | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-1059/a-in.json | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-1059/a-out.json | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-975/a-in.json | \
+    research/ba-requirements/exp/ba-meta-model-cross-check-587/runs/bcreq-975/a-out.json | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \
@@ -534,6 +548,7 @@ is_active_file() {
     docs/audit/2026-07-04-cross-standard-stress-tests.md | \
     docs/audit/2026-08-01-ops-artifact-placement-review.md | \
     docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md | \
+    docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
