@@ -565,6 +565,7 @@ is_active_file() {
     docs/analysis/2026-08-17-agent-lifecycle-rrp-gap-analysis.md | \
     docs/analysis/2026-09-03-ai-rules-compliance-failure-root-cause.md | \
     docs/analysis/2026-09-10-agents-md-hybrid-work-contract-analysis.md | \
+    docs/analysis/2026-09-15-ai-directories-consolidation-analysis.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
