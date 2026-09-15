@@ -1,0 +1,138 @@
+{
+  "skeleton_slots": [
+    "S-GLOSSARY",
+    "S-PROBLEM",
+    "S-SCOPE",
+    "S-SOLUTION",
+    "S-FR",
+    "S-SETTINGS",
+    "S-UI",
+    "S-SCENARIO",
+    "S-AC",
+    "S-NFR",
+    "S-LIMITS",
+    "S-OPEN",
+    "S-TRACE",
+    "S-INTEGRATION"
+  ],
+  "runs": [
+    {
+      "run_id": "RUN-0013",
+      "task": "BCREQ-1059 — одновременная обработка до трёх контактов",
+      "locator": "runs/2026/RUN-0013/outputs/final-artifact.md",
+      "headings_count": 7,
+      "slots_present": [
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-FR",
+        "S-SCENARIO",
+        "S-LIMITS"
+      ],
+      "slots_missing": [
+        "S-SCOPE",
+        "S-SETTINGS",
+        "S-UI",
+        "S-AC",
+        "S-NFR",
+        "S-OPEN",
+        "S-TRACE",
+        "S-INTEGRATION"
+      ],
+      "merged_headings": [
+        {
+          "heading": "4. Функциональные требования и сценарии использования",
+          "slots": [
+            "S-FR",
+            "S-SCENARIO"
+          ]
+        }
+      ],
+      "unmapped_headings": [
+        "6. Особенности реализации"
+      ],
+      "coverage": 0.429
+    },
+    {
+      "run_id": "RUN-0017",
+      "task": "1076 — выгрузка артефактов речевой аналитики ВКС в BPMSoft",
+      "locator": "runs/2026/RUN-0017/outputs/final-artifact.md",
+      "headings_count": 7,
+      "slots_present": [
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-FR",
+        "S-SCENARIO",
+        "S-NFR",
+        "S-LIMITS"
+      ],
+      "slots_missing": [
+        "S-SCOPE",
+        "S-SETTINGS",
+        "S-UI",
+        "S-AC",
+        "S-OPEN",
+        "S-TRACE",
+        "S-INTEGRATION"
+      ],
+      "merged_headings": [
+        {
+          "heading": "Функциональные требования и сценарии использования",
+          "slots": [
+            "S-FR",
+            "S-SCENARIO"
+          ]
+        }
+      ],
+      "unmapped_headings": [
+        "Особенности реализации"
+      ],
+      "coverage": 0.5
+    },
+    {
+      "run_id": "RUN-0021",
+      "task": "975 — параметр «Неэффективный звонок» в кампании ИО",
+      "locator": "runs/2026/RUN-0021/outputs/final-artifact.md",
+      "headings_count": 5,
+      "slots_present": [
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-FR",
+        "S-LIMITS"
+      ],
+      "slots_missing": [
+        "S-SCOPE",
+        "S-SOLUTION",
+        "S-SETTINGS",
+        "S-UI",
+        "S-SCENARIO",
+        "S-AC",
+        "S-NFR",
+        "S-OPEN",
+        "S-TRACE",
+        "S-INTEGRATION"
+      ],
+      "merged_headings": [],
+      "unmapped_headings": [
+        "2. Цели"
+      ],
+      "coverage": 0.286
+    }
+  ],
+  "aggregate": {
+    "runs": 3,
+    "distinct_skeletons": 3,
+    "m1_structural_reproducibility": 0.0,
+    "slots_never_present": [
+      "S-AC",
+      "S-INTEGRATION",
+      "S-OPEN",
+      "S-SCOPE",
+      "S-SETTINGS",
+      "S-TRACE",
+      "S-UI"
+    ],
+    "runs_with_merged_headings": 2
+  }
+}
