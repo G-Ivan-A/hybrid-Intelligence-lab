@@ -508,7 +508,7 @@ Hub + Spoke приняты, а спринты 3, 6, 7 и 8 закрыты и а�
 без обращения к документам Хаба во время исполнения; метрики `M-1`…`M-5` зафиксированы
 и пригодны как вход для возобновления Спринта 14.
 
-| ID | Задача | Приоритет | Зависимости | Статус | Issue | Основание | Краткое содержание | Режим |
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **B-170** | Инициализация структуры `mango-ba-ai-runtime` по шаблону HTOM | **P1** | - | todo | [#583](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/583) | [ADR-009](../docs/adr/2026-07-adr-009-mango-repo-split.md); [ADR-012](../docs/adr/2026-09-adr-012-agents-md-root-contract.md); [`templates/htom/`](../templates/htom/) | Развернуть репозиторий `mango-ba-ai-runtime` из шаблона HTOM: `init.sh`, `.hub-profile.json` (`archetype`, `environment`), базовые каталоги. Никакой кастомизации сверх шаблона: отклонения от генома фиксируются как `project_specific_directories`, а не как ручные правки структуры. | Structured |
 | **B-171** | Проектный `AGENTS.md` и базовые контракты нового репо | **P1** | B-170 | todo | [#583](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/583) | [ADR-012](../docs/adr/2026-09-adr-012-agents-md-root-contract.md); [`templates/htom/AGENTS.md`](../templates/htom/AGENTS.md); Спринт 13 | Разместить в `mango-ba-ai-runtime` проектный `AGENTS.md` и базовые контракты (`AI_GOVERNANCE.md`, `CONTRIBUTING.md`) из шаблона HTOM. Текст инструкции — самодостаточный: норма Хаба переносится в тело файла, а исходный документ указывается только полем `derived_from`. | Structured |
