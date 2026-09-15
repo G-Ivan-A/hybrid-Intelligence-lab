@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-09-10
+version: 0.2
+updated: 2026-09-14
 temperature: 0.3
 type: research
 context: [ba, taxonomy, process, synthetic-cases, golden-reference, metrics, issue-571]
@@ -13,6 +13,7 @@ based_on:
   - research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
 ---
 
 # Практика: сквозные кейсы, проверка словаря и метрики
@@ -54,8 +55,10 @@ Issue #571 разрешает синтетические кейсы при за�
 | `SC-5` | аудит готового ФТ | `P-07` | верификация — процесс с собственным выходом, а не «проверка внутри написания» |
 | `SC-6` | оценка внешнего тендерного ТЗ | `P-08` | оценка чужого документа не производит требований и завершается суждением |
 | `SC-7` | изменение к зафиксированным требованиям | `P-09`, `P-10` | влияние вычисляется по рёбрам `A-TRACE`, а не экспертной оценкой |
+| `SC-8` | граница scope «входящие звонки» при связанном термине «исходящий обзвон» | `P-04`, `P-07` | смежный термин получает явный статус в ограничениях; отсутствие статуса даёт машинный отказ (`EP-G7`) |
 
-Совокупно кейсы покрывают **все 10 процессов** и **все 33 навыка**. Покрытие —
+Совокупно кейсы покрывают **все 10 процессов** и **все 33 навыка**. `SC-8` не
+расширяет словарь, а добавляет негативную проверку границы. Покрытие —
 машинно проверяемое условие, а не заявление:
 [`validate-new-taxonomy.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.py)
 разбирает словари прямо из

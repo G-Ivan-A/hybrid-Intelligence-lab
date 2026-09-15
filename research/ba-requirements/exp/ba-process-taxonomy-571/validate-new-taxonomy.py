@@ -54,6 +54,7 @@ CODE = re.compile(r"`([^`]+)`")
 PROCESS_CODE = re.compile(r"^P-\d{2}$")
 SKILL_CODE = re.compile(r"^SK-[a-z0-9]+(-[a-z0-9]+)*$")
 OPERATION_CODE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)+$")
+OPERATION_ID = re.compile(r"^OP-(EXT|TRN|GEN|CHK|ASM)-\d{2}$")
 TIER = re.compile(r"^G[1-7]$")
 
 
@@ -142,15 +143,17 @@ def parse_operations(text: str) -> dict[str, dict]:
         if not s.startswith("|") or set(s) <= set("| -:"):
             continue
         cells = [c.strip() for c in s.strip("|").split("|")]
-        code = first_code(cells[0])
-        if not code or not OPERATION_CODE.match(code) or len(cells) < 5:
+        operation_id = first_code(cells[0])
+        code = first_code(cells[1]) if len(cells) > 1 else None
+        if not operation_id or not code or not OPERATION_CODE.match(code) or len(cells) < 6:
             continue
         out[code] = {
+            "id": operation_id,
             "class": current_class,
-            "input": cells[1],
-            "output": cells[2],
-            "refusal": cells[3],
-            "tier": first_code(cells[4]),
+            "input": cells[2],
+            "output": cells[3],
+            "refusal": cells[4],
+            "tier": first_code(cells[5]),
         }
     return out
 
@@ -231,10 +234,16 @@ def check(hub: Path) -> dict:
                 errors.append(f"C3 навык {skill}: операция {op} вне каталога")
 
     # C4. Контракт операции заполнен полностью (OC-2, EO-1..EO-4).
+    operation_ids: set[str] = set()
     for op, meta in operations.items():
-        for field in ("class", "input", "output", "refusal", "tier"):
+        for field in ("id", "class", "input", "output", "refusal", "tier"):
             if not meta.get(field):
                 errors.append(f"C4 операция {op}: не заполнено поле {field}")
+        if meta["id"] and not OPERATION_ID.match(meta["id"]):
+            errors.append(f"C4 операция {op}: ID {meta['id']} вне формата OP-<class>-NN")
+        if meta["id"] in operation_ids:
+            errors.append(f"C4 операция {op}: ID {meta['id']} не уникален")
+        operation_ids.add(meta["id"])
         if meta["tier"] and not TIER.match(meta["tier"]):
             errors.append(f"C4 операция {op}: ярус {meta['tier']} вне шкалы G1-G7")
 
@@ -271,6 +280,19 @@ def check(hub: Path) -> dict:
         errors.append(f"C7 навык {code} не покрыт ни одним кейсом")
     for code in sorted(set(operations) - covered_ops):
         errors.append(f"C7 операция {code} не покрыта ни одним кейсом")
+
+    # C8. Негативный эталон границы терминов задаёт проверяемый отказ и три
+    # допустимых явных статуса, а не только описывает неоднозначность прозой.
+    boundary_contract = (
+        "## SC-8.",
+        "missing-related-term-boundary",
+        "`included`",
+        "`excluded`",
+        "`not-applicable`",
+    )
+    for marker in boundary_contract:
+        if marker not in cases_text:
+            errors.append(f"C8 негативный эталон границы терминов: нет {marker}")
 
     return {
         "mode": "new",

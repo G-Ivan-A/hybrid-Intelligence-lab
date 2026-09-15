@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-09-10
+version: 0.3
+updated: 2026-09-14
 temperature: 0.3
 type: research
 context: [ba, methodology, meta-model, taxonomy, actor, execution-package, gigacode, deprecation, traceability, issue-563, issue-571]
@@ -26,9 +26,15 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
 ---
 
-# Каноническая BA Meta-Model и Execution Package
+# Проектная мета-модель БА для КК Манго и Execution Package
+
+Авторство модели: **G-Ivan-A**. Модель описывает проектную реализацию
+БА-процессов КК Манго в среде GigaCode. Это имя не является заявкой на
+универсальность: неизменность `L0`/`L1` при смене домена — проверяемая гипотеза
+задачи `B-158`, а не доказанное свойство текущей модели.
 
 > **Модуль** оформлен по
 > [Reference Research Pattern](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-07-17-rfc-reference-research-pattern.md):
