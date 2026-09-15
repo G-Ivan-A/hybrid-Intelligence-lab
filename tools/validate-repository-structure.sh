@@ -1129,6 +1129,9 @@ reject_file "AI_GOVERNANCE.md"
 reject_path "website"
 reject_path "experiments"
 reject_path "mkdocs.yml"
+# The pr-ops/ -> ops/ compatibility cycle is closed (issue #585): the legacy home
+# must not come back as a second SSOT.
+reject_path "pr-ops"
 
 for kebab_case_dir in standards ops ai-rules ai-governance docs/rfc docs/guides; do
   validate_kebab_case_file_naming "$kebab_case_dir"
@@ -1158,12 +1161,6 @@ while IFS= read -r file; do
   # Historical links in RFC/ADR snapshots still target this path. PR #491
   # keeps it as a disabled compatibility redirect, not an active template.
   if [[ "$file" == ".github/ISSUE_TEMPLATE/task-creative.md" ]]; then
-    continue
-  fi
-
-  # B-119 keeps this deprecated pointer for one synchronization cycle so
-  # incoming links survive the pr-ops/ -> ops/ migration.
-  if [[ "$file" == "pr-ops/README.md" ]]; then
     continue
   fi
 
