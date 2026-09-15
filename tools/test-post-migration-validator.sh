@@ -77,9 +77,18 @@ done
 
 backlog_file="ops/backlog.md"
 
-b053_line="$(grep -F '| **B-053** |' "$backlog_file")"
-[[ "$b053_line" == *'| DONE |'* ]] ||
-  fail "B-053 must be DONE after merged PR #452"
+# B-053 was DONE after merged PR #452 and its sprint (Спринт 3) is archived by
+# issue #583. The regression to guard is resurrection of the archived task, not
+# its status.
+if grep -Fq '| **B-053** |' "$backlog_file"; then
+  fail "B-053 must stay archived after issue #583 (Спринт 3 removed from the active backlog)"
+fi
+
+grep -Fq '## Спринт 19: Инициализация MVP' "$backlog_file" ||
+  fail "Спринт 19 (MVP initialization) must be present in the active backlog"
+
+grep -Fq '| **B-173** |' "$backlog_file" ||
+  fail "B-173 must exist: it is the declared trigger for B-068, B-070 and the Спринт 14 icebox"
 
 b085_line="$(grep -F '| **B-085** |' "$backlog_file")"
 for expected in \

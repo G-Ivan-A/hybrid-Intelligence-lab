@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-07-04
+version: 1.1
+updated: 2026-09-15
 temperature: 0.1
 type: instruction
 context: [governance, backlog, pr-ops, synchronization]
@@ -81,7 +81,7 @@ Markdown-архиве не нужно.
 | Название | Короткий action-oriented заголовок из issue/backlog source. |
 | Приоритет | `P0`, `P1`, `P2`, `P3`; при отсутствии факта - `null`. |
 | Зависимости | Существующие task IDs или `-`; не добавлять speculative blockers. |
-| Статус | `TODO`, `in-progress`, `review`, `DONE`, `ЧАСТИЧНО`; в active backlog обычно остаются не-`DONE`. |
+| Статус | `TODO`, `in-progress`, `review`, `DONE`, `ЧАСТИЧНО`, `CANCELLED`, `deferred (triggered)`, `deferred (regular)`, `deferred (icebox)`; в active backlog обычно остаются не-`DONE`. |
 | Issue | GitHub issue/PR link, если есть; иначе `- (planned)`, `- (deferred)` or `null` according to source. |
 | Источник | Проверяемый источник: issue, PR, artifact, analysis, ADR/RFC, validator or human decision. |
 | Краткое содержание | 1-2 предложения без implementation recipe. |
@@ -102,11 +102,26 @@ idea -> backlog -> in-progress -> review -> DONE -> archived
 - `DONE`: merged/accepted state confirmed by issue/PR/artifact evidence.
 - `archived`: строка удалена из active backlog после закрытия sprint rules.
 
+Дополнительные терминальные и отложенные статусы:
+
+- `CANCELLED`: задача закрыта без исполнения, потому что её основание отпало
+  (решение отменено, контур исполнения сменился, проблема снята другим способом).
+  Требует явного человеческого решения в issue/PR/ADR и краткого обоснования в
+  колонке «Краткое содержание». Для архивации спринта приравнивается к `DONE`.
+- `deferred (triggered)`: задача ждёт названного события; триггер указывается
+  в «Кратком содержании».
+- `deferred (regular)`: регулярная задача вне спринтов, запускаемая по расписанию.
+- `deferred (icebox)`: задача или спринт целиком отложены как преждевременная
+  оптимизация. Отличие от `deferred (triggered)` — откладывается не отдельная
+  задача, а весь блок работ, и триггером служит появление эмпирических данных,
+  а не единичное событие. Строки сохраняются в бэклоге, а не удаляются, когда их
+  фактическая база является входом для возобновления.
+
 ## Правила архивации спринтов
 
 Спринт удаляется из `backlog.md`, когда выполнены оба условия:
 
-1. Все задачи спринта имеют статус `DONE`.
+1. Все задачи спринта имеют статус `DONE` или `CANCELLED`.
 2. Итоговый артефакт или decision outcome имеет статус «согласовано» или
    «отклонено» в issue, PR, ADR/RFC, artifact frontmatter or review record.
 
