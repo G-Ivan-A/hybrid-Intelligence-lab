@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.61
-updated: 2026-09-10
+version: 1.62
+updated: 2026-09-15
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -31,6 +31,7 @@ related_artifacts:
   - "tools/test-post-migration-validator.sh"
   - "LICENSE"
 related_issues:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/396"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/392"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297"
@@ -576,6 +577,39 @@ SDD, агентная инженерия, токеномика, риски и к
 | **B-168** | Границы входных данных и контура исполнения | **P1** | B-151 | todo | [#575](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/575) | [§5 аналитической записки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/practices/ai-engineering/2026-09-14-ai-pdlc-industry-alignment.md) | Объявить в мета-модели, какие классы входных данных допустимы на входе навыка и что меняется при on-premise-контуре против внешнего. Основание — барьеры внедрения ИБ и регуляторики в отраслевом опросе и заявленный курс на отечественный стек. Пока `C-IN` принимает только обезличенный контур, ограничение не задокументировано. | Creative |
 
 
+
+## Спринт 19: Развёртывание спутника и масштабирование пакета исполнения
+
+**Story.**
+Вертикальный срез `A-IN → A-CORE → A-BCREQ` скомпилирован в [пакет исполнения](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/README.md)
+(issue [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580)): закрытые машиночитаемые словари, контракты как JSON Schema, граф
+маршрута `RG-BCREQ-v1`, одиннадцать `SKILL.md`, минимальный Golden Set и машинный гейт как
+скрипт. Пакет лежит в Хабе как артефакт компиляции и ни разу не исполнялся в спутнике: базовой
+линии метрик `M-1`…`M-5` и `MP-1`…`MP-6` не существует, а масштабирование на `P-04`…`P-10`
+до первых прогонов расширяло бы непроверенную конструкцию.
+
+**Цель.**
+Развернуть пакет в спутнике `mango-ba-ai-runtime`, снять базовую линию на первых десяти
+прогонах и только после этого расширять срез на остальные процессы.
+
+**Критерий закрытия.**
+Спутник исполняет маршрут `RG-BCREQ-v1` без обращения к Хабу, значения `M-1`…`M-5` и
+`MP-1`…`MP-6` измерены на десяти прогонах и зафиксированы как базовая линия, расширение
+словаря навыков идёт от измеренного дефекта, а не от полноты таксономии.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-169** | Создание и инициализация репозитория-спутника `mango-ba-ai-runtime` | **P1** | — | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Манифест компиляции](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/compilation-manifest.yaml) | Завести репозиторий спутника, скопировать в его корень содержимое пакета исполнения, проверить `python3 tools/validate-package.py` на чистой копии. Спутник разворачивается там, где доступа к Хабу может не быть, поэтому переносятся физические копии, а не ссылки. Результат — репозиторий, в котором маршрут исполним из коробки. | Structured |
+| **B-170** | Проверка независимости прогона от Хаба | **P1** | B-169 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [`AGENTS.md` спутника](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/AGENTS.md) | Прогнать маршрут `A-IN → A-BCREQ` в спутнике при закрытом доступе к Хабу и зафиксировать каждый случай, когда агенту потребовался документ Хаба. Любое такое обращение — дефект компиляции: оно закрывается перекомпиляцией пакета, а не ручной подсказкой агенту. Результат — перечень дефектов компиляции либо подтверждённый ноль. | Structured |
+| **B-171** | `G-mach` как обязательная проверка CI спутника | **P1** | B-169 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Чек-лист `G-mach`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/evaluation/g-mach-checklist.md) | Поднять в спутнике workflow, запускающий валидатор пакета и проверку выхода прогона по схемам на каждый PR. Гейт fail-closed: непройденная проверка блокирует слияние. Без этого `M-2` не снимается и машинный гейт существует только на бумаге. | Structured |
+| **B-172** | `G-human` как чек-лист PR спутника | **P2** | B-171 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Чек-лист `G-human`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/evaluation/g-human-checklist.md) | Внести человеческий чек-лист в шаблон PR спутника так, чтобы каждый пункт отмечался явно, а неотмеченный пункт блокировал приёмку. Пункты, проверяемые машинно, в человеческий чек-лист не дублируются. | Structured |
+| **B-173** | Первые десять прогонов и базовая линия `M-1`…`M-5` | **P1** | B-170, B-171 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Метрики пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/evaluation/metrics.yaml) | Провести десять прогонов на реальных входах контакт-центра, сохранить листы прогонов и вычислить структурную воспроизводимость, долю машинных отказов, долю человеческих правок после `G-mach`, полноту следа и долю пустых слотов с объявленной причиной. Базовая линия `M-1` равна нулю по замеру 17 документов корпуса; значение после прогонов — первая точка сравнения. | Structured |
+| **B-174** | Замер `MP-1`…`MP-6` на тех же десяти прогонах | **P1** | B-173 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Метрики пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/evaluation/metrics.yaml) | Снять дисциплину словаря, покрытие источниками, машинную исполнимость, восстановимость траектории, цену человеческого гейта и работу машинного гейта. `MP-6` вне коридора 0.1–0.4 и `MP-5` ниже 0.7 диагностируют не качество прогона, а место гейта в маршруте. | Structured |
+| **B-175** | Согласование состава навыков `P-01` с таксономией процессов | **P2** | B-173 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Отклонение в README пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/README.md) | Таксономия относит к `P-01` три навыка, но сборка `A-CORE` остаётся без исполнителя, поэтому скомпилировано четыре. Решить расхождение в пользу таксономии или компиляции и зафиксировать решение в источнике истины. До решения расхождение объявлено, но не устранено. | Creative |
+| **B-176** | Навыки и контракты процесса `P-04` | **P2** | B-174 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Таксономия процессов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) | Скомпилировать следующий процесс среза после снятия базовой линии: навыки, контракт выхода, узлы маршрута и эталоны. Расширение начинается только после измеренных значений `MP-3` на существующем срезе. | Structured |
+| **B-177** | Навыки и контракты процессов `P-05`…`P-10` | **P3** | B-176 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Таксономия процессов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md) | Довести компиляцию до полного словаря процессов с классами артефактов `A-FR`, `A-TZ`, `A-US`, `A-UC`. Задача разбивается на процессы по мере прохождения предыдущего: одновременная компиляция шести процессов воспроизводит инфляцию, от которой уходил срез. | Structured |
+| **B-178** | Расширение Golden Set по дефектам первых прогонов | **P2** | B-173 | todo | [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) | [Индекс эталонов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/golden/cases.yaml) | Довести Golden Set от трёх синтетических случаев до набора, подтверждённого человеком, добавляя случай на каждый дефект, найденный прогонами. Эталон, не подтверждённый человеком, применяется только структурно. | Structured |
+
 ---
 
 ## Источники активного порядка
@@ -599,4 +633,5 @@ SDD, агентная инженерия, токеномика, риски и к
 | Issue [#561](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561) и модуль [`research/ba-requirements/artifact-micro-structure/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/00-introduction.md) | Источник задач B-136..B-145 (Спринт 15): микро-уровень методологии БА — закрытый словарь слотов, валидатор структуры, три проекции одного документа, реестр Golden Set, правила нескольких продуктов в одной задаче и поправки к макро-модулю. Фактическая база — замер 17 результирующих документов корпуса `runs/` и проверка словаря слотов на независимом корпусе `kb/processed`. Задачи B-144 и B-145 заведены по [комментарию фаундера к PR #562](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/562). |
 | Issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571) и модули [`projects/ba-gigacode-implementation/ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md) и [`projects/ba-gigacode-implementation/ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md) | Источник задач B-155..B-163 (Спринт 17): пересборка таксономии процессов и операций от индустриального базиса BABOK v3 с объявленной дельтой КК Манго. Фактическая база — [замер восьми дефектов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md) на коммитах `8cbf82a` и `15aa76f` и валидация нового словаря на семи синтетических кейсах. Правила решения — [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md). Приложенный к issue диалог с фаундером имеет приоритет над телом issue и задал сущности `Система`/`Актор`, навык как подпроцесс и графовый маршрут. |
 | Issue [#575](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/575) и аналитическая записка [`practices/ai-engineering/2026-09-14-ai-pdlc-industry-alignment.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/practices/ai-engineering/2026-09-14-ai-pdlc-industry-alignment.md) | Источник задач B-164..B-168 (Спринт 18): сверка мета-модели БА v2 с индустриальным отчётом Ассоциации ФинТех «ИИ-трансформация разработки 2026» по пяти углам. Фундаментальных противоречий с архитектурой не выявлено; зафиксированы пять адресных разрывов — отсутствие отдельного слоя намерения, отсутствие узла-оркестратора, отсутствие метрики стоимости прогона в токенах при числовой границе `SK-6`, неагрегируемый список гипотез исполнителя по `GT-5` и необъявленные границы входных данных и контура исполнения. |
+| Issue [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) и [пакет исполнения](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/README.md) | Источник задач B-169..B-178 (Спринт 19): компиляция вертикального среза `A-IN → A-CORE → A-BCREQ` в развёртываемый пакет и бэклог его масштабирования. Состав скопированного, преобразованного и отброшенного объявлен в [манифесте компиляции](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/compilation-manifest.yaml); обязательство независимости прогона от Хаба — в [`AGENTS.md` спутника](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/AGENTS.md). |
 | GitHub Issues/PR | История выполненных задач, review discussion and implementation evidence. |

@@ -613,6 +613,7 @@ is_active_file() {
     tools/validate-historical-immutable.sh | \
     tools/validate-agents-bootstrap.sh | \
     tools/test-validate-rrp-links.sh | \
+    tools/test-execution-package.sh | \
     tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
@@ -1905,11 +1906,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.14"
+require_text "ops/artifact-map.md" "version: 2.15"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-09-10"
+require_text "ops/artifact-map.md" "updated: 2026-09-15"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2318,7 +2319,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.61"
+require_text "ops/backlog.md" "version: 1.62"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"
@@ -3064,6 +3065,7 @@ require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-validate-rrp-links.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-execution-package.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-rrp-links.sh"
 require_text ".github/workflows/validate.yml" "fetch-depth: 0"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"

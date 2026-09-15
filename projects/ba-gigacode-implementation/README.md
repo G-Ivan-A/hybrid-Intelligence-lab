@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-09-11
+version: 0.2
+updated: 2026-09-15
 temperature: 0.1
 scope: mango-only
 type: research
@@ -53,6 +53,24 @@ GigaCode»**: какая мета-модель описывает работу, 
   — таксономия операций той же пересборки: 31 операция в пяти классах
   (`extract`, `transform`, `generate`, `check`, `assess`) и правила атомарности
   `OA-1`…`OA-6`.
+
+## Пакет исполнения
+
+- [`execution-package-mvp-bcreq/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/README.md)
+  — компиляция вертикального среза `A-IN → A-CORE → A-BCREQ` для продуктового
+  класса «контакт-центр» (issue [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580)): закрытые
+  машиночитаемые словари, контракты как JSON Schema, граф маршрута
+  `RG-BCREQ-v1`, одиннадцать `SKILL.md`, минимальный Golden Set, метрики и
+  машинный гейт `G-mach` как скрипт.
+
+Пакет — **артефакт компиляции**, а не седьмой модуль Reference Research
+Pattern: исследовательские тексты в нём не дублируются, а их нормативные
+следствия перенесены в исполняемую форму. Состав скопированного,
+преобразованного и отброшенного объявлен в
+[манифесте компиляции](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/compilation-manifest.yaml).
+Пакет разворачивается в репозиторий-спутник копированием и во время прогона на
+этот репозиторий не ссылается; направление остаётся источником истины
+развивающейся модели.
 
 ## Доказательная база
 
