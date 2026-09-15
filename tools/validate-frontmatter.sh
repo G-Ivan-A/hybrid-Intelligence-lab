@@ -74,6 +74,13 @@ document_class() {
   path="$(normalize_path "$1")"
 
   case "$path" in
+    # Пакет исполнения — артефакт компиляции, а не исследовательский документ:
+    # часть его полей задана внешним стандартом GigaCode (name, description),
+    # часть фиксирует происхождение компиляции (compiled_from, derived_from).
+    projects/*/execution-package-*/*.md | projects/*/execution-package-*/*/*.md | \
+    projects/*/execution-package-*/*/*/*.md | projects/*/execution-package-*/*/*/*/*.md)
+      printf 'execution-package'
+      ;;
     docs/audit/*.md)
       printf 'audit'
       ;;
@@ -189,6 +196,14 @@ is_approved_field() {
       return 0
       ;;
     practice:source | practice:executable | practice:entrypoint)
+      return 0
+      ;;
+    execution-package:name | execution-package:description | execution-package:product_class | \
+    execution-package:packs | execution-package:interaction | execution-package:inputs | \
+    execution-package:outputs | execution-package:contracts | execution-package:gates | \
+    execution-package:compiled_from | execution-package:derived_from | execution-package:compiled_at | \
+    execution-package:golden_id | execution-package:artifact_class | execution-package:origin | \
+    execution-package:confirmed_by)
       return 0
       ;;
     default:executable | default:entrypoint | default:source | default:based_on | \
