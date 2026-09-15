@@ -1,10 +1,10 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-14
+version: 0.4
+updated: 2026-09-15
 temperature: 0.3
 type: research
-context: [ba, meta-model, execution-package, skill-compilation, route-graph, golden-set, gigacode, issue-563, issue-571]
+context: [ba, meta-model, execution-package, skill-compilation, route-graph, golden-set, gigacode, issue-563, issue-571, issue-587]
 method: package-design + contract-modeling + environment-documentation
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
@@ -17,6 +17,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587"
 ---
 
 # Рамка решений: минимальный Execution Package
@@ -47,7 +48,7 @@ related_issues:
 | `skills/` | скомпилированные `SKILL.md`, по одному на навык-подпроцесс уровня `L3`, каждый в своём каталоге `.agents/skills/<имя>/` (`GC-3`) | агент, когда описание навыка подошло к задаче (`GC-6`) |
 | `routes/` | графы маршрутов (узлы-навыки, условные рёбра, точки гейтов, акторы) и листы прогонов | оркестратор, при запуске маршрута |
 | `contracts/` | машиночитаемые контракты `C-IN`, `C-CORE`, `C-OUT`, `C-RK` (схемы) | валидатор, на гейте `G-mach` |
-| `taxonomy/` | четыре закрытых словаря в машинной форме (артефакты, операции, процессы, продуктовые классы) | валидатор и агент, при разборе входа |
+| `taxonomy/` | четыре канонических закрытых словаря в машинной форме (артефакты, операции, процессы, продуктовые классы), служебные словари уровней источников и проекций, версионированный глоссарий предметной области | валидатор и агент, при разборе входа |
 | `templates/` | скелет результирующего документа со слотами и подписями | агент, при сборке выхода |
 | `golden/` | эталоны по продуктовым классам | агент как few-shot, валидатор как образец структуры |
 | `evaluation/` | чек-листы гейтов и словарь метрик прогона | валидатор и человек, на `G-mach` и `G-human` |

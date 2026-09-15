@@ -95,7 +95,7 @@ def frontmatter(path: str) -> dict[str, str]:
 
 def check_taxonomies(root: str) -> dict:
     loaded = {}
-    for name in ("artifacts", "operations", "processes", "products", "domain-glossary"):
+    for name in ("artifacts", "operations", "processes", "products", "source-tiers", "projections", "domain-glossary"):
         data = load_yaml(root, f"taxonomy/{name}.yaml")
         loaded[name] = data
         if data is None:
@@ -289,6 +289,101 @@ def check_golden(root: str, graph: dict, skills: dict, glossary: dict) -> None:
                     fail(f"{case_id}: термин вне словаря домена: {term}")
 
 
+def check_source_tiers(root: str, tiers: dict) -> None:
+    """Контракт маршрутизации источников: объявлен уровень, форма доказательства и порядок."""
+    tiers = tiers or {}
+    forms = {form.get("id") for form in tiers.get("evidence_forms") or []}
+    declared = [tier.get("id") for tier in tiers.get("tiers") or []]
+    if not declared:
+        fail("taxonomy/source-tiers.yaml: словарь уровней источников пуст — маршрутизация знания не объявлена")
+    for tier in tiers.get("tiers") or []:
+        if tier.get("evidence_form") not in forms:
+            fail(f"{tier.get('id')}: форма доказательства вне перечня evidence_forms")
+        if not tier.get("rationale"):
+            fail(f"{tier.get('id')}: уровень источника без обоснования применимости")
+    order = tiers.get("order") or []
+    if sorted(order) != sorted(declared):
+        fail("taxonomy/source-tiers.yaml: порядок применения не покрывает ровно объявленные уровни")
+    for rule in ("conflict_rule", "escalation_rule", "investment_rule"):
+        if not tiers.get(rule):
+            fail(f"taxonomy/source-tiers.yaml: отсутствует {rule} — расхождение источников разрешалось бы усмотрением")
+    for item in tiers.get("out_of_slice") or []:
+        if not item.get("why"):
+            fail(f"{item.get('id')}: уровень вне среза без объявленной причины — необъявленная ветка")
+
+    schema = load_json(root, "contracts/c-in.schema.json") or {}
+    source_item = (((schema.get("properties") or {}).get("sources") or {}).get("items") or {})
+    if "tier" not in (source_item.get("required") or []):
+        fail("contracts/c-in.schema.json: уровень источника обязан быть обязательным полем (fail-closed)")
+    enum = ((source_item.get("properties") or {}).get("tier") or {}).get("enum") or []
+    in_slice = [tier.get("id") for tier in tiers.get("tiers") or [] if tier.get("in_slice")]
+    if sorted(enum) != sorted(in_slice):
+        fail("contracts/c-in.schema.json: перечень уровней источника расходится с закрытым словарём source-tiers")
+
+
+def check_projections(root: str, projections: dict) -> None:
+    """Проекция перестаёт быть пустой веткой: обязательна в контракте и разрешима в словарь."""
+    projections = projections or {}
+    schema = load_json(root, "contracts/c-out-bcreq.schema.json") or {}
+    slots = set(((schema.get("properties") or {}).get("slots") or {}).get("required") or [])
+    if "projection" not in (schema.get("required") or []):
+        fail("contracts/c-out-bcreq.schema.json: проекция обязана быть обязательным полем — иначе ветка не исполняется")
+    enum = ((schema.get("properties") or {}).get("projection") or {}).get("enum") or []
+    declared = [item.get("id") for item in projections.get("items") or []]
+    if sorted(enum) != sorted(declared):
+        fail("contracts/c-out-bcreq.schema.json: перечень проекций расходится с закрытым словарём projections")
+    for item in projections.get("items") or []:
+        unknown = set(item.get("required_slots") or []) - slots
+        if unknown:
+            fail(f"{item.get('id')}: обязательные слоты проекции вне закрытого перечня: {sorted(unknown)}")
+        if not item.get("required_slots"):
+            fail(f"{item.get('id')}: проекция без обязательных слотов не отличается от отсутствия проекции")
+        for field in ("addressee", "wording_rule"):
+            if not item.get(field):
+                fail(f"{item.get('id')}: проекция без поля {field} не задаёт предмет проверки гейта")
+
+
+def check_confusable_coverage(root: str, glossary: dict, cases: dict) -> None:
+    """Правило EP-G7 в исполняемом виде: пара близких терминов обязана иметь отрицательный случай.
+
+    До этой проверки EP-G7 существовало как текст правила и один эталон: три из
+    четырёх объявленных пар словаря не имели ни одного теста, то есть правило
+    было выполнено формально.
+    """
+    terms = (glossary or {}).get("terms") or []
+    id_by_name: dict[str, str] = {}
+    for term in terms:
+        id_by_name[term.get("term")] = term.get("id")
+        for alias in term.get("aliases") or []:
+            id_by_name.setdefault(alias, term.get("id"))
+
+    covered: set[frozenset[str]] = set()
+    for case in (cases or {}).get("cases") or []:
+        pair = case.get("glossary_pair") or []
+        if len(pair) == 2:
+            covered.add(frozenset(pair))
+
+    expected: set[frozenset[str]] = set()
+    for term in terms:
+        for other in term.get("confusable_with") or []:
+            name = other.get("term") if isinstance(other, dict) else other
+            target = id_by_name.get(name)
+            if target is None:
+                fail(f"{term.get('id')}: confusable_with ссылается на термин вне словаря: {name!r}")
+                continue
+            if not (other.get("why") if isinstance(other, dict) else True):
+                fail(f"{term.get('id')}: пара близких терминов без объяснения подмены не проверяема")
+            expected.add(frozenset({term.get("id"), target}))
+
+    missing = expected - covered
+    if missing:
+        listed = sorted(" + ".join(sorted(pair)) for pair in missing)
+        fail(
+            "EP-G7: пара близких терминов словаря домена не покрыта отрицательным случаем Golden Set: "
+            + "; ".join(listed)
+        )
+
+
 def check_metrics(root: str) -> None:
     data = load_yaml(root, "evaluation/metrics.yaml") or {}
     declared = {item.get("id") for item in data.get("metrics") or []}
@@ -334,6 +429,13 @@ def main() -> int:
     skills = check_skills(root)
     graph = check_route(root, taxonomies.get("processes") or {}, skills)
     check_golden(root, graph, skills, taxonomies.get("domain-glossary") or {})
+    check_source_tiers(root, taxonomies.get("source-tiers") or {})
+    check_projections(root, taxonomies.get("projections") or {})
+    check_confusable_coverage(
+        root,
+        taxonomies.get("domain-glossary") or {},
+        load_yaml(root, "golden/cases.yaml") or {},
+    )
     check_metrics(root)
     check_runtime_independence(root)
 

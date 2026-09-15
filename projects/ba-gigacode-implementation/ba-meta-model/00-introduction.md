@@ -1,10 +1,10 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-14
+version: 0.4
+updated: 2026-09-15
 temperature: 0.3
 type: research
-context: [ba, methodology, meta-model, taxonomy, actor, execution-package, gigacode, deprecation, traceability, issue-563, issue-571]
+context: [ba, methodology, meta-model, taxonomy, actor, execution-package, gigacode, deprecation, traceability, issue-563, issue-571, issue-587]
 method: synthesis + corpus-measurement + entity-modeling + package-design
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
@@ -27,6 +27,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587"
 ---
 
 # Проектная мета-модель БА для КК Манго и Execution Package
@@ -178,6 +179,22 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 | Синтетические кейсы и эталоны | [`exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md) |
 | Решение о пересборке | [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md) |
 
+Задача [issue #587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587)
+закрывается версией 0.4 — не пересборкой модуля, а точечной достройкой по
+результату сквозной проверки. Порог переработки (отсутствие более 80%
+критического материала) не достигнут: аудит зафиксировал три дефекта и семь
+объявленных отклонений, а формы описанных артефактов сохранены без
+переименований.
+
+| Контракт issue #587 | Где закрыт |
+| --- | --- |
+| Сквозная сверка модели с десятью модулями `research/ai-education` | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md) §7 |
+| Независимый аудит выполнения задачи #577 по пунктам | [`docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md) |
+| Контракт маршрутизации источников (обращение к базе знаний) | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §7.1, `SR-1`…`SR-6` |
+| Механика `G-human` в диалоговой среде | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md) §5 |
+| Эмпирическая валидация на сырых требованиях, без воспроизведения согласованного результата | [`exp/ba-meta-model-cross-check-587/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-meta-model-cross-check-587) |
+| Три формы BCREQ: согласование, разработка, договор | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md) §1, правило 5 |
+
 ## Доказательная база
 
 - [`2026-09-08-meta-model-inputs-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md)
@@ -193,6 +210,10 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 - [`2026-09-08-artifact-structure-variance-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-artifact-structure-variance-facts.md)
   — замер структуры результирующих документов (issue #561), основание для слоя
   артефакта в мета-модели.
+- [`exp/ba-meta-model-cross-check-587/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-meta-model-cross-check-587)
+  — три независимых замера сквозной проверки: воспроизводимость скелета на
+  завершённых прогонах (`M-1 = 0.0`), исполнимость контрактов на сырых входах
+  реальных задач и сравнение нового результата с историческим.
 - [`2026-09-07-ecosystem-knowledge-inventory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-07-ecosystem-knowledge-inventory.md)
   — инвентаризация 368 артефактов экосистемы, источник карты дублирований.
 

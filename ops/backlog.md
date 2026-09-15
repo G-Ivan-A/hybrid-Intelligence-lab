@@ -560,6 +560,33 @@ Hub + Spoke приняты, а спринты 3, 6, 7 и 8 закрыты и а�
 
 ---
 
+## Спринт 21: Коррекции по сквозной проверке мета-модели
+
+**Story.**
+Сквозная проверка мета-модели БА (issue [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587))
+зафиксирована [аудитом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md)
+с вердиктом `conditional`: реинжиниринг не требуется, три дефекта закрыты в том же PR, а пять
+разрывов объявлены отклонениями. Отклонение, оставленное без идентификатора в бэклоге,
+через один цикл неотличимо от недосмотра, поэтому каждый из них получает задачу.
+
+**Цель.**
+Держать объявленные разрывы наблюдаемыми и закрывать их по триггеру, а не по памяти.
+
+**Критерий закрытия.**
+Каждое отклонение аудита имеет либо закрытую задачу, либо объявленный триггер пересмотра
+с датой последней проверки.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-189** | Контракт оценки для метрик пакета | **P2** | B-183 | todo | [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587) | [Аудит сквозной проверки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md) | Объявить снимок корпуса, разметку, пороги и грейдеров для `M-1`…`M-5`. Без контракта оценки метрика измеряет не качество, а прогон, на котором её посчитали. Задача исполняется в спутнике: снимка корпуса в Хабе нет по решению владельца. | Structured |
+| **B-190** | Релизные гейты на смену навыка и смену модели | **P2** | B-181 | todo | [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587) | [`research/ai-education/agent-delivery-and-release/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ai-education/agent-delivery-and-release) | Ввести в релизный контур спутника фиксацию версии модели в листе прогона и отдельный гейт на изменение скомпилированного навыка. Разрыв объявлен картой сопоставления версии 0.4 и относится к релизному контуру, а не к мета-модели. | Structured |
+| **B-191** | Проектирование сигналов наблюдаемости прогона | **P3** | B-183 | todo | [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587) | [`research/ai-education/observability/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ai-education/observability) | Перейти от «лист прогона содержит поля» к «на какой вопрос отвечает каждый сигнал»: перечень вопросов эксплуатации и сигнал под каждый. Поля, не отвечающие ни на один вопрос, удаляются. | Creative |
+| **B-192** | Минимальный конверт исполнения навыка | **P3** | B-183 | todo | [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587) | [`research/ai-education/tool-use/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ai-education/tool-use) | Дополнить лист прогона дайджестами входа и выхода, бюджетом повторов и классом редакции действия. Разрыв объявлен картой сопоставления версии 0.4. | Structured |
+| **B-193** | Исполняемое выражение мета-процесса отладки контрактов | **P3** | B-183 | todo | [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587) | [Аудит сквозной проверки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md) | Пункт 6 контракта issue #577 выполнен формально: цикл «дефект → контракт → тест → diff → ревью» описан словами, но не выражен исполнимо. Выразить его после серии однотипных дефектов реальных прогонов, а не до неё. | Creative |
+| **B-194** | Проверка триггера перехода памяти на внешнее хранилище | **P3** | B-183 | todo | [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587) | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md) | Проверить на первых прогонах, срабатывает ли объявленный триггер: два прогона, не восстанавливаемых из обязательных полей, либо неприемлемая стоимость реконструкции. Досрочный переход не обоснован данными и не выполняется. | Structured |
+
+---
+
 ## Источники активного порядка
 
 | Источник | Что даёт бэклогу |

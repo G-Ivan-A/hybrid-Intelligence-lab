@@ -1,10 +1,10 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-14
+version: 0.4
+updated: 2026-09-15
 temperature: 0.3
 type: research
-context: [ba, meta-model, open-questions, backlog, placement-rationale, portability, gigacode, issue-563, issue-571]
+context: [ba, meta-model, open-questions, backlog, placement-rationale, portability, gigacode, issue-563, issue-571, issue-587]
 method: gap-analysis + placement-rationale
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
@@ -19,6 +19,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587"
 ---
 
 # Открытые вопросы, размещение артефактов и незакрытое
@@ -182,3 +183,29 @@ Issue #563 оставляет выбор исполнителю по SSOT и Ant
 исполняемого контракта репозитория, а не БА-артефакт КК Манго. До повторяемой
 операционной боли он остаётся процедурой опытной эксплуатации и использует
 существующий PR-review контур репозитория.
+
+## 7. Карта сопоставления с `research/ai-education`
+
+Версия 0.4 добавляет систематическое сопоставление модели со всеми десятью
+модулями
+[`research/ai-education/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/README.md).
+До неё сопоставления не было: замер #587 показал ссылки только на два модуля из
+десяти. Это не значит, что следствия остальных восьми нарушены — значит, что их
+соблюдение **не прослеживалось**, а карта строилась по памяти исполнителя.
+
+| Модуль | Состояние модели | Разрыв и что с ним сделано |
+| --- | --- | --- |
+| [`task-processing`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/task-processing/00-introduction.md) | соответствует | шкала автономии учтена, гейт исполняемый; уровень объявлен не по всем классам действий — остаётся открытым |
+| [`evaluation`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/evaluation/00-introduction.md) | частично | метрики `M-1`…`M-5` есть, контракт оценки (снимок корпуса, разметка, пороги, грейдеры) не объявлен — вынесено в бэклог, а не сымитировано |
+| [`retrieval`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/retrieval/00-introduction.md) | было отсутствие | **закрыто в 0.4**: таксономия уровней источников `ST-*` с формами доказательства, порядком, уровнем готовности корпуса и правилом конфликта ([`20-taxonomy.md`](20-taxonomy.md), §7.1) |
+| [`agent-context-engineering`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/agent-context-engineering/00-introduction.md) | частично | перенос носителя требования из промпта в схему и далее в контракт соблюдён де-факто контрактами `C-*`, но не объявлен правилом; бюджет окна не описан — см. §4, п. 1 |
+| [`memory`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/memory/00-introduction.md) | частично | решение #577 — уровень «лист прогона + журнал» с явным триггером пересмотра (§6); переход на внешнее хранилище сознательно не планируется до срабатывания триггера |
+| [`observability`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/observability/00-introduction.md) | частично | лист прогона `C-RK` даёт корреляцию к источнику; проектирование «вопрос → сигнал» отсутствует |
+| [`tool-use`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/tool-use/00-introduction.md) | частично | лист прогона покрывает часть минимального конверта исполнения; дайджесты входа/выхода, бюджет повторов и класс редакции отсутствуют |
+| [`multi-agent-orchestration`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/multi-agent-orchestration/00-introduction.md) | соответствует | маршрут — фиксированный workflow, а не рой агентов: выбор соразмерен задаче |
+| [`information-extraction-graph-modeling`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/information-extraction-graph-modeling/00-introduction.md) | частично | проверка разрешимости и дословности цитаты присутствует; более высокие уровни верификации не заявлены и для MVP не нужны |
+| [`agent-delivery-and-release`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/agent-delivery-and-release/00-introduction.md) | отсутствует | отдельных гейтов на смену навыка и смену модели нет, версия модели в прогоне не фиксируется — объявленный разрыв, вынесен в бэклог |
+
+Карта — объявление состояния, а не план работ: из десяти разрывов в версии 0.4
+закрыт один (`retrieval`), остальные объявлены с причиной. Необъявленный разрыв
+опаснее объявленного, потому что неотличим от соблюдения.
