@@ -8,7 +8,7 @@ tmp_out="$(mktemp)"
 tmp_err="$(mktemp)"
 
 cleanup() {
-  rm -rf governance website experiments mkdocs.yml "$tmp_out" "$tmp_err"
+  rm -rf governance website experiments pr-ops mkdocs.yml "$tmp_out" "$tmp_err"
 }
 trap cleanup EXIT
 
@@ -25,13 +25,13 @@ fail() {
   exit 1
 }
 
-for legacy_path in governance website experiments mkdocs.yml; do
+for legacy_path in governance website experiments pr-ops mkdocs.yml; do
   if [[ -e "$legacy_path" ]]; then
     fail "cannot run legacy-path test while $legacy_path already exists"
   fi
 done
 
-mkdir governance website experiments
+mkdir governance website experiments pr-ops
 : > mkdocs.yml
 
 if ./tools/validate-repository-structure.sh >"$tmp_out" 2>"$tmp_err"; then
@@ -42,6 +42,7 @@ for expected in \
   "forbidden legacy path present: governance" \
   "forbidden legacy path present: website" \
   "forbidden legacy path present: experiments" \
+  "forbidden legacy path present: pr-ops" \
   "forbidden legacy path present: mkdocs.yml"; do
   if ! grep -Fq "$expected" "$tmp_err"; then
     fail "missing expected validator error: $expected"
@@ -59,8 +60,12 @@ if grep -nF 'governance/rfc/' tools/validate-file-naming.sh; then
   fail "file-naming validator must not keep stale governance/rfc/ comments"
 fi
 
-if ! grep -Fq '"pr-ops/README.md"' tools/validate-repository-structure.sh; then
-  fail "structure validator must preserve the declared pr-ops compatibility pointer"
+if grep -Fq '"pr-ops/README.md"' tools/validate-repository-structure.sh; then
+  fail "structure validator must not keep the retired pr-ops compatibility pointer exception"
+fi
+
+if [[ -e "pr-ops" ]]; then
+  fail "legacy pr-ops/ directory must be removed after the compatibility cycle"
 fi
 
 for required_path in \
