@@ -151,7 +151,7 @@ standard и relation metadata.
 | Hub | `research/mango/2026-05-22-requirements-flow.md` | Local process analysis; route after standard. |
 | Hub | `research/open-ai-ru/2026-06-20-open-ai-ru-repository-architecture-and-l3-l4.md` | Local architecture analysis; route after standard. |
 | Mango | `docs/analysis/2026-06-16-experiment-1027-analysis.md` | Actual Analysis already in target path. |
-| Mango | `docs/analysis/2026-06-21-voice-digital-channels-comparison.md` | Actual comparative Analysis. |
+| Mango | `docs/analysis/2026-06-21-voice-digital-channels-2026-09-15-historical-vs-new-comparison.md` | Actual comparative Analysis. |
 | Mango | `docs/analysis/2026-06-22-issue-170-mango-inventory.md` | Actual inventory Analysis. |
 | Mango | `docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md` | Local problem analysis for executable contracts and RFCs. |
 | Mango | `docs/analysis/2026-06-23-repository-structure-analysis.md` | Local repository structure analysis. |

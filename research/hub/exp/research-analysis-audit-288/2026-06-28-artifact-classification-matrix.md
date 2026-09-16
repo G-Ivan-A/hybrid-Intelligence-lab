@@ -126,7 +126,7 @@ directory are excluded from the Hub scan so reruns preserve the baseline.
 | `docs/analysis/2026-06-02-migration-strategy-rfc.md` | `docs/analysis` | Other | proposal | `rfc` | RFC: стратегия миграции проекта Mango из Хаба в спок `mango_ba_prompts` |
 | `docs/analysis/2026-06-16-experiment-1027-analysis.md` | `docs/analysis` | Analysis | local-context-analysis | `analysis` | Анализ эксперимента «Задача 1027» |
 | `docs/analysis/2026-06-21-industry-inventory.md` | `docs/analysis` | Research | knowledge-generation | `research-inventory` | Industry Inventory — аналитическое доисследование для дозаполнения реестра (issue #168) |
-| `docs/analysis/2026-06-21-voice-digital-channels-comparison.md` | `docs/analysis` | Research | knowledge-generation | `analysis` | Сравнительный анализ: голосовые vs текстовые каналы в Industry Taxonomy (ADR-011) |
+| `docs/analysis/2026-06-21-voice-digital-channels-2026-09-15-historical-vs-new-comparison.md` | `docs/analysis` | Research | knowledge-generation | `analysis` | Сравнительный анализ: голосовые vs текстовые каналы в Industry Taxonomy (ADR-011) |
 | `docs/analysis/2026-06-22-issue-170-mango-inventory.md` | `docs/analysis` | Analysis | local-context-analysis | `analysis` | Инвентаризация Mango-реестра и перевод в JSON (issue #170) |
 | `docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md` | `docs/analysis` | Audit | conformance-check | `convergence-test` | Тест на сходимость маппинга Mango Taxonomy на Industry Taxonomy |
 | `docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md` | `docs/analysis` | Other | proposal | `rfc` | RFC: доработка Industry Taxonomy после теста на сходимость |

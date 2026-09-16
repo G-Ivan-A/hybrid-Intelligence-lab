@@ -1,0 +1,12 @@
+модуль                               ссылок
+agent-context-engineering                  0
+agent-delivery-and-release                 0
+evaluation                                 1
+information-extraction-graph-modeling      0
+memory                                     0
+multi-agent-orchestration                  0
+observability                              0
+retrieval                                  0
+task-processing                            10
+tool-use                                   0
+покрыто модулей: 2 из 10
