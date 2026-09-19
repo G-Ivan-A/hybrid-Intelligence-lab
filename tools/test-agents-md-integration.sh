@@ -46,6 +46,9 @@ assert_file "templates/htom/AGENTS.md"
 assert_file "templates/htom/.hub-profile.json"
 assert_file "templates/spoke/AGENTS.md"
 assert_file "templates/spoke/.hub-profile.json"
+assert_file "projects-sink/agents-md/README.md"
+assert_file "projects-sink/agents-md/synchronization-rules.md"
+assert_file "projects-sink/agents-md/templates/project-agents-md-template.md"
 assert_removed_legacy_directory "pr-ops"
 
 if ! "$ROOT_DIR/tools/validate-repository-structure.sh" \

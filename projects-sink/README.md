@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-07-04
+version: 1.1
+updated: 2026-09-19
 temperature: 0.1
 ---
 
@@ -16,8 +16,9 @@ governance/standards Hub. Якорь зафиксирован в
 | Артефакт | Назначение |
 | --- | --- |
 | [AI_PROJECT_CONTEXT-Summary.md](AI_PROJECT_CONTEXT-Summary.md) | Сводка проектного контекста AI-assisted work. |
+| [agents-md/](agents-md/README.md) | Управляемая адаптация корневого `AGENTS.md` для репозиториев экосистемы. |
 
 ## Статус
 
-Каталог создан как якорь по ADR-007 (B-048). Входящий проектный контекст
-попадает сюда через issue -> PR -> review.
+Каталог создан как якорь по ADR-007 (B-048). Входящий проектный контекст и
+правила его управляемого приёма попадают сюда через issue -> PR -> review.

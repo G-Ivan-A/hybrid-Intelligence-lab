@@ -84,6 +84,13 @@ is_active_file() {
     ops/session-digests.md | \
     projects-sink/README.md | \
     projects-sink/AI_PROJECT_CONTEXT-Summary.md | \
+    projects-sink/agents-md/README.md | \
+    projects-sink/agents-md/aether-orbis-validation.md | \
+    projects-sink/agents-md/anti-patterns.md | \
+    projects-sink/agents-md/environment-specific.md | \
+    projects-sink/agents-md/synchronization-rules.md | \
+    projects-sink/agents-md/templates/project-agents-md-template.md | \
+    projects-sink/agents-md/templates/sync-agents-md-task.md | \
     docs/guides/README.md | \
     CHANGELOG.md | \
     LICENSE | \
