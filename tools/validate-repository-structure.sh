@@ -52,6 +52,12 @@ reject_text() {
 
 is_active_file() {
   case "$1" in
+    # Project documentation is an inherited canonical home defined by
+    # standards/project-structure-inheritance.md. Its internal shape belongs to
+    # the project; document-class validators still enforce known subtypes.
+    projects/*/docs/*)
+      return 0
+      ;;
     # Пакет исполнения перечислен шаблоном, а не пофайлово: его состав
     # задаётся компиляцией и меняется целиком, а полноту состава проверяет
     # собственный валидатор пакета (tools/validate-package.py).
@@ -1928,11 +1934,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.15"
+require_text "ops/artifact-map.md" "version: 2.16"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-09-15"
+require_text "ops/artifact-map.md" "updated: 2026-09-21"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2155,7 +2161,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.18"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.19"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
