@@ -90,7 +90,7 @@ document_class() {
     docs/rfc/README.md)
       printf 'governance'
       ;;
-    docs/rfc/*.md)
+    docs/rfc/*.md | projects/*/docs/rfc/*.md)
       printf 'rfc'
       ;;
     docs/adr/README.md)

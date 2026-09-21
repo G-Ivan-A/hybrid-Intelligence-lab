@@ -81,6 +81,9 @@ make_tmp_dir knowledge_dir research
 make_tmp_dir governance_dir standards
 make_tmp_dir adr_dir docs/adr
 make_tmp_dir rfc_dir docs/rfc
+make_tmp_dir project_dir projects
+mkdir -p "$project_dir/docs/rfc"
+project_rfc_doc="$project_dir/docs/rfc/2026-09-project-rfc.md"
 make_tmp_file guide_doc docs/guides
 make_tmp_file report_doc docs/report
 make_tmp_file audit_doc docs/audit
@@ -201,6 +204,14 @@ updated: 2026-06-28
 temperature: 0.1
 owner: Governance"
 expect_fail "RFC scope" "$rfc_dir/missing-rfc-scope.md" "missing required frontmatter field for RFC artifact: rfc-scope"
+
+write_doc "$project_rfc_doc" "status: proposed
+version: 1.0
+updated: 2026-09-21
+temperature: 0.1
+owner: Governance
+rfc-scope: C"
+expect_pass "project-scoped RFC metadata" "$project_rfc_doc"
 
 write_doc "$knowledge_dir/ai-generated.md" "status: reviewed
 version: 1.0

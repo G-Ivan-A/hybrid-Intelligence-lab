@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-09-15
+version: 0.3
+updated: 2026-09-21
 temperature: 0.1
 scope: mango-only
 type: research
@@ -71,6 +71,23 @@ Pattern: исследовательские тексты в нём не дубл
 Пакет разворачивается в репозиторий-спутник копированием и во время прогона на
 этот репозиторий не ссылается; направление остаётся источником истины
 развивающейся модели.
+
+## Развёртывание в GigaCode CLI
+
+- [`docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md)
+  — proposed RFC для issue
+  [#591](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/591):
+  нативный путь `.gigacode/skills/`, явный dispatcher маршрута
+  `RG-BCREQ-v1`, состояние в `runs/<TASK_ID>/`, поиск
+  `docs/kb/ → Confluence MCP`, fail-closed validator и human checkpoints.
+- [`docs/guides/mango-ba-ai-runtime-cli-user-guide.html`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/guides/mango-ba-ai-runtime-cli-user-guide.html)
+  — автономное HTML-руководство оператора. До отдельного implementation PR в
+  runtime оно явно помечено как target-state, а не описание уже работающего
+  интерфейса.
+
+RFC и гайд живут в `projects/<direction>/docs/`, потому что описывают
+развёртывание конкретного Mango runtime. Они не вводят общую норму Хаба и не
+дублируют содержимое execution package.
 
 ## Доказательная база
 
