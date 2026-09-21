@@ -8,7 +8,7 @@ context: [ba-meta-model, execution-package-mvp-bcreq, ai-education, bcreq, issue
 method: contract-reading + reproducible-measurement + historical-corpus-comparison + validator-run
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587"
 scope: project
-audit_target: "Проектная мета-модель БА для КК Манго (`projects/ba-gigacode-implementation/ba-meta-model/`) и её компиляция `execution-package-mvp-bcreq/` — против нормативных следствий всех десяти модулей `research/ai-education/`, против контракта задачи #577 и против эмпирической проверяемости на реальных сырых требованиях корпуса `mango_ba_prompts/runs/`"
+audit_target: "Проектная мета-модель БА для КК Манго (`projects/ba-gigacode-implementation/ba-meta-model/`) и её компиляция `execution-package-gigacode-cli/` — против нормативных следствий всех десяти модулей `research/ai-education/`, против контракта задачи #577 и против эмпирической проверяемости на реальных сырых требованиях корпуса `mango_ba_prompts/runs/`"
 evidence_model: "воспроизводимые замеры в `research/ba-requirements/exp/ba-meta-model-cross-check-587/` (три скрипта с сохранёнными логами) + прогон реальных сырых требований через действующие контракты пакета с валидацией `jsonschema` + прямое чтение файлов модели и пакета с указанием путей и номеров строк + чтение исторических итоговых артефактов корпуса"
 verdict: conditional
 severity_scale: "Critical/Major/Minor/Info"
@@ -24,10 +24,10 @@ related_artifacts:
   - "projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md"
   - "projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md"
   - "projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md"
-  - "projects/ba-gigacode-implementation/execution-package-mvp-bcreq/contracts/c-in.schema.json"
-  - "projects/ba-gigacode-implementation/execution-package-mvp-bcreq/contracts/c-out-bcreq.schema.json"
-  - "projects/ba-gigacode-implementation/execution-package-mvp-bcreq/templates/bcreq-skeleton.md"
-  - "projects/ba-gigacode-implementation/execution-package-mvp-bcreq/tools/validate-package.py"
+  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/contracts/c-in.schema.json"
+  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/contracts/c-out-bcreq.schema.json"
+  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/templates/bcreq-skeleton.md"
+  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/tools/validate-package.py"
   - "research/ba-requirements/exp/ba-meta-model-cross-check-587/README.md"
   - "research/ba-requirements/exp/ba-meta-model-cross-check-587/2026-09-15-historical-vs-new-comparison.md"
   - "research/ai-education/retrieval/"
@@ -71,7 +71,7 @@ related_artifacts:
 | Слой | Путь | Что является нормой |
 | --- | --- | --- |
 | Мета-модель | `projects/ba-gigacode-implementation/ba-meta-model/` | нормативные следствия `research/ai-education/` (все 10 модулей) |
-| Компиляция | `projects/ba-gigacode-implementation/execution-package-mvp-bcreq/` | собственные контракты пакета + постановка #577 + эмпирическая проверяемость |
+| Компиляция | `projects/ba-gigacode-implementation/execution-package-gigacode-cli/` | собственные контракты пакета + постановка #577 + эмпирическая проверяемость |
 
 Норма по первому слою **реконструирована**: единого документа «требования к
 ИИ-агенту» в Хабе нет, поэтому нормой считались явно сформулированные следствия
@@ -191,7 +191,7 @@ related_artifacts:
 | --- | --- | --- |
 | 1. Качество и итеративность | выполнено полноценно | сопоставление альтернатив присутствует в теле PR #578 |
 | 2. Обработка отказа `A-TRACE` | выполнено полноценно | одна корректирующая попытка после `G-mach`, затем `G-human`; отражено в графе маршрута |
-| 3. Однозначное именование сущностей | выполнено полноценно | `OP-<class>-NN` в `taxonomy/operations.yaml` и `ba-operation-taxonomy/20-taxonomy.md`; альтернативы сопоставлены |
+| 3. Однозначное именование сущностей | выполнено полноценно | `OP-<class>-NN` в `taxonomy/operations.yaml` и `operation-taxonomy/20-taxonomy.md`; альтернативы сопоставлены |
 | 4. Согласование с BABOK RADD и авторское имя модели | выполнено полноценно | правки в трёх файлах модели; переносимость вынесена в `B-158` (`50-open-research.md:76`) |
 | 5. Гипотеза `A-MEMORY` | выполнено полноценно (как обоснованный отказ) | `50-open-research.md:177` с измеримым триггером пересмотра |
 | 6. Мета-процесс отладки контрактов | выполнено формально | цикл описан текстом; нового процесса `L2` нет (`50-open-research.md:181`), исполняемого выражения нет |

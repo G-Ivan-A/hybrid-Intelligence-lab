@@ -18,8 +18,8 @@ import re
 import sys
 from pathlib import Path
 
-PROCESS_MODULE = "projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md"
-OPERATION_MODULE = "projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md"
+PROCESS_MODULE = "projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/20-taxonomy.md"
+OPERATION_MODULE = "projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/20-taxonomy.md"
 CASES = "research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md"
 
 # Прежние словари спицы (docs/taxonomy.md §2 и §3) — предмет режима --legacy.

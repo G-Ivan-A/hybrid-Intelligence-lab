@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Целевое руководство оператора MVP BCREQ в GigaCode CLI">
+  <title>Mango BA AI Runtime CLI — руководство оператора</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17233b;
+      --muted: #5d687b;
+      --paper: #fbfcfe;
+      --panel: #ffffff;
+      --line: #dce2eb;
+      --brand: #264ec7;
+      --brand-soft: #e9efff;
+      --ok: #176b48;
+      --ok-soft: #e8f7ef;
+      --warn: #8a4b08;
+      --warn-soft: #fff4df;
+      --danger: #9d2929;
+      --danger-soft: #ffeded;
+      --code: #101827;
+      --code-ink: #e8eefc;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 0%, #e8edff 0, transparent 28rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    a { color: var(--brand); }
+    a:hover { text-decoration-thickness: 2px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(14rem, 18rem) minmax(0, 54rem);
+      gap: 3rem;
+      width: min(100% - 2rem, 78rem);
+      margin: 0 auto;
+      padding: 2rem 0 5rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 1.5rem;
+      align-self: start;
+      max-height: calc(100vh - 3rem);
+      overflow: auto;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: color-mix(in srgb, var(--panel) 92%, transparent);
+      box-shadow: 0 0.7rem 2rem rgb(23 35 59 / 7%);
+    }
+
+    nav strong {
+      display: block;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    nav ol {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    nav li { margin: 0.35rem 0; }
+    nav a { text-decoration: none; }
+
+    main { min-width: 0; }
+
+    header {
+      padding: 2.4rem;
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 0%, #f1f4ff 100%);
+      box-shadow: 0 1rem 3rem rgb(23 35 59 / 8%);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.5rem;
+      color: var(--brand);
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.3rem); }
+    h2 { margin-top: 3.5rem; font-size: 1.75rem; }
+    h3 { margin-top: 2rem; font-size: 1.15rem; }
+
+    .lead {
+      max-width: 48rem;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .banner, .note, .stop, .success {
+      margin: 1.5rem 0;
+      padding: 1rem 1.15rem;
+      border-left: 0.3rem solid;
+      border-radius: 0.6rem;
+    }
+
+    .banner, .note { border-color: var(--warn); background: var(--warn-soft); }
+    .stop { border-color: var(--danger); background: var(--danger-soft); }
+    .success { border-color: var(--ok); background: var(--ok-soft); }
+
+    .banner strong, .note strong, .stop strong, .success strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .card {
+      padding: 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.8rem;
+      background: var(--panel);
+    }
+
+    .card h3 { margin: 0 0 0.4rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    code {
+      padding: 0.12rem 0.32rem;
+      border-radius: 0.3rem;
+      background: var(--brand-soft);
+      color: #17358b;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    pre {
+      overflow: auto;
+      margin: 1rem 0;
+      padding: 1rem 1.15rem;
+      border-radius: 0.75rem;
+      background: var(--code);
+      color: var(--code-ink);
+      line-height: 1.5;
+    }
+
+    pre code { padding: 0; background: transparent; color: inherit; }
+
+    table {
+      width: 100%;
+      margin: 1rem 0;
+      border-collapse: collapse;
+      background: var(--panel);
+    }
+
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: #f1f4f9; }
+    ol.steps { padding-left: 1.5rem; }
+    ol.steps > li { margin: 1rem 0; padding-left: 0.3rem; }
+
+    .tag {
+      display: inline-block;
+      margin: 0.15rem 0.2rem 0.15rem 0;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: #17358b;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 54rem) {
+      .layout { grid-template-columns: 1fr; gap: 1rem; }
+      nav { position: static; max-height: none; }
+    }
+
+    @media (max-width: 38rem) {
+      .cards { grid-template-columns: 1fr; }
+      header { padding: 1.4rem; }
+      th, td { padding: 0.55rem; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .layout { display: block; width: 100%; padding: 0; }
+      nav { display: none; }
+      header, .card { box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <nav aria-label="Содержание">
+      <strong>Содержание</strong>
+      <ol>
+        <li><a href="#status">Статус документа</a></li>
+        <li><a href="#install">Установка и preflight</a></li>
+        <li><a href="#start">Запуск TASK</a></li>
+        <li><a href="#resume">Продолжение работы</a></li>
+        <li><a href="#knowledge">Локальная БЗ и Confluence</a></li>
+        <li><a href="#reject">Ошибка валидации</a></li>
+        <li><a href="#human">Human checkpoints</a></li>
+        <li><a href="#publish">Экспорт и публикация</a></li>
+        <li><a href="#golden">Golden-пример</a></li>
+        <li><a href="#troubleshooting">Диагностика</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <header>
+        <p class="eyebrow">Mango BA · GigaCode CLI</p>
+        <h1>Руководство оператора MVP BCREQ</h1>
+        <p class="lead">
+          Как запустить маршрут <code>RG-BCREQ-v1</code>, продолжить его в новой
+          сессии, проверить результат и безопасно подготовить публикацию в Confluence.
+        </p>
+        <p>
+          <span class="tag">TASK-rooted state</span>
+          <span class="tag">fail-closed</span>
+          <span class="tag">human in control</span>
+        </p>
+      </header>
+
+      <section id="status">
+        <h2>1. Статус документа</h2>
+        <div class="banner">
+          <strong>Hub execution package · RFC proposed</strong>
+          Руководство относится к копируемому модулю
+          <code>execution-package-gigacode-cli/</code> в Хабе. Оно не утверждает,
+          что пакет уже перенесён во внешний runtime
+          <code>mango-ba-ai-runtime-cli</code>: такой перенос остаётся отдельным
+          решением и отдельным PR.
+        </div>
+        <p>
+          Архитектурное основание —
+          <a href="https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md">RFC развёртывания MVP</a>.
+          Целевой продукт — GigaCode CLI на локальной рабочей станции, не VS Code
+          extension и не hosted AI-session GitVerse.
+        </p>
+      </section>
+
+      <section id="install">
+        <h2>2. Установка и preflight</h2>
+        <ol class="steps">
+          <li>
+            Установите CLI через канал вашей организации по
+            <a href="https://gitverse.ru/docs/ai/ai-assistant-gigacode/getting-started-with-gigacode/quick-start">официальному quick start</a>.
+            Не копируйте токены или внутренние URL в репозиторий.
+          </li>
+          <li>
+            Скопируйте <code>execution-package-gigacode-cli/</code> в чистый
+            каталог спутника, добавьте утверждённые срезы в
+            <code>meta-model/</code> и локальные материалы в <code>docs/kb/</code>,
+            затем перейдите в корень пакета и проверьте CLI:
+            <pre><code>cd &lt;каталог-спутника&gt;
+gigacode --version</code></pre>
+          </li>
+          <li>
+            Проверьте пакет до запуска агента:
+            <pre><code>sh tools/validate-package.sh</code></pre>
+            Успех — код возврата <code>0</code>. Любой иной код означает stop;
+            validator не должен сам изменять package или результат. Разрешён
+            только append-only audit event о reject.
+          </li>
+          <li>
+            Запустите CLI из корня проекта:
+            <pre><code>gigacode</code></pre>
+          </li>
+          <li>
+            Внутри CLI проверьте контур:
+            <pre><code>/memory
+/skills
+/mcp</code></pre>
+            В списке skills должен быть <code>rg-bcreq-v1-dispatcher</code>.
+            В памяти — project contract. Для дополняющего поиска в корпоративной
+            БЗ должен быть доступен одобренный MCP с read/search capabilities.
+          </li>
+        </ol>
+        <div class="note">
+          <strong>Если диспетчера нет</strong>
+          Перезапустите CLI после обновления проекта и проверьте файл
+          <code>.gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md</code>. Старый
+          путь <code>.agents/skills/</code> не считается CLI-установкой.
+        </div>
+      </section>
+
+      <section id="start">
+        <h2>3. Запуск задачи</h2>
+        <p>Подготовьте уникальный ID формата <code>TASK-0001</code>, затем:</p>
+        <ol class="steps">
+          <li>
+            Явно вызовите диспетчер:
+            <pre><code>/skills rg-bcreq-v1-dispatcher</code></pre>
+          </li>
+          <li>
+            На запрос диспетчера передайте только TASK ID и предметный вход:
+            <pre><code>TASK-0001
+Подготовь BCREQ для …</code></pre>
+          </li>
+          <li>
+            Проверьте показанный preflight: <code>TASK_ID</code>, route,
+            найденный/создаваемый каталог, первый узел и доступность источников.
+          </li>
+          <li>
+            Подтвердите начало. После этого источником состояния становится
+            <code>runs/TASK-0001/</code>, а не история чата.
+          </li>
+        </ol>
+        <p>Ожидаемая структура:</p>
+        <pre><code>runs/TASK-0001/
+├── task.yaml
+├── runs/RUN-0001.yaml
+├── evidence/
+├── A-BCREQ.md
+└── A-BCREQ.confluence.html</code></pre>
+        <div class="stop">
+          <strong>Не запускайте маршрут обычной фразой</strong>
+          Автоматический выбор model-invoked skill удобен для справочных задач,
+          но не доказывает порядок узлов <code>RG-BCREQ-v1</code>. Строгий маршрут
+          начинается только явным вызовом диспетчера.
+        </div>
+      </section>
+
+      <section id="resume">
+        <h2>4. Продолжение в новой сессии</h2>
+        <p>
+          Команда <code>/resume</code> удобна, но не обязательна. Если сессия
+          закрыта или контекст потерян, запустите GigaCode CLI из того же checkout,
+          снова вызовите dispatcher и передайте прежний <code>TASK_ID</code>.
+        </p>
+        <ol class="steps">
+          <li>Dispatcher читает <code>task.yaml</code>.</li>
+          <li>Проверяет единственный <code>active_run_id</code> и последовательность events.</li>
+          <li>Показывает последний принятый gate и вычисленный следующий узел.</li>
+          <li>Продолжает только после вашего подтверждения.</li>
+        </ol>
+        <p>
+          Не создавайте второй TASK для продолжения той же предметной задачи.
+          Новый <code>RUN_ID</code> внутри TASK разрешён только после решения
+          <code>restart</code>; старый run record сохраняется.
+        </p>
+      </section>
+
+      <section id="knowledge">
+        <h2>5. Локальная БЗ и Confluence</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>ST-LOCAL</h3>
+            <p>Dispatcher ищет версионируемые знания в <code>docs/kb/</code> и сохраняет ссылки на найденные файлы.</p>
+          </article>
+          <article class="card">
+            <h3>ST-CONFLUENCE</h3>
+            <p>Параллельно используется разрешённый MCP read/search: корпоративная БЗ дополняет локальный контекст, а не служит запасным уровнем.</p>
+          </article>
+        </div>
+        <p>
+          До использования найденного факта человек подтверждает название,
+          раздел, страницу или anchor, короткую цитату и ссылку. Для Confluence
+          event также хранит server alias, поисковый запрос, page ID/URL и время
+          чтения. Секреты и полный кэш страницы не должны попадать в
+          <code>runs/</code>. Если MCP отсутствует, отключён или не объявляет
+          нужную capability, маршрут останавливается у человека.
+        </p>
+        <div class="note">
+          <strong>Два дополняющих канала</strong>
+          Достаточность локального ответа не отменяет поиск в Confluence.
+          Недоступность одного канала фиксируется явно и передаётся человеку;
+          web-поиск не является скрытым третьим уровнем источников.
+        </div>
+      </section>
+
+      <section id="reject">
+        <h2>6. Если validator вернул reject</h2>
+        <p>Ожидаемый сценарий:</p>
+        <ol class="steps">
+          <li>Команда завершается ненулевым кодом.</li>
+          <li>В RUN добавляется append-only <code>reject</code> event.</li>
+          <li>На экране показаны invariant, файл/поле, ожидание и команда recheck.</li>
+          <li>Ни один проверяемый файл автоматически не исправляется; единственная допустимая запись — новый <code>reject</code> event.</li>
+          <li>Вы выбираете <code>manual-fix</code>, <code>restart</code> или <code>cancel</code>.</li>
+        </ol>
+        <pre><code>sh tools/validate-package.sh --task TASK-0001</code></pre>
+        <div class="stop">
+          <strong>Reject нельзя подтвердить как success</strong>
+          Сначала устраните причину вручную либо явно начните новую попытку.
+          Увеличение числа автокоррекций не является допустимым обходом.
+        </div>
+      </section>
+
+      <section id="human">
+        <h2>7. Human checkpoints</h2>
+        <table>
+          <thead>
+            <tr><th>Checkpoint</th><th>Что показывает dispatcher</th><th>Что решает человек</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Возражение</td>
+              <td>Конфликт, варианты и рекомендацию до спорного действия</td>
+              <td>Изменить путь, продолжить допустимый вариант или остановить</td>
+            </tr>
+            <tr>
+              <td>Полнота</td>
+              <td>Матрицу «критерий → evidence → секция» и смежные улучшения отдельно</td>
+              <td>Закрыть пробел; не расширять scope; создать отдельную задачу</td>
+            </tr>
+            <tr>
+              <td>Двойное подтверждение</td>
+              <td>Target, page ID, representation, preview/diff и fingerprint</td>
+              <td>Сначала intent, затем тот же fingerprint непосредственно перед write</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Любое изменение target или содержимого аннулирует подтверждения.
+          Локальная запись нового результата обратима и не требует двойного
+          подтверждения; внешняя публикация или перезапись страницы требует.
+        </p>
+      </section>
+
+      <section id="publish">
+        <h2>8. Экспорт и публикация в Confluence</h2>
+        <p>
+          <code>A-BCREQ.md</code> — канонический редактируемый source.
+          <code>A-BCREQ.confluence.html</code> — безопасный XHTML/HTML fragment
+          для Confluence Storage Format: без JavaScript, inline handlers,
+          credentials и локальных абсолютных путей.
+        </p>
+        <ol class="steps">
+          <li>Запустите validation и проверьте принятый финальный gate.</li>
+          <li>Откройте export локально и проверьте заголовки, таблицы, ссылки и anchors.</li>
+          <li>Попросите dispatcher подготовить publish preview, но не выполнять write.</li>
+          <li>Сверьте page ID/URL, representation и diff; дайте первое подтверждение.</li>
+          <li>Непосредственно перед MCP write подтвердите неизменившийся fingerprint второй раз.</li>
+          <li>Сохраните page ID, version и <code>content_sha256</code> в event.</li>
+        </ol>
+        <div class="success">
+          <strong>Идемпотентная публикация</strong>
+          Повтор для той же пары <code>TASK_ID + content_sha256</code> не должен
+          создавать дубликат. Если MCP принимает ADF или Markdown вместо
+          <code>storage</code>, representation и преобразование фиксируются явно.
+        </div>
+      </section>
+
+      <section id="golden">
+        <h2>9. Как добавить хороший пример в Golden Set</h2>
+        <ol class="steps">
+          <li>Выберите TASK с финальным accepted gate и проверяемым evidence.</li>
+          <li>Получите отдельное одобрение использовать его как golden-кандидат.</li>
+          <li>Удалите персональные данные, секреты и закрытые ссылки.</li>
+          <li>Создайте новый стабильный <code>case-id</code>; существующие cases не переписывайте.</li>
+          <li>
+            Запишите <code>origin_task_id</code>, <code>confirmed_by</code>,
+            <code>confirmed_at</code>, класс и обоснование ожидаемого вердикта.
+          </li>
+          <li>Если пример закрывает новый дефект, добавьте связанный negative case.</li>
+          <li>Обновите <code>golden/cases.yaml</code>, запустите validator и golden tests.</li>
+          <li>Передайте изменение на обычный PR review.</li>
+        </ol>
+        <p>
+          Чат, пользовательский run или страница Confluence никогда не становятся
+          golden автоматически. Golden — управляемый test artifact, а не память
+          модели.
+        </p>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>10. Диагностика</h2>
+        <table>
+          <thead>
+            <tr><th>Симптом</th><th>Проверка</th><th>Действие</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Skill не виден</td>
+              <td><code>/skills</code>, путь <code>.gigacode/skills/…/SKILL.md</code></td>
+              <td>Обновить checkout, перезапустить CLI; при необходимости запустить <code>gigacode --debug</code></td>
+            </tr>
+            <tr>
+              <td>Состояние TASK не восстанавливается</td>
+              <td><code>task.yaml</code>, один active RUN, последовательные <code>seq</code></td>
+              <td>Остановиться; не создавать второй TASK; передать диагностику G-human</td>
+            </tr>
+            <tr>
+              <td>Confluence недоступен</td>
+              <td><code>/mcp</code>, server status, read/search capability, environment credentials</td>
+              <td>Не угадывать tool или URL; продолжить с local evidence либо остановиться</td>
+            </tr>
+            <tr>
+              <td>Validator изменил файл</td>
+              <td><code>git status --short</code> до/после</td>
+              <td>Это дефект валидатора; отменить публикацию и зарегистрировать issue</td>
+            </tr>
+            <tr>
+              <td>Publish просит одно подтверждение</td>
+              <td>Events <code>intent_confirmed</code> и <code>execution_confirmed</code></td>
+              <td>Не выполнять write до двух событий одного fingerprint</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <footer>
+        <p>
+          Версия руководства: 0.2 · обновлено 2026-09-21 · владелец: G-Ivan-A.
+          Официальная справка:
+          <a href="https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/skills">Skills</a>,
+          <a href="https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/subagents">Subagents</a>,
+          <a href="https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/commands">Commands</a>,
+          <a href="https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/memory">Memory</a>,
+          <a href="https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/mcp">MCP</a>.
+        </p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

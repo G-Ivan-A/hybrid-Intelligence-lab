@@ -24,7 +24,7 @@ H2. «Операция эквивалентна навыку формата ones
 H3. Есть ли в новом каталоге L3 навык, состоящий ровно из одной операции,
     и какие операции переиспользуются достаточно, чтобы иметь смысл в форме
     самостоятельного навыка. Считается по таблице разложения навыков
-    ba-operation-taxonomy/20-taxonomy.md §4.
+    operation-taxonomy/20-taxonomy.md §4.
 
 Интерпретация — в датированном отчёте
 research/ba-requirements/2026-09-10-skill-granularity-format-facts.md.
@@ -146,7 +146,7 @@ OP_RE = re.compile(r"`([a-z][a-z0-9-]+)`")
 
 
 def measure_catalogue(hub: Path) -> dict:
-    source = hub / "projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md"
+    source = hub / "projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/20-taxonomy.md"
     text = source.read_text(encoding="utf-8")
     skills = {}
     for name, process, cell in SKILL_ROW_RE.findall(text):

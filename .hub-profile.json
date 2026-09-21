@@ -17,13 +17,33 @@
     },
     {
       "from": "research/ba-requirements/ba-process-taxonomy/",
-      "to": "projects/ba-gigacode-implementation/ba-process-taxonomy/",
+      "to": "projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/",
       "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573"
     },
     {
       "from": "research/ba-requirements/ba-operation-taxonomy/",
-      "to": "projects/ba-gigacode-implementation/ba-operation-taxonomy/",
+      "to": "projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/",
       "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573"
+    },
+    {
+      "from": "projects/ba-gigacode-implementation/ba-process-taxonomy/",
+      "to": "projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593"
+    },
+    {
+      "from": "projects/ba-gigacode-implementation/ba-operation-taxonomy/",
+      "to": "projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593"
+    },
+    {
+      "from": "projects/ba-gigacode-implementation/execution-package-mvp-bcreq/",
+      "to": "projects/ba-gigacode-implementation/execution-package-gigacode-cli/",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593"
+    },
+    {
+      "from": "projects/ba-gigacode-implementation/docs/guides/",
+      "to": "projects/ba-gigacode-implementation/meta-model-guides/gigacode-cli/",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593"
     }
   ]
 }

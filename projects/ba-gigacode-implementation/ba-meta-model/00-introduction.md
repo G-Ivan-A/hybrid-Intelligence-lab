@@ -16,8 +16,8 @@ based_on:
 related_artifacts:
   - "docs/adr/2026-09-adr-013-run-modes-deprecation.md"
   - "docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md"
-  - "projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md"
-  - "projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/20-taxonomy.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/20-taxonomy.md"
   - "standards/product-taxonomy-reference.md"
   - "research/ba-requirements/orchestration/00-introduction.md"
   - "ops/backlog.md"
@@ -170,8 +170,8 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 | Контракт issue #571 | Где закрыт |
 | --- | --- |
 | Глубокий разбор дефектов действующей таксономии | [`2026-09-10-process-taxonomy-defects-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md) |
-| Индустриальный базис процессов и дельта КК Манго | [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-process-taxonomy) |
-| Гранулярность операций и связь с навыками | [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-operation-taxonomy) |
+| Индустриальный базис процессов и дельта КК Манго | [`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy) |
+| Гранулярность операций и связь с навыками | [`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy) |
 | Однозначные определения артефактов (`A-CORE`, `A-TZ`, `A-BCREQ`, `A-REP`, `A-TRACE`) | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md) §2 |
 | Сущности `Система`, `Пользователь`, `Актор`, навык как подпроцесс | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md) §2, §4 |
 | Маршрут как граф с ветвлениями по гейтам | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/10-theory.md) §6, [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md) §6.1 |

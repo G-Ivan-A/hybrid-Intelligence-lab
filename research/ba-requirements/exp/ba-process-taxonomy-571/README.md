@@ -11,9 +11,9 @@ type: experiment
 Evidence container для датированного замера
 [`../../2026-09-10-process-taxonomy-defects-facts.md`](../../2026-09-10-process-taxonomy-defects-facts.md)
 и модулей
-[`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-process-taxonomy)
+[`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy)
 и
-[`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-operation-taxonomy),
+[`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy),
 issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571).
 
 > **Ссылки.** Issue #571 требует абсолютных ссылок. Относительная ссылка на

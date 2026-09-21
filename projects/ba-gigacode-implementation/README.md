@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-09-21
 temperature: 0.1
 scope: mango-only
@@ -13,7 +13,7 @@ type: research
 GigaCode»**: какая мета-модель описывает работу, какими процессами и операциями
 она разложена и в какой форме поставляется агенту.
 
-Это **дом проектных артефактов**, а не общая рамка. Все три модуля несут
+Это **дом проектных артефактов**, а не общая рамка. Все четыре модуля несут
 `scope: mango-only`: переносимость — проверяемая гипотеза (задача `B-158`), а не
 объявленное свойство. Переносимая часть исследования остаётся в
 [`research/ba-requirements/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/README.md).
@@ -28,12 +28,13 @@ GigaCode»**: какая мета-модель описывает работу, 
 подтверждено владельцем и выполнено задачей `B-155`
 ([#573](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573)).
 
-Модули лежат прямо в корне направления, а не в подкаталоге из списка стандарта:
-это **не** проектная документация, стандарт или база знаний, а исследовательские
-модули [Reference Research Pattern](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-07-17-rfc-reference-research-pattern.md)
-(шесть файлов `00…50`), у которых своя форма. Отклонение объявлено, а не скрыто.
+Каноническая модель использует форму
+[Reference Research Pattern](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-07-17-rfc-reference-research-pattern.md),
+а инструкции, тесты и пакет имеют форму своей операции. Таксономии процессов и
+операций вложены в `ba-meta-model/`: это части одной канонической модели, а не
+самостоятельные верхнеуровневые модули.
 
-## Модули
+## Четыре операционных модуля
 
 - [`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md)
   — каноническая мета-модель БА (issue
@@ -43,51 +44,32 @@ GigaCode»**: какая мета-модель описывает работу, 
   четыре канонические таксономии, реестр депрекации режимов запуска
   `DP-1`…`DP-5`, правила работы с наследием `LG-1`…`LG-6`, контракт
   `SKILL.md` (`SK-0`…`SK-10`), маршрутный лист, Golden Set и план вертикального
-  MVP-среза с метриками `M-1`…`M-5`.
-- [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md)
-  — таксономия процессов на индустриальном базисе: `L0` (шесть областей знаний
-  BABOK Guide v3) → `L1` (шесть семейств работ) → `L2` (десять процессов
-  `P-01`…`P-10`) → `L3` (33 навыка-подпроцесса), где `L0`/`L1` наследуются, а
-  `L2`/`L3` объявлены дельтой с обоснованием каждого отклонения.
-- [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md)
-  — таксономия операций той же пересборки: 31 операция в пяти классах
-  (`extract`, `transform`, `generate`, `check`, `assess`) и правила атомарности
-  `OA-1`…`OA-6`.
+  MVP-среза с метриками `M-1`…`M-5`. Вложенные
+  [`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/00-introduction.md)
+  и [`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/00-introduction.md)
+  задают соответственно 33 навыка-подпроцесса и 31 атомарную операцию.
+- [`meta-model-guides/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/meta-model-guides/README.md)
+  — инструкции человеку: подготовка чистой директории, локальной KB,
+  Confluence MCP, запуск/возобновление task и изолированный debug.
+- [`execution-package-tests/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-tests/README.md)
+  — mock-fixtures, assertions и детерминированная эмуляция графа без LLM и MCP.
+- [`execution-package-gigacode-cli/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-gigacode-cli/README.md)
+  — копируемый пакет с `.gigacode/skills/`, явным dispatcher, debug-механизмом,
+  контрактами, графом, Golden Set и машинным гейтом `G-mach`.
 
-## Пакет исполнения
-
-- [`execution-package-mvp-bcreq/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/README.md)
-  — компиляция вертикального среза `A-IN → A-CORE → A-BCREQ` для продуктового
-  класса «контакт-центр» (issue [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580)): закрытые
-  машиночитаемые словари, контракты как JSON Schema, граф маршрута
-  `RG-BCREQ-v1`, одиннадцать `SKILL.md`, минимальный Golden Set, метрики и
-  машинный гейт `G-mach` как скрипт.
-
-Пакет — **артефакт компиляции**, а не седьмой модуль Reference Research
-Pattern: исследовательские тексты в нём не дублируются, а их нормативные
-следствия перенесены в исполняемую форму. Состав скопированного,
+Пакет — артефакт компиляции, а не новый RRP-модуль. Состав скопированного,
 преобразованного и отброшенного объявлен в
-[манифесте компиляции](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/compilation-manifest.yaml).
-Пакет разворачивается в репозиторий-спутник копированием и во время прогона на
-этот репозиторий не ссылается; направление остаётся источником истины
-развивающейся модели.
+[манифесте](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-gigacode-cli/compilation-manifest.yaml).
+Его `docs/kb/.gitkeep` и `meta-model/.gitkeep` обозначают copy-time входы; пакет
+не ссылается в Хаб во время прогона.
 
-## Развёртывание в GigaCode CLI
+## Решение о GigaCode CLI
 
-- [`docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md)
-  — proposed RFC для issue
-  [#591](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/591):
-  нативный путь `.gigacode/skills/`, явный dispatcher маршрута
-  `RG-BCREQ-v1`, состояние в `runs/<TASK_ID>/`, поиск
-  `docs/kb/ → Confluence MCP`, fail-closed validator и human checkpoints.
-- [`docs/guides/mango-ba-ai-runtime-cli-user-guide.html`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/guides/mango-ba-ai-runtime-cli-user-guide.html)
-  — автономное HTML-руководство оператора. До отдельного implementation PR в
-  runtime оно явно помечено как target-state, а не описание уже работающего
-  интерфейса.
-
-RFC и гайд живут в `projects/<direction>/docs/`, потому что описывают
-развёртывание конкретного Mango runtime. Они не вводят общую норму Хаба и не
-дублируют содержимое execution package.
+Предложение и доказательства среды сохранены в
+[`docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md).
+Issue [#593](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593)
+реализует проверяемую часть внутри Хаба и не изменяет внешний
+`mango-ba-ai-runtime-cli`.
 
 ## Доказательная база
 

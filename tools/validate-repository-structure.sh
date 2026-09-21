@@ -61,7 +61,11 @@ is_active_file() {
     # Пакет исполнения перечислен шаблоном, а не пофайлово: его состав
     # задаётся компиляцией и меняется целиком, а полноту состава проверяет
     # собственный валидатор пакета (tools/validate-package.py).
-    projects/ba-gigacode-implementation/execution-package-mvp-bcreq/*)
+    projects/ba-gigacode-implementation/execution-package-gigacode-cli/*)
+      return 0
+      ;;
+    projects/ba-gigacode-implementation/meta-model-guides/* | \
+    projects/ba-gigacode-implementation/execution-package-tests/*)
       return 0
       ;;
     README.md | \
@@ -503,18 +507,18 @@ is_active_file() {
     projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md | \
     projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md | \
     projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md | \
-    projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md | \
-    projects/ba-gigacode-implementation/ba-process-taxonomy/10-theory.md | \
-    projects/ba-gigacode-implementation/ba-process-taxonomy/20-taxonomy.md | \
-    projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md | \
-    projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md | \
-    projects/ba-gigacode-implementation/ba-process-taxonomy/50-open-research.md | \
-    projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md | \
-    projects/ba-gigacode-implementation/ba-operation-taxonomy/10-theory.md | \
-    projects/ba-gigacode-implementation/ba-operation-taxonomy/20-taxonomy.md | \
-    projects/ba-gigacode-implementation/ba-operation-taxonomy/30-decision-framework.md | \
-    projects/ba-gigacode-implementation/ba-operation-taxonomy/40-practice-and-cases.md | \
-    projects/ba-gigacode-implementation/ba-operation-taxonomy/50-open-research.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/00-introduction.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/10-theory.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/20-taxonomy.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/30-decision-framework.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/40-practice-and-cases.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/50-open-research.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/00-introduction.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/10-theory.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/20-taxonomy.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/30-decision-framework.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/40-practice-and-cases.md | \
+    projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/50-open-research.md | \
     docs/rfc/README.md | \
     docs/rfc/rfc-two-cases-of-project-initialization.md | \
     docs/rfc/contract-executability-rfc.md | \
@@ -885,6 +889,10 @@ required_directories=(
   "practices/ai-governance"
   "frameworks"
   "projects"
+  "projects/ba-gigacode-implementation/ba-meta-model"
+  "projects/ba-gigacode-implementation/meta-model-guides"
+  "projects/ba-gigacode-implementation/execution-package-tests"
+  "projects/ba-gigacode-implementation/execution-package-gigacode-cli"
   "education"
   "ai-governance"
   "ai-rules"
@@ -1069,8 +1077,11 @@ required_files=(
   "projects/repo-development/README.md"
   "projects/ba-gigacode-implementation/README.md"
   "projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md"
-  "projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md"
-  "projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md"
+  "projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/00-introduction.md"
+  "projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/00-introduction.md"
+  "projects/ba-gigacode-implementation/meta-model-guides/README.md"
+  "projects/ba-gigacode-implementation/execution-package-tests/README.md"
+  "projects/ba-gigacode-implementation/execution-package-gigacode-cli/README.md"
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
   "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
@@ -1934,7 +1945,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.16"
+require_text "ops/artifact-map.md" "version: 2.17"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2347,7 +2358,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.62"
+require_text "ops/backlog.md" "version: 1.63"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"

@@ -32,7 +32,7 @@ type: experiment
 запрещает такую подпись дословно: «союз „и“, соединяющий два слота словаря,
 запрещён: он кодирует два слота одним разделом и делает машинную проверку
 невозможной»
-([`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/templates/bcreq-skeleton.md)).
+([`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-gigacode-cli/templates/bcreq-skeleton.md)).
 
 Новый результат противоречит историческому: `S-FR` и `S-SCENARIO` разведены.
 Противоречие обосновано документом, а не вкусом, и снимает наблюдаемый дефект
@@ -53,7 +53,7 @@ type: experiment
 элементы интерфейса и переводит их в вопрос `Q-03`. Основание — правило
 загрузочного контракта: «Утверждение без ссылки на источник фактом не является.
 Ссылка — локатор плюс дословная цитата»
-([`AGENTS.md` пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/AGENTS.md)).
+([`AGENTS.md` пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-gigacode-cli/AGENTS.md)).
 Это укорочение без потери контекста доработки: сведение переходит из текста в
 адресованный вопрос и остаётся в документе, а не исчезает.
 
@@ -90,7 +90,7 @@ type: experiment
 
 Для `TASK-1059` вопрос `Q-02` («текущее поведение распределения не описано»)
 имеет severity `blocker`. По графу маршрута
-[`rg-bcreq-v1.yaml`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq/routes/rg-bcreq-v1.yaml)
+[`rg-bcreq-v1.yaml`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/execution-package-gigacode-cli/routes/rg-bcreq-v1.yaml)
 ребро `n4 → n5` срабатывает при наличии блокирующей неоднозначности, а ребро
 `n7 → halt` останавливает маршрут до ответа Заказчика.
 

@@ -1,0 +1,7 @@
+outcome: awaiting-human
+path: [entry, n1, n2, n3, n4, n5, n6, n7]
+required_files:
+  - task.yaml
+  - runs/RUN-0001.yaml
+  - evidence/checkpoint-n7.md
+required_event_types: [transition, skill-invocation, artifact-write, gate]

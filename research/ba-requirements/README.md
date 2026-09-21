@@ -101,7 +101,7 @@ GigaCode, то есть являются артефактами конкретн
   требует ссылок на источник (`GT-5`); заявка на универсальность снята и
   заменена проверяемой гипотезой переносимости (`scope: mango-only`).
 
-- [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md)
+- [`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/00-introduction.md)
   — таксономия процессов БА на индустриальном базисе (issue
   [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)):
   четыре уровня `L0` (шесть областей знаний BABOK v3) → `L1` (шесть семейств
@@ -113,7 +113,7 @@ GigaCode, то есть являются артефактами конкретн
   распадается на три процесса. Ярусы контроля `G1`–`G7` заимствованы из
   [`research/ai-education/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/task-processing/00-introduction.md),
   метрики `MP-1`…`MP-6`.
-- [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md)
+- [`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/00-introduction.md)
   — таксономия операций той же пересборки: операция как **атомарное, но
   семантически завершённое** когнитивное действие с шестиполевым контрактом,
   31 операция в пяти классах (`extract`, `transform`, `generate`, `check`,
@@ -174,7 +174,7 @@ GigaCode, то есть являются артефактами конкретн
   отсутствие сущностей `Система`, `Пользователь`, `Подпроцесс`; `D7` — 66 из 67
   прогонов размечены вне словаря процессов; `D8` — одно упоминание ветвления
   против двух утверждений о неизменности маршрута. Доказательная база модулей
-  `ba-process-taxonomy/`, `ba-operation-taxonomy/` и решения ADR-015.
+  `process-taxonomy/`, `operation-taxonomy/` и решения ADR-015.
 
 - [`2026-09-10-gigacode-environment-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-gigacode-environment-facts.md)
   — снимок документации среды исполнения GigaCode на GitVerse: 11 страниц из

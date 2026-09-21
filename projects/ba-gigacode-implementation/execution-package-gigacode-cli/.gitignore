@@ -1,0 +1,4 @@
+# Runtime state and local MCP configuration never belong to the compiled package.
+runs/*
+!runs/.gitkeep
+.gigacode/settings.json
