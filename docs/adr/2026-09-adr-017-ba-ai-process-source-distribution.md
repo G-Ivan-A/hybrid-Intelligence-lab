@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.1
+version: 0.2
 updated: 2026-09-22
 temperature: 0.1
 owner: G-Ivan-A
@@ -142,16 +142,29 @@ dist/execution-package-<environment>/
 ├── AGENTS.md
 ├── package-manifest.yaml          # package/source revisions, adapter, file hashes
 ├── <environment-native>/          # навыки и конфигурация среды
+├── .gitignore                     # runtime state and local configuration stay local
 ├── taxonomy/
 ├── contracts/
 ├── routes/
 ├── templates/
 ├── evaluation/
 ├── docs/
-│   └── guides/                    # task-oriented runtime guides
+│   ├── guides/                    # task-oriented runtime guides
+│   └── kb/
+│       └── .gitkeep               # mandatory ST-LOCAL placeholder
+├── meta-model/
+│   └── .gitkeep                   # mandatory local model placeholder
 ├── tests/
 └── tools/
 ```
+
+`docs/kb/.gitkeep` и `meta-model/.gitkeep` — обязательные copy-time
+входы, а не пустые декоративные каталоги. Первый резервирует
+место для локальной базы знаний уровня `ST-LOCAL`; второй — для
+локальной копии канонической модели из Source. Компилятор создаёт оба
+пути в Distribution, а валидатор отклоняет пакет без любого из них.
+Содержимое появляется только при подготовке конкретного runtime и не
+подменяет версию модели, зафиксированную в `package-manifest.yaml`.
 
 Distribution не содержит RRP, исследовательские обзоры, ADR/RFC, backlog,
 открытые вопросы, аргументацию отвергнутых вариантов или собранные feedback-
@@ -174,6 +187,9 @@ Runtime-репозиторий, например
 ```text
 <runtime-repository>/
 ├── <compiled package files>
+├── docs/
+│   └── kb/                        # from Distribution; locally populated ST-LOCAL
+├── meta-model/                    # from Distribution; locally populated model copy
 ├── runs/                          # только бизнес-прогоны
 ├── debug/                         # только отладка фреймворка в реальной среде
 └── feedback/
@@ -184,6 +200,51 @@ Runtime обязан работать без чтения Source и без до�
 [`G-Ivan-A/hybrid-Intelligence-lab`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab).
 Абсолютная ссылка на Source допустима как provenance, но не как шаг инструкции,
 без которого невозможно выполнить работу.
+
+Runtime получает `docs/kb/` и `meta-model/` вместе с Distribution, затем
+наполняет их локально разрешёнными материалами. `docs/kb/` является
+первым уровнем поиска `ST-LOCAL`; внешний `ST-CONFLUENCE` дополняет его,
+если разрешённый MCP-канал доступен. `meta-model/` даёт локальному
+ИИ-агенту канонические термины и контракты для отладки без сетевого
+доступа к Source; такая отладка запускается явно вызванным проектным
+навыком и пишет только в `debug/`.
+
+### D3.1. Минимум для развёртывания Distribution на АРМ
+
+Критический аудит текущей сборки и официальной
+[документации GigaCode CLI](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli)
+закрепляет следующий минимум:
+
+1. Distribution содержит `README.md` с командами копирования,
+   валидации и первого запуска. На АРМ установлен доступный для
+   организации GigaCode CLI; предварительная проверка — `gigacode --version`.
+   Официальный
+   [quick start](https://gitverse.ru/docs/ai/ai-assistant-gigacode/getting-started-with-gigacode/quick-start)
+   не заявляет Node.js 22+ как общую предпосылку; поэтому такая
+   зависимость не входит в контракт без доказательства от конкретного
+   канала установки.
+2. В Distribution есть `.gitignore`, который как минимум исключает
+   runtime-state и реальную конфигурацию MCP. Конкретный адаптер объявляет,
+   должны ли локальные KB/модель быть untracked или версионироваться в
+   закрытом runtime-репозитории; `.gitkeep` и безопасный example сохраняются
+   всегда. Секреты, реальные URL и токены в Distribution не попадают.
+3. Для GigaCode CLI пакет содержит проектные навыки в
+   `.gigacode/skills/` и безопасный `.gigacode/settings.example.json`.
+   Оператор создаёт локальный `.gigacode/settings.json`, проверяет
+   `/mcp` и `/skills`, не включает `trust: true` для непроверенного сервера и
+   перезапускает CLI после изменения конфигурации. Это следует
+   [MCP-контракту GigaCode CLI](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/mcp)
+   и его
+   [контракту project skills](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/skills).
+4. Перед первым запуском оператор наполняет `meta-model/` и
+   `docs/kb/`, запускает package validator, затем явно вызывает
+   диспетчер через `/skills <skill-name>`. Наличие каталогов без
+   проверки их содержимого не означает готовность к работе.
+5. Обновление не выполняется ручной правкой runtime. Новая версия Source
+   повышает package version, повторно компилируется и проходит все
+   проверки. Runtime получает новый Distribution целиком, сверяет
+   `package-manifest.yaml`, сохраняет локальное содержимое только в явно
+   объявленных mutable-путях и снова проходит validator до запуска.
 
 Отладка фреймворка проводится только в реальной runtime-среде. `runs/` содержит
 только бизнес-выполнение; диагностические сессии живут в `debug/` и не входят
@@ -351,6 +412,17 @@ reviewable PR.
    [`research/mango/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/mango)
    содержат взаимные абсолютные ссылки, но lifecycle-статус повышается только
    по доказательству.
+9. Distribution validator отклоняет отсутствие `docs/kb/.gitkeep`,
+   `meta-model/.gitkeep`, `.gitignore`, `README.md` и безопасного example
+   конфигурации среды; отдельная secret-scan отклоняет секреты, реальные
+   MCP URL/токены и tracked runtime-state. Это целевой acceptance
+   contract; текущий validator из PR #594 уже проверяет оба placeholder
+   и example, а secret-scan остаётся implementation gap, который должен
+   быть закрыт до приёмки Distribution.
+10. При развёртывании на АРМ зафиксированы успешные `gigacode --version`,
+    package validator, обнаружение dispatcher через `/skills` и статус
+    разрешённого MCP через `/mcp`; отсутствие MCP не блокирует
+    offline-маршрут `ST-LOCAL`.
 
 Для настоящего documentation-only PR применяются валидаторы
 [`CONTRIBUTING.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CONTRIBUTING.md),
@@ -385,7 +457,10 @@ Distribution и runtime; разделение `runs/`/`debug/`; включени
 - [AI Education](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ai-education) — исследовательские основания guides.
 - [Project Structure Inheritance](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md) — правила project-scoped структуры.
 - [ADR Structure Standard](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/adr-structure-standard.md) — обязательная форма ADR.
-- [External Sources Registry](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/external-knowledge/external-sources-registry.md) — записи `ext-127`, `ext-324`–`ext-326`.
+- [External Sources Registry](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/external-knowledge/external-sources-registry.md) — записи `ext-127`, `ext-323`–`ext-326`.
+- [GigaCode CLI quick start](https://gitverse.ru/docs/ai/ai-assistant-gigacode/getting-started-with-gigacode/quick-start) — установка и проверка CLI на АРМ.
+- [GigaCode CLI skills](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/skills) — путь project skills, discovery и явный вызов.
+- [GigaCode CLI MCP](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/mcp) — project settings, allowlist, secrets boundary и restart после настройки.
 - [Python Packaging Flow](https://packaging.python.org/en/latest/flow/) — source/distribution boundary.
 - [SLSA Provenance](https://slsa.dev/spec/v1.2/provenance) — provenance-модель сборки.
 - [Diátaxis](https://diataxis.fr/) — разделение типов документации по потребности пользователя.
