@@ -5,7 +5,7 @@ package_version: "2.1"
 compiled_at: 2026-09-22
 source:
   repository: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
-  revision: d6875b3a1837f785915af7f0e259d2835958792c
+  revision: 9bcaf87b42d8cb374f0b7bc82d45b96131a17b98
 adapter:
   name: gigacode-cli
   version: "1.0"
