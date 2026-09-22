@@ -139,4 +139,4 @@ jobs:
         run: python3 tools/generate-manifest.py --check
 
       - name: Validate MVP BCREQ execution package (G-mach)
-        run: python3 projects/ba-gigacode-implementation/execution-package-mvp-bcreq/tools/validate-package.py
+        run: sh projects/ba-gigacode-implementation/execution-package-gigacode-cli/tools/validate-package.sh

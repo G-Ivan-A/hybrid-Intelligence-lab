@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export PYTHONDONTWRITEBYTECODE=1
 
-# Regression tests for the execution package gate (issue #580).
+# Regression tests for the GigaCode CLI execution package gate (issues #580
+# and #593).
 #
 # The package validator IS the machine gate G-mach, so a validator that only
 # ever passes is indistinguishable from no gate at all (metric M-2). Every case
@@ -12,18 +14,41 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-PACKAGE="projects/ba-gigacode-implementation/execution-package-mvp-bcreq"
+PROJECT="projects/ba-gigacode-implementation"
+PACKAGE="$PROJECT/execution-package-gigacode-cli"
 VALIDATOR="$PACKAGE/tools/validate-package.py"
-
-if ! python3 -c 'import yaml' 2>/dev/null; then
-  printf 'SKIP: PyYAML is not installed, execution package tests cannot run.\n' >&2
-  exit 0
-fi
 
 fail() {
   printf 'ERROR: %s\n' "$1" >&2
   exit 1
 }
+
+for required in \
+  ba-meta-model \
+  meta-model-guides \
+  execution-package-tests \
+  execution-package-gigacode-cli; do
+  [[ -d "$PROJECT/$required" ]] || fail "missing target module: $PROJECT/$required"
+done
+
+for obsolete in \
+  ba-process-taxonomy \
+  ba-operation-taxonomy \
+  execution-package-mvp-bcreq; do
+  [[ ! -e "$PROJECT/$obsolete" ]] || fail "obsolete flat-layout path remains: $PROJECT/$obsolete"
+done
+
+for placeholder in docs/kb/.gitkeep meta-model/.gitkeep; do
+  [[ -f "$PACKAGE/$placeholder" ]] || fail "missing copy-time placeholder: $PACKAGE/$placeholder"
+done
+
+[[ -d "$PACKAGE/.gigacode/skills" ]] || fail "missing native GigaCode skill directory"
+[[ ! -e "$PACKAGE/.agents" ]] || fail "legacy .agents tree must not remain in the CLI package"
+
+if ! python3 -c 'import yaml' 2>/dev/null; then
+  printf 'SKIP: PyYAML is not installed, package content tests cannot run.\n' >&2
+  exit 0
+fi
 
 WORKDIR="$(mktemp -d)"
 trap 'rm -rf "$WORKDIR"' EXIT
@@ -61,14 +86,14 @@ expect_pass "$ROOT_DIR/$PACKAGE" "intact package"
 
 # Case 2: a route node pointing at a skill that was never compiled.
 target="$(fixture missing-skill)"
-rm -rf "$target/.agents/skills/core-assembly-contact-center"
+rm -rf "$target/.gigacode/skills/core-assembly-contact-center"
 expect_reject "$target" "missing skill" "SK-core-assembly"
 
 # Case 3: a SKILL.md that lost a mandatory section.
 target="$(fixture missing-section)"
 python3 - "$target" <<'PY'
 import sys, pathlib
-path = pathlib.Path(sys.argv[1], ".agents/skills/ambiguity-detection-contact-center/SKILL.md")
+path = pathlib.Path(sys.argv[1], ".gigacode/skills/ambiguity-detection-contact-center/SKILL.md")
 path.write_text(path.read_text(encoding="utf-8").replace("\n## Отказ\n", "\n## Прочее\n"), encoding="utf-8")
 PY
 expect_reject "$target" "missing skill section" "## Отказ"
@@ -118,4 +143,54 @@ path.write_text(head, encoding="utf-8")
 PY
 expect_reject "$target" "incomplete metric baseline" "MP-6"
 
-printf 'Execution package tests passed (8 case(s)).\n'
+# Case 9: the retired discovery path must fail closed if reintroduced.
+target="$(fixture legacy-skill-tree)"
+mkdir -p "$target/.agents/skills"
+expect_reject "$target" "legacy skill tree" ".agents"
+
+# Case 10: debug orchestration is part of the copyable envelope, not optional prose.
+target="$(fixture missing-debug-orchestrator)"
+rm -rf "$target/.gigacode/skills/ba-debug-orchestrator"
+expect_reject "$target" "missing debug orchestrator" "ba-debug-orchestrator"
+
+# Case 11: a machine rejection may not trigger a hidden corrective retry.
+target="$(fixture corrective-retry)"
+python3 - "$target" <<'PY'
+import sys, pathlib
+path = pathlib.Path(sys.argv[1], "routes/rg-bcreq-v1.yaml")
+path.write_text(path.read_text(encoding="utf-8").replace("corrective_attempts: 0", "corrective_attempts: 1", 1), encoding="utf-8")
+PY
+expect_reject "$target" "automatic corrective retry" "автоматические корректирующие попытки"
+
+# Case 12: local KB and Confluence are complementary, not a sequential fallback.
+target="$(fixture sequential-sources)"
+python3 - "$target" <<'PY'
+import sys, pathlib
+path = pathlib.Path(sys.argv[1], "taxonomy/source-tiers.yaml")
+path.write_text(path.read_text(encoding="utf-8").replace("collection_mode: complementary", "collection_mode: sequential", 1), encoding="utf-8")
+PY
+expect_reject "$target" "sequential source fallback" "обязаны дополнять друг друга"
+
+# Case 13: route orchestrators must never be selected implicitly by the model.
+target="$(fixture implicit-dispatcher)"
+python3 - "$target" <<'PY'
+import sys, pathlib
+path = pathlib.Path(sys.argv[1], ".gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md")
+path.write_text(path.read_text(encoding="utf-8").replace("disable-model-invocation: true", "disable-model-invocation: false", 1), encoding="utf-8")
+PY
+expect_reject "$target" "implicitly invoked dispatcher" "disable-model-invocation: true"
+
+# Case 14: the executable run template and its C-RK schema cannot drift apart.
+target="$(fixture run-template-drift)"
+python3 - "$target" <<'PY'
+import sys, pathlib
+path = pathlib.Path(sys.argv[1], "routes/run-sheet-template.yaml")
+path.write_text(path.read_text(encoding="utf-8").replace("  artifact_refs: []", "  artifact_refs: []\n  undeclared_field: true", 1), encoding="utf-8")
+PY
+expect_reject "$target" "run template schema drift" "handover содержит поля вне C-RK"
+
+# The project-level emulator exercises route traversal and human-gate pauses
+# without invoking an LLM or writing into the committed package.
+python3 "$PROJECT/execution-package-tests/tests/test_emulation.py"
+
+printf 'Execution package tests passed (14 package cases + route emulation).\n'

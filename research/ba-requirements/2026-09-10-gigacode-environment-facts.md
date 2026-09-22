@@ -13,7 +13,7 @@ based_on:
 related_artifacts:
   - "projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md"
   - "projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md"
-  - "projects/ba-gigacode-implementation/ba-process-taxonomy/30-decision-framework.md"
+  - "projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/30-decision-framework.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---

@@ -203,7 +203,8 @@ is_approved_field() {
     execution-package:outputs | execution-package:contracts | execution-package:gates | \
     execution-package:compiled_from | execution-package:derived_from | execution-package:compiled_at | \
     execution-package:golden_id | execution-package:artifact_class | execution-package:origin | \
-    execution-package:confirmed_by)
+    execution-package:confirmed_by | execution-package:priority | \
+    execution-package:disable-model-invocation)
       return 0
       ;;
     default:executable | default:entrypoint | default:source | default:based_on | \

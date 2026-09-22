@@ -1,0 +1,14 @@
+name: straight-through
+task_id: TASK-9001
+run_id: RUN-0001
+human_approvals: [n4, n12]
+transitions:
+  entry: n1
+  n1: n2
+  n2: n3
+  n3: n4
+  n4: n9
+  n9: n10
+  n10: n11
+  n11: n12
+  n12: exit

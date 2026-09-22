@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "confluence": {
+      "command": "<approved-confluence-mcp-command>",
+      "args": [],
+      "env": {
+        "CONFLUENCE_TOKEN": "${CONFLUENCE_TOKEN}"
+      },
+      "includeTools": [],
+      "disabled": true
+    }
+  }
+}

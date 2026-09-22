@@ -24,9 +24,9 @@ related_issues:
 > **Назначение.** Датированное **измерение** восьми конкретных дефектов, из-за
 > которых действующая таксономия процессов и операций не может быть исполнена
 > AI-агентом. Интерпретация и новая норма — в модулях
-> [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/00-introduction.md)
+> [`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/00-introduction.md)
 > и
-> [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/00-introduction.md).
+> [`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/00-introduction.md).
 > Снимок отделён от модулей, потому что корпус растёт: на другом коммите числа
 > будут другими.
 

@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.1
+version: 0.2
 updated: 2026-09-21
 temperature: 0.1
 owner: G-Ivan-A
@@ -15,10 +15,10 @@ rfc-scope: C
 | --- | --- |
 | Owner | G-Ivan-A |
 | RFC status | `proposed`; принятие только решением человека |
-| Source issue | [#591](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/591) |
+| Source issue | [#591](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/591); implementation boundary and source correction: [#593](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593) |
 | Impacted artifacts | Hub RFC/guide/navigation/registry; после принятия — отдельный runtime PR |
 | Decision record | Not yet — human acceptance pending |
-| Implementation link | Not yet — отдельный PR в runtime после принятия |
+| Implementation link | Hub package: [PR #594](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/594); внешний runtime не изменяется |
 | Archetype scope | `C` — Product Spoke / Runtime |
 | Целевой репозиторий | [`mango-ba-ai-runtime-cli`](https://github.com/G-Ivan-A/mango-ba-ai-runtime-cli) |
 | Маршрут | `RG-BCREQ-v1` |
@@ -37,8 +37,9 @@ rfc-scope: C
 Логическая единица работы — `TASK_ID`; все следы лежат в
 `runs/<TASK_ID>/`. Идентификатор сессии GigaCode записывается только как
 необязательная наблюдаемая ссылка и не определяет идентичность задачи. Поиск
-знаний всегда идёт сначала в версионируемый локальный `docs/kb/`, затем — в
-корпоративный Confluence через разрешённый MCP. Ошибка машинной проверки
+знаний использует локальный `docs/kb/` и корпоративный Confluence через
+разрешённый MCP как дополняющие каналы. Каждый выбранный источник подтверждает
+человек по заголовку, разделу, странице/anchor, цитате и locator. Ошибка машинной проверки
 останавливает маршрут без автоматического исправления и возвращает управление
 `G-human`.
 
@@ -94,7 +95,7 @@ CLI» опровергнута CLI-справкой. Альтернативна�
 - задать устанавливаемую структуру MVP для текущего GigaCode CLI;
 - обеспечить воспроизводимый порядок `RG-BCREQ-v1` и возобновление по
   `TASK_ID` между сессиями;
-- нормировать двухуровневый поиск `docs/kb/` → Confluence MCP;
+- нормировать дополняющий поиск `docs/kb/` + Confluence MCP и human confirmation;
 - сделать reject валидатора fail-closed и управляемым человеком;
 - встроить возражение, проверку полноты и двойное подтверждение в маршрут;
 - определить Confluence-ready выход и процедуру добавления golden-примеров;
@@ -217,16 +218,17 @@ history. `/resume` удобен, но не является условием в�
 задачи хранится на уровне `TASK_ID`, а не внутри попытки, и обновляется только
 после принятого gate.
 
-### 4. Двухуровневый поиск знаний
+### 4. Дополняющий поиск знаний и подтверждение источника
 
-Порядок обязателен и наблюдаем:
+Каналы используются в доступной комбинации, а не как последовательный fallback:
 
 1. `ST-LOCAL`: искать релевантные документы в `docs/kb/`, фиксировать пути и
    найденные фрагменты в evidence;
-2. `ST-CONFLUENCE`: только если локального материала недостаточно, проверить
-   разрешённый Confluence MCP и выполнить read/search;
-3. `G-human`: если MCP не настроен, недоступен, не имеет read/search capability,
-   требует новых credentials или найденные данные противоречат локальным.
+2. `ST-CONFLUENCE`: проверить разрешённый Confluence MCP, если канал доступен
+   и соответствует предмету задачи; локальная находка не запрещает проверку;
+3. `G-human`: перед использованием показать `title`, `section`,
+   `page_or_anchor`, `quote`, `locator` и получить явное подтверждение; при
+   недоступности канала, новых credentials или конфликте остановить маршрут.
 
 Диспетчер не выдумывает имя сервера или tools. На preflight он проверяет через
 `/mcp`, что оператором настроен один server с capability `search` и `read` для
@@ -235,8 +237,8 @@ history. `/resume` удобен, но не является условием в�
 показывать форму, но URL, токены и заголовки авторизации не коммитятся; секреты
 поступают из окружения.
 
-Если ответ найден локально, Confluence не вызывается «для уверенности». Если
-использован Confluence, evidence record содержит server alias, запрос,
+Выбор комбинации каналов фиксируется в evidence и зависит от вопроса, а не от
+правила «первый hit победил». Если использован Confluence, evidence record содержит server alias, запрос,
 идентификатор/URL страницы и время чтения, но не секреты и не полный кэш
 страницы. Web-поиск не является неявным третьим уровнем MVP.
 
@@ -319,9 +321,10 @@ handlers, секретов и локальных абсолютных путей
 ### 8. HTML user guide и Golden Set
 
 Целевой операторский документ:
-[`mango-ba-ai-runtime-cli-user-guide.html`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/guides/mango-ba-ai-runtime-cli-user-guide.html).
-Он помечен как target-state до implementation PR и описывает установку,
-preflight, запуск, resume, KB/MCP, reject, публикацию и golden workflow.
+[`mango-ba-ai-runtime-cli-user-guide.html`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/meta-model-guides/gigacode-cli/mango-ba-ai-runtime-cli-user-guide.html).
+Он описывает реализованный в Хабе копируемый пакет; перенос во внешний runtime
+остаётся отдельным implementation PR. Руководство покрывает установку, preflight,
+запуск, resume, KB/MCP, reject, публикацию и golden workflow.
 
 Golden-пример добавляется только из успешно завершённой задачи после отдельного
 одобрения человека:
@@ -346,7 +349,7 @@ Runtime никогда не пополняет golden автоматически
 | --- | --- | --- |
 | TASK/session и `runs/<TASK_ID>/` | §3 | restart/resume test с двумя CLI-сессиями |
 | Skill routing или dispatcher subagent | §2: явный dispatcher skill | graph-order и skipped-gate negative tests |
-| `docs/kb/` → Confluence MCP | §4 | local-hit, MCP-fallback и MCP-unavailable tests |
+| `docs/kb/` + Confluence MCP + source confirmation | §4 | complementary-channel, confirmation-gate и MCP-unavailable tests |
 | `validate-package.sh`, stop, G-human | §5 | validator non-mutation и reject-event tests |
 | Возражение, полнота, двойное подтверждение | §6 | три dialogue contract tests |
 | Confluence output, HTML guide, golden | §7–8 | export fixture, guide link check, golden workflow test |
@@ -409,10 +412,10 @@ Runtime никогда не пополняет golden автоматически
 - `.agents/skills/**` → `.gigacode/skills/**` и добавить dispatcher;
 - `routes/rg-bcreq-v1.yaml` — zero-correction policy и explicit halt;
 - контракты `C-IN`/`C-RK` и run sheet — TASK-rooted state/events;
-- `contracts/source-tiers.yaml` — `ST-LOCAL` → `ST-CONFLUENCE` → `G-human`;
+- `taxonomy/source-tiers.yaml` — complementary local/Confluence collection и обязательный `G-human`;
 - `tools/validate-package.sh` и Python validator — non-mutating task checks;
 - `.gigacode/settings.example.json` — только capability-shaped MCP example;
-- `docs/guides/**`, `golden/**`, README и тесты.
+- `meta-model-guides/**`, `golden/**`, README и тесты.
 
 Секреты, реальные corporate URLs и пользовательские run data в Git не входят.
 
@@ -424,7 +427,7 @@ Implementation PR выполняется атомарными стадиями:
    мигрировать skills;
 2. добавить schema/tests task state и перенести fixtures в `runs/<TASK_ID>/`;
 3. реализовать dispatcher state machine с graph-order negative tests;
-4. реализовать source fallback с mocked MCP capabilities;
+4. реализовать дополняющие source channels и human confirmation с mocked MCP capabilities;
 5. сделать validator non-mutating для package/result и добавить filesystem
    before/after test, допускающий только новый append-only `reject` event;
 6. добавить meta-checkpoints и dialogue tests;
@@ -436,7 +439,8 @@ Implementation PR выполняется атомарными стадиями:
 - skill discovery fixture совпадает с `.gigacode/skills/`;
 - два запуска с одним TASK и разными `session_ref` продолжают один state;
 - нельзя пропустить gate, повторить `seq` или открыть второй active RUN;
-- local KB hit не вызывает MCP; miss вызывает только configured capability;
+- local KB и configured MCP используются в объявленной комбинации, а источник
+  не принимается без human confirmation;
 - недоступный MCP и validator reject завершают маршрут без изменений результата;
 - публикация невозможна без двух подтверждений одного fingerprint;
 - export проходит structural fixture test и не содержит запрещённых элементов;
@@ -454,8 +458,9 @@ credentials или полное содержимое закрытых Confluence
 1. принимает RFC либо возвращает его в `draft` с вопросами;
 2. после принятия создаёт/подтверждает implementation scope в runtime;
 3. runtime PR прикладывает acceptance evidence из предыдущего раздела;
-4. только после его merge HTML-гайд меняет banner `target-state` на
-   `implemented` и получает проверенную минимальную версию CLI.
+4. после его merge HTML-гайд дополняется фактическим runtime status и
+   проверенной минимальной версией CLI; текущий banner подтверждает только
+   реализацию копируемого пакета в Хабе.
 
 Если официальная CLI-документация изменит paths, invocation или MCP schema,
 RFC возвращается в `draft`; изменение не переносится в runtime молча.
@@ -466,14 +471,15 @@ RFC возвращается в `draft`; изменение не перенос�
 организация должна предоставить два конфигурационных значения, которые нельзя
 вывести из публичной документации: alias корпоративного Confluence MCP и
 отображение его read/search/write capabilities на реальные tools. Их отсутствие
-не меняет архитектуру: read fallback останавливается у `G-human`, а publish
+не меняет архитектуру: неподтверждённый read останавливается у `G-human`, а publish
 остаётся выключен.
 
 ## Related Artifacts
 
-- [Execution package MVP BCREQ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/execution-package-mvp-bcreq)
+- [Execution package MVP BCREQ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation/execution-package-gigacode-cli)
 - [BA meta-model decision framework](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md)
 - [Runtime repository](https://github.com/G-Ivan-A/mango-ba-ai-runtime-cli)
-- [HTML operator guide](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/docs/guides/mango-ba-ai-runtime-cli-user-guide.html)
+- [HTML operator guide](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/meta-model-guides/gigacode-cli/mango-ba-ai-runtime-cli-user-guide.html)
 - [External Sources Registry](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/external-knowledge/external-sources-registry.md)
 - [Issue #591](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/591)
+- [Issue #593](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593)

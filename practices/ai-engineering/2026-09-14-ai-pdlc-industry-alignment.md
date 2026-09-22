@@ -166,7 +166,7 @@ AI-DLC даёт ту же идею в фазах Inception / Construction / Oper
   метрики стоимости прогона в токенах — см.
   [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md)
   и
-  [`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md).
+  [`process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/40-practice-and-cases.md).
 - Есть смежная практика
   [skill-catalog-token-budget](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/practices/agent-work/skill-catalog-token-budget.md),
   но она про раздувание каталога, а не про стоимость прогона.

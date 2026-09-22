@@ -168,9 +168,9 @@ flowchart TD
 
 К пяти метрикам пакета версия 0.2 добавляет метрики новых таксономий:
 `MP-1`…`MP-6` для процессов и навыков
-([`ba-process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-process-taxonomy/40-practice-and-cases.md))
+([`process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/40-practice-and-cases.md))
 и `MO-1`…`MO-5` для операций
-([`ba-operation-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-operation-taxonomy/40-practice-and-cases.md)).
+([`operation-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/operation-taxonomy/40-practice-and-cases.md)).
 Пересечения нет: `M-1`…`M-5` измеряют прогон пакета, `MP-*` и `MO-*` — качество
 самой таксономии.
 
