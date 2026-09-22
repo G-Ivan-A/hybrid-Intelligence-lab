@@ -110,7 +110,7 @@ issue, имел право как принять, так и отклонить �
 самоописательны в любой позиции, включая ссылку из спицы, поисковую выдачу и
 строку лога. Имя `ai/` рядом с `docs/`, `ops/`, `research/`, `practices/` не
 говорит ничего: в репозитории, где `research/`, `practices/ai-engineering/`,
-`practices/ai-governance/` и `projects/ba-gigacode-implementation/` посвящены ИИ
+`practices/ai-governance/` и `projects/ba-ai-process/` посвящены ИИ
 по содержанию, каталог с именем `ai/` читается как «всё про ИИ», а не как «дом
 агентских контрактов и политик». Это ухудшает навигацию в `AGENTS.md`, а не
 улучшает её.

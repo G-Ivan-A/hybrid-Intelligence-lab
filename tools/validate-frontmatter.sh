@@ -96,7 +96,7 @@ document_class() {
     docs/adr/README.md)
       printf 'governance'
       ;;
-    docs/adr/*.md)
+    docs/adr/*.md | projects/*/decisions/*.md | projects/*/docs/adr/*.md)
       printf 'adr'
       ;;
     standards/*.md)

@@ -1,0 +1,157 @@
+# Манифест пакета: provenance, allowlist входов, immutable-выходы и правила
+# компиляции. Источник всегда обозначается полным URL репозитория.
+manifest: execution-package-gigacode-cli
+package_version: "2.1"
+compiled_at: 2026-09-22
+source:
+  repository: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
+  revision: 9bcaf87b42d8cb374f0b7bc82d45b96131a17b98
+adapter:
+  name: gigacode-cli
+  version: "1.0"
+inputs:
+  allowlist:
+    - projects/ba-ai-process/ba-meta-model/
+    - projects/ba-ai-process/meta-model-guides/gigacode-cli/
+    - projects/ba-ai-process/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md
+    - research/ba-requirements/2026-09-10-gigacode-environment-facts.md
+outputs:
+  hash_algorithm: sha256
+  hashes:
+    .gigacode/settings.example.json: f9027133c3d5fae5695560b57558d15b37825d03dc01600ee76adf45c0d78e3d
+    .gigacode/skills/ambiguity-detection-contact-center/SKILL.md: 6448e3c81c052b5ae5780713efec53bc724375c059f4a18caa16fbe3cf512868
+    .gigacode/skills/answer-integration-contact-center/SKILL.md: 9d67aa0a0f717722b00bc26df7d73bfe522df15a026f09b13018ff3285aaae0a
+    .gigacode/skills/ba-debug-orchestrator/SKILL.md: 8826ac9e2195d855790f215888e7ac038d22a92a37b7e076fc4c3b44ff71de13
+    .gigacode/skills/bcreq-assembly-contact-center/SKILL.md: 297fc9688d85df98b6c5c837f300ad93b1df4bde34e233522e5b1d92a853278f
+    .gigacode/skills/bcreq-decomposition-contact-center/SKILL.md: 436225f04cea503dd6089a9e4345fcf1e1e2649fbc9a3776772474940683dbe9
+    .gigacode/skills/context-extraction-contact-center/SKILL.md: fc16aef2685280606ac8fabb20c3f7e28b033d2065df83ce9e1b435ae37863dc
+    .gigacode/skills/core-assembly-contact-center/SKILL.md: 2beced007d7ce10fa41dae6d207109dd3ca5e8353bb7478e5f60ebed69d6c3c0
+    .gigacode/skills/problem-statement-contact-center/SKILL.md: 7ccbc724789c94f9b79741c30155863cf71588b43548ec0e3df4f04e817e8700
+    .gigacode/skills/question-formation-contact-center/SKILL.md: d65e81fa49645edd4d142fa449ffacc5dea999998ccdec096ffb8082cfa50ec3
+    .gigacode/skills/question-prioritization-contact-center/SKILL.md: db9a3f63c16e5f4cd481e4b69d1c7f8afc98458ca249eb91b91b187f061432f9
+    .gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md: 65862c5b497ab4e81aef65756bc38efd11565de23cd5c74a4423faac8feca0e4
+    .gigacode/skills/transcript-normalization-contact-center/SKILL.md: 149daa6c2ccbab710f5ba352fc4dbf4203269453cdd3651337c7bc3e5016ce9b
+    .gigacode/skills/value-hypothesis-contact-center/SKILL.md: cdf57365d0b2dc462e7db3ee12a5670a8e438f3d16b12658ccbcd35fe4b5c9cc
+    .gitignore: cf08bbd77af9fc55ec35e16f8b66c0f42cf6e8ce2771128378c3f3549e971804
+    AGENTS.md: 8edabcc4e629f9da1f7272a4794782ef1c96b9d3bfc3e1b32762541807c1d389
+    README.md: 2a0c1a525f0491db78c4b3ab6bf692b1acccdc762264ee495bf6d4ed370dc18f
+    contracts/c-core.schema.json: e139b312912b78fce6b064dfb4e960921991692cb5c8839ad25bdf30cc8f6c6c
+    contracts/c-in.schema.json: c592bbba5dd023c7260b935c57621f37d0575d919c052e4ab54145d413b1387d
+    contracts/c-out-bcreq.schema.json: 5d332110c90934c6e7cc1242732d9e0c78a7c77a9d58d966a7f56363c0268421
+    contracts/c-quest.schema.json: 8f009391c8ce698661ba6709078a0d2f10beb0e5b3326afed5ee2c89fd87445a
+    contracts/c-rk.schema.json: 1ac5763aa5baffc8c2ea21ce7083fcee04c13dc4071e35d442f984ddad1bc908
+    evaluation/g-human-checklist.md: 64cf172983d425460619bcba553bd799dd2efa0e100bae504f651f0123fe0aec
+    evaluation/g-mach-checklist.md: bdba588de435d9b94b4d483785b527e0dfd41145cec50ad554399b3d2cc554cf
+    evaluation/metrics.yaml: f177798b7436665c9882d096c67fb762ccb69fe9112d88af3a467e7adce4bb6f
+    golden/cases.yaml: 837e17041ecac86fb4c20e035eed0fa18a68c1e726abce6bf34b1c3f34eb8b64
+    golden/gs-cc-01-queue-overflow.md: 9a114a9fd081790fbd3e3cb3295198b5d0109099e0963747153660405930ea6e
+    golden/gs-cc-02-report-export.md: 06cb03195d2cfc1bf768d58976136879e957d798fdd08061fa068f25417a3023
+    golden/gs-cc-neg-01-inbound-vs-outbound.md: 826c97fa6d5acfa500cc2a80821db2e6804e4f2d35f8957713fc3191ed12ee02
+    golden/gs-cc-neg-02-queue-vs-group.md: 631495807afae4a774b14aa2d834d3c0e286ac6000ffbfe812a004017497a916
+    golden/gs-cc-neg-03-sla-vs-aht.md: a87851685f7603397023ae26875c1d85a0cbb205373200cb5ca6b9d77e0c00b0
+    golden/gs-cc-neg-04-ivr-vs-announcer.md: 8ec94af05de49aee0af964273af82cc5ef4b47ce39fa6d4ea8338929c35d55a9
+    routes/rg-bcreq-v1.yaml: c343612bd59752d89baea0fd3c64935f43630d6f7b477ab61ed392287a4b228b
+    routes/run-sheet-template.yaml: 20f737d23fd0c82855a0c491bea990a2fbb3aa28628b804b038e54474b3fb6bc
+    taxonomy/artifacts.yaml: 14894f3653144e8b6d66fd42333a501d9595e96de796023c949ee13993a1223e
+    taxonomy/domain-glossary.yaml: 0049f460414d12de1c4154f96b734c18579adc982143c2cd64021795e24b5eaa
+    taxonomy/operations.yaml: c483fdac8b41c0bf9d7dd89e0d8a3761ebc492a911269cbd1f1bdcb26b4f8119
+    taxonomy/processes.yaml: 9b7d50bf513c24b0b8ad67e507eb5cde846eeea654b11fcde4bf6578214d3e7e
+    taxonomy/products.yaml: e02e912f7ade0a60c2c55a14204d86a110896fa74bc728cac4feb4c6a78d49f8
+    taxonomy/projections.yaml: 99a40f365277c74f50163d203852f40f810b278e6d3c0927a8dbabd14952ef0b
+    taxonomy/source-tiers.yaml: f342e972450404fa3689210b13ae0e5c606b660b9985c6828ce6039fcac11de9
+    templates/bcreq-skeleton.md: 3038aea123043f0af8408e259ebadcd76f156075d6ad073d288e27ee9f886b9c
+    templates/checkpoint-skeleton.md: 40501099c65f386e8e1be27e415f68594d6d81a2efbfd6c0aed0d9c9dcdbbc98
+    templates/core-skeleton.yaml: 2b4a7f28993437a3e3537f695dcbabe6d53ac39145d9230b627e802e92c054ec
+    templates/quest-skeleton.md: 341293c4b196f9ad9558470758b3ce2db6884c067d75ed6f3c43b1469f315bc1
+    tools/validate-package.py: d3f1262017b4fb6edda110574a424306d6dc3dc28fd7df85e358e32f3555aa19
+    tools/validate-package.sh: 3f35f38833b3275258f9ecfe7c6e64f0acc3c0de14173466a7811048ecdbedc5
+target_spoke: clean GigaCode CLI working directory
+slice: "A-IN → A-CORE → A-BCREQ, продуктовый класс contact-center, процессы P-01, P-02, P-03"
+
+# Спутник может быть развёрнут без доступа к Source-репозиторию (например, в GitVerse).
+# Поэтому пакет содержит физические копии всего необходимого, а не ссылки.
+deployment:
+  mechanism: копирование каталога пакета в корень репозитория-спутника
+  result: ".gigacode/, docs/kb/, meta-model/, taxonomy/, contracts/, routes/, templates/, golden/, evaluation/, runs/, tools/, AGENTS.md"
+  source_access_required_at_runtime: false
+
+# 1. Скопировано физически: содержание перенесено в пакет дословно или с
+#    сокращением до применимого, без изменения смысла.
+copied:
+  - what: закрытые словари классов артефактов, процессов, операций и продуктов
+    from: таксономии Source-репозитория https://github.com/G-Ivan-A/hybrid-Intelligence-lab
+    to: [taxonomy/artifacts.yaml, taxonomy/processes.yaml, taxonomy/operations.yaml, taxonomy/products.yaml]
+    note: перенесены все значения словарей; принадлежность срезу отмечена флагом in_slice, а не усечением словаря
+  - what: перечень слотов, классов формата, проекций и продуктовых профилей
+    from: исследование микроструктуры артефактов требований
+    to: [contracts/c-out-bcreq.schema.json, templates/bcreq-skeleton.md]
+  - what: смежные термины домена контакт-центра с основанием смешения
+    from: словарь домена и материалы кросс-валидации
+    to: taxonomy/domain-glossary.yaml
+  - what: уровни источников знания, формы доказательства и правило разрешения конфликта источников
+    from: исследование извлечения знания (лестница готовности корпуса, матрица стратегий, приоритет модификаторов)
+    to: taxonomy/source-tiers.yaml
+    note: >-
+      отраслевая семиуровневая иерархия сужена до четырёх уровней среза;
+      уровни вне среза перечислены явно в out_of_slice, чтобы ни одна ветка
+      маршрутизации не осталась необъявленной
+  - what: состав и формулировочные правила проекций документа
+    from: практический раздел мета-модели (проекции как три чтения одного артефакта)
+    to: taxonomy/projections.yaml
+    note: >-
+      существовавшие V-BIZ, V-APPROVE, V-DEV сохранены без переименования и
+      дополнены V-CONTRACT (чтение для технического задания)
+  - what: определения метрик M-1…M-5 и MP-1…MP-6
+    from: практические разделы мета-модели и таксономии процессов
+    to: evaluation/metrics.yaml
+
+# 2. Преобразовано: нормативный текст стал структурой, которую исполняет
+#    скрипт, а не читает человек.
+transformed:
+  - what: контракты C-IN, C-CORE, C-OUT, C-CL, C-RK как текстовые описания
+    to: contracts/*.schema.json
+    form: JSON Schema, проверяемая валидатором
+  - what: описание маршрута P-01 → P-02 → P-03 прозой
+    to: routes/rg-bcreq-v1.yaml
+    form: граф узлов и рёбер с предикатами перехода
+  - what: правила SK-0…SK-10 (структура навыка)
+    to: .gigacode/skills/*/SKILL.md
+    form: шесть обязательных разделов и frontmatter с полями GigaCode name и description
+  - what: явная оркестрация маршрута и безопасная диагностика
+    to: [.gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md, .gigacode/skills/ba-debug-orchestrator/SKILL.md]
+    form: ручные GigaCode skills с task-rooted и DEBUG-rooted состоянием
+  - what: правила гейтов GT-1…GT-6 и порядок G-self → G-mach → G-human
+    to: [evaluation/g-mach-checklist.md, evaluation/g-human-checklist.md, tools/validate-package.py]
+    form: исполняемые проверки для машины, отмечаемый список для человека
+  - what: правила Golden Set EP-G1…EP-G7
+    to: golden/cases.yaml
+    form: индекс случаев с ожиданиями, отбираемый машинным гейтом без чтения markdown
+    note: >-
+      EP-G7 переведено в исполняемый вид: каждая пара confusable_with словаря
+      домена обязана иметь отрицательный случай, что проверяется валидатором
+  - what: правила следа EP-R4, EP-R8 и лист прогона
+    to: [routes/run-sheet-template.yaml, contracts/c-rk.schema.json]
+    form: append-only перечень микро-событий, отдельный пользовательский результат и проекция передачи работы
+
+# 3. Отброшено: во время выполнения не используется. Отбрасывание —
+#    сознательное решение компиляции, а не пропуск (Анти-Инфляция).
+discarded:
+  - what: исследовательские тексты модулей (00-*, 10-*, 20-*, 30-*, 40-*, 50-*)
+    why: нормативные следствия из них уже вынесены в правила навыков и схемы; копия текста удваивала бы источник истины
+  - what: журналы прогонов и черновики запросов к моделям
+    why: материал получения правил, а не сами правила
+  - what: 20 из 31 операции и 22 из 33 навыков таксономии
+    why: маршрут среза их не проходит; словари сохранены целиком, скомпилированы только применимые (Анти-Инфляция)
+  - what: процессы P-04…P-10 и классы артефактов A-FR, A-TZ, A-US, A-UC, A-SPEC, A-DIAG, A-REP
+    why: за границей вертикального среза MVP; внесены в бэклог масштабирования
+  - what: организационные материалы Source-репозитория (карта артефактов, бэклог, история решений)
+    why: управляют развитием модели, а не исполнением маршрута
+
+# Обратная связь: Source https://github.com/G-Ivan-A/hybrid-Intelligence-lab
+# остаётся SSOT развивающейся модели. Расхождение в спутнике исправляется
+# задачей Source-репозитория и новой компиляцией,
+# а не правкой копии в спутнике.
+feedback:
+  rule: правка нормативного содержания в спутнике — дефект процесса
+  channel: задача в https://github.com/G-Ivan-A/hybrid-Intelligence-lab с указанием артефакта пакета и наблюдения из прогона
+  recompilation: смена source.revision и compiled_at во всех затронутых файлах

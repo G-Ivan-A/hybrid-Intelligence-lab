@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-06-09
+version: 1.3
+updated: 2026-09-22
 temperature: 0.1
 source: projects/README-old.md
 ---
@@ -49,7 +49,7 @@ source: projects/README-old.md
 | `repo-development` | HTOM-команда | Развитие governance и проверок самого Хаба, кода-продукта нет. |
 | `mango_ba_prompts` | HTOM-команда | Промпт- и knowledge-репозиторий БА, гибридная human + AI работа. |
 | `open-ai.ru` | Spoke | Первый реальный production-спок с собственным кодом и жизненным циклом. |
-| `ba-gigacode-implementation` | HTOM-команда | Проектная knowledge base направления БА КК Манго: исследовательские модули, production-кода нет. |
+| `ba-ai-process` | HTOM-команда | Source модели БА-процессов и проверяемые Distribution; production runtime остаётся во внешнем spoke. |
 
 ## Рекомендуемая структура проекта
 
@@ -75,7 +75,7 @@ projects/<project-slug>/
 | Проект | Назначение |
 | --- | --- |
 | [repo-development/](repo-development/) | Развитие структуры, governance и локальных проверок самого репозитория. |
-| [ba-gigacode-implementation/](ba-gigacode-implementation/README.md) | Реализация БА-процессов КК Манго в среде GigaCode: мета-модель БА и таксономии процессов и операций (`scope: mango-only`). |
+| [ba-ai-process/](ba-ai-process/README.md) | Source модели БА-процессов: мета-модель и вложенные таксономии (`scope: mango-only`), project-scoped решения, тесты и чистые Distribution. |
 
 ## Мигрировавшие проекты
 

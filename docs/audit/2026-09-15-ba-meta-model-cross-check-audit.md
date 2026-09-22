@@ -8,26 +8,26 @@ context: [ba-meta-model, execution-package-mvp-bcreq, ai-education, bcreq, issue
 method: contract-reading + reproducible-measurement + historical-corpus-comparison + validator-run
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587"
 scope: project
-audit_target: "Проектная мета-модель БА для КК Манго (`projects/ba-gigacode-implementation/ba-meta-model/`) и её компиляция `execution-package-gigacode-cli/` — против нормативных следствий всех десяти модулей `research/ai-education/`, против контракта задачи #577 и против эмпирической проверяемости на реальных сырых требованиях корпуса `mango_ba_prompts/runs/`"
+audit_target: "Проектная мета-модель БА для КК Манго (`projects/ba-ai-process/ba-meta-model/`) и её компиляция `execution-package-gigacode-cli/` — против нормативных следствий всех десяти модулей `research/ai-education/`, против контракта задачи #577 и против эмпирической проверяемости на реальных сырых требованиях корпуса `mango_ba_prompts/runs/`"
 evidence_model: "воспроизводимые замеры в `research/ba-requirements/exp/ba-meta-model-cross-check-587/` (три скрипта с сохранёнными логами) + прогон реальных сырых требований через действующие контракты пакета с валидацией `jsonschema` + прямое чтение файлов модели и пакета с указанием путей и номеров строк + чтение исторических итоговых артефактов корпуса"
 verdict: conditional
 severity_scale: "Critical/Major/Minor/Info"
 follow_up: "Реинжиниринг не требуется: критический материал присутствует. Шесть findings закрываются правкой в этом же PR, остальные вынесены в бэклог как коррекции периода опытной эксплуатации."
-related_norm: "standards/audit-standard.md, standards/research-standard.md, projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md"
+related_norm: "standards/audit-standard.md, standards/research-standard.md, projects/ba-ai-process/ba-meta-model/30-decision-framework.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/578"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/582"
 related_artifacts:
-  - "projects/ba-gigacode-implementation/ba-meta-model/00-introduction.md"
-  - "projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md"
-  - "projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md"
-  - "projects/ba-gigacode-implementation/ba-meta-model/50-open-research.md"
-  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/contracts/c-in.schema.json"
-  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/contracts/c-out-bcreq.schema.json"
-  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/templates/bcreq-skeleton.md"
-  - "projects/ba-gigacode-implementation/execution-package-gigacode-cli/tools/validate-package.py"
+  - "projects/ba-ai-process/ba-meta-model/00-introduction.md"
+  - "projects/ba-ai-process/ba-meta-model/30-decision-framework.md"
+  - "projects/ba-ai-process/ba-meta-model/40-practice-and-cases.md"
+  - "projects/ba-ai-process/ba-meta-model/50-open-research.md"
+  - "projects/ba-ai-process/dist/execution-package-gigacode-cli/contracts/c-in.schema.json"
+  - "projects/ba-ai-process/dist/execution-package-gigacode-cli/contracts/c-out-bcreq.schema.json"
+  - "projects/ba-ai-process/dist/execution-package-gigacode-cli/templates/bcreq-skeleton.md"
+  - "projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.py"
   - "research/ba-requirements/exp/ba-meta-model-cross-check-587/README.md"
   - "research/ba-requirements/exp/ba-meta-model-cross-check-587/2026-09-15-historical-vs-new-comparison.md"
   - "research/ai-education/retrieval/"
@@ -70,8 +70,8 @@ related_artifacts:
 
 | Слой | Путь | Что является нормой |
 | --- | --- | --- |
-| Мета-модель | `projects/ba-gigacode-implementation/ba-meta-model/` | нормативные следствия `research/ai-education/` (все 10 модулей) |
-| Компиляция | `projects/ba-gigacode-implementation/execution-package-gigacode-cli/` | собственные контракты пакета + постановка #577 + эмпирическая проверяемость |
+| Мета-модель | `projects/ba-ai-process/ba-meta-model/` | нормативные следствия `research/ai-education/` (все 10 модулей) |
+| Компиляция | `projects/ba-ai-process/dist/execution-package-gigacode-cli/` | собственные контракты пакета + постановка #577 + эмпирическая проверяемость |
 
 Норма по первому слою **реконструирована**: единого документа «требования к
 ИИ-агенту» в Хабе нет, поэтому нормой считались явно сформулированные следствия

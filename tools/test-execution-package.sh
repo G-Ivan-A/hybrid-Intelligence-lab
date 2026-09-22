@@ -2,8 +2,8 @@
 set -euo pipefail
 export PYTHONDONTWRITEBYTECODE=1
 
-# Regression tests for the GigaCode CLI execution package gate (issues #580
-# and #593).
+# Regression tests for the GigaCode CLI execution package gate (issues #580,
+# #593, and #599).
 #
 # The package validator IS the machine gate G-mach, so a validator that only
 # ever passes is indistinguishable from no gate at all (metric M-2). Every case
@@ -14,8 +14,10 @@ export PYTHONDONTWRITEBYTECODE=1
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-PROJECT="projects/ba-gigacode-implementation"
-PACKAGE="$PROJECT/execution-package-gigacode-cli"
+PROJECT="projects/ba-ai-process"
+PACKAGE="$PROJECT/dist/execution-package-gigacode-cli"
+PROJECT_TESTS="$PROJECT/tests/execution-package"
+DECISION="$PROJECT/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md"
 VALIDATOR="$PACKAGE/tools/validate-package.py"
 
 fail() {
@@ -26,10 +28,19 @@ fail() {
 for required in \
   ba-meta-model \
   meta-model-guides \
-  execution-package-tests \
-  execution-package-gigacode-cli; do
+  decisions \
+  docs/rfc \
+  experiments \
+  tests/execution-package \
+  dist/execution-package-gigacode-cli; do
   [[ -d "$PROJECT/$required" ]] || fail "missing target module: $PROJECT/$required"
 done
+
+[[ ! -e projects/ba-gigacode-implementation ]] || \
+  fail "legacy project root remains: projects/ba-gigacode-implementation"
+
+[[ -f "$DECISION" ]] || fail "accepted project decision is missing: $DECISION"
+grep -Fq 'status: accepted' "$DECISION" || fail "ADR-017 must be accepted"
 
 for obsolete in \
   ba-process-taxonomy \
@@ -189,8 +200,37 @@ path.write_text(path.read_text(encoding="utf-8").replace("  artifact_refs: []", 
 PY
 expect_reject "$target" "run template schema drift" "handover содержит поля вне C-RK"
 
+# Cases 15-19: every prohibited Source artifact class is rejected independently.
+target="$(fixture source-rationale)"
+mkdir -p "$target/docs/rfc"
+printf '%s\n' '# RFC must stay in Source' > "$target/docs/rfc/example.md"
+expect_reject "$target" "source rationale in distribution" "запрещённый Source-артефакт"
+
+target="$(fixture source-rrp)"
+printf '%s\n' '# RRP must stay in Source' > "$target/00-introduction.md"
+expect_reject "$target" "RRP in distribution" "запрещённый Source-артефакт"
+
+target="$(fixture source-adr)"
+mkdir -p "$target/decisions"
+printf '%s\n' '# ADR must stay in Source' > "$target/decisions/2026-09-adr-999-example.md"
+expect_reject "$target" "ADR in distribution" "запрещённый Source-артефакт"
+
+target="$(fixture source-backlog)"
+printf '%s\n' '# Backlog must stay in Source' > "$target/backlog.md"
+expect_reject "$target" "backlog in distribution" "запрещённый Source-артефакт"
+
+target="$(fixture feedback-inbox)"
+mkdir -p "$target/feedback/inbox/test/instance"
+printf '%s\n' 'report: must-stay-in-source' > "$target/feedback/inbox/test/instance/report.yaml"
+expect_reject "$target" "feedback inbox in distribution" "запрещённый Source-артефакт"
+
+# Case 20: an immutable compiled output cannot drift from package provenance.
+target="$(fixture output-drift)"
+printf '\n# uncompiled edit\n' >> "$target/templates/bcreq-skeleton.md"
+expect_reject "$target" "immutable output drift" "SHA-256 не совпадает"
+
 # The project-level emulator exercises route traversal and human-gate pauses
 # without invoking an LLM or writing into the committed package.
-python3 "$PROJECT/execution-package-tests/tests/test_emulation.py"
+python3 "$PROJECT_TESTS/tests/test_emulation.py"
 
-printf 'Execution package tests passed (14 package cases + route emulation).\n'
+printf 'Execution package tests passed (20 package cases + route emulation).\n'

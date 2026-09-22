@@ -19,7 +19,7 @@ from jsonschema import Draft202012Validator
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
 CONTRACTS = ROOT / (
-    "projects/ba-gigacode-implementation/execution-package-gigacode-cli/contracts"
+    "projects/ba-ai-process/dist/execution-package-gigacode-cli/contracts"
 )
 
 CASES = [

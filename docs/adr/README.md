@@ -1,6 +1,6 @@
 ---
 status: accepted
-version: 0.3
+version: 0.4
 updated: 2026-09-22
 temperature: 0.1
 owner: G-Ivan-A
@@ -8,8 +8,9 @@ owner: G-Ivan-A
 
 # Architecture Decision Records
 
-Каталог хранит **ADR Хаба** — записи уже принятых человеком решений с rationale,
-последствиями и способом проверки. ADR отвечает на вопрос «какое решение принято
+Каталог хранит repo-wide ADR и индексирует project-scoped решения из
+`projects/<direction>/decisions/`. Это записи принятых человеком решений с
+rationale, последствиями и способом проверки. ADR отвечает на вопрос «какое решение принято
 и почему», в отличие от [RFC](../rfc/README.md), который отвечает на вопрос
 «следует ли принять изменение и как» и остаётся proposal до human decision gate.
 
@@ -44,7 +45,7 @@ frontmatter и девять обязательных секций. Машино�
 | [ADR-014](2026-09-adr-014-legacy-evidence-not-baseline.md) | proposed | Историческое наследие (`prompts/`, `runs/`, датированные замеры, депрекированные документы) допускается только в роли свидетельства о прошлом и не является базисом, образцом структуры или ограничением новой нормы: правила `LG-1`…`LG-6`, объявленное происхождение `derived_from` и запрет обосновывать норму ссылкой на промпт или прогон. Дополняет ADR-013 вторым контуром. |
 | [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md) | proposed | Таксономия процессов и операций БА пересобирается от индустриального базиса; прежняя модель сохраняется как историческое свидетельство. |
 | [ADR-016](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-016-skill-form-and-contract-format.md) | proposed | Навык — форма поставки одного узла таксономии, а `interaction` вычисляется по точке возврата управления актору. |
-| [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-017-ba-ai-process-source-distribution.md) | proposed | `ba-ai-process` разделяется на Source, компилируемые Distribution и автономные Runtime; отладка изолируется от бизнес-прогонов, а обратная связь остаётся необязательной и санитизированной. |
+| [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md) | accepted | `ba-ai-process` разделяется на Source, компилируемые Distribution и автономные Runtime; project-scoped решение хранится рядом с Source. |
 
 ## Related Artifacts
 

@@ -5,7 +5,7 @@
 # Запуск: ./measure-research-coverage.sh
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../.." && pwd)"
-TARGET="$ROOT/projects/ba-gigacode-implementation"
+TARGET="$ROOT/projects/ba-ai-process"
 printf '%-42s %s\n' "модуль" "ссылок"
 covered=0
 total=0
