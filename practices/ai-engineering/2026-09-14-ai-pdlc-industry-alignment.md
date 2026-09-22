@@ -85,11 +85,11 @@ AI-DLC даёт ту же идею в фазах Inception / Construction / Oper
 - SDD у нас реализован как контракты маршрута: `C-IN` (объявлены продукт, задача,
   источник), `C-CORE`, `C-OUT` (результирующий документ и его структура), `C-CL`,
   `C-RK` — см.
-  [`20-taxonomy.md`, §7](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/20-taxonomy.md).
+  [`20-taxonomy.md`, §7](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/20-taxonomy.md).
 - Execution Package `EP-R1`…`EP-R6` задаёт исполняемую часть: обязательное поле
   `process` из закрытого словаря `L2`, маршрут как граф, предикат на каждом
   условном ребре, лог решений, отказ в приёмке при пустом `trace.required` —
-  [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/30-decision-framework.md).
+  [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/30-decision-framework.md).
 - Чего нет: отдельного **контракта намерения**. Вход задачи нормализуется внутри
   `P-01`, но «зачем» не является самостоятельным артефактом, который проходит
   собственный гейт до того, как начнётся структурирование требований.
@@ -164,9 +164,9 @@ AI-DLC даёт ту же идею в фазах Inception / Construction / Oper
 - Порог для первых компилируемых навыков должен быть измерен задачей `B-162`.
 - Метрики MVP `M-1`…`M-5` и процессные `MP-1`…`MP-6` не содержат **ни одной**
   метрики стоимости прогона в токенах — см.
-  [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/40-practice-and-cases.md)
+  [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/40-practice-and-cases.md)
   и
-  [`process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-gigacode-implementation/ba-meta-model/process-taxonomy/40-practice-and-cases.md).
+  [`process-taxonomy/40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/40-practice-and-cases.md).
 - Есть смежная практика
   [skill-catalog-token-budget](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/practices/agent-work/skill-catalog-token-budget.md),
   но она про раздувание каталога, а не про стоимость прогона.
@@ -296,7 +296,7 @@ SDLC к AI-SDLC и перечисляет шесть ИИ-специфичных
 
 > Agentic Engineering является стратегической целью (вектором, в котором
 > движемся при разработке всех проектов экосистемы). Например проект мета-модели
-> [`projects/ba-gigacode-implementation`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-gigacode-implementation):
+> [`projects/ba-ai-process`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-ai-process):
 > реализация промежуточного этапа в стратегии. Практическое применение, на
 > котором будет строиться отладка.
 
@@ -316,7 +316,7 @@ SDLC к AI-SDLC и перечисляет шесть ИИ-специфичных
    `GT-6` рост автономии выражается пересчётом уровня гейта по шкале `G1`–`G7`,
    а не отменой гейтов. Явная фиксация целевого состояния в самой мета-модели —
    решение человека и в объём этой записки не входит.
-4. `projects/ba-gigacode-implementation` зафиксирован владельцем как площадка
+4. `projects/ba-ai-process` зафиксирован владельцем как площадка
    практического применения и отладки, то есть контур прогона для B-164…B-168
    определён и отдельного выбора не требует.
 

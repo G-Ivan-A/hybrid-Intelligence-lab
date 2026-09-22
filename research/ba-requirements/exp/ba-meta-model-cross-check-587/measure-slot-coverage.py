@@ -21,7 +21,7 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
 SKELETON = ROOT / (
-    "projects/ba-gigacode-implementation/execution-package-gigacode-cli/"
+    "projects/ba-ai-process/dist/execution-package-gigacode-cli/"
     "templates/bcreq-skeleton.md"
 )
 
