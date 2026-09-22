@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.19
-updated: 2026-09-21
+version: 0.20
+updated: 2026-09-22
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -28,6 +28,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/459"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/471"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/591"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/595"
 ---
 
 # Реестр внешних источников
@@ -397,6 +398,9 @@ related_issues:
 | `ext-321` | [Braintrust — Documentation](https://www.braintrust.dev/docs) | `docs` | `en` | `evals, online-evaluation, release-gates` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
 | `ext-322` | [W&B Weave — Documentation](https://weave-docs.wandb.ai/) | `docs` | `en` | `evals, tracing, experiment-history` | `topic: agent-delivery` | `research` | `hub` | ✅ [ADRel-527](../ai-education/agent-delivery-and-release/40-practice-and-cases.md) |
 | `ext-323` | [GitVerse — GigaCode CLI documentation collection](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli) | `docs` | `ru` | `gigacode-cli, skills, subagents, mcp, memory, commands` | `use-case: mango-ba-runtime, topic: cli-deployment` | `research` | `mango` | ✅ [RFC #591](../../projects/ba-gigacode-implementation/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md) |
+| `ext-324` | [Python Packaging User Guide — The Packaging Flow](https://packaging.python.org/en/latest/flow/) | `docs` | `en` | `source-distribution, build-artifacts, packaging` | `topic: ba-ai-process-architecture` | `research` | `hub, mango` | ✅ [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-017-ba-ai-process-source-distribution.md) |
+| `ext-325` | [SLSA v1.2 — Provenance](https://slsa.dev/spec/v1.2/provenance) | `standard` | `en` | `provenance, build, traceability, supply-chain` | `topic: ba-ai-process-architecture` | `research` | `hub, mango` | ✅ [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-017-ba-ai-process-source-distribution.md) |
+| `ext-326` | [GitHub Docs — `repository_dispatch`](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#repository_dispatch) | `docs` | `en` | `github-actions, repository-dispatch, feedback-transport` | `topic: ba-ai-process-architecture` | `research` | `hub, mango` | ✅ [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-017-ba-ai-process-source-distribution.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
