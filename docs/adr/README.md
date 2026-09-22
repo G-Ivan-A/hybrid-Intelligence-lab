@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 0.2
-updated: 2026-08-17
+version: 0.3
+updated: 2026-09-22
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -42,6 +42,9 @@ frontmatter и девять обязательных секций. Машино�
 | [ADR-012](2026-09-adr-012-agents-md-root-contract.md) | accepted | Корневой `AGENTS.md` как обязательный артефакт бутстрапа для архетипов A/B/C/D: SSOT №0 агента, легализация отдельным стандартом бутстрапа (`Q-1`, вариант B), инвариант абсолютных URL, пороги объёма в токенах, разделение машинных и контрактных гейтов, правило `R8` «декларация вместо запрета». |
 | [ADR-013](2026-09-adr-013-run-modes-deprecation.md) | proposed | Режимы запуска `stepwise`, `oneshot`, `legacy` переводятся в `deprecated` и роль `historical evidence`: исключаются из активных схем маршрутизации, идентичность исполняемой единицы задаётся парой «операция + продуктовый класс», форма взаимодействия становится параметром исполнения маршрута; существующие артефакты сохраняются как доказательная база. |
 | [ADR-014](2026-09-adr-014-legacy-evidence-not-baseline.md) | proposed | Историческое наследие (`prompts/`, `runs/`, датированные замеры, депрекированные документы) допускается только в роли свидетельства о прошлом и не является базисом, образцом структуры или ограничением новой нормы: правила `LG-1`…`LG-6`, объявленное происхождение `derived_from` и запрет обосновывать норму ссылкой на промпт или прогон. Дополняет ADR-013 вторым контуром. |
+| [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md) | proposed | Таксономия процессов и операций БА пересобирается от индустриального базиса; прежняя модель сохраняется как историческое свидетельство. |
+| [ADR-016](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-016-skill-form-and-contract-format.md) | proposed | Навык — форма поставки одного узла таксономии, а `interaction` вычисляется по точке возврата управления актору. |
+| [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-017-ba-ai-process-source-distribution.md) | proposed | `ba-ai-process` разделяется на Source, компилируемые Distribution и автономные Runtime; отладка изолируется от бизнес-прогонов, а обратная связь остаётся необязательной и санитизированной. |
 
 ## Related Artifacts
 
