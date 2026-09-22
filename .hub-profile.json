@@ -49,6 +49,11 @@
       "from": "projects/ba-gigacode-implementation/",
       "to": "projects/ba-ai-process/",
       "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/599"
+    },
+    {
+      "from": "docs/adr/2026-09-adr-017-ba-ai-process-source-distribution.md",
+      "to": "projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/599"
     }
   ]
 }

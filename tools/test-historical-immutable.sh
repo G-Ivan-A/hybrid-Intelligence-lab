@@ -295,7 +295,54 @@ git_in commit --quiet -am "accept proposed adr"
 
 expect_pass "перевод proposed → accepted разрешён" "$repo" BASE_REF=main
 
-# 9f. Индекс каталога (README.md) правится вместе с добавлением нового ADR.
+# 9f. Proposed ADR можно перенести по явно объявленной path-миграции и принять.
+git_in checkout --quiet -b move-accept-proposed main
+mkdir -p "$repo/projects/example/decisions"
+cat >"$repo/.hub-profile.json" <<'EOF'
+{
+  "path_migrations": [
+    {
+      "from": "docs/adr/2026-03-adr-002-proposed.md",
+      "to": "projects/example/decisions/2026-03-adr-002-proposed.md",
+      "issue": "https://example.test/issues/2"
+    }
+  ]
+}
+EOF
+git_in mv \
+  "docs/adr/2026-03-adr-002-proposed.md" \
+  "projects/example/decisions/2026-03-adr-002-proposed.md"
+sed -i 's/status: proposed/status: accepted/' \
+  "$repo/projects/example/decisions/2026-03-adr-002-proposed.md"
+git_in add .hub-profile.json projects/example/decisions/2026-03-adr-002-proposed.md
+git_in commit --quiet -m "move and accept proposed adr"
+
+expect_pass "объявленный перенос proposed → accepted разрешён" "$repo" BASE_REF=main
+
+# 9g. Даже объявленная path-миграция не разрешает перенос принятого ADR.
+git_in checkout --quiet -b move-accepted-declared main
+mkdir -p "$repo/projects/example/decisions"
+cat >"$repo/.hub-profile.json" <<'EOF'
+{
+  "path_migrations": [
+    {
+      "from": "docs/adr/2026-01-adr-001-historical.md",
+      "to": "projects/example/decisions/2026-01-adr-001-historical.md",
+      "issue": "https://example.test/issues/3"
+    }
+  ]
+}
+EOF
+git_in mv \
+  "docs/adr/2026-01-adr-001-historical.md" \
+  "projects/example/decisions/2026-01-adr-001-historical.md"
+git_in add .hub-profile.json projects/example/decisions/2026-01-adr-001-historical.md
+git_in commit --quiet -m "move accepted adr with declared migration"
+
+expect_fail "объявленная миграция не разрешает перенос accepted ADR" "$repo" \
+  "переименование существующего исторического документа" BASE_REF=main
+
+# 9h. Индекс каталога (README.md) правится вместе с добавлением нового ADR.
 git_in checkout --quiet main
 cat >"$repo/docs/adr/README.md" <<'EOF'
 # Индекс ADR

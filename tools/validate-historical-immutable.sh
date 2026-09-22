@@ -28,6 +28,9 @@
 # `draft → proposed → accepted`, перевод в `accepted` требует human review).
 # Правка допускается, только если запись была pre-decision и в base-ревизии:
 # понизить статус уже принятого решения и тем обойти проверку нельзя.
+# Объявленный в `.hub-profile.json` перенос такой записи также допустим, если
+# path-миграция точно отображает старый путь в новый. Принятые записи переносить
+# этим исключением нельзя.
 #
 # Переменные окружения:
 #   BASE_REF                        — base-ветка PR (по умолчанию GITHUB_BASE_REF или main)
@@ -131,6 +134,31 @@ for item in profile.get("path_migrations", []):
 '
 }
 
+# Проверяет точное отображение source → target с учётом prefix-миграций.
+is_declared_migration_mapping() {
+  local source_path="$1" target_path="$2" migration source target suffix
+  for migration in "${path_migrations[@]}"; do
+    IFS=$'\t' read -r source target <<<"$migration"
+    [[ "$source_path" == "$source"* ]] || continue
+    suffix="${source_path#"$source"}"
+    [[ "$target$suffix" == "$target_path" ]] && return 0
+  done
+  return 1
+}
+
+# Перенос записи до decision gate разрешён только по точному отображению,
+# объявленному в path_migrations. Статус проверяется между разными путями.
+is_pre_decision_rename() {
+  local source_path="$1" target_path="$2" base_status head_status
+  is_protected "$source_path" || return 1
+  base_status="$(frontmatter_status "$merge_base" "$source_path")"
+  [[ "$base_status" == "draft" || "$base_status" == "proposed" ]] || return 1
+  head_status="$(frontmatter_status "$head_ref" "$target_path")"
+  [[ "$head_status" == "draft" || "$head_status" == "proposed" ||
+    "$head_status" == "accepted" ]] || return 1
+  is_declared_migration_mapping "$source_path" "$target_path"
+}
+
 is_declared_path_migration() {
   local path="$1" base_file head_file source target
   ((${#path_migrations[@]} > 0)) || return 1
@@ -196,6 +224,11 @@ allowed=()
 
 while IFS=$'\t' read -r status path rename_target; do
   [[ -z "${status:-}" || -z "${path:-}" ]] && continue
+  if [[ "${status:0:1}" == "R" && -n "${rename_target:-}" ]] &&
+    is_pre_decision_rename "$path" "$rename_target"; then
+    allowed+=("$path → $rename_target (объявленный перенос записи до decision gate)")
+    continue
+  fi
   # Для переименований git печатает старый и новый путь; проверяются оба.
   local_paths=("$path")
   [[ -n "${rename_target:-}" ]] && local_paths+=("$rename_target")
@@ -263,6 +296,7 @@ if ((${#violations[@]} > 0)); then
   printf 'тело не длиннее %s непустых строк и содержит ссылку на актуальный артефакт.\n' \
     "$DEPRECATED_REDIRECT_MAX_BODY_LINES" >&2
   printf 'Второе исключение — запись до decision gate: status draft|proposed в base-ревизии.\n' >&2
+  printf 'Её перенос требует точной path-миграции из старого пути в новый.\n' >&2
   exit 1
 fi
 
