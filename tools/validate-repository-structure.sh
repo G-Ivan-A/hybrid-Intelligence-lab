@@ -69,7 +69,8 @@ is_active_file() {
       return 0
       ;;
     projects/ba-ai-process/meta-model-guides/* | \
-    projects/ba-ai-process/tests/execution-package/*)
+    projects/ba-ai-process/tests/execution-package/* | \
+    projects/ba-ai-process/experiments/*)
       return 0
       ;;
     README.md | \
@@ -654,6 +655,7 @@ is_active_file() {
     tools/validate-agents-bootstrap.sh | \
     tools/test-validate-rrp-links.sh | \
     tools/test-execution-package.sh | \
+    tools/test-ba-requirements-forensics.sh | \
     tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
@@ -899,6 +901,8 @@ required_directories=(
   "projects/ba-ai-process/build"
   "projects/ba-ai-process/build/compiler"
   "projects/ba-ai-process/decisions"
+  "projects/ba-ai-process/docs"
+  "projects/ba-ai-process/docs/analysis"
   "projects/ba-ai-process/docs/rfc"
   "projects/ba-ai-process/experiments"
   "projects/ba-ai-process/meta-model-guides"

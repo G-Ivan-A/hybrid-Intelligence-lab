@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.1
+version: 0.2
 updated: 2026-09-23
 temperature: 0.1
 owner: G-Ivan-A
@@ -17,6 +17,7 @@ rfc-scope: C
 | RFC status | `proposed`; принятие только решением человека |
 | Source issue | [#601](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/601) |
 | Evidence and golden-form candidates | [Анализ трёх форм BCREQ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-bcreq-golden-forms-and-feasibility.md) |
+| Run forensics and semantic contracts | [Форензика 67 прогонов и двух диалогов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-requirements-run-forensics.md) |
 | Impacted artifacts | Мета-модель и Source-контракты; после принятия — отдельная компиляция Distribution и изменение runtime |
 | Decision record | Отсутствует: решение владельца ожидается |
 | Archetype scope | `C` — Product Spoke / Runtime |
@@ -253,6 +254,53 @@ coverage:
 контрпример. `G-human` принимает спорные классификации и переводит новый
 пример в Golden Set. Ни prompt, ни `G-semantic` без внешней схемы и человека не
 дают жёсткой гарантии.
+
+### 9. Typed contracts FR, UC и NFR
+
+Форензика полного legacy-корпуса уточняет лестницу абстракции тремя
+инвариантами. Полные определения, негативные примеры и evidence находятся в
+[анализе прогонов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-requirements-run-forensics.md).
+
+- `FR-INV-01`: один FR выражает одну независимо проверяемую capability
+  целевой системы; UI, шаг, правило, constraint и implementation detail сами по
+  себе не являются FR.
+- `UC-INV-01`: UC содержит actor, goal, trigger, preconditions, основной поток,
+  alternatives/exceptions и outcome; он демонстрирует FR, но не создаёт новую
+  capability.
+- `NFR-INV-01`: quality NFR содержит attribute, объект, condition, measure,
+  target, verification и source. Неизвестный target остаётся `TBD`, а не
+  заполняется типовым или выведенным моделью числом.
+
+Для всех трёх типов обязательны typed ID, source trace и двустороннее coverage.
+Процент или числовой target не превращает функциональное поведение в NFR.
+Автоматическое действие формулируется от субъекта «Система», а не механически
+как «возможность Пользователя».
+
+### 10. Exact TM Forum binding
+
+Локальная product taxonomy и TM Forum mapping разделяются. Поля `PC-*`,
+`PF-*`, `AF-*` принадлежат MANGO taxonomy и не являются TM Forum ID. Prose в
+`industry_correspondence.tm_forum` является ориентиром, но не точным binding.
+
+```yaml
+tm_forum_binding:
+  status: resolved | unresolved | not-applicable
+  framework: capability | etom-process | oda-component | open-api
+  tm_forum_snapshot_id: TMF-CAPABILITY-4.0.0
+  tm_forum_capability_id: "<exact ID from snapshot>"
+  tm_forum_capability_name: "<exact name from snapshot>"
+  source_anchor: "<stable catalog anchor>"
+  local_product_binding_refs: [PB-01]
+  rationale: "..."
+  reviewed_by: "..."
+```
+
+`tm_forum_capability_id` допустим только для `framework: capability`; eTOM и
+ODA используют типизированные `tm_forum_process_id` и `oda_component_id`.
+`resolved` требует доступного версионированного snapshot, точного element ID,
+имени и source anchor. Если snapshot отсутствует, корректный результат —
+`unresolved`; similarity, свободный перевод и угадывание по названию запрещены.
+Точный binding принимает `G-human`, а `G-mach` проверяет membership и тип поля.
 
 ## Impacted artifacts after acceptance
 

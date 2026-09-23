@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.1
+version: 1.2
 updated: 2026-09-23
 temperature: 0.1
 scope: mango-only
@@ -86,6 +86,11 @@ RFC — в
 Предложения по уровню абстракции и остальным гейтам зафиксированы отдельно в
 [RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md);
 принятая issue #603 часть о продуктовой маршрутизации реализована в Distribution.
+
+Форензика всех 67 legacy-прогонов и приложенных к issue #605 диалогов,
+негативные примеры и строгие инварианты FR/UC/NFR и TM Forum binding находятся
+в
+[анализе прогонов требований](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-requirements-run-forensics.md).
 
 ## Решение о GigaCode CLI
 
