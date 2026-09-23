@@ -47,7 +47,10 @@ GigaCode»**: какая мета-модель описывает работу, 
   MVP-среза с метриками `M-1`…`M-5`. Вложенные
   [`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/00-introduction.md)
   и [`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/operation-taxonomy/00-introduction.md)
-  задают соответственно 33 навыка-подпроцесса и 31 атомарную операцию.
+  задают соответственно 33 навыка-подпроцесса и 31 атомарную операцию;
+  [`product-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-ai-process/ba-meta-model/product-taxonomy)
+  хранит версионированные снимки 42 продуктовых capabilities MANGO и их 42
+  отраслевых соответствий ИТ/телеком для компиляции в Distribution.
 - [`meta-model-guides/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/meta-model-guides/README.md)
   — инструкции человеку: подготовка чистой директории, локальной KB,
   Confluence MCP, запуск/возобновление task и изолированный debug.
