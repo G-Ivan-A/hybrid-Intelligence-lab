@@ -92,6 +92,10 @@ RFC — в
 в
 [анализе прогонов требований](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-requirements-run-forensics.md).
 
+Конвейер от типизированного рабочего baseline к клиентской Release-проекции,
+включая NFR→FR, обратную совместимость и правила компиляции, предложен в
+[RFC Working Document → Release Document](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-working-release-pipeline.md).
+
 ## Решение о GigaCode CLI
 
 Предложение и доказательства среды сохранены в
