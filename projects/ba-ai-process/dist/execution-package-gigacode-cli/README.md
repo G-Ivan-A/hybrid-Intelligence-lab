@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 2.1
-updated: 2026-09-22
+version: 2.2
+updated: 2026-09-23
 temperature: 0.1
 ---
 
@@ -23,7 +23,7 @@ temperature: 0.1
 | `.gigacode/settings.example.json` | безопасный capability-пример Confluence MCP без URL и секретов |
 | `docs/kb/` | место для локальной базы знаний, дополняющей Confluence |
 | `meta-model/` | место для канонической модели, добавляемой при подготовке копии |
-| `taxonomy/` | закрытые словари артефактов, процессов, операций, продуктов, источников, проекций и терминов |
+| `taxonomy/` | закрытые словари артефактов, процессов, операций, routing-профилей, полный снимок 42 capabilities MANGO, 42 отраслевых соответствия, источники, проекции и термины |
 | `contracts/` | `C-IN`, `C-CORE`, `C-CL`, `C-OUT`, `C-RK` как JSON Schema |
 | `routes/` | граф `RG-BCREQ-v1` и шаблон append-only листа прогона |
 | `templates/` | скелеты пользовательских артефактов и Markdown checkpoint |
@@ -51,7 +51,8 @@ sh projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-pac
 ```
 
 Валидатор проверяет layout и manifest hashes, нативный путь `.gigacode/skills/`, обязательные
-оркестраторы, закрытость словарей, разрешимость графа, zero-correction policy,
+оркестраторы, закрытость словарей, целостность продуктового и отраслевого
+снимков, разрешимость графа, zero-correction policy,
 микро-событийный trace, структуру навыков, Golden Set, метрики, дополняющую
 маршрутизацию источников, согласованность run template с `C-RK` и отсутствие
 runtime-ссылок на Source

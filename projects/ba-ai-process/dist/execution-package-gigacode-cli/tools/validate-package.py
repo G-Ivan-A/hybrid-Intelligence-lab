@@ -47,7 +47,7 @@ SKILL_SECTIONS = [
 # Провенанс компиляции указывает на Source
 # https://github.com/G-Ivan-A/hybrid-Intelligence-lab намеренно: это
 # происхождение, а не ссылка времени выполнения.
-PROVENANCE_KEYS = ("derived_from:", "compiled_from:", "source:")
+PROVENANCE_KEYS = ("derived_from:", "compiled_from:", '"compiled_from"', "source:")
 HUB_PATH = re.compile(r"\b(ba-meta-model|ba-process-taxonomy|ba-operation-taxonomy|research/|standards/|ops/|docs/rfc/)")
 SOURCE_ONLY_FILENAMES = {
     "00-introduction.md",
@@ -230,7 +230,17 @@ def frontmatter(path: str) -> dict[str, str]:
 
 def check_taxonomies(root: str) -> dict:
     loaded = {}
-    for name in ("artifacts", "operations", "processes", "products", "source-tiers", "projections", "domain-glossary"):
+    for name in (
+        "artifacts",
+        "operations",
+        "processes",
+        "products",
+        "mango-products",
+        "telecom-products",
+        "source-tiers",
+        "projections",
+        "domain-glossary",
+    ):
         data = load_yaml(root, f"taxonomy/{name}.yaml")
         loaded[name] = data
         if data is None:
@@ -270,7 +280,105 @@ def check_taxonomies(root: str) -> dict:
         schema = item.get("schema")
         if schema and not os.path.isfile(os.path.join(root, schema)):
             fail(f"taxonomy/artifacts.yaml: {item.get('id')} ссылается на несуществующую схему {schema}")
+
+    check_product_taxonomies(
+        loaded.get("mango-products") or {},
+        loaded.get("telecom-products") or {},
+    )
     return loaded
+
+
+def check_product_taxonomies(mango: dict, telecom: dict) -> None:
+    """Проверяет полный snapshot MANGO и взаимно-однозначное отраслевое покрытие."""
+    if mango.get("taxonomy") != "mango-products":
+        fail("taxonomy/mango-products.yaml: неизвестный идентификатор таксономии")
+    if telecom.get("taxonomy") != "telecom-products":
+        fail("taxonomy/telecom-products.yaml: неизвестный идентификатор таксономии")
+
+    for rel, data in (
+        ("taxonomy/mango-products.yaml", mango),
+        ("taxonomy/telecom-products.yaml", telecom),
+    ):
+        provenance = data.get("provenance") or {}
+        if not str(provenance.get("compiled_from", "")).startswith("https://"):
+            fail(f"{rel}: provenance.compiled_from обязан быть абсолютным HTTPS URL")
+        if not re.fullmatch(r"[0-9a-f]{40}", str(provenance.get("source_revision", ""))):
+            fail(f"{rel}: provenance.source_revision обязан быть полным Git SHA")
+
+    if (mango.get("provenance") or {}).get("compiled_from") != (
+        telecom.get("provenance") or {}
+    ).get("compiled_from"):
+        fail("product taxonomies: MANGO snapshot и отраслевые соответствия скомпилированы из разных источников")
+
+    domains = mango.get("domains") or []
+    if len(domains) != 8:
+        fail(f"taxonomy/mango-products.yaml: ожидается 8 доменов snapshot v3.0, получено {len(domains)}")
+
+    domain_ids: set[str] = set()
+    capabilities: dict[str, int] = {}
+    for domain in domains:
+        domain_id = str(domain.get("id", ""))
+        if not domain_id or domain_id in domain_ids:
+            fail(f"taxonomy/mango-products.yaml: пустой или повторяющийся domain id: {domain_id!r}")
+        domain_ids.add(domain_id)
+        if not domain.get("name"):
+            fail(f"taxonomy/mango-products.yaml: домен {domain_id!r} без имени")
+
+        for capability in domain.get("capabilities") or []:
+            capability_id = str(capability.get("id", ""))
+            path = f"{domain_id}/{capability_id}"
+            if not capability_id or path in capabilities:
+                fail(f"taxonomy/mango-products.yaml: пустая или повторяющаяся capability: {path!r}")
+                continue
+            source_row = capability.get("source_row")
+            if not isinstance(source_row, int) or source_row < 1:
+                fail(f"taxonomy/mango-products.yaml: {path} без валидного source_row")
+                continue
+            capabilities[path] = source_row
+            if not capability.get("name") or not capability.get("features"):
+                fail(f"taxonomy/mango-products.yaml: {path} не содержит имя или features")
+            atomic_functions = capability.get("atomic_functions") or []
+            if not atomic_functions:
+                fail(f"taxonomy/mango-products.yaml: {path} не содержит atomic functions")
+            atomic_ids: set[str] = set()
+            for atomic in atomic_functions:
+                atomic_id = str(atomic.get("id", ""))
+                if not atomic_id or atomic_id in atomic_ids:
+                    fail(f"taxonomy/mango-products.yaml: {path} содержит пустую или повторяющуюся atomic function")
+                atomic_ids.add(atomic_id)
+                if not atomic.get("parameters"):
+                    fail(f"taxonomy/mango-products.yaml: {path}/{atomic_id} не содержит parameters")
+
+    if len(capabilities) != 42:
+        fail(
+            "taxonomy/mango-products.yaml: ожидается 42 capabilities snapshot v3.0, "
+            f"получено {len(capabilities)}"
+        )
+
+    mappings: dict[str, dict] = {}
+    for mapping in telecom.get("mappings") or []:
+        path = str(mapping.get("mango_capability", ""))
+        if not path or path in mappings:
+            fail(f"taxonomy/telecom-products.yaml: пустое или повторяющееся соответствие: {path!r}")
+            continue
+        mappings[path] = mapping
+        for field in ("product_or_service", "tm_forum", "unspsc", "babok"):
+            if not mapping.get(field):
+                fail(f"taxonomy/telecom-products.yaml: {path} не содержит поле {field}")
+
+    for path in sorted(set(capabilities) - set(mappings)):
+        fail(f"taxonomy/telecom-products.yaml: для MANGO capability {path} нет отраслевого соответствия")
+    for path in sorted(set(mappings) - set(capabilities)):
+        fail(f"taxonomy/telecom-products.yaml: соответствие ссылается на неизвестную MANGO capability: {path}")
+    for path in sorted(set(capabilities) & set(mappings)):
+        if mappings[path].get("source_row") != capabilities[path]:
+            fail(f"taxonomy/telecom-products.yaml: source_row расходится для {path}")
+
+    frameworks = {item.get("id"): item for item in telecom.get("frameworks") or []}
+    for framework_id in ("tm-forum", "unspsc", "babok-v3"):
+        framework = frameworks.get(framework_id) or {}
+        if not str(framework.get("url", "")).startswith("https://"):
+            fail(f"taxonomy/telecom-products.yaml: framework {framework_id} не содержит абсолютный HTTPS URL")
 
 
 def check_skills(root: str) -> dict[str, dict]:

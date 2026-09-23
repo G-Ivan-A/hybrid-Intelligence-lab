@@ -1,0 +1,368 @@
+{
+  "generated_by": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/build/compiler/compile-product-taxonomies.py",
+  "taxonomy": "telecom-products",
+  "closed": true,
+  "version": "3.0",
+  "scope": "it-telecom",
+  "provenance": {
+    "compiled_from": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3a7306d66011186d42f5017b89a9cc051226fe32/research/mango/2026-05-22-classification.md",
+    "source_revision": "3a7306d66011186d42f5017b89a9cc051226fe32",
+    "copied_for": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/601",
+    "compiled_on": "2026-09-23"
+  },
+  "frameworks": [
+    {
+      "id": "tm-forum",
+      "role": "telecom-domain-and-capability-context",
+      "url": "https://www.tmforum.org/oda/"
+    },
+    {
+      "id": "unspsc",
+      "role": "international-product-and-service-classification",
+      "url": "https://www.ungm.org/Public/UNSPSC"
+    },
+    {
+      "id": "babok-v3",
+      "role": "business-analysis-perspective",
+      "url": "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/"
+    }
+  ],
+  "mappings": [
+    {
+      "source_row": 1,
+      "mango_capability": "voice-ucaas/cloud-pbx",
+      "product_or_service": "Виртуальная АТС / облачная телефония",
+      "tm_forum": "Product Offering в Product domain; Service domain для голосового сервиса; Resource domain для номеров, линий и правил маршрутизации.",
+      "unspsc": "81162000 Cloud-based software as a service + 83111500 Local and long distance telephone communications.",
+      "babok": "RADD: Functional Decomposition + Non-Functional Requirements Analysis (доступность, SLA)"
+    },
+    {
+      "source_row": 2,
+      "mango_capability": "voice-ucaas/sip-connectivity",
+      "product_or_service": "IP-телефония и SIP trunk",
+      "tm_forum": "Service/Resource: логический голосовой сервис поверх SIP-ресурсов; удобно отделять заказ продукта от ресурсов подключения.",
+      "unspsc": "83111500 Local and long distance telephone communications; 43232901 Access software или 43232915 Platform interconnectivity software для софтверной части.",
+      "babok": "RADD: Interface Analysis (SIP-интерфейсы и подключение)"
+    },
+    {
+      "source_row": 3,
+      "mango_capability": "voice-ucaas/number-management",
+      "product_or_service": "Виртуальные номера, 8-800, мобильные номера",
+      "tm_forum": "Resource domain: номерная емкость как ресурс, привязанный к продукту ВАТС или контакт-центру.",
+      "unspsc": "83111501 Local telephone service, 83111502 Long distance telephone services, 83111603 Cellular telephone services.",
+      "babok": "RADD: Business Rules Analysis (правила номерной ёмкости) + Data Modelling"
+    },
+    {
+      "source_row": 4,
+      "mango_capability": "voice-ucaas/ivr-voice-menu",
+      "product_or_service": "Голосовое меню IVR, автосекретарь, автоинформатор",
+      "tm_forum": "Service capability внутри голосового сервиса; требования относятся к service specification, routing и customer interaction.",
+      "unspsc": "83111510 Interactive voice response service + 43232703 Interactive voice response software.",
+      "babok": "RADD: Process Modelling (IVR-сценарии) + Decision Modelling"
+    },
+    {
+      "source_row": 5,
+      "mango_capability": "contact-center/call-routing",
+      "product_or_service": "Распределение звонков, очереди, правила маршрутизации",
+      "tm_forum": "Customer/Service: управление взаимодействием и исполнением сервиса; для требований важны SLA, skill groups и правила маршрутизации.",
+      "unspsc": "43232903 Contact center software или 43231501 Helpdesk or call center software.",
+      "babok": "RADD: Business Rules Analysis (маршрутизация) + NFR Analysis (SLA очередей)"
+    },
+    {
+      "source_row": 6,
+      "mango_capability": "voice-ucaas/call-recording",
+      "product_or_service": "Запись разговоров, журнал звонков, статистика",
+      "tm_forum": "Service assurance и usage: фиксация использования сервиса, контроль качества и доказательная база для обращений.",
+      "unspsc": "43232300 Data management and query software + 43232605 Analytical or scientific software.",
+      "babok": "RADD: NFR Analysis (хранение, ИБ) + Data Modelling"
+    },
+    {
+      "source_row": 7,
+      "mango_capability": "voice-ucaas/callback",
+      "product_or_service": "Обратный звонок с сайта",
+      "tm_forum": "Market & Sales + Customer interaction: лидогенерация превращается в коммуникацию и заказ обратного вызова.",
+      "unspsc": "80141603 Telemarketing + 83111500 Telephone communications.",
+      "babok": "Elicitation: Use Cases and Scenarios + RADD: Process Modelling"
+    },
+    {
+      "source_row": 8,
+      "mango_capability": "voice-ucaas/unified-communications",
+      "product_or_service": "Mango Talker: корпоративный мессенджер и softphone",
+      "tm_forum": "Customer interaction и Service: единое рабочее пространство коммуникаций; Resource - пользовательские endpoint-устройства и приложения.",
+      "unspsc": "43232702 Desktop communications software + 43223204 Unified messaging platform.",
+      "babok": "RADD: Functional Decomposition + Interface Analysis"
+    },
+    {
+      "source_row": 9,
+      "mango_capability": "voice-ucaas/video-conferencing",
+      "product_or_service": "Видеоконференции",
+      "tm_forum": "Service domain для UCaaS-сервиса; Product domain для опции или отдельного предложения в каталоге.",
+      "unspsc": "43233502 Video conferencing software + 81162000 Cloud-based software as a service.",
+      "babok": "RADD: Non-Functional Requirements Analysis (качество медиа) + Use Cases"
+    },
+    {
+      "source_row": 10,
+      "mango_capability": "digital-channels/sms-messaging",
+      "product_or_service": "SMS-рассылки",
+      "tm_forum": "Customer interaction и Campaign/Market & Sales: массовые уведомления и коммуникации с клиентами.",
+      "unspsc": "43223202 Short message service center + 81161600 Electronic mail and messaging services.",
+      "babok": "RADD: Business Rules Analysis (согласия) + NFR Analysis"
+    },
+    {
+      "source_row": 11,
+      "mango_capability": "contact-center/omnichannel-contact-center",
+      "product_or_service": "Омниканальный контакт-центр / CCaaS",
+      "tm_forum": "Product/Service: отдельное Product Offering с capability обслуживания обращений; Customer domain для клиента и обращения.",
+      "unspsc": "43232903 Contact center software + 43231501 Helpdesk or call center software.",
+      "babok": "RADD: Functional Decomposition + Solution Evaluation: Metrics and KPIs"
+    },
+    {
+      "source_row": 12,
+      "mango_capability": "contact-center/agent-workspace",
+      "product_or_service": "Входящие обращения, очереди, рабочее место оператора",
+      "tm_forum": "Customer interaction и Service assurance: управление обращением, оператором, каналом и SLA.",
+      "unspsc": "43232903 Contact center software.",
+      "babok": "RADD: Process Modelling + Prototyping (рабочее место)"
+    },
+    {
+      "source_row": 13,
+      "mango_capability": "contact-center/outbound-calling",
+      "product_or_service": "Исходящий обзвон и кампании",
+      "tm_forum": "Market & Sales + Customer interaction: outbound-кампания как коммерческое взаимодействие, исполняемое контакт-центром.",
+      "unspsc": "80141603 Telemarketing + 43232903 Contact center software.",
+      "babok": "RADD: Process Modelling + Business Rules Analysis (правила кампаний)"
+    },
+    {
+      "source_row": 14,
+      "mango_capability": "digital-channels/omnichannel-messaging",
+      "product_or_service": "Омниканальные коммуникации: чат, мессенджеры, соцсети, email",
+      "tm_forum": "Customer interaction across channels; полезно классифицировать канал отдельно от бизнес-сценария обращения.",
+      "unspsc": "43223204 Unified messaging platform, 43223205 Instant messaging platform, 81161600 Electronic mail and messaging services.",
+      "babok": "RADD: Interface Analysis (каналы) + Process Modelling"
+    },
+    {
+      "source_row": 15,
+      "mango_capability": "digital-channels/website-chat",
+      "product_or_service": "Чат для сайта",
+      "tm_forum": "Customer interaction: цифровой канал обращения, связанный с контакт-центром и карточкой клиента.",
+      "unspsc": "43233504 Instant messaging software + 81161600 Electronic mail and messaging services.",
+      "babok": "Elicitation: Use Cases and Scenarios + RADD: Prototyping"
+    },
+    {
+      "source_row": 16,
+      "mango_capability": "ai-automation/chatbot",
+      "product_or_service": "Чат-бот",
+      "tm_forum": "Service automation внутри Customer domain; бот исполняет часть interaction flow до передачи оператору.",
+      "unspsc": "43231511 Expert system software + 43223205 Instant messaging platform.",
+      "babok": "RADD: Decision Modelling + Use Cases and Scenarios"
+    },
+    {
+      "source_row": 17,
+      "mango_capability": "ai-automation/voice-bot",
+      "product_or_service": "Голосовой робот / voice bot",
+      "tm_forum": "Service automation для голосового канала; связывает IVR, customer interaction и orchestration сценариев.",
+      "unspsc": "43233413 Voice recognition software + 83111510 Interactive voice response service.",
+      "babok": "RADD: Decision Modelling + Process Modelling"
+    },
+    {
+      "source_row": 18,
+      "mango_capability": "ai-automation/process-robot",
+      "product_or_service": "Робот-администратор",
+      "tm_forum": "Service orchestration: автоматизирует операционные действия контакт-центра и обращения клиента.",
+      "unspsc": "81112106 Application service providers + 43232403 Enterprise application integration software.",
+      "babok": "RADD: Process Modelling + Business Rules Analysis"
+    },
+    {
+      "source_row": 19,
+      "mango_capability": "ai-automation/speech-analytics",
+      "product_or_service": "Речевая аналитика / conversation intelligence",
+      "tm_forum": "Service assurance и Customer insight: анализ записей, транскриптов и качества коммуникаций.",
+      "unspsc": "43233413 Voice recognition software + 43232605 Analytical or scientific software.",
+      "babok": "Solution Evaluation: Metrics and KPIs + Data Modelling"
+    },
+    {
+      "source_row": 20,
+      "mango_capability": "contact-center/quality-management",
+      "product_or_service": "Управление качеством операторов (QM)",
+      "tm_forum": "Service assurance: контроль качества, чек-листы, оценки и обратная связь по обслуживанию.",
+      "unspsc": "43232606 Compliance software + 43231501 Helpdesk or call center software.",
+      "babok": "Solution Evaluation: Metrics and KPIs + Business Rules Analysis (чек-листы)"
+    },
+    {
+      "source_row": 21,
+      "mango_capability": "contact-center/workforce-management",
+      "product_or_service": "Workforce Management / управление рабочими ресурсами",
+      "tm_forum": "Resource/Enterprise management: планирование операторов как ресурса сервиса контакт-центра.",
+      "unspsc": "43231505 Human resources software + 43232903 Contact center software.",
+      "babok": "Strategy Analysis: прогноз ресурса + RADD: Process Modelling"
+    },
+    {
+      "source_row": 22,
+      "mango_capability": "contact-center/knowledge-base",
+      "product_or_service": "База знаний и скрипты операторов",
+      "tm_forum": "Customer/Service support: knowledge artifacts поддерживают выполнение service interaction.",
+      "unspsc": "43232200 Content management software + 43232201 Content workflow software.",
+      "babok": "RADD: Data Modelling + Document Analysis"
+    },
+    {
+      "source_row": 23,
+      "mango_capability": "contact-center/deal-management",
+      "product_or_service": "Управление сделками / легкий CRM-сценарий",
+      "tm_forum": "Customer + Market & Sales: связка клиента, сделки, коммуникации и коммерческого процесса.",
+      "unspsc": "43232303 Customer relationship management CRM software.",
+      "babok": "RADD: Data Modelling + Process Modelling"
+    },
+    {
+      "source_row": 24,
+      "mango_capability": "contact-center/crm-platform",
+      "product_or_service": "Полноценная CRM как самостоятельная платформа",
+      "tm_forum": "TM Forum классифицирует как Customer/Sales capability, но в MANGO OFFICE публично виден скорее встроенный сценарий управления сделками и интеграции с внешними CRM.",
+      "unspsc": "43232303 Customer relationship management CRM software.",
+      "babok": "Strategy Analysis: Vendor Assessment + RADD: Data Modelling"
+    },
+    {
+      "source_row": 25,
+      "mango_capability": "platform/platform-integration",
+      "product_or_service": "Интеграции с CRM, 1C, LDAP, marketplace",
+      "tm_forum": "Product/Service integration: интеграционные endpoints и партнерские системы вокруг основного продукта.",
+      "unspsc": "43232403 Enterprise application integration software + 81112106 Application service providers.",
+      "babok": "RADD: Interface Analysis + Data Modelling"
+    },
+    {
+      "source_row": 26,
+      "mango_capability": "platform/open-api",
+      "product_or_service": "Open API, webhook, API для УВК/CRM",
+      "tm_forum": "Open API слой соответствует интеграционному подходу TM Forum: отделить продуктовый каталог, заказ, сервис и клиентские события от конкретного UI.",
+      "unspsc": "43232403 Enterprise application integration software + 43232915 Platform interconnectivity software.",
+      "babok": "RADD: Interface Analysis (API-контракт) + NFR Analysis"
+    },
+    {
+      "source_row": 27,
+      "mango_capability": "analytics/call-tracking",
+      "product_or_service": "Коллтрекинг",
+      "tm_forum": "Market & Sales: атрибуция звонков к рекламным источникам; Service/Resource: динамические номера как ресурс.",
+      "unspsc": "80141501 Marketing analysis + 83111500 Telephone communications.",
+      "babok": "Solution Evaluation: Metrics and KPIs + Data Modelling"
+    },
+    {
+      "source_row": 28,
+      "mango_capability": "analytics/end-to-end-analytics",
+      "product_or_service": "Сквозная аналитика и ROMI",
+      "tm_forum": "Market & Sales analytics: связывает коммуникации, расходы, лиды, сделки и выручку.",
+      "unspsc": "80141501 Marketing analysis + 43232605 Analytical or scientific software.",
+      "babok": "Solution Evaluation: Metrics and KPIs (ROMI) + Financial Analysis"
+    },
+    {
+      "source_row": 29,
+      "mango_capability": "analytics/multichannel-analytics",
+      "product_or_service": "Мультиканальная аналитика и атрибуция",
+      "tm_forum": "Market & Sales + Customer insight: классифицирует требования к источникам, каналам и конверсиям.",
+      "unspsc": "80141501 Marketing analysis.",
+      "babok": "Solution Evaluation: Metrics and KPIs + Data Modelling"
+    },
+    {
+      "source_row": 30,
+      "mango_capability": "analytics/email-tracking",
+      "product_or_service": "Email-трекинг",
+      "tm_forum": "Customer interaction + Market & Sales: email как канал коммуникации и атрибуции.",
+      "unspsc": "43233501 Electronic mail software + 81161600 Electronic mail and messaging services.",
+      "babok": "Solution Evaluation: Metrics and KPIs + Business Rules Analysis (согласия)"
+    },
+    {
+      "source_row": 31,
+      "mango_capability": "analytics/product-analytics",
+      "product_or_service": "Товарная аналитика / ecommerce analytics",
+      "tm_forum": "Market & Sales: анализ спроса, товарных позиций и эффективности продаж.",
+      "unspsc": "80141501 Marketing analysis + 43232307 Data mining software.",
+      "babok": "Solution Evaluation: Metrics and KPIs + Data Modelling (качество данных)"
+    },
+    {
+      "source_row": 32,
+      "mango_capability": "analytics/competitor-analysis",
+      "product_or_service": "Анализ конкурентов",
+      "tm_forum": "Market intelligence в Market & Sales domain; не является core-телеком сервисом, но поддерживает коммерческие решения.",
+      "unspsc": "80141501 Marketing analysis + 80141500 Market research.",
+      "babok": "Strategy Analysis: Benchmarking and Market Analysis"
+    },
+    {
+      "source_row": 33,
+      "mango_capability": "digital-channels/messenger-marketing",
+      "product_or_service": "Мессенджер-маркетинг",
+      "tm_forum": "Market & Sales + Customer interaction: кампании в цифровых каналах, связанные с клиентскими событиями.",
+      "unspsc": "43223205 Instant messaging platform + 81161601 Instant Messaging Administration Service.",
+      "babok": "RADD: Business Rules Analysis (согласия) + Use Cases and Scenarios"
+    },
+    {
+      "source_row": 34,
+      "mango_capability": "platform/cpaas",
+      "product_or_service": "CPaaS / программируемые голосовые и messaging API",
+      "tm_forum": "TM Forum позволяет оформить как API-enabled Product/Service; у MANGO OFFICE есть API/webhook, но публично не выделен полный CPaaS как отдельная товарная линейка.",
+      "unspsc": "81112106 Application service providers + 43232403 Enterprise application integration software.",
+      "babok": "RADD: Interface Analysis (API) + NFR Analysis"
+    },
+    {
+      "source_row": 35,
+      "mango_capability": "platform/service-desk",
+      "product_or_service": "Service desk / ITSM helpdesk",
+      "tm_forum": "В TM Forum соответствует assurance, trouble ticket и customer problem; у MANGO OFFICE это ближе к контакт-центру, а не к самостоятельному ITSM-продукту.",
+      "unspsc": "43231501 Helpdesk or call center software.",
+      "babok": "RADD: Process Modelling (ITSM) + Business Rules Analysis"
+    },
+    {
+      "source_row": 36,
+      "mango_capability": "security/information-security",
+      "product_or_service": "Информационная безопасность",
+      "tm_forum": "Enterprise/Security capability, поддерживающая доверие и эксплуатацию сервиса; не основной коммуникационный продукт.",
+      "unspsc": "43233200 Security and protection software или смежные security-коды по актуальному UNSPSC.",
+      "babok": "RADD: NFR Analysis (ИБ) + Strategy Analysis: Risk Analysis"
+    },
+    {
+      "source_row": 37,
+      "mango_capability": "hardware/telephony-equipment",
+      "product_or_service": "SIP-телефоны, гарнитуры и устройства",
+      "tm_forum": "Resource domain: физические ресурсы доступа к сервису. В требованиях лучше отделять от SaaS-функциональности.",
+      "unspsc": "43222800 Telephony equipment; 43222900 Telephony equipment accessories.",
+      "babok": "Solution Evaluation: Vendor Assessment + критерии приёмки"
+    },
+    {
+      "source_row": 38,
+      "mango_capability": "voice-ucaas/number-branding",
+      "product_or_service": "Маркировка номера, «карусельные номера», защита дозваниваемости",
+      "tm_forum": "Resource domain: маркировка и ротация номерной ёмкости как resource-level сервис оператора связи; Market & Sales для калькуляции эффективности дозвона.",
+      "unspsc": "83111500 Telephone communications + 80141501 Marketing analysis.",
+      "babok": "RADD: Business Rules Analysis (правила маркировки) + NFR Analysis (дозваниваемость)"
+    },
+    {
+      "source_row": 39,
+      "mango_capability": "voice-ucaas/voice-sms-broadcast",
+      "product_or_service": "Голосовые SMS / автоинформирование через голосовой канал",
+      "tm_forum": "Service automation для голосового канала + Market & Sales: массовое автоинформирование, отдельное от текстового SMS и от outbound-кампании.",
+      "unspsc": "83111510 Interactive voice response service + 80141603 Telemarketing.",
+      "babok": "RADD: Process Modelling + Business Rules Analysis (согласия)"
+    },
+    {
+      "source_row": 40,
+      "mango_capability": "contact-center/self-service-portal",
+      "product_or_service": "Self-Service портал клиента / личный кабинет заказчика SaaS",
+      "tm_forum": "Customer self-service в Customer domain + Product: каталог самообслуживания, отделённый от operator workspace.",
+      "unspsc": "81162000 Cloud-based software as a service + 43232703 Interactive voice response software (self-service).",
+      "babok": "RADD: Prototyping / UX + NFR Analysis (ПДн при самообслуживании)"
+    },
+    {
+      "source_row": 41,
+      "mango_capability": "contact-center/operator-mobile-app",
+      "product_or_service": "Мобильное приложение оператора CCaaS",
+      "tm_forum": "Customer interaction + Resource: мобильный endpoint оператора, отделённый от Mango Talker как UCaaS-инструмента сотрудника.",
+      "unspsc": "43232702 Desktop communications software + 43232903 Contact center software.",
+      "babok": "RADD: Prototyping + NFR Analysis (мобильная платформа)"
+    },
+    {
+      "source_row": 42,
+      "mango_capability": "platform/vendor-support-services",
+      "product_or_service": "Услуги поддержки и развития CRM/SaaS как vendor-service",
+      "tm_forum": "Partner/Enterprise: managed/professional services вокруг продукта (engaged party, agreement), а не сам продукт.",
+      "unspsc": "80101507 Application maintenance services + 43232303 Customer relationship management CRM software.",
+      "babok": "Strategy Analysis: Vendor Assessment + Requirements Life Cycle Management"
+    }
+  ]
+}

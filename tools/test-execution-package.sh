@@ -19,6 +19,8 @@ PACKAGE="$PROJECT/dist/execution-package-gigacode-cli"
 PROJECT_TESTS="$PROJECT/tests/execution-package"
 DECISION="$PROJECT/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md"
 VALIDATOR="$PACKAGE/tools/validate-package.py"
+PRODUCT_TAXONOMY="$PROJECT/ba-meta-model/product-taxonomy"
+PRODUCT_TAXONOMY_COMPILER="$PROJECT/build/compiler/compile-product-taxonomies.py"
 
 fail() {
   printf 'ERROR: %s\n' "$1" >&2
@@ -55,6 +57,18 @@ done
 
 [[ -d "$PACKAGE/.gigacode/skills" ]] || fail "missing native GigaCode skill directory"
 [[ ! -e "$PACKAGE/.agents" ]] || fail "legacy .agents tree must not remain in the CLI package"
+
+for taxonomy in mango-products.yaml telecom-products.yaml; do
+  [[ -f "$PRODUCT_TAXONOMY/$taxonomy" ]] || \
+    fail "missing Source product taxonomy: $PRODUCT_TAXONOMY/$taxonomy"
+  [[ -f "$PACKAGE/taxonomy/$taxonomy" ]] || \
+    fail "missing Distribution product taxonomy: $PACKAGE/taxonomy/$taxonomy"
+  cmp -s "$PRODUCT_TAXONOMY/$taxonomy" "$PACKAGE/taxonomy/$taxonomy" || \
+    fail "Source and Distribution product taxonomies drifted: $taxonomy"
+done
+
+python3 "$PRODUCT_TAXONOMY_COMPILER" --check || \
+  fail "product taxonomy compiler check failed"
 
 if ! python3 -c 'import yaml' 2>/dev/null; then
   printf 'SKIP: PyYAML is not installed, package content tests cannot run.\n' >&2
@@ -229,8 +243,23 @@ target="$(fixture output-drift)"
 printf '\n# uncompiled edit\n' >> "$target/templates/bcreq-skeleton.md"
 expect_reject "$target" "immutable output drift" "SHA-256 не совпадает"
 
+# Case 21: every MANGO capability must retain one industry mapping.
+target="$(fixture missing-industry-mapping)"
+python3 - "$target" <<'PY'
+import pathlib
+import sys
+
+import yaml
+
+path = pathlib.Path(sys.argv[1], "taxonomy/telecom-products.yaml")
+data = yaml.safe_load(path.read_text(encoding="utf-8"))
+data["mappings"].pop()
+path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
+PY
+expect_reject "$target" "missing industry mapping" "нет отраслевого соответствия"
+
 # The project-level emulator exercises route traversal and human-gate pauses
 # without invoking an LLM or writing into the committed package.
 python3 "$PROJECT_TESTS/tests/test_emulation.py"
 
-printf 'Execution package tests passed (20 package cases + route emulation).\n'
+printf 'Execution package tests passed (21 package cases + route emulation).\n'
