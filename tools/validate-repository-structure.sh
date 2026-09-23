@@ -64,6 +64,10 @@ is_active_file() {
     projects/ba-ai-process/dist/execution-package-gigacode-cli/*)
       return 0
       ;;
+    projects/ba-ai-process/ba-meta-model/product-taxonomy/* | \
+    projects/ba-ai-process/build/compiler/*)
+      return 0
+      ;;
     projects/ba-ai-process/meta-model-guides/* | \
     projects/ba-ai-process/tests/execution-package/*)
       return 0
@@ -891,6 +895,9 @@ required_directories=(
   "frameworks"
   "projects"
   "projects/ba-ai-process/ba-meta-model"
+  "projects/ba-ai-process/ba-meta-model/product-taxonomy"
+  "projects/ba-ai-process/build"
+  "projects/ba-ai-process/build/compiler"
   "projects/ba-ai-process/decisions"
   "projects/ba-ai-process/docs/rfc"
   "projects/ba-ai-process/experiments"
@@ -1083,6 +1090,9 @@ required_files=(
   "projects/repo-development/README.md"
   "projects/ba-ai-process/README.md"
   "projects/ba-ai-process/ba-meta-model/00-introduction.md"
+  "projects/ba-ai-process/ba-meta-model/product-taxonomy/mango-products.yaml"
+  "projects/ba-ai-process/ba-meta-model/product-taxonomy/telecom-products.yaml"
+  "projects/ba-ai-process/build/compiler/compile-product-taxonomies.py"
   "projects/ba-ai-process/ba-meta-model/process-taxonomy/00-introduction.md"
   "projects/ba-ai-process/ba-meta-model/operation-taxonomy/00-introduction.md"
   "projects/ba-ai-process/meta-model-guides/README.md"

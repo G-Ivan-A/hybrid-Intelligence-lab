@@ -1,11 +1,11 @@
 # Манифест пакета: provenance, allowlist входов, immutable-выходы и правила
 # компиляции. Источник всегда обозначается полным URL репозитория.
 manifest: execution-package-gigacode-cli
-package_version: "2.1"
-compiled_at: 2026-09-22
+package_version: "2.2"
+compiled_at: 2026-09-23
 source:
   repository: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
-  revision: 9bcaf87b42d8cb374f0b7bc82d45b96131a17b98
+  revision: 941f4664df15999bf10a2cd5a1e109269930c465
 adapter:
   name: gigacode-cli
   version: "1.0"
@@ -15,6 +15,7 @@ inputs:
     - projects/ba-ai-process/meta-model-guides/gigacode-cli/
     - projects/ba-ai-process/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md
     - research/ba-requirements/2026-09-10-gigacode-environment-facts.md
+    - research/mango/2026-05-22-classification.md
 outputs:
   hash_algorithm: sha256
   hashes:
@@ -34,7 +35,7 @@ outputs:
     .gigacode/skills/value-hypothesis-contact-center/SKILL.md: cdf57365d0b2dc462e7db3ee12a5670a8e438f3d16b12658ccbcd35fe4b5c9cc
     .gitignore: cf08bbd77af9fc55ec35e16f8b66c0f42cf6e8ce2771128378c3f3549e971804
     AGENTS.md: 8edabcc4e629f9da1f7272a4794782ef1c96b9d3bfc3e1b32762541807c1d389
-    README.md: 2a0c1a525f0491db78c4b3ab6bf692b1acccdc762264ee495bf6d4ed370dc18f
+    README.md: 3ffa4c5f1217d76603a0ad1182db94ed519b2ea03218a1e2dc52c8880116aff0
     contracts/c-core.schema.json: e139b312912b78fce6b064dfb4e960921991692cb5c8839ad25bdf30cc8f6c6c
     contracts/c-in.schema.json: c592bbba5dd023c7260b935c57621f37d0575d919c052e4ab54145d413b1387d
     contracts/c-out-bcreq.schema.json: 5d332110c90934c6e7cc1242732d9e0c78a7c77a9d58d966a7f56363c0268421
@@ -54,16 +55,18 @@ outputs:
     routes/run-sheet-template.yaml: 20f737d23fd0c82855a0c491bea990a2fbb3aa28628b804b038e54474b3fb6bc
     taxonomy/artifacts.yaml: 14894f3653144e8b6d66fd42333a501d9595e96de796023c949ee13993a1223e
     taxonomy/domain-glossary.yaml: 0049f460414d12de1c4154f96b734c18579adc982143c2cd64021795e24b5eaa
+    taxonomy/mango-products.yaml: 73ab6c1d482e07d833b713144b23468ea076369bc990d8bd7323733b3fd45708
     taxonomy/operations.yaml: c483fdac8b41c0bf9d7dd89e0d8a3761ebc492a911269cbd1f1bdcb26b4f8119
     taxonomy/processes.yaml: 9b7d50bf513c24b0b8ad67e507eb5cde846eeea654b11fcde4bf6578214d3e7e
     taxonomy/products.yaml: e02e912f7ade0a60c2c55a14204d86a110896fa74bc728cac4feb4c6a78d49f8
     taxonomy/projections.yaml: 99a40f365277c74f50163d203852f40f810b278e6d3c0927a8dbabd14952ef0b
     taxonomy/source-tiers.yaml: f342e972450404fa3689210b13ae0e5c606b660b9985c6828ce6039fcac11de9
+    taxonomy/telecom-products.yaml: dbc8532bc753e9bb40205e041960a0ce3fdabe1a0cd9faf6c62af60e5b49ec69
     templates/bcreq-skeleton.md: 3038aea123043f0af8408e259ebadcd76f156075d6ad073d288e27ee9f886b9c
     templates/checkpoint-skeleton.md: 40501099c65f386e8e1be27e415f68594d6d81a2efbfd6c0aed0d9c9dcdbbc98
     templates/core-skeleton.yaml: 2b4a7f28993437a3e3537f695dcbabe6d53ac39145d9230b627e802e92c054ec
     templates/quest-skeleton.md: 341293c4b196f9ad9558470758b3ce2db6884c067d75ed6f3c43b1469f315bc1
-    tools/validate-package.py: d3f1262017b4fb6edda110574a424306d6dc3dc28fd7df85e358e32f3555aa19
+    tools/validate-package.py: efd68f73dab3e14cbd8fba8d87de39d7bd42e0899b50cf0b3c504e596e0fb4d2
     tools/validate-package.sh: 3f35f38833b3275258f9ecfe7c6e64f0acc3c0de14173466a7811048ecdbedc5
 target_spoke: clean GigaCode CLI working directory
 slice: "A-IN → A-CORE → A-BCREQ, продуктовый класс contact-center, процессы P-01, P-02, P-03"
@@ -78,10 +81,14 @@ deployment:
 # 1. Скопировано физически: содержание перенесено в пакет дословно или с
 #    сокращением до применимого, без изменения смысла.
 copied:
-  - what: закрытые словари классов артефактов, процессов, операций и продуктов
+  - what: закрытые словари классов артефактов, процессов, операций и routing-профилей продуктов
     from: таксономии Source-репозитория https://github.com/G-Ivan-A/hybrid-Intelligence-lab
     to: [taxonomy/artifacts.yaml, taxonomy/processes.yaml, taxonomy/operations.yaml, taxonomy/products.yaml]
     note: перенесены все значения словарей; принадлежность срезу отмечена флагом in_slice, а не усечением словаря
+  - what: полный снимок 42 продуктовых capabilities MANGO и 42 отраслевых соответствия ИТ/телеком
+    from: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3a7306d66011186d42f5017b89a9cc051226fe32/research/mango/2026-05-22-classification.md
+    to: [taxonomy/mango-products.yaml, taxonomy/telecom-products.yaml]
+    note: byte-identical копии Source используются как данные будущего product routing; действующий contact-center route ими ещё не управляется
   - what: перечень слотов, классов формата, проекций и продуктовых профилей
     from: исследование микроструктуры артефактов требований
     to: [contracts/c-out-bcreq.schema.json, templates/bcreq-skeleton.md]

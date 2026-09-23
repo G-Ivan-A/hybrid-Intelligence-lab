@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-09-22
+version: 1.1
+updated: 2026-09-23
 temperature: 0.1
 scope: mango-only
 type: research
@@ -47,7 +47,10 @@ GigaCode»**: какая мета-модель описывает работу, 
   MVP-среза с метриками `M-1`…`M-5`. Вложенные
   [`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/00-introduction.md)
   и [`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/operation-taxonomy/00-introduction.md)
-  задают соответственно 33 навыка-подпроцесса и 31 атомарную операцию.
+  задают соответственно 33 навыка-подпроцесса и 31 атомарную операцию;
+  [`product-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-ai-process/ba-meta-model/product-taxonomy)
+  хранит версионированные снимки 42 продуктовых capabilities MANGO и их 42
+  отраслевых соответствий ИТ/телеком для компиляции в Distribution.
 - [`meta-model-guides/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/meta-model-guides/README.md)
   — инструкции человеку: подготовка чистой директории, локальной KB,
   Confluence MCP, запуск/возобновление task и изолированный debug.
@@ -72,6 +75,14 @@ RFC — в
 отладка фреймворка изолируется в `experiments/`, а проверяемые Distribution —
 в `dist/`. Архитектурная граница принята в
 [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md).
+
+Кандидаты эталонных форм BCREQ для API, ЛК и Контактного центра вместе с
+проверкой реализуемости описаны в
+[анализе issue #601](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-bcreq-golden-forms-and-feasibility.md).
+Предлагаемые изменения уровня абстракции, продуктовой маршрутизации и гейтов
+зафиксированы отдельно в
+[RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md);
+до human acceptance они не меняют runtime.
 
 ## Решение о GigaCode CLI
 

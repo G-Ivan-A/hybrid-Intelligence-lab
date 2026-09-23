@@ -152,10 +152,16 @@ L0  Индустриальный базис (TM Forum SID/eTOM, BABOK, IREB, UNS
          └─ L3  Feature → Atomic Function  (каталог значений — спица)
 ```
 
+Версионированные снимки каталога значений размещены рядом с процессной и
+операционной таксономиями: [каталог продуктов MANGO](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/product-taxonomy/mango-products.yaml)
+и [отраслевые соответствия ИТ/телеком](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/product-taxonomy/telecom-products.yaml).
+Они являются воспроизводимым входом компиляции Distribution с явным
+provenance, а не новым владельцем продуктовых значений.
+
 | Правило | Формулировка |
 | --- | --- |
 | `PT-1` | Продуктовый класс объявляется до начала шага (`MM-4`), а не выводится из текста артефакта. |
-| `PT-2` | Source владеет формой уровней, спица — каталогом значений (`T-5`). |
+| `PT-2` | Source владеет формой уровней; продуктовый источник владеет значениями, а Source хранит их версионированный снимок для воспроизводимой компиляции (`T-5`). |
 | `PT-3` | Требование связывается с уровнем `Feature` или `Atomic Function`; связь только с `Domain` считается неполной разметкой. |
 | `PT-4` | Продуктовый класс определяет **профиль заполнения** слотов документа, но не состав скелета (правило `R-3` [микро-модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/20-taxonomy.md)). |
 
