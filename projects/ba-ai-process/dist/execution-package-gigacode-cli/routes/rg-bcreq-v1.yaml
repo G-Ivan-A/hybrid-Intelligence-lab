@@ -1,11 +1,10 @@
-# Граф маршрута вертикального среза MVP: A-IN → A-CORE → A-BCREQ с ветвью
+# Граф маршрута: A-IN → подтверждение продуктовой привязки → A-CORE → A-BCREQ с ветвью
 # уточнения. Граф описывает ВСЕ допустимые пути; прогон — одна траектория по
 # нему (EP-R3). Изменение графа — новая версия процесса между прогонами;
 # пройденный лист прогона не правится никогда.
 route_graph_id: RG-BCREQ-v1
-version: "1.0"
+version: "2.0"
 processes: [P-01, P-02, P-03]     # значения закрытого словаря taxonomy/processes.yaml (EP-R1)
-product_class: contact-center     # объявлен до начала (PT-1/MM-4)
 interaction: single-pass
 input_artifact: A-IN
 input_contract: contracts/c-in.schema.json
@@ -15,6 +14,7 @@ output_contract: contracts/c-out-bcreq.schema.json
 # выдаётся (EP-R2). В этом графе такой узел один: n5 — отправка вопросов
 # Заказчику, действие необратимое и потому не ниже яруса G5.
 nodes:
+  - {node: n0, process: P-01, skill: SK-product-attribution, actor: agent, gates: [G-self, G-mach, G-human], output: A-IN, note: "бизнес-аналитик подтверждает полную цепочку Domain → Capability → Feature → Atomic Function; без status=confirmed переход к n1 запрещён"}
   - {node: n1, process: P-01, skill: SK-transcript-normalization, actor: agent, gates: [G-self, G-mach], output: normalized_text}
   - {node: n2, process: P-01, skill: SK-context-extraction, actor: agent, gates: [G-self, G-mach], output: marked_elements}
   - {node: n3, process: P-01, skill: SK-ambiguity-detection, actor: agent, gates: [G-self, G-mach], output: ambiguities}
@@ -31,8 +31,10 @@ nodes:
 # (EP-R5). Ребро «по усмотрению» запрещено: оно делает траекторию
 # невоспроизводимой.
 edges:
-  - {from: entry, to: n1, condition: "c_in.valid == true"}
+  - {from: entry, to: n0, condition: "c_in.valid == true"}
   - {from: entry, to: refuse, condition: "c_in.valid == false"}
+  - {from: n0, to: n1, condition: "product_attribution.status == 'confirmed' and product_binding.valid == true"}
+  - {from: n0, to: halt, condition: "product_attribution.status != 'confirmed' or product_binding.valid == false", note: "неподтверждённая или неразрешимая привязка не допускается к основным этапам генерации"}
   - {from: n1, to: n2, condition: gate_passed}
   - {from: n2, to: n3, condition: gate_passed}
   - {from: n3, to: n4, condition: gate_passed}

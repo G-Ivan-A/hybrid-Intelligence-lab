@@ -1,21 +1,29 @@
-# Закрытый словарь продуктов среза. Ось идентичности — предмет, о котором
-# требование. Форма уровней унаследована (Domain → Capability → Feature →
-# Atomic Function); каталог значений принадлежит споку и расширяется в споке.
-# Правило PT-1: продуктовый класс объявляется ДО начала шага и не выводится
-# из текста артефакта. Шаг, получивший вход без объявленного класса, отказывает.
+# Исполняемый контракт продуктовой маршрутизации. Значения цепочки не
+# дублируются здесь: единственный закрытый каталог всего портфеля MANGO —
+# taxonomy/mango-products.yaml. Профиль управляет заполненностью слотов, но не
+# сужает допустимый продуктовый домен.
 vocabulary: products
 closed: true
-version: "1.0"
+version: "2.0"
+scope: mango-portfolio
+catalog: taxonomy/mango-products.yaml
+industry_mapping: taxonomy/telecom-products.yaml
 levels:
-  - {id: Domain, name: Семейство, question: "В какой продуктовой или сервисной зоне находится требование?"}
-  - {id: Capability, name: Класс, question: "Какую способность должен иметь продукт или команда?"}
-  - {id: Feature, name: Подкласс, question: "Что именно пользователь или администратор включает, настраивает или использует?"}
-  - {id: Atomic Function, name: Функция, question: "Какую неделимую функцию, параметр или правило можно протестировать отдельно?"}
-binding_level: Atomic Function   # PT-3: связь только с Domain считается неполной разметкой
-classes:
-  - {id: contact-center, name: Контакт-центр, default_profile: P-SETTINGS, in_slice: true}
-  - {id: voice-ucaas, name: Телефония и UCaaS, default_profile: P-SETTINGS, in_slice: false}
-  - {id: analytics-reporting, name: Аналитика и отчётность, default_profile: P-NO-SETTINGS, in_slice: false}
+  - {id: Domain, field: domain, question: "К какому домену портфеля MANGO относится задача?"}
+  - {id: Capability, field: capability, question: "Какую продуктовую способность затрагивает задача?"}
+  - {id: Feature, field: feature, question: "Какой пользовательский или системный аспект способности затронут?"}
+  - {id: Atomic Function, field: atomic_function, question: "Какая неделимая функция проверяется отдельно?"}
+binding_level: Atomic Function
+attribution:
+  artifact: A-IN
+  node: n0
+  skill: SK-product-attribution
+  confirmation_gate: G-human
+  status_before_confirmation: pending
+  status_after_confirmation: confirmed
+  propagation_fields: [products, product_attribution]
+  digest: "sha256 канонического JSON массива products (sort_keys=true, separators=',:')"
+  reject_rule: "неразрешимая, неполная или неподтверждённая цепочка останавливает маршрут"
 # Профиль управляет заполненностью слотов документа, но не составом скелета
 # (правило PT-4/R-3): слот словаря присутствует всегда, различается значение
 # «заполнен» или «пуст с причиной».
@@ -26,6 +34,8 @@ profiles:
   - {id: P-API, meaning: "функция без интерфейса пользователя", effect: "S-UI пуст, S-INTEGRATION обязателен"}
 multi_product_rules:
   MP-1: одна задача — один документ, один скелет; число затронутых продуктов не влияет на состав и порядок слотов
-  MP-2: продукты задачи объявляются до генерации реестром в S-PROBLEM — идентификатор, продуктовый класс, atomic function, профиль, владелец
-  MP-3: слот заполнен, если он заполнен хотя бы для одного продукта задачи; причина пустоты объявляется для каждого продукта отдельно
-  MP-4: содержание слота, относящееся к конкретному продукту, помечается маркером продукта из реестра MP-2
+  MP-2: каждая запись содержит marker, полную цепочку domain/capability/feature/atomic_function, profile и owner
+  MP-3: бизнес-аналитик подтверждает весь реестр одним решением G-human до n1; агент не выводит подтверждение из текста
+  MP-4: подтверждённые products и product_attribution передаются без изменения в A-CORE, A-QUEST, A-BCREQ и C-RK
+  MP-5: слот заполнен, если он заполнен хотя бы для одного продукта; причина пустоты объявляется для каждого продукта отдельно
+  MP-6: содержание слота, относящееся к конкретному продукту, помечается marker из подтверждённого реестра

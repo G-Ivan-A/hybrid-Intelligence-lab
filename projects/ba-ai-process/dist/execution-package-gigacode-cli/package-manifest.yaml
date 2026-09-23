@@ -1,7 +1,7 @@
 # Манифест пакета: provenance, allowlist входов, immutable-выходы и правила
 # компиляции. Источник всегда обозначается полным URL репозитория.
 manifest: execution-package-gigacode-cli
-package_version: "2.2"
+package_version: "3.0"
 compiled_at: 2026-09-23
 source:
   repository: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
@@ -14,62 +14,64 @@ inputs:
     - projects/ba-ai-process/ba-meta-model/
     - projects/ba-ai-process/meta-model-guides/gigacode-cli/
     - projects/ba-ai-process/docs/rfc/2026-09-mango-ba-ai-runtime-cli-deployment.md
+    - projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md
     - research/ba-requirements/2026-09-10-gigacode-environment-facts.md
     - research/mango/2026-05-22-classification.md
 outputs:
   hash_algorithm: sha256
   hashes:
     .gigacode/settings.example.json: f9027133c3d5fae5695560b57558d15b37825d03dc01600ee76adf45c0d78e3d
-    .gigacode/skills/ambiguity-detection-contact-center/SKILL.md: 6448e3c81c052b5ae5780713efec53bc724375c059f4a18caa16fbe3cf512868
-    .gigacode/skills/answer-integration-contact-center/SKILL.md: 9d67aa0a0f717722b00bc26df7d73bfe522df15a026f09b13018ff3285aaae0a
-    .gigacode/skills/ba-debug-orchestrator/SKILL.md: 8826ac9e2195d855790f215888e7ac038d22a92a37b7e076fc4c3b44ff71de13
-    .gigacode/skills/bcreq-assembly-contact-center/SKILL.md: 297fc9688d85df98b6c5c837f300ad93b1df4bde34e233522e5b1d92a853278f
-    .gigacode/skills/bcreq-decomposition-contact-center/SKILL.md: 436225f04cea503dd6089a9e4345fcf1e1e2649fbc9a3776772474940683dbe9
-    .gigacode/skills/context-extraction-contact-center/SKILL.md: fc16aef2685280606ac8fabb20c3f7e28b033d2065df83ce9e1b435ae37863dc
-    .gigacode/skills/core-assembly-contact-center/SKILL.md: 2beced007d7ce10fa41dae6d207109dd3ca5e8353bb7478e5f60ebed69d6c3c0
-    .gigacode/skills/problem-statement-contact-center/SKILL.md: 7ccbc724789c94f9b79741c30155863cf71588b43548ec0e3df4f04e817e8700
-    .gigacode/skills/question-formation-contact-center/SKILL.md: d65e81fa49645edd4d142fa449ffacc5dea999998ccdec096ffb8082cfa50ec3
-    .gigacode/skills/question-prioritization-contact-center/SKILL.md: db9a3f63c16e5f4cd481e4b69d1c7f8afc98458ca249eb91b91b187f061432f9
-    .gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md: 65862c5b497ab4e81aef65756bc38efd11565de23cd5c74a4423faac8feca0e4
-    .gigacode/skills/transcript-normalization-contact-center/SKILL.md: 149daa6c2ccbab710f5ba352fc4dbf4203269453cdd3651337c7bc3e5016ce9b
-    .gigacode/skills/value-hypothesis-contact-center/SKILL.md: cdf57365d0b2dc462e7db3ee12a5670a8e438f3d16b12658ccbcd35fe4b5c9cc
+    .gigacode/skills/ambiguity-detection/SKILL.md: 08518712f381b29626f8bf4eda0cc43471dab7387f56e3acbaa67c5cdf7992c8
+    .gigacode/skills/answer-integration/SKILL.md: 80cd896812d791a5501224f92f5f99c2de96a6bd71e3f2208b394ad06d4d1a2c
+    .gigacode/skills/ba-debug-orchestrator/SKILL.md: 8a1fae1b10ef777c2dcce386426e6e9e02c1ec3e1821877d8349878e11728ab2
+    .gigacode/skills/bcreq-assembly/SKILL.md: e26236d1031f4ce441e2cba6157afe7cc8cb6a0899b4f5e836b3a4f4c42b0d42
+    .gigacode/skills/bcreq-decomposition/SKILL.md: 1101e2875f1f527d05f7b91fdd9665af08d9520cbb6b5b0688ab77bc2e10426a
+    .gigacode/skills/context-extraction/SKILL.md: a416c27933e5c0cd433237b970e01dae451d0354110a57dde68e263cc5b8424d
+    .gigacode/skills/core-assembly/SKILL.md: 70c93b76553f40e3fe88a89e68dfdb11fd669d228f27d4dd93d6a22fb3e468c6
+    .gigacode/skills/problem-statement/SKILL.md: 0663b1f8fe50aff0db5e5908839c52601581f6006f07d3dbfa0fc8b5930d2035
+    .gigacode/skills/product-attribution/SKILL.md: 95bc8bdafce439945860f1d1b22d99f424b39147ef163952348245f969d678f0
+    .gigacode/skills/question-formation/SKILL.md: 4088cc42082c28ad7119b66e65b89deb20a2c305b93cb8a675cebc88f653a121
+    .gigacode/skills/question-prioritization/SKILL.md: 7964c8518846d0f207b057d5a1f7f06559b019df6b8c7f3bddbe26172639c199
+    .gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md: 778b1f4ef8e4d40a2eb0a61b5a16eadaf0150e8ada005343bf9251a3bf995916
+    .gigacode/skills/transcript-normalization/SKILL.md: 55a0109ce3aa4f55746ae66b19d22117d86b65b45423de19e1a2d79eebaed29b
+    .gigacode/skills/value-hypothesis/SKILL.md: 4fe8241fd1952dbc3bdf3aebc3a3ac76d84c2c66d542c6af49b26ffdbe96174d
     .gitignore: cf08bbd77af9fc55ec35e16f8b66c0f42cf6e8ce2771128378c3f3549e971804
-    AGENTS.md: 8edabcc4e629f9da1f7272a4794782ef1c96b9d3bfc3e1b32762541807c1d389
-    README.md: 3ffa4c5f1217d76603a0ad1182db94ed519b2ea03218a1e2dc52c8880116aff0
-    contracts/c-core.schema.json: e139b312912b78fce6b064dfb4e960921991692cb5c8839ad25bdf30cc8f6c6c
-    contracts/c-in.schema.json: c592bbba5dd023c7260b935c57621f37d0575d919c052e4ab54145d413b1387d
-    contracts/c-out-bcreq.schema.json: 5d332110c90934c6e7cc1242732d9e0c78a7c77a9d58d966a7f56363c0268421
-    contracts/c-quest.schema.json: 8f009391c8ce698661ba6709078a0d2f10beb0e5b3326afed5ee2c89fd87445a
-    contracts/c-rk.schema.json: 1ac5763aa5baffc8c2ea21ce7083fcee04c13dc4071e35d442f984ddad1bc908
-    evaluation/g-human-checklist.md: 64cf172983d425460619bcba553bd799dd2efa0e100bae504f651f0123fe0aec
-    evaluation/g-mach-checklist.md: bdba588de435d9b94b4d483785b527e0dfd41145cec50ad554399b3d2cc554cf
+    AGENTS.md: 9549601743cc0053b64604f161738b9aa6f82a7f0d065e7d88c2ce68b5c4b2ab
+    README.md: d3c980ed237fe1373b9d87ed6c1ae2d43e061b272a69fb829da3ebdc091b2cb6
+    contracts/c-core.schema.json: 38b80d072e7e1b4a21e9cf3f1b230f51f51f632f227667f675018720d4e555dd
+    contracts/c-in.schema.json: d99011557afa6d1fff181c426d7aa4695fed366c491adc54cd289d5ae0d28f35
+    contracts/c-out-bcreq.schema.json: dc4969bfdd73954ae25e21f3097d90fc3455b0d0c85f326b905ca119be6f2732
+    contracts/c-quest.schema.json: 3c95ec4151e07521f318000aeade35d3da964d06eda9b4977a959bb5976a08df
+    contracts/c-rk.schema.json: b890d79c0f3059363e677a1cee819edde5388c012744dbb1475655f5fd5433f1
+    evaluation/g-human-checklist.md: 412c173437557ea2638c77453996fe3b823f6c782e4ed58010a9eda1ace5e131
+    evaluation/g-mach-checklist.md: e7b5a6abc724645e195cc2f12ee18ab646146bbc7de0c9ed128d35b707439457
     evaluation/metrics.yaml: f177798b7436665c9882d096c67fb762ccb69fe9112d88af3a467e7adce4bb6f
-    golden/cases.yaml: 837e17041ecac86fb4c20e035eed0fa18a68c1e726abce6bf34b1c3f34eb8b64
+    golden/cases.yaml: 4bdeafda49c96cf0e88222eac2e1cec497c61e8f6a602e52aeb56ce3ffa8cd3c
     golden/gs-cc-01-queue-overflow.md: 9a114a9fd081790fbd3e3cb3295198b5d0109099e0963747153660405930ea6e
     golden/gs-cc-02-report-export.md: 06cb03195d2cfc1bf768d58976136879e957d798fdd08061fa068f25417a3023
-    golden/gs-cc-neg-01-inbound-vs-outbound.md: 826c97fa6d5acfa500cc2a80821db2e6804e4f2d35f8957713fc3191ed12ee02
-    golden/gs-cc-neg-02-queue-vs-group.md: 631495807afae4a774b14aa2d834d3c0e286ac6000ffbfe812a004017497a916
-    golden/gs-cc-neg-03-sla-vs-aht.md: a87851685f7603397023ae26875c1d85a0cbb205373200cb5ca6b9d77e0c00b0
-    golden/gs-cc-neg-04-ivr-vs-announcer.md: 8ec94af05de49aee0af964273af82cc5ef4b47ce39fa6d4ea8338929c35d55a9
-    routes/rg-bcreq-v1.yaml: c343612bd59752d89baea0fd3c64935f43630d6f7b477ab61ed392287a4b228b
-    routes/run-sheet-template.yaml: 20f737d23fd0c82855a0c491bea990a2fbb3aa28628b804b038e54474b3fb6bc
+    golden/gs-cc-neg-01-inbound-vs-outbound.md: 66be214c4b4051c7cc861846a66baf98461674b61e692b412c64366dcc5a835a
+    golden/gs-cc-neg-02-queue-vs-group.md: 045fc8a7d7832703813f59057c64856b08ce2973ca67679260b166d1c62daed0
+    golden/gs-cc-neg-03-sla-vs-aht.md: 3b82fe06762f5ce111f8d2aa3b32fdc78af29edc0d37557625e7f0778b5c7ccb
+    golden/gs-cc-neg-04-ivr-vs-announcer.md: 18aa66844a2d42ab3fc4e30046c7db2e41ee2ef7c61c48c45e73f3f533da16e6
+    routes/rg-bcreq-v1.yaml: 0ece89ea284317c680e0526276c913f3e9d067b0928bfb94a5c0cebf7c1c6aa1
+    routes/run-sheet-template.yaml: 6c2b3321fe64c01cf1fe5b206961eb218df59aa2b2d2dfba508e836d08bcd9d4
     taxonomy/artifacts.yaml: 14894f3653144e8b6d66fd42333a501d9595e96de796023c949ee13993a1223e
     taxonomy/domain-glossary.yaml: 0049f460414d12de1c4154f96b734c18579adc982143c2cd64021795e24b5eaa
     taxonomy/mango-products.yaml: 73ab6c1d482e07d833b713144b23468ea076369bc990d8bd7323733b3fd45708
     taxonomy/operations.yaml: c483fdac8b41c0bf9d7dd89e0d8a3761ebc492a911269cbd1f1bdcb26b4f8119
     taxonomy/processes.yaml: 9b7d50bf513c24b0b8ad67e507eb5cde846eeea654b11fcde4bf6578214d3e7e
-    taxonomy/products.yaml: e02e912f7ade0a60c2c55a14204d86a110896fa74bc728cac4feb4c6a78d49f8
+    taxonomy/products.yaml: c95f470716b670c7dab51d8b23cef486c029d9173eb44937d5f9b250b5ea7e73
     taxonomy/projections.yaml: 99a40f365277c74f50163d203852f40f810b278e6d3c0927a8dbabd14952ef0b
     taxonomy/source-tiers.yaml: f342e972450404fa3689210b13ae0e5c606b660b9985c6828ce6039fcac11de9
     taxonomy/telecom-products.yaml: dbc8532bc753e9bb40205e041960a0ce3fdabe1a0cd9faf6c62af60e5b49ec69
-    templates/bcreq-skeleton.md: 3038aea123043f0af8408e259ebadcd76f156075d6ad073d288e27ee9f886b9c
-    templates/checkpoint-skeleton.md: 40501099c65f386e8e1be27e415f68594d6d81a2efbfd6c0aed0d9c9dcdbbc98
-    templates/core-skeleton.yaml: 2b4a7f28993437a3e3537f695dcbabe6d53ac39145d9230b627e802e92c054ec
-    templates/quest-skeleton.md: 341293c4b196f9ad9558470758b3ce2db6884c067d75ed6f3c43b1469f315bc1
-    tools/validate-package.py: efd68f73dab3e14cbd8fba8d87de39d7bd42e0899b50cf0b3c504e596e0fb4d2
-    tools/validate-package.sh: 3f35f38833b3275258f9ecfe7c6e64f0acc3c0de14173466a7811048ecdbedc5
+    templates/bcreq-skeleton.md: ad9b2a898c8429add6ab3f4590138b5e685028c8028a080aa2ee3abe7dccdbb6
+    templates/checkpoint-skeleton.md: 680a5ca51764d0d4e0ec005be5a16f234b80d75fdb3d33c28858ab7b4e7da90d
+    templates/core-skeleton.yaml: 9bae2213fb5d30c4b9d2a3030ffaf834c4faed889d60986e5d2896a60c9a29dc
+    templates/quest-skeleton.md: db2aceebcea205d333c0fefbfeab26d3a0a79164620eee3a27b4dfa50ecc717a
+    tools/validate-package.py: 922c6282a0457c58a9212102e523a0d090f7c46b10d52b910d48f9a7d4d10c74
+    tools/validate-package.sh: 884f51ca709a990877d1ef7fd97f066d4392b85eb537e5b4678758aa24f410eb
 target_spoke: clean GigaCode CLI working directory
-slice: "A-IN → A-CORE → A-BCREQ, продуктовый класс contact-center, процессы P-01, P-02, P-03"
+slice: "A-IN → подтверждённая продуктовая цепочка → A-CORE → A-BCREQ, весь портфель MANGO, процессы P-01, P-02, P-03"
 
 # Спутник может быть развёрнут без доступа к Source-репозиторию (например, в GitVerse).
 # Поэтому пакет содержит физические копии всего необходимого, а не ссылки.
@@ -88,7 +90,7 @@ copied:
   - what: полный снимок 42 продуктовых capabilities MANGO и 42 отраслевых соответствия ИТ/телеком
     from: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3a7306d66011186d42f5017b89a9cc051226fe32/research/mango/2026-05-22-classification.md
     to: [taxonomy/mango-products.yaml, taxonomy/telecom-products.yaml]
-    note: byte-identical копии Source используются как данные будущего product routing; действующий contact-center route ими ещё не управляется
+    note: byte-identical копии Source управляют динамической продуктовой маршрутизацией; n0 разрешает полную цепочку и требует подтверждение бизнес-аналитика
   - what: перечень слотов, классов формата, проекций и продуктовых профилей
     from: исследование микроструктуры артефактов требований
     to: [contracts/c-out-bcreq.schema.json, templates/bcreq-skeleton.md]
@@ -115,6 +117,9 @@ copied:
 # 2. Преобразовано: нормативный текст стал структурой, которую исполняет
 #    скрипт, а не читает человек.
 transformed:
+  - what: ранняя продуктовая атрибуция задачи и её перенос через граф
+    to: [.gigacode/skills/product-attribution/SKILL.md, routes/rg-bcreq-v1.yaml, contracts/*.schema.json, tools/validate-package.py]
+    form: обязательный G-human в n0, разрешение по полному MANGO-каталогу и неизменяемый binding digest downstream
   - what: контракты C-IN, C-CORE, C-OUT, C-CL, C-RK как текстовые описания
     to: contracts/*.schema.json
     form: JSON Schema, проверяемая валидатором

@@ -2,17 +2,38 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "contracts/c-in.schema.json",
   "title": "C-IN — контракт входа маршрута",
-  "description": "Вход маршрута считается принятым, только если объявлены продукт, задача и источник. Правило PT-1: продуктовый класс объявляется до начала шага и не выводится из текста. Правило MM-1: артефакт без класса не существует. Непринятый вход останавливает маршрут (GT-2, fail-closed), а не помечается предупреждением.",
+  "description": "A-IN может войти в product routing preflight со статусом pending. К основным узлам маршрут допускает вход только после явного подтверждения бизнес-аналитиком полной цепочки MANGO Domain → Capability → Feature → Atomic Function. Неподтверждённая или неразрешимая привязка останавливает маршрут fail-closed.",
   "type": "object",
   "required": [
     "artifact_class",
     "state",
     "task",
     "products",
+    "product_attribution",
     "sources",
     "language"
   ],
   "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "product_attribution": {
+            "properties": {"status": {"const": "confirmed"}},
+            "required": ["status"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "products": {"minItems": 1},
+          "product_attribution": {
+            "required": ["status", "confirmed_by", "confirmed_at", "decision_ref", "binding_digest"]
+          }
+        }
+      }
+    }
+  ],
   "properties": {
     "artifact_class": {
       "const": "A-IN"
@@ -45,13 +66,15 @@
     },
     "products": {
       "type": "array",
-      "minItems": 1,
-      "description": "Реестр продуктов задачи по правилу MP-2, объявляется до генерации.",
+      "description": "Кандидатный либо подтверждённый реестр цепочек из taxonomy/mango-products.yaml. Пустой массив допустим только до product routing preflight.",
+      "uniqueItems": true,
       "items": {
         "type": "object",
         "required": [
           "marker",
-          "product_class",
+          "domain",
+          "capability",
+          "feature",
           "atomic_function",
           "profile",
           "owner"
@@ -62,16 +85,21 @@
             "type": "string",
             "pattern": "^[A-ZА-Я]$"
           },
-          "product_class": {
-            "enum": [
-              "contact-center",
-              "voice-ucaas",
-              "analytics-reporting"
-            ]
+          "domain": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "capability": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "feature": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
           },
           "atomic_function": {
             "type": "string",
-            "minLength": 1
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
           },
           "profile": {
             "enum": [
@@ -85,6 +113,37 @@
             "type": "string",
             "minLength": 1
           }
+        }
+      }
+    },
+    "product_attribution": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": ["pending", "confirmed", "rejected"]
+        },
+        "proposed_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confirmed_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confirmed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "binding_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "description": "SHA-256 канонического JSON массива products; downstream-артефакты обязаны переносить значение без изменения."
         }
       }
     },

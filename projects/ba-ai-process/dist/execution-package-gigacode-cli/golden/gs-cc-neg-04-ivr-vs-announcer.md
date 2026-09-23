@@ -38,7 +38,7 @@ temperature: 0.1
 
 ## Ожидаемый отказ
 
-- узел `context-extraction-contact-center` отказывает: сценарий описан
+- узел `context-extraction` отказывает: сценарий описан
   признаками двух разных понятий словаря одновременно;
 - лист прогона фиксирует `verdict: refused` и `outcome: refused`;
 - `A-BCREQ` не формируется.

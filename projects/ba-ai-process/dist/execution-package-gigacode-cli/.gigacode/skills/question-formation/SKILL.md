@@ -1,10 +1,9 @@
 ---
-name: question-formation-contact-center
+name: question-formation
 description: >-
   Используй, когда ядро требований помечено needs-clarification и нужно
   превратить неразрешённые неоднозначности в перечень вопросов Заказчику, по
   одному вопросу на неоднозначность.
-product_class: contact-center
 packs: P-02/SK-question-formation
 interaction: single-pass
 inputs: [A-CORE]
@@ -28,6 +27,8 @@ temperature: 0.1
 вопросов, каждый из которых снимается одним фактом.
 
 ## Предусловия
+
+0. `products` и подтверждённый `product_attribution` переносятся из `A-CORE` в `A-QUEST` без изменения.
 
 1. Ядро содержит непустой перечень неоднозначностей с видом и значимостью.
 2. У каждой неоднозначности есть идентификатор `AMB-NN`.

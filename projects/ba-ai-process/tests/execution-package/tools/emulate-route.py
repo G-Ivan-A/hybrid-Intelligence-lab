@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+import hashlib
+import json
 from pathlib import Path
 import re
 
@@ -28,6 +30,11 @@ def _skill_index(package: Path) -> dict[str, Path]:
     return result
 
 
+def _binding_digest(products: list[dict]) -> str:
+    canonical = json.dumps(products, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return "sha256:" + hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
 def emulate(package: Path, fixture_path: Path, output_root: Path) -> dict:
     fixture = yaml.safe_load(fixture_path.read_text(encoding="utf-8"))
     graph = yaml.safe_load((package / "routes/rg-bcreq-v1.yaml").read_text(encoding="utf-8"))
@@ -40,6 +47,8 @@ def emulate(package: Path, fixture_path: Path, output_root: Path) -> dict:
     edges = {(edge["from"], edge["to"]): edge for edge in graph["edges"]}
     skills = _skill_index(package)
     approved = set(fixture.get("human_approvals", []))
+    products = fixture["products"]
+    product_attribution = {"status": "pending"}
     pause_at = fixture.get("pause_at")
     task_root = output_root / task_id
     (task_root / "runs").mkdir(parents=True)
@@ -154,6 +163,12 @@ def emulate(package: Path, fixture_path: Path, output_root: Path) -> dict:
                         "at": now,
                     }
                 )
+                if target == "n0":
+                    product_attribution = {
+                        "status": "confirmed",
+                        **fixture["product_confirmation"],
+                        "binding_digest": _binding_digest(products),
+                    }
         current = target
 
     if current == "exit":
@@ -183,6 +198,8 @@ def emulate(package: Path, fixture_path: Path, output_root: Path) -> dict:
         "route_id": graph["route_graph_id"],
         "active_run_id": run_id,
         "status": outcome,
+        "products": products,
+        "product_attribution": product_attribution,
     }
     run = {
         "run_id": run_id,
@@ -190,6 +207,8 @@ def emulate(package: Path, fixture_path: Path, output_root: Path) -> dict:
         "task_id": task_id,
         "started_at": now,
         "outcome": outcome,
+        "products": products,
+        "product_attribution": product_attribution,
         "events": events,
         "handover": {
             "objective": fixture["name"],
