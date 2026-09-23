@@ -899,6 +899,8 @@ required_directories=(
   "projects/ba-ai-process/build"
   "projects/ba-ai-process/build/compiler"
   "projects/ba-ai-process/decisions"
+  "projects/ba-ai-process/docs"
+  "projects/ba-ai-process/docs/analysis"
   "projects/ba-ai-process/docs/rfc"
   "projects/ba-ai-process/experiments"
   "projects/ba-ai-process/meta-model-guides"
