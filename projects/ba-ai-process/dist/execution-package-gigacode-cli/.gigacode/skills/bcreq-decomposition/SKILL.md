@@ -1,9 +1,8 @@
 ---
-name: bcreq-decomposition-contact-center
+name: bcreq-decomposition
 description: >-
   Используй, когда гипотеза ценности готова и нужно разложить её на атомарные
   бизнес-требования верхнего уровня, каждое из которых проверяемо отдельно.
-product_class: contact-center
 packs: P-03/SK-bcreq-decomposition
 interaction: single-pass
 inputs: [A-CORE, A-BCREQ]
@@ -27,6 +26,8 @@ temperature: 0.1
 верхнего уровня, размещённых по слотам документа.
 
 ## Предусловия
+
+0. `products` и `product_attribution` подтверждены в `n0` и переносятся в выход без изменения; декомпозиция следует профилю каждой подтверждённой функции.
 
 1. Слоты `S-PROBLEM` и `S-SOLUTION` заполнены.
 2. Утверждения ядра несут признак атомарности и назначенный слот.

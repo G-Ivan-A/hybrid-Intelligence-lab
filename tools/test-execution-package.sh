@@ -3,7 +3,7 @@ set -euo pipefail
 export PYTHONDONTWRITEBYTECODE=1
 
 # Regression tests for the GigaCode CLI execution package gate (issues #580,
-# #593, and #599).
+# #593, #599, and #603).
 #
 # The package validator IS the machine gate G-mach, so a validator that only
 # ever passes is indistinguishable from no gate at all (metric M-2). Every case
@@ -111,14 +111,14 @@ expect_pass "$ROOT_DIR/$PACKAGE" "intact package"
 
 # Case 2: a route node pointing at a skill that was never compiled.
 target="$(fixture missing-skill)"
-rm -rf "$target/.gigacode/skills/core-assembly-contact-center"
+rm -rf "$target/.gigacode/skills/core-assembly"
 expect_reject "$target" "missing skill" "SK-core-assembly"
 
 # Case 3: a SKILL.md that lost a mandatory section.
 target="$(fixture missing-section)"
 python3 - "$target" <<'PY'
 import sys, pathlib
-path = pathlib.Path(sys.argv[1], ".gigacode/skills/ambiguity-detection-contact-center/SKILL.md")
+path = pathlib.Path(sys.argv[1], ".gigacode/skills/ambiguity-detection/SKILL.md")
 path.write_text(path.read_text(encoding="utf-8").replace("\n## Отказ\n", "\n## Прочее\n"), encoding="utf-8")
 PY
 expect_reject "$target" "missing skill section" "## Отказ"
@@ -258,8 +258,86 @@ path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encod
 PY
 expect_reject "$target" "missing industry mapping" "нет отраслевого соответствия"
 
+# Case 22: the product-attribution Human Gate must remain the first work node.
+target="$(fixture bypass-product-gate)"
+python3 - "$target" <<'PY'
+import sys, pathlib
+path = pathlib.Path(sys.argv[1], "routes/rg-bcreq-v1.yaml")
+path.write_text(path.read_text(encoding="utf-8").replace("from: entry, to: n0", "from: entry, to: n1", 1), encoding="utf-8")
+PY
+expect_reject "$target" "bypassed product gate" "n0 обязан быть единственным"
+
+# Case 23: no runtime skill may restore a static domain binding.
+target="$(fixture static-product-class)"
+python3 - "$target" <<'PY'
+import sys, pathlib
+path = pathlib.Path(sys.argv[1], ".gigacode/skills/context-extraction/SKILL.md")
+path.write_text(path.read_text(encoding="utf-8").replace("packs:", "product_class: contact-center\npacks:", 1), encoding="utf-8")
+PY
+expect_reject "$target" "static skill product class" "статическая product_class запрещена"
+
+# Case 24: downstream contracts must preserve the confirmed context.
+target="$(fixture dropped-product-context)"
+python3 - "$target" <<'PY'
+import json
+import pathlib
+import sys
+path = pathlib.Path(sys.argv[1], "contracts/c-quest.schema.json")
+data = json.loads(path.read_text(encoding="utf-8"))
+data["required"].remove("product_attribution")
+path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+PY
+expect_reject "$target" "dropped downstream product context" "привязка не является обязательной"
+
+# Case 25: the optional A-IN gate resolves values dynamically from the MANGO taxonomy.
+python3 - "$ROOT_DIR/$PACKAGE" "$WORKDIR/confirmed-a-in.yaml" <<'PY'
+import hashlib
+import json
+import pathlib
+import sys
+products = [{
+    "marker": "A",
+    "domain": "platform",
+    "capability": "platform-integration",
+    "feature": "crm-connectors",
+    "atomic_function": "crm-bidirectional-sync",
+    "profile": "P-API",
+    "owner": "platform-owner",
+}]
+digest = "sha256:" + hashlib.sha256(
+    json.dumps(products, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+).hexdigest()
+document = {
+    "products": products,
+    "product_attribution": {
+        "status": "confirmed",
+        "confirmed_by": "analyst@example.test",
+        "confirmed_at": "2026-09-23T12:00:00Z",
+        "decision_ref": "evidence/checkpoint-n0.md",
+        "binding_digest": digest,
+    },
+}
+pathlib.Path(sys.argv[2]).write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+PY
+if ! python3 "$ROOT_DIR/$VALIDATOR" "$ROOT_DIR/$PACKAGE" --input "$WORKDIR/confirmed-a-in.yaml" >/dev/null 2>&1; then
+  fail "confirmed non-contact-center A-IN: gate rejected a valid taxonomy path"
+fi
+python3 - "$WORKDIR/confirmed-a-in.yaml" <<'PY'
+import json
+import pathlib
+import sys
+path = pathlib.Path(sys.argv[1])
+data = json.loads(path.read_text(encoding="utf-8"))
+data["products"][0]["capability"] = "not-in-platform"
+path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+PY
+if output="$(python3 "$ROOT_DIR/$VALIDATOR" "$ROOT_DIR/$PACKAGE" --input "$WORKDIR/confirmed-a-in.yaml" 2>&1)"; then
+  fail "invalid product chain: gate accepted a capability outside its domain"
+fi
+[[ "$output" == *"не принадлежит domain"* ]] || fail "invalid product chain: wrong rejection: $output"
+
 # The project-level emulator exercises route traversal and human-gate pauses
 # without invoking an LLM or writing into the committed package.
 python3 "$PROJECT_TESTS/tests/test_emulation.py"
 
-printf 'Execution package tests passed (21 package cases + route emulation).\n'
+printf 'Execution package tests passed (25 package cases + route emulation).\n'

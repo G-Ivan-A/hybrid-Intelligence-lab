@@ -4,13 +4,45 @@
   "title": "C-RK — контракт маршрута и его прослеживаемости",
   "description": "Схема листа прогона (run sheet): проекции графа маршрута на конкретное исполнение. Журнал событий append-only: запись о пройденном узле не редактируется, исправление добавляется новой записью. Лист прогона заменяет свободный файл памяти проекта — состояние прогона обязано быть машиночитаемым.",
   "type": "object",
-  "required": ["run_id", "route_id", "task_id", "started_at", "events", "handover"],
+  "required": ["run_id", "route_id", "task_id", "started_at", "products", "product_attribution", "events", "handover"],
   "additionalProperties": false,
   "properties": {
     "run_id": {"type": "string", "pattern": "^RUN-[0-9]{4}$"},
     "route_id": {"type": "string", "minLength": 1},
     "task_id": {"type": "string", "pattern": "^TASK-[0-9]{4}$"},
     "started_at": {"type": "string", "minLength": 1},
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["marker", "domain", "capability", "feature", "atomic_function", "profile", "owner"],
+        "additionalProperties": false,
+        "properties": {
+          "marker": {"type": "string", "pattern": "^[A-ZА-Я]$"},
+          "domain": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "capability": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "feature": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "atomic_function": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "profile": {"enum": ["P-SETTINGS", "P-NO-SETTINGS", "P-DEVICE", "P-API"]},
+          "owner": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "product_attribution": {
+      "type": "object",
+      "required": ["status", "confirmed_by", "confirmed_at", "decision_ref", "binding_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {"const": "confirmed"},
+        "proposed_by": {"type": "string", "minLength": 1},
+        "confirmed_by": {"type": "string", "minLength": 1},
+        "confirmed_at": {"type": "string", "format": "date-time"},
+        "decision_ref": {"type": "string", "minLength": 1},
+        "binding_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      }
+    },
     "finished_at": {"type": "string"},
     "outcome": {"enum": ["completed", "refused", "escalated", "awaiting-human", "in-progress"]},
     "handover": {

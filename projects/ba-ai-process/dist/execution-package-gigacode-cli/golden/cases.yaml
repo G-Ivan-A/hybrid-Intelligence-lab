@@ -55,7 +55,7 @@ cases:
     expect:
       outcome: refused
       refusing_node: n2
-      refusing_skill: context-extraction-contact-center
+      refusing_skill: context-extraction
       reason: "термин входа близок к двум значениям словаря, источник не позволяет выбрать одно"
       artifact_produced: false
       # Если прогон всё же дошёл до документа, допустимое прохождение —
@@ -73,7 +73,7 @@ cases:
     expect:
       outcome: refused
       refusing_node: n2
-      refusing_skill: context-extraction-contact-center
+      refusing_skill: context-extraction
       reason: "предмет лимита близок к двум значениям словаря, источник не позволяет выбрать один"
       artifact_produced: false
       fallback_requirement:
@@ -89,7 +89,7 @@ cases:
     expect:
       outcome: refused
       refusing_node: n2
-      refusing_skill: context-extraction-contact-center
+      refusing_skill: context-extraction
       reason: "измеряемая величина близка к двум значениям словаря, единица измерения различить их не позволяет"
       artifact_produced: false
       fallback_requirement:
@@ -106,7 +106,7 @@ cases:
     expect:
       outcome: refused
       refusing_node: n2
-      refusing_skill: context-extraction-contact-center
+      refusing_skill: context-extraction
       reason: "сценарий описан признаками двух разных понятий словаря одновременно"
       artifact_produced: false
       fallback_requirement:

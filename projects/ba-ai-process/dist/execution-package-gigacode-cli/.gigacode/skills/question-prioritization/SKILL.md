@@ -1,10 +1,9 @@
 ---
-name: question-prioritization-contact-center
+name: question-prioritization
 description: >-
   Используй, когда перечень вопросов Заказчику сформирован и нужно упорядочить
   его по объявленной шкале, чтобы на одно обращение к человеку приходились
   вопросы, снимающие наибольшую часть блокировки.
-product_class: contact-center
 packs: P-02/SK-question-prioritization
 interaction: single-pass
 inputs: [A-QUEST]
@@ -28,6 +27,8 @@ temperature: 0.1
 обоснованием порядка у каждого вопроса.
 
 ## Предусловия
+
+0. `products` и подтверждённый `product_attribution` сохраняются без изменения при переупорядочивании вопросов.
 
 1. Перечень вопросов непуст и проходит `contracts/c-quest.schema.json`.
 2. У каждого вопроса известна значимость его неоднозначности в ядре.

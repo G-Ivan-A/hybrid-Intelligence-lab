@@ -12,6 +12,12 @@ temperature: 0.1
 - Причина остановки: `<reason>`
 - Требуемое решение: `<decision>`
 
+## Продуктовый контекст
+
+- Цепочки: `<Domain → Capability → Feature → Atomic Function>`
+- Статус: `<pending | confirmed | rejected>`
+- Digest: `<sha256:...>`
+
 ## Материал для проверки
 
 <читаемый фрагмент результата или вопрос>

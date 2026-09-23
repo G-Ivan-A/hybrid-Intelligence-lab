@@ -6,10 +6,18 @@ state: draft                  # draft | validated | needs-clarification
 task_id: TASK-0000
 products:
   - marker: А
-    product_class: contact-center
-    atomic_function: "<функция>"
-    profile: P-SETTINGS
+    domain: "<domain из taxonomy/mango-products.yaml>"
+    capability: "<capability той же ветви>"
+    feature: "<feature той же capability>"
+    atomic_function: "<atomic function той же capability>"
+    profile: "<профиль из taxonomy/products.yaml>"
     owner: "<роль>"
+product_attribution:
+  status: confirmed
+  confirmed_by: "<бизнес-аналитик>"
+  confirmed_at: "<ISO-8601>"
+  decision_ref: "<ссылка на решение G-human в n0>"
+  binding_digest: "sha256:<64 hex символа>"
 entities:
   - {id: ENT-01, name: "<сущность>", glossary_term: "<термин словаря или пусто>", source_ref: {source_id: SRC-01, locator: "<локатор>", quote: "<дословная цитата>"}}
 actors:

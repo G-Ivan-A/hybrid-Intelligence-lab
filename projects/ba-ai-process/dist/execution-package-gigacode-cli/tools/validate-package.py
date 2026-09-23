@@ -9,7 +9,7 @@
 Запуск из корня пакета либо из корня Source
 https://github.com/G-Ivan-A/hybrid-Intelligence-lab:
 
-    python3 tools/validate-package.py [путь-к-пакету]
+    python3 tools/validate-package.py [путь-к-пакету] [--input путь-к-A-IN.yaml]
 
 Зависимость: PyYAML. Пакет разворачивается копированием в спутник, поэтому
 зависимость объявлена здесь, а не подразумевается: `pip install pyyaml`.
@@ -381,6 +381,131 @@ def check_product_taxonomies(mango: dict, telecom: dict) -> None:
             fail(f"taxonomy/telecom-products.yaml: framework {framework_id} не содержит абсолютный HTTPS URL")
 
 
+def canonical_product_digest(products: list[dict]) -> str:
+    """Возвращает переносимый digest подтверждённого продуктового реестра."""
+    payload = json.dumps(products, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return "sha256:" + hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def product_binding_errors(document: dict, mango: dict, routing: dict) -> list[str]:
+    """Проверяет подтверждённую привязку без фиксированного перечня доменов."""
+    errors: list[str] = []
+    products = document.get("products") or []
+    attribution = document.get("product_attribution") or {}
+    if attribution.get("status") != "confirmed":
+        errors.append("product_attribution.status обязан быть confirmed")
+    for field in ("confirmed_by", "confirmed_at", "decision_ref", "binding_digest"):
+        if not attribution.get(field):
+            errors.append(f"product_attribution.{field} обязателен после G-human")
+    if not products:
+        errors.append("подтверждённый реестр products не может быть пустым")
+
+    profiles = {item.get("id") for item in routing.get("profiles") or []}
+    domains = {item.get("id"): item for item in mango.get("domains") or []}
+    markers: set[str] = set()
+    required = {"marker", "domain", "capability", "feature", "atomic_function", "profile", "owner"}
+    for number, product in enumerate(products, start=1):
+        missing = required - set(product)
+        if missing:
+            errors.append(f"products[{number}]: неполная цепочка, отсутствуют {sorted(missing)}")
+            continue
+        marker = product.get("marker")
+        if marker in markers:
+            errors.append(f"products[{number}]: marker {marker!r} повторяется")
+        markers.add(marker)
+        if product.get("profile") not in profiles:
+            errors.append(f"products[{number}]: неизвестный profile {product.get('profile')!r}")
+
+        domain = domains.get(product.get("domain"))
+        if domain is None:
+            errors.append(f"products[{number}]: domain {product.get('domain')!r} отсутствует в MANGO taxonomy")
+            continue
+        capabilities = {item.get("id"): item for item in domain.get("capabilities") or []}
+        capability = capabilities.get(product.get("capability"))
+        if capability is None:
+            errors.append(
+                f"products[{number}]: capability {product.get('capability')!r} не принадлежит domain {product.get('domain')!r}"
+            )
+            continue
+        if product.get("feature") not in (capability.get("features") or []):
+            errors.append(
+                f"products[{number}]: feature {product.get('feature')!r} не принадлежит capability {product.get('capability')!r}"
+            )
+        atomic = {item.get("id") for item in capability.get("atomic_functions") or []}
+        if product.get("atomic_function") not in atomic:
+            errors.append(
+                f"products[{number}]: atomic_function {product.get('atomic_function')!r} не принадлежит capability {product.get('capability')!r}"
+            )
+
+    digest = attribution.get("binding_digest")
+    if products and digest and digest != canonical_product_digest(products):
+        errors.append("product_attribution.binding_digest не совпадает с каноническим products")
+    return errors
+
+
+def check_product_routing(root: str, taxonomies: dict, skills: dict, graph: dict) -> None:
+    """Связывает ранний Human Gate, полный MANGO-каталог и downstream-контракты."""
+    routing = taxonomies.get("products") or {}
+    attribution = routing.get("attribution") or {}
+    if routing.get("scope") != "mango-portfolio":
+        fail("taxonomy/products.yaml: scope обязан однозначно означать весь портфель MANGO")
+    if routing.get("catalog") != "taxonomy/mango-products.yaml":
+        fail("taxonomy/products.yaml: каталог маршрутизации обязан ссылаться на полный MANGO snapshot")
+    if routing.get("classes"):
+        fail("taxonomy/products.yaml: статический перечень product classes запрещён")
+    if attribution.get("node") != "n0" or attribution.get("confirmation_gate") != "G-human":
+        fail("taxonomy/products.yaml: продуктовая атрибуция обязана подтверждаться G-human в n0")
+    if set(attribution.get("propagation_fields") or []) != {"products", "product_attribution"}:
+        fail("taxonomy/products.yaml: propagation_fields обязаны включать products и product_attribution")
+
+    entry_targets = [
+        edge.get("to")
+        for edge in graph.get("edges") or []
+        if edge.get("from") == "entry" and edge.get("to") != "refuse"
+    ]
+    if entry_targets != ["n0"]:
+        fail("routes/rg-bcreq-v1.yaml: n0 обязан быть единственным рабочим переходом из entry")
+    n0 = next((node for node in graph.get("nodes") or [] if node.get("node") == "n0"), {})
+    if n0.get("skill") != "SK-product-attribution" or "G-human" not in (n0.get("gates") or []):
+        fail("routes/rg-bcreq-v1.yaml: n0 обязан исполнять SK-product-attribution с G-human")
+
+    for name, fields in skills.items():
+        if fields.get("product_class"):
+            fail(f".gigacode/skills/{name}/SKILL.md: статическая product_class запрещена")
+
+    expected_fields = {"marker", "domain", "capability", "feature", "atomic_function", "profile", "owner"}
+    for schema_name in ("c-in", "c-core", "c-quest", "c-out-bcreq", "c-rk"):
+        schema = load_json(root, f"contracts/{schema_name}.schema.json") or {}
+        required = set(schema.get("required") or [])
+        if not {"products", "product_attribution"}.issubset(required):
+            fail(f"contracts/{schema_name}.schema.json: подтверждённая привязка не является обязательной")
+        if schema_name == "c-core":
+            product_schema = (schema.get("definitions") or {}).get("product") or {}
+        else:
+            product_schema = (((schema.get("properties") or {}).get("products") or {}).get("items") or {})
+            if "$ref" in product_schema:
+                ref_name = product_schema["$ref"].rsplit("/", 1)[-1]
+                product_schema = (schema.get("definitions") or {}).get(ref_name) or {}
+        if not expected_fields.issubset(set(product_schema.get("required") or [])):
+            fail(f"contracts/{schema_name}.schema.json: полная продуктовая цепочка не обязательна")
+
+
+def load_input_document(path: str):
+    if not os.path.isfile(path):
+        fail(f"A-IN отсутствует: {path}")
+        return {}
+    with open(path, encoding="utf-8") as handle:
+        try:
+            data = yaml.safe_load(handle)
+        except yaml.YAMLError as error:
+            fail(f"A-IN не разбирается как YAML/JSON: {error}")
+            return {}
+    if not isinstance(data, dict):
+        fail("A-IN обязан быть объектом")
+        return {}
+    return data
+
+
 def check_skills(root: str) -> dict[str, dict]:
     skills_dir = os.path.join(root, ".gigacode", "skills")
     compiled: dict[str, dict] = {}
@@ -724,7 +849,19 @@ def check_runtime_independence(root: str) -> None:
 
 
 def main() -> int:
-    root = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    arguments = list(sys.argv[1:])
+    input_path = None
+    if "--input" in arguments:
+        position = arguments.index("--input")
+        if position + 1 >= len(arguments):
+            sys.stderr.write("ERROR: --input требует путь к A-IN.yaml\n")
+            return 2
+        input_path = os.path.abspath(arguments[position + 1])
+        del arguments[position : position + 2]
+    if len(arguments) > 1:
+        sys.stderr.write("ERROR: использование: validate-package.py [пакет] [--input A-IN.yaml]\n")
+        return 2
+    root = arguments[0] if arguments else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     root = os.path.abspath(root)
     if not os.path.isdir(os.path.join(root, "taxonomy")):
         sys.stderr.write(f"ERROR: каталог не похож на пакет исполнения: {root}\n")
@@ -736,6 +873,7 @@ def main() -> int:
     taxonomies = check_taxonomies(root)
     skills = check_skills(root)
     graph = check_route(root, taxonomies.get("processes") or {}, skills)
+    check_product_routing(root, taxonomies, skills, graph)
     check_run_contract(root)
     check_golden(root, graph, skills, taxonomies.get("domain-glossary") or {})
     check_source_tiers(root, taxonomies.get("source-tiers") or {})
@@ -747,6 +885,15 @@ def main() -> int:
     )
     check_metrics(root)
     check_runtime_independence(root)
+
+    if input_path:
+        document = load_input_document(input_path)
+        for message in product_binding_errors(
+            document,
+            taxonomies.get("mango-products") or {},
+            taxonomies.get("products") or {},
+        ):
+            fail(f"{input_path}: {message}")
 
     for schema in ("c-in", "c-core", "c-quest", "c-out-bcreq", "c-rk"):
         load_json(root, f"contracts/{schema}.schema.json")

@@ -1,10 +1,9 @@
 ---
-name: bcreq-assembly-contact-center
+name: bcreq-assembly
 description: >-
   Используй, когда бизнес-требования разложены по слотам и нужно собрать
   итоговый документ A-BCREQ по закрытому скелету, с прослеживаемостью и
   объявленной причиной у каждого пустого слота.
-product_class: contact-center
 packs: P-03/SK-bcreq-assembly
 interaction: single-pass
 inputs: [A-CORE, A-BCREQ]
@@ -28,6 +27,8 @@ temperature: 0.1
 `templates/bcreq-skeleton.md`, проходящий `contracts/c-out-bcreq.schema.json`.
 
 ## Предусловия
+
+0. `products` и подтверждённый `product_attribution` совпадают во всех входах и переносятся в итоговый `A-BCREQ` без изменения.
 
 1. Все слоты содержания получены предыдущими навыками маршрута.
 2. Объявлен класс формата: `F-SHORT`, `F-APPROVAL`, `F-CLASSIC` или

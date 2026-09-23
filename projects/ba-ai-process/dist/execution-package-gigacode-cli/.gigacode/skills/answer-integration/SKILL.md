@@ -1,10 +1,9 @@
 ---
-name: answer-integration-contact-center
+name: answer-integration
 description: >-
   Используй, когда получены ответы Заказчика на вопросы уточнения и нужно
   внести их в ядро требований со ссылкой на ответ, вернув ядро в рабочее
   состояние.
-product_class: contact-center
 packs: P-02/SK-answer-integration
 interaction: single-pass
 inputs: [A-QUEST, A-CORE]
@@ -29,6 +28,8 @@ temperature: 0.1
 элементами, каждый со ссылкой на конкретный ответ.
 
 ## Предусловия
+
+0. `products` и `product_attribution` во входных артефактах совпадают и подтверждены; навык переносит их в выход без изменения.
 
 1. Ответы получены и привязаны к идентификаторам вопросов `Q-NN`.
 2. Ядро содержит неоднозначности, к которым относились вопросы.

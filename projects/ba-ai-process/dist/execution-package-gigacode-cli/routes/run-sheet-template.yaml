@@ -7,16 +7,24 @@ task_id: TASK-0000
 started_at: "<ISO-8601>"
 finished_at: ""
 outcome: in-progress          # completed | refused | escalated | awaiting-human | in-progress
+products:
+  - {marker: А, domain: "<domain>", capability: "<capability>", feature: "<feature>", atomic_function: "<atomic_function>", profile: P-SETTINGS, owner: "<роль>"}
+product_attribution:
+  status: confirmed
+  confirmed_by: "<бизнес-аналитик>"
+  confirmed_at: "<ISO-8601>"
+  decision_ref: "evidence/checkpoint-n0.md"
+  binding_digest: "sha256:<64 hex символа>"
 events:
   - seq: 1
     event_type: skill-invocation
-    node: n1
-    skill: SK-transcript-normalization
+    node: n0
+    skill: SK-product-attribution
     actor: agent
     gate: G-mach
     verdict: pass             # pass | reject | refused | skipped
     attempt: 1
-    decision: "entry → n1 по предикату c_in.valid == true"
+    decision: "entry → n0 по предикату c_in.valid == true"
     rationale: "<почему выбрано это ребро>"
     input_ref: "<путь или digest входа микро-действия>"
     output_ref: "<путь или digest выхода микро-действия>"

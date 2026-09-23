@@ -1,9 +1,16 @@
 name: straight-through
 task_id: TASK-9001
 run_id: RUN-0001
-human_approvals: [n4, n12]
+human_approvals: [n0, n4, n12]
+products:
+  - {marker: A, domain: platform, capability: platform-integration, feature: crm-connectors, atomic_function: crm-bidirectional-sync, profile: P-API, owner: platform-owner}
+product_confirmation:
+  confirmed_by: analyst@example.test
+  confirmed_at: "2026-09-23T12:00:00Z"
+  decision_ref: evidence/checkpoint-n0.md
 transitions:
-  entry: n1
+  entry: n0
+  n0: n1
   n1: n2
   n2: n3
   n3: n4

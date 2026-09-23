@@ -5,7 +5,6 @@ description: >-
   создаются только в изолированном runs/DEBUG-<TIMESTAMP>/.
 priority: low
 disable-model-invocation: true
-product_class: contact-center
 packs: ORCH/DEBUG
 interaction: human-checkpointed
 inputs: [DEBUG-SCENARIO]

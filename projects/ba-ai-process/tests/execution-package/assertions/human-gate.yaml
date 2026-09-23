@@ -1,5 +1,5 @@
 outcome: awaiting-human
-path: [entry, n1, n2, n3, n4, n5, n6, n7]
+path: [entry, n0, n1, n2, n3, n4, n5, n6, n7]
 required_files:
   - task.yaml
   - runs/RUN-0001.yaml

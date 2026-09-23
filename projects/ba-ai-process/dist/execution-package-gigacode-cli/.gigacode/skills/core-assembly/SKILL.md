@@ -1,9 +1,8 @@
 ---
-name: core-assembly-contact-center
+name: core-assembly
 description: >-
   Используй, когда размеченные элементы и перечень неоднозначностей готовы и
   нужно собрать из них машиночитаемое ядро требований A-CORE, проходящее схему.
-product_class: contact-center
 packs: P-01/SK-core-assembly
 interaction: single-pass
 inputs: [A-CORE]
@@ -28,6 +27,8 @@ temperature: 0.1
 `needs-clarification`.
 
 ## Предусловия
+
+0. `products` и подтверждённый `product_attribution` получены из `A-IN` и переносятся в `A-CORE` без изменения.
 
 1. Элементы размечены и снабжены ссылками на источник.
 2. Неоднозначности выявлены и оценены по значимости.
