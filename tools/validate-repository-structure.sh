@@ -656,6 +656,7 @@ is_active_file() {
     tools/test-validate-rrp-links.sh | \
     tools/test-execution-package.sh | \
     tools/test-ba-requirements-forensics.sh | \
+    tools/test-bcreq-working-release-pipeline.sh | \
     tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \

@@ -75,6 +75,9 @@ jobs:
       - name: Test BA meta-model stakeholder overview
         run: bash tools/test-ba-meta-model-overview.sh
 
+      - name: Test BCREQ Working/Release pipeline contract
+        run: bash tools/test-bcreq-working-release-pipeline.sh
+
       - name: Test AGENTS.md physical integration
         run: bash tools/test-agents-md-integration.sh
 
