@@ -1,0 +1,1131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/contracts/c-working-bcreq.schema.json",
+  "title": "Approved typed BCREQ Working baseline",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_class",
+    "state",
+    "working_baseline_id",
+    "working_digest",
+    "work_type",
+    "routing",
+    "evidence",
+    "goals",
+    "tasks",
+    "boundary",
+    "deltas",
+    "product_bindings",
+    "claims",
+    "user_stories",
+    "fr",
+    "uc",
+    "nfr",
+    "acceptance",
+    "design",
+    "edge_cases",
+    "compatibility",
+    "compatibility_obligations",
+    "industry_bindings",
+    "open_questions",
+    "semantic_review",
+    "approval",
+    "terms",
+    "constraints",
+    "projection"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "artifact_class": {
+      "const": "A-BCREQ"
+    },
+    "state": {
+      "const": "approved"
+    },
+    "working_baseline_id": {
+      "type": "string",
+      "pattern": "^WB-[0-9]{3}$"
+    },
+    "working_digest": {
+      "$ref": "#/definitions/digest"
+    },
+    "work_type": {
+      "enum": [
+        "mango-change",
+        "mango-kb",
+        "industry-practice",
+        "external-spec"
+      ]
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_axis",
+        "rule",
+        "decision",
+        "decision_ref"
+      ],
+      "properties": {
+        "primary_axis": {
+          "enum": [
+            "mango",
+            "industry"
+          ]
+        },
+        "rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "const": "confirmed"
+        },
+        "decision_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "retrieval_status",
+          "locator",
+          "anchor",
+          "excerpt",
+          "checksum"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/source_id"
+          },
+          "retrieval_status": {
+            "const": "read"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "anchor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checksum": {
+            "$ref": "#/definitions/digest"
+          }
+        }
+      }
+    },
+    "goals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text",
+          "source_refs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/goal_id"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          }
+        }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text",
+          "goal_refs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/task_id"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          },
+          "goal_refs": {
+            "$ref": "#/definitions/refs"
+          }
+        }
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "system",
+        "in_scope",
+        "out_of_scope"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^BND-[0-9]{3}$"
+        },
+        "system": {
+          "$ref": "#/definitions/text"
+        },
+        "in_scope": {
+          "$ref": "#/definitions/refs"
+        },
+        "out_of_scope": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "deltas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source_refs",
+          "as_is",
+          "requested_delta",
+          "disposition"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/delta_id"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "as_is": {
+            "$ref": "#/definitions/text"
+          },
+          "requested_delta": {
+            "$ref": "#/definitions/text"
+          },
+          "disposition": {
+            "enum": [
+              "change",
+              "as-is",
+              "rejected"
+            ]
+          }
+        }
+      }
+    },
+    "product_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "domain",
+          "capability",
+          "feature",
+          "atomic_function",
+          "source_refs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/product_id"
+          },
+          "domain": {
+            "$ref": "#/definitions/text"
+          },
+          "capability": {
+            "$ref": "#/definitions/text"
+          },
+          "feature": {
+            "$ref": "#/definitions/text"
+          },
+          "atomic_function": {
+            "$ref": "#/definitions/text"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          }
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "candidate_statement",
+          "source_refs",
+          "goal_refs",
+          "task_refs",
+          "delta_ref",
+          "product_binding_refs",
+          "system_boundary",
+          "abstraction_level",
+          "target_slot",
+          "relevance_decision",
+          "relevance_reason"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/claim_id"
+          },
+          "candidate_statement": {
+            "$ref": "#/definitions/text"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "goal_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "task_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "delta_ref": {
+            "$ref": "#/definitions/delta_id"
+          },
+          "product_binding_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "system_boundary": {
+            "$ref": "#/definitions/text"
+          },
+          "abstraction_level": {
+            "enum": [
+              "L1",
+              "L2",
+              "L3",
+              "L4"
+            ]
+          },
+          "target_slot": {
+            "enum": [
+              "S-FR",
+              "S-SCENARIO",
+              "S-SOLUTION",
+              "S-AC",
+              "S-SETTINGS",
+              "S-UI",
+              "S-INTEGRATION",
+              "S-TRACE",
+              "S-NFR",
+              "S-LIMITS",
+              "S-OPEN"
+            ]
+          },
+          "relevance_decision": {
+            "enum": [
+              "accepted",
+              "rejected",
+              "hypothesis",
+              "open"
+            ]
+          },
+          "relevance_reason": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "user_stories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/story_id"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "fr": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "requirement_id",
+          "system_subject",
+          "shall",
+          "abstraction_level",
+          "claim_ref",
+          "goal_refs",
+          "task_refs",
+          "source_refs",
+          "user_story_refs",
+          "delta_ref",
+          "product_binding_refs",
+          "scenario_refs",
+          "acceptance_refs"
+        ],
+        "properties": {
+          "requirement_id": {
+            "$ref": "#/definitions/fr_id"
+          },
+          "system_subject": {
+            "$ref": "#/definitions/text"
+          },
+          "shall": {
+            "$ref": "#/definitions/text"
+          },
+          "abstraction_level": {
+            "const": "L1"
+          },
+          "claim_ref": {
+            "$ref": "#/definitions/claim_id"
+          },
+          "goal_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "task_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "user_story_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "delta_ref": {
+            "$ref": "#/definitions/delta_id"
+          },
+          "product_binding_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "scenario_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "acceptance_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "ui_detail_exception": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reviewed_by",
+              "rationale",
+              "source_ref"
+            ],
+            "properties": {
+              "reviewed_by": {
+                "$ref": "#/definitions/text"
+              },
+              "rationale": {
+                "$ref": "#/definitions/text"
+              },
+              "source_ref": {
+                "$ref": "#/definitions/source_id"
+              }
+            }
+          }
+        }
+      }
+    },
+    "uc": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scenario_id",
+          "actor",
+          "goal_ref",
+          "trigger",
+          "preconditions",
+          "main_flow",
+          "alternatives",
+          "exceptions",
+          "outcome",
+          "requirement_refs",
+          "nfr_refs",
+          "constraint_refs"
+        ],
+        "properties": {
+          "scenario_id": {
+            "$ref": "#/definitions/uc_id"
+          },
+          "actor": {
+            "$ref": "#/definitions/text"
+          },
+          "goal_ref": {
+            "$ref": "#/definitions/goal_id"
+          },
+          "trigger": {
+            "$ref": "#/definitions/text"
+          },
+          "preconditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/text"
+            }
+          },
+          "main_flow": {
+            "$ref": "#/definitions/refs"
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/text"
+            }
+          },
+          "exceptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/text"
+            }
+          },
+          "outcome": {
+            "$ref": "#/definitions/text"
+          },
+          "requirement_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/fr_id"
+            }
+          },
+          "nfr_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/nfr_id"
+            }
+          },
+          "constraint_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "release_selected": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "nfr": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "requirement_id",
+          "quality_attribute",
+          "object",
+          "applies_to_fr",
+          "condition",
+          "measure",
+          "target",
+          "target_source_ref",
+          "verification_method",
+          "source_refs",
+          "text"
+        ],
+        "properties": {
+          "requirement_id": {
+            "$ref": "#/definitions/nfr_id"
+          },
+          "quality_attribute": {
+            "$ref": "#/definitions/text"
+          },
+          "object": {
+            "$ref": "#/definitions/text"
+          },
+          "applies_to_fr": {
+            "$ref": "#/definitions/refs"
+          },
+          "condition": {
+            "$ref": "#/definitions/text"
+          },
+          "measure": {
+            "$ref": "#/definitions/text"
+          },
+          "target": {
+            "$ref": "#/definitions/text"
+          },
+          "target_source_ref": {
+            "type": "string"
+          },
+          "verification_method": {
+            "$ref": "#/definitions/text"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "acceptance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "fr_ref",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/ac_id"
+          },
+          "fr_ref": {
+            "$ref": "#/definitions/fr_id"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "design": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "fr_refs",
+          "scenario_refs",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/design_id"
+          },
+          "fr_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "scenario_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "edge_cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "requirement_refs",
+          "expected_outcome",
+          "verification_ref"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/edge_id"
+          },
+          "requirement_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "expected_outcome": {
+            "$ref": "#/definitions/text"
+          },
+          "verification_ref": {
+            "$ref": "#/definitions/ac_id"
+          }
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requires_backward_compatibility",
+        "rationale",
+        "source_refs",
+        "baseline_refs",
+        "affected_surfaces",
+        "obligation_refs"
+      ],
+      "properties": {
+        "requires_backward_compatibility": {
+          "enum": [
+            true,
+            false,
+            "unknown"
+          ]
+        },
+        "rationale": {
+          "$ref": "#/definitions/text"
+        },
+        "source_refs": {
+          "$ref": "#/definitions/refs"
+        },
+        "baseline_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affected_surfaces": {
+          "$ref": "#/definitions/refs"
+        },
+        "obligation_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/comp_id"
+          }
+        },
+        "question_ref": {
+          "$ref": "#/definitions/open_id"
+        }
+      }
+    },
+    "compatibility_obligations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "fr_refs",
+          "scenario_refs",
+          "edge_case_refs",
+          "design_refs",
+          "verification_refs",
+          "baseline_ref",
+          "preserved_behavior",
+          "allowed_change"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/comp_id"
+          },
+          "fr_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "scenario_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "edge_case_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "design_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "verification_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "baseline_ref": {
+            "$ref": "#/definitions/text"
+          },
+          "preserved_behavior": {
+            "$ref": "#/definitions/text"
+          },
+          "allowed_change": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "industry_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "tm_forum_binding",
+          "sid_context",
+          "local_product_binding_refs",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^IND-[0-9]{3}$"
+          },
+          "tm_forum_binding": {
+            "$ref": "#/definitions/industry_axis"
+          },
+          "sid_context": {
+            "$ref": "#/definitions/sid_axis"
+          },
+          "local_product_binding_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "rationale": {
+            "$ref": "#/definitions/text"
+          },
+          "reviewed_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text",
+          "owner",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/definitions/open_id"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          },
+          "owner": {
+            "$ref": "#/definitions/text"
+          },
+          "status": {
+            "enum": [
+              "open",
+              "resolved"
+            ]
+          }
+        }
+      }
+    },
+    "semantic_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reviewed_by",
+        "rationale",
+        "counterexample"
+      ],
+      "properties": {
+        "status": {
+          "const": "passed"
+        },
+        "reviewed_by": {
+          "$ref": "#/definitions/text"
+        },
+        "rationale": {
+          "$ref": "#/definitions/text"
+        },
+        "counterexample": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewed_by",
+        "decision_ref"
+      ],
+      "properties": {
+        "reviewed_by": {
+          "$ref": "#/definitions/text"
+        },
+        "decision_ref": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "term",
+          "definition",
+          "source_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^TERM-[0-9]{3}$"
+          },
+          "term": {
+            "$ref": "#/definitions/text"
+          },
+          "definition": {
+            "$ref": "#/definitions/text"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text",
+          "status",
+          "source_refs",
+          "applies_to_fr"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^CON-[0-9]{3}$"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          },
+          "status": {
+            "const": "confirmed"
+          },
+          "source_refs": {
+            "$ref": "#/definitions/refs"
+          },
+          "applies_to_fr": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/definitions/fr_id"
+            }
+          }
+        }
+      }
+    },
+    "projection": {
+      "const": "working"
+    }
+  },
+  "definitions": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^SRC-[0-9]{3}$"
+    },
+    "goal_id": {
+      "type": "string",
+      "pattern": "^GOAL-[0-9]{3}$"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^TASK-[0-9]{3}$"
+    },
+    "delta_id": {
+      "type": "string",
+      "pattern": "^DELTA-[0-9]{3}$"
+    },
+    "product_id": {
+      "type": "string",
+      "pattern": "^PB-[0-9]{3}$"
+    },
+    "claim_id": {
+      "type": "string",
+      "pattern": "^CL-[0-9]{3}$"
+    },
+    "story_id": {
+      "type": "string",
+      "pattern": "^US-[0-9]{3}$"
+    },
+    "fr_id": {
+      "type": "string",
+      "pattern": "^FR-[0-9]{3}$"
+    },
+    "uc_id": {
+      "type": "string",
+      "pattern": "^UC-[0-9]{3}$"
+    },
+    "nfr_id": {
+      "type": "string",
+      "pattern": "^NFR-[0-9]{3}$"
+    },
+    "ac_id": {
+      "type": "string",
+      "pattern": "^AC-[0-9]{3}$"
+    },
+    "design_id": {
+      "type": "string",
+      "pattern": "^DES-[0-9]{3}$"
+    },
+    "edge_id": {
+      "type": "string",
+      "pattern": "^EDGE-[0-9]{3}$"
+    },
+    "comp_id": {
+      "type": "string",
+      "pattern": "^COMP-[0-9]{3}$"
+    },
+    "open_id": {
+      "type": "string",
+      "pattern": "^OPEN-[0-9]{3}$"
+    },
+    "industry_axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "element_type",
+        "snapshot_ref",
+        "element_id",
+        "element_name",
+        "source_anchor"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "resolved",
+            "unresolved",
+            "not-applicable",
+            "escalated-to-sid"
+          ]
+        },
+        "element_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "snapshot_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "element_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "element_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_anchor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "sid_axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "element_type",
+        "snapshot_ref",
+        "element_id",
+        "element_name",
+        "source_anchor"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "resolved",
+            "unresolved",
+            "not-applicable"
+          ]
+        },
+        "element_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "snapshot_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "element_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "element_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_anchor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

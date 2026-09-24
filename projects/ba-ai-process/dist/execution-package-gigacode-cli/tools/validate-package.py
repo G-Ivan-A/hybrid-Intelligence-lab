@@ -22,6 +22,10 @@ import hashlib
 import os
 import re
 import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from bcreq_pipeline import validate_release, validate_working
 
 try:
     import yaml
@@ -32,7 +36,7 @@ except ImportError:  # pragma: no cover - диагностика вместо т
 ERRORS: list[str] = []
 
 # Служебные узлы графа: не навыки, скомпилированного SKILL.md не имеют.
-PSEUDO_NODES = {"entry", "exit", "refuse", "halt"}
+PSEUDO_NODES = {"entry", "exit", "refuse", "halt", "handoff-p08"}
 ORCHESTRATOR_SKILLS = {"rg-bcreq-v1-dispatcher", "ba-debug-orchestrator"}
 
 SKILL_SECTIONS = [
@@ -392,6 +396,11 @@ def product_binding_errors(document: dict, mango: dict, routing: dict) -> list[s
     errors: list[str] = []
     products = document.get("products") or []
     attribution = document.get("product_attribution") or {}
+    work_type = document.get("work_type")
+    route = document.get("routing") or {}
+    axis = {"mango-change": "mango", "mango-kb": "mango", "industry-practice": "industry", "external-spec": "industry"}
+    if work_type not in axis or route.get("rule") != work_type or route.get("primary_axis") != axis.get(work_type) or route.get("decision") != "confirmed" or not route.get("decision_ref"):
+        errors.append("routing: work_type, primary_axis and confirmed decision must agree")
     if attribution.get("status") != "confirmed":
         errors.append("product_attribution.status обязан быть confirmed")
     for field in ("confirmed_by", "confirmed_at", "decision_ref", "binding_digest"):
@@ -468,6 +477,11 @@ def check_product_routing(root: str, taxonomies: dict, skills: dict, graph: dict
     n0 = next((node for node in graph.get("nodes") or [] if node.get("node") == "n0"), {})
     if n0.get("skill") != "SK-product-attribution" or "G-human" not in (n0.get("gates") or []):
         fail("routes/rg-bcreq-v1.yaml: n0 обязан исполнять SK-product-attribution с G-human")
+    n0_edges = {edge.get("to"): str(edge.get("condition")) for edge in graph.get("edges") or [] if edge.get("from") == "n0"}
+    if "handoff-p08" not in n0_edges or "external-spec" not in n0_edges["handoff-p08"]:
+        fail("routes/rg-bcreq-v1.yaml: external-spec must hand off to P-08")
+    if "axis_for(work_type)" not in n0_edges.get("n1", ""):
+        fail("routes/rg-bcreq-v1.yaml: n0 must verify deterministic primary axis")
 
     for name, fields in skills.items():
         if fields.get("product_class"):
@@ -477,6 +491,8 @@ def check_product_routing(root: str, taxonomies: dict, skills: dict, graph: dict
     for schema_name in ("c-in", "c-core", "c-quest", "c-out-bcreq", "c-rk"):
         schema = load_json(root, f"contracts/{schema_name}.schema.json") or {}
         required = set(schema.get("required") or [])
+        if schema_name == "c-in" and not {"work_type", "routing"}.issubset(required):
+            fail("contracts/c-in.schema.json: work type and routing decision are required")
         if not {"products", "product_attribution"}.issubset(required):
             fail(f"contracts/{schema_name}.schema.json: подтверждённая привязка не является обязательной")
         if schema_name == "c-core":
@@ -541,6 +557,8 @@ def check_skills(root: str) -> dict[str, dict]:
 
 def check_route(root: str, processes: dict, skills: dict[str, dict]) -> dict:
     graph = load_yaml(root, "routes/rg-bcreq-v1.yaml") or {}
+    if graph.get("output_artifact") != "A-BCREQ" or graph.get("output_contract") != "contracts/c-release-bcreq.schema.json":
+        fail("routes/rg-bcreq-v1.yaml: route output must be the validated client Release")
     nodes = graph.get("nodes") or []
     l2_ids = {item.get("id") for item in (processes or {}).get("l2") or []}
     declared = {item.get("id") for item in (processes or {}).get("l2") or [] if item.get("in_slice")}
@@ -604,6 +622,19 @@ def check_route(root: str, processes: dict, skills: dict[str, dict]) -> dict:
             fail(f"{node_id}: узел недостижим из entry")
         if node_id not in outgoing:
             fail(f"{node_id}: у узла нет исходящего ребра, траектория обрывается")
+
+    required_sequence = ["n10", "n10a", "n11", "n12", "n13", "exit"]
+    edge_set = {(edge.get("from"), edge.get("to")) for edge in edges}
+    for source, target in zip(required_sequence, required_sequence[1:]):
+        if (source, target) not in edge_set:
+            fail(f"routes/rg-bcreq-v1.yaml: mandatory preflight or release edge missing: {source} → {target}")
+    node_map = {node.get("node"): node for node in nodes}
+    if node_map.get("n10a", {}).get("skill") != "SK-bcreq-preflight" or "G-human" not in node_map.get("n10a", {}).get("gates", []):
+        fail("routes/rg-bcreq-v1.yaml: n10a must approve preflight before decomposition")
+    if node_map.get("n13", {}).get("skill") != "SK-bcreq-release" or "G-release" not in node_map.get("n13", {}).get("gates", []):
+        fail("routes/rg-bcreq-v1.yaml: n13 must run G-release")
+    if ("n12", "exit") in edge_set:
+        fail("routes/rg-bcreq-v1.yaml: Working may not bypass G-release")
 
     policy = graph.get("gate_policy") or {}
     if policy.get("fail_closed") is not True:
@@ -851,6 +882,9 @@ def check_runtime_independence(root: str) -> None:
 def main() -> int:
     arguments = list(sys.argv[1:])
     input_path = None
+    working_path = None
+    release_path = None
+    manifest_path = None
     if "--input" in arguments:
         position = arguments.index("--input")
         if position + 1 >= len(arguments):
@@ -858,8 +892,22 @@ def main() -> int:
             return 2
         input_path = os.path.abspath(arguments[position + 1])
         del arguments[position : position + 2]
+    for flag in ("--working", "--release", "--manifest"):
+        if flag in arguments:
+            position = arguments.index(flag)
+            if position + 1 >= len(arguments):
+                sys.stderr.write(f"ERROR: {flag} requires a path\n")
+                return 2
+            value = os.path.abspath(arguments[position + 1])
+            if flag == "--working":
+                working_path = value
+            elif flag == "--release":
+                release_path = value
+            else:
+                manifest_path = value
+            del arguments[position : position + 2]
     if len(arguments) > 1:
-        sys.stderr.write("ERROR: использование: validate-package.py [пакет] [--input A-IN.yaml]\n")
+        sys.stderr.write("ERROR: use validate-package.py [package] [--input A-IN.yaml] [--working Working.json] [--release Release.json --manifest Manifest.json]\n")
         return 2
     root = arguments[0] if arguments else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     root = os.path.abspath(root)
@@ -895,8 +943,30 @@ def main() -> int:
         ):
             fail(f"{input_path}: {message}")
 
-    for schema in ("c-in", "c-core", "c-quest", "c-out-bcreq", "c-rk"):
+    if working_path:
+        try:
+            with open(working_path, encoding="utf-8") as handle:
+                working = json.load(handle)
+            for message in validate_working(working, Path(root)):
+                fail(f"{working_path}: {message}")
+            if release_path or manifest_path:
+                if not release_path or not manifest_path:
+                    fail("--release and --manifest must be supplied together")
+                else:
+                    with open(release_path, encoding="utf-8") as handle:
+                        release = json.load(handle)
+                    with open(manifest_path, encoding="utf-8") as handle:
+                        manifest = json.load(handle)
+                    for message in validate_release(working, release, manifest):
+                        fail(f"{release_path}: {message}")
+        except (OSError, json.JSONDecodeError) as error:
+            fail(f"Working/Release artifact cannot be read: {error}")
+    elif release_path or manifest_path:
+        fail("--release requires --working")
+
+    for schema in ("c-in", "c-core", "c-quest", "c-out-bcreq", "c-rk", "c-working-bcreq", "c-release-bcreq", "c-release-manifest"):
         load_json(root, f"contracts/{schema}.schema.json")
+    load_json(root, "contracts/bcreq-client-v1.json")
 
     if ERRORS:
         for message in ERRORS:

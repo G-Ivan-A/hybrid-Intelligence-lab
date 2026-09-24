@@ -1,13 +1,13 @@
 ---
 status: draft
-version: 3.0
-updated: 2026-09-23
+version: 4.0
+updated: 2026-09-24
 temperature: 0.1
 ---
 
 # Пакет исполнения BCREQ для GigaCode CLI
 
-Компиляция вертикального среза `A-IN → A-CORE → A-BCREQ` для **всего
+Компиляция вертикального среза `A-IN → A-CORE → A-BCREQ (Working → Release)` для **всего
 продуктового портфеля MANGO** в копируемую и проверяемую форму для GigaCode
 CLI. Граница MANGO не означает ограничение Контактным центром: допустимы все
 домены и capabilities закрытого `taxonomy/mango-products.yaml`.
@@ -21,18 +21,18 @@ CLI. Граница MANGO не означает ограничение Конт�
 
 | Каталог | Содержание |
 | --- | --- |
-| `.gigacode/skills/` | явный dispatcher, изолированный debug-оркестратор и 12 `SKILL.md` узлов маршрута, включая раннюю продуктовую атрибуцию |
+| `.gigacode/skills/` | dispatcher, debug-оркестратор и узлы маршрута, включая продуктовую атрибуцию, BCREQ preflight и Release |
 | `.gigacode/settings.example.json` | безопасный capability-пример Confluence MCP без URL и секретов |
 | `docs/kb/` | место для локальной базы знаний, дополняющей Confluence |
 | `meta-model/` | место для канонической модели, добавляемой при подготовке копии |
 | `taxonomy/` | закрытые словари артефактов, процессов, операций, routing-профилей, полный снимок 42 capabilities MANGO, 42 отраслевых соответствия, источники, проекции и термины |
-| `contracts/` | `C-IN`, `C-CORE`, `C-CL`, `C-OUT`, `C-RK` как JSON Schema |
+| `contracts/` | вход, Working, Release, manifest и профиль `BCREQ-client-v1` |
 | `routes/` | граф `RG-BCREQ-v1` и шаблон append-only листа прогона |
 | `templates/` | скелеты пользовательских артефактов и Markdown checkpoint |
 | `golden/` | утверждённые эталоны и отдельное место для ручных кандидатов |
 | `evaluation/` | метрики и чек-листы гейтов |
 | `runs/` | task-rooted состояние и изолированные `DEBUG-*` прогоны; в Git хранится только placeholder |
-| `tools/` | shell entrypoint и Python-гейт `G-mach` |
+| `tools/` | shell entrypoint, Python-гейт `G-mach` и детерминированный BCREQ-компилятор |
 | `AGENTS.md` | загрузочный контракт GigaCode CLI с исполняемыми правилами |
 
 ## Как развернуть
@@ -57,6 +57,20 @@ sh projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-pac
 ```sh
 sh projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.sh --input <A-IN.yaml>
 ```
+
+Утверждённый типизированный Working baseline проверяется и компилируется так:
+
+```sh
+python3 tools/bcreq_pipeline.py validate-working <Working.json>
+python3 tools/bcreq_pipeline.py compile <Working.json> --output <output-directory>
+python3 tools/bcreq_pipeline.py validate-release <Working.json> --release <output-directory>/release.json --manifest <output-directory>/release-manifest.json
+```
+
+Компилятор отказывает при открытых вопросах, `TBD`, неподтверждённом baseline,
+разрыве FR/UC/NFR/compatibility trace и вымышленном точном TM Forum ID. Для
+`resolved` используется только `taxonomy/tmf-snapshots.json`; пока в нём нет
+утверждённого snapshot, разрешённый точный ID не предполагается. `G-semantic`
+и финальное клиентское ревью остаются решением человека.
 
 Валидатор проверяет layout и manifest hashes, нативный путь `.gigacode/skills/`, обязательные
 оркестраторы, закрытость словарей, целостность продуктового и отраслевого

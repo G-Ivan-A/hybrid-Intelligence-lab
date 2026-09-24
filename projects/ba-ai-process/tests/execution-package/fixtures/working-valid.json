@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "artifact_class": "A-BCREQ",
+  "state": "approved",
+  "working_baseline_id": "WB-001",
+  "working_digest": "",
+  "work_type": "mango-change",
+  "routing": {
+    "primary_axis": "mango",
+    "rule": "mango-change",
+    "decision": "confirmed",
+    "decision_ref": "DEC-001"
+  },
+  "evidence": [
+    {
+      "id": "SRC-001",
+      "retrieval_status": "read",
+      "locator": "https://example.test/source/1",
+      "anchor": "section-1",
+      "excerpt": "The target system shall let existing clients export call logs. The export succeeds for 99% of eligible requests and preserves existing report access.",
+      "checksum": "sha256:e4ea1b4898fdf40918023199daa0f4eac1b00aae87d88a4108a4d7738ebcac7d"
+    }
+  ],
+  "goals": [
+    {
+      "id": "GOAL-001",
+      "text": "Existing clients can receive reports",
+      "source_refs": [
+        "SRC-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "text": "Extend report export",
+      "goal_refs": [
+        "GOAL-001"
+      ]
+    }
+  ],
+  "boundary": {
+    "system": "target-system",
+    "in_scope": [
+      "report export"
+    ],
+    "out_of_scope": [
+      "report rendering"
+    ],
+    "id": "BND-001"
+  },
+  "deltas": [
+    {
+      "id": "DELTA-001",
+      "source_refs": [
+        "SRC-001"
+      ],
+      "as_is": "Reports are read in the application",
+      "requested_delta": "Export report",
+      "disposition": "change"
+    },
+    {
+      "id": "DELTA-002",
+      "source_refs": [
+        "SRC-001"
+      ],
+      "as_is": "Existing clients can view reports",
+      "requested_delta": "No change to report viewing",
+      "disposition": "as-is"
+    }
+  ],
+  "product_bindings": [
+    {
+      "id": "PB-001",
+      "domain": "voice-ucaas",
+      "capability": "call-recording",
+      "feature": "call-log",
+      "atomic_function": "call-log-export",
+      "source_refs": [
+        "SRC-001"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL-001",
+      "candidate_statement": "Export report",
+      "source_refs": [
+        "SRC-001"
+      ],
+      "goal_refs": [
+        "GOAL-001"
+      ],
+      "task_refs": [
+        "TASK-001"
+      ],
+      "delta_ref": "DELTA-001",
+      "product_binding_refs": [
+        "PB-001"
+      ],
+      "system_boundary": "target-system",
+      "abstraction_level": "L1",
+      "target_slot": "S-FR",
+      "relevance_decision": "accepted",
+      "relevance_reason": "Export is the requested delta"
+    }
+  ],
+  "user_stories": [
+    {
+      "id": "US-001",
+      "text": "As an existing client I want to export reports so I can use them outside the application."
+    }
+  ],
+  "fr": [
+    {
+      "requirement_id": "FR-001",
+      "system_subject": "target-system",
+      "shall": "The system shall export reports for existing clients.",
+      "abstraction_level": "L1",
+      "claim_ref": "CL-001",
+      "goal_refs": [
+        "GOAL-001"
+      ],
+      "task_refs": [
+        "TASK-001"
+      ],
+      "source_refs": [
+        "SRC-001"
+      ],
+      "user_story_refs": [
+        "US-001"
+      ],
+      "delta_ref": "DELTA-001",
+      "product_binding_refs": [
+        "PB-001"
+      ],
+      "scenario_refs": [
+        "UC-001"
+      ],
+      "acceptance_refs": [
+        "AC-001"
+      ]
+    }
+  ],
+  "uc": [
+    {
+      "scenario_id": "UC-001",
+      "actor": "client",
+      "goal_ref": "GOAL-001",
+      "trigger": "Client requests export",
+      "preconditions": [
+        "Client has access"
+      ],
+      "main_flow": [
+        "Request report",
+        "System returns export"
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "Export unavailable"
+      ],
+      "outcome": "Client receives report",
+      "requirement_refs": [
+        "FR-001"
+      ],
+      "nfr_refs": [
+        "NFR-001"
+      ],
+      "constraint_refs": [
+        "CON-001"
+      ],
+      "release_selected": true
+    }
+  ],
+  "nfr": [
+    {
+      "requirement_id": "NFR-001",
+      "quality_attribute": "reliability",
+      "object": "report export",
+      "applies_to_fr": [
+        "FR-001"
+      ],
+      "condition": "for eligible client requests",
+      "measure": "successful exports / eligible requests",
+      "target": "99%",
+      "target_source_ref": "SRC-001",
+      "verification_method": "replay requests",
+      "source_refs": [
+        "SRC-001"
+      ],
+      "text": "99% of eligible export requests succeed."
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "AC-001",
+      "fr_ref": "FR-001",
+      "text": "Exported report can be opened."
+    }
+  ],
+  "design": [
+    {
+      "id": "DES-001",
+      "fr_refs": [
+        "FR-001"
+      ],
+      "scenario_refs": [
+        "UC-001"
+      ],
+      "text": "The system returns the existing report in export form."
+    }
+  ],
+  "edge_cases": [
+    {
+      "id": "EDGE-001",
+      "requirement_refs": [
+        "FR-001"
+      ],
+      "expected_outcome": "Existing client receives export",
+      "verification_ref": "AC-001"
+    }
+  ],
+  "compatibility": {
+    "requires_backward_compatibility": true,
+    "rationale": "Existing clients must continue receiving exports",
+    "source_refs": [
+      "SRC-001"
+    ],
+    "baseline_refs": [
+      "BASELINE-001"
+    ],
+    "affected_surfaces": [
+      "interface"
+    ],
+    "obligation_refs": [
+      "COMP-001"
+    ]
+  },
+  "compatibility_obligations": [
+    {
+      "id": "COMP-001",
+      "fr_refs": [
+        "FR-001"
+      ],
+      "scenario_refs": [
+        "UC-001"
+      ],
+      "edge_case_refs": [
+        "EDGE-001"
+      ],
+      "design_refs": [
+        "DES-001"
+      ],
+      "verification_refs": [
+        "AC-001"
+      ],
+      "baseline_ref": "BASELINE-001",
+      "preserved_behavior": "Existing clients receive reports",
+      "allowed_change": "Export format may be added"
+    }
+  ],
+  "industry_bindings": [],
+  "open_questions": [],
+  "semantic_review": {
+    "status": "passed",
+    "reviewed_by": "semantic-reviewer",
+    "rationale": "The export is a requested system capability with complete scenario coverage.",
+    "counterexample": "An export button label alone would be a UI detail."
+  },
+  "approval": {
+    "reviewed_by": "analyst",
+    "decision_ref": "DEC-002"
+  },
+  "terms": [],
+  "constraints": [
+    {
+      "id": "CON-001",
+      "text": "Existing report access remains available.",
+      "status": "confirmed",
+      "source_refs": [
+        "SRC-001"
+      ],
+      "applies_to_fr": [
+        "FR-001"
+      ]
+    }
+  ],
+  "projection": "working"
+}

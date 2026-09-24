@@ -27,6 +27,10 @@ temperature: 0.1
 
 ## Предусловия
 
+0. `n10a` has produced approved evidence, goal/task/boundary, as-is→delta,
+   product binding, and claim registers. A candidate without accepted L1 claim
+   and confirmed delta cannot become a top-level FR.
+
 0. `products` и `product_attribution` подтверждены в `n0` и переносятся в выход без изменения; декомпозиция следует профилю каждой подтверждённой функции.
 
 1. Слоты `S-PROBLEM` и `S-SOLUTION` заполнены.
@@ -35,6 +39,11 @@ temperature: 0.1
    относящемуся к конкретному продукту.
 
 ## Шаги
+
+0. Map accepted `S-FR` claims to capability-level FR, `S-SCENARIO` claims to
+   UC, and quality claims to NFR. Keep UI controls and atomic settings in
+   design/UC depth. Require `applies_to_fr` for each NFR and a named source for
+   every target; use `TBD` and an owned question when the target is unknown.
 
 1. `split-statement` — раздели составные утверждения. Признак составного:
    союз «и», соединяющий два разных предмета проверки («система маршрутизирует

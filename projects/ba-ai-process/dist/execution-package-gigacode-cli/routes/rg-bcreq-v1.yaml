@@ -3,18 +3,18 @@
 # нему (EP-R3). Изменение графа — новая версия процесса между прогонами;
 # пройденный лист прогона не правится никогда.
 route_graph_id: RG-BCREQ-v1
-version: "2.0"
+version: "3.0"
 processes: [P-01, P-02, P-03]     # значения закрытого словаря taxonomy/processes.yaml (EP-R1)
 interaction: single-pass
 input_artifact: A-IN
 input_contract: contracts/c-in.schema.json
 output_artifact: A-BCREQ
-output_contract: contracts/c-out-bcreq.schema.json
+output_contract: contracts/c-release-bcreq.schema.json
 # Узел без скомпилированного навыка обязан нести actor: human и агенту не
 # выдаётся (EP-R2). В этом графе такой узел один: n5 — отправка вопросов
 # Заказчику, действие необратимое и потому не ниже яруса G5.
 nodes:
-  - {node: n0, process: P-01, skill: SK-product-attribution, actor: agent, gates: [G-self, G-mach, G-human], output: A-IN, note: "бизнес-аналитик подтверждает полную цепочку Domain → Capability → Feature → Atomic Function; без status=confirmed переход к n1 запрещён"}
+  - {node: n0, process: P-01, skill: SK-product-attribution, actor: agent, gates: [G-self, G-mach, G-human], output: A-IN, note: "тип работы выбирает primary_axis; бизнес-аналитик подтверждает правило, evidence, industry mapping и полную MANGO-цепочку; P-08 передаётся отдельному маршруту"}
   - {node: n1, process: P-01, skill: SK-transcript-normalization, actor: agent, gates: [G-self, G-mach], output: normalized_text}
   - {node: n2, process: P-01, skill: SK-context-extraction, actor: agent, gates: [G-self, G-mach], output: marked_elements}
   - {node: n3, process: P-01, skill: SK-ambiguity-detection, actor: agent, gates: [G-self, G-mach], output: ambiguities}
@@ -25,16 +25,19 @@ nodes:
   - {node: n8, process: P-02, skill: SK-answer-integration, actor: agent, gates: [G-self, G-mach, G-human], output: A-CORE}
   - {node: n9, process: P-03, skill: SK-problem-statement, actor: agent, gates: [G-self, G-mach], output: problem_statement}
   - {node: n10, process: P-03, skill: SK-value-hypothesis, actor: agent, gates: [G-self, G-mach], output: value_hypothesis}
+  - {node: n10a, process: P-03, skill: SK-bcreq-preflight, actor: agent, gates: [G-self, G-mach, G-semantic, G-human], output: preflight_registers, note: "source, goal/task/boundary, as-is→delta, product binding и claim register утверждаются до FR/UC/NFR"}
   - {node: n11, process: P-03, skill: SK-bcreq-decomposition, actor: agent, gates: [G-self, G-mach], output: bcreq_items}
-  - {node: n12, process: P-03, skill: SK-bcreq-assembly, actor: agent, gates: [G-self, G-mach, G-human], output: A-BCREQ}
+  - {node: n12, process: P-03, skill: SK-bcreq-assembly, actor: agent, gates: [G-self, G-mach, G-semantic, G-human], output: A-BCREQ, note: "проекция working, approved baseline"}
+  - {node: n13, process: P-03, skill: SK-bcreq-release, actor: agent, gates: [G-self, G-mach, G-release, G-human], output: A-BCREQ, note: "проекция release, deterministic BCREQ-client-v1 compilation, reverse trace and publication review"}
 # Каждое ребро с условием несёт предикат по объявленному выходу узла-источника
 # (EP-R5). Ребро «по усмотрению» запрещено: оно делает траекторию
 # невоспроизводимой.
 edges:
   - {from: entry, to: n0, condition: "c_in.valid == true"}
   - {from: entry, to: refuse, condition: "c_in.valid == false"}
-  - {from: n0, to: n1, condition: "product_attribution.status == 'confirmed' and product_binding.valid == true"}
-  - {from: n0, to: halt, condition: "product_attribution.status != 'confirmed' or product_binding.valid == false", note: "неподтверждённая или неразрешимая привязка не допускается к основным этапам генерации"}
+  - {from: n0, to: n1, condition: "work_type in ['mango-change','mango-kb','industry-practice'] and routing.decision == 'confirmed' and routing.primary_axis == axis_for(work_type) and product_attribution.status == 'confirmed' and product_binding.valid == true"}
+  - {from: n0, to: handoff-p08, condition: "work_type == 'external-spec' and routing.primary_axis == 'industry' and routing.decision == 'confirmed'", note: "оценка внешнего ТЗ принадлежит P-08, не BCREQ"}
+  - {from: n0, to: halt, condition: "routing.decision != 'confirmed' or (work_type != 'external-spec' and (product_attribution.status != 'confirmed' or product_binding.valid == false))", note: "неподтверждённая атрибуция не допускается к генерации"}
   - {from: n1, to: n2, condition: gate_passed}
   - {from: n2, to: n3, condition: gate_passed}
   - {from: n3, to: n4, condition: gate_passed}
@@ -47,13 +50,18 @@ edges:
   - {from: n8, to: n9, condition: "ambiguities[severity == 'blocker' and resolved == false].count == 0"}
   - {from: n8, to: n5, condition: "ambiguities[severity == 'blocker' and resolved == false].count > 0"}
   - {from: n9, to: n10, condition: gate_passed}
-  - {from: n10, to: n11, condition: gate_passed}
+  - {from: n10, to: n10a, condition: gate_passed}
+  - {from: n10a, to: n11, condition: "preflight_registers.valid == true and human_decision == 'approved'"}
+  - {from: n10a, to: halt, condition: "preflight_registers.valid == false or human_decision != 'approved'"}
   - {from: n11, to: n12, condition: gate_passed}
-  - {from: n12, to: exit, condition: gate_passed}
+  - {from: n12, to: n13, condition: "working.state == 'approved' and working.digest.valid == true and gates_passed == true"}
+  - {from: n12, to: halt, condition: "working.state != 'approved' or working.digest.valid == false or gates_passed == false"}
+  - {from: n13, to: exit, condition: "release_manifest.valid == true and G-release == 'pass' and G-human == 'approved'"}
+  - {from: n13, to: halt, condition: "release_manifest.valid == false or G-release != 'pass' or G-human != 'approved'"}
 # Любой reject G-mach останавливает автоматическое исполнение и возвращает
 # решение человеку. Скрытая корректирующая попытка запрещена (EP-R7).
 gate_policy:
-  order: [G-self, G-mach, G-human]
+  order: [G-self, G-mach, G-semantic, G-release, G-human]
   fail_closed: true
   corrective_attempts: 0
   on_reject: halt_and_request_human

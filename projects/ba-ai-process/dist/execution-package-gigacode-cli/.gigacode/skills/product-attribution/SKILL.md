@@ -35,6 +35,13 @@ temperature: 0.1
 
 ## Шаги
 
+0. Classify `work_type` from the goal, input, and requested outcome. Use
+   `mango` as primary axis for MANGO change or KB search and `industry` for
+   industry practice or external-spec evaluation. For an external spec,
+   hand off to `P-08`; it does not create a BCREQ. Retain all matched,
+   unmatched, and uncertain requirement mappings. Do not apply an 80% template
+   threshold without a versioned template catalog and counting rule.
+
 1. Извлеки кандидатов, но считай их гипотезой: для каждого продукта предложи
    `marker`, `domain`, `capability`, `feature`, `atomic_function`, `profile` и
    `owner`.
@@ -42,14 +49,16 @@ temperature: 0.1
    `taxonomy/mango-products.yaml`; `feature` обязан принадлежать той же
    capability. Не смешивай уровни разных ветвей.
 3. Покажи бизнес-аналитику полный реестр, названия из каталога, основание
-   выбора и альтернативы. Запроси одно из решений: `confirm`, `reject` или
+   выбора, primary axis, routing rule, отраслевую цепочку, evidence, риск и
+   альтернативы. Запроси одно из решений: `confirm`, `reject` или
    исправленный реестр.
 4. Только после `confirm` установи `status: confirmed`, запиши `confirmed_by`,
    `confirmed_at`, `decision_ref` и `binding_digest`. Digest — префикс
    `sha256:` плюс SHA-256 канонического JSON массива `products` с
    `sort_keys=true` и разделителями `(',', ':')`.
 5. Передай `products` и `product_attribution` без изменения в `A-CORE`,
-   `A-QUEST`, `A-BCREQ` и `C-RK`. Любая смена привязки требует нового решения
+   `A-QUEST`, `A-BCREQ` и `C-RK`. Передай также work type и routing decision.
+   Любая смена привязки требует нового решения
    `G-human` и нового прогона, а не скрытой правки downstream-артефакта.
 
 ## Обязательные слоты выхода

@@ -8,6 +8,8 @@
     "artifact_class",
     "state",
     "task",
+    "work_type",
+    "routing",
     "products",
     "product_attribution",
     "sources",
@@ -35,6 +37,20 @@
     }
   ],
   "properties": {
+    "work_type": {
+      "enum": ["mango-change", "mango-kb", "industry-practice", "external-spec"]
+    },
+    "routing": {
+      "type": "object",
+      "required": ["primary_axis", "rule", "decision", "decision_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "primary_axis": {"enum": ["mango", "industry"]},
+        "rule": {"enum": ["mango-change", "mango-kb", "industry-practice", "external-spec"]},
+        "decision": {"enum": ["pending", "confirmed", "rejected"]},
+        "decision_ref": {"type": "string", "minLength": 1}
+      }
+    },
     "artifact_class": {
       "const": "A-IN"
     },

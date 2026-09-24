@@ -138,7 +138,7 @@ python3 - "$target" <<'PY'
 import sys, pathlib
 path = pathlib.Path(sys.argv[1], "routes/rg-bcreq-v1.yaml")
 text = path.read_text(encoding="utf-8")
-anchor = "  - {from: n12, to: exit, condition: gate_passed}\n"
+anchor = next(line + "\n" for line in text.splitlines() if line.startswith("  - {from: n13, to: exit,"))
 path.write_text(text.replace(anchor, anchor + "  - {from: n12, to: n99, condition: gate_passed}\n", 1), encoding="utf-8")
 PY
 expect_reject "$target" "dangling edge" "n99"
@@ -308,6 +308,8 @@ digest = "sha256:" + hashlib.sha256(
     json.dumps(products, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
 ).hexdigest()
 document = {
+    "work_type": "mango-change",
+    "routing": {"primary_axis": "mango", "rule": "mango-change", "decision": "confirmed", "decision_ref": "evidence/checkpoint-n0.md"},
     "products": products,
     "product_attribution": {
         "status": "confirmed",
@@ -339,5 +341,23 @@ fi
 # The project-level emulator exercises route traversal and human-gate pauses
 # without invoking an LLM or writing into the committed package.
 python3 "$PROJECT_TESTS/tests/test_emulation.py"
+python3 "$PROJECT_TESTS/tests/test_semantic_regression.py"
 
-printf 'Execution package tests passed (25 package cases + route emulation).\n'
+python3 - "$PACKAGE" "$PROJECT_TESTS/fixtures/working-valid.json" "$WORKDIR/working.json" <<'PY'
+import importlib.util
+import json
+from pathlib import Path
+import sys
+package, fixture, target = map(Path, sys.argv[1:])
+spec = importlib.util.spec_from_file_location("bcreq_pipeline", package / "tools/bcreq_pipeline.py")
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+working = json.loads(fixture.read_text(encoding="utf-8"))
+working["working_digest"] = module.working_digest(working)
+target.write_bytes(module.canonical(working) + b"\n")
+PY
+python3 "$VALIDATOR" "$PACKAGE" --working "$WORKDIR/working.json" >/dev/null
+python3 "$PACKAGE/tools/bcreq_pipeline.py" compile "$WORKDIR/working.json" --output "$WORKDIR/release" >/dev/null
+python3 "$VALIDATOR" "$PACKAGE" --working "$WORKDIR/working.json" --release "$WORKDIR/release/release.json" --manifest "$WORKDIR/release/release-manifest.json" >/dev/null
+
+printf 'Execution package tests passed (25 package cases + route emulation + BCREQ regression and compilation).\n'
