@@ -470,6 +470,7 @@ is_active_file() {
     research/reputation-technologies/2026-06-20-executive-summary.ru-en.md | \
     research/reputation-technologies/2026-06-20-glossary.ru-en.md | \
     research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md | \
+    research/reputation-technologies/2026-09-24-introductory-course-options-610.md | \
     research/mango/2026-05-22-classification.md | \
     research/mango/2026-05-22-classification-tz.md | \
     research/mango/2026-05-22-requirements-flow.md | \
