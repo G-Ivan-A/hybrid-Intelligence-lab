@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.21
-updated: 2026-09-22
+version: 0.22
+updated: 2026-09-24
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -402,6 +402,11 @@ related_issues:
 | `ext-324` | [Python Packaging User Guide — The Packaging Flow](https://packaging.python.org/en/latest/flow/) | `docs` | `en` | `source-distribution, build-artifacts, packaging` | `topic: ba-ai-process-architecture` | `research` | `hub, mango` | ✅ [accepted ADR-017; migration #599](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md) |
 | `ext-325` | [SLSA v1.2 — Provenance](https://slsa.dev/spec/v1.2/provenance) | `standard` | `en` | `provenance, build, traceability, supply-chain` | `topic: ba-ai-process-architecture` | `research` | `hub, mango` | ✅ [accepted ADR-017; migration #599](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md) |
 | `ext-326` | [GitHub Docs — `repository_dispatch`](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#repository_dispatch) | `docs` | `en` | `github-actions, repository-dispatch, feedback-transport` | `topic: ba-ai-process-architecture` | `research` | `hub, mango` | ✅ [accepted ADR-017; migration #599](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md) |
+| `ext-327` | [Техноград — программа вводного курса, событие 669](https://technograd.moscow/event_page_new?669#programm_event) | `docs` | `ru` | `reputation-course, published-promise, corporate-education` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
+| `ext-328` | [AMEC — Barcelona Principles V4.0](https://amecorg.com/wp-content/uploads/2025/06/Barcelona-Principles-V4.0-eBook-Finalv-compressed.pdf) | `docs` | `en` | `communication-measurement, stakeholders, data-ethics` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
+| `ext-329` | [CIPR — Professional PR Certificate](https://www.cipr.co.uk/CIPR/Learn_Develop/Qualifications/Professional_PR_Certificate.aspx) | `docs` | `en` | `pr-education, applied-learning` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
+| `ext-330` | [CDC — CERC training](https://cdc.gov/cerc/php/about/index.html) | `docs` | `en` | `risk-communication, training-depth` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
+| `ext-331` | [European Commission — Principles of the GDPR](https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/principles-gdpr_en) | `docs` | `en` | `data-minimisation, purpose-limitation, reputation-data` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
