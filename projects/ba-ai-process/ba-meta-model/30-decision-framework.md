@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-09-15
+version: 0.5
+updated: 2026-09-24
 temperature: 0.3
 type: research
 context: [ba, meta-model, execution-package, skill-compilation, route-graph, golden-set, gigacode, issue-563, issue-571, issue-587]
@@ -80,7 +80,10 @@ issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)
 шаблоне ниже — **дельта Source поверх контракта среды**: она добавляет поля
 происхождения и обязательные разделы, ничего не отменяя. Дельта совместима,
 так как среда не ограничивает ни состав дополнительных полей, ни структуру
-инструкции. Граница дельты объявлена в правиле `SK-0`.
+инструкции. Граница дельты объявлена в правиле `SK-0`. Значение
+`contact-center` ниже — пример одной ветви, не значение по умолчанию:
+фактическую цепочку для любого домена подтверждает `n0` по
+[принятому правилу атрибуции](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md).
 
 ```markdown
 ---
@@ -151,6 +154,9 @@ version: <X.Y>
 | **Лист прогона** (`run-sheet`) | одна пройденная траектория: какие узлы исполнены, какие рёбра выбраны и по какому вердикту гейта | при каждом запуске | оркестратор, записью факта |
 
 ### 4.1 Граф маршрута
+
+`contact-center` и `crm-core` в следующем фрагменте иллюстрируют один
+конкретный прогон. Маршрут не назначает эти значения всем задачам.
 
 ```yaml
 route_graph_id: RG-P01-v1

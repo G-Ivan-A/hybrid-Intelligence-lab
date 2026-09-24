@@ -1,7 +1,7 @@
 ---
-status: proposed
-version: 0.2
-updated: 2026-09-23
+status: accepted
+version: 0.3
+updated: 2026-09-24
 temperature: 0.1
 owner: G-Ivan-A
 rfc-scope: C
@@ -14,20 +14,20 @@ rfc-scope: C
 | Поле | Значение |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | `proposed`; принятие только решением человека |
+| RFC status | `accepted`; решение владельца в [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609), уточнения и границы — в [сквозной проверке](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-24-architecture-convergence-and-readiness.md) |
 | Source issue | [#601](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/601) |
 | Evidence and golden-form candidates | [Анализ трёх форм BCREQ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-bcreq-golden-forms-and-feasibility.md) |
 | Run forensics and semantic contracts | [Форензика 67 прогонов и двух диалогов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-requirements-run-forensics.md) |
-| Impacted artifacts | Мета-модель и Source-контракты; после принятия — отдельная компиляция Distribution и изменение runtime |
-| Decision record | Отсутствует: решение владельца ожидается |
+| Impacted artifacts | Мета-модель и Source-контракты; затем отдельная компиляция Distribution и изменение runtime |
+| Decision record | Владелец принял вариант 1 с уточнениями в приложенном к [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609) диалоге; принятие runtime Golden Set и публикация остаются отдельными решениями |
 | Archetype scope | `C` — Product Spoke / Runtime |
 | Маршрут | `RG-BCREQ-v1` |
-| Решение | Требует принятия человеком; этот RFC не меняет навыки, диспетчер или схему BCREQ |
+| Решение | Архитектура принята; этот RFC сам по себе не меняет навыки, диспетчер или схему BCREQ |
 
 ## Summary
 
-Предлагается сохранить внутреннюю 14-слотовую модель BCREQ, но ввести для неё
-семантическую проекцию из семи читаемых разделов и явную лестницу абстракции.
+Сохраняется внутренняя 14-слотовая модель BCREQ; для неё вводятся
+семантическая проекция из семи читаемых разделов и явная лестница абстракции.
 Функциональное требование в разделе 3 описывает способность целевой системы —
 «что должна делать система». Сценарии, бизнес-правила, UI, настройки и
 технические решения раскрывают эту способность в разделах 4 и 7, не размножая
@@ -41,8 +41,7 @@ rfc-scope: C
 отвечают за уровень абстракции и релевантность.
 
 RFC описывает изменение Source. Физическая правка навыков, схем, dispatcher и
-маршрута Distribution намеренно вынесена в последующую задачу после принятия
-решения.
+маршрута Distribution вынесена в последующую реализационную задачу.
 
 ## Motivation
 
@@ -96,7 +95,8 @@ RFC описывает изменение Source. Физическая прав�
 ### Non-goals
 
 - менять в этом PR физические навыки, dispatcher, route или BCREQ schema;
-- объявлять три формы runtime Golden Set до human acceptance;
+- объявлять три формы runtime Golden Set без воспроизводимого прогона и
+  отдельной human acceptance;
 - задавать конкретные UI, API-методы, payload, коды ошибок или SLA;
 - закрывать полную перестройку отраслевой методологии или задачи
   [`B-121`, `B-122`, `B-123`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md);
@@ -106,8 +106,8 @@ RFC описывает изменение Source. Физическая прав�
 
 ### 1. Семь разделов как проекция 14 слотов
 
-Каноническая внутренняя модель остаётся 14-слотовой. Для читателя и
-публикации она проецируется так:
+Каноническая внутренняя модель остаётся 14-слотовой. Для внутреннего читателя
+она группируется так:
 
 | Раздел | Внутренние слоты |
 | --- | --- |
@@ -119,8 +119,14 @@ RFC описывает изменение Source. Физическая прав�
 | 6. Ограничения и открытые вопросы | `S-LIMITS`, `S-OPEN` |
 | 7. Внутренняя техническая спецификация | `S-TRACE`, `S-INTEGRATION` и проекция `V-DEV` |
 
-Проектор не переносит детали между слотами и не скрывает пустоту. Если слот
-не применим или evidence отсутствует, в проекции сохраняется причина.
+Это внутренняя семантическая группировка, а не обязательный клиентский профиль.
+Клиентский `BCREQ-client-v1` из
+[RFC Working → Release](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-working-release-pipeline.md)
+заменяет 2.3 «Задачи» на «Границы изменения», называет раздел 4
+«Функциональный дизайн решения» и публикует раздел 7 только по разрешённому
+профилю. Проектор не переносит детали между слотами и не скрывает пустоту во
+внутреннем trace; отсутствие обязательного клиентского содержания блокирует
+Release, а неприменимый слот получает явную причину.
 
 ### 2. Лестница абстракции
 
@@ -186,16 +192,45 @@ Citation отвечает на вопрос «откуда утверждени�
 
 ### 5. Product routing preflight
 
-До узла `n1` маршрут выбирает одну или несколько цепочек
-`domain → capability → feature → atomic function` из версионированных снимков:
+До `n0` диспетчер определяет **тип работы и направление поиска** по заявленной
+цели, виду входа и результату процесса. `n0` вычисляет одну или несколько
+цепочек `domain → capability → feature → atomic function` из версионированных
+снимков:
 
 - [таксономия продуктов MANGO](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/product-taxonomy/mango-products.yaml);
 - [отраслевые соответствия ИТ/телеком](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/product-taxonomy/telecom-products.yaml).
 
-Выбор подтверждает человек. Неизвестное значение или capability без
-отраслевого соответствия останавливает маршрут. Dispatcher не должен содержать
-безусловный `contact-center`: он выбирает предметную ветку из привязки и
-зафиксированной таблицы маршрутов.
+| Вход и цель | Первичная ось | Вторая ось и результат |
+| --- | --- | --- |
+| Доработка системы MANGO, которой заказчик пользуется или которую документированно рассматривает | MANGO | Сопоставить соответствующие отраслевые классы; подтверждение интереса не доказывает существование capability. |
+| Поиск документации или решений в базе знаний MANGO | MANGO | Отраслевое соответствие добавлять, когда оно помогает ответу; отсутствие не запрещает поиск KB. |
+| Проверка отраслевой или лучшей практики | Отраслевая классификация | Сопоставить с MANGO, если продуктовая применимость заявлена; не выдавать общий стандарт за локальную функцию. |
+| Оценка внешнего ТЗ (`P-08`) | Требования внешнего ТЗ и отраслевая классификация | Сопоставить найденные классы с MANGO и сохранить `matched/unmatched/uncertain` для каждого требования. Результат `P-08` — суждение об осуществимости, не BCREQ. |
+
+В диалоге [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609)
+предложен переход для внешнего ТЗ на MANGO-first при покрытии шаблонными
+требованиями не менее 80%. В Source нет утверждённого версионированного
+каталога таких шаблонов, правил единицы счёта и процедуры проверки ложных
+совпадений. До их появления порог не используется как детерминированный
+предикат. Даже после появления каталога он меняет **порядок поиска**, а не
+скрывает unmatched-требования и не подменяет отраслевую проверку. Измерение
+сохраняет numerator, denominator, версию каталога и anchors каждого совпадения.
+
+Предложение агента содержит тип работы, использованное правило, обе цепочки,
+версии снимков, evidence, альтернативы и рекомендацию `accept/reject` с
+обоснованием риска. `G-human` подтверждает или отклоняет **сопоставление и
+основание**; он не выбирает алгоритм по умолчанию. При отклонении хранится
+причина, а маршрут останавливается до нового кандидата и повторной проверки.
+Неизвестный ID, несогласованная цепочка или требуемое, но отсутствующее
+соответствие останавливает затронутую ветвь. Отсутствие отраслевого mapping
+не запрещает чистый поиск в KB, но запрещает заявлять подтверждённую двойную
+привязку. Dispatcher не содержит безусловного `contact-center`.
+
+Существующий [узел `n0`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/routes/rg-bcreq-v1.yaml)
+из PR #604 подтверждает MANGO-цепочку до `n1`, но ещё не содержит этого
+классификатора намерения и двунаправленного сопоставления. Это обязательная
+дельта следующей компиляции Source → Distribution, а не описание уже
+выполненного runtime.
 
 Multi-product-задача остаётся одним BCREQ, если у неё одна бизнес-цель и одна
 граница изменения. Она хранит несколько product bindings и прослеживает каждое
@@ -207,14 +242,30 @@ Multi-product-задача остаётся одним BCREQ, если у неё
 
 Source владеет семантикой слотов, лестницей уровней и правилами покрытия.
 Шаблон Distribution владеет представлением. Он рендерит семь разделов из 14
-слотов и применяет один из overlay-профилей:
+слотов по выбранному release-профилю и применяет **один или несколько**
+содержательных overlay-профилей:
 
 - API усиливает интерфейсный контракт, состояния доступа, ошибки и события;
 - ЛК усиливает роли, настройки, UI-state matrix и обратную связь;
-- КЦ усиливает рабочий контекст оператора, бизнес-правила, маршруты и
-  устойчивость исторических данных.
+- коммуникации контакт-центра усиливают рабочий контекст оператора,
+  бизнес-правила, очереди, маршруты и устойчивость исторических данных;
+- клиент коммуникаций сотрудника (в том числе Mango Talker) усиливает
+  состояния клиентского приложения, уведомления, сеансы и переходы между
+  устройствами, только если они подтверждены источником;
+- AI и автоматизация усиливают входные данные, управление моделью/правилом,
+  вмешательство человека, качество результата и обработку ошибок для роботов
+  **и** речевой аналитики.
 
-Overlay не меняет смысл L1 и не добавляет обязательства без evidence.
+Профиль описывает паттерн содержания, а не отдельный продукт и не официальный
+класс TM Forum. Поэтому робот и речевая аналитика могут использовать один
+профиль при разных MANGO-capabilities; Talker может сочетаться с API или ЛК.
+Контакт-центр здесь — предмет коммуникаций, не синоним продукта «КЦ Манго».
+Видеоконференции сами по себе не требуют отдельного профиля: известная
+[таксономия](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/product-taxonomy/mango-products.yaml)
+содержит capability `voice-ucaas/video-conferencing`, но не доказывает
+отдельный способ rendering. Новые профили появляются по повторяющемуся
+контрпримеру, который нельзя выразить сочетанием существующих. Overlay не
+меняет смысл L1 и не добавляет обязательства без evidence.
 
 ### 7. Coverage contract ФТ↔UC
 
@@ -242,7 +293,7 @@ coverage:
 
 - schema version, обязательные поля и уникальность ID;
 - существование taxonomy IDs и полную цепочку product binding;
-- наличие отраслевого соответствия для выбранной capability;
+- наличие отраслевого соответствия там, где выбранная ветвь его требует;
 - непротиворечивые ссылки statement→goal/task/source/slot;
 - полное покрытие ФТ↔UC и отсутствие dangling references;
 - наличие причины для пустого слота;
@@ -276,41 +327,57 @@ coverage:
 Автоматическое действие формулируется от субъекта «Система», а не механически
 как «возможность Пользователя».
 
-### 10. Exact TM Forum binding
+### 10. TM Forum и SID: две типизированные оси
 
 Локальная product taxonomy и TM Forum mapping разделяются. Поля `PC-*`,
 `PF-*`, `AF-*` принадлежат MANGO taxonomy и не являются TM Forum ID. Prose в
 `industry_correspondence.tm_forum` является ориентиром, но не точным binding.
 
 ```yaml
-tm_forum_binding:
-  status: resolved | unresolved | not-applicable
-  framework: capability | etom-process | oda-component | open-api
-  tm_forum_snapshot_id: TMF-CAPABILITY-4.0.0
-  tm_forum_capability_id: "<exact ID from snapshot>"
-  tm_forum_capability_name: "<exact name from snapshot>"
-  source_anchor: "<stable catalog anchor>"
+industry_bindings:
+  tm_forum:
+    status: unresolved # resolved | unresolved | not-applicable
+    element_type: capability # capability | etom-process | oda-component | open-api
+    snapshot_ref: null
+    element_id: null
+    element_name: null
+    source_anchor: null
+  sid_context:
+    status: unresolved # resolved | unresolved | not-applicable
+    snapshot_ref: null
+    element_type: null # domain | ABE | business-entity
+    element_id: null
+    element_name: null
+    source_anchor: null
   local_product_binding_refs: [PB-01]
   rationale: "..."
-  reviewed_by: "..."
+  reviewed_by: null
 ```
 
-`tm_forum_capability_id` допустим только для `framework: capability`; eTOM и
-ODA используют типизированные `tm_forum_process_id` и `oda_component_id`.
-`resolved` требует доступного версионированного snapshot, точного element ID,
-имени и source anchor. Если snapshot отсутствует, корректный результат —
-`unresolved`; similarity, свободный перевод и угадывание по названию запрещены.
-Точный binding принимает `G-human`, а `G-mach` проверяет membership и тип поля.
+`resolved` на любой оси требует доступного версионированного источника,
+точного element ID, имени и anchor; поле ID типизировано по виду элемента.
+Если публичный обзор даёт только домен без стабильного ID, сохраняется
+`unresolved` и отдельный **кандидат** с URL и rationale, но не `resolved`.
+Similarity, свободный перевод и угадывание по названию запрещены. Точный
+binding принимает `G-human`, а `G-mach` проверяет membership и тип поля.
 
-## Impacted artifacts after acceptance
+[Information Framework (SID)](https://www.tmforum.org/open-digital-architecture/information-framework-sid/)
+сам принадлежит TM Forum и описывает информационные сущности и их домены.
+Это полезная **вторая ось контекста**, но не независимый стандарт, который
+замещает отсутствующий ID capability/eTOM. Наличие SID-контекста не повышает
+`tm_forum.status` до `resolved` и не снимает блокировку там, где задача требует
+точного capability/process binding. Так сохраняется намерение владельца
+использовать доступный обзор как поддержку эскалации без ложной точности.
 
-| Артефакт | Предлагаемое изменение | В этом PR |
+## Impacted artifacts for implementation
+
+| Артефакт | Предлагаемое изменение | Было в PR #602 |
 | --- | --- | --- |
 | [Мета-модель: taxonomy](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/20-taxonomy.md) | Закрепить product binding и версионирование snapshot. | Только snapshot и навигация. |
-| [Мета-модель: production law](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/30-production-law.md) | Добавить `C-REQ-MAP`, relevance/abstraction/coverage invariants. | Нет. |
+| [Мета-модель: decision framework](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/30-decision-framework.md) | Добавить `C-REQ-MAP`, relevance/abstraction/coverage invariants. | Нет. |
 | [Мета-модель: practice](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/40-practice-and-cases.md) | После приёмки оформить три кейса Golden Set. | Нет. |
 | Source contracts/schemas | Описать pre-decomposition и coverage contracts. | Нет. |
-| Source templates | Описать 14→7 projection и API/LK/КЦ overlays. | Нет. |
+| Source templates | Описать 14→7 projection и сочетаемые content overlays. | Нет. |
 | [BCREQ skeleton](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/templates/bcreq-skeleton.md) | Скомпилировать принятую проекцию. | Нет. |
 | [Output schema](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/contracts/c-out-bcreq.schema.json) | Добавить versioned mapping/coverage representation либо отдельную schema. | Нет. |
 | Skills, dispatcher, route | Добавить product preflight, новую декомпозицию и гейты. | Нет. |
@@ -320,8 +387,10 @@ ODA используют типизированные `tm_forum_process_id` и `
 
 ### Phase 0 — решение
 
-Владелец принимает или отклоняет этот RFC, семантическую форму из семи
-разделов и статус трёх Golden Form. До решения runtime не меняется.
+Владелец принял архитектуру и три формы как целевые кандидаты в
+[issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609).
+Это не является приёмкой новых runtime Golden cases без отдельного
+воспроизводимого прогона и human review.
 
 ### Phase 1 — Source contracts
 
@@ -349,22 +418,22 @@ version без ручного drift Distribution.
 
 ## Acceptance criteria
 
-Решение готово к реализации, если владелец подтверждает одновременно:
+Решение принято для проектирования Source на следующих условиях:
 
 1. раздел 3 содержит только L1 capabilities, а атомарность переносится на
    L2–L4;
 2. семь разделов являются projection, а 14 слотов остаются внутренним
    контрактом;
 3. product binding обязателен до предметной декомпозиции;
-4. три формы из анализа принимаются как Golden candidates или возвращаются с
-   конкретным контрпримером;
+4. три формы из анализа приняты как Golden candidates, но не как уже
+   скомпилированные runtime эталоны;
 5. `G-mach`, `G-semantic` и `G-human` имеют разные полномочия;
 6. физические изменения Distribution выполняются отдельной задачей.
 
 Будущая реализация принимается, когда автоматические проверки докажут:
 
-- неизвестный taxonomy ID и capability без отраслевого соответствия дают
-  fail-closed;
+- неизвестный taxonomy ID и обязательное, но отсутствующее отраслевое
+  соответствие дают fail-closed для соответствующей ветви;
 - факт только с keyword match не проходит без goal/task/system/product refs;
 - ФТ без UC, dangling UC/AC и квадратная матрица с фиктивным ФТ отвергаются;
 - UI field, API method или конкретное значение в L1 создают диагностируемый
@@ -396,22 +465,15 @@ version без ручного drift Distribution.
 в Source или Distribution и удаляются после проверки артефактов. Golden Form
 содержат только синтезированную структуру и обезличенные предметные примеры.
 
-## Decision requested
+## Decision
 
-Владелец выбирает один вариант:
+В [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609)
+владелец принял вариант 1 с уточнениями о маршрутизации и профилях. Этот
+документ фиксирует проверяемую формулировку. Порог 80% и точный SID binding
+не являются готовыми исполняемыми предикатами без указанных источников и
+правил измерения; границы зафиксированы в
+[сквозной проверке](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-24-architecture-convergence-and-readiness.md).
 
-1. **Принять предложение целиком — рекомендуется.** Сохранить 14 слотов,
-   принять 7-раздельную проекцию, product preflight, лестницу абстракции и
-   разделение гейтов.
-2. Принять форму BCREQ, но отложить product routing. Это улучшит документ, но
-   сохранит доказанный риск нерелевантной предметной ветки.
-3. Отклонить предложение с конкретным контрпримером, где деталь L2–L4 должна
-   быть самостоятельным верхнеуровневым ФТ.
-
-Рекомендация — вариант 1 и отдельная implementation issue по фазам 1–3. Это
-закрывает найденные причины, не смешивая proposal с изменением runtime.
-
-Снимки продуктовой и отраслевой таксономий в этом PR являются операционными
-routing inputs для будущей компиляции. Они не исполняют и не закрывают более
-широкие отложенные задачи `B-121`, `B-122`, `B-123`; backlog по issue #601 не
-обновляется, поскольку эта задача не была в нём зарегистрирована.
+Снимки продуктовой и отраслевой таксономий, добавленные PR #602, являются
+операционными routing inputs для будущей компиляции. Они не исполняют и не
+закрывают более широкие отложенные задачи `B-121`, `B-122`, `B-123`.
