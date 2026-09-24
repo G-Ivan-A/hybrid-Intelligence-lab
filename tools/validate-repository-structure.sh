@@ -470,6 +470,7 @@ is_active_file() {
     research/reputation-technologies/2026-06-20-executive-summary.ru-en.md | \
     research/reputation-technologies/2026-06-20-glossary.ru-en.md | \
     research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md | \
+    research/reputation-technologies/2026-09-24-introductory-course-options-610.md | \
     research/mango/2026-05-22-classification.md | \
     research/mango/2026-05-22-classification-tz.md | \
     research/mango/2026-05-22-requirements-flow.md | \
@@ -1973,11 +1974,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.19"
+require_text "ops/artifact-map.md" "version: 2.20"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-09-22"
+require_text "ops/artifact-map.md" "updated: 2026-09-24"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2200,7 +2201,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.21"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.22"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"

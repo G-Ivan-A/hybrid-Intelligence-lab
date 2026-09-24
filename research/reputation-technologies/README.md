@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.0
-updated: 2026-06-20
+version: 1.1
+updated: 2026-09-24
 temperature: 0.1
 ---
 
@@ -30,6 +30,7 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 | [2026-06-20-white-paper.en.md](2026-06-20-white-paper.en.md) | **White paper (EN, 10–15 c.)** для международной аудитории: проблема, формализация видения, доказательства из 15 проектов, фреймворк, стандартизация, go-to-market, экосистема, roadmap. |
 | [2026-06-20-executive-summary.ru-en.md](2026-06-20-executive-summary.ru-en.md) | **Executive summary (RU + EN, 2–3 c.)**: суть, модель, выводы рынка, рекомендации, роль ИИ. |
 | [2026-06-20-glossary.ru-en.md](2026-06-20-glossary.ru-en.md) | **Терминологический словарь (RU↔EN)**: ядро модели, методология, капитал/метрики, данные/ИИ, governance/этика, наименования — с международными аналогами. |
+| [2026-09-24-introductory-course-options-610.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) | Исследование issue #610: пять структур вводного курса, 25 синтетических прогонов, матрица и рекомендация для human review. |
 
 ## Карта Definition of Done (issue #260)
 
