@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.1
-updated: 2026-09-23
+status: accepted
+version: 0.2
+updated: 2026-09-24
 temperature: 0.1
 type: analysis
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/605"
@@ -29,8 +29,10 @@ related_artifacts:
 
 Предлагаемые ниже правила усиливают, но не заменяют действующий
 [RFC уровня абстракции и продуктовой маршрутизации](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md).
-Они остаются proposal до решения владельца и не являются разрешением менять
-runtime-пакет. Предложенный issue путь `docs/contracts/` не использован: он
+Инварианты приняты как основание для Source-контрактов в
+[issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609),
+но сами по себе не являются разрешением менять runtime-пакет. Предложенный
+issue путь `docs/contracts/` не использован: он
 запрещён каноническим `AGENTS.md`; Analysis размещён в контуре инициативы.
 
 ## Контекст и охват
@@ -260,30 +262,43 @@ Forum ID. Текущее поле `industry_correspondence.tm_forum` содер�
 загружен в утверждённый реестр, результат `unresolved`; модель не угадывает ID
 по названию и не публикует similarity как факт.
 
+`TMF-INV-05` — [Information Framework (SID)](https://www.tmforum.org/open-digital-architecture/information-framework-sid/)
+является информационной моделью TM Forum. Его домены и сущности дают отдельный
+контекст для эскалации, но не заменяют ID capability, процесса или компонента.
+Каждая ось хранит собственные status, тип элемента, версию и anchor. Публичное
+описание домена без точного ID даёт кандидата, а не `resolved` binding.
+
 ```yaml
-tm_forum_binding:
-  status: resolved | unresolved | not-applicable
-  framework: capability | etom-process | oda-component | open-api
-  tm_forum_snapshot_id: TMF-CAPABILITY-4.0.0
-  tm_forum_capability_id: "<exact ID from snapshot>"
-  tm_forum_capability_name: "<exact name from snapshot>"
-  source_anchor: "<stable catalog anchor>"
+industry_bindings:
+  tm_forum:
+    status: unresolved
+    element_type: capability
+    snapshot_ref: null
+    element_id: null
+    element_name: null
+    source_anchor: null
+  sid_context:
+    status: unresolved
+    element_type: null
+    snapshot_ref: null
+    element_id: null
+    element_name: null
+    source_anchor: null
   local_product_binding_refs: [PB-01]
   rationale: "why this element supports the requirement"
-  reviewed_by: "<human reviewer>"
+  reviewed_by: null
 ```
 
-Поле `tm_forum_capability_id` допустимо только при `framework: capability`;
-для eTOM и ODA используются соответственно типизированные
-`tm_forum_process_id` и `oda_component_id`. На дату анализа доступной в
-репозитории таблицы точных TM Forum IDs нет. Поэтому массовая автоматическая
+ID и membership проверяются в реестре соответствующего типа элемента; для
+eTOM и ODA нельзя переиспользовать поле capability. На дату анализа доступной
+в репозитории таблицы точных TM Forum IDs нет. Поэтому массовая автоматическая
 разметка текущего корпуса была бы фабрикацией, а не выполнением задачи.
 
 ## Контракт исполнения и проверки
 
 ### Pre-decomposition
 
-До генерации BCREQ исполнитель обязан создать:
+До декомпозиции FR/UC/NFR внутри Working исполнитель обязан создать:
 
 1. реестр evidence с состоянием retrieval и точными anchors;
 2. goal/task/system-boundary register;
@@ -353,17 +368,19 @@ reason, owner и open question.
 
 ## Рекомендации
 
-1. Принять уточнённые инварианты в существующем RFC как typed contracts, но не
-   компилировать runtime до human decision.
+1. Уточнённые инварианты приняты в существующем RFC как typed contracts.
+   Runtime компилируется отдельной задачей с проверяемыми fixtures.
 2. В следующей реализационной задаче сначала добавить schemas и `G-mach`, затем
    semantic regression set; prompt менять после появления измеримого gate.
-3. Завести версионированный TM Forum registry только из доступного
-   авторитетного snapshot. До этого `tm_forum_binding.status=unresolved` должен
-   быть корректным результатом.
-4. Запросить 23 полных диалога из gap list. После загрузки повторить analysis и
-   обновить Golden pairs, не переписывая исходные run.
-5. Не повышать анализ до стандарта или ADR в этом PR: issue не даёт полномочий
-   менять `standards/` или `docs/adr/`, а решение о runtime остаётся у владельца.
+3. Версионированный реестр точных ID заполнять только из доступного
+   авторитетного snapshot. До него `tm_forum.status=unresolved` корректен;
+   отдельно сохранять подтверждённый SID-контекст или кандидата с anchor.
+4. Владелец в [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609)
+   признал доступную выборку достаточной для этих инвариантов. Список 23 run
+   остаётся границей evidence; получение новых чатов — триггер повторного
+   анализа, а не условие принятия текущего Source-дизайна.
+5. Анализ не повышается до стандарта или ADR: issue не даёт полномочий менять
+   `standards/` или `docs/adr/`; runtime имеет отдельный цикл приёмки.
 
 ## Связанные артефакты
 

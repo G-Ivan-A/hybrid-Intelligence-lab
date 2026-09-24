@@ -22,9 +22,9 @@ related_issues:
 # Практика: модель производства артефакта и вертикальный срез
 
 > Файл опирается на основание модуля: закон производства и сущности —
-> [`10-theory.md`](10-theory.md), таксономии и депрекация —
-> [`20-taxonomy.md`](20-taxonomy.md), состав пакета —
-> [`30-decision-framework.md`](30-decision-framework.md).
+> [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/10-theory.md), таксономии и депрекация —
+> [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/20-taxonomy.md), состав пакета —
+> [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/30-decision-framework.md).
 
 ## 1. Модель производства артефакта: BCREQ
 
@@ -222,4 +222,4 @@ flowchart TD
 - Срез описан в словаре версии 0.2 (`P-01`, `P-03`, навыки `SK-*`); прежнее
   описание среза в терминах `fr-generation` и шести операций депрекировано
   вместе со словарём
-  ([`20-taxonomy.md`](20-taxonomy.md), §4).
+  ([`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/20-taxonomy.md), §4).

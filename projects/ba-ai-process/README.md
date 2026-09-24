@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-09-23
+version: 1.3
+updated: 2026-09-24
 temperature: 0.1
 scope: mango-only
 type: research
@@ -80,12 +80,14 @@ RFC — в
 в `dist/`. Архитектурная граница принята в
 [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md).
 
-Кандидаты эталонных форм BCREQ для API, ЛК и Контактного центра вместе с
+Принятые как целевые кандидаты эталонные формы BCREQ для API, ЛК и Контактного центра вместе с
 проверкой реализуемости описаны в
 [анализе issue #601](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-bcreq-golden-forms-and-feasibility.md).
-Предложения по уровню абстракции и остальным гейтам зафиксированы отдельно в
+Принятые правила уровня абстракции и остальных гейтов зафиксированы отдельно в
 [RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md);
-принятая issue #603 часть о продуктовой маршрутизации реализована в Distribution.
+принятая issue #603 часть о ранней MANGO-атрибуции реализована в Distribution.
+Классификатор направления поиска и двойная отраслевая привязка пока остаются
+дельтой Source.
 
 Форензика всех 67 legacy-прогонов и приложенных к issue #605 диалогов,
 негативные примеры и строгие инварианты FR/UC/NFR и TM Forum binding находятся
@@ -93,8 +95,11 @@ RFC — в
 [анализе прогонов требований](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-requirements-run-forensics.md).
 
 Конвейер от типизированного рабочего baseline к клиентской Release-проекции,
-включая NFR→FR, обратную совместимость и правила компиляции, предложен в
+включая NFR→FR, обратную совместимость и правила компиляции, принят в
 [RFC Working Document → Release Document](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-working-release-pipeline.md).
+Согласование [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609),
+сквозные зависимости и граница готовности Source зафиксированы в
+[анализе архитектурной сходимости](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-24-architecture-convergence-and-readiness.md).
 
 ## Решение о GigaCode CLI
 

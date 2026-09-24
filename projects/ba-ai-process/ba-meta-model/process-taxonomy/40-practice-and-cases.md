@@ -18,10 +18,10 @@ related_issues:
 
 # Практика: сквозные кейсы, проверка словаря и метрики
 
-> Основания раздела: уровни и словари — [`20-taxonomy.md`](20-taxonomy.md),
-> критерии уровня и правила дельты — [`10-theory.md`](10-theory.md),
+> Основания раздела: уровни и словари — [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/20-taxonomy.md),
+> критерии уровня и правила дельты — [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/10-theory.md),
 > выбор процесса, граф маршрута и привязка гейтов —
-> [`30-decision-framework.md`](30-decision-framework.md).
+> [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/30-decision-framework.md).
 
 ## 1. Почему кейсы синтетические
 
@@ -62,7 +62,7 @@ Issue #571 разрешает синтетические кейсы при за�
 машинно проверяемое условие, а не заявление:
 [`validate-new-taxonomy.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.py)
 разбирает словари прямо из
-[`20-taxonomy.md`](20-taxonomy.md) обоих модулей и падает при непокрытом
+[`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/20-taxonomy.md) обоих модулей и падает при непокрытом
 значении.
 
 ## 3. Сквозной срез `SC-1`: ветвление, которое прежняя модель запрещала

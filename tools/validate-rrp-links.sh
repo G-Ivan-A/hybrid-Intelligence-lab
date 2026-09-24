@@ -7,9 +7,10 @@ set -euo pipefail
 # cross-validation reports for issue #505 and issue #506 showed that exactly what
 # CI checks is what gets done. This validator makes P2 machine-checkable.
 #
-# Check is deliberately trivial (Anti-Inflation): at least one relative markdown
-# link from the module's practice file (40-*.md) to a theory-branch file
-# (10-*.md, 20-*.md, 30-*.md) in the same module directory. No AST parsing.
+# Check is deliberately trivial (Anti-Inflation): at least one markdown link
+# from the module's practice file (40-*.md) to a theory-branch file
+# (10-*.md, 20-*.md, 30-*.md) in the same module directory. The link may be
+# relative or the full GitHub URL required by a task. No AST parsing.
 #
 # Existing violations are grandfathered in BASELINE_VIOLATIONS: the modules are
 # research text and issue #506 forbids editing them, so the deviation is recorded
@@ -73,9 +74,13 @@ is_baseline_violation() {
 # validate-file-naming.sh uses to recognise a Reference Research Pattern module.
 count_foundation_links() {
   local practice_file="$1"
+  local module="${practice_file%/*}"
+  local relative_count absolute_count
 
   # grep exits 1 on no match, which is a legitimate result here, not an error.
-  grep -cE '\]\((10|20|30)-[a-z0-9]+(-[a-z0-9]+)*\.md(#[^)]*)?\)' "$practice_file" || true
+  relative_count="$(grep -cE '\]\((10|20|30)-[a-z0-9]+(-[a-z0-9]+)*\.md(#[^)]*)?\)' "$practice_file" || true)"
+  absolute_count="$(grep -cE "\\]\\(https://github[.]com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/${module}/(10|20|30)-[a-z0-9]+(-[a-z0-9]+)*[.]md(#[^)]*)?\\)" "$practice_file" || true)"
+  printf '%d\n' "$((relative_count + absolute_count))"
 }
 
 modules_checked=0

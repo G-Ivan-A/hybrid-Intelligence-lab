@@ -1,7 +1,7 @@
 ---
-status: proposed
-version: 0.1
-updated: 2026-09-23
+status: accepted
+version: 0.2
+updated: 2026-09-24
 temperature: 0.1
 owner: G-Ivan-A
 rfc-scope: C
@@ -14,18 +14,18 @@ rfc-scope: C
 | Поле | Значение |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | `proposed`; принятие только решением человека |
+| RFC status | `accepted`; решение владельца зафиксировано в [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609) |
 | Source issue | [#607](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/607) |
 | Implementation link | [PR #608](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/608) |
 | Evidence | Девять вложений issue #607, прочитанных только во временной рабочей области; ранее принятые изменения [PR #602](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/602), [PR #604](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/604) и [PR #606](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/606) |
-| Impacted artifacts | После принятия: BCREQ Source schema, skills, gates, compiler, release profiles и Distribution |
-| Decision record | Этот RFC является предложением; отдельный ADR до решения владельца не создаётся |
+| Impacted artifacts | Для реализации: BCREQ Source schema, skills, gates, compiler, release profiles и Distribution |
+| Decision record | Владелец принял пять пунктов конвейера в приложенном к [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609) диалоге; границы сопоставлены в [сквозной проверке](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-24-architecture-convergence-and-readiness.md) |
 | Archetype scope | `C` — Product Spoke / Runtime |
 
 ## Summary
 
-Предлагается не поддерживать два независимо редактируемых документа. Вместо
-этого BCREQ получает один типизированный **Working Document** — рабочий пакет и
+Не поддерживаются два независимо редактируемых документа. BCREQ получает
+один типизированный **Working Document** — рабочий пакет и
 единственный источник семантики — и один или несколько **Release Document**,
 детерминированно скомпилированных из подтверждённого baseline для заданной
 аудитории.
@@ -127,7 +127,7 @@ Markdown является представлением модели, но не �
 
 | Стадия | Результат Working | Условие перехода |
 | --- | --- | --- |
-| `W0 Intake and attribution` | Нормализованная цель, автор, source register, checksum-дедупликация, подтверждённая продуктовая цепочка и первичное решение о совместимости. | Источники доступны или пробелы названы; продуктовая атрибуция подтверждена человеком; `requires_backward_compatibility != unknown`. |
+| `W0 Intake and attribution` | Нормализованная цель, автор, source register, checksum-дедупликация, тип работы, правило направления поиска, подтверждённые применимые цепочки и первичное решение о совместимости. | Источники доступны или пробелы названы; применимая атрибуция подтверждена человеком по мотивированной рекомендации; `requires_backward_compatibility != unknown`. |
 | `W1 Context and boundary` | Проблема, цель, обязательная User Story, actor/system boundary, `in_scope`, `out_of_scope`, as-is/delta и ограничения. | Контекст не содержит скрытых FR/NFR; граница и дельта подтверждены BA/заказчиком. |
 | `W2 Requirements baseline` | Минимальный набор capability-level FR и измеримых NFR с provenance и ссылками. | Все FR относятся к delta; каждый NFR имеет `applies_to_fr`; TBD не выдан за target. |
 | `W3 Behaviour and alternatives` | UC, coverage matrix, edge cases, варианты решения, критерии выбора и открытые решения. | Каждый FR покрыт UC; каждый сценарий и edge case имеет владельца требования/ограничения; выбранные варианты подтверждены человеком. |
@@ -160,9 +160,11 @@ User Story обязательна в Working и связывает actor, цел
 
 Это уточняет предложенную в
 [RFC уровня абстракции и продуктовой маршрутизации](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md)
-проекцию бизнес-контекста. Оба RFC имеют статус `proposed`; принятие этого
-решения требует синхронно обновить либо supersede пересекающуюся часть прежнего
-RFC, а не оставить две нормы.
+внутреннюю проекцию бизнес-контекста. Оба RFC приняты в
+[issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609):
+этот RFC владеет клиентской Release-проекцией, а RFC абстракции — семантикой
+внутренних слотов. Конфликт заголовков и обязательности раздела 7 разрешён в
+обоих документах.
 
 ### 4. Контракт FR, UC, edge case и функционального дизайна
 
@@ -423,15 +425,15 @@ cases. Нужны stage gates до baseline и отдельная проверк
 
 ## Impacted Artifacts
 
-В текущем PR меняются только:
+В исходном PR #608 менялись только:
 
-- этот proposal RFC;
+- исходная предложенная версия этого RFC;
 - навигация проекта;
 - локальный contract test RFC;
 - регистрация contract test в CI и в реестре активных файлов структурного
   валидатора.
 
-После принятия решения потребуются отдельные реализационные изменения:
+Для исполнения принятой архитектуры потребуются отдельные реализационные изменения:
 
 | Артефакт | Изменение |
 | --- | --- |
@@ -444,14 +446,15 @@ cases. Нужны stage gates до baseline и отдельная проверк
 
 RFC пересекается с разделами 1, 6–9
 [RFC уровня абстракции и продуктовой маршрутизации](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md).
-После human acceptance пересекающиеся нормы должны быть объединены или явно
-superseded до изменения runtime.
+Разделение внутренней семантики и клиентского rendering синхронизировано в
+[issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609);
+отдельного второго источника для Release не создаётся.
 
 ## Implementation and Validation
 
-### В этом PR
+### Исходный PR #608
 
-- предложение переведено в статус `proposed`, но runtime не изменён;
+- предложение было переведено в статус `proposed`, но runtime не изменён;
 - добавлен тест
   `tools/test-bcreq-working-release-pipeline.sh`, который удерживает ключевые
   маркеры и запрещает относительные Markdown-ссылки в RFC; тест выполняется
@@ -471,15 +474,14 @@ superseded до изменения runtime.
 python3 tools/generate-manifest.py --check
 ```
 
-### После принятия
+### Следующая реализационная задача
 
-1. Согласовать этот RFC с пересекающимся proposal и закрепить одно решение.
-2. Добавить schemas и negative fixtures до изменения skills.
-3. Реализовать `G-mach`, baseline digest, compiler и `G-release` в Source.
-4. Добавить release profiles и privacy fixtures.
-5. Выполнить пробную компиляцию на ранее проверенных формах BCREQ.
-6. Скомпилировать Distribution из Source и доказать повторяемость.
-7. Обновить runtime только отдельной задачей и отдельным PR.
+1. Добавить schemas и negative fixtures до изменения skills.
+2. Реализовать `G-mach`, baseline digest, compiler и `G-release` в Source.
+3. Добавить release profiles и privacy fixtures.
+4. Выполнить пробную компиляцию на ранее проверенных формах BCREQ.
+5. Скомпилировать Distribution из Source и доказать повторяемость.
+6. Обновить runtime только отдельной задачей и отдельным PR.
 
 Definition of Done реализации: orphan NFR, `unknown` compatibility, потерянный
 edge case, ручная правка Release и исключение required FR должны падать в
@@ -487,10 +489,9 @@ negative tests; повторная компиляция должна быть by
 
 ## Lifecycle and Decision Path
 
-RFC готов к human review. Он не меняет принятые решения и runtime до явного
-решения владельца.
-
-Владельцу предлагается принять либо отклонить одним решением:
+Владелец принял единым решением в приложенном к
+[issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609)
+диалоге:
 
 1. Working как единственный редактируемый baseline и Release как его проекцию;
 2. замену обязательного 2.3 «Задачи» на 2.3 «Границы изменения»;
@@ -498,17 +499,15 @@ RFC готов к human review. Он не меняет принятые реше
 4. pre-baseline gates плюс post-compilation `G-release`;
 5. название раздела 4 «Функциональный дизайн решения».
 
-При принятии статус становится `accepted`, а пересекающийся RFC синхронно
-обновляется или получает явную ссылку supersession. Только после этого
-открывается реализационная задача. При отклонении статус меняется на `rejected`
-с зафиксированной альтернативой.
+Этот RFC имеет статус `accepted`; пересекающийся RFC синхронизирован.
+Следующая задача меняет Source и затем компилирует Distribution с отдельным
+review. Принятие архитектуры само по себе не утверждает исполняемый пакет.
 
 ## Open Questions
 
-Блокирующих вопросов для review нет. Выбор принять или отклонить пакет решений
-выше является human decision, а не пробелом анализа. Конкретные имена schema,
+Блокирующих вопросов по пяти пунктам конвейера нет. Конкретные имена schema,
 формат физического хранения Working и набор дополнительных release profiles
-определяются после принятия без изменения семантических инвариантов RFC.
+определяются в реализационной задаче без изменения семантических инвариантов RFC.
 
 ## Related Artifacts
 
@@ -519,7 +518,7 @@ RFC готов к human review. Он не меняет принятые реше
 - [Форензика требований](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-23-requirements-run-forensics.md)
   — инварианты FR/UC/NFR, evidence и gate boundary.
 - [RFC уровня абстракции и продуктовой маршрутизации](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-bcreq-abstraction-and-product-routing.md)
-  — связанный proposal, который должен быть согласован при принятии.
+  — принятая семантика внутренних слотов, абстракции и маршрутизации.
 - [ADR-017 Source/Distribution](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md)
   — принятая граница Source, Distribution, Runtime и Feedback.
 - [IREB CPRE Glossary](https://cpre.ireb.org/en/downloads-and-resources/glossary)

@@ -51,6 +51,30 @@ if ! output="$(run_validator none 2>&1)"; then
   fail "validator must pass when the practice file links to its foundation"
 fi
 
+# Case 1b: a full repository URL to the same module also satisfies P2.
+rm -rf "$WORKDIR/research"
+make_module "$WORKDIR/research/ai-education/absolute" \
+  '# Practice
+
+Основание практики — [теория](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/absolute/10-theory.md).'
+
+if ! output="$(run_validator none 2>&1)"; then
+  printf '%s\n' "$output" >&2
+  fail "validator must accept an absolute link to the module foundation"
+fi
+
+# An absolute link to another module cannot satisfy the own-foundation rule.
+rm -rf "$WORKDIR/research"
+make_module "$WORKDIR/research/ai-education/wrong-target" \
+  '# Practice
+
+Это [чужая теория](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/other/10-theory.md).'
+
+if output="$(run_validator none 2>&1)"; then
+  printf '%s\n' "$output" >&2
+  fail "validator must reject an absolute link to another module"
+fi
+
 # Case 2: practice file mentions the file name without a link — insufficient.
 rm -rf "$WORKDIR/research"
 make_module "$WORKDIR/research/ai-education/unlinked" \

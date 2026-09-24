@@ -24,8 +24,9 @@ for marker in "${required_analysis_markers[@]}"; do
 done
 
 required_rfc_markers=(
-  "tm_forum_snapshot_id"
-  "tm_forum_capability_id"
+  "industry_bindings:"
+  "sid_context:"
+  "Порог 80%"
   "FR-INV-01"
   "UC-INV-01"
   "NFR-INV-01"
@@ -37,6 +38,11 @@ for marker in "${required_rfc_markers[@]}"; do
     exit 1
   }
 done
+
+rg -q --fixed-strings 'status: accepted' "$rfc" || {
+  echo "accepted architecture status is missing" >&2
+  exit 1
+}
 
 rg -q --fixed-strings '"projects/ba-ai-process/docs/analysis"' "$structure_validator" || {
   echo "project analysis home is missing from the structure contract" >&2

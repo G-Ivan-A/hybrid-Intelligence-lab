@@ -18,9 +18,9 @@ related_issues:
 # Практика: операции на кейсах и метрики словаря
 
 > Основания раздела: критерии атомарности и классы —
-> [`10-theory.md`](10-theory.md), каталог и разложение навыков —
-> [`20-taxonomy.md`](20-taxonomy.md), тест уровня и ярусы —
-> [`30-decision-framework.md`](30-decision-framework.md).
+> [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/operation-taxonomy/10-theory.md), каталог и разложение навыков —
+> [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/operation-taxonomy/20-taxonomy.md), тест уровня и ярусы —
+> [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/operation-taxonomy/30-decision-framework.md).
 
 ## 1. На чём проверяется
 

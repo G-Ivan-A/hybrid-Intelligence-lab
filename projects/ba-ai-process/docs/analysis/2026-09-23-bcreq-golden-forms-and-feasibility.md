@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.1
-updated: 2026-09-23
+status: accepted
+version: 0.2
+updated: 2026-09-24
 temperature: 0.1
 type: analysis
 scope: mango-only
@@ -32,8 +32,14 @@ related_artifacts:
 раздел ФТ. Это не ограничение языковой модели; это дефект исполняемого
 контракта и его гейтов.
 
-Три формы ниже являются кандидатами на согласование. Они не помещаются в
-runtime Golden Set до решения владельца и отдельной компиляции пакета.
+Владелец принял три формы как целевые кандидаты в приложенном к
+[issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609)
+диалоге. `accepted` означает приёмку анализа и целевой формы, но не включение
+кейсов в runtime Golden Set: для него требуются воспроизводимые входы, регрессионные
+assertions и отдельный human gate. Оценка текущего runtime ниже относится к
+снимку до [PR #604](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/604);
+актуальная дельта приведена в
+[сквозной проверке](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-24-architecture-convergence-and-readiness.md).
 
 ## Доказательная база и метод
 
