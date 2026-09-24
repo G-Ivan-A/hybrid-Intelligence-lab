@@ -24,6 +24,7 @@ import re
 import sys
 from pathlib import Path
 
+sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from bcreq_pipeline import validate_release, validate_working
 
@@ -195,6 +196,8 @@ def check_manifest(root: str) -> None:
             path = os.path.join(current, filename)
             rel = os.path.relpath(path, root).replace(os.sep, "/")
             if rel == "package-manifest.yaml" or rel == ".gigacode/settings.json":
+                continue
+            if "/__pycache__/" in f"/{rel}" and rel.endswith(".pyc"):
                 continue
             if rel.startswith(MUTABLE_OUTPUT_PREFIXES):
                 continue

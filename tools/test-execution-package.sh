@@ -109,6 +109,13 @@ expect_reject() {
 # Case 1: the package as committed passes its own gate.
 expect_pass "$ROOT_DIR/$PACKAGE" "intact package"
 
+# Python may create bytecode during a standalone G-mach invocation. It is a
+# transient runtime file, not an immutable compiled package output.
+target="$(fixture generated-bytecode)"
+mkdir -p "$target/tools/__pycache__"
+printf 'generated' > "$target/tools/__pycache__/bcreq_pipeline.cpython-314.pyc"
+expect_pass "$target" "generated Python bytecode"
+
 # Case 2: a route node pointing at a skill that was never compiled.
 target="$(fixture missing-skill)"
 rm -rf "$target/.gigacode/skills/core-assembly"
