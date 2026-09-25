@@ -1,5 +1,5 @@
 outcome: completed
-path: [entry, n0, n1, n2, n3, n4, n9, n10, n11, n12, exit]
+path: [entry, n0, n1, n2, n3, n4, n9, n10, n10a, n11, n12, n13, exit]
 required_files:
   - task.yaml
   - runs/RUN-0001.yaml

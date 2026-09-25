@@ -48,6 +48,8 @@ class RouteEmulationTest(unittest.TestCase):
             (PACKAGE / "contracts/c-in.schema.json").read_text(encoding="utf-8")
         )
         self.assertIn("product_attribution", schema["required"])
+        self.assertIn("work_type", schema["required"])
+        self.assertIn("routing", schema["required"])
         product = schema["properties"]["products"]["items"]
         self.assertTrue(
             {"domain", "capability", "feature", "atomic_function", "profile", "owner"}
@@ -76,6 +78,8 @@ class RouteEmulationTest(unittest.TestCase):
             }
         ]
         document = {
+            "work_type": "mango-change",
+            "routing": {"primary_axis": "mango", "rule": "mango-change", "decision": "confirmed", "decision_ref": "DEC-001"},
             "products": products,
             "product_attribution": {
                 "status": "confirmed",
@@ -88,6 +92,9 @@ class RouteEmulationTest(unittest.TestCase):
         mango = json.loads((PACKAGE / "taxonomy/mango-products.yaml").read_text(encoding="utf-8"))
         routing = yaml.safe_load((PACKAGE / "taxonomy/products.yaml").read_text(encoding="utf-8"))
         self.assertEqual([], VALIDATOR.product_binding_errors(document, mango, routing))
+        document["routing"]["primary_axis"] = "industry"
+        self.assertTrue(any("routing:" in message for message in VALIDATOR.product_binding_errors(document, mango, routing)))
+        document["routing"]["primary_axis"] = "mango"
 
         document["products"][0]["capability"] = "not-in-platform"
         errors = VALIDATOR.product_binding_errors(document, mango, routing)
@@ -128,6 +135,15 @@ class RouteEmulationTest(unittest.TestCase):
 
     def test_straight_through_route(self) -> None:
         self.assert_scenario("straight-through")
+
+    def test_preflight_and_release_are_unskippable(self) -> None:
+        graph = yaml.safe_load((PACKAGE / "routes/rg-bcreq-v1.yaml").read_text(encoding="utf-8"))
+        edges = {(edge["from"], edge["to"]) for edge in graph["edges"]}
+        for required in (("n10", "n10a"), ("n10a", "n11"), ("n12", "n13"), ("n13", "exit")):
+            self.assertIn(required, edges)
+        self.assertNotIn(("n12", "exit"), edges)
+        nodes = {node["node"]: node for node in graph["nodes"]}
+        self.assertIn("G-release", nodes["n13"]["gates"])
 
     def test_human_gate_persists_markdown_checkpoint(self) -> None:
         self.assert_scenario("human-gate")

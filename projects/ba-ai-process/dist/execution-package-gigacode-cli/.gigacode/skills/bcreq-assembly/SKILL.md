@@ -28,6 +28,10 @@ temperature: 0.1
 
 ## Предусловия
 
+0. Approved preflight registers and typed FR/UC/NFR with complete coverage
+   are available. The client Release is compiled only at `n13`; `n12` produces
+   the approved Working baseline.
+
 0. `products` и подтверждённый `product_attribution` совпадают во всех входах и переносятся в итоговый `A-BCREQ` без изменения.
 
 1. Все слоты содержания получены предыдущими навыками маршрута.
@@ -38,6 +42,12 @@ temperature: 0.1
 3. Известны рёбра следа от требований к элементам ядра и источникам.
 
 ## Шаги
+
+0. Write the `working` projection of `A-BCREQ` against
+   `contracts/c-working-bcreq.schema.json`. Check NFR→FR, FR↔UC, selected
+   design, compatibility closure, industry binding states, and approval.
+   Compute the canonical digest with `tools/bcreq_pipeline.py` and run
+   `validate-working` before setting the baseline to approved.
 
 1. `map-to-slot` — разложи содержание по всем слотам скелета. Слот, для которого
    содержания нет, получает признак «пуст» и причину пустоты из закрытого

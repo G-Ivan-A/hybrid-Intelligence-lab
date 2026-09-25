@@ -1,7 +1,7 @@
 name: straight-through
 task_id: TASK-9001
 run_id: RUN-0001
-human_approvals: [n0, n4, n12]
+human_approvals: [n0, n4, n10a, n12, n13]
 products:
   - {marker: A, domain: platform, capability: platform-integration, feature: crm-connectors, atomic_function: crm-bidirectional-sync, profile: P-API, owner: platform-owner}
 product_confirmation:
@@ -16,6 +16,8 @@ transitions:
   n3: n4
   n4: n9
   n9: n10
-  n10: n11
+  n10: n10a
+  n10a: n11
   n11: n12
-  n12: exit
+  n12: n13
+  n13: exit
