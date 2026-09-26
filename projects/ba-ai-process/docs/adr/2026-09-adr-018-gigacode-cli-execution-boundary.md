@@ -1,7 +1,7 @@
 ---
 status: proposed
-version: 0.1
-updated: 2026-09-25
+version: 0.2
+updated: 2026-09-26
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: runtime
@@ -45,6 +45,28 @@ decision-type: runtime
 2. Клонировать runtime в отдельный каталог задачи, сверить manifest и выполнить `sh tools/validate-package.sh`. Заполнить `meta-model/` и `docs/kb/` с учётом лицензий и доступа.
 3. Создать локальную `.gigacode/settings.json` из example только после выдачи корпоративным администратором адреса, транспорта и credentials одобренного Confluence MCP. Проверить `/mcp` и `/tools`; наличие подключения не доказывает право чтения конкретной страницы.
 4. Вызвать `/skills rg-bcreq-v1-dispatcher` с `TASK-0001`, пройти `n0` и сохранить подтверждение БА. На каждом узле видеть фактическую команду `G-mach`, exit code, путь результата и checkpoint. При reject остановиться. Для `n12` проверить утверждённый Working, для `n13` отдельно выполнить `validate-working`, `compile`, `validate-release` и просмотреть Release человеком.
+
+## Уточнение по review PR #616 (2026-09-26)
+
+Ответ на [комментарий владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/616) по среде 1.
+
+1. **Квалификация подтверждена:** текущий пакет — **ручной пилот**. Для опытной эксплуатации этого достаточно при условии обязательного журнала шагов (см. схему ниже); заявлять детерминированный end-to-end прогон нельзя.
+2. **Где возможна машинная гарантия:** MCP-сервер и skills её не дают — вызов MCP tool выбирает модель, автоприменение skill зависит от контекста ([skills](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/skills)), явный `/skills` переносит гарантию на человека. Обязательных хуков жизненного цикла в [официальной документации GigaCode CLI](https://gitverse.ru/docs/ai/ai-assistant-gigacode/gigacode-cli/commands) на 2026-09-26 не найдено. Поэтому гарантия в среде 1 достигается **только внешним runner**: AI workflow в CI/CD GitVerse или локальный `tools/run-task`, который сам запускает gate и проверяет exit code. Если GigaCode CLI опубликует блокирующие хуки, решение пересматривается.
+3. **Когда переходить:** **не сейчас, а после статистики ручного пилота.** Критерий перехода: после первых 10 задач (или 30 рабочих дней) доля шагов `script_invoked` < 95 % либо есть хотя бы один `step_skipped` на `G-mach` перед `n12`/`n13`. Порог фиксирует владелец; при его нарушении реализуется CI runner до расширения пилота. Независимо от статистики CI-проверка Release (`validate-release` по exit code) обязательна до публикации любого Release.
+
+### Схема наблюдаемости шага
+
+Каждый шаг маршрута пишет одну строку JSONL в `runs/<TASK_ID>/trace.jsonl`. Ровно одно из трёх состояний равно `true`:
+
+| Поле | Значение |
+| --- | --- |
+| `task_id`, `node`, `gate`, `ts` | идентификатор задачи, узел графа, ожидаемый gate, время UTC |
+| `script_invoked` | gate запущен как процесс; обязательны `command`, `exit_code`, `output_digest` |
+| `contract_mode` | шаг выполнен агентом без запуска скрипта; обязательна `reason` |
+| `step_skipped` | шаг пропущен; обязательна `reason` |
+| `recorded_by` | `runner`, `hook`, `agent` или `ba` |
+
+Метрика пилота — доля шагов `script_invoked=true` с записью `recorded_by=runner`. Запись агента не доказывает вызов: CI проверяет, что для каждого узла с `G-mach` в trace есть `exit_code` и что повторный запуск gate даёт тот же результат.
 
 ## Decision Drivers
 

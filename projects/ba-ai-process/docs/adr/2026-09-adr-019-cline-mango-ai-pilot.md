@@ -1,7 +1,7 @@
 ---
 status: proposed
-version: 0.1
-updated: 2026-09-25
+version: 0.2
+updated: 2026-09-26
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: runtime
@@ -48,6 +48,24 @@ decision-type: runtime
 3. Создать/клонировать `mango-ba-ai-runtime-cline` в отдельную папку. Проверить package manifest, `python3 --version`, зависимости и команду gate из README пакета. Пакет должен содержать `AGENTS.md`, адаптер Cline, `contracts/`, `routes/`, `taxonomy/`, `templates/`, `evaluation/`, `golden/`, `tools/`, `meta-model/` и `docs/kb/`; `runs/` и секреты исключить из публичного Git. Не копировать `.gigacode/skills/` как якобы нативные Cline skills.
 4. Администратор добавляет **отдельный** одобренный MCP для Jira/Confluence через Cline MCP Servers и проверяет `tools/list`/пробный read-only поиск по тестовой странице и issue. Пока MCP не выдан, BA работает только с разрешённой локальной KB, маркирует недоступный внешний источник как пробел и не утверждает непроверенную цитату. Model API key не подставлять в MCP как универсальный пароль.
 5. В VS Code открыть runtime-папку, проверить отключённое автоодобрение опасных действий, дать Cline один `TASK-0001` с синтетическим/разрешённым входом, подтвердить `n0`, затем выполнять route через runner. После каждого шага БА видит узел, источник, команду/exit code гейта и Markdown checkpoint; при FAIL останавливается. Для Release отдельно требуются одобренный Working, `validate-working`, `compile`, `validate-release`, human review.
+
+## Уточнение по review PR #616 (2026-09-26)
+
+Владелец попросил искать не «поддержку Python», а **механизм машинной гарантии вызова**, с приоритетом доступности из России. Расширенная проверка:
+
+| Кандидат | Механизм гарантии | Доступность и UX |
+| --- | --- | --- |
+| **Cline ≥ 3.36** | [Hooks](https://cline.bot/blog/cline-v3-36-hooks): исполняемые скрипты `PreToolUse`, `PostToolUse`, `TaskStart`, `TaskResume`, … в `.clinerules/hooks/`; запускаются клиентом, поле `cancel` блокирует операцию. Гарантия **частичная**: хук валидирует действие, которое модель уже выбрала, но не заставляет её сделать шаг. Только macOS/Linux, Windows не поддерживается. | Расширение VS Code; GUI настройка модели; baseline пилота. |
+| **Qwen Code** | [Hooks](https://qwenlm.github.io/qwen-code-docs/en/users/features/hooks/) `PreToolUse`, `PostToolUse`, `Stop` и др.; exit code 2 блокирует; `Stop`-хук может не дать завершить задачу без успешного gate. Та же частичная гарантия. | npm CLI, терминал: сложнее для junior. |
+| **OpenCode** | [Plugins](https://opencode.ai/docs/plugins/) `tool.execute.before/after`, `session.idle`; исключение в `before` блокирует tool. Частичная гарантия, нужен JS/TS-плагин. | CLI/TUI; V1/V2 конфиг. |
+| **Aider** | [`--test-cmd` + `--auto-test`](https://aider.chat/docs/usage/lint-test.html) запускает команду после каждой правки. Гарантия после правок, но не на переходах графа. | pip, терминал. |
+| MCP-runner, skills, Continue, JetBrains | Вызов выбирает модель или человек. | Без изменений. |
+| Hermes Agent, Raven, Nanobot, Bernstein, CUGA, KiwiQ, Dapr Agents, LangGraph (список владельца) | Оркестраторы/фреймворки: детерминированность дает собственный код-планировщик, т.е. это тот же **внешний runner**, а не клиент для БА. Hermes недоступен в РФ без VPN. | Требуют разработки и эксплуатации сервера; не клиент для junior. |
+| CI/CD (GitVerse или CI runtime-репозитория) | **Полная** машинная гарантия: CI сам запускает gate, exit code проверяет машина. | Не требует клиента; дополняет любой из них. |
+
+**Решение для среды 2:** клиент остаётся **Cline** — он единственный сочетает GUI для junior и блокирующие хуки. Гарантия строится из двух слоёв: (1) Cline hooks — `PostToolUse` после записи в `runs/<TASK_ID>/` запускает `G-mach` и пишет trace, `PreToolUse` отменяет `attempt_completion` и запись Release, если в trace нет успешного gate текущего узла; (2) CI runtime-репозитория повторно запускает все gate и отклоняет результат. На Windows-АРМ хуки недоступны: использовать VS Code Remote WSL или считать рабочее место ручным пилотом с обязательным trace. Доступность из России (VS Code Marketplace/Open VSX, npm для Qwen Code) не проверялась из РФ в этом PR — подтвердить на целевом АРМ до пилота; если Cline не скачивается, резерв — Qwen Code с теми же хуками.
+
+**Принятый риск и наблюдаемость:** модель всё ещё может не выполнить шаг — это ловит хук/CI, но не предотвращает. Поэтому обязательна схема trace из [ADR-018](2026-09-adr-018-gigacode-cli-execution-boundary.md#схема-наблюдаемости-шага): на каждом шаге ровно одно из `script_invoked`, `contract_mode`, `step_skipped`; метрика — доля детерминированных шагов (`script_invoked` с `recorded_by=runner` или `hook`).
 
 ## Decision Drivers
 
