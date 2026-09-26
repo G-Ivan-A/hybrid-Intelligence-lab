@@ -7,6 +7,10 @@ temperature: 0.1
 
 # RFC: Независимое видение структуры репозитория(ев) `mango_ba_prompts` (ИБ, внешнее хранилище, экосистема) / Independent Vision of `mango_ba_prompts` Repository Structure
 
+> Актуально для анализа 2026-06-19. Упоминания `kb/processed` ниже описывают
+> тогдашнее предложение; KB перемещена в
+> [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+
 ## Proposal / Предложение
 
 Зафиксировать результат **независимого анализа** (Operating Mode `Creative`,

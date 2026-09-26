@@ -21,6 +21,10 @@ related_artifacts:
 
 # Онтология процессов БА, операций и требований к ДОД в mango_ba_prompts
 
+> Актуально для анализа 2026-08-17 на снимке `295b65d`. Упоминание
+> `kb/processed` ниже сохраняет границу тогдашнего исследования; KB перемещена
+> в [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+
 ## Summary / BLUF
 
 На снимке `mango_ba_prompts@295b65d` уже зафиксирована рабочая онтология БА из

@@ -18,6 +18,10 @@ related_issues:
 
 # Практика: кейсы, эталоны, граничные случаи
 
+> Актуально для кейсов и замеров 2026-09-08. Упоминания `kb/processed` ниже
+> сохраняют исторический корпус; KB перемещена в
+> [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+
 > Ссылки на файлы этого модуля здесь относительные — этого требует правило `P2`
 > Reference Research Pattern, и его форму проверяет
 > [`tools/validate-rrp-links.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-rrp-links.sh).

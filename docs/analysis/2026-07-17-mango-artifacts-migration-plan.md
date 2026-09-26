@@ -25,6 +25,10 @@ related_artifacts:
 
 # План миграции артефактов Mango при разделении репозиториев (B-080)
 
+> Актуально для снимка 2026-07-17. Упоминания `kb/processed` и решения о его
+> размещении ниже сохраняют исторический контекст; KB перемещена в
+> [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+
 > Режим: **Analysis (recommendation)** для issue
 > [#436](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/436) и
 > backlog [B-080](../../ops/backlog.md).

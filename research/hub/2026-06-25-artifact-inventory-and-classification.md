@@ -33,6 +33,10 @@ external_artifacts:
 
 # Инвентаризация и классификация артефактов экосистемы (mango_ba_prompts + hybrid-Intelligence-lab)
 
+> Актуально для инвентаризации 2026-06-25. Упоминание `kb/processed` ниже
+> относится к тогдашнему дереву; KB перемещена в
+> [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+
 > **Режим:** `Research` + `Creative`. Документ — **аналитический отчёт**: он не
 > создаёт RFC, не вводит каталоги, не меняет структуру и **не удаляет артефакты**.
 > Все рекомендации показаны как trade-offs; решения по удалению/перемещению —
