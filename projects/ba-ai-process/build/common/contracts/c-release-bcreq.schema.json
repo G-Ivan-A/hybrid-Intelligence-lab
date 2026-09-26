@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/build/common/contracts/c-release-bcreq.schema.json",
+  "title": "Deterministic BCREQ client Release",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_class",
+    "release_id",
+    "working_baseline_id",
+    "release_profile",
+    "release_profile_version",
+    "audience",
+    "sections",
+    "release_digest",
+    "projection"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "artifact_class": {
+      "const": "A-BCREQ"
+    },
+    "release_id": {
+      "type": "string",
+      "pattern": "^REL-[0-9]{3}$"
+    },
+    "working_baseline_id": {
+      "type": "string",
+      "pattern": "^WB-[0-9]{3}$"
+    },
+    "release_profile": {
+      "const": "BCREQ-client-v1"
+    },
+    "release_profile_version": {
+      "const": 1
+    },
+    "audience": {
+      "const": "customer"
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "heading",
+          "fragments"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "heading": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fragments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "fragment_id",
+                "section",
+                "text",
+                "working_ids"
+              ],
+              "properties": {
+                "fragment_id": {
+                  "type": "string",
+                  "pattern": "^RF-[0-9]{3}$"
+                },
+                "section": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "working_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "release_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "projection": {
+      "const": "release"
+    }
+  }
+}
