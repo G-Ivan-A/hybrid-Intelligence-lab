@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 4.0
-updated: 2026-09-24
+version: 5.0
+updated: 2026-09-26
 temperature: 0.1
 ---
 
@@ -32,14 +32,16 @@ CLI. Граница MANGO не означает ограничение Конт�
 | `golden/` | утверждённые эталоны и отдельное место для ручных кандидатов |
 | `evaluation/` | метрики и чек-листы гейтов |
 | `runs/` | task-rooted состояние и изолированные `DEBUG-*` прогоны; в Git хранится только placeholder |
-| `tools/` | shell entrypoint, Python-гейт `G-mach` и детерминированный BCREQ-компилятор |
+| `tools/` | локальный runner переходов, Python-гейт `G-mach` и детерминированный BCREQ-компилятор |
+| `junior-guide.md` | пошаговая инструкция БА с командами и разбором отказа |
+| `requirements.txt` | зафиксированные версии Python-зависимостей runner и gate |
 | `AGENTS.md` | загрузочный контракт GigaCode CLI с исполняемыми правилами |
 
 ## Как развернуть
 
 ```sh
 cp -R projects/ba-ai-process/dist/execution-package-gigacode-cli/. <clean-directory>/
-cd <clean-directory> && pip install pyyaml && sh tools/validate-package.sh
+cd <clean-directory> && python3 -m pip install -r requirements.txt && sh tools/validate-package.sh
 ```
 
 Пакет может исполняться без доступа к репозиторию модели. Поэтому он содержит
@@ -84,6 +86,30 @@ runtime-ссылок на Source
 
 ## Как запустить
 
+Краткий маршрут БА с готовыми командами — [junior-guide.md](junior-guide.md).
+Для управляемого прогона переходы выполняет `sh tools/run-task`; agent
+готовит артефакт текущего узла, а runner читает граф, вызывает `G-mach` как
+отдельный процесс, проверяет exit code и только затем меняет текущий узел.
+Каждая попытка добавляется в `runs/<TASK_ID>/trace.jsonl`; отказ блокирует
+дальнейшие переходы этого run. Пример начала:
+
+```sh
+sh tools/run-task start TASK-0001
+sh tools/run-task advance TASK-0001 --to n0 --artifact /путь/к/A-IN.yaml
+sh tools/run-task metrics TASK-0001
+```
+
+Доля детерминированных шагов = число успешных записей
+`script_invoked=true`, `recorded_by=runner`, `exit_code=0`, делённое на
+число запрошенных переходов. Пропущенный шаг остаётся в знаменателе; отсутствие
+trace блокирует продолжение. Все строки содержат поля `script_invoked`,
+`contract_mode`, `step_skipped` и `recorded_by`, причём ровно одно состояние
+истинно. Права записи на `runs/` и запуск команд остаются под контролем БА;
+машинная гарантия относится к переходам через runner, а не к произвольной
+правке файлов вне него.
+
+### Ручной пилот для отладки
+
 1. Наполнить `meta-model/` и `docs/kb/`, не меняя скомпилированные правила.
 2. При необходимости создать локальный `.gigacode/settings.json` по example и
    включить одобренный Confluence MCP без коммита секретов.
@@ -95,7 +121,8 @@ runtime-ссылок на Source
    подтверждать checkpoints в `runs/<TASK_ID>/evidence/*.md`;
    машинный YAML остаётся журналом, а не пользовательским интерфейсом.
 
-Для проверки механики без LLM и внешних систем используется
+Этот ручной путь служит для диагностики и не подтверждает вызов gate на каждом
+переходе. Для проверки механики без LLM и внешних систем используется
 `/skills ba-debug-orchestrator`; он пишет только в
 `runs/DEBUG-<TIMESTAMP>/`. Автоматическое продвижение run в Golden Set
 запрещено. Пакет автономен: необходимые команды запуска и диагностики приведены

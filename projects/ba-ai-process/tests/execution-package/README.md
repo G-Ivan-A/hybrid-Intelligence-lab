@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.1
-updated: 2026-09-23
+version: 1.2
+updated: 2026-09-26
 temperature: 0.1
 ---
 
@@ -20,6 +20,11 @@ human gate сохраняет читаемый Markdown checkpoint. Регрес
 ```sh
 python3 projects/ba-ai-process/tests/execution-package/tests/test_emulation.py
 ```
+
+`test_runner.py` проверяет реальный локальный контроллер: каждый разрешённый
+переход запускает `G-mach`, а запрещённое ребро, неверный предикат, ненулевой
+exit code, отсутствие human checkpoint, потеря trace и ложное утверждение о
+пройденном gate блокируют продолжение. Тест копирует пакет во временный каталог.
 
 Временные task runs создаются только в системном temporary directory. Fixtures
 и assertions — тестовые данные механизма, а не Golden Set предметного качества.

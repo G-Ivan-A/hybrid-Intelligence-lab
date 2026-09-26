@@ -26,8 +26,8 @@ jobs:
           python-version: "3.x"
 
       - name: Install Python dependencies
-        # Валидатор пакета исполнения читает машиночитаемые словари пакета.
-        run: pip install pyyaml
+        # Валидатор и локальный runner используют зависимости пакета исполнения.
+        run: pip install -r projects/ba-ai-process/dist/execution-package-gigacode-cli/requirements.txt
 
 
       - name: Validate shell syntax
@@ -83,6 +83,9 @@ jobs:
 
       - name: Test execution package gate
         run: bash tools/test-execution-package.sh
+
+      - name: Test Cline execution package
+        run: bash tools/test-cline-package.sh
 
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')

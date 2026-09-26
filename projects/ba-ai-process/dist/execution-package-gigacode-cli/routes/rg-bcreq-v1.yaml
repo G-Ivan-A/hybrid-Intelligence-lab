@@ -3,7 +3,7 @@
 # нему (EP-R3). Изменение графа — новая версия процесса между прогонами;
 # пройденный лист прогона не правится никогда.
 route_graph_id: RG-BCREQ-v1
-version: "3.0"
+version: "3.1"
 processes: [P-01, P-02, P-03]     # значения закрытого словаря taxonomy/processes.yaml (EP-R1)
 interaction: single-pass
 input_artifact: A-IN
@@ -47,8 +47,8 @@ edges:
   - {from: n6, to: n7, condition: gate_passed}
   - {from: n7, to: n8, condition: "answers.count > 0"}
   - {from: n7, to: halt, condition: "answers.count == 0", note: "маршрут остановлен до ответа Заказчика: ожидание — ребро графа, а не пауза внутри навыка. До вопроса проверяются дополняющие каналы ST-2-CORPUS и ST-3-PRODUCT-DOC, а найденные цитаты подтверждаются человеком"}
-  - {from: n8, to: n9, condition: "ambiguities[severity == 'blocker' and resolved == false].count == 0"}
-  - {from: n8, to: n5, condition: "ambiguities[severity == 'blocker' and resolved == false].count > 0"}
+  - {from: n8, to: n9, condition: "ambiguities[severity == 'blocker' and (resolved_by == null or resolved_by == '')].count == 0"}
+  - {from: n8, to: n5, condition: "ambiguities[severity == 'blocker' and (resolved_by == null or resolved_by == '')].count > 0"}
   - {from: n9, to: n10, condition: gate_passed}
   - {from: n10, to: n10a, condition: gate_passed}
   - {from: n10a, to: n11, condition: "preflight_registers.valid == true and human_decision == 'approved'"}

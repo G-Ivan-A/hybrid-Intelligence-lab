@@ -2,7 +2,7 @@
 name: rg-bcreq-v1-dispatcher
 description: >-
   Явно запускай для нового или продолжаемого TASK-NNNN: диспетчер исполняет
-  ровно один следующий узел RG-BCREQ-v1 и сохраняет состояние между сессиями.
+  следующий узел RG-BCREQ-v1 в ручном пилоте и помогает с диагностикой.
 priority: high
 disable-model-invocation: true
 packs: ORCH/RG-BCREQ-v1
@@ -15,8 +15,8 @@ compiled_from: { package: execution-package-gigacode-cli, route: RG-BCREQ-v1 }
 derived_from: [routes/rg-bcreq-v1.yaml, routes/run-sheet-template.yaml, contracts/c-rk.schema.json]
 compiled_at: 2026-09-21
 status: draft
-version: 1.0
-updated: 2026-09-21
+version: 2.0
+updated: 2026-09-26
 temperature: 0.1
 ---
 
@@ -25,8 +25,9 @@ temperature: 0.1
 ## Когда применять
 
 Применяй только после явной команды `/skills rg-bcreq-v1-dispatcher` для
-создания или продолжения задачи `TASK-NNNN`. Диспетчер владеет порядком графа;
-навык узла не выбирает себе следующий узел и не изменяет уже записанные события.
+ручной отладки задачи `TASK-NNNN`. Для управляемого прогона БА выполняет
+переходы через `sh tools/run-task`; этот навык не меняет состояние runner.
+Навык узла не выбирает себе следующий узел и не изменяет уже записанные события.
 
 ## Предусловия
 
