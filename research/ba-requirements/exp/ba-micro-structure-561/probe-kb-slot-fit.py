@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Проверка словаря слотов `S-*` на корпусе базы знаний `kb/processed/`.
+"""Проверка словаря слотов `S-*` на корпусе базы знаний runtime `docs/kb/`.
 
 Комментарий фаундера к PR #562 (пункт 3) требует показать, что извлечение знаний
 из БЗ для разных продуктов ложится в единый скелет и не требует заводить
@@ -26,8 +26,9 @@
      `P-SETTINGS`; доля `S-INTEGRATION` — строго выше. Порядковое утверждение
      не зависит от выбора порога и опровержимо одним контрпримером.
 
-Вход: клон спицы `mango_ba_prompts`. Разбирается `kb/processed/<doc>/index.md` —
-машинная карта разделов, которую сам корпус объявляет контрактом (`kb/processed/README.md`).
+Вход: клон `mango-ba-ai-runtime`. Разбирается `docs/kb/<doc>/index.md` —
+машинная карта разделов перенесённого корпуса. Опубликованный результат
+`kb-slot-fit.json` снят со старого `mango_ba_prompts/kb/processed` и не перезаписывается.
 
 Границы: отображение лексическое, по заголовку раздела. Раздел со смешанным
 содержанием получает один слот по первому сработавшему правилу, поэтому
@@ -272,16 +273,16 @@ def check_ordinal(documents: list[dict[str, object]]) -> list[dict[str, object]]
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mango", required=True, type=Path, help="клон mango_ba_prompts")
+    parser.add_argument("--runtime", required=True, type=Path, help="клон mango-ba-ai-runtime")
     parser.add_argument(
         "--out",
         type=Path,
-        default=Path(__file__).with_name("kb-slot-fit.json"),
+        required=True,
         help="куда записать результат",
     )
     args = parser.parse_args()
 
-    processed = args.mango / "kb" / "processed"
+    processed = args.runtime / "docs" / "kb"
     if not processed.is_dir():
         print(f"ERROR: {processed} не найден", file=sys.stderr)
         return 2
@@ -314,7 +315,7 @@ def main() -> int:
         documents.append(
             {
                 **probe,
-                "index": f"kb/processed/{probe['doc']}/index.md",
+                "index": f"docs/kb/{probe['doc']}/index.md",
                 "sections": n,
                 "slot_counts": {slot: count for slot, count in counts.items() if count},
                 "slot_shares": {
@@ -355,9 +356,9 @@ def main() -> int:
 
     result = {
         "corpus": {
-            "repo": "https://github.com/G-Ivan-A/mango_ba_prompts",
-            "commit": corpus_commit(args.mango),
-            "layer": "kb/processed",
+            "repo": "https://github.com/G-Ivan-A/mango-ba-ai-runtime",
+            "commit": corpus_commit(args.runtime),
+            "layer": "docs/kb",
         },
         "slot_vocabulary": SLOTS,
         "summary": summary,

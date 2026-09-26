@@ -8,6 +8,11 @@ type: experiment
 
 # Сравнение нового результата с историческим (не воспроизведение)
 
+> Актуально для сравнения 2026-09-15. Упоминания `kb/processed` ниже сохраняют
+> локаторы процитированного корпуса; KB перемещена в
+> [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+> Те же относительные пути доступны в [проверенном снимке runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/ed42b3cd0eed2774c9b080232ca00484d9a4f7cd/docs/kb).
+
 Задача [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587)
 прямо запрещает валидацию через «получить тот же согласованный результат».
 Поэтому замер устроен иначе: сырой вход исторического прогона пропущен через

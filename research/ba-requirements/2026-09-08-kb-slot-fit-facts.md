@@ -17,6 +17,12 @@ related_issues:
 
 # Проверка словаря слотов на корпусе базы знаний: факты замера
 
+> Актуально для замера 2026-09-08 на коммите `8cbf82a`. Старые пути и ссылки
+> ниже сохранены как локаторы измеренного корпуса; KB перемещена в
+> [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+> Соответствующие файлы доступны в [проверенном снимке runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/ed42b3cd0eed2774c9b080232ca00484d9a4f7cd/docs/kb)
+> по тем же относительным путям.
+
 Датированный отчёт. Цифры получены на коммите `8cbf82a` спицы
 [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts) и на другом
 коммите будут другими.

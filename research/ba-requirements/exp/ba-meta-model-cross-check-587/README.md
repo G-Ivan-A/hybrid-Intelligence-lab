@@ -34,8 +34,10 @@ issue [#587](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587).
   итоговых артефактов прогонов `RUN-0013`, `RUN-0017`, `RUN-0021` корпуса
   [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/runs/2026)
   с локаторами. Цитируются только заголовки и минимальные фрагменты входа:
-  корпус БЗ `kb/processed` в Хаб не копируется, его перенос — отдельная задача
-  прямо в spoke `mango-ba-ai-runtime`.
+  корпус БЗ не копируется в Хаб; его актуальный дом —
+  [`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+  Исторические локаторы внутри экземпляров `A-IN` разрешаются относительно
+  [проверенного снимка runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/ed42b3cd0eed2774c9b080232ca00484d9a4f7cd/docs/kb).
 - [`slot-coverage.json`](slot-coverage.json),
   [`measure-slot-coverage.log`](measure-slot-coverage.log) — результат первого замера.
 - `runs/bcreq-1059/`, `runs/bcreq-975/` — экземпляры `A-IN` и `A-BCREQ`,
