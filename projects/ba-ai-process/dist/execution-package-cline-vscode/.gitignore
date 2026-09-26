@@ -1,0 +1,11 @@
+# Business run state and local knowledge are never distributed through Git.
+runs/*
+!runs/.gitkeep
+docs/kb/*
+!docs/kb/.gitkeep
+meta-model/*
+!meta-model/.gitkeep
+__pycache__/
+*.pyc
+.env
+*.local.json

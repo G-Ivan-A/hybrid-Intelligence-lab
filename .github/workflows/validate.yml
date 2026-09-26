@@ -84,6 +84,9 @@ jobs:
       - name: Test execution package gate
         run: bash tools/test-execution-package.sh
 
+      - name: Test Cline execution package
+        run: bash tools/test-cline-package.sh
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:
