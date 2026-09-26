@@ -1,11 +1,11 @@
 # Манифест пакета: provenance, allowlist входов, immutable-выходы и правила
 # компиляции. Источник всегда обозначается полным URL репозитория.
 manifest: execution-package-gigacode-cli
-package_version: "4.0"
-compiled_at: 2026-09-24
+package_version: "5.0"
+compiled_at: 2026-09-26
 source:
   repository: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
-  revision: 6b43527c4a98bcaf4c2ba98a403c2dce45a73ca4
+  revision: da9fc6b47f7fdf634ae3d1b48fb8b2da16dd6dbb
 adapter:
   name: gigacode-cli
   version: "1.0"
@@ -35,12 +35,12 @@ outputs:
     .gigacode/skills/product-attribution/SKILL.md: bff3ba7d36502e805ef378c74fe2a1780d9dd8f8383b616df8844c8b661b07b8
     .gigacode/skills/question-formation/SKILL.md: 4088cc42082c28ad7119b66e65b89deb20a2c305b93cb8a675cebc88f653a121
     .gigacode/skills/question-prioritization/SKILL.md: 7964c8518846d0f207b057d5a1f7f06559b019df6b8c7f3bddbe26172639c199
-    .gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md: c86df82eb0271f389114682a5195badf0685b1a5fae9585306092f7979557540
+    .gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md: e77af704c1a83578a620d92062e0b95f81756b9919750e83cc2a95653b2dbdc0
     .gigacode/skills/transcript-normalization/SKILL.md: 55a0109ce3aa4f55746ae66b19d22117d86b65b45423de19e1a2d79eebaed29b
     .gigacode/skills/value-hypothesis/SKILL.md: 4fe8241fd1952dbc3bdf3aebc3a3ac76d84c2c66d542c6af49b26ffdbe96174d
     .gitignore: e4822f86590d83ade18215bed4457622956a3fa680930aa450398d92d7ec2175
-    AGENTS.md: 9549601743cc0053b64604f161738b9aa6f82a7f0d065e7d88c2ce68b5c4b2ab
-    README.md: 7aec982271b341bec7b2913097bf280a03c1a0c013bd37c4de25d8663bd88203
+    AGENTS.md: b7d4653e78719e74706240e35fd3dfb81b7a5c7c5f2e4bb84ce1c51020854201
+    README.md: 098fe11132a9cd1498a0755af5c199e8f19b8cb9d9d93d761076169c694a5473
     contracts/bcreq-client-v1.json: add9e5b2021da91ad9a242da2be3af32358f3cbd409f3a588babfa9ae74c4a7b
     contracts/c-core.schema.json: 38b80d072e7e1b4a21e9cf3f1b230f51f51f632f227667f675018720d4e555dd
     contracts/c-in.schema.json: 8e1dbfc3f773a3187bfe959c43588bc39ccb774a1b4f4070cbe61f458089f1c0
@@ -52,7 +52,7 @@ outputs:
     contracts/c-working-bcreq.schema.json: 066ad711de9d7172df81cf0b951826602f4ca73a0a51bd3c3a25405e0d789851
     evaluation/g-human-checklist.md: a0f0a354caab05321ce33e9d38ea8617482d7a2484c147dec4bc3357d461a272
     evaluation/g-mach-checklist.md: 9fd4ed74a78a5ec95ada0feb9b4bb9e2a382763536f2d83003fd32c8ede53262
-    evaluation/metrics.yaml: f177798b7436665c9882d096c67fb762ccb69fe9112d88af3a467e7adce4bb6f
+    evaluation/metrics.yaml: 2adb5a9e07a173c9cea9d0b2990baa982cc6f1139c3d07426b0cb9b96f78d9e8
     golden/cases.yaml: 4bdeafda49c96cf0e88222eac2e1cec497c61e8f6a602e52aeb56ce3ffa8cd3c
     golden/gs-cc-01-queue-overflow.md: 9a114a9fd081790fbd3e3cb3295198b5d0109099e0963747153660405930ea6e
     golden/gs-cc-02-report-export.md: 06cb03195d2cfc1bf768d58976136879e957d798fdd08061fa068f25417a3023
@@ -60,7 +60,9 @@ outputs:
     golden/gs-cc-neg-02-queue-vs-group.md: 045fc8a7d7832703813f59057c64856b08ce2973ca67679260b166d1c62daed0
     golden/gs-cc-neg-03-sla-vs-aht.md: 3b82fe06762f5ce111f8d2aa3b32fdc78af29edc0d37557625e7f0778b5c7ccb
     golden/gs-cc-neg-04-ivr-vs-announcer.md: 18aa66844a2d42ab3fc4e30046c7db2e41ee2ef7c61c48c45e73f3f533da16e6
-    routes/rg-bcreq-v1.yaml: 90e65cfe98d369ead91268797cb75957b71f6d7fb6f9f6ac4cfdb73aee13ef22
+    junior-guide.md: 08478e79145925a451b6c00c5a44f3affc4e4cb1699a7b9578f9fd9c87b0011b
+    requirements.txt: 0b0709dc3105d98b29f4fc6a870c15c0cf42191498384ef8a2a32d3fcf5f34ed
+    routes/rg-bcreq-v1.yaml: b2ade0e95e28a495bab087191d26826e210e6332f482c8fa7ca42f8e6d6062c4
     routes/run-sheet-template.yaml: 6c2b3321fe64c01cf1fe5b206961eb218df59aa2b2d2dfba508e836d08bcd9d4
     taxonomy/artifacts.yaml: 14894f3653144e8b6d66fd42333a501d9595e96de796023c949ee13993a1223e
     taxonomy/domain-glossary.yaml: 0049f460414d12de1c4154f96b734c18579adc982143c2cd64021795e24b5eaa
@@ -77,6 +79,8 @@ outputs:
     templates/core-skeleton.yaml: 9bae2213fb5d30c4b9d2a3030ffaf834c4faed889d60986e5d2896a60c9a29dc
     templates/quest-skeleton.md: db2aceebcea205d333c0fefbfeab26d3a0a79164620eee3a27b4dfa50ecc717a
     tools/bcreq_pipeline.py: 95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f
+    tools/run-task: bb6a4ea648ee52cefa78b59dd910670dd65ed34e6f8698efdf1e887ced501923
+    tools/run-task.py: 1271303f276cdcf5711c72f8af2736f8062cf87fdc4fa9e377541dbfeba4839b
     tools/validate-package.py: 9656390349e572c8ff90853af2e35bf8a3d0fecda3e44bb02431627c8586291c
     tools/validate-package.sh: 884f51ca709a990877d1ef7fd97f066d4392b85eb537e5b4678758aa24f410eb
 target_spoke: clean GigaCode CLI working directory
@@ -86,7 +90,7 @@ slice: "A-IN → подтверждённая продуктовая цепоч�
 # Поэтому пакет содержит физические копии всего необходимого, а не ссылки.
 deployment:
   mechanism: копирование каталога пакета в корень репозитория-спутника
-  result: ".gigacode/, docs/kb/, meta-model/, taxonomy/, contracts/, routes/, templates/, golden/, evaluation/, runs/, tools/, AGENTS.md"
+  result: ".gigacode/, docs/kb/, meta-model/, taxonomy/, contracts/, routes/, templates/, golden/, evaluation/, runs/, tools/, AGENTS.md, README.md, junior-guide.md, requirements.txt"
   source_access_required_at_runtime: false
 
 # 1. Скопировано физически: содержание перенесено в пакет дословно или с
@@ -139,8 +143,8 @@ transformed:
     to: .gigacode/skills/*/SKILL.md
     form: шесть обязательных разделов и frontmatter с полями GigaCode name и description
   - what: явная оркестрация маршрута и безопасная диагностика
-    to: [.gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md, .gigacode/skills/ba-debug-orchestrator/SKILL.md]
-    form: ручные GigaCode skills с task-rooted и DEBUG-rooted состоянием
+    to: [tools/run-task, tools/run-task.py, .gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md, .gigacode/skills/ba-debug-orchestrator/SKILL.md]
+    form: локальный runner владеет переходами и gate; skills сохранены для ручной диагностики
   - what: правила гейтов GT-1…GT-6 и порядок G-self → G-mach → G-human
     to: [evaluation/g-mach-checklist.md, evaluation/g-human-checklist.md, tools/validate-package.py]
     form: исполняемые проверки для машины, отмечаемый список для человека
@@ -151,8 +155,8 @@ transformed:
       EP-G7 переведено в исполняемый вид: каждая пара confusable_with словаря
       домена обязана иметь отрицательный случай, что проверяется валидатором
   - what: правила следа EP-R4, EP-R8 и лист прогона
-    to: [routes/run-sheet-template.yaml, contracts/c-rk.schema.json]
-    form: append-only перечень микро-событий, отдельный пользовательский результат и проекция передачи работы
+    to: [routes/run-sheet-template.yaml, contracts/c-rk.schema.json, tools/run-task.py]
+    form: append-only перечень микро-событий и JSONL попыток перехода, отдельный пользовательский результат и проекция передачи работы
 
 # 3. Отброшено: во время выполнения не используется. Отбрасывание —
 #    сознательное решение компиляции, а не пропуск (Анти-Инфляция).
