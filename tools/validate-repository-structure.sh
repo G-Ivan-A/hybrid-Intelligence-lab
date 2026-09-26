@@ -130,6 +130,7 @@ is_active_file() {
     docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
     docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
     projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
+    projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/agents-md-bootstrap-standard.md | \
