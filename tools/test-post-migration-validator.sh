@@ -31,6 +31,10 @@ for legacy_path in governance website experiments pr-ops mkdocs.yml; do
   fi
 done
 
+if ! ./tools/validate-repository-structure.sh >"$tmp_out" 2>"$tmp_err"; then
+  fail "structure validator must accept the current tracked repository before testing legacy paths"
+fi
+
 mkdir governance website experiments pr-ops
 : > mkdocs.yml
 

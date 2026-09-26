@@ -64,6 +64,15 @@ is_active_file() {
     projects/ba-ai-process/dist/execution-package-gigacode-cli/*)
       return 0
       ;;
+    # Cline pilot Source and compiled Distribution are validated together by
+    # tools/test-cline-package.sh; the runtime package is checked by its manifest.
+    projects/ba-ai-process/build/common/* | \
+    projects/ba-ai-process/build/adapters/cline-vscode/* | \
+    projects/ba-ai-process/build/compile-cline-package.py | \
+    projects/ba-ai-process/dist/execution-package-cline-vscode/* | \
+    projects/ba-ai-process/tests/cline-package/*)
+      return 0
+      ;;
     projects/ba-ai-process/ba-meta-model/product-taxonomy/* | \
     projects/ba-ai-process/build/compiler/*)
       return 0
@@ -659,6 +668,7 @@ is_active_file() {
     tools/test-execution-package.sh | \
     tools/test-ba-requirements-forensics.sh | \
     tools/test-bcreq-working-release-pipeline.sh | \
+    tools/test-cline-package.sh | \
     tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
