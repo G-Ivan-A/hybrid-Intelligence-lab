@@ -1,7 +1,7 @@
 ---
 status: canonical
 version: 1.5
-updated: 2026-09-25
+updated: 2026-09-26
 temperature: 0.1
 scope: mango-only
 type: research
