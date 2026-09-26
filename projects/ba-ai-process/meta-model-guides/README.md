@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.1
-updated: 2026-09-22
+version: 1.2
+updated: 2026-09-25
 temperature: 0.1
 ---
 
@@ -10,6 +10,10 @@ temperature: 0.1
 Модуль объясняет человеку, как подготовить и использовать скомпилированную
 модель. Нормативные правила остаются в `ba-meta-model/`, а исполняемые — в
 `dist/execution-package-gigacode-cli/`; здесь нет их второй копии.
+
+Для отдельной задачи на временный сценарий Qwen Chat в существующем runtime
+подготовлен [мандат модернизации](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-615-ab7082802ba9/projects/ba-ai-process/meta-model-guides/qwen-chat-runtime-migration-instruction.md).
+Это Source-инструкция для будущего PR, а не готовый execution package.
 
 ## Подготовка чистой рабочей директории
 

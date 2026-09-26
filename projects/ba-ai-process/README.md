@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-09-24
+version: 1.4
+updated: 2026-09-25
 temperature: 0.1
 scope: mango-only
 type: research
@@ -10,9 +10,11 @@ type: research
 # BA AI Process — Source модели БА-процессов
 
 Направление отвечает на вопрос **«как БА-процессы для всего продуктового
-портфеля MANGO исполняются в среде GigaCode»**: какая мета-модель описывает
+портфеля MANGO исполняются в проверяемых средах»**: какая мета-модель описывает
 работу, какими процессами и операциями она разложена и в какой форме
-поставляется агенту.
+поставляется агенту. GigaCode CLI — существующая поставка; Cline с Mango AI
+и Qwen Chat оцениваются как отдельные пилотные среды по
+[issue #615](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/615).
 
 Это **дом проектных артефактов**, а не общая рамка. Все четыре модуля несут
 `scope: mango-only`. Здесь `mango-only` означает **весь продуктовый портфель
@@ -63,6 +65,9 @@ MANGO** (все домены полного снимка таксономии), 
 - [`dist/execution-package-gigacode-cli/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/README.md)
   — копируемый пакет с `.gigacode/skills/`, явным dispatcher, debug-механизмом,
   контрактами, графом, Golden Set и машинным гейтом `G-mach`.
+- [`meta-model-guides/qwen-chat-runtime-migration-instruction.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-615-ab7082802ba9/projects/ba-ai-process/meta-model-guides/qwen-chat-runtime-migration-instruction.md)
+  — мандат для отдельной задачи на подготовку существующего runtime к временному
+  quick-check в Qwen Chat; это не execution package.
 
 Пакет — артефакт компиляции, а не новый RRP-модуль. Состав скопированного,
 преобразованного и отброшенного объявлен в
@@ -136,6 +141,10 @@ Issue [#593](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593)
   — навык как форма поставки, формат контракта как вычисляемое свойство;
 - [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md)
   — принятая граница Source, Distribution, Runtime и Feedback.
+- [ADR-018](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-615-ab7082802ba9/projects/ba-ai-process/docs/adr/2026-09-adr-018-gigacode-cli-execution-boundary.md)
+  — предлагаемая граница детерминированного исполнения GigaCode CLI.
+- [ADR-019](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-615-ab7082802ba9/projects/ba-ai-process/docs/adr/2026-09-adr-019-cline-mango-ai-pilot.md)
+  — предлагаемый выбор Cline для пилота с Mango AI.
 
 ## Политика ссылок
 
