@@ -26,8 +26,8 @@ jobs:
           python-version: "3.x"
 
       - name: Install Python dependencies
-        # Валидатор пакета исполнения читает машиночитаемые словари пакета.
-        run: pip install pyyaml
+        # Валидатор и локальный runner используют зависимости пакета исполнения.
+        run: pip install -r projects/ba-ai-process/dist/execution-package-gigacode-cli/requirements.txt
 
 
       - name: Validate shell syntax

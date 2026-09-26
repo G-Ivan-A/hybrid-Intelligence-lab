@@ -349,6 +349,7 @@ fi
 # without invoking an LLM or writing into the committed package.
 python3 "$PROJECT_TESTS/tests/test_emulation.py"
 python3 "$PROJECT_TESTS/tests/test_semantic_regression.py"
+python3 "$PROJECT_TESTS/tests/test_runner.py"
 
 python3 - "$PACKAGE" "$PROJECT_TESTS/fixtures/working-valid.json" "$WORKDIR/working.json" <<'PY'
 import importlib.util
@@ -367,4 +368,4 @@ python3 "$VALIDATOR" "$PACKAGE" --working "$WORKDIR/working.json" >/dev/null
 python3 "$PACKAGE/tools/bcreq_pipeline.py" compile "$WORKDIR/working.json" --output "$WORKDIR/release" >/dev/null
 python3 "$VALIDATOR" "$PACKAGE" --working "$WORKDIR/working.json" --release "$WORKDIR/release/release.json" --manifest "$WORKDIR/release/release-manifest.json" >/dev/null
 
-printf 'Execution package tests passed (26 package cases + route emulation + BCREQ regression and compilation).\n'
+printf 'Execution package tests passed (26 package cases + route emulation + runner negatives + BCREQ regression and compilation).\n'
