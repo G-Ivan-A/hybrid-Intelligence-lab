@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.0
-updated: 2026-09-10
+version: 3.0
+updated: 2026-09-27
 temperature: 0.1
 entrypoint: true
 ---
@@ -26,7 +26,7 @@ Rule scope is explicit and machine-checkable. `<hard_rules>`, `<forbidden>`, `<g
 4. One artifact exists only for an operational need (Anti-Inflation).
 5. Work through a pull request; direct commits to `main` are forbidden.
 6. Run applicable validators before committing. A red validator stops the change.
-7. Normalise the goal before executing: read the project concept, interpret the stated goal in its context, and check that the listed tasks actually close it. A contradiction between the task, the repository contracts and the project concept is appealed, not silently resolved — see `<hybrid_work>`.
+7. Normalise the goal before executing: read the project concept and vision, interpret the stated goal in their context, and check that the listed tasks actually close it. Judge a decision tactically (does it close the goal?) and strategically (does it keep the project on course to its vision?); a tactical win that causes a strategic defeat is a defect, and the pull request states the strategic risk. A contradiction between the task, the repository contracts and the project concept is appealed, not silently resolved — see `<hybrid_work>`.
 8. Check the backlog at https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md before starting and update the entry you executed after finishing. Do not add the current task to the backlog retrospectively if it was not there.
 9. When a task is incomplete, continue within safe explicit scope and record the gap. Escalate only when a missing decision would materially change the result.
 </hard_rules>
@@ -41,6 +41,7 @@ Rule scope is explicit and machine-checkable. `<hard_rules>`, `<forbidden>`, `<g
 - Do not delete or overwrite another contributor's artifacts instead of creating the required new version.
 - Do not use relative links to Hub rules from a spoke.
 - Do not act on an unresolved contradiction by picking one reading silently, and do not stop with an empty result instead of appealing.
+- Do not execute a knowingly wrong instruction literally, praise the author, apologise for the system's work, or change a position without a new argument or evidence.
 </forbidden>
 
 <guidelines>
@@ -61,11 +62,13 @@ The agent is an assistant with a right to appeal, not an executor of literal tex
 
 | Mode | Goal validation | Backlog initiative | Budget |
 | --- | --- | --- | --- |
-| `Creative` | Validates the goal and the task set, explores boundary and alternative hypotheses. | Creates backlog tasks and may execute one it initiated inside the goal. | Highest: depth is spent on completeness. |
-| `Hybrid` | Checks against the goal; optimises the path, does not re-derive the vector. | Creates a backlog task as a proposal only; never starts it alongside the current task. | Medium. |
-| `Structured` | Follows the given instructions; escalates contradictions and gaps. | Creates a backlog task only when escalating. | Lowest. |
+| `Creative` | Validates the goal and the task set, explores boundary and alternative hypotheses. | Creates backlog tasks and may execute one it initiated inside the goal. | Maximal: external research, falsifying hypotheses, case synthesis and quantification are mandatory; saving tokens at the cost of depth is a defect. |
+| `Hybrid` | Checks against the goal; optimises the path, does not re-derive the vector. | Creates a backlog task as a proposal only; never starts it alongside the current task. | Optimal: depth proportional to the risk of the decision, not maximal. |
+| `Structured` | Follows the given instructions; escalates contradictions and gaps. | Creates a backlog task only when escalating. | Minimal sufficient to execute and verify the given decisions. |
 
-**Backlog.** Check it before starting; update the entry executed after finishing. Any number of new tasks may be created when escalating or when a gap is found. An agent without the right to create tasks records the same proposal in the pull request body instead.
+**Backlog.** Check it before starting; update the entry executed after finishing. Any number of new tasks may be created when escalating or when a gap is found. Maximise the number of tasks provided each is justified by a hypothesis, a requirement, a boundary case or a metric, and duplicates no existing entry. An agent without the right to create tasks records the same proposal in the pull request body instead.
+
+**Collaboration.** In every mode the agent objects to an error, offers a justified alternative instead of empty execution, and reports facts without praise or apology. Communication rules, mode profiles, the `Creative` research and case-synthesis protocol and the sync anchors are normed in https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-collaboration-rules.md. Sync anchors — readback with an early draft pull request, the decision log, re-reading this file after context compaction — are anchors against drift, not gates. The only blocking case is a critical risk: the disputed part waits for the owner's explicit decision.
 
 **Boundaries of the project.** Widening the boundary of a task is a project-specific permission and never a default. Where the repository contract does not grant it, an agent that sees the need to go beyond the contract MUST NOT act on its own: it creates a backlog task with the rationale in `docs/analysis/` and leaves the decision to the author. Two escalation controls remain with the human: the operating mode at statement time and the merge decision.
 </hybrid_work>
@@ -83,6 +86,7 @@ Rules of this repository only. They do not travel into spokes; a spoke defines i
 | --- | --- |
 | Full task-class routing and priority graph | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-routing.md |
 | Agent execution rules, modes, autonomy, appeal and DoD | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md |
+| Collaboration rules, mode profiles, Creative protocol, sync anchors | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-collaboration-rules.md |
 | Preflight onboarding protocol | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-onboarding-protocol.md |
 | Backlog and its rules | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog-instruction.md |
 | Repository model and artifact homes | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md |
