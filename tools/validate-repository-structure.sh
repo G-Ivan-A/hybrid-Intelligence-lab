@@ -2083,10 +2083,10 @@ require_text "ops/artifact-map.md" "research/external-knowledge/external-insight
 require_text "ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.26"
+require_text "docs/rfc/README.md" "version: 1.27"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-09-04"
+require_text "docs/rfc/README.md" "updated: 2026-09-27"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
