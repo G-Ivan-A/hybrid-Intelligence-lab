@@ -97,7 +97,7 @@
     {
       "id": "htom-agents-bootstrap",
       "path": "templates/htom/AGENTS.md",
-      "version": "3.0.0",
+      "version": "3.1.0",
       "target_type": [
         "HTOM"
       ],
@@ -318,7 +318,7 @@
     {
       "id": "spoke-agents-bootstrap",
       "path": "templates/spoke/AGENTS.md",
-      "version": "3.0.0",
+      "version": "3.1.0",
       "target_type": [
         "Spoke"
       ],

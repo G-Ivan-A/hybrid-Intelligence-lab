@@ -387,6 +387,12 @@ validate_file() {
     return
   fi
 
+  # GitHub inserts this file verbatim into PR bodies; YAML frontmatter would
+  # become visible form text. Its required fields are checked separately.
+  if [[ "$(normalize_path "$path")" == ".github/pull_request_template.md" ]]; then
+    return
+  fi
+
   while IFS= read -r line || [[ -n "$line" ]]; do
     line="${line%$'\r'}"
     line_no=$((line_no + 1))

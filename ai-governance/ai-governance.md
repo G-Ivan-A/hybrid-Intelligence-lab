@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.2
-updated: 2026-08-11
+version: 2.3
+updated: 2026-09-27
 temperature: 0.1
 executable: false
 ---
@@ -86,7 +86,8 @@ vision, publication, license и sensitive context.
 Экспертное исполнение действует во всех Operating Modes с разной шириной по
 [Принципу 1 ADR-010](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md):
 Creative допускает широкое изменение способа исполнения, Structured — только
-минимально необходимое, Hybrid задаёт границы по частям задачи. Обоснованное
+минимально необходимое, Hybrid — средний уровень по умолчанию и допускает
+явное назначение частей задачи как Structured или Creative. Обоснованное
 отклонение допустимо, если:
 
 1. не меняет цель задачи и соответствует её Operating Mode;

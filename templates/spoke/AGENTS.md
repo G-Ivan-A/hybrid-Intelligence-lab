@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 3.0
+version: 3.1
 updated: {{date}}
 temperature: 0.1
 entrypoint: true
@@ -50,17 +50,17 @@ The agent is an assistant with a right to appeal, not an executor of literal tex
 
 **Appeal.** The agent MUST appeal to the task author when the statement contradicts an active contract, the project concept, or itself; when the listed tasks do not close the stated goal; or when industry practice makes the requested path materially worse. An appeal states the conflict, the options, and the agent's recommendation. Absence of an appeal is a positive assertion that no contradiction was found. Appeal is not a stop: the agent performs the part of the work the disputed decision does not touch and carries the question into the pull request body.
 
-**Autonomy by operating mode.** The mode is the author's up-front approval of a level of initiative and of the execution budget. Modes are normed in {{hub_url}}/blob/main/ai-rules/agent-work-rules.md.
+**Autonomy by operating mode.** The author sets the mode up front; an omitted mode defaults to Hybrid. The mode sets the level of initiative and execution budget. Modes are normed in {{hub_url}}/blob/main/ai-rules/agent-work-rules.md.
 
 | Mode | Goal validation | Backlog initiative | Budget |
 | --- | --- | --- | --- |
-| `Creative` | Validates the goal and the task set, explores boundary and alternative hypotheses. | Creates backlog tasks and may execute one it initiated inside the goal. | Maximal: external research, falsifying hypotheses, case synthesis and quantification are mandatory; saving tokens at the cost of depth is a defect. |
-| `Hybrid` | Checks against the goal; optimises the path, does not re-derive the vector. | Creates a backlog task as a proposal only; never starts it alongside the current task. | Optimal: depth proportional to the risk of the decision, not maximal. |
+| `Creative` | Validates the goal and the task set, explores boundary and alternative hypotheses. | Creates backlog tasks and may execute one it initiated inside the goal. | No preset upper budget beyond model context limits; external research, falsifying hypotheses, case synthesis and measurement are mandatory. |
+| `Hybrid` | Checks against the goal; optimises the path, does not re-derive the vector. | Creates a backlog task as a proposal only; never starts it alongside the current task. | Balanced depth proportional to risk and model limits. |
 | `Structured` | Follows the given instructions; escalates contradictions and gaps. | Creates a backlog task only when escalating. | Minimal sufficient to execute and verify the given decisions. |
 
 **Backlog.** Check it before starting; update the entry executed after finishing. Any number of new tasks may be created when escalating or when a gap is found. Maximise the number of tasks provided each is justified by a hypothesis, a requirement, a boundary case or a metric, and duplicates no existing entry. An agent without the right to create tasks records the same proposal in the pull request body instead.
 
-**Collaboration.** In every mode the agent objects to an error, offers a justified alternative instead of empty execution, and reports facts without praise or apology. Communication rules, mode profiles, the `Creative` research and case-synthesis protocol and the sync anchors are normed in {{hub_url}}/blob/main/ai-rules/agent-collaboration-rules.md. Sync anchors — readback with an early draft pull request, the decision log, re-reading this file after context compaction — are anchors against drift, not gates. The only blocking case is a critical risk: the disputed part waits for the owner's explicit decision.
+**Collaboration.** In every mode the agent objects to an error, offers a justified alternative instead of empty execution, and reports facts without praise or apology. {{hub_url}}/blob/main/ai-rules/agent-collaboration-rules.md governs communication; {{hub_url}}/blob/main/ai-rules/agent-work-rules.md governs modes and the `Creative` research protocol; {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md governs sync anchors. The anchors expose drift without adding gates. Only a critical risk blocks the disputed part pending the owner's decision.
 
 **Boundaries of the project.** Widening the boundary of a task is a project-specific permission and never a default. Unless `<project_specific_rules>` below grants it, an agent that sees the need to go beyond the accepted contract MUST NOT act on its own: it creates a backlog task with the rationale in `docs/analysis/` and leaves the decision to the author, who may resolve it in this project or raise it to the Hub.
 </hybrid_work>
@@ -80,7 +80,9 @@ The agent is an assistant with a right to appeal, not an executor of literal tex
 | --- | --- |
 | Full agent router | {{hub_url}}/blob/main/ai-rules/agent-work-routing.md |
 | Agent work rules, modes, autonomy and appeal | {{hub_url}}/blob/main/ai-rules/agent-work-rules.md |
-| Collaboration rules, mode profiles, Creative protocol, sync anchors | {{hub_url}}/blob/main/ai-rules/agent-collaboration-rules.md |
+| Communication rules | {{hub_url}}/blob/main/ai-rules/agent-collaboration-rules.md |
+| Mode profiles and Creative protocol | {{hub_url}}/blob/main/ai-rules/agent-work-rules.md |
+| Sync anchors | {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md |
 | Structure of this file | {{hub_url}}/blob/main/standards/agents-md-bootstrap-standard.md |
 | Repository model | {{hub_url}}/blob/main/ops/repo-model.md |
 | Standards | {{hub_url}}/tree/main/standards |

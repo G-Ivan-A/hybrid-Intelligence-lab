@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.22
-updated: 2026-09-24
+version: 0.23
+updated: 2026-09-27
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -407,6 +407,10 @@ related_issues:
 | `ext-329` | [CIPR — Professional PR Certificate](https://www.cipr.co.uk/CIPR/Learn_Develop/Qualifications/Professional_PR_Certificate.aspx) | `docs` | `en` | `pr-education, applied-learning` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
 | `ext-330` | [CDC — CERC training](https://cdc.gov/cerc/php/about/index.html) | `docs` | `en` | `risk-communication, training-depth` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
 | `ext-331` | [European Commission — Principles of the GDPR](https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/principles-gdpr_en) | `docs` | `en` | `data-minimisation, purpose-limitation, reputation-data` | `topic: reputation-course` | `research` | `hub` | ✅ [сравнение #610](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) |
+| `ext-332` | [OpenAI — Evaluate agent workflows](https://developers.openai.com/api/docs/guides/agent-evals) | `docs` | `en` | `agent-evals, traces, datasets, failure-analysis` | `topic: agent-collaboration` | `research` | `hub` | ✅ [RFC #625](../../docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
+| `ext-333` | [OpenAI — Evaluation best practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices) | `docs` | `en` | `agent-evals, representative-data, human-calibration` | `topic: agent-collaboration` | `research` | `hub` | ✅ [RFC #625](../../docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
+| `ext-334` | [Anthropic — Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) | `blog` | `en` | `agent-evals, failure-cases, repeated-trials` | `topic: agent-collaboration` | `research` | `hub` | ✅ [RFC #625](../../docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
+| `ext-335` | [LangChain — Towards Automating Eval Engineering](https://www.langchain.com/blog/towards-automating-eval-engineering) | `blog` | `en` | `agent-evals, verifier, failure-analysis` | `topic: agent-collaboration` | `research` | `hub` | ✅ [RFC #625](../../docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
