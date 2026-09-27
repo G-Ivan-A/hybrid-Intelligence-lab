@@ -61,13 +61,13 @@ def compile_into(root: Path, revision: str) -> None:
     }
     manifest = {
         "manifest": "execution-package-cline-vscode",
-        "package_version": "0.1.0",
-        "compiled_at": "2026-09-26",
+        "package_version": "0.1.1",
+        "compiled_at": "2026-09-27",
         "source": {
             "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
             "revision": revision,
         },
-        "adapter": {"name": "cline-vscode", "version": "0.1.0"},
+        "adapter": {"name": "cline-vscode", "version": "0.1.1"},
         "inputs": {"allowlist": [
             "projects/ba-ai-process/build/common/",
             "projects/ba-ai-process/build/adapters/cline-vscode/",

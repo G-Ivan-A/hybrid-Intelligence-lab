@@ -102,28 +102,35 @@ def run(task_id: str, candidate: Path, output: Path, package_hash: str) -> bool:
     if output.exists():
         raise ValueError(f"run already exists: {output}")
     output.mkdir(parents=True)
+    working = output / "working.json"
+    working_bytes = candidate.read_bytes()
+    working.write_bytes(working_bytes)
     trace_path = output / "trace.jsonl"
     pipeline = ROOT / "tools/bcreq_pipeline.py"
     commands = (
-        [sys.executable, str(pipeline), "validate-working", str(candidate)],
-        [sys.executable, str(pipeline), "compile", str(candidate), "--output", str(output)],
-        [sys.executable, str(pipeline), "validate-release", str(candidate), "--release", str(output / "release.json"), "--manifest", str(output / "release-manifest.json")],
+        [sys.executable, str(pipeline), "validate-working", str(working)],
+        [sys.executable, str(pipeline), "compile", str(working), "--output", str(output)],
+        [sys.executable, str(pipeline), "validate-release", str(working), "--release", str(output / "release.json"), "--manifest", str(output / "release-manifest.json")],
     )
-    input_hash = sha256(candidate)
+    input_hash = hashlib.sha256(working_bytes).hexdigest()
     ok = True
     with trace_path.open("w", encoding="utf-8") as trace:
         for gate, command in zip(STEPS, commands):
-            if ok:
+            if ok and sha256(working) == input_hash:
                 result = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
                 output_hash = sha256(output / "release.json") if (output / "release.json").exists() else None
+                snapshot_unchanged = sha256(working) == input_hash
                 line = trace_line("script_invoked", task_id, gate, package_hash, command=command,
-                                  exit_code=result.returncode, input_hash=input_hash, output_hash=output_hash)
-                ok = result.returncode == 0
+                                  exit_code=result.returncode, input_hash=input_hash, output_hash=output_hash,
+                                  detail="working snapshot changed" if not snapshot_unchanged else "")
+                ok = result.returncode == 0 and snapshot_unchanged
                 if not ok:
-                    print(result.stderr or result.stdout or f"{gate} failed", file=sys.stderr)
+                    print("working snapshot changed" if not snapshot_unchanged else
+                          (result.stderr or result.stdout or f"{gate} failed"), file=sys.stderr)
             else:
+                ok = False
                 line = trace_line("step_skipped", task_id, gate, package_hash, input_hash=input_hash,
-                                  detail="previous machine gate failed")
+                                  detail="previous machine gate failed or working snapshot changed")
             trace.write(json.dumps(line, ensure_ascii=False) + "\n")
         trace.write(json.dumps(trace_line("contract_mode", task_id, "G-human", package_hash,
                                         input_hash=input_hash, actor="human", detail="semantic and publication review required; not credited as a machine gate"), ensure_ascii=False) + "\n")

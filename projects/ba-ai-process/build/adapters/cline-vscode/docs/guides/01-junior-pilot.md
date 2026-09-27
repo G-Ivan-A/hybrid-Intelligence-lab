@@ -40,7 +40,8 @@ temperature: 0.1
    ответ с файлом.
    Затем в терминале выполните `python3 tools/run_task.py run TASK-0001 submissions/TASK-0001.json`.
 6. Проверьте строку `TASK-0001: PASS`. Откройте
-   `runs/TASK-0001/trace.jsonl`: три машинных шага должны иметь состояние
+   `runs/TASK-0001/working.json`: это снимок входа, который проверяли все
+   три машинных шага. В `runs/TASK-0001/trace.jsonl` они должны иметь состояние
    `script_invoked` и exit code `0`, затем идёт `contract_mode` для проверки
    человеком. Прочитайте `release.json` и `release-manifest.json` в той же
    папке. `FAIL` или `step_skipped` останавливает задачу; исправьте кандидат

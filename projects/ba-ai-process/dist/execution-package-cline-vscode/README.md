@@ -31,9 +31,12 @@ python3 tools/run_task.py run TASK-0001 submissions/TASK-0001.json
 python3 tools/run_task.py verify-ci
 ```
 
-The second run of the same task ID is refused so an existing trace cannot be
-silently overwritten. Use a new task ID for a new attempt. Read
-`runs/TASK-0001/trace.jsonl`, `release.json`, and `release-manifest.json`.
+The runner saves the submitted Working bytes as `runs/TASK-0001/working.json`
+before the first gate. All three machine steps read that snapshot, so edits to
+the submission during a run cannot change the validated input. The second run
+of the same task ID is refused so an existing trace cannot be silently
+overwritten. Use a new task ID for a new attempt. Read the snapshot,
+`trace.jsonl`, `release.json`, and `release-manifest.json`.
 
 ## Gate boundary
 

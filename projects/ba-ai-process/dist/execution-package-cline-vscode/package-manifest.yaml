@@ -1,14 +1,14 @@
 {
   "manifest": "execution-package-cline-vscode",
-  "package_version": "0.1.0",
-  "compiled_at": "2026-09-26",
+  "package_version": "0.1.1",
+  "compiled_at": "2026-09-27",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "f210e8a3e5714f95885f24b51fcc9951c68e806a"
+    "revision": "037f9413efc794a0e6adf7475d9993e1dd03f93e"
   },
   "adapter": {
     "name": "cline-vscode",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "inputs": {
     "allowlist": [
@@ -26,12 +26,12 @@
       ".github/workflows/validate-cline-package.yml": "4866199ec102244405679172880519be20bcb33f89d2576274284b3d48336590",
       ".gitignore": "89912e46cd790c07dbdd676f289fe882fb43f5901bb7b3675a5372f792168c9c",
       "AGENTS.md": "37a2fba8b8267cf4462b5350896ab4cbddf2f302c0e9c2527e71ab8d16f357d0",
-      "README.md": "c2a8f879c272820146e8cc56f5ab9418712ef98600275a27196e2fe3586a05a2",
+      "README.md": "f9d4749c732bad4e68c07a25b30891005b47c6eb93cda693b014619d2fcb1176",
       "contracts/bcreq-client-v1.json": "add9e5b2021da91ad9a242da2be3af32358f3cbd409f3a588babfa9ae74c4a7b",
       "contracts/c-release-bcreq.schema.json": "bb9a1e92f9201fbcafa8559df1f94604d60177b497f4a8d16315554875f790a4",
       "contracts/c-release-manifest.schema.json": "b8daad5a3f940b9f9092e61d7a6a1c08bef3a0cb6010711dabd920b518963648",
       "contracts/c-working-bcreq.schema.json": "2792823ef691d3e49c7e07a9cb2766623a7dd5946c96b59ab4b8e5fd0a874e53",
-      "docs/guides/01-junior-pilot.md": "6d384dc67bf46554ee6c0b935a89d772b4d4264c0a02dfccc24ff30f57747d39",
+      "docs/guides/01-junior-pilot.md": "5d1efe2ad79d1f048b8467df9f6971f0e94a58f7f9de6b20e52fb350f8fc915d",
       "docs/kb-policy.md": "7a86c719ff85dab64cf39fad9e11a704a54f199af8ee1d46190706cb9425a71a",
       "evaluation/g-human-checklist.md": "e8db90d1f061c2559cf9ceddac8abe3e967f01071b504141b350c40c66e195ad",
       "golden/TASK-0001.json": "1a2a05e880866120bc8cda07c8a51a94741502ba39fa09737b174badd31fb8c5",
@@ -41,7 +41,7 @@
       "templates/working-prompt.md": "599a100cf9e2e9a3b779b5cc8a34210cb6fb6780f3a183f2a5d67cf88125e626",
       "tools/bcreq_pipeline.py": "95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f",
       "tools/cline_hook.py": "4333ab8a47c93e8338d159177f814383c122f26e0650e6813f33712ca8ed6ed0",
-      "tools/run_task.py": "0b5fbb87c1508a0a609378ba5127a368c3b719ca1d46d9076d7eeccf797fb99c"
+      "tools/run_task.py": "d1f6b3cffa87831782dd8a30dbf03640c1a7bd5892045f113f58297967b07a66"
     }
   }
 }
