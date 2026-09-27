@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 2.3
-updated: 2026-08-17
+version: 2.4
+updated: 2026-09-27
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -30,13 +30,13 @@ owner: G-Ivan-A
 
 | Термин | Краткое определение | Контекст использования | Пример артефакта |
 | --- | --- | --- | --- |
-| Operating Mode | мета-контракт уровня автономии агента: `Structured`, `Creative` или `Hybrid`. | Сужает допустимую ширину экспертного исполнения для всей задачи, но не расширяет абсолютные границы, не определяет тип результата и глубину обработки. Независимая ось по отношению к `Task Type`. | [agent-work-rules.md](../ai-rules/agent-work-rules.md), [ADR-010](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) |
+| Operating Mode | мета-контракт автономии агента: `Structured`, `Creative` или `Hybrid`. | Задаёт глубину исследования, бюджет токенов и уровень независимости суждений: Structured — минимум, Hybrid — баланс по умолчанию, Creative — максимальная обоснованная глубина. Не расширяет абсолютные границы и не определяет тип результата (`Task Type`). Автор может явно назначить части задачи как Structured или Creative. | [agent-work-rules.md](../ai-rules/agent-work-rules.md), [ADR-010](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) |
 | Экспертное исполнение (Justified Deviation) | Самостоятельный выбор агентом способа исполнения с обязательным обоснованием отклонения в PR. | Допустимо в ширине, заданной Operating Mode; цель задачи и абсолютные границы не переопределяются. | [ADR-010, Принцип 1](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) |
 | Абсолютные границы (Hard Limits) | Закрытый перечень из шести классов действий, которые агент не переопределяет. | При упоре в границу применяется легальный выход, а не молчаливая остановка или нарушение. | [ADR-010, Принцип 2](../docs/adr/2026-08-adr-010-agent-autonomy-principles.md) |
 | Легальный выход (Legal Exit) | Максимальная безопасная часть работы, непустой PR и блок «Не выполнено и вопросы» с вариантами и рекомендацией агента. | Используется, когда завершение требует human decision или требования противоречат друг другу. | [agent-work-rules.md](../ai-rules/agent-work-rules.md) |
 | Task Type | Методологический тип задачи: `Research`, `Education`, `Implementation`, `Audit`, `Analysis`, `RFC` или `ADR`. | Определяет, что делает агент и какой методологический контракт применять. `Research` и `Education` — типы задач, а не Operating Modes. | [task.yml](../.github/ISSUE_TEMPLATE/task.yml), [artifact-map.md](../ops/artifact-map.md) |
 | 5-блочный шаблон задачи | Единый шаблон постановки задачи из пяти блоков: Контекст, Цель, SSOT, Контракты задачи, Готово когда (RFC #470, §P.9). Опционально одной строкой: user story, ФТ, НФТ, Operating Mode. | Один шаблон на все задачи: `operating_mode` и `task_type` — независимые оси, отдельного Creative-шаблона нет. Универсальные контракты не дублируются в issue, список файлов не перечисляется. | [task.md](../.github/ISSUE_TEMPLATE/task.md), [task.yml](../.github/ISSUE_TEMPLATE/task.yml), [RFC #470](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md) |
-| Method | Глубина или способ обработки задачи: `Standard`, `Deep-Think` или `Adversarial`. | Выбирается независимо от Operating Mode и Task Type; `Deep-Think` — метод, а не Operating Mode. | [adversarial-stress-testing.md](../ai-rules/adversarial-stress-testing.md) |
+| Method | Способ обработки задачи: `Standard`, `Deep-Think` или `Adversarial`. | Выбирается для задачи и применяется с глубиной, заданной Operating Mode; `Deep-Think` — метод, а не Operating Mode. | [adversarial-stress-testing.md](../ai-rules/adversarial-stress-testing.md) |
 | Standard | Переиспользуемое IL-3 правило о форме, качестве или review-критериях для класса артефактов. Standard создается только при повторяющейся coordination или review problem. | Отличается от `Guideline` обязательностью, от `Policy` - фокусом на форме артефакта, а от `Contract` - тем, что не является операционным соглашением IL-1. Contract может ссылаться на Standard как на обязательное правило, но не тождественен ему. | [standards/README.md](README.md), [research-standard.md](research-standard.md), [adr-structure-standard.md](adr-structure-standard.md), [rfc-structure-standard.md](rfc-structure-standard.md) |
 | Concept | Базовое описание цели, границ, аудитории и операционной модели решения. Concept объясняет, почему репозиторий или область устроены именно так. | Используется как смысловой источник для standards и policies. Отличается от `Framework`: concept фиксирует назначение и границы, framework задает метод работы. | [docs/concept.md](../docs/concept.md) |
 | Policy | Обязательное правило принятия решений или ограничения поведения: что разрешено, запрещено, требует review или эскалации. | Используется там, где нарушение создает риск для безопасности, публикации, governance или качества. Отличается от `Standard`: policy регулирует действия участников, standard регулирует форму и готовность артефактов. | [AI Governance](../ai-governance/ai-governance.md), [ops/repo-model.md](../ops/repo-model.md) |
@@ -101,7 +101,7 @@ owner: G-Ivan-A
 | Research / Analysis / Audit | Тип работы определяется функцией артефакта, а не каталогом: новое внешнее знание, локальный контекст или проверка нормы. |
 | Research -> RFC -> ADR -> Standard | Research может дать evidence для proposal; RFC формулирует варианты и trade-offs; ADR фиксирует human decision; Standard превращает принятое правило в повторяемый IL-3 формат. |
 | Standard ≠ Contract | Standard задает форму и review-критерии артефактов (IL-3); Contract задает операционное соглашение и обязанности (IL-1). Contract может ссылаться на Standard, но не является Standard. |
-| Operating Mode ⟂ Task Type ⟂ Method | Три независимые оси: уровень автономии, методологический тип задачи и глубина обработки. Значение одной оси не подменяет значения остальных. |
+| Operating Mode ⟂ Task Type ⟂ Method | Три разные оси: режим задаёт автономию и глубину, тип задачи — результат, метод — способ обработки. Назначение метода не отменяет бюджет режима. |
 | Исполнимый документ -> Директивный блок | Исполнимый документ обязан открываться директивным блоком: сигнал «исполняй, не анализируй» стоит в первом видимом блоке (in-band «системная роль»), после чего идёт EXECUTION-часть, а пояснение понижается в EXPLANATION-часть. |
 | Operating Mode ⟂ Исполнимый документ | Ортогональны и не создают коллизии: `executable` помечает *тип документа* (исполнять или учитывать как справку), Operating Mode задаёт *уровень автономии*. Один и тот же исполнимый документ применяется в любом Operating Mode. Манифест стандарта — [docs/rfc/contract-executability-rfc.md](../docs/rfc/contract-executability-rfc.md). |
 | Исполнимый документ -> Validation | Машиночитаемый маркер `executable` во frontmatter позволяет мягко проверять тип документа в [tools/validate-frontmatter.sh](../tools/validate-frontmatter.sh), как и прочие frontmatter-поля. |

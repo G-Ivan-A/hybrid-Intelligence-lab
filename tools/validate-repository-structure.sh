@@ -99,6 +99,7 @@ is_active_file() {
     ai-rules/agent-onboarding-protocol.md | \
     ai-rules/adversarial-stress-testing.md | \
     ai-rules/agent-work-routing.md | \
+    ai-rules/agent-collaboration-rules.md | \
     ops/README.md | \
     ops/repo-model.md | \
     ops/artifact-map.md | \
@@ -138,6 +139,7 @@ is_active_file() {
     docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md | \
     docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
     docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
+    docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
     projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
     projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
@@ -565,6 +567,7 @@ is_active_file() {
     docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md | \
     docs/rfc/2026-09-03-rfc-agents-md-root-contract.md | \
     docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md | \
+    docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -596,6 +599,7 @@ is_active_file() {
     guides/contribute-template.md | \
     guides/troubleshooting.md | \
     guides/glossary.md | \
+    .github/pull_request_template.md | \
     .github/workflows/update-manifest.yml | \
     .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
@@ -1718,8 +1722,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 2.3"
-require_text "standards/glossary.md" "updated: 2026-08-17"
+require_text "standards/glossary.md" "version: 2.4"
+require_text "standards/glossary.md" "updated: 2026-09-27"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"
@@ -1963,8 +1967,8 @@ require_text "docs/rfc/solution-concept-template-proposal.md" "L3 Methodology-la
 require_text "docs/rfc/solution-concept-template-proposal.md" "explicit User approval"
 
 require_text "ai-rules/agent-onboarding-protocol.md" "status: canonical"
-require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.5"
-require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-08-11"
+require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.6"
+require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-09-27"
 require_text "ai-rules/agent-onboarding-protocol.md" "executable: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "entrypoint: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат."
@@ -1985,11 +1989,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.20"
+require_text "ops/artifact-map.md" "version: 2.21"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-09-24"
+require_text "ops/artifact-map.md" "updated: 2026-09-27"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2079,10 +2083,10 @@ require_text "ops/artifact-map.md" "research/external-knowledge/external-insight
 require_text "ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.26"
+require_text "docs/rfc/README.md" "version: 1.27"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-09-04"
+require_text "docs/rfc/README.md" "updated: 2026-09-27"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
@@ -2212,7 +2216,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.22"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.23"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
@@ -2398,7 +2402,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.64"
+require_text "ops/backlog.md" "version: 1.65"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"

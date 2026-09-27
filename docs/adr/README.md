@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 0.4
-updated: 2026-09-22
+version: 0.5
+updated: 2026-09-27
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -46,6 +46,7 @@ frontmatter и девять обязательных секций. Машино�
 | [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md) | proposed | Таксономия процессов и операций БА пересобирается от индустриального базиса; прежняя модель сохраняется как историческое свидетельство. |
 | [ADR-016](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-016-skill-form-and-contract-format.md) | proposed | Навык — форма поставки одного узла таксономии, а `interaction` вычисляется по точке возврата управления актору. |
 | [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md) | accepted | `ba-ai-process` разделяется на Source, компилируемые Distribution и автономные Runtime; project-scoped решение хранится рядом с Source. |
+| [ADR-021](2026-09-adr-021-agent-collaboration-layer.md) | proposed | Коммуникация C-1…C-7 живёт в отдельном файле, режимы и Creative — в work rules, якоря — в onboarding; K-1/K-2 согласованы по решению владельца, принятие ADR зависит от merge. |
 
 ## Related Artifacts
 

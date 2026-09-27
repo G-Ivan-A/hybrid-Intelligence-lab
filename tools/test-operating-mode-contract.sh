@@ -15,6 +15,8 @@ governance_path = Path("ai-governance/ai-governance.md")
 glossary_path = Path("standards/glossary.md")
 workflow_path = Path("standards/issue-workflow.md")
 onboarding_path = Path("ai-rules/agent-onboarding-protocol.md")
+collaboration_path = Path("ai-rules/agent-collaboration-rules.md")
+pr_template_path = Path(".github/pull_request_template.md")
 
 
 def fail(message: str) -> None:
@@ -131,6 +133,24 @@ require_text(
     onboarding_path,
     ["Принцип 1", "Принцип 2", "Принцип 3", "2026-08-adr-010-agent-autonomy-principles.md"],
 )
+
+# Decisions on PR #626: one owner for each concern, Hybrid as the default middle
+# mode, and a review surface for the strategic risk.
+require_text(rules_path, ["Hybrid — режим по умолчанию", "внешние источники", "негативных кейсов"])
+require_text(governance_path, ["Hybrid — средний уровень"])
+require_text(glossary_path, ["Задаёт глубину исследования, бюджет токенов"])
+require_text(pr_template_path, ["Стратегический риск:"])
+collaboration = collaboration_path.read_text(encoding="utf-8")
+if "## Single source of truth" not in collaboration:
+    fail("collaboration rules must identify the owners of non-communication concerns")
+for duplicate_heading in (
+    "## 1. Стратегическая эффективность",
+    "## 3. Профили режимов",
+    "## 5. Правило обоснованных задач",
+    "## 7. Реестр анти-паттернов",
+):
+    if duplicate_heading in collaboration:
+        fail(f"collaboration rules duplicate another contract: {duplicate_heading}")
 
 legacy_template = Path(".github/ISSUE_TEMPLATE/task-creative.md")
 require_text(legacy_template, ['name: ""', "Creative Task (consolidated)"])
