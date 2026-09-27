@@ -17,6 +17,7 @@ onboarding-протокол и операционные инструкции а�
 | Артефакт | Назначение |
 | --- | --- |
 | [agent-work-rules.md](agent-work-rules.md) | Основной контракт поведения агента: pre-flight, operating modes и Definition of Done. |
+| [agent-collaboration-rules.md](agent-collaboration-rules.md) | Правила сотрудничества: стратегическая эффективность, коммуникация, профили режимов, креативный протокол, якоря синхронизации. |
 | [agent-onboarding-protocol.md](agent-onboarding-protocol.md) | Протокол онбординга и синхронизации AI-агента. |
 | [adversarial-stress-testing.md](adversarial-stress-testing.md) | Повторяемая процедура проверки гипотез и решений попыткой опровержения. |
 

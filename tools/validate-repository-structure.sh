@@ -99,6 +99,7 @@ is_active_file() {
     ai-rules/agent-onboarding-protocol.md | \
     ai-rules/adversarial-stress-testing.md | \
     ai-rules/agent-work-routing.md | \
+    ai-rules/agent-collaboration-rules.md | \
     ops/README.md | \
     ops/repo-model.md | \
     ops/artifact-map.md | \
@@ -138,6 +139,7 @@ is_active_file() {
     docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md | \
     docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
     docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
+    docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
     projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
     projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
@@ -565,6 +567,7 @@ is_active_file() {
     docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md | \
     docs/rfc/2026-09-03-rfc-agents-md-root-contract.md | \
     docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md | \
+    docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \

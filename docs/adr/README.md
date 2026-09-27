@@ -46,6 +46,7 @@ frontmatter и девять обязательных секций. Машино�
 | [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md) | proposed | Таксономия процессов и операций БА пересобирается от индустриального базиса; прежняя модель сохраняется как историческое свидетельство. |
 | [ADR-016](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-016-skill-form-and-contract-format.md) | proposed | Навык — форма поставки одного узла таксономии, а `interaction` вычисляется по точке возврата управления актору. |
 | [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md) | accepted | `ba-ai-process` разделяется на Source, компилируемые Distribution и автономные Runtime; project-scoped решение хранится рядом с Source. |
+| [ADR-021](2026-09-adr-021-agent-collaboration-layer.md) | proposed | Слой правил сотрудничества агента (`ai-rules/agent-collaboration-rules.md`): стратегическая эффективность, правила коммуникации C-1…C-7, профили режимов, креативный протокол, якоря синхронизации; противоречия K-1/K-2 в определениях режимов вынесены на решение владельца. |
 
 ## Related Artifacts
 
