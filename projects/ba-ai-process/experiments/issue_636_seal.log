@@ -1,0 +1,13 @@
+ERROR: BASELINE Working digest does not match canonical content
+ERROR: EVID-03 evidence checksum does not match the retained excerpt
+
+TASK-0002: FAIL
+exit=1
+sealed: submissions/TASK-0003.json
+exit=0
+TASK-0003: PASS
+exit=0
+golden/TASK-0001.json: PASS
+submissions/TASK-0003.json: PASS
+exit=0
+package: PASS
