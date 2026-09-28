@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.6
-updated: 2026-09-27
+version: 1.7
+updated: 2026-09-28
 temperature: 0.1
 executable: true
 entrypoint: true
@@ -65,9 +65,11 @@ entrypoint: true
    тип проекта по `.hub-profile.json` и README: HTOM-команда,
    Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
    явного основания.
-2. Чек-лист governance. По маршруту `/AGENTS.md` прочитай локальные
-   AI_GOVERNANCE.md, CONTRIBUTING.md и README.md. Если доступны, прочитай
-   ops/repo-model.md, ops/artifact-map.md, standards/project-structure-inheritance.md и
+2. Чек-лист governance. По маршруту `/AGENTS.md` прочитай governance-контракт
+   текущего репозитория (`ai-governance/ai-governance.md` в Хабе,
+   `AI_GOVERNANCE.md` в HTOM/spoke при наличии), CONTRIBUTING.md и README.md.
+   Если доступны, прочитай ops/repo-model.md, ops/artifact-map.md,
+   standards/project-structure-inheritance.md и
    standards/session-handover-standard.md в Хабе или текущем репозитории.
 3. Чек-лист контекста. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/команды) и блок «Быстрый контекст»,
@@ -77,8 +79,8 @@ entrypoint: true
    они релевантны задаче. Если шаблона нет или ссылка на Хаб сломана — зафиксируй
    это в Readback как риск.
 5. Формат постановки задач. Не меняй структуру issue и не заполняй пустые поля
-   выдуманными значениями. Operating Mode бери из issue; по умолчанию —
-   structured.
+   выдуманными значениями. Operating Mode бери из issue; по умолчанию — Hybrid
+   по [Agent Work Rules](agent-work-rules.md#operating-modes).
 6. Readback. Кратко перескажи своими словами: (а) цель задачи, (б) границы и
    запреты, которые ты понял, (в) релевантные стандарты, (г) план первых
    действий. Затем задай вопросы по всему, что неоднозначно. Если контекста не

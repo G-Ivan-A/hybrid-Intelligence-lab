@@ -627,6 +627,7 @@ is_active_file() {
     docs/analysis/2026-09-03-ai-rules-compliance-failure-root-cause.md | \
     docs/analysis/2026-09-10-agents-md-hybrid-work-contract-analysis.md | \
     docs/analysis/2026-09-15-ai-directories-consolidation-analysis.md | \
+    docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -1967,8 +1968,8 @@ require_text "docs/rfc/solution-concept-template-proposal.md" "L3 Methodology-la
 require_text "docs/rfc/solution-concept-template-proposal.md" "explicit User approval"
 
 require_text "ai-rules/agent-onboarding-protocol.md" "status: canonical"
-require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.6"
-require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-09-27"
+require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.7"
+require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-09-28"
 require_text "ai-rules/agent-onboarding-protocol.md" "executable: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "entrypoint: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат."
@@ -2402,7 +2403,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.65"
+require_text "ops/backlog.md" "version: 1.66"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"
