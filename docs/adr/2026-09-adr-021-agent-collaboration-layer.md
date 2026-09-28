@@ -1,7 +1,7 @@
 ---
-status: proposed
-version: 1.1
-updated: 2026-09-27
+status: accepted
+version: 1.2
+updated: 2026-09-28
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: governance
@@ -15,10 +15,10 @@ decision-type: governance
 | --- | --- |
 | ADR id | ADR-021 |
 | Decision type | governance |
-| Decision status | proposed (narrative summary; машиночитаемый canon — frontmatter `status`) |
-| Decision date | 2026-09-27 |
+| Decision status | accepted (машиночитаемый canon — frontmatter `status`) |
+| Decision date | 2026-09-28 |
 | Owner | G-Ivan-A |
-| Source | issue [#625](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/625); обоснование — [RFC agent collaboration and operating modes](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
+| Source | issue [#625](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/625), корректировки [#631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631); обоснование — [RFC agent collaboration and operating modes](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
 | Impacted artifacts | [`AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/AGENTS.md), [`templates/htom/AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/AGENTS.md), [`templates/spoke/AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/spoke/AGENTS.md), [`ai-rules/agent-collaboration-rules.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-collaboration-rules.md), [`ai-rules/agent-work-rules.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md), [`ai-governance/ai-governance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-governance/ai-governance.md), [`standards/glossary.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/glossary.md) |
 | Supersedes | none |
 | Superseded by | none |
@@ -72,6 +72,27 @@ evidence в RFC. Вариант с несколькими активными в�
 Единственный блокирующий случай — критический риск (C-5). Это сочетание
 Контракта эскалации и human decision rights, а не новый гейт.
 
+Рабочая граница C-5: риск критичен, когда для конкретного спорного действия
+есть проверяемое основание ожидать хотя бы одно из следующих последствий:
+
+- необратимая потеря данных или разрушительное изменение без проверенного
+  способа восстановления;
+- нарушение принятой архитектурной границы с труднообратимым распространением
+  последствий (например, [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md)
+  в пределах `ba-ai-process`) либо стратегическое поражение при тактической
+  победе, если обычный откат не устраняет ущерб;
+- нарушение контракта с внешней системой, способное повредить её данные,
+  совместимость или обязательства перед пользователями до возможного отката;
+- публикация приватных данных, секретов или другого контекста, для которого
+  действуют ограничения публикации.
+
+Агент указывает спорное действие, затронутые данные или границу, evidence,
+последствие и обратимость. Неясность или обычный review-дефект сами по себе
+не делают риск критическим. При таком риске только спорная часть ждёт решения
+человека; независимая работа и подготовка PR продолжаются. Эти критерии —
+рабочая версия и уточняются итеративно по реальным случаям. Они не блокируют
+исполнение этого ADR: согласование результата остаётся за человеком при merge.
+
 **3. Негативные кейсы обязательны.** В `Creative` существенный для решения
 негативный кейс превращается в проверку. Урок ADR-014 обобщается с мета-модели
 БА на любую модель; конкретные кейсы и пределы обобщения остаются в RFC.
@@ -84,13 +105,20 @@ evidence в RFC. Вариант с несколькими активными в�
 - K-2: Operating Mode задаёт уровень автономии **и** бюджет глубины; `Task Type`
   задаёт тип результата. Строка глоссария исправлена в PR по явному полномочию.
 
+**5. Бюджет чтения контрактов.** Для `agent-work-rules.md` порог
+9K — рекомендация, не блокер (в оценочных токенах). При превышении рекомендуется
+декомпозиция документа на несколько канонических артефактов с явными маршрутами,
+без вытеснения действующих норм. Триггер проверки — периодическая инициация пользователем
+агентной проверки контрактов. Порог не должен блокировать чтение
+документа агентом.
+
 ## Decision Drivers
 
 | Драйвер | Содержание |
 | --- | --- |
 | Стратегия важнее тактики | Ошибки мета-модели БА были тактически разумными (быстро, на готовой практике) и стратегически дорогими: повторная сборка модели. |
 | Anti-Inflation | Новый rule-файл оправдан только коммуникацией; остальные нормы расширяют действующие каноны. Точка входа даёт краткий маршрут. |
-| Бюджет контекста | Консолидация режимов довела `agent-work-rules.md` до мягкого предупреждения, но ниже жёсткого порога 9K оценочных токенов. Риск указан в RFC и PR. |
+| Бюджет контекста | Консолидация режимов довела `agent-work-rules.md` до мягкого предупреждения; 9K теперь зафиксирован как рекомендация по декомпозиции, а не как причина вытеснять норму. |
 | Проверяемость | Каждое правило коммуникации имеет строку «Как проверяется». Маршрут и ключевые формулировки защищены регрессионным тестом. |
 | Совместимость | Модель исполнения (перезапуск агента только вручную, merge как согласование) не меняется, гейты не добавляются. |
 
@@ -121,8 +149,9 @@ evidence в RFC. Вариант с несколькими активными в�
   Sync.
 - Большинство проверок остаются human-only review. Машинно проверяются только
   наличие маршрута и ключевых норм.
-- `agent-work-rules.md` превышает мягкий порог размера; будущие добавления
-  должны сначала убрать повторы, чтобы не достигнуть жёсткого порога.
+- `agent-work-rules.md` превышает мягкий порог размера; при дальнейших
+  добавлениях рекомендуется убирать повторы или декомпозировать документ,
+  сохраняя доступ к действующим нормам.
 
 ## Compliance and Validation
 
@@ -139,8 +168,8 @@ evidence в RFC. Вариант с несколькими активными в�
 
 | Переход | Условие |
 | --- | --- |
-| `proposed → accepted` | Merge PR [#626](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/626) после проверки дублирования. |
-| Реализация K-1/K-2 | Выполнена в PR по решению владельца; принятие зависит от merge. |
+| `proposed → accepted` | PR [#626](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/626) merged; корректировки C-5 и 9K внесены по issue [#631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631). Итоговое согласование изменений остаётся за merge текущего PR. |
+| Реализация K-1/K-2 | Выполнена и принята через merge PR [#626](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/626). |
 | Пересмотр | Повторяющийся провал вне кейсов RFC или измеренный перерасход `Creative` без роста качества. |
 
 ## Related Artifacts

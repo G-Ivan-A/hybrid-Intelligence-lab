@@ -17,6 +17,8 @@ workflow_path = Path("standards/issue-workflow.md")
 onboarding_path = Path("ai-rules/agent-onboarding-protocol.md")
 collaboration_path = Path("ai-rules/agent-collaboration-rules.md")
 pr_template_path = Path(".github/pull_request_template.md")
+adr_path = Path("docs/adr/2026-09-adr-021-agent-collaboration-layer.md")
+adr_index_path = Path("docs/adr/README.md")
 
 
 def fail(message: str) -> None:
@@ -137,12 +139,28 @@ require_text(
 # Decisions on PR #626: one owner for each concern, Hybrid as the default middle
 # mode, and a review surface for the strategic risk.
 require_text(rules_path, ["Hybrid — режим по умолчанию", "внешние источники", "негативных кейсов"])
+require_text(rules_path, ["Явное назначение для части задачи имеет приоритет", "ADR-021"])
 require_text(governance_path, ["Hybrid — средний уровень"])
 require_text(glossary_path, ["Задаёт глубину исследования, бюджет токенов"])
 require_text(pr_template_path, ["Стратегический риск:"])
 collaboration = collaboration_path.read_text(encoding="utf-8")
 if "## Single source of truth" not in collaboration:
     fail("collaboration rules must identify the owners of non-communication concerns")
+require_text(collaboration_path, ["status: accepted", "ADR-021"])
+require_text(
+    adr_path,
+    [
+        "status: accepted",
+        "| Decision status | accepted",
+        "необратимая потеря данных",
+        "публикация приватных данных",
+        "9K — рекомендация",
+        "декомпозиция документа",
+        "периодическая инициация пользователем",
+    ],
+)
+require_text(adr_index_path, ["ADR-021](2026-09-adr-021-agent-collaboration-layer.md) | accepted"])
+require_text(onboarding_path, ["по умолчанию — Hybrid", "ai-governance/ai-governance.md"])
 for duplicate_heading in (
     "## 1. Стратегическая эффективность",
     "## 3. Профили режимов",
