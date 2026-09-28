@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-09-26
+version: 0.2
+updated: 2026-09-28
 temperature: 0.1
 ---
 
@@ -40,8 +40,11 @@ silently overwritten. Use a new task ID for a new attempt. Read
 
 Workspace `TaskStart`, `TaskResume` and `PreToolUse` hooks check package hashes.
 The tool hook allows Cline to write only `submissions/TASK-ID.json`, and blocks
-Cline shell commands and unrecognized tools. Enable hooks in Cline Feature
-Settings and verify the hook smoke test in the guide. These hooks inspect only
+Cline shell commands and unrecognized tools. On Windows the current Cline
+release discovers only `<Hook>.ps1` hook files, so these extensionless hooks do
+not run there (guide limitation О-3); the analyst's approval prompts,
+`check-package`, the runner and CI remain the boundary, and the guide's
+protection check covers that path. These hooks inspect only
 actions selected by Cline; they cannot force the model to request a tool call.
 The independent runner produces the authoritative process trace.
 

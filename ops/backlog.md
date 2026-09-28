@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.66
+version: 1.67
 updated: 2026-09-28
 temperature: 0.1
 type: backlog
@@ -621,6 +621,31 @@ ADR-021 и Agent Work Rules; локальные регрессионные те�
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **B-196** | Согласовать валидатор размера с рекомендацией 9K | null | - | TODO | - (planned) | [Анализ разрывов](../docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md), [issue #631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631) | Заменить hard failure при превышении 9K на предупреждение с рекомендацией декомпозиции; регрессионный тест должен подтвердить неблокирующее поведение. | null |
 | **B-197** | Синхронизировать HTOM handover-промпт с режимом по умолчанию | null | - | TODO | - (planned) | [Анализ разрывов](../docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md), [issue #631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631) | Убрать расхождение `structured`/`Hybrid` в `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` и проверить результат на bootstrap-сценарии. | null |
+
+---
+
+## Спринт 24: Реальные задачи BCREQ в Cline-пакете
+
+**Story.** Issue #636 требует запускать реальную задачу BCREQ по ссылке на Jira
+или тексту без изучения архитектуры. Runner пакета принимает любой черновик,
+прошедший схему, но правила агента, отсутствие команды запечатывания и
+неработающие на Windows hooks делают путь зависимым от стартовой фразы и
+ручных команд. Инструкция фиксирует эти разрывы как ограничения О-1…О-5 и не
+обходит их.
+
+**Цель.** Устранить разрывы в Source так, чтобы режим прогона шёл через диалог
+Cline, а режим отладки имел собственные контракты.
+
+**Критерий закрытия.** Ограничения О-1…О-5 из инструкции Cline-пакета сняты
+или приняты решением человека; пакет перекомпилирован, инструкция обновлена.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-198** | Разрешить реальные задачи в правилах агента Cline-пакета | null | - | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637), О-1 | `AGENTS.md` и `templates/working-prompt.md` ограничивают агента синтетическим `TASK-0001`; нужны правила для реальной задачи с корпоративными источниками по `kb-policy`. | null |
+| **B-199** | Добавить в runner команду запечатывания черновика | null | - | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637), О-2 | Пересчёт `evidence[].checksum` и `working_digest` сейчас выполняется временным блоком из инструкции; нужна проверяемая команда runner. | null |
+| **B-200** | Согласовать hooks пакета с Cline на Windows | null | - | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637), О-3 | Cline на Windows ищет только `<Hook>.ps1`, SDK передаёт немапленные имена инструментов и не вызывает `TaskResume`; hooks пакета там не работают. | null |
+| **B-201** | Добавить skills Cline для ведения процесса и контракты отладки | null | B-198 | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637), О-4, О-5 | Диалог процесса (выбор процесса, входные данные, перепроверка KB, нумерованное согласование, действия с командой в скобках) и режим отладки задаются только текстом инструкции. | null |
+| **B-202** | Решить, может ли Cline запускать runner после согласования БА | null | B-200 | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637) | Правила пакета запрещают агенту команды; режим прогона с максимумом UI требует решения о разрешённом запуске runner агентом. | null |
 
 ---
 
