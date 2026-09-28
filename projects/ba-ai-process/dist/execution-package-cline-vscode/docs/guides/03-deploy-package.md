@@ -73,9 +73,6 @@ Get-ChildItem -Force
 `README.md`, `package-manifest.yaml`, `tools`, `contracts` и другие папки.
 Папку `source-lab` после копирования можно удалить.
 
-> Для macOS/Linux: `cp -R source-lab/projects/ba-ai-process/dist/execution-package-cline-vscode/. bcreq-runtime/`
-> (точка в конце копирует и скрытые файлы).
-
 ## Скопируйте KB отдельно
 
 KB скачивается в отдельную временную папку, затем её содержимое копируется в
