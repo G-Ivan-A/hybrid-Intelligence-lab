@@ -4,7 +4,7 @@
   "compiled_at": "2026-09-26",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "f210e8a3e5714f95885f24b51fcc9951c68e806a"
+    "revision": "a1f9eac453fa228e07ec284d0db390b9ba570040"
   },
   "adapter": {
     "name": "cline-vscode",
@@ -26,12 +26,18 @@
       ".github/workflows/validate-cline-package.yml": "4866199ec102244405679172880519be20bcb33f89d2576274284b3d48336590",
       ".gitignore": "89912e46cd790c07dbdd676f289fe882fb43f5901bb7b3675a5372f792168c9c",
       "AGENTS.md": "37a2fba8b8267cf4462b5350896ab4cbddf2f302c0e9c2527e71ab8d16f357d0",
-      "README.md": "c2a8f879c272820146e8cc56f5ab9418712ef98600275a27196e2fe3586a05a2",
+      "README.md": "8324ad984c6e290a0db52cd97df63298b74440e10cf063c34c998b92b89cd465",
       "contracts/bcreq-client-v1.json": "add9e5b2021da91ad9a242da2be3af32358f3cbd409f3a588babfa9ae74c4a7b",
       "contracts/c-release-bcreq.schema.json": "bb9a1e92f9201fbcafa8559df1f94604d60177b497f4a8d16315554875f790a4",
       "contracts/c-release-manifest.schema.json": "b8daad5a3f940b9f9092e61d7a6a1c08bef3a0cb6010711dabd920b518963648",
       "contracts/c-working-bcreq.schema.json": "2792823ef691d3e49c7e07a9cb2766623a7dd5946c96b59ab4b8e5fd0a874e53",
-      "docs/guides/01-junior-pilot.md": "6d384dc67bf46554ee6c0b935a89d772b4d4264c0a02dfccc24ff30f57747d39",
+      "docs/guides/01-junior-pilot.md": "d8d83a2965e7c21007aad789c6e1b673a4925ddfca51428017c7442c26d9f141",
+      "docs/guides/02-install.md": "5e5df5de62b454877612db0cec057d35afb939355a2d33f100deb91c1500dd78",
+      "docs/guides/03-deploy-package.md": "697883d286f6443bc75de179a4c0ed3147a3a3a2ccb63ebd45670a4a6245eb2e",
+      "docs/guides/04-smoke-test.md": "d0704ec0d9994103a1eba74ebaae4f6943a949b03269e3742aea64df5b1b9f95",
+      "docs/guides/05-commands-reference.md": "025f1dcb1b45bb12786941a326921496d790de9869864de59a89a98f60d3e245",
+      "docs/guides/06-working-with-cline.md": "cede41210102e9a744f29bb2ed743d215a2f93b13bf4b62f3ac8726d4a3553ac",
+      "docs/guides/README.md": "d8d0e9cb09f95c153c0257b935484ca19951900cce3e5b4c527eeb30a0f56d8c",
       "docs/kb-policy.md": "7a86c719ff85dab64cf39fad9e11a704a54f199af8ee1d46190706cb9425a71a",
       "evaluation/g-human-checklist.md": "e8db90d1f061c2559cf9ceddac8abe3e967f01071b504141b350c40c66e195ad",
       "golden/TASK-0001.json": "1a2a05e880866120bc8cda07c8a51a94741502ba39fa09737b174badd31fb8c5",
