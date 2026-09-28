@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.24
+version: 0.25
 updated: 2026-09-28
 temperature: 0.1
 type: external-analysis
@@ -414,6 +414,7 @@ related_issues:
 | `ext-336` | [Cline — Task Management](https://docs.cline.bot/core-workflows/task-management) (Cline; публикация без даты, проверено 2026-09-28) | `docs` | `en` | `cline, task-management, dialogue` | `topic: ba-ai-process-pilot` | `research` | `mango` | ✅ [RFC #630](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md) |
 | `ext-337` | [Cline — OpenAI Compatible Provider](https://github.com/cline/cline/blob/main/docs/provider-config/openai-compatible.mdx) (Cline; публикация без даты, проверено 2026-09-28) | `docs` | `en` | `cline, model-provider, dialogue` | `topic: ba-ai-process-pilot` | `research` | `mango` | ✅ [RFC #630](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md) |
 | `ext-338` | [Cline — MCP Overview](https://github.com/cline/cline/blob/main/docs/mcp/mcp-overview.mdx) (Cline; публикация без даты, проверено 2026-09-28) | `docs` | `en` | `cline, mcp, knowledge-sources` | `topic: ba-ai-process-pilot` | `research` | `mango` | ✅ [RFC #630](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md) |
+| `ext-339` | [Scrum Guide — Scrum Guide 2020](https://scrumguides.org/scrum-guide.html) | `docs` | `en` | `backlog-order, sprint-cancellation, product-ownership` | `topic: backlog-closure` | `research` | `hub` | ✅ [2026-09-28-scrum-backlog-decision-rights.md](external-insights/2026-09-28-scrum-backlog-decision-rights.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

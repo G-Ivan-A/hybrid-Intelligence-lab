@@ -494,6 +494,7 @@ is_active_file() {
     research/external-knowledge/external-insights/2026-06-13-spec-driven-development.md | \
     research/external-knowledge/external-insights/2026-06-15-agent-local-memory-context.md | \
     research/external-knowledge/external-insights/2026-06-15-structured-prompt-driven-development.md | \
+    research/external-knowledge/external-insights/2026-09-28-scrum-backlog-decision-rights.md | \
     practices/README.md | \
     practices/agent-work/README.md | \
     practices/agent-work/hybrid-search-before-action.md | \
@@ -568,6 +569,7 @@ is_active_file() {
     docs/rfc/2026-09-03-rfc-agents-md-root-contract.md | \
     docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md | \
     docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md | \
+    docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -628,6 +630,7 @@ is_active_file() {
     docs/analysis/2026-09-10-agents-md-hybrid-work-contract-analysis.md | \
     docs/analysis/2026-09-15-ai-directories-consolidation-analysis.md | \
     docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md | \
+    docs/analysis/2026-09-28-backlog-closure-evidence-634.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -1990,11 +1993,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.21"
+require_text "ops/artifact-map.md" "version: 2.22"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-09-27"
+require_text "ops/artifact-map.md" "updated: 2026-09-28"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2084,10 +2087,10 @@ require_text "ops/artifact-map.md" "research/external-knowledge/external-insight
 require_text "ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.27"
+require_text "docs/rfc/README.md" "version: 1.28"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-09-27"
+require_text "docs/rfc/README.md" "updated: 2026-09-28"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
@@ -2217,7 +2220,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.24"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.25"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"

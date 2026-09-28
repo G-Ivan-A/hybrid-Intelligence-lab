@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-15
+version: 0.3
+updated: 2026-09-28
 temperature: 0.1
 ---
 
@@ -70,6 +70,7 @@ context: [tag1, tag2]
 | [2026-06-13-spec-driven-development.md](2026-06-13-spec-driven-development.md) | `ext-003` | `hypothesis` | `mango, clarify-engine-ai` |
 | [2026-06-15-agent-local-memory-context.md](2026-06-15-agent-local-memory-context.md) | `ext-009` | `research` | `all` |
 | [2026-06-15-structured-prompt-driven-development.md](2026-06-15-structured-prompt-driven-development.md) | `ext-011` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` |
+| [2026-09-28-scrum-backlog-decision-rights.md](2026-09-28-scrum-backlog-decision-rights.md) | `ext-339` | `research` | `hub` |
 
 ## Как добавить инсайт
 
