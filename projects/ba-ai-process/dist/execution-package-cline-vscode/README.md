@@ -19,7 +19,8 @@ and `evaluation/g-human-checklist.md` guide the agent and analyst.
 
 Copy the **contents** of this directory to the root of a clean, private runtime
 repository. Keep `.clinerules/` and `.github/workflows/` when copying. Open that
-root in VS Code and follow `docs/guides/01-junior-pilot.md`.
+root in VS Code and follow the Russian guide cluster starting at
+`docs/guides/README.md` (Windows 10/11 x64 first).
 Python 3.11 or newer is required; the gate itself uses the standard library.
 The model API settings and any corporate knowledge connection are local to the
 user's Cline installation, never part of this package.
