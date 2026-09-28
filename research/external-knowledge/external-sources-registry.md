@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.23
-updated: 2026-09-27
+version: 0.24
+updated: 2026-09-28
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -411,6 +411,9 @@ related_issues:
 | `ext-333` | [OpenAI — Evaluation best practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices) | `docs` | `en` | `agent-evals, representative-data, human-calibration` | `topic: agent-collaboration` | `research` | `hub` | ✅ [RFC #625](../../docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
 | `ext-334` | [Anthropic — Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) | `blog` | `en` | `agent-evals, failure-cases, repeated-trials` | `topic: agent-collaboration` | `research` | `hub` | ✅ [RFC #625](../../docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
 | `ext-335` | [LangChain — Towards Automating Eval Engineering](https://www.langchain.com/blog/towards-automating-eval-engineering) | `blog` | `en` | `agent-evals, verifier, failure-analysis` | `topic: agent-collaboration` | `research` | `hub` | ✅ [RFC #625](../../docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md) |
+| `ext-336` | [Cline — Task Management](https://docs.cline.bot/core-workflows/task-management) (Cline; публикация без даты, проверено 2026-09-28) | `docs` | `en` | `cline, task-management, dialogue` | `topic: ba-ai-process-pilot` | `research` | `mango` | ✅ [RFC #630](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md) |
+| `ext-337` | [Cline — OpenAI Compatible Provider](https://github.com/cline/cline/blob/main/docs/provider-config/openai-compatible.mdx) (Cline; публикация без даты, проверено 2026-09-28) | `docs` | `en` | `cline, model-provider, dialogue` | `topic: ba-ai-process-pilot` | `research` | `mango` | ✅ [RFC #630](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md) |
+| `ext-338` | [Cline — MCP Overview](https://github.com/cline/cline/blob/main/docs/mcp/mcp-overview.mdx) (Cline; публикация без даты, проверено 2026-09-28) | `docs` | `en` | `cline, mcp, knowledge-sources` | `topic: ba-ai-process-pilot` | `research` | `mango` | ✅ [RFC #630](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
