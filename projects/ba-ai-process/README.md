@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.5
-updated: 2026-09-26
+version: 1.6
+updated: 2026-09-28
 temperature: 0.1
 scope: mango-only
 type: research
@@ -109,6 +109,10 @@ RFC — в
 Согласование [issue #609](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/609),
 сквозные зависимости и граница готовности Source зафиксированы в
 [анализе архитектурной сходимости](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-24-architecture-convergence-and-readiness.md).
+
+[RFC проверки единого Source на пилоте GigaCode CLI и Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md)
+по issue #630 классифицирует 20 точек трения и фиксирует результаты локального
+синтетического цикла; парные боевые прогоны остаются открытым gate.
 
 ## Решение о GigaCode CLI
 

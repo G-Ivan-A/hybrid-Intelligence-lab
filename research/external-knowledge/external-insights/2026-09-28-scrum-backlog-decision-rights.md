@@ -4,7 +4,7 @@ version: 0.1
 updated: 2026-09-28
 temperature: 0.1
 type: external-analysis
-source_id: ext-336
+source_id: ext-339
 stage: research
 projects: [hub]
 context: [backlog-order, sprint-cancellation, product-ownership]
@@ -12,7 +12,7 @@ context: [backlog-order, sprint-cancellation, product-ownership]
 
 # Insight: make backlog order and cancellation an owner decision
 
-**Source:** `ext-336`, [Scrum Guide 2020](https://scrumguides.org/scrum-guide.html).
+**Source:** `ext-339`, [Scrum Guide 2020](https://scrumguides.org/scrum-guide.html).
 
 ## Atomic conclusion
 

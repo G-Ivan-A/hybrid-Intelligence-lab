@@ -41,6 +41,12 @@ issue or a Hub distribution package does not prove an independent runtime run.
 These ambiguities can direct effort to repeated theory or premature scaling
 while the project's first empirical test remains open.
 
+The newly merged [Source pilot RFC](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md)
+found a shared compiler and a local synthetic check across the GigaCode and
+Cline packages, while leaving live pilot runs open. It supports verifying the
+existing Source and runtime path before changing Sprint 19/20 statuses or
+claiming a measured baseline.
+
 The [Scrum Guide](https://scrumguides.org/scrum-guide.html) gives the Product
 Owner responsibility for backlog order and reserves cancellation of a Scrum
 Sprint for an obsolete Sprint Goal. Hub “sprints” are logical task groups under
@@ -202,6 +208,7 @@ references and a changelog entry.
 - [Backlog instruction](../../ops/backlog-instruction.md), [Hub concept](../concept.md),
   [Hub vision](../vision.md), [audit matrix](../analysis/2026-09-28-backlog-closure-evidence-634.md).
 - [ADR-017](../../projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md),
+  [Source pilot RFC](../../projects/ba-ai-process/docs/rfc/2026-09-source-pilot-verification.md),
   [PR #582](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/582),
   [issue #583](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/583).
-- [Scrum Guide](https://scrumguides.org/scrum-guide.html), registered as `ext-336`.
+- [Scrum Guide](https://scrumguides.org/scrum-guide.html), registered as `ext-339`.

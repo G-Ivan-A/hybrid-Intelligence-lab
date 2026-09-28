@@ -135,7 +135,7 @@ done
 # The Hub-specific research-boundary rule must live in the project layer only, and
 # must not be shipped into spokes through the general layer of a template.
 if ! sed -n '/<project_specific_rules>/,/<\/project_specific_rules>/p' "$ROOT_DIR/AGENTS.md" \
-  | grep -q 'expands the considered boundary'; then
+  | grep 'expands the considered boundary' >/dev/null; then
   fail "the Hub research-boundary rule must live inside <project_specific_rules> of AGENTS.md"
 fi
 for template in templates/htom/AGENTS.md templates/spoke/AGENTS.md; do
@@ -143,7 +143,7 @@ for template in templates/htom/AGENTS.md templates/spoke/AGENTS.md; do
     fail "$template must not ship the Hub-specific research-boundary rule"
   fi
   if ! sed -n '/<project_specific_rules>/,/<\/project_specific_rules>/p' "$ROOT_DIR/$template" \
-    | grep -q 'REQUIRED: define the rules of THIS project here'; then
+    | grep 'REQUIRED: define the rules of THIS project here' >/dev/null; then
     fail "$template must reserve <project_specific_rules> with an explicit placeholder"
   fi
 done
