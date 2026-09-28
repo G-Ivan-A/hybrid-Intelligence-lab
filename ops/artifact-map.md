@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.21
-updated: 2026-09-27
+version: 2.22
+updated: 2026-09-28
 temperature: 0.1
 ---
 
@@ -121,6 +121,8 @@ temperature: 0.1
 | `/ops/executable-documents-issues.md` | навигация | — | Реестр GitHub Issues CE-001..CE-010 для внедрения стандарта исполнимых документов по RFC §6.1: URL задач, файлы, приоритеты, зависимости, статусы и обязательные метки. | ✅ Да | `docs/rfc/contract-executability-rfc.md`, `ops/backlog.md`, `standards/glossary.md` |
 | `/ops/session-digests.md` | журнал | справка | Единая точка хранения суммарий длинных сессий с внешними агентами (ChatGPT/Claude) для передачи контекста между чатами: индекс + инструкции + суммарии с якорями по дате. Открытые вопросы из дайджестов превращаются в active backlog items только после triage по `ops/backlog-instruction.md`. Механизм только для внешних агентов; агент-исполнитель задачи его НЕ использует и не жжёт токены на суммаризацию. | ⚠️ По необходимости | `standards/session-handover-standard.md`, `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, `ops/backlog.md`, `ops/backlog-instruction.md`, `ai-rules/agent-onboarding-protocol.md`, `guides/sync-with-projects.md` |
 | `/docs/rfc/README.md` | навигация | Canonical | Индекс каталога RFC Хаба: RFC как рекомендации/proposals до human decision и делегирования обязательных норм в active artifacts. | ✅ Да | `ops/artifact-map.md`, `ops/repo-model.md`, `research/governance/2026-06-06-governance-folder-structure-decisions.md` |
+| `/docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md` | RFC | справка | Предложение #634 о доказательном закрытии и приоритете каждого активного спринта; решения о целевом runtime и повторяющихся ID остаются у владельца. | ⚠️ По необходимости | `ops/backlog.md`, `docs/analysis/2026-09-28-backlog-closure-evidence-634.md` |
+| `/docs/analysis/2026-09-28-backlog-closure-evidence-634.md` | анализ | справка | Матрица всех 113 строк бэклога: текущий статус, подтверждённые переходы и сохраняющиеся пробелы. | ⚠️ По необходимости | `ops/backlog.md`, `docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md` |
 | `/docs/rfc/rfc-two-cases-of-project-initialization.md` | RFC | Canonical | Концептуальный манифест разделения двух ортогональных кейсов инициализации проекта: Кейс 1 (Runtime-онбординг) и Кейс 2 (Bootstrap-клонирование). Аналогии из 4 смежных областей, таблица-манифест (13 строк), Mermaid-схема жизненного цикла, обоснование с трассировкой к ретроспективе, follow-up. Термины — только из `standards/glossary.md`. Решение за человеком. | ⚠️ По необходимости | `ai-rules/agent-onboarding-protocol.md`, `templates/htom/README.md`, `research/hub/2026-06-02-ai-collaboration-retrospective.md`, `standards/glossary.md` |
 | `/docs/rfc/contract-executability-rfc.md` | RFC | справка | Reviewed decision record архитектуры исполнимых документов: анализ инцидента «анализ вместо исполнения», утверждённое Видение 3, decision-status table и делегирование нормативных правил в `standards/executable-contract-standard.md`. | ⚠️ По необходимости | `ops/artifact-map.md`, `ai-rules/agent-onboarding-protocol.md`, `ai-rules/agent-work-rules.md`, `standards/issue-workflow.md`, `templates/htom/AI_QUICK_RULES.md`, `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, `standards/glossary.md` |
 | `/docs/rfc/repository-quality-improvement-plan.md` | RFC | справка | Комплексный аудит качества репозитория после PR #170: naming, дубли, metadata duplication, traceability, draft-документы, archive Mango и phased cleanup plan с запросом на согласование. | ⚠️ По необходимости | `ops/artifact-map.md`, `ops/backlog.md`, `ops/repo-model.md`, `standards/file-naming.md`, `tools/validate-repository-structure.sh` |
