@@ -43,19 +43,19 @@ temperature: 0.1
   идёт: полный маршрут показан в [работе с агентом](06-working-with-gigacode.md).
 
 Все команды ниже выполняются в [терминале B](01-junior-pilot.md#term-terminal-b)
-в папке пакета `~/bcreq-pilot/runtime` с включённым окружением Python
-(`. ~/bcreq-pilot/venv/bin/activate`). Вставляйте каждый блок целиком.
+— окне PowerShell в папке пакета `$env:USERPROFILE\bcreq-pilot\runtime`.
+Вставляйте каждый блок целиком.
 
 ## Шаг 1. Начните учебную задачу
 
-**Действие: «Начать задачу»** (`sh tools/run-task start TASK-0001`)
+**Действие: «Начать задачу»** (`python tools/run-task.py start TASK-0001`)
 
 - **Где:** терминал B, папка пакета.
 - **Команды:**
 
-  ```sh
-  sh tools/run-task start TASK-0001
-  mkdir -p runs/TASK-0001/evidence
+  ```powershell
+  python tools/run-task.py start TASK-0001
+  New-Item -ItemType Directory -Force runs\TASK-0001\evidence | Out-Null
   ```
 
 - **Что делают:** runner проверяет целостность пакета
@@ -68,8 +68,8 @@ temperature: 0.1
   TASK-0001: started at entry; next transition requires G-mach
   ```
 
-- **Проверьте:** `ls runs/TASK-0001` показывает `evidence`, `state.json`,
-  `trace.jsonl`.
+- **Проверьте:** `Get-ChildItem runs\TASK-0001` показывает `evidence`,
+  `state.json`, `trace.jsonl`.
 
 Если runner ответил `BLOCKED: task already exists; use a new task id`, вы
 уже начинали учебную задачу — см. [Повторить учебный прогон](#повторить-учебный-прогон).
@@ -78,15 +78,17 @@ temperature: 0.1
 
 **Действие: «Записать учебный вход»**
 
-Три блока ниже создают три файла в `runs/TASK-0001/evidence/`. Каждый блок
-начинается с `cat >` и заканчивается строкой `EOF`: вставьте его целиком и
-нажмите Enter. Команды ничего не печатают.
+Три блока ниже создают три файла в `runs\TASK-0001\evidence\`. Каждый блок
+начинается строкой `@'` и заканчивается строкой `'@ | Set-Content …`:
+вставьте его целиком и нажмите Enter. Пока блок не вставлен полностью,
+PowerShell показывает в начале строки `>>` — это ожидание продолжения, а не
+ошибка. Команды ничего не печатают.
 
 1. **Вход до подтверждения** — `A-IN.json`. Продуктовая привязка
    предложена, но ещё не подтверждена (`"status": "pending"`):
 
-   ```sh
-   cat > runs/TASK-0001/evidence/A-IN.json <<'EOF'
+   ```powershell
+   @'
    {
      "artifact_class": "A-IN",
      "state": "raw",
@@ -98,14 +100,14 @@ temperature: 0.1
      "sources": [{"id": "SRC-01", "kind": "transcript", "tier": "ST-1-ATTACHED", "locator": "smoke", "content": "smoke"}],
      "language": "ru"
    }
-   EOF
+   '@ | Set-Content -Encoding UTF8 runs\TASK-0001\evidence\A-IN.json
    ```
 
 2. **Checkpoint узла `n0`** — `checkpoint-n0.md`. Это то, что вы читаете
    перед подтверждением ([checkpoint](01-junior-pilot.md#term-checkpoint)):
 
-   ```sh
-   cat > runs/TASK-0001/evidence/checkpoint-n0.md <<'EOF'
+   ```powershell
+   @'
    # Checkpoint TASK-0001 / n0
 
    ## Задача
@@ -125,7 +127,7 @@ temperature: 0.1
 
    ## Решение человека
    Одобрено: привязка к продукту верна для учебной задачи.
-   EOF
+   '@ | Set-Content -Encoding UTF8 runs\TASK-0001\evidence\checkpoint-n0.md
    ```
 
 3. **Вход после подтверждения** — `A-IN-confirmed.json`. От первого файла
@@ -135,8 +137,8 @@ temperature: 0.1
    Поле `state` у A-IN всегда `raw`: так требует контракт
    `contracts/c-in.schema.json`.
 
-   ```sh
-   cat > runs/TASK-0001/evidence/A-IN-confirmed.json <<'EOF'
+   ```powershell
+   @'
    {
      "artifact_class": "A-IN",
      "state": "raw",
@@ -148,10 +150,10 @@ temperature: 0.1
      "sources": [{"id": "SRC-01", "kind": "transcript", "tier": "ST-1-ATTACHED", "locator": "smoke", "content": "smoke"}],
      "language": "ru"
    }
-   EOF
+   '@ | Set-Content -Encoding UTF8 runs\TASK-0001\evidence\A-IN-confirmed.json
    ```
 
-**Проверьте:** `ls runs/TASK-0001/evidence` показывает `A-IN.json`,
+**Проверьте:** `Get-ChildItem runs\TASK-0001\evidence` показывает `A-IN.json`,
 `A-IN-confirmed.json`, `checkpoint-n0.md`. Контрольную сумму цепочки можно
 пересчитать командой [«Посчитать binding_digest»](05-commands-reference.md#посчитать-binding_digest):
 для учебной цепочки она печатает то же значение
@@ -187,8 +189,8 @@ temperature: 0.1
 - **Где:** терминал B, папка пакета.
 - **Команда:**
 
-  ```sh
-  sh tools/run-task advance TASK-0001 --to n0 --artifact runs/TASK-0001/evidence/A-IN.json
+  ```powershell
+  python tools/run-task.py advance TASK-0001 --to n0 --artifact runs/TASK-0001/evidence/A-IN.json
   ```
 
 - **Что делает:** runner проверяет, что переход `entry → n0` есть в
@@ -210,8 +212,8 @@ temperature: 0.1
 - **Где:** терминал B, папка пакета.
 - **Команда:**
 
-  ```sh
-  sh tools/run-task advance TASK-0001 --to n1 --artifact runs/TASK-0001/evidence/A-IN-confirmed.json --checkpoint runs/TASK-0001/evidence/checkpoint-n0.md
+  ```powershell
+  python tools/run-task.py advance TASK-0001 --to n1 --artifact runs/TASK-0001/evidence/A-IN-confirmed.json --checkpoint runs/TASK-0001/evidence/checkpoint-n0.md
   ```
 
 - **Что делает:** на узле `n0` стоит G-human. Runner проверяет, что
@@ -219,16 +221,19 @@ temperature: 0.1
   этого спрашивает ваше решение. Он печатает две строки:
 
   ```text
-  Review /home/<логин>/bcreq-pilot/runtime/runs/TASK-0001/evidence/checkpoint-n0.md
+  Review C:\Users\<логин>\bcreq-pilot\runtime\runs\TASK-0001\evidence\checkpoint-n0.md
   Type exactly: APPROVE TASK-0001:n0 sha256:<64 символа>
   ```
 
 - **Ваше действие:**
-  1. Прочитайте checkpoint (например, `cat runs/TASK-0001/evidence/checkpoint-n0.md`
-     в другом окне или попросите GigaCode пересказать его).
+  1. Прочитайте checkpoint: откройте файл в Блокноте, выполните в другом
+     окне PowerShell
+     `Get-Content -Encoding UTF8 runs\TASK-0001\evidence\checkpoint-n0.md`
+     или попросите GigaCode пересказать его.
   2. Скопируйте из терминала текст после `Type exactly: ` — всю строку от
-     `APPROVE` до последнего символа контрольной суммы.
-  3. Вставьте её и нажмите Enter.
+     `APPROVE` до последнего символа контрольной суммы. В окне PowerShell
+     выделите её мышью и нажмите Enter или `Ctrl+C` — строка скопируется.
+  3. Вставьте её правой кнопкой мыши или `Ctrl+V` и нажмите Enter.
 - **Ожидаемый результат:**
 
   ```text
@@ -241,13 +246,13 @@ temperature: 0.1
 
 ## Шаг 6. Посмотрите состояние задачи
 
-**Действие: «Показать состояние задачи»** (`sh tools/run-task metrics TASK-0001`)
+**Действие: «Показать состояние задачи»** (`python tools/run-task.py metrics TASK-0001`)
 
 - **Где:** терминал B, папка пакета.
 - **Команда:**
 
-  ```sh
-  sh tools/run-task metrics TASK-0001
+  ```powershell
+  python tools/run-task.py metrics TASK-0001
   ```
 
 - **Ожидаемый результат:**
@@ -261,7 +266,7 @@ temperature: 0.1
   [справочнике](05-commands-reference.md#показать-состояние-задачи).
 
 **Готово**, если оба перехода прошли и `metrics` показывает `"current": "n1"`.
-Разбор журнала `runs/TASK-0001/trace.jsonl` нужен в
+Разбор журнала `runs\TASK-0001\trace.jsonl` нужен в
 [режиме отладки](05-commands-reference.md#как-читать-журнал-прогона-trace).
 
 ## Повторить учебный прогон
@@ -272,8 +277,8 @@ temperature: 0.1
 Только для учебной задачи можно удалить её папку и начать заново с
 [шага 1](#шаг-1-начните-учебную-задачу):
 
-```sh
-rm -rf runs/TASK-0001
+```powershell
+Remove-Item -Recurse -Force runs\TASK-0001
 ```
 
 Для реальных задач папки `runs/` не удаляйте — берите новый TASK ID.

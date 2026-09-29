@@ -53,9 +53,9 @@ outputs:
     contracts/c-working-bcreq.schema.json: 066ad711de9d7172df81cf0b951826602f4ca73a0a51bd3c3a25405e0d789851
     docs/guides/01-junior-pilot.md: 7d02311b7db35c029ee2e04b385d7b352aa1247d19011c2eaab815346ad8a3a7
     docs/guides/02-install.md: 2026bc4e4e6bc2ed3cea1aa6a4e16b50fb3336920b379fb21833d0e85224615a
-    docs/guides/03-deploy-package.md: 21b7da0411d8bcb96445d0560868c5c9bea72e8cff834ca188826472cd5f52fe
-    docs/guides/04-smoke-test.md: 710a9d1968f1f0e7de307f47c29dccc2032467ee214865af9ded2a96bc5c3d38
-    docs/guides/05-commands-reference.md: 23fa65001705da799801de40fd22bb99d2572988e609a775d092d8e06dec0416
+    docs/guides/03-deploy-package.md: 39f22e53cada1a398ab0a07bb9105f96108e11235bd59792782ec4675a249575
+    docs/guides/04-smoke-test.md: 3a7f128fda980e77976f688cebf3ba4cb1f6873a6682758593a55426d8b851de
+    docs/guides/05-commands-reference.md: f3a52ef507b3ccaf224654f8c70b6d5ae7529f02ead86a8acea5db4619ad507b
     docs/guides/06-working-with-gigacode.md: 450bbcd3840615a5043f4d28631d0f76f33155ec60930263d2f1ed87e5bec6ec
     docs/guides/README.md: ebe3452fa0691a69fe65e5e1a648341f2dcfee32e17704a3f3a0181c9751c6c6
     evaluation/g-human-checklist.md: a0f0a354caab05321ce33e9d38ea8617482d7a2484c147dec4bc3357d461a272

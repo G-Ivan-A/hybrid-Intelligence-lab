@@ -12,9 +12,10 @@ temperature: 0.1
 целиком не обязательно: сюда ведут ссылки из других документов.
 
 Все команды выполняются в [терминале B](01-junior-pilot.md#term-terminal-b)
-в папке пакета `~/bcreq-pilot/runtime` с включённым окружением Python
-(`. ~/bcreq-pilot/venv/bin/activate`). В примерах номер задачи —
-`TASK-0002`; подставьте свой.
+— окне PowerShell в папке пакета `$env:USERPROFILE\bcreq-pilot\runtime`.
+В примерах номер задачи — `TASK-0002`; подставьте свой. Пути в аргументах
+`python` записаны через `/`: Windows понимает их так же, как `\`, и runner
+печатает пути в том же виде.
 
 ## Содержание
 
@@ -31,16 +32,16 @@ temperature: 0.1
 
 | Человеческое название | Команда | Когда |
 |-----------------------|---------|-------|
-| [Проверить пакет](#проверить-пакет) | `sh tools/validate-package.sh` | После развёртывания, после копирования статей KB, при любом сомнении |
-| [Начать задачу](#начать-задачу) | `sh tools/run-task start TASK-0002` | Один раз в начале каждой задачи |
-| [Выполнить переход](#выполнить-переход) | `sh tools/run-task advance TASK-0002 --to <узел> --artifact <файл>` | Когда артефакт текущего узла готов |
-| [Показать состояние задачи](#показать-состояние-задачи) | `sh tools/run-task metrics TASK-0002` | В любой момент: где задача и сколько шагов подтверждено |
-| [Проверить вход A-IN](#проверить-вход-a-in) | `sh tools/validate-package.sh --input <файл>` | До перехода `n0 → n1`, чтобы не заблокировать задачу |
-| [Посчитать binding_digest](#посчитать-binding_digest) | `python3 -c "…"` (см. раздел) | При подтверждении продуктовой привязки на `n0` |
-| [Запечатать Working](#запечатать-working) | `python3 - <файл> <<'EOF' … EOF` (см. раздел) | После каждой правки `working.json` |
-| [Проверить Working](#проверить-working) | `python3 tools/bcreq_pipeline.py validate-working <файл>` | После запечатывания, до перехода `n12 → n13` |
-| [Собрать Release](#собрать-release) | `python3 tools/bcreq_pipeline.py compile <файл> --output runs/TASK-0002/release` | На узле `n13` |
-| [Проверить Release](#проверить-release) | `python3 tools/bcreq_pipeline.py validate-release …` | После сборки, до перехода `n13 → exit` |
+| [Проверить пакет](#проверить-пакет) | `python tools/validate-package.py` | После развёртывания, после копирования статей KB, при любом сомнении |
+| [Начать задачу](#начать-задачу) | `python tools/run-task.py start TASK-0002` | Один раз в начале каждой задачи |
+| [Выполнить переход](#выполнить-переход) | `python tools/run-task.py advance TASK-0002 --to <узел> --artifact <файл>` | Когда артефакт текущего узла готов |
+| [Показать состояние задачи](#показать-состояние-задачи) | `python tools/run-task.py metrics TASK-0002` | В любой момент: где задача и сколько шагов подтверждено |
+| [Проверить вход A-IN](#проверить-вход-a-in) | `python tools/validate-package.py --input <файл>` | До перехода `n0 → n1`, чтобы не заблокировать задачу |
+| [Посчитать binding_digest](#посчитать-binding_digest) | `python -c "…"` (см. раздел) | При подтверждении продуктовой привязки на `n0` |
+| [Запечатать Working](#запечатать-working) | `@' … '@ \| python - <файл>` (см. раздел) | После каждой правки `working.json` |
+| [Проверить Working](#проверить-working) | `python tools/bcreq_pipeline.py validate-working <файл>` | После запечатывания, до перехода `n12 → n13` |
+| [Собрать Release](#собрать-release) | `python tools/bcreq_pipeline.py compile <файл> --output runs/TASK-0002/release` | На узле `n13` |
+| [Проверить Release](#проверить-release) | `python tools/bcreq_pipeline.py validate-release …` | После сборки, до перехода `n13 → exit` |
 
 Три нижние команды и «Проверить вход A-IN» ничего не меняют в состоянии
 задачи: это та же машинная проверка, которую runner запускает при переходе,
@@ -51,7 +52,7 @@ TASK ID.
 
 ### Проверить пакет
 
-- **Команда:** `sh tools/validate-package.sh`
+- **Команда:** `python tools/validate-package.py`
 - **Что делает:** запускает [G-mach](01-junior-pilot.md#term-g-mach):
   сверяет файлы пакета с контрольными суммами в `package-manifest.yaml` и
   проверяет навыки, маршрут, словари, схемы и эталоны.
@@ -65,9 +66,9 @@ TASK ID.
 
 - **Команды:**
 
-  ```sh
-  sh tools/run-task start TASK-0002
-  mkdir -p runs/TASK-0002/evidence
+  ```powershell
+  python tools/run-task.py start TASK-0002
+  New-Item -ItemType Directory -Force runs\TASK-0002\evidence | Out-Null
   ```
 
 - **Что делают:** runner проверяет пакет и создаёт `runs/TASK-0002/` с
@@ -84,8 +85,8 @@ TASK ID.
 
 - **Команда (узел без G-human):**
 
-  ```sh
-  sh tools/run-task advance TASK-0002 --to n2 --artifact runs/TASK-0002/evidence/normalized-text.md
+  ```powershell
+  python tools/run-task.py advance TASK-0002 --to n2 --artifact runs/TASK-0002/evidence/normalized-text.md
   ```
 
 - **Команда (узел с G-human** — `n0`, `n4`, `n7`, `n8`, `n10a`, `n12`,
@@ -107,12 +108,14 @@ TASK ID.
 - **Подтверждение на узле с G-human.** После проверки runner печатает:
 
   ```text
-  Review /home/<логин>/bcreq-pilot/runtime/runs/TASK-0002/evidence/checkpoint-n0.md
+  Review C:\Users\<логин>\bcreq-pilot\runtime\runs\TASK-0002\evidence\checkpoint-n0.md
   Type exactly: APPROVE TASK-0002:n0 sha256:<64 символа>
   ```
 
   Прочитайте checkpoint, скопируйте строку после `Type exactly: ` целиком,
-  вставьте и нажмите Enter. Контрольная сумма в строке — это SHA-256
+  вставьте и нажмите Enter. В окне PowerShell строка копируется так:
+  выделите её мышью и нажмите Enter (или `Ctrl+C`), вставляется — правой
+  кнопкой мыши (или `Ctrl+V`). Контрольная сумма в строке — это SHA-256
   файла checkpoint: если его изменить, строка станет другой. Команда
   должна работать в обычном терминале, а не через `!` в GigaCode
   ([О-5](01-junior-pilot.md#ограничения-текущей-версии-пакета)).
@@ -122,7 +125,7 @@ TASK ID.
 
 ### Показать состояние задачи
 
-- **Команда:** `sh tools/run-task metrics TASK-0002`
+- **Команда:** `python tools/run-task.py metrics TASK-0002`
 - **Ожидаемый результат** (пример после двух переходов):
 
   ```text
@@ -144,7 +147,7 @@ TASK ID.
 ### Проверить вход A-IN
 
 - **Команда:**
-  `sh tools/validate-package.sh --input runs/TASK-0002/evidence/A-IN-confirmed.json`
+  `python tools/validate-package.py --input runs/TASK-0002/evidence/A-IN-confirmed.json`
 - **Что делает:** то же, что «Проверить пакет», плюс проверку A-IN: схема
   `contracts/c-in.schema.json`, продуктовая цепочка по словарю
   `taxonomy/mango-products.yaml`, совпадение `binding_digest`.
@@ -154,8 +157,8 @@ TASK ID.
 
 - **Команда** (одной строкой):
 
-  ```sh
-  python3 -c "import json,hashlib,sys; p=json.load(open(sys.argv[1],encoding='utf-8'))['products']; print('sha256:'+hashlib.sha256(json.dumps(p,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode('utf-8')).hexdigest())" runs/TASK-0002/evidence/A-IN-confirmed.json
+  ```powershell
+  python -c "import json,hashlib,sys; p=json.load(open(sys.argv[1],encoding='utf-8-sig'))['products']; print('sha256:'+hashlib.sha256(json.dumps(p,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode('utf-8')).hexdigest())" runs/TASK-0002/evidence/A-IN-confirmed.json
   ```
 
 - **Что делает:** печатает контрольную сумму массива `products` из A-IN.
@@ -168,21 +171,25 @@ TASK ID.
 
 В пакете нет отдельной команды для этого шага
 ([О-8](01-junior-pilot.md#ограничения-текущей-версии-пакета)). Пока её нет,
-вставьте блок целиком — от `python3` до `EOF`:
+вставьте в PowerShell блок целиком — от `@'` до последней строки с
+`python -`. Пока вы не вставили строку `'@ | …`, PowerShell показывает
+приглашение `>>`: это нормально. Строка `'@` должна начинаться с начала
+строки, без пробелов.
 
-```sh
-python3 - runs/TASK-0002/evidence/working.json <<'EOF'
+```powershell
+@'
 import hashlib, json, sys
 sys.path.insert(0, "tools")
 import bcreq_pipeline
 path = sys.argv[1]
-working = json.load(open(path, encoding="utf-8"))
+working = json.load(open(path, encoding="utf-8-sig"))
 for item in working.get("evidence", []):
     item["checksum"] = "sha256:" + hashlib.sha256(item["excerpt"].encode("utf-8")).hexdigest()
 working["working_digest"] = bcreq_pipeline.working_digest(working)
-open(path, "w", encoding="utf-8").write(json.dumps(working, ensure_ascii=False, indent=2) + "\n")
+text = json.dumps(working, ensure_ascii=False, indent=2) + "\n"
+open(path, "w", encoding="utf-8", newline="\n").write(text)
 print("sealed:", path)
-EOF
+'@ | python - runs/TASK-0002/evidence/working.json
 ```
 
 - **Что делает:** пересчитывает контрольную сумму каждой цитаты
@@ -197,7 +204,7 @@ EOF
 ### Проверить Working
 
 - **Команда:**
-  `python3 tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json`
+  `python tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json`
 - **Что делает:** проверяет черновик: схема, ссылки между пунктами,
   цитаты и их контрольные суммы, продуктовая цепочка, `working_digest`.
 - **Ожидаемый результат:** `G-mach: BCREQ accepted`
@@ -208,7 +215,7 @@ EOF
 ### Собрать Release
 
 - **Команда:**
-  `python3 tools/bcreq_pipeline.py compile runs/TASK-0002/evidence/working.json --output runs/TASK-0002/release`
+  `python tools/bcreq_pipeline.py compile runs/TASK-0002/evidence/working.json --output runs/TASK-0002/release`
 - **Что делает:** детерминированно (одинаковый вход — одинаковый
   результат) собирает из одобренного Working документ
   `runs/TASK-0002/release/release.json` и `release-manifest.json`.
@@ -218,8 +225,8 @@ EOF
 
 - **Команда** (одной строкой):
 
-  ```sh
-  python3 tools/bcreq_pipeline.py validate-release runs/TASK-0002/evidence/working.json --release runs/TASK-0002/release/release.json --manifest runs/TASK-0002/release/release-manifest.json
+  ```powershell
+  python tools/bcreq_pipeline.py validate-release runs/TASK-0002/evidence/working.json --release runs/TASK-0002/release/release.json --manifest runs/TASK-0002/release/release-manifest.json
   ```
 
 - **Что делает:** проверяет, что Release и manifest собраны именно из
@@ -312,8 +319,8 @@ entry → n0 → n1 → n2 → n3 → n4 ─┬─(нет blocker)────�
 контрольных сумм и при расхождении отказывает
 (`runner state differs from trace`). Посмотреть последнюю строку:
 
-```sh
-tail -n 1 runs/TASK-0002/trace.jsonl
+```powershell
+Get-Content -Encoding UTF8 -Tail 1 runs\TASK-0002\trace.jsonl
 ```
 
 | Поле | Что значит |
@@ -404,11 +411,11 @@ GigaCode.
 
 | Что проверить | Команда |
 |---------------|---------|
-| Пакет | `sh tools/validate-package.sh` |
-| A-IN | `sh tools/validate-package.sh --input <файл>` |
-| Working (через проверку пакета) | `sh tools/validate-package.sh --working <файл>` |
-| Working (только черновик) | `python3 tools/bcreq_pipeline.py validate-working <файл>` |
-| Release | `python3 tools/bcreq_pipeline.py validate-release <working> --release <release.json> --manifest <release-manifest.json>` |
+| Пакет | `python tools/validate-package.py` |
+| A-IN | `python tools/validate-package.py --input <файл>` |
+| Working (через проверку пакета) | `python tools/validate-package.py --working <файл>` |
+| Working (только черновик) | `python tools/bcreq_pipeline.py validate-working <файл>` |
+| Release | `python tools/bcreq_pipeline.py validate-release <working> --release <release.json> --manifest <release-manifest.json>` |
 
 Именно эти команды runner запускает при переходе — их точный вид есть в
 поле `command` журнала. Повторите проверку вручную, исправьте артефакт и
@@ -425,10 +432,24 @@ runner перестанет начинать задачи. Правила мен
 2. Передайте описание ответственному за пакет или создайте задачу в
    исходном репозитории
    [hybrid-Intelligence-lab](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues).
-3. После исправления пакет собирается заново. Обновите его на АРМ: для
-   варианта Б из [развёртывания](03-deploy-package.md#получите-пакет) —
-   `git -C ~/bcreq-pilot/source-lab pull`, затем снова скопируйте пакет в
-   `runtime/` (папку `runs/` сохраните) и выполните «Проверить пакет».
+3. После исправления пакет собирается заново. Обновите его на АРМ по
+   варианту Б из [развёртывания](03-deploy-package.md#получите-пакет):
+   скачайте новую версию и скопируйте файлы пакета поверх `runtime`.
+   Папки `runs\`, `docs\kb\` и файл `.gigacode\settings.json` при этом
+   сохраняются. Затем выполните «Проверить пакет».
+
+   ```powershell
+   Set-Location "$env:USERPROFILE\bcreq-pilot"
+   git -C source-lab pull
+   Copy-Item -Recurse -Force source-lab\projects\ba-ai-process\dist\execution-package-gigacode-cli\* runtime\
+   Set-Location runtime
+   python tools/validate-package.py
+   ```
+
+   Если новая версия удалила какой-то файл, проверка покажет
+   `immutable-выход не объявлен: <файл>`: удалите этот файл из `runtime\`
+   и повторите проверку. Для варианта А выполните `git pull` в папке
+   `runtime`.
 
 ## Чего в пилоте нет
 
@@ -440,8 +461,6 @@ runner перестанет начинать задачи. Правила мен
   ([О-6](01-junior-pilot.md#ограничения-текущей-версии-пакета)).
 - Автоматической отправки вопросов Заказчику и публикации Release: оба
   действия выполняете вы.
-- Проверенных команд для Windows и macOS
-  ([О-1](01-junior-pilot.md#ограничения-текущей-версии-пакета)).
 
 ---
 
