@@ -1,0 +1,38 @@
+== 8 sh blocks in dist/execution-package-gigacode-cli/docs/guides/04-smoke-test.md
+
+$ sh tools/run-task start TASK-0001 …
+TASK-0001: started at entry; next transition requires G-mach
+exit=0
+
+$ cat > runs/TASK-0001/evidence/A-IN.json <<'EOF' …
+exit=0
+
+$ cat > runs/TASK-0001/evidence/checkpoint-n0.md <<'EOF' …
+exit=0
+
+$ cat > runs/TASK-0001/evidence/A-IN-confirmed.json <<'EOF' …
+exit=0
+
+$ sh tools/run-task advance TASK-0001 --to n0 --artifact runs/TASK-0001/evidence/A-IN.json
+TASK-0001: entry -> n0; G-mach exit 0; trace seq 1
+exit=0
+
+$ sh tools/run-task advance TASK-0001 --to n1 --artifact runs/TASK-0001/evidence/A-IN-confirmed.json --checkpoint runs/TASK-0001/evidence/checkpoint-n0.md
+Review <tmp>/runtime/runs/TASK-0001/evidence/checkpoint-n0.md
+Type exactly: APPROVE TASK-0001:n0 sha256:4201cbefbc8890706f2ef65228bc3e30a054da37707961a4c2765a9569bcca44
+TASK-0001: n0 -> n1; G-mach exit 0; trace seq 2
+exit=0
+
+$ sh tools/run-task metrics TASK-0001
+{"current": "n1", "deterministic_share": 1.0, "deterministic_steps": 2, "expected_steps": 2, "status": "active", "task_id": "TASK-0001"}
+exit=0
+
+$ rm -rf runs/TASK-0001
+exit=0
+
+== evidence: absent (removed by the last block)
+$ sh tools/run-task start TASK-0001 …
+TASK-0001: started at entry; next transition requires G-mach
+exit=0
+
+== all blocks exit 0: True

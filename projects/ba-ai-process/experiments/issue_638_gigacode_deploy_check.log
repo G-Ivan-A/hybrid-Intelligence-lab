@@ -1,0 +1,28 @@
+== hidden entries in runtime:
+.gigacode
+.gitignore
+pip exit=0
+== python3 is ~/bcreq-pilot/venv/bin/python3
+== gate after deploy
+exit=0
+G-mach: пакет принят (навыков: 16, узлов маршрута: 15).
+== sh tools/run-task works from runtime
+TASK-0009: started at entry; next transition requires G-mach
+{"current": "entry", "deterministic_share": null, "deterministic_steps": 0, "expected_steps": 0, "status": "active", "task_id": "TASK-0009"}
+== venv inside runtime (wrong place)
+exit=1
+ERROR: package-manifest.yaml: immutable-выход не объявлен: .venv-wrong/lib/python3.14/site-packages/pip/py.typed
+ERROR: package-manifest.yaml: immutable-выход не объявлен: .venv-wrong/pyvenv.cfg
+G-mach: пакет отвергнут, ошибок: 491.
+== KB products:
+IMAGE_AUDIT.md MAP.json README.md USAGE.md build_map.py cov-robot-fil integration-1c integration-amocrm integration-bitrix24 integration-bpmsoft lk-vats-sso mango-cc-manual mango-lk-manual maps mdialogi-api mtalker quality-management rolevaya-model-vats sip-trunk speech-analytics vpbx-api 
+== one article in docs/kb
+exit=0
+G-mach: пакет принят (навыков: 16, узлов маршрута: 15).
+== all sections of one product in docs/kb
+exit=0
+G-mach: пакет принят (навыков: 16, узлов маршрута: 15).
+== product index.md in docs/kb (links to Source standards)
+exit=1
+ERROR: docs/kb/vpbx-api/index.md:295: ссылка в документ Source во время выполнения (дефект компиляции, контракт 2): - Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-stand
+G-mach: пакет отвергнут, ошибок: 1.
