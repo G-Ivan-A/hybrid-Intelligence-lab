@@ -53,7 +53,9 @@ execution choice and its falsification tests, rather than a new product model.
    [attribute specification](https://git-scm.com/docs/gitattributes)
    says `-text` disables checkout line ending conversion. A package-local
    `.gitattributes` avoids changing the user's global `core.autocrlf` setting.
-   A clone with `core.autocrlf=true` must still pass `check-package`.
+   The shared compiler inputs also need `build/common/.gitattributes`, since
+   converted Source bytes change the generated manifest hashes. A clone with
+   `core.autocrlf=true` must pass both compiler `--check` and `check-package`.
 
 ## Verification boundary
 

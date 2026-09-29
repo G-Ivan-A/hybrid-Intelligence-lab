@@ -18,6 +18,26 @@ PACKAGE = Path(__file__).resolve().parents[2] / "dist/execution-package-cline-vs
 
 
 class PackageTest(unittest.TestCase):
+    def test_compiler_survives_autocrlf_checkout_of_source(self):
+        project = PACKAGE.parents[1]
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary) / "source"
+            clone = Path(temporary) / "clone"
+            target = source / "projects/ba-ai-process"
+            (target / "build").mkdir(parents=True)
+            shutil.copy2(project / "build/compile-cline-package.py", target / "build")
+            shutil.copytree(project / "build/common", target / "build/common")
+            shutil.copytree(project / "build/adapters/cline-vscode", target / "build/adapters/cline-vscode")
+            shutil.copytree(PACKAGE, target / "dist/execution-package-cline-vscode")
+            subprocess.run(["git", "init", "-q", str(source)], check=True)
+            subprocess.run(["git", "-C", str(source), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(source), "-c", "user.name=Test", "-c", "user.email=test@example.invalid",
+                            "commit", "-qm", "test source and package"], check=True)
+            subprocess.run(["git", "-c", "core.autocrlf=true", "clone", "-q", str(source), str(clone)], check=True)
+            result = subprocess.run([sys.executable, str(clone / "projects/ba-ai-process/build/compile-cline-package.py"), "--check"],
+                                    cwd=clone, text=True, capture_output=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_git_checkout_preserves_manifest_bytes_with_autocrlf(self):
         with tempfile.TemporaryDirectory() as temporary:
             source = Path(temporary) / "source"
