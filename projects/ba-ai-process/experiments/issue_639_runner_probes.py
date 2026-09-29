@@ -4,6 +4,7 @@
 P10 walks a temporary copy of the GigaCode package to n1 with a valid A-IN and a
 human checkpoint, then offers arbitrary text as the n1, n2 and n3 artifacts.
 P11 lists edge conditions that stay YAML strings and are never evaluated.
+P12 mistypes the target of the first transition and then retries it correctly.
 The repository is not modified. Requires PyYAML and jsonschema.
 """
 
@@ -89,6 +90,22 @@ def p11() -> None:
                                           if e["from"] == "n0" and e["to"] == "n1"))
 
 
+def p12() -> None:
+    print("== P12. one mistyped transition, then the correct one")
+    temp = Path(tempfile.mkdtemp(prefix="issue639-runner-"))
+    package = temp / "package"
+    shutil.copytree(PACKAGE, package)
+    a_in = temp / "a-in.json"
+    a_in.write_text(json.dumps(input_document(True)), encoding="utf-8")
+    show("start", run(package, "start", "TASK-9002"))
+    show("entry->n9 (typo)", run(package, "advance", "TASK-9002", "--to", "n9", "--artifact", a_in))
+    show("entry->n0 (retry)", run(package, "advance", "TASK-9002", "--to", "n0", "--artifact", a_in))
+    state = json.loads((package / "runs/TASK-9002/state.json").read_text(encoding="utf-8"))
+    print(f"state after retry: status={state['status']} current={state['current']}")
+    shutil.rmtree(temp)
+
+
 if __name__ == "__main__":
     p10()
     p11()
+    p12()

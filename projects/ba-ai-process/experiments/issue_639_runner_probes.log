@@ -11,3 +11,8 @@ runner reads edge.condition strings: False
 edges with a non-trivial predicate in YAML: 17
 sources with a hand-written branch in required_target(): ['entry', 'n0', 'n4', 'n7', 'n8', 'n10a', 'n12', 'n13']
 n0->n1 YAML predicate: work_type in ['mango-change','mango-kb','industry-practice'] and routing.decision == 'confirmed' and routing.primary_axis == axis_for(work_type) and product_attribution.status == 'confirmed' and product_binding.valid == true
+== P12. one mistyped transition, then the correct one
+start: exit=0 :: TASK-9002: started at entry; next transition requires G-mach
+entry->n9 (typo): exit=1 :: BLOCKED: transition is absent from the route
+entry->n0 (retry): exit=1 :: BLOCKED: task is blocked or finished
+state after retry: status=blocked current=entry
