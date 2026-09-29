@@ -21,6 +21,18 @@ MUTABLE_ROOTS = {"runs", "submissions", "docs/kb", "meta-model", ".git", ".vscod
 STEPS = ("validate-working", "compile", "validate-release")
 
 
+def normalize_windows_path(raw: str) -> str:
+    """Accept Git Bash drive paths when a native Windows Python receives them."""
+    match = re.match(r"^/(?:cygdrive/)?([a-zA-Z])(?=/|$)", raw)
+    if match:
+        return match.group(1).upper() + ":" + raw[match.end():].replace("/", "\\")
+    return raw
+
+
+def host_path(raw: str) -> Path:
+    return Path(normalize_windows_path(raw) if os.name == "nt" else raw).expanduser()
+
+
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -149,11 +161,30 @@ def verify_ci(package_hash: str) -> bool:
     return passed
 
 
+def seal(raw: str) -> None:
+    path = host_path(raw)
+    if path.is_symlink():
+        raise ValueError("candidate must be a regular JSON file")
+    path = path.resolve()
+    if path.parent != (ROOT / "submissions").resolve() or not re.fullmatch(r"TASK-[0-9]{4,}\.json", path.name):
+        raise ValueError("seal accepts only submissions/TASK-ID.json")
+    if not path.is_file() or path.is_symlink():
+        raise ValueError("candidate must be a regular JSON file")
+    from bcreq_pipeline import working_digest
+
+    working = json.loads(path.read_text(encoding="utf-8"))
+    for item in working.get("evidence", []):
+        item["checksum"] = "sha256:" + hashlib.sha256(item["excerpt"].encode("utf-8")).hexdigest()
+    working["working_digest"] = working_digest(working)
+    path.write_text(json.dumps(working, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"sealed: {raw}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("check-package", "run", "verify-ci"))
+    parser.add_argument("action", choices=("check-package", "seal", "run", "verify-ci"))
     parser.add_argument("task_id", nargs="?")
-    parser.add_argument("candidate", nargs="?", type=Path)
+    parser.add_argument("candidate", nargs="?")
     args = parser.parse_args()
     try:
         package_hash = check_package()
@@ -162,12 +193,17 @@ def main() -> int:
             return 0
         if args.action == "verify-ci":
             return 0 if verify_ci(package_hash) else 1
+        if args.action == "seal":
+            if not args.task_id or args.candidate:
+                parser.error("seal requires one submission JSON path")
+            seal(args.task_id)
+            return 0
         if not args.task_id or not args.candidate:
             parser.error("run requires TASK-ID and candidate JSON")
-        outcome = run(args.task_id, args.candidate.resolve(), ROOT / "runs" / args.task_id, package_hash)
+        outcome = run(args.task_id, host_path(args.candidate).resolve(), ROOT / "runs" / args.task_id, package_hash)
         print(f"{args.task_id}: {'PASS' if outcome else 'FAIL'}")
         return 0 if outcome else 1
-    except (OSError, ValueError, KeyError, json.JSONDecodeError) as error:
+    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 1
 

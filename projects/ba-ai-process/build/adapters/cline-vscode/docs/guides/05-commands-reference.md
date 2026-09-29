@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-28
+version: 0.4
+updated: 2026-09-29
 temperature: 0.1
 ---
 
@@ -36,7 +36,7 @@ temperature: 0.1
 |----------|------------------|-------|
 | [Проверить пакет](#проверить-пакет) | `python tools/run_task.py check-package` | После развёртывания; при любых сомнениях в пакете |
 | [Подготовить учебный пример](#подготовить-учебный-пример) | `Copy-Item golden\TASK-0001.json submissions\TASK-0001.json` | Только для [учебного прогона](04-smoke-test.md) |
-| [Запечатать черновик](#запечатать-черновик) | блок `@' … '@ \| python - submissions/TASK-ID.json` | После каждой правки черновика, перед проверкой |
+| [Запечатать черновик](#запечатать-черновик) | `python tools/run_task.py seal submissions/TASK-ID.json` | После каждой правки черновика, перед проверкой |
 | [Запустить проверку задачи](#запустить-проверку-задачи) | `python tools/run_task.py run TASK-ID submissions/TASK-ID.json` | Черновик согласован и запечатан |
 | [Убрать неудачный черновик](#убрать-неудачный-черновик) | `Move-Item submissions\TASK-ID.json runs\TASK-ID\working.json` | Проверка задачи дала `FAIL` |
 | [Проверить всё перед отправкой](#проверить-всё-перед-отправкой) | `python tools/run_task.py verify-ci` | Перед отправкой черновиков в Git |
@@ -71,23 +71,10 @@ temperature: 0.1
 
 ### Запечатать черновик
 
-- **Команда** (скопируйте блок целиком, вставьте в терминал правым щелчком
-  или `Ctrl+V`, нажмите Enter; `TASK-0002` в последней строке замените на
-  свой номер):
+- **Команда** (`TASK-0002` замените на свой номер):
 
   ```powershell
-  @'
-  import hashlib, json, sys
-  sys.path.insert(0, "tools")
-  import bcreq_pipeline
-  path = sys.argv[1]
-  working = json.load(open(path, encoding="utf-8"))
-  for item in working.get("evidence", []):
-      item["checksum"] = "sha256:" + hashlib.sha256(item["excerpt"].encode("utf-8")).hexdigest()
-  working["working_digest"] = bcreq_pipeline.working_digest(working)
-  open(path, "w", encoding="utf-8").write(json.dumps(working, ensure_ascii=False, indent=2) + "\n")
-  print("sealed:", path)
-  '@ | python - submissions/TASK-0002.json
+  python tools/run_task.py seal submissions/TASK-0002.json
   ```
 
 - **Что делает:** пересчитывает контрольные суммы черновика
@@ -101,10 +88,7 @@ temperature: 0.1
 - **Важно:** запечатывайте **после** того, как в черновик записано ваше
   согласование, и заново — после любой правки.
 
-Это временная мера ([О-2](01-junior-pilot.md#ограничения-текущей-версии-пакета)):
-в runner нет отдельной команды запечатывания. Блок проверен в PowerShell 7
-на Linux; в Windows PowerShell 5.1 его пока не проверяли — при ошибке
-передайте текст ответственному.
+Команда исполняется Python и не зависит от версии PowerShell.
 
 ### Запустить проверку задачи
 

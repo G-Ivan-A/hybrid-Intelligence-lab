@@ -146,3 +146,15 @@ jobs:
 
       - name: Validate MVP BCREQ execution package (G-mach)
         run: sh projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.sh
+
+  cline-windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check compiled Cline package
+        run: python projects/ba-ai-process/build/compile-cline-package.py --check
+      - name: Test Cline Windows hooks, paths, and runner
+        run: python projects/ba-ai-process/tests/cline-package/test_package.py

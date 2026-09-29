@@ -3,6 +3,8 @@
 
 import json
 import hashlib
+import importlib.util
+import os
 from pathlib import Path
 import re
 import shutil
@@ -16,6 +18,70 @@ PACKAGE = Path(__file__).resolve().parents[2] / "dist/execution-package-cline-vs
 
 
 class PackageTest(unittest.TestCase):
+    def test_git_checkout_preserves_manifest_bytes_with_autocrlf(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary) / "source"
+            clone = Path(temporary) / "clone"
+            shutil.copytree(PACKAGE, source)
+            subprocess.run(["git", "init", "-q", str(source)], check=True)
+            subprocess.run(["git", "-C", str(source), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(source), "-c", "user.name=Test", "-c", "user.email=test@example.invalid",
+                            "commit", "-qm", "test package"], check=True)
+            subprocess.run(["git", "-c", "core.autocrlf=true", "clone", "-q", str(source), str(clone)], check=True)
+            check = self.invoke(clone, "check-package")
+            self.assertEqual(check.returncode, 0, check.stderr)
+
+    def test_windows_hook_entrypoints_and_v4_tools(self):
+        for name in ("TaskStart", "TaskResume", "PreToolUse"):
+            hook = PACKAGE / ".clinerules/hooks" / f"{name}.ps1"
+            self.assertTrue(hook.is_file(), str(hook))
+        with tempfile.TemporaryDirectory() as temporary:
+            package = Path(temporary) / "package"
+            shutil.copytree(PACKAGE, package)
+            hook = package / "tools/cline_hook.py"
+            for name, parameters, allowed in (
+                ("read_files", {"files": [{"path": str(package / "README.md")}]}, True),
+                ("ask_question", {"question": "Continue?"}, True),
+                ("editor", {"path": str(package / "submissions/TASK-0002.json")}, True),
+                ("editor", {"path": str(package / "contracts/c-working-bcreq.schema.json")}, False),
+                ("run_commands", {"commands": ["echo unsafe"]}, False),
+                ("apply_patch", {"input": "*** Begin Patch"}, False),
+            ):
+                payload = {"hookName": "PreToolUse", "preToolUse": {"toolName": name, "parameters": parameters}}
+                result = subprocess.run([sys.executable, str(hook)], input=json.dumps(payload), cwd=package,
+                                        text=True, capture_output=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(json.loads(result.stdout)["cancel"], not allowed, name)
+
+    def test_git_bash_drive_path_normalization(self):
+        spec = importlib.util.spec_from_file_location("run_task_windows", PACKAGE / "tools/run_task.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        self.assertEqual(module.normalize_windows_path("/c/Users/Иван Петров/bcreq-pilot/runtime/submissions/TASK-0002.json"),
+                         "C:\\Users\\Иван Петров\\bcreq-pilot\\runtime\\submissions\\TASK-0002.json")
+        if os.name == "nt":
+            with tempfile.TemporaryDirectory() as temporary:
+                package = Path(temporary) / "Пилот с пробелом"
+                shutil.copytree(PACKAGE, package)
+                candidate = package / "golden/TASK-0001.json"
+                git_bash_path = "/" + candidate.drive[0].lower() + candidate.as_posix()[2:]
+                result = self.invoke(package, "run", "TASK-0001", git_bash_path)
+                self.assertEqual(result.returncode, 0, result.stderr)
+
+    @unittest.skipUnless(os.name == "nt", "PowerShell hook runs in Windows CI")
+    def test_windows_powershell_hook(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            package = Path(temporary) / "Пилот с пробелом"
+            shutil.copytree(PACKAGE, package)
+            hook = package / ".clinerules/hooks/PreToolUse.ps1"
+            for path, blocked in (("submissions/TASK-0002.json", False), ("contracts/c-working-bcreq.schema.json", True)):
+                payload = {"hookName": "PreToolUse", "preToolUse": {"toolName": "editor", "parameters": {"path": str(package / path)}}}
+                result = subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(hook)],
+                                        input=json.dumps(payload, ensure_ascii=False), cwd=package,
+                                        text=True, capture_output=True, encoding="utf-8")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(json.loads(result.stdout)["cancel"], blocked, result.stdout)
+
     def test_one_environment_boundary(self):
         other_clients = re.compile(r"\b(?:GigaCode|Qwen(?: Chat)?|OpenCode|Kilo Code|Roo Code)\b", re.I)
         for path in PACKAGE.rglob("*"):
@@ -67,17 +133,17 @@ class PackageTest(unittest.TestCase):
             package = Path(temporary) / "package"
             shutil.copytree(PACKAGE, package)
             payload = {"hookName": "PreToolUse", "preToolUse": {"toolName": "write_to_file", "parameters": {"path": "contracts/c-working-bcreq.schema.json"}}}
-            blocked = subprocess.run([str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
+            blocked = subprocess.run([sys.executable, str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
             self.assertEqual(blocked.returncode, 0, blocked.stderr)
             self.assertTrue(json.loads(blocked.stdout)["cancel"])
             payload["preToolUse"]["parameters"]["path"] = "submissions/TASK-0002.json"
-            allowed = subprocess.run([str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
+            allowed = subprocess.run([sys.executable, str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
             self.assertFalse(json.loads(allowed.stdout)["cancel"])
             payload["preToolUse"]["parameters"]["path"] = "submissions/../contracts/c-working-bcreq.schema.json"
-            traversal = subprocess.run([str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
+            traversal = subprocess.run([sys.executable, str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
             self.assertTrue(json.loads(traversal.stdout)["cancel"])
             payload["preToolUse"]["toolName"] = "execute_command"
-            shell = subprocess.run([str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
+            shell = subprocess.run([sys.executable, str(package / ".clinerules/hooks/PreToolUse")], input=json.dumps(payload), cwd=package, text=True, capture_output=True)
             self.assertTrue(json.loads(shell.stdout)["cancel"])
             (package / "tools/bcreq_pipeline.py").write_text("pass\n")
             check = self.invoke(package, "check-package")
@@ -107,9 +173,7 @@ class PackageTest(unittest.TestCase):
 
     def test_guide_real_task_flow(self):
         guide = (PACKAGE / "docs/guides/05-commands-reference.md").read_text(encoding="utf-8")
-        seal = re.search(r"^ *@'\n(.*?)\n *'@ \| python - ", guide, re.S | re.M)
-        self.assertIsNotNone(seal, "sealing command is missing from the guide")
-        seal_script = "\n".join(line[2:] for line in seal.group(1).splitlines())
+        self.assertIn("python tools/run_task.py seal submissions/TASK-0002.json", guide)
         with tempfile.TemporaryDirectory() as temporary:
             package = Path(temporary) / "package"
             shutil.copytree(PACKAGE, package)
@@ -124,8 +188,7 @@ class PackageTest(unittest.TestCase):
             self.assertIn("Working digest does not match", unsealed.stderr)
             rerun = self.invoke(package, "run", "TASK-0002", "submissions/TASK-0002.json")
             self.assertIn("run already exists", rerun.stderr)
-            sealed = subprocess.run([sys.executable, "-", "submissions/TASK-0003.json"], input=seal_script,
-                                    cwd=package, text=True, capture_output=True)
+            sealed = self.invoke(package, "seal", "submissions/TASK-0003.json")
             self.assertEqual(sealed.returncode, 0, sealed.stderr)
             self.assertIn("sealed: submissions/TASK-0003.json", sealed.stdout)
             accepted = self.invoke(package, "run", "TASK-0003", "submissions/TASK-0003.json")
