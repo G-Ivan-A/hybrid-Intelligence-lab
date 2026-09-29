@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-09-29
 temperature: 0.1
 type: analysis
@@ -8,6 +8,7 @@ scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639"
 based_on: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/ba-ai-process/dist/execution-package-cline-vscode"
 related_artifacts:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-cline-vscode/docs/guides/README.md"
@@ -16,6 +17,12 @@ related_artifacts:
 ---
 
 # Разрыв ожиданий и реализации: гипотезы по пакету Cline VS Code
+
+> **Версия 0.2.** Этот разбор — первая часть аудита и разбор одной среды
+> (среда 2). По [замечанию владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/643#issuecomment-5884160620)
+> охват расширен до мета-модели, сред и инструментов запуска, включая n8n и
+> серверную среду 4: [«Мета-модель → среды → инструменты»](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md),
+> гипотезы Г-26…Г-54.
 
 ## Вердикт
 
@@ -67,9 +74,11 @@ Golden-пример. Условие — отладку ведёт человек
   [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637)) и
   шесть ожиданий фаундера из
   [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639).
-- **Что не разбирается.** Пакет GigaCode CLI, содержательная правильность
-  мета-модели и корпоративная инфраструктура Mango (MCP-серверы, Jira,
-  Confluence) — к ним у этого разбора нет доступа.
+- **Что не разбирается.** Содержательная правильность мета-модели и
+  корпоративная инфраструктура Mango (MCP-серверы, Jira, Confluence) — к ним
+  у этого разбора нет доступа. Пакет GigaCode CLI, обязательства исполнения
+  мета-модели и варианты среды запуска разобраны во
+  [второй части](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md).
 - **Для кого.** Для фаундера, который изучает вайбкодинг и ставит задачи
   мультиагентной системе на продуктовом уровне. Поэтому каждая гипотеза
   заканчивается не только технической рекомендацией, но и типом
@@ -288,6 +297,11 @@ flowchart LR
   без расхода TASK ID ([Г-21](#г-21)). Без них замеры будут мерить трение
   интерфейса, а не качество процесса.
 
+**За пределами пакета.** Главный разрыв лежит глубже Cline: у роли
+«оркестратор» в мета-модели нет исполнителя, поэтому в среде 2 порядок
+шагов ведёт модель. Разбор и две рекомендации — runner-ведущий на рабочем
+месте и серверная среда 4 — во [второй части](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md#вердикт).
+
 **Не готово:** работа без присмотра, выдача Release заказчику без
 ручного оформления, опора на hooks как на защиту на Windows и работа на
 Cline v4 до проверки инструкции на этой версии ([Г-25](#г-25)).
@@ -331,6 +345,7 @@ Cline v4 до проверки инструкции на этой версии (
 
 ## Related Artifacts
 
+- [Вторая часть: мета-модель, среды и инструменты запуска](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) — гипотезы Г-26…Г-54, рекомендации 1 и 2.
 - [Issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639) — задача этого разбора.
 - [Issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636) и [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637) — инструкция v0.3 и ограничения О-1…О-5.
 - [Инструкции пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-cline-vscode/docs/guides/README.md).
