@@ -987,4 +987,8 @@ def main() -> int:
 
 
 if __name__ == "__main__":
+    # Redirected output on Windows uses the ANSI code page, which may lack Cyrillic:
+    # escape such characters instead of failing after the checks have passed.
+    for stream in (sys.stdout, sys.stderr):
+        stream.reconfigure(errors="backslashreplace")
     raise SystemExit(main())

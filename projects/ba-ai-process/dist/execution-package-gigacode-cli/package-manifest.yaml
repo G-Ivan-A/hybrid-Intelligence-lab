@@ -85,10 +85,10 @@ outputs:
     templates/checkpoint-skeleton.md: 680a5ca51764d0d4e0ec005be5a16f234b80d75fdb3d33c28858ab7b4e7da90d
     templates/core-skeleton.yaml: 9bae2213fb5d30c4b9d2a3030ffaf834c4faed889d60986e5d2896a60c9a29dc
     templates/quest-skeleton.md: db2aceebcea205d333c0fefbfeab26d3a0a79164620eee3a27b4dfa50ecc717a
-    tools/bcreq_pipeline.py: 68be41c4f4a16c39d11109ea47b2eb518f22c6f0a5798cb9f10ac09d64999f56
+    tools/bcreq_pipeline.py: 55bbb0d034cbb2170dd5458c7ac5dd3a3ac5c992ffdf0b28fb36a1b7d784f608
     tools/run-task: bb6a4ea648ee52cefa78b59dd910670dd65ed34e6f8698efdf1e887ced501923
-    tools/run-task.py: 4743d675bd3481cc3b1f625797219db46f444775112c3be3f2384a9d84988b2f
-    tools/validate-package.py: 77ca3dde3e30d741caa9629ce0e66d2cfb2a6f478d34ff2c517b17acc7fd2f86
+    tools/run-task.py: e0a36f84b1407a539e1c5878350ed9dd4c092fe8d5a3f72ba409b581ad2ab11a
+    tools/validate-package.py: e902bc96fca99601b5dc39786846bbed352bc1e7a6f516c34fbf9e6a73913d68
     tools/validate-package.sh: 884f51ca709a990877d1ef7fd97f066d4392b85eb537e5b4678758aa24f410eb
 target_spoke: clean GigaCode CLI working directory
 slice: "A-IN → подтверждённая продуктовая цепочка → A-CORE → A-BCREQ, весь портфель MANGO, процессы P-01, P-02, P-03"

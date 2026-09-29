@@ -192,6 +192,17 @@ class RunnerTest(unittest.TestCase):
         self.assertIn("G-mach exit 0", result.stdout)
         self.assertIn("пакет принят", self.trace()[-1]["gate_output"])
 
+    def test_gate_cli_survives_non_utf8_redirected_output(self) -> None:
+        # A BA or CI redirecting G-mach output on Windows gets the ANSI code page.
+        env = dict(os.environ, PYTHONIOENCODING="cp1252")
+        for tool, args in (("validate-package.py", []),
+                           ("bcreq_pipeline.py", ["validate-working", str(self.raw)])):
+            result = subprocess.run([sys.executable, str(self.package / "tools" / tool), *args],
+                                    cwd=self.package, capture_output=True, env=env)
+            self.assertNotIn(b"UnicodeEncodeError", result.stderr, tool)
+        self.assertEqual(0, subprocess.run([sys.executable, str(self.package / "tools/validate-package.py")],
+                                           cwd=self.package, capture_output=True, env=env).returncode)
+
     def test_gate_ignores_git_directory_of_cloned_runtime(self) -> None:
         # Deploy variant A clones the runtime repository, which leaves .git/ in the package root.
         (self.package / ".git/refs/heads").mkdir(parents=True)
