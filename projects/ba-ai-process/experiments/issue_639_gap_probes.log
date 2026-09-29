@@ -1,0 +1,60 @@
+== P1. baseline: check-package and verify-ci
+package: PASS
+golden/TASK-0001.json: PASS
+exit=0
+== P2. semantic_review removed (G-semantic before G-mach), sealed
+ERROR: SCHEMA Working.semantic_review is required
+ERROR: SCHEMA Working missing=['semantic_review'] unknown=[]
+ERROR: SEMANTIC G-semantic review with rationale and counterexample is required
+exit=1
+== P3. semantic_review self-declared by the agent, sealed
+G-mach: BCREQ accepted
+exit=0
+== P4. fabricated evidence (non-existent locator, invented excerpt), sealed
+TASK-0103: PASS
+exit=0
+== P5. determinism: compile twice, compare bytes
+identical release.json
+== P6. release format: line count, size, headings
+   1 2053
+top-level keys: ['artifact_class', 'audience', 'projection', 'release_digest', 'release_id', 'release_profile', 'release_profile_version', 'schema_version', 'sections', 'working_baseline_id']
+section titles: [('Terms', 0), ('Business context', 2), ('Change boundary', 2), ('Functional requirements', 1), ('Functional solution design', 1), ('Non-functional requirements', 1), ('Constraints and confirmed assumptions', 1), ('Permitted appendices', 2)]
+== P7. failed run: is the error text kept in the trace?
+TASK-0104: FAIL
+exit=1
+stderr:
+ERROR: SCHEMA Working.semantic_review is required
+ERROR: SCHEMA Working missing=['semantic_review'] unknown=[]
+ERROR: SEMANTIC G-semantic review with rationale and counterexample is required
+
+trace:
+validate-working script_invoked 1 
+compile step_skipped None previous machine gate failed
+validate-release step_skipped None previous machine gate failed
+G-human contract_mode None semantic and publication review required; not credited as a machine gate
+rerun same ID:
+ERROR: run already exists: <tmp>/runtime/runs/TASK-0104
+exit=1
+== P8. hook decisions for selected Cline tools
+read_file            {"cancel": false}
+use_mcp_tool         {"cancel": false}
+plan_mode_respond    {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+execute_command      {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+browser_action       {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+new_task             {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+write AGENTS.md      {"cancel": true, "errorMessage": "Cline may write only submissions/TASK-ID.json"}
+write submissions    {"cancel": false}
+== P8b. hook decisions for Cline v4 SDK tool names (cline/cline v4.1.21 constants.ts)
+read_files           {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+search_codebase      {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+ask_question         {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+run_commands         {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+jira__get_issue      {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+editor submissions   {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+== P9. which package files reference the process menu / meta-model
+meta-model/:
+.gitkeep
+routes/:
+pilot.json
+route_id count:
+1
