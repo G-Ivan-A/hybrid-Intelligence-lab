@@ -86,7 +86,7 @@ Golden-пример. Условие — отладку ведёт человек
    [`experiments/issue_639_gap_probes.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/experiments/issue_639_gap_probes.sh)
    с журналом
    [`issue_639_gap_probes.log`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/experiments/issue_639_gap_probes.log)
-   (пробы `P1`…`P9`). Поведение Cline проверено по исходному коду
+   (пробы `P1`…`P9` и `P8b`). Поведение Cline проверено по исходному коду
    [`cline/cline`](https://github.com/cline/cline) двух версий с закреплёнными
    коммитами: последней v3 —
    [v3.89.2](https://github.com/cline/cline/tree/e1bdeeff68e95734901c7a4b3a31753bae54a634)
