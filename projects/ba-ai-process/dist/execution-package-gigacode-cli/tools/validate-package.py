@@ -9,7 +9,7 @@
 Запуск из корня пакета либо из корня Source
 https://github.com/G-Ivan-A/hybrid-Intelligence-lab:
 
-    python3 tools/validate-package.py [путь-к-пакету] [--input путь-к-A-IN.yaml]
+    python tools/validate-package.py [путь-к-пакету] [--input путь-к-A-IN.yaml]
 
 Зависимость: PyYAML. Пакет разворачивается копированием в спутник, поэтому
 зависимость объявлена здесь, а не подразумевается: `pip install pyyaml`.

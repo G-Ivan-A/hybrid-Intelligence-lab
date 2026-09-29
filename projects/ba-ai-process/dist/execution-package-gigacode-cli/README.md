@@ -39,10 +39,18 @@ CLI. Граница MANGO не означает ограничение Конт�
 
 ## Как развернуть
 
-```sh
-cp -R projects/ba-ai-process/dist/execution-package-gigacode-cli/. <clean-directory>/
-cd <clean-directory> && python3 -m pip install -r requirements.txt && sh tools/validate-package.sh
+```powershell
+Copy-Item -Recurse -Force projects\ba-ai-process\dist\execution-package-gigacode-cli\* <чистая-папка>\
+Set-Location <чистая-папка>
+python -m pip install -r requirements.txt
+python tools/validate-package.py
 ```
+
+Целевая среда пакета — Windows 10/11 (x64), Windows PowerShell 5.1 или
+PowerShell 7 и Python 3.10+. Пошаговое развёртывание описано в
+[docs/guides/03-deploy-package.md](docs/guides/03-deploy-package.md).
+Обёртки `tools/validate-package.sh` и `tools/run-task` нужны только CI
+репозитория-источника; аналитик ими не пользуется.
 
 Пакет может исполняться без доступа к репозиторию модели. Поэтому он содержит
 физические копии, а не runtime-ссылки наружу. При подготовке конкретной копии
@@ -50,22 +58,22 @@ cd <clean-directory> && python3 -m pip install -r requirements.txt && sh tools/v
 
 ## Как проверить
 
-```sh
-sh projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.sh
+```powershell
+python tools/validate-package.py
 ```
 
 Подтверждённый `A-IN` дополнительно проверяется динамически по полному каталогу:
 
-```sh
-sh projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.sh --input <A-IN.yaml>
+```powershell
+python tools/validate-package.py --input <A-IN.yaml>
 ```
 
 Утверждённый типизированный Working baseline проверяется и компилируется так:
 
-```sh
-python3 tools/bcreq_pipeline.py validate-working <Working.json>
-python3 tools/bcreq_pipeline.py compile <Working.json> --output <output-directory>
-python3 tools/bcreq_pipeline.py validate-release <Working.json> --release <output-directory>/release.json --manifest <output-directory>/release-manifest.json
+```powershell
+python tools/bcreq_pipeline.py validate-working <Working.json>
+python tools/bcreq_pipeline.py compile <Working.json> --output <output-directory>
+python tools/bcreq_pipeline.py validate-release <Working.json> --release <output-directory>/release.json --manifest <output-directory>/release-manifest.json
 ```
 
 Компилятор отказывает при открытых вопросах, `TBD`, неподтверждённом baseline,
@@ -87,16 +95,16 @@ runtime-ссылок на Source
 ## Как запустить
 
 Пошаговые инструкции БА с готовыми командами — [docs/guides/README.md](docs/guides/README.md).
-Для управляемого прогона переходы выполняет `sh tools/run-task`; agent
+Для управляемого прогона переходы выполняет `python tools/run-task.py`; agent
 готовит артефакт текущего узла, а runner читает граф, вызывает `G-mach` как
 отдельный процесс, проверяет exit code и только затем меняет текущий узел.
 Каждая попытка добавляется в `runs/<TASK_ID>/trace.jsonl`; отказ блокирует
 дальнейшие переходы этого run. Пример начала:
 
-```sh
-sh tools/run-task start TASK-0001
-sh tools/run-task advance TASK-0001 --to n0 --artifact /путь/к/A-IN.yaml
-sh tools/run-task metrics TASK-0001
+```powershell
+python tools/run-task.py start TASK-0001
+python tools/run-task.py advance TASK-0001 --to n0 --artifact runs/TASK-0001/evidence/A-IN.yaml
+python tools/run-task.py metrics TASK-0001
 ```
 
 Доля детерминированных шагов = число успешных записей

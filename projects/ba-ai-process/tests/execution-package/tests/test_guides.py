@@ -34,7 +34,7 @@ TIMEOUT = 300
 # Runs a guide block statement by statement, as a person types it at the prompt, and
 # stops at the first cmdlet error or non-zero exit code of a native command. Native
 # stderr (git progress, pip notices) is not an error, exactly as in a console window.
-HARNESS = r"""param([string]$BlockPath)
+HARNESS = r"""param([string]$BlockPath, [switch]$ParseOnly)
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $text = [IO.File]::ReadAllText($BlockPath, [Text.Encoding]::UTF8)
 $tokens = $null
@@ -44,6 +44,7 @@ if ($parseErrors) {
     $parseErrors | ForEach-Object { [Console]::Error.WriteLine("PARSE: " + $_.Message) }
     exit 90
 }
+if ($ParseOnly) { exit 0 }
 foreach ($statement in $ast.EndBlock.Statements) {
     $global:LASTEXITCODE = 0
     $before = $Error.Count
@@ -138,13 +139,13 @@ class GuideShell:
         self.harness = workdir / "run-guide-block.ps1"
         self.harness.write_text(HARNESS, encoding="utf-8")
 
-    def run(self, cwd: Path, block: str) -> tuple[int, str]:
+    def run(self, cwd: Path, block: str, parse_only: bool = False) -> tuple[int, str]:
         self.count += 1
         path = self.workdir / f"block-{self.count}.ps1"
         path.write_text(block, encoding="utf-8-sig")
         argv = [self.shell, "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
-                "-File", str(self.harness), str(path)]
-        if "--checkpoint" in block:
+                "-File", str(self.harness), str(path), *(["-ParseOnly"] if parse_only else [])]
+        if "--checkpoint" in block and not parse_only:
             return interactive(argv, cwd, self.env)
         result = subprocess.run(argv, cwd=cwd, env=self.env, stdin=subprocess.DEVNULL,
                                 capture_output=True, encoding="utf-8", errors="replace",
@@ -254,6 +255,20 @@ class PowerShellGuideTest(unittest.TestCase):
                                                  "Write-Output reached")
         self.assertEqual(code, 0, output)
         self.assertIn("reached", output)
+        code, output = self.shell.run(self.root, "python - <<EOF\nprint(1)\nEOF\n", parse_only=True)
+        self.assertEqual(code, 90, output)
+
+    def test_every_documented_block_parses(self) -> None:
+        # Reference blocks with <placeholders> cannot run verbatim, but must be valid PowerShell.
+        documents = [*sorted(GUIDES.glob("*.md")), PACKAGE / "README.md"]
+        checked = 0
+        for path in documents:
+            for block in powershell_blocks(path):
+                text = re.sub(r"<[^>\n]+>", "placeholder", block)
+                code, output = self.shell.run(self.root, text, parse_only=True)
+                self.assertEqual(code, 0, f"{path.name}:\n{block}\n{output}")
+                checked += 1
+        self.assertGreater(checked, 30)
 
     def test_smoke_guide_runs_verbatim(self) -> None:
         guide = GUIDES / "04-smoke-test.md"

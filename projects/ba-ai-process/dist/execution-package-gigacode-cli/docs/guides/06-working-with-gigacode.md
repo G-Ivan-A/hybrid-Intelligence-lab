@@ -15,8 +15,8 @@ GigaCode готовит артефакты узлов, вы проверяете
 Перед началом: [развёртывание](03-deploy-package.md) завершено, «Проверить
 пакет» показывает `G-mach: пакет принят`, открыты
 [терминал A](01-junior-pilot.md#term-terminal-a) с `gigacode` и
-[терминал B](01-junior-pilot.md#term-terminal-b) с включённым окружением
-Python, оба — в папке `~/bcreq-pilot/runtime`.
+[терминал B](01-junior-pilot.md#term-terminal-b) — второе окно PowerShell,
+оба — в папке `$env:USERPROFILE\bcreq-pilot\runtime`.
 
 ## Содержание
 
@@ -64,8 +64,8 @@ Python, оба — в папке `~/bcreq-pilot/runtime`.
 Возьмите следующий свободный номер: `TASK-` и 4 цифры, например
 `TASK-0002`. Проверьте, что его ещё нет:
 
-```sh
-ls runs
+```powershell
+Get-ChildItem runs
 ```
 
 Номера `TASK-0001` лучше оставить для [учебного прогона](04-smoke-test.md).
@@ -81,14 +81,14 @@ ls runs
 - **Где:** терминал B, папка пакета.
 - **Команды:**
 
-  ```sh
-  sh tools/run-task start TASK-0002
-  mkdir -p runs/TASK-0002/evidence/sources
+  ```powershell
+  python tools/run-task.py start TASK-0002
+  New-Item -ItemType Directory -Force runs\TASK-0002\evidence\sources | Out-Null
   ```
 
 - **Ожидаемый результат:**
   `TASK-0002: started at entry; next transition requires G-mach`
-- **Проверьте:** `ls runs/TASK-0002` показывает `evidence`, `state.json`,
+- **Проверьте:** `Get-ChildItem runs\TASK-0002` показывает `evidence`, `state.json`,
   `trace.jsonl`.
 
 Файлы-источники (стенограмму, письмо, выгрузку) скопируйте в
@@ -144,7 +144,7 @@ ls runs
 | Вид (`kind` в A-IN) | Пример | Как передать GigaCode |
 |---------------------|--------|-----------------------|
 | `transcript` | Стенограмма встречи | Файл в `evidence/sources/`, в диалоге — `@runs/TASK-0002/evidence/sources/<файл>` |
-| `document` | ТЗ, спецификация, статья KB | Файл в `evidence/sources/`; статья KB — из `~/bcreq-pilot/kb-source/` (см. [KB](03-deploy-package.md#получите-базу-знаний-kb)) |
+| `document` | ТЗ, спецификация, статья KB | Файл в `evidence/sources/`; статья KB — из `$env:USERPROFILE\bcreq-pilot\kb-source\` (см. [KB](03-deploy-package.md#получите-базу-знаний-kb)) |
 | `email` | Письмо Заказчика | Текст вставьте в диалог или сохраните файлом в `evidence/sources/` |
 | `ticket` | Карточка Jira | Текст карточки вставьте в диалог |
 | `system-export` | Выгрузка из системы | Файл в `evidence/sources/` |
@@ -175,8 +175,8 @@ ls runs
    Разрешите запись файла.
 2. **Выполните в терминале B** — переход `entry → n0`:
 
-   ```sh
-   sh tools/run-task advance TASK-0002 --to n0 --artifact runs/TASK-0002/evidence/A-IN.json
+   ```powershell
+   python tools/run-task.py advance TASK-0002 --to n0 --artifact runs/TASK-0002/evidence/A-IN.json
    ```
 
    **Ожидаемый результат:** `TASK-0002: entry -> n0; G-mach exit 0; trace seq 1`
@@ -200,8 +200,8 @@ ls runs
 
 6. **Выполните в терминале B** «Проверить вход A-IN»:
 
-   ```sh
-   sh tools/validate-package.sh --input runs/TASK-0002/evidence/A-IN-confirmed.json
+   ```powershell
+   python tools/validate-package.py --input runs/TASK-0002/evidence/A-IN-confirmed.json
    ```
 
    **Ожидаемый результат:** `G-mach: пакет принят …`. Если есть
@@ -209,8 +209,8 @@ ls runs
    этом не блокируется.
 7. **Выполните в терминале B** переход `n0 → n1` с подтверждением:
 
-   ```sh
-   sh tools/run-task advance TASK-0002 --to n1 --artifact runs/TASK-0002/evidence/A-IN-confirmed.json --checkpoint runs/TASK-0002/evidence/checkpoint-n0.md
+   ```powershell
+   python tools/run-task.py advance TASK-0002 --to n1 --artifact runs/TASK-0002/evidence/A-IN-confirmed.json --checkpoint runs/TASK-0002/evidence/checkpoint-n0.md
    ```
 
    Прочитайте checkpoint, введите строку `APPROVE TASK-0002:n0 sha256:…`
@@ -234,8 +234,8 @@ ls runs
 добавьте `--checkpoint runs/TASK-0002/evidence/checkpoint-<nX>.md` и
 введите строку подтверждения):
 
-```sh
-sh tools/run-task advance TASK-0002 --to <следующий узел> --artifact runs/TASK-0002/evidence/<файл>
+```powershell
+python tools/run-task.py advance TASK-0002 --to <следующий узел> --artifact runs/TASK-0002/evidence/<файл>
 ```
 
 Навыки узлов описывают результат для человека, а runner на части узлов
@@ -297,8 +297,8 @@ sh tools/run-task advance TASK-0002 --to <следующий узел> --artifac
    **Ожидаемый результат:** `sealed: runs/TASK-0002/evidence/working.json`
 3. **Выполните в терминале B** «Проверить Working»:
 
-   ```sh
-   python3 tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json
+   ```powershell
+   python tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json
    ```
 
    **Ожидаемый результат:** `G-mach: BCREQ accepted`. Если есть строки
@@ -308,17 +308,17 @@ sh tools/run-task advance TASK-0002 --to <следующий узел> --artifac
    требования, что не входит, открытые вопросы». Прочитайте его.
 5. **Выполните в терминале B** переход `n12 → n13`:
 
-   ```sh
-   sh tools/run-task advance TASK-0002 --to n13 --artifact runs/TASK-0002/evidence/working.json --checkpoint runs/TASK-0002/evidence/checkpoint-n12.md
+   ```powershell
+   python tools/run-task.py advance TASK-0002 --to n13 --artifact runs/TASK-0002/evidence/working.json --checkpoint runs/TASK-0002/evidence/checkpoint-n12.md
    ```
 
    Введите строку подтверждения. **Ожидаемый результат:**
    `TASK-0002: n12 -> n13; G-mach exit 0; trace seq …`
 6. **Выполните в терминале B** «Собрать Release» и «Проверить Release»:
 
-   ```sh
-   python3 tools/bcreq_pipeline.py compile runs/TASK-0002/evidence/working.json --output runs/TASK-0002/release
-   python3 tools/bcreq_pipeline.py validate-release runs/TASK-0002/evidence/working.json --release runs/TASK-0002/release/release.json --manifest runs/TASK-0002/release/release-manifest.json
+   ```powershell
+   python tools/bcreq_pipeline.py compile runs/TASK-0002/evidence/working.json --output runs/TASK-0002/release
+   python tools/bcreq_pipeline.py validate-release runs/TASK-0002/evidence/working.json --release runs/TASK-0002/release/release.json --manifest runs/TASK-0002/release/release-manifest.json
    ```
 
    **Ожидаемый результат:** обе команды печатают `G-mach: BCREQ accepted`.
@@ -332,14 +332,14 @@ sh tools/run-task advance TASK-0002 --to <следующий узел> --artifac
 
 8. **Выполните в терминале B** переход `n13 → exit`:
 
-   ```sh
-   sh tools/run-task advance TASK-0002 --to exit --artifact runs/TASK-0002/release/release.json --working runs/TASK-0002/evidence/working.json --manifest runs/TASK-0002/release/release-manifest.json --checkpoint runs/TASK-0002/evidence/checkpoint-n13.md
+   ```powershell
+   python tools/run-task.py advance TASK-0002 --to exit --artifact runs/TASK-0002/release/release.json --working runs/TASK-0002/evidence/working.json --manifest runs/TASK-0002/release/release-manifest.json --checkpoint runs/TASK-0002/evidence/checkpoint-n13.md
    ```
 
    Введите строку подтверждения только после [шага 7](#шаг-7-проверьте-результат-и-примите-решение).
    **Ожидаемый результат:** `TASK-0002: n13 -> exit; G-mach exit 0; trace seq …`
 9. **Выполните в терминале B** «Показать состояние задачи»:
-   `sh tools/run-task metrics TASK-0002`. **Ожидаемый результат:**
+   `python tools/run-task.py metrics TASK-0002`. **Ожидаемый результат:**
    `"current": "exit"`, `"status": "completed"`, `"deterministic_share": 1.0`.
 
 ## Шаг 7. Проверьте результат и примите решение
@@ -395,7 +395,7 @@ Machine-проверка (G-mach) подтверждает форму, ссыл�
 | `@<путь>` | Вставляет файл в сообщение: `@runs/TASK-0002/evidence/A-CORE.json` |
 | `!<команда>` | Выполняет команду оболочки. **Команды runner так не запускайте**: на узлах с G-human переход не пройдёт ([О-5](01-junior-pilot.md#ограничения-текущей-версии-пакета)) |
 
-Если GigaCode просит выполнить команду (в том числе `sh tools/run-task …`),
+Если GigaCode просит выполнить команду (в том числе `python tools/run-task.py …`),
 отклоните её и выполните сами в терминале B.
 
 ## Что ожидать от модели
