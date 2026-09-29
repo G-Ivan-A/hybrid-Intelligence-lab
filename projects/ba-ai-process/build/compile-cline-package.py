@@ -50,7 +50,7 @@ def compile_into(root: Path, revision: str) -> None:
             shutil.copy2(path, target)
     for path in (root / "contracts").glob("*.schema.json"):
         path.write_text(path.read_text(encoding="utf-8").replace(
-            "build/common/contracts/", "dist/execution-package-cline-vscode/contracts/"), encoding="utf-8")
+            "build/common/contracts/", "dist/execution-package-cline-vscode/contracts/"), encoding="utf-8", newline="\n")
     for directory in MUTABLE:
         placeholder = root / directory / ".gitkeep"
         placeholder.parent.mkdir(parents=True, exist_ok=True)
@@ -75,7 +75,7 @@ def compile_into(root: Path, revision: str) -> None:
         ]},
         "outputs": {"hash_algorithm": "sha256", "hashes": dict(sorted(hashes.items()))},
     }
-    (root / "package-manifest.yaml").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (root / "package-manifest.yaml").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 
 def main() -> int:
