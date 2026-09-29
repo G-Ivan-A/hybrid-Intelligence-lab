@@ -1,8 +1,8 @@
 # Манифест пакета: provenance, allowlist входов, immutable-выходы и правила
 # компиляции. Источник всегда обозначается полным URL репозитория.
 manifest: execution-package-gigacode-cli
-package_version: "5.0"
-compiled_at: 2026-09-26
+package_version: "5.1"
+compiled_at: 2026-09-29
 source:
   repository: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
   revision: da9fc6b47f7fdf634ae3d1b48fb8b2da16dd6dbb
@@ -39,8 +39,8 @@ outputs:
     .gigacode/skills/transcript-normalization/SKILL.md: 55a0109ce3aa4f55746ae66b19d22117d86b65b45423de19e1a2d79eebaed29b
     .gigacode/skills/value-hypothesis/SKILL.md: 4fe8241fd1952dbc3bdf3aebc3a3ac76d84c2c66d542c6af49b26ffdbe96174d
     .gitignore: e4822f86590d83ade18215bed4457622956a3fa680930aa450398d92d7ec2175
-    AGENTS.md: b7d4653e78719e74706240e35fd3dfb81b7a5c7c5f2e4bb84ce1c51020854201
-    README.md: 098fe11132a9cd1498a0755af5c199e8f19b8cb9d9d93d761076169c694a5473
+    AGENTS.md: 55ff94e33149dd7719dd1481d70912b581ef81eeeba1cff284b9b2cb020c2447
+    README.md: 560736632bd97c930d725db56d9369ddfe15159f8c025c8fbdbe0f32846e4c0a
     contracts/bcreq-client-v1.json: add9e5b2021da91ad9a242da2be3af32358f3cbd409f3a588babfa9ae74c4a7b
     contracts/c-core.schema.json: 38b80d072e7e1b4a21e9cf3f1b230f51f51f632f227667f675018720d4e555dd
     contracts/c-in.schema.json: 8e1dbfc3f773a3187bfe959c43588bc39ccb774a1b4f4070cbe61f458089f1c0
@@ -50,6 +50,13 @@ outputs:
     contracts/c-release-manifest.schema.json: 327ba0fc2aac558cf5ac36d002b5235dad813ce253e166046d5ceff611857b98
     contracts/c-rk.schema.json: b890d79c0f3059363e677a1cee819edde5388c012744dbb1475655f5fd5433f1
     contracts/c-working-bcreq.schema.json: 066ad711de9d7172df81cf0b951826602f4ca73a0a51bd3c3a25405e0d789851
+    docs/guides/01-junior-pilot.md: 7d02311b7db35c029ee2e04b385d7b352aa1247d19011c2eaab815346ad8a3a7
+    docs/guides/02-install.md: 2026bc4e4e6bc2ed3cea1aa6a4e16b50fb3336920b379fb21833d0e85224615a
+    docs/guides/03-deploy-package.md: 21b7da0411d8bcb96445d0560868c5c9bea72e8cff834ca188826472cd5f52fe
+    docs/guides/04-smoke-test.md: 710a9d1968f1f0e7de307f47c29dccc2032467ee214865af9ded2a96bc5c3d38
+    docs/guides/05-commands-reference.md: 23fa65001705da799801de40fd22bb99d2572988e609a775d092d8e06dec0416
+    docs/guides/06-working-with-gigacode.md: 450bbcd3840615a5043f4d28631d0f76f33155ec60930263d2f1ed87e5bec6ec
+    docs/guides/README.md: ebe3452fa0691a69fe65e5e1a648341f2dcfee32e17704a3f3a0181c9751c6c6
     evaluation/g-human-checklist.md: a0f0a354caab05321ce33e9d38ea8617482d7a2484c147dec4bc3357d461a272
     evaluation/g-mach-checklist.md: 9fd4ed74a78a5ec95ada0feb9b4bb9e2a382763536f2d83003fd32c8ede53262
     evaluation/metrics.yaml: 2adb5a9e07a173c9cea9d0b2990baa982cc6f1139c3d07426b0cb9b96f78d9e8
@@ -60,7 +67,6 @@ outputs:
     golden/gs-cc-neg-02-queue-vs-group.md: 045fc8a7d7832703813f59057c64856b08ce2973ca67679260b166d1c62daed0
     golden/gs-cc-neg-03-sla-vs-aht.md: 3b82fe06762f5ce111f8d2aa3b32fdc78af29edc0d37557625e7f0778b5c7ccb
     golden/gs-cc-neg-04-ivr-vs-announcer.md: 18aa66844a2d42ab3fc4e30046c7db2e41ee2ef7c61c48c45e73f3f533da16e6
-    junior-guide.md: 08478e79145925a451b6c00c5a44f3affc4e4cb1699a7b9578f9fd9c87b0011b
     requirements.txt: 0b0709dc3105d98b29f4fc6a870c15c0cf42191498384ef8a2a32d3fcf5f34ed
     routes/rg-bcreq-v1.yaml: b2ade0e95e28a495bab087191d26826e210e6332f482c8fa7ca42f8e6d6062c4
     routes/run-sheet-template.yaml: 6c2b3321fe64c01cf1fe5b206961eb218df59aa2b2d2dfba508e836d08bcd9d4
@@ -90,7 +96,7 @@ slice: "A-IN → подтверждённая продуктовая цепоч�
 # Поэтому пакет содержит физические копии всего необходимого, а не ссылки.
 deployment:
   mechanism: копирование каталога пакета в корень репозитория-спутника
-  result: ".gigacode/, docs/kb/, meta-model/, taxonomy/, contracts/, routes/, templates/, golden/, evaluation/, runs/, tools/, AGENTS.md, README.md, junior-guide.md, requirements.txt"
+  result: ".gigacode/, docs/kb/, meta-model/, taxonomy/, contracts/, routes/, templates/, golden/, evaluation/, runs/, tools/, AGENTS.md, README.md, docs/guides/, requirements.txt"
   source_access_required_at_runtime: false
 
 # 1. Скопировано физически: содержание перенесено в пакет дословно или с

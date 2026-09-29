@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 4.0
-updated: 2026-09-26
+version: 4.1
+updated: 2026-09-29
 temperature: 0.1
 ---
 
@@ -36,7 +36,7 @@ temperature: 0.1
 | `runs/` | task-rooted состояние и отдельные `DEBUG-*` прогоны | при каждом микро-событии |
 | `tools/validate-package.sh` | машинный гейт `G-mach` | вызывается runner на каждом переходе |
 | `tools/run-task` | локальный контроллер графа | при каждом управляемом переходе |
-| `junior-guide.md` | инструкция БА | перед первым прогоном |
+| `docs/guides/README.md` | кластер инструкций БА | перед первым прогоном |
 
 ## Исполняемые правила
 
