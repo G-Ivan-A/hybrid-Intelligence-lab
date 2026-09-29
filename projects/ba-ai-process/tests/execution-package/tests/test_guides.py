@@ -100,7 +100,9 @@ def interactive(argv: list[str], cwd: Path, env: dict[str, str]) -> tuple[int, s
                 answered = True
         while process.isalive() and time.monotonic() < deadline:
             time.sleep(0.1)
-        return process.exitstatus if process.exitstatus is not None else -1, ANSI.sub("", output)
+        code = process.exitstatus if process.exitstatus is not None else -1
+        process.close(force=True)
+        return code, ANSI.sub("", output)
 
     import select
 
