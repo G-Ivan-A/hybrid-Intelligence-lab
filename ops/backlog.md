@@ -672,6 +672,32 @@ Cline. Детерминированная часть пакета работае
 | **B-209** | Ограничить MCP-инструменты в hook списком только на чтение | null | B-200 | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [аудит разрыва ожиданий, Г-12](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-cline-package-expectation-gap.md) | Hook пропускает любой вызов MCP; «только чтение» держится на организационном требовании к подключению и на ручных подтверждениях. | null |
 | **B-210** | Проверять цитаты из `docs/kb/` по файлу источника | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [аудит разрыва ожиданий, Г-17](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-cline-package-expectation-gap.md) | Контрольная сумма считается от самой цитаты, поэтому выдуманный источник проходит G-mach; для файлов KB runner может детерминированно проверить, что цитата есть в файле. | null |
 
+## Спринт 26: Исполнитель маршрута и среды запуска
+
+**Story.** По замечанию владельца в PR #643 аудит issue #639 расширен с
+Cline-пакета до мета-модели, сред и инструментов запуска. Главный разрыв:
+у роли «оркестратор» нет исполнителя, поэтому маршрут ведёт то БА руками,
+то модель. Пробы `P10`…`P12` показали, что runner GigaCode не исполняет
+предикаты, не проверяет выход промежуточных узлов и блокирует задачу после
+одной опечатки.
+
+**Цель.** Runner-ведущий на рабочем месте (рекомендация 1) до первых 10 задач
+пилота ADR-018 и RFC серверной среды 4 на том же ядре (рекомендация 2).
+
+**Критерий закрытия.** Рекомендации 1 и 2 приняты в Source или отклонены
+решением человека; метрика пилота считает проверенные выходы узлов.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-211** | Runner вычисляет предикаты рёбер из YAML маршрута | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-28](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | 17 условий рёбер в `routes/rg-bcreq-v1.yaml` не исполняются: ветви заново написаны в Python для 8 узлов (проба `P11`). Нужен закрытый язык выражений без `eval` и проверка разбора каждого предиката. | null |
+| **B-212** | Контракт выхода для каждого узла маршрута и честная метрика пилота | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-29, Г-30](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Промежуточный G-mach проверяет пакет, а не выход узла; произвольный текст принят как выход n1…n3, `deterministic_share` = 1.0 (проба `P10`). Метрика ADR-018 должна считать только проверенные выходы. | null |
+| **B-213** | Ожидание и возобновление прогона; ошибка ввода не блокирует задачу | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-31, Г-32, Г-34](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | `halt` конечен, `EP-R8` не реализован, примечания n7 противоречат друг другу; одна опечатка в `--to` навсегда блокирует задачу (проба `P12`). | null |
+| **B-214** | Решить расхождение по корректирующей попытке `EP-R7` | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-33](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Мета-модель допускает одну корректирующую попытку после отказа G-mach, маршрут GigaCode — ноль со ссылкой на `EP-R7`. Решение человека. | null |
+| **B-215** | Назначить исполнителя маршрута в мета-модели | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-26, Г-27](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Мета-модель поручает граф и лист прогона «оркестратору», которого нет среди сущностей; `EP-R8` привязан к чату. Объявить роль исполнителя маршрута как свойство среды. | null |
+| **B-216** | Одно ядро runner для пакетов GigaCode и Cline; команда `next` | null | B-211, B-212, B-213 | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-40](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Два runner с разной логикой переходов; `next` печатает по-русски текущий узел, что сдать и какой командой. | null |
+| **B-217** | Проверить GigaCode CLI: версия, hooks, запуск внешних команд | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-42](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Происхождение и hooks GigaCode CLI не подтверждены первоисточником; проверка на локальной установке. | null |
+| **B-218** | RFC серверной среды 4: служба runner, интерфейс БА, место n8n | null | B-216 | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-43…Г-54](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Служба runner с Postgres и вызовом Mango AI, согласование через чат или форму, n8n только как оболочка интеграций; триггер пересмотра внешнего движка для альтернативы C RFC GigaCode. | null |
+
 ---
 
 ## Источники активного порядка
