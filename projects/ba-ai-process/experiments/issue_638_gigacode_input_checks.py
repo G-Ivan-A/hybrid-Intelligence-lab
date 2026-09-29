@@ -15,6 +15,9 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "tests/execution-package/tests"))
 from issue_638_gigacode_smoke_flow_data import a_in  # noqa: E402
 from test_guides import environment  # noqa: E402
+# A redirected Windows console uses the ANSI code page, which has no Cyrillic;
+# the log of this experiment is UTF-8 like every file of the package.
+sys.stdout.reconfigure(encoding="utf-8")
 
 SRC = pathlib.Path(__file__).resolve().parents[1] / "dist/execution-package-gigacode-cli"
 work = pathlib.Path(tempfile.mkdtemp(prefix="gc-638-in-")) / "runtime"

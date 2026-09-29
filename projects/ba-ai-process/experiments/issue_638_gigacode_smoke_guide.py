@@ -15,6 +15,9 @@ import pathlib, shutil, sys, tempfile
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "tests/execution-package/tests"))
 from test_guides import GuideShell, environment, guide_shell, powershell_blocks  # noqa: E402
+# A redirected Windows console uses the ANSI code page, which has no Cyrillic;
+# the log of this experiment is UTF-8 like every file of the package.
+sys.stdout.reconfigure(encoding="utf-8")
 
 SRC = HERE.parent / "dist/execution-package-gigacode-cli"
 GUIDE = SRC / "docs/guides/04-smoke-test.md"

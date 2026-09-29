@@ -19,6 +19,9 @@ sys.path.insert(0, str(HERE.parent / "tests/execution-package/tests"))
 from issue_638_gigacode_smoke_flow_data import a_in  # noqa: E402
 from test_guides import (GuideShell, environment, guide_shell, interactive,  # noqa: E402
                          powershell_blocks)
+# A redirected Windows console uses the ANSI code page, which has no Cyrillic;
+# the log of this experiment is UTF-8 like every file of the package.
+sys.stdout.reconfigure(encoding="utf-8")
 
 shell = guide_shell()
 if not shell:
