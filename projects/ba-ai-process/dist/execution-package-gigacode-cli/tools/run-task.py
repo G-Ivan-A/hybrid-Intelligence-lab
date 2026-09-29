@@ -75,8 +75,11 @@ def graph_data() -> dict:
 
 def gate(extra: list[str]) -> tuple[list[str], int, str]:
     command = [sys.executable, str(ROOT / "tools/validate-package.py"), str(ROOT), *extra]
+    # A Windows pipe uses the ANSI code page, which cannot encode G-mach messages.
+    environment = dict(os.environ, PYTHONIOENCODING="utf-8")
     try:
-        result = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
+        result = subprocess.run(command, cwd=ROOT, env=environment, encoding="utf-8",
+                                errors="replace", capture_output=True)
     except OSError as error:
         raise Refused(f"gate could not start: {error}") from error
     output = (result.stdout + result.stderr).strip()

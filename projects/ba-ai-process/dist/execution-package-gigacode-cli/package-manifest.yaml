@@ -38,6 +38,7 @@ outputs:
     .gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md: e77af704c1a83578a620d92062e0b95f81756b9919750e83cc2a95653b2dbdc0
     .gigacode/skills/transcript-normalization/SKILL.md: 55a0109ce3aa4f55746ae66b19d22117d86b65b45423de19e1a2d79eebaed29b
     .gigacode/skills/value-hypothesis/SKILL.md: 4fe8241fd1952dbc3bdf3aebc3a3ac76d84c2c66d542c6af49b26ffdbe96174d
+    .gitattributes: f89dac29fb0687b7741b5cf22935f25339b52b8879e6771498e3c8f37d8377f1
     .gitignore: e4822f86590d83ade18215bed4457622956a3fa680930aa450398d92d7ec2175
     AGENTS.md: 55ff94e33149dd7719dd1481d70912b581ef81eeeba1cff284b9b2cb020c2447
     README.md: 560736632bd97c930d725db56d9369ddfe15159f8c025c8fbdbe0f32846e4c0a
@@ -84,10 +85,10 @@ outputs:
     templates/checkpoint-skeleton.md: 680a5ca51764d0d4e0ec005be5a16f234b80d75fdb3d33c28858ab7b4e7da90d
     templates/core-skeleton.yaml: 9bae2213fb5d30c4b9d2a3030ffaf834c4faed889d60986e5d2896a60c9a29dc
     templates/quest-skeleton.md: db2aceebcea205d333c0fefbfeab26d3a0a79164620eee3a27b4dfa50ecc717a
-    tools/bcreq_pipeline.py: 95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f
+    tools/bcreq_pipeline.py: 68be41c4f4a16c39d11109ea47b2eb518f22c6f0a5798cb9f10ac09d64999f56
     tools/run-task: bb6a4ea648ee52cefa78b59dd910670dd65ed34e6f8698efdf1e887ced501923
-    tools/run-task.py: 1271303f276cdcf5711c72f8af2736f8062cf87fdc4fa9e377541dbfeba4839b
-    tools/validate-package.py: 9656390349e572c8ff90853af2e35bf8a3d0fecda3e44bb02431627c8586291c
+    tools/run-task.py: 4743d675bd3481cc3b1f625797219db46f444775112c3be3f2384a9d84988b2f
+    tools/validate-package.py: 116f7473a32d9acbd580538f2be9b0e729766c39a190b15e82eba58d412de40a
     tools/validate-package.sh: 884f51ca709a990877d1ef7fd97f066d4392b85eb537e5b4678758aa24f410eb
 target_spoke: clean GigaCode CLI working directory
 slice: "A-IN → подтверждённая продуктовая цепочка → A-CORE → A-BCREQ, весь портфель MANGO, процессы P-01, P-02, P-03"

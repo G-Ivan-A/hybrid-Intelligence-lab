@@ -61,17 +61,19 @@ class RunnerTest(unittest.TestCase):
         self.confirmed.write_text(json.dumps(input_document(True)), encoding="utf-8")
         self.runner("start", "TASK-9001", expected=0)
 
-    def runner(self, *args: str, expected: int,
-               approval: str | None = None) -> subprocess.CompletedProcess:
+    def runner(self, *args: str, expected: int, approval: str | None = None,
+               env: dict | None = None) -> subprocess.CompletedProcess:
         command = [sys.executable, str(self.package / "tools/run-task.py"), *map(str, args)]
+        env = dict(os.environ, **(env or {}))
         if approval is None:
-            result = subprocess.run(command, cwd=self.package, text=True, capture_output=True)
+            result = subprocess.run(command, cwd=self.package, text=True, capture_output=True,
+                                    env=env, encoding="utf-8")
         else:
             master, slave = os.openpty()
             try:
                 os.write(master, (approval + "\n").encode())
                 result = subprocess.run(command, cwd=self.package, text=True, stdin=slave,
-                                        capture_output=True)
+                                        capture_output=True, env=env, encoding="utf-8")
             finally:
                 os.close(slave)
                 os.close(master)
@@ -169,6 +171,34 @@ class RunnerTest(unittest.TestCase):
         self.runner("advance", "TASK-9001", "--to", "n1", "--artifact", path,
                     "--checkpoint", checkpoint, expected=1)
         self.assertTrue(self.trace()[-1]["step_skipped"])
+
+    def test_windows_utf8_bom_artifacts_pass_gates(self) -> None:
+        # Windows PowerShell 5.1 `Set-Content -Encoding UTF8` and old Notepad add a BOM.
+        for path in (self.raw, self.confirmed):
+            path.write_text(path.read_text(encoding="utf-8"), encoding="utf-8-sig")
+        checkpoint = Path(self.temp.name) / "checkpoint.md"
+        checkpoint.write_text("Одобрено аналитиком", encoding="utf-8-sig")
+        self.runner("advance", "TASK-9001", "--to", "n0", "--artifact", self.raw, expected=0)
+        self.runner("advance", "TASK-9001", "--to", "n1", "--artifact", self.confirmed,
+                    "--checkpoint", checkpoint, expected=0,
+                    approval=self.approval(checkpoint, "n0"))
+
+    def test_gate_survives_non_utf8_console_code_page(self) -> None:
+        # Windows pipes use the ANSI code page; G-mach prints Cyrillic text.
+        result = self.runner("advance", "TASK-9001", "--to", "n0", "--artifact", self.raw,
+                             expected=0, env={"PYTHONIOENCODING": "cp1252"})
+        self.assertIn("G-mach exit 0", result.stdout)
+        self.assertIn("пакет принят", self.trace()[-1]["gate_output"])
+
+    def test_gate_ignores_git_directory_of_cloned_runtime(self) -> None:
+        # Deploy variant A clones the runtime repository, which leaves .git/ in the package root.
+        (self.package / ".git/refs/heads").mkdir(parents=True)
+        (self.package / ".git/HEAD").write_text("ref: refs/heads/main\n", encoding="utf-8")
+        (self.package / ".git/refs/heads/main").write_text("0" * 40 + "\n", encoding="utf-8")
+        (self.package / ".git/ops").mkdir()
+        (self.package / ".git/ops/adr-0001.md").write_text("git object\n", encoding="utf-8")
+        self.runner("advance", "TASK-9001", "--to", "n0", "--artifact", self.raw, expected=0)
+        self.assertIn("пакет принят", self.trace()[-1]["gate_output"])
 
     def test_resolved_blocker_uses_declared_core_field(self) -> None:
         self.assertEqual("n9", RUNNER.required_target(

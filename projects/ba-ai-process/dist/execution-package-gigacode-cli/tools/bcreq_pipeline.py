@@ -513,7 +513,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     package = Path(__file__).resolve().parents[1]
-    working = json.loads(args.working.read_text(encoding="utf-8"))
+    working = json.loads(args.working.read_text(encoding="utf-8-sig"))
     if args.action == "validate-working":
         errors = validate_working(working, package)
     elif args.action == "compile":
@@ -531,8 +531,8 @@ def main() -> int:
     else:
         if args.release is None or args.manifest is None:
             parser.error("validate-release requires --release and --manifest")
-        release = json.loads(args.release.read_text(encoding="utf-8"))
-        manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
+        release = json.loads(args.release.read_text(encoding="utf-8-sig"))
+        manifest = json.loads(args.manifest.read_text(encoding="utf-8-sig"))
         errors = validate_release(working, release, manifest)
     if errors:
         for error in errors:

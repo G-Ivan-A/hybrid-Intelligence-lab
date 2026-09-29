@@ -117,6 +117,7 @@ def check_layout(root: str) -> None:
             fail(f"отсутствует обязательный каталог пакета: {rel}")
 
     for rel in (
+        ".gitattributes",
         ".gitignore",
         ".gigacode/settings.example.json",
         ".gigacode/skills/rg-bcreq-v1-dispatcher/SKILL.md",
@@ -147,6 +148,8 @@ def check_distribution_boundary(root: str) -> None:
         rel_current = os.path.relpath(current, root).replace(os.sep, "/")
         if rel_current == ".":
             rel_current = ""
+            # Вариант развёртывания «git clone runtime-репозитория» оставляет служебный .git.
+            directories[:] = [name for name in directories if name != ".git"]
         for directory in sorted(directories):
             rel = "/".join(part for part in (rel_current, directory) if part) + "/"
             if rel.startswith(source_only_directories) or "feedback/inbox/" in rel:
@@ -191,7 +194,9 @@ def check_manifest(root: str) -> None:
         declared = {}
 
     actual: set[str] = set()
-    for current, _directories, files in os.walk(root):
+    for current, directories, files in os.walk(root):
+        if current == root:
+            directories[:] = [name for name in directories if name != ".git"]
         for filename in files:
             path = os.path.join(current, filename)
             rel = os.path.relpath(path, root).replace(os.sep, "/")
@@ -948,7 +953,7 @@ def main() -> int:
 
     if working_path:
         try:
-            with open(working_path, encoding="utf-8") as handle:
+            with open(working_path, encoding="utf-8-sig") as handle:
                 working = json.load(handle)
             for message in validate_working(working, Path(root)):
                 fail(f"{working_path}: {message}")
@@ -956,9 +961,9 @@ def main() -> int:
                 if not release_path or not manifest_path:
                     fail("--release and --manifest must be supplied together")
                 else:
-                    with open(release_path, encoding="utf-8") as handle:
+                    with open(release_path, encoding="utf-8-sig") as handle:
                         release = json.load(handle)
-                    with open(manifest_path, encoding="utf-8") as handle:
+                    with open(manifest_path, encoding="utf-8-sig") as handle:
                         manifest = json.load(handle)
                     for message in validate_release(working, release, manifest):
                         fail(f"{release_path}: {message}")
