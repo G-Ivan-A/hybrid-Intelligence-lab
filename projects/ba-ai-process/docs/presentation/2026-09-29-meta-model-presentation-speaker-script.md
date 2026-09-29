@@ -138,14 +138,16 @@ related_issues:
 **Текст.**
 
 - Весной всё начиналось с одного большого промпта «для БА». В июне мы
-  [разделили его](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md)
+  [разделили его](https://github.com/G-Ivan-A/mango_ba_prompts/commit/d8a47597ed9f0301e03086e7c14cbd35205b01d1)
   на 23 стандартных файла.
 - После первой реальной сессии, в
   [эксперименте 1027](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/experiment-1027-analysis.md),
   правки промптов откатили. С тех пор промпт меняется только через
   эксперимент. Это был первый шаг от ремесла к процессу.
 - К августу накопилось 56 прогонов на реальных задачах, и мы честно
-  записали: evals и эталонных наборов нет.
+  записали в
+  [README](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/README.md#L50):
+  evals и эталонных наборов нет.
 - В сентябре провели форензику. Выяснилось, что три режима одного промпта —
   пошаговый, одним вызовом и старый — почти не совпадают по структуре:
   [0.077 по Жаккару](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md).

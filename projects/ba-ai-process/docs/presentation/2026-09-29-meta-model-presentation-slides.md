@@ -220,7 +220,8 @@ generous negative space, no text, no letters, no logos, 16:9
 
 **Источники:**
 [каталог прогонов](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/runs),
-[журнал изменений `mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md),
+[разделение промпта на 23 файла](https://github.com/G-Ivan-A/mango_ba_prompts/commit/d8a47597ed9f0301e03086e7c14cbd35205b01d1),
+[README `mango_ba_prompts`: «evals и golden-set отсутствуют»](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/README.md#L50),
 [разбор эксперимента 1027](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/experiment-1027-analysis.md),
 [входы мета-модели и Жаккар 0.077](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md),
 [промпты трёх режимов](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/prompts),
