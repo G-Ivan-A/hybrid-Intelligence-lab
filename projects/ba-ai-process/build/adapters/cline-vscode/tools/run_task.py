@@ -156,7 +156,7 @@ def verify_ci(package_hash: str) -> bool:
         for index, candidate in enumerate(candidates):
             task_id = candidate.stem
             outcome = run(task_id, candidate, Path(temp) / f"run-{index}", package_hash)
-            print(f"{candidate.relative_to(ROOT)}: {'PASS' if outcome else 'FAIL'}")
+            print(f"{candidate.relative_to(ROOT).as_posix()}: {'PASS' if outcome else 'FAIL'}")
             passed &= outcome
     return passed
 
