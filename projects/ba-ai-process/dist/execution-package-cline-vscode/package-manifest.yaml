@@ -4,7 +4,7 @@
   "compiled_at": "2026-09-29",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "4cf5539092d017850483bfa6b1fbabc854a91b6a"
+    "revision": "836aaeb383c7fa8b312ef523f5010c5281089a0a"
   },
   "adapter": {
     "name": "cline-vscode",
@@ -51,7 +51,7 @@
       "templates/working-prompt.md": "599a100cf9e2e9a3b779b5cc8a34210cb6fb6780f3a183f2a5d67cf88125e626",
       "tools/bcreq_pipeline.py": "95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f",
       "tools/cline_hook.py": "01573a2c7f087d49168f54ed8fcc79420b44e8fc8e085ae1b552dd455f525ae8",
-      "tools/run_task.py": "aa51adca836b8cc3c8786e9940273d56a22d184ca0a080cf43b5011bfc7e9822"
+      "tools/run_task.py": "852790ac7f0708166c7793fc19672917df1fdfeeba8c0951933e82c358d74b72"
     }
   }
 }
