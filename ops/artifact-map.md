@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.22
-updated: 2026-09-28
+version: 2.23
+updated: 2026-09-29
 temperature: 0.1
 ---
 
@@ -409,6 +409,7 @@ temperature: 0.1
 | `/projects/ba-ai-process/dist/execution-package-gigacode-cli/` | шаблон | справка | Чистый Distribution issues #593/#599: native `.gigacode/skills/`, контракты, маршруты, templates, evaluation, Golden Set, copy-time placeholders и `package-manifest.yaml` с provenance/allowlist/output hashes. Negative gate отклоняет RRP, ADR/RFC, backlog и прочие Source-only артефакты; mock-исполнение находится отдельно в Source tests. | ⚠️ По необходимости | `projects/ba-ai-process/ba-meta-model/`, `projects/ba-ai-process/meta-model-guides/`, `projects/ba-ai-process/tests/execution-package/`, `ops/backlog.md`, `tools/test-execution-package.sh` |
 | `https://github.com/G-Ivan-A/mango_ba_prompts` | каталог | — | Внешний spoke-репозиторий Mango: рабочие prompt assets, эксперименты, `standards/GLOSSARY.md` и migration manifest. | ⚠️ По необходимости | `projects/README.md`, `research/mango/README.md` |
 | `/projects/education-ba-prompt/README.md` | навигация | — | Sandbox raw-ideas area для курса по промпт-инжинирингу для бизнес-аналитиков: не public project до назначения owner + roadmap; содержит назначение, навигацию, процесс накопления идей и связи со стандартами. | ⚠️ По необходимости | `projects/README.md`, `standards/education-profile.md`, `standards/file-naming.md`, `standards/issue-workflow.md` |
+| `/projects/education-ba-prompt/docs/ai-agent-execution-guide.md` | руководство | справка | Гайд для фаундера и БА по фактическому пути Cline → MCP/источники → локальный runner → `G-mach` → `G-human`, диагностике ошибок и различию задач на изменение модели и её исполнение (issue #640); не объявляет курс опубликованным. | ⚠️ По необходимости | `projects/education-ba-prompt/README.md`, `projects/ba-ai-process/dist/execution-package-cline-vscode/README.md`, `research/ai-education/evaluation/10-theory.md` |
 | `/projects/education-ba-prompt/docs/course-ideas.md` | исследование | — | Сырой sandbox-материал для будущего курса БА: термины, практические кейсы, шаблоны промптов, идеи модулей, упражнения, форматы подачи и вопросы для обсуждения; не curriculum до owner + roadmap. | ⚠️ По необходимости | `projects/education-ba-prompt/README.md`, `standards/education-profile.md` |
 | `/projects/repo-development/README.md` | навигация | — | Развитие структуры, governance и локальных проверок самого репозитория. | ✅ Да | `projects/README.md`, `ops/repo-model.md` |
 | `/projects/repo-development/docs/migration-audit-2026-05.md` | исследование | — | Аудит миграции: согласованность, ссылки, таблица `-old` и рекомендации cleanup. | ✅ Да | `projects/repo-development/README.md`, `docs/concept.md` |

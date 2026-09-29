@@ -43,6 +43,8 @@ roadmap.
 
 ## 🗂️ Навигация
 
+- [Как работают агент, MCP и машинная проверка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/education-ba-prompt/docs/ai-agent-execution-guide.md)
+  — руководство для фаундера и БА: от замысла до проверяемого результата.
 - [Идеи курса](docs/course-ideas.md) - основное пространство для обсуждений.
 - [Профиль образовательных проектов](../../standards/education-profile.md) -
   стандарты для курсов.
