@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.67
-updated: 2026-09-28
+version: 1.68
+updated: 2026-09-29
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -646,6 +646,30 @@ Cline, а режим отладки имел собственные контра
 | **B-200** | Согласовать hooks пакета с Cline на Windows | null | - | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637), О-3 | Cline на Windows ищет только `<Hook>.ps1`, SDK передаёт немапленные имена инструментов и не вызывает `TaskResume`; hooks пакета там не работают. | null |
 | **B-201** | Добавить skills Cline для ведения процесса и контракты отладки | null | B-198 | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637), О-4, О-5 | Диалог процесса (выбор процесса, входные данные, перепроверка KB, нумерованное согласование, действия с командой в скобках) и режим отладки задаются только текстом инструкции. | null |
 | **B-202** | Решить, может ли Cline запускать runner после согласования БА | null | B-200 | TODO | - (planned) | [issue #636](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/636), [PR #637](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/637) | Правила пакета запрещают агенту команды; режим прогона с максимумом UI требует решения о разрешённом запуске runner агентом. | null |
+
+---
+
+## Спринт 25: Разрывы инструкции GigaCode-пакета
+
+**Story.** Issue #638 переработал инструкцию GigaCode-пакета в кластер
+`docs/guides/` по образцу Cline-пакета. Проверка инструкции на прогоне
+маршрута показала, что порядок узлов, запечатывание Working и формат файлов
+для runner держатся на тексте инструкции, а не на командах и навыках пакета.
+Инструкция фиксирует эти разрывы как ограничения О-1…О-10 и не обходит их.
+
+**Цель.** Перенести в пакет то, что сейчас держится на тексте инструкции, и
+подтвердить инструкцию вне Linux.
+
+**Критерий закрытия.** Ограничения О-1, О-3, О-4, О-8…О-10 из инструкции
+GigaCode-пакета сняты или приняты решением человека; `test_guides.py`
+проходит на обновлённой инструкции.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-203** | Добавить в runner GigaCode-пакета команду запечатывания Working | null | - | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-8 | Пересчёт `evidence[].checksum` и `working_digest` выполняется блоком из справочника команд; нужна проверяемая команда runner, согласованная с B-199. | null |
+| **B-204** | Согласовать навыки узлов GigaCode-пакета с контрактами runner | null | - | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-4, О-10 | Навыки описывают результат в Markdown, а runner на `n12` и `n13` требует JSON Working и Release; в пакете нет учебного входа A-IN для `TASK-0001`. | null |
+| **B-205** | Добавить навык, ведущий задачу GigaCode по маршруту | null | B-204 | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-3, О-9 | Порядок узлов задаёт стартовая фраза, а `rg-bcreq-v1-dispatcher` ведёт отдельный ручной журнал; нужен навык, опирающийся на состояние runner. | null |
+| **B-206** | Проверить инструкцию GigaCode-пакета на macOS и Windows | null | - | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-1 | Команды инструкции проверены только на Linux; требования GigaCode CLI к ОС и Node.js в документации GitVerse не указаны. | null |
 
 ---
 
