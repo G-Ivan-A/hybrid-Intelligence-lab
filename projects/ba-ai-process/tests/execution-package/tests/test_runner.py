@@ -69,6 +69,8 @@ class RunnerTest(unittest.TestCase):
             result = subprocess.run(command, cwd=self.package, text=True, capture_output=True,
                                     env=env, encoding="utf-8")
         else:
+            if not hasattr(os, "openpty"):
+                self.skipTest("Windows: APPROVE via console is covered by test_guides.py")
             master, slave = os.openpty()
             try:
                 os.write(master, (approval + "\n").encode())
