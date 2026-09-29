@@ -24,12 +24,16 @@ DIGEST = ("import json,hashlib,sys; p=json.load(open(sys.argv[1],encoding='utf-8
           "separators=(',',':')).encode('utf-8')).hexdigest())")
 
 
+codes = []
+
+
 def sh(title: str, *command: str) -> None:
     result = subprocess.run([sys.executable, *command], cwd=work, capture_output=True,
                             encoding="utf-8", env=environment())
     shown = " ".join(["python", *(c if len(c) < 60 else "<digest one-liner>" for c in command)])
     output = (result.stdout + result.stderr).strip().replace(str(work.parent), "<tmp>")
     print(f"== {title}\n$ {shown}\n{output}\nexit={result.returncode}\n")
+    codes.append(result.returncode)
 
 
 sh("start", "tools/run-task.py", "start", "TASK-0001")
@@ -48,3 +52,5 @@ sh("check pending A-IN", "tools/validate-package.py", "--input", "runs/TASK-0001
 (work / "A-IN.json").write_text("{}", encoding="utf-8")
 sh("gate with stray file in package root", "tools/validate-package.py")
 sh("start with stray file", "tools/run-task.py", "start", "TASK-0002")
+# The guides promise: evidence keeps the gate green, bad inputs and stray files are refused.
+sys.exit(0 if [code != 0 for code in codes] == [False] * 4 + [True] * 4 else f"unexpected exit codes: {codes}")

@@ -21,6 +21,9 @@ from issue_638_gigacode_smoke_flow_data import a_in  # noqa: E402
 from test_guides import environment, interactive  # noqa: E402
 
 
+codes = []
+
+
 def run(title: str, *args: str, approval: str | None = None) -> None:
     command = [sys.executable, "tools/run-task.py", *args]
     print(f"== {title}\nPS> python tools/run-task.py {' '.join(args)}".replace(str(work.parent), "<tmp>"))
@@ -33,6 +36,7 @@ def run(title: str, *args: str, approval: str | None = None) -> None:
         assert approval in output, f"runner asked for another approval line:\n{output}"
     print(output.replace("\r\n", "\n").strip().replace(str(work.parent), "<tmp>"))
     print(f"exit={code}\n")
+    codes.append(code)
 
 
 gate = subprocess.run([sys.executable, "tools/validate-package.py", "."], cwd=work,
@@ -80,3 +84,7 @@ run("fourth: metrics", "metrics", "TASK-0004")
 print("== trace row keys:", sorted(json.loads((work / "runs/TASK-0004/trace.jsonl")
                                               .read_text(encoding="utf-8").splitlines()[-1])))
 print("== runs/:", sorted(p.name for p in (work / "runs").iterdir()))
+# Refusals the guides document: repeated start, bad id, missing checkpoint, wrong edge, no console.
+refused = [1 if code else 0 for code in codes]
+sys.exit(0 if gate.returncode == 0 and refused == [0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+         else f"unexpected exit codes: gate {gate.returncode}, runner {codes}")

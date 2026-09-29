@@ -44,3 +44,4 @@ print("== evidence:", sorted(p.name for p in (work / "runs/TASK-0001/evidence").
 codes.append(run(blocks[0]))
 print("== all blocks exit 0:", all(code == 0 for code in codes))
 shutil.rmtree(root)
+sys.exit(0 if all(code == 0 for code in codes) else 1)
