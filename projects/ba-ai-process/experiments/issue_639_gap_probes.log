@@ -42,8 +42,19 @@ plan_mode_respond    {"cancel": true, "errorMessage": "Use the external runner f
 execute_command      {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
 browser_action       {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
 new_task             {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
-write ../AGENTS.md   {"cancel": true, "errorMessage": "Cline may write only submissions/TASK-ID.json"}
+write AGENTS.md      {"cancel": true, "errorMessage": "Cline may write only submissions/TASK-ID.json"}
 write submissions    {"cancel": false}
+== P8b. hook decisions for Cline v4 SDK tool names (cline/cline v4.1.21 constants.ts)
+read_files           {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+search_codebase      {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+ask_question         {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+run_commands         {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+jira__get_issue      {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
+editor submissions   {"cancel": true, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
 == P9. which package files reference the process menu / meta-model
+meta-model/:
+.gitkeep
+routes/:
 pilot.json
+route_id count:
 1

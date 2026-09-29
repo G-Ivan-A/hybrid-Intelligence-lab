@@ -72,10 +72,18 @@ for t in read_file use_mcp_tool plan_mode_respond execute_command browser_action
   printf '%-20s ' "$t"
   echo "{\"hookName\":\"PreToolUse\",\"preToolUse\":{\"toolName\":\"$t\",\"parameters\":{}}}" | python3 tools/cline_hook.py
 done
-printf '%-20s ' "write ../AGENTS.md"
+printf '%-20s ' "write AGENTS.md"
 echo '{"hookName":"PreToolUse","preToolUse":{"toolName":"write_to_file","parameters":{"path":"AGENTS.md"}}}' | python3 tools/cline_hook.py
 printf '%-20s ' "write submissions"
 echo '{"hookName":"PreToolUse","preToolUse":{"toolName":"write_to_file","parameters":{"path":"submissions/TASK-0200.json"}}}' | python3 tools/cline_hook.py
 
+echo "== P8b. hook decisions for Cline v4 SDK tool names (cline/cline v4.1.21 constants.ts)"
+for t in read_files search_codebase ask_question run_commands jira__get_issue; do
+  printf '%-20s ' "$t"
+  echo "{\"hookName\":\"PreToolUse\",\"preToolUse\":{\"toolName\":\"$t\",\"parameters\":{}}}" | python3 tools/cline_hook.py
+done
+printf '%-20s ' "editor submissions"
+echo '{"hookName":"PreToolUse","preToolUse":{"toolName":"editor","parameters":{"path":"submissions/TASK-0200.json"}}}' | python3 tools/cline_hook.py
+
 echo "== P9. which package files reference the process menu / meta-model"
-ls meta-model; ls routes; grep -c route_id routes/*.json
+echo "meta-model/:"; ls -A meta-model; echo "routes/:"; ls routes; echo "route_id count:"; grep -c route_id routes/*.json
