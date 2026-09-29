@@ -1,116 +1,121 @@
 == start
-$ /tmp/gcvenv/bin/python3 tools/run-task.py start TASK-0002
+$ python tools/run-task.py start TASK-0002
 TASK-0002: started at entry; next transition requires G-mach
 exit=0
 
 == advance -> n0
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n0 --artifact runs/TASK-0002/evidence/A-IN.json
+$ python tools/run-task.py advance TASK-0002 --to n0 --artifact runs/TASK-0002/evidence/A-IN.json
 TASK-0002: entry -> n0; G-mach exit 0; trace seq 1
 exit=0
 
 == advance -> n1
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n1 --artifact runs/TASK-0002/evidence/A-IN-confirmed.json --checkpoint runs/TASK-0002/evidence/checkpoint-n0.md
-Review <tmp>/runtime/runs/TASK-0002/evidence/checkpoint-n0.md
+$ python tools/run-task.py advance TASK-0002 --to n1 --artifact runs/TASK-0002/evidence/A-IN-confirmed.json --checkpoint runs/TASK-0002/evidence/checkpoint-n0.md
+Review <tmp>/Иван Петров/bcreq-pilot/runtime/runs/TASK-0002/evidence/checkpoint-n0.md
 Type exactly: APPROVE TASK-0002:n0 sha256:46f0f6b82bfadb21f959c5d5d77f967aad8149ea9aec3edca032b8dda743f5b5
+APPROVE TASK-0002:n0 sha256:46f0f6b82bfadb21f959c5d5d77f967aad8149ea9aec3edca032b8dda743f5b5
 TASK-0002: n0 -> n1; G-mach exit 0; trace seq 2
 exit=0
 
 == advance -> n2
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n2 --artifact runs/TASK-0002/evidence/normalized-text.md
+$ python tools/run-task.py advance TASK-0002 --to n2 --artifact runs/TASK-0002/evidence/normalized-text.md
 TASK-0002: n1 -> n2; G-mach exit 0; trace seq 3
 exit=0
 
 == advance -> n3
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n3 --artifact runs/TASK-0002/evidence/marked-elements.md
+$ python tools/run-task.py advance TASK-0002 --to n3 --artifact runs/TASK-0002/evidence/marked-elements.md
 TASK-0002: n2 -> n3; G-mach exit 0; trace seq 4
 exit=0
 
 == advance -> n4
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n4 --artifact runs/TASK-0002/evidence/ambiguities.md
+$ python tools/run-task.py advance TASK-0002 --to n4 --artifact runs/TASK-0002/evidence/ambiguities.md
 TASK-0002: n3 -> n4; G-mach exit 0; trace seq 5
 exit=0
 
 == advance -> n9
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n9 --artifact runs/TASK-0002/evidence/A-CORE.json --checkpoint runs/TASK-0002/evidence/checkpoint-n4.md
-Review <tmp>/runtime/runs/TASK-0002/evidence/checkpoint-n4.md
+$ python tools/run-task.py advance TASK-0002 --to n9 --artifact runs/TASK-0002/evidence/A-CORE.json --checkpoint runs/TASK-0002/evidence/checkpoint-n4.md
+Review <tmp>/Иван Петров/bcreq-pilot/runtime/runs/TASK-0002/evidence/checkpoint-n4.md
 Type exactly: APPROVE TASK-0002:n4 sha256:bfba1f630d22e4cf652252606bfe40971eb5381dd8e66095ae0764fd1f6d1234
+APPROVE TASK-0002:n4 sha256:bfba1f630d22e4cf652252606bfe40971eb5381dd8e66095ae0764fd1f6d1234
 TASK-0002: n4 -> n9; G-mach exit 0; trace seq 6
 exit=0
 
 == advance -> n10
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n10 --artifact runs/TASK-0002/evidence/problem-statement.md
+$ python tools/run-task.py advance TASK-0002 --to n10 --artifact runs/TASK-0002/evidence/problem-statement.md
 TASK-0002: n9 -> n10; G-mach exit 0; trace seq 7
 exit=0
 
 == advance -> n10a
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n10a --artifact runs/TASK-0002/evidence/value-hypothesis.md
+$ python tools/run-task.py advance TASK-0002 --to n10a --artifact runs/TASK-0002/evidence/value-hypothesis.md
 TASK-0002: n10 -> n10a; G-mach exit 0; trace seq 8
 exit=0
 
 == advance -> n11
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n11 --artifact runs/TASK-0002/evidence/preflight.json --checkpoint runs/TASK-0002/evidence/checkpoint-n10a.md
-Review <tmp>/runtime/runs/TASK-0002/evidence/checkpoint-n10a.md
+$ python tools/run-task.py advance TASK-0002 --to n11 --artifact runs/TASK-0002/evidence/preflight.json --checkpoint runs/TASK-0002/evidence/checkpoint-n10a.md
+Review <tmp>/Иван Петров/bcreq-pilot/runtime/runs/TASK-0002/evidence/checkpoint-n10a.md
 Type exactly: APPROVE TASK-0002:n10a sha256:7323b8371f7d07d5dfce51e7826f0ca151ad4e477d5acc1a6657587ed8b9333c
+APPROVE TASK-0002:n10a sha256:7323b8371f7d07d5dfce51e7826f0ca151ad4e477d5acc1a6657587ed8b9333c
 TASK-0002: n10a -> n11; G-mach exit 0; trace seq 9
 exit=0
 
 == advance -> n12
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n12 --artifact runs/TASK-0002/evidence/bcreq-items.md
+$ python tools/run-task.py advance TASK-0002 --to n12 --artifact runs/TASK-0002/evidence/bcreq-items.md
 TASK-0002: n11 -> n12; G-mach exit 0; trace seq 10
 exit=0
 
 == validate-working before sealing
-$ /tmp/gcvenv/bin/python3 tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json
+$ python tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json
 ERROR: SCHEMA Working.working_digest has invalid format
 ERROR: BASELINE Working digest does not match canonical content
 exit=1
 
-== seal Working (sh heredoc)
-$ sh -c python3 - runs/TASK-0002/evidence/working.json <<'EOF'
+== seal Working (PowerShell block from 05)
+PS> '@ | python - runs/TASK-0002/evidence/working.json
 sealed: runs/TASK-0002/evidence/working.json
 exit=0
 
 == validate-working after sealing
-$ /tmp/gcvenv/bin/python3 tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json
+$ python tools/bcreq_pipeline.py validate-working runs/TASK-0002/evidence/working.json
 G-mach: BCREQ accepted
 exit=0
 
 == advance n12 -> n13
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n13 --artifact runs/TASK-0002/evidence/working.json --checkpoint runs/TASK-0002/evidence/checkpoint-n12.md
-Review <tmp>/runtime/runs/TASK-0002/evidence/checkpoint-n12.md
-Type exactly: APPROVE TASK-0002:n12 sha256:1825958c51489f6a7a0bfa93ec6f4b69633d1dd0a5778d5c4abb803333d02f73
+$ python tools/run-task.py advance TASK-0002 --to n13 --artifact runs/TASK-0002/evidence/working.json --checkpoint runs/TASK-0002/evidence/checkpoint-n12.md
+Review <tmp>/Иван Петров/bcreq-pilot/runtime/runs/TASK-0002/evidence/checkpoint-n12.md
+Type exactly: APPROVE TASK-0002:n12 sha256:1825958c51489f6a7a0bfa93ec6f4b69633d1dd0a5778d5c4abb803333d02f73APPROVE TASK-0002:n12 sha256:1825958c51489f6a7a0bfa93ec6f4b69633d1dd0a5778d5c4abb803333d02f73
+
 TASK-0002: n12 -> n13; G-mach exit 0; trace seq 11
 exit=0
 
 == compile
-$ /tmp/gcvenv/bin/python3 tools/bcreq_pipeline.py compile runs/TASK-0002/evidence/working.json --output runs/TASK-0002/release
+$ python tools/bcreq_pipeline.py compile runs/TASK-0002/evidence/working.json --output runs/TASK-0002/release
 G-mach: BCREQ accepted
 exit=0
 
 == validate-release
-$ /tmp/gcvenv/bin/python3 tools/bcreq_pipeline.py validate-release runs/TASK-0002/evidence/working.json --release runs/TASK-0002/release/release.json --manifest runs/TASK-0002/release/release-manifest.json
+$ python tools/bcreq_pipeline.py validate-release runs/TASK-0002/evidence/working.json --release runs/TASK-0002/release/release.json --manifest runs/TASK-0002/release/release-manifest.json
 G-mach: BCREQ accepted
 exit=0
 
 == advance n13 -> exit
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to exit --artifact runs/TASK-0002/release/release.json --working runs/TASK-0002/evidence/working.json --manifest runs/TASK-0002/release/release-manifest.json --checkpoint runs/TASK-0002/evidence/checkpoint-n13.md
-Review <tmp>/runtime/runs/TASK-0002/evidence/checkpoint-n13.md
+$ python tools/run-task.py advance TASK-0002 --to exit --artifact runs/TASK-0002/release/release.json --working runs/TASK-0002/evidence/working.json --manifest runs/TASK-0002/release/release-manifest.json --checkpoint runs/TASK-0002/evidence/checkpoint-n13.md
+Review <tmp>/Иван Петров/bcreq-pilot/runtime/runs/TASK-0002/evidence/checkpoint-n13.md
 Type exactly: APPROVE TASK-0002:n13 sha256:c168eb1c722b99c94f532fca8e7cc82c180d5ccaeef2300dcaf97b8220fe4740
+APPROVE TASK-0002:n13 sha256:c168eb1c722b99c94f532fca8e7cc82c180d5ccaeef2300dcaf97b8220fe4740
 TASK-0002: n13 -> exit; G-mach exit 0; trace seq 12
 exit=0
 
 == metrics
-$ /tmp/gcvenv/bin/python3 tools/run-task.py metrics TASK-0002
+$ python tools/run-task.py metrics TASK-0002
 {"current": "exit", "deterministic_share": 1.0, "deterministic_steps": 12, "expected_steps": 12, "status": "completed", "task_id": "TASK-0002"}
 exit=0
 
 == advance after exit
-$ /tmp/gcvenv/bin/python3 tools/run-task.py advance TASK-0002 --to n0 --artifact runs/TASK-0002/evidence/A-IN.json
+$ python tools/run-task.py advance TASK-0002 --to n0 --artifact runs/TASK-0002/evidence/A-IN.json
 BLOCKED: task is blocked or finished
 exit=1
 
 == gate after full route
-$ /tmp/gcvenv/bin/python3 tools/validate-package.py .
+$ python tools/validate-package.py .
 G-mach: пакет принят (навыков: 16, узлов маршрута: 15).
 exit=0
 

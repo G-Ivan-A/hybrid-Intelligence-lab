@@ -4,36 +4,39 @@
 Copies the compiled package to a temp dir and walks the operator steps that the
 docs/guides cluster describes: gate, start, entry -> n0, n0 -> n1 (with and
 without checkpoint, non-interactive and interactive approval), metrics and
-typical refusals. Requires PyYAML and jsonschema (pip install -r requirements.txt).
+typical refusals. The approval is typed into a real terminal (pywinpty on
+Windows, issue #647). Requires PyYAML and jsonschema (pip install -r requirements.txt).
 """
-import hashlib, json, os, pathlib, shutil, subprocess, sys, tempfile
+import hashlib, json, pathlib, shutil, subprocess, sys, tempfile
 
 SRC = pathlib.Path(__file__).resolve().parents[1] / "dist/execution-package-gigacode-cli"
 work = pathlib.Path(tempfile.mkdtemp(prefix="gc-638-")) / "runtime"
 shutil.copytree(SRC, work)
 inputs = work.parent / "inputs"
 inputs.mkdir()
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent / "tests/execution-package/tests"))
 from issue_638_gigacode_smoke_flow_data import a_in  # noqa: E402
+from test_guides import environment, interactive  # noqa: E402
 
 
 def run(title: str, *args: str, approval: str | None = None) -> None:
     command = [sys.executable, "tools/run-task.py", *args]
-    print(f"== {title}\n$ sh tools/run-task {' '.join(args)}")
+    print(f"== {title}\nPS> python tools/run-task.py {' '.join(args)}".replace(str(work.parent), "<tmp>"))
     if approval is None:
-        result = subprocess.run(command, cwd=work, text=True, capture_output=True,
-                                stdin=subprocess.DEVNULL)
+        result = subprocess.run(command, cwd=work, capture_output=True, encoding="utf-8",
+                                env=environment(), stdin=subprocess.DEVNULL)
+        code, output = result.returncode, result.stdout + result.stderr
     else:
-        master, slave = os.openpty()
-        os.write(master, (approval + "\n").encode())
-        result = subprocess.run(command, cwd=work, text=True, capture_output=True, stdin=slave)
-        os.close(slave); os.close(master)
-    print((result.stdout + result.stderr).strip().replace(str(work.parent), "<tmp>"))
-    print(f"exit={result.returncode}\n")
+        code, output = interactive(command, work, environment())
+        assert approval in output, f"runner asked for another approval line:\n{output}"
+    print(output.replace("\r\n", "\n").strip().replace(str(work.parent), "<tmp>"))
+    print(f"exit={code}\n")
 
 
 gate = subprocess.run([sys.executable, "tools/validate-package.py", "."], cwd=work,
-                      text=True, capture_output=True)
+                      capture_output=True, encoding="utf-8", env=environment())
 print(f"== gate\n{(gate.stdout + gate.stderr).strip()}\nexit={gate.returncode}\n")
 
 for task in ("TASK-0001", "TASK-0002"):
@@ -51,7 +54,7 @@ run("bad id", "start", "task-1")
 run("entry -> n0", "advance", "TASK-0001", "--to", "n0", "--artifact", str(inputs / "TASK-0001-A-IN.json"))
 run("n0 -> n1 without checkpoint", "advance", "TASK-0001", "--to", "n1",
     "--artifact", str(inputs / "TASK-0001-A-IN-confirmed.json"))
-print("== state after refusal:", json.loads((work / "runs/TASK-0001/state.json").read_text())["status"], "\n")
+print("== state after refusal:", json.loads((work / "runs/TASK-0001/state.json").read_text(encoding="utf-8"))["status"], "\n")
 
 run("start second task", "start", "TASK-0002")
 run("second: entry -> n0", "advance", "TASK-0002", "--to", "n0", "--artifact", str(inputs / "TASK-0002-A-IN.json"))
@@ -75,5 +78,5 @@ run("fourth: n0 -> n1 interactive approval", "advance", "TASK-0004", "--to", "n1
     approval=approval4)
 run("fourth: metrics", "metrics", "TASK-0004")
 print("== trace row keys:", sorted(json.loads((work / "runs/TASK-0004/trace.jsonl")
-                                              .read_text().splitlines()[-1])))
+                                              .read_text(encoding="utf-8").splitlines()[-1])))
 print("== runs/:", sorted(p.name for p in (work / "runs").iterdir()))

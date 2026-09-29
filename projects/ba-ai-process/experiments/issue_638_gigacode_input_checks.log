@@ -1,31 +1,31 @@
 == start
-$ sh tools/run-task start TASK-0001
+$ python tools/run-task.py start TASK-0001
 TASK-0001: started at entry; next transition requires G-mach
 exit=0
 
 == gate with evidence under runs/
-$ sh tools/validate-package.sh
+$ python tools/validate-package.py
 G-mach: пакет принят (навыков: 16, узлов маршрута: 15).
 exit=0
 
 == digest one-liner
-$ python3 -c <digest one-liner> runs/TASK-0001/evidence/A-IN-confirmed.json
+$ python -c <digest one-liner> runs/TASK-0001/evidence/A-IN-confirmed.json
 sha256:af9fe155106dfbcbecd1ae1fb7a05c2b28781a2ada6b499c2e1d828172e2de0b
 exit=0
 
 == check confirmed A-IN
-$ sh tools/validate-package.sh --input runs/TASK-0001/evidence/A-IN-confirmed.json
+$ python tools/validate-package.py --input runs/TASK-0001/evidence/A-IN-confirmed.json
 G-mach: пакет принят (навыков: 16, узлов маршрута: 15).
 exit=0
 
 == check A-IN with wrong digest
-$ sh tools/validate-package.sh --input runs/TASK-0001/evidence/A-IN-bad.json
+$ python tools/validate-package.py --input runs/TASK-0001/evidence/A-IN-bad.json
 ERROR: <tmp>/runtime/runs/TASK-0001/evidence/A-IN-bad.json: product_attribution.binding_digest не совпадает с каноническим products
 G-mach: пакет отвергнут, ошибок: 1.
 exit=1
 
 == check pending A-IN
-$ sh tools/validate-package.sh --input runs/TASK-0001/evidence/A-IN.json
+$ python tools/validate-package.py --input runs/TASK-0001/evidence/A-IN.json
 ERROR: <tmp>/runtime/runs/TASK-0001/evidence/A-IN.json: routing: work_type, primary_axis and confirmed decision must agree
 ERROR: <tmp>/runtime/runs/TASK-0001/evidence/A-IN.json: product_attribution.status обязан быть confirmed
 ERROR: <tmp>/runtime/runs/TASK-0001/evidence/A-IN.json: product_attribution.confirmed_by обязателен после G-human
@@ -36,13 +36,13 @@ G-mach: пакет отвергнут, ошибок: 6.
 exit=1
 
 == gate with stray file in package root
-$ sh tools/validate-package.sh
+$ python tools/validate-package.py
 ERROR: package-manifest.yaml: immutable-выход не объявлен: A-IN.json
 G-mach: пакет отвергнут, ошибок: 1.
 exit=1
 
 == start with stray file
-$ sh tools/run-task start TASK-0002
+$ python tools/run-task.py start TASK-0002
 BLOCKED: package preflight failed: ERROR: package-manifest.yaml: immutable-выход не объявлен: A-IN.json
 G-mach: пакет отвергнут, ошибок: 1.
 exit=1
