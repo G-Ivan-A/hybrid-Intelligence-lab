@@ -76,7 +76,9 @@ def powershell_blocks(path: Path) -> list[str]:
 
 
 def environment(**extra: str) -> dict[str, str]:
-    env = dict(os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8", **extra)
+    # No PYTHONUTF8: files are read with the ANSI code page defaults of a real Windows
+    # account. PYTHONIOENCODING only stands in for the console, which the pipe replaces.
+    env = dict(os.environ, PYTHONIOENCODING="utf-8", **extra)
     env["PATH"] = f"{Path(sys.executable).parent}{os.pathsep}{env['PATH']}"
     return env
 
@@ -231,9 +233,10 @@ class PowerShellGuideTest(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory(prefix="gigacode-guide-")
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
-        self.home = self.root / "home"
+        # A Windows account name often has a space and Cyrillic letters.
+        self.home = self.root / "Иван Петров"
         self.home.mkdir()
-        self.package = self.root / "runtime"
+        self.package = self.home / "пилот BCREQ" / "runtime"
         shutil.copytree(PACKAGE, self.package)
         self.shell = GuideShell(shell, self.root, environment(USERPROFILE=str(self.home)))
 
