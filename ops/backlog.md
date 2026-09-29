@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.67
-updated: 2026-09-28
+version: 1.68
+updated: 2026-09-29
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -697,6 +697,32 @@ Cline-пакета до мета-модели, сред и инструмент�
 | **B-216** | Одно ядро runner для пакетов GigaCode и Cline; команда `next` | null | B-211, B-212, B-213 | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-40](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Два runner с разной логикой переходов; `next` печатает по-русски текущий узел, что сдать и какой командой. | null |
 | **B-217** | Проверить GigaCode CLI: версия, hooks, запуск внешних команд | null | - | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-42](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Происхождение и hooks GigaCode CLI не подтверждены первоисточником; проверка на локальной установке. | null |
 | **B-218** | RFC серверной среды 4: служба runner, интерфейс БА, место n8n | null | B-216 | TODO | - (planned) | [issue #639](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/639), [варианты среды исполнения, Г-43…Г-54](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/analysis/2026-09-29-ba-ai-process-runtime-options.md) | Служба runner с Postgres и вызовом Mango AI, согласование через чат или форму, n8n только как оболочка интеграций; триггер пересмотра внешнего движка для альтернативы C RFC GigaCode. | null |
+
+---
+
+## Спринт 27: Разрывы инструкции GigaCode-пакета
+
+**Story.** Issue #638 переработал инструкцию GigaCode-пакета в кластер
+`docs/guides/` по образцу Cline-пакета. Проверка инструкции на прогоне
+маршрута показала, что порядок узлов, запечатывание Working и формат файлов
+для runner держатся на тексте инструкции, а не на командах и навыках пакета.
+Инструкция фиксирует эти разрывы как ограничения О-2…О-10 и не обходит их.
+Целевая среда пакета — только Windows 10/11 (x64); прежнее ограничение О-1
+(команды проверены не на Windows) снято в том же PR.
+
+**Цель.** Перенести в пакет то, что сейчас держится на тексте инструкции.
+
+**Критерий закрытия.** Ограничения О-3, О-4, О-8…О-10 из инструкции
+GigaCode-пакета сняты или приняты решением человека; `test_guides.py`
+проходит на обновлённой инструкции в Windows PowerShell 5.1 и PowerShell 7
+на Windows.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-219** | Добавить в runner GigaCode-пакета команду запечатывания Working | null | - | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-8 | Пересчёт `evidence[].checksum` и `working_digest` выполняется блоком из справочника команд; нужна проверяемая команда runner, согласованная с B-199. | null |
+| **B-220** | Согласовать навыки узлов GigaCode-пакета с контрактами runner | null | - | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-4, О-10 | Навыки описывают результат в Markdown, а runner на `n12` и `n13` требует JSON Working и Release; в пакете нет учебного входа A-IN для `TASK-0001`. | null |
+| **B-221** | Добавить навык, ведущий задачу GigaCode по маршруту | null | B-220 | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-3, О-9 | Порядок узлов задаёт стартовая фраза, а `rg-bcreq-v1-dispatcher` ведёт отдельный ручной журнал; нужен навык, опирающийся на состояние runner. | null |
+| **B-222** | Подтвердить инструкцию GigaCode-пакета на Windows 10/11 | null | - | DONE | [#638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638) / [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641) | [комментарий владельца к PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-1 | Целевая среда — только Windows 10/11 (x64). Все команды инструкции и документов пакета записаны в PowerShell; CI-задача `windows-guides` исполняет их дословно в Windows PowerShell 5.1 и PowerShell 7 на клоне Git for Windows. Ограничение О-1 снято. | null |
 
 ---
 

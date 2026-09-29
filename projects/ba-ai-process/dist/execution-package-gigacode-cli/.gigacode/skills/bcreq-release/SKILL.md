@@ -30,9 +30,9 @@ approval. The versioned `BCREQ-client-v1` profile is available.
 
 ## Шаги
 
-1. Run `python3 tools/bcreq_pipeline.py validate-working WORKING.json`.
-2. Run `python3 tools/bcreq_pipeline.py compile WORKING.json --output RELEASE_DIR`.
-3. Run `python3 tools/bcreq_pipeline.py validate-release WORKING.json --release RELEASE_DIR/release.json --manifest RELEASE_DIR/release-manifest.json`.
+1. Run `python tools/bcreq_pipeline.py validate-working WORKING.json`.
+2. Run `python tools/bcreq_pipeline.py compile WORKING.json --output RELEASE_DIR`.
+3. Run `python tools/bcreq_pipeline.py validate-release WORKING.json --release RELEASE_DIR/release.json --manifest RELEASE_DIR/release-manifest.json`.
 4. Inspect all included and excluded Working IDs, audience, NFR to FR links,
    compatibility obligations, the byte-stable digest, and every reverse link.
 5. Ask `G-human` to approve publication. A semantic correction creates a new
