@@ -1,0 +1,90 @@
+== gate
+G-mach: пакет принят (навыков: 16, узлов маршрута: 15).
+exit=0
+
+== start
+$ sh tools/run-task start TASK-0001
+TASK-0001: started at entry; next transition requires G-mach
+exit=0
+
+== metrics before steps
+$ sh tools/run-task metrics TASK-0001
+{"current": "entry", "deterministic_share": null, "deterministic_steps": 0, "expected_steps": 0, "status": "active", "task_id": "TASK-0001"}
+exit=0
+
+== start again
+$ sh tools/run-task start TASK-0001
+BLOCKED: task already exists; use a new task id
+exit=1
+
+== bad id
+$ sh tools/run-task start task-1
+BLOCKED: task id must have form TASK-NNNN
+exit=1
+
+== entry -> n0
+$ sh tools/run-task advance TASK-0001 --to n0 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0001-A-IN.json
+TASK-0001: entry -> n0; G-mach exit 0; trace seq 1
+exit=0
+
+== n0 -> n1 without checkpoint
+$ sh tools/run-task advance TASK-0001 --to n1 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0001-A-IN-confirmed.json
+BLOCKED: human gate requires checkpoint
+exit=1
+
+== state after refusal: blocked 
+
+== start second task
+$ sh tools/run-task start TASK-0002
+TASK-0002: started at entry; next transition requires G-mach
+exit=0
+
+== second: entry -> n0
+$ sh tools/run-task advance TASK-0002 --to n0 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0002-A-IN.json
+TASK-0002: entry -> n0; G-mach exit 0; trace seq 1
+exit=0
+
+== second: wrong edge n0 -> n2
+$ sh tools/run-task advance TASK-0002 --to n2 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0002-A-IN-confirmed.json
+BLOCKED: transition is absent from the route
+exit=1
+
+== start third task
+$ sh tools/run-task start TASK-0003
+TASK-0003: started at entry; next transition requires G-mach
+exit=0
+
+== third: entry -> n0
+$ sh tools/run-task advance TASK-0003 --to n0 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0003-A-IN.json
+TASK-0003: entry -> n0; G-mach exit 0; trace seq 1
+exit=0
+
+== third: n0 -> n1 non-interactive
+$ sh tools/run-task advance TASK-0003 --to n1 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0003-A-IN-confirmed.json --checkpoint /tmp/gc-638-raw1n65e/inputs/checkpoint-n0.md
+BLOCKED: human gate requires an interactive terminal
+exit=1
+
+== start fourth task
+$ sh tools/run-task start TASK-0004
+TASK-0004: started at entry; next transition requires G-mach
+exit=0
+
+== fourth: entry -> n0
+$ sh tools/run-task advance TASK-0004 --to n0 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0004-A-IN.json
+TASK-0004: entry -> n0; G-mach exit 0; trace seq 1
+exit=0
+
+== fourth: n0 -> n1 interactive approval
+$ sh tools/run-task advance TASK-0004 --to n1 --artifact /tmp/gc-638-raw1n65e/inputs/TASK-0004-A-IN-confirmed.json --checkpoint /tmp/gc-638-raw1n65e/inputs/checkpoint-n0.md
+Review <tmp>/inputs/checkpoint-n0.md
+Type exactly: APPROVE TASK-0004:n0 sha256:8929a5ae7593f143c68bf3b500f9db4c322ee38093adcacc354bf7c8f8e0d370
+TASK-0004: n0 -> n1; G-mach exit 0; trace seq 2
+exit=0
+
+== fourth: metrics
+$ sh tools/run-task metrics TASK-0004
+{"current": "n1", "deterministic_share": 1.0, "deterministic_steps": 2, "expected_steps": 2, "status": "active", "task_id": "TASK-0004"}
+exit=0
+
+== trace row keys: ['checkpoint_digest', 'checkpoint_ref', 'command', 'contract_mode', 'event_digest', 'exit_code', 'from', 'gate', 'gate_output', 'node', 'output_digest', 'output_ref', 'previous_digest', 'reason', 'recorded_by', 'script_invoked', 'seq', 'status', 'step_skipped', 'task_id', 'to', 'ts']
+== runs/: ['.gitkeep', 'TASK-0001', 'TASK-0002', 'TASK-0003', 'TASK-0004']

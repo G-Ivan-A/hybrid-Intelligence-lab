@@ -1,0 +1,5 @@
+# G-mach сверяет SHA-256 каждого файла пакета с package-manifest.yaml.
+# Git for Windows по умолчанию (core.autocrlf=true) меняет окончания строк
+# при clone и checkout, и пакет перестаёт проходить проверку. Поэтому Git не
+# преобразует ни один файл пакета.
+* -text

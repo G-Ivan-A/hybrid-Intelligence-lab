@@ -1,0 +1,16 @@
+== KB files by extension
+   3030 png
+   2202 md
+   1208 jpeg
+     47 json
+      1 py
+      1 gitkeep
+== gate with full KB
+exit=1
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+== gate with KB text files only
+exit=1
+ERROR: docs/kb/speech-analytics/vats-offline-scoring/index.md:128: ссылка в документ Source во время выполнения (дефект компиляции, контракт 2): - Стандарт цитирования: [`standards/kb-standard.md`](../../../../standards/kb-st
+ERROR: docs/kb/vpbx-api/index.md:295: ссылка в документ Source во время выполнения (дефект компиляции, контракт 2): - Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-stand
+ERROR: запрещённый Source-артефакт в Distribution: docs/kb/integration-bitrix24/sections/110-dobavlenie-vo-vneshnyuyu-sistemu-url-adr.md
+G-mach: пакет отвергнут, ошибок: 23.

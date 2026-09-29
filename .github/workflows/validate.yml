@@ -82,6 +82,9 @@ jobs:
         run: bash tools/test-agents-md-integration.sh
 
       - name: Test execution package gate
+        env:
+          # Блоки инструкций БА исполняются в PowerShell 7; без pwsh тест падает, а не пропускается.
+          GUIDE_SHELL: pwsh
         run: bash tools/test-execution-package.sh
 
       - name: Test Cline execution package
@@ -158,3 +161,35 @@ jobs:
         run: python projects/ba-ai-process/build/compile-cline-package.py --check
       - name: Test Cline Windows hooks, paths, and runner
         run: python projects/ba-ai-process/tests/cline-package/test_package.py
+  windows-guides:
+    # Целевая среда БА — Windows 10/11 (x64): инструкции пакета GigaCode исполняются
+    # дословно в Windows PowerShell 5.1 и PowerShell 7 на клоне с настройками Git for Windows.
+    runs-on: windows-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shell: [powershell, pwsh]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Python dependencies
+        # pywinpty даёт runner настоящую консоль для ввода строки APPROVE.
+        run: python -m pip install -r projects/ba-ai-process/dist/execution-package-gigacode-cli/requirements.txt pywinpty
+
+      - name: Validate GigaCode package (G-mach)
+        run: python projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.py
+
+      - name: Test GigaCode runner
+        run: python projects/ba-ai-process/tests/execution-package/tests/test_runner.py
+
+      - name: Execute BA guides in ${{ matrix.shell }}
+        env:
+          GUIDE_SHELL: ${{ matrix.shell }}
+        run: python projects/ba-ai-process/tests/execution-package/tests/test_guides.py
