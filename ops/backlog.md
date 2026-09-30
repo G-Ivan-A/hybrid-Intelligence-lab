@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.68
+version: 1.69
 updated: 2026-09-29
 temperature: 0.1
 type: backlog
@@ -722,7 +722,7 @@ GigaCode-пакета сняты или приняты решением чело
 | **B-219** | Добавить в runner GigaCode-пакета команду запечатывания Working | null | - | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-8 | Пересчёт `evidence[].checksum` и `working_digest` выполняется блоком из справочника команд; нужна проверяемая команда runner, согласованная с B-199. | null |
 | **B-220** | Согласовать навыки узлов GigaCode-пакета с контрактами runner | null | - | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-4, О-10 | Навыки описывают результат в Markdown, а runner на `n12` и `n13` требует JSON Working и Release; в пакете нет учебного входа A-IN для `TASK-0001`. | null |
 | **B-221** | Добавить навык, ведущий задачу GigaCode по маршруту | null | B-220 | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-3, О-9 | Порядок узлов задаёт стартовая фраза, а `rg-bcreq-v1-dispatcher` ведёт отдельный ручной журнал; нужен навык, опирающийся на состояние runner. | null |
-| **B-222** | Подтвердить инструкцию GigaCode-пакета на Windows 10/11 | null | - | DONE | [#638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638) / [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641) | [комментарий владельца к PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-1 | Целевая среда — только Windows 10/11 (x64). Все команды инструкции и документов пакета записаны в PowerShell; CI-задача `windows-guides` исполняет их дословно в Windows PowerShell 5.1 и PowerShell 7 на клоне Git for Windows. Ограничение О-1 снято. | null |
+| **B-222** | Подтвердить инструкцию GigaCode-пакета на Windows 10/11 | null | - | review | [#638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638) / [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), [#647](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/647) / [PR #649](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/649) | [комментарий владельца к PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), [issue #647](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/647), О-1 | Целевая среда — только Windows 10/11 (x64). Все команды инструкции и документов пакета записаны в PowerShell; CI-задача `windows-guides` исполняет их дословно в Windows PowerShell 5.1 и PowerShell 7 на клоне Git for Windows. Ограничение О-1 снято. Issue #647: отрицательные тесты `G-mach` перенесены из bash в `test_package_gate.py`, эксперименты `issue_638_*.py` и APPROVE в `test_runner.py` исполняются в Windows, инструкции проверяются без `PYTHONUTF8` в профиле с пробелом и кириллицей. | null |
 
 ---
 

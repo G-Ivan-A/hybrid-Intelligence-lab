@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.11
-updated: 2026-09-28
+version: 2.12
+updated: 2026-09-29
 temperature: 0.1
 ---
 
@@ -82,6 +82,7 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- projects: проверки GigaCode-пакета для Windows 10/11 доведены до полного набора (issue [#647](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/647)). Отрицательные случаи `G-mach` и регрессия компиляции Working→Release перенесены из bash в [`test_package_gate.py`](projects/ba-ai-process/tests/execution-package/tests/test_package_gate.py), который вызывает `tools/test-execution-package.sh` и исполняет CI-задача `windows-guides`. Эксперименты `issue_638_*.py` исполняют блоки инструкции через PowerShell и `python` вместо `python3` и POSIX-путей, а при неожиданных кодах возврата завершаются с ошибкой. Строку APPROVE в `test_runner.py` в Windows вводит `pywinpty` вместо пропуска. Инструкции исполняются без `PYTHONUTF8` в профиле `USERPROFILE` с пробелом и кириллицей. B-222 переведена в `review`.
 - ops: аудит [issue #634](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/634) сверил все 113 активных строк бэклога с merged PR и действующими артефактами. `B-060`, `B-118`, `B-119`, `B-146`, `B-147`, `B-155`, `B-161` отмечены `DONE` по PR #590, #568, #582 и #574; остальные статусы сохранены. [Матрица доказательств](docs/analysis/2026-09-28-backlog-closure-evidence-634.md) и [RFC закрытия спринтов](docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md) выносят приоритет первого независимого BCREQ-прогона, разбор трёх повторяющихся ID и сверку целевого runtime на решение владельца. Новых отмен и архивации без решения нет.
 - projects: [Мета-модель БА](projects/ba-ai-process/ba-meta-model/00-introduction.md) поднята до версии 0.4. Добавлено систематическое сопоставление со **всеми десятью** модулями [`research/ai-education`](research/ai-education/README.md) (§7 `50-open-research.md`): один разрыв закрыт (`retrieval`), остальные объявлены с причиной и получили задачи бэклога `B-189`…`B-194`. Объявлено отклонение по версионированию: строки «2.1» в модели не существует, действующий контракт версии — поле `version` во frontmatter.
 - projects: Механика `G-human` объявлена **диалоговой**: агент прерывает выполнение, печатает один пункт, ждёт ответа, ответ становится источником уровня `ST-4-HUMAN` и попадает в след. Прежняя форма (чек-лист запроса на слияние) сохранена как объявленный запасной путь с отметкой `gate_form: checklist`, а не как умолчание: откладывание человеческого ревью на PR делало гейт невидимым внутри прогона.

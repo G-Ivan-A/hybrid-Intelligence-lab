@@ -14,6 +14,8 @@ import sys
 import tempfile
 import unittest
 
+from test_guides import interactive
+
 
 PACKAGE = Path(__file__).resolve().parents[3] / "dist/execution-package-gigacode-cli"
 SPEC = importlib.util.spec_from_file_location("run_task", PACKAGE / "tools/run-task.py")
@@ -68,9 +70,12 @@ class RunnerTest(unittest.TestCase):
         if approval is None:
             result = subprocess.run(command, cwd=self.package, text=True, capture_output=True,
                                     env=env, encoding="utf-8")
+        elif not hasattr(os, "openpty"):
+            # Windows: pywinpty types the line the runner asks for into a real console.
+            code, output = interactive(command, self.package, env)
+            self.assertIn(approval, output, "runner asked for another approval line")
+            result = subprocess.CompletedProcess(command, code, output, "")
         else:
-            if not hasattr(os, "openpty"):
-                self.skipTest("Windows: APPROVE via console is covered by test_guides.py")
             master, slave = os.openpty()
             try:
                 os.write(master, (approval + "\n").encode())

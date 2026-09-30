@@ -175,6 +175,16 @@ jobs:
       - name: Validate GigaCode package (G-mach)
         run: python projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.py
 
+      # Каждая команда — отдельный шаг: многострочный pwsh-шаг падает только по коду последней.
+      - name: Test GigaCode package gate (G-mach negatives, BCREQ compile)
+        run: python projects/ba-ai-process/tests/execution-package/tests/test_package_gate.py
+
+      - name: Test GigaCode route emulation
+        run: python projects/ba-ai-process/tests/execution-package/tests/test_emulation.py
+
+      - name: Test GigaCode semantic regression
+        run: python projects/ba-ai-process/tests/execution-package/tests/test_semantic_regression.py
+
       - name: Test GigaCode runner
         run: python projects/ba-ai-process/tests/execution-package/tests/test_runner.py
 
@@ -182,3 +192,19 @@ jobs:
         env:
           GUIDE_SHELL: ${{ matrix.shell }}
         run: python projects/ba-ai-process/tests/execution-package/tests/test_guides.py
+
+      - name: Run issue 638 smoke guide experiment in ${{ matrix.shell }}
+        env:
+          GUIDE_SHELL: ${{ matrix.shell }}
+        run: python projects/ba-ai-process/experiments/issue_638_gigacode_smoke_guide.py
+
+      - name: Run issue 638 input checks experiment
+        run: python projects/ba-ai-process/experiments/issue_638_gigacode_input_checks.py
+
+      - name: Run issue 638 smoke flow experiment
+        run: python projects/ba-ai-process/experiments/issue_638_gigacode_smoke_flow.py
+
+      - name: Run issue 638 full route experiment in ${{ matrix.shell }}
+        env:
+          GUIDE_SHELL: ${{ matrix.shell }}
+        run: python projects/ba-ai-process/experiments/issue_638_gigacode_full_route.py

@@ -2406,7 +2406,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.68"
+require_text "ops/backlog.md" "version: 1.69"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"
