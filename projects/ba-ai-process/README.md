@@ -137,6 +137,20 @@ Issue [#593](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/593)
 - [`2026-09-10-gigacode-environment-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-gigacode-environment-facts.md);
 - [`2026-09-10-skill-granularity-format-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-skill-granularity-format-facts.md).
 
+## Презентация для руководства
+
+Пакет из двух документов для Руководителя отдела AI-разработки Mango
+([issue #646](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/646)):
+эволюция от репозитория промптов к мета-модели, прорыв в оцифровке
+когнитивных операций и вектор от пилота на АРМ к Среде 4.
+
+- [Шаблон слайдов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/presentation/2026-09-29-meta-model-presentation-slides.md)
+  — 10 слайдов в стиле Assertion-Evidence с источниками и промптами для
+  изображений;
+- [Сценарий для диктора](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/docs/presentation/2026-09-29-meta-model-presentation-speaker-script.md)
+  — текст по тем же номерам слайдов, мостики и ответы на вопросы технического
+  руководителя.
+
 ## Решения
 
 - [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md)
