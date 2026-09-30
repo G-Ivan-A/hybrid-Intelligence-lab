@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.1
-updated: 2026-09-24
+version: 1.2
+updated: 2026-09-30
 temperature: 0.1
 ---
 
@@ -31,6 +31,7 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 | [2026-06-20-executive-summary.ru-en.md](2026-06-20-executive-summary.ru-en.md) | **Executive summary (RU + EN, 2–3 c.)**: суть, модель, выводы рынка, рекомендации, роль ИИ. |
 | [2026-06-20-glossary.ru-en.md](2026-06-20-glossary.ru-en.md) | **Терминологический словарь (RU↔EN)**: ядро модели, методология, капитал/метрики, данные/ИИ, governance/этика, наименования — с международными аналогами. |
 | [2026-09-24-introductory-course-options-610.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) | Исследование issue #610: пять структур вводного курса, 25 синтетических прогонов, матрица и рекомендация для human review. |
+| [2026-09-30-course-sources-and-presentations-650.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md) | Исследование issue #650: углубление согласованного курса 4×90 мин в векторе «Вижу → Собираю → Выбираю → Действую» — тезисы, связки, вовлечение, тайминг, промпты, источники с цитатами, структуры презентаций, сквозные кейсы. |
 
 ## Карта Definition of Done (issue #260)
 
