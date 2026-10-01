@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.23
-updated: 2026-09-29
+version: 2.24
+updated: 2026-09-30
 temperature: 0.1
 ---
 
@@ -250,6 +250,7 @@ temperature: 0.1
 | `/research/hub/2026-06-12-ecosystem-governance-audit.md` | исследование | — | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. | ⚠️ По необходимости | `ai-governance/ai-governance.md`, `standards/frontmatter-standard.md`, `.github/ISSUE_TEMPLATE/task-creative.md`, `templates/htom/AI_GOVERNANCE.md` |
 | `/research/hub/2026-06-20-ecosystem-architecture-research.md` | исследование | — | Комплексное исследование архитектуры экосистемы для issue #257: Hub как центр 5+ проектов, token balance, L1-L4 для `open-ai.ru` и репутационные технологии. | ⚠️ По необходимости | `ops/repo-model.md`, `ops/artifact-map.md`, `research/mango/2026-06-19-token-optimization-proposal.md`, `docs/rfc/methodology-research-and-proposals.md`, `research/external-knowledge/external-sources-registry.md` |
 | `/research/reputation-technologies/2026-09-24-introductory-course-options-610.md` | исследование | — | Issue #610: пять вариантов вводного корпоративного курса, 25 прозрачных синтетических сценариев, сравнение с опубликованной программой и рекомендация для решения фаундера. | ⚠️ По необходимости | `research/reputation-technologies/README.md`, `research/external-knowledge/external-sources-registry.md` |
+| `/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md` | исследование | — | Issue #650: углубление согласованного курса 4×90 мин — тезисы, связки дней, вовлечение молчаливой аудитории, тайминг, библиотека промптов, проверенные RU/EN источники с цитатами и страницами, структуры презентаций и сквозные обезличенные кейсы. | ⚠️ По необходимости | `research/reputation-technologies/README.md`, `research/external-knowledge/external-sources-registry.md` |
 | `/research/hub/2026-06-12-external-practice-intake.md` | исследование | — | Анализ Habr-источников Artem Chirkov и slam, тест структуры `practices/`, extracted agent-work practices и Mango docs error pattern без изменения Mango. | ⚠️ По необходимости | `practices/agent-work/README.md`, `standards/htom-documentation-structure.md`, `templates/sync-project-with-hub-prompt.md` |
 | `/research/hub/2026-06-12-international-ai-governance-practices.md` | исследование | — | Анализ NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic и Google SAIF с executable implementation matrix для Хаба. | ⚠️ По необходимости | `practices/ai-governance/README.md`, `standards/executable-documentation-standard.md`, `ai-governance/ai-governance.md` |
 | `/research/external-knowledge/2026-06-18-wigers-requirements-analysis.md` | исследование | — | Независимое двуязычное (ru/en) извлечение системы требований Вигерса (Tier‑1 внешний источник; уровни Бизнес → Пользовательские → Функциональные/Нефункциональные, типы требований включая пять категорий бизнес-правил и атрибуты качества, процессы инженерии требований, глоссарий Приложения А), актуализация по трём трендам (2020 Вигерс / 2026 Agile-DevOps-CI·CD / 2026 AI) на пятислойную модель, сравнение классификаций с BABOK v3 / ISO 29148 / AI-разработкой (LangChain, CrewAI) и вариативность полной/локальной цепочки. Только проверяемые факты (ось E0–E4). Scope: repo-wide. | ⚠️ По необходимости | `research/mango/2026-06-18-requirements-engineering-ai-era.md`, `ops/repo-model.md`, `standards/glossary.md`, `docs/rfc/methodology-research-and-proposals.md` |
