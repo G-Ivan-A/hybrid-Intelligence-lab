@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-28
+version: 0.4
+updated: 2026-09-29
 temperature: 0.1
 ---
 
@@ -25,6 +25,8 @@ VS Code, убедиться, что пакет цел, и настроить Cli
 Все команды этого документа выполняются в
 [терминале VS Code](01-junior-pilot.md#term-vscode-terminal) (``Ctrl+` ``).
 Пока пакет не открыт в VS Code, подойдёт терминал в любом окне VS Code.
+Выберите **PowerShell** в меню профиля терминала. Git Bash установлен вместе с
+Git, но команды `New-Item` и `Copy-Item` относятся к PowerShell.
 
 ## Где что лежит на АРМ
 
@@ -95,6 +97,7 @@ runtime-репозиторий с пакетом.**
   Copy-Item -Recurse -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\* runtime\
   Copy-Item -Recurse -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.clinerules runtime\
   Copy-Item -Recurse -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.github runtime\
+  Copy-Item -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.gitattributes runtime\
   Copy-Item -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.gitignore runtime\
   ```
 
@@ -111,7 +114,7 @@ runtime-репозиторий с пакетом.**
 Get-ChildItem -Force runtime
 ```
 
-В списке есть `.clinerules`, `.github`, `.gitignore`, `AGENTS.md`,
+В списке есть `.clinerules`, `.github`, `.gitattributes`, `.gitignore`, `AGENTS.md`,
 `README.md`, `package-manifest.yaml`, `tools`, `contracts`, `docs`,
 `golden`, `runs`, `submissions`. Папку `source-lab` не удаляйте: она
 понадобится для обновления пакета и режима отладки.
@@ -188,29 +191,27 @@ Jira/Confluence, если к ним есть подключение только
 | `ERROR: … extra=[…]` | Лишние файлы вне рабочих папок | Удалите перечисленные файлы |
 | `ERROR: missing runtime placeholder` | Удалён `.gitkeep` в `runs`, `submissions`, `docs\kb` или `meta-model` | Повторите копирование пакета |
 
-> Возможная причина `hash mismatch` на Windows: Git мог заменить окончания
-> строк. Если ошибка появилась после `git clone`, выполните
-> `git config --global core.autocrlf false`, удалите папки `runtime` и
-> `source-lab` и повторите копирование. Если не помогло — передайте ошибку
-> ответственному.
+> Файл `.gitattributes` сохраняет байты пакета при `git clone` на Windows.
+> Если после клонирования появился `hash mismatch`, убедитесь, что этот файл
+> присутствует, затем повторите копирование повреждённого пакета. Не меняйте
+> глобальную конфигурацию Git ради одного пакета.
 
 ## Настройте подтверждения в Cline
 
-Зачем: на Windows hooks пакета сейчас не запускаются
-([О-3](01-junior-pilot.md#ограничения-текущей-версии-пакета)). Поэтому
-главная защита пакета — Cline **спрашивает вас** перед записью файла и
-перед запуском команды.
+Зачем: hooks пакета останавливают запрещённые действия Cline, а
+подтверждения позволяют вам проверить действие до его запуска. Проверка
+пакета и CI остаются независимыми проверками результата.
 
-1. Откройте панель Cline → настройки **Auto-approve** (автоматические
+1. Настройки Cline → **Features** → включите **Enable Hooks**.
+2. Откройте панель Cline → настройки **Auto-approve** (автоматические
    разрешения).
-2. Включите только **Read project files** — Cline сможет без вопросов
+3. Включите только **Read files** — Cline сможет без вопросов
    читать файлы пакета и KB.
-3. **Выключите** Edit project files, Edit all files, Execute safe commands,
-   Execute all commands, Use the browser. **Use MCP servers** оставьте
+4. **Выключите** Edit files, Execute commands и Fetch web content.
+   **Use MCP servers** оставьте
    выключенным: тогда каждое обращение к Jira/Confluence Cline тоже покажет
    вам на подтверждение.
-4. Настройки Cline → **Features**: убедитесь, что **YOLO Mode** выключен
-   (в этом режиме Cline ничего не спрашивает).
+5. Если в вашей версии есть режим без подтверждений, выключите его.
 
 Правило работы после настройки:
 
@@ -237,7 +238,7 @@ Jira/Confluence, если к ним есть подключение только
    - Cline показывает предлагаемое изменение и ждёт вашего решения —
      нажмите **Reject**. Так защита работает на Windows.
    - Или появляется сообщение `Cline may write only submissions/TASK-ID.json`
-     — это сработал hook пакета (так будет там, где hooks запускаются).
+     — это сработал hook пакета; задача Cline остановится.
 4. Отмените задачу. В терминале VS Code выполните «Проверить пакет»:
    `python tools/run_task.py check-package`.
 5. **Проверьте:** `package: PASS`.
@@ -247,6 +248,11 @@ Jira/Confluence, если к ним есть подключение только
 | Cline спросил, вы отклонили, `package: PASS` | Защита работает, продолжайте |
 | Cline изменил файл, не спросив | **Стоп.** Включён Auto-approve для правок или YOLO Mode — выключите. Восстановите файл повторным копированием пакета и повторите проверку |
 | Cline отказался сам, не предложив изменение | Проверка не выполнена. Напишите: «Предложи изменение, я его отклоню — мне нужно проверить подтверждение» |
+
+Повторите проверку новой задачей с просьбой выполнить безвредную команду
+`python --version`. Hook должен остановить задачу; если Cline запрашивает
+подтверждение, отклоните его. После остановки начните новую задачу — hook
+завершает текущую, а не пропускает только один вызов.
 
 **Готово**, если «Проверить пакет» показывает `package: PASS`, KB лежит в
 `docs\kb\`, а Cline спрашивает перед записью файла. Дальше —

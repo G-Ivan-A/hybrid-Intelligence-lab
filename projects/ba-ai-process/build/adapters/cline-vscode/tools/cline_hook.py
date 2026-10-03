@@ -7,14 +7,16 @@ import re
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from run_task import ROOT, check_package
+from run_task import ROOT, check_package, host_path
 
 
 READ_TOOLS = {
     "read_file", "list_files", "search_files", "list_code_definition_names",
     "ask_followup_question", "attempt_completion", "access_mcp_resource", "use_mcp_tool",
+    "read_files", "search_codebase", "fetch_web_content", "ask_question", "submit_and_exit",
 }
-WRITE_TOOLS = {"write_to_file", "replace_in_file"}
+WRITE_TOOLS = {"write_to_file", "replace_in_file", "editor"}
+READ_MCP_VERBS = {"get", "list", "search", "read", "fetch", "query"}
 
 
 def decision(event: dict) -> dict:
@@ -31,13 +33,15 @@ def decision(event: dict) -> dict:
     name = tool.get("toolName")
     if name in READ_TOOLS:
         return {"cancel": False}
+    if isinstance(name, str) and "__" in name and name.rsplit("__", 1)[-1].split("_", 1)[0].lower() in READ_MCP_VERBS:
+        return {"cancel": False}
     if name not in WRITE_TOOLS:
         return {"cancel": True, "errorMessage": "Use the external runner for commands; this Cline tool is not approved for the pilot"}
     parameters = tool.get("parameters", {})
     raw = parameters.get("path", parameters.get("file_path"))
     if not isinstance(raw, str):
         return {"cancel": True, "errorMessage": "Write target is missing"}
-    target = (ROOT / raw).resolve()
+    target = (ROOT / host_path(raw)).resolve()
     try:
         relative = target.relative_to(ROOT / "submissions")
     except ValueError:

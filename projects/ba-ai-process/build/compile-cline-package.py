@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -49,7 +50,7 @@ def compile_into(root: Path, revision: str) -> None:
             shutil.copy2(path, target)
     for path in (root / "contracts").glob("*.schema.json"):
         path.write_text(path.read_text(encoding="utf-8").replace(
-            "build/common/contracts/", "dist/execution-package-cline-vscode/contracts/"), encoding="utf-8")
+            "build/common/contracts/", "dist/execution-package-cline-vscode/contracts/"), encoding="utf-8", newline="\n")
     for directory in MUTABLE:
         placeholder = root / directory / ".gitkeep"
         placeholder.parent.mkdir(parents=True, exist_ok=True)
@@ -61,20 +62,20 @@ def compile_into(root: Path, revision: str) -> None:
     }
     manifest = {
         "manifest": "execution-package-cline-vscode",
-        "package_version": "0.1.0",
-        "compiled_at": "2026-09-26",
+        "package_version": "0.2.0",
+        "compiled_at": "2026-09-29",
         "source": {
             "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
             "revision": revision,
         },
-        "adapter": {"name": "cline-vscode", "version": "0.1.0"},
+        "adapter": {"name": "cline-vscode", "version": "0.2.0"},
         "inputs": {"allowlist": [
             "projects/ba-ai-process/build/common/",
             "projects/ba-ai-process/build/adapters/cline-vscode/",
         ]},
         "outputs": {"hash_algorithm": "sha256", "hashes": dict(sorted(hashes.items()))},
     }
-    (root / "package-manifest.yaml").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (root / "package-manifest.yaml").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 
 def main() -> int:
@@ -100,7 +101,7 @@ def main() -> int:
             for rel, path in expected.items():
                 if path.read_bytes() != actual[rel].read_bytes():
                     raise ValueError(f"Distribution differs from Source: {rel}")
-                if rel.startswith(".clinerules/hooks/") and not (actual[rel].stat().st_mode & 0o111):
+                if os.name != "nt" and rel.startswith(".clinerules/hooks/") and not (actual[rel].stat().st_mode & 0o111):
                     raise ValueError(f"Cline hook is not executable: {rel}")
             print("Cline package matches Source")
         else:

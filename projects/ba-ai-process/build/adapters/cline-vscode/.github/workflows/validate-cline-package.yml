@@ -9,11 +9,14 @@ permissions:
 
 jobs:
   gate:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-2022]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Validate package and every submitted BCREQ
-        run: python3 tools/run_task.py verify-ci
+        run: python tools/run_task.py verify-ci

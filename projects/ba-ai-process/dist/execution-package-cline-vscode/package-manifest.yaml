@@ -1,14 +1,14 @@
 {
   "manifest": "execution-package-cline-vscode",
-  "package_version": "0.1.0",
-  "compiled_at": "2026-09-26",
+  "package_version": "0.2.0",
+  "compiled_at": "2026-09-29",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "af0d5282e1611ebcdd5bcd6457765f612921edb3"
+    "revision": "836aaeb383c7fa8b312ef523f5010c5281089a0a"
   },
   "adapter": {
     "name": "cline-vscode",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "inputs": {
     "allowlist": [
@@ -19,25 +19,29 @@
   "outputs": {
     "hash_algorithm": "sha256",
     "hashes": {
-      ".clinerules/01-package.md": "afe187669bf36ac40e617137b827739dde7e2229d0784780121ccde056e41352",
+      ".clinerules/01-package.md": "6b032464e81addf712eac67da818723fccf05a8e7077a5ebad7a47f4a40c70ef",
       ".clinerules/hooks/PreToolUse": "67f5b927f5d173aca252dded2f0f3bfae96558d8319dc1a4a17b0f1df7843195",
+      ".clinerules/hooks/PreToolUse.ps1": "910b8d36e874ecb8d97d43adb5089eb750ba506b5c710a34b916f4b53ed3bda3",
       ".clinerules/hooks/TaskResume": "67f5b927f5d173aca252dded2f0f3bfae96558d8319dc1a4a17b0f1df7843195",
+      ".clinerules/hooks/TaskResume.ps1": "910b8d36e874ecb8d97d43adb5089eb750ba506b5c710a34b916f4b53ed3bda3",
       ".clinerules/hooks/TaskStart": "67f5b927f5d173aca252dded2f0f3bfae96558d8319dc1a4a17b0f1df7843195",
-      ".github/workflows/validate-cline-package.yml": "4866199ec102244405679172880519be20bcb33f89d2576274284b3d48336590",
+      ".clinerules/hooks/TaskStart.ps1": "910b8d36e874ecb8d97d43adb5089eb750ba506b5c710a34b916f4b53ed3bda3",
+      ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      ".github/workflows/validate-cline-package.yml": "bb5fd01e0dd6d0d5c4e260f5b43747cad0d9f3de14eb2648d633834dac13625e",
       ".gitignore": "89912e46cd790c07dbdd676f289fe882fb43f5901bb7b3675a5372f792168c9c",
-      "AGENTS.md": "37a2fba8b8267cf4462b5350896ab4cbddf2f302c0e9c2527e71ab8d16f357d0",
-      "README.md": "8e0028bb6b498f9250af16a3163395a9df7723ef38ffda99a4a5d2e2d68239ce",
+      "AGENTS.md": "0eb0061378f8962685ad8cc3b1e89fa1bda6cfdf5d12b7926254846f159a1bf1",
+      "README.md": "8c2a080c7cf3161641c768cdb5deb6ed4ad19f14da57e9a04677c077b3235c83",
       "contracts/bcreq-client-v1.json": "add9e5b2021da91ad9a242da2be3af32358f3cbd409f3a588babfa9ae74c4a7b",
       "contracts/c-release-bcreq.schema.json": "bb9a1e92f9201fbcafa8559df1f94604d60177b497f4a8d16315554875f790a4",
       "contracts/c-release-manifest.schema.json": "b8daad5a3f940b9f9092e61d7a6a1c08bef3a0cb6010711dabd920b518963648",
       "contracts/c-working-bcreq.schema.json": "2792823ef691d3e49c7e07a9cb2766623a7dd5946c96b59ab4b8e5fd0a874e53",
-      "docs/guides/01-junior-pilot.md": "698ec382bfe607828a97af751fa0bb3cdf3449ea1ec348d0ca20492b5bff430a",
-      "docs/guides/02-install.md": "e28f8ce13db77e47f342aa42be3c5fae7efd201db71fbcf6b717399f0141ce0b",
-      "docs/guides/03-deploy-package.md": "06c380eca9c57028c9c309cf436fd1ed82575e9a0bccf2f4e51e860c5713e2d0",
+      "docs/guides/01-junior-pilot.md": "070afdef344e68f54b50469d57ece60c9e667097cf42110491bd7047ef488c4b",
+      "docs/guides/02-install.md": "d834e7e7dc387b20ebb0ba317d64601cdab4b5282d43a8b44e56ea74394f887f",
+      "docs/guides/03-deploy-package.md": "1031d289bb0f7d2018665a000944460b83e84d33664f59dcc73a9c443d4f7158",
       "docs/guides/04-smoke-test.md": "2c3d803543f3d03e06a5749aa8916b300d937512ded556dd99e4ad284fb08a3c",
-      "docs/guides/05-commands-reference.md": "dd701084e61472ef2751df48e2c023201718c73e1be969d1262517ffbdeb9507",
-      "docs/guides/06-working-with-cline.md": "5f135dee253c2003c12a3f405ad3336bf1e10b4ae3edfc16910d4eb8c5492ee3",
-      "docs/guides/README.md": "80f9a59f26d4aad892b8167f523aa70878260e20859e78d9ce22ea4949c3b78b",
+      "docs/guides/05-commands-reference.md": "6dae6b3cc1f5858baf87475415832e0fc5fa7fcb9b020ddf119f2559f2b04999",
+      "docs/guides/06-working-with-cline.md": "7a35e24f4dc1074eb5d9ae97aa45065d760331ee42539a445a8001752cf58957",
+      "docs/guides/README.md": "3d0b220192caf9ca6ddedb61e0df269e22cc68a24f1fa38fb28b6b26e05b9095",
       "docs/kb-policy.md": "7a86c719ff85dab64cf39fad9e11a704a54f199af8ee1d46190706cb9425a71a",
       "evaluation/g-human-checklist.md": "e8db90d1f061c2559cf9ceddac8abe3e967f01071b504141b350c40c66e195ad",
       "golden/TASK-0001.json": "1a2a05e880866120bc8cda07c8a51a94741502ba39fa09737b174badd31fb8c5",
@@ -46,8 +50,8 @@
       "taxonomy/tmf-snapshots.json": "629adcbd9df8d596fefd3821ea814a86e29fa6b8f9f4043149660ec56239c4af",
       "templates/working-prompt.md": "599a100cf9e2e9a3b779b5cc8a34210cb6fb6780f3a183f2a5d67cf88125e626",
       "tools/bcreq_pipeline.py": "95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f",
-      "tools/cline_hook.py": "4333ab8a47c93e8338d159177f814383c122f26e0650e6813f33712ca8ed6ed0",
-      "tools/run_task.py": "0b5fbb87c1508a0a609378ba5127a368c3b719ca1d46d9076d7eeccf797fb99c"
+      "tools/cline_hook.py": "01573a2c7f087d49168f54ed8fcc79420b44e8fc8e085ae1b552dd455f525ae8",
+      "tools/run_task.py": "852790ac7f0708166c7793fc19672917df1fdfeeba8c0951933e82c358d74b72"
     }
   }
 }

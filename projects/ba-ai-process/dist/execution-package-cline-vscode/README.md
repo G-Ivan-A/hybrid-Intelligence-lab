@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-09-28
+version: 0.3
+updated: 2026-09-29
 temperature: 0.1
 ---
 
@@ -25,11 +25,11 @@ Python 3.11 or newer is required; the gate itself uses the standard library.
 The model API settings and any corporate knowledge connection are local to the
 user's Cline installation, never part of this package.
 
-```sh
-python3 tools/run_task.py check-package
-cp golden/TASK-0001.json submissions/TASK-0001.json
-python3 tools/run_task.py run TASK-0001 submissions/TASK-0001.json
-python3 tools/run_task.py verify-ci
+```powershell
+python tools/run_task.py check-package
+Copy-Item golden\TASK-0001.json submissions\TASK-0001.json
+python tools/run_task.py run TASK-0001 submissions/TASK-0001.json
+python tools/run_task.py verify-ci
 ```
 
 The second run of the same task ID is refused so an existing trace cannot be
@@ -40,11 +40,13 @@ silently overwritten. Use a new task ID for a new attempt. Read
 
 Workspace `TaskStart`, `TaskResume` and `PreToolUse` hooks check package hashes.
 The tool hook allows Cline to write only `submissions/TASK-ID.json`, and blocks
-Cline shell commands and unrecognized tools. On Windows the current Cline
-release discovers only `<Hook>.ps1` hook files, so these extensionless hooks do
-not run there (guide limitation О-3); the analyst's approval prompts,
-`check-package`, the runner and CI remain the boundary, and the guide's
-protection check covers that path. These hooks inspect only
+Cline shell commands and unrecognized tools. Windows Cline discovers the
+`<Hook>.ps1` launchers; Unix uses the extensionless Python launchers. Enable
+hooks in Cline settings and perform the protection check in the guide. Cline
+4.1.21 does not dispatch `TaskResume`, so `PreToolUse` checks integrity again
+before every tool call. A hook cancel stops the Cline task. The analyst's
+approval prompts, `check-package`, the runner and CI remain independent
+controls. These hooks inspect only
 actions selected by Cline; they cannot force the model to request a tool call.
 The independent runner produces the authoritative process trace.
 
