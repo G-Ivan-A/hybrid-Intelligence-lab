@@ -175,6 +175,8 @@ console.log(JSON.stringify(results))
         self.assertNotIn("!`", start)
         gate = (PACKAGE / ".opencode/commands/bcreq-gate.md").read_text(encoding="utf-8")
         self.assertIn("!`python tools/opencode_command.py gate '$1'`", gate)
+        # OpenCode on Windows drops the output of a !`...` block that exits with 1 (cross-spawn reports
+        # ENOENT), so every command exits 0 and reports the result in its `exit code:` line.
         with tempfile.TemporaryDirectory() as temporary:
             package = Path(temporary) / "Пилот с пробелом"
             shutil.copytree(PACKAGE, package)
@@ -184,14 +186,16 @@ console.log(JSON.stringify(results))
             for name in ("OPENCODE_PURE", "OPENCODE_DISABLE_PROJECT_CONFIG", "OPENCODE_PERMISSION",
                          "OPENCODE_CONFIG_CONTENT", "OPENCODE_DISABLE_DEFAULT_PLUGINS"):
                 overridden = self.command(package, "check", env={name: "1"})
-                self.assertNotEqual(overridden.returncode, 0, name)
-                self.assertIn(f"ERROR: OpenCode protection overrides are set: {name}", overridden.stdout)
+                self.assertEqual(overridden.returncode, 0, name)
+                self.assertIn(f"ERROR: OpenCode protection overrides are set: {name}\nexit code: 1", overridden.stdout)
             for raw in ("x;y", "TASK-0002; echo pwned", "BCREQ-123", "TASK-12", ""):
                 rejected = self.command(package, "gate", raw)
-                self.assertNotEqual(rejected.returncode, 0, raw)
+                self.assertEqual(rejected.returncode, 0, raw)
                 self.assertIn("ERROR: task ID must match TASK-0001", rejected.stdout)
+                self.assertIn("exit code: 1", rejected.stdout)
             missing = self.command(package, "gate", "TASK-0009")
-            self.assertNotEqual(missing.returncode, 0)
+            self.assertEqual(missing.returncode, 0)
+            self.assertIn("exit code: 1", missing.stdout)
             self.assertNotIn("run TASK-0009", missing.stdout)
             self.assertFalse((package / "runs/TASK-0009").exists())
             shutil.copy2(package / "golden/TASK-0001.json", package / "submissions/TASK-0001.json")
@@ -207,8 +211,11 @@ console.log(JSON.stringify(results))
             rerun = self.command(package, "gate", "TASK-0001", env={"PYTHONIOENCODING": "cp1252"})
             self.assertIn("ERROR: run already exists", rerun.stdout, rerun.stdout + rerun.stderr)
             self.assertIn("exit code: 1", rerun.stdout, rerun.stdout + rerun.stderr)
+            self.assertEqual(rerun.returncode, 0)
             self.assertEqual(self.command(package, "verify").returncode, 0)
-            self.assertEqual(self.command(package, "unknown").returncode, 2)
+            unknown = self.command(package, "unknown")
+            self.assertEqual(unknown.returncode, 0)
+            self.assertIn("exit code: 2", unknown.stdout)
 
     def test_git_bash_drive_path_normalization(self):
         spec = importlib.util.spec_from_file_location("run_task_windows", PACKAGE / "tools/run_task.py")

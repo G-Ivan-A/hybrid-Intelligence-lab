@@ -206,6 +206,7 @@ def main() -> int:
         ("check", ["--command", "bcreq-check"], "package: PASS"),
         ("gate", ["--command", "bcreq-gate", "TASK-0002"], "TASK-0002: PASS"),
         ("gate-bad", ["--command", "bcreq-gate", "TASK-0002;", "echo", "pwned", ">", "pwned2.txt"], "task ID must match"),
+        ("gate-again", ["--command", "bcreq-gate", "TASK-0002"], "ERROR: run already exists"),
     ):
         mock = Mock(work, name, [{"text": "ok"}])
         try:

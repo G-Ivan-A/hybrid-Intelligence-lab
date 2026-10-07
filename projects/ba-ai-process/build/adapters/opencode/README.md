@@ -72,6 +72,9 @@ Known boundaries:
   (PowerShell on Windows) when the analyst types the command; they bypass the
   model permissions by OpenCode design. The TASK ID is passed in single quotes
   and validated by `tools/opencode_command.py`.
+- OpenCode on Windows drops the output of a `!` block that exits with code 1
+  (its process library reports that as a missing program). The package
+  commands therefore always exit 0 and print the result as `exit code: N`.
 - At start-up OpenCode installs its plugin SDK into `.opencode/`
   (`package.json`, lock files, `node_modules/`). These files are ignored by Git
   and excluded from the package hashes; the guard plugin does not import them.
