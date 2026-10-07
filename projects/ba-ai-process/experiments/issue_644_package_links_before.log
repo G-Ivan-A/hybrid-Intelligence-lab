@@ -1,0 +1,14 @@
+...F.....s
+======================================================================
+FAIL: test_guide_links_resolve (__main__.PackageTest.test_guide_links_resolve)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_package.py", line 207, in test_guide_links_resolve
+    self.assertRegex(target, r"^https?://", f"{path.relative_to(PACKAGE)}: {target}")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Regex didn't match: '^https?://' not found in '01-junior-pilot.md#term-run-mode' : docs/guides/05-commands-reference.md: 01-junior-pilot.md#term-run-mode
+
+----------------------------------------------------------------------
+Ran 10 tests in 10.152s
+
+FAILED (failures=1, skipped=1)

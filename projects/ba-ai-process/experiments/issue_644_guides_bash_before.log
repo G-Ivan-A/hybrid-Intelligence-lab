@@ -1,0 +1,62 @@
+test_deploy_and_smoke_guides_run_verbatim (__main__.GitBashGuideTest.test_deploy_and_smoke_guides_run_verbatim) ... FAIL
+test_every_documented_block_parses (__main__.GitBashGuideTest.test_every_documented_block_parses) ... FAIL
+test_install_check_runs_verbatim (__main__.GitBashGuideTest.test_install_check_runs_verbatim) ... ERROR
+test_real_task_commands_run_verbatim (__main__.GitBashGuideTest.test_real_task_commands_run_verbatim) ... FAIL
+test_blocks_use_only_what_git_bash_provides (__main__.StaticGuideTest.test_blocks_use_only_what_git_bash_provides) ... ok
+test_guides_are_git_bash_instructions (__main__.StaticGuideTest.test_guides_are_git_bash_instructions) ... FAIL
+
+======================================================================
+ERROR: test_install_check_runs_verbatim (__main__.GitBashGuideTest.test_install_check_runs_verbatim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_guides_bash.py", line 172, in test_install_check_runs_verbatim
+    block, = [block for block in bash_blocks(GUIDES / "02-install.md") if "git --version" in block]
+    ^^^^^^
+ValueError: not enough values to unpack (expected 1, got 0)
+
+======================================================================
+FAIL: test_deploy_and_smoke_guides_run_verbatim (__main__.GitBashGuideTest.test_deploy_and_smoke_guides_run_verbatim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_guides_bash.py", line 180, in test_deploy_and_smoke_guides_run_verbatim
+    runtime = self.deploy()
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_guides_bash.py", line 150, in deploy
+    self.assertIn(lab.as_uri(), script)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'file:///tmp/cline-guide-yfhoiros/lab' not found in ''
+
+======================================================================
+FAIL: test_every_documented_block_parses (__main__.GitBashGuideTest.test_every_documented_block_parses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_guides_bash.py", line 169, in test_every_documented_block_parses
+    self.assertGreater(checked, 12)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 0 not greater than 12
+
+======================================================================
+FAIL: test_real_task_commands_run_verbatim (__main__.GitBashGuideTest.test_real_task_commands_run_verbatim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_guides_bash.py", line 192, in test_real_task_commands_run_verbatim
+    runtime = self.deploy()
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_guides_bash.py", line 150, in deploy
+    self.assertIn(lab.as_uri(), script)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'file:///tmp/cline-guide-ohyo23vq/lab' not found in ''
+
+======================================================================
+FAIL: test_guides_are_git_bash_instructions (__main__.StaticGuideTest.test_guides_are_git_bash_instructions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/gh-issue-solver-1791333177087/projects/ba-ai-process/tests/cline-package/test_guides_bash.py", line 72, in test_guides_are_git_bash_instructions
+    self.assertIsNone(found, f"{path.relative_to(PACKAGE)}: {label}: "
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             f"{found and text[max(0, found.start() - 40):found.end() + 40]!r}")
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: <re.Match object; span=(7451, 7456), match='PS C:'> is not None : docs/guides/01-junior-pilot.md: PowerShell prompt: ' работает PowerShell, приглашение вида `PS C:\\…>` | [Условные обозначения](README.md#'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.370s
+
+FAILED (failures=4, errors=1)
