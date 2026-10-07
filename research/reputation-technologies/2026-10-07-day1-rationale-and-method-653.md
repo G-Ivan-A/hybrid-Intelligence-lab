@@ -301,7 +301,7 @@ Rajkumar et al. (Science, 2022) провели эксперименты на Lin
 
 ## Источники
 
-Ссылки вида `[650:X]` ведут на проверенные записи [исследования #650](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md), раздел «Источники». Там приведены библиография, страницы, цитаты и статусы. Ниже — новые источники этого комплекта. Все проверены 2026-10-07. Переводы цитат наши.
+Ссылки вида `[650:X]` ведут на проверенные записи [исследования #650](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md), раздел «Источники». Там приведены библиография, страницы, цитаты и статусы. Ниже — новые источники этого комплекта. Все проверены 2026-10-07. Переводы цитат наши. Ключевые из них (М1–М8) внесены в [реестр внешних источников](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/external-knowledge/external-sources-registry.md) как `ext-356` … `ext-363`.
 
 **Статусы проверки:**
 - VERIFIED-FULLTEXT — цитата сверена с текстом страницы или аннотации первоисточника;

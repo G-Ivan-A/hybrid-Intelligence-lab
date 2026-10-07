@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.26
-updated: 2026-09-30
+version: 0.27
+updated: 2026-10-07
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -31,6 +31,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/599"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/595"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/650"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/653"
 ---
 
 # Реестр внешних источников
@@ -432,6 +433,14 @@ related_issues:
 | `ext-353` | [Сбер — GigaChat: Основы промпт-инжиниринга](https://developers.sber.ru/docs/ru/gigachat/prompts-hub/prompt-engineering) | `docs` | `ru` | `prompt-engineering, hallucination-control` | `topic: reputation-course` | `research` | `hub` | ✅ [курс #650](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md) |
 | `ext-354` | [Crouch, Mazur — Peer Instruction: Ten years of experience and results (2001)](https://web.mit.edu/jbelcher/www/TEALref/Crouch_Mazur.pdf) | `paper` | `en` | `silent-audience, voting, active-learning` | `topic: reputation-course` | `research` | `hub` | ✅ [курс #650](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md) |
 | `ext-355` | [Freeman et al. — Active learning increases student performance (PNAS 2014)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4060654/) | `paper` | `en` | `active-learning, meta-analysis` | `topic: reputation-course` | `research` | `hub` | ✅ [курс #650](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md) |
+| `ext-356` | [Edelman Trust Barometer 2025 — Trust and the Crisis of Grievance (обзор IPAA)](https://qld.ipaa.org.au/2025/02/2025-edelman-trust-barometer-trust-and-the-crisis-of-grievance) | `article` | `en` | `trust-deficit, grievance` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-357` | [Edelman Trust Barometer 2026 — национальная замкнутость доверия (O'Dwyer's)](https://www.odwyerpr.com/story/public/24179/2026-01-20/national-insularity-threatens-global-economy.html) | `article` | `en` | `trust-insularity, employer-trust` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-358` | [Tow Center (CJR) — AI Search Has a Citation Problem (2025)](https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php) | `article` | `en` | `ai-search, hallucination, citations` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-359` | [Edge et al. — From Local to Global: A Graph RAG Approach (2024/2025)](https://arxiv.org/abs/2404.16130) | `paper` | `en` | `knowledge-graph, graphrag, link-extraction` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-360` | [Maginative — OpenAI Deep Research agent (2025)](https://www.maginative.com/article/openai-unveils-deep-research-an-ai-agent-that-conducts-multi-step-research-tasks/) | `article` | `en` | `research-agents, hallucination` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-361` | [Rajkumar et al. — A causal test of the strength of weak ties (Science 2022)](https://digitaleconomy.stanford.edu/publication/a-causal-test-of-the-strength-of-weak-ties) | `paper` | `en` | `weak-ties, causal-evidence` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-362` | [Peters, Matz — LLMs can infer psychological dispositions of social media users (PNAS Nexus 2024)](https://arxiv.org/abs/2309.08631) | `paper` | `en` | `llm-profiling, ethics, privacy` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-363` | [Федеральный закон № 152-ФЗ «О персональных данных» (ст. 10.1)](https://www.consultant.ru/document/cons_doc_LAW_61801/) | `standard` | `ru` | `personal-data, counterparty-research-ethics` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
