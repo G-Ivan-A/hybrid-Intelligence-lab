@@ -189,7 +189,7 @@ def main() -> int:
         expect(needle in text, f"/{arguments[1]} gives the model the runner output ({needle})")
         if needle not in text:
             output = (work / f"{name}.out").read_text(encoding="utf-8", errors="replace")
-            print(f"  model requests: {len(mock.requests())}; user text: {ascii(text[-1500:])}")
+            print(f"  model requests: {len(mock.requests())}; runner block: {ascii(text[text.find(chr(96) * 3):][:1500])}")
             print(f"  OpenCode output: {ascii(output[-3000:])}")
     expect((package / "runs/TASK-0002/release.json").is_file(), "/bcreq-gate writes runs/TASK-0002/release.json")
     # cmd.exe would keep the single quotes and redirect into a file named pwned2.txt'
