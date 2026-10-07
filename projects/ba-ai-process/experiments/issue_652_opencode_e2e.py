@@ -116,10 +116,13 @@ def probe(binary: str, package: Path, work: Path):
         "---\ndescription: probe\n---\n"
         "A !`echo shell=[$BASH_VERSION] [%COMSPEC%] [$PSVersionTable]`\n"
         "B !`python -c \"import sys, os; print('argv', sys.argv[1:], os.getcwd())\" '$1'`\n"
-        "C !`python -c \"import sys; print('argv-dq', sys.argv[1:])\" \"$1\"`\n", encoding="utf-8")
+        "C !`python -c \"import sys; print('argv-dq', sys.argv[1:])\" \"$1\"`\n"
+        "D !`python tools/opencode_command.py gate '$1'`\n"
+        "E !`python -c \"print('exit-1'); raise SystemExit(1)\"`\n", encoding="utf-8")
     for label, arguments in (("plain", ["TASK-0002"]), ("semicolon", ["TASK-0002;", "echo", "probe"]),
                              ("redirect", ["TASK-0002", ">", "probe1.txt"]),
-                             ("both", ["TASK-0002;", "echo", "probe", ">", "probe2.txt"])):
+                             ("both", ["TASK-0002;", "echo", "probe", ">", "probe2.txt"]),
+                             ("pwned", ["TASK-0002;", "echo", "pwned", ">", "probe3.txt"])):
         mock = Mock(work, f"probe-{label}", [{"text": "ok"}])
         try:
             opencode(binary, package, environment(work, mock.port), ["--command", "probe", *arguments],
@@ -127,7 +130,7 @@ def probe(binary: str, package: Path, work: Path):
         finally:
             mock.stop()
         text = user_text(mock.requests())
-        print(f"  probe {label}: {ascii(text[text.find('A '):][:600])}")
+        print(f"  probe {label}: {ascii(text[text.find('A '):][:1200])}")
         created = sorted(str(path.relative_to(work)) for path in work.rglob("probe[0-9]*"))
         print(f"  probe {label} files: {created}")
     command.unlink()
