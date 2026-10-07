@@ -187,8 +187,13 @@ def main() -> int:
             mock.stop()
         text = user_text(mock.requests())
         expect(needle in text, f"/{arguments[1]} gives the model the runner output ({needle})")
+        if needle not in text:
+            output = (work / f"{name}.out").read_text(encoding="utf-8", errors="replace")
+            print(f"  model requests: {len(mock.requests())}; user text: {text[-1500:]!r}")
+            print(f"  OpenCode output: {output[-3000:]!r}")
     expect((package / "runs/TASK-0002/release.json").is_file(), "/bcreq-gate writes runs/TASK-0002/release.json")
-    expect(not (package / "pwned2.txt").exists(), "/bcreq-gate does not run text after the TASK ID")
+    # cmd.exe would keep the single quotes and redirect into a file named pwned2.txt'
+    expect(not any(package.glob("pwned2*")), "/bcreq-gate does not run text after the TASK ID")
     check = subprocess.run([sys.executable, "tools/run_task.py", "check-package"], cwd=package,
                            capture_output=True, text=True)
     expect(check.returncode == 0, f"package integrity after OpenCode start-up: {check.stdout.strip() or check.stderr.strip()}")
