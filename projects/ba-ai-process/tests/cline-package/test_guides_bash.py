@@ -43,8 +43,9 @@ def guide_bash() -> str | None:
     return None
 
 
-def bash_blocks(path: Path) -> list[str]:
-    text = path.read_text(encoding="utf-8")
+def bash_blocks(source: Path | str) -> list[str]:
+    """Blocks of a guide file or of a part of its text, without the list item indent."""
+    text = source.read_text(encoding="utf-8") if isinstance(source, Path) else source
     return ["".join(line[len(match.group(1)):] for line in match.group(2).splitlines(True))
             for match in re.finditer(r"^( *)```bash\n(.*?)^\1```", text, re.M | re.S)]
 
@@ -144,8 +145,7 @@ class GitBashGuideTest(unittest.TestCase):
             git("commit", "-q", "-m", "fixture", cwd=repository)
         guide = (GUIDES / "03-deploy-package.md").read_text(encoding="utf-8")
         before_open, _, _ = guide.partition("## Откройте пакет в VS Code")
-        deploy = [block for block in bash_blocks(GUIDES / "03-deploy-package.md")
-                  if block in before_open and not PLACEHOLDER.search(block)]
+        deploy = [block for block in bash_blocks(before_open) if not PLACEHOLDER.search(block)]
         script = "\n".join(deploy).replace(LAB_URL, lab.as_uri()).replace(KB_URL, kb.as_uri())
         self.assertIn(lab.as_uri(), script)
         self.assertIn(kb.as_uri(), script)
@@ -181,8 +181,7 @@ class GitBashGuideTest(unittest.TestCase):
         # VS Code opens the terminal of the runtime folder in that folder.
         after_open = (GUIDES / "03-deploy-package.md").read_text(encoding="utf-8").partition(
             "## Откройте пакет в VS Code")[2]
-        checks = [block for block in bash_blocks(GUIDES / "03-deploy-package.md") if block in after_open]
-        self.assertIn("package: PASS", self.run_blocks(runtime, checks))
+        self.assertIn("package: PASS", self.run_blocks(runtime, bash_blocks(after_open)))
         output = self.run_blocks(runtime, bash_blocks(GUIDES / "04-smoke-test.md"))
         self.assertEqual(output.count("TASK-0001: PASS"), 2, output)
         self.assertTrue((runtime / "runs/TASK-0001/release.json").is_file())

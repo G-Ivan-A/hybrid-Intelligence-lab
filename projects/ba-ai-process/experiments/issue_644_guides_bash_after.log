@@ -1,0 +1,11 @@
+test_deploy_and_smoke_guides_run_verbatim (__main__.GitBashGuideTest.test_deploy_and_smoke_guides_run_verbatim) ... ok
+test_every_documented_block_parses (__main__.GitBashGuideTest.test_every_documented_block_parses) ... ok
+test_install_check_runs_verbatim (__main__.GitBashGuideTest.test_install_check_runs_verbatim) ... ok
+test_real_task_commands_run_verbatim (__main__.GitBashGuideTest.test_real_task_commands_run_verbatim) ... ok
+test_blocks_use_only_what_git_bash_provides (__main__.StaticGuideTest.test_blocks_use_only_what_git_bash_provides) ... ok
+test_guides_are_git_bash_instructions (__main__.StaticGuideTest.test_guides_are_git_bash_instructions) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.942s
+
+OK
