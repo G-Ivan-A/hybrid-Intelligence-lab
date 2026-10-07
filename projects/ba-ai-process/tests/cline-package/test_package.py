@@ -102,6 +102,34 @@ class PackageTest(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(json.loads(result.stdout)["cancel"], blocked, result.stdout)
 
+    @unittest.skipUnless(os.name == "nt", "PowerShell hook runs in Windows CI")
+    def test_windows_hook_falls_back_to_py_launcher(self):
+        # Without "Add python.exe to PATH" the name python is the Microsoft Store alias (exit 9009)
+        # and only the py launcher starts Python.
+        with tempfile.TemporaryDirectory() as temporary:
+            package = Path(temporary) / "Пилот с пробелом"
+            shutil.copytree(PACKAGE, package)
+            fake = Path(temporary) / "fake"
+            fake.mkdir()
+            (fake / "python.cmd").write_text("@exit /b 9009\r\n", encoding="ascii")
+            hook = package / ".clinerules/hooks/PreToolUse.ps1"
+            env = dict(os.environ, PATH=os.pathsep.join((str(fake), os.environ["PATH"])))
+            for launcher, path, cancel in (
+                (f'@"{sys.executable}" %2\r\n', "submissions/TASK-0002.json", False),
+                (f'@"{sys.executable}" %2\r\n', "contracts/c-working-bcreq.schema.json", True),
+                ("@exit /b 9009\r\n", "submissions/TASK-0002.json", True),
+            ):
+                (fake / "py.cmd").write_text(launcher, encoding="ascii")
+                payload = {"hookName": "PreToolUse", "preToolUse": {"toolName": "editor", "parameters": {"path": str(package / path)}}}
+                result = subprocess.run(["powershell", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+                                         "-File", str(hook)], input=json.dumps(payload, ensure_ascii=False), cwd=package,
+                                        env=env, text=True, capture_output=True, encoding="utf-8")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                response = json.loads(result.stdout)
+                self.assertEqual(response["cancel"], cancel, result.stdout)
+                if launcher.startswith("@exit"):
+                    self.assertIn("Windows hook failed", response["errorMessage"])
+
     def test_one_environment_boundary(self):
         other_clients = re.compile(r"\b(?:GigaCode|Qwen(?: Chat)?|OpenCode|Kilo Code|Roo Code)\b", re.I)
         for path in PACKAGE.rglob("*"):

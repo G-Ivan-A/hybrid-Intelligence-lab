@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-28
+version: 0.4
+updated: 2026-10-07
 temperature: 0.1
 ---
 
@@ -26,18 +26,18 @@ temperature: 0.1
 
 ## Что такое учебный пример
 
-- В пакете есть папка [`golden\`](01-junior-pilot.md#term-golden) с файлом
+- В пакете есть папка [`golden/`](01-junior-pilot.md#term-golden) с файлом
   `TASK-0001.json`. Это **готовый черновик** BCREQ Working по вымышленной
   задаче «клиенты хотят выгружать журнал звонков». Его подготовили авторы
   пакета; ссылки вида `example.test` — заглушки, а не корпоративные страницы.
-- Файлы в `golden\` менять нельзя: это эталон, по которому пакет проверяет
+- Файлы в `golden/` менять нельзя: это эталон, по которому пакет проверяет
   сам себя.
 - [Runner](01-junior-pilot.md#term-runner) проверяет черновики, которые лежат
-  в папке [`submissions\`](01-junior-pilot.md#term-submissions) — папке
+  в папке [`submissions/`](01-junior-pilot.md#term-submissions) — папке
   «ваших» задач. Поэтому для учебного прогона вы кладёте **копию** эталона в
-  `submissions\` и дальше работаете с ней так же, как с реальной задачей.
+  `submissions/` и дальше работаете с ней так же, как с реальной задачей.
 
-В реальной задаче копировать ничего не нужно: черновик в `submissions\`
+В реальной задаче копировать ничего не нужно: черновик в `submissions/`
 пишет агент по вашим данным ([Работа с агентом](06-working-with-cline.md)).
 
 ## Шаг 1. Подготовьте учебный пример
@@ -45,15 +45,15 @@ temperature: 0.1
 **Действие: «Подготовить учебный пример»**
 
 - **Где:** [терминал VS Code](01-junior-pilot.md#term-vscode-terminal)
-  (``Ctrl+` ``), папка пакета `C:\Users\<логин>\bcreq-pilot\runtime`.
+  (``Ctrl+` ``, Git Bash), папка пакета `~/bcreq-pilot/runtime`.
 - **Команда:**
 
-  ```powershell
-  Copy-Item golden\TASK-0001.json submissions\TASK-0001.json
+  ```bash
+  cp golden/TASK-0001.json submissions/TASK-0001.json
   ```
 
-- **Что делает:** копирует файл учебного черновика из `golden\` в
-  `submissions\` под тем же именем. Эталон остаётся нетронутым.
+- **Что делает:** копирует файл учебного черновика из `golden/` в
+  `submissions/` под тем же именем. Эталон остаётся нетронутым.
 - **Ожидаемый результат:** команда ничего не печатает.
 - **Проверьте:** в проводнике VS Code (левая панель, значок с листами) в
   папке `submissions` появился файл `TASK-0001.json`.
@@ -90,7 +90,7 @@ temperature: 0.1
 - **Где:** терминал VS Code, папка пакета.
 - **Команда:**
 
-  ```powershell
+  ```bash
   python tools/run_task.py run TASK-0001 submissions/TASK-0001.json
   ```
 
@@ -98,14 +98,14 @@ temperature: 0.1
   запускает три машинные проверки черновика
   ([G-mach](01-junior-pilot.md#term-g-mach)), собирает
   [Release](01-junior-pilot.md#term-release) и записывает
-  [журнал прогона](01-junior-pilot.md#term-trace) в `runs\TASK-0001\`.
+  [журнал прогона](01-junior-pilot.md#term-trace) в `runs/TASK-0001/`.
 - **Ожидаемый результат:** через несколько секунд строка
 
   ```text
   TASK-0001: PASS
   ```
 
-- **Проверьте:** в проводнике VS Code появилась папка `runs\TASK-0001\` с
+- **Проверьте:** в проводнике VS Code появилась папка `runs/TASK-0001/` с
   файлами `trace.jsonl`, `release.json`, `release-manifest.json`.
 
 Если вместо `PASS` появилось `FAIL` или `ERROR:` — пакет повреждён. Не
@@ -113,7 +113,7 @@ temperature: 0.1
 
 ## Шаг 4. Посмотрите результат
 
-- Откройте `runs\TASK-0001\release.json` в VS Code — это собранный
+- Откройте `runs/TASK-0001/release.json` в VS Code — это собранный
   Release. Он пока **кандидат**: окончательное решение за человеком
   ([G-human](01-junior-pilot.md#term-g-human)).
 - Попросите Cline (режим Plan):
@@ -132,12 +132,12 @@ temperature: 0.1
 ([один TASK ID — один прогон](05-commands-reference.md#контроль-прогонов-один-task-id--один-прогон)).
 Только для учебного примера можно удалить результат и запустить заново:
 
-```powershell
-Remove-Item -Recurse runs\TASK-0001
+```bash
+rm -r runs/TASK-0001
 python tools/run_task.py run TASK-0001 submissions/TASK-0001.json
 ```
 
-Для реальных задач папки `runs\` не удаляйте — берите новый TASK ID.
+Для реальных задач папки `runs/` не удаляйте — берите новый TASK ID.
 
 ---
 

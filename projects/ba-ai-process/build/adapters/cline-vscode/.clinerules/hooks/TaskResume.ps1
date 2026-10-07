@@ -4,8 +4,17 @@ try {
     $env:PYTHONUTF8 = '1'
     $payload = [Console]::In.ReadToEnd()
     $runner = Join-Path $PSScriptRoot '..\..\tools\cline_hook.py'
-    $response = $payload | & python $runner
-    if ($LASTEXITCODE -ne 0 -or -not $response) {
+    $response = $null
+    # "python" may be missing or be the Microsoft Store alias (exit 9009); then use the py launcher.
+    if (Get-Command python -ErrorAction SilentlyContinue) {
+        $response = $payload | & python $runner
+        if ($LASTEXITCODE -ne 0) { $response = $null }
+    }
+    if (-not $response -and (Get-Command py -ErrorAction SilentlyContinue)) {
+        $response = $payload | & py -3 $runner
+        if ($LASTEXITCODE -ne 0) { $response = $null }
+    }
+    if (-not $response) {
         throw 'Python hook failed'
     }
     Write-Output $response

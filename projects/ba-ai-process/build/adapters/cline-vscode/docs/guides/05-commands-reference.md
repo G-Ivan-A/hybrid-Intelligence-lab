@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-09-29
+version: 0.5
+updated: 2026-10-07
 temperature: 0.1
 ---
 
@@ -28,22 +28,23 @@ temperature: 0.1
 ## Команды человеческим языком
 
 Все команды выполняются в
-[терминале VS Code](01-junior-pilot.md#term-vscode-terminal) (``Ctrl+` ``)
-в папке пакета `C:\Users\<логин>\bcreq-pilot\runtime`. Проверить папку:
-строка приглашения терминала заканчивается на `...\bcreq-pilot\runtime>`.
+[терминале VS Code](01-junior-pilot.md#term-vscode-terminal) (``Ctrl+` ``,
+Git Bash) в папке пакета `C:\Users\<логин>\bcreq-pilot\runtime` — в Git Bash
+`~/bcreq-pilot/runtime`. Проверить папку: строка над приглашением `$`
+заканчивается на `MINGW64 ~/bcreq-pilot/runtime`.
 
 | Действие | Команда (кратко) | Когда |
 |----------|------------------|-------|
 | [Проверить пакет](#проверить-пакет) | `python tools/run_task.py check-package` | После развёртывания; при любых сомнениях в пакете |
-| [Подготовить учебный пример](#подготовить-учебный-пример) | `Copy-Item golden\TASK-0001.json submissions\TASK-0001.json` | Только для [учебного прогона](04-smoke-test.md) |
+| [Подготовить учебный пример](#подготовить-учебный-пример) | `cp golden/TASK-0001.json submissions/TASK-0001.json` | Только для [учебного прогона](04-smoke-test.md) |
 | [Запечатать черновик](#запечатать-черновик) | `python tools/run_task.py seal submissions/TASK-ID.json` | После каждой правки черновика, перед проверкой |
 | [Запустить проверку задачи](#запустить-проверку-задачи) | `python tools/run_task.py run TASK-ID submissions/TASK-ID.json` | Черновик согласован и запечатан |
-| [Убрать неудачный черновик](#убрать-неудачный-черновик) | `Move-Item submissions\TASK-ID.json runs\TASK-ID\working.json` | Проверка задачи дала `FAIL` |
+| [Убрать неудачный черновик](#убрать-неудачный-черновик) | `mv submissions/TASK-ID.json runs/TASK-ID/working.json` | Проверка задачи дала `FAIL` |
 | [Проверить всё перед отправкой](#проверить-всё-перед-отправкой) | `python tools/run_task.py verify-ci` | Перед отправкой черновиков в Git |
-| [Прочитать журнал прогона](#прочитать-журнал-прогона) | открыть `runs\TASK-ID\trace.jsonl` | Непонятно, на каком шаге остановилась проверка |
+| [Прочитать журнал прогона](#прочитать-журнал-прогона) | открыть `runs/TASK-ID/trace.jsonl` | Непонятно, на каком шаге остановилась проверка |
 
 `TASK-ID` в командах замените на свой номер, например `TASK-0002`.
-Команды не меняют файлы пакета: они пишут только в `submissions\` и `runs\`.
+Команды не меняют файлы пакета: они пишут только в `submissions/` и `runs/`.
 
 ## Описание команд
 
@@ -51,8 +52,8 @@ temperature: 0.1
 
 - **Команда:** `python tools/run_task.py check-package`
 - **Что делает:** сверяет каждый файл пакета с контрольными суммами из
-  `package-manifest.yaml`. Файлы в `submissions\`, `runs\`, `docs\kb\`,
-  `meta-model\` не проверяются — их менять можно.
+  `package-manifest.yaml`. Файлы в `submissions/`, `runs/`, `docs/kb/`,
+  `meta-model/` не проверяются — их менять можно.
 - **Ожидаемый результат:** `package: PASS`.
 - **Если иначе:** `ERROR: package hash mismatch: <файл>` — файл пакета
   изменён; `ERROR: immutable file list differs: missing=[…], extra=[…]` —
@@ -64,16 +65,16 @@ temperature: 0.1
 
 ### Подготовить учебный пример
 
-- **Команда:** `Copy-Item golden\TASK-0001.json submissions\TASK-0001.json`
-- **Что делает:** копирует учебный черновик из `golden\` в `submissions\`.
-- **Ожидаемый результат:** ничего не печатается; в `submissions\` появился
+- **Команда:** `cp golden/TASK-0001.json submissions/TASK-0001.json`
+- **Что делает:** копирует учебный черновик из `golden/` в `submissions/`.
+- **Ожидаемый результат:** ничего не печатается; в `submissions/` появился
   `TASK-0001.json`.
 
 ### Запечатать черновик
 
 - **Команда** (`TASK-0002` замените на свой номер):
 
-  ```powershell
+  ```bash
   python tools/run_task.py seal submissions/TASK-0002.json
   ```
 
@@ -88,16 +89,14 @@ temperature: 0.1
 - **Важно:** запечатывайте **после** того, как в черновик записано ваше
   согласование, и заново — после любой правки.
 
-Команда исполняется Python и не зависит от версии PowerShell.
-
 ### Запустить проверку задачи
 
 - **Команда:** `python tools/run_task.py run TASK-0002 submissions/TASK-0002.json`
 - **Что делает:** [runner](01-junior-pilot.md#term-runner) проверяет пакет,
   затем по очереди — черновик (`validate-working`), собирает Release
   (`compile`) и проверяет Release (`validate-release`). Результаты пишет в
-  `runs\TASK-0002\`.
-- **Ожидаемый результат:** `TASK-0002: PASS`. В `runs\TASK-0002\` — файлы
+  `runs/TASK-0002/`.
+- **Ожидаемый результат:** `TASK-0002: PASS`. В `runs/TASK-0002/` — файлы
   `trace.jsonl`, `release.json`, `release-manifest.json`.
 - **Если иначе:** `TASK-0002: FAIL` и строки `ERROR: …` выше — черновик не
   прошёл; см. [типичные ситуации](06-working-with-cline.md#типичные-ситуации).
@@ -106,19 +105,24 @@ temperature: 0.1
 
 ### Убрать неудачный черновик
 
-- **Команда:** `Move-Item submissions\TASK-0002.json runs\TASK-0002\working.json`
+- **Команда** (`TASK-0002` замените на свой номер):
+
+  ```bash
+  mv submissions/TASK-0002.json runs/TASK-0002/working.json
+  ```
+
 - **Что делает:** переносит черновик, не прошедший проверку, в папку его
   прогона. Черновик не теряется и лежит рядом с журналом.
 - **Зачем:** «Проверить всё перед отправкой» проверяет **все** файлы в
-  `submissions\` и даёт `FAIL`, если хотя бы один не проходит.
+  `submissions/` и даёт `FAIL`, если хотя бы один не проходит.
 - **Ожидаемый результат:** ничего не печатается; файла нет в
-  `submissions\`, он есть в `runs\TASK-0002\`.
+  `submissions/`, он есть в `runs/TASK-0002/`.
 
 ### Проверить всё перед отправкой
 
 - **Команда:** `python tools/run_task.py verify-ci`
 - **Что делает:** то же, что CI после отправки в Git: во временной папке
-  проверяет учебный пример и каждый файл в `submissions\`. Папку `runs\` не
+  проверяет учебный пример и каждый файл в `submissions/`. Папку `runs/` не
   трогает.
 - **Ожидаемый результат:** по строке на файл, все с `PASS`:
 
@@ -129,13 +133,13 @@ temperature: 0.1
 
 - **Если иначе:** строка с `FAIL` — уберите этот черновик
   ([команда](#убрать-неудачный-черновик)).
-  `ERROR: unexpected submission: <имя>` — в `submissions\` лежит файл не с
+  `ERROR: unexpected submission: <имя>` — в `submissions/` лежит файл не с
   именем `TASK-NNNN.json` (например, `BCREQ-123.json`); переименуйте его или
   уберите.
 
 ### Прочитать журнал прогона
 
-- **Как:** откройте `runs\TASK-ID\trace.jsonl` в VS Code или **напишите
+- **Как:** откройте `runs/TASK-ID/trace.jsonl` в VS Code или **напишите
   Cline** (режим Plan): «Прочитай runs/TASK-0002/trace.jsonl и объясни по
   строкам, какой шаг не прошёл».
 - Расшифровка — в разделе [Как читать журнал прогона](#как-читать-журнал-прогона-trace).
@@ -146,7 +150,7 @@ temperature: 0.1
 [TASK ID](01-junior-pilot.md#term-task-id). Повторный запуск с тем же
 номером runner отклоняет: `ERROR: run already exists`.
 
-**Зачем.** Папка `runs\TASK-ID\` — журнал именно этой попытки: какой черновик
+**Зачем.** Папка `runs/TASK-ID/` — журнал именно этой попытки: какой черновик
 проверялся (контрольная сумма), какая версия пакета, какой результат.
 Если бы журнал можно было перезаписать, нельзя было бы доказать, что
 проверено именно то, что согласовано.
@@ -155,12 +159,12 @@ temperature: 0.1
 
 1. Уберите неудачный черновик: [команда](#убрать-неудачный-черновик).
 2. Исправленный черновик получает следующий свободный номер, например
-   `submissions\TASK-0003.json`.
+   `submissions/TASK-0003.json`.
 3. Запечатайте и запустите проверку с новым номером.
 4. Для себя отметьте: «BCREQ-123 → TASK-0002 (FAIL), TASK-0003 (PASS)».
 
-**Чего не делать:** не удаляйте папки `runs\` реальных задач и не
-переименовывайте их. Удалять `runs\TASK-0001` допустимо только для
+**Чего не делать:** не удаляйте папки `runs/` реальных задач и не
+переименовывайте их. Удалять `runs/TASK-0001` допустимо только для
 [учебного примера](04-smoke-test.md#повторить-учебный-прогон).
 
 ## Процесс формирования бизнес-спецификации
@@ -173,21 +177,21 @@ temperature: 0.1
  Вы + Cline (диалог)            Runner (машинная проверка, G-mach)          Вы (G-human)
  ─────────────────────          ─────────────────────────────────────       ──────────────
  входные данные → согласование  validate-working → compile → validate-release   чек-лист,
- → черновик submissions\…json   (черновик)        (сборка)  (Release)           решение
+ → черновик submissions/…json   (черновик)        (сборка)  (Release)           решение
  → запечатать
 ```
 
 - **Вход:** согласованный и запечатанный черновик BCREQ Working (JSON).
-- **Выход:** BCREQ Release и его manifest в `runs\TASK-ID\`.
+- **Выход:** BCREQ Release и его manifest в `runs/TASK-ID/`.
 - **Если машинный шаг не прошёл:** следующие шаги не выполняются
   (`step_skipped`), проверка останавливается.
 - **Если нет источника:** явная ошибка или открытый вопрос, но не догадка.
 - **Открытые вопросы:** пока они есть, Release не собирается.
-- **Проверка человеком:** чек-лист `evaluation\g-human-checklist.md`.
+- **Проверка человеком:** чек-лист `evaluation/g-human-checklist.md`.
 
 ## Как читать журнал прогона (trace)
 
-Файл `runs\TASK-ID\trace.jsonl` пишет только runner. Одна строка — один шаг.
+Файл `runs/TASK-ID/trace.jsonl` пишет только runner. Одна строка — один шаг.
 Главные поля строки:
 
 | Поле | Значение |
@@ -223,19 +227,19 @@ G-human            contract_mode   semantic and publication review required
 
 | Папка или файл | Что это | Кто меняет |
 |----------------|---------|------------|
-| [`submissions\`](01-junior-pilot.md#term-submissions) | Черновики задач `TASK-ID.json`. Единственная папка, куда пишет Cline | Вы и Cline (с вашего разрешения) |
-| [`runs\`](01-junior-pilot.md#term-runs) | Результаты прогонов `runs\TASK-ID\`. В Git не отправляется | Runner; вы — только перенос неудачного черновика |
-| [`golden\`](01-junior-pilot.md#term-golden) | Учебный пример `TASK-0001.json`, эталон для самопроверки пакета | Никто |
-| `docs\kb\` | Локальная [база знаний](01-junior-pilot.md#term-kb). В Git не отправляется | Вы (копирование KB) |
-| `docs\kb-policy.md` | Правила выбора источников: сначала корпоративные, затем KB | Никто |
-| `meta-model\` | Место для разрешённых материалов мета-модели. Runner его не читает | Вы, по указанию ответственного |
-| `contracts\` | Правила формата черновика и Release (JSON-схемы) | Никто |
-| `taxonomy\` | Справочники продуктов Mango и TMF для продуктовой привязки | Никто |
-| `routes\pilot.json` | Описание процесса | Никто |
-| `templates\working-prompt.md` | Базовый запрос для учебного черновика | Никто |
-| `evaluation\g-human-checklist.md` | Ваш чек-лист проверки | Никто |
-| `tools\` | Программы runner и проверок | Никто |
-| `AGENTS.md`, `.clinerules\` | Правила для Cline | Никто |
+| [`submissions/`](01-junior-pilot.md#term-submissions) | Черновики задач `TASK-ID.json`. Единственная папка, куда пишет Cline | Вы и Cline (с вашего разрешения) |
+| [`runs/`](01-junior-pilot.md#term-runs) | Результаты прогонов `runs/TASK-ID/`. В Git не отправляется | Runner; вы — только перенос неудачного черновика |
+| [`golden/`](01-junior-pilot.md#term-golden) | Учебный пример `TASK-0001.json`, эталон для самопроверки пакета | Никто |
+| `docs/kb/` | Локальная [база знаний](01-junior-pilot.md#term-kb). В Git не отправляется | Вы (копирование KB) |
+| `docs/kb-policy.md` | Правила выбора источников: сначала корпоративные, затем KB | Никто |
+| `meta-model/` | Место для разрешённых материалов мета-модели. Runner его не читает | Вы, по указанию ответственного |
+| `contracts/` | Правила формата черновика и Release (JSON-схемы) | Никто |
+| `taxonomy/` | Справочники продуктов Mango и TMF для продуктовой привязки | Никто |
+| `routes/pilot.json` | Описание процесса | Никто |
+| `templates/working-prompt.md` | Базовый запрос для учебного черновика | Никто |
+| `evaluation/g-human-checklist.md` | Ваш чек-лист проверки | Никто |
+| `tools/` | Программы runner и проверок | Никто |
+| `AGENTS.md`, `.clinerules/` | Правила для Cline | Никто |
 | `package-manifest.yaml` | Контрольные суммы файлов пакета | Никто |
 
 «Никто» означает: изменение ломает «Проверить пакет». Предложения по
@@ -282,15 +286,23 @@ G-human            contract_mode   semantic and publication review required
 
 Сначала создайте папку для отладочных результатов вне пакета (один раз):
 
-```powershell
-New-Item -ItemType Directory -Force $env:USERPROFILE\bcreq-pilot\debug
+```bash
+mkdir -p "$HOME/bcreq-pilot/debug"
+```
+
+Затем выполните шаги по одному (строки блока — по порядку):
+
+```bash
+python tools/bcreq_pipeline.py validate-working submissions/TASK-0002.json
+python tools/bcreq_pipeline.py compile submissions/TASK-0002.json --output "$HOME/bcreq-pilot/debug/TASK-0002"
+python tools/bcreq_pipeline.py validate-release submissions/TASK-0002.json --release "$HOME/bcreq-pilot/debug/TASK-0002/release.json" --manifest "$HOME/bcreq-pilot/debug/TASK-0002/release-manifest.json"
 ```
 
 | Шаг | Команда | Проверяет |
 |-----|---------|-----------|
-| Проверить черновик | `python tools/bcreq_pipeline.py validate-working submissions/TASK-0002.json` | Формат, ссылки на источники, контрольные суммы, согласование |
-| Собрать Release | `python tools/bcreq_pipeline.py compile submissions/TASK-0002.json --output $env:USERPROFILE\bcreq-pilot\debug\TASK-0002` | Сборку Release; открытые вопросы её блокируют |
-| Проверить Release | `python tools/bcreq_pipeline.py validate-release submissions/TASK-0002.json --release $env:USERPROFILE\bcreq-pilot\debug\TASK-0002\release.json --manifest $env:USERPROFILE\bcreq-pilot\debug\TASK-0002\release-manifest.json` | Release соответствует черновику и формату |
+| Проверить черновик | `validate-working` (первая строка) | Формат, ссылки на источники, контрольные суммы, согласование |
+| Собрать Release | `compile` (вторая строка) | Сборку Release в `~/bcreq-pilot/debug/TASK-0002/`; открытые вопросы её блокируют |
+| Проверить Release | `validate-release` (третья строка) | Release соответствует черновику и формату |
 
 - **Ожидаемый результат каждого шага:** `G-mach: BCREQ accepted`.
 - **Если иначе:** строки `ERROR: …`. Первое слово строки указывает раздел
@@ -328,11 +340,9 @@ New-Item -ItemType Directory -Force $env:USERPROFILE\bcreq-pilot\debug
   команды Cline (`/newtask`, `/smol`) работают, но процесс BCREQ не ведут;
   его ведёт [стартовая фраза](06-working-with-cline.md#стартовая-фраза), а
   проверки — команды из этого справочника.
-- Нет команды запечатывания в runner — временно используется
-  [блок команд](#запечатать-черновик).
 - Корпоративное подключение Jira/Confluence **только на чтение** настраивает
   администратор в Cline (MCP Servers). Пока его нет — источник
-  `docs\kb\` и текст, который вы вставили в диалог.
+  `docs/kb/` и текст, который вы вставили в диалог.
 
 ---
 

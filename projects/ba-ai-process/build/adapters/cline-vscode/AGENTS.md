@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-09-29
+version: 0.3
+updated: 2026-10-07
 temperature: 0.1
 ---
 
@@ -19,7 +19,7 @@ The normative package files are pinned by `package-manifest.yaml`.
 2. Do not edit `tools/`, `contracts/`, `taxonomy/`, `.clinerules/`, `golden/`,
    the manifest or CI during a task. A change to the model or gate needs a
    new Source revision and package compilation.
-3. Ask the analyst to run `python tools/run_task.py seal submissions/TASK-0001.json` and then `python tools/run_task.py run TASK-0001 submissions/TASK-0001.json` in the VS Code PowerShell terminal. Read the exit status
+3. Ask the analyst to run `python tools/run_task.py seal submissions/TASK-0001.json` and then `python tools/run_task.py run TASK-0001 submissions/TASK-0001.json` in the VS Code Git Bash terminal. Do not suggest PowerShell or `cmd` syntax. Read the exit status
    and `runs/TASK-0001/trace.jsonl`; do not claim a gate passed from your text.
 4. `script_invoked` records an actual process, `step_skipped` blocks progress,
    and `contract_mode` records that human semantic review is still required.
