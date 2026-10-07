@@ -13,20 +13,20 @@ VS Code, убедиться, что пакет цел, и настроить Cli
 
 ## Содержание
 
-1. [Где что лежит на АРМ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#где-что-лежит-на-арм)
-2. [Создайте рабочую папку](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#создайте-рабочую-папку)
-3. [Получите пакет](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#получите-пакет)
-4. [Получите базу знаний (KB)](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#получите-базу-знаний-kb)
-5. [Откройте пакет в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#откройте-пакет-в-vs-code)
-6. [Проверьте целостность пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#проверьте-целостность-пакета)
-7. [Настройте подтверждения в Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#настройте-подтверждения-в-cline)
-8. [Проверьте защиту пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#проверьте-защиту-пакета)
+1. [Где что лежит на АРМ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#где-что-лежит-на-арм)
+2. [Создайте рабочую папку](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#создайте-рабочую-папку)
+3. [Получите пакет](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#получите-пакет)
+4. [Получите базу знаний (KB)](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#получите-базу-знаний-kb)
+5. [Откройте пакет в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#откройте-пакет-в-vs-code)
+6. [Проверьте целостность пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#проверьте-целостность-пакета)
+7. [Настройте подтверждения в Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#настройте-подтверждения-в-cline)
+8. [Проверьте защиту пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#проверьте-защиту-пакета)
 
 Все команды этого документа выполняются в
-[терминале VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal) (``Ctrl+` ``).
+[терминале VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal) (``Ctrl+` ``).
 Пока пакет не открыт в VS Code, подойдёт терминал в любом окне VS Code.
 Терминал должен быть **Git Bash** — справа вверху терминала написано **bash**
-(как выбрать — [установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code)).
+(как выбрать — [установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code)).
 
 ## Где что лежит на АРМ
 
@@ -38,9 +38,9 @@ VS Code, убедиться, что пакет цел, и настроить Cli
 
 | Папка | Что в ней | Откуда | Зачем |
 |-------|-----------|--------|-------|
-| `C:\Users\<логин>\bcreq-pilot\runtime\` | [Пакет](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-package) — **эту папку вы открываете в VS Code** | Папка `projects/ba-ai-process/dist/execution-package-cline-vscode/` репозитория [hybrid-Intelligence-lab](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) | Правила, схемы, runner |
-| `C:\Users\<логин>\bcreq-pilot\runtime\docs\kb\` | [KB](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-kb) — резервная база знаний | Папка `docs/kb/` репозитория [mango-ba-ai-runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb) | Подтверждения для требований, если корпоративные источники недоступны |
-| `C:\Users\<логин>\bcreq-pilot\source-lab\` | [Исходный репозиторий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-source) | Клон hybrid-Intelligence-lab | Обновление пакета и [режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#режим-отладки) |
+| `C:\Users\<логин>\bcreq-pilot\runtime\` | [Пакет](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-package) — **эту папку вы открываете в VS Code** | Папка `projects/ba-ai-process/dist/execution-package-cline-vscode/` репозитория [hybrid-Intelligence-lab](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) | Правила, схемы, runner |
+| `C:\Users\<логин>\bcreq-pilot\runtime\docs\kb\` | [KB](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-kb) — резервная база знаний | Папка `docs/kb/` репозитория [mango-ba-ai-runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb) | Подтверждения для требований, если корпоративные источники недоступны |
+| `C:\Users\<логин>\bcreq-pilot\source-lab\` | [Исходный репозиторий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-source) | Клон hybrid-Intelligence-lab | Обновление пакета и [режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#режим-отладки) |
 | `C:\Users\<логин>\bcreq-pilot\kb-source\` | Клон репозитория с KB | Клон mango-ba-ai-runtime | Обновление KB |
 | `C:\Users\<логин>\bcreq-pilot\debug\` | Результаты ручных проверок в режиме отладки | Создаёте вы | Чтобы не смешивать отладку с настоящими прогонами |
 
@@ -144,7 +144,7 @@ ls -a runtime
 
 Как агент использует KB: сначала он ищет подтверждения в корпоративных
 Jira/Confluence, если к ним есть подключение только на чтение
-([MCP](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-mcp)). KB в `docs/kb/` — резервный источник,
+([MCP](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-mcp)). KB в `docs/kb/` — резервный источник,
 когда корпоративного подключения нет или там не нашлось подтверждения.
 Если подтверждения нет нигде — открытый вопрос, а не догадка
 (правила — `docs/kb-policy.md`).
@@ -165,7 +165,7 @@ Jira/Confluence, если к ним есть подключение только
    `$` — строка `<логин>@<компьютер> MINGW64 ~/bcreq-pilot/runtime`. Это
    «папка пакета»: все дальнейшие команды выполняются здесь. Если открылся
    PowerShell (приглашение `PS …>`), выберите Git Bash по
-   [инструкции установки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code).
+   [инструкции установки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code).
 
 ## Проверьте целостность пакета
 
@@ -257,14 +257,14 @@ Jira/Confluence, если к ним есть подключение только
 
 **Готово**, если «Проверить пакет» показывает `package: PASS`, KB лежит в
 `docs/kb/`, а Cline спрашивает перед записью файла. Дальше —
-[реальная задача](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) или, для знакомства,
-[учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md).
+[реальная задача](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) или, для знакомства,
+[учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md).
 
 ---
 
-**Навигация:** [Содержание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md) · [Обзор и глоссарий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md) ·
-[1. Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md) · **2. Развёртывание** ·
-[3. Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) · [4. Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) ·
-[5. Команды и отладка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md)
+**Навигация:** [Содержание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md) · [Обзор и глоссарий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md) ·
+[1. Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md) · **2. Развёртывание** ·
+[3. Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) · [4. Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) ·
+[5. Команды и отладка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md)
 
-← Назад: [1. Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md) · Далее: [3. Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) (необязательно) или [4. Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) →
+← Назад: [1. Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md) · Далее: [3. Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) (необязательно) или [4. Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) →

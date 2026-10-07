@@ -4,7 +4,7 @@
   "compiled_at": "2026-10-07",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "abd20fa7fac5750edf0af78f2c87999676368bdf"
+    "revision": "9a65744776a0e703dccbf742b226c1e155bcdd66"
   },
   "adapter": {
     "name": "cline-vscode",
@@ -35,13 +35,13 @@
       "contracts/c-release-bcreq.schema.json": "bb9a1e92f9201fbcafa8559df1f94604d60177b497f4a8d16315554875f790a4",
       "contracts/c-release-manifest.schema.json": "b8daad5a3f940b9f9092e61d7a6a1c08bef3a0cb6010711dabd920b518963648",
       "contracts/c-working-bcreq.schema.json": "2792823ef691d3e49c7e07a9cb2766623a7dd5946c96b59ab4b8e5fd0a874e53",
-      "docs/guides/01-junior-pilot.md": "e33bdfe515b1cf17ad9ae99e7edf084156d9a02224d71628d14c70056213df28",
-      "docs/guides/02-install.md": "e7297170ac2e887cbcc6866c0ceb090314b94db328d29135563efbedf93ff922",
-      "docs/guides/03-deploy-package.md": "3e0d9f40d97cdbb45e2438db0c77f4c54e69b79f56c327dac53f9cc5e403689a",
-      "docs/guides/04-smoke-test.md": "2140d8fb3848c9da4b862cf13be41d745c03efcd7f4180b810b1786188eba52c",
-      "docs/guides/05-commands-reference.md": "48abe5671b8f0da901098ead717bfb7a612a6ceab6058c32e8463fcd04e9f193",
-      "docs/guides/06-working-with-cline.md": "a9bbb66f46a4ae452aa1c66fc3f7717685cc1cda573ebe7b6031aa150977c954",
-      "docs/guides/README.md": "d6ea1db20121064abdcbf215186ce7403361268f8a73f2e78e92cea187563aaf",
+      "docs/guides/01-junior-pilot.md": "2fbf04dd3de05d8010165dae908bf8dfc439a4f01e9db9db5a756a1428400405",
+      "docs/guides/02-install.md": "196cee73cc8e74cd4a42213969604b50ff900477a57897754125b4dcdacf679a",
+      "docs/guides/03-deploy-package.md": "2ef62686935e318bb2907c0648df3e5674d57c2869cb874fda8f35c314815366",
+      "docs/guides/04-smoke-test.md": "5cba296e668dd9323f030deef96338c6aebedf287831c015e7ab6b9a913b8b50",
+      "docs/guides/05-commands-reference.md": "ce1b3d3025941a54045ff7bd24ec60564010acd00d97decd1ac2750f6c1c698e",
+      "docs/guides/06-working-with-cline.md": "83a968f1f1e092d93eed7bc48a772da399f72915f57d8061772b5a072a9c3e85",
+      "docs/guides/README.md": "c9706c1506e6a9ef3af6886ba5a6a54db22201a805c37e096de409d015134c0d",
       "docs/kb-policy.md": "7a86c719ff85dab64cf39fad9e11a704a54f199af8ee1d46190706cb9425a71a",
       "evaluation/g-human-checklist.md": "e8db90d1f061c2559cf9ceddac8abe3e967f01071b504141b350c40c66e195ad",
       "golden/TASK-0001.json": "1a2a05e880866120bc8cda07c8a51a94741502ba39fa09737b174badd31fb8c5",

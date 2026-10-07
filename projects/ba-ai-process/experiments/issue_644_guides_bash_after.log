@@ -6,6 +6,6 @@ test_blocks_use_only_what_git_bash_provides (__main__.StaticGuideTest.test_block
 test_guides_are_git_bash_instructions (__main__.StaticGuideTest.test_guides_are_git_bash_instructions) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 4.942s
+Ran 6 tests in 5.608s
 
 OK

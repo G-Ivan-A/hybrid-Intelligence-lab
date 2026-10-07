@@ -12,22 +12,22 @@ temperature: 0.1
 
 ## Содержание
 
-1. [Что установить и зачем](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#что-установить-и-зачем)
-2. [Установка на Windows 10/11 x64](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#установка-на-windows-1011-x64)
-3. [Терминал Git Bash в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code)
-4. [Подключение модели в Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#подключение-модели-в-cline)
-5. [Команды из инструкции AI Core](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#команды-из-инструкции-ai-core)
-6. [Проверка установки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#проверка-установки)
-7. [Если что-то не так](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#если-что-то-не-так)
+1. [Что установить и зачем](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#что-установить-и-зачем)
+2. [Установка на Windows 10/11 x64](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#установка-на-windows-1011-x64)
+3. [Терминал Git Bash в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code)
+4. [Подключение модели в Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#подключение-модели-в-cline)
+5. [Команды из инструкции AI Core](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#команды-из-инструкции-ai-core)
+6. [Проверка установки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#проверка-установки)
+7. [Если что-то не так](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#если-что-то-не-так)
 
 ## Что установить и зачем
 
 | Программа | Зачем | Что ставить дополнительно |
 |-----------|-------|---------------------------|
-| [VS Code](https://code.visualstudio.com/download) | Редактор: в нём открыт пакет, [терминал VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal) и [панель Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-cline-panel) | Ничего |
+| [VS Code](https://code.visualstudio.com/download) | Редактор: в нём открыт пакет, [терминал VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal) и [панель Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-cline-panel) | Ничего |
 | [Cline](https://docs.cline.bot/getting-started/installing-cline) | Расширение VS Code — ИИ-агент, с которым вы ведёте диалог | Ничего |
 | [Git](https://git-scm.com/download/win) | Скачать пакет и базу знаний; Git Bash из состава Git — терминал для всех команд инструкций | Ничего |
-| [Python 3.11 или новее](https://www.python.org/downloads/windows/) | На Python написаны [runner](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-runner) и проверки пакета | **Ничего.** Runner использует только стандартную библиотеку, которая входит в установщик Python. Команду `pip install` выполнять не нужно |
+| [Python 3.11 или новее](https://www.python.org/downloads/windows/) | На Python написаны [runner](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-runner) и проверки пакета | **Ничего.** Runner использует только стандартную библиотеку, которая входит в установщик Python. Команду `pip install` выполнять не нужно |
 
 Если на АРМ нет прав администратора, попросите администратора установить
 программы из корпоративного каталога ПО.
@@ -79,7 +79,7 @@ temperature: 0.1
 ## Подключение модели в Cline
 
 Зачем: Cline сам по себе не содержит модель — он обращается к серверу
-Mango AI ([модель](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-model)).
+Mango AI ([модель](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-model)).
 
 1. Откройте панель Cline (значок Cline на левой панели) → значок настроек
    (шестерёнка).
@@ -111,7 +111,7 @@ AI Core для терминала Cline не нужны**. Они настраи
    `~/.<папка>/settings.json` окажется в `C:\Users\<логин>\.<папка>\settings.json`.
 4. Вместо `cd /path/to/your-project` укажите реальную папку в записи Git Bash,
    например `cd ~/bcreq-pilot/runtime` (правило записи путей — в таблице
-   раздела [Терминал Git Bash в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code)).
+   раздела [Терминал Git Bash в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code)).
 5. `chmod 600` в Git Bash завершается без ошибки, но права Windows на файл
    не меняет: Git для Windows подключает диски без поддержки прав POSIX
    (`noacl`). Доступ к файлу определяют права вашей папки профиля. Поэтому не
@@ -119,14 +119,14 @@ AI Core для терминала Cline не нужны**. Они настраи
    отправляйте его в чат.
 
 Другие модели (например, DeepSeek) подключить технически можно — см.
-[Внешняя модель](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#можно-ли-подключить-внешнюю-модель-например-deepseek).
+[Внешняя модель](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#можно-ли-подключить-внешнюю-модель-например-deepseek).
 Для пилота используйте модель Mango AI.
 
 ## Проверка установки
 
 ### Проверить версии программ
 
-- **Где:** [терминал VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal)
+- **Где:** [терминал VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal)
   (``Ctrl+` ``). Папка пока не важна.
 - **Команды** — по одной, после каждой нажмите Enter:
 
@@ -152,7 +152,7 @@ AI Core для терминала Cline не нужны**. Они настраи
 
 ### Проверить связь с моделью
 
-- **Где:** [панель Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-cline-panel).
+- **Где:** [панель Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-cline-panel).
 - **Напишите Cline:** `Ответь одним словом: готов`
 - **Ожидаемый результат:** ответ модели в панели, например `Готов`.
 - **Проверьте:** нет сообщения об ошибке 401/403 или таймауте. Файлы при
@@ -163,21 +163,21 @@ AI Core для терминала Cline не нужны**. Они настраи
 | Симптом | Что сделать |
 |---------|-------------|
 | `python: command not found`, `Python was not found` или открывается Microsoft Store | Переустановите Python с галочкой **Add python.exe to PATH** и перезапустите VS Code. Либо используйте `py -3` вместо `python` во всех командах инструкции |
-| `uname -s` показал не `MINGW64_NT…`, приглашение начинается с `PS`, или ошибка `The token '&&' is not a valid statement separator` | Терминал — PowerShell, а не Git Bash. Выполните шаги раздела [Терминал Git Bash в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code) и откройте новый терминал |
+| `uname -s` показал не `MINGW64_NT…`, приглашение начинается с `PS`, или ошибка `The token '&&' is not a valid statement separator` | Терминал — PowerShell, а не Git Bash. Выполните шаги раздела [Терминал Git Bash в VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code) и откройте новый терминал |
 | `Python 3.10` или старше | Установите 3.11 или новее |
 | `code` или `git` не найден | Перезапустите VS Code; если не помогло — переустановите с добавлением в PATH |
 | Cline отвечает ошибкой 401/403 | Проверьте ключ; обратитесь к администратору AI Core |
 | Cline не отвечает / таймаут | Включите VPN, проверьте Base URL |
-| Cline пишет «Выполнение сценариев отключено в этой системе» или `Windows hook failed` | Cline сам запускает hooks пакета (`.ps1`) через Windows PowerShell с параметром `-ExecutionPolicy Bypass`; это сообщение значит, что сценарии запрещены групповой политикой или Python недоступен. Проверьте `python --version` в Git Bash и передайте текст администратору; не меняйте политику исполнения самостоятельно |
+| Cline пишет «Выполнение сценариев отключено в этой системе» или `Windows hook failed` | Cline сам запускает hooks пакета (`.ps1`) через Windows PowerShell с параметром `-ExecutionPolicy Bypass`; это сообщение значит, что сценарии запрещены групповой политикой или Python недоступен: hook пробует `python`, затем `py -3`. Проверьте `python --version` в Git Bash и передайте текст администратору; не меняйте политику исполнения самостоятельно |
 
 **Готово**, если команды показали версии, `uname -s` — `MINGW64_NT…`, и Cline ответил. Переходите к
-[развёртыванию пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md).
+[развёртыванию пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md).
 
 ---
 
-**Навигация:** [Содержание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md) · [Обзор и глоссарий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md) ·
-**1. Установка** · [2. Развёртывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md) ·
-[3. Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) · [4. Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) ·
-[5. Команды и отладка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md)
+**Навигация:** [Содержание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md) · [Обзор и глоссарий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md) ·
+**1. Установка** · [2. Развёртывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md) ·
+[3. Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) · [4. Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) ·
+[5. Команды и отладка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md)
 
-← Назад: [Обзор и глоссарий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md) · Далее: [2. Развёртывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/abd20fa7fac5750edf0af78f2c87999676368bdf/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md) →
+← Назад: [Обзор и глоссарий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md) · Далее: [2. Развёртывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md) →
