@@ -19,6 +19,7 @@ OVERRIDES = ("OPENCODE_PURE", "OPENCODE_DISABLE_PROJECT_CONFIG", "OPENCODE_PERMI
 
 def runner(*arguments: str) -> int:
     result = subprocess.run([sys.executable, str(RUNNER), *arguments], cwd=ROOT, text=True,
+                            encoding="utf-8", errors="replace",
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"})
     print(f"$ python tools/run_task.py {' '.join(arguments)}")
@@ -50,6 +51,8 @@ def gate(raw: str) -> int:
 
 
 def main(argv: list[str]) -> int:
+    # The runner writes UTF-8; a Windows console code page must not break the output for OpenCode.
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     if len(argv) == 1 and argv[0] == "check":
         return check()
     if len(argv) == 1 and argv[0] == "verify":

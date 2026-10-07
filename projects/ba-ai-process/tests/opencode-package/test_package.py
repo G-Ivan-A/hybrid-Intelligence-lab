@@ -203,9 +203,10 @@ console.log(JSON.stringify(results))
             # Sealing a sealed file changes nothing; on Windows the runner writes CRLF.
             self.assertEqual(json.loads((package / "submissions/TASK-0001.json").read_text(encoding="utf-8")),
                              json.loads((package / "golden/TASK-0001.json").read_text(encoding="utf-8")))
-            rerun = self.command(package, "gate", "TASK-0001")
-            self.assertIn("ERROR: run already exists", rerun.stdout)
-            self.assertIn("exit code: 1", rerun.stdout)
+            # A Windows console code page: the runner reports the Cyrillic package path.
+            rerun = self.command(package, "gate", "TASK-0001", env={"PYTHONIOENCODING": "cp1252"})
+            self.assertIn("ERROR: run already exists", rerun.stdout, rerun.stdout + rerun.stderr)
+            self.assertIn("exit code: 1", rerun.stdout, rerun.stdout + rerun.stderr)
             self.assertEqual(self.command(package, "verify").returncode, 0)
             self.assertEqual(self.command(package, "unknown").returncode, 2)
 
