@@ -109,6 +109,27 @@ def user_text(requests: list) -> str:
     return "\n".join(texts)
 
 
+def probe(binary: str, package: Path, work: Path):
+    """Trace which shell runs the !`...` blocks of a command and what argv it passes."""
+    command = package / ".opencode/commands/probe.md"
+    command.write_text(
+        "---\ndescription: probe\n---\n"
+        "A !`echo shell=[$BASH_VERSION] [%COMSPEC%] [$PSVersionTable]`\n"
+        "B !`python -c \"import sys, os; print('argv', sys.argv[1:], os.getcwd())\" '$1'`\n"
+        "C !`python -c \"import sys; print('argv-dq', sys.argv[1:])\" \"$1\"`\n", encoding="utf-8")
+    for label, arguments in (("plain", ["TASK-0002"]), ("semicolon", ["TASK-0002;", "echo", "probe"])):
+        mock = Mock(work, f"probe-{label}", [{"text": "ok"}])
+        try:
+            opencode(binary, package, environment(work, mock.port), ["--command", "probe", *arguments],
+                     work / f"probe-{label}.out")
+        finally:
+            mock.stop()
+        text = user_text(mock.requests())
+        print(f"  probe {label}: {ascii(text[text.find('A '):][:600])}")
+    command.unlink()
+    print(f"  SHELL={os.environ.get('SHELL')!r} COMSPEC={os.environ.get('COMSPEC')!r}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("package", type=Path)
@@ -191,6 +212,7 @@ def main() -> int:
             output = (work / f"{name}.out").read_text(encoding="utf-8", errors="replace")
             print(f"  model requests: {len(mock.requests())}; runner block: {ascii(text[text.find(chr(96) * 3):][:1500])}")
             print(f"  OpenCode output: {ascii(output[-3000:])}")
+            probe(args.opencode, package, work)
     expect((package / "runs/TASK-0002/release.json").is_file(), "/bcreq-gate writes runs/TASK-0002/release.json")
     # cmd.exe would keep the single quotes and redirect into a file named pwned2.txt'
     expect(not any(package.glob("pwned2*")), "/bcreq-gate does not run text after the TASK ID")
