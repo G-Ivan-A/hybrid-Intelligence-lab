@@ -4,7 +4,7 @@
   "compiled_at": "2026-09-29",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "8ca3702065513d3a744864ebe4b5c1072f806d53"
+    "revision": "62f5340f8c1ae43a54fda03b599225b149c1ac38"
   },
   "adapter": {
     "name": "opencode",
@@ -33,9 +33,9 @@
       "contracts/c-release-bcreq.schema.json": "fd2252b483318b09cda892c99a6f99e881b0b9bdce45a39e25c7efad710de5ca",
       "contracts/c-release-manifest.schema.json": "a206178bb9e7c59af2db17113345af38bcd49b3dc9397654e65b5e3d2ebe8b46",
       "contracts/c-working-bcreq.schema.json": "3c0fc22499c75b586038f3bb98640f43d1882a247a5ecf07ca4f8dc7a3e46ccb",
-      "docs/guides/01-junior-pilot.md": "0b5d9ffb8aed206922524bf986158f2f906259fcc8c8bb8e9c72b3c197c55f8a",
+      "docs/guides/01-junior-pilot.md": "9b3c3e62d7957469cc09ff340ef80352779caacf5324d95c2961bdd3b85a6dea",
       "docs/guides/02-install.md": "5450c41e9751032f134365725edfb5bd53df70c03943bcd770a7d7eb53c29265",
-      "docs/guides/03-deploy-package.md": "fd557ab3772d0ce5aae5e983df21ffa2b607babfea31395ae445146ab1401536",
+      "docs/guides/03-deploy-package.md": "1a9afabd0e8c6d70ef8658bca1185ae42bddfb738b86b3cb02833b823de0d772",
       "docs/guides/04-smoke-test.md": "7ab2b97c5b2c9a12c991de4f12712de2b2173c2a5762c93e6e39c261491e16e5",
       "docs/guides/05-commands-reference.md": "ca41652189f220b85f473cc2ef34c17f6f017001cddf59ef7bc5754365abc85d",
       "docs/guides/06-working-with-opencode.md": "cfef52ed1720dd899662048bf51d51dc5b2ebbcc064fc649a0bd1c81e68b660f",
