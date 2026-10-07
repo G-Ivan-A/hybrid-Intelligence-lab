@@ -73,6 +73,13 @@ is_active_file() {
     projects/ba-ai-process/tests/cline-package/*)
       return 0
       ;;
+    # OpenCode pilot Source and Distribution: tools/test-opencode-package.sh.
+    projects/ba-ai-process/build/adapters/opencode/* | \
+    projects/ba-ai-process/build/compile-opencode-package.py | \
+    projects/ba-ai-process/dist/execution-package-opencode/* | \
+    projects/ba-ai-process/tests/opencode-package/*)
+      return 0
+      ;;
     projects/ba-ai-process/ba-meta-model/product-taxonomy/* | \
     projects/ba-ai-process/build/compiler/*)
       return 0
@@ -678,6 +685,7 @@ is_active_file() {
     tools/test-ba-requirements-forensics.sh | \
     tools/test-bcreq-working-release-pipeline.sh | \
     tools/test-cline-package.sh | \
+    tools/test-opencode-package.sh | \
     tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \

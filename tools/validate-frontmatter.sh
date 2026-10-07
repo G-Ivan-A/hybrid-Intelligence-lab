@@ -74,6 +74,12 @@ document_class() {
   path="$(normalize_path "$1")"
 
   case "$path" in
+    # Команда OpenCode: поля description и agent задаёт внешний формат
+    # OpenCode (.opencode/commands/*.md) — и в адаптере, и в пакете исполнения.
+    projects/*/build/adapters/*/.opencode/commands/*.md | \
+    projects/*/execution-package-*/.opencode/commands/*.md)
+      printf 'opencode-command'
+      ;;
     # Пакет исполнения — артефакт компиляции, а не исследовательский документ:
     # часть его полей задана внешним стандартом GigaCode (name, description),
     # часть фиксирует происхождение компиляции (compiled_from, derived_from).
@@ -196,6 +202,9 @@ is_approved_field() {
       return 0
       ;;
     practice:source | practice:executable | practice:entrypoint)
+      return 0
+      ;;
+    opencode-command:description | opencode-command:agent)
       return 0
       ;;
     execution-package:name | execution-package:description | execution-package:product_class | \

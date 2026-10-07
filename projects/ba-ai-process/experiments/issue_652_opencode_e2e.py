@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Drive a real OpenCode binary against a compiled package and a scripted mock model.
 
-Usage: python run_e2e.py PACKAGE_DIR [--opencode PATH] [--keep]
+Usage: python issue_652_opencode_e2e.py PACKAGE_DIR [--opencode PATH] [--keep]
 
 Checks, on a disposable Git runtime copy of the package:
 1. the guard plugin loads and blocks writes outside submissions/TASK-ID.json;
@@ -31,7 +31,7 @@ class Mock:
         script_path = work / f"{name}.script.json"
         script_path.write_text(json.dumps(script, ensure_ascii=False), encoding="utf-8")
         port_file = work / f"{name}.port"
-        self.process = subprocess.Popen([sys.executable, str(HERE / "mock_openai.py"), str(script_path),
+        self.process = subprocess.Popen([sys.executable, str(HERE / "issue_652_mock_openai.py"), str(script_path),
                                          str(self.log), "--port-file", str(port_file)])
         for _ in range(100):
             if port_file.exists() and port_file.read_text():
