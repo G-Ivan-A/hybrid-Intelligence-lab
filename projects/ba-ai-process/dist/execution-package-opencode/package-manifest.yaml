@@ -4,7 +4,7 @@
   "compiled_at": "2026-09-29",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "6b85a24603fd3ec5036fbd365f2cbce9b0b09ea1"
+    "revision": "88176f4dd1abae8fbae8ce0d3506ecdcb42040f1"
   },
   "adapter": {
     "name": "opencode",
@@ -28,7 +28,7 @@
       ".opencode/commands/bcreq-start.md": "68542745ae64ee0bfaf7e2a2e01ddf4d0d06bb050bb3cbaf8253403c51db4694",
       ".opencode/plugins/bcreq-guard.js": "583552bc8e30d9a96e81d704767bac2994be1e636b0afd94ea6bad1ef92c2544",
       "AGENTS.md": "65a5c22346fbbcd79e64415692d1efdfd73ea5e3fb98de10e1c69fc06bfefb19",
-      "README.md": "d7d223041b5139bc598e8153ae4d3fa7dc30a39eb0552e2cafc25937e4c135b2",
+      "README.md": "38397864016ea5852ae4045ceec6b21dc50828c10eb2286bcbf31492e752a718",
       "contracts/bcreq-client-v1.json": "add9e5b2021da91ad9a242da2be3af32358f3cbd409f3a588babfa9ae74c4a7b",
       "contracts/c-release-bcreq.schema.json": "fd2252b483318b09cda892c99a6f99e881b0b9bdce45a39e25c7efad710de5ca",
       "contracts/c-release-manifest.schema.json": "a206178bb9e7c59af2db17113345af38bcd49b3dc9397654e65b5e3d2ebe8b46",
@@ -49,7 +49,7 @@
       "taxonomy/tmf-snapshots.json": "629adcbd9df8d596fefd3821ea814a86e29fa6b8f9f4043149660ec56239c4af",
       "templates/working-prompt.md": "4b6627e0437c1b3366874a191f047d0b518c99cafcbe7d6296adb1b5dc02b7f0",
       "tools/bcreq_pipeline.py": "95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f",
-      "tools/opencode_command.py": "8e0d2779e72c5ae23632a2539f6041f372da968a29c9d686478d79358b468936",
+      "tools/opencode_command.py": "f394972f42bed88909ff4f8daca16d3493b237e3c1d5402dcf255e069b59fe77",
       "tools/opencode_hook.py": "161b886d1d5fcf40bbdce3e79d60ebb64119cb9ef3cb6712bc72e40dbece34cf",
       "tools/run_task.py": "36cee2dc2f81cb0c820b0f223fcbe48208cafba085c7ed2ed74b3329e4dc4bec"
     }

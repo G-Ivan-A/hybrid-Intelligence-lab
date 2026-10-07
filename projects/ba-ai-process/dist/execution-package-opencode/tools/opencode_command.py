@@ -65,4 +65,7 @@ def main(argv: list[str]) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main(sys.argv[1:]))
+    main(sys.argv[1:])
+    # OpenCode on Windows drops the output of a !`...` block that exits with 1 (cross-spawn reports
+    # ENOENT); the result is the printed `exit code:` line.
+    raise SystemExit(0)
