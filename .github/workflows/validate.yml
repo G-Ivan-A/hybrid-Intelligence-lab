@@ -190,7 +190,7 @@ jobs:
       - name: Run real OpenCode against the package (E2E)
         shell: bash
         run: |
-          binary="$(npm prefix -g)/node_modules/opencode-ai/bin/opencode"
+          binary="$(npm root -g)/opencode-ai/bin/opencode"
           [ -f "$binary.exe" ] && binary="$binary.exe"
           "$binary" --version
           python projects/ba-ai-process/experiments/issue_652_opencode_e2e.py \

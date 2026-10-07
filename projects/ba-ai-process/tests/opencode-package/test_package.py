@@ -200,8 +200,9 @@ console.log(JSON.stringify(results))
             self.assertEqual(passed.returncode, 0, passed.stdout)
             self.assertIn("sealed: submissions/TASK-0001.json\nexit code: 0", passed.stdout)
             self.assertIn("TASK-0001: PASS\nexit code: 0", passed.stdout)
-            self.assertEqual((package / "submissions/TASK-0001.json").read_bytes(),
-                             (package / "golden/TASK-0001.json").read_bytes())
+            # Sealing a sealed file changes nothing; on Windows the runner writes CRLF.
+            self.assertEqual(json.loads((package / "submissions/TASK-0001.json").read_text(encoding="utf-8")),
+                             json.loads((package / "golden/TASK-0001.json").read_text(encoding="utf-8")))
             rerun = self.command(package, "gate", "TASK-0001")
             self.assertIn("ERROR: run already exists", rerun.stdout)
             self.assertIn("exit code: 1", rerun.stdout)
