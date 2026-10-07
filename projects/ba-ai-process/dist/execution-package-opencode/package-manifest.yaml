@@ -4,7 +4,7 @@
   "compiled_at": "2026-09-29",
   "source": {
     "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "revision": "62f5340f8c1ae43a54fda03b599225b149c1ac38"
+    "revision": "6b85a24603fd3ec5036fbd365f2cbce9b0b09ea1"
   },
   "adapter": {
     "name": "opencode",
@@ -49,7 +49,7 @@
       "taxonomy/tmf-snapshots.json": "629adcbd9df8d596fefd3821ea814a86e29fa6b8f9f4043149660ec56239c4af",
       "templates/working-prompt.md": "4b6627e0437c1b3366874a191f047d0b518c99cafcbe7d6296adb1b5dc02b7f0",
       "tools/bcreq_pipeline.py": "95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f",
-      "tools/opencode_command.py": "a8c1976d6e1bef1e818b9255c23aca5720aaff95f8a4119212e39bf6d4eb7526",
+      "tools/opencode_command.py": "8e0d2779e72c5ae23632a2539f6041f372da968a29c9d686478d79358b468936",
       "tools/opencode_hook.py": "161b886d1d5fcf40bbdce3e79d60ebb64119cb9ef3cb6712bc72e40dbece34cf",
       "tools/run_task.py": "36cee2dc2f81cb0c820b0f223fcbe48208cafba085c7ed2ed74b3329e4dc4bec"
     }
