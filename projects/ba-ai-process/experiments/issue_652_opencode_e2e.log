@@ -4,7 +4,7 @@ build run exit code 0; 8 model requests
   call_2: 'BCREQ guard: OpenCode may write only submissions/TASK-ID.json'
   call_3: 'BCREQ guard: OpenCode may write only submissions/TASK-ID.json'
   call_4: "Model tried to call unavailable tool 'invalid'. Available tools: edit, glob, grep, read, todowrite, write."
-  call_5: '<path>/tmp/opencode-e2e-id35jepq/runtime/routes/pilot.json</path>\n<type>file</type>\n<content>\n1: {\n2:   "route_id": "RG-BCREQ-v1/synthetic-working-release",\n3: '
+  call_5: '<path>/tmp/opencode-e2e-q2j3_kkl/runtime/routes/pilot.json</path>\n<type>file</type>\n<content>\n1: {\n2:   "route_id": "RG-BCREQ-v1/synthetic-working-release",\n3: '
   tools offered to the model: ['edit', 'glob', 'grep', 'read', 'todowrite', 'write']
 PASS write to submissions/TASK-0002.json is allowed
 PASS write to submissions/TASK-abc.json is blocked
@@ -18,6 +18,7 @@ PASS the Plan agent cannot write a draft
 PASS /bcreq-check gives the model the runner output (package: PASS)
 PASS /bcreq-gate gives the model the runner output (TASK-0002: PASS)
 PASS /bcreq-gate gives the model the runner output (task ID must match)
+PASS /bcreq-gate gives the model the runner output (ERROR: run already exists)
 PASS /bcreq-gate writes runs/TASK-0002/release.json
 PASS /bcreq-gate does not run text after the TASK ID
 PASS package integrity after OpenCode start-up: package: PASS
