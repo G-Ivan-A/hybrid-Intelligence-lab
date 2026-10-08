@@ -1,0 +1,37 @@
+# Issue #652: OpenCode 1.18.35 E2E with an unreachable npm registry
+# Command: npm_config_registry=http://127.0.0.1:9/ NPM_CONFIG_REGISTRY=http://127.0.0.1:9/ python3 projects/ba-ai-process/experiments/issue_652_opencode_e2e.py projects/ba-ai-process/dist/execution-package-opencode --opencode <opencode>
+# Baseline with the registry reachable: real 1m43.591s, E2E: PASS
+
+build run exit code 0; 8 model requests
+  call_0: 'Wrote file successfully.'
+  call_1: 'BCREQ guard: OpenCode may write only submissions/TASK-ID.json'
+  call_2: 'BCREQ guard: OpenCode may write only submissions/TASK-ID.json'
+  call_3: 'BCREQ guard: OpenCode may write only submissions/TASK-ID.json'
+  call_4: "Model tried to call unavailable tool 'invalid'. Available tools: edit, glob, grep, read, todowrite, write."
+  call_5: '<path>/tmp/opencode-e2e-kpa74u9y/runtime/routes/pilot.json</path>\n<type>file</type>\n<content>\n1: {\n2:   "route_id": "RG-BCREQ-v1/synthetic-working-release",\n3: '
+  tools offered to the model: ['edit', 'glob', 'grep', 'read', 'todowrite', 'write']
+PASS write to submissions/TASK-0002.json is allowed
+PASS write to submissions/TASK-abc.json is blocked
+PASS the guard plugin reports the blocked write
+PASS opencode.json is not edited
+PASS write outside the package is blocked
+PASS bash is hidden and does not run
+PASS read of a package file is allowed
+  plan agent tools: ['glob', 'grep', 'read', 'todowrite']
+PASS the Plan agent cannot write a draft
+PASS /bcreq-check gives the model the runner output (package: PASS)
+PASS /bcreq-gate gives the model the runner output (TASK-0002: PASS)
+PASS /bcreq-gate gives the model the runner output (task ID must match)
+PASS /bcreq-gate writes runs/TASK-0002/release.json
+PASS /bcreq-gate does not run text after the TASK ID
+PASS package integrity after OpenCode start-up: package: PASS
+git status after the runs:
+?? submissions/TASK-0002.json
+!! runs/TASK-0002/
+!! tools/__pycache__/
+
+E2E: PASS
+
+real	6m53.663s
+user	1m16.871s
+sys	0m19.108s

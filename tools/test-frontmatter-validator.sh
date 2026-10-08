@@ -86,6 +86,10 @@ mkdir -p "$project_dir/docs/rfc"
 project_rfc_doc="$project_dir/docs/rfc/2026-09-project-rfc.md"
 mkdir -p "$project_dir/decisions"
 project_adr_doc="$project_dir/decisions/2026-09-project-adr.md"
+mkdir -p "$project_dir/build/adapters/opencode/.opencode/commands"
+opencode_command_doc="$project_dir/build/adapters/opencode/.opencode/commands/bcreq-check.md"
+mkdir -p "$project_dir/build/adapters/opencode/docs"
+opencode_plain_doc="$project_dir/build/adapters/opencode/docs/notes.md"
 make_tmp_file guide_doc docs/guides
 make_tmp_file report_doc docs/report
 make_tmp_file audit_doc docs/audit
@@ -255,5 +259,20 @@ audit_target: standards/audit-standard.md
 evidence_model: manual-review
 verdict: pass" "# Fixture"
 expect_fail "audit required body sections" "$audit_missing_sections_doc" "missing required Audit body section: Summary / BLUF"
+
+write_doc "$opencode_command_doc" "status: draft
+version: 0.1
+updated: 2026-10-07
+temperature: 0.1
+description: Проверить пакет
+agent: plan"
+expect_pass "OpenCode command metadata" "$opencode_command_doc"
+
+write_doc "$opencode_plain_doc" "status: draft
+version: 0.1
+updated: 2026-10-07
+temperature: 0.1
+agent: plan"
+expect_fail "OpenCode fields outside commands" "$opencode_plain_doc" "frontmatter field is not approved for this document class: agent"
 
 printf 'Frontmatter validator regression tests passed.\n'

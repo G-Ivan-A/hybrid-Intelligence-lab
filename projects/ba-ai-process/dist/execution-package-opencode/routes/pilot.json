@@ -1,0 +1,9 @@
+{
+  "route_id": "RG-BCREQ-v1/synthetic-working-release",
+  "input": "approved A-BCREQ Working JSON",
+  "output": "BCREQ-client-v1 Release JSON and release manifest",
+  "machine_steps": ["validate-working", "compile", "validate-release"],
+  "human_gate": "G-human",
+  "on_machine_failure": "step_skipped and halt",
+  "on_missing_source": "explicit error or open question"
+}

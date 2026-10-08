@@ -1,0 +1,57 @@
+{
+  "manifest": "execution-package-opencode",
+  "package_version": "0.2.0",
+  "compiled_at": "2026-09-29",
+  "source": {
+    "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
+    "revision": "88176f4dd1abae8fbae8ce0d3506ecdcb42040f1"
+  },
+  "adapter": {
+    "name": "opencode",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "allowlist": [
+      "projects/ba-ai-process/build/common/",
+      "projects/ba-ai-process/build/adapters/opencode/"
+    ]
+  },
+  "outputs": {
+    "hash_algorithm": "sha256",
+    "hashes": {
+      ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      ".github/workflows/validate-opencode-package.yml": "ba9123f3cc33bae9fc13462ffcb18af7511a708106b3acf2c0cdfb06da51005c",
+      ".gitignore": "89912e46cd790c07dbdd676f289fe882fb43f5901bb7b3675a5372f792168c9c",
+      ".opencode/.gitignore": "1ef27c231a02318a9c56001174b0cf924ff97500e4be751cb823e8af37c7444d",
+      ".opencode/commands/bcreq-check.md": "9ab950794258efb1b01db30d5dabaa3fc20adf76ed59eb5646c06dc3fda4ac2e",
+      ".opencode/commands/bcreq-gate.md": "1a3af3db2450f1a2debf6c729c30c6e0a323d7d86af3afcb22a3581ab5769154",
+      ".opencode/commands/bcreq-start.md": "68542745ae64ee0bfaf7e2a2e01ddf4d0d06bb050bb3cbaf8253403c51db4694",
+      ".opencode/plugins/bcreq-guard.js": "583552bc8e30d9a96e81d704767bac2994be1e636b0afd94ea6bad1ef92c2544",
+      "AGENTS.md": "65a5c22346fbbcd79e64415692d1efdfd73ea5e3fb98de10e1c69fc06bfefb19",
+      "README.md": "38397864016ea5852ae4045ceec6b21dc50828c10eb2286bcbf31492e752a718",
+      "contracts/bcreq-client-v1.json": "add9e5b2021da91ad9a242da2be3af32358f3cbd409f3a588babfa9ae74c4a7b",
+      "contracts/c-release-bcreq.schema.json": "fd2252b483318b09cda892c99a6f99e881b0b9bdce45a39e25c7efad710de5ca",
+      "contracts/c-release-manifest.schema.json": "a206178bb9e7c59af2db17113345af38bcd49b3dc9397654e65b5e3d2ebe8b46",
+      "contracts/c-working-bcreq.schema.json": "3c0fc22499c75b586038f3bb98640f43d1882a247a5ecf07ca4f8dc7a3e46ccb",
+      "docs/guides/01-junior-pilot.md": "9b3c3e62d7957469cc09ff340ef80352779caacf5324d95c2961bdd3b85a6dea",
+      "docs/guides/02-install.md": "5450c41e9751032f134365725edfb5bd53df70c03943bcd770a7d7eb53c29265",
+      "docs/guides/03-deploy-package.md": "1a9afabd0e8c6d70ef8658bca1185ae42bddfb738b86b3cb02833b823de0d772",
+      "docs/guides/04-smoke-test.md": "7ab2b97c5b2c9a12c991de4f12712de2b2173c2a5762c93e6e39c261491e16e5",
+      "docs/guides/05-commands-reference.md": "ca41652189f220b85f473cc2ef34c17f6f017001cddf59ef7bc5754365abc85d",
+      "docs/guides/06-working-with-opencode.md": "cfef52ed1720dd899662048bf51d51dc5b2ebbcc064fc649a0bd1c81e68b660f",
+      "docs/guides/README.md": "941f6cfa631d1eeb60161868ad7610c677ed9978bfddb88f0f9edbf82684b22d",
+      "docs/kb-policy.md": "7a86c719ff85dab64cf39fad9e11a704a54f199af8ee1d46190706cb9425a71a",
+      "evaluation/g-human-checklist.md": "e8db90d1f061c2559cf9ceddac8abe3e967f01071b504141b350c40c66e195ad",
+      "golden/TASK-0001.json": "1a2a05e880866120bc8cda07c8a51a94741502ba39fa09737b174badd31fb8c5",
+      "opencode.json": "218b06ddcc423f90a4f6a8ed83a2c5e47641b49f6affe3b63170af75744e351d",
+      "routes/pilot.json": "e5866eaf909498f9e05522ebdc73bac475ae2fd7fa7c63441a6482c1f9501c44",
+      "taxonomy/mango-products.yaml": "73ab6c1d482e07d833b713144b23468ea076369bc990d8bd7323733b3fd45708",
+      "taxonomy/tmf-snapshots.json": "629adcbd9df8d596fefd3821ea814a86e29fa6b8f9f4043149660ec56239c4af",
+      "templates/working-prompt.md": "4b6627e0437c1b3366874a191f047d0b518c99cafcbe7d6296adb1b5dc02b7f0",
+      "tools/bcreq_pipeline.py": "95a32a69ffb10e46798dbdc574f4de6e76ba53466f552594c3b6da5a4ddc658f",
+      "tools/opencode_command.py": "f394972f42bed88909ff4f8daca16d3493b237e3c1d5402dcf255e069b59fe77",
+      "tools/opencode_hook.py": "161b886d1d5fcf40bbdce3e79d60ebb64119cb9ef3cb6712bc72e40dbece34cf",
+      "tools/run_task.py": "36cee2dc2f81cb0c820b0f223fcbe48208cafba085c7ed2ed74b3329e4dc4bec"
+    }
+  }
+}
