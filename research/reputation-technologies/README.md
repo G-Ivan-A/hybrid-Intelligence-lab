@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.2
-updated: 2026-09-30
+version: 1.3
+updated: 2026-10-07
 temperature: 0.1
 ---
 
@@ -32,6 +32,9 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 | [2026-06-20-glossary.ru-en.md](2026-06-20-glossary.ru-en.md) | **Терминологический словарь (RU↔EN)**: ядро модели, методология, капитал/метрики, данные/ИИ, governance/этика, наименования — с международными аналогами. |
 | [2026-09-24-introductory-course-options-610.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-610-0ac7e285f2ac/research/reputation-technologies/2026-09-24-introductory-course-options-610.md) | Исследование issue #610: пять структур вводного курса, 25 синтетических прогонов, матрица и рекомендация для human review. |
 | [2026-09-30-course-sources-and-presentations-650.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md) | Исследование issue #650: углубление согласованного курса 4×90 мин в векторе «Вижу → Собираю → Выбираю → Действую» — тезисы, связки, вовлечение, тайминг, промпты, источники с цитатами, структуры презентаций, сквозные кейсы. |
+| [2026-10-07-day1-rationale-and-method-653.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) | Issue #653, День 1, документ 1: почему «от образа к связям» именно сейчас (современные данные + классика), статус GRA с трассировкой «зафиксировано / интерпретация / гипотеза», метод для пассивной онлайн-аудитории, поминутный тайминг, 4 микро-кейса, CTA к соисследователям, источники. |
+| [2026-10-07-day1-presentation-653.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-presentation-653.md) | Issue #653, День 1, документ 2: 30 слайдов с тезисами и строкой «сдвиг мышления», промпты изображений «эмпатия связей», «карта GRA» и мотив провенанса. |
+| [2026-10-07-day1-lecturer-script-653.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md) | Issue #653, День 1, документ 3: полный текст лектора с тегами пауз, голосований, демонстрации промпта, разрядки и охоты на ошибки ИИ; промпт, ИИ-досье с ключом, ответы на частые вопросы. |
 
 ## Карта Definition of Done (issue #260)
 

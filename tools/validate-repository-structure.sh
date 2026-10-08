@@ -484,6 +484,9 @@ is_active_file() {
     research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md | \
     research/reputation-technologies/2026-09-24-introductory-course-options-610.md | \
     research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md | \
+    research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md | \
+    research/reputation-technologies/2026-10-07-day1-presentation-653.md | \
+    research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md | \
     research/mango/2026-05-22-classification.md | \
     research/mango/2026-05-22-classification-tz.md | \
     research/mango/2026-05-22-requirements-flow.md | \
@@ -1994,11 +1997,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.24"
+require_text "ops/artifact-map.md" "version: 2.25"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-09-30"
+require_text "ops/artifact-map.md" "updated: 2026-10-07"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2221,7 +2224,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.26"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.27"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
