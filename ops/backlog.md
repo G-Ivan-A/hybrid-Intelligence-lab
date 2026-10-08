@@ -725,6 +725,37 @@ GigaCode-пакета сняты или приняты решением чело
 | **B-221** | Добавить навык, ведущий задачу GigaCode по маршруту | null | B-220 | TODO | - (planned) | [issue #638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638), [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), О-3, О-9 | Порядок узлов задаёт стартовая фраза, а `rg-bcreq-v1-dispatcher` ведёт отдельный ручной журнал; нужен навык, опирающийся на состояние runner. | null |
 | **B-222** | Подтвердить инструкцию GigaCode-пакета на Windows 10/11 | null | - | review | [#638](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/638) / [PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), [#647](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/647) / [PR #649](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/649) | [комментарий владельца к PR #641](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/641), [issue #647](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/647), О-1 | Целевая среда — только Windows 10/11 (x64). Все команды инструкции и документов пакета записаны в PowerShell; CI-задача `windows-guides` исполняет их дословно в Windows PowerShell 5.1 и PowerShell 7 на клоне Git for Windows. Ограничение О-1 снято. Issue #647: отрицательные тесты `G-mach` перенесены из bash в `test_package_gate.py`, эксперименты `issue_638_*.py` и APPROVE в `test_runner.py` исполняются в Windows, инструкции проверяются без `PYTHONUTF8` в профиле с пробелом и кириллицей. | null |
 
+## Спринт 28: Пакет исполнения OpenCode
+
+**Story.** Issue #652 добавляет третью среду исполнения — OpenCode — тем же
+путём, что Cline: общий Source `build/common/`, адаптер
+`build/adapters/opencode/`, компилятор и пакет
+`dist/execution-package-opencode/`. Маршрут `RG-BCREQ-v1` идёт от TASK-ID до
+Release через `G-mach` и `G-human`; блокирующую защиту даёт плагин
+`tool.execute.before`, а запечатывание и проверку запускают команды
+`/bcreq-start` и `/bcreq-gate`. Проверка по исходному коду OpenCode 1.18.35 и
+прогонам реального OpenCode показала разрывы, которые инструкция фиксирует как
+ограничения О-2, О-5…О-8 и не обходит.
+
+**Цель.** Довести пакет до пилота на рабочих местах Windows 10/11 и снять или
+принять решением человека ограничения OpenCode.
+
+**Критерий закрытия.** PR #655 принят; задачи B-224…B-227 закрыты или приняты
+решением человека; пакет перекомпилирован, инструкция обновлена.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-223** | Адаптер и пакет исполнения для OpenCode | null | - | review | [#652](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/652) / [PR #655](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/655) | [issue #652](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/652) | Адаптер `build/adapters/opencode/`, компилятор `compile-opencode-package.py`, пакет с `package-manifest.yaml` и кластером `docs/guides/` (README, 01–06) на PowerShell. Тест `test_package.py` и прогон реального OpenCode 1.18.35 с mock-моделью исполняются в CI на `ubuntu-latest` и `windows-2022`. Критической возможности OpenCode, без которой пакет невозможен, не найдено. | Creative |
+| **B-224** | Решить, как защищать пакет OpenCode от ключей запуска и shell-режима | null | - | TODO | - (planned) | [issue #652](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/652), [PR #655](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/655), О-6, [ограничения пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-opencode/docs/guides/01-junior-pilot.md#ограничения-текущей-версии-пакета) | Защита работает вместе с аналитиком, а не против него: `opencode --pure` и `OPENCODE_PURE` отключают плагин, `OPENCODE_DISABLE_PROJECT_CONFIG` отключает оба слоя, `OPENCODE_PERMISSION` и `OPENCODE_CONFIG_CONTENT` переопределяют правила; строки с `!` в поле ввода исполняются в shell без `tool.execute.before`. Сейчас `/bcreq-check` сообщает о переменных, а независимый gate `verify-ci` проверяет результат. Нужно решение: принять риск для пилота или закрепить конфигурацию средствами администрирования рабочего места. | null |
+| **B-225** | Проверить порядок правил разрешений при глобальном конфиге пользователя | null | - | TODO | - (planned) | [issue #652](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/652), [PR #655](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/655) | OpenCode объединяет глобальный конфиг пользователя с `opencode.json` пакета; если в глобальном конфиге уже есть те же ключи `permission`, порядок декларативных правил меняется. Решение принимает плагин, поэтому запрет сохраняется, но окно согласования может не появиться или появиться иначе. Нужен тест с типовыми глобальными конфигами и, при необходимости, правило в инструкции установки. | null |
+| **B-226** | Ограничить MCP-инструменты OpenCode-пакета без эвристики по имени | null | B-209 | TODO | - (planned) | [issue #652](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/652), [PR #655](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/655), О-7, [ограничения пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-opencode/docs/guides/01-junior-pilot.md#ограничения-текущей-версии-пакета) | Подключение `kb-readonly` распознаётся по имени сервера, а «только чтение» — по глаголам в имени инструмента. Это соглашение, а не гарантия сервера: подключение должен настроить администратор только на чтение. Решение общее с B-209 для Cline. | null |
+| **B-227** | Проверить запуск OpenCode-пакета без доступа к npm-реестру | null | - | TODO | - (planned) | [issue #652](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/652), [PR #655](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/655) | При запуске OpenCode в фоне ставит `@opencode-ai/plugin` в `.opencode/` и ждёт эту установку перед загрузкой плагинов; ошибка установки только пишется в журнал. Прогон с недоступным реестром прошёл (`E2E: PASS`), но занял 6 мин 54 с против 1 мин 44 с с доступным реестром (`issue_652_opencode_offline_registry.log`), поэтому на рабочем месте без интернета запуск может ждать таймаутов npm. Нужен замер на корпоративном рабочем месте и, при необходимости, офлайн-способ поставки зависимости. | null |
+
+Ограничения О-2 (запечатывание — отдельная команда runner, её выполняет
+`/bcreq-gate`), О-5 (нет контрактов отладки, задача B-201 и B-193) и О-8
+(модель сама решает, когда предложить запись) общие с Cline-пакетом и
+отдельных задач не получают.
+
 ---
 
 ## Источники активного порядка

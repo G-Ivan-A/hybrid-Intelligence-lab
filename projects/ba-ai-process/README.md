@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.6
-updated: 2026-09-28
+version: 1.7
+updated: 2026-10-07
 temperature: 0.1
 scope: mango-only
 type: research
@@ -14,7 +14,8 @@ type: research
 работу, какими процессами и операциями она разложена и в какой форме
 поставляется агенту. GigaCode CLI — существующая поставка; Cline с Mango AI
 и Qwen Chat оцениваются как отдельные пилотные среды по
-[issue #615](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/615).
+[issue #615](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/615),
+OpenCode — по [issue #652](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/652).
 
 Это **дом проектных артефактов**, а не общая рамка. Все четыре модуля несут
 `scope: mango-only`. Здесь `mango-only` означает **весь продуктовый портфель
@@ -69,6 +70,11 @@ MANGO** (все домены полного снимка таксономии), 
   — отдельный пилот Cline для синтетического BCREQ Working → Release с блокирующими
   hooks, независимым runner, CI gate, trace и политикой источников знания; Source
   сборки — `build/common/` и `build/adapters/cline-vscode/`.
+- [`dist/execution-package-opencode/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-opencode/README.md)
+  — пилот OpenCode на том же Source и runner: блокирующий плагин
+  `tool.execute.before`, команды `/bcreq-start` и `/bcreq-gate`, CI gate и
+  инструкция `docs/guides/` для Windows 10/11; Source сборки — `build/common/` и
+  `build/adapters/opencode/`.
 - [`meta-model-guides/qwen-chat-runtime-migration-instruction.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-615-ab7082802ba9/projects/ba-ai-process/meta-model-guides/qwen-chat-runtime-migration-instruction.md)
   — мандат для отдельной задачи на подготовку существующего runtime к временному
   quick-check в Qwen Chat; это не execution package.

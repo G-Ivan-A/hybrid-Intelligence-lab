@@ -1,0 +1,6 @@
+# OpenCode installs its plugin SDK here at start-up.
+node_modules
+package.json
+package-lock.json
+bun.lock
+bun.lockb

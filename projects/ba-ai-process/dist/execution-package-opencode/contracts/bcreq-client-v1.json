@@ -1,0 +1,60 @@
+{
+  "profile_id": "BCREQ-client-v1",
+  "version": 1,
+  "audience": "customer",
+  "sections": [
+    {
+      "id": "1",
+      "heading": "Terms"
+    },
+    {
+      "id": "2",
+      "heading": "Business context"
+    },
+    {
+      "id": "2.3",
+      "heading": "Change boundary"
+    },
+    {
+      "id": "3",
+      "heading": "Functional requirements"
+    },
+    {
+      "id": "4",
+      "heading": "Functional solution design"
+    },
+    {
+      "id": "5",
+      "heading": "Non-functional requirements"
+    },
+    {
+      "id": "6",
+      "heading": "Constraints and confirmed assumptions"
+    },
+    {
+      "id": "7",
+      "heading": "Permitted appendices"
+    }
+  ],
+  "entity_policies": {
+    "evidence": "internal_only",
+    "goals": "required",
+    "tasks": "internal_only",
+    "boundary": "required",
+    "deltas": "conditional",
+    "product_bindings": "internal_only",
+    "claims": "internal_only",
+    "user_stories": "required",
+    "fr": "required",
+    "uc": "conditional",
+    "nfr": "required",
+    "acceptance": "internal_only",
+    "design": "required",
+    "edge_cases": "internal_only",
+    "compatibility_obligations": "conditional",
+    "industry_bindings": "internal_only",
+    "open_questions": "internal_only",
+    "terms": "required",
+    "constraints": "required"
+  }
+}
