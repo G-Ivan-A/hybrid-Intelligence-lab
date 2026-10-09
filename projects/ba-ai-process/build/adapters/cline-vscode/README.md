@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-29
+version: 0.4
+updated: 2026-10-07
 temperature: 0.1
 ---
 
@@ -25,9 +25,13 @@ Python 3.11 or newer is required; the gate itself uses the standard library.
 The model API settings and any corporate knowledge connection are local to the
 user's Cline installation, never part of this package.
 
-```powershell
+Commands are written for Git Bash, the shell installed with Git for Windows and
+detected by VS Code as the "Git Bash" terminal profile; run them in the package
+root. They are executed verbatim in Git Bash on Windows by CI.
+
+```bash
 python tools/run_task.py check-package
-Copy-Item golden\TASK-0001.json submissions\TASK-0001.json
+cp golden/TASK-0001.json submissions/TASK-0001.json
 python tools/run_task.py run TASK-0001 submissions/TASK-0001.json
 python tools/run_task.py verify-ci
 ```

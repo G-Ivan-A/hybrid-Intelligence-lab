@@ -19,6 +19,9 @@ COMMON = PROJECT / "build/common"
 ADAPTER = PROJECT / "build/adapters/cline-vscode"
 OUTPUT = PROJECT / "dist/execution-package-cline-vscode"
 MUTABLE = {"runs", "submissions", "docs/kb", "meta-model"}
+REPOSITORY = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab"
+FENCE = re.compile(r"^ *```.*?^ *```[^\n]*$", re.M | re.S)
+LINK = re.compile(r"\]\(([^()\s]+)\)")
 
 
 def source_files(source: Path):
@@ -39,15 +42,50 @@ def static_files(root: Path):
     }
 
 
+def pin_links(text: str, relative: Path, origins: dict[str, Path], revision: str) -> str:
+    """Make every Markdown link an absolute URL of the Source file at the compiled revision.
+
+    The package is copied to the analyst's computer without the repository, so a relative
+    link would depend on the viewer; a revision-pinned URL opens the same text everywhere.
+    """
+    def absolute(match: re.Match[str]) -> str:
+        target = match.group(1)
+        if re.match(r"[a-z][a-z0-9+.-]*:", target, re.I):
+            return match.group(0)
+        path, _, anchor = target.partition("#")
+        resolved = os.path.normpath((relative.parent / path).as_posix()) if path else relative.as_posix()
+        resolved = Path(resolved).as_posix()
+        if resolved not in origins:
+            raise ValueError(f"{relative.as_posix()}: link outside the package: {target}")
+        source = origins[resolved].relative_to(PROJECT / "build").as_posix()
+        url = f"{REPOSITORY}/blob/{revision}/projects/ba-ai-process/build/{source}"
+        return f"]({url}{'#' + anchor if anchor else ''})"
+
+    parts, start = [], 0
+    for fence in FENCE.finditer(text):
+        parts += [LINK.sub(absolute, text[start:fence.start()]), fence.group(0)]
+        start = fence.end()
+    return "".join(parts + [LINK.sub(absolute, text[start:])])
+
+
 def compile_into(root: Path, revision: str) -> None:
     if not re.fullmatch(r"[0-9a-f]{40}", revision):
         raise ValueError("source revision must be a full Git commit SHA")
+    origins: dict[str, Path] = {}
     for source in (COMMON, ADAPTER):
         for path in source_files(source):
             relative = path.relative_to(source)
+            origins[relative.as_posix()] = path
             target = root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(path, target)
+    for rel, path in origins.items():
+        if rel.endswith(".md"):
+            target = root / rel
+            text = target.read_text(encoding="utf-8")
+            pinned = pin_links(text, Path(rel), origins, revision)
+            if pinned != text:
+                target.write_text(pinned, encoding="utf-8", newline="\n")
     for path in (root / "contracts").glob("*.schema.json"):
         path.write_text(path.read_text(encoding="utf-8").replace(
             "build/common/contracts/", "dist/execution-package-cline-vscode/contracts/"), encoding="utf-8", newline="\n")
@@ -62,13 +100,13 @@ def compile_into(root: Path, revision: str) -> None:
     }
     manifest = {
         "manifest": "execution-package-cline-vscode",
-        "package_version": "0.2.0",
-        "compiled_at": "2026-09-29",
+        "package_version": "0.3.0",
+        "compiled_at": "2026-10-07",
         "source": {
             "repository": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
             "revision": revision,
         },
-        "adapter": {"name": "cline-vscode", "version": "0.2.0"},
+        "adapter": {"name": "cline-vscode", "version": "0.3.0"},
         "inputs": {"allowlist": [
             "projects/ba-ai-process/build/common/",
             "projects/ba-ai-process/build/adapters/cline-vscode/",

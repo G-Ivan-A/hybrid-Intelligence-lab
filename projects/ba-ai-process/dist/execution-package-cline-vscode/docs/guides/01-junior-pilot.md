@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-09-29
+version: 0.5
+updated: 2026-10-07
 temperature: 0.1
 ---
 
@@ -9,29 +9,29 @@ temperature: 0.1
 
 Стартовый документ. Он объясняет, **что** вы будете делать, **с кем** —
 с агентом или с командами — и **зачем**. Пошаговые действия — в следующих
-документах ([содержание](README.md)).
+документах ([содержание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md)).
 
 ## Содержание
 
-1. [Что такое пилот](#что-такое-пилот)
-2. [Реальные задачи и учебный пример](#реальные-задачи-и-учебный-пример)
-3. [С чем вы работаете: агент или команды](#с-чем-вы-работаете-агент-или-команды)
-4. [Кто что делает](#кто-что-делает)
-5. [Маршрут задачи](#маршрут-задачи)
-6. [Что понадобится](#что-понадобится)
-7. [Правила безопасности](#правила-безопасности)
-8. [Ограничения текущей версии пакета](#ограничения-текущей-версии-пакета)
-9. [Глоссарий](#глоссарий)
+1. [Что такое пилот](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#что-такое-пилот)
+2. [Реальные задачи и учебный пример](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#реальные-задачи-и-учебный-пример)
+3. [С чем вы работаете: агент или команды](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#с-чем-вы-работаете-агент-или-команды)
+4. [Кто что делает](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#кто-что-делает)
+5. [Маршрут задачи](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#маршрут-задачи)
+6. [Что понадобится](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#что-понадобится)
+7. [Правила безопасности](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#правила-безопасности)
+8. [Ограничения текущей версии пакета](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#ограничения-текущей-версии-пакета)
+9. [Глоссарий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#глоссарий)
 
 ## Что такое пилот
 
 Вы готовите **BCREQ** — структурированное описание бизнес-требований по
 задаче клиента. Оно существует в двух видах:
 
-- [**Working**](#term-working) — рабочий черновик в формате JSON. Его пишет
+- [**Working**](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-working) — рабочий черновик в формате JSON. Его пишет
   агент Cline по вашим указаниям, вы его согласовываете.
-- [**Release**](#term-release) — итоговый документ для клиента. Его собирает
-  программа [runner](#term-runner) из проверенного Working.
+- [**Release**](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-release) — итоговый документ для клиента. Его собирает
+  программа [runner](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-runner) из проверенного Working.
 
 В пилоте доступен один процесс: «Сформировать бизнес-спецификацию по задаче
 BCREQ» — путь Working → Release (технически `RG-BCREQ-v1`).
@@ -40,18 +40,18 @@ BCREQ» — путь Working → Release (технически `RG-BCREQ-v1`).
 
 - **Реальные (боевые) задачи можно запускать сразу после установки и
   развёртывания.** Runner проверяет любой черновик с корректным
-  [TASK ID](#term-task-id), а не только учебный пример. Как это сделать —
-  [Работа с агентом](06-working-with-cline.md).
+  [TASK ID](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-task-id), а не только учебный пример. Как это сделать —
+  [Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md).
 - **Учебный пример `TASK-0001`** — только знакомство (онбординг). Он лежит в
-  папке [`golden\`](#term-golden), содержит вымышленные данные и нужен, чтобы
+  папке [`golden/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-golden), содержит вымышленные данные и нужен, чтобы
   один раз увидеть успешный прогон без риска для корпоративных данных.
   Он **не обязателен** и не блокирует реальную работу —
-  [Учебный прогон](04-smoke-test.md).
+  [Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md).
 
 Правила агента внутри пакета пока написаны в расчёте на учебный пример.
 Поэтому при реальной задаче вы явно говорите Cline, что задача реальная
-(готовая фраза есть в [стартовой фразе](06-working-with-cline.md#стартовая-фраза)).
-Это известное ограничение, см. [О-1](#ограничения-текущей-версии-пакета).
+(готовая фраза есть в [стартовой фразе](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#стартовая-фраза)).
+Это известное ограничение, см. [О-1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#ограничения-текущей-версии-пакета).
 
 ## С чем вы работаете: агент или команды
 
@@ -59,54 +59,56 @@ BCREQ» — путь Working → Release (технически `RG-BCREQ-v1`).
 
 | Что | Где | Как | Когда |
 |-----|-----|-----|-------|
-| **Агент Cline** | [Панель Cline](#term-cline-panel) | Обычный диалог на русском языке | Постановка задачи, поиск источников, согласование пунктов, исправление черновика, вопросы «почему так?» |
-| **Команды** | [Терминал VS Code](#term-vscode-terminal) | Вставить готовую команду из инструкции и нажать Enter | Проверка пакета, [запечатывание](#term-seal) черновика, запуск проверки задачи, уборка неудачного черновика |
+| **Агент Cline** | [Панель Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-cline-panel) | Обычный диалог на русском языке | Постановка задачи, поиск источников, согласование пунктов, исправление черновика, вопросы «почему так?» |
+| **Команды** | [Терминал VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal) | Вставить готовую команду из инструкции и нажать Enter | Проверка пакета, [запечатывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-seal) черновика, запуск проверки задачи, уборка неудачного черновика |
 
 Почему команды запускаете вы, а не агент: правило пакета — результат
-проверки должен давать независимая программа ([runner](#term-runner)),
+проверки должен давать независимая программа ([runner](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-runner)),
 а не текст модели. Модель может ошибиться или «придумать» успешную
 проверку; строка `PASS` от runner — нет. Поэтому агент подсказывает, какую
 команду выполнить, а выполняете её вы.
 
 Команд немного, и у каждой есть человеческое название, например
 «Запустить проверку задачи» (`python tools/run_task.py run …`). Полный
-список — [Команды и режим отладки](05-commands-reference.md#команды-человеческим-языком).
+список — [Команды и режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#команды-человеческим-языком).
 
 ## Кто что делает
 
 | Участник | Роль |
 |----------|------|
 | **Вы (БА)** | Ставите задачу агенту, согласуете пункты, запускаете команды, принимаете решение о результате |
-| **Cline** ([агент](#term-agent)) | Ведёт диалог, читает источники и [KB](#term-kb), пишет черновик Working **только** в `submissions\TASK-ID.json`, подсказывает следующие шаги |
-| **Runner** (`tools/run_task.py`) | Независимая программа: проверяет пакет и черновик, собирает Release, пишет [журнал прогона](#term-trace) |
+| **Cline** ([агент](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-agent)) | Ведёт диалог, читает источники и [KB](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-kb), пишет черновик Working **только** в `submissions/TASK-ID.json`, подсказывает следующие шаги |
+| **Runner** (`tools/run_task.py`) | Независимая программа: проверяет пакет и черновик, собирает Release, пишет [журнал прогона](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-trace) |
 | **CI** | Та же проверка на сервере при отправке в Git (если пакет лежит в закрытом runtime-репозитории) |
 
 **Главное правило: о результате проверки говорит runner, а не Cline.**
 Если Cline пишет «всё прошло» — это не доказательство. Доказательство —
 строка `TASK-ID: PASS`, напечатанная runner в
-[терминале VS Code](#term-vscode-terminal), и файл
-`runs\TASK-ID\trace.jsonl` ([trace](#term-trace)).
+[терминале VS Code](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-vscode-terminal), и файл
+`runs/TASK-ID/trace.jsonl` ([trace](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-trace)).
 
 ## Маршрут задачи
 
-1. **Установить ПО** — [Установка](02-install.md).
+1. **Установить ПО** — [Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md).
 2. **Развернуть пакет и KB** в `C:\Users\<логин>\bcreq-pilot\` —
-   [Развёртывание](03-deploy-package.md).
-3. (Необязательно) **Посмотреть учебный прогон** — [Учебный прогон](04-smoke-test.md).
-4. **Решать реальную задачу с агентом** — [Работа с агентом](06-working-with-cline.md):
+   [Развёртывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md).
+3. (Необязательно) **Посмотреть учебный прогон** — [Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md).
+4. **Решать реальную задачу с агентом** — [Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md):
    стартовая фраза → диалог и согласование → черновик → запечатать →
    запустить проверку → ваше решение.
-5. При сбое — **режим отладки** — [Команды и режим отладки](05-commands-reference.md#режим-отладки).
+5. При сбое — **режим отладки** — [Команды и режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#режим-отладки).
 
 ## Что понадобится
 
-- Рабочий компьютер ([АРМ](#term-arm)) с Windows 10/11 x64. Видеокарта не
+- Рабочий компьютер ([АРМ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-arm)) с Windows 10/11 x64. Видеокарта не
   нужна: модель работает на сервере Mango AI.
 - Права на установку программ или помощь администратора.
+- Git для Windows: в его составе Git Bash — терминал, в котором выполняются
+  все команды инструкций.
 - Base URL сервиса модели и личный API-ключ `sk-…` от администратора AI Core.
 - При необходимости — корпоративная сеть или VPN.
 - Для работы с Jira/Confluence из Cline — корпоративное подключение
-  только на чтение ([MCP](#term-mcp)), которое настраивает администратор.
+  только на чтение ([MCP](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-mcp)), которое настраивает администратор.
   Без него вы вставляете текст задачи в диалог сами.
 
 ## Правила безопасности
@@ -115,15 +117,15 @@ BCREQ» — путь Working → Release (технически `RG-BCREQ-v1`).
   файлы, снимки экрана.
 - Корпоративные материалы, KB и черновики реальных задач не отправляйте в
   публичный репозиторий.
-- Не меняйте `tools\`, `contracts\`, `taxonomy\`, `.clinerules\`,
-  `golden\`, `package-manifest.yaml`: команда «Проверить пакет» это
+- Не меняйте `tools/`, `contracts/`, `taxonomy/`, `.clinerules/`,
+  `golden/`, `package-manifest.yaml`: команда «Проверить пакет» это
   обнаружит, и runner перестанет принимать задачи.
-- Подтверждайте в панели Cline только запись файла `submissions\TASK-ID.json`.
+- Подтверждайте в панели Cline только запись файла `submissions/TASK-ID.json`.
   Любую другую запись и любую команду от Cline отклоняйте
-  (см. [проверку защиты](03-deploy-package.md#проверьте-защиту-пакета)).
+  (см. [проверку защиты](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#проверьте-защиту-пакета)).
 - Машинный `PASS` не заменяет ваше решение: источники, продуктовую
   привязку, смысл и право на публикацию проверяете вы
-  ([G-human](#term-g-human)).
+  ([G-human](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-g-human)).
 
 ## Ограничения текущей версии пакета
 
@@ -132,53 +134,53 @@ BCREQ» — путь Working → Release (технически `RG-BCREQ-v1`).
 
 | № | Ограничение | Что это значит для вас |
 |---|-------------|------------------------|
-| О-1 | Правила агента в пакете (`AGENTS.md`, `templates/working-prompt.md`) написаны для учебного примера `TASK-0001` | Для реальной задачи используйте [стартовую фразу](06-working-with-cline.md#стартовая-фраза): в ней сказано, что задача реальная |
-| О-4 | Нет готовой команды Cline (skill), которая сама ведёт процесс по шагам | Процесс задаётся [стартовой фразой](06-working-with-cline.md#стартовая-фраза); поведение модели по ней не гарантировано |
-| О-5 | Нет внутренних контрактов отладки мета-модели | [Режим отладки](05-commands-reference.md#режим-отладки) — ручной: чтение журналов и отдельные команды |
+| О-1 | Правила агента в пакете (`AGENTS.md`, `templates/working-prompt.md`) написаны для учебного примера `TASK-0001` | Для реальной задачи используйте [стартовую фразу](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#стартовая-фраза): в ней сказано, что задача реальная |
+| О-4 | Нет готовой команды Cline (skill), которая сама ведёт процесс по шагам | Процесс задаётся [стартовой фразой](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#стартовая-фраза); поведение модели по ней не гарантировано |
+| О-5 | Нет внутренних контрактов отладки мета-модели | [Режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#режим-отладки) — ручной: чтение журналов и отдельные команды |
 
 ## Глоссарий
 
 | Термин | Простыми словами | Подробнее |
 |--------|------------------|-----------|
-| <a id="term-arm"></a>АРМ | Ваш рабочий компьютер с Windows 10/11 x64 | [Установка](02-install.md) |
-| <a id="term-vscode-terminal"></a>Терминал VS Code | Панель для ввода команд **внутри VS Code** (не отдельное окно Windows). Открывается ``Ctrl+` `` или меню **Terminal → New Terminal**. По умолчанию в ней работает PowerShell, приглашение вида `PS C:\…>` | [Условные обозначения](README.md#условные-обозначения) |
-| <a id="term-cline-panel"></a>Панель Cline | Окно диалога с агентом Cline в VS Code. Открывается значком Cline на левой панели | [Работа с агентом](06-working-with-cline.md) |
-| <a id="term-agent"></a>Агент (Cline) | Расширение VS Code, которое ведёт с вами диалог, читает файлы и пишет черновик. «Думает» за него [модель](#term-model) | [Работа с агентом](06-working-with-cline.md) |
-| <a id="term-model"></a>Модель (LLM) | Языковая модель на сервере, к которой обращается Cline. В пилоте — Mango AI (`gpu-default`) | [Подключение модели](02-install.md#подключение-модели-в-cline) |
-| <a id="term-plan-act"></a>Plan / Act | Два режима Cline. **Plan** предназначен для обсуждения, но в Cline 4.1.21 не запрещает все команды. **Act** допускает запись файла (с вашим подтверждением); защиту дают настройки и hooks | [Диалог с Cline](06-working-with-cline.md#диалог-с-cline-вопросы-и-режимы-plan-и-act) |
-| <a id="term-package"></a>Пакет | Папка `runtime` с правилами, схемами и программами пилота. Её файлы менять нельзя, кроме рабочих папок `submissions\`, `runs\`, `docs\kb\`, `meta-model\` | [Развёртывание](03-deploy-package.md) |
-| <a id="term-source"></a>Исходный репозиторий (Source) | Репозиторий `hybrid-Intelligence-lab`, из которого собирается пакет. Улучшения модели вносятся только туда | [Режим отладки](05-commands-reference.md#режим-отладки) |
-| <a id="term-meta-model"></a>Мета-модель | Правила, схемы и процессы, по которым работают агент и runner. В пакете представлены файлами `contracts\`, `taxonomy\`, `routes\`, `tools\` | [Режим отладки](05-commands-reference.md#режим-отладки) |
-| <a id="term-kb"></a>KB | **Резервная** база знаний: разрешённые документы о продуктах в папке `docs\kb\`. Основной источник — корпоративные Jira и Confluence, если к ним есть подключение только на чтение ([MCP](#term-mcp)). Агент не ограничивается KB: сначала ищет в корпоративных источниках, KB — когда их нет или там не нашлось подтверждения (правила — `docs\kb-policy.md`) | [KB на АРМ](03-deploy-package.md#получите-базу-знаний-kb) |
-| <a id="term-mcp"></a>MCP | Способ подключить к Cline внешний сервис, например корпоративные Jira или Confluence. Настраивает администратор (Cline → MCP Servers), только на чтение. Адреса и ключи в пакет не записываются | [Входные данные](06-working-with-cline.md#какие-входные-данные-можно-дать) |
-| <a id="term-task-id"></a>TASK ID | Номер одного [прогона](#term-run): `TASK-` и минимум 4 цифры (`TASK-0002`). Это не номер задачи в Jira: ключ Jira (`BCREQ-123`) указывается внутри черновика. **Один TASK ID — один прогон**: повторный запуск с тем же номером runner отклоняет, чтобы журнал нельзя было незаметно перезаписать и чтобы не смешивать разные попытки | [Контроль прогонов](05-commands-reference.md#контроль-прогонов-один-task-id--один-прогон) |
-| <a id="term-run"></a>Прогон | Один запуск команды «Запустить проверку задачи» для одного черновика. Результат — папка `runs\TASK-ID\` | [Запустить проверку задачи](05-commands-reference.md#запустить-проверку-задачи) |
-| <a id="term-run-mode"></a>Режим прогона | Обычная работа: диалог с агентом и несколько готовых команд. Знание архитектуры не нужно | [Работа с агентом](06-working-with-cline.md) |
-| <a id="term-debug-mode"></a>Режим отладки | Разбор неудачных прогонов и подготовка улучшений мета-модели. Команды по отдельности, нужно знание устройства пакета | [Режим отладки](05-commands-reference.md#режим-отладки) |
-| <a id="term-working"></a>Working (черновик) | Черновик требований в JSON: `submissions\TASK-ID.json`. Пишет Cline, согласуете вы | [Работа с агентом](06-working-with-cline.md) |
-| <a id="term-release"></a>Release | Итоговый документ для клиента `runs\TASK-ID\release.json`. Собирает runner. До вашего решения — кандидат | [Проверка результата](06-working-with-cline.md#шаг-7-проверьте-результат-и-примите-решение) |
-| <a id="term-seal"></a>Запечатать черновик | Пересчитать контрольные суммы черновика после правок, чтобы runner принял его как неизменённый после вашего согласования | [Запечатать черновик](05-commands-reference.md#запечатать-черновик) |
-| <a id="term-runner"></a>Runner | Программа `tools\run_task.py`: проверяет пакет, прогоняет черновик через три машинных шага, собирает Release, пишет журнал. Запускается командой в терминале VS Code | [Как запускать](05-commands-reference.md#запустить-проверку-задачи) |
-| <a id="term-gate"></a>Gate | Контрольная точка: без её прохождения дальше нельзя | [Процесс](05-commands-reference.md#процесс-формирования-бизнес-спецификации) |
-| <a id="term-g-mach"></a>G-mach | Машинная проверка: три шага runner (`validate-working`, `compile`, `validate-release`) | [Процесс](05-commands-reference.md#процесс-формирования-бизнес-спецификации) |
-| <a id="term-g-human"></a>G-human | Ваша проверка после машинной: источники, продуктовая привязка, смысл, право на публикацию. Чек-лист `evaluation\g-human-checklist.md` | [Проверка результата](06-working-with-cline.md#шаг-7-проверьте-результат-и-примите-решение) |
-| <a id="term-hook"></a>Hook | Автоматическая проверка перед действием Cline, которая может остановить задачу. На Windows запускается файл `.ps1`; в Cline нужно включить Hooks | [Проверка защиты](03-deploy-package.md#проверьте-защиту-пакета) |
-| <a id="term-trace"></a>Trace (журнал прогона) | Файл `runs\TASK-ID\trace.jsonl`: одна строка — один шаг проверки. Пишет только runner | [Как читать trace](05-commands-reference.md#как-читать-журнал-прогона-trace) |
-| <a id="term-script-invoked"></a>`script_invoked` | Запись в trace: «программа этого шага действительно запускалась». Успех или ошибку показывает `exit_code` | [Как читать trace](05-commands-reference.md#как-читать-журнал-прогона-trace) |
-| <a id="term-step-skipped"></a>`step_skipped` | Запись в trace: «шаг не выполнялся, потому что предыдущий не прошёл». Задача остановлена | [Как читать trace](05-commands-reference.md#как-читать-журнал-прогона-trace) |
-| <a id="term-contract-mode"></a>`contract_mode` | Запись в trace: «дальше нужна проверка человеком ([G-human](#term-g-human)); машина её не делает и не засчитывает» | [Как читать trace](05-commands-reference.md#как-читать-журнал-прогона-trace) |
-| <a id="term-exit-code"></a>Exit code | Код завершения программы: `0` — успех, другое число — ошибка | [Как читать trace](05-commands-reference.md#как-читать-журнал-прогона-trace) |
-| <a id="term-pass-fail"></a>PASS / FAIL | Итог команды runner в терминале: `TASK-ID: PASS` — все машинные шаги прошли; `TASK-ID: FAIL` — нет, причина в строках `ERROR: …` | [Запустить проверку задачи](05-commands-reference.md#запустить-проверку-задачи) |
-| <a id="term-golden"></a>`golden\` | Папка с учебным (эталонным) примером `TASK-0001.json`. Только чтение | [Учебный прогон](04-smoke-test.md) |
-| <a id="term-submissions"></a>`submissions\` | Папка черновиков `TASK-ID.json`. Единственное место, куда Cline может писать | [Папки](05-commands-reference.md#папки-пакета) |
-| <a id="term-runs"></a>`runs\` | Папка результатов прогонов `runs\TASK-ID\`. Пишет runner; в Git не отправляется | [Папки](05-commands-reference.md#папки-пакета) |
-| <a id="term-ci"></a>CI | Автоматическая проверка на сервере при отправке изменений в Git | [Отправка результата](06-working-with-cline.md#отправка-результата-в-git) |
+| <a id="term-arm"></a>АРМ | Ваш рабочий компьютер с Windows 10/11 x64 | [Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md) |
+| <a id="term-vscode-terminal"></a>Терминал VS Code | Панель для ввода команд **внутри VS Code** (не отдельное окно Windows). Открывается ``Ctrl+` `` или меню **Terminal → New Terminal**. В пилоте в ней работает **Git Bash** (его выбирают при [установке](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#терминал-git-bash-в-vs-code)): над строкой ввода — `<логин>@<компьютер> MINGW64 ~/…`, строка ввода начинается с `$` | [Условные обозначения](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md#условные-обозначения) |
+| <a id="term-cline-panel"></a>Панель Cline | Окно диалога с агентом Cline в VS Code. Открывается значком Cline на левой панели | [Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) |
+| <a id="term-agent"></a>Агент (Cline) | Расширение VS Code, которое ведёт с вами диалог, читает файлы и пишет черновик. «Думает» за него [модель](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-model) | [Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) |
+| <a id="term-model"></a>Модель (LLM) | Языковая модель на сервере, к которой обращается Cline. В пилоте — Mango AI (`gpu-default`) | [Подключение модели](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md#подключение-модели-в-cline) |
+| <a id="term-plan-act"></a>Plan / Act | Два режима Cline. **Plan** предназначен для обсуждения, но в Cline 4.1.21 не запрещает все команды. **Act** допускает запись файла (с вашим подтверждением); защиту дают настройки и hooks | [Диалог с Cline](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#диалог-с-cline-вопросы-и-режимы-plan-и-act) |
+| <a id="term-package"></a>Пакет | Папка `runtime` с правилами, схемами и программами пилота. Её файлы менять нельзя, кроме рабочих папок `submissions/`, `runs/`, `docs/kb/`, `meta-model/` | [Развёртывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md) |
+| <a id="term-source"></a>Исходный репозиторий (Source) | Репозиторий `hybrid-Intelligence-lab`, из которого собирается пакет. Улучшения модели вносятся только туда | [Режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#режим-отладки) |
+| <a id="term-meta-model"></a>Мета-модель | Правила, схемы и процессы, по которым работают агент и runner. В пакете представлены файлами `contracts/`, `taxonomy/`, `routes/`, `tools/` | [Режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#режим-отладки) |
+| <a id="term-kb"></a>KB | **Резервная** база знаний: разрешённые документы о продуктах в папке `docs/kb/`. Основной источник — корпоративные Jira и Confluence, если к ним есть подключение только на чтение ([MCP](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-mcp)). Агент не ограничивается KB: сначала ищет в корпоративных источниках, KB — когда их нет или там не нашлось подтверждения (правила — `docs/kb-policy.md`) | [KB на АРМ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#получите-базу-знаний-kb) |
+| <a id="term-mcp"></a>MCP | Способ подключить к Cline внешний сервис, например корпоративные Jira или Confluence. Настраивает администратор (Cline → MCP Servers), только на чтение. Адреса и ключи в пакет не записываются | [Входные данные](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#какие-входные-данные-можно-дать) |
+| <a id="term-task-id"></a>TASK ID | Номер одного [прогона](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-run): `TASK-` и минимум 4 цифры (`TASK-0002`). Это не номер задачи в Jira: ключ Jira (`BCREQ-123`) указывается внутри черновика. **Один TASK ID — один прогон**: повторный запуск с тем же номером runner отклоняет, чтобы журнал нельзя было незаметно перезаписать и чтобы не смешивать разные попытки | [Контроль прогонов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#контроль-прогонов-один-task-id--один-прогон) |
+| <a id="term-run"></a>Прогон | Один запуск команды «Запустить проверку задачи» для одного черновика. Результат — папка `runs/TASK-ID/` | [Запустить проверку задачи](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#запустить-проверку-задачи) |
+| <a id="term-run-mode"></a>Режим прогона | Обычная работа: диалог с агентом и несколько готовых команд. Знание архитектуры не нужно | [Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) |
+| <a id="term-debug-mode"></a>Режим отладки | Разбор неудачных прогонов и подготовка улучшений мета-модели. Команды по отдельности, нужно знание устройства пакета | [Режим отладки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#режим-отладки) |
+| <a id="term-working"></a>Working (черновик) | Черновик требований в JSON: `submissions/TASK-ID.json`. Пишет Cline, согласуете вы | [Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) |
+| <a id="term-release"></a>Release | Итоговый документ для клиента `runs/TASK-ID/release.json`. Собирает runner. До вашего решения — кандидат | [Проверка результата](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#шаг-7-проверьте-результат-и-примите-решение) |
+| <a id="term-seal"></a>Запечатать черновик | Пересчитать контрольные суммы черновика после правок, чтобы runner принял его как неизменённый после вашего согласования | [Запечатать черновик](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#запечатать-черновик) |
+| <a id="term-runner"></a>Runner | Программа `tools/run_task.py`: проверяет пакет, прогоняет черновик через три машинных шага, собирает Release, пишет журнал. Запускается командой в терминале VS Code | [Как запускать](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#запустить-проверку-задачи) |
+| <a id="term-gate"></a>Gate | Контрольная точка: без её прохождения дальше нельзя | [Процесс](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#процесс-формирования-бизнес-спецификации) |
+| <a id="term-g-mach"></a>G-mach | Машинная проверка: три шага runner (`validate-working`, `compile`, `validate-release`) | [Процесс](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#процесс-формирования-бизнес-спецификации) |
+| <a id="term-g-human"></a>G-human | Ваша проверка после машинной: источники, продуктовая привязка, смысл, право на публикацию. Чек-лист `evaluation/g-human-checklist.md` | [Проверка результата](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#шаг-7-проверьте-результат-и-примите-решение) |
+| <a id="term-hook"></a>Hook | Автоматическая проверка перед действием Cline, которая может остановить задачу. На Windows запускается файл `.ps1`; в Cline нужно включить Hooks | [Проверка защиты](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md#проверьте-защиту-пакета) |
+| <a id="term-trace"></a>Trace (журнал прогона) | Файл `runs/TASK-ID/trace.jsonl`: одна строка — один шаг проверки. Пишет только runner | [Как читать trace](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#как-читать-журнал-прогона-trace) |
+| <a id="term-script-invoked"></a>`script_invoked` | Запись в trace: «программа этого шага действительно запускалась». Успех или ошибку показывает `exit_code` | [Как читать trace](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#как-читать-журнал-прогона-trace) |
+| <a id="term-step-skipped"></a>`step_skipped` | Запись в trace: «шаг не выполнялся, потому что предыдущий не прошёл». Задача остановлена | [Как читать trace](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#как-читать-журнал-прогона-trace) |
+| <a id="term-contract-mode"></a>`contract_mode` | Запись в trace: «дальше нужна проверка человеком ([G-human](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/01-junior-pilot.md#term-g-human)); машина её не делает и не засчитывает» | [Как читать trace](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#как-читать-журнал-прогона-trace) |
+| <a id="term-exit-code"></a>Exit code | Код завершения программы: `0` — успех, другое число — ошибка | [Как читать trace](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#как-читать-журнал-прогона-trace) |
+| <a id="term-pass-fail"></a>PASS / FAIL | Итог команды runner в терминале: `TASK-ID: PASS` — все машинные шаги прошли; `TASK-ID: FAIL` — нет, причина в строках `ERROR: …` | [Запустить проверку задачи](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#запустить-проверку-задачи) |
+| <a id="term-golden"></a>`golden/` | Папка с учебным (эталонным) примером `TASK-0001.json`. Только чтение | [Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) |
+| <a id="term-submissions"></a>`submissions/` | Папка черновиков `TASK-ID.json`. Единственное место, куда Cline может писать | [Папки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#папки-пакета) |
+| <a id="term-runs"></a>`runs/` | Папка результатов прогонов `runs/TASK-ID/`. Пишет runner; в Git не отправляется | [Папки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md#папки-пакета) |
+| <a id="term-ci"></a>CI | Автоматическая проверка на сервере при отправке изменений в Git | [Отправка результата](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md#отправка-результата-в-git) |
 
 ---
 
-**Навигация:** [Содержание](README.md) · **Обзор и глоссарий** ·
-[1. Установка](02-install.md) · [2. Развёртывание](03-deploy-package.md) ·
-[3. Учебный прогон](04-smoke-test.md) · [4. Работа с агентом](06-working-with-cline.md) ·
-[5. Команды и отладка](05-commands-reference.md)
+**Навигация:** [Содержание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md) · **Обзор и глоссарий** ·
+[1. Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md) · [2. Развёртывание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/03-deploy-package.md) ·
+[3. Учебный прогон](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/04-smoke-test.md) · [4. Работа с агентом](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/06-working-with-cline.md) ·
+[5. Команды и отладка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/05-commands-reference.md)
 
-← Назад: [Содержание](README.md) · Далее: [1. Установка](02-install.md) →
+← Назад: [Содержание](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/README.md) · Далее: [1. Установка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9a65744776a0e703dccbf742b226c1e155bcdd66/projects/ba-ai-process/build/adapters/cline-vscode/docs/guides/02-install.md) →

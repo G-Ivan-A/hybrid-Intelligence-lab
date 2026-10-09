@@ -155,6 +155,7 @@ jobs:
 
   cline-windows:
     runs-on: windows-2022
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -164,6 +165,13 @@ jobs:
         run: python projects/ba-ai-process/build/compile-cline-package.py --check
       - name: Test Cline Windows hooks, paths, and runner
         run: python projects/ba-ai-process/tests/cline-package/test_package.py
+      - name: Run Cline guide commands verbatim in Git Bash
+        # БА работает в терминале Git Bash из Git for Windows; блоки ```bash руководств исполняются дословно.
+        shell: bash
+        env:
+          GUIDE_BASH: C:\Program Files\Git\bin\bash.exe
+        run: python projects/ba-ai-process/tests/cline-package/test_guides_bash.py
+
   opencode:
     # The OpenCode pilot runs on Windows 10/11 x64; the real OpenCode binary drives the
     # guard plugin, permission rules and package commands against a scripted mock model.
@@ -195,6 +203,7 @@ jobs:
           "$binary" --version
           python projects/ba-ai-process/experiments/issue_652_opencode_e2e.py \
             projects/ba-ai-process/dist/execution-package-opencode --opencode "$binary"
+
   windows-guides:
     # Целевая среда БА — Windows 10/11 (x64): инструкции пакета GigaCode исполняются
     # дословно в Windows PowerShell 5.1 и PowerShell 7 на клоне с настройками Git for Windows.

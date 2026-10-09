@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-09-29
+version: 0.5
+updated: 2026-10-07
 temperature: 0.1
 ---
 
@@ -25,15 +25,16 @@ VS Code, убедиться, что пакет цел, и настроить Cli
 Все команды этого документа выполняются в
 [терминале VS Code](01-junior-pilot.md#term-vscode-terminal) (``Ctrl+` ``).
 Пока пакет не открыт в VS Code, подойдёт терминал в любом окне VS Code.
-Выберите **PowerShell** в меню профиля терминала. Git Bash установлен вместе с
-Git, но команды `New-Item` и `Copy-Item` относятся к PowerShell.
+Терминал должен быть **Git Bash** — справа вверху терминала написано **bash**
+(как выбрать — [установка](02-install.md#терминал-git-bash-в-vs-code)).
 
 ## Где что лежит на АРМ
 
 Работа идёт **локально**, на вашем АРМ, в папке вашего пользователя Windows.
 Путь по умолчанию — `C:\Users\<логин>\bcreq-pilot\`, где `<логин>` — имя
-вашей учётной записи Windows. В PowerShell этот путь записывается как
-`$env:USERPROFILE\bcreq-pilot` — так вам не нужно вписывать логин вручную.
+вашей учётной записи Windows. В Git Bash этот путь записывается как
+`~/bcreq-pilot` или `"$HOME/bcreq-pilot"` — так вам не нужно вписывать логин
+вручную.
 
 | Папка | Что в ней | Откуда | Зачем |
 |-------|-----------|--------|-------|
@@ -48,9 +49,10 @@ Git, но команды `New-Item` и `Copy-Item` относятся к PowerSh
 `docs/kb/` указана в `.gitignore`). Так пакет остаётся неизменным, а KB
 можно обновлять.
 
-Работа из папки, в пути которой есть пробел или кириллица (например,
-`C:\Users\Иван Петров\`), проверена только вне Windows; если на АРМ команды
-из такой папки дают ошибки пути — сообщите ответственному.
+Логин с пробелом или кириллицей (например, `C:\Users\Иван Петров\`)
+поддерживается: команды ниже берут путь в двойные кавычки, а автоматическая
+проверка выполняет их в Git Bash на Windows именно из такой папки. Если
+команды всё же дают ошибки пути — передайте текст ответственному.
 
 ## Создайте рабочую папку
 
@@ -59,15 +61,15 @@ Git, но команды `New-Item` и `Copy-Item` относятся к PowerSh
 - **Где:** терминал VS Code.
 - **Команды:**
 
-  ```powershell
-  New-Item -ItemType Directory -Force "$env:USERPROFILE\bcreq-pilot"
-  Set-Location "$env:USERPROFILE\bcreq-pilot"
+  ```bash
+  mkdir -p "$HOME/bcreq-pilot"
+  cd "$HOME/bcreq-pilot"
   ```
 
 - **Что делает:** создаёт папку `C:\Users\<логин>\bcreq-pilot\` (если её
   нет) и переходит в неё.
-- **Ожидаемый результат:** приглашение терминала
-  `PS C:\Users\<логин>\bcreq-pilot>`.
+- **Ожидаемый результат:** над приглашением `$` — строка
+  `<логин>@<компьютер> MINGW64 ~/bcreq-pilot`.
 
 ## Получите пакет
 
@@ -76,10 +78,10 @@ Git, но команды `New-Item` и `Copy-Item` относятся к PowerSh
 **Вариант А. Администратор создал для вас закрытый (private)
 runtime-репозиторий с пакетом.**
 
-- **Где:** терминал VS Code, папка `C:\Users\<логин>\bcreq-pilot`.
+- **Где:** терминал VS Code, папка `~/bcreq-pilot`.
 - **Команда** (адрес выдаёт администратор):
 
-  ```powershell
+  ```bash
   git clone <адрес-вашего-runtime-репозитория> runtime
   ```
 
@@ -88,30 +90,27 @@ runtime-репозиторий с пакетом.**
 
 **Вариант Б. Закрытого репозитория нет — скопируйте пакет сами.**
 
-- **Где:** терминал VS Code, папка `C:\Users\<логин>\bcreq-pilot`.
+- **Где:** терминал VS Code, папка `~/bcreq-pilot`.
 - **Команды** — выполняйте по одной:
 
-  ```powershell
+  ```bash
   git clone --depth 1 https://github.com/G-Ivan-A/hybrid-Intelligence-lab.git source-lab
-  New-Item -ItemType Directory -Force runtime
-  Copy-Item -Recurse -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\* runtime\
-  Copy-Item -Recurse -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.clinerules runtime\
-  Copy-Item -Recurse -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.github runtime\
-  Copy-Item -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.gitattributes runtime\
-  Copy-Item -Force source-lab\projects\ba-ai-process\dist\execution-package-cline-vscode\.gitignore runtime\
+  mkdir -p runtime
+  cp -r source-lab/projects/ba-ai-process/dist/execution-package-cline-vscode/. runtime/
   ```
 
 - **Что делают:** скачивают исходный репозиторий в `source-lab`, создают
-  папку `runtime` и копируют в неё **содержимое** папки пакета. Папки и
-  файлы, имя которых начинается с точки (`.clinerules`, `.github`,
-  `.gitignore`), копируются отдельными командами, чтобы точно не потерялись.
+  папку `runtime` и копируют в неё **содержимое** папки пакета. Точка в конце
+  `execution-package-cline-vscode/.` важна: так копируются и папки и файлы,
+  имя которых начинается с точки (`.clinerules`, `.github`, `.gitattributes`,
+  `.gitignore`).
 - **Ожидаемый результат:** после `git clone` — `done.` без `fatal:`;
-  команды `Copy-Item` ничего не печатают.
+  команды `mkdir` и `cp` ничего не печатают.
 
 **Проверьте** (оба варианта):
 
-```powershell
-Get-ChildItem -Force runtime
+```bash
+ls -a runtime
 ```
 
 В списке есть `.clinerules`, `.github`, `.gitattributes`, `.gitignore`, `AGENTS.md`,
@@ -123,20 +122,20 @@ Get-ChildItem -Force runtime
 
 **Действие: «Скачать и разложить базу знаний»**
 
-- **Где:** терминал VS Code, папка `C:\Users\<логин>\bcreq-pilot`.
+- **Где:** терминал VS Code, папка `~/bcreq-pilot`.
 - **Команды:**
 
-  ```powershell
+  ```bash
   git clone --depth 1 https://github.com/G-Ivan-A/mango-ba-ai-runtime.git kb-source
-  Copy-Item -Recurse -Force kb-source\docs\kb\* runtime\docs\kb\
+  cp -r kb-source/docs/kb/. runtime/docs/kb/
   ```
 
 - **Что делают:** скачивают репозиторий с KB в `kb-source` и копируют его
-  папку `docs\kb` в `runtime\docs\kb`.
+  папку `docs/kb` в `runtime/docs/kb`.
 - **Проверьте:**
 
-  ```powershell
-  Get-ChildItem -Force runtime\docs\kb
+  ```bash
+  ls -a runtime/docs/kb
   ```
 
   Видны `.gitkeep`, `README.md`, `MAP.json` и папки продуктов (например,
@@ -145,26 +144,28 @@ Get-ChildItem -Force runtime
 
 Как агент использует KB: сначала он ищет подтверждения в корпоративных
 Jira/Confluence, если к ним есть подключение только на чтение
-([MCP](01-junior-pilot.md#term-mcp)). KB в `docs\kb\` — резервный источник,
+([MCP](01-junior-pilot.md#term-mcp)). KB в `docs/kb/` — резервный источник,
 когда корпоративного подключения нет или там не нашлось подтверждения.
 Если подтверждения нет нигде — открытый вопрос, а не догадка
-(правила — `docs\kb-policy.md`).
+(правила — `docs/kb-policy.md`).
 
-Обновить KB позже: выполните `git -C kb-source pull`, затем повторите
-команду `Copy-Item` выше.
+Обновить KB позже: в папке `~/bcreq-pilot` выполните `git -C kb-source pull`,
+затем повторите команду `cp` выше.
 
 ## Откройте пакет в VS Code
 
 1. VS Code → **File → Open Folder…** → выберите
    `C:\Users\<логин>\bcreq-pilot\runtime`. Открывайте именно `runtime`, а не
    `bcreq-pilot`: пакет должен быть **корнем** проекта, иначе Cline не увидит
-   правила пакета.
+   правила пакета. Можно и из Git Bash: `code ~/bcreq-pilot/runtime`.
 2. Если VS Code спросит «Do you trust the authors of the files in this
    folder?» — нажмите **Yes, I trust the authors**.
 3. Откройте терминал VS Code (``Ctrl+` ``).
-4. **Проверьте:** приглашение терминала —
-   `PS C:\Users\<логин>\bcreq-pilot\runtime>`. Это «папка пакета»: все
-   дальнейшие команды выполняются здесь.
+4. **Проверьте:** справа вверху терминала написано **bash**, над приглашением
+   `$` — строка `<логин>@<компьютер> MINGW64 ~/bcreq-pilot/runtime`. Это
+   «папка пакета»: все дальнейшие команды выполняются здесь. Если открылся
+   PowerShell (приглашение `PS …>`), выберите Git Bash по
+   [инструкции установки](02-install.md#терминал-git-bash-в-vs-code).
 
 ## Проверьте целостность пакета
 
@@ -173,23 +174,23 @@ Jira/Confluence, если к ним есть подключение только
 - **Где:** терминал VS Code, папка пакета.
 - **Команда:**
 
-  ```powershell
+  ```bash
   python tools/run_task.py check-package
   ```
 
 - **Что делает:** сверяет каждый файл пакета с контрольной суммой (SHA-256)
   из `package-manifest.yaml`. Так вы узнаёте, что пакет скопирован полностью
-  и никто его не менял. Файлы в `docs\kb\`, `meta-model\`, `submissions\` и
-  `runs\` не проверяются: это рабочие папки.
+  и никто его не менял. Файлы в `docs/kb/`, `meta-model/`, `submissions/` и
+  `runs/` не проверяются: это рабочие папки.
 - **Ожидаемый результат:** `package: PASS`.
 
 | Результат | Значение | Что делать |
 |-----------|----------|------------|
 | `package: PASS` | Пакет цел | Продолжайте |
 | `ERROR: package hash mismatch: <файл>` | Файл изменён или повреждён при копировании | См. примечание ниже |
-| `ERROR: immutable file list differs: missing=[…]` | Не хватает файлов — чаще всего не скопированы `.clinerules` или `.github` | Повторите команды `Copy-Item` |
+| `ERROR: immutable file list differs: missing=[…]` | Не хватает файлов — чаще всего не скопированы `.clinerules` или `.github` | Повторите команду `cp` варианта Б: точка в конце пути обязательна |
 | `ERROR: … extra=[…]` | Лишние файлы вне рабочих папок | Удалите перечисленные файлы |
-| `ERROR: missing runtime placeholder` | Удалён `.gitkeep` в `runs`, `submissions`, `docs\kb` или `meta-model` | Повторите копирование пакета |
+| `ERROR: missing runtime placeholder` | Удалён `.gitkeep` в `runs`, `submissions`, `docs/kb` или `meta-model` | Повторите копирование пакета |
 
 > Файл `.gitattributes` сохраняет байты пакета при `git clone` на Windows.
 > Если после клонирования появился `hash mismatch`, убедитесь, что этот файл
@@ -217,7 +218,7 @@ Jira/Confluence, если к ним есть подключение только
 
 | Cline просит | Ваше действие |
 |--------------|---------------|
-| Записать `submissions\TASK-ID.json` | Разрешить (Save / Approve) |
+| Записать `submissions/TASK-ID.json` | Разрешить (Save / Approve) |
 | Записать любой другой файл | Отклонить (Reject) |
 | Выполнить команду | Отклонить (Reject) и выполнить нужную команду самим в терминале VS Code по инструкции |
 
@@ -255,7 +256,7 @@ Jira/Confluence, если к ним есть подключение только
 завершает текущую, а не пропускает только один вызов.
 
 **Готово**, если «Проверить пакет» показывает `package: PASS`, KB лежит в
-`docs\kb\`, а Cline спрашивает перед записью файла. Дальше —
+`docs/kb/`, а Cline спрашивает перед записью файла. Дальше —
 [реальная задача](06-working-with-cline.md) или, для знакомства,
 [учебный прогон](04-smoke-test.md).
 

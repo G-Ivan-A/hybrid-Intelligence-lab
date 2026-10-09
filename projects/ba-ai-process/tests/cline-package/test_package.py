@@ -102,6 +102,34 @@ class PackageTest(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(json.loads(result.stdout)["cancel"], blocked, result.stdout)
 
+    @unittest.skipUnless(os.name == "nt", "PowerShell hook runs in Windows CI")
+    def test_windows_hook_falls_back_to_py_launcher(self):
+        # Without "Add python.exe to PATH" the name python is the Microsoft Store alias (exit 9009)
+        # and only the py launcher starts Python.
+        with tempfile.TemporaryDirectory() as temporary:
+            package = Path(temporary) / "Пилот с пробелом"
+            shutil.copytree(PACKAGE, package)
+            fake = Path(temporary) / "fake"
+            fake.mkdir()
+            (fake / "python.cmd").write_text("@exit /b 9009\r\n", encoding="ascii")
+            hook = package / ".clinerules/hooks/PreToolUse.ps1"
+            env = dict(os.environ, PATH=os.pathsep.join((str(fake), os.environ["PATH"])))
+            for launcher, path, cancel in (
+                (f'@"{sys.executable}" %2\r\n', "submissions/TASK-0002.json", False),
+                (f'@"{sys.executable}" %2\r\n', "contracts/c-working-bcreq.schema.json", True),
+                ("@exit /b 9009\r\n", "submissions/TASK-0002.json", True),
+            ):
+                (fake / "py.cmd").write_text(launcher, encoding="ascii")
+                payload = {"hookName": "PreToolUse", "preToolUse": {"toolName": "editor", "parameters": {"path": str(package / path)}}}
+                result = subprocess.run(["powershell", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass",
+                                         "-File", str(hook)], input=json.dumps(payload, ensure_ascii=False), cwd=package,
+                                        env=env, text=True, capture_output=True, encoding="utf-8")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                response = json.loads(result.stdout)
+                self.assertEqual(response["cancel"], cancel, result.stdout)
+                if launcher.startswith("@exit"):
+                    self.assertIn("Windows hook failed", response["errorMessage"])
+
     def test_one_environment_boundary(self):
         other_clients = re.compile(r"\b(?:GigaCode|Qwen(?: Chat)?|OpenCode|Kilo Code|Roo Code)\b", re.I)
         for path in PACKAGE.rglob("*"):
@@ -170,26 +198,51 @@ class PackageTest(unittest.TestCase):
             self.assertNotEqual(check.returncode, 0)
 
     def test_guide_links_resolve(self):
+        # Source guides link to each other relatively; the compiler pins every link of the
+        # package to the Source revision, so a copied package has only absolute URLs (#644).
         def slug(heading):
             text = re.sub(r"`|\*|\[|\]\([^)]*\)", "", heading).strip().lower()
             return re.sub(r"[^\w\- ]", "", text).replace(" ", "-")
 
-        guides = PACKAGE / "docs/guides"
-        anchors = {}
-        for path in guides.glob("*.md"):
+        def anchors(path):
             text = re.sub(r"```.*?```", "", path.read_text(encoding="utf-8"), flags=re.S)
-            anchors[path.name] = {slug(item) for item in re.findall(r"^#{1,6}\s+(.*)$", text, re.M)}
-            anchors[path.name] |= set(re.findall(r'<a id="([^"]+)"', text))
-        for path in guides.glob("*.md"):
+            return {slug(item) for item in re.findall(r"^#{1,6}\s+(.*)$", text, re.M)} | set(
+                re.findall(r'<a id="([^"]+)"', text))
+
+        def links(path):
             text = re.sub(r"```.*?```", "", path.read_text(encoding="utf-8"), flags=re.S)
-            for target in re.findall(r"\]\(([^)\s]+)\)", text):
+            return re.findall(r"\]\(([^)\s]+)\)", text)
+
+        source = PACKAGE.parents[1] / "build"
+        for path in (source / "adapters/cline-vscode/docs/guides").glob("*.md"):
+            for target in links(path):
                 if target.startswith(("http://", "https://")):
                     continue
                 name, _, anchor = target.partition("#")
-                name = name or path.name
-                self.assertTrue((guides / name).is_file(), f"{path.name}: {target}")
-                if anchor and name.endswith(".md"):
-                    self.assertIn(anchor, anchors[name], f"{path.name}: {target}")
+                linked = (path.parent / name).resolve() if name else path
+                self.assertTrue(linked.exists(), f"{path.name}: {target}")
+                if anchor:
+                    self.assertIn(anchor, anchors(linked), f"{path.name}: {target}")
+
+        manifest = json.loads((PACKAGE / "package-manifest.yaml").read_text(encoding="utf-8"))
+        pinned = (f"{manifest['source']['repository']}/blob/{manifest['source']['revision']}"
+                  "/projects/ba-ai-process/build/")
+        checked = 0
+        for path in PACKAGE.rglob("*.md"):
+            if "docs/kb" in path.relative_to(PACKAGE).as_posix():
+                continue
+            for target in links(path):
+                self.assertRegex(target, r"^https?://", f"{path.relative_to(PACKAGE)}: {target}")
+                if not target.startswith(pinned):
+                    continue
+                checked += 1
+                location, _, anchor = target[len(pinned):].partition("#")
+                self.assertTrue((source / location).is_file(), f"{path.name}: {target}")
+                inside = location.removeprefix("adapters/cline-vscode/").removeprefix("common/")
+                self.assertTrue((PACKAGE / inside).is_file(), f"{path.name}: {target}")
+                if anchor:
+                    self.assertIn(anchor, anchors(PACKAGE / inside), f"{path.name}: {target}")
+        self.assertGreater(checked, 50)
 
     def test_guide_real_task_flow(self):
         guide = (PACKAGE / "docs/guides/05-commands-reference.md").read_text(encoding="utf-8")
