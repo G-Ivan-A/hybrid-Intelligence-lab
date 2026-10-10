@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.27
-updated: 2026-10-07
+version: 0.28
+updated: 2026-10-10
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -32,6 +32,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/595"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/650"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/653"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
 ---
 
 # Реестр внешних источников
@@ -441,6 +442,8 @@ related_issues:
 | `ext-361` | [Rajkumar et al. — A causal test of the strength of weak ties (Science 2022)](https://digitaleconomy.stanford.edu/publication/a-causal-test-of-the-strength-of-weak-ties) | `paper` | `en` | `weak-ties, causal-evidence` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
 | `ext-362` | [Peters, Matz — LLMs can infer psychological dispositions of social media users (PNAS Nexus 2024)](https://arxiv.org/abs/2309.08631) | `paper` | `en` | `llm-profiling, ethics, privacy` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
 | `ext-363` | [Федеральный закон № 152-ФЗ «О персональных данных» (ст. 10.1)](https://www.consultant.ru/document/cons_doc_LAW_61801/) | `standard` | `ru` | `personal-data, counterparty-research-ethics` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
+| `ext-364` | [Simini, González, Maritan, Barabási — A universal model for mobility and migration patterns (Nature 2012)](https://arxiv.org/abs/1111.0586) | `paper` | `en` | `gravity-model, radiation-model, competing-models` | `topic: reputation-gra` | `research` | `hub` | ✅ [GRA как исследовательская программа #657](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/50-open-research.md#6-источники) |
+| `ext-365` | [CogSci Summaries — Gentner (1983) Structure-Mapping: A Theoretical Framework for Analogy](https://www.jimdavies.org/summaries/gentner1983.html) | `article` | `en` | `analogy, structure-mapping` | `topic: reputation-gra` | `research` | `hub` | ✅ [GRA как исследовательская программа #657](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/50-open-research.md#6-источники) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

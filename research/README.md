@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.26
-updated: 2026-08-25
+version: 1.27
+updated: 2026-10-10
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -80,6 +80,7 @@ source: research/README-old.md
 | [2026-06-20-white-paper.en.md](reputation-technologies/2026-06-20-white-paper.en.md) | White paper (EN, 10–15 c.) для международной аудитории. |
 | [2026-06-20-executive-summary.ru-en.md](reputation-technologies/2026-06-20-executive-summary.ru-en.md) | Executive summary (RU + EN, 2–3 c.). |
 | [2026-06-20-glossary.ru-en.md](reputation-technologies/2026-06-20-glossary.ru-en.md) | Терминологический словарь (RU↔EN) с международными аналогами. |
+| [gra-research-program/](reputation-technologies/gra-research-program/00-introduction.md) | Модуль RRP (issue #657): GRA как открытая исследовательская программа — структурное соответствие вместо переноса физики, многомерные дистанция и масса, направленность потоков, конкурирующие модели связи H0–H6, граница домена, роль ИИ-агентов, открытые вопросы. |
 
 ### Подкаталог `education/`
 
