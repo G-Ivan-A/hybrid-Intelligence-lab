@@ -1,13 +1,13 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-10-10
 temperature: 0.6
 type: research
 context: [reputation-technologies, gra, research-program, taxonomy, operationalization, competing-models]
 method: conceptual-analysis + competing-hypotheses + operationalization-design
 scope: reputation-technologies
-source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
+source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657; https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
 based_on:
   - research/reputation-technologies/gra-research-program/10-theory.md
   - research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md
@@ -16,6 +16,7 @@ related_artifacts:
   - "research/reputation-technologies/gra-research-program/40-practice-and-cases.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
 ---
 
 # Таксономия: Масса, Дистанция, Полярность и конкурирующие модели связи
@@ -86,8 +87,9 @@ related_issues:
 ## 3. Масса
 
 **Определение ○.** Масса — набор потенциально наблюдаемых характеристик узла
-или системы, которые, по гипотезе, усиливают его взаимодействия. Масса и
-влияние на решение разведены (см.
+или системы (ресурс, позиция, сеть, репутационный капитал, совокупная масса
+холдинга), которые, по гипотезе, усиливают его взаимодействия. Влияние на
+решение — это проявление массы в конкретном контексте, а не её определение (см.
 [§3 файла 10-theory.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#3-объектная-модель)).
 
 ### 3.1. Компоненты массы
@@ -145,9 +147,11 @@ related_issues:
   сигнал идёт «по потоку»), а не усиливать сигнал против потока.
 - Опроверглась бы, если при сопоставимой массе отправителя исходы сигналов
   «по потоку» и «против потока» не различаются.
-- Иллюстрация — кейс Б Дня 1 (пресс-релиз против потока и обращение через члена
-  правления ассоциации) в
-  [40-practice-and-cases.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-б-банк-и-пост-предпринимателя).
+- Иллюстрация — кейс 2 курса (холодный питч deep-tech стартапа идёт против
+  потока сделок инвестора; сонаправленный путь — через анкерного заказчика,
+  отраслевого эксперта или соинвестора) в
+  [40-practice-and-cases.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-2-deep-tech-стартап-инвесторы-и-направление-потока).
+  Прежняя иллюстрация (кейс Б, банк) перенесена в архив кейсов того же файла.
 
 ## 5. Конкурирующие модели связи H0–H6
 
