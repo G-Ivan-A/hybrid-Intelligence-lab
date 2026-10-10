@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.28
+version: 0.29
 updated: 2026-10-10
 temperature: 0.1
 type: external-analysis
@@ -33,6 +33,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/650"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/653"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/660"
 ---
 
 # Реестр внешних источников
@@ -444,6 +445,12 @@ related_issues:
 | `ext-363` | [Федеральный закон № 152-ФЗ «О персональных данных» (ст. 10.1)](https://www.consultant.ru/document/cons_doc_LAW_61801/) | `standard` | `ru` | `personal-data, counterparty-research-ethics` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 1 #653](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) |
 | `ext-364` | [Simini, González, Maritan, Barabási — A universal model for mobility and migration patterns (Nature 2012)](https://arxiv.org/abs/1111.0586) | `paper` | `en` | `gravity-model, radiation-model, competing-models` | `topic: reputation-gra` | `research` | `hub` | ✅ [GRA как исследовательская программа #657](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/50-open-research.md#6-источники) |
 | `ext-365` | [CogSci Summaries — Gentner (1983) Structure-Mapping: A Theoretical Framework for Analogy](https://www.jimdavies.org/summaries/gentner1983.html) | `article` | `en` | `analogy, structure-mapping` | `topic: reputation-gra` | `research` | `hub` | ✅ [GRA как исследовательская программа #657](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/50-open-research.md#6-источники) |
+| `ext-366` | [Федеральный закон № 38-ФЗ «О рекламе» (ст. 24, реклама медицинских услуг)](https://www.consultant.ru/document/cons_doc_LAW_58968/) | `standard` | `ru` | `advertising-law, medical-services` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
+| `ext-367` | [Картотека арбитражных дел (kad.arbitr.ru)](https://kad.arbitr.ru/) | `docs` | `ru` | `counterparty-check, court-records, provenance` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
+| `ext-368` | [ФССП — Банк данных исполнительных производств](https://fssp.gov.ru/iss/ip) | `docs` | `ru` | `counterparty-check, enforcement-records` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
+| `ext-369` | [ФНС — Сведения из ЕГРЮЛ/ЕГРИП](https://egrul.nalog.ru/) | `docs` | `ru` | `counterparty-check, legal-entity-registry` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
+| `ext-370` | [Единая информационная система в сфере закупок (zakupki.gov.ru)](https://zakupki.gov.ru/) | `docs` | `ru` | `procurement-records, counterparty-check` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
+| `ext-371` | [Фонд содействия инновациям (fasie.ru)](https://fasie.ru/) | `docs` | `ru` | `development-institution, deep-tech-funding` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

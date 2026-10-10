@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 1.4
+version: 1.5
 updated: 2026-10-10
 temperature: 0.1
 ---
@@ -35,6 +35,9 @@ Reputation Architecture** (публичный слоган *Global Reputation Ag
 | [2026-10-07-day1-rationale-and-method-653.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) | Issue #653, День 1, документ 1: почему «от образа к связям» именно сейчас (современные данные + классика), статус GRA с трассировкой «зафиксировано / интерпретация / гипотеза», метод для пассивной онлайн-аудитории, поминутный тайминг, 4 микро-кейса, CTA к соисследователям, источники. |
 | [2026-10-07-day1-presentation-653.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-presentation-653.md) | Issue #653, День 1, документ 2: 30 слайдов с тезисами и строкой «сдвиг мышления», промпты изображений «эмпатия связей», «карта GRA» и мотив провенанса. |
 | [2026-10-07-day1-lecturer-script-653.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md) | Issue #653, День 1, документ 3: полный текст лектора с тегами пауз, голосований, демонстрации промпта, разрядки и охоты на ошибки ИИ; промпт, ИИ-досье с ключом, ответы на частые вопросы. |
+| [2026-10-30-day2-rationale-and-method.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) | Issue #660, День 2, документ 1: зачем Дню 2 провенанс и статусы `VERIFIED` / `PARTIAL` / `CONFLICT`, как статусы меняют управленческое решение, эволюция Промпта-фреймера в Промпт-разведчик, ИИ как инструмент первичной кластеризации и охоты на галлюцинации, 3 сквозных кейса через линзу Дня 2, поминутный тайминг, мост ко Дню 3, источники. |
+| [2026-10-30-day2-presentation.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-presentation.md) | Issue #660, День 2, документ 2: 30 слайдов по программе Дня 2 с тезисами и строкой «сдвиг мышления», промпты изображений для провенанса, графа связей со статусами и метрик со статусами, проверка на соответствие программе. |
+| [2026-10-30-day2-lecturer-script.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md) | Issue #660, День 2, документ 3: поминутный текст лектора с режиссёрскими метками, 3 кейса через линзу статусов, Промпт-разведчик для копирования, ИИ-реестр для охоты на спрятанный `CONFLICT` с ключом, ответы на частые вопросы. |
 | [gra-research-program/](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/00-introduction.md) | Issue #657, модуль RRP (модель M2): GRA как открытая исследовательская программа. Происхождение и принцип структурного соответствия, многомерные дистанция и масса, гипотеза направленности потоков, конкурирующие модели связи H0–H6 (формула — гипотеза H1), граница домена, гейт для выводов ИИ-агентов, разметка кейсов Дня 1, протокол соисследователя, открытые вопросы. Материалы Дня 1 синхронизированы с модулем (версия 0.2). |
 
 ## Карта Definition of Done (issue #260)
