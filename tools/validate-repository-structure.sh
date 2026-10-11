@@ -494,6 +494,9 @@ is_active_file() {
     research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md | \
     research/reputation-technologies/2026-10-07-day1-presentation-653.md | \
     research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md | \
+    research/reputation-technologies/2026-10-30-day2-rationale-and-method.md | \
+    research/reputation-technologies/2026-10-30-day2-presentation.md | \
+    research/reputation-technologies/2026-10-30-day2-lecturer-script.md | \
     research/reputation-technologies/gra-research-program/00-introduction.md | \
     research/reputation-technologies/gra-research-program/10-theory.md | \
     research/reputation-technologies/gra-research-program/20-taxonomy.md | \
@@ -2244,7 +2247,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.28"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.29"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
