@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-10-10
 temperature: 0.1
 type: external-analysis
 context: [reputation-technologies, gra, framework, international-standard, iso-42010, iso-42001]
@@ -14,6 +14,7 @@ related_artifacts:
   - research/reputation-technologies/2026-06-20-glossary.ru-en.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
 ---
 
 # GRA Framework Standard — Draft (International Format)
@@ -22,9 +23,13 @@ related_issues:
 > **ISO/IEC/IEEE 42010** (architecture description) and anchored to **ISO/IEC 42001** (AI
 > management). This is a **research proposal for a standard**, not a ratified standard and not an
 > implementation. It accompanies the main report
-> [2026-06-20-founders-vision-and-framework.ru.md](2026-06-20-founders-vision-and-framework.ru.md) and the
-> [white paper](2026-06-20-white-paper.en.md). Terminology is in the
-> [glossary](2026-06-20-glossary.ru-en.md).
+> [2026-06-20-founders-vision-and-framework.ru.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) and the
+> [white paper](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-white-paper.en.md). Terminology is in the
+> [glossary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md).
+>
+> **Revision 0.2 (issue [#659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659)).** Definitions of mass, distance and polarity and the
+> grounding of the formula follow the [GRA research model](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/00-introduction.md).
+> The rest of the draft is unchanged.
 
 **GRA** — *Gravitational & Magnetic Reputation Architecture* (public slogan: *Global Reputation
 Agreement*). Curator: Ivan Gulienko. License: CC BY-NC-SA 4.0.
@@ -76,19 +81,22 @@ edition.
 
 ## 3. Terms and definitions
 
-The normative vocabulary is maintained in the [glossary](2026-06-20-glossary.ru-en.md). Core terms:
+The normative vocabulary is maintained in the [glossary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md). Core terms:
 
 - **Reputation** — the dynamic state of the information-reputation field; not a label but a graph
   configuration. «Reputation lives not in the customer's head, but in the links between customers.»
 - **Information-reputation field** — a weighted, directed graph of nodes and edges that **contains
-  and leads the market** (lag 30–180 days).
+  and is hypothesised to lead the market** (lag 30–180 days; hypothesis HM-I, not yet tested).
 - **Node (subject/object)** — an entity at any level (individual…state) with a **mass** and an
   **Identity–Capability–Impact** triad.
 - **Edge (development edge)** — a relation with type, weight, **polarity** (+1/0/−1), distance, and
   trust-transfer risk.
-- **Mass** — influence/resource/reputation capital.
-- **Distance** — inverse of trust.
-- **Polarity** — sign of an edge: +1 attraction, 0 neutral, −1 repulsion; time-dependent.
+- **Mass** — observable node characteristics (resource, position, network, reputation capital); for
+  a group, the aggregate mass of the holding. Influence on a specific decision is recorded separately.
+- **Distance** — multidimensional: physical/temporal, informational (channel), trust, values,
+  institutional; at least the physical and informational axes. Axes are not merged into one number.
+- **Polarity** — sign of an edge: +1 attraction, 0 neutral, −1 repulsion, ? unknown; time- and
+  signal-dependent. Each edge also has a flow direction (A→B ≠ B→A).
 - **Gravity / Magnetism** — external structural attraction (mass/distance²) / internal
   polarity-setting contour.
 - **Trust Equity** — accumulated positive reputation capital.
@@ -114,8 +122,12 @@ inconsistency (Magnetism/polarity is the operational term). Rationale and trade-
 
 $$ F(t) = \frac{Mass_A \times Mass_B}{Distance^2} \times Polarity(t) $$
 
-Grounded in the Gravity Model of Trade (Tinbergen, 1962), Force Field Analysis (Lewin, 1947), and
-the ABI trust model (Mayer–Davis–Schoorman, 1995). The "force field" is an **operational metaphor**
+The formula is working hypothesis H1, one of the competing relation models H0–H6. GRA originated as
+the founder's authorial hypothesis of a structural correspondence with physical regularities
+([origin, verbatim](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#1-происхождение-gra)). The Gravity Model of Trade (Tinbergen, 1962) is a precedent and a possible
+research environment, not a source; its distance exponent is estimated from data and is close to 1.
+Elements of the model draw on Force Field Analysis (Lewin, 1947) and the ABI trust model
+(Mayer–Davis–Schoorman, 1995). The "force field" is an **operational metaphor**
 over graph mathematics and trust theory; its rigorous home is **sociophysics** (Castellano et al.,
 2009) — this disclaimer is **normative** to prevent "aggregate-confusion" misuse.
 
@@ -184,7 +196,7 @@ Each cycle feeds back to the axioms (§5.1). Versioning follows semantic `MAJOR.
 ## 10. References
 
 Normative references — §2. Scientific and project references are consolidated in the main report
-[Sources](2026-06-20-founders-vision-and-framework.ru.md#источники). Source materials of issue
+[Sources](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md#источники). Source materials of issue
 [#260](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260): the founder's framework,
 standard, strategic-session, gravity-magnetism, and RDF documents, plus team-Q and team-G dialogues.
 

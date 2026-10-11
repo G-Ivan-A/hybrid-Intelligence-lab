@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.1
-updated: 2026-06-29
+updated: 2026-10-10
 temperature: 0.2
 type: external-analysis
 context: [reputation-technologies, gra, partner-strategy, corporate-education, course]
@@ -30,8 +30,8 @@ related_issues:
 перехода от локального курса к международному обмену практиками.
 
 **Связанные артефакты.** Исследование опирается на основное видение GRA:
-[founders-vision-and-framework](2026-06-20-founders-vision-and-framework.ru.md) и
-[executive summary](2026-06-20-executive-summary.ru-en.md). В этих документах репутация
+[founders-vision-and-framework](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) и
+[executive summary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-executive-summary.ru-en.md). В этих документах репутация
 описана как измеримая, моделируемая и управляемая система связей, а GRA - как открытый
 графовый подход к репутационному инжинирингу.
 
@@ -319,7 +319,7 @@ CSR/ESG, internal communications, GR, HR brand, legal reputation defense, analyt
 
 1. Issue #292: [research: Подготовить стратегию привлечения партнеров к курсу Репутационных технологий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/292).
 2. Техноград: [карточка курса](https://technograd.moscow/event_page_new?669_) и [API события 669](https://technograd.moscow/api/events/669/).
-3. GRA: [founders-vision-and-framework](2026-06-20-founders-vision-and-framework.ru.md) и [executive summary](2026-06-20-executive-summary.ru-en.md).
+3. GRA: [founders-vision-and-framework](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) и [executive summary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-executive-summary.ru-en.md).
 4. РБК: [РБК 500 - рейтинг крупнейших по выручке компаний России](https://pro.rbc.ru/rbc500) и [новость о лидерах рейтинга по итогам 2024 года](https://www.rbc.ru/business/30/10/2025/6901febd9a79472454d4b2f0).
 5. RAEX: [RAEX-600 - рейтинг крупнейших компаний России](https://raex-rr.com/largest/RAEX-600/biggest_companies/2022/) как дополнительная методологическая опора по российским крупным компаниям.
 6. Fortune: [Global 500](https://fortune.com/ranking/global500/), [Fortune 500 2025 press release](https://fortunemedia.mediaroom.com/2025-06-02-Fortune-Announces-2025-Fortune-500-List), [Fortune China 500 2025](https://www.fortunechina.com/fortune500/c/2025-07/22/content_467138.htm), [Fortune India 500](https://www.fortuneindia.com/rankings/fortune-500/2025).

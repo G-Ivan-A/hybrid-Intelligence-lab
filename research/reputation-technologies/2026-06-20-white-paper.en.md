@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-10-10
 temperature: 0.2
 type: external-analysis
 context: [reputation-technologies, gra, framework, white-paper, international-standard]
@@ -14,15 +14,21 @@ related_artifacts:
   - research/reputation-technologies/2026-06-20-glossary.ru-en.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
 ---
 
 # GRA — A Graph-Native, Cross-Level Standard for Reputation Engineering (White Paper)
 
 > International-audience white paper for the **GRA reputation-technology framework**. Companion to the
-> Russian research report [2026-06-20-founders-vision-and-framework.ru.md](2026-06-20-founders-vision-and-framework.ru.md)
-> and the draft [standard](2026-06-20-framework-standard.en.md). Terms: [glossary](2026-06-20-glossary.ru-en.md).
+> Russian research report [2026-06-20-founders-vision-and-framework.ru.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md)
+> and the draft [standard](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md). Terms: [glossary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md).
 
 **Author/Curator:** Ivan Gulienko · **License:** CC BY-NC-SA 4.0 · **Status:** draft for community review.
+
+> **Revision 0.2 (issue [#659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659)).** The origin of GRA now follows the founder's verbatim
+> wording. The Gravity Model of Trade and Force Field Analysis are named as precedents, not as the
+> foundation of the formula. Mass is a set of observable node characteristics, distance is
+> multidimensional, and polarity carries both sign and flow direction. The rest of the text is unchanged.
 
 ## Abstract
 
@@ -62,9 +68,9 @@ modelling and management tractable. GRA turns these into an operational model.
 
 The **information-reputation field** is a weighted directed graph `G = (V, E)`. Nodes `V` are
 subjects/objects at any level; edges `E` are **development edges** carrying type, weight, distance,
-trust-transfer risk, and a **polarity** sign. The field **contains** the market and **leads** it by
-roughly **30–180 days**, which is what makes reputation a *leading indicator* of revenue
-(`Reputation → Trust → ↓CAC → ↑LTV → Profit`).
+trust-transfer risk, and a **polarity** sign. The field **contains** the market. Hypothesis HM-I (not yet tested): the field **leads** the market by
+roughly **30–180 days**; if confirmed, reputation would be a *leading indicator* of revenue
+(`Reputation → Trust → ↓CAC → ↑LTV → Profit`). This chain is a hypothesis, not a promise of business effect.
 
 ### 2.2 The force law (an operational metaphor)
 
@@ -72,12 +78,27 @@ roughly **30–180 days**, which is what makes reputation a *leading indicator* 
 F(t) = ( Mass_A × Mass_B ) / Distance(t)²  ×  Polarity(t)
 ```
 
-- **Mass** — influence/resource/reputation capital (revenue, share, authority, reach).
-- **Distance** — inverse of trust (closer = more trusted = stronger pull).
-- **Polarity ∈ {+1, 0, −1}** — attraction / neutral / repulsion; time-dependent (events flip signs).
+The formula is working hypothesis H1, one of several competing relation models (H0–H6, see the
+[GRA research model taxonomy](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/20-taxonomy.md#5-конкурирующие-модели-связи-h0h6)). The square of distance is not calibrated.
 
-This unifies the **Gravity Model of Trade** (Tinbergen, 1962) with **Force Field Analysis** (Lewin,
-1947) and signs edges via the **ABI trust model** (Mayer–Davis–Schoorman, 1995). We state plainly:
+- **Mass** — observable node characteristics: resource (revenue, budget), position (share, formal
+  status), network, reputation capital; for a group of companies, the aggregate mass of the holding.
+  Components may diverge and are not merged into one number. Influence on a specific decision is
+  recorded separately.
+- **Distance** — multidimensional: physical and temporal, informational (channel), trust, values,
+  institutional. At least two axes (physical and informational) are always used. Trust is one axis,
+  not the definition of distance.
+- **Polarity ∈ {+1, 0, −1, ?}** — attraction / neutral / repulsion / unknown; time-dependent (events
+  flip signs) and signal-dependent. Every relation also has a flow direction: A→B is not B→A
+  (hypothesis HP-D).
+
+**Origin.** In the founder's words (Russian original, translation ours): "GRA originated solely as the founder's authorial hypothesis that social and informational relations may be described structurally, by analogy with physical regularities. Any mathematical or economic models (including gravity models) are treated only as one of the possible practical environments for researching or implementing this hypothesis, with no status of a primary source or a special reference point"
+([original](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#1-происхождение-gra)). Accordingly, the **Gravity Model of Trade** (Tinbergen, 1962) is a precedent and a
+possible research environment, not the source of the formula: Tinbergen estimated exponents from
+data, and the empirical distance exponent in trade is closer to 1 than to 2. **Force Field Analysis**
+(Lewin, 1947), with Lewin's caveat that the absolute strength of social forces cannot be determined,
+supports the language of forces, and the **ABI trust model** (Mayer–Davis–Schoorman, 1995) supports
+edge signs. We state plainly:
 the "force field" is a **metaphor** over graph mathematics; its rigorous scientific home is
 **sociophysics** (Castellano, Fortunato & Loreto, 2009). This honesty is a feature — it is what keeps
 a published score auditable rather than mystical.
@@ -174,8 +195,8 @@ standard for reputation engineering**.
 
 ## References
 
-Consolidated in the main report's [Sources](2026-06-20-founders-vision-and-framework.ru.md#источники)
+Consolidated in the main report's [Sources](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md#источники)
 section (issue #260 source materials, scientific foundations, the fifteen projects, and standards).
-Key anchors: Tinbergen 1962; Lewin 1947; Mayer-Davis-Schoorman 1995; Barabási-Albert 1999; Coombs
+Key anchors: Tinbergen 1962 (precedent, not a source of GRA); Lewin 1947; Mayer-Davis-Schoorman 1995; Barabási-Albert 1999; Coombs
 2007; Castellano-Fortunato-Loreto 2009; ISO/IEC/IEEE 42010:2022; ISO/IEC 42001:2023; W3C RDF 1.1;
 EU AI Act (Reg. 2024/1689).

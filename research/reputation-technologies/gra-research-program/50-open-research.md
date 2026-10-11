@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-10-10
 temperature: 0.6
 type: research
@@ -17,6 +17,7 @@ related_artifacts:
   - "research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md"
   - "research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md"
 related_issues:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
 ---
 
@@ -24,8 +25,14 @@ related_issues:
 
 > **Модуль.** Файл `50-open-research.md` модуля
 > [`research/reputation-technologies/gra-research-program/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/reputation-technologies/gra-research-program).
-> Здесь собрано то, чего программа пока не знает, и то, что в корпусе
-> репозитория расходится с модулем.
+> Здесь собрано то, чего исследовательская модель GRA пока не знает, и то,
+> что в корпусе репозитория расходилось с модулем.
+>
+> **Версия 0.2 (issue [#659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659)).**
+> Кейсы в ранжировании названы по сквозной нумерации курса. Пробелы корпуса
+> из §3 устранены в ранних артефактах; таблица получила колонку статуса.
+> Термин «программа» заменён на «исследовательская модель», кроме ссылок на
+> методологию Лакатоса и цитат из условий #657.
 
 ## 1. Открытые вопросы
 
@@ -40,7 +47,7 @@ related_issues:
 | OQ-7 | Есть ли инерция массивных узлов и устойчив ли лаг «поле → рынок» (в отчёте фаундера — 30–180 дней)? | HM-I | Временные ряды событий поля и рыночных показателей |
 | OQ-8 | Достижима ли надёжная порядковая разметка массы и дистанции двумя независимыми людьми? | K2 | Двойная разметка кейсов соисследователей |
 | OQ-9 | Объясняет ли модель конкурентных возможностей (H5) исходы лучше гравитационных? | H5 | Кейсы, где между узлами есть альтернативные посредники |
-| OQ-10 | Какие ещё физические или математические структуры дают проверяемые отношения уровня L1? | Эвристика программы | Регулярный разбор аналогий по таблице §6 таксономии |
+| OQ-10 | Какие ещё физические или математические структуры дают проверяемые отношения уровня L1? | Эвристика модели | Регулярный разбор аналогий по таблице §6 таксономии |
 
 ## 2. Ранжирование гипотез для первой проверки
 
@@ -50,24 +57,27 @@ related_issues:
 | Ранг | Гипотеза | Почему первой | Минимальные данные |
 | --- | --- | --- | --- |
 | 1 | Структурная гипотеза против H0 (K3) | Это главная гипотеза (в) таблицы трассировки Дня 1; её проверяют все кейсы | 1–2 кейса соисследователей с исходом |
-| 2 | HP-D, направленность | Кейсы Б и В на неё опираются; качественно проверяема | Те же кейсы + разметка «кто кому передаёт» |
+| 2 | HP-D, направленность | Кейсы 2 и 3 на неё опираются: поток к инвестору и два потока рекомендаций к массажисту; качественно проверяема | Те же кейсы + разметка «кто кому передаёт» |
 | 3 | HD1, независимость D1 и D2 | MVP-требование зависит от ответа | Кейсы с расхождением D1 и D2 |
 | 4 | Разведение массы и влияния (T4) | Проверяется разметкой, не требует чисел | Двойная разметка |
 | 5 | H1 против H2, HS, HM-I | Требуют количественных данных и временных рядов | Отдельный исследовательский проект |
 
 ## 3. Пробелы корпуса
 
-Ранние артефакты GRA содержат формулировки, которые модуль исправляет. По
-условиям задачи #657 они не редактировались: правка ограничена SSOT Дня 1.
-Расхождения зафиксированы здесь и вынесены в предложение §5.
+Ранние артефакты GRA содержали формулировки, которые модуль исправляет. По
+условиям задачи #657 они не редактировались: правка была ограничена SSOT Дня 1.
+Задача #659 потребовала сквозной проверки корпуса, и расхождения устранены в
+самих артефактах. Каждое место описано в
+[аудите согласованности](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-10-10-reputation-technologies-consistency-audit.md).
+Исторические формулировки оставлены в таблице как след решения.
 
-| Артефакт | Место | Формулировка | Расхождение с модулем |
-| --- | --- | --- | --- |
-| [Отчёт о концепции фаундера](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) | Раздел о формуле и научных основаниях | «Это соединяет гравитационную модель торговли (Tinbergen, 1962) и анализ силового поля»; «Научные основания: Gravity Model of Trade (Tinbergen, 1962) для «масса/дистанция²»» | Генеалогия (F1): торговая модель — параллельный прецедент. Квадрат дистанции у Тинбергена не заложен `[650:Г1]` |
-| Тот же отчёт | Лаг «поле опережает рынок» | 30–180 дней как свойство поля | Это гипотеза HM-I, OQ-7 |
-| [White paper (en)](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-white-paper.en.md) | Описание модели | «This unifies the Gravity Model of Trade (Tinbergen, 1962) with Force Field Analysis» | F1 |
-| [Framework standard (en)](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md) | Описание модели | «Grounded in the Gravity Model of Trade (Tinbergen, 1962)» | F1, F2 |
-| [Глоссарий ru-en](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md) | Статьи «Масса», «Дистанция», «Гравитация» | Дистанция «обратна доверию»; масса и гравитация со ссылкой на Gravity Model (Tinbergen 1962) | F3, F1 |
+| Артефакт | Место | Формулировка | Расхождение с модулем | Статус (#659) |
+| --- | --- | --- | --- | --- |
+| [Отчёт о концепции фаундера](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) | Раздел о формуле и научных основаниях | «Это соединяет гравитационную модель торговли (Tinbergen, 1962) и анализ силового поля»; «Научные основания: Gravity Model of Trade (Tinbergen, 1962) для «масса/дистанция²»» | Генеалогия (F1): торговая модель — параллельный прецедент. Квадрат дистанции у Тинбергена не заложен `[650:Г1]` | Исправлено |
+| Тот же отчёт | Лаг «поле опережает рынок» | 30–180 дней как свойство поля | Это гипотеза HM-I, OQ-7 | Исправлено: лаг помечен как гипотеза HM-I |
+| [White paper (en)](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-white-paper.en.md) | Описание модели | «This unifies the Gravity Model of Trade (Tinbergen, 1962) with Force Field Analysis» | F1 | Исправлено |
+| [Framework standard (en)](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md) | Описание модели | «Grounded in the Gravity Model of Trade (Tinbergen, 1962)» | F1, F2 | Исправлено |
+| [Глоссарий ru-en](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md) | Статьи «Масса», «Дистанция», «Гравитация» | Дистанция «обратна доверию»; масса и гравитация со ссылкой на Gravity Model (Tinbergen 1962) | F3, F1 | Исправлено |
 
 ## 4. Словарь
 
@@ -75,7 +85,7 @@ related_issues:
 | --- | --- |
 | Структурное соответствие | Совпадение отношений (не свойств) между физической или математической системой и социальной системой; предмет исследования GRA, а не её предпосылка |
 | Лестница переноса | L0 закономерность → L1 структура → L2 социальная гипотеза → L3 прикладная модель; каждый переход — отдельная гипотеза |
-| Ядро программы | Утверждение, которое пересматривается последним; тоже гипотеза |
+| Ядро исследовательской модели | Утверждение, которое пересматривается последним; тоже гипотеза |
 | Защитный пояс | Операционализации, формы модели, степени, аналогии; пересматриваются в первую очередь |
 | Операционализация | Способ сделать конструкт наблюдаемым: индикатор, источник данных, шкала |
 | Базовая линия H0 | Оптика образа: охват и тональность. С ней сравнивается любая модель GRA |
@@ -86,9 +96,11 @@ related_issues:
 
 ## 5. Предложения
 
+> **Статус (#659): принято и выполнено, см. §3.** Исходная формулировка предложения:
+>
 > **Я предлагаю скорректировать ранние артефакты GRA (отчёт о концепции фаундера, white paper, framework standard, глоссарий), потому что вариант «исправить только День 1» оставляет в корпусе неверную генеалогию и формулу «дистанция = обратное доверие», а вариант «синхронизировать корпус отдельной задачей» эффективнее решает задачу единого источника истины: правки в ранних документах затрагивают двуязычные тексты и требуют решения фаундера, а не исполнителя Дня 1.** Перечень мест — §3.
 
-> **Я предлагаю скорректировать порядок исследований, начав с проверки структурной гипотезы против базовой линии H0 на кейсах соисследователей, потому что вариант «сначала откалибровать формулу H1» эффективнее отложить: для калибровки нужны количественные данные, которых у лаборатории нет, а сравнение с H0 даёт ответ на главный вопрос программы уже на одном-двух кейсах.** Ранжирование — §2.
+> **Я предлагаю скорректировать порядок исследований, начав с проверки структурной гипотезы против базовой линии H0 на кейсах соисследователей, потому что вариант «сначала откалибровать формулу H1» эффективнее отложить: для калибровки нужны количественные данные, которых у лаборатории нет, а сравнение с H0 даёт ответ на главный вопрос исследовательской модели уже на одном-двух кейсах.** Ранжирование — §2.
 
 ## 6. Источники
 
@@ -126,7 +138,7 @@ related_issues:
 
 | Требование | Где выполнено |
 | --- | --- |
-| RRP-исследование с полным методологическим обоснованием GRA как открытой программы | Шесть файлов модуля; выбор M2 — в [00-introduction.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/00-introduction.md#почему-модель-m2-rrp-а-не-m3) |
+| RRP-исследование с полным методологическим обоснованием GRA как открытой программы (с #659 — «исследовательская модель GRA») | Шесть файлов модуля; выбор M2 — в [00-introduction.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/00-introduction.md#почему-модель-m2-rrp-а-не-m3) |
 | GRA возникла как гипотеза о структурных аналогах | [10-theory.md, §1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#1-происхождение-gra) |
 | GRA не наследует физические законы, а исследует соответствие | [10-theory.md, §2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#2-принцип-структурного-соответствия) |
 | Роль ИИ-агентов и независимая проверка | [10-theory.md, §6](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#6-роль-ии-агентов), [30-decision-framework.md, §5](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/30-decision-framework.md#5-гейт-для-выводов-ии-агентов) |
@@ -134,3 +146,14 @@ related_issues:
 | Синхронизация презентации и сценария | [Презентация](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-presentation-653.md), [сценарий лектора](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md) |
 | Неизменные элементы Дня 1 | [30-decision-framework.md, §6](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/30-decision-framework.md#6-уровень-аудитории), решение A7 |
 | Абсолютные ссылки | Все ссылки модуля абсолютные |
+
+## 8. Самоаудит против условий задачи #659
+
+| Требование | Где выполнено |
+| --- | --- |
+| Восемь правок F1–F8 в трёх документах Дня 1 | [Обоснование](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md), [презентация](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-presentation-653.md), [сценарий лектора](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md); в каждом — раздел «Изменения версии 0.3» |
+| Дословная формулировка происхождения GRA | [10-theory.md, §1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#1-происхождение-gra); слайд 8 презентации и сценария |
+| Три сквозных кейса вместо микро-кейсов, собственный кейс и Промпт-фреймер | [40-practice-and-cases.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#промпт-фреймер-дня-1) |
+| Сквозная проверка корпуса | §3 и [аудит согласованности](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-10-10-reputation-technologies-consistency-audit.md) |
+| Полные абсолютные URL | Все ссылки домена; исключение — относительная ссылка в README каталогов `exp/`, которую требует `tools/validate-evidence-structure.sh` ([README эксперимента](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day1-methodology-659/README.md)) |
+| Решение об углублении | Выполнено то, что нужно для эфира Дня 1: разметка кейсов с H0 и опровергающим условием, белые источники для Дня 2, этика и право, урок для теории, Промпт-фреймер, синхронизация ранних артефактов. Вынесено в [Спринт 29 бэклога](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md#спринт-29-курс-по-репутационным-технологиям-после-дня-1): материалы Дня 2 (B-229), юридическая проверка кейсов (B-230), проверка HP-D и HM-I (B-231), имя каталога (B-232). Эти задачи требуют данных, юриста или решения человека |

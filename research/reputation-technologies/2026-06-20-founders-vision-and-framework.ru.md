@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-10-10
 temperature: 0.2
 type: external-analysis
 context: [reputation-technologies, gra, framework, international-standard, ecosystem, ai-governance]
@@ -17,6 +17,7 @@ related_artifacts:
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/257"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
 ---
 
 # Репутационные технологии: от видения фаундера к международному стандарту GRA
@@ -26,6 +27,13 @@ related_issues:
 > Это **исследовательский отчёт**, а не реализация фреймворка: артефакты фреймворка
 > (код, отдельный репозиторий) здесь только **проектируются и рекомендуются**, но не создаются
 > (см. ограничение issue #260: «не создавать файлы фреймворка в этом репозитории»).
+>
+> **Правка версии 0.2 (issue [#659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659)).**
+> Происхождение GRA приведено к дословной формулировке фаундера. Гравитационная модель торговли и
+> анализ силового поля названы прецедентами, а не научным основанием формулы. Масса описана как
+> наблюдаемые характеристики узла, дистанция — как многомерная величина, полярность — как знак и
+> направление потока. Остальной текст отчёта не менялся. Актуальная теория —
+> [модуль «Исследовательская модель GRA»](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/00-introduction.md).
 
 Этот документ выделяет **видение фаундера** (Иван Гулиенко) из трёх групп прикреплённых
 материалов, очищает его от образовательной обёртки, формализует как базу фреймворка,
@@ -34,9 +42,9 @@ related_issues:
 Hub. Спутниковые документы — стандарт (EN), white paper (EN), executive summary (RU+EN) и
 терминологический словарь (RU↔EN) — вынесены в отдельные файлы этого же домена и связаны ссылками.
 
-Навигация по домену — в [README.md](README.md). Сводка для руководителей —
-в [executive summary](2026-06-20-executive-summary.ru-en.md). Полный словарь терминов —
-в [glossary](2026-06-20-glossary.ru-en.md).
+Навигация по домену — в [README.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/README.md). Сводка для руководителей —
+в [executive summary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-executive-summary.ru-en.md). Полный словарь терминов —
+в [glossary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md).
 
 ## Введение
 
@@ -46,7 +54,7 @@ Issue [#260](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260) с�
 сформировать из «сырых» материалов фаундера целостный, готовый к международной презентации
 **фреймворк репутационных технологий** и проект **международного стандарта**. Параллельное
 исследование архитектуры экосистемы
-([research/hub/2026-06-20-ecosystem-architecture-research.md](../hub/2026-06-20-ecosystem-architecture-research.md))
+([research/hub/2026-06-20-ecosystem-architecture-research.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-06-20-ecosystem-architecture-research.md))
 прямо зафиксировало, что «сырые данные по репутационным технологиям отсутствуют» и их нужно
 «запросить и приложить» прежде, чем превращать выводы в стандарт. Настоящий отчёт **закрывает
 этот пробел**: материалы приложены к issue #260 и проанализированы здесь.
@@ -97,15 +105,23 @@ Issue [#260](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260) с�
    диалога (Q и G) и не зависит от образовательной обёртки (курс — лишь один из каналов применения).
 
 2. **Модель «Гравитация + Магнетизм» — оригинальный вклад.** Репутационное взаимодействие
-   описывается вектором **F(t) = (Масса_A × Масса_B) / Дистанция² × Полярность(t)**, где Масса —
-   влияние/ресурс/репутационный капитал, Дистанция — обратна доверию, Полярность ∈ {+1, 0, −1}.
-   Это соединяет **гравитационную модель торговли** (Tinbergen, 1962) и **анализ силового поля**
-   (Lewin, 1947) в едином графовом формализме.
+   описывается вектором **F(t) = (Масса_A × Масса_B) / Дистанция² × Полярность(t)** — рабочей
+   гипотезой H1, одной из нескольких моделей связи. Масса — наблюдаемые характеристики узла: ресурс,
+   позиция, сеть связей, репутационный капитал; влияние на конкретное решение фиксируется отдельно.
+   Дистанция многомерна: физическая и временная, информационная (канал), доверие, ценности,
+   институциональная. Полярность ∈ {+1, 0, −1, ?} — знак связи и направление потока.
+   Происхождение (правка #659, дословно): «GRA возникла исключительно как авторская гипотеза
+   фаундера о возможности структурного описания социальных и информационных связей по аналогии с
+   физическими закономерностями. Любые математические или экономические модели (включая
+   гравитационные) рассматриваются лишь как одна из возможных практических сред исследования или
+   реализации этой гипотезы, не имеющая статуса первоисточника или особого ориентира».
 
 3. **«Информационно-репутационное поле» опережает рынок.** Поле ⊃ Рынок; изменения в поле
-   проявляются на рынке с лагом **30–180 дней**. Это даёт прогностический горизонт и обосновывает
+   проявляются на рынке с лагом **30–180 дней**. Это гипотеза HM-I, она не проверена (правка #659).
+   Если она подтвердится, это даст прогностический горизонт и обоснует
    управление репутацией как опережающим индикатором выручки (**Репутационный ROI**:
-   Репутация → Доверие → ↓CAC → ↑LTV → Прибыль).
+   Репутация → Доверие → ↓CAC → ↑LTV → Прибыль). Это гипотетическая цепочка, а не обещание
+   эффекта для бизнеса.
 
 4. **Найдено «белое пятно» рынка.** Из 15 международных проектов **ни один** не является
    одновременно: (1) предписывающим/инженерным, (2) графовым, (3) кросс-уровневым (индивид →
@@ -130,12 +146,12 @@ Issue [#260](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260) с�
 
 | # | Рекомендация | Куда фиксируется |
 | --- | --- | --- |
-| R1 | Принять ядро видения «репутация как измеримая управляемая система» базой фреймворка | Этот отчёт, §I; [framework-standard.en.md](2026-06-20-framework-standard.en.md) §3 |
-| R2 | Консолидировать наименование в единый бэкроним **GRA = Gravitational & Magnetic Reputation Architecture**, сохранив публичный слоган «Global Reputation Agreement» | §8.1; [framework-standard.en.md](2026-06-20-framework-standard.en.md) §4 |
-| R3 | Базировать стандарт на **ISO/IEC/IEEE 42010:2022** и явно добавить **ISO/IEC 42001:2023 (AI management)** как ключевой недостающий якорь | §IX; [framework-standard.en.md](2026-06-20-framework-standard.en.md) §2 |
-| R4 | Формализовать онтологию в **W3C RDF 1.1 + SKOS + PROV-O**; для МСП — рекомендовать **Edge List** как точку входа | §IV.4; [glossary](2026-06-20-glossary.ru-en.md) |
-| R5 | Перенять модель продвижения «ежегодный публикуемый рейтинг» как маховик | §VII; [white-paper.en.md](2026-06-20-white-paper.en.md) §6 |
-| R6 | Создать **отдельный репозиторий** (`reputation-engineering` / `gra-framework`), наследующий governance Hub через spoke-шаблон | §X; связь с [ecosystem-architecture-research](../hub/2026-06-20-ecosystem-architecture-research.md) |
+| R1 | Принять ядро видения «репутация как измеримая управляемая система» базой фреймворка | Этот отчёт, §I; [framework-standard.en.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md) §3 |
+| R2 | Консолидировать наименование в единый бэкроним **GRA = Gravitational & Magnetic Reputation Architecture**, сохранив публичный слоган «Global Reputation Agreement» | §8.1; [framework-standard.en.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md) §4 |
+| R3 | Базировать стандарт на **ISO/IEC/IEEE 42010:2022** и явно добавить **ISO/IEC 42001:2023 (AI management)** как ключевой недостающий якорь | §IX; [framework-standard.en.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md) §2 |
+| R4 | Формализовать онтологию в **W3C RDF 1.1 + SKOS + PROV-O**; для МСП — рекомендовать **Edge List** как точку входа | §IV.4; [glossary](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md) |
+| R5 | Перенять модель продвижения «ежегодный публикуемый рейтинг» как маховик | §VII; [white-paper.en.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-white-paper.en.md) §6 |
+| R6 | Создать **отдельный репозиторий** (`reputation-engineering` / `gra-framework`), наследующий governance Hub через spoke-шаблон | §X; связь с [ecosystem-architecture-research](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-06-20-ecosystem-architecture-research.md) |
 | R7 | Реализовать **двойную защиту от «aggregate confusion»**: открытая методология + аудит графа + дисклеймер «метафора, не физика» | §VIII.5, §VI (white space) |
 | R8 | Двигаться к признанию по пути **de-facto стандарта** (Schema.org/OpenAPI-модель), а не сразу к ISO/PAS | §XI (roadmap стандартизации) |
 
@@ -197,8 +213,8 @@ Issue [#260](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260) с�
 
 | Идея | Формулировка фаундера | Почему уникально |
 | --- | --- | --- |
-| **Гравитация + Магнетизм** | Сила связи = (Масса_A × Масса_B)/Дистанция² × Полярность | Соединяет gravity-model и force-field в графе; ни один аналог не использует физическую метафору как операциональную модель |
-| **Информационно-репутационное поле ⊃ рынок** | Поле опережает рынок на 30–180 дней | Превращает репутацию в опережающий индикатор выручки |
+| **Гравитация + Магнетизм** | Сила связи = (Масса_A × Масса_B)/Дистанция² × Полярность | Авторская гипотеза структурного соответствия; gravity-model и force-field — прецеденты, а не источник (правка #659); ни один аналог не использует физическую метафору как операциональную модель |
+| **Информационно-репутационное поле ⊃ рынок** | Поле опережает рынок на 30–180 дней (гипотеза HM-I, не проверена) | Если гипотеза подтвердится, репутация станет опережающим индикатором выручки |
 | **Контуры управления** | Внутренний (80–100% контроля) / внешний (0–50% влияния) / среда | Чёткая граница «что я контролирую» vs «на что влияю» |
 | **Триада И-К-В** | Идентичность–Компетенция–Влияние | Кросс-уровневый «паспорт узла» (от человека до государства) |
 | **Кросс-уровневость** | Индивид → бренд → компания → государство в одной модели | Никто из 15 аналогов не покрывает все 4 уровня |
@@ -269,7 +285,8 @@ flowchart LR
 
 **Репутация (в GRA)** — это динамическое состояние **информационно-репутационного поля**:
 взвешенного направленного графа узлов (субъектов/объектов) и связей (граней), где сила и знак
-связи определяются «массой» узлов, «дистанцией» (обратной доверию) и «полярностью».
+связи определяются «массой» узлов, многомерной «дистанцией» (доверие — одна из её осей) и
+«полярностью» со знаком и направлением потока.
 
 Компоненты системы (рычаги управления из issue):
 
@@ -307,7 +324,7 @@ flowchart TB
 1. **Структурные** (из графа): центральности (degree/betweenness/eigenvector), плотность,
    модулярность сообществ, доля положительных/отрицательных граней.
 2. **Капитальные**: **Trust Equity** (репутационный капитал) = накопленный положительный поток;
-   **Репутационный ROI**.
+   **Репутационный ROI** (гипотетическая цепочка, не обещание эффекта; правка #659).
 3. **Динамические**: скорость распространения (**Propagation of Reputation**), устойчивость к
    шоку (по Coombs SCCT), **Рекурсия восприятия** (восприятие восприятия — петля обратной связи).
 
@@ -326,12 +343,26 @@ flowchart TB
 
 $$ F(t) = \frac{Масса_A \times Масса_B}{Дистанция^2} \times Полярность(t) $$
 
-- **Масса** = влияние/ресурс/репутационный капитал (оборот, доля, авторитет, бюджет).
-- **Дистанция** = обратна доверию (ближе = больше доверия = сильнее связь).
-- **Полярность(t)** ∈ {**+1** притяжение/поддержка, **0** нейтрально, **−1** отталкивание/противодействие}; зависит от времени (события сдвигают знак).
+Статус формулы — рабочая гипотеза H1, одна из конкурирующих моделей связи H0–H6
+([модуль «Исследовательская модель GRA»](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/20-taxonomy.md#5-конкурирующие-модели-связи-h0h6)). Квадрат дистанции не откалиброван.
 
-Научные основания: **Gravity Model of Trade** (Tinbergen, 1962) для «масса/дистанция²»;
-**Force Field Analysis** (Lewin, 1947) для сил поддержки/препятствия; **ABI trust model**
+- **Масса** = наблюдаемые характеристики узла: ресурс (оборот, бюджет), позиция (доля, формальный статус),
+  сеть связей, репутационный капитал; у группы компаний — совокупная масса холдинга. Части массы могут
+  расходиться, в одно число их не сводят. Влияние узла на конкретное решение фиксируется отдельно.
+- **Дистанция** многомерна: физическая и временная, информационная (канал связи), доверие, ценности,
+  институциональная (формальные барьеры). Минимум — две оси, физическая и информационная. Доверие —
+  одна из осей, а не определение дистанции.
+- **Полярность(t)** ∈ {**+1** притяжение/поддержка, **0** нейтрально, **−1** отталкивание/противодействие,
+  **?** нет данных}; зависит от времени (события сдвигают знак) и от сигнала. У связи есть направление
+  потока: A→B не равно B→A (гипотеза HP-D).
+
+Происхождение формулы — авторская гипотеза фаундера (дословная формулировка — в разделе о ядре
+концепции выше и в [модуле «Исследовательская модель GRA», §1.1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#1-происхождение-gra)).
+**Gravity Model of Trade** (Tinbergen, 1962) — прецедент переноса похожей формы на социальные данные и
+одна из возможных сред исследования, а не основание «масса/дистанция²»: у Тинбергена степени
+оцениваются по данным, и показатель расстояния в торговле ближе к 1, чем к 2.
+Опоры для отдельных элементов модели: **Force Field Analysis** (Lewin, 1947) для сил поддержки/препятствия,
+с оговоркой Левина о неопределимости абсолютной величины социальных сил; **ABI trust model**
 (Mayer–Davis–Schoorman, 1995) для знака связи (полярность = функция Ability/Benevolence/Integrity,
 в русской терминологии — **КЧЗ: Компетентность/Честность/Забота**).
 
@@ -418,14 +449,14 @@ flowchart LR
 3. **Симуляция каскадов.** Agent-based modeling по графу: распространение события, оценка
    устойчивости (Coombs SCCT), поиск точек отказа (Key Man Risk).
 4. **Прогноз поля → рынка.** Time-series по структурным метрикам поля с лагом 30–180 дней как
-   опережающий индикатор выручки.
+   проверка гипотезы HM-I об опережающем индикаторе выручки.
 5. **No-Code контур для МСП.** Google Sheets (Edge List) + промпт-библиотека + рендерер графа —
    минимальный жизнеспособный инструмент без программирования.
 
 **Управление ИИ (governance):** все ИИ-функции подчиняются **ISO/IEC 42001:2023** (AI management
 system) и **EU AI Act** (прозрачность, запрет манипулятивных практик), **OECD AI Principles**,
 **NIST AI RMF**. Это прямой мост к существующему исследованию Hub
-([international-ai-governance-practices](../hub/2026-06-12-international-ai-governance-practices.md)).
+([international-ai-governance-practices](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-06-12-international-ai-governance-practices.md)).
 
 ### V.3. Этическая классификация воздействий
 
@@ -607,7 +638,7 @@ ESG-divergence и согласуется с **EU ESG Ratings Regulation** (пр�
 ## Часть IX. Стандарт фреймворка (международный формат)
 
 Полный проект стандарта (нормативный, EN) — в
-[2026-06-20-framework-standard.en.md](2026-06-20-framework-standard.en.md). Здесь — обоснование формата.
+[2026-06-20-framework-standard.en.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md). Здесь — обоснование формата.
 
 ### IX.1. Якорные стандарты
 
@@ -653,7 +684,7 @@ flowchart TB
 ```
 
 GRA реализует объектную модель «репутация-как-граф-доказательств», уже намеченную в
-[2026-06-20-ecosystem-architecture-research.md](../hub/2026-06-20-ecosystem-architecture-research.md)
+[2026-06-20-ecosystem-architecture-research.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-06-20-ecosystem-architecture-research.md)
 (EvidenceObject / ReputationClaim / ScoringPolicy / ReputationScore / AppealRecord) и
 зарезервированный там spoke `reputation-engineering`.
 
@@ -734,12 +765,12 @@ flowchart LR
 
 ## Часть XIII. Executive Summary (краткая версия)
 
-> Полная двуязычная версия — [2026-06-20-executive-summary.ru-en.md](2026-06-20-executive-summary.ru-en.md).
+> Полная двуязычная версия — [2026-06-20-executive-summary.ru-en.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-executive-summary.ru-en.md).
 
 **RU.** Видение фаундера: репутация — измеримая, моделируемая и управляемая система связей, а ИИ —
 инструмент её моделирования и управления на уровнях от индивида до государства. Формализация:
 модель **Гравитация + Магнетизм** (F = (M·M)/D² × Полярность) на взвешенном графе
-(«информационно-репутационное поле», опережающее рынок на 30–180 дней). Рынок из 15 проектов
+(«информационно-репутационное поле»; опережение рынка на 30–180 дней — гипотеза HM-I). Рынок из 15 проектов
 оставляет **белое пятно**: нет открытого, графового, предписывающего, кросс-уровневого стандарта —
 это позиция **GRA**. Рекомендации: единый бэкроним GRA, стандарт на ISO 42010:2022 + 42001:2023,
 открытая методология против «aggregate confusion», маховик «ежегодный рейтинг», отдельный репозиторий
@@ -747,8 +778,8 @@ flowchart LR
 
 **EN (краткое зеркало).** The founder's vision: reputation is a measurable, modelable, manageable
 system of relations; AI is the instrument to model and manage it from individual to nation. It is
-formalized as a **Gravity + Magnetism** model on a weighted reputation-field graph that leads the
-market by 30–180 days. Across 15 global projects, the **white space** is an open, graph-based,
+formalized as a **Gravity + Magnetism** model on a weighted reputation-field graph hypothesised to lead the
+market by 30–180 days (hypothesis HM-I). Across 15 global projects, the **white space** is an open, graph-based,
 prescriptive, cross-level standard — GRA's position. Full text in the bilingual summary file.
 
 ---
@@ -767,7 +798,7 @@ prescriptive, cross-level standard — GRA's position. Full text in the bilingua
 
 ### Научные основания
 
-- Tinbergen J. (1962). *Shaping the World Economy* — Gravity Model of Trade.
+- Tinbergen J. (1962). *Shaping the World Economy* — Gravity Model of Trade (прецедент, не первоисточник GRA; правка #659).
 - Lewin K. (1947). Frontiers in Group Dynamics — Force Field Analysis.
 - Freeman R.E. (1984). *Strategic Management: A Stakeholder Approach.*
 - Mitchell, Agle, Wood (1997). Stakeholder Salience. *AMR.*
@@ -801,6 +832,6 @@ prescriptive, cross-level standard — GRA's position. Full text in the bilingua
 
 ### Связанные внутренние артефакты
 
-- [research/hub/2026-06-20-ecosystem-architecture-research.md](../hub/2026-06-20-ecosystem-architecture-research.md)
-- [research/hub/2026-06-12-international-ai-governance-practices.md](../hub/2026-06-12-international-ai-governance-practices.md)
-- [standards/research-standard.md](../../standards/research-standard.md)
+- [research/hub/2026-06-20-ecosystem-architecture-research.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-06-20-ecosystem-architecture-research.md)
+- [research/hub/2026-06-12-international-ai-governance-practices.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-06-12-international-ai-governance-practices.md)
+- [standards/research-standard.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/research-standard.md)
