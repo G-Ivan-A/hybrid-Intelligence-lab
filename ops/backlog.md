@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.70
-updated: 2026-10-07
+version: 1.71
+updated: 2026-10-10
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -755,6 +755,32 @@ Release через `G-mach` и `G-human`; блокирующую защиту д
 `/bcreq-gate`), О-5 (нет контрактов отладки, задача B-201 и B-193) и О-8
 (модель сама решает, когда предложить запись) общие с Cline-пакетом и
 отдельных задач не получают.
+
+---
+
+## Спринт 29: Курс по репутационным технологиям после Дня 1
+
+**Story.** Issue #659 перевела материалы Дня 1 (обоснование, презентация,
+сценарий лектора, версия 0.3) и модуль «Исследовательская модель GRA» на три
+сквозных кейса и восемь правил `30-decision-framework.md`. Сквозная проверка
+домена `research/reputation-technologies` исправила противоречия в ранних
+артефактах, но оставила то, что нельзя закрыть текстом: юридическую проверку
+формулировок кейсов, эмпирическую проверку гипотез HP-D и HM-I и имя каталога
+модуля, которое расходится с термином.
+
+**Цель.** Подготовить День 2 на тех же кейсах и снять или принять решением
+человека остаточные риски, названные в аудите согласованности.
+
+**Критерий закрытия.** PR #661 принят; задачи B-229…B-232 закрыты или приняты
+решением человека.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-228** | Методологическая актуализация Дня 1 и рефакторинг кейсов GRA | null | - | review | [#659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659) / [PR #661](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/661) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659) | Правила F1–F8 применены к трём документам Дня 1 (версия 0.3), `40-practice-and-cases.md` переведён на три сквозных кейса, свой кейс и Промпт-фреймер Дня 1; противоречия домена зафиксированы и исправлены в [аудите согласованности](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-10-10-reputation-technologies-consistency-audit.md). | Creative |
+| **B-229** | Подготовить материалы Дня 2 на сквозных кейсах | null | B-228 | TODO | - (planned) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659), [мост к Дню 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md), [issue #650](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/650) | День 2 принимает карточку Промпт-фреймера и проверяет её «?» и ○ Промптом-разведчиком. Нужны обоснование, презентация и сценарий лектора Дня 2 с теми же кейсами 1–3, значками ●◐○ и запретом на обещания эффекта. | Creative |
+| **B-230** | Юридически проверить формулировки сквозных кейсов | null | - | TODO | - (planned) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659), [PR #661](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/661), [аудит, Remediation](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-10-10-reputation-technologies-consistency-audit.md) | Кейсы синтетические, но описывают реальные регуляторные среды: относится ли массаж по авторской методике к медицинской услуге; закон о рекламе для рекомендаций; инвестиционные формулировки кейса 2; 381-ФЗ для кейса 1. Нужна проверка юристом до эфира или явное принятие риска владельцем курса. | null |
+| **B-231** | Проверить гипотезы HP-D и HM-I на данных соисследователей | null | B-228 | TODO | - (planned) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659), [открытые вопросы OQ-4, OQ-7](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/50-open-research.md) | Кейсы 2 и 3 опираются на направленность потока (HP-D), а лаг «поле → рынок» 30–180 дней остаётся гипотезой HM-I. Нужен протокол наблюдения с 1–2 соисследователями после Дня 1; без данных обе остаются гипотезами на слайдах. | null |
+| **B-232** | Решить, переименовывать ли каталог `gra-research-program/` | null | - | TODO | - (planned) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659), [аудит, Deviation](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-10-10-reputation-technologies-consistency-audit.md) | Термин в текстах — «исследовательская модель GRA», а каталог назван «research program». Имя сохранено ради стабильности ссылок из PR, issue и реестров; переименование требует решения человека и массовой правки ссылок. | null |
 
 ---
 
