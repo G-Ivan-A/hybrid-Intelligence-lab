@@ -70,7 +70,7 @@ The **information-reputation field** is a weighted directed graph `G = (V, E)`. 
 subjects/objects at any level; edges `E` are **development edges** carrying type, weight, distance,
 trust-transfer risk, and a **polarity** sign. The field **contains** the market. Hypothesis HM-I (not yet tested): the field **leads** the market by
 roughly **30–180 days**; if confirmed, reputation would be a *leading indicator* of revenue
-(`Reputation → Trust → ↓CAC → ↑LTV → Profit`).
+(`Reputation → Trust → ↓CAC → ↑LTV → Profit`). This chain is a hypothesis, not a promise of business effect.
 
 ### 2.2 The force law (an operational metaphor)
 
