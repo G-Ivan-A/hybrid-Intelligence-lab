@@ -27,6 +27,36 @@ for p in 'Теория заинтересованных сторон' 'Акти�
   if grep -q -i -F "$p" "$d1" && grep -q -i -F "$p" "$d2"; then echo "ok   program phrase: $p"; else echo "FAIL program phrase: $p"; fail=1; fi
 done
 
+# Разметка достоверности (комментарий владельца в PR #664): правило о причине
+# статуса в Промпте-фильтре и в Промпте-разведчике Дня 2, достижимые индикаторы
+# кейса 1. Строки промпта перенесены, поэтому текст склеивается в одну строку.
+flat() { tr '\n' ' ' < "$1" | tr -s ' '; }
+d2s="$dir/2026-10-30-day2-lecturer-script.md"
+for p in 'РАЗМЕТКА ДОСТОВЕРНОСТИ' 'ты обязан явно указать причину низкого уровня достоверности' 'https://kad.arbitr.ru/' 'https://fssp.gov.ru/iss/ip' 'тендер и ассортиментный комитет'; do
+  if flat "$d1" | grep -q -F -- "$p"; then echo "ok   reliability markup: $p"; else echo "FAIL reliability markup: $p"; fail=1; fi
+done
+if flat "$d2s" | grep -q -F 'ты обязан явно указать причину низкого уровня достоверности'; then echo "ok   reliability markup: Day 2 Разведчик"; else echo "FAIL reliability markup: Day 2 Разведчик"; fail=1; fi
+
+# «Плата за вход» — коммерческое условие без источника; допустимо только
+# упоминание в самопроверке документа 1, где оно взято в кавычки.
+hits=$(grep -n -i -E 'плат[аеиоуыю]+ за вход' "$d1" "$d2" "$d3" | grep -v -F '«плате за вход»' || true)
+if [ -n "$hits" ]; then echo "FAIL unsourced commercial term:"; echo "$hits"; fail=1; else echo "ok   unsourced commercial term «плата за вход»: 0"; fi
+
+# Вертикальная черта внутри кода в строке таблицы делит ячейку (GFM).
+pipes=$(awk '
+  FNR==1 {fence=0}
+  /^```/ {fence=!fence; next}
+  fence || !/^\|/ {next}
+  {
+    incode=0
+    for (i=1; i<=length($0); i++) {
+      c=substr($0,i,1)
+      if (c=="`") incode=!incode
+      else if (c=="|" && incode && substr($0,i-1,1)!="\\") {print FILENAME ":" FNR; break}
+    }
+  }' "$d1" "$d2" "$d3")
+if [ -n "$pipes" ]; then echo "FAIL pipe inside code in table row:"; echo "$pipes"; fail=1; else echo "ok   pipe inside code in table rows: 0"; fi
+
 echo "--- spoken words per slot (script, without directions, tags, tables, code)"
 awk '
   /^## Приложение/ {exit}
