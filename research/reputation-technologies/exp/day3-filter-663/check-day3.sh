@@ -49,7 +49,7 @@ d2r="$dir/2026-10-30-day2-rationale-and-method.md"
 laws() { grep -o -E '[0-9]+-ФЗ' | LC_ALL=C sort -u; }
 for day in 'Day 3' 'Day 2'; do
   if [ "$day" = 'Day 3' ]; then r="$d1"; s="$d3"; else r="$d2r"; s="$d2s"; fi
-  need=$(grep -m1 -F 'Правовые нормы' "$r" | laws || true)
+  need=$(grep -m1 -E '^([0-9]+\.|-) (\*\*)?Правовые нормы' "$r" | laws || true)
   have=$(grep -m1 -E '^[0-9]+\. Сверьте с юристом' "$s" | laws || true)
   missing=$(LC_ALL=C comm -23 <(printf '%s\n' "$need") <(printf '%s\n' "$have") | tr '\n' ' ')
   if [ -z "$need" ]; then echo "FAIL lawyer check: $day — no «Правовые нормы» line in document 1"; fail=1

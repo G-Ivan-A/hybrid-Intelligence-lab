@@ -65,4 +65,9 @@ expect 'Day 3 lawyer check without case 1 norms' 'FAIL lawyer check: Day 3 — p
 setup; mutate 2026-10-30-day2-lecturer-script.md '98-ФЗ \(ст\. 3\) в кейсе 1 и в правилах Промпта-разведчика о коммерческих условиях, ' ''
 expect 'Day 2 lawyer check without 98-ФЗ' 'FAIL lawyer check: Day 2 — prep item misses 98-ФЗ'
 
+# Слова «Правовые нормы» вне пункта списка выше настоящего пункта не подменяют его.
+setup; mutate 2026-11-02-day3-rationale-and-method.md '\A' 'Правовые нормы кейса 2: 259-ФЗ.\n'
+mutate 2026-11-02-day3-lecturer-script.md '381-ФЗ \(ст\. 9\) и ' ''
+expect 'Day 3 lawyer check with a decoy line above the norms item' 'FAIL lawyer check: Day 3 — prep item misses 381-ФЗ'
+
 exit $fail
