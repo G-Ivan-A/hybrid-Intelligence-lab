@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Самопроверка check-day3.sh (issue #663): на копии документов по одной вносит
-# нарушение разметки достоверности и ждёт от check-day3.sh код 1 и нужную
-# строку FAIL. Исходные документы не меняются.
+# нарушение разметки достоверности или сверки с юристом и ждёт от check-day3.sh
+# код 1 и нужную строку FAIL. Исходные документы не меняются.
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 src="$(cd "$here/../.." && pwd)"
@@ -13,7 +13,8 @@ setup() {
   rm -rf "$tmp/case"
   mkdir -p "$tmp/case/exp/day3-filter-663"
   cp "$here/check-day3.sh" "$tmp/case/exp/day3-filter-663/"
-  cp "$src"/2026-11-02-day3-*.md "$src/2026-10-30-day2-lecturer-script.md" "$tmp/case/"
+  cp "$src"/2026-11-02-day3-*.md "$src/2026-10-30-day2-lecturer-script.md" \
+    "$src/2026-10-30-day2-rationale-and-method.md" "$tmp/case/"
 }
 
 # mutate <файл> <регулярное выражение Python> <замена>
@@ -57,5 +58,11 @@ expect 'unsourced «плата за вход» in a table' 'FAIL unsourced comme
 
 setup; mutate 2026-11-02-day3-presentation.md '\Z' '\n| Выход | Таблица `Узел | Статус` |\n'
 expect 'pipe inside code in a table row' 'FAIL pipe inside code in table row'
+
+setup; mutate 2026-11-02-day3-lecturer-script.md '381-ФЗ \(ст\. 9\) и 98-ФЗ \(ст\. 3, ст\. 5\) в кейсе 1 и в разметке достоверности, ' ''
+expect 'Day 3 lawyer check without case 1 norms' 'FAIL lawyer check: Day 3 — prep item misses 381-ФЗ 98-ФЗ'
+
+setup; mutate 2026-10-30-day2-lecturer-script.md '98-ФЗ \(ст\. 3\) в кейсе 1 и в правилах Промпта-разведчика о коммерческих условиях, ' ''
+expect 'Day 2 lawyer check without 98-ФЗ' 'FAIL lawyer check: Day 2 — prep item misses 98-ФЗ'
 
 exit $fail

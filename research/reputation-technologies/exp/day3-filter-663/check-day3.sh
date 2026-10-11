@@ -42,6 +42,21 @@ if flat "$d2s" | grep -q -F 'ты обязан явно указать прич�
 hits=$(grep -n -i -E 'плат[аеиоуыю]+ за вход' "$d1" "$d2" "$d3" | grep -v -F '«плате за вход»' || true)
 if [ -n "$hits" ]; then echo "FAIL unsourced commercial term:"; echo "$hits"; fail=1; else echo "ok   unsourced commercial term «плата за вход»: 0"; fi
 
+# Сверка с юристом в подготовке лектора охватывает все нормы, которые документ 1
+# помечает как границу для юриста: в Дне 3 — и нормы кейса 1 (381-ФЗ, 98-ФЗ),
+# в Дне 2 версии 0.2 — и 98-ФЗ из разметки достоверности.
+d2r="$dir/2026-10-30-day2-rationale-and-method.md"
+laws() { grep -o -E '[0-9]+-ФЗ' | LC_ALL=C sort -u; }
+for day in 'Day 3' 'Day 2'; do
+  if [ "$day" = 'Day 3' ]; then r="$d1"; s="$d3"; else r="$d2r"; s="$d2s"; fi
+  need=$(grep -m1 -F 'Правовые нормы' "$r" | laws || true)
+  have=$(grep -m1 -E '^[0-9]+\. Сверьте с юристом' "$s" | laws || true)
+  missing=$(LC_ALL=C comm -23 <(printf '%s\n' "$need") <(printf '%s\n' "$have") | tr '\n' ' ')
+  if [ -z "$need" ]; then echo "FAIL lawyer check: $day — no «Правовые нормы» line in document 1"; fail=1
+  elif [ -n "${missing// /}" ]; then echo "FAIL lawyer check: $day — prep item misses ${missing% }"; fail=1
+  else echo "ok   lawyer check: $day covers" $need; fi
+done
+
 # Вертикальная черта внутри кода в строке таблицы делит ячейку (GFM).
 pipes=$(awk '
   FNR==1 {fence=0}
