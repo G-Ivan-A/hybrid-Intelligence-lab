@@ -62,7 +62,7 @@ expect 'pipe inside code in a table row' 'FAIL pipe inside code in table row'
 setup; mutate 2026-11-02-day3-lecturer-script.md '381-ФЗ \(ст\. 9\) и 98-ФЗ \(ст\. 3, ст\. 5\) в кейсе 1 и в разметке достоверности, ' ''
 expect 'Day 3 lawyer check without case 1 norms' 'FAIL lawyer check: Day 3 — prep item misses 381-ФЗ 98-ФЗ'
 
-setup; mutate 2026-10-30-day2-lecturer-script.md '98-ФЗ \(ст\. 3\) в кейсе 1 и в правилах Промпта-разведчика о коммерческих условиях, ' ''
+setup; mutate 2026-10-30-day2-lecturer-script.md '98-ФЗ \(ст\. 3\) в правиле о коммерческих условиях \([^)]*\), ' ''
 expect 'Day 2 lawyer check without 98-ФЗ' 'FAIL lawyer check: Day 2 — prep item misses 98-ФЗ'
 
 # Слова «Правовые нормы» вне пункта списка выше настоящего пункта не подменяют его.
