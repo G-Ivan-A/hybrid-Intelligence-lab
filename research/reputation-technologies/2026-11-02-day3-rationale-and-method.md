@@ -26,7 +26,7 @@ method: course-design-with-traceable-evidence
 Опоры комплекта:
 
 - [SSOT Дня 1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md) — стиль, механики вовлечения, значки статуса ●/◐/○;
-- [обоснование Дня 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) — провенанс, статусы `VERIFIED` / `PARTIAL` / `CONFLICT`, Промпт-разведчик, реестр по трём кейсам;
+- [обоснование Дня 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) — провенанс, статусы `VERIFIED` / `PARTIAL` / `CONFLICT`, Промпт-разведчик, реестр по трём кейсам. Файл появится в `main` после слияния [PR #662](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/662); до этого выдержки из реестра Дня 2 пересказаны в разборе кейсов ниже;
 - [исследовательская модель GRA](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/00-introduction.md) и [таксономия](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/20-taxonomy.md) — оси дистанции D1–D5, компоненты массы M1–M4, полярность и направление потока;
 - [рамка решений](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/30-decision-framework.md) — запрещённые формулировки F1–F10, критерии K1–K7 (K7 «этика и право» — порог), гейт ИИ G1–G6;
 - [файл практики](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md) — три сквозных кейса, «Свой кейс», этические и правовые границы каждого кейса;
@@ -146,7 +146,7 @@ method: course-design-with-traceable-evidence
 | `VERIFIED` | Действие по задаче: вид, стиль, канал первого шага; образ и сообщение — День 4 | **Отказ** (вред) или выход через посредника (доступность) |
 | Нет данных | Узел возвращается в сбор: Промпт-разведчик Дня 2 | Узел исключается из этого цикла; пометка «?» сохраняется. «?» — не 0 |
 
-**Почему `CONFLICT` может стать приоритетом.** Противоречие — это узел, в котором есть информация. Если разговор с одним человеком снимает противоречие, он стоит дешевле, чем проверка десятка вторичных источников. Кроме того, вопрос о причине противоречия — профессиональный повод для первого контакта: «мы видим разные сведения, помогите понять». Он не требует ни скидки, ни обещания.
+**Почему `CONFLICT` может стать приоритетом.** Программа говорит: «Точка с CONFLICT может быть приоритетной: прямой разговор снимает противоречие». Противоречие — это узел, в котором есть информация. Если разговор с одним человеком снимает противоречие, он стоит дешевле, чем проверка десятка вторичных источников. Кроме того, вопрос о причине противоречия — профессиональный повод для первого контакта: «мы видим разные сведения, помогите понять». Он не требует ни скидки, ни обещания.
 
 **Почему `PARTIAL` опасна для публичного действия.** Публичное действие необратимо: письмо, слайд, пост видят люди, которые проверят основание. Если основание не подтвердится, вред несёт уже не данные, а репутация автора действия. Поэтому `PARTIAL` закрывает публичное и открывает обратимое.
 
