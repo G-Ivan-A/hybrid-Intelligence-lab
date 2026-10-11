@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-10-10
 temperature: 0.7
 type: research
