@@ -502,6 +502,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-02-day3-lecturer-script.md | \
     research/reputation-technologies/exp/day3-filter-663/README.md | \
     research/reputation-technologies/exp/day3-filter-663/check-day3.sh | \
+    research/reputation-technologies/exp/day3-filter-663/test-check-day3.sh | \
     research/reputation-technologies/gra-research-program/00-introduction.md | \
     research/reputation-technologies/gra-research-program/10-theory.md | \
     research/reputation-technologies/gra-research-program/20-taxonomy.md | \
