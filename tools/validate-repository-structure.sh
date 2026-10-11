@@ -502,6 +502,9 @@ is_active_file() {
     research/reputation-technologies/gra-research-program/50-open-research.md | \
     research/reputation-technologies/exp/gra-research-program-657/README.md | \
     research/reputation-technologies/exp/gra-research-program-657/check-gra-anchors.py | \
+    research/reputation-technologies/exp/day1-methodology-659/README.md | \
+    research/reputation-technologies/exp/day1-methodology-659/absolutize-links.py | \
+    research/reputation-technologies/exp/day1-methodology-659/scan-contradictions.sh | \
     research/mango/2026-05-22-classification.md | \
     research/mango/2026-05-22-classification-tz.md | \
     research/mango/2026-05-22-requirements-flow.md | \
@@ -609,6 +612,7 @@ is_active_file() {
     docs/audit/2026-08-01-ops-artifact-placement-review.md | \
     docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md | \
     docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md | \
+    docs/audit/2026-10-10-reputation-technologies-consistency-audit.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -2013,7 +2017,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.26"
+require_text "ops/artifact-map.md" "version: 2.27"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
