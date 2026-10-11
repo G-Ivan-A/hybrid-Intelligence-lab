@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-10-10
 temperature: 0.2
 type: external-analysis
 context: [reputation-technologies, gra, framework, executive-summary, international-standard]
@@ -14,13 +14,19 @@ related_artifacts:
   - research/reputation-technologies/2026-06-20-white-paper.en.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/260"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
 ---
 
 # Executive Summary — GRA Reputation Framework (RU + EN)
 
 > Two-to-three-page summary for decision-makers, in Russian and English. Full analysis:
-> [main report](2026-06-20-founders-vision-and-framework.ru.md) ·
-> [standard](2026-06-20-framework-standard.en.md) · [white paper](2026-06-20-white-paper.en.md).
+> [main report](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) ·
+> [standard](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-framework-standard.en.md) · [white paper](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-white-paper.en.md).
+>
+> **Правка версии 0.2 / Revision 0.2 (issue [#659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659)).** Определения модели приведены к
+> [исследовательской модели GRA](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/00-introduction.md);
+> опережение рынка и цепочка до прибыли помечены как гипотезы. Model definitions follow the GRA
+> research model; the market lead and the profit chain are marked as hypotheses.
 
 ---
 
@@ -36,10 +42,12 @@ related_issues:
 ### Модель
 
 Репутация описывается как **информационно-репутационное поле** — взвешенный направленный граф, где
-сила связи **F = (Масса_A × Масса_B) / Дистанция² × Полярность**. Масса — влияние/ресурс/капитал;
-Дистанция обратна доверию; Полярность ∈ {+1, 0, −1}. Поле **опережает рынок на 30–180 дней**, поэтому
-управление репутацией — это опережающий индикатор выручки (Репутация → Доверие → ↓CAC → ↑LTV →
-Прибыль). Модель работает **на всех уровнях**: индивид → бренд → компания → государство.
+сила связи **F = (Масса_A × Масса_B) / Дистанция² × Полярность** — рабочая гипотеза H1, одна из
+нескольких моделей связи. Масса — наблюдаемые характеристики узла (ресурс, позиция, сеть,
+репутационный капитал); Дистанция многомерна (физическая, информационная, доверие, ценности,
+институциональная); Полярность ∈ {+1, 0, −1, ?} и направление потока. Гипотеза HM-I: поле
+**опережает рынок на 30–180 дней**; если она подтвердится, репутация станет опережающим индикатором
+выручки (Репутация → Доверие → ↓CAC → ↑LTV → Прибыль). Это не обещание эффекта. Модель работает **на всех уровнях**: индивид → бренд → компания → государство.
 
 ### Что показывает рынок (15 проектов)
 
@@ -81,10 +89,12 @@ wrapping, is formalized as the **GRA — Gravitational & Magnetic Reputation Arc
 ### The model
 
 Reputation is modeled as the **information-reputation field** — a weighted directed graph in which the
-force of a relation is **F = (Mass_A × Mass_B) / Distance² × Polarity**. Mass is
-influence/resource/capital; Distance is inverse of trust; Polarity ∈ {+1, 0, −1}. The field **leads
-the market by 30–180 days**, making reputation management a leading revenue indicator (Reputation →
-Trust → ↓CAC → ↑LTV → Profit). The model holds **across all levels**: individual → brand → company →
+force of a relation is **F = (Mass_A × Mass_B) / Distance² × Polarity** — working hypothesis H1, one
+of several relation models. Mass is a set of observable node characteristics (resource, position,
+network, reputation capital); Distance is multidimensional (physical, informational, trust, values,
+institutional); Polarity ∈ {+1, 0, −1, ?} plus flow direction. Hypothesis HM-I: the field **leads
+the market by 30–180 days**; if confirmed, reputation would become a leading revenue indicator
+(Reputation → Trust → ↓CAC → ↑LTV → Profit). This is not a promise of effect. The model holds **across all levels**: individual → brand → company →
 state.
 
 ### What the market shows (15 projects)

@@ -505,6 +505,9 @@ is_active_file() {
     research/reputation-technologies/gra-research-program/50-open-research.md | \
     research/reputation-technologies/exp/gra-research-program-657/README.md | \
     research/reputation-technologies/exp/gra-research-program-657/check-gra-anchors.py | \
+    research/reputation-technologies/exp/day1-methodology-659/README.md | \
+    research/reputation-technologies/exp/day1-methodology-659/absolutize-links.py | \
+    research/reputation-technologies/exp/day1-methodology-659/scan-contradictions.sh | \
     research/mango/2026-05-22-classification.md | \
     research/mango/2026-05-22-classification-tz.md | \
     research/mango/2026-05-22-requirements-flow.md | \
@@ -612,6 +615,7 @@ is_active_file() {
     docs/audit/2026-08-01-ops-artifact-placement-review.md | \
     docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md | \
     docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md | \
+    docs/audit/2026-10-10-reputation-technologies-consistency-audit.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -2429,7 +2433,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.70"
+require_text "ops/backlog.md" "version: 1.71"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"

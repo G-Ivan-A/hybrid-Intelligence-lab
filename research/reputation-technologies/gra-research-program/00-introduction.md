@@ -1,13 +1,13 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-10-10
 temperature: 0.6
 type: research
 context: [reputation-technologies, gra, research-program, methodology, introduction, reading-map]
 method: conceptual-analysis + source-traceability + competing-hypotheses + falsification-design
 scope: reputation-technologies
-source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
+source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657; https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
 based_on:
   - research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md
   - research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md
@@ -20,12 +20,13 @@ related_artifacts:
   - "research/reputation-technologies/gra-research-program/50-open-research.md"
   - "docs/rfc/2026-07-17-rfc-reference-research-pattern.md"
 related_issues:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/653"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/650"
 ---
 
-# GRA как исследовательская программа: введение и карта чтения
+# Исследовательская модель GRA: введение и карта чтения
 
 > **Модуль.** Это файл `00-introduction.md` модуля
 > [`research/reputation-technologies/gra-research-program/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/reputation-technologies/gra-research-program).
@@ -39,6 +40,13 @@ related_issues:
 > валидатор `tools/validate-rrp-links.sh` проверяет и по абсолютным ссылкам,
 > поэтому исключений из политики нет.
 >
+> **Термин.** GRA называется **исследовательской моделью** (рабочее название —
+> **концептуальный фреймворк GRA**). Слово «программа» на курсе занято
+> программой обучения, поэтому с issue
+> [#659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659) оно
+> не используется как имя GRA. Имя каталога `gra-research-program/` сохранено
+> ради стабильности ссылок.
+>
 > **Статус.** `draft`. Модуль — методологическое основание GRA. Он не отменяет
 > [отчёт о концепции фаундера](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md),
 > а задаёт статус его утверждений: что в GRA является исходной концепцией, что
@@ -46,17 +54,19 @@ related_issues:
 
 ## BLUF
 
-1. **GRA — открытая исследовательская программа, а не догма и не готовая
+1. **GRA — открытая исследовательская модель, а не догма и не готовая
    методика.** Она возникла как гипотеза: социально-информационные системы,
    возможно, допускают описание через структурные аналоги физических и
    математических закономерностей. Всё в модели, включая формулу, имеет статус
    гипотезы и требует исследования силами людей и ИИ-команд. Разбор —
    [§1 и §4 файла 10-theory.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md#1-происхождение-gra).
-2. **GRA не выросла из гравитационной модели торговли.** Источник GRA — опыт
-   фаундера в PR/GR и гипотеза о структурном описании связей. Модель Тинбергена
-   — один из нескольких параллельных научных прецедентов переноса физических
-   моделей в социальные науки, наряду с «социальной физикой» Стюарта, гипотезой
-   Ципфа, теорией поля Левина и статистической физикой социальной динамики.
+2. **Происхождение GRA — дословно по фаундеру:** «GRA возникла исключительно
+   как авторская гипотеза фаундера о возможности структурного описания
+   социальных и информационных связей по аналогии с физическими
+   закономерностями. Любые математические или экономические модели (включая
+   гравитационные) рассматриваются лишь как одна из возможных практических сред
+   исследования или реализации этой гипотезы, не имеющая статуса первоисточника
+   или особого ориентира». PR/GR — область применения на курсе, а не источник.
 3. **GRA не наследует физические законы напрямую.** Она исследует, существует
    ли структурное соответствие. Перенос идёт по лестнице из четырёх уровней:
    физическая закономерность → математическая структура → социальная гипотеза →
@@ -66,15 +76,17 @@ related_issues:
    конкурирующими операционализациями.** Дистанция — многомерный конструкт:
    минимум две независимые интерпретации (физическая/пространственно-временная и
    информационно-коммуникационная), доверие — одна из рабочих. Масса — набор
-   потенциально наблюдаемых характеристик узла; инерция массивных узлов —
-   отдельная гипотеза. Полярность включает гипотезу направленности потоков
-   (A→B ≠ B→A). Таксономия —
+   потенциально наблюдаемых характеристик узла (ресурс, позиция, сеть,
+   репутационный капитал, совокупная масса холдинга); влияние на решение —
+   проявление массы в конкретном контексте, а не её определение; инерция
+   массивных узлов — отдельная гипотеза. Полярность — знак связи и направление
+   потока (A→B ≠ B→A). Таксономия —
    [20-taxonomy.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/20-taxonomy.md).
 5. **Формула фаундера — гипотеза H1, один из кандидатов на модель связи.** Рядом
    с ней стоят конкурирующие математические конструкции H2–H6, включая модели
    без «силы» и без числа вовсе
    ([§5 файла 20-taxonomy.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/20-taxonomy.md#5-конкурирующие-модели-связи-h0h6)).
-6. **Цель программы — найти операционализации с наибольшей объяснительной
+6. **Цель модели — найти операционализации с наибольшей объяснительной
    ценностью, а не подтвердить заранее выбранную физическую аналогию.** Рамка
    выбора и запрет нефальсифицируемых формулировок —
    [30-decision-framework.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/30-decision-framework.md).
@@ -96,8 +108,8 @@ Issue [#657](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657)
 | Элемент рамки решений | Из какого материала выведен |
 | --- | --- |
 | Лестница переноса из четырёх уровней | Обсуждение фаундера с командами по #653 и ограничения из #650: степень расстояния ≈ 1 `[650:Г1][650:Г3]`, неопределимость абсолютной силы `[650:Г5]` |
-| Таблица запрещённых и допустимых формулировок | Восемь правок issue #657 к SSOT Дня 1 |
-| Критерии выбора операционализаций | Шаблон Дня 1 «гипотеза → факт, который её опроверг бы» и четыре микро-кейса |
+| Таблица запрещённых и допустимых формулировок | Восемь правок issue #657 к SSOT Дня 1; дословная формулировка происхождения от фаундера (issue #659) |
+| Критерии выбора операционализаций | Шаблон Дня 1 «гипотеза → факт, который её опроверг бы»; четыре микро-кейса (#657, в архиве) и три сквозных кейса (#659) |
 | Гейт для выводов ИИ-агентов | Охота на галлюцинации Дня 1 и данные о точности ИИ-поиска `[653:М3]` |
 
 Отсюда тема зрелая в смысле стандарта: есть объектная модель, таксономия и
@@ -111,7 +123,7 @@ Issue [#657](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657)
 | [10-theory.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/10-theory.md) | Откуда GRA, что такое структурное соответствие, что в GRA «ядро», а что пересматривается; роль ИИ-агентов; граница домена | Фаундеру, методологу, рецензенту |
 | [20-taxonomy.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/20-taxonomy.md) | Какие бывают Масса, Дистанция, Полярность; какие модели связи конкурируют с H1; какие аналогии конкурируют с гравитацией | Исследователю, который операционализирует |
 | [30-decision-framework.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/30-decision-framework.md) | Как формулировать утверждения GRA, как выбирать между операционализациями, что принимать от ИИ | Автору курса, лектору, ИИ-агенту |
-| [40-practice-and-cases.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md) | Как гипотезы выглядят на четырёх микро-кейсах Дня 1 и какой протокол дать соисследователю | Лектору, соисследователю |
+| [40-practice-and-cases.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md) | Как гипотезы выглядят на трёх сквозных кейсах курса и на «своём кейсе»; Промпт-фреймер Дня 1; протокол соисследователя; архив кейсов А–Г | Лектору, слушателю, соисследователю |
 | [50-open-research.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/50-open-research.md) | Открытые вопросы, ранжирование гипотез, пробелы корпуса, словарь, источники, самоаудит | Тому, кто планирует следующий шаг |
 
 ## Граф зависимостей
@@ -121,7 +133,7 @@ flowchart LR
   T["10 Теория<br/>происхождение, лестница переноса,<br/>ядро и защитный пояс"] --> X["20 Таксономия<br/>Масса · Дистанция · Полярность,<br/>H0–H6, аналогии"]
   T --> D["30 Рамка решений<br/>формулировки, выбор операционализаций,<br/>гейт ИИ"]
   X --> D
-  D --> P["40 Практика<br/>кейсы А–Г, протокол соисследователя"]
+  D --> P["40 Практика<br/>кейсы 1–3, свой кейс,<br/>Промпт-фреймер, протокол"]
   X --> P
   P -. "P5: обратная связь" .-> T
   P -.-> O["50 Открытые вопросы"]
@@ -137,7 +149,8 @@ SSOT Дня 1 —
 Эти документы не пересказывают модуль, а ссылаются на него. В аудитории
 остаются три простые линзы (масса, дистанция, полярность) и рамка «это наша
 рабочая гипотеза». Научная глубина живёт здесь и не превращает День 1 в лекцию
-по философии науки.
+по философии науки. Сквозные кейсы и Промпт-фреймер Дня 1 описаны в
+[40-practice-and-cases.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md).
 
 ## Обозначения статусов
 
@@ -148,4 +161,4 @@ SSOT Дня 1 —
 | --- | --- | --- |
 | ● | (а) зафиксировано | Факт: проверено по источнику или зафиксировано в репозитории как концепция-источник |
 | ◐ | (б) интерпретация | Так мы применяем известную теорию к GRA |
-| ○ | (в) гипотеза | Утверждение исследовательской программы, ждёт проверки; у каждой названо опровергающее условие |
+| ○ | (в) гипотеза | Утверждение исследовательской модели, ждёт проверки; у каждой названо опровергающее условие |
