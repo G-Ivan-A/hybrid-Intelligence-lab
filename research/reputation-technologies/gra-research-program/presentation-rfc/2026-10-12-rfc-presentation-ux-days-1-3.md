@@ -1,6 +1,6 @@
 ---
-status: draft
-version: 0.1
+status: rejected
+version: 0.2
 updated: 2026-10-12
 temperature: 0.1
 owner: G-Ivan-A
@@ -9,12 +9,14 @@ rfc-scope: A
 
 # RFC: самостоятельное чтение презентаций Дней 1–3
 
+> **ОТКЛОНЁН фаундером** ([issue #667](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/667)). Изменения по этому RFC внесены в презентации до его утверждения, что нарушило контракт «изменения только после RFC». Документ сохранён как история решения и не служит основанием для правок. Действующее предложение — [RFC: логический каркас Дней 1–3 на 90 минут](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md).
+
 ## RFC Metadata
 
 | Field | Value |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | draft, решение принимает автор курса |
+| RFC status | rejected ([#667](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/667)) |
 | Source issue | [#665](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/665), Creative |
 | Impacted artifacts | Три презентации, навигация домена, карта артефактов, журнал изменений, регистрация новых файлов |
 | Decision record | Этот RFC; принятие ещё не зафиксировано |

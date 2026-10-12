@@ -7,7 +7,7 @@ temperature: 0.1
 
 # Presentation UX: проверка issue #665
 
-Родительский отчёт — [RFC от 2026-10-12](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md), задача — [#665](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/665). Контейнер проверяет редакционные признаки самостоятельного чтения, не обучающий эффект.
+Родительский отчёт — [RFC от 2026-10-12](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md), задача — [#665](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/665). Контейнер проверяет редакционные признаки самостоятельного чтения, не обучающий эффект. Родительский RFC отклонён фаундером в [#667](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/667); проверка оставлена в CI, пока презентации не пересобраны по [новому RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md).
 
 Исходный датированный исследовательский материал для сравнения — [презентация Дня 1](../../2026-10-07-day1-presentation-653.md); обоснование программы — [метод Дня 1](../../2026-10-07-day1-rationale-and-method-653.md). Подробный результат проверки всех трёх дней находится в родительском RFC выше.
 
