@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.29
-updated: 2026-10-10
+version: 0.30
+updated: 2026-10-11
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -34,6 +34,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/653"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/657"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/660"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/663"
 ---
 
 # Реестр внешних источников
@@ -451,6 +452,10 @@ related_issues:
 | `ext-369` | [ФНС — Сведения из ЕГРЮЛ/ЕГРИП](https://egrul.nalog.ru/) | `docs` | `ru` | `counterparty-check, legal-entity-registry` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
 | `ext-370` | [Единая информационная система в сфере закупок (zakupki.gov.ru)](https://zakupki.gov.ru/) | `docs` | `ru` | `procurement-records, counterparty-check` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
 | `ext-371` | [Фонд содействия инновациям (fasie.ru)](https://fasie.ru/) | `docs` | `ru` | `development-institution, deep-tech-funding` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 2 #660](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md) |
+| `ext-372` | [Freeman — Strategic Management: A Stakeholder Approach (1984; переиздание Cambridge University Press, 2010)](https://doi.org/10.1017/CBO9781139192675) | `book` | `en` | `stakeholder-theory, influence-point` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 3 #663](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-02-day3-rationale-and-method.md) |
+| `ext-373` | [Burt — Structural Holes versus Network Closure as Social Capital (2000)](https://snap.stanford.edu/class/cs224w-readings/burt00capital.pdf) | `paper` | `en` | `structural-holes, brokerage, social-capital` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 3 #663](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-02-day3-rationale-and-method.md) |
+| `ext-374` | [Cha, Haddadi, Benevenuto, Gummadi — Measuring User Influence in Twitter: The Million Follower Fallacy (ICWSM 2010)](https://snap.stanford.edu/class/cs224w-readings/cha10influence.pdf) | `paper` | `en` | `influence-measurement, audience-activity` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 3 #663](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-02-day3-rationale-and-method.md) |
+| `ext-375` | [Федеральный закон № 98-ФЗ «О коммерческой тайне» (ст. 3 и 5)](https://www.consultant.ru/document/cons_doc_LAW_48699/) | `standard` | `ru` | `trade-secret, commercial-terms, provenance` | `topic: reputation-course` | `research` | `hub` | ✅ [курс, день 3 #663](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-02-day3-rationale-and-method.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
