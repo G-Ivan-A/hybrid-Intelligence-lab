@@ -93,6 +93,9 @@ jobs:
       - name: Test OpenCode execution package
         run: bash tools/test-opencode-package.sh
 
+      - name: Check presentation UX coverage and preservation
+        run: python3 research/reputation-technologies/exp/presentation-ux-665/check-presentation-ux.py --self-test
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:

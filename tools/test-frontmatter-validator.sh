@@ -81,6 +81,7 @@ make_tmp_dir knowledge_dir research
 make_tmp_dir governance_dir standards
 make_tmp_dir adr_dir docs/adr
 make_tmp_dir rfc_dir docs/rfc
+make_tmp_dir research_rfc_dir research/reputation-technologies/gra-research-program/presentation-rfc
 make_tmp_dir project_dir projects
 mkdir -p "$project_dir/docs/rfc"
 project_rfc_doc="$project_dir/docs/rfc/2026-09-project-rfc.md"
@@ -220,6 +221,28 @@ temperature: 0.1
 owner: Governance
 rfc-scope: C"
 expect_pass "project-scoped RFC metadata" "$project_rfc_doc"
+
+write_doc "$research_rfc_dir/valid.md" "status: draft
+version: 0.1
+updated: 2026-10-12
+temperature: 0.1
+owner: G-Ivan-A
+rfc-scope: A"
+expect_pass "course research RFC metadata" "$research_rfc_dir/valid.md"
+
+write_doc "$research_rfc_dir/missing-scope.md" "status: draft
+version: 0.1
+updated: 2026-10-12
+temperature: 0.1
+owner: G-Ivan-A"
+expect_fail "course research RFC requires scope" "$research_rfc_dir/missing-scope.md" "missing required frontmatter field for RFC artifact: rfc-scope"
+
+write_doc "$research_rfc_dir/missing-owner.md" "status: draft
+version: 0.1
+updated: 2026-10-12
+temperature: 0.1
+rfc-scope: A"
+expect_fail "course research RFC requires owner" "$research_rfc_dir/missing-owner.md" "missing required frontmatter field for governance artifact: owner"
 
 write_doc "$project_adr_doc" "status: accepted
 version: 1.0

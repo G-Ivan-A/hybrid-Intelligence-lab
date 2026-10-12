@@ -90,6 +90,12 @@ document_class() {
     docs/audit/*.md)
       printf 'audit'
       ;;
+    # Issue #665 explicitly places the curriculum review in its research module.
+    # Keep the RFC owner/scope gate for this typed home instead of treating it
+    # as generic knowledge or widening the fields allowed for all research.
+    research/reputation-technologies/gra-research-program/presentation-rfc/*.md)
+      printf 'rfc'
+      ;;
     research/*.md | docs/analysis/*.md | docs/report/*.md)
       printf 'knowledge'
       ;;
