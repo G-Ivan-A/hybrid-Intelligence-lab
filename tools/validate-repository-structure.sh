@@ -505,6 +505,8 @@ is_active_file() {
     research/reputation-technologies/gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md | \
     research/reputation-technologies/exp/rfc-days-logic-667/README.md | \
     research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py | \
+    research/reputation-technologies/exp/rfc-days-logic-667/issue-669-before.log | \
+    research/reputation-technologies/exp/rfc-days-logic-667/issue-669-after.log | \
     research/reputation-technologies/exp/presentation-ux-665/README.md | \
     research/reputation-technologies/exp/presentation-ux-665/check-presentation-ux.py | \
     research/reputation-technologies/exp/presentation-ux-665/render-preview.py | \
