@@ -1,0 +1,7 @@
+$ python3 -I research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py --self-test   # checker v0.3 (#671) on RFC v0.3
+PASS: appeal first; 4 days × 22–26 slides with 5 intro / 15–20 main / 1–4 final; 4 fields per slide with a self-study link; 90 minutes with reserve
+PASS: ≤2 chat votes and 1 prompt trial per day; Day 4 narrative tied to Day 3; Day 3 filter by usefulness for the meeting with the lecturer phrase on the site word; ≥54 min of image technologies on Day 4
+PASS: founder quotes as fixed in #671; no trigger words even in quotes; repository links and anchors resolve; no tables before appendix; no image prompts
+PASS: GRA as guardrails with an explicit verdict, no formula in the days; case 1 «Умные холодные продажи» without an incoming request; Day 1 openness slide; Day 2 ethics; Day 3 Wayback Machine and open web; эклектика instead of провокация
+PASS: rejected #665 RFC fails the contract; 33 broken fixtures rejected
+exit code: 0
