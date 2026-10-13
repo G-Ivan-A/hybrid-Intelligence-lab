@@ -1,0 +1,55 @@
+$ python3 -I research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py --self-test   # checker v0.3 (#671) on RFC v0.2
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: founder quote missing or shortened: «Между "посредник врет" и "давайте измери…»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: founder quote missing or shortened: «Про цифры - они сейчас не критичны. Коли…»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: trigger word (quotes included, the partnership vector is primary): «безопасн»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: trigger word (quotes included, the partnership vector is primary): «безопасн»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: frontmatter version below 0.3
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: no independent verdict «СОГЛАШАЮСЬ / НЕ СОГЛАШАЮСЬ» on GRA as guardrails in the appeal section
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: case structure decision «Один сквозной кейс …» not stated in the appeal section
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «прислала запрос»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «запрос цен»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «прислала запрос»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «запрос цен»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «запрос цен»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «запрос цен»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «запрос цен»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «запрос цен»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md: incoming-request paradigm of case 1: «прислала запрос»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 1: risk rhetoric: «риск»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 1: GRA formula: «формул»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 1: GRA formula: «H1»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 3: «провокация» instead of «эклектика»: «провоц»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провоц»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «провокация» instead of «эклектика»: «провок»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: image-technology share «Имидж-технологии — N минут (слайды a–b)» not stated
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 4: «эклектика / грамотный контраст» not explained
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 1: GRA is not introduced as guardrails for AI prompts
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 1: case 1 is not framed as «Умные холодные продажи»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 1: no slide «Как понять, открыта ли сеть к новым поставщикам, используя открытые данные»
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 2: collection condition does not name open profiles as allowed and hidden databases as forbidden
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 3: lecturer phrase on «вред» → «полезность для встречи» missing
+FAIL: 2026-10-12-rfc-days-1-3-logic.md/День 3: prompt trial does not make Wayback Machine and the open web mandatory
+FAIL: self-test: mutation not rejected: version not bumped
+FAIL: self-test: mutation not rejected: no guardrails verdict
+FAIL: self-test: mutation not rejected: case structure missing
+FAIL: self-test: mutation not rejected: guardrails missing
+FAIL: self-test: mutation not rejected: smart cold sales missing
+FAIL: self-test: mutation not rejected: openness slide missing
+FAIL: self-test: mutation not rejected: ethics missing
+FAIL: self-test: mutation not rejected: lecturer phrase missing
+FAIL: self-test: mutation not rejected: wayback missing
+FAIL: self-test: mutation not rejected: image share below 60%
+exit code: 1

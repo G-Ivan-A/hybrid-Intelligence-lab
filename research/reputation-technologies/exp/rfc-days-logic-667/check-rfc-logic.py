@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the RFC contract of issues #667 and #669: appeal first, four logical day skeletons, 90-minute budget, partnership tone."""
+"""Check the RFC contract of issues #667, #669 and #671: appeal first, four logical day skeletons, 90-minute budget, partnership tone, GRA as guardrails, proactive case 1."""
 import argparse
 import re
 from pathlib import Path
@@ -16,10 +16,26 @@ PRINCIPLE = "Просто в эфире, глубоко в ссылках"
 APPEAL = "АППЕЛЯЦИЯ: Требование"
 FIELDS = ("- **Когнитивный сдвиг:**", "- **Нарративная связь:**", "- **Глубже — в ссылках:**", "- **Формат и время:**")
 IMAGE_MARKERS = re.compile(r"Qwen|Kandinsky|Midjourney|DALL|Stable Diffusion|промпт[а-я]* (?:для )?изображени|image prompt", re.I)
-LOCAL_PROGRAM = re.compile(r"default\.txt|121026\.txt|user-attachments")
-# #669 DoD: no investigation rhetoric outside verbatim quotes (blockquotes).
+LOCAL_PROGRAM = re.compile(r"default\.txt|121026\.txt|131026\.txt|user-attachments")
+# #669 DoD: no investigation rhetoric; #671: the partnership vector beats verbatim quotes, so quotes are checked too.
 TRIGGERS = re.compile(r"безопасн|разоблач|угроз|расследова|ловл[яиюе]", re.I)
 HARM = re.compile(r"вред", re.I)
+# #671: inside the days — no «проверка на вшивость» and no risk rhetoric, no GRA formula, no incoming request from the chain.
+DAY_TONE = re.compile(r"риск|вшив", re.I)
+FORMULA = re.compile(r"формул(?!ир)|F\(t\)|\bH1\b", re.I)
+INCOMING = re.compile(r"запрос[а-я]* цен|прислал[аи]? запрос", re.I)
+PROVOCATION = re.compile(r"провок|провоц", re.I)
+VERSION = "0.3"
+GUARDRAILS_VERDICT = re.compile(r"(?<!НЕ )СОГЛАШАЮСЬ с заменой формулы на guardrails, обоснование: |НЕ СОГЛАШАЮСЬ, предлагаю альтернативу: ")
+SMART_COLD_SALES = "Умные холодные продажи"
+OPENNESS_SLIDE = "открыта ли сеть к новым поставщикам"
+LECTURER_HARM = 'В эфире лектор использует термин "полезность для встречи", вербально нивелируя слово "вред" из программы сайта, не принимая его как внутреннюю логику фильтра'
+CASE_STRUCTURE = "Один сквозной кейс"
+WAYBACK = "https://web.archive.org/"
+OPEN_WEB = re.compile(r"открыт(?:ом|ый|ого) веб", re.I)
+ETHICS_ALLOWED = re.compile(r"открыт[а-я]* (?:аккаунт|профил)", re.I)
+ETHICS_FORBIDDEN = re.compile(r"скрыт[а-я]* баз", re.I)
+IMAGE_SHARE = re.compile(r"Имидж-технологии — (\d+(?:,\d)?) минут[а-я]* \(слайды (\d+)–(\d+)\)")
 DAY = re.compile(r"^## День ([1-4])\. .+$", re.M)
 PART = re.compile(r"^### (Вход|Основная часть|Финал)[^\n]*\(слайды (\d+)–(\d+)\)$", re.M)
 SLIDE = re.compile(r"^#### Слайд (\d+)\. «.+»$", re.M)
@@ -29,10 +45,11 @@ LINK = re.compile(r"\]\((https://[^)\s]+)\)")
 DAY3_MENTION = re.compile(r"Д(?:ень|ня|ню|не|нём|нем) 3")
 
 FOUNDER_QUOTES = (
-    'Между "посредник врет" и "давайте измерим связь по трем осям" - такое ощущение, что мы пытаемся поймать исследуемый объект на противоречиях и зафиксировать это. НО посыл курса другой - давайте МИРНО посмотрим на то, какую информацию мы можем собрать (в том числе с использованием ИИ) и проанализировать (с использованием ИИ). Для увеличения вероятности детерминированного результата нам надо задать модель, которой и является исследуемый GRA. Мы не пытаемся что-то доказать. Мы не пытаемся заниматься экономической безопасностью. Мы не пытаемся планировать действия в жесткой конкурентной борьбе. Пока, в этой итерации/курсе. На первом этапе мы смотрим, что можно узнать и как это интерпретировать и записать для накопления статистики и дальнейшего применения в анализе. Пока на простом уровне',
+    # #671 appeal 1: quotes 1 and 4 are shortened at «[…]» so the partnership vector holds; the meaning stays.
+    'Между "посредник врет" и "давайте измерим связь по трем осям" - такое ощущение, что мы пытаемся поймать исследуемый объект на противоречиях и зафиксировать это. НО посыл курса другой - давайте МИРНО посмотрим на то, какую информацию мы можем собрать (в том числе с использованием ИИ) и проанализировать (с использованием ИИ). Для увеличения вероятности детерминированного результата нам надо задать модель, которой и является исследуемый GRA. Мы не пытаемся что-то доказать. […] Мы не пытаемся планировать действия в жесткой конкурентной борьбе. Пока, в этой итерации/курсе. На первом этапе мы смотрим, что можно узнать и как это интерпретировать и записать для накопления статистики и дальнейшего применения в анализе. Пока на простом уровне',
     'Поэтому целесообразно упростить "подачу курса", сократить количество убеждений и доказательств (но дать много ссылок в тексте на ресурсы, кейсы, промпты, которые они могут изучить отдельно от лекции). И рассматривать курс именно с позитивной позиции, что мы подбираем "партнеров" и на 4-й день планируем определенную грань - как визуально выстроить коммуникацию. Нет цели разработать идеальные всесторонние стратегии. Давайте проще и понятнее ЦА на этом первом этапе (первом прогоне курса)',
     'Вред - предлагаю не рассматривать (см. выше), предлагаю рассматривать как: из полученной (собранной) информации выделить "полезное" для подготовки встречи (4 день)',
-    'Про цифры - они сейчас не критичны. Количество исков за длительный период существования бизнеса говорит о том, что он работает. Далее надо смотреть от кого (например налоговые или физики или юрики) - но это уже углубленный экономической безопасности анализ, вне рамок нашей задачи. Потому можно смотреть что они есть и от кого, коротко суммировать результаты и продолжает или нет действовать компания ... пока на очень простом информативном уровне',
+    'Про цифры - они сейчас не критичны. Количество исков за длительный период существования бизнеса говорит о том, что он работает. Далее надо смотреть от кого (например налоговые или физики или юрики) - но это уже углубленный […] анализ, вне рамок нашей задачи. Потому можно смотреть что они есть и от кого, коротко суммировать результаты и продолжает или нет действовать компания ... пока на очень простом информативном уровне',
 )
 
 
@@ -43,6 +60,13 @@ def number(value):
 def frontmatter(text):
     match = re.match(r"---\n(.*?)\n---\n", text, re.S)
     return dict(line.split(": ", 1) for line in match[1].splitlines()) if match else {}
+
+
+def version(text):
+    try:
+        return tuple(int(part) for part in frontmatter(text).get("version", "0").split("."))
+    except ValueError:
+        return (0,)
 
 
 def plain(text):
@@ -113,8 +137,19 @@ def validate(text, label):
     for quote in FOUNDER_QUOTES:
         if f"> «{quote}»" not in text:
             errors.append(f"{label}: founder quote missing or shortened: «{quote[:40]}…»")
-    for match in TRIGGERS.finditer(plain(text)):
-        errors.append(f"{label}: trigger word outside a verbatim quote: «{match[0]}»")
+    for match in TRIGGERS.finditer(text):
+        errors.append(f"{label}: trigger word (quotes included, the partnership vector is primary): «{match[0]}»")
+    if version(text) < tuple(int(part) for part in VERSION.split(".")):
+        errors.append(f"{label}: frontmatter version below {VERSION}")
+    sections = text.split("\n## ")
+    appeal = sections[1] if len(sections) > 1 else ""
+    if not GUARDRAILS_VERDICT.search(appeal):
+        errors.append(f"{label}: no independent verdict «СОГЛАШАЮСЬ / НЕ СОГЛАШАЮСЬ» on GRA as guardrails in the appeal section")
+    if CASE_STRUCTURE not in appeal:
+        errors.append(f"{label}: case structure decision «{CASE_STRUCTURE} …» not stated in the appeal section")
+    after_appeal = main.split("\n## ", 2)[2] if main.count("\n## ") >= 2 else main
+    for match in INCOMING.finditer(after_appeal):
+        errors.append(f"{label}: incoming-request paradigm of case 1: «{match[0]}»")
     errors += [f"{label}: broken link {problem}" for problem in broken_links(text)]
     days = dict(day_sections(text))
     if sorted(days) != ["1", "2", "3", "4"]:
@@ -125,6 +160,9 @@ def validate(text, label):
             errors.append(f"{where}: image prompt in slide structure")
         if HARM.search(plain(body)):
             errors.append(f"{where}: «вред» outside a verbatim program quote")
+        for pattern, problem in ((DAY_TONE, "risk rhetoric"), (FORMULA, "GRA formula"), (PROVOCATION, "«провокация» instead of «эклектика»")):
+            for match in pattern.finditer(plain(body)):
+                errors.append(f"{where}: {problem}: «{match[0]}»")
         slides = list(SLIDE.finditer(body))
         numbers = [int(m[1]) for m in slides]
         if numbers != list(range(1, len(numbers) + 1)):
@@ -137,7 +175,7 @@ def validate(text, label):
             errors.append(f"{where}: expected 5 intro + 15–20 main + 1–4 final slides")
         if sum(parts.values()) - parts.get("Основная часть", 0) + main_count != len(numbers):
             errors.append(f"{where}: part ranges do not cover all slides")
-        total = 0.0
+        total, per_slide = 0.0, {}
         for i, slide in enumerate(slides):
             chunk = body[slide.end():slides[i + 1].start() if i + 1 < len(slides) else len(body)]
             for name in FIELDS:
@@ -148,7 +186,8 @@ def validate(text, label):
             if day == "4" and not DAY3_MENTION.search(field(chunk, FIELDS[1])):
                 errors.append(f"{where}/слайд {slide[1]}: narrative link does not name the Day 3 result")
             minutes = MINUTES.search(chunk)
-            total += number(minutes[1]) if minutes else 0
+            per_slide[int(slide[1])] = number(minutes[1]) if minutes else 0
+            total += per_slide[int(slide[1])]
         reserve = RESERVE.search(body)
         if not reserve or abs(total + number(reserve[1]) - 90) > 0.01:
             errors.append(f"{where}: slide minutes {total:g} + reserve do not sum to 90")
@@ -157,12 +196,50 @@ def validate(text, label):
             errors.append(f"{where}: {votes} chat votes, at most 2 allowed")
         if trials != 1:
             errors.append(f"{where}: {trials} prompt trials, exactly 1 expected")
+        if day == "4":
+            share = IMAGE_SHARE.search(body)
+            if not share:
+                errors.append(f"{where}: image-technology share «Имидж-технологии — N минут (слайды a–b)» not stated")
+            else:
+                counted = sum(per_slide.get(n, 0) for n in range(int(share[2]), int(share[3]) + 1))
+                if abs(counted - number(share[1])) > 0.01 or number(share[1]) < 0.6 * 90:
+                    errors.append(f"{where}: image technologies {share[1]} min declared, {counted:g} min counted; at least 54 of 90 required")
+            if not re.search(r"эклектик", plain(body), re.I):
+                errors.append(f"{where}: «эклектика / грамотный контраст» not explained")
     filter_slides = [m[0] for m in SLIDE.finditer(days.get("3", "")) if "фильтр" in m[0].lower()]
     if not any("полезност" in title for title in filter_slides):
         errors.append(f"{label}/День 3: filter slide has no «полезность для встречи»")
     if not re.search(r"маркер активности", plain(days.get("1", ""))):
-        errors.append(f"{label}/День 1: case 1 lawsuits are not described as an activity marker")
+        errors.append(f"{label}/День 1: open-data signals of case 1 are not described as activity markers")
+    day1 = days.get("1", "")
+    if "guardrails" not in day1:
+        errors.append(f"{label}/День 1: GRA is not introduced as guardrails for AI prompts")
+    if SMART_COLD_SALES not in day1:
+        errors.append(f"{label}/День 1: case 1 is not framed as «{SMART_COLD_SALES}»")
+    if not any(OPENNESS_SLIDE in m[0] for m in SLIDE.finditer(day1)):
+        errors.append(f"{label}/День 1: no slide «Как понять, {OPENNESS_SLIDE}, используя открытые данные»")
+    day2 = days.get("2", "")
+    condition = re.search(r"\*\*Условие сбора\.\*\*[^\n]*", day2)
+    if not condition or not ETHICS_ALLOWED.search(condition[0]) or not ETHICS_FORBIDDEN.search(condition[0]):
+        errors.append(f"{label}/День 2: collection condition does not name open profiles as allowed and hidden databases as forbidden")
+    day3 = days.get("3", "")
+    if LECTURER_HARM not in day3:
+        errors.append(f"{label}/День 3: lecturer phrase on «вред» → «полезность для встречи» missing")
+    trial = [m for m in SLIDE.finditer(day3) if "🤖" in m[0]]
+    if trial:
+        start = trial[0].end()
+        following = SLIDE.search(day3, start)
+        chunk = day3[start:following.start() if following else len(day3)]
+        if WAYBACK not in chunk or not OPEN_WEB.search(chunk):
+            errors.append(f"{label}/День 3: prompt trial does not make Wayback Machine and the open web mandatory")
     return errors
+
+
+def in_day(text, day, old, new):
+    """Replace the first occurrence of old after the heading of the given day; unchanged text if there is none."""
+    start = text.find(f"## День {day}.")
+    position = text.find(old, start) if start >= 0 else -1
+    return text if position < 0 else text[:position] + new + text[position + len(old):]
 
 
 def self_test(text):
@@ -185,8 +262,24 @@ def self_test(text):
         "founder quote shortened": text.replace("Пока на простом уровне", "", 1),
         "activity marker missing": text.replace("маркер активности", "признак"),
         "principle missing": text.replace(PRINCIPLE, "Просто"),
+        "version not bumped": re.sub(r"^version: .+$", "version: 0.2", text, count=1, flags=re.M),
+        "trigger in a quote": text.replace("## Как читать", "> «Курс про экономическую безопасность.»\n\n## Как читать", 1),
+        "no guardrails verdict": text.replace("СОГЛАШАЮСЬ с заменой формулы на guardrails", "Принимаю замену", 1),
+        "case structure missing": text.replace(CASE_STRUCTURE, "Кейсы"),
+        "formula in a day": in_day(text, 1, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Формула F(t) на экране. "),
+        "risk rhetoric": in_day(text, 1, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Проверяем сеть на риски. "),
+        "guardrails missing": in_day(text, 1, "guardrails", "рамки"),
+        "incoming request": in_day(text, 1, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Сеть прислала запрос цен. "),
+        "smart cold sales missing": text.replace(SMART_COLD_SALES, "Продажи"),
+        "openness slide missing": text.replace(OPENNESS_SLIDE, "живёт ли сеть"),
+        "ethics missing": text.replace("скрытых баз", "баз"),
+        "lecturer phrase missing": text.replace("вербально нивелируя", "заменяя"),
+        "wayback missing": text.replace(WAYBACK, "https://example.org/"),
+        "provocation in day 4": in_day(text, 4, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Провокация. "),
+        "image share below 60%": re.sub(r"Имидж-технологии — \d+(?:,\d)?", "Имидж-технологии — 40", text, count=1),
     }
-    return [name for name, mutated in broken.items() if not validate(mutated, name)]
+    # A mutation that changes nothing proves nothing, so it counts as not rejected.
+    return [name for name, mutated in broken.items() if mutated == text or not validate(mutated, name)], len(broken)
 
 
 def main():
@@ -202,16 +295,17 @@ def main():
     if args.self_test:
         if not validate(OLD_RFC.read_text(encoding="utf-8"), OLD_RFC.name):
             errors.append("self-test: rejected #665 RFC unexpectedly passes the contract")
-        failed = self_test(text)
+        failed, fixtures = self_test(text)
         errors += [f"self-test: mutation not rejected: {name}" for name in failed]
     if errors:
         print("\n".join(f"FAIL: {error}" for error in errors))
         raise SystemExit(1)
     print("PASS: appeal first; 4 days × 22–26 slides with 5 intro / 15–20 main / 1–4 final; 4 fields per slide with a self-study link; 90 minutes with reserve")
-    print("PASS: ≤2 chat votes and 1 prompt trial per day; Day 4 narrative tied to Day 3; Day 3 filter by usefulness for the meeting; case 1 lawsuits as an activity marker")
-    print("PASS: founder quotes verbatim; no trigger words outside quotes; repository links and anchors resolve; no tables before appendix; no image prompts")
+    print("PASS: ≤2 chat votes and 1 prompt trial per day; Day 4 narrative tied to Day 3; Day 3 filter by usefulness for the meeting with the lecturer phrase on the site word; ≥54 min of image technologies on Day 4")
+    print("PASS: founder quotes as fixed in #671; no trigger words even in quotes; repository links and anchors resolve; no tables before appendix; no image prompts")
+    print("PASS: GRA as guardrails with an explicit verdict, no formula in the days; case 1 «Умные холодные продажи» without an incoming request; Day 1 openness slide; Day 2 ethics; Day 3 Wayback Machine and open web; эклектика instead of провокация")
     if args.self_test:
-        print("PASS: rejected #665 RFC fails the contract; 18 broken fixtures rejected")
+        print(f"PASS: rejected #665 RFC fails the contract; {fixtures} broken fixtures rejected")
 
 
 if __name__ == "__main__":
