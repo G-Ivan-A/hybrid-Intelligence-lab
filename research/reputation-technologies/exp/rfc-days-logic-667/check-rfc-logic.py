@@ -74,6 +74,11 @@ def plain(text):
     return "\n".join(line for line in text.splitlines() if not line.startswith(">"))
 
 
+def prose(text):
+    """Plain text without link targets: anchors of other files may keep their own headings (#671)."""
+    return re.sub(r"\]\([^)]*\)", "]", plain(text))
+
+
 def anchors(path):
     """GitHub-style heading anchors of a Markdown file."""
     seen, result = {}, set()
@@ -158,10 +163,10 @@ def validate(text, label):
         where = f"{label}/День {day}"
         if IMAGE_MARKERS.search(body):
             errors.append(f"{where}: image prompt in slide structure")
-        if HARM.search(plain(body)):
-            errors.append(f"{where}: «вред» outside a verbatim program quote")
+        if HARM.search(plain(body).replace(LECTURER_HARM, "")):
+            errors.append(f"{where}: «вред» outside a verbatim program quote or the lecturer phrase")
         for pattern, problem in ((DAY_TONE, "risk rhetoric"), (FORMULA, "GRA formula"), (PROVOCATION, "«провокация» instead of «эклектика»")):
-            for match in pattern.finditer(plain(body)):
+            for match in pattern.finditer(prose(body)):
                 errors.append(f"{where}: {problem}: «{match[0]}»")
         slides = list(SLIDE.finditer(body))
         numbers = [int(m[1]) for m in slides]
@@ -204,7 +209,7 @@ def validate(text, label):
                 counted = sum(per_slide.get(n, 0) for n in range(int(share[2]), int(share[3]) + 1))
                 if abs(counted - number(share[1])) > 0.01 or number(share[1]) < 0.6 * 90:
                     errors.append(f"{where}: image technologies {share[1]} min declared, {counted:g} min counted; at least 54 of 90 required")
-            if not re.search(r"эклектик", plain(body), re.I):
+            if not re.search(r"эклектик", prose(body), re.I):
                 errors.append(f"{where}: «эклектика / грамотный контраст» not explained")
     filter_slides = [m[0] for m in SLIDE.finditer(days.get("3", "")) if "фильтр" in m[0].lower()]
     if not any("полезност" in title for title in filter_slides):
@@ -242,6 +247,13 @@ def in_day(text, day, old, new):
     return text if position < 0 else text[:position] + new + text[position + len(old):]
 
 
+def across_day(text, day, old, new):
+    """Replace every occurrence inside one day: a single replace leaves the other mentions and proves nothing."""
+    start = text.find(f"## День {day}.")
+    end = text.find("\n## ", start + 1)
+    return text if start < 0 else text[:start] + text[start:end].replace(old, new) + text[end:]
+
+
 def self_test(text):
     broken = {
         "appeal moved": text.replace("## КРИТИЧЕСКАЯ АППЕЛЯЦИЯ", "## Аппеляция", 1),
@@ -259,7 +271,7 @@ def self_test(text):
         "second prompt trial": text.replace("#### Слайд 6. «", "#### Слайд 6. «🤖 ", 1),
         "trigger word": text.replace("## Как читать", "Курс учит экономической безопасности.\n\n## Как читать", 1),
         "harm in filter": re.sub(r"(#### Слайд \d+\. «[^»\n]*?)полезность для встречи", r"\1возможный вред", text, count=1),
-        "founder quote shortened": text.replace("Пока на простом уровне", "", 1),
+        "founder quote shortened": re.sub(r"^(> «Между[^\n]*?) Пока на простом уровне»", r"\1»", text, count=1, flags=re.M),
         "activity marker missing": text.replace("маркер активности", "признак"),
         "principle missing": text.replace(PRINCIPLE, "Просто"),
         "version not bumped": re.sub(r"^version: .+$", "version: 0.2", text, count=1, flags=re.M),
@@ -268,11 +280,11 @@ def self_test(text):
         "case structure missing": text.replace(CASE_STRUCTURE, "Кейсы"),
         "formula in a day": in_day(text, 1, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Формула F(t) на экране. "),
         "risk rhetoric": in_day(text, 1, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Проверяем сеть на риски. "),
-        "guardrails missing": in_day(text, 1, "guardrails", "рамки"),
+        "guardrails missing": across_day(text, 1, "guardrails", "рамки"),
         "incoming request": in_day(text, 1, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Сеть прислала запрос цен. "),
         "smart cold sales missing": text.replace(SMART_COLD_SALES, "Продажи"),
         "openness slide missing": text.replace(OPENNESS_SLIDE, "живёт ли сеть"),
-        "ethics missing": text.replace("скрытых баз", "баз"),
+        "ethics missing": in_day(text, 2, "Нельзя: скрытые базы, ", "Нельзя: "),
         "lecturer phrase missing": text.replace("вербально нивелируя", "заменяя"),
         "wayback missing": text.replace(WAYBACK, "https://example.org/"),
         "provocation in day 4": in_day(text, 4, "- **Когнитивный сдвиг:** ", "- **Когнитивный сдвиг:** Провокация. "),
