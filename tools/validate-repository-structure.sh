@@ -500,7 +500,11 @@ is_active_file() {
     research/reputation-technologies/2026-11-02-day3-rationale-and-method.md | \
     research/reputation-technologies/2026-11-02-day3-presentation.md | \
     research/reputation-technologies/2026-11-02-day3-lecturer-script.md | \
+    research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
+    research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md | \
+    research/reputation-technologies/exp/rfc-days-logic-667/README.md | \
+    research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py | \
     research/reputation-technologies/exp/presentation-ux-665/README.md | \
     research/reputation-technologies/exp/presentation-ux-665/check-presentation-ux.py | \
     research/reputation-technologies/exp/presentation-ux-665/render-preview.py | \
@@ -2032,7 +2036,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.29"
+require_text "ops/artifact-map.md" "version: 2.30"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"

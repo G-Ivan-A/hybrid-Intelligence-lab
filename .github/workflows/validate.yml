@@ -96,6 +96,9 @@ jobs:
       - name: Check presentation UX coverage and preservation
         run: python3 research/reputation-technologies/exp/presentation-ux-665/check-presentation-ux.py --self-test
 
+      - name: Check Days 1-3 logic RFC contract
+        run: python3 -I research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py --self-test
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:
