@@ -262,9 +262,9 @@ def mutate(texts, path, old, new, count=1):
     return changed
 
 
-def mutate_re(texts, path, pattern, new):
+def mutate_re(texts, path, pattern, new, count=1):
     changed = dict(texts)
-    changed[path] = re.sub(pattern, new, texts[path], count=1, flags=re.M | re.S)
+    changed[path] = re.sub(pattern, new, texts[path], count=count, flags=re.M | re.S)
     return changed
 
 
@@ -290,7 +290,7 @@ def self_test(texts, rfc):
         "incoming price request": mutate(texts, r, "\n## ", "\nСеть «Х» прислала запрос цен.\n\n## "),
         "matrix quote missing": mutate(texts, p, "матрица закрыта до весны", "ассортимент обновят", count=-1),
         "activity marker missing": mutate(texts, s, "маркер активности", "признак", count=-1),
-        "payment ban missing": mutate_re(texts, r, r"(?<![а-яё])не(?![а-яё])([^.\n]{0,160}платёжн)", r"мы\1"),
+        "payment ban missing": mutate_re(texts, r, r"(?<![а-яё])не(?![а-яё])([^.\n]{0,160}платёжн)", r"мы\1", count=0),
         "hidden databases not forbidden": mutate(texts, r, "скрытые базы", "новые сводки", count=-1),
         "contact book missing": mutate(texts, s, "записную книжку", "таблицу", count=-1),
         "collection condition edited": mutate(texts, r, "без обхода входа", "с обходом входа"),
