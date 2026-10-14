@@ -515,6 +515,10 @@ is_active_file() {
     research/reputation-technologies/exp/presentation-ux-665/render-preview.py | \
     research/reputation-technologies/exp/presentation-ux-665/before.png | \
     research/reputation-technologies/exp/presentation-ux-665/after.png | \
+    research/reputation-technologies/exp/day2-rebuild-673/README.md | \
+    research/reputation-technologies/exp/day2-rebuild-673/check-day2.py | \
+    research/reputation-technologies/exp/day2-rebuild-673/issue-673-before.log | \
+    research/reputation-technologies/exp/day2-rebuild-673/issue-673-after.log | \
     research/reputation-technologies/exp/day3-filter-663/README.md | \
     research/reputation-technologies/exp/day3-filter-663/check-day3.sh | \
     research/reputation-technologies/exp/day3-filter-663/test-check-day3.sh | \
@@ -2041,11 +2045,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.32"
+require_text "ops/artifact-map.md" "version: 2.33"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-10-13"
+require_text "ops/artifact-map.md" "updated: 2026-10-14"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
