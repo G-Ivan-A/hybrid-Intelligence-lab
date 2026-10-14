@@ -1,0 +1,7 @@
+$ python3 -I research/reputation-technologies/exp/day2-rebuild-673/check-day2.py --self-test   # after #673: Day 2 rationale v0.3, presentation v0.4, script v0.3
+PASS: presentation has the 24 RFC v0.3 slides with RFC titles and minutes, 6 fields each, a full URL in «Глубже — в ссылках», 🗳 on slides 3 and 10, 🤖 on slide 14, 80 + 10 = 90 minutes
+PASS: slides 1–10 form the «потому что → поэтому» chain: no grounds → volume, not source → confidence, not accuracy → 140 = 9 sources → provenance → status → meeting
+PASS: three files: source #673, no formula, no trigger/risk/«вред»/provocation words, no incoming price request, payments only as a prohibition, matrix CONFLICT quotes, guardrails
+PASS: rationale quotes the RFC collection condition; lawsuits are an activity marker with no payment-discipline conclusions; ethics allows open accounts, photos, a contact book and forbids hidden databases, parsing, closed data
+PASS: script shows slides 1–24 in order with 2 votes and 1 prompt trial; Промпт-разведчик searches Wayback Machine and the open web, ЕГРЮЛ by choice; repository links and RFC anchors resolve
+PASS: 31 broken fixtures rejected

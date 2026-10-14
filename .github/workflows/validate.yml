@@ -99,6 +99,9 @@ jobs:
       - name: Check Days 1-3 logic RFC contract
         run: python3 -I research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py --self-test
 
+      - name: Check Day 2 against RFC v0.3
+        run: python3 -I research/reputation-technologies/exp/day2-rebuild-673/check-day2.py --self-test
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:

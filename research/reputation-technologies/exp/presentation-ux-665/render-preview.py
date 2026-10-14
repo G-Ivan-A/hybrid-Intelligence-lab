@@ -8,10 +8,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[4]
 DOMAIN = ROOT / "research/reputation-technologies"
+# The "after" view reads the current file, except Day 2: it was rebuilt on RFC v0.3 in #673,
+# so its #665 layout is taken from the last commit before #673.
 SELECTED = [
-    (1, "2026-10-07-day1-presentation-653.md", "7"),
-    (2, "2026-10-30-day2-presentation.md", "10"),
-    (3, "2026-11-02-day3-presentation.md", "13"),
+    (1, "2026-10-07-day1-presentation-653.md", "7", None),
+    (2, "2026-10-30-day2-presentation.md", "10", "16e2577"),
+    (3, "2026-11-02-day3-presentation.md", "13", None),
 ]
 
 
@@ -42,9 +44,10 @@ def diagram(day):
     return '<svg role="img" aria-label="Рабочая схема по спецификации слайда" viewBox="0 0 610 590">' + "".join(cards) + "</svg>"
 
 
-def slide(day, name, key, before):
+def slide(day, name, key, pinned, before):
     path = DOMAIN / name
-    text = subprocess.check_output(["git", "show", f"6428ade:{path.relative_to(ROOT)}"], cwd=ROOT, text=True) if before else path.read_text()
+    ref = "6428ade" if before else pinned
+    text = subprocess.check_output(["git", "show", f"{ref}:{path.relative_to(ROOT)}"], cwd=ROOT, text=True) if ref else path.read_text()
     match = re.search(rf'^\*\*Слайд {key}\. (.+?)\*\*\n(.*?)(?=^\*\*Слайд |^## Промпты|^### Завершение)', text, re.M | re.S)
     title, body = match.groups()
     paragraph = re.search(r'^- Раскрытие тезисов: (.+)$', body, re.M)
@@ -86,7 +89,7 @@ def main():
     footer{margin-top:26px;border-top:2px solid #ccc5b9;padding-top:20px;display:grid;grid-template-columns:470px 1fr;gap:30px;font-size:28px;line-height:1.25}
     footer b{color:#854c00}'''
     document = '<!doctype html><html lang="ru"><meta charset="utf-8"><title>Прототип слайдов #665</title><style>' + css + '</style><body>'
-    document += ''.join(slide(d, n, k, args.before) for d, n, k in SELECTED)
+    document += ''.join(slide(d, n, k, p, args.before) for d, n, k, p in SELECTED)
     document += '</body></html>'
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(document)

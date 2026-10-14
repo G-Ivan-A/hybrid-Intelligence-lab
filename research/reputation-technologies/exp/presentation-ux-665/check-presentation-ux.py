@@ -8,9 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[4]
 DOMAIN = ROOT / "research/reputation-technologies"
 BASE = "6428ade"
+# Day 2 was rebuilt on RFC v0.3 in #673 (24 slides); its layout is checked by exp/day2-rebuild-673/check-day2.py.
 DECKS = (
     "2026-10-07-day1-presentation-653.md",
-    "2026-10-30-day2-presentation.md",
     "2026-11-02-day3-presentation.md",
 )
 RFC = DOMAIN / "gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md"
@@ -103,9 +103,9 @@ def main():
     if all_errors:
         print("\n".join(f"FAIL {error}" for error in all_errors))
         return 1
-    print("PASS: 111 slides; original titles, theses, visual specifications and image prompts preserved; 24 tool entries; 111 review rows")
+    print("PASS: 74 slides of Days 1 and 3; original titles, theses, visual specifications and image prompts preserved; 16 tool entries; 111 review rows")
     if args.self_test:
-        print("PASS: 24 destructive mutations rejected")
+        print("PASS: 16 destructive mutations rejected")
     return 0
 
 
