@@ -37,7 +37,7 @@ HARM = re.compile(r"вред", re.I)
 STOP_LISTS = (("trigger word", TRIGGERS), ("risk or «вшивость» rhetoric", DAY_TONE), ("GRA formula", FORMULA),
               ("incoming price request", INCOMING), ("provocation", PROVOCATION), ("«вред»", HARM))
 # #673 item 2: payments are never the focus; any sentence about payments must be a prohibition.
-PAYMENT = re.compile(r"оплат|платёж|платеж", re.I)
+PAYMENT = re.compile(r"оплат|платёж|платеж|плат[ия]т|платил", re.I)
 NEGATION = re.compile(r"(?<![а-яё])(?:не|ни|нет|нельзя|без|вне)(?![а-яё])|запрещ", re.I)
 PAYMENT_CONFLICT = re.compile(r"CONFLICT`? по (?:задержкам )?оплат", re.I)
 PAYMENT_BAN = re.compile(r"(?<![а-яё])не(?![а-яё])[^.\n]{0,160}платёжн[а-я]* дисциплин", re.I)
