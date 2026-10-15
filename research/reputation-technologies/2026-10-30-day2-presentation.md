@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.4
+version: 0.5
 updated: 2026-10-15
 temperature: 0.3
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/673"
