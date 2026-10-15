@@ -501,6 +501,7 @@ is_active_file() {
     research/reputation-technologies/2026-10-30-day2-rationale-and-method.md | \
     research/reputation-technologies/2026-10-30-day2-presentation.md | \
     research/reputation-technologies/2026-10-30-day2-lecturer-script.md | \
+    research/reputation-technologies/2026-10-30-day2-presentation-gamma.md | \
     research/reputation-technologies/2026-11-02-day3-rationale-and-method.md | \
     research/reputation-technologies/2026-11-02-day3-presentation.md | \
     research/reputation-technologies/2026-11-02-day3-lecturer-script.md | \
@@ -534,6 +535,10 @@ is_active_file() {
     research/reputation-technologies/exp/day1-rebuild-677/check-day1-677.py | \
     research/reputation-technologies/exp/day1-rebuild-677/issue-677-before.log | \
     research/reputation-technologies/exp/day1-rebuild-677/issue-677-after.log | \
+    research/reputation-technologies/exp/day2-gamma-679/README.md | \
+    research/reputation-technologies/exp/day2-gamma-679/check-day2-679.py | \
+    research/reputation-technologies/exp/day2-gamma-679/issue-679-before.log | \
+    research/reputation-technologies/exp/day2-gamma-679/issue-679-after.log | \
     research/reputation-technologies/gra-research-program/00-introduction.md | \
     research/reputation-technologies/gra-research-program/10-theory.md | \
     research/reputation-technologies/gra-research-program/20-taxonomy.md | \
