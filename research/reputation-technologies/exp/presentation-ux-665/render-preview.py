@@ -8,10 +8,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[4]
 DOMAIN = ROOT / "research/reputation-technologies"
-# The "after" view reads the current file, except Day 2: it was rebuilt on RFC v0.3 in #673,
-# so its #665 layout is taken from the last commit before #673.
+# The "after" view reads the current file, except Days 1 and 2: they were rebuilt on RFC v0.3 in #675 and #673,
+# so their #665 layout is taken from the last commit before each rebuild.
 SELECTED = [
-    (1, "2026-10-07-day1-presentation-653.md", "7", None),
+    (1, "2026-10-07-day1-presentation-653.md", "7", "6258f6a"),
     (2, "2026-10-30-day2-presentation.md", "10", "16e2577"),
     (3, "2026-11-02-day3-presentation.md", "13", None),
 ]
