@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check issue #673: the three Day 2 files follow the Day 2 section of RFC v0.3 — 24 slides, peaceful collection, CONFLICT on matrix openness, GRA as guardrails."""
+"""Check issue #673: the three Day 2 files follow the Day 2 section of RFC v0.3 — 24 slides, peaceful collection, CONFLICT on matrix openness, GRA as guardrails; the script's source, slide markers and timing moved to the #679 checker exp/day2-gamma-679/check-day2-679.py."""
 import argparse
 import re
 from pathlib import Path
@@ -11,6 +11,8 @@ RATIONALE = DOMAIN / "2026-10-30-day2-rationale-and-method.md"
 PRESENTATION = DOMAIN / "2026-10-30-day2-presentation.md"
 SCRIPT = DOMAIN / "2026-10-30-day2-lecturer-script.md"
 FILES = (RATIONALE, PRESENTATION, SCRIPT)
+# #679 moved the script to the 28-slide Gamma deck: its source and slide markers are checked by check-day2-679.py.
+SOURCED = (RATIONALE, PRESENTATION)
 SOURCE = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/673"
 REPO_BLOB = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/"
 CASE1_ANCHOR = "кейс-1-умные-холодные-продажи-conflict-по-открытости-матрицы-меняет-подготовку-к-встрече"
@@ -158,7 +160,7 @@ def validate(texts, rfc):
     # 1. Shared contract of the three files.
     for path in FILES:
         text, name = texts[path], path.name
-        if frontmatter(text).get("source", "").strip('"') != SOURCE:
+        if path in SOURCED and frontmatter(text).get("source", "").strip('"') != SOURCE:
             errors.append(f"{name}: frontmatter source is not issue #673")
         clean = prose(text)
         for label, pattern in STOP_LISTS:
@@ -231,10 +233,7 @@ def validate(texts, rfc):
     if not reserve or minutes + number(reserve[1]) != 90:
         errors.append(f"{PRESENTATION.name}: slides {minutes:g} min + reserve {reserve[1] if reserve else '?'} ≠ 90")
 
-    # 4. Lecturer script: every slide once and in order, 2 votes, 1 prompt trial, the prompt searches Wayback and the open web.
-    markers = [int(n) for n in re.findall(r"`\[СЛАЙД (\d+)\]`", script)]
-    if sorted(set(markers)) != list(range(1, 25)) or markers != sorted(markers):
-        errors.append(f"{SCRIPT.name}: slide markers are not 1–24 in order: {sorted(set(markers))}")
+    # 4. Lecturer script: 2 votes, 1 prompt trial, the prompt searches Wayback and the open web.
     body = script.split("\n## Приложение", 1)[0]
     if body.count(SCRIPT_VOTE) != 2 or body.count(SCRIPT_TRIAL) != 1:
         errors.append(f"{SCRIPT.name}: {body.count(SCRIPT_VOTE)} votes and {body.count(SCRIPT_TRIAL)} prompt trials, expected 2 and 1")
@@ -298,10 +297,9 @@ def self_test(texts, rfc):
         "ЕГРЮЛ mandatory": mutate_re(texts, s, r"(ЕГРЮЛ[^\n]{0,80})по желанию", r"\1обязательно"),
         "broken anchor": mutate(texts, r, "## Мост ко Дню 3", "## Переход"),
         "case 1 still on payments": mutate(texts, r, "по открытости матрицы", "по задержкам оплат"),
-        "script slide marker missing": mutate(texts, s, "`[СЛАЙД 12]`", ""),
         "third vote in script": mutate(texts, s, "`[СЛАЙД 4]`", "`[СЛАЙД 4]` " + SCRIPT_VOTE),
         "relative link": mutate(texts, p, "](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/", "](../"),
-        "source not #673": mutate(texts, s, SOURCE, "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/660"),
+        "source not #673": mutate(texts, r, SOURCE, "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/660"),
     }
     failed = [name for name, mutated in broken.items() if mutated == texts or not validate(mutated, rfc)]
     rfc_broken = {
@@ -326,9 +324,9 @@ def main():
         raise SystemExit(1)
     print("PASS: presentation has the 24 RFC v0.3 slides with RFC titles and minutes, 6 fields each, a full URL in «Глубже — в ссылках», 🗳 on slides 3 and 10, 🤖 on slide 14, 80 + 10 = 90 minutes")
     print("PASS: slides 1–10 form the «потому что → поэтому» chain: no grounds → volume, not source → confidence, not accuracy → 140 = 9 sources → provenance → status → meeting")
-    print("PASS: three files: source #673, no formula, no trigger/risk/«вред»/provocation words, no incoming price request, payments only as a prohibition, matrix CONFLICT quotes, guardrails")
+    print("PASS: three files: source #673 for the rationale and the presentation, no formula, no trigger/risk/«вред»/provocation words, no incoming price request, payments only as a prohibition, matrix CONFLICT quotes, guardrails")
     print("PASS: rationale quotes the RFC collection condition; lawsuits are an activity marker with no payment-discipline conclusions; ethics allows open accounts, photos, a contact book and forbids hidden databases, parsing, closed data")
-    print("PASS: script shows slides 1–24 in order with 2 votes and 1 prompt trial; Промпт-разведчик searches Wayback Machine and the open web, ЕГРЮЛ by choice; repository links and RFC anchors resolve")
+    print("PASS: script has 2 votes and 1 prompt trial; Промпт-разведчик searches Wayback Machine and the open web, ЕГРЮЛ by choice; repository links and RFC anchors resolve")
     if args.self_test:
         print(f"PASS: {fixtures} broken fixtures rejected")
 

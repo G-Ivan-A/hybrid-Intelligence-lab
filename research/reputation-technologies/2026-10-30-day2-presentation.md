@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.4
-updated: 2026-10-14
+updated: 2026-10-15
 temperature: 0.3
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/673"
 scope: reputation-engineering-course-day2
@@ -13,7 +13,7 @@ related_issues:
 
 # День 2. Презентация: 24 слайда, тезисы и промпты для изображений
 
-**Документ 2 из 3.** Обоснование, кейсы, определения статусов и источники — в [документе 1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md). Текст лектора, «Промпт-разведчик» и пакет утверждений для пробы — в [документе 3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md).
+**Документ 2 из 3.** Обоснование, кейсы, определения статусов и источники — в [документе 1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md). Текст лектора, «Промпт-разведчик» и пакет утверждений для пробы — в [документе 3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md). Колода для показа в Gamma на 28 слайдов — в [отдельном файле](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-presentation-gamma.md) (issue [#679](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/679)): перед слайдами этой колоды в ней четыре вводных слайда, поэтому слайд N здесь — слайд N + 4 там. Сценарий лектора нумерует слайды и время по колоде Gamma.
 
 **Редакция issue [#673](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/673).** Колода пересобрана по разделу Дня 2 в [RFC v0.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md#день-2-собираю-проверяем-основания-связей): 24 слайда, заголовки и минуты — как в RFC, 2 голосования в чате и 1 проба промпта. Все учебные компании, имена и числовые параметры кейсов — **синтетические учебные данные**; статистика внешних исследований отмечена ссылками и не является измерением этих кейсов.
 
