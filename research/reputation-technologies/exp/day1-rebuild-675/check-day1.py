@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check issue #675: the three Day 1 files follow the Day 1 section of RFC v0.3 («Умные холодные продажи», GRA as guardrails, 24 slides) and the Gamma deck keeps the four-field slide template."""
+"""Check issue #675: the three Day 1 files follow the Day 1 section of RFC v0.3 («Умные холодные продажи», GRA as guardrails, 24 slides); the Gamma deck moved to the #677 checker exp/day1-rebuild-677/check-day1-677.py."""
 import argparse
 import re
 from pathlib import Path
@@ -10,13 +10,10 @@ RFC = DOMAIN / "2026-10-12-rfc-days-1-3-logic.md"
 RATIONALE = DOMAIN / "2026-10-07-day1-rationale-and-method-653.md"
 PRESENTATION = DOMAIN / "2026-10-07-day1-presentation-653.md"
 SCRIPT = DOMAIN / "2026-10-07-day1-lecturer-script-653.md"
-GAMMA = DOMAIN / "2026-10-14-day1-presentation-gamma.md"
 FILES = (RATIONALE, PRESENTATION, SCRIPT)
-ALL_FILES = FILES + (GAMMA,)
 SOURCE = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/675"
 REPO_BLOB = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/"
 SLIDE = re.compile(r"^#### Слайд (\d+)\. «(.+)»$", re.M)
-GAMMA_SLIDE = re.compile(r"^### Слайд (\d+)\. (.+)$", re.M)
 MINUTES = re.compile(r"· (\d+(?:,\d)?) мин$", re.M)
 RESERVE = re.compile(r"Резерв — (\d+(?:,\d)?) минут")
 LINK = re.compile(r"\]\(([^)\s]+)\)")
@@ -28,7 +25,6 @@ FIELDS = (
     "- **Визуал:**",
     "- **Формат и время:**",
 )
-GAMMA_FIELDS = ("SLIDE_TEXT", "SPEAKER_NOTES", "IMAGE_PROMPT", "FOOTER_LINKS")
 # The NFR stop list of the #671 task, applied to every Day 1 file: verbatim program quotes (lines starting with «>») and link targets are exempt.
 TRIGGERS = re.compile(r"безопасн|разоблач|угроз|расследова|ловл[яиюе]", re.I)
 DAY_TONE = re.compile(r"риск|вшив", re.I)
@@ -38,11 +34,6 @@ STOP_LISTS = (("trigger word", TRIGGERS), ("risk or «вшивость» rhetori
               ("provocation", PROVOCATION))
 # DoD of #671: a plain grep finds neither the incoming price request nor «прислал» anywhere in the files, quotes and links included.
 RAW_INCOMING = re.compile(r"запрос[а-я]* цен|прислал", re.I)
-# Gamma pages quoted without changes (#675 part B) and the founder's slide 9 title keep their own words; nothing else is exempt.
-GAMMA_VERBATIM = (
-    "Важны прозрачность отчетности, устойчивость риск-модели и отсутствие регуляторных скрытых угроз.",
-    "GRA как guardrails (ограничители) для ИИ, а не формула",
-)
 # Lawsuits stay one activity marker; payments are never discussed except as a prohibition.
 PAYMENT = re.compile(r"оплат|платёж|платеж|плат[ия]т|платил", re.I)
 NEGATION = re.compile(r"(?<![а-яё])(?:не|ни|нет|нельзя|без|вне)(?![а-яё])|запрещ", re.I)
@@ -129,40 +120,6 @@ CHAIN = {
 VOTE, TRIAL = "🗳", "🤖"
 VOTE_SLIDES, TRIAL_SLIDES = {3, 12}, {14}
 SCRIPT_VOTE, SCRIPT_TRIAL = "[ГОЛОСОВАНИЕ В ЧАТ]", "[ПРОБА ПРОМПТА]"
-# Part B of #675: 33 Gamma slides; the founder fixed titles 1, 2 and 9–11, slides 3–8 repeat Gamma pages 2, 3, 4, 6, 7, 9 without changes.
-GAMMA_SLIDES = 33
-GAMMA_TITLES = {
-    1: "Введение: от вероятностного мониторинга влияния к имиджу",
-    2: "Лектор: профессиональная оптика и границы метода",
-    9: "От теории к практике МСП: GRA как guardrails (ограничители) для ИИ, а не формула",
-    10: "Четыре дня: Вижу → Собираю → Выбираю → Действую",
-    11: "Маршрут вечера: цель дня и вход в работу",
-}
-GAMMA_PAGES = {
-    3: ("АРХИТЕКТУРА ВОСПРИЯТИЯ", "Репутация — это система сигналов", "Доверие складывается из сигналов, а не из деклараций",
-        "КОНТУР 01", "Медиа и инфополе", "КОНТУР 02", "Стейкхолдеры и общество", "КОНТУР 03", "Рынки и инвесторы",
-        "КОНТУР 04", "Поведение и культура"),
-    4: ("ПРИНЦИП СООТВЕТСТВИЯ", "Обещаемое должно совпадать с подтверждаемым",
-        "Нельзя обещать больше, чем способна подтвердить практика", "ЧТО МЫ ОБЕЩАЕМ", "Ясный вектор",
-        "ЧЕМ ПОДТВЕРЖДАЕМ", "Твёрдая база"),
-    5: ("МЕТОДОЛОГИЯ ЦИКЛА", "Три контура управления репутацией", "Цикл работает, только когда каждый этап подтверждён",
-        "ЭТАП 01", "Диагностика", "ЭТАП 02", "Настройка", "ЭТАП 03", "Доказательство"),
-    6: ("НАКОПЛЕНИЕ ДОВЕРИЯ", "Сильная позиция собирается из повторяемых сигналов",
-        "Повторяемость сильнее разовых громких кампаний", "Единый смысловой центр", "Синхронный язык каналов",
-        "Проверяемые действия", "Ритм подтверждений"),
-    7: ("ФОКУСИРОВКА СООБЩЕНИЙ", "Карта стейкхолдеров показывает, где нужна точность",
-        "Одно сообщение — разные критерии проверки", "ГРУППА 01 · ИНВЕСТОРЫ И СОВЕТ", "ГРУППА 02 · КЛИЕНТЫ И ПОЛЬЗОВАТЕЛИ",
-        "ГРУППА 03 · РЕГУЛЯТОРЫ И ОТРАСЛЬ", "ГРУППА 04 · КОМАНДА И РЫНОК ТРУДА"),
-    8: ("МЕТРИКИ УСТОЙЧИВОСТИ", "Измерять нужно не шум, а устойчивость доверия", "Ценен не шум, а устойчивое доверие",
-        "ВЫВОД АНАЛИТИКИ", "Охваты не равны лояльности"),
-}
-GAMMA_EXCLUDED = ("АНАЛИЗ УЯЗВИМОСТЕЙ", "ПРЕВЕНТИВНЫЙ КОНТРОЛЬ", "безопасными полями")
-GAMMA_HEADER = "Введение в репутационный инжиниринг · Репутационный инжиниринг: ключевые составляющие"
-GAMMA_FOOTER = "@gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026"
-SLOGAN = "Кто знает, на чём держится каждая связь, выбирает ход, а не угадывает его"
-INDICES_QUOTE = "Помните слайд с индексами?"
-GAMMA_VOTES, GAMMA_TRIALS = {13, 22}, {24}
-NOTES_WORDS = (150, 180)
 
 
 def number(value):
@@ -240,11 +197,6 @@ def field(chunk, name):
     return match[0] if match else ""
 
 
-def gamma_field(chunk, name):
-    match = re.search(r"\*\*\[" + name + r"\]\*\*[^\n]*\n(.*?)(?=\n\*\*\[[A-Z_]+\]\*\*|\Z)", chunk, re.S)
-    return match[1].strip() if match else None
-
-
 def words(text):
     return len([token for token in text.split() if re.search(r"\w", token)])
 
@@ -282,66 +234,15 @@ def shared(path, text, texts, clean):
     return errors
 
 
-def validate_gamma(texts):
-    errors, text, name = [], texts[GAMMA], GAMMA.name
-    clean = prose(text)
-    for phrase in GAMMA_VERBATIM:
-        clean = clean.replace(phrase, "")
-    errors += shared(GAMMA, text, texts, clean)
-    for phrase in (GAMMA_HEADER, GAMMA_FOOTER, SLOGAN, INDICES_QUOTE):
-        if phrase not in text:
-            errors.append(f"{name}: required phrase missing: «{phrase}»")
-    for phrase in GAMMA_EXCLUDED:
-        if phrase in text:
-            errors.append(f"{name}: excluded Gamma wording present: «{phrase}»")
-    if "## Как читать" not in text:
-        errors.append(f"{name}: section «Как читать» missing")
-    deck = list(slides(text, GAMMA_SLIDE))
-    if [n for n, _, _ in deck] != list(range(1, GAMMA_SLIDES + 1)):
-        errors.append(f"{name}: slides are not 1–{GAMMA_SLIDES}: {[n for n, _, _ in deck][:40]}")
-    for n, title, chunk in deck:
-        if n in GAMMA_TITLES and title != GAMMA_TITLES[n]:
-            errors.append(f"{name}: slide {n} title is not the founder's: «{title}»")
-        if n > 11 and words(title.replace(VOTE, "").replace(TRIAL, "")) > 6:
-            errors.append(f"{name}: slide {n} title longer than 6 words: «{title}»")
-        values = {key: gamma_field(chunk, key) for key in GAMMA_FIELDS}
-        for key, value in values.items():
-            if not value:
-                errors.append(f"{name}: slide {n} field missing or empty: [{key}]")
-        notes, image, footer, screen = (values[key] or "" for key in ("SPEAKER_NOTES", "IMAGE_PROMPT", "FOOTER_LINKS", "SLIDE_TEXT"))
-        if notes and not NOTES_WORDS[0] <= words(notes) <= NOTES_WORDS[1]:
-            errors.append(f"{name}: slide {n} speaker notes have {words(notes)} words, expected {NOTES_WORDS[0]}–{NOTES_WORDS[1]}")
-        if notes and not ("потому что" in notes.lower() and "поэтому" in notes.lower()):
-            errors.append(f"{name}: slide {n} speaker notes have no «потому что… поэтому…» bridge")
-        if image and (re.search(r"[а-яё]", image, re.I) or not re.search(r"gold|amber", image, re.I)
-                      or "16:9" not in image or "no readable text" not in image.lower()):
-            errors.append(f"{name}: slide {n} image prompt is not English with a gold accent, 16:9 and no readable text")
-        if footer and not re.search(r"\]\(https://[^)\s]+\)", footer):
-            errors.append(f"{name}: slide {n} has no full URL in [FOOTER_LINKS]")
-        for mark in sorted(set(re.findall(r"\^\[\d+\]", screen))):
-            if mark not in footer:
-                errors.append(f"{name}: slide {n} quote footnote {mark} has no source in [FOOTER_LINKS]")
-        for phrase in GAMMA_PAGES.get(n, ()):
-            if phrase not in screen:
-                errors.append(f"{name}: slide {n} lost Gamma wording: «{phrase}»")
-    if INDICES_QUOTE not in dict((n, chunk) for n, _, chunk in deck).get(8, ""):
-        errors.append(f"{name}: the lecturer's indices quote is not on slide 8")
-    votes = {n for n, title, _ in deck if VOTE in title}
-    trials = {n for n, title, _ in deck if TRIAL in title}
-    if votes != GAMMA_VOTES or trials != GAMMA_TRIALS:
-        errors.append(f"{name}: votes {sorted(votes)} and prompt trials {sorted(trials)}, expected {sorted(GAMMA_VOTES)} and {sorted(GAMMA_TRIALS)}")
-    return errors
-
-
 def validate(texts, rfc):
     errors = []
     rationale, presentation, script = (texts[path] for path in FILES)
     day1 = rfc_day1(rfc)
     if not day1:
         return ["RFC: Day 1 section not found"]
-    missing = [path for path in ALL_FILES if not texts[path]]
+    missing = [path for path in FILES if not texts[path]]
     errors += [f"{path.name}: file not found" for path in missing]
-    if set(missing) & set(FILES):
+    if missing:
         return errors
 
     # 1. Shared contract of the three files.
@@ -453,10 +354,8 @@ def validate(texts, rfc):
     if not re.search(r"^## Приложение В\. Короткие ответы на частые вопросы", script, re.M):
         errors.append(f"{SCRIPT.name}: FAQ appendix missing")
 
-    # 5. Gamma deck and the RFC side.
-    if GAMMA not in missing:
-        errors += validate_gamma(texts)
-    errors += [f"{RFC.name}: {error}" for error in broken_links(rfc, texts, only=set(ALL_FILES))]
+    # 5. The RFC side.
+    errors += [f"{RFC.name}: {error}" for error in broken_links(rfc, texts, only=set(FILES))]
     return errors
 
 
@@ -473,7 +372,7 @@ def mutate_re(texts, path, pattern, new, count=1):
 
 
 def self_test(texts, rfc):
-    p, r, s, g = PRESENTATION, RATIONALE, SCRIPT, GAMMA
+    p, r, s = PRESENTATION, RATIONALE, SCRIPT
     lead = "- **Главный вывод:** "
     broken = {
         "slide removed": mutate_re(texts, p, r"^#### Слайд 24\. [^\n]+\n", ""),
@@ -516,24 +415,6 @@ def self_test(texts, rfc):
         "third vote in script": mutate(texts, s, "`[СЛАЙД 4]`", "`[СЛАЙД 4]` " + SCRIPT_VOTE),
         "relative link": mutate(texts, p, "](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/", "](../"),
         "source not #675": mutate(texts, s, SOURCE, "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/653"),
-        "Gamma file missing": mutate_re(texts, g, r".*", "", count=1),
-        "Gamma slide removed": mutate_re(texts, g, r"^### Слайд 33\. [^\n]+\n", ""),
-        "Gamma field missing": mutate(texts, g, "**[FOOTER_LINKS]**", "**Ссылки**"),
-        "Gamma notes too long": mutate_re(texts, g, r"(\*\*\[SPEAKER_NOTES\]\*\*[^\n]*\n)", r"\1" + "слово " * 60),
-        "Gamma notes without bridge": mutate_re(texts, g, r"(### Слайд 20\..*?)[Пп]оэтому(.*?### Слайд 21)", r"\1и\2", count=0),
-        "Gamma image prompt in Russian": mutate_re(texts, g, r"(\*\*\[IMAGE_PROMPT\]\*\*[^\n]*\n)", r"\1Иллюстрация. "),
-        "Gamma image without gold": mutate_re(texts, g, r"(### Слайд 5\..*?\*\*\[IMAGE_PROMPT\]\*\*.*?)(gold|amber)(.*?\*\*\[FOOTER_LINKS\]\*\*)", r"\1grey\3"),
-        "Gamma footer without URL": mutate_re(texts, g, r"(### Слайд 12\..*?\*\*\[FOOTER_LINKS\]\*\*[^\n]*\n)[^\n]*https://[^\n]*", r"\1- см. обоснование"),
-        "Gamma page text edited": mutate(texts, g, "Репутация — это система сигналов", "Репутация — это сигналы", count=-1),
-        "Gamma founder title edited": mutate(texts, g, "### Слайд 10. Четыре дня", "### Слайд 10. Пять дней"),
-        "Gamma excluded page added": mutate(texts, g, "\n## ", "\nАНАЛИЗ УЯЗВИМОСТЕЙ\n\n## "),
-        "Gamma «безопасными полями» kept": mutate(texts, g, "для печати и экспорта в PPTX.", "с безопасными полями для печати и экспорта в PPTX."),
-        "Gamma slogan lost": mutate(texts, g, SLOGAN, "Репутацией управляет тот, кто громче говорит", count=-1),
-        "Gamma indices quote lost": mutate(texts, g, INDICES_QUOTE, "Помните индексы?", count=-1),
-        "Gamma risk word outside the verbatim page": mutate(texts, g, "\n## ", "\nНовый поставщик — это риск.\n\n## "),
-        "Gamma third vote": mutate_re(texts, g, r"^### Слайд 14\. ", "### Слайд 14. 🗳 "),
-        "Gamma long title": mutate_re(texts, g, r"^(### Слайд 30\. )([^\n]+)", r"\1\2 и ещё много лишних слов"),
-        "Gamma footnote without source": mutate_re(texts, g, r"(### Слайд 4\..*?\*\*\[SLIDE_TEXT\]\*\*[^\n]*\n- [^\n]*)", r"\1 ^[9]"),
     }
     failed = [name for name, mutated in broken.items() if mutated == texts or not validate(mutated, rfc)]
     rfc_broken = {
@@ -547,7 +428,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--self-test", action="store_true", help="also prove the checker rejects broken fixtures")
     args = parser.parse_args()
-    texts = {path: path.read_text(encoding="utf-8") if path.is_file() else "" for path in ALL_FILES}
+    texts = {path: path.read_text(encoding="utf-8") if path.is_file() else "" for path in FILES}
     rfc = RFC.read_text(encoding="utf-8")
     errors = validate(texts, rfc)
     if args.self_test and not errors:
@@ -561,7 +442,7 @@ def main():
     print("PASS: three files: source #675, case «Умные холодные продажи» (100 stores, 5–8 networks in 3 months, 20 cards, 3–5 networks and their ЛПР, «Х» of 25 stores), no formula/F(t)/H1, no trigger/risk/«вшивость»/provocation words, no «запрос цен» or «прислал» even in quotes, payments only as a prohibition, guardrails")
     print("PASS: rationale keeps the 13 linked headings, the RFC budget, 8 nodes, 4 openness markers, Wayback and the open web mandatory, ЕГРЮЛ by choice, harmony/eclecticism «свой, но заметный», ethics «гибко и одновременно аккуратно»; lawsuits are one activity marker with no payment-discipline conclusions")
     print("PASS: script shows slides 1–24 in order and speaks the chain, 2 votes and 1 prompt trial; Промпт-фреймер asks the three guardrail questions, puts «?», searches Wayback Machine and the open web, ЕГРЮЛ by choice; FAQ present")
-    print(f"PASS: Gamma deck has {GAMMA_SLIDES} four-field slides, founder titles 1, 2, 9–11, Gamma pages 2, 3, 4, 6, 7, 9 unchanged on slides 3–8, notes of 150–180 words with a bridge, English 16:9 gold image prompts, footer URLs, votes 13 and 22, trial 24; repository links and RFC anchors resolve")
+    print("PASS: repository links of the three files and RFC links to them resolve; the Gamma deck is checked by exp/day1-rebuild-677/check-day1-677.py")
     if args.self_test:
         print(f"PASS: {fixtures} broken fixtures rejected")
 
