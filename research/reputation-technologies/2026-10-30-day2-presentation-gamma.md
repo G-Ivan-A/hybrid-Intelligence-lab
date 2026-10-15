@@ -90,7 +90,7 @@ related_issues:
 
 Визуальный баланс: 50% слайдов — монохромные изображения моды, искусства или архитектуры с одним цветовым акцентом; 25% — крупные символьно-графические композиции на основе абстрактной гармонии, геометрии и конструктивистской структуры с одним золотым фокусом; 25% — без иллюстраций, только текст, схемы и типографика. Не использовать фотографии людей в офисе, на улице, на совещаниях или в деловых сценах. Люди допустимы только в иллюстрациях, связанных с модой: женщина или мужчина 30–50 лет.
 
-Символьно-графические изображения должны быть по размеру и пропорциям сопоставимы с фотографиями, иметь сложную композицию, белое пространство, графитовые и глубокие синие формы и один золотой акцент. Не использовать маленькие иконки, случайные пиктограммы, градиенты, перегруженный декор или текст внутри изображений. Сквозной мотив Дня 2 — бумажная бирка источника на линии связи: плотная, полупрозрачная или разделённая по диагонали.
+Символьно-графические изображения должны быть по размеру и пропорциям сопоставимы с фотографиями, иметь сложную композицию, белое пространство, графитовые и глубокие синие формы и один золотой акцент. Все изображения — искусство, близкое к монохрому, с обязательным золотым или янтарным акцентом. Не использовать маленькие иконки, случайные пиктограммы, градиенты, перегруженный декор или текст внутри изображений. Сквозной мотив Дня 2 — бумажная бирка источника на линии связи: плотная, полупрозрачная или разделённая по диагонали.
 
 Сохраняй белый минималистичный фон, сочетание ар-деко и конструктивизма в блок-схемах, крупные геометрические модули, тонкие линии, строгую сетку и консистентные размеры визуальных блоков. На каждом слайде подвал — строка из поля [FOOTER_LINKS]: источники, авторы и метка «Москва, 10.2026». Не добавляй на слайды и в подвал дату и время эфира. Не выдумывай URL источников. Все изображения должны быть релевантны заголовку и содержанию текстового блока.
 ```
@@ -163,7 +163,7 @@ Fashion editorial photo: a man aged 40–50 in a charcoal double-breasted jacket
 - Вывод: Сегодня учимся собирать данные и проверять их основания, а не просто считать упоминания.
 
 **[IMAGE_PROMPT]**
-Symbol-graphic composition: four large geometric modules in a strict horizontal row on white, graphite circle, deep blue square, graphite triangle and deep blue hexagon, joined by thin constructivist lines, the second module outlined and lit with a single gold accent, generous white space, flat vector, art deco proportions, no readable text on image, 16:9.
+Symbol-graphic composition: four large geometric modules in a strict horizontal row on white, graphite circle, deep blue square, graphite triangle and deep blue hexagon, joined by thin constructivist lines, the second module outlined and lit with a single gold accent, generous white space, flat vector, art deco proportions, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [программа курса на Технограде](https://technograd.moscow/event_page_new?669#programm_event); [логика Дней 1–3 и мост ко Дню 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md#день-2-собираю-проверяем-основания-связей); [связь Дня 1 с Днями 2–4](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md#связь-с-днями-24) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -233,7 +233,7 @@ Art photo: a monochrome still life of six white paper sheets suspended on a sing
 - Вывод: Карта — не знание, а список вопросов. Первым делом хочется открыть мониторинг; следующий слайд спрашивает, хватит ли его цифры.
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: an abstract network map of seven geometric nodes of different sizes joined by thin graphite lines, a small paper tag hanging on every line, half of the tags solid graphite and half empty with dashed light-grey outlines, one gold node at the centre as the single focus, art deco and constructivist layout, strict grid, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: an abstract network map of seven geometric nodes of different sizes joined by thin graphite lines, a small paper tag hanging on every line, half of the tags solid graphite and half empty with dashed light-grey outlines, one gold node at the centre as the single focus, art deco and constructivist layout, strict grid, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [мост от Дня 1: связь с Днями 2–4](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md#связь-с-днями-24); [кейс 1 Дня 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#кейс-1-умные-холодные-продажи-conflict-по-открытости-матрицы-меняет-подготовку-к-встрече) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -256,7 +256,7 @@ Typographic scheme on white background: an abstract network map of seven geometr
 - Вывод: Закрытое голосование. Ответ не разбираем: день его проверяет, а финал вечера возвращается к нему на слайде 26.
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: one monumental abstract percentage-like geometric block in graphite on the left, two tall empty choice panels in graphite and deep blue on the right, a thin gold vertical line dividing the composition, art deco proportions, constructivist grid, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: one monumental abstract percentage-like geometric block in graphite on the left, two tall empty choice panels in graphite and deep blue on the right, a thin gold vertical line dividing the composition, art deco proportions, constructivist grid, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [правило 35–70% Peer Instruction](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md#п1-crouch--mazur-2001-peer-instruction) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -304,7 +304,7 @@ Fashion editorial photo: a woman aged 35–45 in a structured ivory blouse and g
 - Вывод: Три остановки и результат к 20:00 — реестр кейса 1 со статусами. Первая остановка — мониторинг: сначала признать, что он даёт.
 
 **[IMAGE_PROMPT]**
-Symbol-graphic composition: three large numbered-like geometric cards in a row, graphite, deep blue and graphite, connected by a thin constructivist arrow, and a tall white registry sheet on the right with five ruled rows and one gold tag pinned to its corner, generous white space, flat vector, strict grid, no readable text on image, 16:9.
+Symbol-graphic composition: three large numbered-like geometric cards in a row, graphite, deep blue and graphite, connected by a thin constructivist arrow, and a tall white registry sheet on the right with five ruled rows and one gold tag pinned to its corner, generous white space, flat vector, strict grid, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [реестр источников курса: происхождение данных и статусы](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md#д-происхождение-данных-честные-статусы-и-измерение-день-2); [программа Дня 2 на Технограде](https://technograd.moscow/event_page_new?669#programm_event) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -349,7 +349,7 @@ Architecture photo: a monochrome glass facade reflecting hundreds of identical s
 - Вывод: «Сколько» со слайда 10 не отвечает на вопрос дня. Гипотезу Г2-1 проверяем на тех же 72% — следующий слайд.
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: two clean lines on an abstract chart without numbers, an amber line rising steadily to the upper right and a graphite line flattening into a plateau, thin constructivist axes, one small gold point where the lines part, art deco proportions, strict grid, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: two clean lines on an abstract chart without numbers, an amber line rising steadily to the upper right and a graphite line flattening into a plateau, thin constructivist axes, one small gold point where the lines part, art deco proportions, strict grid, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [Heuer, психология разведывательного анализа](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md#д3-heuer-r-j-jr-psychology-of-intelligence-analysis); [почему Дню 2 нужны провенанс и статусы](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#почему-дню-2-нужны-провенанс-и-статусы) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -371,7 +371,7 @@ Typographic scheme on white background: two clean lines on an abstract chart wit
 - Вывод: Гипотеза слайда 11 подтверждена на цифре слайда 7: считать надо источники, а не упоминания. Как их описать, показывает следующий слайд.
 
 **[IMAGE_PROMPT]**
-Symbol-graphic composition: a wide field of many small graphite cards on the left compressing into nine neat stacks on the right, one stack much taller than the others, a half-transparent tag with a dashed outline beside it, thin constructivist guide lines, a single gold accent on the tallest stack, generous white space, flat vector, no readable text on image, 16:9.
+Symbol-graphic composition: a wide field of many small graphite cards on the left compressing into nine neat stacks on the right, one stack much taller than the others, a half-transparent tag with a dashed outline beside it, thin constructivist guide lines, a single gold accent on the tallest stack, generous white space, flat vector, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [принципы AMEC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md#д7-amec-barcelona-principles-40); [почему не усреднять](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#почему-не-усреднять); [метрики со статусами](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#метрики-со-статусами) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -419,7 +419,7 @@ Architecture photo: a long colonnade of six monochrome stone arches receding int
 - Вывод: Закрытое голосование. Ответ разберём сразу на следующем слайде: расхождению нужно своё слово.
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: two tall abstract source cards facing each other, one graphite with a dense printed pattern and one deep blue with a rough edge, a single line between them carrying a paper tag split diagonally into an amber half and a muted red half, art deco proportions, constructivist grid, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: two tall abstract source cards facing each other, one graphite with a dense printed pattern and one deep blue with a rough edge, a single line between them carrying a paper tag split diagonally into an amber half and a muted red half, art deco proportions, constructivist grid, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [кейс 1 Дня 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#кейс-1-умные-холодные-продажи-conflict-по-открытости-матрицы-меняет-подготовку-к-встрече); [правило 35–70% Peer Instruction](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md#п1-crouch--mazur-2001-peer-instruction) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -444,7 +444,7 @@ Typographic scheme on white background: two tall abstract source cards facing ea
 - Вывод: Статус ценен, если меняет подготовку к первому контакту, а не цвет в отчёте, — следующий слайд.
 
 **[IMAGE_PROMPT]**
-Symbol-graphic composition: on the left a single smooth graphite gauge bar with a marker exactly in the middle, on the right the same bar pulled apart into an amber cluster of dots and a muted red cluster with empty space between them, the two clusters joined by one paper tag split diagonally, a dashed grey outline where the average used to be, one gold focus on the tag, generous white space, flat vector, no readable text on image, 16:9.
+Symbol-graphic composition: on the left a single smooth graphite gauge bar with a marker exactly in the middle, on the right the same bar pulled apart into an amber cluster of dots and a muted red cluster with empty space between them, the two clusters joined by one paper tag split diagonally, a dashed grey outline where the average used to be, one gold focus on the tag, generous white space, flat vector, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [статусы данных вместо усреднённых метрик](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#статусы-данных-partial-и-conflict-вместо-усреднённых-метрик); [таксономия статусов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/20-taxonomy.md#1-таксономия-статусов) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -513,7 +513,7 @@ Architecture photo: a monochrome library interior with tall shelves, a stack of 
 - Вывод: Поиск — по ключевым словам в веб-архиве и открытом вебе; пустой архив — «снимков нет»; ЕГРЮЛ — по желанию. Без ИИ под рукой — найдите такое утверждение в пакете сами.
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: a large abstract chat window frame beside an empty registry of eight ruled rows, a geometric five-minute timer ring above it with one gold segment, three numbered-like step blocks along the bottom, thin gold guardrail lines along the registry edges, art deco and constructivist block diagram, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: a large abstract chat window frame beside an empty registry of eight ruled rows, a geometric five-minute timer ring above it with one gold segment, three numbered-like step blocks along the bottom, thin gold guardrail lines along the registry edges, art deco and constructivist block diagram, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [эволюция промпта: от фреймера к разведчику](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#эволюция-промпта-от-промпта-фреймера-к-промпту-разведчику); [текст Промпта-разведчика](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md#а2-текст-промпта); [пакет из 8 утверждений](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md#приложение-б-пакет-из-8-утверждений-о-сети-х-и-ключ-разбора) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -539,7 +539,7 @@ Typographic scheme on white background: a large abstract chat window frame besid
 - Вывод: Гипотеза Г2-2 проверена, блок 2 закрыт. Все четыре ошибки ведут в блок 3: что раньше — понимать или считать?
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: a fragment of an abstract registry with four ruled rows, each row marked on the margin by a short muted red stroke and a thin gold correction line, a pencil-like geometric bar resting beside the sheet, art deco and constructivist layout, strict grid, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: a fragment of an abstract registry with four ruled rows, each row marked on the margin by a short muted red stroke and a thin gold correction line, a pencil-like geometric bar resting beside the sheet, art deco and constructivist layout, strict grid, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [гейт для выводов ИИ-агентов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/30-decision-framework.md#5-гейт-для-выводов-ии-агентов); [guardrails для промптов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md#gra-как-guardrails-модель-для-промптов); [как снижать ошибки ИИ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md#н7-anthropic-документация-reduce-hallucinations); [ключ разбора](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md#приложение-б-пакет-из-8-утверждений-о-сети-х-и-ключ-разбора) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -561,7 +561,7 @@ Typographic scheme on white background: a fragment of an abstract registry with 
 - Вывод: Это последовательный дизайн смешанных методов. Правило легче принять на другом примере — контрастный кейс 3 на следующем слайде.
 
 **[IMAGE_PROMPT]**
-Symbol-graphic composition: on the left a soft cluster of overlapping graphite speech-bubble shapes, in the middle their thin threads converging into one clear gold key-like shape, on the right a precise grid of small deep blue columns, a gentle left-to-right flow, constructivist structure, generous white space, flat vector, no readable text on image, 16:9.
+Symbol-graphic composition: on the left a soft cluster of overlapping graphite speech-bubble shapes, in the middle their thin threads converging into one clear gold key-like shape, on the right a precise grid of small deep blue columns, a gentle left-to-right flow, constructivist structure, generous white space, flat vector, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [качественные и количественные данные](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#качественные-и-количественные-данные-что-оцифровывать-первым); [Fetters, Curry, Creswell о смешанных методах](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md#д8-fetters-m-d-curry-l-a-creswell-j-w-achieving-integration-in-mixed-methods-designs) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -629,7 +629,7 @@ Architecture photo: a monochrome modernist facade with three identical empty lit
 - Вывод: Правило есть; теперь его нужно применить к подготовке первого письма — следующий слайд.
 
 **[IMAGE_PROMPT]**
-Symbol-graphic composition: a large geometric counter wheel in graphite rolling ahead of a tall deep blue question-mark-like arc, a thin gold line marking the point where the counter should have waited, constructivist diagonal, generous white space, flat vector, no numbers, no readable text on image, 16:9.
+Symbol-graphic composition: a large geometric counter wheel in graphite rolling ahead of a tall deep blue question-mark-like arc, a thin gold line marking the point where the counter should have waited, constructivist diagonal, generous white space, flat vector, no numbers, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [что оцифровывать первым](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#качественные-и-количественные-данные-что-оцифровывать-первым); [программа Дня 2 на Технограде](https://technograd.moscow/event_page_new?669#programm_event) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -704,7 +704,7 @@ Architecture photo: a monochrome concrete staircase passing behind a half-transp
 - Вывод: Новый разрыв: в реестре десять узлов, а сил хватит на два-три разговора. Это готовит мост ко Дню 3.
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: the same abstract network map of nine geometric nodes, now every connecting line carries a paper tag, solid graphite, half-transparent dashed or split diagonally into amber and muted red, two split tags slightly highlighted, one gold node as the single focus, art deco and constructivist layout, strict grid, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: the same abstract network map of nine geometric nodes, now every connecting line carries a paper tag, solid graphite, half-transparent dashed or split diagonally into amber and muted red, two split tags slightly highlighted, one gold node as the single focus, art deco and constructivist layout, strict grid, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [запись провенанса](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#запись-провенанса-одна-строка-на-утверждение); [протокол соисследователя](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#протокол-соисследователя); [полный реестр кейса 1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#кейс-1-умные-холодные-продажи-conflict-по-открытости-матрицы-меняет-подготовку-к-встрече) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -726,7 +726,7 @@ Typographic scheme on white background: the same abstract network map of nine ge
 - Вывод: Следующий шаг — День 3 «Выбираю»: внутренние и внешние факторы влияния на развитие компании.
 
 **[IMAGE_PROMPT]**
-Symbol-graphic composition: ten geometric nodes of different sizes in graphite and deep blue scattered across a white field, three empty square frames drawn in thin gold lines waiting at the right edge, faint constructivist lines suggesting possible choices, generous white space, flat vector, strict grid, no readable text on image, 16:9.
+Symbol-graphic composition: ten geometric nodes of different sizes in graphite and deep blue scattered across a white field, three empty square frames drawn in thin gold lines waiting at the right edge, faint constructivist lines suggesting possible choices, generous white space, flat vector, strict grid, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [мост ко Дню 3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#мост-ко-дню-3); [Промпт-разведчик для слушателей](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md#приложение-а-промпт-разведчик-для-слушателей) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -750,7 +750,7 @@ Symbol-graphic composition: ten geometric nodes of different sizes in graphite a
 - Вывод: Просто в эфире, глубоко в ссылках: QR-код на обоснование Дня 2.
 
 **[IMAGE_PROMPT]**
-Typographic scheme on white background: four long horizontal graphite bars of different lengths stacked like a reading list, a square geometric QR-like block of graphite modules on the right with one gold module in its corner, thin constructivist rules between the bars, art deco proportions, generous white space, no readable text on image, 16:9.
+Typographic scheme on white background: four long horizontal graphite bars of different lengths stacked like a reading list, a square geometric QR-like block of graphite modules on the right with one gold module in its corner, thin constructivist rules between the bars, art deco proportions, generous white space, near-monochrome palette, no readable text on image, 16:9.
 
 **[FOOTER_LINKS]**
 Источники: [Промпт-разведчик для слушателей](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-lecturer-script.md#приложение-а-промпт-разведчик-для-слушателей); [белые источники для Дня 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#16-белые-источники-для-дня-2); [этика и право](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#17-этика-и-право); [Internet Archive (Wayback Machine)](https://web.archive.org/); [ЕГРЮЛ — по желанию](https://egrul.nalog.ru/); [решение по этике сбора](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md#решения-по-кейсу-1-источникам-этике-и-структуре-кейсов-issue-671-пункты-1316); [источники Дня 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day2-rationale-and-method.md#источники) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
