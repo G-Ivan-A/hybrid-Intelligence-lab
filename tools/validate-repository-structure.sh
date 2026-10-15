@@ -494,6 +494,7 @@ is_active_file() {
     research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md | \
     research/reputation-technologies/2026-10-07-day1-presentation-653.md | \
     research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md | \
+    research/reputation-technologies/2026-10-14-day1-presentation-gamma.md | \
     research/reputation-technologies/2026-10-30-day2-rationale-and-method.md | \
     research/reputation-technologies/2026-10-30-day2-presentation.md | \
     research/reputation-technologies/2026-10-30-day2-lecturer-script.md | \
@@ -522,6 +523,10 @@ is_active_file() {
     research/reputation-technologies/exp/day3-filter-663/README.md | \
     research/reputation-technologies/exp/day3-filter-663/check-day3.sh | \
     research/reputation-technologies/exp/day3-filter-663/test-check-day3.sh | \
+    research/reputation-technologies/exp/day1-rebuild-675/README.md | \
+    research/reputation-technologies/exp/day1-rebuild-675/check-day1.py | \
+    research/reputation-technologies/exp/day1-rebuild-675/issue-675-before.log | \
+    research/reputation-technologies/exp/day1-rebuild-675/issue-675-after.log | \
     research/reputation-technologies/gra-research-program/00-introduction.md | \
     research/reputation-technologies/gra-research-program/10-theory.md | \
     research/reputation-technologies/gra-research-program/20-taxonomy.md | \
@@ -2045,11 +2050,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.33"
+require_text "ops/artifact-map.md" "version: 2.34"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-10-14"
+require_text "ops/artifact-map.md" "updated: 2026-10-15"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"

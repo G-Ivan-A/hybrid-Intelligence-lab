@@ -1,0 +1,108 @@
+$ python3 -I research/reputation-technologies/exp/day1-rebuild-675/check-day1.py --self-test   # on Day 1 files v0.3/v0.4/v0.3, no Gamma file (before #675)
+FAIL: 2026-10-14-day1-presentation-gamma.md: file not found
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: frontmatter source is not issue #675
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: trigger word: «безопасн»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: risk or «вшивость» rhetoric: «риск»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: GRA formula: «F(t)»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: GRA formula: «H1»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: GRA formula: «Формул»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: provocation: «провок»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: incoming price request plot: «запрос цен»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: incoming price request plot: «запроса цен»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: incoming price request plot: «прислал»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: payments discussed without a prohibition: «**Что опровергло бы гипотезу «сеть меняет поставщиков из-за проблем с оплатой».** Два вари»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: GRA is not presented as guardrails
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: case 1 «Умные холодные продажи» fact missing: about 100 stores
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: case 1 «Умные холодные продажи» fact missing: goal of 5–8 partner networks
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: case 1 «Умные холодные продажи» fact missing: 20 business cards
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: case 1 «Умные холодные продажи» fact missing: 3–5 networks written to first
+FAIL: 2026-10-07-day1-presentation-653.md: frontmatter source is not issue #675
+FAIL: 2026-10-07-day1-presentation-653.md: risk or «вшивость» rhetoric: «риск»
+FAIL: 2026-10-07-day1-presentation-653.md: GRA formula: «H1»
+FAIL: 2026-10-07-day1-presentation-653.md: GRA formula: «Формул»
+FAIL: 2026-10-07-day1-presentation-653.md: GRA formula: «формул»
+FAIL: 2026-10-07-day1-presentation-653.md: incoming price request plot: «Запрос цен»
+FAIL: 2026-10-07-day1-presentation-653.md: incoming price request plot: «запрос цен»
+FAIL: 2026-10-07-day1-presentation-653.md: incoming price request plot: «запроса цен»
+FAIL: 2026-10-07-day1-presentation-653.md: payments discussed without a prohibition: «- Вопрос внизу: «Совпадение или сеть меняет поставщиков из-за проблем с оплатой?»»
+FAIL: 2026-10-07-day1-presentation-653.md: GRA is not presented as guardrails
+FAIL: 2026-10-07-day1-presentation-653.md: case 1 «Умные холодные продажи» fact missing: about 100 stores
+FAIL: 2026-10-07-day1-presentation-653.md: case 1 «Умные холодные продажи» fact missing: goal of 5–8 partner networks
+FAIL: 2026-10-07-day1-presentation-653.md: case 1 «Умные холодные продажи» fact missing: 20 business cards
+FAIL: 2026-10-07-day1-presentation-653.md: case 1 «Умные холодные продажи» fact missing: 3–5 networks written to first
+FAIL: 2026-10-07-day1-presentation-653.md: case 1 «Умные холодные продажи» fact missing: decision makers (ЛПР)
+FAIL: 2026-10-07-day1-lecturer-script-653.md: frontmatter source is not issue #675
+FAIL: 2026-10-07-day1-lecturer-script-653.md: trigger word: «безопасн»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: risk or «вшивость» rhetoric: «риск»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: GRA formula: «H1»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: GRA formula: «Формул»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: GRA formula: «формул»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: incoming price request plot: «Запрос цен»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: incoming price request plot: «запрос цен»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: incoming price request plot: «запроса цен»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: payments discussed without a prohibition: «А может быть, сеть меняет поставщиков, потому что у неё проблемы с оплатой.»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: GRA is not presented as guardrails
+FAIL: 2026-10-07-day1-lecturer-script-653.md: case 1 «Умные холодные продажи» fact missing: about 100 stores
+FAIL: 2026-10-07-day1-lecturer-script-653.md: case 1 «Умные холодные продажи» fact missing: goal of 5–8 partner networks
+FAIL: 2026-10-07-day1-lecturer-script-653.md: case 1 «Умные холодные продажи» fact missing: in 3 months
+FAIL: 2026-10-07-day1-lecturer-script-653.md: case 1 «Умные холодные продажи» fact missing: 20 business cards
+FAIL: 2026-10-07-day1-lecturer-script-653.md: case 1 «Умные холодные продажи» fact missing: 3–5 networks written to first
+FAIL: 2026-10-07-day1-lecturer-script-653.md: case 1 «Умные холодные продажи» fact missing: decision makers (ЛПР)
+FAIL: 2026-10-07-day1-lecturer-script-653.md: case 1 «Умные холодные продажи» fact missing: network «Х» of 25 stores
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: section «Цепочка «потому что → поэтому»» does not list slides 1–10
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: section «Изменения версии 0.4 (issue #675)» missing
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: RFC budget of Day 1 is not quoted verbatim
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: node missing: category manager
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: node missing: purchasing department
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: node missing: network representative from the exhibition
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: node missing: co-supplier «С»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: node missing: distributor «Д»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: node missing: other suppliers of the network
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: node missing: industry association
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: openness marker missing: «Поставщикам» page
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: openness marker missing: store openings and category-manager vacancies
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: openness marker missing: page history in the web archive
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: openness marker missing: words of network representatives at the exhibition and in industry media
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: source rule missing: Wayback Machine
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: source rule missing: open web
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: source rule missing: ЕГРЮЛ optional
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: harmony / eclecticism missing: harmony
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: harmony / eclecticism missing: eclecticism
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: harmony / eclecticism missing: «свой, но заметный»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: harmony / eclecticism missing: eclecticism as competent contrast
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: harmony / eclecticism missing: visual channels
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: lawsuits are not read as an activity marker
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: no explicit ban on payment-discipline conclusions
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: «гибко и одновременно аккуратно»
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: open accounts allowed
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: public photos allowed
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: business phone in a personal contact book
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: hidden databases forbidden
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: leaked dumps forbidden
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: illegal parsing forbidden
+FAIL: 2026-10-07-day1-rationale-and-method-653.md: ethics boundary missing: closed data forbidden
+FAIL: 2026-10-07-day1-lecturer-script-653.md: lawsuits are not read as an activity marker
+FAIL: 2026-10-07-day1-lecturer-script-653.md: no explicit ban on payment-discipline conclusions
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: «гибко и одновременно аккуратно»
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: open accounts allowed
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: public photos allowed
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: business phone in a personal contact book
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: hidden databases forbidden
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: leaked dumps forbidden
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: illegal parsing forbidden
+FAIL: 2026-10-07-day1-lecturer-script-653.md: ethics boundary missing: closed data forbidden
+FAIL: 2026-10-07-day1-presentation-653.md: slides are not 1–24: []
+FAIL: 2026-10-07-day1-presentation-653.md: votes [] and prompt trials [], expected [3, 12] and [14]
+FAIL: 2026-10-07-day1-presentation-653.md: slides 0 min + reserve ? ≠ 90
+FAIL: 2026-10-07-day1-presentation-653.md: image prompts are not a separate section after the slides
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide markers are not 1–24 in order: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+FAIL: 2026-10-07-day1-lecturer-script-653.md: 0 votes and 0 prompt trials, expected 2 and 1
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 1: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 2: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 3: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 4: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 5: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 7: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 9: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: slide 10: the «потому что → поэтому» link is not spoken
+FAIL: 2026-10-07-day1-lecturer-script-653.md: section «А.2. Текст промпта» with a text block missing

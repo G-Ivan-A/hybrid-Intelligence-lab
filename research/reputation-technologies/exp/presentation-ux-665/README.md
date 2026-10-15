@@ -1,20 +1,20 @@
 ---
 status: draft
 version: 0.1
-updated: 2026-10-14
+updated: 2026-10-15
 temperature: 0.1
 ---
 
 # Presentation UX: проверка issue #665
 
-Родительский отчёт — [RFC от 2026-10-12](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md), задача — [#665](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/665). Контейнер проверяет редакционные признаки самостоятельного чтения, не обучающий эффект. Родительский RFC отклонён фаундером в [#667](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/667); проверка оставлена в CI, пока презентации не пересобраны по [новому RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md). Презентация Дня 2 пересобрана по RFC v0.3 в [#673](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/673): её проверяет [check-day2.py](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day2-rebuild-673/README.md), а здесь остались Дни 1 и 3.
+Родительский отчёт — [RFC от 2026-10-12](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md), задача — [#665](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/665). Контейнер проверяет редакционные признаки самостоятельного чтения, не обучающий эффект. Родительский RFC отклонён фаундером в [#667](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/667); проверка оставлена в CI, пока презентации не пересобраны по [новому RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md). Презентация Дня 2 пересобрана по RFC v0.3 в [#673](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/673): её проверяет [check-day2.py](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day2-rebuild-673/README.md), а презентация Дня 1 пересобрана по RFC v0.3 в [#675](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/675): её проверяет [check-day1.py](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day1-rebuild-675/README.md). Здесь остался День 3.
 
 Исходный датированный исследовательский материал для сравнения — [презентация Дня 1](../../2026-10-07-day1-presentation-653.md); обоснование программы — [метод Дня 1](../../2026-10-07-day1-rationale-and-method-653.md). Подробный результат проверки всех трёх дней находится в родительском RFC выше.
 
 | Артефакт | Назначение |
 | --- | --- |
-| `check-presentation-ux.py` | 74 слайда Дней 1 и 3, сохранность исходных заголовков/визуалов/промптов, восемь инструментов в каждом дне и полное профильное ревью на 111 строк; 16 повреждений в режиме self-test |
-| `render-preview.py` | Воспроизводимый HTML-макет трёх плотных слайдов Д1/7, Д2/10, Д3/13 из текущего Markdown; Д2/10 — из `16e2577`, последней версии до #673; исходный вариант берётся из `6428ade` |
+| `check-presentation-ux.py` | 37 слайдов Дня 3, сохранность исходных заголовков/визуалов/промптов, восемь инструментов и полное профильное ревью на 111 строк; 8 повреждений в режиме self-test |
+| `render-preview.py` | Воспроизводимый HTML-макет трёх плотных слайдов Д1/7, Д2/10, Д3/13 из текущего Markdown; Д1/7 — из `6258f6a`, последней версии до #675; Д2/10 — из `16e2577`, последней версии до #673; исходный вариант берётся из `6428ade` |
 | `before.png`, `after.png` | Снимки браузера с одинаковой сеткой 1920×1080; контекст добавлен на экран, вывод выделен отдельно |
 
 ## Запуск из корня
