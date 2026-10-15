@@ -1,0 +1,262 @@
+# check-day1-677.py on main (72a4b38) before #677: only the #675 deck exists
+$ python3 -I research/reputation-technologies/exp/day1-rebuild-677/check-day1-677.py
+FAIL: 2026-10-14-day1-lecturer-script.md: file not found
+FAIL: 2026-10-14-day1-lecturer-gra-research.md: file not found
+FAIL: 2026-10-15-day1-slide-standard-and-gate-677.md: file not found
+exit 1
+
+# The same check on the #675 deck from main, with the three new #677 files copied next to it
+$ python3 -I research/reputation-technologies/exp/day1-rebuild-677/check-day1-677.py
+FAIL: 2026-10-14-day1-presentation-gamma.md: frontmatter source is not issue #677
+FAIL: 2026-10-14-day1-presentation-gamma.md: case 1 still counts «100 магазинов» instead of over 100 wholesale buyers
+FAIL: 2026-10-14-day1-presentation-gamma.md: required phrase missing: «Управляйте данными о связях — или стратегию за вас выберет случай»
+FAIL: 2026-10-14-day1-presentation-gamma.md: required phrase missing: «УЧЕБНЫЙ КЕЙС»
+FAIL: 2026-10-14-day1-presentation-gamma.md: excluded wording present: «SPEAKER_NOTES»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 shows air time or format: «18:30»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 shows air time or format: «20:00»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 1 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 2 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 3 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 3 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 3 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 4 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 4 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 4 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 5 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 5 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 5 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 6 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 6 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 6 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 7 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 7 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 7 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 8 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 8 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 8 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 9 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 shows air time or format: «02.11»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 shows air time or format: «03.11»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 10 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 shows air time or format: «20:00»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 11 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 shows air time or format: «20:00»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 14 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 15 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 16 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 17 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 18 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 19 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 21 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 22 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 25 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 26 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 27 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 28 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 29 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 30 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 31 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 32 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 has no common header
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 on-screen title differs from the heading
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 shows air time or format: «30.10»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 has no intro paragraph (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 has no «КОНТЕКСТ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 has no «ЦЕЛЬ», «ПРОБЛЕМА», «ВОПРОС» or «ГРАНИЦЫ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 has no «РЕШЕНИЕ» or «ДЕЙСТВИЕ» card (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 has no conclusion (Контекст → Цель → Действие)
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 33 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 case fact missing: over 100 wholesale buyers
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 12 of case 1 is not marked «УЧЕБНЫЙ КЕЙС»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 13 of case 1 is not marked «УЧЕБНЫЙ КЕЙС»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 20 of case 1 is not marked «УЧЕБНЫЙ КЕЙС»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 23 of case 1 is not marked «УЧЕБНЫЙ КЕЙС»
+FAIL: 2026-10-14-day1-presentation-gamma.md: slide 24 of case 1 is not marked «УЧЕБНЫЙ КЕЙС»
+exit 1

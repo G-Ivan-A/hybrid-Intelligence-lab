@@ -1,0 +1,10 @@
+# check-day1-677.py on branch issue-677-cc080acc6cc1 after #677
+$ python3 -I research/reputation-technologies/exp/day1-rebuild-677/check-day1-677.py --self-test
+PASS: deck has 33 slides with three fields (no speaker notes), the common header, founder titles 1, 2, 9–11, Gamma pages 2, 3, 4, 6, 7, 9 unchanged on slides 3–8, the slogan, votes 13 and 22, trial 24
+PASS: every new slide has an intro paragraph, a «КОНТЕКСТ» card, a goal / problem / question / limits card, a solution / action card and a conclusion (Контекст → Цель → Действие)
+PASS: footers carry full URLs, Telegram and «Москва, 10.2026» with no air time, format or day counter; image prompts are English, 16:9, gold, without readable text
+PASS: case 1 is marked «УЧЕБНЫЙ КЕЙС», the producer has over 100 wholesale buyers and writes first; 8 nodes on slide 20, openness markers and lawsuits as an activity marker on slide 23, ethics on slide 33; no formula/F(t)/H1, trigger, risk, provocation, price request or slide-count appeal
+PASS: script speaks slides 1–33 under the deck titles in 150–180 words with a «потому что → поэтому» bridge, no 8-word repeat of the slide text, each mark at least 3 times, План Б on 13, 22, 24, the indices quote on slide 8 and the full Промпт-фреймер
+PASS: lecturer research keeps the final prompt, the full search result and the GRA breakdown; the gate document lists the nine checked rules, the distortion and the acknowledgement; repository links resolve
+PASS: 60 broken fixtures rejected
+exit 0

@@ -105,6 +105,9 @@ jobs:
       - name: Check Day 1 against RFC v0.3
         run: python3 -I research/reputation-technologies/exp/day1-rebuild-675/check-day1.py --self-test
 
+      - name: Check Day 1 deck, lecturer script and gate of #677
+        run: python3 -I research/reputation-technologies/exp/day1-rebuild-677/check-day1-677.py --self-test
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:
