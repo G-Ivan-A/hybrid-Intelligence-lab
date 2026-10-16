@@ -1,0 +1,10 @@
+# check-day2-679.py after #679
+$ python3 -I research/reputation-technologies/exp/day2-gamma-679/check-day2-679.py --self-test
+PASS: deck has 28 slides with exactly the fields [SLIDE_TEXT], [IMAGE_PROMPT], [FOOTER_LINKS], the common header «Введение в репутационный инжиниринг · Мониторинг ресурсов, работа с данными» and no «День 2: Собираю»
+PASS: slides 1–4 keep the founder's text of #679 line by line; slide 2 shows VERIFIED, PARTIAL and «?»; votes on 7 and 14, prompt trial on 18
+PASS: every slide line has a label; every slide has an intro paragraph and the cards Контекст → Цель/Проблема → Решение/Действие with a conclusion
+PASS: footers carry full URLs, Telegram and «Москва, 10.2026» with no air date, time, format or day counter; image prompts are English, monochrome, 16:9, gold or amber, without readable text, people aged 30–50 only in fashion photos
+PASS: case 1 has over 100 wholesale buyers, lawsuits stay an activity marker; no formula/F(t)/H1, trigger, risk, provocation, price request or slide-count appeal in the deck and the script
+PASS: script marks `[СЛАЙД 1]`…`[СЛАЙД 28]` in order, the slide 2 quote, the 6-minute intro, slide 5 at 18:36, the 4-minute reserve 19:56–20:00, votes on 7 and 14 and the trial on 18 with План Б, all three speech marks; repository links resolve
+PASS: 62 broken fixtures rejected
+exit 0

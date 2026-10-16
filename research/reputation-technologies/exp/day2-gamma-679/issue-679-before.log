@@ -1,0 +1,27 @@
+# check-day2-679.py on main (f357f39) before #679: there is no Gamma deck of Day 2
+$ python3 -I research/reputation-technologies/exp/day2-gamma-679/check-day2-679.py --self-test
+FAIL: 2026-10-30-day2-presentation-gamma.md: file not found
+exit 1
+
+# The same check on the main lecturer script, with the 28-slide #679 Gamma deck copied next to it
+$ python3 -I research/reputation-technologies/exp/day2-gamma-679/check-day2-679.py
+FAIL: 2026-10-30-day2-lecturer-script.md: frontmatter source is not issue #679
+FAIL: 2026-10-30-day2-lecturer-script.md: appeal to the number of slides: «сократите рассказ на слайд»
+FAIL: 2026-10-30-day2-lecturer-script.md: case 1 still counts «100 магазинов» instead of over 100 wholesale buyers
+FAIL: 2026-10-30-day2-lecturer-script.md: slide marks are not `[СЛАЙД 1]`…`[СЛАЙД 28]` in order: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+FAIL: 2026-10-30-day2-lecturer-script.md: the slide 2 speech does not say «Вчера мы собирали данные обо мне. Сегодня давайте …»
+FAIL: 2026-10-30-day2-lecturer-script.md: the slide 2 speech does not name a VERIFIED fact
+FAIL: 2026-10-30-day2-lecturer-script.md: the slide 2 speech does not name a PARTIAL fact
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «## 18:30–18:36. Вводный блок»
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «*[18:36]* `[СЛАЙД 5]`»
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «## 19:56–20:00. Резерв»
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «Резерв — 4 минуты, с 19:56 до 20:00»
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «## Тайминг и План Б»
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «| **Итого** | 28 слайдов | 18:30–20:00 | **90** |»
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «**План Б: чат молчит.**»
+FAIL: 2026-10-30-day2-lecturer-script.md: timing anchor missing: «**План Б: эфир начался позже.**»
+FAIL: 2026-10-30-day2-lecturer-script.md: `[ГОЛОСОВАНИЕ В ЧАТ]` on slides [3, 10], expected once on each of [7, 14]
+FAIL: 2026-10-30-day2-lecturer-script.md: `[ПРОБА ПРОМПТА]` on slides [14], expected once on each of [18]
+FAIL: 2026-10-30-day2-lecturer-script.md: no «План Б» in the speeches of slides [7, 14, 18]
+FAIL: 2026-10-30-day2-lecturer-script.md: case 1 does not say «более 100 оптовых покупателей»
+exit 1
