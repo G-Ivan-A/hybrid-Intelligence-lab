@@ -548,6 +548,10 @@ is_active_file() {
     research/reputation-technologies/exp/day3-gamma-681/day3_links_681.py | \
     research/reputation-technologies/exp/day3-gamma-681/issue-681-before.log | \
     research/reputation-technologies/exp/day3-gamma-681/issue-681-after.log | \
+    research/reputation-technologies/exp/day3-rationale-683/README.md | \
+    research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
+    research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
+    research/reputation-technologies/exp/day3-rationale-683/issue-683-after.log | \
     research/reputation-technologies/gra-research-program/00-introduction.md | \
     research/reputation-technologies/gra-research-program/10-theory.md | \
     research/reputation-technologies/gra-research-program/20-taxonomy.md | \
