@@ -1,0 +1,103 @@
+## Run 1: main before #681
+$ python3 -I research/reputation-technologies/exp/day3-gamma-681/check-day3-681.py
+FAIL: 2026-11-02-day3-presentation-gamma.md: file not found
+FAIL: 2026-11-02-day3-slide-standard-and-gate.md: file not found
+exit 1
+
+## Run 2: the new deck and gate file next to the lecturer script of main
+$ python3 -I research/reputation-technologies/exp/day3-gamma-681/check-day3-681.py
+FAIL: 2026-11-02-day3-presentation-gamma.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-02-day3-lecturer-script.md#а2-текст-промпта: anchor not found
+FAIL: 2026-11-02-day3-presentation-gamma.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-02-day3-lecturer-script.md#б1-десять-узлов-вокруг-сети-х: anchor not found
+FAIL: 2026-11-02-day3-presentation-gamma.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-02-day3-lecturer-script.md#б2-20-визиток-с-выставки: anchor not found
+FAIL: 2026-11-02-day3-lecturer-script.md: frontmatter source is not issue #681
+FAIL: 2026-11-02-day3-slide-standard-and-gate.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day3-gamma-681/README.md: file not found
+FAIL: 2026-11-02-day3-slide-standard-and-gate.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day3-gamma-681/deck_words_681.py: file not found
+FAIL: 2026-11-02-day3-lecturer-script.md: risk or «вшивость» rhetoric: «риск»
+FAIL: 2026-11-02-day3-lecturer-script.md: GRA formula: «Формул»
+FAIL: 2026-11-02-day3-lecturer-script.md: provocation: «провоц»
+FAIL: 2026-11-02-day3-lecturer-script.md: payments discussed without a prohibition: «О региональной сети «Х» в отраслевом чате пишут «платит день в день».»
+FAIL: 2026-11-02-day3-lecturer-script.md: case 1 does not say «более 100 оптовых покупателей»
+FAIL: 2026-11-02-day3-lecturer-script.md: case 1 does not say the producer «сам пишет сетям первым»
+FAIL: 2026-11-02-day3-lecturer-script.md: lawsuits are not described as an activity marker
+FAIL: 2026-11-02-day3-lecturer-script.md: the program word «вред» without its reading as «полезность для встречи» in the same paragraph: «Второй блок — фильтр данных. Программа называет четыре критерия: доступность, значимость, »
+FAIL: 2026-11-02-day3-lecturer-script.md: slide marks are not `[СЛАЙД 1]`…`[СЛАЙД 33]` in order: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 1 speech has 42 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 1 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 1 speech retells the slide text: «внутренние и внешние факторы влияния на развитие компании»
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 2 speech has 85 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 2 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 3 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 4 speech has 94 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 4 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 4 speech retells the slide text: «на достижение целей организации или испытывает влияние от»
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 5 speech has 87 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 5 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 6 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 7 speech has 106 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 7 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 8 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 9 speech has 123 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 9 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 10 speech has 62 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 10 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 11 speech has 137 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 11 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 12 speech has 142 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 13 speech has 117 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 13 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 14 speech has 73 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 14 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 15 speech has 124 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 15 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 16 speech has 225 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 16 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 17 speech has 181 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 17 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 17 speech retells the slide text: «partial опасна для публичного действия без дополнительной проверки»
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 18 speech has 80 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 18 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 19 speech has 187 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 19 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 20 speech has 246 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 20 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 21 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 22 speech has 90 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 22 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 23 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 24 speech has 145 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 24 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 25 speech has 113 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 25 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 26 speech has 206 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 26 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 27 speech has 92 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 27 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 28 speech has 189 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 28 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 28 speech retells the slide text: «выбор появление новых данных и смена полярности связей»
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 29 speech has 108 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 29 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 30 speech has 62 words, not 150–180
+FAIL: 2026-11-02-day3-lecturer-script.md: slide 30 speech has no «потому что → поэтому» bridge
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «## 18:30–18:37. Вводный блок»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «*[18:37]* `[СЛАЙД 5]`»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «## 19:50–20:00. Резерв»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «Резерв — 10 минут, с 19:50 до 20:00»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «## Тайминг и План Б»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «| **Итого** | 33 слайда | 18:30–20:00 | **90** |»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «**План Б: чат молчит.**»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «**План Б: эфир начался позже.**»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing anchor missing: «**План Б: у слушателей нет ИИ под рукой.**»
+FAIL: 2026-11-02-day3-lecturer-script.md: timing table blocks add up to 0 minutes, not 90
+FAIL: 2026-11-02-day3-lecturer-script.md: mark [ДЕМОНСТРАЦИЯ ЭКРАНА] missing
+FAIL: 2026-11-02-day3-lecturer-script.md: `[ГОЛОСОВАНИЕ В ЧАТ]` on slides [], expected once on each of [9, 18]
+FAIL: 2026-11-02-day3-lecturer-script.md: `[ПРОБА ПРОМПТА]` on slides [], expected once on each of [23]
+FAIL: 2026-11-02-day3-lecturer-script.md: no «План Б» in the speeches of slides [9, 18, 23]
+FAIL: 2026-11-02-day3-lecturer-script.md: appendix heading missing: «### А.2. Текст промпта»
+FAIL: 2026-11-02-day3-lecturer-script.md: appendix heading missing: «### А.3. Бриф кейса 1: сеть «Х»»
+FAIL: 2026-11-02-day3-lecturer-script.md: appendix heading missing: «### Б.1. Десять узлов вокруг сети «Х»»
+FAIL: 2026-11-02-day3-lecturer-script.md: appendix heading missing: «### Б.2. 20 визиток с выставки»
+FAIL: 2026-11-02-day3-lecturer-script.md: appendix heading missing: «### Б.3. Выход ИИ с ошибками: образец для слайда 24»
+FAIL: 2026-11-02-day3-lecturer-script.md: the Промпт-фильтр does not ask the four questions in order: В1. ДОСТУПНОСТЬ, В2. ЗНАЧИМОСТЬ, В3. КАЧЕСТВО, В4. ПОЛЕЗНОСТЬ ДЛЯ ВСТРЕЧИ
+FAIL: 2026-11-02-day3-lecturer-script.md: section Б.2 does not list 20 business cards
+exit 1

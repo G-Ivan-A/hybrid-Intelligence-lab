@@ -1,0 +1,20 @@
+$ python3 -I research/reputation-technologies/exp/day3-gamma-681/check-day3-681.py --self-test
+PASS: deck has 33 slides with exactly the fields [SLIDE_TEXT], [IMAGE_PROMPT], [FOOTER_LINKS], the common header «Введение в репутационный инжиниринг · Внутренние и внешние факторы влияния» and titles of at most 6 words
+PASS: every slide line has a label; every slide has an intro paragraph and the cards Контекст → Цель/Проблема → Решение/Действие with a conclusion
+PASS: slide 2 shows VERIFIED, PARTIAL and «?», slide 3 keeps the course map, slide 17 asks the four filter questions in order; votes on 9 and 18, prompt trial on 23
+PASS: RFC v0.3 logic on screen: Day 2 statuses as criteria (6), 20 business cards (7, 25), point of influence versus audience (21), polarity change (22), meeting preparation (30)
+PASS: footers are «Источники: …» with full URLs, Telegram and «Москва, 10.2026», no air date, time, format or day counter; image prompts are English, monochrome, 16:9, with a gold accent and no readable text, people aged 30–50 only in fashion photos
+PASS: case 1 is proactive with over 100 wholesale buyers, lawsuits stay an activity marker, «вред» only as the program word read as «полезность для встречи»; no formula/F(t)/H1, trigger, risk, provocation, evaluative adjective, price request, payment talk or slide-count appeal
+PASS: script marks `[СЛАЙД 1]`…`[СЛАЙД 33]` in order, every speech 150–180 words with a «потому что → поэтому» bridge and no 8-word copy of the slides; 90-minute timing, Plan Б on 9, 18 and 23, all three speech marks
+PASS: «Сверьте с юристом» names all six laws; appendices А (Промпт-фильтр with В1–В4 in order), Б (ten nodes, 20 business cards, flawed AI output) and В; gate file has sections 1–8 and 10 confirmed items; repository links resolve
+PASS: 76 broken fixtures rejected
+exit 0
+
+$ python3 -I research/reputation-technologies/exp/day3-gamma-681/deck_words_681.py <Day 1, Day 2 and Day 3 Gamma decks>
+2026-10-14-day1-presentation-gamma.md: 33 slides, median 113, min 64, max 163, slides 1–4 median 105.5
+  119 147 92 64 74 69 106 71 163 125 122 126 117 113 112 109 111 106 125 131 100 88 135 137 103 118 129 115 96 101 113 111 141
+2026-10-30-day2-presentation-gamma.md: 28 slides, median 111.5, min 82, max 160, slides 1–4 median 129.5
+  110 160 133 126 114 134 115 108 109 107 94 106 107 113 125 145 96 144 126 82 110 109 98 109 107 143 115 126
+2026-11-02-day3-presentation-gamma.md: 33 slides, median 136, min 112, max 164, slides 1–4 median 145.0
+  144 162 146 143 127 150 149 146 125 124 112 135 122 124 136 130 152 118 139 140 125 140 164 137 149 132 126 129 138 137 118 121 128
+exit 0
