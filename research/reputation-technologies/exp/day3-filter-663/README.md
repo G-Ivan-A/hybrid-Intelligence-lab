@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-10-11
+version: 0.3
+updated: 2026-10-17
 temperature: 0.1
 type: experiment
 ---
@@ -11,6 +11,14 @@ type: experiment
 Evidence container для пакета Дня 3 курса, начиная с
 [`../../2026-11-02-day3-rationale-and-method.md`](../../2026-11-02-day3-rationale-and-method.md),
 по issue [#663](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/663).
+
+> **Историческая проверка.** С issue [#681](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/681)
+> сценарий лектора Дня 3 переписан под Gamma-презентацию на 33 слайда со словарём
+> тегов Дня 2 (`[ГОЛОСОВАНИЕ В ЧАТ]`, `[ПРОБА ПРОМПТА]`, `[ДЕМОНСТРАЦИЯ ЭКРАНА]`).
+> Поэтому `check-day3.sh` на текущих файлах печатает `FAIL` по трём тегам #663 и по
+> числу слайдов (33 против 30). Проверка не входит в CI и хранится как история
+> версии #663. Текущий комплект Дня 3 проверяет
+> [`exp/day3-gamma-681/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day3-gamma-681/README.md).
 
 > **Ссылки.** Issue #663 требует абсолютных ссылок. Относительная ссылка на
 > родительский отчёт выше — вынужденное исключение: её форму машинно проверяет

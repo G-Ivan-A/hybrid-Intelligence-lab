@@ -111,6 +111,9 @@ jobs:
       - name: Check Day 2 Gamma deck and lecturer script of #679
         run: python3 -I research/reputation-technologies/exp/day2-gamma-679/check-day2-679.py --self-test
 
+      - name: Check Day 3 Gamma deck, lecturer script and gate of #681
+        run: python3 -I research/reputation-technologies/exp/day3-gamma-681/check-day3-681.py --self-test
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:
