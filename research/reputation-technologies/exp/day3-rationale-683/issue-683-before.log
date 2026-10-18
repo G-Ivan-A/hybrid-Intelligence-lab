@@ -1,0 +1,100 @@
+FAIL trigger word: «безопасн» at line 409
+FAIL risk rhetoric: «риск» at line 107
+FAIL risk rhetoric: «риск» at line 107
+FAIL risk rhetoric: «риск» at line 109
+FAIL risk rhetoric: «риск» at line 109
+FAIL risk rhetoric: «риск» at line 601
+FAIL risk rhetoric: «риск» at line 621
+FAIL risk rhetoric: «риск» at line 622
+FAIL GRA formula: «Формул» at line 48
+FAIL GRA formula: «H1» at line 48
+FAIL GRA formula: «формул» at line 48
+FAIL provocation: «провок» at line 743
+FAIL provocation: «провок» at line 743
+FAIL provocation: «провоц» at line 748
+FAIL payments: «Платеж» at line 160
+FAIL payments: «оплат» at line 160
+FAIL payments: «платёж» at line 160
+FAIL payments: «платеж» at line 160
+FAIL payments: «оплат» at line 162
+FAIL payments: «платеж» at line 164
+FAIL payments: «платеж» at line 202
+FAIL payments: «платеж» at line 260
+FAIL payments: «оплат» at line 260
+FAIL payments: «платёж» at line 269
+FAIL payments: «оплат» at line 276
+FAIL payments: «платит» at line 435
+FAIL payments: «платёж» at line 437
+FAIL payments: «оплат» at line 437
+FAIL payments: «платеж» at line 441
+FAIL payments: «оплат» at line 441
+FAIL payments: «оплат» at line 457
+FAIL payments: «оплат» at line 466
+FAIL payments: «оплат» at line 466
+FAIL payments: «оплат» at line 473
+FAIL payments: «оплат» at line 474
+FAIL payments: «оплат» at line 474
+FAIL payments: «оплат» at line 488
+FAIL payments: «платеж» at line 488
+FAIL payments: «платёж» at line 488
+FAIL payments: «оплат» at line 498
+FAIL payments: «платит» at line 498
+FAIL payments: «платёж» at line 498
+FAIL payments: «оплат» at line 502
+FAIL payments: «оплат» at line 502
+FAIL payments: «платит» at line 502
+FAIL payments: «оплат» at line 504
+FAIL payments: «платеж» at line 506
+FAIL payments: «платит» at line 655
+FAIL payments: «платеж» at line 756
+FAIL payments: «оплат» at line 759
+FAIL payments: «платит» at line 759
+FAIL payments: «оплат» at line 763
+FAIL payments: «платеж» at line 763
+FAIL payments: «оплат» at line 767
+FAIL lawsuit analysis: «дебитор» at line 74
+FAIL lawsuit analysis: «исполнительные производств» at line 159
+FAIL lawsuit analysis: «исполнительные производств» at line 254
+FAIL lawsuit analysis: «дебитор» at line 298
+FAIL lawsuit analysis: «исполнительные производств» at line 330
+FAIL lawsuit analysis: «дебитор» at line 432
+FAIL lawsuit analysis: «Исполнительные производств» at line 446
+FAIL lawsuit analysis: «ФССП» at line 446
+FAIL lawsuit analysis: «дебитор» at line 455
+FAIL lawsuit analysis: «ФССП» at line 474
+FAIL lawsuit analysis: «исполнительные производств» at line 498
+FAIL lawsuit analysis: «исполнительных производств» at line 502
+FAIL lawsuit analysis: «исполнительные производств» at line 502
+FAIL lawsuit analysis: «дебитор» at line 504
+FAIL lawsuit analysis: «исполнительные производств» at line 506
+FAIL lawsuit analysis: «ФССП» at line 655
+FAIL lawsuit analysis: «дебитор» at line 655
+FAIL lawsuit analysis: «ФССП» at line 668
+FAIL lawsuit analysis: «дебитор» at line 672
+FAIL lawsuit analysis: «исполнительные производств» at line 756
+FAIL lawsuit analysis: «ФССП» at line 798
+FAIL lawsuit analysis: «исполнительных производств» at line 798
+FAIL lawsuit analysis: «ФССП» at line 798
+FAIL old case 1: «40 магазин» at line 432
+FAIL old case 1: «40 магазин» at line 448
+FAIL old case 1: «40 магазин» at line 474
+FAIL «вред» must appear in one paragraph only, translated into «полезность для встречи»
+FAIL missing: более 100 оптовых
+FAIL missing: 5–8 торговых сетей за 3 месяца
+FAIL missing: 20 визиток
+FAIL missing: 25 магазинов
+FAIL missing: компания действует, иски за годы работы есть
+FAIL missing: гибко и одновременно аккуратно
+FAIL missing: ### Этика сбора: гибко и одновременно аккуратно
+FAIL missing: Полезность для встречи
+FAIL missing: | Полезн. |
+FAIL missing: «не сейчас»
+FAIL missing: звонком «Д»
+FAIL missing: вопрос о сроках входа в матрицу
+FAIL missing: web.archive.org
+FAIL missing: ст. 152.2 ГК
+FAIL missing: гармония или эклектика
+FAIL missing: version: 0.3
+FAIL missing: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/683
+FAIL prompt text differs from section А.2 of the lecturer script
+99 problem(s)

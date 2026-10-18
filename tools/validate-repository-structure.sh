@@ -554,6 +554,10 @@ is_active_file() {
     research/reputation-technologies/exp/day4-rationale-685/mutation_reasons_685.py | \
     research/reputation-technologies/exp/day4-rationale-685/issue-685-before.log | \
     research/reputation-technologies/exp/day4-rationale-685/issue-685-after.log | \
+    research/reputation-technologies/exp/day3-rationale-683/README.md | \
+    research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
+    research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
+    research/reputation-technologies/exp/day3-rationale-683/issue-683-after.log | \
     research/reputation-technologies/gra-research-program/00-introduction.md | \
     research/reputation-technologies/gra-research-program/10-theory.md | \
     research/reputation-technologies/gra-research-program/20-taxonomy.md | \
