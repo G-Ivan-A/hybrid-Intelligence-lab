@@ -116,6 +116,10 @@ jobs:
 
       - name: Check Day 4 rationale and method slide structure and gate of #685
         run: python3 -I research/reputation-technologies/exp/day4-rationale-685/check-day4-685.py --self-test
+
+      - name: Check Day 4 Gamma deck and lecturer script of #687
+        run: python3 -I research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py --self-test
+
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
 
