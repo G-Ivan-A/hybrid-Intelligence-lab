@@ -1,0 +1,10 @@
+$ python3 -I research/reputation-technologies/exp/day4-rationale-685/check-day4-685.py --self-test   # after #685
+PASS: 26 slides in order — block А 1–4 and block Б 5–26 with every RFC v0.3 slide; titles of at most 6 words
+PASS: every slide is «**Ключевые тезисы:**» with 2–3 bullets and «**Логика и комментарий:**» with why here, a «потому что → поэтому» bridge, the method task, GRA and case 1, format and time
+PASS: slide 1 carries the program title, subtitle and slogan; slide 2 the lecturer's VERIFIED, PARTIAL and «?» with harmony or eclectic; slide 3 the course map with Действую today; slide 4 the three stops and the one-page card
+PASS: mandatory nodes: Г4-1 (9), ●/◐/○ for methods (13), contrasts ◐ and color types ○ (14), the eclectic rule +1, small distance, high mass (19), Промпт-стратег against the Day 2 statuses (21), three different steps of case 1 (23), the card and the return to the vote (24); votes on 6 and 18, prompt trial on 21
+PASS: the card lists point, status, polarity, distance, kind, style, channel, first phrase and what to record; case 1 gives «Д», «С» and the commercial director three different values in every row
+PASS: case 1 is proactive with over 100 wholesale buyers and a network of 25 stores; lawsuits stay an activity marker without forensic reading; «полезность для встречи» is named as an adaptation; rebranding is outside the day; no formula/F(t)/H1, «вред», payment talk, incoming request, trigger, risk, provocation or evaluative adjective
+PASS: all sections present, timing totals 90 minutes with 68% image technologies, SSOT links present, gate has 8 confirmed items, repository links resolve
+PASS: 52 broken fixtures rejected
+exit code: 0
