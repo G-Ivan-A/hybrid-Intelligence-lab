@@ -1,0 +1,41 @@
+$ python3 -I research/reputation-technologies/exp/day4-correction-689/check-day4-689.py --self-test   # after #689
+PASS: Variant 1 is unchanged (blob 6bae8fc84fc1d5d9d8b483f24aa3473a6768b54e); the three new files cite issue #689, use full URLs and their repository links resolve
+PASS: the analysis has the summary, examples, root cause and the proverb applied to the agent; every quote of Variant 1 matches its line; the missing dialog is a deviation; gate has 7 confirmed items
+PASS: Variant 2 lists 21 cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer does not apply GRA to himself; gate has 6 confirmed items
+PASS: the RFC keeps the deck structure, gives ONE verbatim phrase on deck slide 17, swaps the slide 19 title for «Правило выбора стиля» in 2 P0 swaps, files P1 as a deviation, links the deck permalink; gate has 6 confirmed items
+PASS: 39 broken fixtures rejected
+exit code: 0
+$ python3 -I research/reputation-technologies/exp/day4-correction-689/verify_deck_quotes_689.py   # after #689
+PASS: P0-1 slide 19: 47 → 20 characters (-27)
+PASS: P0-2 slide 19: 95 → 98 characters (+3)
+PASS: P1-1 slide 19: 110 → 98 characters (-12)
+PASS: P1-2 slide 19: 106 → 86 characters (-20)
+PASS: P1-3 slide 19: 84 → 58 characters (-26)
+PASS: P1-4 slide 19: 51 → 43 characters (-8)
+PASS: P1-5 slide 18: 99 → 90 characters (-9)
+PASS: P1-6 slide 18: 75 → 56 characters (-19)
+PASS: P1-7 slide 18: 41 → 44 characters (+3)
+PASS: P1-8 slide 2: 97 → 79 characters (-18)
+PASS: P1-9 slide 2: 11 → 11 characters (+0)
+PASS: P1-10 slide 2: 109 → 81 characters (-28)
+PASS: P1-11 slide 2: 43 → 41 characters (-2)
+PASS: P1-12 slide 23: 57 → 43 characters (-14)
+PASS: P1-13 slide 22: 58 → 53 characters (-5)
+PASS: P1-14 slide 24: 50 → 44 characters (-6)
+PASS: P1-15 slide 26: 78 → 73 characters (-5)
+PASS: P2-1 slide 11: 27 → 31 characters (+4)
+PASS: P2-2 slide 24: 100 → 79 characters (-21)
+PASS: P2-3 slide 18: 58 → 61 characters (+3)
+PASS: P2-4 slide 20: 73 → 73 characters (+0)
+PASS: 26 deck slides read, 0 swaps not found verbatim
+exit code: 0
+$ python3 -I research/reputation-technologies/exp/day4-rationale-685/check-day4-685.py --self-test   # Variant 1 still passes its own check
+PASS: 26 slides in order — block А 1–4 and block Б 5–26 with every RFC v0.3 slide; titles of at most 6 words
+PASS: every slide is «**Ключевые тезисы:**» with 2–3 bullets and «**Логика и комментарий:**» with why here, a «потому что → поэтому» bridge, the method task, GRA and case 1, format and time
+PASS: slide 1 carries the program title, subtitle and slogan; slide 2 the lecturer's VERIFIED, PARTIAL and «?» with harmony or eclectic; slide 3 the course map with Действую today; slide 4 the three stops and the one-page card
+PASS: mandatory nodes: Г4-1 (9), ●/◐/○ for methods (13), contrasts ◐ and color types ○ (14), the eclectic rule +1, small distance, high mass (19), Промпт-стратег against the Day 2 statuses (21), three different steps of case 1 (23), the card and the return to the vote (24); votes on 6 and 18, prompt trial on 21
+PASS: the card lists point, status, polarity, distance, kind, style, channel, first phrase and what to record; case 1 gives «Д», «С» and the commercial director three different values in every row
+PASS: case 1 is proactive with over 100 wholesale buyers and a network of 25 stores; lawsuits stay an activity marker without forensic reading; «полезность для встречи» is named as an adaptation; rebranding is outside the day; no formula/F(t)/H1, «вред», payment talk, incoming request, trigger, risk, provocation or evaluative adjective
+PASS: all sections present, timing totals 90 minutes with 68% image technologies, SSOT links present, gate has 8 confirmed items, repository links resolve
+PASS: 52 broken fixtures rejected
+exit code: 0
