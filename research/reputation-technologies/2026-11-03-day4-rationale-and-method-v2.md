@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-10-18
+version: 0.2
+updated: 2026-10-19
 temperature: 0.2
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/689"
 scope: reputation-engineering-course-day4
@@ -15,7 +15,7 @@ related_issues:
 
 **Файл 1 из трёх по issue [#689](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/689).** Это перечень имидж-технологий Дня 4 «Имиджевые стратегии для действия»: что делает каждая технология, когда её применять и как она выглядит. Нарратив дня — порядок слайдов и связки между ними — выстраивает фаундер. Этот файл связок не задаёт.
 
-[Вариант 1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-rationale-and-method.md) не изменён и остаётся историческим документом. Почему он не подходит, разобрано в [анализе интерпретации ИИ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-ai-interpretation-analysis.md). Как исправить готовые слайды без перегенерации — в [RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-crisis-mitigation-rfc.md).
+[Вариант 1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-rationale-and-method.md) не изменён и остаётся историческим документом. Почему он не подходит, разобрано в [анализе интерпретации ИИ](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-ai-interpretation-analysis.md). Как исправить уже созданные в Gamma колоды Дней 1–3 и что делать с колодой Дня 4 — в [RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-crisis-mitigation-rfc.md). Колода Дня 4 в Gamma ещё не генерировалась: [вариант 1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-presentation-gamma.md) не изменён, исправления внесены в [вариант 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-presentation-gamma-v2.md).
 
 ## Как читать
 
@@ -50,13 +50,13 @@ Issue #689 даёт пример условия применения: «при �
 
 На Дне 1 лектор согласился с одним: GRA полезна, чтобы собрать и описать открытые данные о нём самом ([разбор Дня 1, таблица утверждений](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-14-day1-lecturer-gra-research.md#61-выжимка-в-одну-таблицу)). Это согласие на описание данных, а не на выбор образа.
 
-На Дне 4 лектор не применяет GRA к себе для выбора стиля. Образ на эфир он выбирает сам, как специалист по имидж-технологиям, по технологиям этого перечня:
+На Дне 4 лектор вообще не применяет к себе ни GRA, ни статусы данных Дня 2. Образ на эфир он выбирает сам, как специалист по имидж-технологиям, по технологиям этого перечня:
 
 - принцип соответствия (технология 1): роль ведущего, деловая площадка Технограда, вечерний эфир;
 - «свой, но заметный» (технология 9): деловой костюм и одна деталь;
 - одна контрастная деталь по Иттену (технология 5).
 
-На слайде 2 это графитовый костюм, белая рубашка и один малахитовый платок. Факты о себе лектор называет с теми значками, которые они получили на Дне 1: это граница того, что сказать о себе, а не правило стиля.
+На слайде 2 это графитовый костюм, белая рубашка и один малахитовый платок. Факты о себе на слайде 2 варианта 2 названы просто, без статусов и значков.
 
 ## Перечень имидж-технологий
 
@@ -219,7 +219,7 @@ Issue #689 даёт пример условия применения: «при �
 
 ## Технологии на слайдах колоды
 
-Карта показывает, на каком слайде [колоды #688](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9d1fc9f0dc17924f04abb5c53260edcc97e897f9/research/reputation-technologies/2026-11-03-day4-presentation-gamma.md) уже есть изображение для технологии. Порядок технологий и связки между слайдами выбирает фаундер.
+Карта показывает, на каком слайде [колоды #688](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9d1fc9f0dc17924f04abb5c53260edcc97e897f9/research/reputation-technologies/2026-11-03-day4-presentation-gamma.md) уже есть изображение для технологии; номера слайдов в [варианте 2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-presentation-gamma-v2.md) те же. Порядок технологий и связки между слайдами выбирает фаундер.
 
 | Технология | Слайды |
 |---|---|
@@ -251,5 +251,5 @@ Issue #689 даёт пример условия применения: «при �
 - [x] В описаниях технологий нет массы, дистанции, полярности и меток данных как обоснования стиля, одежды и цвета.
 - [x] В описаниях технологий нет связки «потому что → поэтому»; условия записаны прямыми правилами «Если …, применяем …».
 - [x] У каждой технологии есть Название, Суть, Условие применения и Визуальный маркер.
-- [x] Лектор: на Дне 1 только согласие, что GRA собирает и описывает данные о нём; на Дне 4 он не применяет GRA к себе для выбора стиля.
+- [x] Лектор: на Дне 1 только согласие, что GRA собирает и описывает данные о нём; на Дне 4 он не применяет к себе ни GRA, ни статусы данных.
 - [x] Отклонение от примера условия «при полярности +1 и высокой массе аудитории» записано в формате фаундера.
