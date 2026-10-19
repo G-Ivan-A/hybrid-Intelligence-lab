@@ -508,6 +508,8 @@ is_active_file() {
     research/reputation-technologies/2026-11-02-day3-presentation-gamma.md | \
     research/reputation-technologies/2026-11-02-day3-slide-standard-and-gate.md | \
     research/reputation-technologies/2026-11-03-day4-rationale-and-method.md | \
+    research/reputation-technologies/2026-11-03-day4-presentation-gamma.md | \
+    research/reputation-technologies/2026-11-03-day4-lecturer-script.md | \
     research/reputation-technologies/2026-11-03-day4-rationale-and-method-v2.md | \
     research/reputation-technologies/2026-11-03-day4-ai-interpretation-analysis.md | \
     research/reputation-technologies/2026-11-03-day4-crisis-mitigation-rfc.md | \
@@ -557,6 +559,11 @@ is_active_file() {
     research/reputation-technologies/exp/day4-rationale-685/mutation_reasons_685.py | \
     research/reputation-technologies/exp/day4-rationale-685/issue-685-before.log | \
     research/reputation-technologies/exp/day4-rationale-685/issue-685-after.log | \
+    research/reputation-technologies/exp/day4-gamma-687/README.md | \
+    research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py | \
+    research/reputation-technologies/exp/day4-gamma-687/mutation_reasons_687.py | \
+    research/reputation-technologies/exp/day4-gamma-687/issue-687-before.log | \
+    research/reputation-technologies/exp/day4-gamma-687/issue-687-after.log | \
     research/reputation-technologies/exp/day4-correction-689/README.md | \
     research/reputation-technologies/exp/day4-correction-689/check-day4-689.py | \
     research/reputation-technologies/exp/day4-correction-689/mutation_reasons_689.py | \

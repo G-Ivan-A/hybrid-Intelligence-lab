@@ -1,0 +1,12 @@
+## Run 1: after #687
+
+$ python3 -I research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py --self-test
+PASS: deck has 26 slides with exactly the fields [SLIDE_TEXT], [IMAGE_PROMPT], [FOOTER_LINKS], the common header «Введение в репутационный инжиниринг · Имиджевые стратегии для действия» and titles of at most 6 words, the same as in the approved rationale of #685
+PASS: every slide line has a label; every slide has an intro paragraph and the cards Контекст → Цель/Проблема → Решение/Действие with a conclusion
+PASS: slide 2 shows VERIFIED, PARTIAL and «?», slide 3 keeps the course map with Day 4 as today; votes on 6 and 18, prompt trial on 21
+PASS: footers are «Источники: …» with full URLs, Telegram and «Москва, 10.2026», no air date, time, format or day counter; image prompts are English, monochrome, 16:9, with a malachite and gold accent and no readable text, people aged 30–50 only in fashion photos
+PASS: case 1 is proactive with over 100 wholesale buyers, lawsuits stay an activity marker; no «вред», formula/F(t)/H1, trigger, risk, provocation, evaluative adjective, price request, payment talk or slide-count appeal
+PASS: script marks `[СЛАЙД 1]`…`[СЛАЙД 26]` in order, every speech 150–180 words with a «потому что → поэтому» bridge and no 8-word copy of the slides; 90-minute timing of the rationale, Plan Б on 6, 18 and 21, all three speech marks, Г4-1…Г4-3 named
+PASS: «Сверьте с юристом» names 152-ФЗ, ст. 152.2 ГК РФ, 98-ФЗ, 38-ФЗ and 381-ФЗ; appendix А carries the Промпт-стратег of the rationale word for word and the director card, Б the three cards of first contact with the step derived from the status and the flawed AI answer with its key, В short answers; repository links resolve
+PASS: 78 broken fixtures rejected
+exit 0
