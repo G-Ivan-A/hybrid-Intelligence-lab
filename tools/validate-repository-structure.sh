@@ -513,6 +513,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-day4-rationale-and-method-v2.md | \
     research/reputation-technologies/2026-11-03-day4-ai-interpretation-analysis.md | \
     research/reputation-technologies/2026-11-03-day4-crisis-mitigation-rfc.md | \
+    research/reputation-technologies/2026-11-03-day4-presentation-gamma-v2.md | \
     research/reputation-technologies/2026-10-19-founder-dialog-689.txt | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
@@ -569,6 +570,7 @@ is_active_file() {
     research/reputation-technologies/exp/day4-correction-689/check-day4-689.py | \
     research/reputation-technologies/exp/day4-correction-689/mutation_reasons_689.py | \
     research/reputation-technologies/exp/day4-correction-689/verify_deck_quotes_689.py | \
+    research/reputation-technologies/exp/day4-correction-689/build_deck_v2_689.py | \
     research/reputation-technologies/exp/day4-correction-689/issue-689-before.log | \
     research/reputation-technologies/exp/day4-correction-689/issue-689-after.log | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
