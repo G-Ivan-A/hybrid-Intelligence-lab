@@ -100,6 +100,7 @@ PHRASE = ("> Коллеги, важное разграничение. GRA пом
           "на основе отдельной экспертизы.")
 SLIDE_17 = "речь к слайду 17 «Гармония: говорить языком точки»"
 TITLE_SWAP = re.compile(r"^\| Д4-\d+ \| 19 \| Заголовок \| \[колода Д4 в1:\d+\]\([^)]+\) «Стратегию выбирают полярность, дистанция, масса» \| Правило выбора стиля \|$", re.M)
+STEPS = ("День 3", "День 1", "День 2", "День 4", "RFC v0.3")
 CRITICAL_SLIDES = ("Д3-G-01", "Д3-G-02", "Д3-G-03")
 CONTRACT = "Ничего из этого RFC не применяется без согласования."
 DIAGNOSIS = ("Колоды созданы в Gamma", "Менять структуру колод — порядок и число слайдов, вёрстку, изображения — нельзя",
@@ -301,6 +302,9 @@ def validate_rfc(text, findings, deck2):
     positions = [text.find("\n" + head + "\n") for head in DAYS_1_3 + (DAY4,)]
     if -1 not in positions and max(positions[:-1]) > positions[-1]:
         errors.append(f"{name}: Days 1–3 do not come before Day 4")
+    steps = re.findall(r"^\d\. \*\*(День \d|RFC v0\.3)\.\*\*", section(text, "## Порядок действий"), re.M)
+    if steps != list(STEPS):
+        errors.append(f"{name}: the order of actions is not Days 3, 1, 2, then Day 4: {steps}")
     for phrase in DIAGNOSIS:
         if phrase not in section(text, "## Диагноз"):
             errors.append(f"{name}: the diagnosis lost «{phrase[:60]}»")
@@ -500,6 +504,7 @@ def self_test(texts):
         "dialog deletion not confirmed": mutate(texts, a, "- [x] Я удалил прикреплённый файл с диалогом", "- [x] Файл диалога оставлен"),
         "contract lost": mutate(texts, r, CONTRACT, "Замены можно применять сразу."),
         "Day 4 before Days 1–3": mutate_re(texts, r, r"^(## День 3: слайд-мост 32 — первым\n.*?)(^## День 4: колода вариант 2 вместо правок\n.*?)(?=^## Порядок действий)", r"\2\1"),
+        "Day 4 first in the order of actions": mutate_re(texts, r, r"^1\. \*\*День 3\.\*\*(.*?)^4\. \*\*День 4\.\*\*([^\n]*)", r"1. **День 4.**\2\n2. **День 3.**\1", count=1),
         "diagnosis lost": mutate(texts, r, "Менять структуру колод — порядок и число слайдов, вёрстку, изображения — нельзя", "Колоды можно перегенерировать"),
         "longer swaps not a deviation": mutate(texts, r, "Я предлагаю скорректировать [Ограничение «точечная правка 1–2 слов»]", "Можно расширить [Ограничение «точечная правка 1–2 слов»]"),
         "phrase reworded": mutate(texts, r, "GRA не диктует цвет вашего галстука.", "GRA не выбирает галстук."),
@@ -542,7 +547,7 @@ def main():
     print(f"PASS: {count} permalinked quotes match their lines at commit {SHA[:7]}; the register holds {FINDINGS_COUNT} findings and {OK_COUNT} correct interpretations, each quote in its line")
     print(f"PASS: the analysis has the summary, at least {V1_QUOTES} quotes of Variant 1, all four days assessed, the root cause and the proverb applied to the agent and laid over Variant 1; gate has {len(ANALYSIS_GATE)} confirmed items")
     print(f"PASS: Variant 2 lists {CARDS} cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer applies neither GRA nor statuses to himself; gate has {V2_GATE} confirmed items")
-    print(f"PASS: the RFC puts Days 1–3 before Day 4, keeps the contract, quotes ONE verbatim phrase for slide 17, swaps the slide 19 title for «Правило выбора стиля», every swap matches the register; gate has {RFC_GATE} confirmed items")
+    print(f"PASS: the RFC puts Days 1–3 before Day 4 in its sections and its order of actions, keeps the contract, quotes ONE verbatim phrase for slide 17, swaps the slide 19 title for «Правило выбора стиля», every swap matches the register; gate has {RFC_GATE} confirmed items")
     print(f"PASS: deck v2 is exactly what {BUILD.name} builds from deck v1, keeps its slides and titles slide 19 «Правило выбора стиля»")
     if args.self_test:
         print(f"PASS: {fixtures} broken fixtures rejected")
