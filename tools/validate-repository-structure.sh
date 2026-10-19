@@ -513,6 +513,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-day4-rationale-and-method-v2.md | \
     research/reputation-technologies/2026-11-03-day4-ai-interpretation-analysis.md | \
     research/reputation-technologies/2026-11-03-day4-crisis-mitigation-rfc.md | \
+    research/reputation-technologies/2026-10-19-founder-dialog-689.txt | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
