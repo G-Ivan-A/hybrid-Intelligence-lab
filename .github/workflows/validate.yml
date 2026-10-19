@@ -119,6 +119,8 @@ jobs:
 
       - name: Check Day 4 Gamma deck and lecturer script of #687
         run: python3 -I research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py --self-test
+      - name: Check Day 4 correction files and unchanged Variant 1 of #689
+        run: python3 -I research/reputation-technologies/exp/day4-correction-689/check-day4-689.py --self-test
 
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
