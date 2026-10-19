@@ -1,25 +1,57 @@
 #!/usr/bin/env python3
-"""Check issue #689: the analysis of the AI interpretation failure quotes Variant 1 line by line and explains the proverb, Variant 2 is a clean catalog of image technologies without GRA, the RFC fixes the generated deck with one lecturer phrase and a few word swaps, Variant 1 stays byte for byte as PR #686 accepted it, and all gate items are confirmed."""
+"""Check issue #689: the analysis assesses Days 1–4 against the founder's dialog with quotes checked line by line, Variant 2 is a clean catalog of image technologies without GRA, the RFC proposes Days 1–3 first, ONE lecturer phrase and word swaps, deck v2 of Day 4 is rebuilt from the untouched deck v1, the register of findings matches its source lines, the first variants stay byte for byte, the dialog file is deleted and all gate items are confirmed."""
 import argparse
 import hashlib
+import json
 import re
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[4]
+HERE = Path(__file__).resolve().parent
 DOMAIN = ROOT / "research/reputation-technologies"
 V1 = DOMAIN / "2026-11-03-day4-rationale-and-method.md"
+DECK1 = DOMAIN / "2026-11-03-day4-presentation-gamma.md"
 V2 = DOMAIN / "2026-11-03-day4-rationale-and-method-v2.md"
 ANALYSIS = DOMAIN / "2026-11-03-day4-ai-interpretation-analysis.md"
 RFC = DOMAIN / "2026-11-03-day4-crisis-mitigation-rfc.md"
-NEW = (ANALYSIS, V2, RFC)
-FILES = (V1,) + NEW
+DECK2 = DOMAIN / "2026-11-03-day4-presentation-gamma-v2.md"
+FINDINGS = HERE / "findings-days-1-4-689.json"
+BUILD = HERE / "build_deck_v2_689.py"
+DIALOG = DOMAIN / "2026-10-19-founder-dialog-689.txt"
+NEW = (ANALYSIS, V2, RFC, DECK2)
+FILES = (V1, DECK1) + NEW + (FINDINGS,)
 SOURCE = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/689"
 REPO_BLOB = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/"
-# The deck of #688 is not in main yet: it is linked by a permalink to the commit the slides were generated from.
-DECK = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/9d1fc9f0dc17924f04abb5c53260edcc97e897f9/research/reputation-technologies/2026-11-03-day4-presentation-gamma.md"
 LINK = re.compile(r"\]\(([^)\s]+)\)")
-# #689: Variant 1 stays unchanged — the git blob hash of the file PR #686 merged into main (54dcc91).
-V1_BLOB = "6bae8fc84fc1d5d9d8b483f24aa3473a6768b54e"
+# #689 and the founder's comment on PR #690: the first variants stay unchanged — git blob hashes of the files in main.
+FIRST_VARIANTS = {V1: "6bae8fc84fc1d5d9d8b483f24aa3473a6768b54e", DECK1: "19df63d29dba90a77f7736efdf08bc7163fc2e6a"}
+# Quotes link to the commit that added the founder's dialog: the dialog file is deleted later, the commit keeps it.
+SHA = "16415e90abc2d6489ed0ea9582236a3af15bb648"
+PERMALINK = re.compile(r"\[([^\]\n]+):(\d+)\]\(https://github\.com/G-Ivan-A/hybrid-Intelligence-lab/blob/" + SHA
+                       + r"/research/reputation-technologies/([^?)#\s]+)\?plain=1#L(\d+)\)")
+LABELS = {
+    "диалог": "2026-10-19-founder-dialog-689.txt",
+    "колода Д1": "2026-10-14-day1-presentation-gamma.md",
+    "сценарий Д1": "2026-10-14-day1-lecturer-script.md",
+    "обоснование Д1": "2026-10-07-day1-rationale-and-method-653.md",
+    "разбор лектора Д1": "2026-10-14-day1-lecturer-gra-research.md",
+    "колода Д2": "2026-10-30-day2-presentation-gamma.md",
+    "черновик колоды Д2": "2026-10-30-day2-presentation.md",
+    "сценарий Д2": "2026-10-30-day2-lecturer-script.md",
+    "обоснование Д2": "2026-10-30-day2-rationale-and-method.md",
+    "колода Д3": "2026-11-02-day3-presentation-gamma.md",
+    "черновик колоды Д3": "2026-11-02-day3-presentation.md",
+    "сценарий Д3": "2026-11-02-day3-lecturer-script.md",
+    "обоснование Д3": "2026-11-02-day3-rationale-and-method.md",
+    "стандарт Д3": "2026-11-02-day3-slide-standard-and-gate.md",
+    "вариант 1": V1.name,
+    "колода Д4 в1": DECK1.name,
+    "сценарий Д4": "2026-11-03-day4-lecturer-script.md",
+    "RFC v0.3": "2026-10-12-rfc-days-1-3-logic.md",
+}
 # The founder's deviation format.
 DEVIATION = re.compile(r"Я предлагаю скорректировать \[[^\]\n]+\], потому что вариант \[[^\]\n]+\] эффективнее решает задачу \[[^\]\n]+\]")
 
@@ -33,36 +65,56 @@ BRIDGE = re.compile(r"потому что|поэтому", re.I)
 V2_SECTIONS = ("## Как читать", "## Граница: что этот перечень не делает", "## Отклонение от постановки",
                "## Лектор на Дне 4", CATALOG_HEAD, CATALOG_END, "## Гейт-проверка Файла 1")
 LECTURER = ("На Дне 1 лектор согласился с одним: GRA полезна, чтобы собрать и описать открытые данные о нём самом",
-            "На Дне 4 лектор не применяет GRA к себе для выбора стиля")
+            "На Дне 4 лектор вообще не применяет к себе ни GRA, ни статусы данных")
 V2_GATE = 6
 
-# Analysis: the four parts of direction 1, the proverb and quotes of Variant 1 checked against its lines.
+# Analysis: the four parts of direction 1 for all four days, the proverb, quotes checked against their lines.
 PROVERB = "Заставь дурака молиться, он и лоб расшибет"
-ANALYSIS_SECTIONS = ("## Источник разбора", "## Граница, которую нарушил ИИ", "## 1. Суммаризация проблемы",
-                     "## 2. Конкретные примеры провала", "## 3. Корневая причина",
-                     f"## 4. «{PROVERB}»: что это значит для ИИ-агента", "## 5. Что исправлено", "## Гейт-проверка")
-ROW_QUOTE = re.compile(r"^\| строка (\d+)[^|\n]*\| «(.+)» \| [^|\n]+ \|$", re.M)
-ITEM_QUOTE = re.compile(r"^(?:- )?[Сс]трока (\d+)[^:\n]*: [^«\n]*«(.+)»", re.M)
-QUOTES = 20
-ANALYSIS_GATE = 7
-NO_DIALOG = "Файл диалога: неприменимо"
+EXAMPLES = "## 2. Конкретные примеры провала: День 4"
+DAYS = "## 3. Независимая оценка по дням"
+DAY_HEADS = ("### 3.1. День 1", "### 3.2. День 2", "### 3.3. День 3", "### 3.4. День 4")
+PROVERB_HEAD = f"## 5. «{PROVERB}»: что это значит для ИИ-агента"
+ANALYSIS_SECTIONS = ("## Источник разбора", "## Граница: что делает каждая модель", "## 1. Суммаризация проблемы",
+                     EXAMPLES, DAYS, "## 4. Корневая причина", PROVERB_HEAD, "### 5.1. Интерпретация для агента",
+                     "### 5.2. Наложение на Вариант 1", "### 5.3. Наложение на Дни 1–3", "## Гейт-проверка")
+V1_QUOTES = 20
+DAY_QUOTES = 3
+# The seven gate items of the issue, by their key words.
+ANALYSIS_GATE = ("Я полностью прочитал прикреплённый файл диалога и усвоил границы применения GRA", "Я создал Файл 2",
+                 "Я создал Файл 1", "Я создал Файл 3", "Я не трогал и не удалял исходный файл `2026-11-03-day4-rationale-and-method.md` (Вариант 1)",
+                 "Все 3 файла созданы в каталоге `research/reputation-technologies/`", "Я удалил прикреплённый файл с диалогом")
 
-# RFC: the four parts of direction 3, the founder's phrase verbatim and the P0 word swap on slide 19.
-RFC_SECTIONS = ("## 1. Диагноз", "## 2. Решение для сценария лектора: одна фраза на слайде 17",
-                "## 3. Решение для презентации: точечные замены в `[SLIDE_TEXT]`", "### P0. Обязательно: две замены на слайде 19",
-                "## 4. Вывод", "## Гейт-проверка Файла 3")
+# RFC: Days 1–3 first, Day 4 deck v2 instead of edits, the founder's phrase verbatim once, the slide 19 title swap.
+DAY4 = "## День 4: колода вариант 2 вместо правок"
+PHRASE_HEAD = "### Фраза в сценарий лектора: слайд 17"
+PROMPT_HEAD = "### Промпт-стратег: исправленное правило 2"
+RFC_SECTIONS = ("## Диагноз", "## Как править слайды в Gamma", "### Отклонение: где замена длиннее 1–2 слов",
+                "## День 3: слайд-мост 32 — первым", "## День 1: замены или генерация с нуля",
+                "### Вариант: сгенерировать колоду Дня 1 с нуля", "## День 2: по желанию", "## RFC v0.3: каркас курса",
+                DAY4, PHRASE_HEAD, "### Правки сценария Дня 4", PROMPT_HEAD, "## Порядок действий", "## Вывод",
+                "## Гейт-проверка Файла 3")
+DAYS_1_3 = ("## День 3: слайд-мост 32 — первым", "## День 1: замены или генерация с нуля", "## День 2: по желанию")
 PHRASE = ("> Коллеги, важное разграничение. GRA помогла нам собрать данные о том, КОМУ писать. Но то, КАК мы выглядим "
           "и звучим в этом письме, — это отдельная область: имидж-технологии. GRA не диктует цвет вашего галстука. "
           "Статус VERIFIED не определяет стиль письма. Данные собирает GRA, но решение о подаче принимает человек "
           "на основе отдельной экспертизы.")
-SLIDE_17 = "**Слайд 17 колоды «Гармония: говорить языком точки»**"
-P0_TITLE = "| P0-1 | 19 | Заголовок | Стратегию выбирают полярность, дистанция, масса | **Правило выбора стиля** |"
-P0_ROW = re.compile(r"^\| P0-\d+ \| ", re.M)
-P0_ROWS = 2
-SWAP_ROW = re.compile(r"^\| (P\d-\d+) \| (\d+) \| [^|\n]+ \| ([^|\n]+) \| ([^|\n]+) \|$", re.M)
-DIAGNOSIS = ("26 слайдов сгенерированы в Gamma", "Менять структуру колоды — порядок и число слайдов, вёрстку, изображения — нельзя")
-CONCLUSION = ("кредиты Gamma", "Новой генерации нет", "В эфире", "В тексте слайда 19")
+SLIDE_17 = "речь к слайду 17 «Гармония: говорить языком точки»"
+TITLE_SWAP = re.compile(r"^\| Д4-\d+ \| 19 \| Заголовок \| \[колода Д4 в1:\d+\]\([^)]+\) «Стратегию выбирают полярность, дистанция, масса» \| Правило выбора стиля \|$", re.M)
+CRITICAL_SLIDES = ("Д3-G-01", "Д3-G-02", "Д3-G-03")
+CONTRACT = "Ничего из этого RFC не применяется без согласования."
+DIAGNOSIS = ("Колоды созданы в Gamma", "Менять структуру колод — порядок и число слайдов, вёрстку, изображения — нельзя",
+             "**День 4.** В Gamma не генерировался")
+CONCLUSION = ("кредиты Gamma", "Новой генерации нет", "в эфире", "«Правило выбора стиля»")
+RULE_2 = "2. Данные о связи — массу, дистанцию, полярность и статусы — используй только для описания ситуации, не для выбора стиля."
 RFC_GATE = 6
+ROW = re.compile(r"^\| (?:Д\d|RFC)-.*\|$", re.M)
+SWAP_CELL = re.compile(r"^\[[^\]]+\]\([^)]+\) «(.*)»$")
+
+# Deck v2: rebuilt from deck v1, same slides, slide 19 titled «Правило выбора стиля».
+SLIDE = re.compile(r"^### Слайд (\d+)\.", re.M)
+DECK2_TITLE = ("### Слайд 19. Правило выбора стиля", "- Заголовок: Правило выбора стиля")
+DECK2_GONE = "Стратегию выбирают"
+FINDINGS_COUNT, OK_COUNT = 228, 65
 
 
 def frontmatter(text):
@@ -100,31 +152,88 @@ def broken_links(text, texts):
                 yield f"{url}: anchor not found"
 
 
+SOURCE_LINES = {}
+
+
+def source_lines(name):
+    """Lines of a file at the commit the quotes link to; CI checks out the full history."""
+    if name not in SOURCE_LINES:
+        result = subprocess.run(["git", "-C", str(ROOT), "show", f"{SHA}:research/reputation-technologies/{name}"],
+                                capture_output=True, text=True)
+        SOURCE_LINES[name] = result.stdout.split("\n") if result.returncode == 0 else None
+    return SOURCE_LINES[name]
+
+
+def quote_after(text, start):
+    """The «quote» right after a permalink, with nested «» kept."""
+    if not text.startswith(" «", start):
+        return None
+    depth, i = 1, start + 2
+    for j in range(i, len(text)):
+        depth += {"«": 1, "»": -1}.get(text[j], 0)
+        if depth == 0:
+            return text[i:j]
+    return None
+
+
+def in_line(quote, line):
+    """Every piece of a quote between «…» stands in the line, in order."""
+    pos, pieces = 0, [piece.strip() for piece in quote.split("…") if piece.strip()]
+    for piece in pieces:
+        pos = line.find(piece, pos)
+        if pos < 0:
+            return False
+        pos += len(piece)
+    return bool(pieces)
+
+
+def permalinks(name, text):
+    """Check every permalink: label matches file and line, the quote after it stands in that line at commit SHA."""
+    errors, count = [], 0
+    for match in PERMALINK.finditer(text):
+        count += 1
+        label, number, path, anchor = match[1], int(match[2]), match[3], int(match[4])
+        if LABELS.get(label) != path or number != anchor:
+            errors.append(f"{name}: permalink [{label}:{number}] points to {path}#L{anchor}")
+            continue
+        lines = source_lines(path)
+        if lines is None:
+            errors.append(f"{name}: cannot read {path} at commit {SHA[:7]}: checkout the full history (fetch-depth: 0)")
+            continue
+        quote = quote_after(text, match.end())
+        if quote is None:
+            errors.append(f"{name}: permalink [{label}:{number}] has no «quote» after it")
+        elif not 0 < number <= len(lines) or not in_line(quote, lines[number - 1]):
+            errors.append(f"{name}: the quote of [{label}:{number}] is not in that line: «{quote[:60]}»")
+    return errors, count
+
+
 def section(text, head, end=None):
-    """Body of a section from its heading to the next heading of the same level, or to end."""
-    if head not in text:
+    """Body of a section from its heading to the next heading of the same or higher level, or to end."""
+    match = re.search(r"^" + re.escape(head) + r".*$", text, re.M)
+    if not match:
         return ""
-    body = text.split(head, 1)[1]
+    body = text[match.end():]
     if end:
         return body.split(end, 1)[0]
-    level = head.split(" ", 1)[0]
-    return re.split(r"^" + level + r" ", body, maxsplit=1, flags=re.M)[0]
+    level = len(head.split(" ", 1)[0])
+    return re.split(r"^#{1,%d} " % level, body, maxsplit=1, flags=re.M)[0]
 
 
 def gate(name, text, head, expected):
     body = section(text, head)
-    done, open_items = re.findall(r"^- \[x\] ", body, re.M), re.findall(r"^- \[ \] ", body, re.M)
-    if len(done) != expected or open_items:
-        return [f"{name}: gate has {len(done)} confirmed and {len(open_items)} open items, expected {expected} confirmed"]
+    done, open_items = re.findall(r"^- \[x\] (.*)$", body, re.M), re.findall(r"^- \[ \] ", body, re.M)
+    count = expected if isinstance(expected, int) else len(expected)
+    if len(done) != count or open_items:
+        return [f"{name}: gate has {len(done)} confirmed and {len(open_items)} open items, expected {count} confirmed"]
+    if not isinstance(expected, int):
+        return [f"{name}: gate item {i} does not start with «{item}»" for i, (item, line) in enumerate(zip(expected, done), 1)
+                if not line.startswith(item)]
     return []
 
 
 def sections(name, text, heads):
     return [f"{name}: section «{head}» missing" for head in heads if not re.search(r"^" + re.escape(head) + r"$", text, re.M)]
-
-
-def plain(text):
-    return text.replace("**", "").replace("*", "")
 
 
 def validate_v2(text):
@@ -145,8 +254,7 @@ def validate_v2(text):
             errors.append(f"{name}: card {match[1]} is not Название, Суть, Условие применения «Если …», Визуальный маркер")
         elif " применяем " not in lines[2]:
             errors.append(f"{name}: card {match[1]} condition is not a direct rule «Если …, применяем …»")
-    deviation = section(text, "## Отклонение от постановки")
-    if not DEVIATION.search(deviation):
+    if not DEVIATION.search(section(text, "## Отклонение от постановки")):
         errors.append(f"{name}: the deviation from the condition examples is not in the founder's format")
     lecturer = section(text, "## Лектор на Дне 4")
     for phrase in LECTURER:
@@ -156,59 +264,138 @@ def validate_v2(text):
     return errors
 
 
-def validate_analysis(text, v1):
+def validate_analysis(text, findings):
     errors, name = sections(ANALYSIS.name, text, ANALYSIS_SECTIONS), ANALYSIS.name
-    lines = plain(v1).splitlines()
-    quotes = [(int(m[1]), m[2]) for pattern in (ROW_QUOTE, ITEM_QUOTE) for m in pattern.finditer(section(text, "## 2. Конкретные примеры провала"))]
-    if len(quotes) < QUOTES:
-        errors.append(f"{name}: {len(quotes)} quotes of Variant 1 with line numbers, expected at least {QUOTES}")
-    for number, quote in quotes:
-        line = lines[number - 1] if 0 < number <= len(lines) else ""
-        parts = [part.strip() for part in plain(quote).split("…") if part.strip()]
-        if not parts or any(part not in line for part in parts):
-            errors.append(f"{name}: the quote of line {number} is not in Variant 1: «{quote[:60]}»")
-    if not DEVIATION.search(section(text, "## Источник разбора")):
-        errors.append(f"{name}: the missing dialog file has no deviation in the founder's format")
+    examples = section(text, EXAMPLES)
+    quotes = len(re.findall(r"\[вариант 1:\d+\]\(", examples))
+    if quotes < V1_QUOTES:
+        errors.append(f"{name}: {quotes} permalinked quotes of Variant 1 in the examples, expected at least {V1_QUOTES}")
     for phrase in ("потому что → поэтому", "масса", "дистанция", "полярность"):
-        if phrase not in section(text, "## 2. Конкретные примеры провала").lower():
+        if phrase not in examples.lower():
             errors.append(f"{name}: the examples do not show «{phrase}»")
-    proverb = section(text, f"## 4. «{PROVERB}»: что это значит для ИИ-агента")
+    for head in DAY_HEADS:
+        count = len(PERMALINK.findall(section(text, head)))
+        if count < DAY_QUOTES:
+            errors.append(f"{name}: «{head}» has {count} permalinked quotes, expected at least {DAY_QUOTES}")
+    proverb = section(text, "### 5.1. Интерпретация для агента")
     if len(re.findall(r"^\d\. \*\*", proverb, re.M)) < 3 or "| Расшибленный лоб |" not in proverb:
         errors.append(f"{name}: the proverb is not applied to the agent: roles table and at least three mechanisms")
-    if NO_DIALOG not in section(text, "## Гейт-проверка"):
-        errors.append(f"{name}: gate item 7 does not say the dialog file was not applicable")
+    if "| Расшибленный лоб |" not in section(text, "### 5.2. Наложение на Вариант 1"):
+        errors.append(f"{name}: the proverb is not laid over Variant 1")
+    if findings:
+        total = f"Все {len(findings['findings'])} найденных нарушений и {len(findings['ok'])} верных интерпретаций"
+        if total not in text:
+            errors.append(f"{name}: the summary does not match the register: «{total}» missing")
     errors += gate(name, text, "## Гейт-проверка", ANALYSIS_GATE)
     return errors
 
 
-def validate_rfc(text):
+def cells(row):
+    return [cell.strip() for cell in row.strip("|").split(" | ")]
+
+
+def validate_rfc(text, findings, deck2):
     errors, name = sections(RFC.name, text, RFC_SECTIONS), RFC.name
+    if CONTRACT not in text.split("## Диагноз", 1)[0]:
+        errors.append(f"{name}: the intro does not say nothing is applied without the founder's agreement")
+    positions = [text.find("\n" + head + "\n") for head in DAYS_1_3 + (DAY4,)]
+    if -1 not in positions and max(positions[:-1]) > positions[-1]:
+        errors.append(f"{name}: Days 1–3 do not come before Day 4")
     for phrase in DIAGNOSIS:
-        if phrase not in section(text, "## 1. Диагноз"):
+        if phrase not in section(text, "## Диагноз"):
             errors.append(f"{name}: the diagnosis lost «{phrase[:60]}»")
-    lecturer = section(text, "## 2. Решение для сценария лектора: одна фраза на слайде 17")
-    if PHRASE not in lecturer:
-        errors.append(f"{name}: the founder's phrase is not quoted verbatim in the lecturer section")
+    if not DEVIATION.search(section(text, "### Отклонение: где замена длиннее 1–2 слов")):
+        errors.append(f"{name}: the longer swaps are not a deviation in the founder's format")
+    phrase = section(text, PHRASE_HEAD)
+    if PHRASE not in phrase:
+        errors.append(f"{name}: the founder's phrase is not quoted verbatim in «{PHRASE_HEAD}»")
     if text.count("Коллеги, важное разграничение.") != 1:
         errors.append(f"{name}: the lecturer gets not exactly ONE phrase")
-    if SLIDE_17 not in lecturer:
-        errors.append(f"{name}: the phrase is not placed on deck slide 17")
-    if P0_TITLE not in text:
-        errors.append(f"{name}: P0 does not swap the slide 19 title for «Правило выбора стиля»")
-    p0 = section(text, "### P0. Обязательно: две замены на слайде 19")
-    if len(P0_ROW.findall(p0)) != P0_ROWS:
-        errors.append(f"{name}: P0 has {len(P0_ROW.findall(p0))} swaps, expected {P0_ROWS}")
-    if not DEVIATION.search(section(text, "### Отклонение: необязательный список P1")):
-        errors.append(f"{name}: the optional P1 list is not a deviation in the founder's format")
-    for swap, slide, old, new in SWAP_ROW.findall(text):
-        if old.strip() == new.strip():
-            errors.append(f"{name}: swap {swap} on slide {slide} changes nothing")
-    if f"]({DECK})" not in text:
-        errors.append(f"{name}: the deck permalink of #688 is missing")
+    if SLIDE_17 not in phrase:
+        errors.append(f"{name}: the phrase is not placed in the speech to deck slide 17")
+    if not TITLE_SWAP.search(section(text, DAY4)):
+        errors.append(f"{name}: Day 4 does not swap the slide 19 title for «Правило выбора стиля»")
+    day3 = section(text, DAYS_1_3[0])
+    for item in CRITICAL_SLIDES:
+        if f"| {item} | 32 |" not in day3:
+            errors.append(f"{name}: Day 3 lost the critical slide 32 swap {item}")
+    rule = re.search(r"```text\n(.*?)```", section(text, PROMPT_HEAD), re.S)
+    if not rule or not rule[1].startswith(RULE_2) or "при полярности +1" in rule[1]:
+        errors.append(f"{name}: the corrected prompt rule 2 is missing or still ties eclecticism to polarity")
+    known = {item["id"]: item for item in findings["findings"]} if findings else {}
+    rows = 0
+    for match in ROW.finditer(text):
+        row = cells(match[0])
+        swap = next((i for i, cell in enumerate(row[:-1]) if SWAP_CELL.match(cell)), None)
+        if not re.match(r"(Д\d|RFC)-", row[0]) or swap is None:
+            continue
+        old, new = SWAP_CELL.match(row[swap])[1], row[swap + 1]
+        if old == new:
+            errors.append(f"{name}: swap {row[0]} changes nothing")
+        elif row[0] in known:
+            rows += 1
+            if (old, new) != (known[row[0]]["was"], known[row[0]]["now"]):
+                errors.append(f"{name}: row {row[0]} does not match the register: «{new[:60]}»")
+        elif re.match(r"Д4-\d+$", row[0]) and new not in deck2:
+            errors.append(f"{name}: Day 4 swap {row[0]} is not in deck v2: «{new[:60]}»")
+    if known and rows < 100:
+        errors.append(f"{name}: {rows} rows match the register, expected at least 100")
     for phrase in CONCLUSION:
-        if phrase not in section(text, "## 4. Вывод"):
+        if phrase not in section(text, "## Вывод"):
             errors.append(f"{name}: the conclusion lost «{phrase}»")
     errors += gate(name, text, "## Гейт-проверка Файла 3", RFC_GATE)
+    return errors
+
+
+BUILT = {}
+
+
+def build_deck2(deck1):
+    """Deck v2 as build_deck_v2_689.py builds it from the given deck v1."""
+    if deck1 not in BUILT:
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / DECK1.name).write_text(deck1, encoding="utf-8")
+            result = subprocess.run([sys.executable, "-I", str(BUILD), tmp], capture_output=True, text=True)
+            out = Path(tmp) / DECK2.name
+            BUILT[deck1] = out.read_text(encoding="utf-8") if result.returncode == 0 and out.is_file() else None
+    return BUILT[deck1]
+
+
+def validate_deck2(text, deck1):
+    errors, name = [], DECK2.name
+    if SLIDE.findall(text) != SLIDE.findall(deck1):
+        errors.append(f"{name}: slides differ from deck v1: {SLIDE.findall(text)[:5]}…")
+    for phrase in DECK2_TITLE:
+        if phrase not in text:
+            errors.append(f"{name}: slide 19 is not titled «Правило выбора стиля»: «{phrase}» missing")
+    if DECK2_GONE in text:
+        errors.append(f"{name}: «{DECK2_GONE}» is still on the slides")
+    if build_deck2(deck1) != text:
+        errors.append(f"{name}: differs from what {BUILD.name} builds from deck v1")
+    return errors
+
+
+def validate_findings(findings):
+    errors, name = [], FINDINGS.name
+    if findings.get("source_commit") != SHA:
+        errors.append(f"{name}: source_commit is not {SHA[:7]}")
+    items, ok = findings.get("findings", []), findings.get("ok", [])
+    if len(items) != FINDINGS_COUNT or len(ok) != OK_COUNT:
+        errors.append(f"{name}: {len(items)} findings and {len(ok)} correct interpretations, expected {FINDINGS_COUNT} and {OK_COUNT}")
+    ids = [item["id"] for item in items]
+    if len(set(ids)) != len(ids):
+        errors.append(f"{name}: finding ids repeat")
+    for item in items + ok:
+        lines = source_lines(item["file"])
+        where = f"{item.get('id', 'ok')} {item['file']}:{item['line']}"
+        if lines is None:
+            errors.append(f"{name}: cannot read {item['file']} at commit {SHA[:7]}")
+        elif not 0 < item["line"] <= len(lines) or not in_line(item["quote"], lines[item["line"] - 1]):
+            errors.append(f"{name}: {where}: the quote is not in that line")
+        elif "was" in item and (item["was"] not in lines[item["line"] - 1] or item["was"] == item["now"]):
+            errors.append(f"{name}: {where}: «was» is not in the line or equals «now»")
+        if "id" in item and (any(kind not in findings["types"] for kind in item["type"].split(",")) or item["severity"] not in findings["severity"]):
+            errors.append(f"{name}: {where}: unknown type or severity")
     return errors
 
 
@@ -218,12 +405,22 @@ def blob(text):
 
 
 def validate(texts):
+    validate.permalinks = 0
     missing = [path for path in FILES if not texts[path]]
     errors = [f"{path.name}: file not found" for path in missing]
     if missing:
         return errors
-    if blob(texts[V1]) != V1_BLOB:
-        errors.append(f"{V1.name}: Variant 1 changed: blob {blob(texts[V1])}, expected {V1_BLOB}")
+    for path, expected in FIRST_VARIANTS.items():
+        if blob(texts[path]) != expected:
+            errors.append(f"{path.name}: the first variant changed: blob {blob(texts[path])}, expected {expected}")
+    if texts.get(DIALOG):
+        errors.append(f"{DIALOG.name}: the dialog file is not deleted after the three files were committed")
+    try:
+        findings = json.loads(texts[FINDINGS])
+    except ValueError as error:
+        errors.append(f"{FINDINGS.name}: not JSON: {error}")
+        findings = None
+    count = 0
     for path in NEW:
         text, name = texts[path], path.name
         if frontmatter(text).get("source", "").strip('"') != SOURCE:
@@ -234,9 +431,17 @@ def validate(texts):
         errors += [f"{name}: {error}" for error in broken_links(text, texts)]
         if "<!--" in text:
             errors.append(f"{name}: a draft comment is left in the file")
-    errors += validate_analysis(texts[ANALYSIS], texts[V1])
+        if path != DECK2:
+            found, number = permalinks(name, text)
+            errors += found
+            count += number
+    if findings:
+        errors += validate_findings(findings)
+    errors += validate_analysis(texts[ANALYSIS], findings)
     errors += validate_v2(texts[V2])
-    errors += validate_rfc(texts[RFC])
+    errors += validate_rfc(texts[RFC], findings, texts[DECK2])
+    errors += validate_deck2(texts[DECK2], texts[DECK1])
+    validate.permalinks = count
     return errors
 
 
@@ -253,19 +458,29 @@ def mutate_re(texts, path, pattern, new, count=1):
 
 
 def self_test(texts):
-    a, v, r = ANALYSIS, V2, RFC
+    a, v, r, d, f = ANALYSIS, V2, RFC, DECK2, FINDINGS
+    dialog = dict(texts)
+    dialog[DIALOG] = "1. запрещего перегенерировать\n"
     broken = {
         "RFC missing": mutate_re(texts, r, r".*", "", count=1),
+        "dialog file kept": dialog,
         "Variant 1 edited": mutate(texts, V1, "Стратегию выбирают полярность, дистанция, масса", "Правило выбора стиля"),
         "Variant 1 deleted": mutate_re(texts, V1, r".*", "", count=1),
+        "deck v1 edited": mutate(texts, DECK1, "Стратегию выбирают полярность, дистанция, масса", "Правило выбора стиля"),
         "source is another issue": mutate(texts, v, 'source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/689"', 'source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/685"'),
         "relative link": mutate(texts, a, "](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/", "](../"),
         "broken anchor": mutate(texts, r, "#нумерация-документ-и-rfc-v03", "#нумерация"),
-        "draft comment left": mutate(texts, r, "## 4. Вывод", "<!-- TODO -->\n## 4. Вывод"),
+        "draft comment left": mutate(texts, r, "## Вывод", "<!-- TODO -->\n## Вывод"),
+        "permalink quote altered": mutate(texts, a, "«Стратегию выбирают полярность, дистанция, масса", "«Стратегию выбирают имидж-технологии"),
+        "permalink line shifted": mutate_re(texts, a, r"\[вариант 1:394\]\((.*?)#L394\)", r"[вариант 1:395](\1#L395)"),
+        "permalink label mismatch": mutate_re(texts, r, r"\[сценарий Д4:424\]\((.*?)#L424\)", r"[сценарий Д4:424](\1#L426)"),
+        "permalink to another file": mutate(texts, r, "[колода Д3:866](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/" + SHA + "/research/reputation-technologies/2026-11-02-day3-presentation-gamma.md",
+                                            "[колода Д3:866](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/" + SHA + "/research/reputation-technologies/2026-11-02-day3-presentation.md"),
+        "dialog quote altered": mutate(texts, a, "«GRA запрещено применять к имидж-технологиям»", "«GRA можно применять к имидж-технологиям»"),
         "mass justifies style in the catalog": mutate(texts, v, "- **Условие применения:** Если готовим любой первый контакт", "- **Условие применения:** Если масса аудитории высокая и готовим любой первый контакт"),
         "polarity in a visual marker": mutate(texts, v, "- **Визуальный маркер:** Графит и белый", "- **Визуальный маркер:** При полярности «?» графит и белый"),
         "status label in the catalog": mutate(texts, v, "- **Суть:** Образ соответствует роли", "- **Суть:** Образ со статусом VERIFIED соответствует роли"),
-        "GRA in the catalog": mutate(texts, v, "#### 10. Деталь дела", "#### 10. Деталь дела по GRA"),
+        "GRA in the catalog": mutate(texts, v, "- **Суть:** Образ соответствует роли", "- **Суть:** Образ по GRA соответствует роли"),
         "narrative bridge in the catalog": mutate(texts, v, "- **Суть:** Образ соответствует роли", "- **Суть:** Потому что образ соответствует роли"),
         "card field lost": mutate_re(texts, v, r"(#### 3\. [^\n]+\n\n(?:- [^\n]+\n){1})- \*\*Суть:\*\* [^\n]+\n", r"\1"),
         "condition not a direct rule": mutate(texts, v, "- **Условие применения:** Если готовим", "- **Условие применения:** Когда готовим"),
@@ -273,27 +488,38 @@ def self_test(texts):
         "card removed": mutate_re(texts, v, r"^#### 21\. .*?(?=^## )", ""),
         "cards out of order": mutate(texts, v, "#### 8. ", "#### 9. "),
         "Variant 2 deviation not in format": mutate(texts, v, "эффективнее решает задачу [отделить", "лучше [отделить"),
-        "lecturer applies GRA to himself": mutate(texts, v, "На Дне 4 лектор не применяет GRA к себе для выбора стиля", "На Дне 4 лектор применяет GRA к себе для выбора стиля"),
+        "lecturer applies statuses to himself": mutate(texts, v, "На Дне 4 лектор вообще не применяет к себе ни GRA, ни статусы данных", "На Дне 4 лектор не применяет к себе GRA, но берёт статусы данных"),
         "Variant 2 gate item open": mutate(texts, v, "- [x] Только перечень", "- [ ] Только перечень"),
-        "analysis quote not in Variant 1": mutate(texts, a, "«Стратегию выбирают полярность, дистанция, масса» | Центральный", "«Стратегию выбирают имидж-технологии» | Центральный"),
-        "analysis line number wrong": mutate(texts, a, "| строка 394, слайд 11 |", "| строка 395, слайд 11 |"),
-        "analysis quotes cut": mutate_re(texts, a, r"^### 2\.2\. .*?(?=^### 2\.3\.)", ""),
-        "analysis section lost": mutate(texts, a, "## 3. Корневая причина", "## 3. Причины"),
-        "proverb not applied": mutate(texts, a, "| Расшибленный лоб |", "| Итог |"),
-        "dialog deviation lost": mutate(texts, a, "Я предлагаю скорректировать [требование «единственный источник", "Предлагаю поменять [требование «единственный источник"),
-        "dialog claimed deleted": mutate(texts, a, "Файл диалога: неприменимо", "Файл диалога удалён"),
+        "analysis quotes of Variant 1 cut": mutate_re(texts, a, r"^### 2\.1\. .*?(?=^### 2\.3\.)", ""),
+        "a day not assessed": mutate(texts, a, "### 3.2. День 2", "### 3.2. Второй день"),
+        "analysis section lost": mutate(texts, a, "## 4. Корневая причина", "## 4. Причины"),
+        "proverb not applied": mutate(texts, a, "| Расшибленный лоб | Разрушенный смысл", "| Итог | Разрушенный смысл"),
+        "proverb not laid over Variant 1": mutate_re(texts, a, r"^### 5\.2\. .*?(?=^### 5\.3\.)", "### 5.2. Наложение на Вариант 1\n\n"),
+        "summary disagrees with the register": mutate(texts, a, "Все 228 найденных нарушений", "Все 227 найденных нарушений"),
         "analysis gate item lost": mutate_re(texts, a, r"^- \[x\] Все 3 файла[^\n]*\n", ""),
+        "dialog deletion not confirmed": mutate(texts, a, "- [x] Я удалил прикреплённый файл с диалогом", "- [x] Файл диалога оставлен"),
+        "contract lost": mutate(texts, r, CONTRACT, "Замены можно применять сразу."),
+        "Day 4 before Days 1–3": mutate_re(texts, r, r"^(## День 3: слайд-мост 32 — первым\n.*?)(^## День 4: колода вариант 2 вместо правок\n.*?)(?=^## Порядок действий)", r"\2\1"),
+        "diagnosis lost": mutate(texts, r, "Менять структуру колод — порядок и число слайдов, вёрстку, изображения — нельзя", "Колоды можно перегенерировать"),
+        "longer swaps not a deviation": mutate(texts, r, "Я предлагаю скорректировать [Ограничение «точечная правка 1–2 слов»]", "Можно расширить [Ограничение «точечная правка 1–2 слов»]"),
         "phrase reworded": mutate(texts, r, "GRA не диктует цвет вашего галстука.", "GRA не выбирает галстук."),
-        "second phrase": mutate(texts, r, "### Время", "> Коллеги, важное разграничение. Ещё одна фраза.\n\n### Время"),
-        "phrase moved off slide 17": mutate(texts, r, SLIDE_17, "**Слайд 19 колоды «Правило выбора стиля»**"),
-        "slide 19 title kept": mutate(texts, r, "| **Правило выбора стиля** |", "| Стратегию выбирают полярность, дистанция, масса |"),
-        "P0 grown to three swaps": mutate(texts, r, "\n\nПервая фраза вводного абзаца", "\n| P0-3 | 19 | Эпиграф | «Право на контраст зарабатывается вкладом» | «Контраст по ситуации» |\n\nПервая фраза вводного абзаца"),
-        "swap changes nothing": mutate(texts, r, "| 02 · ВОПРОС | 02 · ДАННЫЕ |", "| 02 · ВОПРОС | 02 · ВОПРОС |"),
-        "P1 deviation not in format": mutate(texts, r, "Я предлагаю скорректировать [Ограничение «указать 1–2 слова", "Можно расширить [Ограничение «указать 1–2 слова"),
-        "diagnosis lost": mutate(texts, r, "Менять структуру колоды — порядок и число слайдов, вёрстку, изображения — нельзя", "Колоду можно перегенерировать"),
-        "deck permalink lost": mutate(texts, r, DECK, "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/688", count=1),
+        "second phrase": mutate(texts, r, "**Время.**", "> Коллеги, важное разграничение. Ещё одна фраза.\n\n**Время.**"),
+        "phrase moved off slide 17": mutate(texts, r, SLIDE_17, "речь к слайду 19 «Правило выбора стиля»"),
+        "slide 19 title kept": mutate(texts, r, "| Заголовок | [колода Д4 в1:559]", "| Подзаголовок | [колода Д4 в1:559]"),
+        "Day 3 critical swap dropped": mutate_re(texts, r, r"^\| Д3-G-02 \|[^\n]*\n", ""),
+        "row disagrees with the register": mutate(texts, r, "| Точки выбраны: гармония или эклектика? |", "| Гармония или эклектика? |"),
+        "swap changes nothing": mutate(texts, r, "«МЕТОД КУРСА, ПРИМЕНЁННЫЙ К ЛЕКТОРУ» | ЛЕКТОР ВЕЧЕРА |", "«МЕТОД КУРСА, ПРИМЕНЁННЫЙ К ЛЕКТОРУ» | МЕТОД КУРСА, ПРИМЕНЁННЫЙ К ЛЕКТОРУ |"),
+        "Day 4 swap not in deck v2": mutate(texts, r, "» | ЛЕКТОР ВЕЧЕРА |", "» | ЛЕКТОР КУРСА |"),
+        "prompt rule 2 kept polarity": mutate(texts, r, RULE_2, "2. Открытую эклектику предлагай только при полярности +1, малой дистанции и высокой массе говорящего."),
         "conclusion lost": mutate(texts, r, "Новой генерации нет", "Нужна новая генерация"),
         "RFC gate item open": mutate(texts, r, "- [x] Диагноз", "- [ ] Диагноз"),
+        "deck v2 edited by hand": mutate_re(texts, d, r"^(### Слайд 20\. [^\n]*)$", r"\1 (правка)"),
+        "deck v2 keeps the GRA title": mutate(texts, d, "- Заголовок: Правило выбора стиля", "- Заголовок: Стратегию выбирают полярность, дистанция, масса"),
+        "deck v2 slide dropped": mutate_re(texts, d, r"^### Слайд 25\..*?(?=^### Слайд 26\.)", ""),
+        "register quote altered": mutate(texts, f, '"quote": "Управляйте данными о связях', '"quote": "Управляйте связями'),
+        "register line shifted": mutate(texts, f, '"line": 100,\n   "place": "слайд 1 ', '"line": 101,\n   "place": "слайд 1 '),
+        "register finding dropped": mutate_re(texts, f, r'\{\s*"id": "Д1-D1".*?\},\s*', ""),
+        "register swap changes nothing": mutate(texts, f, '"now": "карту связей нарисует случай"', '"now": "стратегию за вас выберет случай"'),
     }
     failed = [name for name, mutated in broken.items() if mutated == texts or not validate(mutated)]
     return failed, len(broken)
@@ -303,18 +529,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--self-test", action="store_true", help="also prove the checker rejects broken fixtures")
     args = parser.parse_args()
-    texts = {path: path.read_text(encoding="utf-8") if path.is_file() else "" for path in FILES}
+    texts = {path: path.read_text(encoding="utf-8") if path.is_file() else "" for path in FILES + (DIALOG,)}
     errors = validate(texts)
+    count = validate.permalinks
     if args.self_test and not errors:
         failed, fixtures = self_test(texts)
         errors += [f"self-test: mutation not rejected: {name}" for name in failed]
     if errors:
         print("\n".join(f"FAIL: {error}" for error in errors))
         raise SystemExit(1)
-    print(f"PASS: Variant 1 is unchanged (blob {V1_BLOB}); the three new files cite issue #689, use full URLs and their repository links resolve")
-    print(f"PASS: the analysis has the summary, examples, root cause and the proverb applied to the agent; every quote of Variant 1 matches its line; the missing dialog is a deviation; gate has {ANALYSIS_GATE} confirmed items")
-    print(f"PASS: Variant 2 lists {CARDS} cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer does not apply GRA to himself; gate has {V2_GATE} confirmed items")
-    print(f"PASS: the RFC keeps the deck structure, gives ONE verbatim phrase on deck slide 17, swaps the slide 19 title for «Правило выбора стиля» in {P0_ROWS} P0 swaps, files P1 as a deviation, links the deck permalink; gate has {RFC_GATE} confirmed items")
+    print(f"PASS: Variant 1 and deck v1 are unchanged; the dialog file is deleted; the new files cite issue #689, use full URLs and their repository links resolve")
+    print(f"PASS: {count} permalinked quotes match their lines at commit {SHA[:7]}; the register holds {FINDINGS_COUNT} findings and {OK_COUNT} correct interpretations, each quote in its line")
+    print(f"PASS: the analysis has the summary, at least {V1_QUOTES} quotes of Variant 1, all four days assessed, the root cause and the proverb applied to the agent and laid over Variant 1; gate has {len(ANALYSIS_GATE)} confirmed items")
+    print(f"PASS: Variant 2 lists {CARDS} cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer applies neither GRA nor statuses to himself; gate has {V2_GATE} confirmed items")
+    print(f"PASS: the RFC puts Days 1–3 before Day 4, keeps the contract, quotes ONE verbatim phrase for slide 17, swaps the slide 19 title for «Правило выбора стиля», every swap matches the register; gate has {RFC_GATE} confirmed items")
+    print(f"PASS: deck v2 is exactly what {BUILD.name} builds from deck v1, keeps its slides and titles slide 19 «Правило выбора стиля»")
     if args.self_test:
         print(f"PASS: {fixtures} broken fixtures rejected")
 

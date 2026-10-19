@@ -2,4 +2,6 @@ $ python3 -I research/reputation-technologies/exp/day4-correction-689/check-day4
 FAIL: 2026-11-03-day4-ai-interpretation-analysis.md: file not found
 FAIL: 2026-11-03-day4-rationale-and-method-v2.md: file not found
 FAIL: 2026-11-03-day4-crisis-mitigation-rfc.md: file not found
+FAIL: 2026-11-03-day4-presentation-gamma-v2.md: file not found
+FAIL: findings-days-1-4-689.json: file not found
 exit code: 1
