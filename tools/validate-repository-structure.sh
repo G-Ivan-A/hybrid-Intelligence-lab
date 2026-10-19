@@ -573,6 +573,7 @@ is_active_file() {
     research/reputation-technologies/exp/day4-correction-689/build_deck_v2_689.py | \
     research/reputation-technologies/exp/day4-correction-689/issue-689-before.log | \
     research/reputation-technologies/exp/day4-correction-689/issue-689-after.log | \
+    research/reputation-technologies/exp/day4-correction-689/findings-days-1-4-689.json | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
     research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
     research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
