@@ -2,7 +2,7 @@ $ python3 -I research/reputation-technologies/exp/day4-correction-689/check-day4
 PASS: Variant 1 and deck v1 are unchanged; the dialog file is deleted; the new files cite issue #689, use full URLs and their repository links resolve
 PASS: 310 permalinked quotes match their lines at commit 16415e9; the register holds 228 findings and 65 correct interpretations, each quote in its line
 PASS: the analysis has the summary, at least 20 quotes of Variant 1, all four days assessed, the root cause and the proverb applied to the agent and laid over Variant 1; gate has 7 confirmed items
-PASS: Variant 2 lists 21 cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer applies neither GRA nor statuses to himself; gate has 6 confirmed items
+PASS: Variant 2 lists 21 cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer applies neither GRA nor statuses to themselves; gate has 6 confirmed items
 PASS: the RFC puts Days 1–3 before Day 4 in its sections and its order of actions, keeps the contract, quotes ONE verbatim phrase for slide 17, swaps the slide 19 title for «Правило выбора стиля», every swap matches the register; gate has 6 confirmed items
 PASS: deck v2 is exactly what build_deck_v2_689.py builds from deck v1, keeps its slides and titles slide 19 «Правило выбора стиля»
 PASS: 58 broken fixtures rejected
@@ -33,7 +33,7 @@ condition without «применяем»: 2026-11-03-day4-rationale-and-method-v
 card removed: 2026-11-03-day4-rationale-and-method-v2.md: catalog cards are not 1–21: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 cards out of order: 2026-11-03-day4-rationale-and-method-v2.md: catalog cards are not 1–21: [1, 2, 3, 4, 5, 6, 7, 9, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 Variant 2 deviation not in format: 2026-11-03-day4-rationale-and-method-v2.md: the deviation from the condition examples is not in the founder's format
-lecturer applies statuses to himself: 2026-11-03-day4-rationale-and-method-v2.md: the lecturer section lost «На Дне 4 лектор вообще не применяет к себе ни GRA, ни статус»
+lecturer applies statuses to themselves: 2026-11-03-day4-rationale-and-method-v2.md: the lecturer section lost «На Дне 4 лектор вообще не применяет к себе ни GRA, ни статус»
 Variant 2 gate item open: 2026-11-03-day4-rationale-and-method-v2.md: gate has 5 confirmed and 1 open items, expected 6 confirmed
 analysis quotes of Variant 1 cut: 2026-11-03-day4-ai-interpretation-analysis.md: 9 permalinked quotes of Variant 1 in the examples, expected at least 20
 a day not assessed: 2026-11-03-day4-ai-interpretation-analysis.md: «### 3.2. День 2» has 0 permalinked quotes, expected at least 3

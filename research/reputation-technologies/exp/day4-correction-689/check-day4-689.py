@@ -492,7 +492,7 @@ def self_test(texts):
         "card removed": mutate_re(texts, v, r"^#### 21\. .*?(?=^## )", ""),
         "cards out of order": mutate(texts, v, "#### 8. ", "#### 9. "),
         "Variant 2 deviation not in format": mutate(texts, v, "эффективнее решает задачу [отделить", "лучше [отделить"),
-        "lecturer applies statuses to himself": mutate(texts, v, "На Дне 4 лектор вообще не применяет к себе ни GRA, ни статусы данных", "На Дне 4 лектор не применяет к себе GRA, но берёт статусы данных"),
+        "lecturer applies statuses to themselves": mutate(texts, v, "На Дне 4 лектор вообще не применяет к себе ни GRA, ни статусы данных", "На Дне 4 лектор не применяет к себе GRA, но берёт статусы данных"),
         "Variant 2 gate item open": mutate(texts, v, "- [x] Только перечень", "- [ ] Только перечень"),
         "analysis quotes of Variant 1 cut": mutate_re(texts, a, r"^### 2\.1\. .*?(?=^### 2\.3\.)", ""),
         "a day not assessed": mutate(texts, a, "### 3.2. День 2", "### 3.2. Второй день"),
@@ -546,7 +546,7 @@ def main():
     print(f"PASS: Variant 1 and deck v1 are unchanged; the dialog file is deleted; the new files cite issue #689, use full URLs and their repository links resolve")
     print(f"PASS: {count} permalinked quotes match their lines at commit {SHA[:7]}; the register holds {FINDINGS_COUNT} findings and {OK_COUNT} correct interpretations, each quote in its line")
     print(f"PASS: the analysis has the summary, at least {V1_QUOTES} quotes of Variant 1, all four days assessed, the root cause and the proverb applied to the agent and laid over Variant 1; gate has {len(ANALYSIS_GATE)} confirmed items")
-    print(f"PASS: Variant 2 lists {CARDS} cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer applies neither GRA nor statuses to himself; gate has {V2_GATE} confirmed items")
+    print(f"PASS: Variant 2 lists {CARDS} cards of Название, Суть, Условие применения «Если …, применяем …», Визуальный маркер; no mass, distance, polarity, statuses, GRA or «потому что → поэтому» in the catalog; the lecturer applies neither GRA nor statuses to themselves; gate has {V2_GATE} confirmed items")
     print(f"PASS: the RFC puts Days 1–3 before Day 4 in its sections and its order of actions, keeps the contract, quotes ONE verbatim phrase for slide 17, swaps the slide 19 title for «Правило выбора стиля», every swap matches the register; gate has {RFC_GATE} confirmed items")
     print(f"PASS: deck v2 is exactly what {BUILD.name} builds from deck v1, keeps its slides and titles slide 19 «Правило выбора стиля»")
     if args.self_test:
