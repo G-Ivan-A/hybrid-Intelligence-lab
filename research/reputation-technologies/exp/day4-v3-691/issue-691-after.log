@@ -1,0 +1,14 @@
+## Run 1: after #691
+
+$ python3 -I research/reputation-technologies/exp/day4-v3-691/check-day4-691.py --self-test
+PASS: deck has 6 slides, exactly four of them «Технология: …» in the order Цвет, Форма, Стиль, Аксессуары; every slide has only the fields [SLIDE_TEXT], [IMAGE_PROMPT], [FOOTER_LINKS]
+PASS: every slide line has a label in the order Шапка → Надзаголовок → Заголовок → Эпиграф → Вводный абзац → Карточка → Вывод; header «Введение в репутационный инжиниринг · Имиджевые стратегии для действия», overline in capitals, titles of at most 6 words, intro of 1–2 sentences
+PASS: cards 01 · ТЕХНОЛОГИЯ → 02 · ВЕКТОР: ГАРМОНИЯ → 03 · ВЕКТОР: КОНТРАСТ/ЭКЛЕКТИКА; card 01 of each technology names it and gives a traditional base principle of 1–2 sentences
+PASS: no GRA term and no running case in the deck outside the gate or anywhere in the script; no bridge «потому что → поэтому» on the slides
+PASS: image prompts are English, carry the base rules of #691 word for word, alternate architecture → art → fashion and gold → malachite, keep the subject in the centre; people aged 30–50 only in fashion photos, without offices or smiles
+PASS: footers are one line «Источники: …» with full URLs, Telegram and «Москва, 10.2026»; the Gamma prompt carries every base rule and no colour beyond them; photo layout alternates left and right; the six gate items are ticked
+PASS: script marks `[СЛАЙД 1]`…`[СЛАЙД 6]` at 1,2 minutes each, every speech 150–180 words with `[ПАУЗА]`, `[ДЕМОНСТРАЦИЯ ЭКРАНА]` of a footer source and `[ПЛАН Б ДЛЯ МОЛЧАЛИВОГО ЧАТА]`, examples from fintech, luxury and deep-tech and no 8-word copy of the slides
+PASS: one bridge «потому что → поэтому» closes each speech 1–5 and leads to the next slide; none on the last slide or outside the speeches
+PASS: Variant 3 links only to its own files and names no earlier variant; repository links resolve
+PASS: 61 broken fixtures rejected
+exit 0
