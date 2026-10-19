@@ -1,0 +1,31 @@
+## Run 1: main before #687 — the Gamma deck and the lecturer script of Day 4 do not exist
+
+$ python3 -I research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py
+FAIL: 2026-11-03-day4-presentation-gamma.md: file not found
+FAIL: 2026-11-03-day4-lecturer-script.md: file not found
+exit 1
+
+## Run 2: the deck of #687 with the first draft of the lecturer script — speeches copy eight words of the slides or run short
+
+$ python3 -I research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 1 speech has 144 words, not 150–180
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 2 speech retells the slide text: «деловой формат площадки и одна деталь дела открытые»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 3 speech has 138 words, not 150–180
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 5 speech retells the slide text: «пишет сетям первым сеть х на 25 магазинов»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 6 speech retells the slide text: «а подстроиться под формат сети стандартная анкета поставщика»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 10 speech retells the slide text: «формат категорийной работы сети и язык поставщиков которых»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 12 speech retells the slide text: «отчасти да но эффект меньше чем принято думать»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 14 speech retells the slide text: «светлое и темное теплое и холодное дополнительные цвета»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 15 speech retells the slide text: «выбираем сами одеждой материалами оформлением о партнере по»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 16 speech retells the slide text: «базовый формат партнера плюс одна своя деталь связанная»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 17 speech retells the slide text: «гармония подстройка под формат точки он подходит большинству»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 18 speech has 149 words, not 150–180
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 18 speech retells the slide text: «а да это запоминается и показывает дело б»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 19 speech retells the slide text: «выбирали точки сегодня они выбирают стиль первого шага»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 20 speech retells the slide text: «к точке с 1 подстройка и вопрос а»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 23 speech retells the slide text: «точки дня 3 получают вид стиль и канал»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 24 speech retells the slide text: «точка статус данных полярность дистанция полезное для встречи»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 25 speech retells the slide text: «был ли второй шаг сменилась ли полярность что»
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 26 speech has 143 words, not 150–180
+FAIL: 2026-11-03-day4-lecturer-script.md: slide 26 speech retells the slide text: «быть первый шаг чтобы точка захотела второго теперь»
+exit 1
