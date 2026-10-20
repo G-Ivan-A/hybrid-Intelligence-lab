@@ -122,6 +122,9 @@ jobs:
       - name: Check Day 4 correction files and unchanged Variant 1 of #689
         run: python3 -I research/reputation-technologies/exp/day4-correction-689/check-day4-689.py --self-test
 
+      - name: Check Day 4 Variant 3 deck and lecturer script of #691
+        run: python3 -I research/reputation-technologies/exp/day4-v3-691/check-day4-691.py --self-test
+
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
 

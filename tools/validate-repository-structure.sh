@@ -514,6 +514,8 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-day4-ai-interpretation-analysis.md | \
     research/reputation-technologies/2026-11-03-day4-crisis-mitigation-rfc.md | \
     research/reputation-technologies/2026-11-03-day4-presentation-gamma-v2.md | \
+    research/reputation-technologies/2026-11-03-day4-presentation-gamma-v3.md | \
+    research/reputation-technologies/2026-11-03-day4-lecturer-script-v3.md | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
@@ -573,6 +575,11 @@ is_active_file() {
     research/reputation-technologies/exp/day4-correction-689/issue-689-before.log | \
     research/reputation-technologies/exp/day4-correction-689/issue-689-after.log | \
     research/reputation-technologies/exp/day4-correction-689/findings-days-1-4-689.json | \
+    research/reputation-technologies/exp/day4-v3-691/README.md | \
+    research/reputation-technologies/exp/day4-v3-691/check-day4-691.py | \
+    research/reputation-technologies/exp/day4-v3-691/mutation_reasons_691.py | \
+    research/reputation-technologies/exp/day4-v3-691/issue-691-before.log | \
+    research/reputation-technologies/exp/day4-v3-691/issue-691-after.log | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
     research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
     research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
@@ -2100,7 +2107,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.40"
+require_text "ops/artifact-map.md" "version: 2.41"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"

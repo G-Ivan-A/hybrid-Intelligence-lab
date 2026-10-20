@@ -1,0 +1,12 @@
+## Run 1: on main before #691
+
+$ python3 -I research/reputation-technologies/exp/day4-v3-691/check-day4-691.py --self-test
+FAIL: 2026-11-03-day4-presentation-gamma-v3.md: file not found
+FAIL: 2026-11-03-day4-lecturer-script-v3.md: file not found
+exit code: 1
+
+## Run 2: first draft of the lecturer script, slide 5 speech still copies the slide
+
+$ python3 -I research/reputation-technologies/exp/day4-v3-691/check-day4-691.py --self-test
+FAIL: script: slide 5 speech copies the slides: «аксессуары детали которые завершают образ часы очки обувь»
+exit 1
