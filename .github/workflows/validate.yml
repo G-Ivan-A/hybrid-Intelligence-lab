@@ -125,6 +125,9 @@ jobs:
       - name: Check Day 4 Variant 3 deck and lecturer script of #691
         run: python3 -I research/reputation-technologies/exp/day4-v3-691/check-day4-691.py --self-test
 
+      - name: Check Day 4 Variant 4 hypothesis-map deck and image-technologies module of #693
+        run: python3 -I research/reputation-technologies/exp/day4-v4-693/check-day4-693.py --self-test
+
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
 
