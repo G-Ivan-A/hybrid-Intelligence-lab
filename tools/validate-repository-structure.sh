@@ -516,6 +516,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-day4-presentation-gamma-v2.md | \
     research/reputation-technologies/2026-11-03-day4-presentation-gamma-v3.md | \
     research/reputation-technologies/2026-11-03-day4-lecturer-script-v3.md | \
+    research/reputation-technologies/2026-11-03-day4-presentation-gamma-v4.md | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
@@ -580,6 +581,11 @@ is_active_file() {
     research/reputation-technologies/exp/day4-v3-691/mutation_reasons_691.py | \
     research/reputation-technologies/exp/day4-v3-691/issue-691-before.log | \
     research/reputation-technologies/exp/day4-v3-691/issue-691-after.log | \
+    research/reputation-technologies/exp/day4-v4-693/README.md | \
+    research/reputation-technologies/exp/day4-v4-693/check-day4-693.py | \
+    research/reputation-technologies/exp/day4-v4-693/mutation_reasons_693.py | \
+    research/reputation-technologies/exp/day4-v4-693/issue-693-before.log | \
+    research/reputation-technologies/exp/day4-v4-693/issue-693-after.log | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
     research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
     research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
@@ -590,6 +596,12 @@ is_active_file() {
     research/reputation-technologies/gra-research-program/30-decision-framework.md | \
     research/reputation-technologies/gra-research-program/40-practice-and-cases.md | \
     research/reputation-technologies/gra-research-program/50-open-research.md | \
+    research/reputation-technologies/image-technologies/00-introduction.md | \
+    research/reputation-technologies/image-technologies/10-theory.md | \
+    research/reputation-technologies/image-technologies/20-taxonomy.md | \
+    research/reputation-technologies/image-technologies/30-decision-framework.md | \
+    research/reputation-technologies/image-technologies/40-practice-and-cases.md | \
+    research/reputation-technologies/image-technologies/50-open-research.md | \
     research/reputation-technologies/exp/gra-research-program-657/README.md | \
     research/reputation-technologies/exp/gra-research-program-657/check-gra-anchors.py | \
     research/reputation-technologies/exp/day1-methodology-659/README.md | \
