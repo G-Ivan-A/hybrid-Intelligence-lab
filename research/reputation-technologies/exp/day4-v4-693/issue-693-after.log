@@ -1,0 +1,87 @@
+## Run 1: after #693
+
+$ python3 -I research/reputation-technologies/exp/day4-v4-693/check-day4-693.py --self-test
+PASS: deck has 27 slides — introduction 1–2, legend 3, four axes of three technologies with an interpretation and four markers each, six styles on slide 16, assembly 25–27; every slide has only the fields [SLIDE_TEXT], [IMAGE_PROMPT], [FOOTER_LINKS]
+PASS: every slide line has a label in the order Шапка → Надзаголовок → Заголовок → Эпиграф → Вводный абзац → Карточка → Вывод; header «Введение в репутационный инжиниринг · Имиджевые стратегии для действия», overline in capitals, titles of at most 6 words, intro of 1–2 sentences
+PASS: technology slides are «ОСЬ — МЕТОД — АВТОР» with cards ДЛЯ ЧЕГО → ИСПОЛЬЗУЮТ → В ЧЁМ СУТЬ, no vector and a support level; mandatory technologies of #693 are present and the «в тон» rule is rejected
+PASS: interpretation slides are ГАРМОНИЯ/КЛАССИЦИЗМ → КОНТРАСТ/ЭКЛЕКТИКА → ОБОБЩЕНИЕ or КОНКУРИРУЮЩИЕ ПОДХОДЫ; marker slides are the four management conclusions of #693; the colour thesis is checked on slide 8
+PASS: no term of the course data-collection model anywhere in the deck; running cases only on the assembly slides, each with a hypothesis per axis, a vector, a check and a link to its case
+PASS: image prompts are English haute couture 2026–2027 with the rules of #693 word for word, a palette of 2–3 named base colours and one gold accent, people aged 30–50, calm and serious
+PASS: footers are one line «Источники: …» with full URLs; the Gamma prompt carries every rule; photo side and accent alternate; the gate items are ticked; the deviations follow the wording of #693 and match the module
+PASS: the deck links the module files it is built on and the module links the deck; frontmatter source is #693; repository links and anchors resolve
+PASS: 69 broken fixtures rejected
+exit 0
+
+## Run 2: first error of every self-test mutation
+
+$ python3 -I research/reputation-technologies/exp/day4-v4-693/mutation_reasons_693.py
+deck file missing -> 2026-11-03-day4-presentation-gamma-v4.md: file not found
+module file missing -> 20-taxonomy.md: file not found
+slide removed -> deck: slides are numbered [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], expected 1–27
+slides out of order -> deck: slides are numbered [1, 2, 3, 4, 6, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27], expected 1–27
+fourth field on a slide -> slide 1: fields are ['SLIDE_TEXT', 'SPEAKER_NOTES', 'IMAGE_PROMPT', 'FOOTER_LINKS'], expected ['SLIDE_TEXT', 'IMAGE_PROMPT', 'FOOTER_LINKS']
+field missing -> slide 1: fields are ['SLIDE_TEXT', 'IMAGE_PROMPT'], expected ['SLIDE_TEXT', 'IMAGE_PROMPT', 'FOOTER_LINKS']
+common header lost -> slide 1: header is not «Введение в репутационный инжиниринг · Имиджевые стратегии для действия»
+unlabeled line on a slide -> slide 1: [SLIDE_TEXT] line without a label: 'Без метки.'
+labels out of order -> slide 1: labels are ['Шапка', 'Надзаголовок', 'Заголовок', 'Вводный абзац', 'Карточка', 'Карточка', 'Карточка', 'Карточка', 'Вывод'], expected Шапка →
+overline not in capitals -> slide 3: overline is not in capitals
+title differs from the heading -> slide 3: title «Карта гипотез» differs from the heading «Карта гипотез: четыре оси»
+title longer than six words -> slide 1: title longer than 6 words
+epigraph without author -> slide 1: epigraph is not «quote». — author
+intro paragraph of three sentences -> slide 1: intro paragraph is not 1–2 sentences
+facet of the image missing -> slide 1: introduction does not name the facets of the image ['синтаксис']
+legend without «может» -> slide 3: legend does not say the image may be built on four axes and the vector is a hypothesis
+technology overline without author -> slide 4: overline is not «ЦВЕТ — МЕТОД — АВТОР»
+mandatory Itten missing -> deck: mandatory technologies of axis ЦВЕТ missing: ['Й. ИТТЕН']
+mandatory Беляева-Экземплярская missing -> deck: mandatory technologies of axis ФОРМА missing: ['БЕЛЯЕВА-ЭКЗЕМПЛЯРСКАЯ']
+«в тон» not rejected -> deck: accessories technologies do not reject the «в тон» rule
+technology numbered wrong -> slide 10: intro does not start with «Технология 2 из 3 на оси формы»
+technology card renamed -> slide 4: card 02 is «02 · ПРИМЕНЕНИЕ — Художники, дизайнеры, стилисты. », expected «02 · ИСПОЛЬЗУЮТ — …»
+vector on a technology card -> slide 4: technology card carries a vector: ['Вектор', 'гармони']
+support level missing -> slide 6: conclusion does not name the support level «Опора Э/К/П/А»
+style missing -> slide 16: card 06 is «06 · ГРАНЖ — Коротко, угловато, динамично. Коротки», expected «06 · СПОРТ — …»
+style without art association -> slide 16: style card without lines or an art association: «06 · СПОРТ — Коротко, угловато»
+art parallels not marked as analogy -> slide 16: conclusion does not mark the art parallels as an analogy (А)
+interpretation card missing -> slide 7: card 02 is «02 · АКЦЕНТ — Один названный контраст. Дополнитель», expected «02 · КОНТРАСТ/ЭКЛЕКТИКА — …»
+interpretation without synthesis -> slide 7: card 03 is «03 · ИТОГ — База плюс один контраст Иттена. Сильна», expected «03 · ОБОБЩЕНИЕ | КОНКУРИРУЮЩИЕ ПОДХОДЫ — …»
+marker missing -> slide 8: card 03 is «03 · КАНАЛ — Проверка носителя. Цвета марки, интер», expected «03 · ИНФОПОЛЕ КОММУНИКАЦИИ — …»
+markers out of order -> slide 13: card 01 is «01 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — Что », expected «01 · СВОИ ОСОБЕННОСТИ — …»
+colour thesis lost -> slide 8: the checked colour thesis is missing from the intro
+assembly without hypothesis -> slide 25: assembly card without a hypothesis: «01 · ЦВЕТ — Колориты плюс созв»
+assembly without check -> slide 25: conclusion does not give «Вектор — …» and «Проверка — …»
+assembly without case link -> slide 26: assembly footer does not cite case 2 of the course
+case on a technology slide -> slide 11: running case outside the assembly slides: ['производител', 'консерв']
+case in the reading guide -> deck: running case outside the assembly slides: ['оптов']
+GRA term on a slide -> deck: term of the course data-collection model: ['Полярн']
+«масса» in the deck -> deck: term of the course data-collection model: ['масса']
+GRA named in the gate -> deck: term of the course data-collection model: ['GRA']
+image prompt in Russian -> slide 1: image prompt is not in English
+image rules edited -> slide 1: image prompt does not end with the image rules of #693 word for word
+fifth base colour in a palette -> slide 1: palette «graphite #16181D, deep blue #132A4A, emerald #0A4D3C and ruby #720E1E» is not 2–3 named base colours of #693
+one colour in a palette -> slide 1: palette «graphite #16181D» is not 2–3 named base colours of #693
+palette colour misnamed -> slide 1: palette «graphite #16181D and emerald #132A4A» is not 2–3 named base colours of #693
+second gold in a concept -> slide 1: image prompt has a colour code outside the palette or more than one gold accent
+colour outside the palette -> slide 1: image concept names a colour outside the palette: ['white']
+person too young -> slide 1: image without people aged 30–50
+stock smile in a concept -> slide 1: image concept is not calm and serious
+concept without couture -> slide 2: image concept is not haute couture
+footer without Telegram -> slide 1: footer is not one line «Источники: […](…)… · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+footer without «Источники:» -> slide 1: footer is not one line «Источники: […](…)… · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026»
+footer with a relative link -> 2026-11-03-day4-presentation-gamma-v4.md: links are not full URLs: ['../pubmed.ncbi.nlm.nih.gov/16866745/']
+invented hex -> deck: colours outside the rules of #693: ['#F4F1EA']
+Gamma prompt lacks a rule -> deck: Gamma prompt lacks «Space Grotesk, 28 pt»
+Gamma prompt slide count -> deck: Gamma prompt does not fix the number of slides
+photo side not alternating -> deck: photo layout row 2 is not «Технология — метод с опорой | … | справа | изумруд #0A4D3C»
+accent not alternating -> deck: photo layout row 1 is not «Образ шире четырёх осей | … | слева | золото #B89B5E»
+gate item unticked -> deck: gate check is not the 10 ticked items of #693 in order
+deviation wording broken -> deck: decisions do not state 4 deviations in the wording of #693
+deviation differs from the module -> deck: deviation differs from the module: «Я предлагаю скорректировать [Ограничение «учёт искусствоведч»
+decisions section lost -> deck: decisions do not state 4 deviations in the wording of #693
+deck does not cite the taxonomy -> deck: does not link the module file image-technologies/20-taxonomy.md it is built on
+module does not link the deck -> module: introduction does not link the v4 deck
+broken anchor -> 2026-11-03-day4-presentation-gamma-v4.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technol
+broken file link -> 2026-11-03-day4-presentation-gamma-v4.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technol
+source not #693 -> 2026-11-03-day4-presentation-gamma-v4.md: frontmatter source is not issue #693
+module source not #693 -> 30-decision-framework.md: frontmatter source is not issue #693
+draft comment -> 2026-11-03-day4-presentation-gamma-v4.md: draft HTML comment
+exit 0

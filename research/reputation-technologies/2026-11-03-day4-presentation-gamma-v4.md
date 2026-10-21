@@ -1,0 +1,717 @@
+---
+status: draft
+version: 0.1
+updated: 2026-10-20
+temperature: 0.4
+source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/693"
+scope: reputation-engineering-course-day4
+method: gamma-hypothesis-map-693
+based_on:
+  - research/reputation-technologies/image-technologies/20-taxonomy.md
+  - research/reputation-technologies/image-technologies/30-decision-framework.md
+  - research/reputation-technologies/image-technologies/40-practice-and-cases.md
+related_issues:
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/691"
+---
+
+# День 4. Презентация для Gamma, вариант 4: карта гипотез имидж-технологий
+
+Это четвёртый вариант блока имидж-технологий Дня 4 курса «Введение в репутационный инжиниринг». Он собран по issue [#693](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/693) на основе исследовательского модуля [`image-technologies`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/00-introduction.md). Файл целиком передаётся в Gamma.app или в другой ИИ-генератор презентаций.
+
+Колода раскладывает образ на четыре оси — **цвет, форму, стиль и аксессуары** — и на каждой оси показывает три технологии с профессиональной опорой: книгой, учебной программой школы или экспериментом. Карточки технологий взяты из [таксономии модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/20-taxonomy.md), интерпретации и маркеры — из [рамки решений](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/30-decision-framework.md), сборка — из [практики модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/40-practice-and-cases.md). Технологии описаны без векторов и без кейсов курса. Два вектора применяются к ним отдельно, на слайдах интерпретации:
+
+- **гармония** (классицизм как основа) — адаптация, следование правилам, слияние с фоном и ожиданиями аудитории;
+- **контраст или эклектика** — осмысленное, а не хаотичное смешение: нарушение ожиданий ради внимания с сохранением внутренней логики образа.
+
+Выбор вектора — гипотеза о реакции аудитории, а не правило. Каждый слайд называет уровень опоры: где есть эксперимент, где книга или программа школы, где практика стилистов, а где только аналогия.
+
+## Как читать
+
+**Колода — 27 слайдов.**
+
+| Блок | Слайды | Что внутри |
+| --- | --- | --- |
+| Введение | 1–2 | образ шире четырёх осей; что считается технологией и уровни опоры |
+| Легенда карты | 3 | четыре оси, по три технологии на ось, два вектора |
+| Ось 1. Цвет | 4–8 | три технологии, интерпретация, аналитические маркеры |
+| Ось 2. Форма | 9–13 | три технологии, интерпретация, аналитические маркеры |
+| Ось 3. Стиль | 14–19 | три технологии и слайд шести стилей, интерпретация, аналитические маркеры |
+| Ось 4. Аксессуары | 20–24 | три технологии, интерпретация, аналитические маркеры |
+| Сборка | 25–27 | три сценария первого контакта на кейсах курса |
+
+**Три поля слайда.**
+
+- `[SLIDE_TEXT]` — весь текст, который виден на слайде. Ничего из него не сокращается и не пересказывается.
+- `[IMAGE_PROMPT]` — промпт фотографии на английском. На слайд он не выводится.
+- `[FOOTER_LINKS]` — подвал в одну строку: источники полными ссылками, авторы и «Москва, 10.2026».
+
+**Разметка текста слайда.** Каждая строка `[SLIDE_TEXT]` начинается со слова-метки. Метка показывает роль строки и сама на слайд не выводится.
+
+| Метка | Что это на слайде |
+| --- | --- |
+| `Шапка:` | маленькая строка над слайдом: название курса и тема Дня 4 |
+| `Надзаголовок:` | короткая строка прописными буквами над заголовком; на слайде технологии — «Ось — метод — автор» |
+| `Заголовок:` | крупный заголовок слайда, не длиннее шести слов |
+| `Эпиграф:` | короткая цитата курсивом под заголовком |
+| `Вводный абзац:` | одно-два предложения контекста |
+| `Карточка:` | смысловой блок: подпись прописными до знака «—», текст после него; первая фраза до точки — подзаголовок карточки |
+| `Вывод:` | итоговая строка внизу слайда с акцентом |
+
+**Четыре типа слайдов.**
+
+- **Технология** (слайды 4–6, 9–11, 14, 15, 17, 20–22). Надзаголовок — «Ось — метод — автор». Три карточки: `01 · ДЛЯ ЧЕГО`, `02 · ИСПОЛЬЗУЮТ`, `03 · В ЧЁМ СУТЬ`. Вывод называет уровень опоры. Векторов гармонии и контраста на карточке технологии нет. Слайд 16 — второй слайд стилевых технологий: шесть стилей с линиями и искусствоведческой ассоциацией.
+- **Интерпретация** (слайды 7, 12, 18, 23). Три карточки: `01 · ГАРМОНИЯ/КЛАССИЦИЗМ`, `02 · КОНТРАСТ/ЭКЛЕКТИКА`, `03 · ОБОБЩЕНИЕ` или `03 · КОНКУРИРУЮЩИЕ ПОДХОДЫ`.
+- **Аналитические маркеры** (слайды 8, 13, 19, 24). Четыре карточки — управленческие выводы, а не советы стилиста: `01 · СВОИ ОСОБЕННОСТИ`, `02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ`, `03 · ИНФОПОЛЕ КОММУНИКАЦИИ`, `04 · МОДА СЕЗОНА`.
+- **Сборка** (слайды 25–27). Четыре карточки по осям: технология, решение и гипотеза. Вывод — вектор и способ проверки. Кейсы курса стоят только на этих трёх слайдах.
+
+Три карточки ставятся в один ряд, четыре — сеткой 2×2, шесть — сеткой 3×2. Все карточки собираются нативными модулями Gamma.
+
+**Фото и акцент по слайдам.** Все фото — высокая мода 2026–2027. Вертикальный блок фото чередуется слева и справа. Акцент слайда один: золото на нечётных слайдах, изумруд на чётных. В самом фото золото — единственный акцент.
+
+| Слайд | Заголовок | Тема фото | Блок фото | Акцент |
+| --- | --- | --- | --- | --- |
+| 1 | Образ шире четырёх осей | походка в зале ар-деко | слева | золото #B89B5E |
+| 2 | Технология — метод с опорой | кутюрье закалывает макет на манекене | справа | изумруд #0A4D3C |
+| 3 | Карта гипотез: четыре оси | четыре фигуры в аркаде | слева | золото #B89B5E |
+| 4 | Цвет: сочетания и контрасты Иттена | платье из цветовых плоскостей | справа | изумруд #0A4D3C |
+| 5 | Цвет: колориты Ваттерман и Цингель | тональный синий шёлк | слева | золото #B89B5E |
+| 6 | Цвет: сезонные цветотипы Джексон | изумрудное пальто | справа | изумруд #0A4D3C |
+| 7 | Цвет через призму векторов | тональный ансамбль с рубиновой вставкой | слева | золото #B89B5E |
+| 8 | Цвет: аналитические маркеры | лаковый холл | справа | изумруд #0A4D3C |
+| 9 | Форма: законы зрительного восприятия | линии швов на силуэте | слева | золото #B89B5E |
+| 10 | Форма: типы фигур «Гида по стилю» | подчёркнутая линия талии | справа | изумруд #0A4D3C |
+| 11 | Форма: классификация фигур FFIT | силуэт в рамке сканера | слева | золото #B89B5E |
+| 12 | Форма через призму векторов | горизонтальный рельеф между колоннами | справа | изумруд #0A4D3C |
+| 13 | Форма: аналитические маркеры | кейп на лестнице сцены | слева | золото #B89B5E |
+| 14 | Стиль: стилевая комбинаторика ВШСДТ | лацканы повторяют линию челюсти | справа | изумруд #0A4D3C |
+| 15 | Стиль: черты лица по Туркенич | скульптурный профиль | слева | золото #B89B5E |
+| 16 | Стиль: шесть стилевых направлений | три стиля на лестнице | справа | изумруд #0A4D3C |
+| 17 | Стиль: типология образов Кибби | мягкое и острое в одном образе | слева | золото #B89B5E |
+| 18 | Стиль через призму векторов | пекинская вышитая панель на строгом костюме | справа | изумруд #0A4D3C |
+| 19 | Стиль: аналитические маркеры | зеркальные панели | слева | золото #B89B5E |
+| 20 | Аксессуары: по стилю и чертам лица | монолитные серьги | справа | изумруд #0A4D3C |
+| 21 | Аксессуары: дизайн, размер, количество | скульптурный браслет | слева | золото #B89B5E |
+| 22 | Аксессуары: дресс-код Моллоя | костюм на заказ в лобби отеля | справа | изумруд #0A4D3C |
+| 23 | Аксессуары через призму векторов | рубиновая сумка на строгой базе | слева | золото #B89B5E |
+| 24 | Аксессуары: аналитические маркеры | очки без оправы | справа | изумруд #0A4D3C |
+| 25 | Сборка 1: закупщик региональной розницы | торговый зал ар-деко | слева | золото #B89B5E |
+| 26 | Сборка 2: партнёр венчурного фонда | стеклянный зал Баухауза | справа | изумруд #0A4D3C |
+| 27 | Сборка 3: встреча с лечащим врачом | изумрудная туника без колец | слева | золото #B89B5E |
+
+**Цитаты.** Эпиграфы — дословные цитаты источников из подвала того же слайда. Цитаты из английских, немецких и испанских источников даны в нашем переводе.
+
+### Промпт для генерации в Gamma
+
+Промпт повторяет базовые правила Gamma и правила изображений issue #693. Вставьте его в Gamma вместе с разделом «Слайды».
+
+```text
+Создай презентацию из 27 слайдов. Формат — альбомный А4, 297×210 мм. Безопасные поля — 12 мм со всех сторон. Не меняй количество слайдов и не сокращай исходные текстовые блоки.
+
+Каждый слайд описан тремя полями:
+- [SLIDE_TEXT] — единственный текст на слайде. Переноси его полностью, без сокращений и пересказа;
+- [IMAGE_PROMPT] — промпт фотографии. Используй его только для изображения, на слайд не выводи;
+- [FOOTER_LINKS] — подвал в одну строку.
+
+В [SLIDE_TEXT] каждая строка начинается со слова-метки перед двоеточием. Метку на слайд не выводи, выводи только текст после неё:
+- «Шапка:» — маленькая строка над всем слайдом, 8 pt;
+- «Надзаголовок:» — короткая строка прописными буквами над заголовком;
+- «Заголовок:» — Space Grotesk, 28 pt, глубокий синий #132A4A;
+- «Эпиграф:» — цитата курсивом, IBM Plex Sans, 15 pt;
+- «Вводный абзац:» — основной текст, 12 pt;
+- «Карточка:» — карточки одинакового размера: три — в один ряд, четыре — сеткой 2×2, шесть — сеткой 3×2; подпись прописными до знака «—», после него текст карточки 12 pt; первая фраза до точки — подзаголовок карточки;
+- «Вывод:» — итоговая строка внизу слайда, отмеченная акцентом слайда.
+Подвал из поля [FOOTER_LINKS] — 7 pt.
+
+Цвета: фон #FFFFFF; текст — графит #16181D; заголовки — глубокий синий #132A4A; светло-серый #E7E9EC — для подложек карточек и тонких линий. Акцент — один на слайд: на нечётных слайдах золото #B89B5E, на чётных — изумруд #0A4D3C.
+
+Изображения: фото — единственный тип иллюстраций. На каждом слайде одно фото в вертикальном блоке около 70×168 мм, это пропорция 1:2.4. Блок чередуется: на нечётных слайдах — слева, на чётных — справа. Все фото — высокая мода (Haute Couture) 2026–2027, вдохновлённая Нью-Йорком и Пекином и строго подчинённая базе: роскошный ар-деко, лёгкий Баухауз, Neue Sachlichkeit. Палитра фото — строго два-три цвета из графита #16181D, глубокого синего #132A4A, изумруда #0A4D3C и рубина #720E1E и один золотой акцент #B89B5E. Люди 30–50 лет, спокойные и серьёзные. Без текста на изображении, без офисных сцен и стоковых улыбок. Главный объект фото держи в центральной части кадра.
+
+Инфографика — только нативными средствами Gamma: текст, линии, модули. Не генерируй инфографику картинкой.
+```
+
+## Слайды
+
+### Слайд 1. Образ шире четырёх осей
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ВВЕДЕНИЕ · МНОГОГРАННОСТЬ ОБРАЗА
+- Заголовок: Образ шире четырёх осей
+- Эпиграф: «Мы, конечно, часто ожидаем подтверждающей согласованности между внешностью и манерой». — Э. Гофман
+- Вводный абзац: Образ — это не только цвет, форма, стиль и аксессуары. Это ещё причёска, походка, речь, почерк, мимика, синтаксис и стиль жизни в целом — всё, по чему собеседник судит о человеке до первого слова и после него.
+- Карточка: 01 · ТЕЛО И ДВИЖЕНИЕ — Причёска, походка, мимика. Их видят раньше, чем слышат голос: суждение о лице складывается за доли секунды, но быстрота не означает точности.
+- Карточка: 02 · РЕЧЬ И ТЕКСТ — Речь, почерк, синтаксис. Манера говорить и писать либо подтверждает внешность, либо спорит с ней; аудитория ждёт их согласия.
+- Карточка: 03 · СТИЛЬ ЖИЗНИ — Привычки, среда, выбор. Образ продолжается в том, где человек бывает, что выбирает и как распоряжается временем; это самый медленный и самый убедительный слой.
+- Карточка: 04 · ЧЕТЫРЕ ОСИ — Пример глубокого разложения. Цвет, форму, стиль и аксессуары мы разбираем подробно: на этих осях есть книги, учебные программы и эксперименты, то есть технологии, а не советы.
+- Вывод: Тема шире колоды. Четыре оси — пример того, как образ раскладывается на проверяемые технологии.
+
+**[IMAGE_PROMPT]**
+A woman aged 40 walks with a slow, upright gait across a polished art deco hall, wearing a floor-length couture coat with sharp stepped lapels; her posture, hairstyle and calm, serious face carry the image as much as the garment. Seen from a low, unusual angle, the stepped arches behind her repeat the lapels; the single gold accent is a thin inlaid line in the floor. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Goffman, The Presentation of Self in Everyday Life, 1959, p. 24](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a); [Willis, Todorov, 2006](https://pubmed.ncbi.nlm.nih.gov/16866745/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 2. Технология — метод с опорой
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ВВЕДЕНИЕ · ЧТО СЧИТАЕТСЯ ТЕХНОЛОГИЕЙ
+- Заголовок: Технология — метод с опорой
+- Эпиграф: «…наши результаты ставят под сомнение воспроизводимость ранних исследований „одетого познания“, но подтверждают доказательность эффектов, опубликованных после 2015 года». — К. Б. Хортон и соавт.
+- Вводный абзац: Технология образа — не бытовой совет, а метод с первоисточником, процедурой и сообществом практики. Насколько метод надёжен, показывает уровень опоры.
+- Карточка: 01 · ОПОРА Э: ЭКСПЕРИМЕНТ — Рецензируемая проверка. Эффект измерен, указаны его размер и границы: например, горизонтальная полоса на одежде не «полнит».
+- Карточка: 02 · ОПОРА К: КНИГА ИЛИ ПРОГРАММА — Метод описан автором или школой. Его преподают профессионалам, но экспериментально не проверяли.
+- Карточка: 03 · ОПОРА П: ПРАКТИКА — Метод описан в практических публикациях. Первоисточник недоступен или не найден; правило живёт в работе стилистов.
+- Карточка: 04 · ОПОРА А: АНАЛОГИЯ — Перенос из другой области. Чаще всего из истории искусства: аналогия помогает назвать замысел, но ничего не доказывает.
+- Вывод: Уровень опоры не делит методы на правильные и неправильные. Он показывает, на чём держится гипотеза.
+
+**[IMAGE_PROMPT]**
+A couturier aged 45 pins a draped haute couture toile on a dress form in a high-ceilinged atelier with fluted art deco pilasters; precise hands, measuring tape, chalk marks, a calm, serious, concentrated face. Strict frontal Neue Sachlichkeit framing; the single gold accent is the head of one pin catching the light. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Horton, Adam, Galinsky, 2023](https://doi.org/10.1177/01461672231182478); [Adam, Galinsky, 2012](https://doi.org/10.1016/j.jesp.2012.02.008); [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 3. Карта гипотез: четыре оси
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ЛЕГЕНДА КАРТЫ
+- Заголовок: Карта гипотез: четыре оси
+- Эпиграф: «…одновременно дают чувство принадлежности и чувство отличительности». — М. Брюэр
+- Вводный абзац: Образ может собираться по четырём осям, и к каждой оси мы применяем три технологии с профессиональной опорой. Выбор вектора — гипотеза о реакции аудитории, а не правило.
+- Карточка: 01 · ЦВЕТ — Иттен, Ваттерман и Цингель, сезонные цветотипы. Как сочетать цвета и как подобрать палитру по внешности.
+- Карточка: 02 · ФОРМА — Беляева-Экземплярская, «Гид по стилю», FFIT. Как зрительные иллюзии меняют фигуру и как фигуру классифицируют.
+- Карточка: 03 · СТИЛЬ — ВШСДТ, Школа Н. Туркенич, Кибби. Как стиль выводят из линий лица и фигуры.
+- Карточка: 04 · АКСЕССУАРЫ — ВШСДТ, Школа Н. Туркенич, Моллой. Как деталь выводят из человека или из нормы среды.
+- Карточка: 05 · ВЕКТОР: ГАРМОНИЯ/КЛАССИЦИЗМ — Адаптация. Следовать правилам, совпадать с ожиданиями аудитории, сливаться с фоном ситуации.
+- Карточка: 06 · ВЕКТОР: КОНТРАСТ/ЭКЛЕКТИКА — Осмысленное смешение. Нарушить ожидание ради внимания и сохранить внутреннюю логику образа.
+- Вывод: Технологии описывают оси без векторов. Векторы — отдельный слой, его применяют к любой технологии на слайдах интерпретации.
+
+**[IMAGE_PROMPT]**
+Four couture models aged 30 to 50 stand in the four openings of a symmetrical art deco arcade, each embodying one axis of the image: a colour-blocked gown, a sharply cut sculptural silhouette, a quietly tailored suit, a single statement brooch. Calm, serious faces, strict Bauhaus spacing between the figures; the single gold accent is the brooch. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D, deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Brewer, 1991](https://doi.org/10.1177/0146167291175001); [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870); [Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 4. Цвет: сочетания и контрасты Иттена
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ЦВЕТ — СОЧЕТАНИЯ И КОНТРАСТЫ ЦВЕТА — Й. ИТТЕН
+- Заголовок: Цвет: сочетания и контрасты Иттена
+- Эпиграф: «Для суждения недостаточно цвета волос, глаз и кожи». — Й. Иттен
+- Вводный абзац: Технология 1 из 3 на оси цвета. Иттен описал цвет как отношение к соседним цветам, а не как свойство одного оттенка.
+- Карточка: 01 · ДЛЯ ЧЕГО — Обучение художников и дизайнеров. Вводный курс Иттена в Баухаузе — с 1919 года; систематизация — книга «Искусство цвета», 1961.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Художники, дизайнеры, стилисты. Книга — основа курсов колористики и преподавания композиции.
+- Карточка: 03 · В ЧЁМ СУТЬ — Семь контрастов и созвучия на круге. Контрасты: цвета, светлого и тёмного, холодного и тёплого, дополнительных цветов, одновременный, насыщенности и количества; созвучия — двух-, трёх- и четырёхзвучия на двенадцатичастном круге. Глава о «субъективных тембрах» связывает любимые цвета с внешностью и считается истоком сезонных цветотипов.
+- Вывод: Опора К — книга-первоисточник. Иттен строит сочетания цветов, но не назначает человеку палитру.
+
+**[IMAGE_PROMPT]**
+A woman aged 38 in a sculptural couture gown built from large flat colour planes that meet along precise geometric seams, the planes shifting from deep blue to emerald like a study of colour relations. She stands still between two fluted art deco columns, calm, serious, three-quarter view; the single gold accent is a narrow piping along one seam. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Itten, Arte del color (исп. изд. Kunst der Farbe, 1961), с. 23–26](https://archive.org/details/LaHistoriaInterminable); [Itten, Kunst der Farbe, Open Library](https://openlibrary.org/works/OL3134338W); [Johannes Itten, Wikipedia](https://en.wikipedia.org/wiki/Johannes_Itten) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 5. Цвет: колориты Ваттерман и Цингель
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ЦВЕТ — МЕТОДИКА ЦВЕТОВЫХ КОЛОРИТОВ — М. ВАТТЕРМАН, А. ЦИНГЕЛЬ
+- Заголовок: Цвет: колориты Ваттерман и Цингель
+- Эпиграф: «Два самых светлых колорита: Светлое Лето и Светлая Весна». — программа курса Т. Маменко
+- Вводный абзац: Технология 2 из 3 на оси цвета. Внешность описывается не одним из четырёх сезонов, а набором характеристик, среди которых есть ведущая — доминанта.
+- Карточка: 01 · ДЛЯ ЧЕГО — Персональная цветовая консультация. Книга «Новая цветовая консультация», 1994: цветотипы, цветовой стиль, узоры, аксессуары и цветовые карты.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Стилисты, колористы, визажисты. В российской практике метод преподают как систему шестнадцати колоритов.
+- Карточка: 03 · В ЧЁМ СУТЬ — Доминанта задаёт колорит. Характеристики — светлота или глубина, тепло или холод, чистота или мягкость; колориты одного сезона, «сёстры-сезоны», различаются доминантой. Палитра повторяет доминанту внешности и задаёт эмоцию образа.
+- Вывод: Опора К — книга подтверждена библиографически; П — содержание метода известно по учебным программам.
+
+**[IMAGE_PROMPT]**
+A man aged 42 in a tonal couture ensemble of deep blue silk layers, each layer a half-step lighter or darker than the next, matching the depth of his own colouring; calm, serious face, seen in profile against a lacquered art deco wall panel. Soft side light reveals the tonal steps; the single gold accent is a slim cufflink. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Wattermann, Zingel, Die neue Farbberatung, 1994 — каталог](https://www.bibliothek-freiberg.de/title/Title/getTitle/334939); [Die neue Farbberatung — описание издания](https://www.eurobuch.com/buch/isbn/3806847827.html); [Маменко, «Колористика для стилистов. Система 16 колоритов»](https://tatyana-mamenko.ru/services/stylist/kurs-koloristika-dlya-stilistov/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 6. Цвет: сезонные цветотипы Джексон
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ЦВЕТ — СЕЗОННЫЕ ЦВЕТОТИПЫ — К. ДЖЕКСОН
+- Заголовок: Цвет: сезонные цветотипы Джексон
+- Эпиграф: «Очень часто у девушек, а также начинающих профессиональных визажистов возникают сложности с определением цветотипа внешности». — Н. В. Поступаева
+- Вводный абзац: Технология 3 из 3 на оси цвета — самая распространённая. Четыре сезона сделали персональную палитру доступной без стилиста.
+- Карточка: 01 · ДЛЯ ЧЕГО — Широкий рынок. Книга «Цвет делает вас красивыми», 1980, дала читателю готовую палитру; предшественник системы — метод С. Кейгилл.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Консультанты, ретейл, бьюти-индустрия. На этой системе построены онлайн-тесты и подборки «вашего сезона».
+- Карточка: 03 · В ЧЁМ СУТЬ — Четыре сезона на двух осях. Внешность относят к сезону по подтону, тёплому или холодному, и по светлоте или контрасту; каждому сезону соответствует готовая палитра.
+- Вывод: Опора П — широкая практика. Рецензируемых проверок надёжности сезонов мы не нашли.
+
+**[IMAGE_PROMPT]**
+A woman aged 34 in a long double-faced couture overcoat of deep emerald wool, the one colour of her season worn from collar to hem, standing on a stepped art deco staircase. Calm, serious face, high viewpoint looking down the steps; the single gold accent is a row of small buttons. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Jackson, Color Me Beautiful, 1980](https://openlibrary.org/works/OL4995954W); [Поступаева, 2021](https://cyberleninka.ru/article/n/slozhnosti-opredeleniya-tsvetotipa-vneshnosti); [Caygill, Color: The Essence of You, 1980](https://openlibrary.org/works/OL17629026W) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 7. Цвет через призму векторов
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ЦВЕТ · ИНТЕРПРЕТАЦИЯ
+- Заголовок: Цвет через призму векторов
+- Эпиграф: «…примирение противоположных потребностей в уподоблении другим и отличии от них». — М. Брюэр
+- Вводный абзац: Технологии оси делят работу. Колориты и сезоны дают базу — личную палитру, а Иттен даёт грамматику обоих векторов.
+- Карточка: 01 · ГАРМОНИЯ/КЛАССИЦИЗМ — Палитра повторяет доминанту. Палитра своего колорита или сезона, созвучия Иттена, родственные цвета и мягкий контраст количества.
+- Карточка: 02 · КОНТРАСТ/ЭКЛЕКТИКА — Один названный контраст. Дополнительные цвета, тёплое и холодное, малое яркое пятно на спокойном поле; в колоритах — сдвиг к «сестре-сезону» при той же доминанте. У сезонов языка контраста нет: цвет вне палитры читается как «не мой».
+- Карточка: 03 · ОБОБЩЕНИЕ — База плюс один контраст Иттена. Сильная схема — личная палитра как основа и одно отступление, которое можно назвать: «контраст дополнительных», «контраст количества».
+- Вывод: Аудитории нужны и принадлежность, и отличие. Вектор — гипотеза о том, какая потребность у неё сильнее сейчас.
+
+**[IMAGE_PROMPT]**
+A woman aged 46 in a column of tonal graphite couture, tailored jacket and long skirt in one quiet shade, interrupted by a single narrow ruby panel running from shoulder to hem: a calm base with one named contrast. She stands in a symmetrical art deco doorway, serious, direct gaze; the single gold accent is the clasp at the top of the ruby panel. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Brewer, 1991](https://doi.org/10.1177/0146167291175001); [Itten, Arte del color, с. 23–26](https://archive.org/details/LaHistoriaInterminable); [Elliot, Maier, 2012](https://doi.org/10.1016/B978-0-12-394286-9.00002-0) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 8. Цвет: аналитические маркеры
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ЦВЕТ · УПРАВЛЕНЧЕСКИЕ ВЫВОДЫ
+- Заголовок: Цвет: аналитические маркеры
+- Эпиграф: «Для мужчин, оценивающих женщин, мы нашли небольшой, статистически значимый эффект». — Г. Леманн и соавт.
+- Вводный абзац: Тезис проверен и уточнён: цвет не сообщает характер, он слабо и в зависимости от контекста сдвигает первое впечатление. Поэтому выбор цвета — гипотеза, которую проверяет реакция аудитории.
+- Карточка: 01 · СВОИ ОСОБЕННОСТИ — Решение начинается с доминанты. Какую доминанту внешности вы готовы подчеркнуть — а не какой цвет любите; противоречие доминанте — сознательная цена, а не случайность.
+- Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — Цвет подбирают к связке, а не к себе. Кто смотрит, о чём будет разговор и зачем собеседнику встреча: один и тот же цвет значит разное в разных контекстах.
+- Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Проверка носителя. Цвета марки, интерьер зала, фон видеозвонка, экран, который искажает оттенки: цвет оценивают там, где вас увидят.
+- Карточка: 04 · МОДА СЕЗОНА — Знак «в курсе» для тех, кто следит. Для остальных код сезона нейтрален: сначала определите, к какой группе относится собеседник, потом решайте, нужен ли цвет сезона.
+- Вывод: Это не совет стилиста. Маркер говорит, что решить, на какие данные опереться и как проверить решение.
+
+**[IMAGE_PROMPT]**
+A man aged 50 in a softly structured emerald couture suit waits in a lacquered art deco lobby whose deep blue walls shift the green of his suit; the scene shows how surroundings change the reading of a colour. Calm, serious face, seen from a distance through a framed doorway; the single gold accent is a thin metal band on the lobby wall. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to emerald #0A4D3C and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Lehmann, Elliot, Calin-Jageman, 2018](https://doi.org/10.1177/1474704918802412); [Elliot, Maier, 2012](https://doi.org/10.1016/B978-0-12-394286-9.00002-0); [Labrecque, Milne, 2012](https://doi.org/10.1007/s11747-010-0245-y); [Simmel, Fashion, 1957](https://doi.org/10.1086/222102) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 9. Форма: законы зрительного восприятия
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ФОРМА — МОДЕЛИРОВАНИЕ ОДЕЖДЫ ПО ЗАКОНАМ ЗРИТЕЛЬНОГО ВОСПРИЯТИЯ — С. Н. БЕЛЯЕВА-ЭКЗЕМПЛЯРСКАЯ
+- Заголовок: Форма: законы зрительного восприятия
+- Эпиграф: «Исследование дает соответствующий научный материал, относящийся к так называемым зрительным иллюзиям и их воздействию на психологию восприятия». — аннотация к книге С. Н. Беляевой-Экземплярской, URSS
+- Вводный абзац: Технология 1 из 3 на оси формы. Глаз оценивает фигуру не по сантиметрам, а через иллюзии, и модельер управляет этими иллюзиями.
+- Карточка: 01 · ДЛЯ ЧЕГО — Проектирование костюма. Книга 1934 года перенесла экспериментальную психологию восприятия в работу художников-модельеров и конструкторов одежды.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Модельеры, конструкторы, преподаватели дизайна костюма, стилисты. Книгу переиздавали в 1996 и 2016 годах.
+- Карточка: 03 · В ЧЁМ СУТЬ — Реальная фигура вместо идеала. Направление линий, членения, пропорции частей, контраст цвета, рисунок и фактура ткани меняют видимую высоту, ширину и объём. Конструктивный крой, членения и ткань — инструменты управления видимой формой конкретной фигуры с её пропорциями и антропологией.
+- Вывод: Опора К — книга-первоисточник. Отдельные правила проверены экспериментально, и результаты смешанные.
+
+**[IMAGE_PROMPT]**
+A woman aged 44 in a couture dress whose vertical and diagonal seam lines are the only decoration, the seams visibly lengthening and narrowing her real, not idealised, figure. She stands against a grid of slender art deco pilasters that echo the seams, calm, serious, frontal Neue Sachlichkeit view; the single gold accent is the topstitching along one seam. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Беляева-Экземплярская, «Моделирование одежды по законам зрительного восприятия», URSS](http://urss.ru/cgi-bin/db.pl?lang=Ru&blang=ru&page=Book&id=184524); [С. Н. Беляева-Экземплярская, МПГУ](http://mpgu.su/graduates/belyaeva-ekzemplyarskaya-sofiya-nikolaevna/); [издания книги, LiveLib](https://www.livelib.ru/book/1000518138-modelirovanie-odezhdy-po-zakonam-zritelnogo-vospriyatiya-sofiya-belyaevaekzemplyarskaya) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 10. Форма: типы фигур «Гида по стилю»
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ФОРМА — ЧЕТЫРЕ ТИПА ФИГУР И КОРРЕКЦИЯ — «ГИД ПО СТИЛЮ», ШКОЛА СТИЛЯ Н. ТУРКЕНИЧ
+- Заголовок: Форма: типы фигур «Гида по стилю»
+- Эпиграф: «Визуальные иллюзии и их применение, коррекция фигуры». — программа Школы стиля Н. Туркенич
+- Вводный абзац: Технология 2 из 3 на оси формы. Тип фигуры задаёт силуэт одежды, коррекция выравнивает отдельные особенности.
+- Карточка: 01 · ДЛЯ ЧЕГО — Работа имиджмейкера с клиентом. «Гид по стилю» — одно из первых имидж-агентств России, школа с 2005 года, с 2010 года — Школа стиля Наталии Туркенич.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Имиджмейкеры, стилисты, шопперы, консультанты по гардеробу. Близкий модуль преподаёт ВШСДТ: «Типология фигур и принципы визуальной коррекции».
+- Карточка: 03 · В ЧЁМ СУТЬ — Четыре типа по линии талии и силуэта. Приталенный, полуприталенный, прямой и округлый тип; силуэт одежды повторяет пропорции фигуры. Затем коррекция длины рук, ног и шеи, высоты талии — через зрительные иллюзии.
+- Вывод: Опора К — учебные программы школ; П — названия четырёх типов: их официального описания в открытом доступе мы не нашли.
+
+**[IMAGE_PROMPT]**
+A woman aged 36 in a couture sheath with a clearly defined waist, the silhouette repeating the proportions of her own figure; a wide sculpted belt marks the waistline. She stands in a curved art deco niche, calm, serious, slightly turned shoulders, seen from waist height; the single gold accent is the belt buckle. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [программа «Стилист-имиджмейкер», Школа стиля Н. Туркенич](https://style-school.com/training/imagemaker/stylist); [история «Гида по стилю»](https://style-school.com/about/traditions); [программа стилиста-консультанта, ВШСДТ](https://styleschool.ru/education/style-consultant) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 11. Форма: классификация фигур FFIT
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ФОРМА — АНТРОПОМЕТРИЧЕСКАЯ КЛАССИФИКАЦИЯ FFIT — К. СИММОНС, С. ИСТУК, П. ДЕВАРАДЖАН
+- Заголовок: Форма: классификация фигур FFIT
+- Эпиграф: «Понимая форму, изготовители могут лучше проектировать, подгонять и градуировать изделия для этого рынка по всему размерному ряду». — С. Соколовски, К. Беттенкур
+- Вводный абзац: Технология 3 из 3 на оси формы — конкурент из индустрии. Тип фигуры определяют не на глаз, а по формулам из измерений.
+- Карточка: 01 · ДЛЯ ЧЕГО — Посадка одежды. Размерные стандарты, посадка изделий широкого рынка, онлайн-подбор размера.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Конструкторы, технологи, исследователи посадки, разработчики размерных шкал. Метод дорабатывают, например, для больших размеров.
+- Карточка: 03 · В ЧЁМ СУТЬ — Девять форм по обхватам. Обхваты груди, талии, бёдер и живота снимает 3D-сканер; формулы относят фигуру к «песочным часам» и их вариантам, «ложке», прямоугольнику, ромбу, овалу, треугольнику или перевёрнутому треугольнику.
+- Вывод: Опора Э — рецензируемые публикации с данными измерений. Задача метода — точность посадки, а не впечатление.
+
+**[IMAGE_PROMPT]**
+A woman aged 39 stands inside a slender vertical frame of thin metal rings, like a body scanner rebuilt as an art deco sculpture, wearing a precisely fitted ruby couture column dress. Calm, serious, frontal pose with arms slightly away from the body, strict Neue Sachlichkeit clarity; the single gold accent is one of the rings. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to ruby #720E1E and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Sokolowski, Bettencourt, 2020 — модификация FFIT](https://doi.org/10.15221/20.22); [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 12. Форма через призму векторов
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ФОРМА · ИНТЕРПРЕТАЦИЯ
+- Заголовок: Форма через призму векторов
+- Эпиграф: «Линейный стиль — это стиль пластически ощущаемой отчётливости». — Г. Вёльфлин
+- Вводный абзац: На оси формы технологии расходятся в главном. Беляева-Экземплярская и «Гид по стилю» управляют впечатлением от фигуры, FFIT — посадкой.
+- Карточка: 01 · ГАРМОНИЯ/КЛАССИЦИЗМ — Иллюзия работает на баланс. Линии, членения и пропорции уравновешивают реальную фигуру, силуэт повторяет тип, посадка точна по измерениям.
+- Карточка: 02 · КОНТРАСТ/ЭКЛЕКТИКА — Иллюзия работает на акцент. Подчёркнутая линия плеча, контрастное членение, особенность фигуры, показанная как знак; для FFIT — намеренно неточная посадка, которая читается как замысел только рядом с безупречной.
+- Карточка: 03 · КОНКУРИРУЮЩИЕ ПОДХОДЫ — Впечатление против точности. Для первых двух технологий интерпретация общая; для FFIT контраст возможен только как модный код поверх точной посадки.
+- Вывод: Правила иллюзий — тоже гипотезы: эксперименты подтверждают одни правила и опровергают другие.
+
+**[IMAGE_PROMPT]**
+A man aged 41 in a couture coat with bold horizontal ribbing across the chest, an illusion used as an accent rather than as correction, standing between two tall fluted art deco columns whose vertical lines counter the ribs. Calm, serious face, low angle; the single gold accent is a thin horizontal line in the ribbing. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Wölfflin, Principles of Art History](https://archive.org/details/princarth00wlff); [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405); [Koutsoumpis и соавт., 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8438770/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 13. Форма: аналитические маркеры
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: ФОРМА · УПРАВЛЕНЧЕСКИЕ ВЫВОДЫ
+- Заголовок: Форма: аналитические маркеры
+- Эпиграф: «…не находим подтверждения тому, что горизонтальные линии на одежде „полнят“». — П. Томпсон, К. Микеллиду
+- Вводный абзац: Форма сообщает роль раньше, чем человек заговорит. Решение по форме — выбор роли и носителя, а не размера.
+- Карточка: 01 · СВОИ ОСОБЕННОСТИ — Что сделать фоном, а что знаком. Работайте с реальной фигурой, а не с идеалом; это решение принимает владелец образа, а не стилист.
+- Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — Форма подбирается к роли. Строгий силуэт сообщает официальность, мягкий — доступность; определите, кто вы в этой встрече: эксперт, партнёр, проситель или хозяин площадки.
+- Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Носитель меняет форму. На видео виден верх фигуры, на сцене — силуэт целиком, за столом — плечи и руки; проверяйте решение там, где вас увидят.
+- Карточка: 04 · МОДА СЕЗОНА — Силуэт сезона быстро становится нормой. Сначала он знак «в курсе», потом — фон: решите, в какой фазе он сейчас для вашей аудитории.
+- Вывод: Членения добавляют видимую ширину, полосы ведут себя не так, как гласит бытовое правило. Решение по форме проверяют на носителе, а не перед зеркалом.
+
+**[IMAGE_PROMPT]**
+A woman aged 48 descends a wide stage staircase in a sculptural couture cape that turns her whole silhouette into one strong geometric form, seen from far below as an audience would see her. Calm, serious face, strict symmetry of the stair and the proscenium arch; the single gold accent is the edge of the cape collar. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405); [Шипков, 2017](https://zh-szf.ru/en/nauka/article/19053/jats); [Blumer, 1969](https://doi.org/10.1111/j.1533-8525.1969.tb01292.x) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 14. Стиль: стилевая комбинаторика ВШСДТ
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СТИЛЬ — СТИЛЕВЫЕ ТИПАЖИ И СТИЛЕВАЯ КОМБИНАТОРИКА — ВШСДТ
+- Заголовок: Стиль: стилевая комбинаторика ВШСДТ
+- Эпиграф: «Исследование линий в лице, одежде как элемента стилевой комбинаторики». — программа ВШСДТ
+- Вводный абзац: Технология 1 из 3 на оси стиля. Стиль определяют по линиям лица и фигуры, а не по вкусу клиента.
+- Карточка: 01 · ДЛЯ ЧЕГО — Подготовка стилистов. Высшая школа стилистики, дизайна и технологий готовит стилистов-консультантов и fashion-стилистов и работает с Томским государственным университетом.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Стилисты, имиджмейкеры, байеры. Преподаватели школы описывают связь лица и фигуры в книгах «Фигура & лицо» и «Мода. Цвет. Стиль».
+- Карточка: 03 · В ЧЁМ СУТЬ — Линии лица как основа формулы стиля. В программе — исследование линий в лице и одежде, художественные принципы комплектов и дисциплина «Правила смешения стилей в одежде». Итог — «Создание индивидуальной формулы стиля клиента»: одежда, аксессуары, макияж и причёска как одна система.
+- Вывод: Опора К — учебные программы и книги преподавателей школы.
+
+**[IMAGE_PROMPT]**
+A man aged 37 in a couture jacket whose sharp, angled lapels repeat the strong line of his own jaw, photographed in a tight three-quarter portrait against a stepped art deco relief. Calm, serious face, the parallel between face and garment lines is the subject; the single gold accent is a narrow lapel pin. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [программа fashion-стилиста, ВШСДТ](https://styleschool.ru/education/fashion-stylist); [программа стилиста-консультанта, ВШСДТ](https://styleschool.ru/education/style-consultant); [Трубецкова, Найденская, «Фигура & лицо», 2021](https://www.labirint.ru/books/804884/); [«Мода. Цвет. Стиль», 2021](https://www.labirint.ru/books/789704/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 15. Стиль: черты лица по Туркенич
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СТИЛЬ — СТИЛЕВЫЕ НАПРАВЛЕНИЯ ПО ЧЕРТАМ ЛИЦА — ШКОЛА СТИЛЯ Н. ТУРКЕНИЧ
+- Заголовок: Стиль: черты лица по Туркенич
+- Эпиграф: «Черты лица – главные носители идеи и основа для построения персонального стиля». — Школа стиля Н. Туркенич
+- Вводный абзац: Технология 2 из 3 на оси стиля. Стиль выводят из «скульптуры лица» — форм, линий и масштаба черт.
+- Карточка: 01 · ДЛЯ ЧЕГО — Персональный стиль от внешности. Метод создан для имиджмейкеров и стилистов, которые строят образ клиента от лица, а не от гардероба.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Имиджмейкеры, стилисты, консультанты по деловому стилю. Метод входит в программу подготовки стилиста-имиджмейкера школы.
+- Карточка: 03 · В ЧЁМ СУТЬ — Лицо задаёт стиль. Черты лица определяют стилевое направление, затем оно соотносится с искусствоведческим образом: в программе — темы «Истоки стилевых направлений в истории искусств» и «Большое искусство и современные образы». Направлений шесть, они — на следующем слайде.
+- Вывод: Опора К — учебная программа; П — подробные описания стилей по практическим публикациям.
+
+**[IMAGE_PROMPT]**
+A close sculptural profile of a woman aged 43 with clear, strongly modelled features, lit like a bust in a museum, wearing a high couture collar that continues the line of her cheekbone. A curved art deco panel behind her repeats the profile; calm, serious expression; the single gold accent is a thin rim on the collar. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [программа «Стилист-имиджмейкер», Школа стиля Н. Туркенич](https://style-school.com/training/imagemaker/stylist); [история школы](https://style-school.com/about/traditions) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 16. Стиль: шесть стилевых направлений
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СТИЛЬ — ШЕСТЬ СТИЛЕВЫХ НАПРАВЛЕНИЙ — ВШСДТ И «ГИД ПО СТИЛЮ»
+- Заголовок: Стиль: шесть стилевых направлений
+- Эпиграф: «Истоками наивной романтики являются стиль Рококо и Нью Лук Диора». — Jewelrygram
+- Вводный абзац: Обе школы описывают шесть направлений через линии и масштаб лица и фигуры. Искусствоведческая ассоциация помогает назвать замысел стиля.
+- Карточка: 01 · ДРАМА — Крупно, резко, вытянуто. Крупный масштаб, острые углы, длинные прямые линии, высокий контраст; ассоциация — ар-деко, графика, конструктивизм.
+- Карточка: 02 · КЛАССИКА — Симметрия и мера. Средний масштаб, уравновешенные пропорции, умеренные линии без крайностей; ассоциация — античность и классицизм.
+- Карточка: 03 · НАТУРАЛЬНЫЙ — Широко, мягко, фактурно. Широкие мягкие прямые, открытая асимметрия, никаких острых углов; ассоциация — импрессионизм и пленэр.
+- Карточка: 04 · РОМАНТИЗМ — Изгиб и острая деталь. Мягкие изгибы вместе с острыми деталями, многодетальность, асимметрия; ассоциация — барокко и модерн.
+- Карточка: 05 · НАИВНАЯ РОМАНТИКА — Мелко, округло, просто. Малый масштаб, округлые мягкие линии; ассоциация в практических публикациях — рококо и New Look К. Диора.
+- Карточка: 06 · СПОРТ — Коротко, угловато, динамично. Короткие прямые линии, угловатость при малом масштабе; ассоциация — функционализм и Баухауз.
+- Вывод: Опора П — описания стилей по практическим публикациям; А — искусствоведческие параллели, кроме наивной романтики, — наша аналогия.
+
+**[IMAGE_PROMPT]**
+Three models aged 32, 40 and 49 stand on different steps of a grand art deco staircase, each embodying a different style line: an angular dramatic coat with long straight lines, a softly draped romantic gown with one sharp detail, a short, angular sport-inspired couture jacket. Calm, serious faces, a strong diagonal composition along the stairs; the single gold accent is the stair rail. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D, deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Jewelrygram, «Стилевые типажи и украшения»](https://jewelrygram.ru/stilevye-tipazhi-i-ukrashenija/); [totemi-ru](https://totemi-ru.livejournal.com/23732.html); [make-your-style](https://make-your-style.livejournal.com/297987.html); [rainy-forest](https://rainy-forest.livejournal.com/382665.html) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 17. Стиль: типология образов Кибби
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СТИЛЬ — ТИПОЛОГИЯ ОБРАЗОВ — Д. КИББИ
+- Заголовок: Стиль: типология образов Кибби
+- Эпиграф: «Суждения после показа в 100 мс высоко коррелировали с суждениями без ограничения времени». — Дж. Уиллис, А. Тодоров
+- Вводный абзац: Технология 3 из 3 на оси стиля — западный конкурент. Внешность раскладывается по одному балансу: «инь — ян».
+- Карточка: 01 · ДЛЯ ЧЕГО — Персональный стайлинг для широкой аудитории. Книга «Метаморфоза», 1987, предложила читателю определить свой тип без стилиста.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Персональные стилисты и онлайн-сообщества. Прежде всего в англоязычном мире; в последние годы — широко в соцсетях.
+- Карточка: 03 · В ЧЁМ СУТЬ — Баланс острого и мягкого. Острые, вытянутые, крупные линии против мягких, округлых, мелких; из баланса выводятся Драматик, Натурал, Классик, Гамин, Романтик и смешанные подтипы, а линии одежды повторяют линии тела и лица.
+- Вывод: Опора К — авторская книга без эмпирической проверки. Названия типов частично совпадают с шестью направлениями школ.
+
+**[IMAGE_PROMPT]**
+A woman aged 35 whose image balances soft and sharp: a couture gown with a softly rounded draped bodice and a sharply pointed, architectural shoulder, mirroring the mix of rounded and angular lines in her own face. She stands in an art deco rotunda, calm, serious, three-quarter view; the single gold accent is a small pointed clasp at the shoulder. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to ruby #720E1E and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Kibbe, Metamorphosis, 1987](https://openlibrary.org/works/OL4972581W); [Willis, Todorov, 2006](https://pubmed.ncbi.nlm.nih.gov/16866745/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 18. Стиль через призму векторов
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СТИЛЬ · ИНТЕРПРЕТАЦИЯ
+- Заголовок: Стиль через призму векторов
+- Эпиграф: «Люди приписывают более высокий статус и компетентность нонконформистам, а не конформистам». — С. Беллецца и соавт.
+- Вводный абзац: Все три технологии выводят стиль из линий лица и фигуры. Поэтому у гармонии и контраста на этой оси одно определение.
+- Карточка: 01 · ГАРМОНИЯ/КЛАССИЦИЗМ — Одежда повторяет линии человека. Один ведущий стиль, индивидуальная формула стиля, один искусствоведческий образ, линии в балансе внешности.
+- Карточка: 02 · КОНТРАСТ/ЭКЛЕКТИКА — Линия другого стиля при сохранении ведущего. Ведущий стиль плюс подчинённый по правилам смешения, цитата другой эпохи, смешанный подтип как встроенная эклектика.
+- Карточка: 03 · ОБОБЩЕНИЕ — Эклектика с внутренней логикой. Ар-деко сам эклектичен: геометрия, роскошь материалов и экзотические мотивы собраны в одну систему — так читается смешение, у которого есть основа и замысел.
+- Вывод: Нонконформизм повышает оценку статуса, только если аудитория знает норму и видит намерение. Опора параллели с ар-деко — А.
+
+**[IMAGE_PROMPT]**
+A man aged 46 in a strict graphite couture suit with a single Beijing-inspired embroidered panel set into one side of the jacket, an eclectic quotation held inside a calm tailored base. He stands in a lacquered art deco corridor with Bauhaus-straight lines, calm, serious, seen from slightly below; the single gold accent is the embroidery thread. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870); [программа стилиста-консультанта, ВШСДТ](https://styleschool.ru/education/style-consultant); [Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 19. Стиль: аналитические маркеры
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СТИЛЬ · УПРАВЛЕНЧЕСКИЕ ВЫВОДЫ
+- Заголовок: Стиль: аналитические маркеры
+- Эпиграф: «Мода — это форма подражания и, значит, социального уравнивания, но, парадоксальным образом, непрерывно меняясь, она отличает одно время от другого и один социальный слой от другого». — Г. Зиммель
+- Вводный абзац: Стиль — обещание, которое человек даёт до первого слова. Маркеры показывают, кому это обещание адресовано и как его проверить.
+- Карточка: 01 · СВОИ ОСОБЕННОСТИ — Подтвердить или спорить. Стиль из линий лица подтверждают манерой и речью или осознанно с ним спорят; несогласие стиля и поведения читается как сбой.
+- Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — У каждой аудитории свой ожидаемый стиль. Решение о контрасте — это решение о том, знает ли собеседник норму и увидит ли намерение.
+- Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Стиль шире одежды. Фото в профиле, оформление презентации, визитка, сайт: решение принимают для всего поля сразу, иначе стиль распадается на разные голоса.
+- Карточка: 04 · МОДА СЕЗОНА — Источник подчинённой линии. Сезон предлагает эстетики, эпохи и цитаты; решите, сколько сезона выдержит ваш стиль без потери узнаваемости.
+- Вывод: Ведущий стиль — из своих линий; сезон и среда входят в образ подчинённой линией.
+
+**[IMAGE_PROMPT]**
+A woman aged 42 in a tailored couture ensemble stands between angled mirror panels of an art deco salon, her figure repeated in several reflections that stay consistent in every view, a single coherent style across all surfaces. Calm, serious face, cool controlled light; the single gold accent is the thin frame of one mirror. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Simmel, Fashion, 1957](https://doi.org/10.1086/222102); [Goffman, 1959](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a); [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 20. Аксессуары: по стилю и чертам лица
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: АКСЕССУАРЫ — ПОДБОР ПО СТИЛЮ И ЧЕРТАМ ЛИЦА — ВШСДТ
+- Заголовок: Аксессуары: по стилю и чертам лица
+- Эпиграф: «…линии и формы украшений определяются чертами лица, которые во многом зависят от стилевого типажа; масштаб украшений зависит от масштаба фигуры». — Jewelrygram
+- Вводный абзац: Технология 1 из 3 на оси аксессуаров. Подход отвергает подбор «в тон» одежде: аксессуар повторяет не цвет вещи, а линии лица и стиль образа.
+- Карточка: 01 · ДЛЯ ЧЕГО — Целостная формула стиля. Стилист собирает одежду, аксессуары, макияж и причёску в одну систему, и деталь подчиняется этой системе.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Стилисты-консультанты, fashion-стилисты, ювелирные консультанты. Подбор входит в программу fashion-стилиста ВШСДТ как часть стратегии целостного стиля клиента.
+- Карточка: 03 · В ЧЁМ СУТЬ — Форма детали — по стилю, масштаб — по фигуре. Драме — крупные монолитные формы с острыми углами, Классике — симметричные и лаконичные, Натуральному — объёмные и округлые, сложной Романтике — многодетальные и асимметричные, Наивной романтике — мелкие и простые.
+- Вывод: Опора К — учебная программа; П — правила по практическим публикациям.
+
+**[IMAGE_PROMPT]**
+A tight portrait of a woman aged 37 with strong angular features wearing large monolithic geometric earrings whose sharp angles repeat the lines of her cheekbones and jaw, the earrings chosen by her face, not by the colour of her couture dress. Calm, serious gaze, a stepped art deco relief behind her; the single gold accent is the earrings themselves. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Jewelrygram, «Стилевые типажи и украшения»](https://jewelrygram.ru/stilevye-tipazhi-i-ukrashenija/); [программа fashion-стилиста, ВШСДТ](https://styleschool.ru/education/fashion-stylist) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 21. Аксессуары: дизайн, размер, количество
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: АКСЕССУАРЫ — ДИЗАЙН, РАЗМЕР И КОЛИЧЕСТВО — ШКОЛА СТИЛЯ Н. ТУРКЕНИЧ
+- Заголовок: Аксессуары: дизайн, размер, количество
+- Эпиграф: «Законы подбора аксессуаров по дизайну, размеру, количеству». — программа Школы стиля Н. Туркенич
+- Вводный абзац: Технология 2 из 3 на оси аксессуаров. Аксессуар оценивают по трём параметрам, и каждый отвечает на свой вопрос.
+- Карточка: 01 · ДЛЯ ЧЕГО — Деловой и представительский образ. Метод создан для имиджмейкеров, которые отвечают за образ клиента в деловой среде.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Имиджмейкеры, персональные стилисты, консультанты по деловому стилю. Деловые нормы собраны в справочнике «Кодекс стиля» Н. Туркенич и Е. Меньшиковой.
+- Карточка: 03 · В ЧЁМ СУТЬ — Три параметра — три вопроса. Дизайн, то есть линии и характер, соответствует стилю, который задают черты лица; размер соотносится с масштабом черт и фигуры; количество — с ситуацией и дресс-кодом.
+- Вывод: Опора К — учебная программа и справочник.
+
+**[IMAGE_PROMPT]**
+The forearm and hand of a man aged 44 resting on a lacquered art deco table, wearing one wide sculptural cuff, its scale matched to his broad wrist, as the only accessory of a couture look in emerald and graphite. Calm, serious, still composition seen from above, Neue Sachlichkeit precision; the single gold accent is the cuff. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [программа «Стилист-имиджмейкер», Школа стиля Н. Туркенич](https://style-school.com/training/imagemaker/stylist); [Туркенич, Меньшикова, «Кодекс стиля»](https://www.koob.ru/turkenich_n/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 22. Аксессуары: дресс-код Моллоя
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: АКСЕССУАРЫ — ДЕЛОВОЙ ДРЕСС-КОД — ДЖ. МОЛЛОЙ
+- Заголовок: Аксессуары: дресс-код Моллоя
+- Эпиграф: «Даже небольшие изменения в выборе одежды могут сообщать наблюдателю разную информацию». — Н. Хаулетт и соавт.
+- Вводный абзац: Технология 3 из 3 на оси аксессуаров — конкурент. Правило детали выводится не из внешности человека, а из нормы среды.
+- Карточка: 01 · ДЛЯ ЧЕГО — Карьера в деловой среде. Книга «Одевайтесь для успеха», 1975, предложила правила одежды для карьеры на основе опросов автора.
+- Карточка: 02 · ИСПОЛЬЗУЮТ — Корпоративные тренеры, HR, имиджмейкеры руководителей. Консультанты по деловому этикету опираются на ту же логику кода среды.
+- Карточка: 03 · В ЧЁМ СУТЬ — Деталь как знак статуса. Часы, обувь, портфель, галстук читаются как знак положения и принадлежности к среде. Поздние эксперименты подтверждают: небольшие изменения костюма меняют оценки, а видимая марка люкса повышает статус в глазах окружающих.
+- Вывод: Опора К — авторская книга на собственных опросах; Э — отдельные эффекты деталей.
+
+**[IMAGE_PROMPT]**
+A man aged 49 in a bespoke couture suit stands in the lobby of a grand New York art deco hotel, every detail of watch, shoes and tie quietly matching the code of the place; calm, serious face, seen from a low angle through a revolving door frame. Strict symmetry, Neue Sachlichkeit clarity; the single gold accent is the watch case. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Molloy, Dress for Success, 1975](https://openlibrary.org/works/OL3266029W); [Howlett и соавт., 2013](https://doi.org/10.1108/13612021311305128); [Nelissen, Meijers, 2011](https://doi.org/10.1016/j.evolhumbehav.2010.12.002) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 23. Аксессуары через призму векторов
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: АКСЕССУАРЫ · ИНТЕРПРЕТАЦИЯ
+- Заголовок: Аксессуары через призму векторов
+- Эпиграф: «Положительные выводы исчезают, когда наблюдатель не знаком со средой, когда нонконформное поведение показано как ненамеренное…». — С. Беллецца и соавт.
+- Вводный абзац: Ось держится на споре двух логик. ВШСДТ и Школа Н. Туркенич выводят аксессуар из человека, Моллой — из среды.
+- Карточка: 01 · ГАРМОНИЯ/КЛАССИЦИЗМ — Совпадение с собой или с залом. Линии детали повторяют черты лица, масштаб — масштаб фигуры, количество — норму ситуации; в логике среды — совпадение со статусной нормой.
+- Карточка: 02 · КОНТРАСТ/ЭКЛЕКТИКА — Один акцент на гармоничной базе. Деталь чужого стиля или масштаба, размер или количество выше нормы при том же дизайне, осознанное отступление от кода среды.
+- Карточка: 03 · КОНКУРИРУЮЩИЕ ПОДХОДЫ — Из человека или из среды. Подбор «в тон» — ни гармония, ни контраст, а отказ от решения; аксессуар — самый дешёвый и быстрый носитель контраста.
+- Вывод: Одна деталь может нести всё отступление образа, пока остальное остаётся базой.
+
+**[IMAGE_PROMPT]**
+A woman aged 41 in a strictly tailored graphite couture suit carries one sculptural ruby bag, a single deliberate accent on an otherwise quiet base, crossing a polished art deco gallery. Calm, serious face, shot from a high angle so the bag sits in the centre of the frame; the single gold accent is the bag's clasp. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870); [Molloy, Dress for Success, 1975](https://openlibrary.org/works/OL3266029W); [Jewelrygram](https://jewelrygram.ru/stilevye-tipazhi-i-ukrashenija/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 24. Аксессуары: аналитические маркеры
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: АКСЕССУАРЫ · УПРАВЛЕНЧЕСКИЕ ВЫВОДЫ
+- Заголовок: Аксессуары: аналитические маркеры
+- Эпиграф: «…они могут снижать привлекательность, но повышать воспринимаемый интеллект и надёжность их владельцев. Эти эффекты зависят от вида очков». — Х. Ледер и соавт.
+- Вводный абзац: Деталь — самый короткий сигнал образа. Маркеры решают, какой сигнал послать и где его увидят.
+- Карточка: 01 · СВОИ ОСОБЕННОСТИ — Какая одна деталь несёт ваш знак. Аксессуар продолжает черты лица и масштаб фигуры; «подобрать в тон» — отказ от управления деталью.
+- Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — Статус выше, равный или ниже. Детали читаются как статус: решите, какое соотношение со статусом собеседника нужно в этой встрече, и подберите знак к решению.
+- Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Что попадёт в кадр. На видео видны очки и серьги, в зале — обувь и сумка; очки меняют оценку интеллекта и привлекательности.
+- Карточка: 04 · МОДА СЕЗОНА — Самый короткий сигнал «в курсе». Модный аксессуар устаревает быстрее всего: держите долю сезона в деталях, а не в основе.
+- Вывод: Сначала база по всем четырём осям, затем не больше одного названного отступления на встречу.
+
+**[IMAGE_PROMPT]**
+A man aged 39 in rimless glasses and a high-collared couture jacket, framed as if seen on a video call, only head and shoulders visible, so the glasses are the one detail that reaches the viewer. Calm, serious, attentive face, a deep blue lacquered art deco wall behind; the single gold accent is the thin temple of the glasses. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Leder, Forster, Gerger, 2011](https://doi.org/10.1024/1421-0185/a000059); [Nelissen, Meijers, 2011](https://doi.org/10.1016/j.evolhumbehav.2010.12.002); [Simmel, Fashion, 1957](https://doi.org/10.1086/222102) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 25. Сборка 1: закупщик региональной розницы
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СБОРКА · СЦЕНАРИЙ 1 ИЗ 3 · КЕЙС КУРСА
+- Заголовок: Сборка 1: закупщик региональной розницы
+- Эпиграф: «Мужчину оценили выше по всем качествам, кроме надёжности, когда он был в костюме на заказ». — Н. Хаулетт и соавт.
+- Вводный абзац: Производитель консервов впервые встречается с категорийным директором региональной сети после рекомендации неконкурирующего поставщика. Цель впечатления — «надёжный производитель, с которым не придётся торговаться о цене каждый месяц».
+- Карточка: 01 · ЦВЕТ — Колориты плюс созвучия Иттена. Палитра повторяет доминанту внешности: родственные цвета, низкий контраст; гипотеза — спокойная палитра поддерживает впечатление предсказуемости.
+- Карточка: 02 · ФОРМА — Беляева-Экземплярская. Силуэт уравновешивает реальную фигуру без подчёркнутых акцентов; гипотеза — форма не отвлекает от продукта и образцов на столе.
+- Карточка: 03 · СТИЛЬ — Стилевые типажи ВШСДТ. Классика — ведущий стиль, подчинённая линия — из своего типажа; гипотеза — образ читается как «деловой человек с производства», а не как продавец.
+- Карточка: 04 · АКСЕССУАРЫ — Моллой плюс количество по Школе Н. Туркенич. Норма закупки, минимум деталей, без знаков люкса; гипотеза — люкс в ценовом разговоре прочтут как «запас по цене есть».
+- Вывод: Вектор — гармония: надёжность здесь означает предсказуемость. Проверка — разговор идёт о стабильной поставке, сроках оплаты и тестовой поставке, а не о скидке с первой минуты.
+
+**[IMAGE_PROMPT]**
+A man aged 47 in a quietly tailored couture suit walks through the calm, orderly trading hall of an art deco market building, rows of identical shelves behind him like a rhythm of columns; nothing in his look competes with the goods. Calm, serious, steady gaze, symmetrical frontal view; the single gold accent is a thin tie bar. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Кейс 1 курса: B2B-производитель консервов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-1-b2b-производитель-консервов-надёжные-оптовые-партнёры); [Howlett и соавт., 2013](https://doi.org/10.1108/13612021311305128); [Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 26. Сборка 2: партнёр венчурного фонда
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СБОРКА · СЦЕНАРИЙ 2 ИЗ 3 · КЕЙС КУРСА
+- Заголовок: Сборка 2: партнёр венчурного фонда
+- Эпиграф: «…дополнительное время может лишь повышать уверенность в суждениях». — Дж. Уиллис, А. Тодоров
+- Вводный абзац: Основатель deep-tech стартапа впервые встречается с партнёром фонда после представления через якорного заказчика, часто по видео. Цель впечатления — «инженерная команда, которая знает свою технологию и уже проверила её у заказчика».
+- Карточка: 01 · ЦВЕТ — Контраст количества Иттена на базе своего колорита. Спокойная база и одно малое насыщенное пятно; гипотеза — на видео акцент держит внимание на лице, а база не спорит с экраном.
+- Карточка: 02 · ФОРМА — FFIT и Беляева-Экземплярская. Точная посадка по фигуре без декоративных членений; гипотеза — точность формы читается как точность инженера.
+- Карточка: 03 · СТИЛЬ — Направления Школы Н. Туркенич. Ведущий стиль — из черт лица, подчинённая линия — Спорт с параллелью функционализма; гипотеза — стиль связывает человека с инженерной культурой.
+- Карточка: 04 · АКСЕССУАРЫ — Подбор по стилю и чертам лица ВШСДТ. Одна функциональная деталь повторяет линии лица и несёт названное отступление от делового кода; гипотеза — деталь заметна в кадре и запоминается как знак команды.
+- Вывод: Вектор — база плюс одно названное отступление: партнёр знает норму своей среды и видит намерение. Проверка — запрос материалов для due diligence; вопросы о «зрелости» команды — сигнал, что отступление прочитано как ошибка.
+
+**[IMAGE_PROMPT]**
+A woman aged 36, an engineer-founder, stands in a glass-walled Bauhaus hall inside an art deco tower, wearing a precisely fitted graphite couture jacket with one small ruby functional detail at the collar, the single named deviation of her look. Calm, serious, focused face, seen through the glass grid from a slightly low angle; the single gold accent is a thin frame of the glass wall. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Кейс 2 курса: deep-tech стартап](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-2-deep-tech-стартап-инвесторы-и-направление-потока); [Willis, Todorov, 2006](https://pubmed.ncbi.nlm.nih.gov/16866745/); [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+### Слайд 27. Сборка 3: встреча с лечащим врачом
+
+**[SLIDE_TEXT]**
+- Шапка: Введение в репутационный инжиниринг · Имиджевые стратегии для действия
+- Надзаголовок: СБОРКА · СЦЕНАРИЙ 3 ИЗ 3 · КЕЙС КУРСА
+- Заголовок: Сборка 3: встреча с лечащим врачом
+- Эпиграф: «Ряд противоречащих данных привёл к пересмотру теории». — Дж. Бургун
+- Вводный абзац: Массажист-эксперт впервые встречается с ортопедом, реабилитологом или неврологом после рекомендации общего пациента. Цель впечатления — «специалист с медицинским образованием, который ясно знает границы своего метода».
+- Карточка: 01 · ЦВЕТ — Колориты Ваттерман и Цингель. Палитра по доминанте внешности, чистые спокойные цвета без контрастных пар; гипотеза — гармоничная палитра поддерживает впечатление аккуратности и не отвлекает.
+- Карточка: 02 · ФОРМА — Типы фигур «Гида по стилю». Силуэт по типу фигуры, свобода движения рук и плеч; гипотеза — форма показывает человека дела, а не визитёра.
+- Карточка: 03 · СТИЛЬ — Стилевые типажи ВШСДТ. Ведущий стиль — из своих линий, подчинённая линия — Спорт или Натуральный; гипотеза — стиль совпадает с образом специалиста по телу и движению.
+- Карточка: 04 · АКСЕССУАРЫ — Дресс-код среды и количество по Школе Н. Туркенич. Минимум деталей, без колец и браслетов, которые противоречат гигиене профессии; гипотеза — отсутствие лишнего врач читает как профессиональную норму.
+- Вывод: Вектор — строгая гармония с профессиональной нормой: любое отступление рискует прочитаться как «народный целитель». Проверка — врач спрашивает о методе, противопоказаниях и границах и направляет одного пациента на пробу.
+
+**[IMAGE_PROMPT]**
+A man aged 43 with strong, capable hands stands in a bright, orderly art deco treatment hall in a clean-lined emerald couture tunic with free shoulders and sleeves, no rings and no bracelets; his hands rest still in front of him. Calm, serious, trustworthy face, strict frontal Neue Sachlichkeit composition; the single gold accent is a thin line inlaid in the wall panel behind him. Haute couture 2026–2027, inspired by New York and Beijing, strictly subordinate to a luxurious art deco base with a light touch of Bauhaus and Neue Sachlichkeit. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+
+**[FOOTER_LINKS]**
+Источники: [Кейс 3 курса: массажист-эксперт](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-3-массажист-эксперт-закрытый-пул-клиентов-по-рекомендациям); [Burgoon, 2015](https://experts.arizona.edu/en/publications/expectancy-violations-theory/); [Goffman, 1959](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+
+## Источники и уровень опоры
+
+Список нужен лектору и редактору, на слайды он не выводится. Уровни опоры: **Э** — эксперимент, **К** — книга или учебная программа, **П** — практика, **А** — аналогия. Подробные карточки и пулы кандидатов — в [таксономии модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/20-taxonomy.md).
+
+| Технология | Что говорит источник | Уровень опоры |
+| --- | --- | --- |
+| Введение и легенда | Аудитория ждёт согласованности внешности и манеры ([Goffman, 1959, p. 24](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a)). Суждения о лице складываются за 100 мс ([Willis, Todorov, 2006](https://pubmed.ncbi.nlm.nih.gov/16866745/)). Эффект одежды на владельца подтверждён для работ после 2015 года ([Horton и соавт., 2023](https://doi.org/10.1177/01461672231182478)). Принадлежность и отличительность — две базовые потребности ([Brewer, 1991](https://doi.org/10.1177/0146167291175001)). | Э; описательная социология |
+| Сочетания и контрасты Иттена | Семь контрастов и созвучия на двенадцатичастном круге; предостережение против суждений о человеке по цвету ([Arte del color, с. 23–26](https://archive.org/details/LaHistoriaInterminable); [Open Library](https://openlibrary.org/works/OL3134338W)). | К |
+| Колориты Ваттерман и Цингель | Книга 1994 года подтверждена библиографически ([каталог](https://www.bibliothek-freiberg.de/title/Title/getTitle/334939); [описание издания](https://www.eurobuch.com/buch/isbn/3806847827.html)); система шестнадцати колоритов — по учебной программе ([Маменко](https://tatyana-mamenko.ru/services/stylist/kurs-koloristika-dlya-stilistov/)). | К; П |
+| Сезонные цветотипы | Готовая палитра для широкой аудитории ([Jackson, 1980](https://openlibrary.org/works/OL4995954W); [Caygill, 1980](https://openlibrary.org/works/OL17629026W)); определение цветотипа на практике затруднено ([Поступаева, 2021](https://cyberleninka.ru/article/n/slozhnosti-opredeleniya-tsvetotipa-vneshnosti)). | П |
+| Проверка тезиса о цвете | Значение цвета зависит от контекста ([Elliot, Maier, 2012](https://doi.org/10.1016/B978-0-12-394286-9.00002-0)); цвет меняет воспринимаемую «личность» марки ([Labrecque, Milne, 2012](https://doi.org/10.1007/s11747-010-0245-y)); эффект «красного» мал и неоднороден ([Lehmann и соавт., 2018](https://doi.org/10.1177/1474704918802412)). Разбор — в [теории модуля, §3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/10-theory.md#3-проверка-тезиса-о-цвете). | Э |
+| Моделирование по Беляевой-Экземплярской | Зрительные иллюзии в проектировании костюма ([URSS](http://urss.ru/cgi-bin/db.pl?lang=Ru&blang=ru&page=Book&id=184524); [МПГУ](http://mpgu.su/graduates/belyaeva-ekzemplyarskaya-sofiya-nikolaevna/)). Проверка отдельных правил: полосы ([Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405)), тёмная одежда ([Koutsoumpis и соавт., 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8438770/)), членения ([Шипков, 2017](https://zh-szf.ru/en/nauka/article/19053/jats)). | К; Э для отдельных правил |
+| Типы фигур «Гида по стилю» | Темы программы о типологии фигур и визуальных иллюзиях ([Школа стиля Н. Туркенич](https://style-school.com/training/imagemaker/stylist)); близкий модуль ВШСДТ ([программа](https://styleschool.ru/education/style-consultant)). | К; П для названий типов |
+| FFIT | Классификация по 3D-измерениям и её модификация ([Sokolowski, Bettencourt, 2020](https://doi.org/10.15221/20.22)). | Э |
+| Стилевая комбинаторика ВШСДТ | Линии лица и одежды, правила смешения стилей, формула стиля клиента ([программа fashion-стилиста](https://styleschool.ru/education/fashion-stylist); [программа стилиста-консультанта](https://styleschool.ru/education/style-consultant); [«Фигура & лицо»](https://www.labirint.ru/books/804884/)). | К |
+| Направления Школы Н. Туркенич и шесть стилей | Черты лица как носители идеи стиля ([программа](https://style-school.com/training/imagemaker/stylist)); линии и искусствоведческие ассоциации шести стилей — по практическим публикациям ([Jewelrygram](https://jewelrygram.ru/stilevye-tipazhi-i-ukrashenija/)). | К; П; А для параллелей |
+| Типология Кибби | Баланс «инь — ян» и типы образов ([Kibbe, 1987](https://openlibrary.org/works/OL4972581W)). | К без эмпирической проверки |
+| Аксессуары по стилю и чертам лица | Отказ от подбора «в тон»; форма по чертам, масштаб по фигуре ([программа ВШСДТ](https://styleschool.ru/education/fashion-stylist); [Jewelrygram](https://jewelrygram.ru/stilevye-tipazhi-i-ukrashenija/)). | К; П |
+| Дизайн, размер, количество | Три параметра аксессуара ([программа](https://style-school.com/training/imagemaker/stylist); [«Кодекс стиля»](https://www.koob.ru/turkenich_n/)). | К |
+| Дресс-код Моллоя | Деталь как знак среды ([Molloy, 1975](https://openlibrary.org/works/OL3266029W)); эффекты деталей ([Howlett и соавт., 2013](https://doi.org/10.1108/13612021311305128); [Nelissen, Meijers, 2011](https://doi.org/10.1016/j.evolhumbehav.2010.12.002); [Leder и соавт., 2011](https://doi.org/10.1024/1421-0185/a000059)). | К; Э для отдельных эффектов |
+| Векторы | Нарушение ожиданий с двумя исходами ([Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158); пересмотр — [Burgoon, 2015](https://experts.arizona.edu/en/publications/expectancy-violations-theory/)); нонконформизм работает при знании нормы ([Bellezza и соавт., 2014](https://doi.org/10.1086/674870)); пара «линейное — живописное» ([Wölfflin](https://archive.org/details/princarth00wlff)). | Э; А для параллелей из искусства |
+| Мода сезона | Подражание и отличие одновременно ([Simmel, 1957](https://doi.org/10.1086/222102)); коллективный отбор ([Blumer, 1969](https://doi.org/10.1111/j.1533-8525.1969.tb01292.x)). | теория моды |
+| Сборка | Три сценария первого контакта на кейсах курса — в [практике модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/40-practice-and-cases.md). | гипотезы для проверки |
+
+Загрузки Гофмана и Иттена на archive.org пользовательские, права на них не проверены. В раздаточных материалах давайте библиографическую ссылку на печатное издание.
+
+## Гейт-проверка
+
+Пункты issue #693 подтверждены по этому файлу и по модулю [`image-technologies`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/00-introduction.md). Автоматическая проверка — [`check-day4-693.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day4-v4-693/check-day4-693.py) с самопроверкой на искусственных повреждениях.
+
+- [x] Исследование по контракту RRP создано в отдельном модуле `image-technologies`, и колода собрана на его основе.
+- [x] На каждой из четырёх осей — три технологии; обязательные включены: Иттен и Ваттерман — Цингель, Беляева-Экземплярская и «Гид по стилю», ВШСДТ и «Гид по стилю» с шестью стилями, подбор аксессуаров ВШСДТ против «подбора в тон».
+- [x] Тезис «цвет не сообщает характер, а является гипотезой о первом впечатлении» проверен по источникам и уточнён — слайд 8.
+- [x] Введение — слайды 1–2, легенда карты — слайд 3; образ включает причёску, походку, речь, почерк, мимику, синтаксис и стиль жизни.
+- [x] Каждая технология описана как «Ось — метод — автор», «Для чего», «Используют», «В чём суть»; векторов на карточке технологии нет.
+- [x] На каждую ось — слайд интерпретации через гармонию и контраст и слайд из четырёх аналитических маркеров.
+- [x] Сборка — слайды 25–27 на трёх кейсах курса; на других слайдах кейсов нет.
+- [x] Модель сбора данных курса и её термины к имидж-технологиям не применяются.
+- [x] Каждый слайд — ровно три поля `[SLIDE_TEXT]`, `[IMAGE_PROMPT]`, `[FOOTER_LINKS]`; каждая строка текста слайда начинается с метки роли.
+- [x] Промпты изображений: только высокая мода 2026–2027, Нью-Йорк и Пекин под базой ар-деко, Баухауза и Neue Sachlichkeit; два-три базовых цвета и один золотой акцент; вертикаль 1:2.4; без текста, офисных сцен и стоковых улыбок.
+
+## Решения исполнителя в пределах постановки
+
+Отклонения от постановки сформулированы по её правилу и повторяют раздел 2 [открытых вопросов модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/50-open-research.md#2-отклонения-от-постановки).
+
+1. **Тезис о цвете.** Я предлагаю скорректировать [Ограничение «цвет не сообщает характер, а является гипотезой о первом впечатлении»], потому что вариант [«цвет не сообщает характер; он слабо и в зависимости от контекста сдвигает первое впечатление, поэтому выбор цвета — гипотеза»] эффективнее решает задачу [научно точной карты гипотез]. Без уточнения тезис легко прочитать как «цвет ни на что не влияет», а это противоречит данным о сдвиге впечатления.
+2. **Атрибуция четырёх типов фигур.** Я предлагаю скорректировать [Ограничение «подход НИА „Гид по стилю“, где рассматривают 4 типа фигур»], потому что вариант [«четыре типа фигур из постановки в логике учебной программы школы; официальное описание не найдено»] эффективнее решает задачу [проверяемости каждого тезиса]. На слайде 10 это видно из уровня опоры.
+3. **Искусствоведческие ассоциации стилей.** Я предлагаю скорректировать [Ограничение «учёт искусствоведческих ассоциаций» в виде утверждения], потому что вариант [ассоциации как явно помеченная аналогия рядом с линиями лица и фигуры] эффективнее решает задачу [методологической чистоты]. На слайде 16 у параллелей стоит уровень опоры А.
+4. **Изображения.** Я предлагаю скорректировать [правило #691 о чередовании тем «архитектура — арт — мода»], потому что вариант [только высокая мода, как требует #693] эффективнее решает задачу [единого визуального языка колоды v4]. Архитектура и искусство остались фоном и материалом кадра.
+
+Решения в пределах постановки, без отклонений:
+
+5. **Три технологии на ось.** Постановка разрешает от двух до четырёх. Четвёртая технология не взята ни на одной оси: кандидаты либо повторяют выбранные, либо не имеют профессиональной опоры. Пулы кандидатов и причины отбора — в таксономии модуля.
+6. **Один слайд на технологию, кроме стиля.** Каждая технология укладывается в один слайд из трёх карточек. Шесть стилей вынесены на второй слайд стилевых технологий — слайд 16, — потому что их описание общее для ВШСДТ и «Гида по стилю».
+7. **Эпиграфы.** Каждый эпиграф — дословная цитата из источника в подвале того же слайда, сверенная по первоисточнику или странице программы. Для Кибби проверяемой дословной цитаты в открытом доступе не нашлось, поэтому на слайде 17 эпиграф — из эксперимента Уиллиса и Тодорова о скорости суждения по лицу: он задаёт рамку, в которой работает типология по линиям лица.
+8. **Сценарий лектора.** Постановка #693 его не запрашивает. Колода самостоятельна: каждый слайд читается без речи лектора.

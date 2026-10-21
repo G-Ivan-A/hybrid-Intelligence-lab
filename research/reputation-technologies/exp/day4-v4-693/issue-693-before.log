@@ -1,0 +1,21 @@
+## Run 1: on main before #693
+
+$ python3 -I research/reputation-technologies/exp/day4-v4-693/check-day4-693.py --self-test
+FAIL: 2026-11-03-day4-presentation-gamma-v4.md: file not found
+FAIL: 00-introduction.md: file not found
+FAIL: 10-theory.md: file not found
+FAIL: 20-taxonomy.md: file not found
+FAIL: 30-decision-framework.md: file not found
+FAIL: 40-practice-and-cases.md: file not found
+FAIL: 50-open-research.md: file not found
+exit 1
+
+## Run 2: first draft of the deck, five image prompts break the image rules of #693
+
+$ python3 -I research/reputation-technologies/exp/day4-v4-693/check-day4-693.py --self-test
+FAIL: slide 2: image concept is not haute couture
+FAIL: slide 3: image concept is not haute couture
+FAIL: slide 5: image concept is not calm and serious
+FAIL: slide 20: image concept is not haute couture
+FAIL: slide 21: image concept is not calm and serious
+exit 1
