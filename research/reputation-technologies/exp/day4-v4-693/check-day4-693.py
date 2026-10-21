@@ -401,7 +401,8 @@ def validate(texts):
         return errors
     for path in FILES:
         text, name = texts[path], path.name
-        if frontmatter(text).get("source", "").strip('"') != SOURCE:
+        # A later issue may extend the module, so the source is a «; »-separated list that must name #693.
+        if SOURCE not in [item.strip() for item in frontmatter(text).get("source", "").strip('"').split(";")]:
             errors.append(f"{name}: frontmatter source is not issue #693")
         if "<!--" in text:
             errors.append(f"{name}: draft HTML comment")
