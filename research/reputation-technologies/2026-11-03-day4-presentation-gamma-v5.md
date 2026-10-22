@@ -1,22 +1,25 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-10-22
 temperature: 0.4
-source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/693; https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/695"
+source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/693; https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/695; https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/697"
 scope: reputation-engineering-course-day4
-method: gamma-hypothesis-map-695
+method: gamma-hypothesis-map-697
 based_on:
   - research/reputation-technologies/image-technologies/20-taxonomy.md
   - research/reputation-technologies/image-technologies/30-decision-framework.md
   - research/reputation-technologies/image-technologies/40-practice-and-cases.md
+  - research/reputation-technologies/2026-11-03-rfc-presentation-update-v5.md
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/693"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/695"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/697"
 ---
 
 # День 4. Презентация для Gamma, вариант 5: карта гипотез имидж-технологий
 
-Это пятый вариант блока имидж-технологий Дня 4 курса «Введение в репутационный инжиниринг». Он собран по issue [#695](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/695) на основе исследовательского модуля [`image-technologies`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/00-introduction.md). Файл целиком передаётся в Gamma.app или в другой ИИ-генератор презентаций.
+Это пятый вариант блока имидж-технологий Дня 4 курса «Введение в репутационный инжиниринг». Он собран по issue [#697](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/697): к структуре [варианта 4](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-presentation-gamma-v4.md) применены все замены утверждённого [RFC v5](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-rfc-presentation-update-v5.md) из issue [#695](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/695), а выводы осей и легенды взяты из PDF-эталона «Карта гипотез, а не инструкция». Опора — исследовательский модуль [`image-technologies`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/00-introduction.md). Файл целиком передаётся в Gamma.app или в другой ИИ-генератор презентаций. Речь лектора к каждому слайду — в [сценарии лектора, вариант 5](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-lecturer-script-v5.md).
 
 Колода раскладывает образ на четыре оси — **цвет, форму, стиль и аксессуары** — и на каждой оси показывает три технологии с профессиональной опорой: книгой, учебной программой школы или экспериментом. Карточки технологий взяты из [таксономии модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/20-taxonomy.md), интерпретации и маркеры — из [рамки решений](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/30-decision-framework.md), сборка — из [практики модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/40-practice-and-cases.md). Технологии описаны без векторов и без кейсов курса. Два вектора применяются к ним отдельно, на слайдах интерпретации:
 
@@ -102,7 +105,7 @@ related_issues:
 
 ### Промпт для генерации в Gamma
 
-Промпт повторяет базовые правила Gamma и правила изображений issues #693 и #695. Вставьте его в Gamma вместе с разделом «Слайды».
+Промпт повторяет базовые правила Gamma и правила изображений issues #693, #695 и #697. Вставьте его в Gamma вместе с разделом «Слайды».
 
 ```text
 Создай презентацию из 27 слайдов. Формат — альбомный А4, 297×210 мм. Безопасные поля — 12 мм со всех сторон. Не меняй количество слайдов и не сокращай исходные текстовые блоки.
@@ -124,7 +127,7 @@ related_issues:
 
 Цвета: фон #FFFFFF; текст — графит #16181D; заголовки — глубокий синий #132A4A; светло-серый #E7E9EC — для подложек карточек и тонких линий. Акцент — один на слайд: на нечётных слайдах золото #B89B5E, на чётных — изумруд #0A4D3C.
 
-Изображения: фото — единственный тип иллюстраций. На каждом слайде одно фото в вертикальном блоке около 70×168 мм, это пропорция 1:2.4. Блок чередуется: на нечётных слайдах — слева, на чётных — справа. Все фото — высокая мода (Haute Couture) 2026–2027, навеянная идеей ар-деко. Палитра фото — строго два-три цвета из графита #16181D, глубокого синего #132A4A, изумруда #0A4D3C и рубина #720E1E и один золотой акцент #B89B5E. Люди 30–50 лет, спокойные и серьёзные. Без текста на изображении, без офисных сцен и стоковых улыбок. Главный объект фото держи в центральной части кадра.
+Изображения: фото — единственный тип иллюстраций. На каждом слайде одно фото в вертикальном блоке около 70×168 мм, это пропорция 1:2.4. Блок чередуется: на нечётных слайдах — слева, на чётных — справа. Все фото — высокая мода (Haute Couture) 2026–2027, навеянная идеей ар-деко. Палитра фото — строго два-три цвета из графита #16181D, глубокого синего #132A4A, изумруда #0A4D3C и рубина #720E1E и один золотой акцент #B89B5E. Люди 30–50 лет в спокойных и серьёзных позах, редакционная съёмка (editorial). Без читаемого текста, без логотипов, без искажений лиц и фигур, без офисных сцен и стоковых улыбок. Главный объект фото держи в центральной части кадра.
 
 Инфографика — только нативными средствами Gamma: текст, линии, модули. Не генерируй инфографику картинкой.
 ```
@@ -146,7 +149,7 @@ related_issues:
 - Вывод: Тема шире колоды. Четыре оси — пример того, как образ раскладывается на проверяемые технологии.
 
 **[IMAGE_PROMPT]**
-A woman aged 40 walks with a slow, upright gait across a polished art deco hall, wearing a floor-length couture coat with sharp stepped lapels; her posture, hairstyle and calm, serious face carry the image as much as the garment. Seen from a low, unusual angle, the stepped arches behind her repeat the lapels; the single gold accent is a thin inlaid line in the floor. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 40 walks with a slow, upright gait across a polished art deco hall, wearing a floor-length couture coat with sharp stepped lapels; her posture, hairstyle and calm, serious face carry the image as much as the garment. Seen from a low, unusual angle, the stepped arches behind her repeat the lapels; the single gold accent is a thin inlaid line in the floor. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Goffman, The Presentation of Self in Everyday Life, 1959, p. 24](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a); [Willis, Todorov, 2006](https://pubmed.ncbi.nlm.nih.gov/16866745/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -166,7 +169,7 @@ A woman aged 40 walks with a slow, upright gait across a polished art deco hall,
 - Вывод: Уровень опоры не делит методы на правильные и неправильные. Он показывает, на чём держится гипотеза.
 
 **[IMAGE_PROMPT]**
-A couturier aged 45 pins a draped haute couture toile on a dress form in a high-ceilinged atelier with fluted art deco pilasters; precise hands, measuring tape, chalk marks, a calm, serious, concentrated face. Strict frontal framing; the single gold accent is the head of one pin catching the light. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A couturier aged 45 pins a draped haute couture toile on a dress form in a high-ceilinged atelier with fluted art deco pilasters; precise hands, measuring tape, chalk marks, a calm, serious, concentrated face. Strict frontal framing; the single gold accent is the head of one pin catching the light. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Horton, Adam, Galinsky, 2023](https://doi.org/10.1177/01461672231182478); [Adam, Galinsky, 2012](https://doi.org/10.1016/j.jesp.2012.02.008); [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -178,17 +181,17 @@ A couturier aged 45 pins a draped haute couture toile on a dress form in a high-
 - Надзаголовок: ЛЕГЕНДА КАРТЫ
 - Заголовок: Карта гипотез: четыре оси
 - Эпиграф: «…одновременно дают чувство принадлежности и чувство отличительности». — М. Брюэр
-- Вводный абзац: Образ может собираться по четырём осям, и к каждой оси мы применяем три технологии с профессиональной опорой. Выбор вектора — гипотеза о реакции аудитории, а не правило.
+- Вводный абзац: Образ может собираться по четырём осям, к каждой оси мы применяем три технологии с профессиональной опорой, а вектор — гармония или контраст — это гипотеза о реакции аудитории, а не правило. Технологии, используемые в НИА "Гид по стилю" (на базе которых впоследствии образовался ряд профильных школ), стоят на трёх осях из четырёх: на форме, стиле и аксессуарах.
 - Карточка: 01 · ЦВЕТ — Иттен, Ватерман и Цингель, Кобаяси. Как сочетать цвета, как подобрать палитру по внешности и как передать впечатление.
-- Карточка: 02 · ФОРМА — Беляева-Экземплярская, «Гид по стилю», FFIT. Как зрительные иллюзии меняют фигуру и как фигуру классифицируют.
-- Карточка: 03 · СТИЛЬ — "Гид по стилю", Трубецкова и Найденская, Кибби. Как стиль выводят из человека и из ситуации.
-- Карточка: 04 · АКСЕССУАРЫ — "Гид по стилю", пособие UKY, громкий и тихий сигнал. Как деталь выводят из человека, из композиции или из аудитории.
+- Карточка: 02 · ФОРМА — Беляева-Экземплярская, типы фигур «Гида по стилю», FFIT. Как зрительные иллюзии меняют фигуру и как фигуру классифицируют.
+- Карточка: 03 · СТИЛЬ — Четыре стиля «Гида по стилю», Трубецкова и Найденская, Кибби. Как стиль выводят из человека и из ситуации.
+- Карточка: 04 · АКСЕССУАРЫ — Аксессуары «Гида по стилю», пособие UKY, громкий и тихий сигнал. Как деталь выводят из человека, из композиции или из аудитории.
 - Карточка: 05 · ВЕКТОР: ГАРМОНИЯ/КЛАССИЦИЗМ — Адаптация. Следовать правилам, совпадать с ожиданиями аудитории, сливаться с фоном ситуации.
 - Карточка: 06 · ВЕКТОР: КОНТРАСТ/ЭКЛЕКТИКА — Осмысленное смешение. Нарушить ожидание ради внимания и сохранить внутреннюю логику образа.
-- Вывод: Технологии описывают оси без векторов. Векторы — отдельный слой, его применяют к любой технологии на слайдах интерпретации.
+- Вывод: Образ собирается из четырёх осей технологий, и каждую технологию можно применить в одном из двух режимов. Выбор режима — гипотеза о реакции аудитории, а не правило.
 
 **[IMAGE_PROMPT]**
-Four couture models aged 30 to 50 stand in the four openings of a symmetrical art deco arcade, each embodying one axis of the image: a colour-blocked gown, a sharply cut sculptural silhouette, a quietly tailored suit, a single statement brooch. Calm, serious faces, strict geometric spacing between the figures; the single gold accent is the brooch. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D, deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+Four couture models aged 30 to 50 stand in the four openings of a symmetrical art deco arcade, each embodying one axis of the image: a colour-blocked gown, a sharply cut sculptural silhouette, a quietly tailored suit, a single statement brooch. Calm, serious faces, strict geometric spacing between the figures; the single gold accent is the brooch. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D, deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Brewer, 1991](https://doi.org/10.1177/0146167291175001); [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870); [Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -207,7 +210,7 @@ Four couture models aged 30 to 50 stand in the four openings of a symmetrical ar
 - Вывод: Опора К — книга-первоисточник. Иттен строит сочетания цветов, но не назначает человеку палитру. Статусы проверки: 2 VERIFIED, 1 PARTIAL, 1 CONFLICT, 1 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A woman aged 38 in a sculptural couture gown built from large flat colour planes that meet along precise geometric seams, the planes shifting from deep blue to emerald like a study of colour relations. She stands still between two fluted art deco columns, calm, serious, three-quarter view; the single gold accent is a narrow piping along one seam. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 38 in a sculptural couture gown built from large flat colour planes that meet along precise geometric seams, the planes shifting from deep blue to emerald like a study of colour relations. She stands still between two fluted art deco columns, calm, serious, three-quarter view; the single gold accent is a narrow piping along one seam. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Itten, The Art of Color, 1961/1973, с. 24–32](https://archive.org/details/artofcolorsubjec00itte); [Itten, Kunst der Farbe, Open Library](https://openlibrary.org/works/OL3134338W); [Schloss, Palmer, 2011](https://doi.org/10.3758/s13414-010-0027-0) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -226,7 +229,7 @@ A woman aged 38 in a sculptural couture gown built from large flat colour planes
 - Вывод: Опора К — книга подтверждена библиографически, справочник НИА 2007 года — первоисточник её применения. Статусы проверки: 2 PARTIAL, 2 CONFLICT, 1 «?», плюс 1 PARTIAL по атрибуции. Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A man aged 42 in a tonal couture ensemble of deep blue silk layers, each layer a half-step lighter or darker than the next, matching the depth of his own colouring; calm, serious face, seen in profile against a lacquered art deco wall panel. Soft side light reveals the tonal steps; the single gold accent is a slim cufflink. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 42 in a tonal couture ensemble of deep blue silk layers, each layer a half-step lighter or darker than the next, matching the depth of his own colouring; calm, serious face, seen in profile against a lacquered art deco wall panel. Soft side light reveals the tonal steps; the single gold accent is a slim cufflink. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [PDF, с. 22–23](https://github.com/user-attachments/files/33784962/kodeks_stilya.pdf); [Die neue Farbberatung — описание издания](https://www.eurobuch.com/buch/isbn/3806847827.html); [Perrett и соавт., 2023](https://doi.org/10.1037/aca0000626) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -245,7 +248,7 @@ A man aged 42 in a tonal couture ensemble of deep blue silk layers, each layer a
 - Вывод: Опора Э — методика собрана статистически; К — книга-атлас. Статусы проверки: 1 VERIFIED, 1 PARTIAL, 1 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A woman aged 34 in a long double-faced couture overcoat of deep emerald wool, the one colour chosen for the impression she wants to convey, worn from collar to hem, standing on a stepped art deco staircase. Calm, serious face, high viewpoint looking down the steps; the single gold accent is a row of small buttons. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 34 in a long double-faced couture overcoat of deep emerald wool, the one colour chosen for the impression she wants to convey, worn from collar to hem, standing on a stepped art deco staircase. Calm, serious face, high viewpoint looking down the steps; the single gold accent is a row of small buttons. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Kobayashi, 1981](https://doi.org/10.1002/col.5080060210); [Kobayashi, Color Image Scale, 1991](https://archive.org/details/colorimagescale00koba); [Labrecque, Milne, 2012](https://doi.org/10.1007/s11747-010-0245-y) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -264,7 +267,7 @@ A woman aged 34 in a long double-faced couture overcoat of deep emerald wool, th
 - Вывод: Аудитории нужны и принадлежность, и отличие. Вектор — гипотеза о том, какая потребность у неё сильнее сейчас.
 
 **[IMAGE_PROMPT]**
-A woman aged 46 in a column of tonal graphite couture, tailored jacket and long skirt in one quiet shade, interrupted by a single narrow ruby panel running from shoulder to hem: a calm base with one named contrast. She stands in a symmetrical art deco doorway, serious, direct gaze; the single gold accent is the clasp at the top of the ruby panel. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 46 in a column of tonal graphite couture, tailored jacket and long skirt in one quiet shade, interrupted by a single narrow ruby panel running from shoulder to hem: a calm base with one named contrast. She stands in a symmetrical art deco doorway, serious, direct gaze; the single gold accent is the clasp at the top of the ruby panel. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Brewer, 1991](https://doi.org/10.1177/0146167291175001); [Itten, The Art of Color, 1961/1973, с. 24–32](https://archive.org/details/artofcolorsubjec00itte); [Elliot, Maier, 2012](https://doi.org/10.1016/B978-0-12-394286-9.00002-0) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -276,15 +279,15 @@ A woman aged 46 in a column of tonal graphite couture, tailored jacket and long 
 - Надзаголовок: ЦВЕТ · УПРАВЛЕНЧЕСКИЕ ВЫВОДЫ
 - Заголовок: Цвет: аналитические маркеры
 - Эпиграф: «Для мужчин, оценивающих женщин, мы нашли небольшой, статистически значимый эффект». — Г. Леманн и соавт.
-- Вводный абзац: Тезис проверен и уточнён: цвет не сообщает характер, он слабо и в зависимости от контекста сдвигает первое впечатление. Поэтому выбор цвета — гипотеза, которую проверяет реакция аудитории.
+- Вводный абзац: Тезис проверен и уточнён: цвет не сообщает характер, он слабо и в зависимости от контекста сдвигает первое впечатление. Маркеры — не совет стилиста: они говорят, что решить, на какие данные опереться и как проверить решение.
 - Карточка: 01 · СВОИ ОСОБЕННОСТИ — Решение начинается со своего колорита. Какой природный колорит вы готовы подчеркнуть — а не какой цвет любите; уход от своего колорита — сознательная цена, а не случайность.
 - Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — Цвет подбирают к связке, а не к себе. Кто смотрит, о чём будет разговор и зачем собеседнику встреча: один и тот же цвет значит разное в разных контекстах.
 - Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Проверка носителя. Цвета марки, интерьер зала, фон видеозвонка, экран, который искажает оттенки: цвет оценивают там, где вас увидят.
 - Карточка: 04 · МОДА СЕЗОНА — Знак «в курсе» для тех, кто следит. Для остальных код сезона нейтрален: сначала определите, к какой группе относится собеседник, потом решайте, нужен ли цвет сезона.
-- Вывод: Это не совет стилиста. Маркер говорит, что решить, на какие данные опереться и как проверить решение.
+- Вывод: Цвет не сообщает характер — ни ваш, ни чужой. Палитра — гипотеза о первом впечатлении.
 
 **[IMAGE_PROMPT]**
-A man aged 50 in a softly structured emerald couture suit waits in a lacquered art deco lobby whose deep blue walls shift the green of his suit; the scene shows how surroundings change the reading of a colour. Calm, serious face, seen from a distance through a framed doorway; the single gold accent is a thin metal band on the lobby wall. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 50 in a softly structured emerald couture suit waits in a lacquered art deco lobby whose deep blue walls shift the green of his suit; the scene shows how surroundings change the reading of a colour. Calm, serious face, seen from a distance through a framed doorway; the single gold accent is a thin metal band on the lobby wall. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Lehmann, Elliot, Calin-Jageman, 2018](https://doi.org/10.1177/1474704918802412); [Elliot, Maier, 2012](https://doi.org/10.1016/B978-0-12-394286-9.00002-0); [Labrecque, Milne, 2012](https://doi.org/10.1007/s11747-010-0245-y); [Simmel, Fashion, 1957](https://doi.org/10.1086/222102) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -303,7 +306,7 @@ A man aged 50 in a softly structured emerald couture suit waits in a lacquered a
 - Вывод: Опора К — книга-первоисточник. Отдельные правила проверены экспериментально, и результаты смешанные. Статусы проверки: 3 VERIFIED, 1 CONFLICT, 1 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A woman aged 44 in a couture dress whose vertical and diagonal seam lines are the only decoration, the seams visibly lengthening and narrowing her real, not idealised, figure. She stands against a grid of slender art deco pilasters that echo the seams, calm, serious, frontal view; the single gold accent is the topstitching along one seam. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 44 in a couture dress whose vertical and diagonal seam lines are the only decoration, the seams visibly lengthening and narrowing her real, not idealised, figure. She stands against a grid of slender art deco pilasters that echo the seams, calm, serious, frontal view; the single gold accent is the topstitching along one seam. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Беляева-Экземплярская, «Моделирование одежды по законам зрительного восприятия», URSS](https://urss.ru/cgi-bin/db.pl?lang=Ru&blang=ru&page=Book&id=325972); [Серова, 2012](https://cyberleninka.ru/article/n/sofya-nikolaevna-belyaeva-ekzemplyarskaya-vypusknitsa-mvzhk); [Глагольева, 2012](https://conf.sfu-kras.ru/sites/mn2012/thesis/s002/s002-024.pdf) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -322,7 +325,7 @@ A woman aged 44 in a couture dress whose vertical and diagonal seam lines are th
 - Вывод: Опора К — справочник-первоисточник 2007 года. Статусы проверки: 1 VERIFIED, 5 PARTIAL, 1 CONFLICT, 5 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A woman aged 36 in a couture sheath with a clearly defined waist, the silhouette repeating the proportions of her own figure; a wide sculpted belt marks the waistline. She stands in a curved art deco niche, calm, serious, slightly turned shoulders, seen from waist height; the single gold accent is the belt buckle. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 36 in a couture sheath with a clearly defined waist, the silhouette repeating the proportions of her own figure; a wide sculpted belt marks the waistline. She stands in a curved art deco niche, calm, serious, slightly turned shoulders, seen from waist height; the single gold accent is the belt buckle. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [PDF, с. 33–46](https://github.com/user-attachments/files/33784962/kodeks_stilya.pdf); [Parker и соавт., 2021](https://doi.org/10.1080/00140139.2021.1902572); [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -341,7 +344,7 @@ A woman aged 36 in a couture sheath with a clearly defined waist, the silhouette
 - Вывод: Опора Э — рецензируемые публикации с данными измерений. Задача метода — точность посадки, а не впечатление. Статусы проверки: 1 VERIFIED, 1 PARTIAL, 1 CONFLICT. Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A woman aged 39 stands inside a slender vertical frame of thin metal rings, like a body scanner rebuilt as an art deco sculpture, wearing a precisely fitted ruby couture column dress. Calm, serious, frontal pose with arms slightly away from the body, strict geometric clarity; the single gold accent is one of the rings. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to ruby #720E1E and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 39 stands inside a slender vertical frame of thin metal rings, like a body scanner rebuilt as an art deco sculpture, wearing a precisely fitted ruby couture column dress. Calm, serious, frontal pose with arms slightly away from the body, strict geometric clarity; the single gold accent is one of the rings. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to ruby #720E1E and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Sokolowski, Bettencourt, 2020 — модификация FFIT](https://doi.org/10.15221/20.22); [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -353,14 +356,14 @@ A woman aged 39 stands inside a slender vertical frame of thin metal rings, like
 - Надзаголовок: ФОРМА · ИНТЕРПРЕТАЦИЯ
 - Заголовок: Форма через призму векторов
 - Эпиграф: «Линейный стиль — это стиль пластически ощущаемой отчётливости». — Г. Вёльфлин
-- Вводный абзац: На оси формы технологии расходятся в главном. Беляева-Экземплярская и «Гид по стилю» управляют впечатлением от фигуры, FFIT — посадкой.
+- Вводный абзац: На оси формы технологии расходятся в главном: Беляева-Экземплярская управляет впечатлением от фигуры, FFIT — посадкой. Технологии, используемые в НИА "Гид по стилю" (на базе которых впоследствии образовался ряд профильных школ), тоже работают с впечатлением — через тип фигуры и его коррекцию.
 - Карточка: 01 · ГАРМОНИЯ/КЛАССИЦИЗМ — Иллюзия работает на баланс. Линии, членения и пропорции уравновешивают реальную фигуру, силуэт повторяет тип, посадка точна по измерениям.
 - Карточка: 02 · КОНТРАСТ/ЭКЛЕКТИКА — Иллюзия работает на акцент. Подчёркнутая линия плеча, контрастное членение, особенность фигуры, показанная как знак; для FFIT — намеренно неточная посадка, которая читается как замысел только рядом с безупречной.
 - Карточка: 03 · КОНКУРИРУЮЩИЕ ПОДХОДЫ — Впечатление против точности. Для первых двух технологий интерпретация общая; для FFIT контраст возможен только как модный код поверх точной посадки.
 - Вывод: Правила иллюзий — тоже гипотезы: эксперименты подтверждают одни правила и опровергают другие.
 
 **[IMAGE_PROMPT]**
-A man aged 41 in a couture coat with bold horizontal ribbing across the chest, an illusion used as an accent rather than as correction, standing between two tall fluted art deco columns whose vertical lines counter the ribs. Calm, serious face, low angle; the single gold accent is a thin horizontal line in the ribbing. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 41 in a couture coat with bold horizontal ribbing across the chest, an illusion used as an accent rather than as correction, standing between two tall fluted art deco columns whose vertical lines counter the ribs. Calm, serious face, low angle; the single gold accent is a thin horizontal line in the ribbing. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Wölfflin, Principles of Art History](https://archive.org/details/princarth00wlff); [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405); [Koutsoumpis и соавт., 2021](https://doi.org/10.1177/03010066211038158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -377,10 +380,10 @@ A man aged 41 in a couture coat with bold horizontal ribbing across the chest, a
 - Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — Форма подбирается к роли. Строгий силуэт сообщает официальность, мягкий — доступность; определите, кто вы в этой встрече: эксперт, партнёр, проситель или хозяин площадки.
 - Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Носитель меняет форму. На видео виден верх фигуры, на сцене — силуэт целиком, за столом — плечи и руки; проверяйте решение там, где вас увидят.
 - Карточка: 04 · МОДА СЕЗОНА — Силуэт сезона быстро становится нормой. Сначала он знак «в курсе», потом — фон: решите, в какой фазе он сейчас для вашей аудитории.
-- Вывод: Членения добавляют видимую ширину, полосы ведут себя не так, как гласит бытовое правило. Решение по форме проверяют на носителе, а не перед зеркалом.
+- Вывод: Иллюзии формы реальны, но слабы, а правило «вертикаль стройнит» в экспериментах иногда работает наоборот. Решение по форме проверяют на носителе, а не перед зеркалом.
 
 **[IMAGE_PROMPT]**
-A woman aged 48 descends a wide stage staircase in a sculptural couture cape that turns her whole silhouette into one strong geometric form, seen from far below as an audience would see her. Calm, serious face, strict symmetry of the stair and the proscenium arch; the single gold accent is the edge of the cape collar. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 48 descends a wide stage staircase in a sculptural couture cape that turns her whole silhouette into one strong geometric form, seen from far below as an audience would see her. Calm, serious face, strict symmetry of the stair and the proscenium arch; the single gold accent is the edge of the cape collar. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Thompson, Mikellidou, 2011](https://doi.org/10.1068/i0405); [Шипков, 2017](https://zh-szf.ru/en/nauka/article/19053/jats); [Blumer, 1969](https://doi.org/10.1111/j.1533-8525.1969.tb01292.x) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -399,7 +402,7 @@ A woman aged 48 descends a wide stage staircase in a sculptural couture cape tha
 - Вывод: Опора К — справочник-первоисточник 2007 года. Статусы проверки: 1 VERIFIED, 2 PARTIAL, 3 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A man aged 37 in a couture jacket whose sharp, angled lapels repeat the strong line of his own jaw, photographed in a tight three-quarter portrait against a stepped art deco relief. Calm, serious face, the parallel between face and garment lines is the subject; the single gold accent is a narrow lapel pin. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 37 in a couture jacket whose sharp, angled lapels repeat the strong line of his own jaw, photographed in a tight three-quarter portrait against a stepped art deco relief. Calm, serious face, the parallel between face and garment lines is the subject; the single gold accent is a narrow lapel pin. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [PDF, с. 50–62](https://github.com/user-attachments/files/33784962/kodeks_stilya.pdf); [Debrett's](https://debretts.com/deconstructing-dress-codes/); [Damhorst, 1985](https://doi.org/10.1177/0887302x8500300207) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -418,7 +421,7 @@ A man aged 37 in a couture jacket whose sharp, angled lapels repeat the strong l
 - Вывод: Опора К — книги авторов с аннотациями издательств. Статусы проверки: 1 VERIFIED, 1 PARTIAL, 3 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A close sculptural profile of a woman aged 43 with clear, strongly modelled features, lit like a bust in a museum, wearing a high couture collar that continues the line of her cheekbone. A curved art deco panel behind her repeats the profile; calm, serious expression; the single gold accent is a thin rim on the collar. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A close sculptural profile of a woman aged 43 with clear, strongly modelled features, lit like a bust in a museum, wearing a high couture collar that continues the line of her cheekbone. A curved art deco panel behind her repeats the profile; calm, serious expression; the single gold accent is a thin rim on the collar. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Трубецкова, Найденская, Эксмо](https://eksmo.ru/book/zolotye-pravila-stilya-dress-kod-uspeshnoy-zhenshchiny-ITD816396/); [АСТ](https://ast.ru/book/kod-vneshnosti-ot-golovy-do-paltsev-nog-856038/); [Rafaeli, Pratt, 1993](https://doi.org/10.2307/258822) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -437,10 +440,10 @@ A close sculptural profile of a woman aged 43 with clear, strongly modelled feat
 - Карточка: 04 · РОМАНТИЗМ — Изгиб и острая деталь. Мягкие изгибы вместе с острыми деталями, многодетальность, асимметрия; ассоциация — барокко и модерн.
 - Карточка: 05 · НАИВНАЯ РОМАНТИКА — Мелко, округло, просто. Малый масштаб, округлые мягкие линии; ассоциация — рококо.
 - Карточка: 06 · СПОРТ — Коротко, угловато, динамично. Короткие прямые линии, угловатость при малом масштабе; ассоциация — функционализм и Баухауз.
-- Вывод: Опора К — справочник НИА и шкала Маккимзи; А — соответствие русских названий американским типам и искусствоведческие параллели — наша аналогия, статус проверки «?».
+- Вывод: Опора К — справочник НИА и шкала Маккимзи; А — соответствие русских названий американским типам и искусствоведческие параллели — наша аналогия. Статусы проверки: 3 VERIFIED, 1 PARTIAL, 2 «?» по шкале Маккимзи и 1 «?» за аналогию. Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-Three models aged 32, 40 and 49 stand on different steps of a grand art deco staircase, each embodying a different style line: an angular dramatic coat with long straight lines, a softly draped romantic gown with one sharp detail, a short, angular sport-inspired couture jacket. Calm, serious faces, a strong diagonal composition along the stairs; the single gold accent is the stair rail. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D, deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+Three models aged 32, 40 and 49 stand on different steps of a grand art deco staircase, each embodying a different style line: an angular dramatic coat with long straight lines, a softly draped romantic gown with one sharp detail, a short, angular sport-inspired couture jacket. Calm, serious faces, a strong diagonal composition along the stairs; the single gold accent is the stair rail. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D, deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [PDF, с. 50–61](https://github.com/user-attachments/files/33784962/kodeks_stilya.pdf); [McJimsey, 1963](https://archive.org/details/artinclothingsel0000mcji); [McJimsey, 1973](https://archive.org/details/artfashioninclot00harr); [Swenson, Pinckney, 1984](https://archive.org/details/newimageforwomen0000marg) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -459,7 +462,7 @@ Three models aged 32, 40 and 49 stand on different steps of a grand art deco sta
 - Вывод: Опора К — авторская книга без эмпирической проверки. Названия типов частично совпадают с шестью стилевыми направлениями. Статусы проверки: 2 VERIFIED, 1 PARTIAL, 2 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A woman aged 35 whose image balances soft and sharp: a couture gown with a softly rounded draped bodice and a sharply pointed, architectural shoulder, mirroring the mix of rounded and angular lines in her own face. She stands in an art deco rotunda, calm, serious, three-quarter view; the single gold accent is a small pointed clasp at the shoulder. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to ruby #720E1E and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 35 whose image balances soft and sharp: a couture gown with a softly rounded draped bodice and a sharply pointed, architectural shoulder, mirroring the mix of rounded and angular lines in her own face. She stands in an art deco rotunda, calm, serious, three-quarter view; the single gold accent is a small pointed clasp at the shoulder. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to ruby #720E1E and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Kibbe, Metamorphosis, 1987](https://openlibrary.org/works/OL4972581W); [Willis, Todorov, 2006](https://pubmed.ncbi.nlm.nih.gov/16866745/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -471,14 +474,14 @@ A woman aged 35 whose image balances soft and sharp: a couture gown with a softl
 - Надзаголовок: СТИЛЬ · ИНТЕРПРЕТАЦИЯ
 - Заголовок: Стиль через призму векторов
 - Эпиграф: «Люди приписывают более высокий статус и компетентность нонконформистам, а не конформистам». — С. Беллецца и соавт.
-- Вводный абзац: НИА и Кибби выводят стиль из линий человека, метод Трубецковой и Найденской — из ситуации. Ситуация задаёт размер отступления.
+- Вводный абзац: Технологии, используемые в НИА "Гид по стилю" (на базе которых впоследствии образовался ряд профильных школ), и Кибби выводят стиль из линий человека, метод Трубецковой и Найденской — из ситуации. Ситуация задаёт размер отступления.
 - Карточка: 01 · ГАРМОНИЯ/КЛАССИЦИЗМ — Одежда повторяет линии человека. Один ведущий стиль, строгость по коэффициенту консервативности, один искусствоведческий образ, линии в балансе внешности.
 - Карточка: 02 · КОНТРАСТ/ЭКЛЕКТИКА — Линия другого стиля при сохранении ведущего. Классическая база плюс элементы стиля своего типажа, отступление в пределах коэффициента консервативности, смешанный подтип как встроенная эклектика.
 - Карточка: 03 · ОБОБЩЕНИЕ — Эклектика с внутренней логикой. Ар-деко сам эклектичен: геометрия, роскошь материалов и экзотические мотивы собраны в одну систему — так читается смешение, у которого есть основа и замысел.
 - Вывод: Нонконформизм повышает оценку статуса, только если аудитория знает норму и видит намерение. Опора параллели с ар-деко — А.
 
 **[IMAGE_PROMPT]**
-A man aged 46 in a strict graphite couture suit with a single art deco embroidered panel set into one side of the jacket, an eclectic quotation held inside a calm tailored base. He stands in a lacquered art deco corridor with straight lines, calm, serious, seen from slightly below; the single gold accent is the embroidery thread. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 46 in a strict graphite couture suit with a single art deco embroidered panel set into one side of the jacket, an eclectic quotation held inside a calm tailored base. He stands in a lacquered art deco corridor with straight lines, calm, serious, seen from slightly below; the single gold accent is the embroidery thread. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870); [Трубецкова, Найденская, Эксмо](https://eksmo.ru/book/zolotye-pravila-stilya-dress-kod-uspeshnoy-zhenshchiny-ITD816396/); [Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -495,13 +498,13 @@ A man aged 46 in a strict graphite couture suit with a single art deco embroider
 - Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — У каждой аудитории свой ожидаемый стиль. Решение о контрасте — это решение о том, знает ли собеседник норму и увидит ли намерение.
 - Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Стиль шире одежды. Фото в профиле, оформление презентации, визитка, сайт: решение принимают для всего поля сразу, иначе стиль распадается на разные голоса.
 - Карточка: 04 · МОДА СЕЗОНА — Источник подчинённой линии. Сезон предлагает эстетики, эпохи и цитаты; решите, сколько сезона выдержит ваш стиль без потери узнаваемости.
-- Вывод: Ведущий стиль — из своих линий; сезон и среда входят в образ подчинённой линией.
+- Вывод: Гипотеза теории нарушения ожиданий: позитивно прочитанное отступление выигрывает у нормы, негативно прочитанное — проигрывает. Ведущий стиль — из своих линий; сезон и среда входят в образ подчинённой линией.
 
 **[IMAGE_PROMPT]**
-A woman aged 42 in a tailored couture ensemble stands between angled mirror panels of an art deco salon, her figure repeated in several reflections that stay consistent in every view, a single coherent style across all surfaces. Calm, serious face, cool controlled light; the single gold accent is the thin frame of one mirror. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 42 in a tailored couture ensemble stands between angled mirror panels of an art deco salon, her figure repeated in several reflections that stay consistent in every view, a single coherent style across all surfaces. Calm, serious face, cool controlled light; the single gold accent is the thin frame of one mirror. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
-Источники: [Simmel, Fashion, 1957](https://doi.org/10.1086/222102); [Goffman, 1959](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a); [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+Источники: [Simmel, Fashion, 1957](https://doi.org/10.1086/222102); [Goffman, 1959](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a); [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870); [Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
 
 ### Слайд 20. Аксессуары: по форме лица и должности
 
@@ -517,7 +520,7 @@ A woman aged 42 in a tailored couture ensemble stands between angled mirror pane
 - Вывод: Опора К — справочник-первоисточник 2007 года; П — практика школ. Статусы проверки: 1 VERIFIED, 2 PARTIAL, 1 CONFLICT, 1 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A tight portrait of a woman aged 37 with strong angular features wearing large monolithic geometric earrings whose sharp angles repeat the lines of her cheekbones and jaw, the earrings chosen by her face, not by the colour of her couture dress. Calm, serious gaze, a stepped art deco relief behind her; the single gold accent is the earrings themselves. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A tight portrait of a woman aged 37 with strong angular features wearing large monolithic geometric earrings whose sharp angles repeat the lines of her cheekbones and jaw, the earrings chosen by her face, not by the colour of her couture dress. Calm, serious gaze, a stepped art deco relief behind her; the single gold accent is the earrings themselves. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and deep blue #132A4A with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [PDF, с. 16–18, 47–49](https://github.com/user-attachments/files/33784962/kodeks_stilya.pdf); [Lennon, Miller, 1984](https://doi.org/10.1177/0887302x8400300101); [ABDO](https://www.abdo.org.uk/news/oa-corner-part-7/) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -536,7 +539,7 @@ A tight portrait of a woman aged 37 with strong angular features wearing large m
 - Вывод: Опора К — учебное пособие университета; Э — эффект взаимодействия деталей. Статусы проверки: 1 VERIFIED, 1 PARTIAL, 1 CONFLICT, 2 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-The forearm and hand of a man aged 44 resting on a lacquered art deco table, wearing one wide sculptural cuff, its scale matched to his broad wrist, as the only accessory of a couture look in emerald and graphite. Calm, serious, still composition seen from above, precise geometry; the single gold accent is the cuff. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+The forearm and hand of a man aged 44 resting on a lacquered art deco table, wearing one wide sculptural cuff, its scale matched to his broad wrist, as the only accessory of a couture look in emerald and graphite. Calm, serious, still composition seen from above, precise geometry; the single gold accent is the cuff. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [UKY, FCS2-347](https://publications.mgcafe.uky.edu/sites/publications.ca.uky.edu/files/FCS2347.pdf); [Lennon, Miller, 1984](https://doi.org/10.1177/0887302x8400300101); [Post, 1922](https://www.gutenberg.org/ebooks/14314) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -555,7 +558,7 @@ The forearm and hand of a man aged 44 resting on a lacquered art deco table, wea
 - Вывод: Опора Э — рецензируемые полевые исследования; К — классический трактат. Статусы проверки: 2 VERIFIED, 1 PARTIAL, 1 CONFLICT. Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом.
 
 **[IMAGE_PROMPT]**
-A man aged 49 in a bespoke couture suit stands in the lobby of a grand art deco hotel, a slim unbranded watch as his only quiet signal of status; calm, serious face, seen from a low angle through a revolving door frame. Strict symmetry, geometric clarity; the single gold accent is the watch case. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 49 in a bespoke couture suit stands in the lobby of a grand art deco hotel, a slim unbranded watch as his only quiet signal of status; calm, serious face, seen from a low angle through a revolving door frame. Strict symmetry, geometric clarity; the single gold accent is the watch case. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Han, Nunes, Drèze, 2010](https://doi.org/10.1509/jmkg.74.4.015); [Berger, Ward, 2010](https://doi.org/10.1086/655445); [Berger, 2017](https://doi.org/10.1371/journal.pone.0170216) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -567,14 +570,14 @@ A man aged 49 in a bespoke couture suit stands in the lobby of a grand art deco 
 - Надзаголовок: АКСЕССУАРЫ · ИНТЕРПРЕТАЦИЯ
 - Заголовок: Аксессуары через призму векторов
 - Эпиграф: «Положительные выводы исчезают, когда наблюдатель не знаком со средой, когда нонконформное поведение показано как ненамеренное…». — С. Беллецца и соавт.
-- Вводный абзац: Ось держится на споре трёх логик. «Гид по стилю» выводит аксессуар из человека, пособие UKY — из композиции комплекта, громкий и тихий сигнал — из аудитории.
+- Вводный абзац: Ось держится на споре трёх логик: пособие UKY выводит аксессуар из композиции комплекта, громкий и тихий сигнал — из аудитории. Технологии, используемые в НИА "Гид по стилю" (на базе которых впоследствии образовался ряд профильных школ), выводят его из человека — из формы лица и уровня должности.
 - Карточка: 01 · ГАРМОНИЯ/КЛАССИЦИЗМ — Совпадение с собой, с комплектом или с адресатом. Форма детали подобна лицу, пропорция и один центр внимания, громкость марки — по адресату.
 - Карточка: 02 · КОНТРАСТ/ЭКЛЕКТИКА — Один акцент на гармоничной базе. Деталь чужого стиля или масштаба, размер или количество выше нормы при том же дизайне, осознанное отступление от кода среды.
 - Карточка: 03 · КОНКУРИРУЮЩИЕ ПОДХОДЫ — Из человека, из комплекта или из аудитории. Подбор «в тон» — ни гармония, ни контраст, а отказ от решения; аксессуар — самый дешёвый и быстрый носитель контраста.
 - Вывод: Одна деталь может нести всё отступление образа, пока остальное остаётся базой.
 
 **[IMAGE_PROMPT]**
-A woman aged 41 in a strictly tailored graphite couture suit carries one sculptural ruby bag, a single deliberate accent on an otherwise quiet base, crossing a polished art deco gallery. Calm, serious face, shot from a high angle so the bag sits in the centre of the frame; the single gold accent is the bag's clasp. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 41 in a strictly tailored graphite couture suit carries one sculptural ruby bag, a single deliberate accent on an otherwise quiet base, crossing a polished art deco gallery. Calm, serious face, shot from a high angle so the bag sits in the centre of the frame; the single gold accent is the bag's clasp. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870); [Berger, Ward, 2010](https://doi.org/10.1086/655445); [UKY, FCS2-347](https://publications.mgcafe.uky.edu/sites/publications.ca.uky.edu/files/FCS2347.pdf) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -591,13 +594,13 @@ A woman aged 41 in a strictly tailored graphite couture suit carries one sculptu
 - Карточка: 02 · КОНТЕКСТ: СУБЪЕКТЫ, ОБЪЕКТЫ, МОТИВАЦИИ — Статус выше, равный или ниже. Детали читаются как статус: решите, какое соотношение со статусом собеседника нужно в этой встрече, и подберите знак к решению.
 - Карточка: 03 · ИНФОПОЛЕ КОММУНИКАЦИИ — Что попадёт в кадр. На видео видны очки и серьги, в зале — обувь и сумка; очки меняют оценку интеллекта и привлекательности.
 - Карточка: 04 · МОДА СЕЗОНА — Самый короткий сигнал «в курсе». Модный аксессуар устаревает быстрее всего: держите долю сезона в деталях, а не в основе.
-- Вывод: Сначала база по всем четырём осям, затем не больше одного названного отступления на встречу.
+- Вывод: В эксперименте небольшие изменения костюма подняли оценки по всем качествам, кроме надёжности: деталь меняет впечатление, но не гарантирует доверия. Сначала база по всем четырём осям, затем не больше одного названного отступления на встречу.
 
 **[IMAGE_PROMPT]**
-A man aged 39 in rimless glasses and a high-collared couture jacket, framed as if seen on a video call, only head and shoulders visible, so the glasses are the one detail that reaches the viewer. Calm, serious, attentive face, a deep blue lacquered art deco wall behind; the single gold accent is the thin temple of the glasses. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 39 in rimless glasses and a high-collared couture jacket, framed as if seen on a video call, only head and shoulders visible, so the glasses are the one detail that reaches the viewer. Calm, serious, attentive face, a deep blue lacquered art deco wall behind; the single gold accent is the thin temple of the glasses. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and emerald #0A4D3C with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
-Источники: [Leder, Forster, Gerger, 2011](https://doi.org/10.1024/1421-0185/a000059); [Nelissen, Meijers, 2011](https://doi.org/10.1016/j.evolhumbehav.2010.12.002); [Simmel, Fashion, 1957](https://doi.org/10.1086/222102) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
+Источники: [Leder, Forster, Gerger, 2011](https://doi.org/10.1024/1421-0185/a000059); [Nelissen, Meijers, 2011](https://doi.org/10.1016/j.evolhumbehav.2010.12.002); [Simmel, Fashion, 1957](https://doi.org/10.1086/222102); [Howlett и соавт., 2013](https://doi.org/10.1108/13612021311305128) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
 
 ### Слайд 25. Сборка 1: закупщик региональной розницы
 
@@ -609,12 +612,12 @@ A man aged 39 in rimless glasses and a high-collared couture jacket, framed as i
 - Вводный абзац: Производитель консервов впервые встречается с категорийным директором региональной сети после рекомендации неконкурирующего поставщика. Цель впечатления — «надёжный производитель, с которым не придётся торговаться о цене каждый месяц».
 - Карточка: 01 · ЦВЕТ — Колориты плюс созвучия Иттена. Палитра повторяет свой колорит: родственные цвета, низкий контраст; гипотеза — спокойная палитра поддерживает впечатление предсказуемости.
 - Карточка: 02 · ФОРМА — Беляева-Экземплярская. Силуэт уравновешивает реальную фигуру без подчёркнутых акцентов; гипотеза — форма не отвлекает от продукта и образцов на столе.
-- Карточка: 03 · СТИЛЬ — Четыре стиля «Гида по стилю». Классика — ведущий стиль, подчинённая линия — из своего типажа; гипотеза — образ читается как «деловой человек с производства», а не как продавец.
-- Карточка: 04 · АКСЕССУАРЫ — Тихий сигнал и норма должности «Гида по стилю». Норма закупки, минимум деталей, без громких знаков люкса; гипотеза — люкс в ценовом разговоре прочтут как «запас по цене есть».
+- Карточка: 03 · СТИЛЬ — Четыре стиля. Технологии, используемые в НИА "Гид по стилю" (на базе которых впоследствии образовался ряд профильных школ): классика — ведущий стиль, подчинённая линия — из своего типажа; гипотеза — образ читается как «деловой человек с производства», а не как продавец.
+- Карточка: 04 · АКСЕССУАРЫ — Тихий сигнал и норма должности. Норма закупки по тем же технологиям НИА, минимум деталей, без громких знаков люкса; гипотеза — люкс в ценовом разговоре прочтут как «запас по цене есть».
 - Вывод: Вектор — гармония: надёжность здесь означает предсказуемость. Проверка — разговор идёт о стабильной поставке, сроках оплаты и тестовой поставке, а не о скидке с первой минуты.
 
 **[IMAGE_PROMPT]**
-A man aged 47 in a quietly tailored couture suit walks through the calm, orderly trading hall of an art deco market building, rows of identical shelves behind him like a rhythm of columns; nothing in his look competes with the goods. Calm, serious, steady gaze, symmetrical frontal view; the single gold accent is a thin tie bar. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 47 in a quietly tailored couture suit walks through the calm, orderly trading hall of an art deco market building, rows of identical shelves behind him like a rhythm of columns; nothing in his look competes with the goods. Calm, serious, steady gaze, symmetrical frontal view; the single gold accent is a thin tie bar. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to deep blue #132A4A and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Кейс 1 курса: B2B-производитель консервов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-1-b2b-производитель-консервов-надёжные-оптовые-партнёры); [Howlett и соавт., 2013](https://doi.org/10.1108/13612021311305128); [Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -630,11 +633,11 @@ A man aged 47 in a quietly tailored couture suit walks through the calm, orderly
 - Карточка: 01 · ЦВЕТ — Контраст количества Иттена на базе своего колорита. Спокойная база и одно малое насыщенное пятно; гипотеза — на видео акцент держит внимание на лице, а база не спорит с экраном.
 - Карточка: 02 · ФОРМА — FFIT и Беляева-Экземплярская. Точная посадка по фигуре без декоративных членений; гипотеза — точность формы читается как точность инженера.
 - Карточка: 03 · СТИЛЬ — Коэффициент консервативности Трубецковой и Найденской. Строгость — по должности партнёра и уровню встречи, подчинённая линия — Спорт с параллелью функционализма; гипотеза — стиль связывает человека с инженерной культурой.
-- Карточка: 04 · АКСЕССУАРЫ — Подбор по форме лица «Гида по стилю». Одна функциональная деталь повторяет линии лица и несёт названное отступление от делового кода; гипотеза — деталь заметна в кадре и запоминается как знак команды.
+- Карточка: 04 · АКСЕССУАРЫ — Подбор по форме лица. Технологии, используемые в НИА "Гид по стилю" (на базе которых впоследствии образовался ряд профильных школ): одна функциональная деталь повторяет линии лица и несёт названное отступление от делового кода; гипотеза — деталь заметна в кадре и запоминается как знак команды.
 - Вывод: Вектор — база плюс одно названное отступление: партнёр знает норму своей среды и видит намерение. Проверка — запрос материалов для due diligence; вопросы о «зрелости» команды — сигнал, что отступление прочитано как ошибка.
 
 **[IMAGE_PROMPT]**
-A woman aged 36, an engineer-founder, stands in a glass-walled hall inside an art deco tower, wearing a precisely fitted graphite couture jacket with one small ruby functional detail at the collar, the single named deviation of her look. Calm, serious, focused face, seen through the glass grid from a slightly low angle; the single gold accent is a thin frame of the glass wall. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A woman aged 36, an engineer-founder, stands in a glass-walled hall inside an art deco tower, wearing a precisely fitted graphite couture jacket with one small ruby functional detail at the collar, the single named deviation of her look. Calm, serious, focused face, seen through the glass grid from a slightly low angle; the single gold accent is a thin frame of the glass wall. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to graphite #16181D and ruby #720E1E with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Кейс 2 курса: deep-tech стартап](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-2-deep-tech-стартап-инвесторы-и-направление-потока); [Willis, Todorov, 2006](https://pubmed.ncbi.nlm.nih.gov/16866745/); [Bellezza, Gino, Keinan, 2014](https://doi.org/10.1086/674870) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -648,13 +651,13 @@ A woman aged 36, an engineer-founder, stands in a glass-walled hall inside an ar
 - Эпиграф: «Ряд противоречащих данных привёл к пересмотру теории». — Дж. Бургун
 - Вводный абзац: Массажист-эксперт впервые встречается с ортопедом, реабилитологом или неврологом после рекомендации общего пациента. Цель впечатления — «специалист с медицинским образованием, который ясно знает границы своего метода».
 - Карточка: 01 · ЦВЕТ — Колориты Ватерман и Цингель. Палитра своего колорита, чистые спокойные цвета без контрастных пар; гипотеза — гармоничная палитра поддерживает впечатление аккуратности и не отвлекает.
-- Карточка: 02 · ФОРМА — Типы фигур «Гида по стилю». Силуэт по типу фигуры, свобода движения рук и плеч; гипотеза — форма показывает человека дела, а не визитёра.
-- Карточка: 03 · СТИЛЬ — Четыре стиля «Гида по стилю». Ведущий стиль — из своих линий, подчинённая линия — Спорт или Натуральный; гипотеза — стиль совпадает с образом специалиста по телу и движению.
-- Карточка: 04 · АКСЕССУАРЫ — Норма должности «Гида по стилю» и пособие UKY. Минимум деталей, без колец и браслетов, которые противоречат гигиене профессии; гипотеза — отсутствие лишнего врач читает как профессиональную норму.
+- Карточка: 02 · ФОРМА — Типы фигур. Технологии, используемые в НИА "Гид по стилю" (на базе которых впоследствии образовался ряд профильных школ): силуэт по типу фигуры, свобода движения рук и плеч; гипотеза — форма показывает человека дела, а не визитёра.
+- Карточка: 03 · СТИЛЬ — Четыре стиля тех же технологий НИА. Ведущий стиль — из своих линий, подчинённая линия — Спорт или Натуральный; гипотеза — стиль совпадает с образом специалиста по телу и движению.
+- Карточка: 04 · АКСЕССУАРЫ — Норма должности НИА и пособие UKY. Минимум деталей, без колец и браслетов, которые противоречат гигиене профессии; гипотеза — отсутствие лишнего врач читает как профессиональную норму.
 - Вывод: Вектор — строгая гармония с профессиональной нормой: любое отступление рискует прочитаться как «народный целитель». Проверка — врач спрашивает о методе, противопоказаниях и границах и направляет одного пациента на пробу.
 
 **[IMAGE_PROMPT]**
-A man aged 43 with strong, capable hands stands in a bright, orderly art deco treatment hall in a clean-lined emerald couture tunic with free shoulders and sleeves, no rings and no bracelets; his hands rest still in front of him. Calm, serious, trustworthy face, strict frontal composition; the single gold accent is a thin line inlaid in the wall panel behind him. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, main subject in the central part of the frame. No text, no letters, no logos, no office scenes, no stock smiles.
+A man aged 43 with strong, capable hands stands in a bright, orderly art deco treatment hall in a clean-lined emerald couture tunic with free shoulders and sleeves, no rings and no bracelets; his hands rest still in front of him. Calm, serious, trustworthy face, strict frontal composition; the single gold accent is a thin line inlaid in the wall panel behind him. Haute couture 2026–2027, inspired by the idea of art deco. Palette strictly limited to emerald #0A4D3C and graphite #16181D with ONE gold accent #B89B5E. Vertical 1:2.4 composition, editorial photography, main subject in the central part of the frame. No readable text, no logos, no distortion, no office scenes, no stock smiles.
 
 **[FOOTER_LINKS]**
 Источники: [Кейс 3 курса: массажист-эксперт](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/40-practice-and-cases.md#кейс-3-массажист-эксперт-закрытый-пул-клиентов-по-рекомендациям); [Burgoon, 2015](https://experts.arizona.edu/en/publications/expectancy-violations-theory/); [Goffman, 1959](https://archive.org/details/the-presentation-of-self-in-everyday-life-the-presentation-erving-goffman-1959-a) · (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026
@@ -698,7 +701,7 @@ A man aged 43 with strong, capable hands stands in a bright, orderly art deco tr
 - [x] Сборка — слайды 25–27 на трёх кейсах курса; на других слайдах кейсов нет.
 - [x] Модель сбора данных курса и её термины к имидж-технологиям не применяются.
 - [x] Каждый слайд — ровно три поля `[SLIDE_TEXT]`, `[IMAGE_PROMPT]`, `[FOOTER_LINKS]`; каждая строка текста слайда начинается с метки роли.
-- [x] Промпты изображений: только высокая мода 2026–2027, навеянная идеей ар-деко; два-три базовых цвета и один золотой акцент; вертикаль 1:2.4; без текста, офисных сцен и стоковых улыбок.
+- [x] Промпты изображений: только высокая мода 2026–2027, навеянная идеей ар-деко; два-три базовых цвета и один золотой акцент; вертикаль 1:2.4; редакционная съёмка; без читаемого текста, логотипов, искажений, офисных сцен и стоковых улыбок.
 
 ## Решения исполнителя в пределах постановки
 
@@ -714,4 +717,30 @@ A man aged 43 with strong, capable hands stands in a bright, orderly art deco tr
 5. **Три технологии на ось.** Постановка разрешает от двух до четырёх. Четвёртая технология не взята ни на одной оси: кандидаты либо повторяют выбранные, либо не имеют профессиональной опоры. Пулы кандидатов и причины отбора — в таксономии модуля.
 6. **Один слайд на технологию, кроме стиля.** Каждая технология укладывается в один слайд из трёх карточек. Шесть стилей вынесены на второй слайд стилевых технологий — слайд 16, — потому что их описание соединяет справочник НИА и шкалу Маккимзи.
 7. **Эпиграфы.** Каждый эпиграф — дословная цитата из источника в подвале того же слайда, сверенная по первоисточнику или аннотации издательства. Для Кибби проверяемой дословной цитаты в открытом доступе не нашлось, поэтому на слайде 17 эпиграф — из эксперимента Уиллиса и Тодорова о скорости суждения по лицу: он задаёт рамку, в которой работает типология по линиям лица.
-8. **Сценарий лектора.** Постановки #693 и #695 его не запрашивают. Колода самостоятельна: каждый слайд читается без речи лектора.
+8. **Сценарий лектора.** Постановки #693 и #695 его не запрашивали, issue #697 запрашивает: он вынесен в отдельный файл — [сценарий лектора, вариант 5](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-lecturer-script-v5.md). Колода остаётся самостоятельной: каждый слайд читается без речи лектора, а речь раскрывает механизм и контекст, не повторяя текст слайда.
+
+## Гейт-проверка issue #697
+
+Пункты issue [#697](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/697) подтверждены по этому файлу и по [сценарию лектора, вариант 5](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-lecturer-script-v5.md). Автоматическая проверка — [`check-day4-697.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/day4-v5-697/check-day4-697.py): она прогоняет колоду через гейт #693 с правилами #695 и добавляет правила #697, с самопроверкой на искусственных повреждениях.
+
+- [x] Все замены RFC v5 применены к структуре v4: шкала образов Кобаяси вместо сезонов Джексон (слайд 6), типы фигур НИА — четыре женских и три мужских (слайд 10), четыре стиля «Гида по стилю» и коэффициент консервативности Трубецковой и Найденской вместо программ двух школ стиля (слайды 14–16), аксессуары НИА, элементы и принципы дизайна UKY, громкий и тихий сигнал статуса вместо программ двух школ и дресс-кода Моллоя (слайды 20–22).
+- [x] Формулировка НИА дословно стоит на каждом слайде, где упоминаются технологии «Гида по стилю»: слайды 3, 5, 10, 12, 14, 16, 18, 20, 23, 25, 26, 27.
+- [x] Вывод каждого слайда технологии — слайды 4–6, 9–11, 14–17, 20–22 — содержит «Статусы проверки: …» по таксономии модуля и фразу о контексте.
+- [x] Выводы легенды и маркеров осей — формулировки PDF-эталона: слайд 3 — легенда, 8 — цвет, 13 — форма, 19 — стиль, 24 — аксессуары; источники выводов стоят в подвалах.
+- [x] Каждый слайд — три поля `[SLIDE_TEXT]`, `[IMAGE_PROMPT]`, `[FOOTER_LINKS]`; подвал — полные URL и строка `(Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва, 10.2026`.
+- [x] Промпты изображений: тема `Haute couture 2026–2027, inspired by the idea of art deco.`, два-три базовых цвета и один золотой акцент, вертикаль 1:2.4, люди 30–50 лет, спокойные и серьёзные, редакционная съёмка, `No readable text, no logos, no distortion, no office scenes, no stock smiles`; без Нью-Йорка, Пекина, Баухауза и Neue Sachlichkeit.
+- [x] Термины модели сбора данных курса не обосновывают выбор образа; кейсы курса — только на слайдах сборки 25–27; ни одна технология не приписана одному автору как личное изобретение.
+- [x] Сценарий лектора: 27 речей по 1,2 минуты и 150–180 слов, мостик «Потому что …, поэтому …» только при переходе к следующему слайду, без цепочек из 8 и более слов текста слайда, метки ритма и план Б на слайдах с голосованием и пробой промпта.
+
+## Решения исполнителя по issue #697
+
+Отклонения сформулированы по правилу issue #697.
+
+1. **Легенда PDF-эталона.** Я предлагаю скорректировать [формулировку легенды PDF-эталона «Образ собирается из четырёх технологий, и каждую можно применить в одном из двух режимов»], потому что вариант [«Образ собирается из четырёх осей технологий, и каждую технологию можно применить в одном из двух режимов»] эффективнее решает задачу [согласовать легенду с колодой RFC, где на каждой из четырёх осей стоят три технологии]. Вторая фраза эталона — «Выбор режима — гипотеза о реакции аудитории, а не правило» — перенесена дословно.
+2. **Формулировка НИА в заголовках и повторах.** Я предлагаю скорректировать [правило «на слайдах с технологиями Гида по стилю использовать строго формулировку НИА» для заголовков, надзаголовков и повторных упоминаний], потому что вариант [формулировка НИА дословно один раз в тексте каждого такого слайда, а в заголовке и в повторах — краткое «Гид по стилю» или «технологии НИА»] эффективнее решает задачу [сохранить точную атрибуцию и читаемость слайда]. Заголовок колоды ограничен шестью словами, а формулировка НИА длиннее; повтор её дважды на одном слайде превращает карточку в оговорку.
+
+Решения в пределах постановки, без отклонений:
+
+3. **Где стоят выводы PDF-эталона.** Эталон формулирует вывод для оси, а не для отдельной технологии. Поэтому выводы цвета, формы, стиля и аксессуаров стоят в «Выводе» слайдов аналитических маркеров 8, 13, 19 и 24 — итоговых слайдов осей, — а вывод легенды — на слайде 3. «Вывод» слайдов технологий отдан опоре и статусам проверки. Вывод о стиле опирается на теорию нарушения ожиданий ([Burgoon, Hale, 1988](https://doi.org/10.1080/03637758809376158)), вывод об аксессуарах — на эксперимент с костюмом ([Howlett и соавт., 2013](https://doi.org/10.1108/13612021311305128)); обе ссылки добавлены в подвалы слайдов 19 и 24.
+4. **Статусы на слайде 16.** Шесть стилевых направлений опираются на шкалу Маккимзи — карточку 3.1 таксономии, а соответствие русских названий американским типам и искусствоведческие параллели — наша аналогия, она добавляет один «?». Статусы проверки: 3 VERIFIED, 1 PARTIAL, 3 «?». Механизм восприятия реален, но направление и сила зависят от контекста, что требует проверки глазом и опытом. Четыре стиля НИА со своим профилем — на слайде 14.
+5. **Хвост промптов.** Запреты issue #697 перенесены в каждый промпт дословно, а «редакционная съёмка» — как `editorial photography` перед указанием о центре кадра. Указание держать главный объект в центральной части кадра сохранено из v4: блок фото узкий, и Gamma обрезает края.
