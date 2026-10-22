@@ -1,0 +1,88 @@
+## Run 1: before #697 — no deck v5 and no script v5 (commit d7599df)
+
+$ python3 -I research/reputation-technologies/exp/day4-v5-697/check-day4-697.py --self-test
+FAIL: 2026-11-03-day4-presentation-gamma-v5.md: file not found
+FAIL: 2026-11-03-day4-lecturer-script-v5.md: file not found
+exit 1
+
+## Run 2: deck v5 with only the rows of RFC v5 applied (commit 3cb7422) and the first draft of the script v5
+
+$ python3 -I research/reputation-technologies/exp/day4-v5-697/check-day4-697.py --self-test
+FAIL: gate #693/#695: slide 1: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 2: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 3: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 4: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 5: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 6: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 7: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 8: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 9: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 10: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 11: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 12: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 13: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 14: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 15: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 16: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 17: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 18: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 19: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 20: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 21: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 22: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 23: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 24: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 25: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 26: image prompt does not end with the image rules of #693 word for word
+FAIL: gate #693/#695: slide 27: image prompt does not end with the image rules of #693 word for word
+FAIL: deck: frontmatter source does not name issue #697
+FAIL: deck slide 3: names the technologies of «Гид по стилю» without the wording of the NIA
+FAIL: deck slide 8: bridge «потому что → поэтому» on the slide
+FAIL: deck slide 12: names the technologies of «Гид по стилю» without the wording of the NIA
+FAIL: deck slide 18: names the technologies of «Гид по стилю» without the wording of the NIA
+FAIL: deck slide 23: names the technologies of «Гид по стилю» without the wording of the NIA
+FAIL: deck slide 25: names the technologies of «Гид по стилю» without the wording of the NIA
+FAIL: deck slide 26: names the technologies of «Гид по стилю» without the wording of the NIA
+FAIL: deck slide 27: names the technologies of «Гид по стилю» without the wording of the NIA
+FAIL: deck slide 16: conclusion without «Статусы проверки: ….» and the context phrase
+FAIL: deck slide 16: status profile is not card 3.1 plus 1 «?» for the analogy: {'VERIFIED': 3, 'PARTIAL': 1, 'CONFLICT': 0, '?': 3}
+FAIL: deck slide 3: conclusion does not carry the wording of the PDF reference «Выбор режима — гипотеза о реакции аудитории, а не …»
+FAIL: deck slide 8: conclusion does not carry the wording of the PDF reference «Цвет не сообщает характер — ни ваш, ни чужой. Пали…»
+FAIL: deck slide 13: conclusion does not carry the wording of the PDF reference «Иллюзии формы реальны, но слабы, а правило «вертик…»
+FAIL: deck slide 19: conclusion does not carry the wording of the PDF reference «Гипотеза теории нарушения ожиданий: позитивно проч…»
+FAIL: deck slide 19: footer does not name the source of the conclusion https://doi.org/10.1080/03637758809376158
+FAIL: deck slide 24: conclusion does not carry the wording of the PDF reference «деталь меняет впечатление, но не гарантирует довер…»
+FAIL: deck slide 24: footer does not name the source of the conclusion https://doi.org/10.1108/13612021311305128
+FAIL: deck: gate check of #697 missing or not all ticked
+FAIL: deck: decisions of #697 do not state 2 deviations in the wording of the issue
+FAIL: deck: no link to the lecturer script v5
+FAIL: script: slide 1 speech has 143 words, expected 150–180
+FAIL: script: slide 3 speech has 135 words, expected 150–180
+FAIL: script: slide 5 speech has 144 words, expected 150–180
+FAIL: script: slide 6 speech has 145 words, expected 150–180
+FAIL: script: slide 7 speech has 137 words, expected 150–180
+FAIL: script: slide 8 speech has 149 words, expected 150–180
+FAIL: script: slide 9 speech has 133 words, expected 150–180
+FAIL: script: slide 10 speech has 143 words, expected 150–180
+FAIL: script: slide 11 speech has 142 words, expected 150–180
+FAIL: script: slide 12 speech has 126 words, expected 150–180
+FAIL: script: slide 13 speech has 132 words, expected 150–180
+FAIL: script: slide 14 speech has 134 words, expected 150–180
+FAIL: script: slide 15 speech has 138 words, expected 150–180
+FAIL: script: slide 16 speech has 135 words, expected 150–180
+FAIL: script: slide 17 speech has 142 words, expected 150–180
+FAIL: script: slide 18 speech has 136 words, expected 150–180
+FAIL: script: timing row 19 is not «Стиль: аналитические маркеры | 21:36–22:48» with a source from the footer of the slide
+FAIL: script: slide 19 speech has 147 words, expected 150–180
+FAIL: script: slide 20 speech has 149 words, expected 150–180
+FAIL: script: slide 21 speech has 147 words, expected 150–180
+FAIL: script: slide 22 speech has 139 words, expected 150–180
+FAIL: script: slide 23 speech has 128 words, expected 150–180
+FAIL: script: timing row 24 is not «Аксессуары: аналитические маркеры | 27:36–28:48» with a source from the footer of the slide
+FAIL: script: slide 24 speech has 144 words, expected 150–180
+FAIL: script: slide 24 speech copies the slides: «видео видны очки и серьги в зале обувь»
+FAIL: script: slide 25 speech has 143 words, expected 150–180
+FAIL: script: slide 26 speech copies the slides: «которая знает свою технологию и уже проверила ее»
+FAIL: script: slide 27 speech has 132 words, expected 150–180
+FAIL: script: slide 27 speech copies the slides: «врач спрашивает о методе противопоказаниях и границах и»
+exit 1
