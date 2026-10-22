@@ -1,0 +1,82 @@
+## Run 1: after #695
+
+$ python3 -I research/reputation-technologies/exp/rfc-v5-695/check-rfc-695.py --self-test
+PASS: RFC has sections «1. Обоснование», «2. Таблица замен (Diffs)», «3. Визуальные правила»; 172 rows, each «Было» quoted word for word from its permalinked line of the deck v4 (commit f3af657, unchanged), slide and field match the line
+PASS: the rows apply without overlaps and G-01 replaces the tail of all 27 image prompts; the deck v5 passes the gate of #693 with the rules of #695
+PASS: deck v5 quotes the wording of the NIA on slides 5, 10, 14, 16, 20; no ВШСДТ, Школа Туркенич, authors of the NIA or blogs; every link is a full https URL without shorteners
+PASS: status profiles on the technology slides and in the stage 2 table equal the taxonomy; every PARTIAL and CONFLICT carries the context phrase of #695
+PASS: section 3 quotes the visual rule of #695 word for word; no New York, Beijing, Bauhaus or Neue Sachlichkeit in the image prompts, the Gamma prompt and the photo table; section 1 states the 7 deviations as in the module
+PASS: 53 broken fixtures rejected
+exit 0
+
+## Run 2: first error of every self-test mutation
+
+$ python3 -I research/reputation-technologies/exp/rfc-v5-695/mutation_reasons_695.py
+RFC missing -> 2026-11-03-rfc-presentation-update-v5.md: file not found
+deck v4 edited -> 2026-11-03-day4-presentation-gamma-v4.md: deck v4 differs from commit f3af657 — the RFC quotes it, it is not regenerated
+«Было» not quoted from its line -> RFC V5-001: «Было» is not quoted once from v4 line 169: «Stern frontal Neue Sachlichkeit framing»
+«Было» line number wrong -> RFC V5-001: «Было» is not quoted once from v4 line 170: «Strict frontal Neue Sachlichkeit framing»
+label and permalink differ -> RFC V5-001: label v4:L169 and permalink #L168 differ
+permalink not of commit f3af657 -> RFC V5-001: «Было» is not «[v4:Ln](permalink of line n) «quote»» or «Стало» is not ««text»»
+«Было» without quote marks -> RFC V5-001: «Было» is not «[v4:Ln](permalink of line n) «quote»» or «Стало» is not ««text»»
+row removed, Джексон stays -> RFC: rows are not G-01, V5-001… and S-001… numbered in order
+row duplicated -> RFC: rows are not G-01, V5-001… and S-001… numbered in order
+rows out of order -> RFC: rows are not G-01, V5-001… and S-001… numbered in order
+row with five cells -> RFC: rows are not G-01, V5-001… and S-001… numbered in order
+row without reason -> RFC V5-001: no reason
+slide column wrong -> RFC V5-001: slide «3» and field «[IMAGE_PROMPT]» do not match v4 line 169
+field column wrong -> RFC V5-001: slide «2» and field «[FOOTER_LINKS]» do not match v4 line 169
+service row given a slide -> RFC S-001: slide «1» and field «frontmatter» do not match v4 line 3
+table header without «Обоснование» -> RFC: section 2 does not have the two tables with the header «| № | Слайд | Поле | Было (v4, дословно) | Стало (v5) | Обоснование |»
+G-01 missing -> RFC: rows are not G-01, V5-001… and S-001… numbered in order
+G-01 brings Bauhaus back -> v5: slide 1: image prompt does not end with the image rules of #693 word for word
+prompt keeps Neue Sachlichkeit -> v5: image rules still carry influences removed by #695: ['Neue Sachlichkeit']
+Gamma prompt keeps New York -> v5: image rules still carry influences removed by #695: ['Нью-Йорк']
+ВШСДТ in «Стало» -> v5: slide 14: title «Стиль: четыре стиля «Гида по стилю»» differs from the heading «Стиль: ВШСДТ, четыре стиля «Гида по стилю»»
+Туркенич in a card of slide 6 -> v5: names «Туркенич»
+ТУРКЕНИЧ in «Стало» -> v5: names «Туркенич»
+NIA author named -> RFC: names an author of the NIA handbook outside the quotes of v4
+Ваттерман on a slide -> v5: slide 5: title «Цвет: колориты Ватерман и Цингель» differs from the heading «Цвет: колориты Ваттерман и Цингель»
+Ваттерман in «Как читать» -> v5: deck: photo layout row 5 is not «Цвет: колориты Ватерман и Цингель | … | слева | золото #B89B5E»
+Кобаяси replaced by Джексон in «Как читать» -> v5: deck: photo layout row 6 is not «Цвет: шкала образов Кобаяси | … | справа | изумруд #0A4D3C»
+shortened link in «Стало» -> v5: link is not a full https URL of a primary source: https://bit.ly/3kXy
+http link in «Стало» -> v5: link is not a full https URL of a primary source: http://doi.org/10.1002/col.5080060210
+blog link in «Стало» -> v5: link is not a full https URL of a primary source: https://make-your-style.livejournal.com/297987.html
+blog link in the reasoning -> RFC: links outside the quotes of v4 are not full https URLs of primary sources: ['https://make-your-style.livejournal.com/297987.html']
+NIA wording edited -> v5 slide 5: wording of the NIA of #695 is not quoted word for word
+NIA wording dropped -> v5 slide 5: wording of the NIA of #695 is not quoted word for word
+context phrase dropped -> v5: PARTIAL or CONFLICT without «Статусы проверки: ….» and the context phrase: «- Вывод: Опора К — книга-первоисточник. Иттен строит сочетан»
+profile differs from taxonomy -> v5 slide 4: status profile differs from taxonomy cards 1.3: {'VERIFIED': 2, 'PARTIAL': 1, 'CONFLICT': 1, '?': 1}
+taxonomy profile changed -> v5 slide 9: status profile differs from taxonomy cards 2.2: {'VERIFIED': 2, 'PARTIAL': 0, 'CONFLICT': 1, '?': 1}
+taxonomy PARTIAL without context -> taxonomy card 1.5: PARTIAL or CONFLICT profile without the context phrase of #695
+stage 2 table differs -> RFC: stage 2 table row of slide 9 is [2, 0, 1, 1], taxonomy gives [3, 0, 1, 1]
+GRA term in «Стало» -> v5: deck: term of the course data-collection model: ['полярн']
+case on a technology slide -> v5: slide 6: running case outside the assembly slides: ['производител']
+mandatory Трубецкова dropped -> v5: deck: mandatory technologies of axis СТИЛЬ missing: ['ТРУБЕЦКОВА']
+visual rule edited -> RFC: section 3 does not quote the visual rule of #695 word for word
+visual rules section missing -> RFC: sections «1. Обоснование», «2. Таблица замен (Diffs)», «3. Визуальные правила» missing or out of order
+reasoning section missing -> RFC: sections «1. Обоснование», «2. Таблица замен (Diffs)», «3. Визуальные правила» missing or out of order
+sections out of order -> RFC: sections «1. Обоснование», «2. Таблица замен (Diffs)», «3. Визуальные правила» missing or out of order
+deviation differs from the module -> RFC: deviation differs from the module: «Я предлагаю скорректировать [Ограничение «найти и проанализи»
+deviation wording broken -> RFC: section 1 does not state the 7 deviations of #695 in the wording of the issue
+RFC source not #695 -> RFC: frontmatter source is not issue #695
+RFC broken anchor -> RFC: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/00-introduction.md#подтверждени
+RFC links a missing file -> RFC: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/rfc-v5-695/check.py: file not found
+RFC relative link -> RFC: links outside the quotes of v4 are not full https URLs of primary sources: ['image-technologies/20-taxonomy.md#исключённые-источники']
+RFC gate item unticked -> RFC: gate check items are not all ticked
+v5 source without #695 -> v5: frontmatter source does not name issue #695
+exit 0
+
+## Run 3: the gate of #693 on the deck v4 is unchanged
+
+$ python3 -I research/reputation-technologies/exp/day4-v4-693/check-day4-693.py --self-test
+PASS: deck has 27 slides — introduction 1–2, legend 3, four axes of three technologies with an interpretation and four markers each, six styles on slide 16, assembly 25–27; every slide has only the fields [SLIDE_TEXT], [IMAGE_PROMPT], [FOOTER_LINKS]
+PASS: every slide line has a label in the order Шапка → Надзаголовок → Заголовок → Эпиграф → Вводный абзац → Карточка → Вывод; header «Введение в репутационный инжиниринг · Имиджевые стратегии для действия», overline in capitals, titles of at most 6 words, intro of 1–2 sentences
+PASS: technology slides are «ОСЬ — МЕТОД — АВТОР» with cards ДЛЯ ЧЕГО → ИСПОЛЬЗУЮТ → В ЧЁМ СУТЬ, no vector and a support level; mandatory technologies of #693 are present and the «в тон» rule is rejected
+PASS: interpretation slides are ГАРМОНИЯ/КЛАССИЦИЗМ → КОНТРАСТ/ЭКЛЕКТИКА → ОБОБЩЕНИЕ or КОНКУРИРУЮЩИЕ ПОДХОДЫ; marker slides are the four management conclusions of #693; the colour thesis is checked on slide 8
+PASS: no term of the course data-collection model anywhere in the deck; running cases only on the assembly slides, each with a hypothesis per axis, a vector, a check and a link to its case
+PASS: image prompts are English haute couture 2026–2027 with the rules of #693 word for word, a palette of 2–3 named base colours and one gold accent, people aged 30–50, calm and serious
+PASS: footers are one line «Источники: …» with full URLs; the Gamma prompt carries every rule; photo side and accent alternate; the gate items are ticked; the deviations follow the wording of #693 and match the module
+PASS: the deck links the module files it is built on and the module links the deck; frontmatter source is #693; repository links and anchors resolve
+PASS: 69 broken fixtures rejected
+exit 0
