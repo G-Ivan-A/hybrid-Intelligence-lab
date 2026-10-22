@@ -134,6 +134,9 @@ jobs:
           python3 -I research/reputation-technologies/exp/rfc-v5-695/build-rfc-695.py
           git diff --exit-code -- research/reputation-technologies/2026-11-03-rfc-presentation-update-v5.md
 
+      - name: Check Day 4 Variant 5 deck and lecturer script of #697
+        run: python3 -I research/reputation-technologies/exp/day4-v5-697/check-day4-697.py --self-test
+
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
 

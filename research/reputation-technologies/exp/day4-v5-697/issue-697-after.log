@@ -1,0 +1,89 @@
+## Run 1: after #697 — deck v5 and lecturer script v5
+
+$ python3 -I research/reputation-technologies/exp/day4-v5-697/check-day4-697.py --self-test
+PASS: deck v5 passes the gate of #693 with the rules of #695 and the image tail of #697; 27 slides, three fields each
+PASS: the wording of the NIA stands word for word on every slide of the «Гид по стилю» technologies: 3, 5, 10, 12, 14, 16, 18, 20, 23, 25, 26, 27
+PASS: the conclusion of every technology slide (4, 5, 6, 9, 10, 11, 14, 15, 16, 17, 20, 21, 22) carries «Статусы проверки: …» and the context phrase; profiles equal the taxonomy, slide 16 — card 3.1 plus one «?» for the analogy
+PASS: conclusions of slides 3, 8, 13, 19, 24 carry the wordings of the PDF reference with their sources in the footer; no bridge on the slides, no case outside the assembly slides, no technology as a personal invention
+PASS: gate of #697 ticked, 2 deviations in the wording of the issue, the deck links the lecturer script v5
+PASS: script marks `[СЛАЙД 1]`…`[СЛАЙД 27]` at 1,2 minutes each, 150–180 spoken words per slide, timing table with the interaction and a footer source of each slide
+PASS: every speech has one `[ПАУЗА]`, one `[ДЕМОНСТРАЦИЯ ЭКРАНА]` of a footer source and a `[ПЛАН Б ДЛЯ МОЛЧАЛИВОГО ЧАТА]` with a line to say; at most one `[ЮМОР/РАЗРЯДКА]` per speech, at least 9 in total
+PASS: one bridge «потому что → поэтому» closes each speech 1–26; none on the last slide or outside the speeches; no 8-word copy of the slides; no case outside speeches 25–27, no term of the data-collection model, full https links
+PASS: 57 broken fixtures rejected
+exit 0
+
+## Run 2: every broken fixture is rejected for its intended reason
+
+$ python3 -I research/reputation-technologies/exp/day4-v5-697/mutation_reasons_697.py
+deck missing -> 2026-11-03-day4-presentation-gamma-v5.md: file not found
+script missing -> 2026-11-03-day4-lecturer-script-v5.md: file not found
+deck source without #697 -> deck: frontmatter source does not name issue #697
+prompt tail of #695 kept -> gate #693/#695: slide 1: image prompt does not end with the image rules of #693 word for word
+editorial photography dropped -> gate #693/#695: slide 1: image prompt does not end with the image rules of #693 word for word
+Bauhaus back in a prompt -> gate #693/#695: slide 1: image prompt does not end with the image rules of #693 word for word
+NIA wording dropped on slide 12 -> deck slide 12: names the technologies of «Гид по стилю» without the wording of the NIA
+NIA wording dropped on slide 27 -> deck slide 27: names the technologies of «Гид по стилю» without the wording of the NIA
+NIA wording edited on slide 5 -> gate #693/#695: v5 slide 5: wording of the NIA of #695 is not quoted word for word
+status line dropped on slide 4 -> gate #693/#695: v5 slide 4: status profile differs from taxonomy cards 1.3: {'VERIFIED': 2, 'PARTIAL': 1, 'CONFLICT': 1, '?': 1}
+context phrase dropped on slide 15 -> gate #693/#695: v5: PARTIAL or CONFLICT without «Статусы проверки: ….» and the context phrase: «- Вывод: Опора К — книги авторов с аннотациями издател
+slide 16 profile edited -> deck slide 16: status profile is not card 3.1 plus 1 «?» for the analogy: {'VERIFIED': 3, 'PARTIAL': 1, 'CONFLICT': 0, '?': 3}
+slide 6 profile differs from taxonomy -> gate #693/#695: v5 slide 6: status profile differs from taxonomy cards 1.5: {'VERIFIED': 1, 'PARTIAL': 1, 'CONFLICT': 0, '?': 1}
+legend wording of the PDF lost -> deck slide 3: conclusion does not carry the wording of the PDF reference «Выбор режима — гипотеза о реакции аудитории, а не …»
+colour wording of the PDF lost -> deck slide 8: conclusion does not carry the wording of the PDF reference «Цвет не сообщает характер — ни ваш, ни чужой. Пали…»
+form wording of the PDF lost -> deck slide 13: conclusion does not carry the wording of the PDF reference «Иллюзии формы реальны, но слабы, а правило «вертик…»
+style wording of the PDF lost -> deck slide 19: conclusion does not carry the wording of the PDF reference «Гипотеза теории нарушения ожиданий: позитивно проч…»
+accessories wording of the PDF lost -> deck slide 24: conclusion does not carry the wording of the PDF reference «деталь меняет впечатление, но не гарантирует довер…»
+source of the style conclusion dropped -> deck slide 19: footer does not name the source of the conclusion https://doi.org/10.1080/03637758809376158
+bridge on a slide -> deck slide 1: bridge «потому что → поэтому» on the slide
+personal invention on a slide -> deck: slide attributes a technology as a personal invention: ['изобрёл']
+case on a technology slide -> gate #693/#695: slide 1: running case outside the assembly slides: ['дистрибьют']
+GRA term justifies a choice -> gate #693/#695: deck: term of the course data-collection model: ['полярн']
+ВШСДТ back in the deck -> gate #693/#695: v5: names «ВШСДТ»
+shortened link in the deck -> gate #693/#695: v5: link is not a full https URL of a primary source: https://bit.ly/3kXy
+gate of #697 unticked -> deck: gate check of #697 missing or not all ticked
+deviation of #697 reworded -> deck: decisions of #697 do not state 2 deviations in the wording of the issue
+deck does not link the script -> deck: no link to the lecturer script v5
+script source not #697 -> 2026-11-03-day4-lecturer-script-v5.md: frontmatter source is not issue #697
+script slide mark missing -> script: slide marks are [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27], expected [1, 2, 3, 4, 5, 6, 
+script heading differs from the deck -> script: slide headings differ from the deck
+slide not at 1,2 minutes -> script: slide 12 is not timed 1,2 мин from 13:12 to 14:24
+timing total lost -> script: timing table without «| **Итого** | 27 слайдов | 00:00–32:24 | 27 интерактивов | **32,4 мин** |»
+timing row with a source not in the footer -> script: timing row 6 is not «Цвет: шкала образов Кобаяси | 06:00–07:12» with a source from the footer of the slide
+timing row says question, speech votes -> script: slide 7 interaction is ['голосование'], the timing table says «вопрос»
+short speech -> script: slide 2 speech has 124 words, expected 150–180
+long speech -> script: slide 5 speech has 185 words, expected 150–180
+pause mark missing -> script: slide 3 has 0 marks `[ПАУЗА]`, expected one
+demonstration mark missing -> script: slide 4 has 0 marks `[ДЕМОНСТРАЦИЯ ЭКРАНА]`, expected one
+demonstration not from the footer -> script: slide 4 demonstration does not open a source from the footer
+Plan Б without a line on a vote slide -> script: slide 7 Plan Б has no line to say «Скажите: «…»»
+Plan Б missing on a prompt trial -> script: slide 18 has 0 marks `[ПЛАН Б ДЛЯ МОЛЧАЛИВОГО ЧАТА]`, expected one
+two humour marks in a speech -> script: slide 5 has 2 marks `[ЮМОР/РАЗРЯДКА]`, expected at most one
+humour marks dropped -> script: 0 marks `[ЮМОР/РАЗРЯДКА]`, expected at least 9
+speech without a bridge -> script: slide 10 does not end with exactly one bridge «потому что → поэтому» to slide 11
+second bridge inside a speech -> script: slide 11 does not end with exactly one bridge «потому что → поэтому» to slide 12
+bridge after the last slide -> script: slide 27 is the last one, yet has a bridge «потому что → поэтому»
+bridge outside the speeches -> script: «потому что → поэтому» outside the speeches
+speech retells the slide -> script: slide 8 speech copies the slides: «ваш ни чужой палитра гипотеза о первом впечатлении»
+case of the course in a technology speech -> script: slide 15 speech names a case of the course: ['дистрибьют', '«Д»']
+GRA term in a speech -> script: term of the course data-collection model: ['дистанц']
+status code in a speech -> script: term of the course data-collection model: ['VERIFIED']
+personal invention in a speech -> script: technology attributed as a personal invention: ['придумал']
+Туркенич in the script -> 2026-11-03-day4-lecturer-script-v5.md: names «Туркенич»
+shortened link in the script -> 2026-11-03-day4-lecturer-script-v5.md: link is not a full https URL of a primary source: https://bit.ly/3brewer
+broken anchor in the script -> 2026-11-03-day4-lecturer-script-v5.md: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-03-day4-
+end mark lost -> script: scenario does not end with «*[32:24. Конец блока имидж-технологий.]*»
+exit 0
+
+## Run 3: the earlier checks of the Day 4 deck still pass
+
+$ python3 -I research/reputation-technologies/exp/day4-v4-693/check-day4-693.py --self-test
+PASS: footers are one line «Источники: …» with full URLs; the Gamma prompt carries every rule; photo side and accent alternate; the gate items are ticked; the deviations follow the wording of #693 and match the module
+PASS: the deck links the module files it is built on and the module links the deck; frontmatter source is #693; repository links and anchors resolve
+PASS: 69 broken fixtures rejected
+exit 0
+
+$ python3 -I research/reputation-technologies/exp/rfc-v5-695/check-rfc-695.py --self-test
+PASS: status profiles on the technology slides and in the stage 2 table equal the taxonomy; every PARTIAL and CONFLICT carries the context phrase of #695
+PASS: section 3 quotes the visual rule of #695 word for word; no New York, Beijing, Bauhaus or Neue Sachlichkeit in the image prompts, the Gamma prompt and the photo table; section 1 states the 7 deviations as in the module
+PASS: 53 broken fixtures rejected
+exit 0
