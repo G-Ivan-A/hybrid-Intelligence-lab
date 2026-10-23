@@ -1,0 +1,5 @@
+## Run 1: before the fix — the prompt file of #699 does not exist
+
+$ python3 -I research/reputation-technologies/exp/day4-image-prompts-v5-699/check-day4-image-prompts-699.py --self-test
+FAIL: research/reputation-technologies/2026-11-03-day4-image-prompts-v5-couturier-constructor.md is missing
+exit 1
