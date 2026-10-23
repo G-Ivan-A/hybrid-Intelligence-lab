@@ -520,6 +520,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-rfc-presentation-update-v5.md | \
     research/reputation-technologies/2026-11-03-day4-presentation-gamma-v5.md | \
     research/reputation-technologies/2026-11-03-day4-lecturer-script-v5.md | \
+    research/reputation-technologies/2026-11-03-day4-image-prompts-v5-couturier-constructor.md | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
@@ -600,6 +601,11 @@ is_active_file() {
     research/reputation-technologies/exp/day4-v5-697/mutation_reasons_697.py | \
     research/reputation-technologies/exp/day4-v5-697/issue-697-before.log | \
     research/reputation-technologies/exp/day4-v5-697/issue-697-after.log | \
+    research/reputation-technologies/exp/day4-image-prompts-v5-699/README.md | \
+    research/reputation-technologies/exp/day4-image-prompts-v5-699/check-day4-image-prompts-699.py | \
+    research/reputation-technologies/exp/day4-image-prompts-v5-699/mutation_reasons_699.py | \
+    research/reputation-technologies/exp/day4-image-prompts-v5-699/issue-699-before.log | \
+    research/reputation-technologies/exp/day4-image-prompts-v5-699/issue-699-after.log | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
     research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
     research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
@@ -2133,11 +2139,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.44"
+require_text "ops/artifact-map.md" "version: 2.45"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-10-22"
+require_text "ops/artifact-map.md" "updated: 2026-10-23"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"

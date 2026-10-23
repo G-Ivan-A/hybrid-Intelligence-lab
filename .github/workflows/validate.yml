@@ -137,6 +137,9 @@ jobs:
       - name: Check Day 4 Variant 5 deck and lecturer script of #697
         run: python3 -I research/reputation-technologies/exp/day4-v5-697/check-day4-697.py --self-test
 
+      - name: Check Day 4 image prompts v5 couturier constructor of #699
+        run: python3 -I research/reputation-technologies/exp/day4-image-prompts-v5-699/check-day4-image-prompts-699.py --self-test
+
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
 

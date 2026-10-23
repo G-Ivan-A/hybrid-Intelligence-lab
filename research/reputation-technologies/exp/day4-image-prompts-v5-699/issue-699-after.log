@@ -1,0 +1,58 @@
+## Run 1: after the fix — the prompt file of #699 passes the gate and the self-test
+
+$ python3 -I research/reputation-technologies/exp/day4-image-prompts-v5-699/check-day4-image-prompts-699.py --self-test
+PASS: 27 slides of the deck v5 with Variant А «Гармония» and Variant Б «Эклектика», [EN] and [RU] each: 108 prompts
+PASS: 26 couturiers on exactly two slides each; 27 cities at most twice, neighbouring variants in different cultural zones, never three European cities in a row; subject types, motions and art objects never repeat on neighbouring variants
+PASS: every prompt keeps the proportion frame in words, a real city, the couturier, two base colours on the person before the art object and the third on it, gold #B89B5E on the person, a moderate varied crowd in bokeh, the season, at least three markers of the house, no banned word, at most 4000 characters
+PASS: [RU] keeps HEX codes, Latin city and house names and «Ар-Деко»; gate checklist of §7 ticked; deviations listed
+PASS: 44 broken fixtures rejected
+exit 0
+
+## Run 2: after the fix — the first error each broken fixture causes
+
+$ python3 -I research/reputation-technologies/exp/day4-image-prompts-v5-699/mutation_reasons_699.py
+prompts missing -> research/reputation-technologies/2026-11-03-day4-image-prompts-v5-couturier-constructor.md is missing
+source without #699 -> frontmatter source is not https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/699
+title of the issue changed -> title «# День 4 · Промпты для изображений (Версия 5 · Couturier Constructor)» missing
+slide title differs from the deck -> slide 6: title «Цвет: шкала Кобаяси» differs from the deck v5 «Цвет: шкала образов Кобаяси»
+slide 27 dropped -> slide sections [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26] are not the 27 slides of the deck v5
+gate line without the country -> slide 3: gate line is not «А — Louis Vuitton (Nicolas Ghesquière / Pharrell Williams), Франция; Б — Coperni (Arnaud Vaillant & Sébastien Meyer), Франц
+interpretation of two sentences -> slide 4: interpretation is not one sentence
+variant heading without the designer -> slide 1: heading of Variant Б is not «Эклектика (Schiaparelli — Daniel Roseberry)»
+[RU] prompt dropped -> slide 9: Variant А with [EN] and [RU] code spans not found
+proportions not in words -> slide 2А [EN]: frame element «height far greater than width» missing
+RU proportions not in words -> slide 2Б [RU]: frame element «высота намного больше ширины» missing
+EN start changed -> slide 5А [EN]: does not start with «Tall narrow vertical banner photograph»
+RU start changed -> slide 5Б [RU]: does not start with «Высокий вертикальный баннер»
+Variant А ending without the city -> slide 7А [EN]: does not end with «Always recognisable Art Deco in London.»
+Variant А RU ending without the city -> slide 7А [RU]: does not end with «Всегда узнаваемое Ар-Деко в Лондоне.»
+Variant Б ending changed -> slide 8Б [EN]: does not end with «Surreal-meets-classical eclecticism.»
+Variant Б RU ending changed -> slide 8Б [RU]: does not end with «Сюрреалистичная эклектика.»
+city of the table missing -> slide 10А [EN]: city «Real Cairo,» of the table missing
+Latin city missing in RU -> slide 10Б [RU]: city «(Vienna)» of the table missing
+couturier not named -> slide 11А [EN]: couturier Jil Sander not named
+season not named -> slide 12А [RU]: season FW 2026/27 not named
+subject type changed -> slide 13Б [EN]: subject «two men» of type MM missing
+age of the models dropped -> slide 14А [EN]: age 30–50 of the models not stated
+fourth base colour -> slide 15А [EN]: HEX codes ['#0A4D3C', '#16181D', '#720E1E', '#B89B5E'] differ from the table ['#132A4A', '#16181D', '#720E1E', '#B89B5E']
+clothing colours after the art object -> slide 16А [EN]: #0A4D3C not on the person before the «art object»
+gold dropped -> slide 17А [EN]: HEX codes ['#132A4A', '#16181D', '#720E1E'] differ from the table ['#132A4A', '#16181D', '#720E1E', '#B89B5E']
+RU gold dropped -> slide 17Б [RU]: HEX codes ['#0A4D3C', '#132A4A', '#720E1E'] differ from the table ['#0A4D3C', '#132A4A', '#720E1E', '#B89B5E']
+crowd not moderate -> slide 18А [EN]: crowd element /\bmoderate/ missing
+crowd without bokeh -> slide 18Б [RU]: crowd element /боке/ missing
+uniform in a prompt -> slide 19А [EN]: banned word «Uniform»
+office in a RU prompt -> slide 19Б [RU]: banned word «Офис»
+statue as the art object -> slide 20А [EN]: banned word «statue»
+night scene -> slide 20Б [EN]: banned word «night»
+generic draping -> slide 21А [EN]: generic «draping» not tied to Hermès in the same sentence
+too few house markers -> slide 22А [EN]: 0 markers of Fendi (), need at least 3
+too long for DALL-E 3 -> slide 23А [EN]: 6962 characters, more than 4000
+shortened prompt -> slide 24Б [RU]: 86 words, fewer than 240
+house on a third slide -> table: Celine on slides [7, 19, 25], not on exactly two
+zone repeats -> table: zone «Западная Азия» repeats on 22Б→23А
+three European cities in a row -> table: three European cities in a row from 1А
+subject type repeats -> table: type «WW» repeats on 1Б→2А
+pair motion for one model -> table: motion facing of 1А not allowed for W
+gate unticked -> gate checklist of §7 is not ticked: six items with `- [x]` expected
+deviations dropped -> section «## Отклонения от постановки» missing
+exit 0
