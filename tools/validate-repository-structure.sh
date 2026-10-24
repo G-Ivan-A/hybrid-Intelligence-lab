@@ -521,6 +521,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-day4-presentation-gamma-v5.md | \
     research/reputation-technologies/2026-11-03-day4-lecturer-script-v5.md | \
     research/reputation-technologies/2026-11-03-day4-image-prompts-v5-couturier-constructor.md | \
+    research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
@@ -606,6 +607,11 @@ is_active_file() {
     research/reputation-technologies/exp/day4-image-prompts-v5-699/mutation_reasons_699.py | \
     research/reputation-technologies/exp/day4-image-prompts-v5-699/issue-699-before.log | \
     research/reputation-technologies/exp/day4-image-prompts-v5-699/issue-699-after.log | \
+    research/reputation-technologies/exp/handout-registry-700/README.md | \
+    research/reputation-technologies/exp/handout-registry-700/check-handout-700.py | \
+    research/reputation-technologies/exp/handout-registry-700/mutation_reasons_700.py | \
+    research/reputation-technologies/exp/handout-registry-700/issue-700-before.log | \
+    research/reputation-technologies/exp/handout-registry-700/issue-700-after.log | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
     research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
     research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \

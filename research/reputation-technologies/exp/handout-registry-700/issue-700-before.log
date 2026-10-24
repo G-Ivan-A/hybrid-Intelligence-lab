@@ -1,0 +1,5 @@
+## Run 1: before the fix — the handout file of #700 does not exist (commit b81331d)
+
+$ python3 -I research/reputation-technologies/exp/handout-registry-700/check-handout-700.py --self-test
+FAIL: research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md is missing
+exit 1
