@@ -1,0 +1,58 @@
+## Run 2: after the fix — the handout file of #700 is in place
+
+$ python3 -I research/reputation-technologies/exp/handout-registry-700/check-handout-700.py --self-test
+PASS: research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md — 6 templates in one file, schedule of 4 days, unified blocks, links to the latest decks
+PASS: image template — 5 variables, 4 hard constraints, 26 houses with DNA markers of #699, no banned words
+PASS: footprint audit — 7 platforms, Gap rule, LiveLib book card
+PASS: 47 broken fixtures rejected
+exit 0
+
+$ python3 -I research/reputation-technologies/exp/handout-registry-700/mutation_reasons_700.py
+handout missing -> research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md is missing
+ai-generated in frontmatter -> frontmatter: «ai-generated» is not allowed
+frontmatter without method -> frontmatter: key «method» missing
+title without handout -> title is not «# Раздаточные материалы курса · Master Prompt Registry · Дни 1–4»: the name must say these are handout materials
+no schedule -> section «## Когда что раздавать» missing
+schedule without Day 2 homework slide -> schedule: Day 2 has no row for slide 27
+schedule without Day 4 -> schedule: no row for Day 4
+day topic differs from deck -> Day 2 topic «Мониторинг» differs from the deck header «Мониторинг ресурсов, работа с данными»
+Day 3 missing -> day headings are ['1', '2', '4'], expected 1, 2, 3, 4 in order
+task 2.2 missing -> tasks are ['1.1', '2.1', '3.1', '4.1', '4.2'], expected ['1.1', '2.1', '2.2', '3.1', '4.1', '4.2']
+goal not generate -> task 1.1: «**Цель:** Сгенерировать …» missing
+tool without GigaChat -> task 1.1: tool line does not name GigaChat
+4.2 tool without Nano Banana -> task 4.2: tool line does not name Nano Banana
+no prompt block -> task 2.1: no ```text block after «📋 Шаблон промпта»
+OUTPUT FORMAT missing -> task 1.1 prompt: header «# OUTPUT FORMAT» missing
+TASK header renamed -> task 1.1 prompt: header «# TASK» missing
+headers out of order -> task 1.1 prompt: headers are not in the order # ROLE → # CONTEXT → # INPUT DATA → # TASK → # OUTPUT FORMAT
+role not senior -> task 3.1 prompt: # ROLE does not start with «You are a Senior …»
+context day wrong -> task 3.1 prompt: CONTEXT line «- Day: 3. Topic: Внутренние и внешние факторы влияния.» missing
+context without methodology -> task 1.1 prompt: CONTEXT line «- Methodology:» missing
+input without fields -> task 2.2 prompt: INPUT DATA has no [FIELD] to replace
+no example input -> task 2.1: example has no «Вход» and «Ожидаемый выход»
+no error review -> task 4.1: «#### 🔁 Разбор ошибок» missing
+comment without adaptation -> task 3.1: comment item «Как адаптировать INPUT DATA» missing
+no Day 3 homework -> homework of Day 3 missing
+footprint without Habr -> task 2.2 prompt: platform Habr missing from the fan-out search
+footprint without Gap -> task 2.2 prompt: rules «not only academic bases» and «Gap» missing
+footprint only academic -> task 2.2 prompt: rules «not only academic bases» and «Gap» missing
+LiveLib example missing -> task 2.2 example: the LiveLib book card missed by the Day 1 prompt is not shown
+4.1 without eclecticism -> task 4.1 prompt: «ЭКЛЕКТИКА» missing
+image instruction changed -> task 4.2: instruction «Выберите дизайнера из списка 26 мировых домов …» missing
+variable missing -> task 4.2 prompt: variable [BASE_COLOR_2] missing
+business suit in image prompt -> task 4.2 prompt: banned words ['business suit']
+dark scene in image prompt -> task 4.2 prompt: banned words ['dark', 'shadows']
+gold dropped -> task 4.2 prompt: frame element «Gold #B89B5E» missing
+ratio dropped -> task 4.2 prompt: frame element «about 1 to 2.4» missing
+constraint missing -> task 4.2: hard constraint «Gold Accent Mandatory» missing from the checklist
+house missing -> task 4.2: house Coperni missing from the 26-house table
+house DNA too thin -> task 4.2: house Bottega Veneta has 0 DNA markers of #699, at least 3 needed
+house DNA with uniform -> task 4.2: house Thom Browne DNA has banned words
+broken anchor -> anchor link #материал-м32-визитки leads to no heading
+relative link -> link 2026-11-03-day4-image-prompts-v5-couturier-constructor.md is not absolute: students have no access to the repository tree
+stale Day 4 deck -> latest Day 4 deck 2026-11-03-day4-presentation-gamma-v5.md is not linked
+dead repo link -> link https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-12-rfc-days-1-4-logic.md leads to no file
+deviation free wording -> deviation not in the form «Я предлагаю скорректировать …, потому что вариант … лучше подходит …»
+gaps without 2.txt -> section «## Gaps» with the unavailable 2.txt missing
+deck header lost -> research/reputation-technologies/2026-11-03-day4-presentation-gamma-v5.md: no «Шапка» line with the day topic
+exit 0
