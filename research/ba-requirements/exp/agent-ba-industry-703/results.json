@@ -1,0 +1,134 @@
+{
+  "kind": "deterministic synthetic measurement; no LLM or vendor benchmark",
+  "fixture_sha256": "a39ae8f2a0695b84dae7d5824981ed85fd83246c672bceb4a9c6ef49f4d627b4",
+  "variants": {
+    "complete": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "completeness": 1.0,
+      "precision": 1.0,
+      "critical_completeness": 1.0,
+      "contradictions": 0,
+      "machine_pass": true,
+      "escalated": false
+    },
+    "fluent-summary": {
+      "tp": 6,
+      "fp": 1,
+      "fn": 2,
+      "completeness": 0.75,
+      "precision": 0.857143,
+      "critical_completeness": 0.0,
+      "contradictions": 1,
+      "machine_pass": true,
+      "escalated": false
+    },
+    "verbose": {
+      "tp": 8,
+      "fp": 4,
+      "fn": 0,
+      "completeness": 1.0,
+      "precision": 0.666667,
+      "critical_completeness": 1.0,
+      "contradictions": 0,
+      "machine_pass": true,
+      "escalated": false
+    },
+    "honest-abstention": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 1,
+      "completeness": 0.875,
+      "precision": 1.0,
+      "critical_completeness": 1.0,
+      "contradictions": 0,
+      "machine_pass": false,
+      "escalated": true
+    }
+  },
+  "aggregate": {
+    "first_pass_rate": 0.75,
+    "false_pass_rate_among_passed": 0.666667,
+    "human_escalation_rate": 0.25,
+    "escalation_recall": 0.333333,
+    "probes_passed": 15
+  },
+  "probes": [
+    {
+      "id": "H1-1",
+      "perspective": "architecture",
+      "observation": "JSON round-trip retains all 8 facts and references"
+    },
+    {
+      "id": "H1-2",
+      "perspective": "human-governance",
+      "observation": "Lossy summary omits F2 and F6"
+    },
+    {
+      "id": "H1-3",
+      "perspective": "operations",
+      "observation": "Changed source revision invalidates old envelope"
+    },
+    {
+      "id": "H1-4",
+      "perspective": "security",
+      "observation": "Absent source pointer is rejected"
+    },
+    {
+      "id": "H1-5",
+      "perspective": "human-governance",
+      "observation": "Well-formed evidence pointer does not prove entailment"
+    },
+    {
+      "id": "H2-1",
+      "perspective": "architecture",
+      "observation": "Matching owner, validation and revision permit publication"
+    },
+    {
+      "id": "H2-2",
+      "perspective": "operations",
+      "observation": "An approval for revision 1 cannot publish revision 2"
+    },
+    {
+      "id": "H2-3",
+      "perspective": "security",
+      "observation": "Mutation without a new hash is detected"
+    },
+    {
+      "id": "H2-4",
+      "perspective": "human-governance",
+      "observation": "An agent cannot act as the owner with a copied approval"
+    },
+    {
+      "id": "H2-5",
+      "perspective": "operations",
+      "observation": "Two delivery attempts create one logical record in the toy ledger"
+    },
+    {
+      "id": "H3-1",
+      "perspective": "architecture",
+      "observation": "100% schema-pass coexists with 75% completeness"
+    },
+    {
+      "id": "H3-2",
+      "perspective": "security",
+      "observation": "100% completeness coexists with 66.6667% precision"
+    },
+    {
+      "id": "H3-3",
+      "perspective": "human-governance",
+      "observation": "Omitted critical facts remain visible despite fluent output"
+    },
+    {
+      "id": "H3-4",
+      "perspective": "operations",
+      "observation": "A justified abstention lowers pass rate and preserves precision"
+    },
+    {
+      "id": "H3-5",
+      "perspective": "human-governance",
+      "observation": "75% first-pass rate hides 2 false passes; escalation recall is 1/3"
+    }
+  ]
+}

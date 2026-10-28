@@ -1,0 +1,416 @@
+[
+  {
+    "id": "S01",
+    "title": "Anthropic: Building effective agents",
+    "url": "https://www.anthropic.com/research/building-effective-agents",
+    "author_or_organization": "Anthropic",
+    "published_or_revision": "2024-12-19",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "workflow-vs-agent",
+    "registry_existing": [
+      "ext-001"
+    ]
+  },
+  {
+    "id": "S02",
+    "title": "LangGraph: Interrupts",
+    "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+    "author_or_organization": "LangChain",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "langgraph",
+    "registry_existing": [],
+    "registry_added": "ext-376"
+  },
+  {
+    "id": "S03",
+    "title": "LangGraph: Persistence",
+    "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+    "author_or_organization": "LangChain",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "langgraph",
+    "registry_existing": [
+      "ext-173"
+    ]
+  },
+  {
+    "id": "S04",
+    "title": "CrewAI: Flows",
+    "url": "https://docs.crewai.com/v1.15.32/en/concepts/flows",
+    "author_or_organization": "CrewAI",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "crewai",
+    "registry_existing": [],
+    "registry_added": "ext-377"
+  },
+  {
+    "id": "S05",
+    "title": "CrewAI: Human Feedback in Flows",
+    "url": "https://docs.crewai.com/v1.15.32/en/learn/human-feedback-in-flows",
+    "author_or_organization": "CrewAI",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "crewai",
+    "registry_existing": [],
+    "registry_added": "ext-378"
+  },
+  {
+    "id": "S06",
+    "title": "Microsoft Agent Framework overview",
+    "url": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+    "author_or_organization": "Microsoft",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "microsoft",
+    "registry_existing": [
+      "ext-277"
+    ]
+  },
+  {
+    "id": "S07",
+    "title": "Agent Framework: Human-in-the-loop",
+    "url": "https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop",
+    "author_or_organization": "Microsoft",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "microsoft",
+    "registry_existing": [],
+    "registry_added": "ext-379"
+  },
+  {
+    "id": "S08",
+    "title": "Agent Framework: Checkpoints",
+    "url": "https://learn.microsoft.com/en-us/agent-framework/workflows/checkpoints",
+    "author_or_organization": "Microsoft",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "microsoft",
+    "registry_existing": [],
+    "registry_added": "ext-380"
+  },
+  {
+    "id": "S09",
+    "title": "OpenAI Agents SDK: Orchestration and handoffs",
+    "url": "https://developers.openai.com/api/docs/guides/agents/orchestration",
+    "author_or_organization": "OpenAI",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "openai-sdk",
+    "registry_existing": [],
+    "registry_added": "ext-381"
+  },
+  {
+    "id": "S10",
+    "title": "OpenAI Agents SDK: Guardrails and human review",
+    "url": "https://developers.openai.com/api/docs/guides/agents/guardrails-approvals",
+    "author_or_organization": "OpenAI",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "openai-sdk",
+    "registry_existing": [],
+    "registry_added": "ext-382"
+  },
+  {
+    "id": "S11",
+    "title": "OpenAI Agents SDK: Integrations and observability",
+    "url": "https://developers.openai.com/api/docs/guides/agents/integrations-observability",
+    "author_or_organization": "OpenAI",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "evaluation-tools",
+    "registry_existing": [],
+    "registry_added": "ext-383"
+  },
+  {
+    "id": "S12",
+    "title": "ADK: Template agent workflows",
+    "url": "https://adk.dev/agents/workflow-agents/",
+    "author_or_organization": "Google",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "adk",
+    "registry_existing": [],
+    "registry_added": "ext-384"
+  },
+  {
+    "id": "S13",
+    "title": "ADK: State",
+    "url": "https://adk.dev/sessions/state/",
+    "author_or_organization": "Google",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "adk",
+    "registry_existing": [],
+    "registry_added": "ext-385"
+  },
+  {
+    "id": "S14",
+    "title": "MARE: Multi-Agents Collaboration Framework for Requirements Engineering, v1",
+    "url": "https://arxiv.org/html/2405.03256v1",
+    "author_or_organization": "Dongming Jin et al.",
+    "published_or_revision": "2024-05-06",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "mare",
+    "registry_existing": [],
+    "registry_added": "ext-386"
+  },
+  {
+    "id": "S15",
+    "title": "iReDev: A Knowledge-Driven Multi-Agent Framework for Intelligent Requirements Development",
+    "url": "https://arxiv.org/html/2507.13081v1",
+    "author_or_organization": "Dongming Jin et al.",
+    "published_or_revision": "2025-07-17",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "iredev",
+    "registry_existing": [],
+    "registry_added": "ext-387"
+  },
+  {
+    "id": "S16",
+    "title": "iReDev implementation README",
+    "url": "https://github.com/jdm4pku/iReDev/blob/d11ccf1958640705737412693677306faefcf219/README.md",
+    "author_or_organization": "iReDev contributors",
+    "published_or_revision": "2026-03-28",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "iredev",
+    "registry_existing": [],
+    "registry_added": "ext-388"
+  },
+  {
+    "id": "S17",
+    "title": "QUARE: Quality-Aware Requirements Analysis through Multi-Agent Dialectical Negotiation, v2",
+    "url": "https://arxiv.org/html/2603.11890v2",
+    "author_or_organization": "Haowei Cheng et al.",
+    "published_or_revision": "2026-06-05",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "quare",
+    "registry_existing": [],
+    "registry_added": "ext-389"
+  },
+  {
+    "id": "S18",
+    "title": "Multi-Agent LLM Workflow for Regulatory-Driven Requirement Generation in Automotive Software Development",
+    "url": "https://saemobilus.sae.org/papers/multi-agent-llm-workflow-regulatory-driven-requirement-generation-automotive-software-development-2026-01-0787",
+    "author_or_organization": "Abdelrahman Abdalla et al.; RWTH Aachen / FEV Europe",
+    "published_or_revision": "2026-07-01",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "regulatory",
+    "registry_existing": [],
+    "registry_added": "ext-390"
+  },
+  {
+    "id": "S19",
+    "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "url": "https://arxiv.org/abs/2308.00352",
+    "author_or_organization": "Sirui Hong et al.",
+    "published_or_revision": "2024-11-01",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "metagpt",
+    "registry_existing": [
+      "ext-145"
+    ]
+  },
+  {
+    "id": "S20",
+    "title": "MetaGPT implementation README",
+    "url": "https://github.com/FoundationAgents/MetaGPT/blob/11cdf466d042aece04fc6cfd13b28e1a70341b1f/README.md",
+    "author_or_organization": "FoundationAgents",
+    "published_or_revision": "2026-01-21",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "metagpt",
+    "registry_existing": [
+      "ext-279"
+    ]
+  },
+  {
+    "id": "S21",
+    "title": "Spec Kit: Agentic SDD",
+    "url": "https://github.github.com/spec-kit/reference/agentic-sdd.html",
+    "author_or_organization": "GitHub",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "spec-kit",
+    "registry_existing": [],
+    "registry_added": "ext-391"
+  },
+  {
+    "id": "S22",
+    "title": "Rovo: Product requirements expert",
+    "url": "https://www.atlassian.com/software/rovo/use-cases/agent-product-requirements-expert",
+    "author_or_organization": "Atlassian",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "rovo",
+    "registry_existing": [],
+    "registry_added": "ext-392"
+  },
+  {
+    "id": "S23",
+    "title": "Rovo: Agents",
+    "url": "https://support.atlassian.com/rovo/docs/agents/",
+    "author_or_organization": "Atlassian",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "rovo",
+    "registry_existing": [],
+    "registry_added": "ext-393"
+  },
+  {
+    "id": "S24",
+    "title": "Kiro: Specs",
+    "url": "https://kiro.dev/docs/specs/",
+    "author_or_organization": "AWS / Kiro",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "kiro",
+    "registry_existing": [],
+    "registry_added": "ext-394"
+  },
+  {
+    "id": "S25",
+    "title": "Kiro: Feature Specs",
+    "url": "https://kiro.dev/docs/specs/feature-specs/",
+    "author_or_organization": "AWS / Kiro",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "kiro",
+    "registry_existing": [],
+    "registry_added": "ext-395"
+  },
+  {
+    "id": "S26",
+    "title": "LangSmith Evaluation",
+    "url": "https://docs.langchain.com/langsmith/evaluation",
+    "author_or_organization": "LangChain",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "evaluation-tools",
+    "registry_existing": [
+      "ext-228"
+    ]
+  },
+  {
+    "id": "S27",
+    "title": "Langfuse: Compare experiments",
+    "url": "https://langfuse.com/docs/evaluation/experiments/compare-experiments",
+    "author_or_organization": "Langfuse / ClickHouse",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "evaluation-tools",
+    "registry_existing": [],
+    "registry_added": "ext-396"
+  },
+  {
+    "id": "S28",
+    "title": "The Business Analysis Standard, v2.0",
+    "url": "https://www.iiba.org/globalassets/business-analysis-resources/the-business-analysis-standard/files/the-business-analysis-standard.pdf",
+    "author_or_organization": "IIBA",
+    "published_or_revision": "2025",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "babok-mapping",
+    "registry_existing": [],
+    "registry_added": "ext-397"
+  },
+  {
+    "id": "S29",
+    "title": "Introducing Business Analysis Tasks",
+    "url": "https://www.iiba.org/knowledgehub/business-analysis-standard/4-tasks-and-knowledge-areas/introducing-business-analysis-tasks/",
+    "author_or_organization": "IIBA",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "babok-mapping",
+    "registry_existing": [],
+    "registry_added": "ext-398"
+  },
+  {
+    "id": "S30",
+    "title": "Jama Connect Advisor",
+    "url": "https://help.jamasoftware.com/ah/en/jama-connect-advisor-.html",
+    "author_or_organization": "Jama Software",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "exclusions",
+    "registry_existing": [],
+    "registry_added": "ext-399"
+  },
+  {
+    "id": "S31",
+    "title": "MCP: Architecture overview, 2026-07-28 documentation",
+    "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+    "author_or_organization": "Model Context Protocol maintainers",
+    "published_or_revision": "2026-07-28",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "interoperability",
+    "registry_existing": [],
+    "registry_added": "ext-400"
+  },
+  {
+    "id": "S32",
+    "title": "A2A specification",
+    "url": "https://a2a-protocol.org/latest/specification/",
+    "author_or_organization": "A2A Project",
+    "published_or_revision": null,
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "interoperability",
+    "registry_existing": [],
+    "registry_added": "ext-401"
+  },
+  {
+    "id": "S33",
+    "title": "Aether Orbis concept: replaceable tools and component contracts",
+    "url": "https://github.com/G-Ivan-A/aether-orbis/blob/ead22d699c92ff3d91f300efb0cd0ec0702b967b/docs/concept.md",
+    "author_or_organization": "G-Ivan-A",
+    "published_or_revision": "2026-10-22",
+    "accessed": "2026-10-28",
+    "language": "ru",
+    "insight_anchor": "reuse-boundary",
+    "registry_existing": [],
+    "registry_added": "ext-402"
+  },
+  {
+    "id": "S34",
+    "title": "Langfuse LICENSE at research snapshot",
+    "url": "https://github.com/langfuse/langfuse/blob/0c531beae65c708a8316767c03ae299802f69158/LICENSE",
+    "author_or_organization": "Langfuse / ClickHouse",
+    "published_or_revision": "2026-10-28",
+    "accessed": "2026-10-28",
+    "language": "en",
+    "insight_anchor": "evaluation-tools",
+    "registry_existing": [],
+    "registry_added": "ext-403"
+  }
+]
