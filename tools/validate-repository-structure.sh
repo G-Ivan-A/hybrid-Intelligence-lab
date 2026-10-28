@@ -342,6 +342,12 @@ is_active_file() {
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \
     research/hub/exp/ai-execution-statistics-543/pr-cost-dataset.json | \
+    research/ai-education/agent-types/00-introduction.md | \
+    research/ai-education/agent-types/10-theory.md | \
+    research/ai-education/agent-types/20-taxonomy.md | \
+    research/ai-education/agent-types/30-decision-framework.md | \
+    research/ai-education/agent-types/40-practice-and-cases.md | \
+    research/ai-education/agent-types/50-open-research.md | \
     research/ai-education/retrieval/00-introduction.md | \
     research/ai-education/retrieval/10-theory.md | \
     research/ai-education/retrieval/20-taxonomy.md | \
@@ -2152,7 +2158,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.47"
+require_text "ops/artifact-map.md" "version: 2.48"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2379,7 +2385,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.31"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.32"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
