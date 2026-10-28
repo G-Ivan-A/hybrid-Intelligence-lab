@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-09-10
+version: 0.6
+updated: 2026-10-28
 temperature: 0.1
 ---
 
@@ -18,6 +18,15 @@ temperature: 0.1
 Направление намеренно отделено от [`research/mango/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/mango):
 там лежат датированные отчёты по конкретным задачам спицы MANGO OFFICE, здесь —
 переносимая рамка, у которой Mango является одним (первым) применением.
+
+## Независимые индустриальные исследования
+
+- [Агентная автоматизация бизнес-анализа: индустриальный survey #703](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/issue-703-a19ee3f6a30d/research/ba-requirements/2026-10-28-agent-ba-industry-survey.md)
+  — внешний базис без подгонки под мета-модель: ответственность человека и
+  агентов, перенос состояния, generate–validate–approve, 15 решений OSS и
+  commercial, отображение на BABOK/IIBA и рамка оценки качества. Выводы
+  предварительные (M3); 34 первичных источника и 15 синтетических проверок
+  отделены от неподтверждённых заявлений о production-зрелости.
 
 ## Модули
 

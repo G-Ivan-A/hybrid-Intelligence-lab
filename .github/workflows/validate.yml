@@ -146,6 +146,9 @@ jobs:
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
 
+      - name: Check synthetic BA industry survey evidence of issue 703
+        run: python3 -I research/ba-requirements/exp/agent-ba-industry-703/measure.py --check
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:

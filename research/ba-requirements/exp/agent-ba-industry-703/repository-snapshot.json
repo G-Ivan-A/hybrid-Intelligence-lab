@@ -1,0 +1,112 @@
+[
+  {
+    "repo": "langchain-ai/langgraph",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "default_branch": "main",
+    "head": "eb8ec111b3e9d3108af5d7bdcac51e3e913637a0",
+    "committed": "2026-10-27T21:46:39Z",
+    "pushed_at": "2026-10-28T10:04:40Z",
+    "archived": false,
+    "license": "MIT",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "crewAIInc/crewAI",
+    "url": "https://github.com/crewAIInc/crewAI",
+    "default_branch": "main",
+    "head": "b95aa8bbdea6bc02b465a35fa8da54fecf82f528",
+    "committed": "2026-10-28T08:21:48Z",
+    "pushed_at": "2026-10-28T10:58:41Z",
+    "archived": false,
+    "license": "MIT",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "openai/openai-agents-python",
+    "url": "https://github.com/openai/openai-agents-python",
+    "default_branch": "main",
+    "head": "cd26bbbc52847845fde73b9952b51e62e2bcbdc0",
+    "committed": "2026-10-27T19:22:01Z",
+    "pushed_at": "2026-10-27T19:44:03Z",
+    "archived": false,
+    "license": "MIT",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "microsoft/agent-framework",
+    "url": "https://github.com/microsoft/agent-framework",
+    "default_branch": "main",
+    "head": "4a272d2b8e96242a1e00783e833d42922a618d23",
+    "committed": "2026-10-28T06:27:42Z",
+    "pushed_at": "2026-10-28T06:35:06Z",
+    "archived": false,
+    "license": "MIT",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "google/adk-python",
+    "url": "https://github.com/google/adk-python",
+    "default_branch": "main",
+    "head": "1d81896aa081e7b2e50b3a4a227f7c6933805752",
+    "committed": "2026-10-28T06:24:57Z",
+    "pushed_at": "2026-10-28T10:34:00Z",
+    "archived": false,
+    "license": "Apache-2.0",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "FoundationAgents/MetaGPT",
+    "url": "https://github.com/FoundationAgents/MetaGPT",
+    "default_branch": "main",
+    "head": "11cdf466d042aece04fc6cfd13b28e1a70341b1f",
+    "committed": "2026-01-21T10:12:32Z",
+    "pushed_at": "2026-01-21T10:12:33Z",
+    "archived": false,
+    "license": "MIT",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "github/spec-kit",
+    "url": "https://github.com/github/spec-kit",
+    "default_branch": "main",
+    "head": "222a973f8b8794366680c043fb935a31f71902af",
+    "committed": "2026-10-27T20:01:21Z",
+    "pushed_at": "2026-10-27T20:01:22Z",
+    "archived": false,
+    "license": "MIT",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "jdm4pku/iReDev",
+    "url": "https://github.com/jdm4pku/iReDev",
+    "default_branch": "main",
+    "head": "d11ccf1958640705737412693677306faefcf219",
+    "committed": "2026-03-28T20:43:26Z",
+    "pushed_at": "2026-03-28T20:43:36Z",
+    "archived": false,
+    "license": null,
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "G-Ivan-A/aether-orbis",
+    "url": "https://github.com/G-Ivan-A/aether-orbis",
+    "default_branch": "main",
+    "head": "ead22d699c92ff3d91f300efb0cd0ec0702b967b",
+    "committed": "2026-10-22T21:11:44Z",
+    "pushed_at": "2026-10-23T23:50:58Z",
+    "archived": false,
+    "license": "MIT",
+    "checked": "2026-10-28"
+  },
+  {
+    "repo": "langfuse/langfuse",
+    "url": "https://github.com/langfuse/langfuse",
+    "default_branch": "main",
+    "head": "0c531beae65c708a8316767c03ae299802f69158",
+    "committed": "2026-10-28T09:57:49Z",
+    "pushed_at": "2026-10-28T11:12:06Z",
+    "archived": false,
+    "license": "NOASSERTION",
+    "checked": "2026-10-28"
+  }
+]
