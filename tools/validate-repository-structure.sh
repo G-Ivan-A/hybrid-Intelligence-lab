@@ -630,6 +630,11 @@ is_active_file() {
     research/reputation-technologies/exp/day1-osint-709/check-pipeline-709.py | \
     research/reputation-technologies/exp/day1-osint-709/before.log | \
     research/reputation-technologies/exp/day1-osint-709/after.log | \
+    research/reputation-technologies/exp/day1-osint-709/feedback-before.log | \
+    research/reputation-technologies/exp/day1-osint-709/check-graph-709.py | \
+    research/reputation-technologies/exp/day1-osint-709/2026-10-30-ten-company-example.md | \
+    research/external-knowledge/external-insights/2026-10-30-gephi-csv-evidence-graph.md | \
+    research/external-knowledge/external-insights/2026-10-30-w3c-tabular-provenance-keys.md | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
     research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
     research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
@@ -2392,7 +2397,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.34"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.35"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"

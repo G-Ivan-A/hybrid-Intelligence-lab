@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.34
+version: 0.35
 updated: 2026-10-30
 temperature: 0.1
 type: external-analysis
@@ -528,6 +528,10 @@ related_issues:
 | `ext-442` | [Continue — Agent quick start](https://docs.continue.dev/ide-extensions/agent/quick-start) | `docs` | `en` | `agents, ba-automation, tool-selection` | `topic: ba-agent-practice` | `research` | `hub` | ✅ [BA-practice-707 P30](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-10-28-agent-ba-industry-survey.md#practical-verification) |
 | `ext-443` | [ФНС России — предоставление сведений ЕГРЮЛ/ЕГРИП](https://www.nalog.gov.ru/rn77/related_activities/registries/egrul_egrip/) | `docs` | `ru` | `counterparty-check, legal-entity-registry` | `topic: reputation-course` | `research` | `hub` | ✅ [выписка как ручной маршрут #709](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/external-knowledge/external-insights/2026-10-30-fns-egrul-cold-search.md) |
 | `ext-444` | [OHCHR / UC Berkeley — Berkeley Protocol, библиотечная запись (2022)](https://searchlibrary.ohchr.org/record/30334) | `standard` | `en` | `osint, evidence-provenance` | `topic: evidence-methods` | `observation` | `hub` | Метаданные изучены 30.10.2026; полный PDF вернул 403, содержательные выводы из недоступного текста не извлекались. |
+| `ext-445` | [Gephi — CSV import](https://docs.gephi.org/desktop/User_Manual/Import/CSV_Format/) | `docs` | `en` | `graph, csv, stable-identifiers` | `topic: reputation-course` | `research` | `hub` | ✅ [граф и ID #709](external-insights/2026-10-30-gephi-csv-evidence-graph.md) |
+| `ext-446` | [W3C — Model for Tabular Data and Metadata on the Web](https://www.w3.org/TR/tabular-data-model/) | `standard` | `en` | `tabular-data, keys, evidence-provenance` | `topic: reputation-course` | `research` | `hub` | ✅ [ссылочная целостность #709](external-insights/2026-10-30-w3c-tabular-provenance-keys.md) |
+| `ext-447` | [АРПП «Отечественный софт» — члены ассоциации](https://arppsoft.ru/members/) | `docs` | `ru` | `industry-discovery, company-directory` | `topic: reputation-course` | `observation` | `hub` | Открыт 30.10.2026; десять первых названий сохранены как упоминания, не проверенные покупатели: [конечный пример #709](../reputation-technologies/exp/day1-osint-709/2026-10-30-ten-company-example.md). |
+| `ext-448` | [РУССОФТ — участники](https://russoft.org/members/) | `docs` | `ru` | `industry-discovery, access-gap` | `topic: reputation-course` | `observation` | `hub` | Проверен 30.10.2026: доступный текстовый просмотр страницы не извлёк список названий; содержательные выводы о компаниях не делались. Использован другой открытый каталог; ❌ отдельный инсайт не извлечён. |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

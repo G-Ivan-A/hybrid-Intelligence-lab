@@ -1,0 +1,26 @@
+FAIL: route: default must be draft map → evidence check
+FAIL: 1.0: safeguard missing: Do not propose company names from model memory
+FAIL: 1.0: safeguard missing: manual shortlist
+FAIL: 1.0: safeguard missing: up to 10
+FAIL: 1.1: safeguard missing: single company
+FAIL: 1.1: safeguard missing: edge_id
+FAIL: 1.1: safeguard missing: source_node
+FAIL: 1.1: safeguard missing: target_node
+FAIL: 1.1: safeguard missing: claim_ids
+FAIL: 1.1: safeguard missing: mass
+FAIL: 1.1: safeguard missing: distance
+FAIL: 1.1: safeguard missing: polarity
+FAIL: 1.1: safeguard missing: not zero
+FAIL: 1.1: safeguard missing: alternative
+FAIL: 1.1: safeguard missing: four columns
+FAIL: 1.1: safeguard missing: optional enrichment
+FAIL: 1.2: safeguard missing: edge_id
+FAIL: 1.2: safeguard missing: claim_ids
+FAIL: 2.1: safeguard missing: edge_id
+FAIL: 2.1: safeguard missing: claim_ids
+FAIL: 2.1: safeguard missing: nodes.csv
+FAIL: 2.1: safeguard missing: edges.csv
+FAIL: 2.1: safeguard missing: Target
+FAIL: 2.1: safeguard missing: dangling
+FAIL: 2.1: safeguard missing: hypothetical
+FAIL: 2.1: safeguard missing: four columns

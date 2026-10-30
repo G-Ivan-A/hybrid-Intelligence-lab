@@ -144,7 +144,9 @@ jobs:
         run: python3 -I research/reputation-technologies/exp/handout-registry-700/check-handout-700.py --self-test
 
       - name: Check cold-start OSINT pipeline of #709
-        run: python3 -I research/reputation-technologies/exp/day1-osint-709/check-pipeline-709.py --self-test
+        run: |
+          python3 -I research/reputation-technologies/exp/day1-osint-709/check-pipeline-709.py --self-test
+          python3 -I research/reputation-technologies/exp/day1-osint-709/check-graph-709.py
 
       - name: Check Day 3 rationale v0.3 of #683
         run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test

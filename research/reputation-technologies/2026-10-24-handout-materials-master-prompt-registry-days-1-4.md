@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-10-30
 temperature: 0.3
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/700"
@@ -15,16 +15,16 @@ related_issues:
 
 # Раздаточные материалы курса · Master Prompt Registry · Дни 1–4
 
-В этом файле собрано всё, что лектор курса «Введение в репутационный инжиниринг» раздаёт слушателям: промпты, учебные материалы, разборы ошибок и домашние задания Дней 1–4. Все названия, цифры и даты в примерах условные, кейсы учебные.
+В этом файле собрано всё, что лектор курса «Введение в репутационный инжиниринг» раздаёт слушателям: промпты, учебные материалы, разборы ошибок и домашние задания Дней 1–4. Учебные кейсы ниже условные. Отдельный воспроизводимый пример десяти кандидатов из открытого каталога явно помечен в дизайне; это не список подтверждённых покупателей.
 
 ## Как пользоваться
 
-Для холодного списка компаний используйте **1.1 → 1.2 → 2.1**. **1.0** нужен только при входе «отрасль без названий». Результат — проверяемая база деловых сведений и явных пробелов; отсутствие имени — допустимый результат.
+Для списка или одной компании используйте **1.1 → 2.1**: черновик карты → проверка утверждений. **1.2 — необязательное обогащение** людьми и публичными каналами между этими шагами; отсутствие имени не мешает карте. Если известна только отрасль, начните с **1.0**: с поиском получите до десяти кандидатов из источников, без поиска — запросы для ручного списка. Затем 1.1 → 2.1. Отвечать на анкету или заранее знать связи не нужно.
 
 1. Скопируйте целиком один промпт 1.0, 1.1, 1.2 или 2.1. Следующим сообщением передайте минимальный вход, указанный перед ним. Заполнять анкету и заранее знать связи не нужно. В остальных шаблонах 2.2–4.2 сохранился прежний формат с полями `[…]`.
 2. Если поиска в чате нет, выполните выданные запросы в Яндексе/Google, откройте реестр или сайт, скопируйте нужный короткий фрагмент с URL и датами. Верните его в тот же чат. Если страница закрыта, запишите пробел. Не платите за API и не обходите вход.
 3. Откройте каждую ссылку сами: сверьте компанию, цитату, дату и чей это канал. Сообщите модели, что именно проверили. Не удаляйте неудобные строки: сохраняйте `PARTIAL` и ○ НЕ НАЙДЕНО с причиной. Факт публикации не гарантирует действующую должность.
-4. Скопируйте **весь ответ с журналом источников**, а не только таблицу контактов, в следующий шаг. Сохраните локально последний пакет; для 20 компаний продолжайте партиями по пять с прежними ID.
+4. Скопируйте **весь ответ: карту, утверждения и журнал источников** в следующий шаг. Для рисунка и анализа после проверки попросите «Экспортируй граф»: получите CSV, а не новое исследование. Сохраните локально последний пакет; для 20 компаний продолжайте партиями по пять с прежними ID.
 5. До ввода ФИО или ссылки на личный профиль определите законное основание, цель и допустимую среду обработки ПД. Обычный несогласованный чат получает только компании, роли и обезличенные выдержки; имена сверяются локально. Не вводите личные номера, частную жизнь или лишние ПД. Публичность не означает разрешение на любую обработку и передачу в облако. Храните данные только пока они нужны цели; не публикуйте базу.
 6. Ответ модели — черновик. Зафиксируйте нарушения правил одной строкой (правило, строка ответа, исправление промпта) и повторите запрос. Автоматические проверки структуры промптов не гарантируют правильный ответ любой LLM.
 
@@ -38,7 +38,7 @@ related_issues:
 | 2 | Слайд 18, проба промпта | Для упражнения: 2.1 и учебный пакет М2.2; бриф М2.1 необязателен | [2.1](#задача-21-реестр-атомарных-утверждений-с-датой-и-статусом), [М2.1](#материал-м21-бриф-кейса-1-сеть-х), [М2.2](#материал-м22-пакет-из-8-утверждений-о-сети-х) |
 | 2 | Слайд 19, разбор | Ошибки источников, дат, независимости и статусов | [Ошибки 2.1](#-разбор-ошибок-21) |
 | 2 | Слайд 27, домашнее задание | Реестр на своём пакете либо на учебном | [Задание Дня 2](#-домашнее-задание-дня-2) |
-| 2 | Рассылка после эфира — Дни 1 и 2 вместе | Инструкция слушателю выше + промпты 1.0 (необязательный), 1.1, 1.2, 2.1; памятка, задание; 2.2 — дополнительный аудит, не обязательная часть холодного поиска компаний | [1.0](#задача-10-поиск-компаний-по-отрасли--необязательный-вход), [1.1](#задача-11-идентичность-компании-статус-и-каркас-ролей), [1.2](#задача-12-люди-в-деловых-ролях-и-публичные-каналы-компании), [2.1](#задача-21-реестр-атомарных-утверждений-с-датой-и-статусом), [2.2](#задача-22-аудит-цифрового-следа-человека-автора-или-школы), [памятка](#памятка-три-статуса-и-условие-сбора) |
+| 2 | Рассылка после эфира — Дни 1 и 2 вместе | Инструкция слушателю выше + промпты 1.0 (при отсутствии названий), 1.1 → 2.1; 1.2 — необязательное обогащение; памятка, задание; 2.2 — дополнительный аудит, не обязательная часть холодного поиска компаний | [1.0](#задача-10-поиск-компаний-по-отрасли--необязательный-вход), [1.1](#задача-11-идентичность-компании-статус-и-каркас-ролей), [1.2](#задача-12-люди-в-деловых-ролях-и-публичные-каналы-компании), [2.1](#задача-21-реестр-атомарных-утверждений-с-датой-и-статусом), [2.2](#задача-22-аудит-цифрового-следа-человека-автора-или-школы), [памятка](#памятка-три-статуса-и-условие-сбора) |
 | 3 | Слайд 23, проба промпта | Два сообщения: шаблон 3.1, затем бриф и реестр десяти узлов | [3.1](#задача-31-фильтр-узлов-23-точки-и-список-не-сейчас-промпт-фильтр), [М3.1](#материал-м31-бриф-и-реестр-десяти-узлов-кейса-1) |
 | 3 | Слайд 24, разбор | Пять ошибок слайда и шестая из ключа | [Ошибки 3.1](#-разбор-ошибок-3) |
 | 3 | Слайд 25, 20 визиток | Таблица 20 визиток — после разбора слайда | [М3.2](#материал-м32-20-визиток-с-выставки) |
@@ -53,7 +53,7 @@ related_issues:
 
 ### Задача 1.0: Поиск компаний по отрасли — необязательный вход
 
-**Цель:** Сгенерировать список компаний-кандидатов, если названий ещё нет; это подготовка, которую пропускают при готовом списке.
+**Цель:** Сгенерировать список компаний-кандидатов из доступных источников или запросы для ручного списка, если названий ещё нет; это подготовка, которую пропускают при готовом списке.
 **Инструмент:** Обычный чат: GPT, Claude, Gemini, GigaChat, GigaCode или YandexGPT, если сервис доступен пользователю. Наличие веб-поиска проверяется в самом чате; платная подписка и API не нужны для ручного маршрута.
 **Минимальный вход:** Только отрасль. Регион — необязательное уточнение; если его нет, явно укажите, что география не задана.
 **Применение:** Вставьте промпт и следующим сообщением назовите отрасль. Отметьте релевантные компании; передайте выбранные строки в 1.1. При наличии списка сразу переходите к 1.1.
@@ -65,7 +65,7 @@ related_issues:
 You are a Senior Open-Source Business Research Analyst.
 
 # CONTEXT
-- Ask questions and write all output in Russian, including tables and explanations.
+- Ask questions and write all output in Russian, including tables and explanations. Keep technical IDs, status codes and the specified CSV field names unchanged.
 - Use ● ФАКТ only for an exact claim supported by accessible evidence; it does not certify truth or present-day validity. Use ◐ ИНТЕРПРЕТАЦИЯ for a reasoned hypothesis linked to its evidence, never for an invented person or contact. Use ○ НЕ НАЙДЕНО for a scoped search gap, not proof of absence.
 - Never invent names, emails, URLs, quotations or dates. Model memory is not evidence. A search snippet is a lead, not a checked page. Never say you visited a URL unless you actually opened its content.
 - Declare actual web capability before research. Without web access, give specific search queries for Yandex or Google; process the user's pasted extracts as supplied text, not as a live-site visit. Request only the relevant excerpt, its URL if available, publication date if shown and the user's inspection date. Unknown metadata stays unknown. Never require an API, paid tool or account.
@@ -79,21 +79,21 @@ Use the data already supplied in this conversation or in the next message. Ask a
 The indispensable input is an industry if no company names are supplied. A region is optional.
 
 # TASK
-1. If company names are already supplied, preserve them and state that discovery can be skipped. Otherwise identify up to 20 industry candidates. With web access, search current public business sources; without it, use model memory only to propose unverified candidates, not real active companies certified by memory.
-2. Give each candidate a company_id. Record trade name, region if evidenced, a source or a gap, and why it may match the industry. Do not invent companies to reach 20; report the actual count. Do not generate named people.
-3. Distinguish a sourced mention from current legal existence and activity: all candidates still need entity resolution. Separate confirmed source observations from hypotheses. Give exact queries using the supplied industry, optional region, company name and EGRUL.
+1. If company names are already supplied, preserve them and skip discovery. Otherwise seek up to 10 industry candidates (up to 20 only if requested). A mention must come from an actually opened source or a user-provided extract. Do not propose company names from model memory, guess a website, fill a quota or generate named people.
+2. Without usable web results, produce a manual shortlist procedure: search queries using the supplied industry, optional region, association member directories, exhibitions and supplier catalogues. Give no named candidates until the user supplies found names or extracts. Ask for the resulting list in one message; do not replace it with famous firms from memory. A blocked or dynamic directory is an access gap, not an empty market.
+3. For each found candidate assign a company_id, record the exact source mention and a separate relevance hypothesis. Distinguish directory membership from legal existence, current activity, buying intent and suitability for the user's offer. All remain unknown unless separately evidenced. Geography may stay unspecified. Carry selected names and sources forward for entity resolution.
 
 # OUTPUT FORMAT
-State web capability and input scope. Then output: company_id | candidate name | region | marker and exact observation | source_id or gap | relevance hypothesis | manual search query. Add a source journal and a selected-candidates packet for further entity verification. Do not mark a candidate active solely from model memory.
+State web capability and input scope. Use short Russian cards or a table of at most four columns: candidate ID/name | exact mention and source_id | relevance hypothesis | gaps/query. Append compact source cards and the selected list for entity verification. Without sources output only the manual shortlist procedure and gaps; do not create company nodes.
 ```
 
 #### 💡 Пример использования
 
 **Вход:** Отрасль: производство упаковки; регион не задан.
 
-**Ожидаемый выход:** Таблица кандидатов с неизвестным регионом там, где нет источника. Если веб недоступен, все названия из памяти помечены как непроверенные кандидаты; нет ни одного утверждения «действует» без реестра. Это синтетический пример проверки правил, а не найденные сведения о реальных компаниях.
+**Ожидаемый выход:** Таблица кандидатов с неизвестным регионом там, где нет источника. Если веб недоступен, названий из памяти нет: есть запросы «производители упаковки каталог участников», «производство упаковки выставка участники» и просьба вернуть найденные названия. Каталог подтверждает только упоминание; утверждения «действует» без реестра нет. Это синтетический пример проверки правил, а не найденные сведения о реальных компаниях.
 
-**Критерии приёмки:** Нет добивки списка выдуманными фирмами, факты не получены из памяти; у каждого кандидата есть ID, основание и запрос для проверки.
+**Критерии приёмки:** Нет добивки списка выдуманными фирмами, факты не получены из памяти; у каждого найденного кандидата есть ID, источник и запрос для проверки; без источников — только ручной маршрут, не ложный список.
 
 #### 🔁 Разбор ошибок 1.0
 
@@ -109,8 +109,8 @@ State web capability and input scope. Then output: company_id | candidate name |
 
 **Цель:** Сгенерировать проверяемый каркас по названиям: отдельные юридические лица, статус и роли-кандидаты без выдуманных сотрудников.
 **Инструмент:** Обычный чат: GPT, Claude, Gemini, GigaChat, GigaCode или YandexGPT, если сервис доступен пользователю. Наличие веб-поиска проверяется в самом чате; платная подписка и API не нужны для ручного маршрута.
-**Минимальный вход:** Список названий компаний, в том числе 20 строк с выставки. ИНН, регион, сайт и деловая задача полезны, но не обязательны.
-**Применение:** Вставьте промпт и список названий. Проверьте предложенные совпадения в ЕГРЮЛ и реквизитах сайта; при отсутствии веба верните короткие выдержки. Скопируйте полный ответ с журналом источников в 1.2.
+**Минимальный вход:** Одно название или список, в том числе 20 строк с выставки. Для одной цели отрасль и предложение помогают выбрать роли; без них карта всё равно начинается. ИНН, регион и сайт необязательны.
+**Применение:** Вставьте промпт и список названий. Проверьте предложенные совпадения в ЕГРЮЛ и реквизитах сайта; при отсутствии веба верните короткие выдержки. Скопируйте полный ответ с журналом в 2.1; добавляйте 1.2, только если нужны люди и каналы.
 
 #### 📋 Шаблон промпта (Copy-Paste)
 
@@ -119,7 +119,7 @@ State web capability and input scope. Then output: company_id | candidate name |
 You are a Senior Open-Source Business Research Analyst.
 
 # CONTEXT
-- Ask questions and write all output in Russian, including tables and explanations.
+- Ask questions and write all output in Russian, including tables and explanations. Keep technical IDs, status codes and the specified CSV field names unchanged.
 - Use ● ФАКТ only for an exact claim supported by accessible evidence; it does not certify truth or present-day validity. Use ◐ ИНТЕРПРЕТАЦИЯ for a reasoned hypothesis linked to its evidence, never for an invented person or contact. Use ○ НЕ НАЙДЕНО for a scoped search gap, not proof of absence.
 - Never invent names, emails, URLs, quotations or dates. Model memory is not evidence. A search snippet is a lead, not a checked page. Never say you visited a URL unless you actually opened its content.
 - Declare actual web capability before research. Without web access, give specific search queries for Yandex or Google; process the user's pasted extracts as supplied text, not as a live-site visit. Request only the relevant excerpt, its URL if available, publication date if shown and the user's inspection date. Unknown metadata stays unknown. Never require an API, paid tool or account.
@@ -133,14 +133,18 @@ Use the data already supplied in this conversation or in the next message. Ask a
 The indispensable input is at least one company name. Region, INN, website, industry and business purpose are optional; do not block on them.
 
 # TASK
+0. Automatically use list mode for several names or single company mode for one; never ask the user to choose a mode or repeat supplied input. Industry and offer are optional context, not mandatory questions. Build a draft map before optional enrichment with people/channels. A missing website does not prevent anonymous role hypotheses when industry or purpose supplies a basis.
 1. Preserve every input row, including duplicates and unresolved names, using company_id values C01, C02 and so on. If there are 20 names, account for all 20. Work in batches of at most five companies; list pending IDs and wait for "Продолжить" rather than silently dropping rows.
 2. Resolve homonyms before attaching facts. Distinguish brand, subsidiary and legal entity. Record exact legal name, INN/OGRN if supported, region, official website and the evidence linking that website to the entity. Keep competing matches separate, without merging their people or contacts. If identity is unresolved, mark it as a gap and do not proceed to named-person search for that row.
 3. Check EGRUL at https://egrul.nalog.ru/ using the exact name or known INN/OGRN. A user can obtain the public electronic extract manually. An aggregator is a secondary lead with provenance, not a substitute for an unavailable extract. An official website confirms its exact published statements, not EGRUL legal status. A website outage does not mean liquidated; an existing registry entry does not prove current business activity. Keep the exact registry status (including liquidated, in liquidation or reorganisation), effective date and inspection date separate. Do not translate one status into another.
 4. Use three practical groups: entity and registry status confirmed; under question (ambiguous identity, missing or stale evidence); liquidated (explicit matching registry evidence). Preserve all groups; do not delete liquidated rows. A liquidation is a sourced ● ФАКТ, not merely ○ НЕ НАЙДЕНО. The latter describes a missing current contact or missing evidence. Do not search for current employees of a confirmed liquidated entity; another operating company requires its own identity check.
-5. Do not search for named people. First extract structural units and roles actually evidenced on the company's public pages. Separately propose a few generic role hypotheses appropriate to the evidenced industry or stated purpose. Label them ◐ ИНТЕРПРЕТАЦИЯ, explain their basis and say the existence and decision authority of those roles are unconfirmed. If industry and purpose are unknown, leave the role hypothesis empty instead of guessing a fixed procurement or executive list.
+5. Do not search for named people. First extract structural units and roles actually evidenced on the company's public pages. Separately propose a few generic role hypotheses appropriate to the evidenced industry or stated purpose. Label them ◐ ИНТЕРПРЕТАЦИЯ, state whether the basis is supplied context or a general industry heuristic, offer an alternative role and evidence that would disprove the hypothesis. Say existence and decision authority are unconfirmed. A purchasing, technical, operations or other process role may matter more than a CEO; registry directors do not automatically decide the relevant purchase. Do not impose a procurement-only template. Vacancies can evidence a role description, not its current holder. If industry and purpose are unknown, leave the role hypothesis empty instead of guessing a fixed procurement or executive list.
+
+6. Give stable node IDs: N00 is the user's stated research perspective; company_id C01 etc. are company nodes, not verified legal identities. R01 etc. are distinct role nodes tied to one company. Add an edge_id E01 etc. with source_node, target_node, relation type and claim_ids for every proposed link. A user-selected target is an intention edge, not proof of an existing relationship or buying interest. A role hypothesis edge is explicitly hypothetical. A sourced member-of or published-role edge states only that exact relation. Leave missing people absent, not fictional placeholders. Preserve unresolved names and rejected matches without silently merging homonyms.
+7. Record mass (influence on the specified decision, not firm size), distance (evidenced relationship/access, not geography) and polarity (evidenced attitude) separately for each relevant edge. Unknown is ?, not zero, +1, cold or High/Medium/Low guessed from a generic B2B sale. With no decision context or evidence keep ?. For any estimate state criterion, basis, uncertainty and falsifier; no reputation score or priority ranking.
 
 # OUTPUT FORMAT
-State web capability, received/processed/pending counts. Table A: company_id | input name | distinct legal entity and identifiers | region and official site linkage | exact registry status and dates | practical group | marker | source_id or gap. Table B: company_id | evidenced unit/role | source_id | separate role hypotheses and basis | authority still unknown. Include a source journal, specific manual search queries for unresolved rows, and a full handoff packet retaining all company IDs, sources and gaps. Never label a company "alive" from its website alone.
+State capability, input mode, received/processed/pending counts. Default to a short Russian outline or a map table of at most four columns: node | edge/relation | basis/claim_ids | marker and gap. Keep edge_id and endpoint IDs visible. Beneath it append compact company cards (identity, exact legal status/dates, practical group), role cards (evidenced versus hypothetical), claim cards (claim_id, one exact statement, marker, source_ids or explicit hypothesis/gap basis, relevant time, PARTIAL pending verification and reason) and source cards with the provenance above. Record mass/distance/polarity as ? unless justified; list exact manual queries. Carry every node, edge, claim and source ID forward as one packet. Do not require JSON or a wide spreadsheet. Never label a company "alive" from its website alone.
 ```
 
 #### 💡 Пример использования
@@ -149,7 +153,7 @@ State web capability, received/processed/pending counts. Table A: company_id | i
 
 **Ожидаемый выход:** Первые пять строк плюс список 15 ожидающих ID; «Север» остаётся неоднозначным до идентификации. Недоступный сайт не становится доказательством ликвидации. Типовая роль не превращается в должность конкретного сотрудника. Это синтетический пример проверки правил, а не найденные сведения о реальных компаниях.
 
-**Критерии приёмки:** Сохранён каждый входной ID; одноимённые организации разделены; юридический статус и коммерческая активность не смешаны; фактическая структура отделена от гипотез ролей. До имён есть идентичность.
+**Критерии приёмки:** Сохранён каждый входной ID; одноимённые организации разделены; юридический статус и коммерческая активность не смешаны; фактическая структура отделена от гипотез ролей. До имён есть идентичность; узлы и рёбра имеют ID и основания, неизвестные масса/дистанция/полярность — «?», карта не изображает намерение как существующую связь.
 
 #### 🔁 Разбор ошибок 1.1
 
@@ -163,7 +167,7 @@ State web capability, received/processed/pending counts. Table A: company_id | i
 
 ### Задача 1.2: Люди в деловых ролях и публичные каналы компании
 
-**Цель:** Сгенерировать базу подтверждённых деловых сведений и пробелов: кто назван в источнике, в какой роли и к какому времени относится запись.
+**Цель:** Сгенерировать при необходимости дополнительную базу подтверждённых деловых сведений и пробелов: кто назван в источнике, в какой роли и к какому времени относится запись.
 **Инструмент:** Обычный чат: GPT, Claude, Gemini, GigaChat, GigaCode или YandexGPT, если сервис доступен пользователю. Наличие веб-поиска проверяется в самом чате; платная подписка и API не нужны для ручного маршрута.
 **Минимальный вход:** Полный ответ 1.1. Допустим список компаний: тогда сначала выполните проверку идентичности и не приписывайте людей неразрешённым названиям.
 **Применение:** Вставьте промпт и пакет 1.1. Если веб недоступен, выполните запросы в обычном поиске и верните выдержки. Имена проверяйте локально либо в согласованной среде обработки ПД; в обычный несогласованный чат передавайте обезличенные строки. Откройте источники сами, отметьте проверку; полный пакет станет входом 2.1.
@@ -175,7 +179,7 @@ State web capability, received/processed/pending counts. Table A: company_id | i
 You are a Senior Open-Source Business Research Analyst.
 
 # CONTEXT
-- Ask questions and write all output in Russian, including tables and explanations.
+- Ask questions and write all output in Russian, including tables and explanations. Keep technical IDs, status codes and the specified CSV field names unchanged.
 - Use ● ФАКТ only for an exact claim supported by accessible evidence; it does not certify truth or present-day validity. Use ◐ ИНТЕРПРЕТАЦИЯ for a reasoned hypothesis linked to its evidence, never for an invented person or contact. Use ○ НЕ НАЙДЕНО for a scoped search gap, not proof of absence.
 - Never invent names, emails, URLs, quotations or dates. Model memory is not evidence. A search snippet is a lead, not a checked page. Never say you visited a URL unless you actually opened its content.
 - Declare actual web capability before research. Without web access, give specific search queries for Yandex or Google; process the user's pasted extracts as supplied text, not as a live-site visit. Request only the relevant excerpt, its URL if available, publication date if shown and the user's inspection date. Unknown metadata stays unknown. Never require an API, paid tool or account.
@@ -195,8 +199,10 @@ The indispensable input is an entity-verification packet or company names. If on
 4. Record only explicitly published business channels: general company channel (email, reception phone or contact form), departmental channel, or an evidenced public professional profile. A general address is a company fact, not a direct personal contact and not proof of routing to a role. Record who owns each channel, its source, publication/inspection dates and freshness limits. Never guess email formats. Exclude personal phone numbers even when publicly visible.
 5. In an approved environment with an established lawful basis, include only the necessary professional name, role and public professional link; otherwise use P01 etc. and leave identifying data for local human review. Do not transfer personal data to an unapproved chat. Redact irrelevant identifiers in pasted extracts. Retain a gap rather than expanding into private-life research.
 
+6. Preserve all node IDs, edge_id and claim_ids from the incoming map. Add people only when permitted above and identity is resolved; link a person to the exact evidenced role and time, never directly to the user's supposed access. Add public channel nodes with their actual owner; a general company channel is not a personal contact. Keep role hypotheses separate and carry unknown mass/distance/polarity unchanged.
+
 # OUTPUT FORMAT
-State web capability and processed/pending IDs. Table: claim_id | company_id | person or anonymous label / ○ НЕ НАЙДЕНО | exact evidenced role | current role or historical mention / freshness unknown | channel value or gap | channel owner/type | marker | source_id and short supporting quote | human_checked. Include the complete source journal, independent-origin groups, unresolved entities, role hypotheses and exact search queries. End with a copyable evidence packet containing the tables and journal; do not assign VERIFIED status yourself.
+Use a Russian outline or a table of at most four columns: node | relation | claim_ids/basis | marker and gap. Append compact cards for new atomic claims and sources: exact role/channel owner, relevant time, dates, public channel type, quoted evidence, inspection mode and human_checked. Preserve the whole incoming map, company cards, hypotheses, edge_id and claim_ids. Include unresolved roles, disambiguation gaps and exact manual queries. Leave verification to the evidence-checking step; no VERIFIED from this enrichment alone.
 ```
 
 #### 💡 Пример использования
@@ -219,7 +225,7 @@ State web capability and processed/pending IDs. Table: claim_id | company_id | p
 
 #### 📝 Домашнее задание Дня 1
 
-> Возьмите свой список названий (до 20) и выполните 1.1 → 1.2. Сохраните все строки, включая неоднозначные и ненайденные, источники и границы актуальности. Обезличенный пакет станет входом 2.1; известные связи и ФИО заранее не требуются.
+> Возьмите свой список названий (до 20) и выполните 1.1 → 2.1. Сохраните все строки, включая неоднозначные и ненайденные, источники и границы актуальности. Обезличенный пакет станет входом 2.1; известные связи и ФИО заранее не требуются.
 
 ---
 
@@ -229,7 +235,7 @@ State web capability and processed/pending IDs. Table: claim_id | company_id | p
 
 **Цель:** Сгенерировать реестр проверяемых утверждений из собранного пакета, сохранив происхождение, время, противоречия и непроверенные места.
 **Инструмент:** Обычный чат: GPT, Claude, Gemini, GigaChat, GigaCode или YandexGPT, если сервис доступен пользователю. Наличие веб-поиска проверяется в самом чате; платная подписка и API не нужны для ручного маршрута.
-**Минимальный вход:** Полный ответ 1.2 либо собственные утверждения с выдержками источников. Число утверждений не фиксировано; для упражнения можно взять пакет М2.2.
+**Минимальный вход:** Полный ответ 1.1 (или 1.2, если обогащали) либо собственные утверждения с выдержками источников. Число утверждений не фиксировано; для упражнения можно взять пакет М2.2.
 **Применение:** Вставьте промпт и полный пакет. Откройте доступные первоисточники, сообщите, какие строки лично сверили, и верните точные выдержки. Без веба модель выполняет разбор присланного текста и даёт запросы; окончательную проверку происхождения делает слушатель.
 
 #### 📋 Шаблон промпта (Copy-Paste)
@@ -239,7 +245,7 @@ State web capability and processed/pending IDs. Table: claim_id | company_id | p
 You are a Senior Open-Source Business Research Analyst.
 
 # CONTEXT
-- Ask questions and write all output in Russian, including tables and explanations.
+- Ask questions and write all output in Russian, including tables and explanations. Keep technical IDs, status codes and the specified CSV field names unchanged.
 - Use ● ФАКТ only for an exact claim supported by accessible evidence; it does not certify truth or present-day validity. Use ◐ ИНТЕРПРЕТАЦИЯ for a reasoned hypothesis linked to its evidence, never for an invented person or contact. Use ○ НЕ НАЙДЕНО for a scoped search gap, not proof of absence.
 - Never invent names, emails, URLs, quotations or dates. Model memory is not evidence. A search snippet is a lead, not a checked page. Never say you visited a URL unless you actually opened its content.
 - Declare actual web capability before research. Without web access, give specific search queries for Yandex or Google; process the user's pasted extracts as supplied text, not as a live-site visit. Request only the relevant excerpt, its URL if available, publication date if shown and the user's inspection date. Unknown metadata stays unknown. Never require an API, paid tool or account.
@@ -259,13 +265,16 @@ The indispensable input is an evidence packet or a set of claims and available s
 4. Keep the three observation markers separate from verification status: ● ФАКТ records exact source evidence, ◐ ИНТЕРПРЕТАЦИЯ a reasoned inference, ○ НЕ НАЙДЕНО a scoped gap. An inference is not VERIFIED factual knowledge. Assess source reliability A-F separately from information credibility 1-6: A fully reliable, B usually reliable, C fairly reliable, D not usually reliable, E unreliable, F cannot judge; 1 independently confirmed, 2 probably true, 3 possibly true, 4 doubtful, 5 improbable, 6 cannot judge. Explain each assessment; use F/6 if evidence is insufficient, not fabricated scores. Do not convert these into a numerical reputation or priority ranking.
 5. For every status record the reason and the specific missing evidence that could change it. For VERIFIED say what new evidence would invalidate it. Keep research queries separate from facts; give no communication recommendations.
 
+6. Preserve node IDs, edge_id and endpoint references. When splitting a claim, update every edge's claim_ids to the atomic child IDs, retaining the parent mapping. An edge can cite several claims with different statuses; do not promote the whole company, person or graph to VERIFIED. A hypothetical role remains hypothetical even if an industry source exists. Keep missing mass/distance/polarity as ?, with no invented default. A factual analysis must explicitly filter to VERIFIED exact relations and exclude hypotheses, intentions and unresolved conflicts; report excluded edge IDs and coverage. A draft graph may show them with distinct styles. Centrality in an incomplete or hypothetical graph is not measured real influence, mass or access.
+7. Only when the user asks to export the graph, return UTF-8 CSV blocks nodes.csv, edges.csv, claims.csv and sources.csv. Nodes: Id,Label,Kind. Edges: Id,Source,Target,Type,Relation,claim_ids,mass,distance,polarity,metric_claim_ids; Type is Directed, claim_ids is a semicolon-separated list. Claims: Id,node_ids,Marker,Statement,Time,source_ids,Basis,Status,Reason,Credibility,Assessment_reason; source_ids is a semicolon-separated list, may be empty only with an explicit gap/hypothesis/user-input basis. Sources: Id,URL,Publisher,Published,Inspected,Access,Quote,Human_checked,Origin,Reliability,Assessment_reason. node_ids references the entities of each claim. Keep information credibility 1-6 and its reason with each claim, source reliability A-F and its reason with each source. metric_claim_ids references separate claims justifying any non-? mass/distance/polarity with criterion, basis, uncertainty and falsifier; keep it empty when all metrics are ?. Use the exact incoming IDs, CSV quoting and ? for unknowns. No dangling node/claim/source references, duplicate IDs or omitted pending companies. Hypotheses and intentions stay labelled in claim Basis and Relation; export carries the complete provenance, not just a drawing. Check counts and referential integrity before output. No extra tool or JSON is required for the normal outline.
+
 # OUTPUT FORMAT
-State capability and the number of received/atomic claims. Table: claim_id | company_id | atomic claim and relevant time | observation marker | source_id and exact quote | origin group | publication/event/inspection dates | human_checked | source A-F and information 1-6 with reasons | VERIFIED/PARTIAL/CONFLICT and reason | evidence needed to change status. Include the source journal and both versions of any conflict. End with unresolved gaps and queries, never a forced quota of statuses or advice on whom to contact.
+State capability and received/atomic claim counts. Use a Russian outline or at most four columns: claim_id/node or edge_id | exact statement and time | evidence/source_ids | marker, status and reason. Append source cards retaining quotes, origin, publication/event/inspection dates, human_checked and A-F / 1-6 with reasons, plus evidence needed to change each status. Include both versions of conflicts, updated map and parent-to-child claim references. Keep the full packet together. End with unresolved gaps and queries. Export the four CSV blocks only on request; never require JSON, a wide table, a quota of statuses or advice on whom to contact.
 ```
 
 #### 💡 Пример использования
 
-**Вход:** Полный пакет 1.2: общий ящик, историческое упоминание руководителя, текущая роль неизвестна; либо учебный пакет М2.2.
+**Вход:** Полный пакет 1.1 или 1.2: общий ящик, историческое упоминание руководителя, текущая роль неизвестна; либо учебный пакет М2.2.
 
 **Ожидаемый выход:** Отдельные утверждения о канале, прошлом назначении и неизвестной текущей роли. Без подтверждения ручной проверки — PARTIAL; 12 перепечаток одного релиза не становятся независимыми источниками. Это синтетический пример проверки правил, а не найденные сведения о реальных компаниях.
 
@@ -279,7 +288,7 @@ State capability and the number of received/atomic claims. Table: claim_id | com
 
 - **Почему шаблон работает.** Он превращает находки в проверяемые утверждения и ограничивает доверие областью, датой и происхождением конкретного свидетельства.
 - **Типичные ошибки новичков.** Дата просмотра объявлена датой события; разные годы превращены в конфликт; перепечатки посчитаны независимыми; VERIFIED присвоен по уверенности модели; гипотеза получила имя.
-- **Как адаптировать INPUT DATA.** Вставьте весь пакет 1.2 или М2.2. Для учебного пакета явно напишите «синтетический», чтобы не искать выдуманную организацию в реальном вебе.
+- **Как адаптировать INPUT DATA.** Вставьте весь пакет 1.1, необязательного 1.2 или М2.2. Для учебного пакета явно напишите «синтетический», чтобы не искать выдуманную организацию в реальном вебе.
 
 ### Задача 2.2: Аудит цифрового следа человека, автора или школы
 
@@ -447,7 +456,7 @@ You are a Senior Digital Footprint Analyst. Ты проверяешь по от�
 
 #### 📝 Домашнее задание Дня 2
 
-> Прогоните 2.1 на пакете 1.2 или на учебном М2.2. Принесите реестр с источниками, датами и причинами статусов. Если в своём кейсе нет `CONFLICT`, не выдумывайте его: отдельно разберите синтетическое противоречие из дизайна пайплайна и явно подпишите его как учебное. Аналогично проверьте `PARTIAL` на примере неполных данных.
+> Прогоните 2.1 на пакете 1.1 (или 1.2, если обогащали) либо на учебном М2.2. Принесите реестр с источниками, датами и причинами статусов. Если в своём кейсе нет `CONFLICT`, не выдумывайте его: отдельно разберите синтетическое противоречие из дизайна пайплайна и явно подпишите его как учебное. Аналогично проверьте `PARTIAL` на примере неполных данных.
 
 ---
 
@@ -894,7 +903,7 @@ Tall narrow vertical banner photograph, one continuous uninterrupted scene filli
 - Я предлагаю скорректировать строку `Methodology` прежних шаблонов 2.2 и 3.1, потому что вариант с методологией дня (карта связей GRA, реестр статусов, фильтр В1–В4) лучше подходит для автономного использования слушателем: «Hypothesis Map (Harmony vs Eclecticism)» — методология только Дня 4.
 - Я предлагаю скорректировать момент выдачи материалов Дня 4, потому что вариант «после слайда 27, рассылкой» лучше подходит для автономного использования слушателем: в сценарии v5 нет отправки в чат и домашнего задания, а задание Дня 4 здесь помечено как рекомендация.
 
-- Я предлагаю скорректировать прежний четырёхшаговый проход Дня 1, потому что вариант «необязательный 1.0 + 1.1 + 1.2» лучше подходит для автономного использования слушателем: проверка компании и каркас объединены, имена исследуются после идентификации; новый 2.1 принимает весь пакет без знания курса. Английский текст инструкций и русские вопросы/выход применены к этим четырём обновлённым промптам по #709.
+- Я предлагаю скорректировать прежний четырёхшаговый проход Дня 1, потому что вариант «1.1 → 2.1, необязательное обогащение 1.2 и подготовка 1.0 при отраслевом входе» лучше подходит для автономного использования слушателем: проверка компании и каркас объединены, имена исследуются после идентификации; новый 2.1 принимает весь пакет без знания курса. Английский текст инструкций и русские вопросы/выход применены к этим четырём обновлённым промптам по #709.
 
 ## Gaps
 

@@ -22,10 +22,10 @@ COMMON = {
     "manual check": "human_checked",
 }
 SPECIFIC = {
-    "1.0": ("industry", "model memory", "unverified candidates"),
-    "1.1": ("EGRUL", "INN", "homonyms", "liquidated", "website outage", "role hypotheses", "Do not search for named people"),
-    "1.2": ("current role", "historical", "general company channel", "Never derive a person's identity", "closed profiles", "approved environment"),
-    "2.1": ("VERIFIED", "PARTIAL", "CONFLICT", "atomic claim", "independent", "A-F", "1-6", "Never manufacture a conflict"),
+    "1.0": ("industry", "Do not propose company names from model memory", "manual shortlist", "up to 10"),
+    "1.1": ("EGRUL", "INN", "homonyms", "liquidated", "website outage", "role hypotheses", "Do not search for named people", "single company", "edge_id", "source_node", "target_node", "claim_ids", "mass", "distance", "polarity", "not zero", "alternative", "four columns", "optional enrichment"),
+    "1.2": ("current role", "historical", "general company channel", "Never derive a person's identity", "closed profiles", "approved environment", "edge_id", "claim_ids"),
+    "2.1": ("VERIFIED", "PARTIAL", "CONFLICT", "atomic claim", "independent", "A-F", "1-6", "Never manufacture a conflict", "edge_id", "claim_ids", "nodes.csv", "edges.csv", "Source", "Target", "dangling", "hypothetical", "four columns"),
 }
 
 
@@ -40,6 +40,8 @@ def prompts(text):
 
 def validate(text):
     errors = []
+    if "**1.1 → 2.1**" not in text:
+        errors.append("route: default must be draft map → evidence check")
     for task, prompt in prompts(text).items():
         if not prompt:
             errors.append(f"{task}: standalone prompt missing")
@@ -74,6 +76,7 @@ def self_test(text):
             mutations.append((f"{task}: {phrase}", text.replace(prompt, prompt.replace(phrase, "REMOVED"), 1)))
         mutations.append((f"{task}: course dependency", text.replace(prompt, prompt + "\n- Course: example.\n", 1)))
     mutations.append(("schedule drift", text.replace("Дни 1 и 2 вместе", "День 2 отдельно")))
+    mutations.append(("mandatory enrichment", text.replace("**1.1 → 2.1**", "**1.1 → 1.2 → 2.1**")))
     failed = [name for name, broken in mutations if broken == text or not validate(broken)]
     return failed, len(mutations)
 
