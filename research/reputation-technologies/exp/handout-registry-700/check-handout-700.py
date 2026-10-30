@@ -22,10 +22,15 @@ check699 = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(check699)
 HOUSES, BANNED, GENERIC = check699.HOUSES, check699.BANNED, check699.GENERIC
 
+# Issue #709 supersedes the Course/Day/placeholder contract only for these tasks.
+spec709 = importlib.util.spec_from_file_location("check709", DOMAIN / "exp/day1-osint-709/check-pipeline-709.py")
+check709 = importlib.util.module_from_spec(spec709)
+spec709.loader.exec_module(check709)
+
 REPO_URL = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab"
 TITLE = "# Раздаточные материалы курса · Master Prompt Registry · Дни 1–4"
 FRONTMATTER = ("status", "version", "updated", "temperature", "source", "scope", "method", "related_issues")
-TASKS = {"1.1": 1, "2.1": 2, "2.2": 2, "3.1": 3, "4.1": 4, "4.2": 4}
+TASKS = {"1.0": 1, "1.1": 1, "1.2": 1, "2.1": 2, "2.2": 2, "3.1": 3, "4.1": 4, "4.2": 4}
 LLMS = ("Claude", "GPT", "Gemini", "GigaChat")
 GENERATORS = ("Midjourney", "Nano Banana", "DALL-E")
 HEADERS = ("# ROLE", "# CONTEXT", "# INPUT DATA", "# TASK", "# OUTPUT FORMAT")
@@ -83,6 +88,9 @@ def check_template(task, day, topic, prompt):
         errors.append(f"{where}: headers are not in the order {' → '.join(HEADERS)}")
     if not re.search(r"^# ROLE\nYou are a Senior \S", prompt, re.M):
         errors.append(f"{where}: # ROLE does not start with «You are a Senior …»")
+    if task in check709.CORE:
+        # The dedicated gate enforces autonomy, evidence, input and safety rules.
+        return errors
     context = section(prompt, "# CONTEXT\n", r"^# ") or ""
     for line in ("- Course: Introduction to Reputation Engineering.", f"- Day: {day}. Topic: {topic}.", "- Methodology: ", "- Constraints:"):
         if line not in context:
@@ -215,6 +223,7 @@ def validate(texts):
     gaps = section(text, "## Gaps\n", r"^## ")
     if gaps is None or "`Gap`" not in gaps or "`2.txt`" not in gaps:
         errors.append("section «## Gaps» with the unavailable 2.txt missing")
+    errors += check709.validate(text)
     return errors
 
 
@@ -284,18 +293,18 @@ def self_test(texts):
         "day topic differs from deck": mutate(texts, h, "## День 2. Тема: Мониторинг ресурсов, работа с данными", "## День 2. Тема: Мониторинг"),
         "Day 3 missing": mutate(texts, h, "## День 3. Тема:", "## Третий день. Тема:"),
         "task 2.2 missing": mutate(texts, h, "### Задача 2.2: ", "### Аудит: "),
-        "goal not generate": mutate(texts, h, "**Цель:** Сгенерировать черновик карты", "**Цель:** Черновик карты"),
-        "tool without GigaChat": mutate(texts, h, "(Claude, GPT, Gemini, GigaChat). Лучше", "(Claude, GPT, Gemini). Лучше"),
+        "goal not generate": mutate(texts, h, "**Цель:** Сгенерировать список компаний-кандидатов", "**Цель:** Список компаний-кандидатов"),
+        "tool without GigaChat": mutate(texts, h, "Обычный чат: GPT, Claude, Gemini, GigaChat,", "Обычный чат: GPT, Claude, Gemini,"),
         "4.2 tool without Nano Banana": mutate(texts, h, "**Инструмент:** Midjourney, Nano Banana (Gemini), DALL-E 3.", "**Инструмент:** Midjourney, DALL-E 3."),
-        "no prompt block": mutate(texts, h, "#### 📋 Шаблон промпта (Copy-Paste)\n\n```text\n# ROLE\nYou are a Senior OSINT", "#### 📋 Шаблон промпта (Copy-Paste)\n\n```\n# ROLE\nYou are a Senior OSINT"),
-        "OUTPUT FORMAT missing": mutate(texts, h, "# OUTPUT FORMAT\n1. Первая строка", "ВЫХОД\n1. Первая строка"),
-        "TASK header renamed": mutate(texts, h, "# TASK\n1. Найди открытые сведения", "# TASKS\n1. Найди открытые сведения"),
-        "headers out of order": mutate_re(texts, h, r"(# CONTEXT\n.*?)(# INPUT DATA\n.*?)(# TASK\n1\. Найди)", r"\2\1\3"),
+        "no prompt block": mutate(texts, h, "#### 📋 Шаблон промпта (Copy-Paste)\n\n```text\n# ROLE\nYou are a Senior Open-Source", "#### 📋 Шаблон промпта (Copy-Paste)\n\n```\n# ROLE\nYou are a Senior Open-Source"),
+        "OUTPUT FORMAT missing": mutate(texts, h, "# OUTPUT FORMAT\nState web capability", "ВЫХОД\nState web capability"),
+        "TASK header renamed": mutate(texts, h, "# TASK\n1. If company names", "# TASKS\n1. If company names"),
+        "headers out of order": mutate_re(texts, h, r"(# CONTEXT\n.*?)(# INPUT DATA\n.*?)(# TASK\n1\. If company names)", r"\2\1\3"),
         "role not senior": mutate(texts, h, "You are a Senior Partnership Strategist", "You are a Partnership Strategist"),
         "context day wrong": mutate(texts, h, "- Day: 3. Topic:", "- Day: 2. Topic:"),
-        "context without methodology": mutate(texts, h, "- Methodology: GRA", "- Method: GRA"),
+        "context without methodology": mutate(texts, h, "- Methodology: Digital Footprint", "- Method: Digital Footprint"),
         "input without fields": mutate_re(texts, h, r"(# INPUT DATA\nКого проверяем: )\[[^\n]+\n(Варианты написания: )\[[^\n]+\n(Что уже известно: )\[[^\n]+\n(Зачем проверяем: )\[[^\n]+", r"\1—\n\2—\n\3—\n\4—"),
-        "no example input": mutate(texts, h, "**Вход:** в INPUT DATA вставлены [бриф М2.1]", "Вставлены [бриф М2.1]"),
+        "no example input": mutate(texts, h, "**Вход:** Отрасль: производство упаковки;", "Отрасль: производство упаковки;"),
         "no error review": mutate(texts, h, "#### 🔁 Разбор ошибок 4.1", "#### Ошибки 4.1"),
         "comment without adaptation": mutate(texts, h, "- **Как адаптировать INPUT DATA.** Вставьте свою задачу", "- Вставьте свою задачу"),
         "no Day 3 homework": mutate(texts, h, "#### 📝 Домашнее задание Дня 3", "#### Задание"),
