@@ -535,6 +535,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-day4-lecturer-script-v5.md | \
     research/reputation-technologies/2026-11-03-day4-image-prompts-v5-couturier-constructor.md | \
     research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md | \
+    research/reputation-technologies/2026-10-30-day1-osint-pipeline-design.md | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
@@ -625,6 +626,10 @@ is_active_file() {
     research/reputation-technologies/exp/handout-registry-700/mutation_reasons_700.py | \
     research/reputation-technologies/exp/handout-registry-700/issue-700-before.log | \
     research/reputation-technologies/exp/handout-registry-700/issue-700-after.log | \
+    research/reputation-technologies/exp/day1-osint-709/README.md | \
+    research/reputation-technologies/exp/day1-osint-709/check-pipeline-709.py | \
+    research/reputation-technologies/exp/day1-osint-709/before.log | \
+    research/reputation-technologies/exp/day1-osint-709/after.log | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
     research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
     research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
@@ -658,6 +663,8 @@ is_active_file() {
     research/external-knowledge/external-insights/2026-06-15-agent-local-memory-context.md | \
     research/external-knowledge/external-insights/2026-06-15-structured-prompt-driven-development.md | \
     research/external-knowledge/external-insights/2026-09-28-scrum-backlog-decision-rights.md | \
+    research/external-knowledge/external-insights/2026-10-30-fns-egrul-cold-search.md | \
+    research/external-knowledge/external-insights/2026-10-30-personal-data-business-research-boundaries.md | \
     practices/README.md | \
     practices/agent-work/README.md | \
     practices/agent-work/hybrid-search-before-action.md | \
