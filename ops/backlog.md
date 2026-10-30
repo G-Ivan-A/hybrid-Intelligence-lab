@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.71
-updated: 2026-10-10
+version: 1.72
+updated: 2026-10-30
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -781,6 +781,7 @@ Release через `G-mach` и `G-human`; блокирующую защиту д
 | **B-230** | Юридически проверить формулировки сквозных кейсов | null | - | TODO | - (planned) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659), [PR #661](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/661), [аудит, Remediation](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-10-10-reputation-technologies-consistency-audit.md) | Кейсы синтетические, но описывают реальные регуляторные среды: относится ли массаж по авторской методике к медицинской услуге; закон о рекламе для рекомендаций; инвестиционные формулировки кейса 2; 381-ФЗ для кейса 1. Нужна проверка юристом до эфира или явное принятие риска владельцем курса. | null |
 | **B-231** | Проверить гипотезы HP-D и HM-I на данных соисследователей | null | B-228 | TODO | - (planned) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659), [открытые вопросы OQ-4, OQ-7](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/gra-research-program/50-open-research.md) | Кейсы 2 и 3 опираются на направленность потока (HP-D), а лаг «поле → рынок» 30–180 дней остаётся гипотезой HM-I. Нужен протокол наблюдения с 1–2 соисследователями после Дня 1; без данных обе остаются гипотезами на слайдах. | null |
 | **B-232** | Решить, переименовывать ли каталог `gra-research-program/` | null | - | TODO | - (planned) | [issue #659](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/659), [аудит, Deviation](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/audit/2026-10-10-reputation-technologies-consistency-audit.md) | Термин в текстах — «исследовательская модель GRA», а каталог назван «research program». Имя сохранено ради стабильности ссылок из PR, issue и реестров; переименование требует решения человека и массовой правки ссылок. | null |
+| **B-233** | Измерить дисциплину холодного поиска в потребительских чатах | P2 | - | TODO | - (planned) | [Дизайн #709, стресс-проверка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-10-30-day1-osint-pipeline-design.md#гипотезы-стресс-проверка-и-порог-опровержения) | Предложение: при выборе сервиса для слушателей выполнить конечные T01–T20 с фиксацией модели, веб-доступа и ответов; измерить потерю ID/рёбер, выдуманные контакты и ошибочное повышение VERIFIED; PR #710 добавил конечный граф десяти кандидатов и 12 отрицательных мутаций, но не измеряет дисциплину потребительских чатов. Структурная проверка промптов не измеряет поведение конкретного чата; запуск — после решения владельца курса, отдельно от дизайна #709. | Creative |
 
 ---
 

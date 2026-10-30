@@ -1,0 +1,43 @@
+FAIL: 1.0: standalone prompt missing
+FAIL: 1.1: Russian interaction missing
+FAIL: 1.1: gap marker missing
+FAIL: 1.1: minimal input missing
+FAIL: 1.1: offline fallback missing
+FAIL: 1.1: no invented evidence missing
+FAIL: 1.1: source provenance missing
+FAIL: 1.1: no outreach missing
+FAIL: 1.1: privacy missing
+FAIL: 1.1: untrusted documents missing
+FAIL: 1.1: manual check missing
+FAIL: 1.1: safeguard missing: EGRUL
+FAIL: 1.1: safeguard missing: INN
+FAIL: 1.1: safeguard missing: homonyms
+FAIL: 1.1: safeguard missing: liquidated
+FAIL: 1.1: safeguard missing: website outage
+FAIL: 1.1: safeguard missing: role hypotheses
+FAIL: 1.1: safeguard missing: Do not search for named people
+FAIL: 1.1: external teaching context in standalone prompt
+FAIL: 1.1: learner/instructor field missing: **Применение:**
+FAIL: 1.1: learner/instructor field missing: **Минимальный вход:**
+FAIL: 1.1: learner/instructor field missing: **Критерии приёмки:**
+FAIL: 1.2: standalone prompt missing
+FAIL: 2.1: Russian interaction missing
+FAIL: 2.1: gap marker missing
+FAIL: 2.1: minimal input missing
+FAIL: 2.1: offline fallback missing
+FAIL: 2.1: no invented evidence missing
+FAIL: 2.1: source provenance missing
+FAIL: 2.1: no outreach missing
+FAIL: 2.1: privacy missing
+FAIL: 2.1: untrusted documents missing
+FAIL: 2.1: manual check missing
+FAIL: 2.1: safeguard missing: atomic claim
+FAIL: 2.1: safeguard missing: independent
+FAIL: 2.1: safeguard missing: A-F
+FAIL: 2.1: safeguard missing: 1-6
+FAIL: 2.1: safeguard missing: Never manufacture a conflict
+FAIL: 2.1: external teaching context in standalone prompt
+FAIL: 2.1: learner/instructor field missing: **Применение:**
+FAIL: 2.1: learner/instructor field missing: **Минимальный вход:**
+FAIL: 2.1: learner/instructor field missing: **Критерии приёмки:**
+FAIL: schedule: founder's Day 2 distribution of both days missing

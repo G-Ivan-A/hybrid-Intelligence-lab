@@ -1,0 +1,9 @@
+PASS: four standalone prompts; minimal input, offline fallback, evidence, privacy and Day 2 handoff
+PASS: 102 unsafe contract mutations rejected
+PASS: 22 nodes (10 companies), 30 edges, 40 claims, 1 source; CSV round trip preserved
+PASS: 12 unsafe graph mutations rejected; VERIFIED factual subgraph: 0 edges; 30 draft edges excluded
+PASS: synthetic positive control admits one verified edge; mixed-status control excludes it
+PASS: research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md — 8 templates in one file, schedule of 4 days, unified blocks, links to the latest decks
+PASS: image template — 5 variables, 4 hard constraints, 26 houses with DNA markers of #699, no banned words
+PASS: footprint audit — 7 platforms, Gap rule, LiveLib book card
+PASS: 47 broken fixtures rejected
