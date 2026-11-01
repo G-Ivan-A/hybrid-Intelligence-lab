@@ -536,6 +536,7 @@ is_active_file() {
     research/reputation-technologies/2026-11-03-day4-image-prompts-v5-couturier-constructor.md | \
     research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md | \
     research/reputation-technologies/2026-10-30-day1-osint-pipeline-design.md | \
+    research/reputation-technologies/2026-11-01-course-quotes-days-1-4-alce.md | \
     research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
     research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
     research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
@@ -633,6 +634,19 @@ is_active_file() {
     research/reputation-technologies/exp/day1-osint-709/feedback-before.log | \
     research/reputation-technologies/exp/day1-osint-709/check-graph-709.py | \
     research/reputation-technologies/exp/day1-osint-709/2026-10-30-ten-company-example.md | \
+    research/reputation-technologies/exp/quotes-711/README.md | \
+    research/reputation-technologies/exp/quotes-711/extract_650.py | \
+    research/reputation-technologies/exp/quotes-711/inventory-650.json | \
+    research/reputation-technologies/exp/quotes-711/quotes_711_data.py | \
+    research/reputation-technologies/exp/quotes-711/names-evidence-711.json | \
+    research/reputation-technologies/exp/quotes-711/interpretations-711.json | \
+    research/reputation-technologies/exp/quotes-711/source-excerpts-711.txt | \
+    research/reputation-technologies/exp/quotes-711/expand_titles_711.py | \
+    research/reputation-technologies/exp/quotes-711/build_quotes_711.py | \
+    research/reputation-technologies/exp/quotes-711/check-quotes-711.py | \
+    research/reputation-technologies/exp/quotes-711/mutation_reasons_711.py | \
+    research/reputation-technologies/exp/quotes-711/issue-711-before.log | \
+    research/reputation-technologies/exp/quotes-711/issue-711-after.log | \
     research/external-knowledge/external-insights/2026-10-30-gephi-csv-evidence-graph.md | \
     research/external-knowledge/external-insights/2026-10-30-w3c-tabular-provenance-keys.md | \
     research/reputation-technologies/exp/day3-rationale-683/README.md | \
@@ -2170,11 +2184,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.49"
+require_text "ops/artifact-map.md" "version: 2.50"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-10-30"
+require_text "ops/artifact-map.md" "updated: 2026-11-01"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
