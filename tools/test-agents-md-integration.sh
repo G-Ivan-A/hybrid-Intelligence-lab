@@ -187,6 +187,8 @@ if [[ -d "$ROOT_DIR/ops" ]]; then
     ':(exclude)tools/validate-repository-structure.sh' \
     ':(exclude)ops/backlog.md' \
     ':(exclude)ops/artifact-map.md' \
+    ':(exclude)docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md' \
+    ':(exclude)docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md' \
     >"$TMP_DIR/stale-pr-ops.log"; then
     fail "active tracked files still contain stale pr-ops/ references"
   fi
