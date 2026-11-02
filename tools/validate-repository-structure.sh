@@ -338,6 +338,13 @@ is_active_file() {
     research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/classify-runs.py | \
     research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/classify-runs.log | \
     research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/runs-routing.json | \
+    research/hub/exp/hub-governance-roadmap-715/README.md | \
+    research/hub/exp/hub-governance-roadmap-715/backlog-census.py | \
+    research/hub/exp/hub-governance-roadmap-715/backlog-census.log | \
+    research/hub/exp/hub-governance-roadmap-715/hub-status-census.py | \
+    research/hub/exp/hub-governance-roadmap-715/hub-status-census.log | \
+    research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.py | \
+    research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.log | \
     research/hub/exp/ai-execution-statistics-543/README.md | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \
@@ -759,6 +766,7 @@ is_active_file() {
     docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md | \
     docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md | \
     docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md | \
+    docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -2186,11 +2194,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.50"
+require_text "ops/artifact-map.md" "version: 2.51"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-11-01"
+require_text "ops/artifact-map.md" "updated: 2026-11-02"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2280,10 +2288,10 @@ require_text "ops/artifact-map.md" "research/external-knowledge/external-insight
 require_text "ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.28"
+require_text "docs/rfc/README.md" "version: 1.29"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-09-28"
+require_text "docs/rfc/README.md" "updated: 2026-11-02"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
