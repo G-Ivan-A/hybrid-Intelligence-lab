@@ -1,0 +1,22 @@
+| Check | hybrid-Intelligence-lab | mango_ba_prompts | mango-ba-ai-runtime | aether-orbis-gra | aether-orbis | open-ai.ru | clarify-engine-ai |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| AGENTS.md | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| .hub-profile.json | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| profile.archetype | A | ❌ | ❌ | D | ❌ | ❌ | ❌ |
+| profile.environment | local | ❌ | ❌ | local | ❌ | ❌ | ❌ |
+| profile.last_sync | ❌ | 2026-08-17 | ❌ | 2026-11-01 | ❌ | ❌ | ❌ |
+| last_sync pin key | ❌ | hub_sha | ❌ | hub_commit | ❌ | ❌ | ❌ |
+| ops/backlog.md | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| other backlog | docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md,docs/analysis/2026-09-28-backlog-closure-evidence-634.md,docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md | docs/analysis/2026-09-03-hub-backlog-sprint-validation.md,pr-ops/BACKLOG.md,pr-ops/backlog-ba-model.md | - | - | docs/superpowers/plans/2026-09-08-phase-1-backlog-grooming.md | - | docs/backlog/2026-05-17_backlog_rag-optimization_v1.2.md,docs/backlog/2026-05-17_backlog_rag-optimization_v1.3.md,docs/backlog/2026-05-17_backlog_rag-optimization_v1.4.md |
+| pr-ops (legacy ops home) | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| docs/README.md | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ |
+| docs/vision.md | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ |
+| docs/concept.md | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ |
+| docs/adr/ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ |
+| docs/contracts/ (forbidden) | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| ai-rules/ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| root AI_*.md | - | - | - | AI_GOVERNANCE.md,AI_QUICK_RULES.md,AI_SESSION_HANDOVER_PROMPT.md | - | AI_GOVERNANCE.md,AI_HANDOVER_PROMPT.md,AI_QUICK_RULES.md | - |
+| issue tpl task.md | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| issue tpl task-creative.md | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| CI workflow | 2 | 3 | 1 | 1 | 1 | ❌ | 1 |
+| sync tool | guides/sync-from-hub.md,templates/sync-project-with-hub-prompt.md,tools/sync-from-hub.sh | scripts/sync_from_hub.py | - | tests/test_import_from_hub.py,tools/import_from_hub.py | - | - | - |

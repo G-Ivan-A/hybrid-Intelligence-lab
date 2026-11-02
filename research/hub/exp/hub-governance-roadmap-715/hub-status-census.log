@@ -1,0 +1,60 @@
+(root)                                           5  {'canonical': 5}
+.github                                          3  {'none': 1, 'deprecated': 1, 'canonical': 1}
+ai-governance                                    3  {'canonical': 2, 'accepted': 1}
+ai-rules                                         6  {'canonical': 4, 'accepted': 2}
+docs                                             6  {'draft': 5, 'canonical': 1}
+docs/adr                                        18  {'proposed': 7, 'accepted': 11}
+docs/analysis                                   19  {'draft': 18, 'none': 1}
+docs/audit                                       8  {'draft': 3, 'none': 5}
+docs/guides                                      1  {'draft': 1}
+docs/project-summaries                           4  {'draft': 4}
+docs/report                                      4  {'draft': 4}
+docs/rfc                                        31  {'draft': 15, 'accepted': 11, 'proposed': 4, 'none': 1}
+docs/superpowers                                 1  {'draft': 1}
+education                                        1  {'canonical': 1}
+frameworks                                       1  {'canonical': 1}
+guides                                          11  {'draft': 11}
+ops                                              7  {'canonical': 5, 'none': 1, 'draft': 1}
+practices                                       16  {'canonical': 16}
+projects                                         1  {'canonical': 1}
+projects-sink                                    9  {'canonical': 7, 'draft': 2}
+projects/ba-ai-process                         130  {'canonical': 1, 'draft': 117, 'none': 1, 'accepted': 6, 'proposed': 5}
+projects/education-ba-prompt                     3  {'draft': 3}
+projects/repo-development                        4  {'canonical': 3, 'draft': 1}
+research                                         1  {'canonical': 1}
+research/ai-education                           68  {'draft': 68}
+research/ba-requirements                        74  {'draft': 74}
+research/cicd                                    2  {'draft': 1, 'canonical': 1}
+research/education                               2  {'canonical': 1, 'superseded': 1}
+research/external-knowledge                     14  {'draft': 13, 'none': 1}
+research/governance                              5  {'canonical': 4, 'reviewed': 1}
+research/hub                                    50  {'draft': 44, 'canonical': 3, 'none': 2, 'reviewed': 1}
+research/mango                                  13  {'draft': 9, 'reviewed': 3, 'canonical': 1}
+research/open-ai-ru                              2  {'canonical': 1, 'draft': 1}
+research/reputation-technologies                81  {'draft': 78, 'none': 1, 'rejected': 2}
+standards                                       29  {'accepted': 18, 'proposed': 1, 'draft': 10}
+templates                                       17  {'superseded': 1, 'draft': 10, 'canonical': 6}
+
+open-status (draft/proposed/review) docs not updated since 2026-09-01, excluding exp/: 207
+    61  research/ai-education
+    32  research/ba-requirements
+    20  research/hub
+    16  docs/rfc
+    12  research/mango
+    11  guides
+    11  docs/analysis
+    10  standards
+     7  research/external-knowledge
+     4  docs
+     4  docs/report
+     4  docs/project-summaries
+     3  docs/adr
+     3  docs/audit
+     2  projects/education-ba-prompt
+     1  ops
+     1  projects/repo-development
+     1  projects-sink
+     1  docs/guides
+     1  research/open-ai-ru
+     1  research/governance
+     1  research/cicd

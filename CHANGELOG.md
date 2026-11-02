@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.34
-updated: 2026-11-01
+version: 2.35
+updated: 2026-11-02
 temperature: 0.1
 ---
 
@@ -13,6 +13,7 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- rfc: issue [#715](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/715) — [RFC дорожной карты оптимизации Хаба и детерминированного управления спицами](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md): 7 шагов, 46 задач к исполнению и 11 по триггеру; вынос `projects/ba-ai-process/` целиком вместо одной мета-модели; контракт наследования I-1…I-8 одним ADR; классы репозиториев экосистемы; [evidence-контейнер](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/exp/hub-governance-roadmap-715/README.md) с переписью бэклога, статусов и матрицей согласованного чтения спиц.
 - analysis: issue [#713](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/713) — проверка передачи практик Хаба в спицы: [mango_ba_prompts](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md) (`pr-ops/` вместо `ops/` — следствие синка 2026-08-17 до переименования в Хабе 2026-09-09, отличие не обосновано; нет `AGENTS.md`, устаревший профиль и синк, `docs/contracts/`; апелляция о статусе `legacy/archived`) и [aether-orbis-gra](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md) (корневые `AI_QUICK_RULES.md` и `AI_SESSION_HANDOVER_PROMPT.md` поставляет геном `templates/htom/`; нет объявленного бэклога; Хаб не отразил вынос проекта). У каждого отличия — вердикт обоснованности и рекомендации спице и Хабу.
 - research: issue [#711](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/711) — [цитаты курса по Дням 1–4 в разметке ALCE](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-11-01-course-quotes-days-1-4-alce.md) в одном файле: 273 дословные цитаты из проверенных источников — все 232 цитаты каталога #650, таблицы М1–М7 и Д3-Т3…Д3-Т5, R:Simini и R:Gentner, эпиграфы колоды Дня 4 v5; у каждой — интерпретация для репутационных технологий, полные имена авторов, дата, полное название источника без сокращений, ссылка, место в источнике и статус проверки; маркеры `[n]` сводятся к списку из 107 источников в порядке первого упоминания; границы списка и пробелы записаны явно. [Проверка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/exp/quotes-711/README.md) с 24 повреждениями самопроверки и проверкой построителя подключена к CI.
 - research: issue [#703](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/703) — [независимый survey агентной автоматизации БА](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-10-28-agent-ba-industry-survey.md): 15 OSS/commercial решений, 34 первичных источника, HITL и state transfer, evaluation framework и BABOK mapping; [15 синтетических проверок](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/agent-ba-industry-703/README.md) включены в CI. Выводы предварительные, ограничения кода, лицензий и промышленной воспроизводимости явны.
