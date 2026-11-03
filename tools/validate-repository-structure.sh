@@ -114,6 +114,7 @@ is_active_file() {
     ops/backlog-instruction.md | \
     ops/executable-documents-issues.md | \
     ops/session-digests.md | \
+    ops/hub-project-extraction-contract.md | \
     projects-sink/README.md | \
     projects-sink/AI_PROJECT_CONTEXT-Summary.md | \
     projects-sink/agents-md/README.md | \
@@ -492,6 +493,13 @@ is_active_file() {
     research/hub/exp/mango-separation-readiness-507/README.md | \
     research/hub/exp/mango-separation-readiness-507/scan-mango-readiness.sh | \
     research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log | \
+    research/hub/exp/ba-extraction-717/README.md | \
+    research/hub/exp/ba-extraction-717/name-availability.py | \
+    research/hub/exp/ba-extraction-717/name-availability.log | \
+    research/hub/exp/ba-extraction-717/2026-11-03-web-search.md | \
+    research/hub/exp/ba-extraction-717/ba-instance-params.txt | \
+    research/hub/exp/ba-extraction-717/rehearse-contract.sh | \
+    research/hub/exp/ba-extraction-717/rehearse-contract.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -1273,6 +1281,13 @@ required_files=(
   "research/hub/exp/mango-separation-readiness-507/README.md"
   "research/hub/exp/mango-separation-readiness-507/scan-mango-readiness.sh"
   "research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log"
+  "research/hub/exp/ba-extraction-717/README.md"
+  "research/hub/exp/ba-extraction-717/name-availability.py"
+  "research/hub/exp/ba-extraction-717/name-availability.log"
+  "research/hub/exp/ba-extraction-717/2026-11-03-web-search.md"
+  "research/hub/exp/ba-extraction-717/ba-instance-params.txt"
+  "research/hub/exp/ba-extraction-717/rehearse-contract.sh"
+  "research/hub/exp/ba-extraction-717/rehearse-contract.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -1340,6 +1355,7 @@ required_files=(
   "ops/backlog-instruction.md"
   "ops/executable-documents-issues.md"
   "ops/session-digests.md"
+  "ops/hub-project-extraction-contract.md"
   "docs/rfc/README.md"
   "docs/rfc/rfc-two-cases-of-project-initialization.md"
   "docs/rfc/contract-executability-rfc.md"
@@ -3357,6 +3373,15 @@ require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-si
 require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.sh"
 require_text "tools/spoke-extraction.py" "ops/hub-project-extraction-contract.md"
+require_text "ops/hub-project-extraction-contract.md" "executable: true"
+require_text "ops/hub-project-extraction-contract.md" "## ▶️ EXECUTION"
+require_text "ops/hub-project-extraction-contract.md" "## ℹ️ EXPLANATION"
+require_text "ops/hub-project-extraction-contract.md" "extraction-params"
+require_text "ops/hub-project-extraction-contract.md" "tools/spoke-extraction.py"
+require_text "ops/artifact-map.md" "ops/hub-project-extraction-contract.md"
+require_text "ops/README.md" "hub-project-extraction-contract.md"
+require_text "research/hub/exp/ba-extraction-717/README.md" "type: experiment"
+require_text "research/hub/exp/ba-extraction-717/rehearse-contract.log" "E5 OK: 100 backlog rows"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
