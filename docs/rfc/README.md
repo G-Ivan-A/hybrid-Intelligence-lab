@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.29
-updated: 2026-11-02
+version: 1.30
+updated: 2026-11-03
 temperature: 0.1
 owner: G-Ivan-A
 ---
