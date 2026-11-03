@@ -66,6 +66,9 @@ jobs:
       - name: Test nonempty diff validator
         run: bash tools/test-nonempty-diff.sh
 
+      - name: Test spoke extraction tool
+        run: bash tools/test-spoke-extraction.sh
+
       - name: Test historical immutability validator
         run: bash tools/test-historical-immutable.sh
 

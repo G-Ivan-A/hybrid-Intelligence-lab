@@ -854,6 +854,8 @@ is_active_file() {
     templates/sync-metadata.json | \
     tools/generate-manifest.py | \
     tools/sync-from-hub.sh | \
+    tools/spoke-extraction.py | \
+    tools/test-spoke-extraction.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-agents-md-integration.sh | \
     tools/test-evidence-structure-validator.sh | \
@@ -1384,6 +1386,8 @@ required_files=(
   ".github/workflows/update-manifest.yml"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
+  "tools/spoke-extraction.py"
+  "tools/test-spoke-extraction.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
   "tools/test-reference-research-terminology.sh"
@@ -3351,6 +3355,8 @@ require_text ".github/workflows/validate.yml" "bash tools/test-operating-mode-co
 require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.sh"
+require_text "tools/spoke-extraction.py" "ops/hub-project-extraction-contract.md"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
