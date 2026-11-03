@@ -839,6 +839,7 @@ is_active_file() {
     docs/analysis/2026-09-28-backlog-closure-evidence-634.md | \
     docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md | \
     docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md | \
+    docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
