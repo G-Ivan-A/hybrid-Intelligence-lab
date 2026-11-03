@@ -8,7 +8,9 @@
 #   * verify ловит подмену байта, пропуск файла, лишний файл и смену режима;
 #   * rewrite-links (L1/L2) переписывает только то, что должен, идемпотентен,
 #     не трогает код, SHA-пермалинки и файлы, изменённые после импорта;
-#   * history-paths находит исторические пути переименованного файла.
+#   * history-paths находит исторические пути переименованного файла;
+#   * sections переносит разделы Markdown (спринты бэклога) дословно и
+#     обнаруживает изменённую строку.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -180,6 +182,49 @@ ext manifest --sha "$sha2" --map ops/skel.md=AGENTS.md -o "$skel_manifest" 2>/de
 run "materialize --substitute: остаток плейсхолдера" 0 "placeholder left: AGENTS.md: {{unknown_key}}" -- \
   ext materialize --manifest "$skel_manifest" --target "$work_dir/skel" --substitute project_name=demo-spoke
 expect_line "materialize --substitute: подстановка" "name: demo-spoke {{unknown_key}}" "$work_dir/skel/AGENTS.md"
+
+# ---------------------------------------------------------------- sections
+cat >"$hub/ops/backlog.md" <<'EOB'
+# Backlog
+
+## Sprint 1: demo
+
+| ID | Link |
+| --- | --- |
+| B-1 | [model](../projects/demo/model/model.md), [rule](repo-model.md) |
+
+### Note
+
+```md
+## Sprint 9: not a heading inside code
+```
+
+## Sprint 2: other
+
+| B-2 | other |
+EOB
+git -C "$hub" add -A && git -C "$hub" commit -q -m backlog
+sha3="$(git -C "$hub" rev-parse HEAD)"
+manifest3="$work_dir/manifest3.tsv"
+ext manifest --sha "$sha3" --map projects/demo/= -o "$manifest3" 2>/dev/null
+sections_out="$work_dir/sections.md"
+run "sections: извлечение раздела с подразделом" 0 "sections: 1 from ops/backlog.md" -- \
+  ext sections --sha "$sha3" --source ops/backlog.md --heading "## Sprint 1:" --manifest "$manifest3" \
+  --target-path ops/backlog.md --hub-url "$HUB_URL" -o "$sections_out"
+expect_line "sections: ссылка внутри набора -> путь спицы" "[model](../model/model.md)" "$sections_out"
+expect_line "sections: ссылка вне набора -> пермалинк SHA" "[rule]($HUB_URL/blob/$sha3/ops/repo-model.md)" "$sections_out"
+expect_line "sections: подраздел включён" "### Note" "$sections_out"
+reject_line "sections: следующий раздел не включён" "B-2" "$sections_out"
+run "sections: неоднозначный или отсутствующий заголовок" 2 "matches 0 headings" -- \
+  ext sections --sha "$sha3" --source ops/backlog.md --heading "## Sprint 9:"
+{ printf '# Spoke backlog\n\n'; cat "$sections_out"; } >"$work_dir/spoke-backlog.md"
+run "sections --check: раздел присутствует" 0 "" -- \
+  ext sections --sha "$sha3" --source ops/backlog.md --heading "## Sprint 1:" --manifest "$manifest3" \
+  --target-path ops/backlog.md --hub-url "$HUB_URL" --check "$work_dir/spoke-backlog.md"
+sed -i 's/| B-1 |/| B-1x |/' "$work_dir/spoke-backlog.md"
+run "sections --check: изменённая строка" 1 "section absent or changed: ## Sprint 1:" -- \
+  ext sections --sha "$sha3" --source ops/backlog.md --heading "## Sprint 1:" --manifest "$manifest3" \
+  --target-path ops/backlog.md --hub-url "$HUB_URL" --check "$work_dir/spoke-backlog.md"
 
 if (( failures > 0 )); then
   printf '\n%d проверок упало\n' "$failures" >&2

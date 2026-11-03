@@ -15,6 +15,9 @@ Subcommands
   rewrite-links  Rewrite relative Markdown links and in-set Hub URLs.
   scan           List remaining occurrences of renamed source prefixes.
   verify         Compare a target directory with the manifest by content hash.
+  sections       Extract Markdown sections of one Hub file verbatim (e.g.
+                 backlog sprints), with the same link rules, or --check that a
+                 target file contains them.
 
 Path map: --map SRC=DST, where SRC is a Hub path ending with "/" (directory)
 or a file path, and DST is the target path ("" = target root). A file is
@@ -507,6 +510,87 @@ def cmd_scan(args):
     print(f"scan: {hits} occurrence(s) of renamed source prefixes", file=sys.stderr)
 
 
+HEADING_RE = re.compile(r"^(#{1,6})\s")
+
+
+def extract_sections(text, prefixes):
+    """Return [(prefix, section_text)] for headings starting with each prefix.
+
+    A section runs from its heading line to the next heading of the same or a
+    higher level (fenced code is not scanned for headings). Each prefix must
+    match exactly one heading line.
+    """
+    lines = text.split("\n")
+    headings, fence = [], None
+    for i, line in enumerate(lines):
+        mark = FENCE_RE.match(line)
+        if fence:
+            if mark and mark.group(1) == fence:
+                fence = None
+            continue
+        if mark:
+            fence = mark.group(1)
+            continue
+        m = HEADING_RE.match(line)
+        if m:
+            headings.append((i, len(m.group(1)), line))
+    out = []
+    for prefix in prefixes:
+        found = [h for h in headings if h[2].startswith(prefix)]
+        if len(found) != 1:
+            die(f"heading prefix {prefix!r} matches {len(found)} headings (need exactly 1)")
+        start, level, _ = found[0]
+        end = len(lines)
+        for i, lvl, _ in headings:
+            if i > start and lvl <= level:
+                end = i
+                break
+        body = lines[start:end]
+        while body and not body[-1].strip():
+            body.pop()
+        out.append((prefix, "\n".join(body)))
+    return out
+
+
+def cmd_sections(args):
+    check_sha(args.hub, args.sha)
+    if args.manifest:
+        msha, maps, _excludes, entries = read_manifest(args.manifest)
+        if msha != args.sha:
+            die(f"manifest is pinned to {msha}, not {args.sha}")
+    else:
+        maps, entries = [], []
+    tree = HubTree(args.hub, args.sha)
+    if args.source not in tree.files:
+        die(f"{args.source} does not exist at {args.sha}")
+    text = git(args.hub, "cat-file", "blob", f"{args.sha}:{args.source}", binary=True).decode("utf-8")
+    rewriter = Rewriter(tree, maps, {e["source"] for e in entries}, args.sha, args.hub_url, args.target_url)
+    target_path = args.target_path or args.source
+    sections, kinds = [], {}
+    for prefix, body in extract_sections(text, args.heading):
+        new, events = rewriter.apply(body.encode("utf-8"), args.source, target_path)
+        for ev in events:
+            kinds[ev["kind"]] = kinds.get(ev["kind"], 0) + 1
+        sections.append((prefix, new.decode("utf-8")))
+    print(f"sections: {len(sections)} from {args.source} at {args.sha}; link events {json.dumps(kinds, sort_keys=True)}",
+          file=sys.stderr)
+    if args.check:
+        with open(args.check, encoding="utf-8") as fh:
+            current = fh.read()
+        absent = [prefix for prefix, body in sections if body not in current]
+        for prefix in absent:
+            print(f"section absent or changed: {prefix}", file=sys.stderr)
+        if absent:
+            sys.exit(1)
+        return
+    data = "\n\n".join(body for _, body in sections) + "\n"
+    if args.output:
+        with open(args.output, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(data)
+    else:
+        sys.stdout.write(data)
+
+
 def cmd_verify(args):
     sha, maps, _excludes, entries = load(args)
     rewriter = make_rewriter(args, sha, maps, entries) if args.links else None
@@ -597,6 +681,19 @@ def main(argv=None):
     p.add_argument("--manifest", required=True)
     p.add_argument("--target", required=True)
     p.set_defaults(func=cmd_scan)
+
+    p = sub.add_parser("sections", help="verbatim Markdown sections of one Hub file")
+    p.add_argument("--sha", required=True)
+    p.add_argument("--source", required=True, help="Hub path of the Markdown file")
+    p.add_argument("--heading", action="append", required=True, metavar="PREFIX",
+                   help="heading line prefix, e.g. '## Sprint 14:' (repeatable, order kept)")
+    p.add_argument("--manifest", help="manifest whose map decides in-set links")
+    p.add_argument("--target-path", help="path of the output file in the target (default: --source)")
+    p.add_argument("--hub-url", default="https://github.com/G-Ivan-A/hybrid-Intelligence-lab")
+    p.add_argument("--target-url", help="enables rule L2 (in-set absolute Hub URLs)")
+    p.add_argument("--check", metavar="FILE", help="exit 1 unless FILE contains every section verbatim")
+    p.add_argument("--output", "-o")
+    p.set_defaults(func=cmd_sections)
 
     args = parser.parse_args(argv)
     args.func(args)
