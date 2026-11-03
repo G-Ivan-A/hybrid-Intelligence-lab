@@ -53,6 +53,15 @@ GFR=/tmp/gfr/bin/git-filter-repo bash research/hub/exp/ba-extraction-717/rehears
 (как у нового репозитория GitHub); инструмент берётся из ветки, потому что
 `HUB_SHA` старше инструмента.
 
+## Результаты зонда имён
+
+Проверено 14 имён (2026-11-03). Дословно занято одно — `ai-ba-playbooks`:
+переадресация на `G-Ivan-A/mango-ba-ai-runtime`. Ноль похожих на GitHub
+(`in:name`) у `ba-ai-metamodel`, `universal-ba-ai-framework`,
+`gra-ba-ai-framework` и `aether-orbis-ba`; у `ba-ai-process` — 282. PyPI и npm
+свободны для всех имён. Codeberg ответил 504 на 7 имён; для `ba-ai-metamodel`
+ответ получен. Выбор имени — в анализе, раздел «Имя репозитория».
+
 ## Результаты репетиции (`HUB_SHA` = `c06075d`)
 
 | Этап | Результат |
