@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-06-12
+version: 0.5
+updated: 2026-11-03
 temperature: 0.1
 ---
 
@@ -53,18 +53,46 @@ temperature: 0.1
 
 ## Матрица проектов
 
+Матрица — единый реестр репозиториев экосистемы (элемент I-1
+[RFC #715](rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md#шаг-2-контракт-детерминированного-наследования--7-задач);
+решение владельца Q-4 в issue
+[#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717)).
+Другие документы Хаба не ведут собственных таблиц статусов, а ссылаются сюда.
+
+| Репозиторий | Класс | Тип | Связь с Хабом | Краткое описание |
+| --- | --- | --- | --- | --- |
+| [hybrid-Intelligence-lab](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) (Хаб) | `hub` | Методологический центр | Источник генома и норм | Нормы, стандарты, шаблоны, исследования и решения экосистемы. |
+| [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | `governed` | HTOM-команда | Референсная реализация | Действующий репозиторий: референсная реализация универсальной модели БА (39 классов). Статус `legacy/archived` по issue #583 отменён решением Q-3. |
+| Репозиторий проекта метамодели БА (имя согласуется в PR [#718](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/718), рекомендация — `ba-ai-metamodel`) | `governed` | Spoke-репозиторий (архетип B) | Вынос из Хаба по [контракту выноса](../ops/hub-project-extraction-contract.md) | Ядро метамодели БА, компиляторы пакетов, тесты и eval; до выноса живёт в `projects/ba-ai-process/`. Строка получит ссылку после создания репозитория (Ш3.1). |
+| [mango-ba-ai-runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime) | `exempt-runtime` | Spoke-репозиторий | Закреплённая компиляция | Автономная среда исполнения MVP; правило `EP-C1` запрещает зависимость инструкций от документов Хаба, поэтому геном не наследует. |
+| [aether-orbis-gra](https://github.com/G-Ivan-A/aether-orbis-gra) | `governed` | HTOM-команда (архетип D) | Геном и практики | GRA — исследовательский фреймворк репутационной архитектуры. |
+| [aether-orbis](https://github.com/G-Ivan-A/aether-orbis) | `governed` | Spoke-репозиторий | Геном | Спица вне контура MVP; бутстрап `AGENTS.md` и профиля — задача Ш4.3. |
+| [open-ai.ru](https://github.com/G-Ivan-A/open-ai.ru) | `dormant` | Spoke-репозиторий | Будущий единый интерфейс | Законсервирован до появления готовых решений; затем становится единым интерфейсом проектов экосистемы (Q-5). Задач согласования нет. |
+| [clarify-engine-ai](https://github.com/G-Ivan-A/clarify-engine-ai) | `stopped` | HTOM-команда | Источник механизмов | Проект остановлен; изменения не планируются. |
+
+Внутренние рабочие области и планы, которые не являются отдельными
+репозиториями:
+
 | Проект | Статус | Тип | Связь с Хабом | Краткое описание |
 | --- | --- | --- | --- | --- |
-| [open-ai.ru](https://github.com/G-Ivan-A/open-ai.ru) | Active | Spoke-репозиторий | Портал методологии | AI-native интерфейс для гибридных команд. |
-| [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | Active | HTOM-команда | Библиотека промптов | Промпты для бизнес-анализа в ИТ и телекоме. |
-| clarify-engine-ai | Active | HTOM-команда | Движок уточнений | Движок для уточнения требований. |
 | reputation-engineering | Planned | Spoke-репозиторий | Репутационный инжиниринг | Методология и кейсы репутационного инжиниринга. |
 | [repo-development](../projects/repo-development/README.md) | Active | HTOM-команда | Развитие репо | Инструменты и процессы развития самого репозитория. |
 
 **Обозначения.**
 
-- **Статус** — `Active` (проект работает), `Planned` (запланирован, ещё не
-  запущен).
+- **Класс** (I-1) определяет, применяется ли к репозиторию согласованное чтение:
+  - `governed` — наследует геном Хаба; к нему применяются синк и проверки
+    согласованного чтения;
+  - `exempt-runtime` — автономная среда исполнения, исключённая из наследования
+    генома правилом `EP-C1`;
+  - `legacy-evidence` — используется только как свидетельство по
+    [ADR-014](adr/2026-09-adr-014-legacy-evidence-not-baseline.md); сейчас таких
+    репозиториев нет;
+  - `dormant` — законсервирован с явной целью возобновления; задач согласования
+    нет;
+  - `stopped` — остановлен; задач нет.
+- **Статус** рабочих областей — `Active` (работает) или `Planned` (запланирована,
+  ещё не запущена).
 - **Тип** — `HTOM-команда` (гибридная человек + AI рабочая единица, наследует
   governance-геном `templates/htom/`) или `Spoke-репозиторий` (production-продукт
   с собственным жизненным циклом, шаблон `templates/spoke/`). Различие закреплено
@@ -72,8 +100,8 @@ temperature: 0.1
 - **Связь с Хабом** — короткая роль проекта по отношению к методологическому
   центру.
 
-Статусы и типы отражают текущий план фаундера по развитию экосистемы и
-уточняются при согласовании пакета и при каждой синхронизации карты.
+Класс меняется только решением владельца. Изменение записывается здесь в том же
+PR, что и решение.
 
 ---
 
@@ -91,18 +119,27 @@ temperature: 0.1
 ```mermaid
 graph TD
     hub(["🧭 Хаб — методологический центр"])
-    openai["open-ai.ru · Spoke"]
-    mango["mango_ba_prompts · HTOM"]
-    clarify["clarify-engine-ai · HTOM"]
+    openai["open-ai.ru · dormant"]
+    mango["mango_ba_prompts · governed"]
+    bameta["Репозиторий метамодели БА · governed"]
+    runtime["mango-ba-ai-runtime · exempt-runtime"]
+    gra["aether-orbis-gra · governed"]
+    orbis["aether-orbis · governed"]
+    clarify["clarify-engine-ai · stopped"]
     reputation["reputation-engineering · Spoke (Planned)"]
     repodev["repo-development · HTOM"]
 
     hub -.- openai
     hub -.- mango
+    hub -.- bameta
+    hub -.- gra
+    hub -.- orbis
     hub -.- clarify
     hub -.- reputation
     hub -.- repodev
 
+    bameta --- mango
+    bameta --> runtime
     openai --- mango
     openai --- clarify
     openai --- reputation
@@ -119,12 +156,18 @@ graph TD
 
 - **open-ai.ru** → `mango_ba_prompts`, `clarify-engine-ai`,
   `reputation-engineering`.
-- **mango_ba_prompts** → `open-ai.ru`, `clarify-engine-ai`.
+- **mango_ba_prompts** → `open-ai.ru`, `clarify-engine-ai`, репозиторий
+  метамодели БА (crosswalk 39 классов с метамоделью).
+- **Репозиторий метамодели БА** → `mango_ba_prompts`, `mango-ba-ai-runtime`
+  (runtime компилируется с закреплённого коммита метамодели).
+- **mango-ba-ai-runtime** — методологической связи нет (`exempt-runtime`);
+  входящая функциональная связь от репозитория метамодели БА.
 - **clarify-engine-ai** → `open-ai.ru`, `mango_ba_prompts`.
 - **reputation-engineering** → `open-ai.ru`.
 - **repo-development** → все проекты экосистемы.
 
-Методологическая связь с Хабом есть у каждого проекта: Хаб хранит полный граф,
+Методологическая связь с Хабом есть у каждого проекта, кроме
+`mango-ba-ai-runtime` (`exempt-runtime`): Хаб хранит полный граф,
 а проект — только перечисленные выше функциональные связи.
 
 ---
@@ -283,15 +326,16 @@ Product Concept описывает что, а карта показывает к
 **Фокус:** зафиксировать методологический центр и первые связи.
 
 - Хаб как источник общих правил и шаблонов.
-- Активные проекты: `open-ai.ru`, `mango_ba_prompts`, `clarify-engine-ai`,
-  `repo-development`.
+- Репозитории по классам — в [матрице проектов](#матрица-проектов);
+  `governed`: `mango_ba_prompts`, `aether-orbis-gra`, `aether-orbis` и
+  репозиторий метамодели БА после выноса.
 - Полный граф экосистемы в этой карте.
 
 ### Этап 2. Need-to-Know на практике
 
 **Фокус:** раскатать частичный граф по проектам.
 
-- В каждом активном проекте появляются `.hub-ecosystem.json` и
+- В каждом `governed`-репозитории появляются `.hub-ecosystem.json` и
   `docs/ecosystem-context.md`.
 - Smart Sync расширяется: предлагает обновления не только шаблонов, но и связей.
 - Человек подтверждает изменения частичного графа осознанно.
@@ -322,6 +366,8 @@ Product Concept описывает что, а карта показывает к
 | [htom-vs-spoke-clarification-2026-06.md](rfc/htom-vs-spoke-clarification-2026-06.md) | Различие HTOM-команда vs Spoke-репозиторий. |
 | [session-handover-standard.md](../standards/session-handover-standard.md) | Draft-стандарт структуры `AI_SESSION_HANDOVER_PROMPT.md` и разделения онбординга/передачи контекста. |
 | [projects/README.md](../projects/README.md) | Навигация по проектным рабочим областям. |
+| [RFC #715](rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Классы реестра (I-1) и решения владельца Q-3…Q-5 по классам спиц. |
+| [hub-project-extraction-contract.md](../ops/hub-project-extraction-contract.md) | Контракт выноса проекта Хаба в новый репозиторий. |
 
 ---
 

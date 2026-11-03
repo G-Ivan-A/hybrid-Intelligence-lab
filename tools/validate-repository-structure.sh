@@ -2074,7 +2074,9 @@ require_text "docs/product-concept.md" "быстрее входить в раб�
 require_text "docs/product-concept.md" "Связь L1-L4"
 require_text "docs/product-concept.md" "docs/rfc/product-concept-template-proposal.md"
 require_text "docs/product-concept.md" "docs/rfc/resolve-artifact-location-proposal.md"
-require_text "docs/ecosystem-map.md" "version: 0.4"
+require_text "docs/ecosystem-map.md" "version: 0.5"
+require_text "docs/ecosystem-map.md" "единый реестр репозиториев экосистемы"
+require_text "docs/ecosystem-map.md" '`exempt-runtime`'
 require_text "docs/ecosystem-map.md" "обмен практиками"
 require_text "docs/ecosystem-map.md" "practices/README.md"
 require_text "docs/ecosystem-map.md" "templates/sync-project-with-hub-prompt.md"
