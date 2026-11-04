@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 0.6
-updated: 2026-09-28
+version: 0.7
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -47,6 +47,7 @@ frontmatter и девять обязательных секций. Машино�
 | [ADR-016](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-016-skill-form-and-contract-format.md) | proposed | Навык — форма поставки одного узла таксономии, а `interaction` вычисляется по точке возврата управления актору. |
 | [ADR-017](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md) | accepted | `ba-ai-process` разделяется на Source, компилируемые Distribution и автономные Runtime; project-scoped решение хранится рядом с Source. |
 | [ADR-021](2026-09-adr-021-agent-collaboration-layer.md) | accepted | Коммуникация C-1…C-7 живёт в отдельном файле, режимы и Creative — в work rules, якоря — в onboarding; C-5 и порог 9K уточнены по issue #631. |
+| [ADR-022](2026-11-adr-022-hub-archive-and-extraction-redirect.md) | proposed | Архив Хаба — защищённый тег `archive/<slug>-<YYYY-MM>`, а не каталог; удалённый путь адресуется манифестом и `path_migrations` с внешним `to`; персональные данные не архивируются (issue #721). |
 
 ## Related Artifacts
 

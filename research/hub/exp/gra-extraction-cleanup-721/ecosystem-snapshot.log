@@ -1,0 +1,61 @@
+# snapshot 2026-11-04T08:38Z
+## repos (gh repo list G-Ivan-A)
+aether-orbis	2026-10-23T23:50:58Z	archived=false
+aether-orbis-gra	2026-11-01T20:24:44Z	archived=false
+ba-ai-metamodel	2026-11-04T07:50:39Z	archived=false
+clarify-engine-ai	2026-05-21T16:15:27Z	archived=false
+hybrid-Intelligence-lab	2026-11-04T08:37:22Z	archived=false
+mango-ba-ai-runtime	2026-11-01T20:19:41Z	archived=false
+mango_ba_prompts	2026-11-03T13:39:32Z	archived=false
+open-ai.ru	2026-06-09T18:47:41Z	archived=false
+## open PRs/issues: hybrid-Intelligence-lab
+PR #722	issue-721-52a33a31abf6	[WIP] Проверка полноты выноса парктик репутационных технологий в отдельный проект и план архивирования или удаления данных из хаба
+PR #720	issue-719-1e389db848b1	feat(#719): ХАБ-1 — привязка c-in.atomic_function к каталогу продуктов (PT-5) и компиляция в runtime
+PR #718	issue-717-6568354f39c6	docs(#717): шаг 1 RFC #715 — контракт выноса проекта метамодели БА, имя репозитория, архетип и состав
+issue #721	Проверка полноты выноса парктик репутационных технологий в отдельный проект и план архивирования или удаления данных из хаба
+issue #719	ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов и компиляция в mango-ba-ai-runtime
+issue #717	title: "[creative/hybrid] Выполнение задачи по Шагу 1: Вынос ba-ai-process, исследование именования, архетипов и декомпозиции"
+## open PRs/issues: ba-ai-metamodel
+## open PRs/issues: mango_ba_prompts
+PR #441	issue-434-r17	docs(issue-434): Р-17 принято
+PR #440	issue-434-accept-74-nodes	Issue #434: Р-17 — accept 74 portal taxonomy nodes (review → accepted)
+PR #439	issue-438-cebef63aa82f	docs(issue-438): BL-157 комплект прогона и BL-156 промпты шагов «по тесту» (Р-15); RUN-0080; Р-16 — перепроверка, рекомендован А+
+issue #438	Движение по беклогу - выполнение BL-156
+## open PRs/issues: aether-orbis-gra
+## open PRs/issues: mango-ba-ai-runtime
+PR #17	issue-719-1e389db848b1	ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляция PT-5)
+PR #16	issue-15-01ec34f64925	РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)
+issue #15	РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)
+## open PRs/issues: aether-orbis
+PR #47	issue-46-d46a326da34a	docs: RFC и ADR-009 — Lean Global Compliance, анонимизация на границе и дешёвый гибрид
+issue #46	title: "architecture: RFP (Request for Proposal) — Lean Global Compliance & Budget-Optimized Hybrid Deployment"
+issue #43	tech-debt: pyproject.toml и packaging tooling (Industrial Hardening, после MVP)
+issue #28	[T5.5] Фаза 5: чек-лист соответствия перед релизом
+issue #27	[T5.4] Фаза 5: резервное копирование Raw / Source Store
+issue #26	[T5.3] Фаза 5: управление секретами
+issue #25	[T5.2] Фаза 5: VPS для состояния
+issue #24	[T5.1] Фаза 5: serverless-развёртывание вычислительных шагов
+issue #23	[T4.4] Фаза 4: сверка стоимости прогона с бюджетом
+issue #22	[T4.3] Фаза 4: тест явного ZERO при недостаточном контексте
+issue #21	[T4.2] Фаза 4: прогон направления «Анализ практик Хаба (Habr)»
+issue #20	[T4.1] Фаза 4: прогон направления «Репутационные технологии (GRA)»
+issue #19	[T3.6] Фаза 3: точки human-in-the-loop (заглушки MVP)
+issue #18	[T3.5] Фаза 3: обязательная 2FA для публичного API
+issue #17	[T3.4] Фаза 3: публичный API на FastAPI
+issue #16	[T3.3] Фаза 3: телеметрия по контракту
+issue #15	[T3.2] Фаза 3: реализация Sufficiency Gate
+issue #14	[T3.1] Фаза 3: реализация Relevance / Quality Gate
+issue #13	[T2.5] Фаза 2: кэширование и batch API на cost-sensitive ролях
+issue #12	[T2.4] Фаза 2: YAML-конфигурации направлений
+issue #11	[T2.3] Фаза 2: evaluation качества извлечения на целевых моделях
+issue #10	[T2.2] Фаза 2: подключение моделей РФ и Китая
+issue #9	[T2.1] Фаза 2: Model Router поверх LiteLLM
+## open PRs/issues: open-ai.ru
+PR #44	issue-199-clean-structure	Setup minimal portal planning structure
+## open PRs/issues: clarify-engine-ai
+## inbound links into research/reputation-technologies/ from other ecosystem repos (shallow clones, grep -rI)
+aether-orbis@ead22d699c92: 0 path links; 4 files use only the direction id `reputation-technologies` (configs/directions/reputation-technologies/research-profile.yaml, configs/README.md, docs/superpowers/*) — engine direction name, not a Hub path
+ba-ai-metamodel@bc1249f141f9: 0
+mango-ba-ai-runtime (default branch, depth 1): 0
+mango_ba_prompts (default branch, depth 1): 0
+aether-orbis-gra@1669943: see gra-inventory.log (51 pinned, 167 floating blob/main links)

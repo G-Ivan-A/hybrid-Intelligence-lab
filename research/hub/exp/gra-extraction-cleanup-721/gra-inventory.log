@@ -1,0 +1,169 @@
+hub HEAD: a5d2b708cdfe50a7d254f005f3d10977a84dfef6
+spoke HEAD: 1669943e6f0193e78b245bb9d26b3281a1c5a438
+spoke snapshot (last_sync.hub_commit): 32b5fa524e542af23c1a8e67c919bd66d5f4e399
+domain files at HEAD: 173 (units: 80; sum check: 173)
+domain files in snapshot: 159; added after snapshot: 14; removed after snapshot: 0
+spoke files with source: permalink to the domain: 35
+
+files by disposition:
+  ARCHIVE: 61 files, 22 units
+  DELETE: 73 files, 19 units
+  OWNER-Q: 2 files, 2 units
+  PII: 1 files, 1 units
+  README-TOMBSTONE: 1 files, 1 units
+  REIMPORT: 1 files, 1 units
+  TOMBSTONE: 34 files, 34 units
+
+units with a CI step in .github/workflows/validate.yml: 20
+spoke references to the domain: pinned 51 floating 167
+
+re-import list (rule R2/R3):
+  2026-11-01-course-quotes-days-1-4-alce.md (1 files; stale 0; new 1)
+
+units referenced from historical records (CHANGELOG.md or docs/{adr,rfc,audit,analysis,report}/): 72 of 80 units, 159 files
+  artifact-deprecation-standard, Deletion Rules, forbidden #1: such a path may not be deleted unless its address is replaced by a compatibility redirect
+
+units blocked by floating spoke links (must be pinned in the spoke before the Hub moves them):
+  2026-09-30-course-sources-and-presentations-650.md: 116 floating -> OWNER-Q
+  2026-10-07-day1-lecturer-script-653.md: 5 floating -> ARCHIVE
+  2026-10-07-day1-presentation-653.md: 2 floating -> ARCHIVE
+  2026-10-13-day1-rebuild-task-671.md: 2 floating -> ARCHIVE
+  2026-10-14-day1-lecturer-gra-research.md: 10 floating -> PII
+  2026-10-30-day2-presentation.md: 6 floating -> ARCHIVE
+  2026-11-02-day3-presentation.md: 2 floating -> ARCHIVE
+  2026-11-03-day4-lecturer-script-v3.md: 1 floating -> ARCHIVE
+  2026-11-03-day4-presentation-gamma-v4.md: 3 floating -> ARCHIVE
+  2026-11-03-rfc-presentation-update-v5.md: 7 floating -> ARCHIVE
+  README.md: 1 floating -> README-TOMBSTONE
+  exp/day1-osint-709/: 5 floating -> ARCHIVE
+  exp/day1-rebuild-677/: 1 floating -> ARCHIVE
+  exp/day3-gamma-681/: 4 floating -> ARCHIVE
+  exp/day4-v5-697/: 1 floating -> ARCHIVE
+  exp/rfc-days-logic-667/: 1 floating -> ARCHIVE
+
+Hub files outside the domain that reference it:
+  (count = absolute mentions + relative Markdown links resolved into the domain; a bare mention of the domain root counts too)
+  .github/workflows/validate.yml: 23
+  CHANGELOG.md: 84
+  docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md: 3
+  docs/audit/2026-10-10-reputation-technologies-consistency-audit.md: 49
+  docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md: 2
+  ops/artifact-map.md: 202
+  ops/backlog.md: 4
+  research/README.md: 7
+  research/ba-requirements/exp/ba-methodology-unification-557/knowledge-inventory.json: 25
+  research/ba-requirements/normalization/00-introduction.md: 3
+  research/ba-requirements/normalization/20-taxonomy.md: 5
+  research/ba-requirements/normalization/50-open-research.md: 2
+  research/external-knowledge/external-insights/2026-10-30-fns-egrul-cold-search.md: 1
+  research/external-knowledge/external-insights/2026-10-30-gephi-csv-evidence-graph.md: 1
+  research/external-knowledge/external-insights/2026-10-30-personal-data-business-research-boundaries.md: 1
+  research/external-knowledge/external-insights/2026-10-30-w3c-tabular-provenance-keys.md: 1
+  research/external-knowledge/external-sources-registry.md: 42
+  research/hub/exp/analysis-inventory-342/2026-07-02-analysis-artifact-matrix.md: 7
+  research/hub/exp/analysis-inventory-342/analysis-inventory.json: 7
+  research/hub/exp/gra-extraction-cleanup-721/README.md: 1
+  research/hub/exp/gra-extraction-cleanup-721/ci-course-steps.py: 2
+  research/hub/exp/gra-extraction-cleanup-721/ecosystem-snapshot.log: 1
+  research/hub/exp/gra-extraction-cleanup-721/gra-inventory.py: 2
+  research/hub/exp/hub-contradictions-audit-529/artifact-map-coverage.log: 7
+  research/hub/exp/hub-governance-roadmap-715/README.md: 4
+  research/hub/exp/hub-governance-roadmap-715/hub-status-census.log: 1
+  research/hub/exp/reports-inventory-310/2026-07-01-reports-artifact-matrix.md: 1
+  research/hub/exp/reports-inventory-310/reports-inventory.json: 7
+  research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md: 6
+  research/hub/exp/research-analysis-audit-288/artifact-classification.json: 6
+  research/hub/exp/research-methodology-validation-499/research-inventory.json: 6
+  tools/test-frontmatter-validator.sh: 1
+  tools/validate-frontmatter.sh: 1
+  tools/validate-repository-structure.sh: 174
+  total files: 34
+
+Hub files outside the domain with only a bare `reputation-technologies/` mention (tree diagrams, tables; no link):
+  docs/adr/2026-07-adr-007-hub-root-structure.md: 1
+  docs/analysis/2026-08-11-research-methodology-validation.md: 1
+  research/hub/2026-06-25-artifact-inventory-and-classification.md: 1
+  total files: 3
+
+per-unit table:
+  unit | files | class | stale | new_after_snapshot | ci_step | changelog_ref | decision_refs | spoke_floating | disposition
+  2026-06-20-executive-summary.ru-en.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  2026-06-20-founders-vision-and-framework.ru.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  2026-06-20-framework-standard.en.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  2026-06-20-glossary.ru-en.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  2026-06-20-white-paper.en.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  2026-06-29-partner-attraction-strategy.ru.md | 1 | global-candidate | 0 | 0 | - | - | 1 | 0 | OWNER-Q
+  2026-09-24-introductory-course-options-610.md | 1 | decision | 0 | 0 | - | - | 1 | 0 | ARCHIVE
+  2026-09-30-course-sources-and-presentations-650.md | 1 | global-candidate | 0 | 0 | - | - | 1 | 116 | OWNER-Q
+  2026-10-07-day1-lecturer-script-653.md | 1 | superseded | 0 | 0 | - | yes | 1 | 5 | ARCHIVE
+  2026-10-07-day1-presentation-653.md | 1 | superseded | 0 | 0 | - | yes | 0 | 2 | ARCHIVE
+  2026-10-07-day1-rationale-and-method-653.md | 1 | current | 0 | 0 | - | yes | 1 | 0 | TOMBSTONE
+  2026-10-12-rfc-days-1-3-logic.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-10-13-day1-rebuild-task-671.md | 1 | superseded | 0 | 0 | - | yes | 0 | 2 | ARCHIVE
+  2026-10-14-day1-lecturer-gra-research.md | 1 | pii | 0 | 0 | - | yes | 0 | 10 | PII
+  2026-10-14-day1-lecturer-script.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-10-14-day1-presentation-gamma.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-10-15-day1-slide-standard-and-gate-677.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-10-24-handout-materials-master-prompt-registry-days-1-4.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-10-30-day1-osint-pipeline-design.md | 1 | current | 0 | 0 | - | - | 0 | 0 | TOMBSTONE
+  2026-10-30-day2-lecturer-script.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-10-30-day2-presentation-gamma.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-10-30-day2-presentation.md | 1 | superseded | 0 | 0 | - | yes | 0 | 6 | ARCHIVE
+  2026-10-30-day2-rationale-and-method.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-01-course-quotes-days-1-4-alce.md | 1 | current | 0 | 1 | - | yes | 0 | 0 | REIMPORT
+  2026-11-02-day3-lecturer-script.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-02-day3-presentation-gamma.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-02-day3-presentation.md | 1 | superseded | 0 | 0 | - | yes | 0 | 2 | ARCHIVE
+  2026-11-02-day3-rationale-and-method.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-02-day3-slide-standard-and-gate.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-03-day4-ai-interpretation-analysis.md | 1 | decision | 0 | 0 | - | yes | 0 | 0 | ARCHIVE
+  2026-11-03-day4-crisis-mitigation-rfc.md | 1 | decision | 0 | 0 | - | yes | 0 | 0 | ARCHIVE
+  2026-11-03-day4-image-prompts-v5-couturier-constructor.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-03-day4-lecturer-script-v3.md | 1 | superseded | 0 | 0 | - | yes | 0 | 1 | ARCHIVE
+  2026-11-03-day4-lecturer-script-v5.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-03-day4-lecturer-script.md | 1 | superseded | 0 | 0 | - | yes | 0 | 0 | DELETE
+  2026-11-03-day4-presentation-gamma-v2.md | 1 | superseded | 0 | 0 | - | yes | 0 | 0 | DELETE
+  2026-11-03-day4-presentation-gamma-v3.md | 1 | superseded | 0 | 0 | - | yes | 0 | 0 | DELETE
+  2026-11-03-day4-presentation-gamma-v4.md | 1 | superseded | 0 | 0 | - | yes | 0 | 3 | ARCHIVE
+  2026-11-03-day4-presentation-gamma-v5.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  2026-11-03-day4-presentation-gamma.md | 1 | decision | 0 | 0 | - | yes | 0 | 0 | ARCHIVE
+  2026-11-03-day4-rationale-and-method-v2.md | 1 | superseded | 0 | 0 | - | yes | 0 | 0 | DELETE
+  2026-11-03-day4-rationale-and-method.md | 1 | superseded | 0 | 0 | - | yes | 0 | 0 | DELETE
+  2026-11-03-rfc-presentation-update-v5.md | 1 | decision | 0 | 0 | yes | yes | 0 | 7 | ARCHIVE
+  README.md | 1 | index | 0 | 0 | - | - | 2 | 1 | README-TOMBSTONE
+  exp/day1-methodology-659/ | 3 | evidence | 0 | 0 | - | - | 1 | 0 | ARCHIVE
+  exp/day1-osint-709/ | 7 | evidence | 0 | 0 | yes | - | 0 | 5 | ARCHIVE
+  exp/day1-rebuild-675/ | 4 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day1-rebuild-677/ | 4 | evidence | 0 | 0 | yes | yes | 0 | 1 | ARCHIVE
+  exp/day2-gamma-679/ | 4 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day2-rebuild-673/ | 4 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day3-filter-663/ | 3 | evidence | 0 | 0 | - | yes | 0 | 0 | DELETE
+  exp/day3-gamma-681/ | 7 | evidence | 0 | 0 | yes | yes | 0 | 4 | ARCHIVE
+  exp/day3-rationale-683/ | 4 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day4-correction-689/ | 8 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day4-gamma-687/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day4-image-prompts-v5-699/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day4-rationale-685/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day4-v3-691/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day4-v4-693/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/day4-v5-697/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 1 | ARCHIVE
+  exp/gra-research-program-657/ | 2 | evidence | 0 | 0 | - | - | 1 | 0 | ARCHIVE
+  exp/handout-registry-700/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/presentation-ux-665/ | 5 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  exp/quotes-711/ | 13 | provenance | 0 | 13 | yes | yes | 0 | 0 | ARCHIVE
+  exp/rfc-days-logic-667/ | 6 | evidence | 0 | 0 | yes | yes | 0 | 1 | ARCHIVE
+  exp/rfc-v5-695/ | 6 | evidence | 0 | 0 | yes | yes | 0 | 0 | DELETE
+  gra-research-program/00-introduction.md | 1 | current | 0 | 0 | - | yes | 1 | 0 | TOMBSTONE
+  gra-research-program/10-theory.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  gra-research-program/20-taxonomy.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  gra-research-program/30-decision-framework.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  gra-research-program/40-practice-and-cases.md | 1 | current | 0 | 0 | - | yes | 1 | 0 | TOMBSTONE
+  gra-research-program/50-open-research.md | 1 | current | 0 | 0 | - | - | 1 | 0 | TOMBSTONE
+  gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md | 1 | decision | 0 | 0 | - | yes | 0 | 0 | ARCHIVE
+  gra-research-program/presentation-rfc/README.md | 1 | decision | 0 | 0 | - | - | 0 | 0 | ARCHIVE
+  image-technologies/00-introduction.md | 1 | current | 0 | 0 | - | yes | 0 | 0 | TOMBSTONE
+  image-technologies/10-theory.md | 1 | current | 0 | 0 | - | - | 0 | 0 | TOMBSTONE
+  image-technologies/20-taxonomy.md | 1 | current | 0 | 0 | - | - | 0 | 0 | TOMBSTONE
+  image-technologies/30-decision-framework.md | 1 | current | 0 | 0 | - | - | 0 | 0 | TOMBSTONE
+  image-technologies/40-practice-and-cases.md | 1 | current | 0 | 0 | - | - | 0 | 0 | TOMBSTONE
+  image-technologies/50-open-research.md | 1 | current | 0 | 0 | - | - | 0 | 0 | TOMBSTONE
