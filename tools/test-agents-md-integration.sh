@@ -190,6 +190,11 @@ if [[ -d "$ROOT_DIR/ops" ]]; then
     ':(exclude)docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md' \
     ':(exclude)docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md' \
     ':(exclude)research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.log' \
+    ':(exclude)docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md' \
+    ':(exclude)docs/analysis/2026-11-04-gra-extraction-completeness-check.md' \
+    ':(exclude)docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md' \
+    ':(exclude)research/hub/exp/gra-extraction-cleanup-721/README.md' \
+    ':(exclude)research/hub/exp/gra-extraction-cleanup-721/permalink-probe.log' \
     >"$TMP_DIR/stale-pr-ops.log"; then
     fail "active tracked files still contain stale pr-ops/ references"
   fi

@@ -1,0 +1,22 @@
+course steps: 19; files replaced by spoke copies: 34
+step | hub | spoke | last line on spoke
+Check presentation UX coverage and preservation | ok | ok | 
+Check Days 1-3 logic RFC contract | ok | FAIL | FAIL: self-test: mutation not rejected: appeal moved
+Check Day 2 against RFC v0.3 | ok | FAIL | FAIL: 2026-10-30-day2-lecturer-script.md: links are not full URLs: ['rationale-and-method.md', 'presentation.md', '../course-logic.md#день-2-собираю-проверяем-о
+Check Day 1 against RFC v0.3 | ok | FAIL | FAIL: 2026-10-07-day1-rationale-and-method-653.md: section «Изменения версии 0.4 (issue #675)» missing
+Check Day 1 deck, lecturer script and gate of #677 | ok | FAIL | FAIL: 2026-10-15-day1-slide-standard-and-gate-677.md: required phrase missing: «check-day1-677.py --self-test»
+Check Day 2 Gamma deck and lecturer script of #679 | ok | FAIL | FAIL: 2026-10-30-day2-presentation-gamma.md: slide 27 footer has no full URL or does not end with «· (Telegram) @gulienko @qwen-3.7plus @claudeopus-5.5 · Москва
+Check Day 3 Gamma deck, lecturer script and gate of #681 | ok | FAIL | FAIL: 2026-11-02-day3-slide-standard-and-gate.md: section «## 8. Как запустить проверку» missing
+Check Day 4 rationale and method slide structure and gate of #685 | ok | ok | 
+Check Day 4 Gamma deck and lecturer script of #687 | ok | ok | 
+Check Day 4 correction files and unchanged Variant 1 of #689 | ok | ok | 
+Check Day 4 Variant 3 deck and lecturer script of #691 | ok | ok | 
+Check Day 4 Variant 4 hypothesis-map deck and image-technologies module  | ok | FAIL | FAIL: deck: deviation differs from the module: «Я предлагаю скорректировать [правило #691 о чередовании тем »
+Check Day 4 Variant 5 point-diff RFC against the unchanged v4 deck of #6 | ok | FAIL | FAIL: RFC: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/image-technologies/50-open-research.md#2-отклонения-от
+Check Day 4 Variant 5 deck and lecturer script of #697 | ok | FAIL | FAIL: script: timing table rows are [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27], expected [1, 2, 3, 4, 5, 6, 7, 
+Check Day 4 image prompts v5 couturier constructor of #699 | ok | FAIL | FAIL: gate checklist of §7 is not ticked: six items with `- [x]` expected
+Check handout materials master prompt registry of #700 | ok | FAIL | FAIL: section «## Gaps» with the unavailable 2.txt missing
+Check cold-start OSINT pipeline of #709 | ok | ok | 
+Check course quote list (ALCE) of #711 | ok | FAIL | FAIL: 4.70 (E-leder): slide 24 epigraph does not match the deck line
+Check Day 3 rationale v0.3 of #683 | ok | FAIL | AssertionError: ['missing: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/683']
+summary: both-pass 6, spoke-fails 13, hub-fails 0

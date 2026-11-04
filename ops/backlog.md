@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.75
+version: 1.76
 updated: 2026-11-04
 temperature: 0.1
 type: backlog
@@ -34,6 +34,7 @@ related_artifacts:
   - "docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md"
   - "ops/hub-project-extraction-contract.md"
   - "docs/ecosystem-map.md"
+  - "docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/396"
@@ -71,6 +72,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/715"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/723"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/721"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -107,7 +109,12 @@ related_issues:
 - `mango-ba-ai-runtime` — `exempt-runtime`, единственная среда исполнения MVP;
   задачи Спринта 19 выполняются только в нём;
 - для `dormant` (`open-ai.ru`) и `stopped` (`clarify-engine-ai`) задачи не
-  планируются.
+  планируются;
+- `aether-orbis-gra` — `governed`, спица направления «Репутационные
+  технологии (GRA)», вынесенного из `research/reputation-technologies/`
+  2026-11-01. Задачи курса ставятся в спицу после ответа владельца на Q-1
+  [RFC #721](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md);
+  в Хабе остаются только шаги выноса (Спринт 31).
 
 **Правило компиляции (`EP-C1` в редакции issue #583).** Исполняемые файлы
 `mango-ba-ai-runtime` не содержат ссылок на исследовательские документы Хаба,
@@ -872,6 +879,46 @@ Release через `G-mach` и `G-human`; блокирующую защиту д
 | **B-266** | Общий фреймворк оценки (eval) метамодели | null | B-264 | deferred (triggered) | - (deferred) | [Анализ шага 1, «Состав как база масштабирования»](../docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md) | Триггер — второй проект-потребитель метамодели. Сейчас есть оценка одного MVP-среза (Golden Set, `G-mach`, `M-1`…`M-5`); обобщение с одного потребителя закрепит его частности. | null |
 | **B-267** | Уточнить ADR-014 после решения Q-3 | null | B-234 | TODO | - (planned) | [ADR-014](../docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md); [RFC #715, Q-3](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | `mango_ba_prompts` больше не `legacy/archived`: отделить его исторические прогоны и промпты (свидетельство по `LG-1`…`LG-6`) от действующей референсной реализации (39 классов) и снять формулировки, которые объявляют весь репозиторий наследием. | Hybrid |
 
+## Спринт 31: Завершение выноса GRA и очистка домена из Хаба
+
+**Story.** Issue #721 требует довести вынос направления «Репутационные
+технологии» в [`aether-orbis-gra`](https://github.com/G-Ivan-A/aether-orbis-gra)
+до конца и очистить Хаб. [Сверка полноты выноса](../docs/analysis/2026-11-04-gra-extraction-completeness-check.md)
+показала: текущие документы перенесены без расхождений, но 167 ссылок спицы
+плавают на `blob/main` Хаба, все единицы, предложенные к удалению, упомянуты в
+CHANGELOG, а каталог-архив не сохраняет адресов. Поэтому порядок жёсткий:
+решение, предусловия в спице, перенос задач, норма и валидатор, вынос из
+дерева, реестры. Номер 30 и B-234…B-267 заняты Спринтом 30 (PR #718).
+
+**Цель.** В дереве Хаба от домена остаётся только надгробие с манифестом,
+записи решений доступны на защищённом теге, задачи курса живут в бэклоге спицы,
+19 шагов CI курса удалены.
+
+**Критерий закрытия.** RFC #721 и ADR-022 приняты; задачи B-268…B-286 закрыты
+или приняты решением человека; критерии Ш6.2 RFC выполнены.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-268** | Решить вопросы Q-1…Q-6 и IPA-1…IPA-5 и принять RFC #721 и ADR-022 | P1 | - | TODO | [#721](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/721) / [PR #722](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/722) | [RFC #721, Ш1.1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Удаление и перезапись человеческой работы требуют мандата (ADR-010, Принцип 2, п. 4), поэтому шаги 2–6 не начинаются до ответа владельца. Нужен ответ по каждому вопросу и каждому предупреждению и перевод RFC и ADR-022 в `accepted`. | null |
+| **B-269** | Снять исключение A-4 RFC #715 для домена GRA | P1 | B-268 | TODO | - (planned) | [RFC #721, Ш1.2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | A-4 запрещает задачи на перенос и заморозку `research/reputation-technologies/`, а #721 требует завершить вынос. PR #718 слит 2026-11-04, A-4 в RFC #715 не изменился; правка — после ответа владельца на Q-1. | Structured |
+| **B-270** | Выставить issue S-1 в `aether-orbis-gra` по постановке из RFC #721 и суб-issue S-4 в Хабе | P2 | B-268 | TODO | - (planned) | [RFC #721, Ш1.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Задача на копирование ставится в спице, но ссылается на постановку в Хабе: текст — в разделе «Постановка S-1 для `aether-orbis-gra`» RFC. S-4 не касается домена и выставляется сразу. S-2 и S-3 здесь не создаются (B-286). | Structured |
+| **B-271** | Закрепить ссылки спицы на домен Хаба на один SHA | P1 | B-270 | TODO | - (planned) | [RFC #721, Ш2.1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | В `aether-orbis-gra` 167 ссылок `blob/main` на домен; после удаления путей GitHub отдаёт 404. Закрепление на один `PIN_SHA` начинает заморозку домена. | Structured |
+| **B-272** | Доимпортировать документ цитат курса в спицу с пересчётом якорей | P2 | B-270 | TODO | - (planned) | [RFC #721, Ш2.2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | `2026-11-01-course-quotes-days-1-4-alce.md` создан после снимка `32b5fa5`, а его якоря `#Lnnn` не совпадают с копиями колод спицы. При ответе Q-3 «перенести» то же делается для источников #650. | Hybrid |
+| **B-273** | Создать бэклог спицы `aether-orbis-gra` | P2 | B-270 | TODO | - (planned) | [RFC #721, Ш2.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | `AGENTS.md` спицы требует сверяться с бэклогом проекта, а бэклога нет (анализ #713, A-1). Без него задачам Спринта 29 некуда переехать. | Structured |
+| **B-274** | Перенести B-230, B-231, B-233 в бэклог спицы | P2 | B-273 | TODO | - (planned) | [RFC #721, Ш3.1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Это открытые задачи курса. В Хабе строки отмечаются «перенесено» со ссылкой на строку спицы. | Structured |
+| **B-275** | Закрыть B-228, B-229, B-232 и Спринт 29 | P2 | B-274 | TODO | - (planned) | [RFC #721, Ш3.2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | PR #661 принят, материалы Дня 2 есть в спице, каталога `gra-research-program/` в спице нет. Статусы устарели, закрытие сопровождается ссылками. | Structured |
+| **B-276** | Принять внешний `to` и манифест в `path_migrations` валидаторами | P1 | B-286 | TODO | - (planned) | [RFC #721, Ш4.1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Сейчас правило принимает битую ссылку, только если `to + suffix` есть локально; для выноса в другой репозиторий это всегда ложь. Нужна та же семантика в `validate-repository-structure.sh` и `validate-historical-immutable.sh`. | Structured |
+| **B-277** | Проверка манифеста надгробия и регрессионный тест | P1 | B-276 | TODO | - (planned) | [RFC #721, Ш4.2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Манифест заменяет redirect для 173 путей. Проверка падает, если удалённый путь не перечислен или не имеет адреса. | Structured |
+| **B-278** | Сигнал выбытия и заморозка домена GRA | P1 | B-271, B-277 | TODO | - (planned) | [RFC #721, Ш5.1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Блок перехода и манифест по 80 единицам в `research/reputation-technologies/README.md`. Прямой переход `active → deleted` запрещён стандартом выбытия. | Structured |
+| **B-279** | Переписать 11 живых файлов Хаба со ссылками на домен | P2 | B-278 | TODO | - (planned) | [RFC #721, Ш5.2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Обслуживаемые указатели (`research/README.md`, нормализация БА, реестр внешних источников, external-insights, реестры `ops/`) переводятся на спицу или манифест. Исторические записи не меняются. | Structured |
+| **B-280** | Удалить по мандату единицы R9 и файл с персональными данными (PR-α) | P1 | B-279 | TODO | - (planned) | [RFC #721, Ш5.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | 73 файла рабочих версий и одноразовых самопроверок и 1 файл PII удаляются до тега, чтобы не попасть в архив. Без мандата Q-2 единицы R9 уходят в тег. | Structured |
+| **B-281** | Аннотированный тег `archive/reputation-technologies-2026-11` и ruleset `archive/*` | P1 | B-280 | TODO | - (planned) | [RFC #721, Ш5.4](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Тег ставится на merge-коммит PR-α и сохраняет записи решений с работающими относительными ссылками. Ruleset включает администратор репозитория (Q-6). | Structured |
+| **B-282** | Вынести домен из дерева вместе с самопроверками и упоминаниями в валидаторах (PR-β) | P1 | B-281 | TODO | - (planned) | [RFC #721, Ш5.5](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Остаются только надгробие и запись `path_migrations`; 19 шагов CI курса и 174 упоминания домена в валидаторе удаляются в том же PR. Проверки без файлов падают, файлы без проверок дрейфуют. | Structured |
+| **B-283** | Записать выбытие в CHANGELOG и реестры | P2 | B-282 | TODO | - (planned) | [RFC #721, Ш6.1](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Раздел `Removed` со ссылкой на тег и манифест, `ops/artifact-map.md`, указатель на спицу в `research/README.md`. Прежние записи CHANGELOG не переписываются. | Structured |
+| **B-284** | Проверить приёмку выноса тем же инструментом, что измерял вход | P2 | B-283 | TODO | - (planned) | [RFC #721, Ш6.2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | `gra-inventory.py` показывает 0 единиц в дереве, кроме надгробия; `git grep` находит только надгробие, `path_migrations` и историю; CI зелёный; ссылки спицы на `PIN_SHA` отвечают 200. | Structured |
+| **B-285** | Закрепить форму Industry Practice Alert в правилах сотрудничества | P3 | B-268 | TODO | - (planned) | [RFC #721, Ш6.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | По умолчанию предлагается вариант практики, ответ адресуется по номеру IPA, необратимое действие ждёт ответа (R-5 анализа протокола #721). Без нормы предупреждения оформляются по-разному, и ответы нельзя сопоставить. | Hybrid |
+| **B-286** | Выставить отдельную постановку очистки Хаба: суб-issue S-2 и S-3 | P1 | B-271, B-272, B-273, B-274 | TODO | - (planned) | [RFC #721, Ш1.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Владелец требует порядка: сначала копирование в спицу, потом отдельная постановка очистки Хаба ([экспертиза диалога](../docs/analysis/2026-11-04-issue-721-dialog-expert-review.md), O-6). Сигнал — комментарий в #721 со ссылкой на принятый PR спицы по S-1. Черновики S-2 и S-3 — в разделе «Черновики суб-issue» RFC. | Structured |
+
 ---
 
 ## Источники активного порядка
@@ -898,4 +945,5 @@ Release через `G-mach` и `G-human`; блокирующую защиту д
 | Issue [#580](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/580) и [пакет исполнения](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/README.md) | Источник задач B-179..B-188 (Спринт 20): компиляция вертикального среза `A-IN → A-CORE → A-BCREQ` в развёртываемый пакет и бэклог его масштабирования. Состав скопированного, преобразованного и отброшенного объявлен в [манифесте компиляции](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/package-manifest.yaml); обязательство независимости прогона от Хаба — в [`AGENTS.md` спутника](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/dist/execution-package-gigacode-cli/AGENTS.md). |
 | Issue [#583](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/583) (решение владельца) | Источник актуализации бэклога: архивация Спринтов 3, 6, 7 и 8, перевод `mango_ba_prompts` в `legacy/archived`, переопределение цели Спринта 13, перевод Спринта 14 в `Icebox` и формирование Спринта 19 (B-069..B-174) — задач, необходимых только для первого прогона BCREQ в `mango-ba-ai-runtime`. Там же зафиксировано правило компиляции `EP-C1`. |
 | [RFC #715](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md), принят в issue [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) | Источник Спринта 30 (B-234…B-267): шаги 1–7 дорожной карты, решения владельца Q-1…Q-5 и замена таблицы статусов репозиториев ссылкой на единый реестр. |
+| Issue [#721](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/721) и [RFC завершения выноса GRA](../docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md) | Источник задач B-268…B-286 (Спринт 31): решение владельца, предусловия в спице, перенос задач Спринта 29, manifest redirect в валидаторах, вынос домена из дерева с архивом тегом ([ADR-022](../docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md)) и реестры. Фактическая база — [evidence-контейнер](../research/hub/exp/gra-extraction-cleanup-721/README.md). |
 | GitHub Issues/PR | История выполненных задач, review discussion and implementation evidence. |

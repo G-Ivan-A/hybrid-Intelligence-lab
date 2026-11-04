@@ -148,6 +148,7 @@ is_active_file() {
     docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
     docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
     docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
+    docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md | \
     projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
     projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
@@ -346,6 +347,20 @@ is_active_file() {
     research/hub/exp/hub-governance-roadmap-715/hub-status-census.log | \
     research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.py | \
     research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.log | \
+    research/hub/exp/gra-extraction-cleanup-721/README.md | \
+    research/hub/exp/gra-extraction-cleanup-721/gra-inventory.py | \
+    research/hub/exp/gra-extraction-cleanup-721/gra-inventory.log | \
+    research/hub/exp/gra-extraction-cleanup-721/gra-inventory.tsv | \
+    research/hub/exp/gra-extraction-cleanup-721/ci-course-steps.py | \
+    research/hub/exp/gra-extraction-cleanup-721/ci-course-steps.log | \
+    research/hub/exp/gra-extraction-cleanup-721/ci-run-41427101826-jobs.jsonl | \
+    research/hub/exp/gra-extraction-cleanup-721/spoke-guard-replay.py | \
+    research/hub/exp/gra-extraction-cleanup-721/spoke-guard-replay.log | \
+    research/hub/exp/gra-extraction-cleanup-721/permalink-probe.log | \
+    research/hub/exp/gra-extraction-cleanup-721/domain-footprint.log | \
+    research/hub/exp/gra-extraction-cleanup-721/ecosystem-snapshot.log | \
+    research/hub/exp/gra-extraction-cleanup-721/dialog-review-checks.sh | \
+    research/hub/exp/gra-extraction-cleanup-721/dialog-review-checks.log | \
     research/hub/exp/ai-execution-statistics-543/README.md | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \
@@ -780,6 +795,7 @@ is_active_file() {
     docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md | \
     docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md | \
     docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md | \
+    docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -844,6 +860,9 @@ is_active_file() {
     docs/analysis/2026-09-28-backlog-closure-evidence-634.md | \
     docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md | \
     docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md | \
+    docs/analysis/2026-11-04-gra-extraction-completeness-check.md | \
+    docs/analysis/2026-11-04-issue-721-execution-protocol-analysis.md | \
+    docs/analysis/2026-11-04-issue-721-dialog-expert-review.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
@@ -1597,8 +1616,8 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.13"
-require_text "standards/README.md" "updated: 2026-08-11"
+require_text "standards/README.md" "version: 1.14"
+require_text "standards/README.md" "updated: 2026-11-04"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -2228,7 +2247,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.53"
+require_text "ops/artifact-map.md" "version: 2.54"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2322,7 +2341,7 @@ require_text "ops/artifact-map.md" "research/external-knowledge/external-insight
 require_text "ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.31"
+require_text "docs/rfc/README.md" "version: 1.32"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
 require_text "docs/rfc/README.md" "updated: 2026-11-04"
@@ -2641,7 +2660,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.75"
+require_text "ops/backlog.md" "version: 1.76"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
