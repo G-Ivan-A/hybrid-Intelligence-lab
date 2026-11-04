@@ -112,7 +112,7 @@ Issue требует, чтобы исполнитель сам дописал п
 | W-8d | B-116 (а, б): запреты генома на любой глубине | `templates/htom/tools/validate-repository-structure.sh` 1.2.0, раздел 9 `test-smart-sync.sh` | выполнено |
 | W-8e | B-116 (в): тонкий указатель вместо копии правил | `validate-agents-bootstrap.sh` Хаба и генома, негативные сценарии `test-agents-md-integration.sh` и `test-smart-sync.sh` | выполнено |
 | W-8f | B-116 (г): гейт постановки Г-1 (Q-4) | [`tools/validate-issue-statement.sh`](../../tools/validate-issue-statement.sh), `tools/test-issue-statement-gate.sh`, workflow `issue-statement-gate`, [ретро-прогон](../../research/hub/exp/independent-tech-debt-727/README.md) по 150 issue | выполнено |
-| W-9 | B-154: ADR, стандарты, валидатор (Q-5, вариант C) | [ADR-023](../adr/2026-11-adr-023-ai-participation-frontmatter-fields.md) `accepted`; [`frontmatter-standard`](../../standards/frontmatter-standard.md) 1.2, 9 стандартов, `CONTRIBUTING.md`, три `AGENTS.md`; `validate-frontmatter.sh`, 8 случаев `test-frontmatter-validator.sh` | выполнено |
+| W-9 | B-154: ADR, стандарты, валидатор (Q-5, вариант C) | [ADR-023](../adr/2026-11-adr-023-ai-participation-frontmatter-fields.md) `accepted`; [`frontmatter-standard`](../../standards/frontmatter-standard.md) 1.2, 9 стандартов, `CONTRIBUTING.md`, три `AGENTS.md`; `validate-frontmatter.sh`, 9 случаев `test-frontmatter-validator.sh` | выполнено |
 | W-10 | Закрытие: бэклог, CHANGELOG, карта артефактов | Строки Спринта 13 в [бэклоге](../../ops/backlog.md) → `review` и `CANCELLED`, критерий закрытия пересмотрен (Q-3); `CHANGELOG.md`; `ops/artifact-map.md` | выполнено |
 
 **Граничные случаи.**
