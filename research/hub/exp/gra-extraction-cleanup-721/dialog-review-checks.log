@@ -1,5 +1,5 @@
 == C-1. Файлы PR против базы (origin/main...HEAD): сколько всего и сколько в домене курса
-files_total=25 files_in_research/reputation-technologies=0
+files_total=28 files_in_research/reputation-technologies=0
 == C-2. Есть ли файлы day1-framer / day2-scout в Хабе (рабочее дерево и вся история)
 tree: 0
 history: 0
@@ -25,4 +25,4 @@ after c06075d: 0
 after 32b5fa5: 5
 == C-8. Повтор инвентаря: отличаются ли диспозиции от gra-inventory.tsv
 dispositions: identical (81 rows)
-rows with changed reference counts only: 2
+rows with changed reference counts only: 3
