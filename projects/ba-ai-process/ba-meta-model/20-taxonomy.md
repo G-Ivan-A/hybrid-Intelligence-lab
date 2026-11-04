@@ -1,10 +1,10 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-09-15
+version: 0.5
+updated: 2026-11-04
 temperature: 0.3
 type: research
-context: [ba, meta-model, taxonomy, artifacts, operations, processes, products, gates, deprecation, issue-563, issue-571, issue-587]
+context: [ba, meta-model, taxonomy, artifacts, operations, processes, products, gates, deprecation, issue-563, issue-571, issue-587, issue-719]
 method: synthesis + inheritance-mapping + corpus-measurement
 scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
@@ -20,6 +20,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/577"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/587"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/719"
 ---
 
 # Таксономии: четыре канонические и две служебные
@@ -130,6 +131,13 @@ related_issues:
 Два процесса объявлены новыми и обоснованы отдельно: `P-02` управление
 уточнением и `P-10` ведение жизненного цикла требований.
 
+**Исполнение `PT-5`.** Машинный гейт `G-mach` проверяет форму каталога
+(уникальность `id`, родитель ровно на уровень выше, явный пустой список классов)
+и Golden Set каждого продуктового класса: у каждого случая объявлены класс и
+функция каталога этого класса. Каталог в исполнении остаётся копией
+продуктового источника с provenance (`PT-2`, `T-5`): привязка `PT-5` не делает
+Source владельцем значений и не заменяет снимок, указанный выше.
+
 **Факт, определяющий приоритет.** В поле `process:` метаданных 67 прогонов
 встретился **один** процесс из девяти; остальные 66 значений лежат вне словаря
 (`D7`). Словарь существовал, но не использовался для идентификации работы,
@@ -164,6 +172,7 @@ provenance, а не новым владельцем продуктовых зн�
 | `PT-2` | Source владеет формой уровней; продуктовый источник владеет значениями, а Source хранит их версионированный снимок для воспроизводимой компиляции (`T-5`). |
 | `PT-3` | Требование связывается с уровнем `Feature` или `Atomic Function`; связь только с `Domain` считается неполной разметкой. |
 | `PT-4` | Продуктовый класс определяет **профиль заполнения** слотов документа, но не состав скелета (правило `R-3` [микро-модуля](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/20-taxonomy.md)). |
+| `PT-5` | **Функция продукта на входе — закрытое значение.** `atomic_function` входа — `id` узла уровня `Atomic Function` закрытого каталога значений, а объявленный продуктовый класс входит в классы этого узла. Функция вне каталога, узел другого уровня или функция чужого класса — отказ до первого шага (`T-1`), а не подбор похожего значения. Функция домена, для которого не объявлен продуктовый класс исполнения, явно несёт пустой список классов и на входе не объявляется. |
 
 **Факт, определяющий приоритет.** Домен продукта объявлен в метаданных 5
 прогонов из 67, а лексические маркеры дают более одного домена у 66 прогонов.
