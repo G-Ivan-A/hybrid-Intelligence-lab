@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.1
-updated: 2026-07-17
+version: 1.2
+updated: 2026-11-04
 temperature: 0.1
 ---
 
@@ -35,6 +35,7 @@ introductions, общие курсы и материалы, не привяза�
 | Документ | Назначение |
 | --- | --- |
 | [2026-07-16-retrieval-strategies-survey.md](2026-07-16-retrieval-strategies-survey.md) | Исходный монолит исследования retrieval-стратегий для AI-агентов (issue #418), реорганизованный в Reference Research Pattern. |
+| [2026-06-29-partner-attraction-strategy.ru.md](2026-06-29-partner-attraction-strategy.ru.md) | Стратегия привлечения партнёров к корпоративному курсу (issue #292): сегменты партнёров, модель скоринга, каналы. Глобальное исследование: оставлено в Хабе при выносе домена GRA в спицу [`aether-orbis-gra`](https://github.com/G-Ivan-A/aether-orbis-gra) (решение Q-3 issue [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725)). |
 
 ## Политики направления
 

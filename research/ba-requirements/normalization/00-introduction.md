@@ -79,7 +79,7 @@ related_issues:
    вынесена в
    [§4 файла 20-taxonomy.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/normalization/20-taxonomy.md#4-гипотеза-h6--репутационный-слой-поверх-таксономии-стейкхолдеров)
    с абсолютной ссылкой на
-   [`research/reputation-technologies`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/reputation-technologies).
+   [`research/reputation-technologies`](https://github.com/G-Ivan-A/aether-orbis-gra).
 8. **Атомарные операции на этой итерации не меняются.** Переписыванию подлежат
    процессы, которые эти операции компонуют: маршрут входа, гейты, критерии
    перехода состояний, реестр. Обоснование —

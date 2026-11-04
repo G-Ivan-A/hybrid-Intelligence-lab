@@ -211,6 +211,7 @@ is_active_file() {
     research/education/README.md | \
     research/ai-education/README.md | \
     research/education/2026-07-16-retrieval-strategies-survey.md | \
+    research/education/2026-06-29-partner-attraction-strategy.ru.md | \
     research/ba-requirements/README.md | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
@@ -538,7 +539,6 @@ is_active_file() {
     research/reputation-technologies/2026-06-20-white-paper.en.md | \
     research/reputation-technologies/2026-06-20-executive-summary.ru-en.md | \
     research/reputation-technologies/2026-06-20-glossary.ru-en.md | \
-    research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md | \
     research/reputation-technologies/2026-09-24-introductory-course-options-610.md | \
     research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md | \
     research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md | \
@@ -1325,7 +1325,7 @@ required_files=(
   "research/mango/2026-05-22-classification-tz.md"
   "research/mango/2026-05-22-requirements-flow.md"
   "research/mango/2026-05-26-rag-mapping-roadmap.md"
-  "research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md"
+  "research/education/2026-06-29-partner-attraction-strategy.ru.md"
   "research/external-knowledge/README.md"
   "research/external-knowledge/external-sources-registry.md"
   "research/external-knowledge/external-insights/README.md"
@@ -2242,7 +2242,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.54"
+require_text "ops/artifact-map.md" "version: 2.55"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"

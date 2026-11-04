@@ -39,7 +39,7 @@ source: research/README-old.md
 | [governance/](governance/) | Исследования governance-форматов Хаба: формат research-документации, исполнимых контрактов, contract documentation и решений по структуре каталогов (`scope: repo-wide`). |
 | [external-knowledge/](external-knowledge/) | Интеграция внешних знаний: Base Registry внешних источников, механизм инсайтов и привязка к knowledge lifecycle (`scope: repo-wide`). |
 | [cicd/](cicd/) | Исследования практик и стандартов CI/CD для AI-native проектов: анализ шаблонов, паттернов автоматизации и применимости к нашим репозиториям (`scope: repo-wide`). |
-| [reputation-technologies/](reputation-technologies/) | Фреймворк репутационных технологий **GRA**: видение фаундера, концептуальная модель, международный стандарт, словарь, white paper, архитектура отдельного репозитория в экосистеме (`scope: repo-wide`). |
+| [reputation-technologies/](https://github.com/G-Ivan-A/aether-orbis-gra) | Фреймворк репутационных технологий **GRA**: видение фаундера, концептуальная модель, международный стандарт, словарь, white paper, архитектура отдельного репозитория в экосистеме (`scope: repo-wide`). |
 | [ba-requirements/](ba-requirements/) | Нормализация входа BA-процессов: универсальная таксономия инициирующих артефактов и стейкхолдеров, цикл нормализации с гейтами, процесс статистики требований и Mango-специализированный срез на корпусе `runs/` (`scope: universal + mango`). |
 | [education/](education/) | Теоретическая основа для образовательных модулей Хаба: source-backed survey предметных областей, таксономии и матрицы принятия решений (`scope: repo-wide`). Учебный продукт на их основе живёт в [education/](../education/). |
 
@@ -75,12 +75,12 @@ source: research/README-old.md
 
 | Файл | Назначение |
 | --- | --- |
-| [2026-06-20-founders-vision-and-framework.ru.md](reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md) | Основной отчёт (RU): видение фаундера, эволюция, репутация как система, роль ИИ, 15 международных проектов, фреймворк GRA, стандарт, отдельный репозиторий, roadmaps, trade-offs. |
-| [2026-06-20-framework-standard.en.md](reputation-technologies/2026-06-20-framework-standard.en.md) | Проект стандарта (EN) в формате ISO/IEC/IEEE 42010:2022 + ISO/IEC 42001:2023. |
-| [2026-06-20-white-paper.en.md](reputation-technologies/2026-06-20-white-paper.en.md) | White paper (EN, 10–15 c.) для международной аудитории. |
-| [2026-06-20-executive-summary.ru-en.md](reputation-technologies/2026-06-20-executive-summary.ru-en.md) | Executive summary (RU + EN, 2–3 c.). |
-| [2026-06-20-glossary.ru-en.md](reputation-technologies/2026-06-20-glossary.ru-en.md) | Терминологический словарь (RU↔EN) с международными аналогами. |
-| [gra-research-program/](reputation-technologies/gra-research-program/00-introduction.md) | Модуль RRP (issue #657): исследовательская модель GRA (термин уточнён в issue #659) — структурное соответствие вместо переноса физики, многомерные дистанция и масса, направленность потоков, конкурирующие модели связи H0–H6, граница домена, роль ИИ-агентов, открытые вопросы. |
+| [2026-06-20-founders-vision-and-framework.ru.md](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-founders-vision-and-framework.ru.md) | Основной отчёт (RU): видение фаундера, эволюция, репутация как система, роль ИИ, 15 международных проектов, фреймворк GRA, стандарт, отдельный репозиторий, roadmaps, trade-offs. |
+| [2026-06-20-framework-standard.en.md](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-framework-standard.en.md) | Проект стандарта (EN) в формате ISO/IEC/IEEE 42010:2022 + ISO/IEC 42001:2023. |
+| [2026-06-20-white-paper.en.md](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-white-paper.en.md) | White paper (EN, 10–15 c.) для международной аудитории. |
+| [2026-06-20-executive-summary.ru-en.md](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-executive-summary.ru-en.md) | Executive summary (RU + EN, 2–3 c.). |
+| [2026-06-20-glossary.ru-en.md](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-glossary.ru-en.md) | Терминологический словарь (RU↔EN) с международными аналогами. |
+| [gra-research-program/](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/methodology/research-program/00-introduction.md) | Модуль RRP (issue #657): исследовательская модель GRA (термин уточнён в issue #659) — структурное соответствие вместо переноса физики, многомерные дистанция и масса, направленность потоков, конкурирующие модели связи H0–H6, граница домена, роль ИИ-агентов, открытые вопросы. |
 
 ### Подкаталог `education/`
 
