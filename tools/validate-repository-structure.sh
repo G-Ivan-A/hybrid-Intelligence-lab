@@ -663,6 +663,8 @@ is_active_file() {
     guides/glossary.md | \
     .github/pull_request_template.md | \
     .github/workflows/update-manifest.yml | \
+    .github/workflows/archive-tag.yml | \
+    .github/rulesets/archive-tags.json | \
     .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
     .github/ISSUE_TEMPLATE/task.md | \
@@ -726,6 +728,8 @@ is_active_file() {
     tools/test-spoke-extraction.sh | \
     tools/path-migration-manifest.py | \
     tools/test-path-migration-manifest.sh | \
+    tools/archive-tags.py | \
+    tools/test-archive-tags.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-agents-md-integration.sh | \
     tools/test-evidence-structure-validator.sh | \
@@ -1254,12 +1258,16 @@ required_files=(
   "templates/sync-metadata.json"
   ".github/workflows/validate.yml"
   ".github/workflows/update-manifest.yml"
+  ".github/workflows/archive-tag.yml"
+  ".github/rulesets/archive-tags.json"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
   "tools/spoke-extraction.py"
   "tools/test-spoke-extraction.sh"
   "tools/path-migration-manifest.py"
   "tools/test-path-migration-manifest.sh"
+  "tools/archive-tags.py"
+  "tools/test-archive-tags.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
   "tools/test-reference-research-terminology.sh"
@@ -2073,7 +2081,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.55"
+require_text "ops/artifact-map.md" "version: 2.56"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -3235,6 +3243,11 @@ require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-si
 require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-path-migration-manifest.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-archive-tags.sh"
+require_text ".github/workflows/archive-tag.yml" "python3 -I tools/archive-tags.py plan"
+require_text ".github/workflows/archive-tag.yml" "python3 -I tools/path-migration-manifest.py check"
+require_text ".github/workflows/archive-tag.yml" ".github/rulesets/archive-tags.json"
+require_text ".github/rulesets/archive-tags.json" "refs/tags/archive/*"
 require_text "tools/validate-repository-structure.sh" "tools/path-migration-manifest.py resolve"
 require_text "tools/spoke-extraction.py" "ops/hub-project-extraction-contract.md"
 require_text "ops/hub-project-extraction-contract.md" "executable: true"

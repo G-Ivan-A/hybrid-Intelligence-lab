@@ -1,0 +1,104 @@
+name: archive-tag
+
+# Аннотированные теги архива archive/* (RFC #721 Ш4.3, ADR-022, issue #725).
+# Запись path_migrations с полями archive и archive_commit объявляет тег архива
+# выведенного домена (решение Q-5: аннотированный тег). На push в main workflow
+# ставит тег на archive_commit, если его ещё нет, и никогда не переписывает
+# существующий. На pull_request — пробный прогон без push.
+# Затем проверяет ruleset (решение Q-6): теги archive/* нельзя обновить или
+# удалить. Ruleset включает администратор репозитория: на PR его отсутствие —
+# предупреждение, на main — падение с инструкцией.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-tag-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  archive-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Полная история и теги: archive_commit должен быть предком HEAD.
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Check manifest redirect
+        run: python3 -I tools/path-migration-manifest.py check
+
+      - name: Plan archive tags
+        run: |
+          set -euo pipefail
+          python3 -I tools/archive-tags.py plan | tee "$RUNNER_TEMP/archive-tags.tsv"
+
+      - name: Create archive tags
+        env:
+          DRY_RUN: ${{ github.event_name == 'pull_request' }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          while IFS=$'\t' read -r action tag commit; do
+            [[ "$action" == "create" ]] || { echo "$tag уже на $commit"; continue; }
+            if [[ "$DRY_RUN" == "true" ]]; then
+              echo "Пробный прогон: после merge будет создан тег $tag на $commit"
+              continue
+            fi
+            python3 -I tools/archive-tags.py message "$tag" "$commit" > "$RUNNER_TEMP/tag-message.txt"
+            git tag -a "$tag" -F "$RUNNER_TEMP/tag-message.txt" "$commit"
+            git push origin "refs/tags/$tag"
+            echo "Создан тег $tag на $commit"
+          done < "$RUNNER_TEMP/archive-tags.tsv"
+
+      - name: Check archive tag ruleset (Q-6)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ON_MAIN: ${{ github.event_name != 'pull_request' }}
+        run: |
+          set -uo pipefail
+          tags=$(cut -f2 "$RUNNER_TEMP/archive-tags.tsv")
+          [[ -n "$tags" ]] || { echo "Тегов архива нет."; exit 0; }
+          explain() {
+            cat <<EOF
+          Теги archive/* не защищены ruleset (решение Q-6 issue #725).
+          Нужно действие администратора репозитория: импортировать
+          .github/rulesets/archive-tags.json (Settings → Rules → Rulesets →
+          New ruleset → Import a ruleset) или выполнить
+            gh api -X POST repos/${GITHUB_REPOSITORY}/rulesets --input .github/rulesets/archive-tags.json
+          и перезапустить этот workflow.
+          EOF
+          }
+          if ! gh api "repos/${GITHUB_REPOSITORY}/rulesets?includes_parents=true" --paginate --jq '.[].id' > "$RUNNER_TEMP/ids.txt"; then
+            echo "::warning::Не удалось прочитать ruleset репозитория"
+            : > "$RUNNER_TEMP/ids.txt"
+          fi
+          : > "$RUNNER_TEMP/rulesets.jsonl"
+          while read -r id; do
+            gh api "repos/${GITHUB_REPOSITORY}/rulesets/$id" >> "$RUNNER_TEMP/rulesets.jsonl" || true
+          done < "$RUNNER_TEMP/ids.txt"
+          jq -s '.' "$RUNNER_TEMP/rulesets.jsonl" > "$RUNNER_TEMP/rulesets.json"
+          # shellcheck disable=SC2086
+          if python3 -I tools/archive-tags.py ruleset-check "$RUNNER_TEMP/rulesets.json" $tags; then
+            exit 0
+          fi
+          if [[ "$ON_MAIN" == "true" ]]; then
+            echo "::error::$(explain | tr '\n' ' ')"
+            explain
+            exit 1
+          fi
+          echo "::warning::$(explain | tr '\n' ' ')"
+          explain

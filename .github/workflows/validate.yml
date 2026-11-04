@@ -72,6 +72,9 @@ jobs:
       - name: Test path migration manifest redirect
         run: bash tools/test-path-migration-manifest.sh
 
+      - name: Test archive tag tool
+        run: bash tools/test-archive-tags.sh
+
       - name: Test historical immutability validator
         run: bash tools/test-historical-immutable.sh
 
