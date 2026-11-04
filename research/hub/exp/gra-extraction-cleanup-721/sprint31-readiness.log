@@ -1,0 +1,45 @@
+== P-1. PR спицы по S-1 слит (B-271, B-272, B-273 и сторона спицы B-274)
+state=MERGED mergedAt=2026-11-04T14:42:03Z merge=b49acde5af86629eb781015f4338b5ec834f27c8
+spoke_clone_HEAD=b49acde5af86629eb781015f4338b5ec834f27c8
+== P-2. Ссылки спицы на домен Хаба: плавающие (blob/main) и закреплённые по SHA
+floating_domain_links=0
+pinned 2 22f12f6
+pinned 2 2fad164
+pinned 17 32b5fa524e542af23c1a8e67c919bd66d5f4e399
+pinned 682 48ebe5230be87ca5bf8a08b385e296a2987e9958
+pinned 1 e054991
+== P-3. Каждый закреплённый путь домена существует на своём коммите Хаба
+pinned_paths=78 missing=0
+== P-4. Строки бэклога спицы для задач, переносимых из Спринта 29 Хаба, и для Q-3/Q-4
+B-230: ops/backlog.md#L84
+B-231: ops/backlog.md#L85
+B-233: ops/backlog.md#L86
+GRA-003: ops/backlog.md#L60
+GRA-004: ops/backlog.md#L61
+== P-5. Домен Хаба не менялся после PIN_SHA (заморозка началась с закрепления)
+main=9b140d99b12afd5328a822a974d6545a9068ce41
+changed_files_since_pin=0
+commits_since_pin=0
+== P-6. Открытые PR Хаба, которые трогают домен (параллельная работа)
+PR #726 domain_files=0
+== P-7. CI validate на main
+validate main@9b140d9 success
+== P-8. Права исполнителя и rulesets (Q-6 требует администратора)
+admin=false push=true
+rulesets=0
+archive_tags=0
+== P-9. Повтор инвентаря на текущей спице: какие диспозиции сдвинулись
+units base=80 now=80
+  2026-10-07-day1-presentation-653.md: ARCHIVE -> DELETE (1 files; spoke_floating 2 -> 0)
+  2026-10-13-day1-rebuild-task-671.md: ARCHIVE -> DELETE (1 files; spoke_floating 2 -> 0)
+  2026-10-30-day2-presentation.md: ARCHIVE -> DELETE (1 files; spoke_floating 6 -> 0)
+  2026-11-01-course-quotes-days-1-4-alce.md: REIMPORT -> TOMBSTONE (1 files; spoke_floating 0 -> 0)
+  2026-11-02-day3-presentation.md: ARCHIVE -> DELETE (1 files; spoke_floating 2 -> 0)
+  2026-11-03-day4-lecturer-script-v3.md: ARCHIVE -> DELETE (1 files; spoke_floating 1 -> 0)
+  2026-11-03-day4-presentation-gamma-v4.md: ARCHIVE -> DELETE (1 files; spoke_floating 3 -> 0)
+  exp/day1-osint-709/: ARCHIVE -> DELETE (7 files; spoke_floating 5 -> 0)
+  exp/day1-rebuild-677/: ARCHIVE -> DELETE (4 files; spoke_floating 1 -> 0)
+  exp/day3-gamma-681/: ARCHIVE -> DELETE (7 files; spoke_floating 4 -> 0)
+  exp/day4-v5-697/: ARCHIVE -> DELETE (5 files; spoke_floating 1 -> 0)
+  exp/rfc-days-logic-667/: ARCHIVE -> DELETE (6 files; spoke_floating 1 -> 0)
+mandate_Q2_units=19 files=73

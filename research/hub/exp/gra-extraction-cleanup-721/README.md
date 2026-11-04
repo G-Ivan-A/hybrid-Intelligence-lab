@@ -41,6 +41,8 @@ Evidence-контейнер issue
 | `ecosystem-snapshot.log` | Репозитории экосистемы, открытые PR и issue в каждом, входящие ссылки других репозиториев на домен. Это карта параллельной работы, которую нельзя заморозить. |
 | `dialog-review-checks.sh` | Проверки C-1…C-8 [экспертизы диалога о приёмке PR #722](../../../../docs/analysis/2026-11-04-issue-721-dialog-expert-review.md): файлы PR в домене курса, существование `day1-framer` / `day2-scout` в дереве, истории и коде владельца, назначение PR #710, офлайн-режим и контакты в материале дня 1, `HEAD` и `last_sync` спицы, коммиты в домене после снимков, повтор инвентаря. Только чтение; спица — данные, `python3 -I`. |
 | `dialog-review-checks.log` | Результат: в домене 0 из 28 файлов PR; `day1-framer` / `day2-scout` — 0 в дереве, истории и поиске; #710 — карта компаний; 4 правила дня 1 найдены (строки 14, 69, 87, 193); после базы RFC `c06075d` в домене 0 коммитов; диспозиции 81 строки инвентаря не изменились. |
+| `sprint31-readiness.sh` | Контрольная проверка готовности к Спринту 31 ([анализ #725](../../../../docs/analysis/2026-11-04-sprint-31-readiness-check.md)): P-1 PR спицы по S-1 слит; P-2 плавающие и закреплённые ссылки спицы на домен; P-3 каждый закреплённый путь есть на своём коммите (`git cat-file -e`); P-4 строки бэклога спицы; P-5 домен не менялся после `PIN_SHA`; P-6 открытые PR Хаба в домене; P-7 CI `main`; P-8 права и rulesets; P-9 повтор инвентаря и сдвиг диспозиций. Только чтение; спица — данные, `python3 -I`. |
+| `sprint31-readiness.log` | Результат: PR #4 спицы слит (`b49acde`); плавающих ссылок 0, закреплённых путей 78, отсутствующих 0; домен после `PIN_SHA` не менялся; `admin=false`, rulesets 0, тегов `archive/*` 0; 11 единиц перешли ARCHIVE → DELETE после закрепления ссылок, мандат Q-2 — те же 19 единиц и 73 файла. |
 
 ## Снимки
 
@@ -69,6 +71,7 @@ python3 -I $D/spoke-guard-replay.py . /tmp/spokes/aether-orbis-gra $D/gra-invent
 # permalink-probe.log: curl -s -o /dev/null -w '%{http_code}' по четырём адресам из файла
 # domain-footprint.log: git ls-files | wc -l; git ls-files -z <путь> | xargs -0 cat | wc -c
 $D/dialog-review-checks.sh . /tmp/spokes/aether-orbis-gra origin/main > $D/dialog-review-checks.log 2>&1
+$D/sprint31-readiness.sh . /tmp/spokes/aether-orbis-gra > $D/sprint31-readiness.log 2>&1
 ```
 
 Скрипту инвентаря нужна история Хаба до снимка `32b5fa5`: в клоне глубины 1 он
