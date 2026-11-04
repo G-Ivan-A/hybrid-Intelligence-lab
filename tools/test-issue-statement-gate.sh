@@ -18,7 +18,7 @@ mkdir -p "$fake_root/ai-rules" "$fake_root/ops" "$fake_root/docs" "$fake_root/to
 cat >"$fake_root/.hub-profile.json" <<'JSON'
 {
   "project_specific_directories": [{"path": "lab/", "decision": "docs/adr/2026-11-adr-999-lab.md"}],
-  "path_migrations": [{"from": "pr-ops/", "to": "ops/", "issue": "#567"}]
+  "path_migrations": [{"from": "legacy-ops/", "to": "ops/", "issue": "#567"}]
 }
 JSON
 
@@ -119,10 +119,10 @@ expect "declared top-level directories pass" 0 "$f"
 # 7. Перенесённый каталог получает подсказку с новым путём.
 f="$(fixture dod-moved <<'MD'
 ### 5. Готово, когда
-- [ ] Строка добавлена в `pr-ops/backlog.md`.
+- [ ] Строка добавлена в `legacy-ops/backlog.md`.
 MD
 )"
-expect "moved top-level pr-ops/ is red with hint" 1 "$f" "path_migrations to ops/"
+expect "moved top-level legacy-ops/ is red with hint" 1 "$f" "path_migrations to ops/"
 
 # 8. Предписание поля frontmatter ai-generated.
 f="$(fixture dod-ai-generated <<'MD'

@@ -244,6 +244,7 @@ if [[ -d "$ROOT_DIR/ops" ]]; then
     ':(exclude)docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md' \
     ':(exclude)research/hub/exp/gra-extraction-cleanup-721/README.md' \
     ':(exclude)research/hub/exp/gra-extraction-cleanup-721/permalink-probe.log' \
+    ':(exclude)research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log' \
     >"$TMP_DIR/stale-pr-ops.log"; then
     fail "active tracked files still contain stale pr-ops/ references"
   fi
