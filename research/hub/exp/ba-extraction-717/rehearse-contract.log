@@ -1,0 +1,23 @@
+freeze: 0 commit(s) touch the sources after HUB_SHA
+manifest: 322 files at c06075d0b45da70cb68e2df3851b861b5ec3aed1
+manifest: 9 files at c06075d0b45da70cb68e2df3851b861b5ec3aed1
+E1 genome/import path intersection:
+E1 DIR check (empty = equal):
+materialize: 9 files from c06075d0b45da70cb68e2df3851b861b5ec3aed1
+AGENTS.md bootstrap validation passed (B/local).
+File naming validation passed.
+E1 OK
+history-paths: 193 historical, 0 shadowed
+E2 conflicts: README.md 
+Updated 1 path from the index
+E2 OK: 231 imported commits; 141 messages with qualified issue refs
+rewrite-links: 75 file(s) changed; events {"file-out": 64, "url-in": 490}
+rewrite-links: 0 file(s) to change; events {"file-out": 64, "url-in": 490}
+E3 events: {'url-in': 490, 'file-out': 64}
+E3 OK
+scan: 365 occurrence(s) of renamed source prefixes
+E4 scan-before: 365 line(s)
+sections: 13 from ops/backlog.md at c06075d0b45da70cb68e2df3851b861b5ec3aed1; link events {"dir-out": 1, "file-out": 6, "url-in": 46}
+sections: 13 from ops/backlog.md at c06075d0b45da70cb68e2df3851b861b5ec3aed1; link events {"dir-out": 1, "file-out": 6, "url-in": 46}
+E5 OK: 100 backlog rows
+validators OK after E5

@@ -1,0 +1,49 @@
+HUB_REPO: G-Ivan-A/hybrid-Intelligence-lab
+HUB_SHA: c06075d0b45da70cb68e2df3851b861b5ec3aed1
+MAP: projects/ba-ai-process/=
+MAP: research/mango/=research/mango/
+MAP: docs/ba-meta-model-overview.md=docs/ba-meta-model-overview.md
+MAP: tools/test-execution-package.sh=tools/test-execution-package.sh
+MAP: tools/test-cline-package.sh=tools/test-cline-package.sh
+MAP: tools/test-opencode-package.sh=tools/test-opencode-package.sh
+MAP: tools/test-bcreq-working-release-pipeline.sh=tools/test-bcreq-working-release-pipeline.sh
+MAP: tools/test-ba-meta-model-overview.sh=tools/test-ba-meta-model-overview.sh
+DIR: ba-meta-model | Ядро метамодели: классы, онтология, правила
+DIR: build | Компиляторы пакетов исполнения и таксономий
+DIR: decisions | Реестр решений проекта
+DIR: dist | Скомпилированные пакеты исполнения (проверяются --check)
+DIR: experiments | Журналы экспериментов проекта
+DIR: meta-model-guides | Руководства по применению метамодели
+DIR: research | Исследования эталонной реализации (mango)
+DIR: tests | Тесты и эталонные наборы проекта
+CI_STEP: validate / Install Python dependencies
+CI_STEP: validate / Test execution package gate
+CI_STEP: validate / Test Cline execution package
+CI_STEP: validate / Test OpenCode execution package
+CI_STEP: validate / Test BCREQ Working/Release pipeline contract
+CI_STEP: validate / Test BA meta-model stakeholder overview
+CI_STEP: validate / Validate MVP BCREQ execution package (G-mach)
+CI_JOB: cline-windows
+CI_JOB: opencode
+CI_JOB: windows-guides
+BACKLOG: ## Спринт 14:
+BACKLOG: ## Спринт 15:
+BACKLOG: ## Спринт 16:
+BACKLOG: ## Спринт 17:
+BACKLOG: ## Спринт 18:
+BACKLOG: ## Спринт 19:
+BACKLOG: ## Спринт 20:
+BACKLOG: ## Спринт 21:
+BACKLOG: ## Спринт 24:
+BACKLOG: ## Спринт 25:
+BACKLOG: ## Спринт 26:
+BACKLOG: ## Спринт 27:
+BACKLOG: ## Спринт 28:
+HISTORICAL: docs/adr/
+HISTORICAL: docs/rfc/
+HISTORICAL: docs/analysis/
+HISTORICAL: docs/presentation/
+HISTORICAL: decisions/
+HISTORICAL: experiments/
+EXCLUDE: 
+STAGE: 
