@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.5
-updated: 2026-08-11
+version: 1.6
+updated: 2026-11-04
 temperature: 0.1
 executable: false
 ---
@@ -28,6 +28,12 @@ executable: false
 | `docs/rfc/` | RFC-предложения об изменении структуры, lifecycle и правил Хаба. | Создавать RFC только для активно обсуждаемого изменения, требующего review. |
 | `tools/` | Локальные validation и maintenance scripts. | Добавлять scripts, которые делают проверки воспроизводимыми. |
 | `.github/ISSUE_TEMPLATE/` | GitHub-native task intake. | Держать templates focused на качестве issue и reviewability. |
+
+Документ класса «контракт» живёт в доме своего исполнения: контракт агента — в
+`ai-rules/` по классу, контракт процесса — в `ops/`; каталог `docs/contracts/`
+запрещён на любой глубине. Правило — раздел «Где живёт контракт»
+[standards/contract-documentation-standard.md](../standards/contract-documentation-standard.md#где-живёт-контракт),
+таблица домов — `<artifact_homes>` в [AGENTS.md](../AGENTS.md).
 
 Именование файлов для корня репозитория и вложенных каталогов описано в
 [standards/file-naming.md](../standards/file-naming.md).
