@@ -1,0 +1,65 @@
+# Hub HEAD: 195fd38 (2026-11-04)
+
+## F-1. Size validator: hard failure above 9K
+13:ERROR_TOKENS="${ERROR_TOKENS:-9000}"
+17:  exit 1
+28:  printf 'ERROR: %s exceeds the hard budget of %s tokens (~%s).\n' \
+31:  exit 1
+51:if ! grep -Fq 'exceeds the hard budget' "$tmp_root/err"; then
+52:  printf 'Expected hard budget error message.\n' >&2
+109:9K — рекомендация, не блокер (в оценочных токенах). При превышении рекомендуется
+  run: ai-rules/agent-work-rules.md: 25390 bytes = ~7934 tokens (warning 7000, error 9000).
+  run: WARNING: ai-rules/agent-work-rules.md exceeds the soft budget of 7000 tokens (~7934).
+  run: Agent work rules size check passed.
+
+## F-2…F-5. Default operating mode wording (canon vs genome)
+82:   выдуманными значениями. Operating Mode бери из issue; по умолчанию — Hybrid
+108:Режим назначается человеком при постановке. Hybrid — режим по умолчанию, если
+53:**Autonomy by operating mode.** The author sets the mode up front; an omitted mode defaults to Hybrid. The mode sets 
+80:   выдуманными значениями. Operating Mode бери из issue; по умолчанию —
+81-   structured.
+75:| Structured | По умолчанию для структуры проекта, governance и tooling. |
+14:Для ИИ: если поле пустое, не генерируй значение. Работай в Structured mode по
+27:- Operating Mode: `Structured`
+18:Operating mode: Structured unless the task explicitly asks for Creative mode.
+
+## Pins that a B-197 edit must update
+3268:require_text "templates/htom/AI_GOVERNANCE.md" "temperature: 0.1"
+3270:require_text "templates/htom/AI_GOVERNANCE.md" "Обоснованный обход в Creative Mode"
+3275:require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.9"
+3:117:      "id": "htom-ai-governance",
+5:119-      "version": "0.5.0",
+9:154:      "id": "htom-ai-session-handover-prompt",
+11:156-      "version": "0.9.0",
+
+## Backlog rows of Sprint 23
+ **B-196** | - | TODO | - (planned) 
+ **B-197** | - | TODO | - (planned) 
+
+## Open Hub PRs touching Sprint 23 files
+PR #724: none
+PR #722: none
+
+## Spokes: open PRs and whether CI reads Hub files at run time
+### mango_ba_prompts
+open PR #443: Issue #442: BL-163 — registry pinned to runtime catalog (2db0ef51), И-2 «Да», З-1 retired
+open PR #439: docs(issue-438): проверка готовности BL-156/BL-157 — заготовка (Р-15 ждё�
+.github/workflows/github-pages.yml: Hub fetch steps = 0
+.github/workflows/kb.yml: Hub fetch steps = 0
+.github/workflows/validate.yml: Hub fetch steps = 0
+.hub-profile.json pin: "hub_sha": "3bfa4103c9efbbd59bc951814884920e406982e2"
+  synced path mentions templates/htom: 0
+  synced path mentions tools/check-agent-work-rules-size.sh: 0
+  synced path mentions AI_SESSION_HANDOVER_PROMPT.md: 2
+  synced path mentions AI_GOVERNANCE.md: 2
+### mango-ba-ai-runtime
+open PR #17: ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляци�
+.github/workflows/validate.yml: Hub fetch steps = 0
+.hub-profile.json: absent
+### aether-orbis-gra
+.github/workflows/validate.yml: Hub fetch steps = 0
+.hub-profile.json pin: "hub_commit": "32b5fa524e542af23c1a8e67c919bd66d5f4e399"
+  synced path mentions templates/htom: 1
+  synced path mentions tools/check-agent-work-rules-size.sh: 0
+  synced path mentions AI_SESSION_HANDOVER_PROMPT.md: 0
+  synced path mentions AI_GOVERNANCE.md: 0

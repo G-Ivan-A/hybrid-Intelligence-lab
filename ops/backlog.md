@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.74
+version: 1.75
 updated: 2026-11-04
 temperature: 0.1
 type: backlog
@@ -70,6 +70,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/583"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/715"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/723"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -631,8 +632,8 @@ ADR-021 и Agent Work Rules; локальные регрессионные те�
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-196** | Согласовать валидатор размера с рекомендацией 9K | null | - | TODO | - (planned) | [Анализ разрывов](../docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md), [issue #631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631) | Заменить hard failure при превышении 9K на предупреждение с рекомендацией декомпозиции; регрессионный тест должен подтвердить неблокирующее поведение. | null |
-| **B-197** | Синхронизировать HTOM handover-промпт с режимом по умолчанию | null | - | TODO | - (planned) | [Анализ разрывов](../docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md), [issue #631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631) | Убрать расхождение `structured`/`Hybrid` в `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` и проверить результат на bootstrap-сценарии. | null |
+| **B-196** | Согласовать валидатор размера с рекомендацией 9K | null | - | in-progress | [#723](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/723) / [PR #724](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/724) | [Анализ разрывов](../docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md), [issue #631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631), [Выбор спринта](../docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md) | Заменить hard failure при превышении 9K на предупреждение с рекомендацией декомпозиции; регрессионный тест должен подтвердить неблокирующее поведение. Выбран issue #723 точечным исключением из порядка RFC #715 (шаг 7) — ждёт ответа владельца на Q-1 и Q-3; режим запуска предложен `Structured`. | null |
+| **B-197** | Синхронизировать HTOM handover-промпт с режимом по умолчанию | null | - | in-progress | [#723](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/723) / [PR #724](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/724) | [Анализ разрывов](../docs/analysis/2026-09-28-adr-021-downstream-contract-gaps.md), [issue #631](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/631), [Выбор спринта](../docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md) | Убрать расхождение `structured`/`Hybrid` в `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` и проверить результат на bootstrap-сценарии. Повторная проверка (issue #723) нашла тот же дефект в `templates/htom/AI_GOVERNANCE.md` и двух строках режима HTOM-шаблона `task.md` (F-3, F-4): предложено расширить строку без нового ID (Q-2, Q-4). Спицы получат правку своим синком (B-251, B-252). | null |
 
 ---
 
@@ -836,7 +837,7 @@ Release через `G-mach` и `G-human`; блокирующую защиту д
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-234** | Ш1.1–Ш1.2: решение владельца по RFC #715 и постановка шагов 2–7 | null | - | review | [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) / [PR #718](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/718) | [RFC #715, «Решения владельца»](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | RFC переведён в `accepted`, ответы Q-1…Q-5 записаны; контракт выноса, инструмент `tools/spoke-extraction.py` и его репетиция на проекте метамодели готовы; шаги 2–7 — строки этого спринта. | Hybrid |
+| **B-234** | Ш1.1–Ш1.2: решение владельца по RFC #715 и постановка шагов 2–7 | null | - | DONE | [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) / [PR #718](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/718) | [RFC #715, «Решения владельца»](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | RFC переведён в `accepted`, ответы Q-1…Q-5 записаны; контракт выноса, инструмент `tools/spoke-extraction.py` и его репетиция на проекте метамодели готовы; шаги 2–7 — строки этого спринта. PR #718 смёржен 2026-11-04, issue #717 закрыт; статус сверен в issue #723. | Hybrid |
 | **B-235** | Согласовать имя репозитория проекта метамодели БА | null | B-234 | DONE | [PR #718, комментарий владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/718#issuecomment-6625672558) | [Анализ шага 1, «Имя репозитория»](../docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md) | Владелец выбрал рекомендованное имя и создал [`ba-ai-metamodel`](https://github.com/G-Ivan-A/ba-ai-metamodel) 2026-11-04 с одним начальным `README.md`. | null |
 | **B-236** | Ш2.1: ADR «Контракт наследования экосистемы» (I-1…I-8) | null | B-234 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Один принятый decision record для реестра, схемы профиля, закреплённого источника, канонического инструмента, проверки дрейфа, деклараций отклонений, исправления генома и обратного потока. После принятия заменяет временное исключение контракта выноса. | Hybrid |
 | **B-237** | Ш2.2: единый реестр экосистемы (I-1) | null | B-234 | ЧАСТИЧНО | [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) | [RFC #715, Q-4](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Сделано в #717: реестр — [`docs/ecosystem-map.md`](../docs/ecosystem-map.md) с классами I-1, таблица статусов бэклога заменена ссылкой. Осталось: машиночитаемая форма реестра для инструмента синка (по ADR B-236) Ссылка на `ba-ai-metamodel` уже в реестре. | null |
