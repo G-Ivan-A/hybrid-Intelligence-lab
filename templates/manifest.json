@@ -41,7 +41,7 @@
     {
       "id": "htom-issue-template-task",
       "path": "templates/htom/.github/ISSUE_TEMPLATE/task.md",
-      "version": "2.2.0",
+      "version": "3.0.0",
       "target_type": [
         "HTOM",
         "Spoke"
@@ -55,7 +55,7 @@
         "issue-template",
         "task"
       ],
-      "description": "Structured шаблон задачи: мета, контекст, артефакты, ограничения, AI-agent specifics, DoD."
+      "description": "Structured шаблон задачи: мета, пять уровней постановки (User Story, ФТ, НФТ, задача исполнителю, ограничения процесса), контекст, AI-agent specifics, DoD, отклонения и вопросы."
     },
     {
       "id": "htom-validate-workflow",

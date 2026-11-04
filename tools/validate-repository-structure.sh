@@ -3186,6 +3186,13 @@ require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "🎯 Контек�
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "✅ Готово, когда"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Hybrid` (по умолчанию)'
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "version: 3.0"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 1. User Story"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 2. ФТ к системе"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 3. НФТ к системе"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 4. Задача исполнителю"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 5. Ограничения процесса"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Не выполнено и вопросы"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"

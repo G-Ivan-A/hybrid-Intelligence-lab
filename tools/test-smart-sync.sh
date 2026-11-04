@@ -118,6 +118,14 @@ check "init.sh: no {{date}} placeholder left in handover prompt" \
 for rel in AI_SESSION_HANDOVER_PROMPT.md AI_GOVERNANCE.md .github/ISSUE_TEMPLATE/task.md; do
   check "init.sh: $rel names Hybrid as default mode" "mode_default_ok \"$HTOM_INIT/$rel\""
 done
+# B-115 (issue #727): геном доставляет пять уровней постановки, плейсхолдеры подставлены.
+for level in "Уровень 1. User Story" "Уровень 2. ФТ к системе" "Уровень 3. НФТ к системе" \
+             "Уровень 4. Задача исполнителю" "Уровень 5. Ограничения процесса"; do
+  check "init.sh: task.md renders '## $level'" \
+    "grep -qx '## $level' \"$HTOM_INIT/.github/ISSUE_TEMPLATE/task.md\""
+done
+check "init.sh: task.md has no {{project_name}} / {{date}} placeholder left" \
+  "! grep -q '{{project_name}}\\|{{date}}' \"$HTOM_INIT/.github/ISSUE_TEMPLATE/task.md\""
 check "init.sh: AGENTS.md defaults an omitted mode to Hybrid" \
   "grep -q 'an omitted mode defaults to Hybrid' \"$HTOM_INIT/AGENTS.md\""
 check "bootstrapped HTOM team passes its own structure validator" \
