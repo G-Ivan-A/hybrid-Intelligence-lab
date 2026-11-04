@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-07-04
+version: 1.1
+updated: 2026-11-03
 temperature: 0.1
 ---
 
@@ -23,6 +23,7 @@ backlog, правила его ведения, карта артефактов, 
 | [repo-model.md](repo-model.md) | Правила структуры и Anti-Inflation principle. |
 | [session-digests.md](session-digests.md) | Дайджесты рабочих сессий. |
 | [executable-documents-issues.md](executable-documents-issues.md) | Реестр executable-документов и issues. |
+| [hub-project-extraction-contract.md](hub-project-extraction-contract.md) | Исполнимый контракт выноса проекта Хаба в новый репозиторий (этапы E1–E6). |
 
 ## Граница
 

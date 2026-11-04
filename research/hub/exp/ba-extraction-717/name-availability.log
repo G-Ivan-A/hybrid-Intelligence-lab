@@ -1,0 +1,31 @@
+{"name": "ba-ai-process", "github": {"total_in_name": 282, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"hits": 0, "exact": []}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "universal-ba-ai-framework", "github": {"total_in_name": 0, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"hits": 0, "exact": []}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "gra-ba-ai-framework", "github": {"total_in_name": 0, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"hits": 0, "exact": []}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ba-ai-framework", "github": {"total_in_name": 265, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"hits": 0, "exact": []}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ba-ai-metamodel", "github": {"total_in_name": 0, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"hits": 0, "exact": []}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ba-meta-model", "github": {"total_in_name": 81, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"hits": 0, "exact": []}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ba-ai-meta-model", "github": {"total_in_name": 3, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"error": 504}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ba-ai-method", "github": {"total_in_name": 55, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"error": 504}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ba-ai-source", "github": {"total_in_name": 79, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"error": 504}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ba-ai-playbook", "github": {"total_in_name": 10, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"error": 504}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "ai-ba-playbooks", "github": {"total_in_name": 2, "exact": [], "contains": 0, "own_namespace": "G-Ivan-A/mango-ba-ai-runtime"}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"error": 504}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "aether-orbis-ba", "github": {"total_in_name": 0, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"error": 504}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "hybrid-ba-framework", "github": {"total_in_name": 162, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"error": 504}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+{"name": "gra-ba-ai-process", "github": {"total_in_name": 2, "exact": [], "contains": 0, "own_namespace": null}, "gitlab": {"hits": 0, "exact": []}, "codeberg": {"hits": 0, "exact": []}, "huggingface": {"models": [], "spaces": [], "datasets": []}, "pypi": "free", "npm": "free"}
+
+| Name | GitHub exact | GitHub `in:name` total | GitHub name contains | Own namespace | GitLab exact | Codeberg exact | HF exact | PyPI | npm |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ba-ai-process | 0 | 282 | 0 | free | 0 | 0 | 0 | free | free |
+| universal-ba-ai-framework | 0 | 0 | 0 | free | 0 | 0 | 0 | free | free |
+| gra-ba-ai-framework | 0 | 0 | 0 | free | 0 | 0 | 0 | free | free |
+| ba-ai-framework | 0 | 265 | 0 | free | 0 | 0 | 0 | free | free |
+| ba-ai-metamodel | 0 | 0 | 0 | free | 0 | 0 | 0 | free | free |
+| ba-meta-model | 0 | 81 | 0 | free | 0 | 0 | 0 | free | free |
+| ba-ai-meta-model | 0 | 3 | 0 | free | 0 | {'error': 504} | 0 | free | free |
+| ba-ai-method | 0 | 55 | 0 | free | 0 | {'error': 504} | 0 | free | free |
+| ba-ai-source | 0 | 79 | 0 | free | 0 | {'error': 504} | 0 | free | free |
+| ba-ai-playbook | 0 | 10 | 0 | free | 0 | {'error': 504} | 0 | free | free |
+| ai-ba-playbooks | 0 | 2 | 0 | G-Ivan-A/mango-ba-ai-runtime | 0 | {'error': 504} | 0 | free | free |
+| aether-orbis-ba | 0 | 0 | 0 | free | 0 | {'error': 504} | 0 | free | free |
+| hybrid-ba-framework | 0 | 162 | 0 | free | 0 | {'error': 504} | 0 | free | free |
+| gra-ba-ai-process | 0 | 2 | 0 | free | 0 | 0 | 0 | free | free |

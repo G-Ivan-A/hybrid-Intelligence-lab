@@ -114,6 +114,7 @@ is_active_file() {
     ops/backlog-instruction.md | \
     ops/executable-documents-issues.md | \
     ops/session-digests.md | \
+    ops/hub-project-extraction-contract.md | \
     projects-sink/README.md | \
     projects-sink/AI_PROJECT_CONTEXT-Summary.md | \
     projects-sink/agents-md/README.md | \
@@ -492,6 +493,15 @@ is_active_file() {
     research/hub/exp/mango-separation-readiness-507/README.md | \
     research/hub/exp/mango-separation-readiness-507/scan-mango-readiness.sh | \
     research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log | \
+    research/hub/exp/ba-extraction-717/README.md | \
+    research/hub/exp/ba-extraction-717/name-availability.py | \
+    research/hub/exp/ba-extraction-717/name-availability.log | \
+    research/hub/exp/ba-extraction-717/2026-11-03-web-search.md | \
+    research/hub/exp/ba-extraction-717/ba-instance-params.txt | \
+    research/hub/exp/ba-extraction-717/rehearse-contract.sh | \
+    research/hub/exp/ba-extraction-717/rehearse-contract.log | \
+    research/hub/exp/ba-extraction-717/drift-snapshot.py | \
+    research/hub/exp/ba-extraction-717/drift-baseline.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -831,6 +841,7 @@ is_active_file() {
     docs/analysis/2026-09-28-backlog-closure-evidence-634.md | \
     docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md | \
     docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md | \
+    docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -854,6 +865,8 @@ is_active_file() {
     templates/sync-metadata.json | \
     tools/generate-manifest.py | \
     tools/sync-from-hub.sh | \
+    tools/spoke-extraction.py | \
+    tools/test-spoke-extraction.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-agents-md-integration.sh | \
     tools/test-evidence-structure-validator.sh | \
@@ -1271,6 +1284,15 @@ required_files=(
   "research/hub/exp/mango-separation-readiness-507/README.md"
   "research/hub/exp/mango-separation-readiness-507/scan-mango-readiness.sh"
   "research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log"
+  "research/hub/exp/ba-extraction-717/README.md"
+  "research/hub/exp/ba-extraction-717/name-availability.py"
+  "research/hub/exp/ba-extraction-717/name-availability.log"
+  "research/hub/exp/ba-extraction-717/2026-11-03-web-search.md"
+  "research/hub/exp/ba-extraction-717/ba-instance-params.txt"
+  "research/hub/exp/ba-extraction-717/rehearse-contract.sh"
+  "research/hub/exp/ba-extraction-717/rehearse-contract.log"
+  "research/hub/exp/ba-extraction-717/drift-snapshot.py"
+  "research/hub/exp/ba-extraction-717/drift-baseline.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -1338,6 +1360,7 @@ required_files=(
   "ops/backlog-instruction.md"
   "ops/executable-documents-issues.md"
   "ops/session-digests.md"
+  "ops/hub-project-extraction-contract.md"
   "docs/rfc/README.md"
   "docs/rfc/rfc-two-cases-of-project-initialization.md"
   "docs/rfc/contract-executability-rfc.md"
@@ -1384,6 +1407,8 @@ required_files=(
   ".github/workflows/update-manifest.yml"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
+  "tools/spoke-extraction.py"
+  "tools/test-spoke-extraction.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
   "tools/test-reference-research-terminology.sh"
@@ -2053,7 +2078,9 @@ require_text "docs/product-concept.md" "быстрее входить в раб�
 require_text "docs/product-concept.md" "Связь L1-L4"
 require_text "docs/product-concept.md" "docs/rfc/product-concept-template-proposal.md"
 require_text "docs/product-concept.md" "docs/rfc/resolve-artifact-location-proposal.md"
-require_text "docs/ecosystem-map.md" "version: 0.4"
+require_text "docs/ecosystem-map.md" "version: 0.6"
+require_text "docs/ecosystem-map.md" "единый реестр репозиториев экосистемы"
+require_text "docs/ecosystem-map.md" '`exempt-runtime`'
 require_text "docs/ecosystem-map.md" "обмен практиками"
 require_text "docs/ecosystem-map.md" "practices/README.md"
 require_text "docs/ecosystem-map.md" "templates/sync-project-with-hub-prompt.md"
@@ -2194,11 +2221,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.51"
+require_text "ops/artifact-map.md" "version: 2.52"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-11-02"
+require_text "ops/artifact-map.md" "updated: 2026-11-04"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2288,10 +2315,10 @@ require_text "ops/artifact-map.md" "research/external-knowledge/external-insight
 require_text "ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.29"
+require_text "docs/rfc/README.md" "version: 1.31"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-11-02"
+require_text "docs/rfc/README.md" "updated: 2026-11-04"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
@@ -2607,7 +2634,10 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.72"
+require_text "ops/backlog.md" "version: 1.74"
+require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
+require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
+require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"
@@ -3351,6 +3381,18 @@ require_text ".github/workflows/validate.yml" "bash tools/test-operating-mode-co
 require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.sh"
+require_text "tools/spoke-extraction.py" "ops/hub-project-extraction-contract.md"
+require_text "ops/hub-project-extraction-contract.md" "executable: true"
+require_text "ops/hub-project-extraction-contract.md" "## ▶️ EXECUTION"
+require_text "ops/hub-project-extraction-contract.md" "## ℹ️ EXPLANATION"
+require_text "ops/hub-project-extraction-contract.md" "extraction-params"
+require_text "ops/hub-project-extraction-contract.md" "tools/spoke-extraction.py"
+require_text "ops/artifact-map.md" "ops/hub-project-extraction-contract.md"
+require_text "ops/README.md" "hub-project-extraction-contract.md"
+require_text "research/hub/exp/ba-extraction-717/README.md" "type: experiment"
+require_text "research/hub/exp/ba-extraction-717/rehearse-contract.log" "E5 OK: 100 backlog rows"
+require_text "research/hub/exp/ba-extraction-717/drift-baseline.log" "files: 1 ok"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
