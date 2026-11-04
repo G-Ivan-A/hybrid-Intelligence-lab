@@ -236,6 +236,71 @@ temperature: 0.1
 ai-generated: true"
 expect_fail "ai-generated ban" "$knowledge_dir/ai-generated.md" "frontmatter field is forbidden: ai-generated"
 
+# Поля участия ИИ (ADR-023): пара contributors + ai-models проходит,
+# обобщённые метки, модель без версии и ai-models без ответственного — нет.
+write_doc "$knowledge_dir/ai-participation.md" "status: reviewed
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+contributors: [G-Ivan-A, konard]
+ai-models: [claude-opus-5-5]"
+expect_pass "ai participation fields (ADR-023)" "$knowledge_dir/ai-participation.md"
+
+write_doc "$knowledge_dir/ai-participation-scalar.md" "status: reviewed
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+contributors: G-Ivan-A"
+expect_pass "contributors scalar without ai-models" "$knowledge_dir/ai-participation-scalar.md"
+
+write_doc "$knowledge_dir/ai-models-alone.md" "status: reviewed
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+ai-models: [claude-opus-5-5]"
+expect_fail "ai-models requires contributors" "$knowledge_dir/ai-models-alone.md" "frontmatter field ai-models requires contributors"
+
+write_doc "$knowledge_dir/ai-models-generic.md" "status: reviewed
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+contributors: [G-Ivan-A]
+ai-models: [llm]"
+expect_fail "ai-models generic label" "$knowledge_dir/ai-models-generic.md" "invalid ai-models item 'llm' (generic label"
+
+write_doc "$knowledge_dir/ai-models-unversioned.md" "status: reviewed
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+contributors: [G-Ivan-A]
+ai-models: [claude]"
+expect_fail "ai-models without version" "$knowledge_dir/ai-models-unversioned.md" "expected concrete model id with version"
+
+write_doc "$knowledge_dir/contributors-generic.md" "status: reviewed
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+contributors: [AI]"
+expect_fail "contributors generic label" "$knowledge_dir/contributors-generic.md" "invalid contributors item 'AI' (generic label"
+
+write_doc "$knowledge_dir/contributors-block-list.md" "status: reviewed
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+contributors:
+  - G-Ivan-A"
+expect_fail "contributors block list" "$knowledge_dir/contributors-block-list.md" "block lists are not supported"
+
+write_doc "$adr_dir/2026-11-adr-participation.md" "status: accepted
+version: 1.0
+updated: 2026-11-04
+temperature: 0.1
+owner: G-Ivan-A
+decision-type: governance
+contributors: [G-Ivan-A, konard]
+ai-models: [claude-opus-5-5, gpt-5.1]"
+expect_pass "ai participation fields on ADR" "$adr_dir/2026-11-adr-participation.md"
+
 write_doc "$knowledge_dir/unknown-field.md" "status: reviewed
 version: 1.0
 updated: 2026-06-28
@@ -274,5 +339,10 @@ updated: 2026-10-07
 temperature: 0.1
 agent: plan"
 expect_fail "OpenCode fields outside commands" "$opencode_plain_doc" "frontmatter field is not approved for this document class: agent"
+
+write_doc "$opencode_command_doc" "description: Проверить пакет
+agent: plan
+contributors: [G-Ivan-A]"
+expect_fail "ai participation fields outside own metadata formats" "$opencode_command_doc" "frontmatter field is not approved for this document class: contributors"
 
 printf 'Frontmatter validator regression tests passed.\n'

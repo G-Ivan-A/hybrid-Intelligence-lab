@@ -159,6 +159,17 @@ is_approved_field() {
     *:ai-generated)
       return 1
       ;;
+    # Поля участия ИИ (ADR-023): люди или роли в contributors, конкретные
+    # модели в ai-models. Внешние форматы (issue form, команда OpenCode,
+    # пакет исполнения GigaCode) свой набор полей задают сами.
+    issue-template:contributors | issue-template:ai-models | \
+    opencode-command:contributors | opencode-command:ai-models | \
+    execution-package:contributors | execution-package:ai-models)
+      return 1
+      ;;
+    *:contributors | *:ai-models)
+      return 0
+      ;;
     knowledge:owner | knowledge:type | knowledge:context | knowledge:method | knowledge:scope | \
     knowledge:source | knowledge:source_id | knowledge:stage | knowledge:projects | \
     knowledge:related_artifacts | knowledge:related_issues | knowledge:related_issue | \
@@ -343,7 +354,55 @@ validate_field() {
           ;;
       esac
       ;;
+    contributors | ai-models)
+      validate_participation_field "$path" "$field" "$line" "$value"
+      ;;
   esac
+}
+
+# Поля участия ИИ (ADR-023). Значение — скаляр или inline-список `[a, b]`:
+# построчный разбор frontmatter блочные списки не видит. Обобщённая метка
+# («ai», «llm», «true») не называет ни ответственного, ни модель и потому
+# отклоняется; модель в ai-models задаётся конкретным идентификатором с версией.
+validate_participation_field() {
+  local path="$1"
+  local field="$2"
+  local line="$3"
+  local value="$4"
+  local inner="$value"
+  local item
+  local items=()
+
+  if [[ "$inner" =~ ^\[(.*)\]$ ]]; then
+    inner="${BASH_REMATCH[1]}"
+  elif [[ "$inner" == \[* || "$inner" == *\] ]]; then
+    error "$path" "$line" "invalid $field '$value' (expected scalar or inline list [a, b])"
+    return
+  fi
+
+  if [[ -z "${inner//[[:space:],]/}" ]]; then
+    error "$path" "$line" "invalid $field '$value' (expected non-empty scalar or inline list [a, b]; block lists are not supported)"
+    return
+  fi
+
+  IFS=',' read -r -a items <<< "$inner"
+  for item in "${items[@]}"; do
+    item="$(trim_value "$item")"
+    if [[ -z "$item" ]]; then
+      error "$path" "$line" "invalid $field '$value' (empty list item)"
+      continue
+    fi
+    case "${item,,}" in
+      ai | llm | ml | gpt | model | models | bot | agent | ai-agent | assistant | \
+      true | false | yes | no | unknown | none | n/a | na | - | tbd | todo)
+        error "$path" "$line" "invalid $field item '$item' (generic label; name a person or role in contributors and a concrete model id in ai-models, ADR-023)"
+        continue
+        ;;
+    esac
+    if [[ "$field" == "ai-models" && ! "$item" =~ [0-9] ]]; then
+      error "$path" "$line" "invalid ai-models item '$item' (expected concrete model id with version, e.g. claude-opus-5-5)"
+    fi
+  done
 }
 
 validate_audit_body_sections() {
@@ -446,7 +505,7 @@ validate_file() {
   local field
   for field in "${fields[@]}"; do
     if [[ "$field" == "ai-generated" ]]; then
-      error "$path" "${lines[$field]}" "frontmatter field is forbidden: ai-generated"
+      error "$path" "${lines[$field]}" "frontmatter field is forbidden: ai-generated (name participants with contributors and ai-models, ADR-023)"
       continue
     fi
 
@@ -463,6 +522,10 @@ validate_file() {
       error "$path" 1 "missing required frontmatter field: $field"
     fi
   done
+
+  if [[ -n "${lines[ai-models]+set}" && -z "${lines[contributors]+set}" ]]; then
+    error "$path" "${lines[ai-models]}" "frontmatter field ai-models requires contributors (ADR-023: a named person or role is accountable for AI output)"
+  fi
 
   if is_governance_class "$class" && [[ -z "${lines[owner]+set}" ]]; then
     error "$path" 1 "missing required frontmatter field for governance artifact: owner"

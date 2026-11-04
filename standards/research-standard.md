@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-08-17
+version: 0.4
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
@@ -124,7 +124,8 @@ temperature: 0.3
 - `README.md` контейнера `exp/<issue-slug>/` наследует базовые четыре поля
   (`status`, `version`, `updated`, `temperature`).
 - `ai-generated` ЗАПРЕЩЁН во frontmatter. Provenance фиксируется в issue, PR,
-  changelog, audit или session record.
+  changelog, audit или session record; людей и модель называют необязательные
+  поля `contributors` и `ai-models` ([Frontmatter Standard, обязательство 5](frontmatter-standard.md#обязательства), ADR-023).
 
 > **Разграничение словарей (lifecycle vs frontmatter).** Правила этой секции
 > нормируют frontmatter **research reports** (объект стандарта, путь

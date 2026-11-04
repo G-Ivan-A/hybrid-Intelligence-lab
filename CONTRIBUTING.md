@@ -122,7 +122,11 @@ sufficient frontmatter из
 базовые поля `status`, `version`, `updated`, `temperature` плюс обязательные
 поля класса документа. Governance-артефакты требуют `owner`, ADR требует
 `decision-type`, RFC требует `rfc-scope`. `ai-generated` во frontmatter
-запрещён.
+запрещён. Людей-участников и конкретную модель ИИ называют необязательные поля
+`contributors` и `ai-models`: `ai-models` только вместе с `contributors`,
+значения — скаляр или inline-список `[a, b]` (обязательство 5
+[frontmatter-standard.md](standards/frontmatter-standard.md#обязательства),
+[ADR-023](docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md)).
 
 ## File Naming
 

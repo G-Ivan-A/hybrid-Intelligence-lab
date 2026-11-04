@@ -149,6 +149,7 @@ is_active_file() {
     docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
     docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
     docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md | \
+    docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md | \
     projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
     projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
@@ -1044,6 +1045,7 @@ required_files=(
   "docs/adr/2026-08-adr-010-agent-autonomy-principles.md"
   "docs/adr/2026-08-adr-011-research-models.md"
   "docs/adr/2026-09-adr-012-agents-md-root-contract.md"
+  "docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md"
   "docs/adr/README.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
@@ -1510,8 +1512,8 @@ require_text "standards/README.md" "Artifact location resolver"
 require_text "standards/README.md" "resolve-artifact-location-proposal.md"
 
 require_text "standards/frontmatter-standard.md" "status: accepted"
-require_text "standards/frontmatter-standard.md" "version: 1.1"
-require_text "standards/frontmatter-standard.md" "updated: 2026-06-28"
+require_text "standards/frontmatter-standard.md" "version: 1.2"
+require_text "standards/frontmatter-standard.md" "updated: 2026-11-04"
 require_text "standards/frontmatter-standard.md" "temperature: 0.1"
 require_text "standards/frontmatter-standard.md" "owner: G-Ivan-A"
 require_text "standards/frontmatter-standard.md" '`status`'
@@ -1520,10 +1522,31 @@ require_text "standards/frontmatter-standard.md" '`updated`'
 require_text "standards/frontmatter-standard.md" '`temperature`'
 require_text "standards/frontmatter-standard.md" '`ai-generated` **ЗАПРЕЩЕН** во frontmatter'
 require_text "standards/frontmatter-standard.md" "NIST AI Risk Management Framework"
+# B-154 (issue #727): поля участия ИИ вместо метки ai-generated (ADR-023, вариант C).
+adr_023="docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md"
+require_text "$adr_023" "status: accepted"
+require_text "$adr_023" "decision-type: governance"
+require_text "$adr_023" "**Вариант C.**"
+require_text "$adr_023" "ai-models: [claude-opus-5-5]"
+require_text "docs/adr/README.md" "2026-11-adr-023-ai-participation-frontmatter-fields.md"
+require_text "standards/frontmatter-standard.md" "2026-11-adr-023-ai-participation-frontmatter-fields.md"
+require_text "standards/frontmatter-standard.md" "Только вместе с \`contributors\`"
+for participation_file in standards/frontmatter-docs-standard.md standards/analysis-standard.md \
+  standards/audit-standard.md standards/report-standard.md standards/research-standard.md \
+  standards/rfc-structure-standard.md standards/adr-structure-standard.md \
+  standards/standard-meta-structure.md standards/product-taxonomy-reference.md CONTRIBUTING.md \
+  AGENTS.md templates/htom/AGENTS.md templates/spoke/AGENTS.md; do
+  require_text "$participation_file" "ai-models"
+  require_text "$participation_file" "ADR-023"
+done
+require_text "tools/validate-frontmatter.sh" "frontmatter field ai-models requires contributors"
+require_text "tools/validate-frontmatter.sh" "generic label"
+require_text "tools/test-frontmatter-validator.sh" "ai-models requires contributors"
+require_text "tools/test-frontmatter-validator.sh" "ai participation fields outside own metadata formats"
 
 require_text "standards/frontmatter-docs-standard.md" "status: accepted"
-require_text "standards/frontmatter-docs-standard.md" "version: 1.3"
-require_text "standards/frontmatter-docs-standard.md" "updated: 2026-07-03"
+require_text "standards/frontmatter-docs-standard.md" "version: 1.4"
+require_text "standards/frontmatter-docs-standard.md" "updated: 2026-11-04"
 require_text "standards/frontmatter-docs-standard.md" "temperature: 0.1"
 require_text "standards/frontmatter-docs-standard.md" "owner: G-Ivan-A"
 require_text "standards/frontmatter-docs-standard.md" "standards/frontmatter-standard.md"
@@ -1619,7 +1642,7 @@ require_text "standards/standard-meta-structure.md" "## Related Artifacts"
 require_text "standards/standard-meta-structure.md" '`N/A`'
 require_text "standards/standard-meta-structure.md" "specific tail"
 require_text "standards/standard-meta-structure.md" "ADR-002"
-require_text "standards/standard-meta-structure.md" "version: 0.2"
+require_text "standards/standard-meta-structure.md" "version: 0.3"
 require_text "standards/standard-meta-structure.md" "executable: false"
 require_text "standards/standard-meta-structure.md" "scope: repo-wide"
 require_text "standards/standard-meta-structure.md" "related_standards:"

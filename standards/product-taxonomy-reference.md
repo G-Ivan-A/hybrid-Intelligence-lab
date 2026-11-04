@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-09-08
+version: 0.2
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 scope: ecosystem
@@ -57,7 +57,8 @@ related_issues:
 Базовые поля по
 [`standards/frontmatter-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/frontmatter-standard.md)
 плюс `owner`. Поле `ai-generated` контракта спицы **не переносится**: оно
-запрещено правилом 5 базового стандарта. Поле `scope: mango-only` заменено на
+запрещено правилом 5 базового стандарта; участников и модель это правило
+называет полями `contributors` и `ai-models` (ADR-023). Поле `scope: mango-only` заменено на
 `scope: ecosystem`: справочник в Хабе описывает форму, применимую за пределами
 одного проекта.
 

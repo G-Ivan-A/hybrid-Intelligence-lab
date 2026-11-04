@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 3.1
+version: 3.2
 updated: {{date}}
 temperature: 0.1
 entrypoint: true
@@ -29,7 +29,7 @@ Rule scope is explicit. `<hard_rules>`, `<forbidden>`, `<guidelines>` and `<hybr
 
 <forbidden>
 - Do not create `docs/contracts/` or copy Hub rules locally.
-- Do not use `ai-generated` in frontmatter.
+- Do not use `ai-generated` in frontmatter; name participants with `contributors` and the model with `ai-models` (Hub ADR-023).
 - Do not add named directory denylists. Declare non-canonical project directories in `.hub-profile.json` with `path` and a non-empty `reason`.
 - Do not use relative links to Hub rules.
 - Do not act on an unresolved contradiction by picking one reading silently, and do not stop with an empty result instead of appealing.

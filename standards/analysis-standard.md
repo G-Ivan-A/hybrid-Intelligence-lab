@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-07-17
+version: 0.3
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
@@ -145,7 +145,8 @@ related_artifacts:
 - `supersedes` НЕ входит в обязательное ядро; добавляется только при
   подтверждённой замене (B-024 §6) как backlink на заменяющий Analysis.
 - `ai-generated` во frontmatter **ЗАПРЕЩЁН**. Provenance фиксируется в issue, PR,
-  changelog или session record.
+  changelog или session record; людей и модель называют необязательные
+  поля `contributors` и `ai-models` ([Frontmatter Standard, обязательство 5](frontmatter-standard.md#обязательства), ADR-023).
 
 Relation-словарь **согласован** с Reports standard (B-043:
 `based_on`/`source`/`scope`/`supersedes`/`related_artifacts`) и Audit standard
