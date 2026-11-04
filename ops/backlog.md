@@ -96,6 +96,7 @@ related_issues:
 | [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts) | **`legacy/archived`** | Новая разработка в нём не ведётся. Его артефакты (`runs/`, `kb/`, `prompts/`, стандарты) допускаются **только как свидетельство** по [ADR-014](../docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md) (`LG-1`…`LG-6`) и не являются базисом новой нормы. Активная задача, предполагающая изменение этого репозитория, в бэклоге запрещена. |
 | `mango-ba-ai-runtime` | `target` | Единственная среда исполнения MVP. Задачи Спринта 19 выполняются только в нём. |
 | [`aether-orbis`](https://github.com/G-Ivan-A/aether-orbis) | `active` | Спица вне контура MVP; задачи генома сохраняются. |
+| [`aether-orbis-gra`](https://github.com/G-Ivan-A/aether-orbis-gra) | `active` | Спица направления «Репутационные технологии (GRA)», вынесенного из `research/reputation-technologies/` 2026-11-01. Задачи курса ставятся в спицу после ответа владельца на Q-1 [RFC #721](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md); в Хабе остаются только шаги выноса (Спринт 31). |
 | [`clarify-engine-ai`](https://github.com/G-Ivan-A/clarify-engine-ai) | `stopped` | Проект остановлен; используется как источник механизмов, изменения в нём не планируются. |
 
 **Правило компиляции (`EP-C1` в редакции issue #583).** Исполняемые файлы
