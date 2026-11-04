@@ -208,7 +208,7 @@
     {
       "id": "htom-readme",
       "path": "templates/htom/README.md",
-      "version": "0.6.0",
+      "version": "0.7.0",
       "target_type": [
         "HTOM"
       ],
@@ -263,7 +263,7 @@
     {
       "id": "htom-validate-repository-structure",
       "path": "templates/htom/tools/validate-repository-structure.sh",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "target_type": [
         "HTOM"
       ],
@@ -276,7 +276,7 @@
         "validation",
         "tooling"
       ],
-      "description": "Валидатор структуры HTOM-репозитория."
+      "description": "Валидатор структуры HTOM-репозитория: канонический набор, декларация каталогов, запреты docs/contracts/ и ai-generated на любой глубине."
     },
     {
       "id": "spoke-ci",

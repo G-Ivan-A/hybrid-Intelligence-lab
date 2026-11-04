@@ -89,11 +89,11 @@
     },
     "templates/htom/tools/validate-repository-structure.sh": {
       "id": "htom-validate-repository-structure",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "target_type": ["HTOM"],
       "criticality": "CORE",
       "tags": ["validation", "tooling"],
-      "description": "Валидатор структуры HTOM-репозитория."
+      "description": "Валидатор структуры HTOM-репозитория: канонический набор, декларация каталогов, запреты docs/contracts/ и ai-generated на любой глубине."
     },
     "templates/htom/tools/validate-agents-bootstrap.sh": {
       "id": "htom-validate-agents-bootstrap",
