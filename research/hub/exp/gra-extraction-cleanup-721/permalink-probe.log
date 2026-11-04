@@ -1,0 +1,6 @@
+# probe 2026-11-04T09:00:17Z: does GitHub redirect a path removed after a declared path_migrations entry?
+# .hub-profile.json path_migrations: pr-ops/ -> ops/ (#567); pr-ops/ removed in 5b4adf0 (#585)
+404	redirect=	https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/README.md
+404	redirect=	https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/pr-ops
+200	redirect=	https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/34defa5128d44180df835bb7e613d977f467fec3/pr-ops/README.md
+200	redirect=	https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/README.md

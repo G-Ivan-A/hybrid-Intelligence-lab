@@ -355,6 +355,8 @@ is_active_file() {
     research/hub/exp/gra-extraction-cleanup-721/ci-run-41427101826-jobs.jsonl | \
     research/hub/exp/gra-extraction-cleanup-721/spoke-guard-replay.py | \
     research/hub/exp/gra-extraction-cleanup-721/spoke-guard-replay.log | \
+    research/hub/exp/gra-extraction-cleanup-721/permalink-probe.log | \
+    research/hub/exp/gra-extraction-cleanup-721/domain-footprint.log | \
     research/hub/exp/gra-extraction-cleanup-721/ecosystem-snapshot.log | \
     research/hub/exp/ai-execution-statistics-543/README.md | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
