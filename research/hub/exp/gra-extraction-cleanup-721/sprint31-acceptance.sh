@@ -41,9 +41,15 @@ echo "course_steps_mentions=$course"
 
 echo "== A-5. Задание validate в CI (база — 135 с, из них 38 с курса)"
 if [[ -n "$RUN" ]]; then
-  gh api "repos/$REPO/actions/runs/$RUN/jobs" \
-    --jq '.jobs[] | "\(.name) \(.conclusion) \(((.completed_at|fromdate) - (.started_at|fromdate)))s steps=\(.steps|length)"' 2>/dev/null \
-    || echo "n/a"
+  # Ответ API собирается целиком: при сбое он повторяется, а не обрывается на середине.
+  jobs=""
+  for _ in 1 2 3; do
+    jobs=$(gh api "repos/$REPO/actions/runs/$RUN/jobs" \
+      --jq '.jobs[] | "\(.name) \(.conclusion) \(((.completed_at|fromdate) - (.started_at|fromdate)))s steps=\(.steps|length)"' 2>/dev/null) && break
+    jobs=""; sleep 5
+  done
+  echo "run=$RUN"
+  echo "${jobs:-n/a}"
 else
   echo "n/a (ci-run-id не передан)"
 fi
