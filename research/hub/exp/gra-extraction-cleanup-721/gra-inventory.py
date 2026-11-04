@@ -51,11 +51,11 @@ SEMANTIC: dict[str, tuple[str, str]] = {
     "2026-11-03-day4-presentation-gamma.md": (
         "decision", "Вариант 1 — исторический документ провала интерпретации"),
     "2026-06-29-partner-attraction-strategy.ru.md": (
-        "decision", "Стратегическое исследование Хаба; часть выводов устарела; учтено в треке C дорожной карты спицы"),
+        "global-candidate", "ADR-001 спицы, п. 6: «Глобальные исследования (например, стратегия привлечения партнёров ...) остаются в Хабе»; тема файла — партнёры курса (issue #292), то есть проектная"),
     "2026-09-24-introductory-course-options-610.md": (
         "decision", "Сравнение вариантов курса до выбора программы"),
     "2026-09-30-course-sources-and-presentations-650.md": (
-        "sources", "Исследование источников курса; коды `[650:X]` в материалах курса ведут на него"),
+        "global-candidate", "Инвентарь спицы: «Исследование источников курса (глобальное исследование)»; `scope: reputation-technologies-course-deepening`; коды `[650:X]` курса ведут на него"),
     "2026-10-07-day1-lecturer-script-653.md": ("superseded", "Ранние версии дня 1, заменены версиями 14.10"),
     "2026-10-07-day1-presentation-653.md": ("superseded", "Ранние версии дня 1, заменены версиями 14.10"),
     "2026-10-13-day1-rebuild-task-671.md": ("superseded", "Постановка задачи"),
@@ -208,6 +208,7 @@ def main(argv: list[str]) -> int:
         ext_refs = sorted(f for f, v in hub_targets.items()
                           if any(t == needle or t.startswith(needle) for t in v))
         decision_refs = [f for f in ext_refs if f.startswith(DECISION_HOMES)]
+        changelog_ref = "CHANGELOG.md" in ext_refs
         registry_refs = [f for f in ext_refs if f in (
             "ops/artifact-map.md", "tools/validate-repository-structure.sh", "CHANGELOG.md",
             "ops/backlog.md", "research/README.md")]
@@ -231,8 +232,8 @@ def main(argv: list[str]) -> int:
             rule, disp = "R4 персональные данные", "PII"
         elif cls == "index":
             rule, disp = "R5 индекс домена", "README-TOMBSTONE"
-        elif cls == "sources":
-            rule, disp = "R6 источник, на который ссылается курс", "OWNER-Q"
+        elif cls == "global-candidate":
+            rule, disp = "R6 кандидат в глобальные исследования: спица называет глобальным, тема проектная", "OWNER-Q"
         elif cls == "decision":
             rule, disp = "R7 запись решения или урока", "ARCHIVE"
         elif cls == "provenance":
@@ -249,7 +250,8 @@ def main(argv: list[str]) -> int:
             "unit": unit, "files": len(paths), "class": cls, "moved_to": ";".join(moved_to) or "-",
             "stale": len(stale), "new_after_snapshot": len(new), "ci_step": "yes" if ci else "-",
             "hub_ext_refs": len(ext_refs), "decision_refs": len(decision_refs),
-            "registry_refs": len(registry_refs), "spoke_pinned": sref["pinned"],
+            "registry_refs": len(registry_refs), "changelog_ref": "yes" if changelog_ref else "-",
+            "spoke_pinned": sref["pinned"],
             "spoke_floating": sref["floating"], "rule": rule, "disposition": disp,
             "reason": reason or "-", "decision_ref_files": ",".join(decision_refs) or "-",
         })
@@ -285,6 +287,12 @@ def main(argv: list[str]) -> int:
         if r["disposition"] == "REIMPORT":
             print(f"  {r['unit']} ({r['files']} files; stale {r['stale']}; new {r['new_after_snapshot']})")
     print()
+    hist = [r for r in rows if r["changelog_ref"] == "yes" or r["decision_refs"]]
+    print("units referenced from historical records (CHANGELOG.md or docs/{adr,rfc,audit,analysis,report}/):"
+          f" {len(hist)} of {len(rows)} units, {sum(r['files'] for r in hist)} files")
+    print("  artifact-deprecation-standard, Deletion Rules, forbidden #1: such a path may not be deleted"
+          " unless its address is replaced by a compatibility redirect")
+    print()
     print("units blocked by floating spoke links (must be pinned in the spoke before the Hub moves them):")
     for r in rows:
         if r["spoke_floating"] and r["disposition"] != "TOMBSTONE":
@@ -308,7 +316,7 @@ def main(argv: list[str]) -> int:
     print(f"  total files: {len(bare)}")
     print()
     print("per-unit table:")
-    short = ["unit", "files", "class", "stale", "new_after_snapshot", "ci_step", "decision_refs", "spoke_floating", "disposition"]
+    short = ["unit", "files", "class", "stale", "new_after_snapshot", "ci_step", "changelog_ref", "decision_refs", "spoke_floating", "disposition"]
     print("  " + " | ".join(short))
     for r in rows:
         print("  " + " | ".join(str(r[c]) for c in short))
