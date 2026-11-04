@@ -893,6 +893,8 @@ is_active_file() {
     tools/sync-from-hub.sh | \
     tools/spoke-extraction.py | \
     tools/test-spoke-extraction.sh | \
+    tools/path-migration-manifest.py | \
+    tools/test-path-migration-manifest.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-agents-md-integration.sh | \
     tools/test-evidence-structure-validator.sh | \
@@ -1007,27 +1009,14 @@ validate_metadata_single_source() {
 resolve_declared_path_migration() {
   local target_path="$1"
   [[ -f .hub-profile.json ]] || return 1
-  python3 - "$target_path" .hub-profile.json <<'PY'
-import json
-import os
-import sys
+  # Локальный `to + suffix` или строка манифеста надгробия (ADR-022, issue #725).
+  python3 tools/path-migration-manifest.py resolve "$target_path"
+}
 
-target, profile_path = sys.argv[1:]
-with open(profile_path, encoding="utf-8") as source:
-    profile = json.load(source)
-for migration in profile.get("path_migrations", []):
-    if not isinstance(migration, dict):
-        continue
-    old, new = migration.get("from"), migration.get("to")
-    if isinstance(old, str) and old and isinstance(new, str) and new and old != new:
-        normalized = os.path.normpath(target)
-        old_normalized = os.path.normpath(old)
-        if normalized == old_normalized or normalized.startswith(old_normalized + os.sep):
-            candidate = new.rstrip("/") + normalized[len(old_normalized):]
-            if os.path.isfile(candidate):
-                raise SystemExit(0)
-raise SystemExit(1)
-PY
+validate_path_migration_manifests() {
+  if ! python3 tools/path-migration-manifest.py check; then
+    fail "path_migrations manifest redirect is incomplete; see tools/path-migration-manifest.py check"
+  fi
 }
 
 validate_internal_markdown_links() {
@@ -1438,6 +1427,8 @@ required_files=(
   "tools/sync-from-hub.sh"
   "tools/spoke-extraction.py"
   "tools/test-spoke-extraction.sh"
+  "tools/path-migration-manifest.py"
+  "tools/test-path-migration-manifest.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
   "tools/test-reference-research-terminology.sh"
@@ -1490,6 +1481,7 @@ done
 
 validate_metadata_single_source
 validate_internal_markdown_links
+validate_path_migration_manifests
 validate_artifact_map_paths
 validate_template_placeholders
 if ! ./tools/validate-file-naming.sh; then
@@ -3411,6 +3403,8 @@ require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-path-migration-manifest.sh"
+require_text "tools/validate-repository-structure.sh" "tools/path-migration-manifest.py resolve"
 require_text "tools/spoke-extraction.py" "ops/hub-project-extraction-contract.md"
 require_text "ops/hub-project-extraction-contract.md" "executable: true"
 require_text "ops/hub-project-extraction-contract.md" "## ▶️ EXECUTION"

@@ -236,6 +236,25 @@ git_in commit --quiet -m "mix path migration and content rewrite"
 expect_fail "path-миграция не скрывает содержательную правку" "$repo" \
   "изменение существующего исторического документа" BASE_REF=main
 
+# 9a-bis. Manifest redirect (ADR-022, issue #725) не даёт права переписывать
+# историю: запись с внешним `to` и `manifest` не подставляет URL вместо пути,
+# исторические ссылки разрешает манифест надгробия.
+git_in checkout --quiet -b manifest-migration main
+cat >"$repo/.hub-profile.json" <<'EOF'
+{
+  "path_migrations": [
+    {"from": "pr-ops/", "to": "https://github.com/example/spoke/blob/main/", "manifest": "pr-ops/README.md",
+     "archive": "archive/pr-ops-2026-11", "issue": "https://example.test/issues/2"}
+  ]
+}
+EOF
+sed -i 's#pr-ops/#https://github.com/example/spoke/blob/main/#g' "$repo/docs/rfc/2026-01-01-rfc-historical.md"
+git_in add .hub-profile.json docs/rfc/2026-01-01-rfc-historical.md
+git_in commit --quiet -m "rewrite historical link to external receiver"
+
+expect_fail "manifest redirect не разрешает переписать ссылку принятого RFC" "$repo" \
+  "изменение существующего исторического документа" BASE_REF=main
+
 # 9b. Переименование существующего RFC — падение (оба пути защищены).
 git_in checkout --quiet -b rename-rfc main
 git_in mv "docs/rfc/2026-01-01-rfc-historical.md" "docs/rfc/2026-01-01-rfc-renamed.md"

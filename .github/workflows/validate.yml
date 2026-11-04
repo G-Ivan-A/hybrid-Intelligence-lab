@@ -69,6 +69,9 @@ jobs:
       - name: Test spoke extraction tool
         run: bash tools/test-spoke-extraction.sh
 
+      - name: Test path migration manifest redirect
+        run: bash tools/test-path-migration-manifest.sh
+
       - name: Test historical immutability validator
         run: bash tools/test-historical-immutable.sh
 
