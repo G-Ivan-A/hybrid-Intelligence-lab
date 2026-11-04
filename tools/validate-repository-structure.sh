@@ -528,6 +528,9 @@ is_active_file() {
     research/hub/exp/independent-tech-debt-723/README.md | \
     research/hub/exp/independent-tech-debt-723/independence-check.sh | \
     research/hub/exp/independent-tech-debt-723/independence-check.log | \
+    research/hub/exp/independent-tech-debt-727/README.md | \
+    research/hub/exp/independent-tech-debt-727/independence-check.sh | \
+    research/hub/exp/independent-tech-debt-727/independence-check.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -704,6 +707,7 @@ is_active_file() {
     docs/analysis/2026-11-04-sprint-31-readiness-check.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
+    docs/analysis/2026-11-04-sprint-13-hub-normative-debt-selection.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -1149,6 +1153,9 @@ required_files=(
   "research/hub/exp/independent-tech-debt-723/README.md"
   "research/hub/exp/independent-tech-debt-723/independence-check.sh"
   "research/hub/exp/independent-tech-debt-723/independence-check.log"
+  "research/hub/exp/independent-tech-debt-727/README.md"
+  "research/hub/exp/independent-tech-debt-727/independence-check.sh"
+  "research/hub/exp/independent-tech-debt-727/independence-check.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -2084,7 +2091,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.56"
+require_text "ops/artifact-map.md" "version: 2.57"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2497,7 +2504,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.77"
+require_text "ops/backlog.md" "version: 1.78"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
@@ -3265,6 +3272,8 @@ require_text "research/hub/exp/ba-extraction-717/rehearse-contract.log" "E5 OK: 
 require_text "research/hub/exp/ba-extraction-717/drift-baseline.log" "files: 1 ok"
 require_text "research/hub/exp/independent-tech-debt-723/README.md" "type: experiment"
 require_text "research/hub/exp/independent-tech-debt-723/independence-check.log" "Hub fetch steps = 0"
+require_text "research/hub/exp/independent-tech-debt-727/README.md" "type: experiment"
+require_text "research/hub/exp/independent-tech-debt-727/independence-check.log" "Hub fetch steps = 0"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"

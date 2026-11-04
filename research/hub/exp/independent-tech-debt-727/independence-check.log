@@ -1,0 +1,106 @@
+# Hub HEAD: 7dc6df2 (2026-11-04)
+
+## Previous steps: backlog rows still in review although their PR is merged
+ **B-196** | review | [#723](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/723) / [PR #724](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/724) 
+ **B-197** | review | [#723](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/723) / [PR #724](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/724) 
+ **B-269** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-275** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-276** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-277** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-278** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-279** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-280** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-281** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-282** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-283** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-284** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+ **B-285** | review | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) 
+
+## F-1. B-169: contract home is normed in AGENTS.md, not in the standard
+35:- Do not create `docs/contracts/`; agent contracts live in `ai-rules/`.
+106:| Agent contract: always-loaded rule | `ai-rules/<name>.md` |
+107:| Agent contract: human-invoked command | `ai-rules/commands/<slug>.md` |
+108:| Agent contract: context-selected skill, self-contained and executable | `ai-rules/skills/<slug>/SKILL.md` |
+109:| Process contract: operational process artifact | `ops/<name>.md` |
+contract-documentation-standard.md mentions ai-rules/: 0
+contract-documentation-standard.md mentions docs/contracts: 0
+ops/repo-model.md mentions контракт/contract: 0
+standards/contract-documentation-standard.md:3:version: 1.1
+standards/contract-documentation-standard.md:4:updated: 2026-06-13
+ops/repo-model.md:3:version: 1.5
+ops/repo-model.md:4:updated: 2026-08-11
+
+## F-2. B-114: five levels exist, wording rules are declared missing
+125:### Пять уровней постановки задачи
+155:Правила формулирования Story/ФТ/НФТ отдельным стандартом пока не
+156:зафиксированы; задача на его инициирование - B-114 в
+119:Keep the levels distinct: user story, system functional requirements, system non-funct
+issue-workflow.md mentions измерим/проверяем: 4
+issue-workflow.md mentions антипаттерн: 0
+
+## F-3. B-115: Hub template has five levels, genome template does not
+.github/ISSUE_TEMPLATE/task.md: version: 3.1, level headings = 5
+templates/htom/.github/ISSUE_TEMPLATE/task.md: version: 2.2, level headings = 0
+docs/rfc/2026-08-06-rfc-task-statement-architecture.md: status: draft, version: 0.1
+54:IFS=',' read -r -a protected_prefixes <<<"${HISTORICAL_IMMUTABLE_PATHS:-docs/rfc/,docs/adr/}"
+
+## F-4. B-116: machine gates
+Hub: every tracked file must be on the allowlist (docs/contracts/* is not):
+53:is_active_file() {
+1338:  if is_active_file "$file"; then
+Hub allowlist mentions docs/contracts: 0
+449:      error "$path" "${lines[$field]}" "frontmatter field is forbidden: ai-generated"
+Genome validator scans only the root:
+278:  done < <(find . -maxdepth 1 -type d ! -name '.')
+Genome validator mentions docs/contracts: 0
+Genome tools check ai-generated: 0
+Any validator names model-specific rule files (.cursorrules, GEMINI.md, .windsurfrules): 0
+Workflows triggered by issue events (inside the on: block): 0
+Tools reading issue bodies (gh issue view / event.issue.body): 0
+
+## F-5. B-154: where the ai-generated ban is written
+  standards/adr-structure-standard.md
+  standards/analysis-standard.md
+  standards/audit-standard.md
+  standards/frontmatter-docs-standard.md
+  standards/frontmatter-standard.md
+  standards/product-taxonomy-reference.md
+  standards/report-standard.md
+  standards/research-standard.md
+  standards/rfc-structure-standard.md
+  standards/standard-meta-structure.md
+  CONTRIBUTING.md
+  AGENTS.md
+  templates/htom/AGENTS.md
+files: 13
+
+## Overlap with RFC #715 steps (Sprint 30 rows)
+ **B-239** | Ш2.4: канонический инструмент синка с закреплением (I-3, I-4) | null | TODO 
+ **B-240** | Ш2.5: исправить геном (I-7: H-1, H-3) | null | TODO 
+ **B-241** | Ш2.6: шаблон CI-проверки дрейфа для спиц (I-5) | null | TODO 
+ **B-259** | Ш6.2: валидаторы — правила дома вместо явных путей | null | TODO 
+ **B-260** | Ш6.3: гигиена бэклога | null | TODO 
+
+## Duplicate IDs among the chosen rows (expect 1 each)
+B-114 rows: 1
+B-115 rows: 1
+B-116 rows: 1
+B-154 rows: 1
+B-169 rows: 1
+
+## Open Hub PRs touching the chosen files
+PR #728: none
+
+## Spokes: open PRs, Hub paths they touch, whether CI reads Hub files at run time
+### mango_ba_prompts
+open PR #447: [WIP] BL-157 а (files under standards/, templates/htom/, ops/backlog.md: 0)
+.github/workflows/github-pages.yml: Hub fetch steps = 0
+.github/workflows/kb.yml: Hub fetch steps = 0
+.github/workflows/validate.yml: Hub fetch steps = 0
+.hub-profile.json pin: "hub_sha": "3bfa4103c9efbbd59bc951814884920e406982e2"
+### mango-ba-ai-runtime
+.github/workflows/validate.yml: Hub fetch steps = 0
+.hub-profile.json: absent
+### aether-orbis-gra
+.github/workflows/validate.yml: Hub fetch steps = 0
+.hub-profile.json pin: "hub_commit": "48ebe5230be87ca5bf8a08b385e296a2987e9958"
