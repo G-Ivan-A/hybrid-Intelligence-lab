@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-11-04
 temperature: 0.1
 type: experiment
@@ -43,6 +43,11 @@ Evidence-контейнер issue
 | `dialog-review-checks.log` | Результат: в домене 0 из 28 файлов PR; `day1-framer` / `day2-scout` — 0 в дереве, истории и поиске; #710 — карта компаний; 4 правила дня 1 найдены (строки 14, 69, 87, 193); после базы RFC `c06075d` в домене 0 коммитов; диспозиции 81 строки инвентаря не изменились. |
 | `sprint31-readiness.sh` | Контрольная проверка готовности к Спринту 31 ([анализ #725](../../../../docs/analysis/2026-11-04-sprint-31-readiness-check.md)): P-1 PR спицы по S-1 слит; P-2 плавающие и закреплённые ссылки спицы на домен; P-3 каждый закреплённый путь есть на своём коммите (`git cat-file -e`); P-4 строки бэклога спицы; P-5 домен не менялся после `PIN_SHA`; P-6 открытые PR Хаба в домене; P-7 CI `main`; P-8 права и rulesets; P-9 повтор инвентаря и сдвиг диспозиций. Только чтение; спица — данные, `python3 -I`. |
 | `sprint31-readiness.log` | Результат: PR #4 спицы слит (`b49acde`); плавающих ссылок 0, закреплённых путей 78, отсутствующих 0; домен после `PIN_SHA` не менялся; `admin=false`, rulesets 0, тегов `archive/*` 0; 11 единиц перешли ARCHIVE → DELETE после закрепления ссылок, мандат Q-2 — те же 19 единиц и 73 файла. |
+| `tombstone-manifest.py` | Генератор надгробия `research/reputation-technologies/README.md` (B-278): строка манифеста на каждый из 172 файлов домена — SHA-ссылка на копию в спице (по `source:` спицы, байты Хаба не менялись после него), путь на теге (ARCHIVE и #650), «удалён; последняя версия — `48ebe52`» (мандат Q-2 и PII Q-4), относительная ссылка на #292 в `research/education/` (Q-3). Падает, если путь остался без адреса. Спица — данные, `python3 -I`. |
+| `rewrite-live-links.py` | Перепись живых ссылок Хаба на домен по манифесту (B-279): плавающая ветка и относительные ссылки → адрес из манифеста; корень домена → спица; каталог → тот же каталог на теге; ссылка на файл с персональными данными — ошибка. 62 ссылки в 11 файлах. |
+| `grep-classify.py` | Критерий Ш6.2: каждое вхождение `research/reputation-technologies` в дереве — надгробие или существующий путь, `path_migrations`, историческая запись или закреплённый адрес (SHA или тег `archive/*`); иначе — живая ссылка, ошибка. |
+| `sprint31-acceptance.sh` | Приёмка выноса (B-284, Ш6.2) тем же инструментом, что измерял вход: A-1 повтор `gra-inventory.py`, A-2 `grep-classify.py`, A-3 manifest redirect и план тега, A-4 шаги CI курса, A-5 задание `validate` в прогоне CI PR, A-6 закреплённые ссылки спицы на коммиты Хаба (`git cat-file` и HTTP 200). Только чтение; спица — данные. |
+| `sprint31-acceptance.log` | Результат: в домене только `README.md` (`README-TOMBSTONE`, 0 шагов CI); живых вхождений 0; манифест полон по `archive_commit` `51869aa`, путь вне манифеста не разрешается; шагов курса в `validate.yml` 0; 87 закреплённых ссылок спицы — 200 и есть в git. |
 
 ## Снимки
 
@@ -72,6 +77,10 @@ python3 -I $D/spoke-guard-replay.py . /tmp/spokes/aether-orbis-gra $D/gra-invent
 # domain-footprint.log: git ls-files | wc -l; git ls-files -z <путь> | xargs -0 cat | wc -c
 $D/dialog-review-checks.sh . /tmp/spokes/aether-orbis-gra origin/main > $D/dialog-review-checks.log 2>&1
 $D/sprint31-readiness.sh . /tmp/spokes/aether-orbis-gra > $D/sprint31-readiness.log 2>&1
+# Спринт 31: надгробие (на коммите до удаления), перепись ссылок, приёмка
+python3 -I $D/tombstone-manifest.py . /tmp/spokes/aether-orbis-gra $D/gra-inventory.tsv research/reputation-technologies/README.md
+python3 -I $D/rewrite-live-links.py . research/README.md research/external-knowledge/external-sources-registry.md # и др.
+$D/sprint31-acceptance.sh . /tmp/spokes/aether-orbis-gra <ci-run-id> > $D/sprint31-acceptance.log 2>&1
 ```
 
 Скрипту инвентаря нужна история Хаба до снимка `32b5fa5`: в клоне глубины 1 он

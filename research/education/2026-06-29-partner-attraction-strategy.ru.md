@@ -8,8 +8,8 @@ context: [reputation-technologies, gra, partner-strategy, corporate-education, c
 method: source-synthesis + market-segmentation + scoring-model
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/292"
 related_artifacts:
-  - research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md
-  - research/reputation-technologies/2026-06-20-executive-summary.ru-en.md
+  - "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-founders-vision-and-framework.ru.md"
+  - "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-executive-summary.ru-en.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/292"
 ---

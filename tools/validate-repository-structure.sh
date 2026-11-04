@@ -366,6 +366,9 @@ is_active_file() {
     research/hub/exp/gra-extraction-cleanup-721/sprint31-readiness.log | \
     research/hub/exp/gra-extraction-cleanup-721/tombstone-manifest.py | \
     research/hub/exp/gra-extraction-cleanup-721/rewrite-live-links.py | \
+    research/hub/exp/gra-extraction-cleanup-721/grep-classify.py | \
+    research/hub/exp/gra-extraction-cleanup-721/sprint31-acceptance.sh | \
+    research/hub/exp/gra-extraction-cleanup-721/sprint31-acceptance.log | \
     research/hub/exp/ai-execution-statistics-543/README.md | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \

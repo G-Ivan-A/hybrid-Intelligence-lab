@@ -1,0 +1,29 @@
+== A-1. Повтор инвентаря: в дереве только надгробие
+hub_HEAD=5b0ac811d0f6cd786ed47e1afdcdb83a788cdf90
+domain files at HEAD: 1 (units: 1; sum check: 1)
+domain files in snapshot: 173; added after snapshot: 0; removed after snapshot: 172
+files by disposition:
+  README-TOMBSTONE: 1 files, 1 units
+units with a CI step in .github/workflows/validate.yml: 0
+domain_tree_files=research/reputation-technologies/README.md 
+== A-2. git grep research/reputation-technologies: только надгробие, path_migrations, история и закреплённые адреса
+класс	вхождений	файлов
+tombstone	184	7
+path_migrations	3	1
+history	182	32
+pinned	21	1
+live	0	0
+== A-3. Manifest redirect: полнота по archive_commit, разрешение путей
+Path migration manifests passed (1 manifest(s)).
+resolve research/reputation-technologies/2026-06-20-glossary.ru-en.md: resolved
+resolve research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md: resolved
+resolve research/reputation-technologies/no-such-file.md: unresolved
+create	archive/reputation-technologies-2026-11	51869aa50f14a0bc8f69f8b426e216244f16c970
+== A-4. Шаги CI курса в validate.yml
+course_steps_mentions=0
+== A-5. Задание validate в CI (база — 135 с, из них 38 с курса)
+n/a (ci-run-id не передан)
+== A-6. Ссылки спицы на коммиты Хаба отвечают 200 и существуют в git
+spoke_pinned_urls=87 http_not_200=0 missing_in_git=0
+== Итог
+acceptance passed
