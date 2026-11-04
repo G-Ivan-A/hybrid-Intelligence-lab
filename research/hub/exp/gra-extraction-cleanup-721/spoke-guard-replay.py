@@ -11,7 +11,7 @@ Each check is run twice, in two detached git worktrees of the Hub at HEAD:
 
 A check that passes on `hub` and fails on `spoke` guards text the spoke has
 changed (by design: the spoke drops self-check sections on import, spoke
-ADR-001 point 5). A check that passes on both still holds for the spoke copy.
+migration inventory rule 3). A check that passes on both still holds for the spoke copy.
 
 Only Hub check scripts (trusted, tracked in this repository) are executed. Spoke
 files are copied as data and never executed. Every check runs `python3 -I`
