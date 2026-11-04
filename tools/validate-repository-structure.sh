@@ -211,6 +211,7 @@ is_active_file() {
     research/education/README.md | \
     research/ai-education/README.md | \
     research/education/2026-07-16-retrieval-strategies-survey.md | \
+    research/education/2026-06-29-partner-attraction-strategy.ru.md | \
     research/ba-requirements/README.md | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
@@ -361,6 +362,13 @@ is_active_file() {
     research/hub/exp/gra-extraction-cleanup-721/ecosystem-snapshot.log | \
     research/hub/exp/gra-extraction-cleanup-721/dialog-review-checks.sh | \
     research/hub/exp/gra-extraction-cleanup-721/dialog-review-checks.log | \
+    research/hub/exp/gra-extraction-cleanup-721/sprint31-readiness.sh | \
+    research/hub/exp/gra-extraction-cleanup-721/sprint31-readiness.log | \
+    research/hub/exp/gra-extraction-cleanup-721/tombstone-manifest.py | \
+    research/hub/exp/gra-extraction-cleanup-721/rewrite-live-links.py | \
+    research/hub/exp/gra-extraction-cleanup-721/grep-classify.py | \
+    research/hub/exp/gra-extraction-cleanup-721/sprint31-acceptance.sh | \
+    research/hub/exp/gra-extraction-cleanup-721/sprint31-acceptance.log | \
     research/hub/exp/ai-execution-statistics-543/README.md | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \
@@ -531,180 +539,8 @@ is_active_file() {
     research/open-ai-ru/README.md | \
     research/open-ai-ru/2026-06-20-open-ai-ru-repository-architecture-and-l3-l4.md | \
     research/reputation-technologies/README.md | \
-    research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md | \
-    research/reputation-technologies/2026-06-20-framework-standard.en.md | \
-    research/reputation-technologies/2026-06-20-white-paper.en.md | \
-    research/reputation-technologies/2026-06-20-executive-summary.ru-en.md | \
-    research/reputation-technologies/2026-06-20-glossary.ru-en.md | \
-    research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md | \
-    research/reputation-technologies/2026-09-24-introductory-course-options-610.md | \
-    research/reputation-technologies/2026-09-30-course-sources-and-presentations-650.md | \
-    research/reputation-technologies/2026-10-07-day1-rationale-and-method-653.md | \
-    research/reputation-technologies/2026-10-07-day1-presentation-653.md | \
-    research/reputation-technologies/2026-10-07-day1-lecturer-script-653.md | \
-    research/reputation-technologies/2026-10-14-day1-presentation-gamma.md | \
-    research/reputation-technologies/2026-10-14-day1-lecturer-script.md | \
-    research/reputation-technologies/2026-10-14-day1-lecturer-gra-research.md | \
-    research/reputation-technologies/2026-10-15-day1-slide-standard-and-gate-677.md | \
-    research/reputation-technologies/2026-10-30-day2-rationale-and-method.md | \
-    research/reputation-technologies/2026-10-30-day2-presentation.md | \
-    research/reputation-technologies/2026-10-30-day2-lecturer-script.md | \
-    research/reputation-technologies/2026-10-30-day2-presentation-gamma.md | \
-    research/reputation-technologies/2026-11-02-day3-rationale-and-method.md | \
-    research/reputation-technologies/2026-11-02-day3-presentation.md | \
-    research/reputation-technologies/2026-11-02-day3-lecturer-script.md | \
-    research/reputation-technologies/2026-11-02-day3-presentation-gamma.md | \
-    research/reputation-technologies/2026-11-02-day3-slide-standard-and-gate.md | \
-    research/reputation-technologies/2026-11-03-day4-rationale-and-method.md | \
-    research/reputation-technologies/2026-11-03-day4-presentation-gamma.md | \
-    research/reputation-technologies/2026-11-03-day4-lecturer-script.md | \
-    research/reputation-technologies/2026-11-03-day4-rationale-and-method-v2.md | \
-    research/reputation-technologies/2026-11-03-day4-ai-interpretation-analysis.md | \
-    research/reputation-technologies/2026-11-03-day4-crisis-mitigation-rfc.md | \
-    research/reputation-technologies/2026-11-03-day4-presentation-gamma-v2.md | \
-    research/reputation-technologies/2026-11-03-day4-presentation-gamma-v3.md | \
-    research/reputation-technologies/2026-11-03-day4-lecturer-script-v3.md | \
-    research/reputation-technologies/2026-11-03-day4-presentation-gamma-v4.md | \
-    research/reputation-technologies/2026-11-03-rfc-presentation-update-v5.md | \
-    research/reputation-technologies/2026-11-03-day4-presentation-gamma-v5.md | \
-    research/reputation-technologies/2026-11-03-day4-lecturer-script-v5.md | \
-    research/reputation-technologies/2026-11-03-day4-image-prompts-v5-couturier-constructor.md | \
-    research/reputation-technologies/2026-10-24-handout-materials-master-prompt-registry-days-1-4.md | \
-    research/reputation-technologies/2026-10-30-day1-osint-pipeline-design.md | \
-    research/reputation-technologies/2026-11-01-course-quotes-days-1-4-alce.md | \
-    research/reputation-technologies/2026-10-12-rfc-days-1-3-logic.md | \
-    research/reputation-technologies/2026-10-13-day1-rebuild-task-671.md | \
-    research/reputation-technologies/gra-research-program/presentation-rfc/README.md | \
-    research/reputation-technologies/gra-research-program/presentation-rfc/2026-10-12-rfc-presentation-ux-days-1-3.md | \
-    research/reputation-technologies/exp/rfc-days-logic-667/README.md | \
-    research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py | \
-    research/reputation-technologies/exp/rfc-days-logic-667/issue-669-before.log | \
-    research/reputation-technologies/exp/rfc-days-logic-667/issue-669-after.log | \
-    research/reputation-technologies/exp/rfc-days-logic-667/issue-671-before.log | \
-    research/reputation-technologies/exp/rfc-days-logic-667/issue-671-after.log | \
-    research/reputation-technologies/exp/presentation-ux-665/README.md | \
-    research/reputation-technologies/exp/presentation-ux-665/check-presentation-ux.py | \
-    research/reputation-technologies/exp/presentation-ux-665/render-preview.py | \
-    research/reputation-technologies/exp/presentation-ux-665/before.png | \
-    research/reputation-technologies/exp/presentation-ux-665/after.png | \
-    research/reputation-technologies/exp/day2-rebuild-673/README.md | \
-    research/reputation-technologies/exp/day2-rebuild-673/check-day2.py | \
-    research/reputation-technologies/exp/day2-rebuild-673/issue-673-before.log | \
-    research/reputation-technologies/exp/day2-rebuild-673/issue-673-after.log | \
-    research/reputation-technologies/exp/day3-filter-663/README.md | \
-    research/reputation-technologies/exp/day3-filter-663/check-day3.sh | \
-    research/reputation-technologies/exp/day3-filter-663/test-check-day3.sh | \
-    research/reputation-technologies/exp/day1-rebuild-675/README.md | \
-    research/reputation-technologies/exp/day1-rebuild-675/check-day1.py | \
-    research/reputation-technologies/exp/day1-rebuild-675/issue-675-before.log | \
-    research/reputation-technologies/exp/day1-rebuild-675/issue-675-after.log | \
-    research/reputation-technologies/exp/day1-rebuild-677/README.md | \
-    research/reputation-technologies/exp/day1-rebuild-677/check-day1-677.py | \
-    research/reputation-technologies/exp/day1-rebuild-677/issue-677-before.log | \
-    research/reputation-technologies/exp/day1-rebuild-677/issue-677-after.log | \
-    research/reputation-technologies/exp/day2-gamma-679/README.md | \
-    research/reputation-technologies/exp/day2-gamma-679/check-day2-679.py | \
-    research/reputation-technologies/exp/day2-gamma-679/issue-679-before.log | \
-    research/reputation-technologies/exp/day2-gamma-679/issue-679-after.log | \
-    research/reputation-technologies/exp/day3-gamma-681/README.md | \
-    research/reputation-technologies/exp/day3-gamma-681/check-day3-681.py | \
-    research/reputation-technologies/exp/day3-gamma-681/deck_words_681.py | \
-    research/reputation-technologies/exp/day3-gamma-681/mutation_reasons_681.py | \
-    research/reputation-technologies/exp/day3-gamma-681/day3_links_681.py | \
-    research/reputation-technologies/exp/day3-gamma-681/issue-681-before.log | \
-    research/reputation-technologies/exp/day3-gamma-681/issue-681-after.log | \
-    research/reputation-technologies/exp/day4-rationale-685/README.md | \
-    research/reputation-technologies/exp/day4-rationale-685/check-day4-685.py | \
-    research/reputation-technologies/exp/day4-rationale-685/mutation_reasons_685.py | \
-    research/reputation-technologies/exp/day4-rationale-685/issue-685-before.log | \
-    research/reputation-technologies/exp/day4-rationale-685/issue-685-after.log | \
-    research/reputation-technologies/exp/day4-gamma-687/README.md | \
-    research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py | \
-    research/reputation-technologies/exp/day4-gamma-687/mutation_reasons_687.py | \
-    research/reputation-technologies/exp/day4-gamma-687/issue-687-before.log | \
-    research/reputation-technologies/exp/day4-gamma-687/issue-687-after.log | \
-    research/reputation-technologies/exp/day4-correction-689/README.md | \
-    research/reputation-technologies/exp/day4-correction-689/check-day4-689.py | \
-    research/reputation-technologies/exp/day4-correction-689/mutation_reasons_689.py | \
-    research/reputation-technologies/exp/day4-correction-689/verify_deck_quotes_689.py | \
-    research/reputation-technologies/exp/day4-correction-689/build_deck_v2_689.py | \
-    research/reputation-technologies/exp/day4-correction-689/issue-689-before.log | \
-    research/reputation-technologies/exp/day4-correction-689/issue-689-after.log | \
-    research/reputation-technologies/exp/day4-correction-689/findings-days-1-4-689.json | \
-    research/reputation-technologies/exp/day4-v3-691/README.md | \
-    research/reputation-technologies/exp/day4-v3-691/check-day4-691.py | \
-    research/reputation-technologies/exp/day4-v3-691/mutation_reasons_691.py | \
-    research/reputation-technologies/exp/day4-v3-691/issue-691-before.log | \
-    research/reputation-technologies/exp/day4-v3-691/issue-691-after.log | \
-    research/reputation-technologies/exp/day4-v4-693/README.md | \
-    research/reputation-technologies/exp/day4-v4-693/check-day4-693.py | \
-    research/reputation-technologies/exp/day4-v4-693/mutation_reasons_693.py | \
-    research/reputation-technologies/exp/day4-v4-693/issue-693-before.log | \
-    research/reputation-technologies/exp/day4-v4-693/issue-693-after.log | \
-    research/reputation-technologies/exp/rfc-v5-695/README.md | \
-    research/reputation-technologies/exp/rfc-v5-695/build-rfc-695.py | \
-    research/reputation-technologies/exp/rfc-v5-695/check-rfc-695.py | \
-    research/reputation-technologies/exp/rfc-v5-695/mutation_reasons_695.py | \
-    research/reputation-technologies/exp/rfc-v5-695/issue-695-before.log | \
-    research/reputation-technologies/exp/rfc-v5-695/issue-695-after.log | \
-    research/reputation-technologies/exp/day4-v5-697/README.md | \
-    research/reputation-technologies/exp/day4-v5-697/check-day4-697.py | \
-    research/reputation-technologies/exp/day4-v5-697/mutation_reasons_697.py | \
-    research/reputation-technologies/exp/day4-v5-697/issue-697-before.log | \
-    research/reputation-technologies/exp/day4-v5-697/issue-697-after.log | \
-    research/reputation-technologies/exp/day4-image-prompts-v5-699/README.md | \
-    research/reputation-technologies/exp/day4-image-prompts-v5-699/check-day4-image-prompts-699.py | \
-    research/reputation-technologies/exp/day4-image-prompts-v5-699/mutation_reasons_699.py | \
-    research/reputation-technologies/exp/day4-image-prompts-v5-699/issue-699-before.log | \
-    research/reputation-technologies/exp/day4-image-prompts-v5-699/issue-699-after.log | \
-    research/reputation-technologies/exp/handout-registry-700/README.md | \
-    research/reputation-technologies/exp/handout-registry-700/check-handout-700.py | \
-    research/reputation-technologies/exp/handout-registry-700/mutation_reasons_700.py | \
-    research/reputation-technologies/exp/handout-registry-700/issue-700-before.log | \
-    research/reputation-technologies/exp/handout-registry-700/issue-700-after.log | \
-    research/reputation-technologies/exp/day1-osint-709/README.md | \
-    research/reputation-technologies/exp/day1-osint-709/check-pipeline-709.py | \
-    research/reputation-technologies/exp/day1-osint-709/before.log | \
-    research/reputation-technologies/exp/day1-osint-709/after.log | \
-    research/reputation-technologies/exp/day1-osint-709/feedback-before.log | \
-    research/reputation-technologies/exp/day1-osint-709/check-graph-709.py | \
-    research/reputation-technologies/exp/day1-osint-709/2026-10-30-ten-company-example.md | \
-    research/reputation-technologies/exp/quotes-711/README.md | \
-    research/reputation-technologies/exp/quotes-711/extract_650.py | \
-    research/reputation-technologies/exp/quotes-711/inventory-650.json | \
-    research/reputation-technologies/exp/quotes-711/quotes_711_data.py | \
-    research/reputation-technologies/exp/quotes-711/names-evidence-711.json | \
-    research/reputation-technologies/exp/quotes-711/interpretations-711.json | \
-    research/reputation-technologies/exp/quotes-711/source-excerpts-711.txt | \
-    research/reputation-technologies/exp/quotes-711/expand_titles_711.py | \
-    research/reputation-technologies/exp/quotes-711/build_quotes_711.py | \
-    research/reputation-technologies/exp/quotes-711/check-quotes-711.py | \
-    research/reputation-technologies/exp/quotes-711/mutation_reasons_711.py | \
-    research/reputation-technologies/exp/quotes-711/issue-711-before.log | \
-    research/reputation-technologies/exp/quotes-711/issue-711-after.log | \
     research/external-knowledge/external-insights/2026-10-30-gephi-csv-evidence-graph.md | \
     research/external-knowledge/external-insights/2026-10-30-w3c-tabular-provenance-keys.md | \
-    research/reputation-technologies/exp/day3-rationale-683/README.md | \
-    research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py | \
-    research/reputation-technologies/exp/day3-rationale-683/issue-683-before.log | \
-    research/reputation-technologies/exp/day3-rationale-683/issue-683-after.log | \
-    research/reputation-technologies/gra-research-program/00-introduction.md | \
-    research/reputation-technologies/gra-research-program/10-theory.md | \
-    research/reputation-technologies/gra-research-program/20-taxonomy.md | \
-    research/reputation-technologies/gra-research-program/30-decision-framework.md | \
-    research/reputation-technologies/gra-research-program/40-practice-and-cases.md | \
-    research/reputation-technologies/gra-research-program/50-open-research.md | \
-    research/reputation-technologies/image-technologies/00-introduction.md | \
-    research/reputation-technologies/image-technologies/10-theory.md | \
-    research/reputation-technologies/image-technologies/20-taxonomy.md | \
-    research/reputation-technologies/image-technologies/30-decision-framework.md | \
-    research/reputation-technologies/image-technologies/40-practice-and-cases.md | \
-    research/reputation-technologies/image-technologies/50-open-research.md | \
-    research/reputation-technologies/exp/gra-research-program-657/README.md | \
-    research/reputation-technologies/exp/gra-research-program-657/check-gra-anchors.py | \
-    research/reputation-technologies/exp/day1-methodology-659/README.md | \
-    research/reputation-technologies/exp/day1-methodology-659/absolutize-links.py | \
-    research/reputation-technologies/exp/day1-methodology-659/scan-contradictions.sh | \
     research/mango/2026-05-22-classification.md | \
     research/mango/2026-05-22-classification-tz.md | \
     research/mango/2026-05-22-requirements-flow.md | \
@@ -830,6 +666,8 @@ is_active_file() {
     guides/glossary.md | \
     .github/pull_request_template.md | \
     .github/workflows/update-manifest.yml | \
+    .github/workflows/archive-tag.yml | \
+    .github/rulesets/archive-tags.json | \
     .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
     .github/ISSUE_TEMPLATE/task.md | \
@@ -863,6 +701,7 @@ is_active_file() {
     docs/analysis/2026-11-04-gra-extraction-completeness-check.md | \
     docs/analysis/2026-11-04-issue-721-execution-protocol-analysis.md | \
     docs/analysis/2026-11-04-issue-721-dialog-expert-review.md | \
+    docs/analysis/2026-11-04-sprint-31-readiness-check.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
@@ -890,6 +729,10 @@ is_active_file() {
     tools/sync-from-hub.sh | \
     tools/spoke-extraction.py | \
     tools/test-spoke-extraction.sh | \
+    tools/path-migration-manifest.py | \
+    tools/test-path-migration-manifest.sh | \
+    tools/archive-tags.py | \
+    tools/test-archive-tags.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-agents-md-integration.sh | \
     tools/test-evidence-structure-validator.sh | \
@@ -1004,27 +847,14 @@ validate_metadata_single_source() {
 resolve_declared_path_migration() {
   local target_path="$1"
   [[ -f .hub-profile.json ]] || return 1
-  python3 - "$target_path" .hub-profile.json <<'PY'
-import json
-import os
-import sys
+  # Локальный `to + suffix` или строка манифеста надгробия (ADR-022, issue #725).
+  python3 tools/path-migration-manifest.py resolve "$target_path"
+}
 
-target, profile_path = sys.argv[1:]
-with open(profile_path, encoding="utf-8") as source:
-    profile = json.load(source)
-for migration in profile.get("path_migrations", []):
-    if not isinstance(migration, dict):
-        continue
-    old, new = migration.get("from"), migration.get("to")
-    if isinstance(old, str) and old and isinstance(new, str) and new and old != new:
-        normalized = os.path.normpath(target)
-        old_normalized = os.path.normpath(old)
-        if normalized == old_normalized or normalized.startswith(old_normalized + os.sep):
-            candidate = new.rstrip("/") + normalized[len(old_normalized):]
-            if os.path.isfile(candidate):
-                raise SystemExit(0)
-raise SystemExit(1)
-PY
+validate_path_migration_manifests() {
+  if ! python3 tools/path-migration-manifest.py check; then
+    fail "path_migrations manifest redirect is incomplete; see tools/path-migration-manifest.py check"
+  fi
 }
 
 validate_internal_markdown_links() {
@@ -1333,7 +1163,7 @@ required_files=(
   "research/mango/2026-05-22-classification-tz.md"
   "research/mango/2026-05-22-requirements-flow.md"
   "research/mango/2026-05-26-rag-mapping-roadmap.md"
-  "research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md"
+  "research/education/2026-06-29-partner-attraction-strategy.ru.md"
   "research/external-knowledge/README.md"
   "research/external-knowledge/external-sources-registry.md"
   "research/external-knowledge/external-insights/README.md"
@@ -1431,10 +1261,16 @@ required_files=(
   "templates/sync-metadata.json"
   ".github/workflows/validate.yml"
   ".github/workflows/update-manifest.yml"
+  ".github/workflows/archive-tag.yml"
+  ".github/rulesets/archive-tags.json"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
   "tools/spoke-extraction.py"
   "tools/test-spoke-extraction.sh"
+  "tools/path-migration-manifest.py"
+  "tools/test-path-migration-manifest.sh"
+  "tools/archive-tags.py"
+  "tools/test-archive-tags.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
   "tools/test-reference-research-terminology.sh"
@@ -1487,6 +1323,7 @@ done
 
 validate_metadata_single_source
 validate_internal_markdown_links
+validate_path_migration_manifests
 validate_artifact_map_paths
 validate_template_placeholders
 if ! ./tools/validate-file-naming.sh; then
@@ -2247,7 +2084,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.54"
+require_text "ops/artifact-map.md" "version: 2.56"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2660,7 +2497,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.76"
+require_text "ops/backlog.md" "version: 1.77"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
@@ -3408,6 +3245,13 @@ require_text ".github/workflows/validate.yml" "bash tools/test-check-agent-work-
 require_text ".github/workflows/validate.yml" "./tools/check-agent-work-rules-size.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-path-migration-manifest.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-archive-tags.sh"
+require_text ".github/workflows/archive-tag.yml" "python3 -I tools/archive-tags.py plan"
+require_text ".github/workflows/archive-tag.yml" "python3 -I tools/path-migration-manifest.py check"
+require_text ".github/workflows/archive-tag.yml" ".github/rulesets/archive-tags.json"
+require_text ".github/rulesets/archive-tags.json" "refs/tags/archive/*"
+require_text "tools/validate-repository-structure.sh" "tools/path-migration-manifest.py resolve"
 require_text "tools/spoke-extraction.py" "ops/hub-project-extraction-contract.md"
 require_text "ops/hub-project-extraction-contract.md" "executable: true"
 require_text "ops/hub-project-extraction-contract.md" "## ▶️ EXECUTION"

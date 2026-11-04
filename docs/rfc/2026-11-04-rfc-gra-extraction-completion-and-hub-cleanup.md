@@ -1,6 +1,6 @@
 ---
-status: proposed
-version: 0.3
+status: accepted
+version: 0.4
 updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
@@ -14,11 +14,11 @@ rfc-scope: multi
 | Field | Value |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | `proposed`: ждёт решения владельца по вопросам Q-1…Q-6 и предупреждениям IPA-1…IPA-5 |
+| RFC status | `accepted`: владелец ответил на Q-1…Q-6 в issue [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725); IPA-4 и IPA-5 приняты по умолчанию в варианте практики (раздел «Ответы владельца») |
 | Source issue | [#721](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/721) |
 | Impacted artifacts | `research/reputation-technologies/` (173 файла), `.github/workflows/validate.yml` (19 шагов курса), `tools/validate-repository-structure.sh`, `tools/validate-frontmatter.sh`, `tools/test-frontmatter-validator.sh`, `.hub-profile.json`, `standards/artifact-deprecation-standard.md`, `ops/backlog.md`, `ops/artifact-map.md`, `CHANGELOG.md`, 11 живых файлов Хаба со ссылками на домен; в спице `aether-orbis-gra` — ссылки на Хаб, `education/`, будущий `ops/backlog.md`. Подробности — в разделе «Impacted Artifacts» |
-| Decision record | [ADR-022](../adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md) (`proposed`) — для формы архива и префиксного перенаправления. По составу и порядку шагов decision record — это RFC после принятия |
-| Implementation link | not yet. Доказательная база: [evidence-контейнер `gra-extraction-cleanup-721`](../../research/hub/exp/gra-extraction-cleanup-721/README.md), [сверка полноты выноса](../analysis/2026-11-04-gra-extraction-completeness-check.md), [анализ протокола исполнения](../analysis/2026-11-04-issue-721-execution-protocol-analysis.md), [экспертиза диалога о приёмке](../analysis/2026-11-04-issue-721-dialog-expert-review.md) |
+| Decision record | [ADR-022](../adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md) (`accepted`) — для формы архива и префиксного перенаправления. По составу и порядку шагов decision record — это RFC после принятия |
+| Implementation link | Спринт 31 — issue [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725), PR [#726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726); шаг 2 — [PR #4 спицы](https://github.com/G-Ivan-A/aether-orbis-gra/pull/4); [проверка готовности](../analysis/2026-11-04-sprint-31-readiness-check.md). Доказательная база: [evidence-контейнер `gra-extraction-cleanup-721`](../../research/hub/exp/gra-extraction-cleanup-721/README.md), [сверка полноты выноса](../analysis/2026-11-04-gra-extraction-completeness-check.md), [анализ протокола исполнения](../analysis/2026-11-04-issue-721-execution-protocol-analysis.md), [экспертиза диалога о приёмке](../analysis/2026-11-04-issue-721-dialog-expert-review.md) |
 | Archetype scope | multi: A (Хаб) и спица D `aether-orbis-gra`, которая принимает остаток домена |
 
 ## Summary
@@ -139,6 +139,12 @@ A-4 для домена (Ш1.2), но не снимает его сам. Пок�
 A-4 действует, и шаги 2–6 не начинаются. Текст RFC #715 этот PR не меняет:
 PR #718 слит 2026-11-04, RFC #715 принят в issue #717, раздел «Исключение
 A-4» в нём не изменился; снять A-4 может только Ш1.2 после ответа на Q-1.
+
+**Снято 2026-11-04.** Владелец ответил на Q-1 в issue
+[#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725): «снимаю
+исключение A-4 для домена GRA. Ведение задач курса теперь только в спице».
+Принятый текст RFC #715 не переписывается (Historical link policy): снятие
+действует через этот RFC и отмечено в [индексе RFC](README.md).
 
 ## Goals and Non-goals
 
@@ -574,8 +580,11 @@ evidence-контейнер; Спринт 31 в `ops/backlog.md`; регистр
 
 ## Implementation and Validation
 
-Текущее состояние: предложение. Шаги 1–6 не начаты; норма шага 4 есть в виде
-черновика.
+Текущее состояние: принят 2026-11-04 (issue #725). Шаг 2 выполнен в спице
+([PR #4](https://github.com/G-Ivan-A/aether-orbis-gra/pull/4)); шаги 1, 3–6 —
+Спринт 31, PR [#726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726).
+Шаги 3 и 5 стандарта исполнены отдельными коммитами одного PR, а не двумя PR;
+причина и компенсирующие меры — в [проверке готовности](../analysis/2026-11-04-sprint-31-readiness-check.md), F-3.
 
 Доказательная база воспроизводима (клоны спиц — недоверенные данные: только
 чтение и `python3 -I`):
@@ -619,8 +628,7 @@ flowchart LR
     S5 --> S6[Шаг 6: реестры, проверка, S-4]
 ```
 
-- Сейчас: `proposed`. Все обязательные секции заполнены, локальная проверка
-  проходит.
+- Сейчас: `accepted` (issue #725, 2026-11-04). До этого — `proposed`.
 - Human gate: владелец отвечает на Q-1…Q-6 и IPA-1…IPA-5 и переводит RFC и
   ADR-022 в `accepted`.
 - После принятия задачи Спринта 31 исполняются отдельными issue и PR. В
@@ -649,6 +657,19 @@ flowchart LR
    (IPA-1). A — только с тремя мерами ADR-022.
 6. **Q-6. Включить ruleset, запрещающий обновлять и удалять теги `archive/*`?**
    Рекомендация: да; это действие администратора репозитория.
+
+### Ответы владельца (issue #725)
+
+| Вопрос | Ответ | Исполнение |
+| --- | --- | --- |
+| Q-1 | Да: A-4 снято для домена GRA, задачи курса — только в спице | B-269 |
+| Q-2 | Да: мандат на 19 единиц (73 файла) R9 из `gra-inventory.tsv` | B-280 |
+| Q-3 | #292 остаётся в Хабе как глобальное исследование; #650 переносится в спицу (116 ссылок) | B-280 (#292 → `research/education/`); перенос #650 — задача спицы GRA-003, в Хабе #650 уходит в тег |
+| Q-4 | Файл PII удалить только из дерева, в тег не включать, историю git не переписывать | B-280 |
+| Q-5 | Аннотированный тег (вариант B) | B-281 |
+| Q-6 | Да: ruleset, запрещающий обновлять и удалять теги `archive/*` | B-281; включает администратор репозитория |
+| IPA-4 | Явного ответа нет | Вариант практики: исторические записи не переписываются |
+| IPA-5 | Явного ответа нет | Вариант практики: утверждение — review и merge PR |
 
 ## Related Artifacts
 

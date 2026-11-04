@@ -1,0 +1,16 @@
+{
+  "name": "archive-tags-immutable",
+  "target": "tag",
+  "enforcement": "active",
+  "bypass_actors": [],
+  "conditions": {
+    "ref_name": {
+      "include": ["refs/tags/archive/*"],
+      "exclude": []
+    }
+  },
+  "rules": [
+    {"type": "update"},
+    {"type": "deletion"}
+  ]
+}

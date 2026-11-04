@@ -1,0 +1,35 @@
+== A-1. Повтор инвентаря: в дереве только надгробие
+hub_HEAD=949fa2a2ac70dfd085a7f1254df0e8a706e3a01a
+domain files at HEAD: 1 (units: 1; sum check: 1)
+domain files in snapshot: 173; added after snapshot: 0; removed after snapshot: 172
+files by disposition:
+  README-TOMBSTONE: 1 files, 1 units
+units with a CI step in .github/workflows/validate.yml: 0
+domain_tree_files=research/reputation-technologies/README.md 
+== A-2. git grep research/reputation-technologies: только надгробие, path_migrations, история и закреплённые адреса
+класс	вхождений	файлов
+tombstone	184	7
+path_migrations	3	1
+history	190	35
+pinned	21	1
+live	0	0
+== A-3. Manifest redirect: полнота по archive_commit, разрешение путей
+Path migration manifests passed (1 manifest(s)).
+resolve research/reputation-technologies/2026-06-20-glossary.ru-en.md: resolved
+resolve research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md: resolved
+resolve research/reputation-technologies/no-such-file.md: unresolved
+create	archive/reputation-technologies-2026-11	51869aa50f14a0bc8f69f8b426e216244f16c970
+== A-4. Шаги CI курса в validate.yml
+course_steps_mentions=0
+== A-5. Задание validate в CI (база — 135 с, из них 38 с курса)
+run=41862774654
+cline-windows success 32s steps=9
+windows-guides (powershell) success 123s steps=17
+opencode (ubuntu-latest) success 53s steps=12
+windows-guides (pwsh) success 130s steps=17
+validate success 129s steps=41
+opencode (windows-2022) success 140s steps=12
+== A-6. Ссылки спицы на коммиты Хаба отвечают 200 и существуют в git
+spoke_pinned_urls=87 http_not_200=0 missing_in_git=0
+== Итог
+acceptance passed

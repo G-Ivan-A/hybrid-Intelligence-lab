@@ -54,7 +54,7 @@ related_issues:
 
 | Источник | Роль |
 | --- | --- |
-| [research/reputation-technologies](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/reputation-technologies) | **источник гипотезы H6**: параметры внутреннего/внешнего контура, массы, дистанции, полярности и силы связи |
+| [research/reputation-technologies](https://github.com/G-Ivan-A/aether-orbis-gra) | **источник гипотезы H6**: параметры внутреннего/внешнего контура, массы, дистанции, полярности и силы связи |
 | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | онтология операций и процессов, библиотека промптов, режимы `stepwise`/`oneshot` |
 | [mango_ba_prompts/runs](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/runs) | эмпирический корпус 56 прогонов (`524a8eb`) |
 | [research/mango](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/research/mango) | контекст и данные; по условию issue #539 **не ограничивает** глубину и методологию настоящей работы |

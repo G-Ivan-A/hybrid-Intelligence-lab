@@ -11,7 +11,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/539"
 based_on:
   - research/ba-requirements/2026-08-25-mango-runs-empirical-snapshot.md
   - research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md
-  - research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md
+  - "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-founders-vision-and-framework.ru.md"
 related_artifacts:
   - "research/ba-requirements/normalization/10-theory.md"
   - "research/ba-requirements/normalization/20-taxonomy.md"
@@ -79,7 +79,7 @@ related_issues:
    вынесена в
    [§4 файла 20-taxonomy.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/normalization/20-taxonomy.md#4-гипотеза-h6--репутационный-слой-поверх-таксономии-стейкхолдеров)
    с абсолютной ссылкой на
-   [`research/reputation-technologies`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/reputation-technologies).
+   [`research/reputation-technologies`](https://github.com/G-Ivan-A/aether-orbis-gra).
 8. **Атомарные операции на этой итерации не меняются.** Переписыванию подлежат
    процессы, которые эти операции компонуют: маршрут входа, гейты, критерии
    перехода состояний, реестр. Обоснование —

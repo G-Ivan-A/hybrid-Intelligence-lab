@@ -129,6 +129,10 @@ for item in profile.get("path_migrations", []):
     if not isinstance(item, dict):
         continue
     source, target = item.get("from"), item.get("to")
+    # Внешний приёмник и manifest redirect не дают права переписывать историю:
+    # исторические ссылки на выведенный префикс разрешает манифест (ADR-022).
+    if item.get("manifest") or "://" in str(target):
+        continue
     if isinstance(source, str) and source and isinstance(target, str) and target and source != target:
         print(source + "\t" + target)
 '

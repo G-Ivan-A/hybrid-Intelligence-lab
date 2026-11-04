@@ -1,6 +1,6 @@
 ---
-status: proposed
-version: 0.1
+status: accepted
+version: 0.2
 updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
@@ -15,8 +15,8 @@ decision-type: governance
 | --- | --- |
 | ADR id | ADR-022 |
 | Decision type | governance |
-| Decision status | proposed (машиночитаемый canon — frontmatter `status`) |
-| Decision date | 2026-11-04 (предложено; дата принятия — merge PR, переводящего статус в `accepted`) |
+| Decision status | accepted (машиночитаемый canon — frontmatter `status`); владелец выбрал тег (Q-5) и ruleset (Q-6) в issue [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) |
+| Decision date | 2026-11-04 (предложено и принято; дата вступления — merge PR [#726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726)) |
 | Owner | G-Ivan-A |
 | Source | issue [#721](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/721); обоснование — [RFC завершения выноса GRA](../rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md), доказательства — [сверка полноты выноса](../analysis/2026-11-04-gra-extraction-completeness-check.md) (F-5, F-6, F-7) |
 | Impacted artifacts | [`standards/artifact-deprecation-standard.md`](../../standards/artifact-deprecation-standard.md) (v0.3), [`.hub-profile.json`](../../.hub-profile.json) (поле `path_migrations`), `tools/validate-repository-structure.sh`, `tools/validate-historical-immutable.sh` (задача Ш4 RFC) |

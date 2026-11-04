@@ -69,6 +69,12 @@ jobs:
       - name: Test spoke extraction tool
         run: bash tools/test-spoke-extraction.sh
 
+      - name: Test path migration manifest redirect
+        run: bash tools/test-path-migration-manifest.sh
+
+      - name: Test archive tag tool
+        run: bash tools/test-archive-tags.sh
+
       - name: Test historical immutability validator
         run: bash tools/test-historical-immutable.sh
 
@@ -95,69 +101,6 @@ jobs:
 
       - name: Test OpenCode execution package
         run: bash tools/test-opencode-package.sh
-
-      - name: Check presentation UX coverage and preservation
-        run: python3 research/reputation-technologies/exp/presentation-ux-665/check-presentation-ux.py --self-test
-
-      - name: Check Days 1-3 logic RFC contract
-        run: python3 -I research/reputation-technologies/exp/rfc-days-logic-667/check-rfc-logic.py --self-test
-
-      - name: Check Day 2 against RFC v0.3
-        run: python3 -I research/reputation-technologies/exp/day2-rebuild-673/check-day2.py --self-test
-
-      - name: Check Day 1 against RFC v0.3
-        run: python3 -I research/reputation-technologies/exp/day1-rebuild-675/check-day1.py --self-test
-
-      - name: Check Day 1 deck, lecturer script and gate of #677
-        run: python3 -I research/reputation-technologies/exp/day1-rebuild-677/check-day1-677.py --self-test
-
-      - name: Check Day 2 Gamma deck and lecturer script of #679
-        run: python3 -I research/reputation-technologies/exp/day2-gamma-679/check-day2-679.py --self-test
-
-      - name: Check Day 3 Gamma deck, lecturer script and gate of #681
-        run: python3 -I research/reputation-technologies/exp/day3-gamma-681/check-day3-681.py --self-test
-
-      - name: Check Day 4 rationale and method slide structure and gate of #685
-        run: python3 -I research/reputation-technologies/exp/day4-rationale-685/check-day4-685.py --self-test
-
-      - name: Check Day 4 Gamma deck and lecturer script of #687
-        run: python3 -I research/reputation-technologies/exp/day4-gamma-687/check-day4-687.py --self-test
-      - name: Check Day 4 correction files and unchanged Variant 1 of #689
-        run: python3 -I research/reputation-technologies/exp/day4-correction-689/check-day4-689.py --self-test
-
-      - name: Check Day 4 Variant 3 deck and lecturer script of #691
-        run: python3 -I research/reputation-technologies/exp/day4-v3-691/check-day4-691.py --self-test
-
-      - name: Check Day 4 Variant 4 hypothesis-map deck and image-technologies module of #693
-        run: python3 -I research/reputation-technologies/exp/day4-v4-693/check-day4-693.py --self-test
-
-      - name: Check Day 4 Variant 5 point-diff RFC against the unchanged v4 deck of #695
-        run: |
-          python3 -I research/reputation-technologies/exp/rfc-v5-695/check-rfc-695.py --self-test
-          python3 -I research/reputation-technologies/exp/rfc-v5-695/build-rfc-695.py
-          git diff --exit-code -- research/reputation-technologies/2026-11-03-rfc-presentation-update-v5.md
-
-      - name: Check Day 4 Variant 5 deck and lecturer script of #697
-        run: python3 -I research/reputation-technologies/exp/day4-v5-697/check-day4-697.py --self-test
-
-      - name: Check Day 4 image prompts v5 couturier constructor of #699
-        run: python3 -I research/reputation-technologies/exp/day4-image-prompts-v5-699/check-day4-image-prompts-699.py --self-test
-
-      - name: Check handout materials master prompt registry of #700
-        run: python3 -I research/reputation-technologies/exp/handout-registry-700/check-handout-700.py --self-test
-
-      - name: Check cold-start OSINT pipeline of #709
-        run: |
-          python3 -I research/reputation-technologies/exp/day1-osint-709/check-pipeline-709.py --self-test
-          python3 -I research/reputation-technologies/exp/day1-osint-709/check-graph-709.py
-
-      - name: Check course quote list (ALCE) of #711
-        run: |
-          python3 -I research/reputation-technologies/exp/quotes-711/check-quotes-711.py --self-test
-          python3 -I research/reputation-technologies/exp/quotes-711/build_quotes_711.py --check
-
-      - name: Check Day 3 rationale v0.3 of #683
-        run: python3 -I research/reputation-technologies/exp/day3-rationale-683/check-day3-rationale-683.py --self-test
 
       - name: Check synthetic BA industry survey evidence of issue 703
         run: python3 -I research/ba-requirements/exp/agent-ba-industry-703/measure.py --check

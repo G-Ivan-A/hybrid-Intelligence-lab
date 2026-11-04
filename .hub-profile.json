@@ -54,6 +54,19 @@
       "from": "docs/adr/2026-09-adr-017-ba-ai-process-source-distribution.md",
       "to": "projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md",
       "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/599"
+    },
+    {
+      "from": "research/reputation-technologies/2026-06-29-partner-attraction-strategy.ru.md",
+      "to": "research/education/2026-06-29-partner-attraction-strategy.ru.md",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725"
+    },
+    {
+      "from": "research/reputation-technologies/",
+      "to": "https://github.com/G-Ivan-A/aether-orbis-gra",
+      "manifest": "research/reputation-technologies/README.md",
+      "archive": "archive/reputation-technologies-2026-11",
+      "archive_commit": "51869aa50f14a0bc8f69f8b426e216244f16c970",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725"
     }
   ]
 }

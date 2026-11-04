@@ -10,7 +10,7 @@ scope: repo-wide
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/539"
 based_on:
   - research/ba-requirements/2026-08-25-mango-runs-empirical-snapshot.md
-  - research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md
+  - "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-founders-vision-and-framework.ru.md"
 related_artifacts:
   - "research/ba-requirements/normalization/00-introduction.md"
   - "research/ba-requirements/normalization/10-theory.md"
@@ -168,10 +168,10 @@ Q4, либо производит домысел на Q0.
 > предложенная к проверке, а не заимствование.
 
 `[H]` **Источник методологии:**
-[`research/reputation-technologies`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/reputation-technologies),
+[`research/reputation-technologies`](https://github.com/G-Ivan-A/aether-orbis-gra),
 в частности
-[концептуальная рамка GRA](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-founders-vision-and-framework.ru.md)
-и [словарь терминов RU↔EN](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/reputation-technologies/2026-06-20-glossary.ru-en.md).
+[концептуальная рамка GRA](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-founders-vision-and-framework.ru.md)
+и [словарь терминов RU↔EN](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/history/2026-06-20-glossary.ru-en.md).
 
 ### 4.1 Что именно накладывается
 
