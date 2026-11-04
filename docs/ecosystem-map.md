@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-11-03
+version: 0.6
+updated: 2026-11-04
 temperature: 0.1
 ---
 
@@ -63,7 +63,7 @@ temperature: 0.1
 | --- | --- | --- | --- | --- |
 | [hybrid-Intelligence-lab](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) (Хаб) | `hub` | Методологический центр | Источник генома и норм | Нормы, стандарты, шаблоны, исследования и решения экосистемы. |
 | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | `governed` | HTOM-команда | Референсная реализация | Действующий репозиторий: референсная реализация универсальной модели БА (39 классов). Статус `legacy/archived` по issue #583 отменён решением Q-3. |
-| Репозиторий проекта метамодели БА (имя согласуется в PR [#718](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/718), рекомендация — `ba-ai-metamodel`) | `governed` | Spoke-репозиторий (архетип B) | Вынос из Хаба по [контракту выноса](../ops/hub-project-extraction-contract.md) | Ядро метамодели БА, компиляторы пакетов, тесты и eval; до выноса живёт в `projects/ba-ai-process/`. Строка получит ссылку после создания репозитория (Ш3.1). |
+| [ba-ai-metamodel](https://github.com/G-Ivan-A/ba-ai-metamodel) — репозиторий проекта метамодели БА | `governed` | Spoke-репозиторий (архетип B) | Вынос из Хаба по [контракту выноса](../ops/hub-project-extraction-contract.md) | Ядро метамодели БА, компиляторы пакетов, тесты и eval; до выноса живёт в `projects/ba-ai-process/`. Создан 2026-11-04 с одним `README.md`; вынос отложен до окна заморозки источников ([бэклог](../ops/backlog.md), B-243). |
 | [mango-ba-ai-runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime) | `exempt-runtime` | Spoke-репозиторий | Закреплённая компиляция | Автономная среда исполнения MVP; правило `EP-C1` запрещает зависимость инструкций от документов Хаба, поэтому геном не наследует. |
 | [aether-orbis-gra](https://github.com/G-Ivan-A/aether-orbis-gra) | `governed` | HTOM-команда (архетип D) | Геном и практики | GRA — исследовательский фреймворк репутационной архитектуры. |
 | [aether-orbis](https://github.com/G-Ivan-A/aether-orbis) | `governed` | Spoke-репозиторий | Геном | Спица вне контура MVP; бутстрап `AGENTS.md` и профиля — задача Ш4.3. |
@@ -121,7 +121,7 @@ graph TD
     hub(["🧭 Хаб — методологический центр"])
     openai["open-ai.ru · dormant"]
     mango["mango_ba_prompts · governed"]
-    bameta["Репозиторий метамодели БА · governed"]
+    bameta["ba-ai-metamodel · governed"]
     runtime["mango-ba-ai-runtime · exempt-runtime"]
     gra["aether-orbis-gra · governed"]
     orbis["aether-orbis · governed"]
@@ -158,7 +158,7 @@ graph TD
   `reputation-engineering`.
 - **mango_ba_prompts** → `open-ai.ru`, `clarify-engine-ai`, репозиторий
   метамодели БА (crosswalk 39 классов с метамоделью).
-- **Репозиторий метамодели БА** → `mango_ba_prompts`, `mango-ba-ai-runtime`
+- **ba-ai-metamodel** (репозиторий метамодели БА) → `mango_ba_prompts`, `mango-ba-ai-runtime`
   (runtime компилируется с закреплённого коммита метамодели).
 - **mango-ba-ai-runtime** — методологической связи нет (`exempt-runtime`);
   входящая функциональная связь от репозитория метамодели БА.
