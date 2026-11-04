@@ -147,6 +147,7 @@ is_active_file() {
     docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
     docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
     docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
+    docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md | \
     projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
     projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
@@ -345,6 +346,16 @@ is_active_file() {
     research/hub/exp/hub-governance-roadmap-715/hub-status-census.log | \
     research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.py | \
     research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.log | \
+    research/hub/exp/gra-extraction-cleanup-721/README.md | \
+    research/hub/exp/gra-extraction-cleanup-721/gra-inventory.py | \
+    research/hub/exp/gra-extraction-cleanup-721/gra-inventory.log | \
+    research/hub/exp/gra-extraction-cleanup-721/gra-inventory.tsv | \
+    research/hub/exp/gra-extraction-cleanup-721/ci-course-steps.py | \
+    research/hub/exp/gra-extraction-cleanup-721/ci-course-steps.log | \
+    research/hub/exp/gra-extraction-cleanup-721/ci-run-41427101826-jobs.jsonl | \
+    research/hub/exp/gra-extraction-cleanup-721/spoke-guard-replay.py | \
+    research/hub/exp/gra-extraction-cleanup-721/spoke-guard-replay.log | \
+    research/hub/exp/gra-extraction-cleanup-721/ecosystem-snapshot.log | \
     research/hub/exp/ai-execution-statistics-543/README.md | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \
@@ -767,6 +778,7 @@ is_active_file() {
     docs/rfc/2026-09-27-rfc-agent-collaboration-and-operating-modes.md | \
     docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md | \
     docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md | \
+    docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -831,6 +843,8 @@ is_active_file() {
     docs/analysis/2026-09-28-backlog-closure-evidence-634.md | \
     docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md | \
     docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md | \
+    docs/analysis/2026-11-04-gra-extraction-completeness-check.md | \
+    docs/analysis/2026-11-04-issue-721-execution-protocol-analysis.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \

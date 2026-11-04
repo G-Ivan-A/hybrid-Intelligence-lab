@@ -34,6 +34,8 @@ Evidence-контейнер issue
 | `ci-course-steps.py` | Доля самопроверок курса в задании `validate`: шаги `validate.yml`, чей `run:` упоминает домен, и их длительность в прогоне CI. |
 | `ci-run-41427101826-jobs.jsonl` | Сохранённые тайминги заданий прогона [41427101826](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/41427101826) (`main` @ `c06075d`, success). |
 | `ci-course-steps.log` | Результат: 19 шагов курса, 38 с из 135 с задания `validate` (28 %). |
+| `spoke-guard-replay.py` | Переносятся ли самопроверки курса в спицу: каждый из 19 шагов CI курса запускается дважды в двух временных `git worktree` Хаба на `HEAD` — как есть и с подменой 34 перенесённых файлов их версиями из спицы (по колонке `moved_to`). Исполняются только проверки Хаба; файлы спицы копируются как данные. Таймаут 120 с и лимит памяти 512 МиБ на проверку. |
+| `spoke-guard-replay.log` | Результат: на Хабе проходят 19 из 19; на копиях спицы — 6, падают 13. Спица при импорте сознательно убрала разделы самопроверки и перевела ссылки на относительные (ADR-001 спицы, п. 5), поэтому проверки Хаба охраняют только копии Хаба и в спицу как есть не переносятся. |
 | `ecosystem-snapshot.log` | Репозитории экосистемы, открытые PR и issue в каждом, входящие ссылки других репозиториев на домен. Это карта параллельной работы, которую нельзя заморозить. |
 
 ## Снимки
@@ -59,6 +61,7 @@ gh api repos/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/41427101826/jobs \
   --jq '.jobs[] | {name, started_at, completed_at, steps: [.steps[] | {name, started_at, completed_at}]}' -c \
   > $D/ci-run-41427101826-jobs.jsonl
 python3 -I $D/ci-course-steps.py .github/workflows/validate.yml $D/ci-run-41427101826-jobs.jsonl > $D/ci-course-steps.log
+python3 -I $D/spoke-guard-replay.py . /tmp/spokes/aether-orbis-gra $D/gra-inventory.tsv > $D/spoke-guard-replay.log
 ```
 
 Скрипту инвентаря нужна история Хаба до снимка `32b5fa5`: в клоне глубины 1 он
