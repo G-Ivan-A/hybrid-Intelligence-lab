@@ -170,6 +170,32 @@ for duplicate_heading in (
     if duplicate_heading in collaboration:
         fail(f"collaboration rules duplicate another contract: {duplicate_heading}")
 
+# B-197 (issue #723): the HTOM genome must not reintroduce an implicit
+# Structured default (ADR-021 K-1: an omitted mode defaults to Hybrid). An
+# explicit Structured assignment for a kind of task stays legal.
+htom_root = Path("templates/htom")
+implicit_structured_default = [
+    re.compile(r"по\s+умолчанию\W{0,3}\s*structured", re.IGNORECASE),
+    re.compile(r"structured\W{0,3}\s*(mode\s+)?(\|\s*)?по\s+умолчанию", re.IGNORECASE),
+    re.compile(r"default(s)?\s+(mode\s+)?(is\s+|to\s+)?`?structured", re.IGNORECASE),
+    re.compile(r"structured`?\s+(is\s+the\s+|by\s+)default", re.IGNORECASE),
+    re.compile(r"^-\s*Operating Mode:\s*`Structured`\s*$", re.IGNORECASE | re.MULTILINE),
+]
+for path in sorted(htom_root.rglob("*.md")):
+    text = path.read_text(encoding="utf-8")
+    flat = re.sub(r"\s+", " ", text)
+    for pattern in implicit_structured_default:
+        match = pattern.search(text) or pattern.search(flat)
+        if match:
+            fail(f"{path} declares Structured as the implicit default mode: {match.group(0)!r}; ADR-021 K-1 sets Hybrid")
+htom_handover = htom_root / "AI_SESSION_HANDOVER_PROMPT.md"
+htom_governance = htom_root / "AI_GOVERNANCE.md"
+htom_task = htom_root / ".github/ISSUE_TEMPLATE/task.md"
+require_text(htom_handover, ["по умолчанию — Hybrid", "ai-rules/agent-work-rules.md"])
+require_text(htom_governance, ["| Hybrid | По умолчанию", "2026-09-adr-021-agent-collaboration-layer.md"])
+require_text(htom_task, ["работай в Hybrid mode (по умолчанию)", "Operating Mode: `Hybrid` (по умолчанию)"])
+require_text(htom_root / "AGENTS.md", ["an omitted mode defaults to Hybrid"])
+
 legacy_template = Path(".github/ISSUE_TEMPLATE/task-creative.md")
 require_text(legacy_template, ['name: ""', "Creative Task (consolidated)"])
 

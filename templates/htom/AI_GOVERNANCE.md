@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.5
+version: 0.6
 updated: {{date}}
 temperature: 0.1
 ---
@@ -66,14 +66,18 @@ temperature: 0.1
 ## Operating Modes
 
 Канонический словарь Хаба и принципы автономии задаёт
-[`ADR-010`]({{hub_url}}/blob/main/docs/adr/2026-08-adr-010-agent-autonomy-principles.md).
+[`ADR-010`]({{hub_url}}/blob/main/docs/adr/2026-08-adr-010-agent-autonomy-principles.md);
+режим по умолчанию — `Hybrid` по
+[`ADR-021`]({{hub_url}}/blob/main/docs/adr/2026-09-adr-021-agent-collaboration-layer.md)
+(K-1) и [Agent Work Rules]({{hub_url}}/blob/main/ai-rules/agent-work-rules.md#operating-modes).
 Локальные `Research` ниже — task profile, а не режим Хаба; миграцию словаря
 нужно оформить отдельным human-reviewed решением команды.
 
 | Mode | Когда использовать |
 | --- | --- |
-| Structured | По умолчанию для структуры проекта, governance и tooling. |
+| Structured | По явному назначению автора: структура проекта, governance и tooling, где нужно точное следование заданным решениям. |
 | Creative | Для задач с заданной целью и свободой выбора структуры, prompt/process/context решений или governance-синтеза. |
+| Hybrid | По умолчанию, если режим не указан: средняя автономия, агент оптимизирует путь, не переопределяя вектор задачи. Явное назначение части задачи `Structured` или `Creative` имеет приоритет. |
 | Research | Для source-backed analysis (фундаментальные знания - вкладом в `research/` Хаба, а не в команду). |
 
 ## Обоснованный обход в Creative Mode
