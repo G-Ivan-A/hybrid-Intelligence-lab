@@ -114,6 +114,55 @@ PY
   fi
 fi
 
+# Model-specific rules files (B-116, issue #727): only a thin generated pointer to
+# AGENTS.md passes; a copy of the rules fails.
+if [[ -f "$ROOT_DIR/AGENTS.md" && -f "$ROOT_DIR/.hub-profile.json" ]]; then
+  adapter_repo() {
+    local repo="$TMP_DIR/adapter-$1"
+    mkdir -p "$repo"
+    cp "$ROOT_DIR/AGENTS.md" "$ROOT_DIR/.hub-profile.json" "$repo/"
+    printf '%s\n' "$repo"
+  }
+  thin_pointer='<!-- Generated adapter: do not edit; rules live in AGENTS.md. -->
+@AGENTS.md'
+
+  repo="$(adapter_repo thin-pointer)"
+  mkdir -p "$repo/.github" "$repo/.cursor/rules"
+  printf '%s\n' "$thin_pointer" > "$repo/CLAUDE.md"
+  printf '%s\n' "$thin_pointer" > "$repo/.github/copilot-instructions.md"
+  printf '%s\n' "$thin_pointer" > "$repo/.cursor/rules/agents.mdc"
+  if ! "$ROOT_DIR/tools/validate-agents-bootstrap.sh" "$repo" >"$TMP_DIR/adapter-thin-pointer.log" 2>&1; then
+    fail "thin generated pointers to AGENTS.md were rejected"
+  fi
+
+  repo="$(adapter_repo copied-rules)"
+  cp "$ROOT_DIR/AGENTS.md" "$repo/CLAUDE.md"
+  expect_validator_failure "adapter-copied-rules" "$repo" \
+    "CLAUDE.md: model-specific rules file copies AGENTS.md sections"
+
+  repo="$(adapter_repo copied-cursor-rules)"
+  mkdir -p "$repo/.cursor/rules"
+  { printf '%s\n' "$thin_pointer"; sed -n '/<hard_rules>/,/<\/hard_rules>/p' "$ROOT_DIR/AGENTS.md"; } \
+    > "$repo/.cursor/rules/agents.mdc"
+  expect_validator_failure "adapter-copied-cursor-rules" "$repo" \
+    ".cursor/rules/agents.mdc: model-specific rules file copies AGENTS.md sections <hard_rules>"
+
+  repo="$(adapter_repo no-pointer)"
+  printf '# Gemini rules (generated)\n\nAlways answer in English.\n' > "$repo/GEMINI.md"
+  expect_validator_failure "adapter-no-pointer" "$repo" \
+    "GEMINI.md: model-specific rules file must be a thin pointer to AGENTS.md"
+
+  repo="$(adapter_repo not-generated)"
+  printf 'Read AGENTS.md first.\n' > "$repo/.cursorrules"
+  expect_validator_failure "adapter-not-generated" "$repo" \
+    ".cursorrules: model-specific rules file must identify itself as a generated adapter"
+
+  repo="$(adapter_repo too-long)"
+  { printf '%s\n' "$thin_pointer"; for i in $(seq 1 25); do printf 'Rule %s.\n' "$i"; done; } > "$repo/.windsurfrules"
+  expect_validator_failure "adapter-too-long" "$repo" \
+    ".windsurfrules: model-specific rules file has 27 non-empty lines"
+fi
+
 GENERAL_LAYER_SECTIONS=(hard_rules forbidden guidelines hybrid_work)
 REQUIRED_SECTIONS=(scope hard_rules forbidden guidelines hybrid_work project_specific_rules routing artifact_homes issue_levels missing_tags context_scope validation models escalation)
 

@@ -59,6 +59,39 @@ for section in scope hard_rules forbidden guidelines hybrid_work project_specifi
   grep -Fq "</$section>" "$agents_file" || fail "AGENTS.md missing section: </$section>"
 done
 
+# Model-specific rules files (B-116, issue #727): a native adapter MAY exist only as
+# a thin, generated pointer to /AGENTS.md; a copied rule set is forbidden
+# (standards/agents-md-bootstrap-standard.md, "Size and adapters").
+adapter_errors="$(python3 - "$ROOT_DIR" <<'PY'
+import os
+import sys
+
+root = sys.argv[1]
+max_lines = 20
+candidates = ["CLAUDE.md", "GEMINI.md", ".cursorrules", ".windsurfrules", ".github/copilot-instructions.md"]
+rules_dir = os.path.join(root, ".cursor", "rules")
+for base, _, files in sorted(os.walk(rules_dir)):
+    candidates.extend(os.path.relpath(os.path.join(base, name), root) for name in sorted(files))
+sections = ("scope", "hard_rules", "forbidden", "guidelines", "hybrid_work", "artifact_homes", "escalation")
+for rel in candidates:
+    path = os.path.join(root, rel)
+    if not os.path.isfile(path):
+        continue
+    text = open(path, encoding="utf-8", errors="replace").read()
+    lines = [line for line in text.splitlines() if line.strip()]
+    if "AGENTS.md" not in text:
+        print(f"{rel}: model-specific rules file must be a thin pointer to AGENTS.md (import or link it)")
+    if "generated" not in text.lower():
+        print(f"{rel}: model-specific rules file must identify itself as a generated adapter")
+    if len(lines) > max_lines:
+        print(f"{rel}: model-specific rules file has {len(lines)} non-empty lines; a thin pointer to AGENTS.md has at most {max_lines}")
+    copied = [f"<{name}>" for name in sections if f"<{name}>" in text]
+    if copied:
+        print(f"{rel}: model-specific rules file copies AGENTS.md sections {', '.join(copied)}; keep the rules in AGENTS.md only")
+PY
+)"
+[[ -z "$adapter_errors" ]] || fail "$adapter_errors"
+
 token_estimate="$(python3 - "$agents_file" <<'PY'
 import re
 import sys

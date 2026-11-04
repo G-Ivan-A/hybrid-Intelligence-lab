@@ -97,11 +97,11 @@
     },
     "templates/htom/tools/validate-agents-bootstrap.sh": {
       "id": "htom-validate-agents-bootstrap",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "target_type": ["HTOM"],
       "criticality": "CORE",
       "tags": ["validation", "bootstrap", "environment"],
-      "description": "Проверка единственной точки входа AGENTS.md и согласованности профиля."
+      "description": "Проверка единственной точки входа AGENTS.md, согласованности профиля и тонких указателей модель-специфичных файлов правил."
     },
     "templates/spoke/AGENTS.md": {
       "id": "spoke-agents-bootstrap",

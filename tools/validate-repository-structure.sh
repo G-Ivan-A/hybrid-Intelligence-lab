@@ -2300,6 +2300,13 @@ require_text "$htom_validator" ".github/workflows/validate.yml"
 require_text "$htom_validator" "-type d -path '*/docs/contracts'"
 require_text "$htom_validator" "поле frontmatter ai-generated запрещено"
 require_text "tools/test-smart-sync.sh" "explicit bans at any depth (B-116, issue #727)"
+# B-116 (c, issue #727): модель-специфичный файл правил — только тонкий указатель.
+for adapter_validator in tools/validate-agents-bootstrap.sh templates/htom/tools/validate-agents-bootstrap.sh; do
+  require_text "$adapter_validator" "a thin pointer to AGENTS.md"
+  require_text "$adapter_validator" ".github/copilot-instructions.md"
+  require_text "$adapter_validator" "copies AGENTS.md sections"
+done
+require_text "tools/test-agents-md-integration.sh" "adapter-copied-rules"
 require_file "templates/htom/.github/workflows/validate.yml"
 require_text "templates/htom/.github/workflows/validate.yml" "./tools/validate-repository-structure.sh"
 require_text "templates/sync-metadata.json" '"htom-validate-workflow"'

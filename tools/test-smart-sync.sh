@@ -178,6 +178,14 @@ check "ai-generated failure points to contributors + ai-models" \
 C="$(htom_case ai-generated-body)"
 printf -- '---\nstatus: draft\n---\n\n# Note\n\nai-generated: упоминание в теле не является полем.\n' > "$C/docs/ai-body.md"
 check "ai-generated mentioned only in the body passes" "htom_validate \"$C\" \"$WORK/v-ai-body.txt\""
+C="$(htom_case adapter-thin)"
+printf '<!-- Generated adapter: rules live in AGENTS.md. -->\n@AGENTS.md\n' > "$C/CLAUDE.md"
+check "genome: thin generated CLAUDE.md pointer passes" "htom_validate \"$C\" \"$WORK/v-adapter-thin.txt\""
+C="$(htom_case adapter-copy)"
+cp "$C/AGENTS.md" "$C/CLAUDE.md"
+check "genome: CLAUDE.md copy of the rules fails" "! htom_validate \"$C\" \"$WORK/v-adapter-copy.txt\""
+check "genome: copy failure names the copied sections" \
+  "grep -q 'CLAUDE.md: model-specific rules file copies AGENTS.md sections' \"$WORK/v-adapter-copy.txt\""
 
 echo ""
 echo "Passed: $PASS  Failed: $FAIL"
