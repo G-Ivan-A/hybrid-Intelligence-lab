@@ -531,6 +531,8 @@ is_active_file() {
     research/hub/exp/independent-tech-debt-727/README.md | \
     research/hub/exp/independent-tech-debt-727/independence-check.sh | \
     research/hub/exp/independent-tech-debt-727/independence-check.log | \
+    research/hub/exp/independent-tech-debt-727/issue-statement-sweep.sh | \
+    research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -670,6 +672,7 @@ is_active_file() {
     .github/pull_request_template.md | \
     .github/workflows/update-manifest.yml | \
     .github/workflows/archive-tag.yml | \
+    .github/workflows/issue-statement-gate.yml | \
     .github/rulesets/archive-tags.json | \
     .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
@@ -752,6 +755,8 @@ is_active_file() {
     tools/check-agent-work-rules-size.sh | \
     tools/test-nonempty-diff.sh | \
     tools/validate-nonempty-diff.sh | \
+    tools/test-issue-statement-gate.sh | \
+    tools/validate-issue-statement.sh | \
     tools/test-historical-immutable.sh | \
     tools/validate-historical-immutable.sh | \
     tools/validate-agents-bootstrap.sh | \
@@ -1156,6 +1161,8 @@ required_files=(
   "research/hub/exp/independent-tech-debt-727/README.md"
   "research/hub/exp/independent-tech-debt-727/independence-check.sh"
   "research/hub/exp/independent-tech-debt-727/independence-check.log"
+  "research/hub/exp/independent-tech-debt-727/issue-statement-sweep.sh"
+  "research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -1269,6 +1276,7 @@ required_files=(
   ".github/workflows/validate.yml"
   ".github/workflows/update-manifest.yml"
   ".github/workflows/archive-tag.yml"
+  ".github/workflows/issue-statement-gate.yml"
   ".github/rulesets/archive-tags.json"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
@@ -1290,6 +1298,8 @@ required_files=(
   "tools/check-agent-work-rules-size.sh"
   "tools/test-nonempty-diff.sh"
   "tools/validate-nonempty-diff.sh"
+  "tools/test-issue-statement-gate.sh"
+  "tools/validate-issue-statement.sh"
   "tools/test-historical-immutable.sh"
   "tools/validate-historical-immutable.sh"
   "tools/test-validate-rrp-links.sh"
@@ -1397,11 +1407,13 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "/AGENTS.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.14"
+require_text "CONTRIBUTING.md" "version: 1.15"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-08-17"
+require_text "CONTRIBUTING.md" "updated: 2026-11-04"
+require_text "CONTRIBUTING.md" "## Гейт постановки задачи"
+require_text "CONTRIBUTING.md" "tools/validate-issue-statement.sh"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" "no-diff-expected"
@@ -3301,6 +3313,16 @@ require_text "research/hub/exp/independent-tech-debt-723/README.md" "type: exper
 require_text "research/hub/exp/independent-tech-debt-723/independence-check.log" "Hub fetch steps = 0"
 require_text "research/hub/exp/independent-tech-debt-727/README.md" "type: experiment"
 require_text "research/hub/exp/independent-tech-debt-727/independence-check.log" "Hub fetch steps = 0"
+require_text "research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log" "mango#353: red (patient zero caught)"
+require_text ".github/workflows/validate.yml" "bash tools/test-issue-statement-gate.sh"
+require_text ".github/workflows/issue-statement-gate.yml" "types: [opened, edited]"
+require_text ".github/workflows/issue-statement-gate.yml" "bash tools/validate-issue-statement.sh"
+reject_text ".github/workflows/issue-statement-gate.yml" "issues: write"
+reject_text ".github/workflows/issue-statement-gate.yml" "gh issue comment"
+require_text ".github/workflows/issue-statement-gate.yml" "ISSUE_BODY: \${{ github.event.issue.body }}"
+require_text "tools/validate-issue-statement.sh" "is forbidden by AGENTS.md <forbidden>"
+require_text "tools/validate-issue-statement.sh" "project_specific_directories"
+require_text "tools/test-issue-statement-gate.sh" "docs/contracts/ in «Контекст» passes"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"

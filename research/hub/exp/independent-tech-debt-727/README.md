@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-11-04
 temperature: 0.1
 type: experiment
@@ -35,12 +35,36 @@ issue [#727](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/727).
 | --- | --- |
 | [`independence-check.sh`](independence-check.sh) | Скрипт только для чтения: `git`, `grep`, `awk`, `gh`. Ничего не меняет ни в Хабе, ни в спицах |
 | [`independence-check.log`](independence-check.log) | Вывод скрипта от 2026-11-04 при Хабе `7dc6df2` (ветка от `main@6ab5e9b`) |
+| [`issue-statement-sweep.sh`](issue-statement-sweep.sh) | Ретро-прогон гейта постановки `tools/validate-issue-statement.sh` (B-116 (d)) по 150 последним issue Хаба и по нулевому пациенту mango#353. Только чтение: `gh issue list/view` |
+| [`issue-statement-sweep.log`](issue-statement-sweep.log) | Вывод ретро-прогона от 2026-11-04 при Хабе `83acba5` |
+
+## Ретро-прогон гейта постановки (B-116 (d))
+
+Гейт должен ловить нулевого пациента F7 и не мешать текущим постановкам.
+Итог прогона по 150 issue Хаба: 130 проходят, 20 красные.
+
+- **mango#353 красный.** Гейт ловит `docs/contracts/` в «5. Готово, когда»
+  (строка 86). Это ровно тот путь, который породил F2/F7.
+- **hub#605 красный по делу.** В «Критериях готовности» предписан
+  `docs/contracts/`.
+- **17 issue (#425…#557) красные из-за `pr-ops/`.** Каталог перенесён в
+  `ops/` (#567), гейт подсказывает новый путь.
+- **3 случая неоднозначны** (#446 `kb/processes/`, #599 `.gigacode/skills/` и
+  `meta-model/.gitkeep`). Это пути относительно проекта, названного выше в тексте.
+  Гейт краснит их, потому что из свободного текста не видно корня.
+  Цена — правка постановки или эскалация.
+- **Все issue от #606 до #727 проходят.** Гейт не мешает действующей практике.
 
 ## Воспроизведение
 
 ```bash
 research/hub/exp/independent-tech-debt-727/independence-check.sh \
   > research/hub/exp/independent-tech-debt-727/independence-check.log 2>&1
+```
+
+```bash
+research/hub/exp/independent-tech-debt-727/issue-statement-sweep.sh \
+  > research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log 2>&1
 ```
 
 Без `gh` выполняются только локальные разделы. «Hub fetch steps» — число

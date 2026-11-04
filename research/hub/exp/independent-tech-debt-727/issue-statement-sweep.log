@@ -1,0 +1,58 @@
+# issue-statement sweep: hub HEAD 83acba5, limit 150
+## hub#425
+  line 127 [📋 Definition of Done] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+  line 130 [📋 Definition of Done] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#426
+  line 133 [📋 Definition of Done] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#427
+  line 55 [📋 Definition of Done] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+  line 56 [📋 Definition of Done] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#435
+  line 167 [📋 Definition of Done] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+  line 168 [📋 Definition of Done] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#436
+  line 107 [📋 Definition of Done] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#446
+  line 73 [📋 Definition of Done] kb/processes/: creates top-level directory kb/
+## hub#475
+  line 44 [Definition of Done] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#476
+  line 73 [Definition of Done] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+## hub#484
+  line 105 [Definition of Done] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+## hub#531
+  line 38 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#533
+  line 39 [Готово, когда] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+  line 39 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+  line 41 [Готово, когда] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+  line 41 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#537
+  line 54 [Готово, когда] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+  line 54 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#541
+  line 48 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+  line 48 [Готово, когда] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+## hub#545
+  line 50 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+  line 50 [Готово, когда] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+## hub#551
+  line 74 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+  line 74 [Готово, когда] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+## hub#553
+  line 55 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+  line 55 [Готово, когда] pr-ops/artifact-map.md: uses top-level directory pr-ops/ moved
+## hub#555
+  line 66 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#557
+  line 54 [Готово, когда] pr-ops/backlog.md: uses top-level directory pr-ops/ moved
+## hub#599
+  line 51 [Критерии готовности (Definition of Done)] .gigacode/skills/: creates top-level directory .gigacode/
+  line 51 [Критерии готовности (Definition of Done)] meta-model/.gitkeep: creates top-level directory meta-model/
+## hub#605
+  line 47 [Критерии готовности (Definition of Done)] docs/contracts/: is forbidden
+hub issues: 150 checked, 130 OK, 20 red
+## mango#353 (нулевой пациент F7, путь предписан в «Готово, когда»)
+  line 86 [5. Готово, когда] docs/contracts/: is forbidden
+  line 87 [5. Готово, когда] scripts/validate_pagination_shift.py: creates top-level directory scripts/
+mango#353: red (patient zero caught)
