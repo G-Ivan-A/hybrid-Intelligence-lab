@@ -358,6 +358,8 @@ is_active_file() {
     research/hub/exp/gra-extraction-cleanup-721/permalink-probe.log | \
     research/hub/exp/gra-extraction-cleanup-721/domain-footprint.log | \
     research/hub/exp/gra-extraction-cleanup-721/ecosystem-snapshot.log | \
+    research/hub/exp/gra-extraction-cleanup-721/dialog-review-checks.sh | \
+    research/hub/exp/gra-extraction-cleanup-721/dialog-review-checks.log | \
     research/hub/exp/ai-execution-statistics-543/README.md | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
     research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \
@@ -847,6 +849,7 @@ is_active_file() {
     docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md | \
     docs/analysis/2026-11-04-gra-extraction-completeness-check.md | \
     docs/analysis/2026-11-04-issue-721-execution-protocol-analysis.md | \
+    docs/analysis/2026-11-04-issue-721-dialog-expert-review.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \

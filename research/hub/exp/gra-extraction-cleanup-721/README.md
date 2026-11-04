@@ -39,6 +39,8 @@ Evidence-контейнер issue
 | `permalink-probe.log` | Перенаправляет ли GitHub адрес, удалённый после объявленной записи `path_migrations` (`pr-ops/` → `ops/`, #567; удалён в #585): `blob/main/pr-ops/README.md` и `tree/main/pr-ops` — 404 без перенаправления; тот же файл по SHA родителя коммита удаления — 200. `path_migrations` — правило валидатора, а не веб-перенаправление. |
 | `domain-footprint.log` | Доля домена в Хабе: 173 из 1089 отслеживаемых файлов (15,9 %), 8,66 из 25,87 МБ (33,5 %), 33 734 из 155 320 строк Markdown (21,7 %). Это объём, который поиск агента и полнотекстовые проверки читают при каждом запуске. |
 | `ecosystem-snapshot.log` | Репозитории экосистемы, открытые PR и issue в каждом, входящие ссылки других репозиториев на домен. Это карта параллельной работы, которую нельзя заморозить. |
+| `dialog-review-checks.sh` | Проверки C-1…C-8 [экспертизы диалога о приёмке PR #722](../../../../docs/analysis/2026-11-04-issue-721-dialog-expert-review.md): файлы PR в домене курса, существование `day1-framer` / `day2-scout` в дереве, истории и коде владельца, назначение PR #710, офлайн-режим и контакты в материале дня 1, `HEAD` и `last_sync` спицы, коммиты в домене после снимков, повтор инвентаря. Только чтение; спица — данные, `python3 -I`. |
+| `dialog-review-checks.log` | Результат: в домене 0 из 25 файлов PR; `day1-framer` / `day2-scout` — 0 в дереве, истории и поиске; #710 — карта компаний; 4 правила дня 1 найдены (строки 14, 69, 87, 193); после базы RFC `c06075d` в домене 0 коммитов; диспозиции 81 строки инвентаря не изменились. |
 
 ## Снимки
 
@@ -66,6 +68,7 @@ python3 -I $D/ci-course-steps.py .github/workflows/validate.yml $D/ci-run-414271
 python3 -I $D/spoke-guard-replay.py . /tmp/spokes/aether-orbis-gra $D/gra-inventory.tsv > $D/spoke-guard-replay.log
 # permalink-probe.log: curl -s -o /dev/null -w '%{http_code}' по четырём адресам из файла
 # domain-footprint.log: git ls-files | wc -l; git ls-files -z <путь> | xargs -0 cat | wc -c
+$D/dialog-review-checks.sh . /tmp/spokes/aether-orbis-gra origin/main > $D/dialog-review-checks.log 2>&1
 ```
 
 Скрипту инвентаря нужна история Хаба до снимка `32b5fa5`: в клоне глубины 1 он
