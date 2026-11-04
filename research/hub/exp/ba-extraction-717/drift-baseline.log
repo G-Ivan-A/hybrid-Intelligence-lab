@@ -1,0 +1,190 @@
+# Команда: python3 -I drift-snapshot.py --params ba-instance-params.txt --hub HUB --ref c06075d0b45da70cb68e2df3851b861b5ec3aed1 --target ba-ai-metamodel --spoke mango_ba_prompts=… --spoke mango-ba-ai-runtime=… --spoke aether-orbis=… --spoke aether-orbis-gra=…
+# Снято: 2026-11-04, клоны main экосистемы на указанных head
+# drift-snapshot v1
+hub_ref: c06075d0b45da70cb68e2df3851b861b5ec3aed1
+## sources
+files: 322
+digest: 41b69e2c75754ca259ec64b3ab514e410f23e7301c6c551b19c5193346aaf8ea
+dir ba-meta-model: 20 declared
+dir build: 63 declared
+dir decisions: 2 declared
+dir dist: 150 declared
+dir docs: 15 genome
+dir experiments: 34 declared
+dir meta-model-guides: 4 declared
+dir research: 13 declared
+dir tests: 15 declared
+dir tools: 5 genome
+## inbound
+files: 85
+.github/workflows/validate.yml
+.gitignore
+.hub-profile.json
+CHANGELOG.md
+README.md
+docs/adr/2026-09-adr-013-run-modes-deprecation.md
+docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md
+docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md
+docs/adr/2026-09-adr-016-skill-form-and-contract-format.md
+docs/adr/2026-09-adr-021-agent-collaboration-layer.md
+docs/adr/README.md
+docs/analysis/2026-07-02-analysis-artifacts-inventory.md
+docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md
+docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md
+docs/analysis/2026-07-17-mango-artifacts-migration-plan.md
+docs/analysis/2026-09-15-ai-directories-consolidation-analysis.md
+docs/analysis/2026-09-28-backlog-closure-evidence-634.md
+docs/audit/2026-06-11-task-execution-audit.md
+docs/audit/2026-09-15-ba-meta-model-cross-check-audit.md
+docs/report/2026-08-26-ai-execution-statistics.md
+docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md
+docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md
+docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md
+docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md
+docs/rfc/README.md
+docs/rfc/documentation-architecture-balance.md
+docs/rfc/draft-triage-and-exit-plan.md
+docs/rfc/methodology-research-and-proposals.md
+docs/rfc/repository-quality-improvement-plan.md
+docs/rfc/tech-debt-solutions-proposal-2026-06.md
+ops/artifact-map.md
+ops/backlog.md
+practices/ai-engineering/2026-09-14-ai-pdlc-industry-alignment.md
+projects/education-ba-prompt/docs/ai-agent-execution-guide.md
+projects/repo-development/docs/migration-audit-2026-05.md
+research/README.md
+research/ba-requirements/2026-09-07-ecosystem-knowledge-inventory.md
+research/ba-requirements/2026-09-08-meta-model-inputs-facts.md
+research/ba-requirements/2026-09-09-legacy-normative-influence-facts.md
+research/ba-requirements/2026-09-10-gigacode-environment-facts.md
+research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md
+research/ba-requirements/2026-09-10-skill-granularity-format-facts.md
+research/ba-requirements/2026-10-28-agent-ba-industry-survey.md
+research/ba-requirements/README.md
+research/ba-requirements/exp/ba-meta-model-563/README.md
+research/ba-requirements/exp/ba-meta-model-cross-check-587/2026-09-15-historical-vs-new-comparison.md
+research/ba-requirements/exp/ba-meta-model-cross-check-587/measure-research-coverage.sh
+research/ba-requirements/exp/ba-meta-model-cross-check-587/measure-slot-coverage.py
+research/ba-requirements/exp/ba-meta-model-cross-check-587/validate-instances.py
+research/ba-requirements/exp/ba-methodology-unification-557/knowledge-inventory.json
+research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md
+research/ba-requirements/exp/ba-process-taxonomy-571/README.md
+research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py
+research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.py
+research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-defects.json
+research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.py
+research/ba-requirements/normalization/00-introduction.md
+research/ba-requirements/normalization/10-theory.md
+research/ba-requirements/normalization/30-decision-framework.md
+research/ba-requirements/normalization/50-open-research.md
+research/external-knowledge/2026-06-18-wigers-requirements-analysis.md
+research/external-knowledge/external-insights/2026-06-13-spec-driven-development.md
+research/external-knowledge/external-sources-registry.md
+research/hub/2026-05-28-project-context-and-bootstrap-patterns.md
+research/hub/2026-05-28-prompts-classification-audit.md
+research/hub/2026-05-28-user-prompts-analysis.md
+research/hub/2026-06-12-ecosystem-governance-audit.md
+research/hub/2026-06-20-ecosystem-architecture-research.md
+research/hub/2026-06-23-repository-structure-concept.md
+research/hub/2026-06-25-artifact-inventory-and-classification.md
+research/hub/exp/ai-execution-statistics-543/pr-cost-dataset.json
+research/hub/exp/analysis-inventory-342/2026-07-02-analysis-artifact-matrix.md
+research/hub/exp/analysis-inventory-342/analysis-inventory.json
+research/hub/exp/hub-contradictions-audit-529/artifact-map-coverage.log
+research/hub/exp/hub-governance-roadmap-715/README.md
+research/hub/exp/hub-governance-roadmap-715/hub-status-census.log
+research/hub/exp/ops-task-strategy-461/corpus-metrics.json
+research/hub/exp/ops-task-strategy-461/experiment-references.json
+research/hub/exp/reports-inventory-310/reports-inventory.json
+research/hub/exp/research-analysis-audit-288/2026-06-28-artifact-classification-matrix.md
+research/hub/exp/research-analysis-audit-288/artifact-classification.json
+research/hub/exp/research-methodology-validation-499/research-inventory.json
+standards/product-taxonomy-reference.md
+tools/test-ba-requirements-forensics.sh
+tools/validate-repository-structure.sh
+## ci
+job cline-windows: declared
+job opencode: declared
+job validate: step-level
+job windows-guides: declared
+step cline-windows / Check compiled Cline package: declared
+step cline-windows / Run Cline guide commands verbatim in Git Bash: declared
+step cline-windows / Test Cline Windows hooks, paths, and runner: declared
+step opencode / Check compiled OpenCode package: declared
+step opencode / Run real OpenCode against the package (E2E): declared
+step opencode / Test OpenCode guard, package commands, paths, and runner: declared
+step validate / Install Python dependencies: declared
+step validate / Test BA meta-model stakeholder overview: declared
+step validate / Test BCREQ Working/Release pipeline contract: declared
+step validate / Test Cline execution package: declared
+step validate / Test OpenCode execution package: declared
+step validate / Test execution package gate: declared
+step validate / Validate MVP BCREQ execution package (G-mach): declared
+step windows-guides / Execute BA guides in ${{ matrix.shell }}: declared
+step windows-guides / Install Python dependencies: declared
+step windows-guides / Run issue 638 full route experiment in ${{ matrix.shell }}: declared
+step windows-guides / Run issue 638 input checks experiment: declared
+step windows-guides / Run issue 638 smoke flow experiment: declared
+step windows-guides / Run issue 638 smoke guide experiment in ${{ matrix.shell }}: declared
+step windows-guides / Test GigaCode package gate (G-mach negatives, BCREQ compile): declared
+step windows-guides / Test GigaCode route emulation: declared
+step windows-guides / Test GigaCode runner: declared
+step windows-guides / Test GigaCode semantic regression: declared
+step windows-guides / Validate GigaCode package (G-mach): declared
+## backlog
+section ## Спринт 14: Единая методология БА, оптимизированная под ИИ-агентов: declared rows=15
+section ## Спринт 15: Микро-уровень методологии БА — единая структура артефакта: declared rows=10
+section ## Спринт 16: Каноническая мета-модель БА и Execution Package: declared rows=8
+section ## Спринт 17: Пересборка таксономии процессов и операций БА (Мета-модель v2): declared rows=9
+section ## Спринт 18: Сверка мета-модели БА с индустриальным AI-PDLC: declared rows=5
+section ## Спринт 19: Инициализация MVP в `mango-ba-ai-runtime`: declared rows=6
+section ## Спринт 20: Развёртывание спутника и масштабирование пакета исполнения: declared rows=10
+section ## Спринт 21: Коррекции по сквозной проверке мета-модели: declared rows=6
+section ## Спринт 24: Реальные задачи BCREQ в Cline-пакете: declared rows=6
+section ## Спринт 25: Разрывы ожиданий и реализации Cline-пакета: declared rows=8
+section ## Спринт 26: Исполнитель маршрута и среды запуска: declared rows=8
+section ## Спринт 27: Разрывы инструкции GigaCode-пакета: declared rows=4
+section ## Спринт 28: Пакет исполнения OpenCode: declared rows=5
+section ## Источники активного порядка: mentions-source rows=0
+## target
+head: bc1249f141f92fb03b1b76d7151a05c3b3773819
+files: 1 ok
+README.md
+## spoke mango_ba_prompts
+head: dafba840e754eed107864e542d55510d3218a09d
+pinned-links: 556
+floating-links: 48 in 21 file(s)
+floating experiments/issue_319/L4-preamble.md.in: 1
+floating experiments/issue_319_requirements_statistics.py: 1
+floating experiments/issue_395/source-notes.md: 1
+floating experiments/issue_397/evidence.json: 1
+floating experiments/issue_397/evidence.md: 1
+floating prompts/bcreq-constitution-governance-oneshot.md: 1
+floating prompts/bcreq-constraints-documentation-stepwise.md: 1
+floating prompts/bcreq-context-understanding-stepwise.md: 1
+floating prompts/bcreq-core-documentation-oneshot.md: 1
+floating prompts/bcreq-extra-risk-analysis-stepwise.md: 1
+floating prompts/bcreq-fr-documentation-stepwise.md: 1
+floating prompts/bcreq-in-understanding-oneshot.md: 1
+floating prompts/bcreq-nfr-documentation-stepwise.md: 1
+floating prompts/bcreq-orr-solution-design-stepwise.md: 1
+floating prompts/bcreq-products-impact-analysis-stepwise.md: 1
+floating prompts/bcreq-review-validation-oneshot.md: 1
+floating prompts/bcreq-scenarios-modeling-oneshot.md: 1
+floating prompts/bcreq-uc-modeling-stepwise.md: 1
+floating prompts/bcreq-work-solution-design-oneshot.md: 1
+floating runs/2026/RUN-0057/outputs/L4-requirements-statistics.md: 1
+floating site/data/prompts.json: 28
+## spoke mango-ba-ai-runtime
+head: 5d8c201511fd730a596c9f9b4588470a7b01edc9
+pinned-links: 0
+floating-links: 0 in 0 file(s)
+pin compilation-manifest.yaml: dbf3baa96d3585150974212254af81bcf7b03150
+## spoke aether-orbis
+head: ead22d699c92ff3d91f300efb0cd0ec0702b967b
+pinned-links: 0
+floating-links: 0 in 0 file(s)
+## spoke aether-orbis-gra
+head: 1669943e6f0193e78b245bb9d26b3281a1c5a438
+pinned-links: 0
+floating-links: 0 in 0 file(s)

@@ -500,6 +500,8 @@ is_active_file() {
     research/hub/exp/ba-extraction-717/ba-instance-params.txt | \
     research/hub/exp/ba-extraction-717/rehearse-contract.sh | \
     research/hub/exp/ba-extraction-717/rehearse-contract.log | \
+    research/hub/exp/ba-extraction-717/drift-snapshot.py | \
+    research/hub/exp/ba-extraction-717/drift-baseline.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -1289,6 +1291,8 @@ required_files=(
   "research/hub/exp/ba-extraction-717/ba-instance-params.txt"
   "research/hub/exp/ba-extraction-717/rehearse-contract.sh"
   "research/hub/exp/ba-extraction-717/rehearse-contract.log"
+  "research/hub/exp/ba-extraction-717/drift-snapshot.py"
+  "research/hub/exp/ba-extraction-717/drift-baseline.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -3387,6 +3391,7 @@ require_text "ops/artifact-map.md" "ops/hub-project-extraction-contract.md"
 require_text "ops/README.md" "hub-project-extraction-contract.md"
 require_text "research/hub/exp/ba-extraction-717/README.md" "type: experiment"
 require_text "research/hub/exp/ba-extraction-717/rehearse-contract.log" "E5 OK: 100 backlog rows"
+require_text "research/hub/exp/ba-extraction-717/drift-baseline.log" "files: 1 ok"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"

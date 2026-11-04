@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-11-03
+version: 0.2
+updated: 2026-11-04
 temperature: 0.1
 type: experiment
 ---
@@ -22,6 +22,10 @@ issue [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717).
 2. **Исполнимость контракта выноса.** Проходят ли команды этапов E1, E2, E3 и
    E5 контракта на реальных данных проекта метамодели БА при закреплённом
    `HUB_SHA` и что остаётся агенту на этапе E4.
+3. **Дрейф до возобновления.** Вынос отложен (решение владельца 2026-11-04,
+   B-243). Перед возобновлением снимок при новом коммите Хаба сравнивается со
+   снимком при `c06075d`: изменилось ли то, от чего зависят параметры
+   выноса, в Хабе, в целевом репозитории и в репозиториях экосистемы.
 
 ## Файлы
 
@@ -33,6 +37,8 @@ issue [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717).
 | `ba-instance-params.txt` | Блок `extraction-params` проекта метамодели БА: `MAP`, `DIR`, `CI_JOB`, `CI_STEP`, `BACKLOG`, `HISTORICAL` |
 | `rehearse-contract.sh` | Репетиция этапов E1, E2, E3, E5 и сканирования E4 в локальном git-репозитории |
 | `rehearse-contract.log` | Вывод репетиции (без построчного JSONL журнала ссылок) |
+| `drift-snapshot.py` | Снимок зависимостей параметров при одном коммите Хаба: источники (число, дайджест, каталоги против `DIR`), файлы Хаба с упоминанием источников, шаги CI против `CI_STEP`/`CI_JOB`, разделы бэклога против `BACKLOG`, файлы целевого репозитория, ссылки репозиториев экосистемы на источники (по SHA и плавающие) и закрепления `hub_commit`. Только чтение |
+| `drift-baseline.log` | Базовый снимок при `c06075d` и `main` экосистемы на 2026-11-04 |
 
 ## Воспроизведение
 
@@ -46,6 +52,20 @@ python3 -m venv /tmp/gfr && /tmp/gfr/bin/pip install git-filter-repo==2.47.0
 GFR=/tmp/gfr/bin/git-filter-repo bash research/hub/exp/ba-extraction-717/rehearse-contract.sh \
   research/hub/exp/ba-extraction-717/ba-instance-params.txt /tmp/hub-clone \
   tools/spoke-extraction.py /tmp/rehearsal-out
+```
+
+```bash
+# дрейф: клоны main экосистемы и целевого репозитория в отдельных пустых каталогах
+python3 -I research/hub/exp/ba-extraction-717/drift-snapshot.py \
+  --params research/hub/exp/ba-extraction-717/ba-instance-params.txt \
+  --hub /tmp/hub-clone --ref NEW_SHA --since c06075d0b45da70cb68e2df3851b861b5ec3aed1 \
+  --target /tmp/eco/ba-ai-metamodel \
+  --spoke mango_ba_prompts=/tmp/eco/mango_ba_prompts \
+  --spoke mango-ba-ai-runtime=/tmp/eco/mango-ba-ai-runtime \
+  --spoke aether-orbis=/tmp/eco/aether-orbis \
+  --spoke aether-orbis-gra=/tmp/eco/aether-orbis-gra > /tmp/drift-new.log
+diff <(grep -v '^#' research/hub/exp/ba-extraction-717/drift-baseline.log) \
+  <(sed '/^## since/,$d' /tmp/drift-new.log | grep -v '^#')
 ```
 
 Репетиция отличается от контракта тремя подстановками: параметры читаются из
@@ -76,3 +96,19 @@ GFR=/tmp/gfr/bin/git-filter-repo bash research/hub/exp/ba-extraction-717/rehears
 Ограничения: E4 (правка кода и CI) и E6 требуют работы агента и CI нового
 репозитория, поэтому здесь не репетируются; зонд имён проверяет точное
 совпадение и не проверяет товарные знаки.
+
+## Базовый снимок дрейфа (`c06075d`, 2026-11-04)
+
+| Раздел | Значение |
+| --- | --- |
+| Источники | 322 файла; все каталоги корня цели объявлены в `DIR` или входят в геном |
+| Хаб | 85 файлов вне источников упоминают их пути (надмножество 75 файлов, которые правит E3) |
+| CI | 24 шага: 17 в трёх заданиях из `CI_JOB` и 7 шагов задания `validate` из `CI_STEP`; необъявленных шагов, упоминающих источники, нет |
+| Бэклог | 13 объявленных разделов; раздел «Источники активного порядка» упоминает источники и не переносится |
+| Цель | `ba-ai-metamodel` — один файл `README.md`: предусловие E2 выполнено |
+| `mango_ba_prompts` | 556 ссылок по SHA (переживут надгробие), 48 плавающих в 21 файле (сломаются на Ш3.6) |
+| `mango-ba-ai-runtime` | 0 ссылок; `hub_commit: dbf3baa…` |
+| `aether-orbis`, `aether-orbis-gra` | 0 ссылок |
+
+Пустой `diff` нового снимка с базовым означает, что параметры и задачи выноса
+действуют без правки; иначе каждая строка разницы — пункт сверки в B-243.
