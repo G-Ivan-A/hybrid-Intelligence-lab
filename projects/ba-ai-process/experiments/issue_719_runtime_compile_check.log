@@ -1,0 +1,20 @@
+runtime HEAD: fb5776bd7c3f4c4a50bce4485d16ea4678d704a6
+manifest hub_commit: de68984899b40ae478bb270d6015ddeb61eaada3
+manifest meta_model_version: "0.5"
+ok - n1 skill compiled from the manifest hub_commit
+ok - Hub commit contains PT-5
+ok - only the manifest references the Hub
+--- runtime smoke
+ok - golden atomic_function omnichannel-contact-center/function/interaction-routing is in catalog
+ok - golden set has a function-outside-catalog negative case
+ok - golden negative function queue-callback-offer is outside catalog
+runtime smoke test passed
+--- runtime unittest
+Ran 17 tests in 2.485s
+
+OK
+--- mutation: GS-CC-02 declares the invented id handling-report-export
+AssertionError: Lists differ: ['cases.yaml GS-CC-02: функция вне каталога: handling-report-export'] != []
+FAILED (failures=1)
+not ok - golden atomic_function handling-report-export is in catalog
+runtime smoke test failed: 1 check(s)
