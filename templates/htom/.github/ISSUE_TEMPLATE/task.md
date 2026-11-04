@@ -5,16 +5,17 @@ title: "[scope] Краткое описание задачи"
 labels: "scope"
 assignees: ""
 status: draft
-version: 2.1
+version: 2.2
 updated: {{date}}
 temperature: 0.1
 ---
 
 <!--
-Для ИИ: если поле пустое, не генерируй значение. Работай в Structured mode по
-умолчанию. Сохраняй traceability между контекстом, артефактами, изменениями,
-проверками и PR. Не создавай `research/` в HTOM-команде без явного решения
-человека и ADR.
+Для ИИ: если поле пустое, не генерируй значение. Если Operating Mode не указан,
+работай в Hybrid mode (по умолчанию); явно назначенный `Structured` или
+`Creative` имеет приоритет. Сохраняй traceability между контекстом,
+артефактами, изменениями, проверками и PR. Не создавай `research/` в
+HTOM-команде без явного решения человека и ADR.
 -->
 
 ## Мета
@@ -24,7 +25,7 @@ temperature: 0.1
 - User Story / ФТ: `-`
 - Linked Backlog: `-`
 - Depends On: `-`
-- Operating Mode: `Structured`
+- Operating Mode: `Hybrid` (по умолчанию) / `Structured` / `Creative`
 
 ## 🎯 Контекст
 

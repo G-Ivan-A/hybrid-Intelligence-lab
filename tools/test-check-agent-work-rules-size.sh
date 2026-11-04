@@ -41,15 +41,46 @@ if ! grep -Fq 'WARNING' "$tmp_root/err"; then
   exit 1
 fi
 
-# 3. Выше жёсткого порога: падение.
+# 3. Выше рекомендуемого порога 9K: успех с рекомендацией декомпозиции
+# (ADR-021 §5: «9K — рекомендация, не блокер»; B-196).
 make_fixture 32000  # ~10000 токенов
-if TARGET_FILE="$fixture" ./tools/check-agent-work-rules-size.sh \
+if ! TARGET_FILE="$fixture" ./tools/check-agent-work-rules-size.sh \
     >"$tmp_root/out" 2>"$tmp_root/err"; then
-  printf 'Expected failure for oversized file.\n' >&2
+  printf 'Expected non-blocking pass for oversized file (9K is a recommendation).\n' >&2
+  cat "$tmp_root/err" >&2
   exit 1
 fi
-if ! grep -Fq 'exceeds the hard budget' "$tmp_root/err"; then
-  printf 'Expected hard budget error message.\n' >&2
+if ! grep -Fq 'exceeds the recommended budget of 9000 tokens' "$tmp_root/err"; then
+  printf 'Expected recommended budget warning for oversized file.\n' >&2
+  cat "$tmp_root/err" >&2
+  exit 1
+fi
+if ! grep -Fq 'Рекомендуется декомпозиция' "$tmp_root/err"; then
+  printf 'Expected decomposition recommendation for oversized file.\n' >&2
+  cat "$tmp_root/err" >&2
+  exit 1
+fi
+if grep -Eq 'ERROR|hard budget' "$tmp_root/err" "$tmp_root/out"; then
+  printf 'Unexpected hard-limit error wording for oversized file.\n' >&2
+  cat "$tmp_root/err" >&2
+  exit 1
+fi
+if ! grep -Fq 'Agent work rules size check passed.' "$tmp_root/out"; then
+  printf 'Expected pass message for oversized file.\n' >&2
+  cat "$tmp_root/out" >&2
+  exit 1
+fi
+
+# 3a. Прежнее имя ERROR_TOKENS принимается и тоже не блокирует.
+make_fixture 25600  # ~8000 токенов
+if ! ERROR_TOKENS=7500 TARGET_FILE="$fixture" ./tools/check-agent-work-rules-size.sh \
+    >"$tmp_root/out" 2>"$tmp_root/err"; then
+  printf 'Expected non-blocking pass with legacy ERROR_TOKENS override.\n' >&2
+  cat "$tmp_root/err" >&2
+  exit 1
+fi
+if ! grep -Fq 'exceeds the recommended budget of 7500 tokens' "$tmp_root/err"; then
+  printf 'Expected legacy ERROR_TOKENS to set the recommended budget.\n' >&2
   cat "$tmp_root/err" >&2
   exit 1
 fi

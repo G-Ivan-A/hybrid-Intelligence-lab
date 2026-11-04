@@ -127,7 +127,7 @@
     },
     "templates/htom/.github/ISSUE_TEMPLATE/task.md": {
       "id": "htom-issue-template-task",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "target_type": ["HTOM", "Spoke"],
       "criticality": "CORE",
       "tags": ["issue-template", "task"],

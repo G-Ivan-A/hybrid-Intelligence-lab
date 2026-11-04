@@ -517,6 +517,9 @@ is_active_file() {
     research/hub/exp/ba-extraction-717/rehearse-contract.log | \
     research/hub/exp/ba-extraction-717/drift-snapshot.py | \
     research/hub/exp/ba-extraction-717/drift-baseline.log | \
+    research/hub/exp/independent-tech-debt-723/README.md | \
+    research/hub/exp/independent-tech-debt-723/independence-check.sh | \
+    research/hub/exp/independent-tech-debt-723/independence-check.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -861,6 +864,7 @@ is_active_file() {
     docs/analysis/2026-11-04-issue-721-execution-protocol-analysis.md | \
     docs/analysis/2026-11-04-issue-721-dialog-expert-review.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
+    docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -1312,6 +1316,9 @@ required_files=(
   "research/hub/exp/ba-extraction-717/rehearse-contract.log"
   "research/hub/exp/ba-extraction-717/drift-snapshot.py"
   "research/hub/exp/ba-extraction-717/drift-baseline.log"
+  "research/hub/exp/independent-tech-debt-723/README.md"
+  "research/hub/exp/independent-tech-debt-723/independence-check.sh"
+  "research/hub/exp/independent-tech-debt-723/independence-check.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -2240,7 +2247,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.53"
+require_text "ops/artifact-map.md" "version: 2.54"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2653,7 +2660,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.75"
+require_text "ops/backlog.md" "version: 1.76"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
@@ -3291,7 +3298,7 @@ require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "agent-onboarding-protocol.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.9"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.10"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ops/session-digests.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ops/backlog.md"
@@ -3326,7 +3333,7 @@ require_text "templates/htom/CHANGELOG.md" "## Unreleased"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "🎯 Контекст"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "✅ Готово, когда"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
-require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured`'
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Hybrid` (по умолчанию)'
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
@@ -3412,6 +3419,8 @@ require_text "ops/README.md" "hub-project-extraction-contract.md"
 require_text "research/hub/exp/ba-extraction-717/README.md" "type: experiment"
 require_text "research/hub/exp/ba-extraction-717/rehearse-contract.log" "E5 OK: 100 backlog rows"
 require_text "research/hub/exp/ba-extraction-717/drift-baseline.log" "files: 1 ok"
+require_text "research/hub/exp/independent-tech-debt-723/README.md" "type: experiment"
+require_text "research/hub/exp/independent-tech-debt-723/independence-check.log" "Hub fetch steps = 0"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
