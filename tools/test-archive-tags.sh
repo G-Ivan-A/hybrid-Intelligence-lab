@@ -7,7 +7,10 @@
 #   * ruleset-check: эталон .github/rulesets/archive-tags.json защищает тег;
 #     нет ruleset, ruleset выключен, цель branch, нет правила deletion или
 #     update, тег исключён шаблоном — падение; правила из двух ruleset и ~ALL
-#     засчитываются.
+#     засчитываются;
+#   * шаг «Create archive tags» из .github/workflows/archive-tag.yml: GitHub
+#     отклонил push тега — падение с инструкцией владельцу (B-281, на main
+#     отказ шёл без инструкции); push принят — тег на archive_commit.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -119,6 +122,51 @@ rulesets "[$(ruleset tag active '"refs/tags/archive/*"' '' '{"type": "update"}')
 run "ruleset: правила из двух ruleset и ~ALL" 0 "OK" -- check
 
 run "message: аннотация ссылается на RFC и манифест" 0 "манифест redirect" -- "${TOOL[@]}" message "$TAG" "$alpha"
+
+# ------------------------------------------------------- шаг workflow
+# Исполняется настоящий текст шага, а не его копия. Отказ GitHub моделирует
+# pre-receive hook голого remote.
+step="$work_dir/create-step.sh"
+awk '
+  /- name: Create archive tags/ { found = 1; next }
+  found && /^ +run: \|$/ { body = 1; next }
+  body && /^$/ { print; next }
+  body && !/^          / { exit }
+  body { print substr($0, 11) }
+' "$ROOT_DIR/.github/workflows/archive-tag.yml" >"$step"
+remote="$work_dir/remote.git"
+clone="$work_dir/clone"
+runner_temp="$work_dir/runner-temp"
+git init -q --bare -b main "$remote"
+git -C "$repo" push -q "$remote" "$alpha:refs/heads/main"
+git clone -q "$remote" "$clone"
+mkdir -p "$clone/tools" "$runner_temp"
+cp "$ROOT_DIR/tools/archive-tags.py" "$clone/tools/"
+printf 'create\t%s\t%s\n' "$TAG" "$alpha" >"$runner_temp/archive-tags.tsv"
+create_step() { (cd "$clone" && DRY_RUN=false RUNNER_TEMP="$runner_temp" bash -euo pipefail "$step"); }
+
+cat >"$remote/hooks/pre-receive" <<'HOOK'
+#!/bin/sh
+echo "refusing to allow a GitHub App to create or update workflow without workflows permission" >&2
+exit 1
+HOOK
+chmod +x "$remote/hooks/pre-receive"
+run "шаг: push отклонён — падение" 1 "::error::Тег $TAG не создан" -- create_step
+git -C "$clone" tag -d "$TAG" >/dev/null
+run "шаг: инструкция называет команду для владельца" 1 "git tag -a $TAG -F /tmp/tag-message.txt $alpha" -- create_step
+if git -C "$remote" rev-parse --verify --quiet "refs/tags/$TAG" >/dev/null; then
+  report "FAIL" "шаг: отклонённый тег не должен появиться в remote"
+else
+  report "PASS" "шаг: отклонённый тег не появился в remote"
+fi
+git -C "$clone" tag -d "$TAG" >/dev/null
+rm "$remote/hooks/pre-receive"
+run "шаг: push принят — тег создан" 0 "Создан тег $TAG на $alpha" -- create_step
+if [[ "$(git -C "$remote" rev-parse "refs/tags/$TAG^{commit}")" == "$alpha" ]]; then
+  report "PASS" "шаг: тег в remote указывает на archive_commit"
+else
+  report "FAIL" "шаг: тег в remote указывает не на archive_commit"
+fi
 
 if ((failures > 0)); then
   printf '\n%d test(s) failed\n' "$failures" >&2
