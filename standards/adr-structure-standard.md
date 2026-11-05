@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.1
-updated: 2026-07-02
+version: 1.2
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -72,7 +72,8 @@ Frontmatter `status` является единственным machine-readable 
 status в `Decision Metadata` МОЖЕТ повторять его только как narrative summary.
 
 `ai-generated` ЗАПРЕЩЁН во frontmatter. Provenance фиксируется в issue, PR,
-changelog, audit или session record.
+changelog, audit или session record; людей и модель называют необязательные
+поля `contributors` и `ai-models` ([Frontmatter Standard, обязательство 5](frontmatter-standard.md#обязательства), ADR-023).
 
 ## Required Body Sections
 

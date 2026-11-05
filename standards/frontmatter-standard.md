@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.1
-updated: 2026-06-28
+version: 1.2
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -48,8 +48,22 @@ nodes.
    provenance rule или governance-процесс.
 4. Governance-артефакты **ДОЛЖНЫ** иметь `owner` в frontmatter. ADR также
    указывает `decision-type`, RFC - `rfc-scope`.
-5. `ai-generated` **ЗАПРЕЩЕН** во frontmatter. Авторство и доля AI фиксируются в
-   issue, PR, changelog или audit, если это влияет на review.
+5. `ai-generated` **ЗАПРЕЩЕН** во frontmatter: метка не называет ни
+   ответственного, ни модель. Участие ИИ, если оно влияет на review,
+   фиксируется в issue, PR, changelog или audit и **МОЖЕТ** быть названо во
+   frontmatter двумя полями
+   ([ADR-023](../docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md)):
+
+   | Поле | Значение | Правило |
+   | --- | --- | --- |
+   | `contributors` | Люди, команды или роли, которые вели работу и отвечают за результат | Непустой скаляр или inline-список `[a, b]`; обобщённая метка (`ai`, `llm`, `bot`, `true`, `unknown` и т. п.) не допускается |
+   | `ai-models` | Конкретные модели ИИ, участвовавшие в работе | Только вместе с `contributors`; скаляр или inline-список идентификаторов с версией (`claude-opus-5-5`, `gpt-5.1`), а не семейство (`claude`, `gpt`) |
+
+   Поля необязательны и допустимы во всех собственных классах метаданных Хаба.
+   Внешние форматы (issue form, команда OpenCode, пакет исполнения) их не
+   получают. Блочные YAML-списки не поддерживаются: валидатор читает
+   frontmatter построчно. Этот пункт — единственный нормативный источник полей;
+   остальные стандарты ссылаются на него.
 6. `status`, `version`, `updated` и `temperature` **НЕ ДОЛЖНЫ** дублироваться в
    теле документа как отдельные строки "Версия", "Дата", "Статус" без
    операционной причины.
@@ -61,6 +75,8 @@ nodes.
 - Связи вынесены в навигацию, карту артефактов, PR или ADR/RFC, а не разложены
   по множеству metadata-полей.
 - `./tools/validate-frontmatter.sh .` проходит без ошибок.
+- Если указано `ai-models`, указано и `contributors`; значения названы
+  конкретно, а не обобщённой меткой.
 - Если добавлено исключение, в PR объяснено, какой валидатор или контракт его
   потребляет.
 
@@ -86,6 +102,8 @@ frameworks OpenAI, Anthropic и Google SAIF показывают ценност�
 - [NIST AI Risk Management Framework 1.0](https://www.nist.gov/itl/ai-risk-management-framework)
 - [EU AI Act, Regulation (EU) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng)
 - [ISO/IEC 42001 AI management systems](https://www.iso.org/standard/42001)
+- [W3C PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)
+- [ADR-023: поля `contributors` и `ai-models`](../docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md)
 - [OpenAI Preparedness Framework](https://openai.com/safety/)
 - [Anthropic Responsible Scaling Policy](https://www.anthropic.com/responsible-scaling-policy)
 - [Google Secure AI Framework](https://saif.google/)

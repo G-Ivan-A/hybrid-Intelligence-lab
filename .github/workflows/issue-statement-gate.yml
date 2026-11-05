@@ -1,0 +1,32 @@
+name: issue-statement-gate
+
+# Гейт постановки задачи (B-116 (d), issue #727, решение Г-1).
+# Проверяет тело issue до передачи задачи агенту: пути в «Готово, когда» и
+# «Задаче исполнителю» не попадают в <forbidden> AGENTS.md и лежат в объявленных
+# домах. Только краснит проверку: комментариев, меток и правок от имени
+# владельца workflow не создаёт.
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  issue-statement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Write issue body to file
+        # Тело передаётся через env, а не подстановкой в скрипт: так текст issue
+        # не исполняется оболочкой.
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: printf '%s\n' "$ISSUE_BODY" > "$RUNNER_TEMP/issue-body.md"
+
+      - name: Validate issue statement
+        run: bash tools/validate-issue-statement.sh "$RUNNER_TEMP/issue-body.md"

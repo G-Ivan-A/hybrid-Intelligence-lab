@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.1
-updated: 2026-07-02
+version: 1.2
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -76,7 +76,8 @@ routing consume them. `impacted-artifacts`, decision links and implementation
 links remain in body-level `RFC Metadata` unless a future index consumes them.
 
 `ai-generated` ЗАПРЕЩЁН во frontmatter. Provenance фиксируется в issue, PR,
-changelog, audit или session record.
+changelog, audit или session record; людей и модель называют необязательные
+поля `contributors` и `ai-models` ([Frontmatter Standard, обязательство 5](frontmatter-standard.md#обязательства), ADR-023).
 
 ## Required Body Sections
 

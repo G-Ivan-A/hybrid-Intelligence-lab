@@ -41,7 +41,7 @@
     {
       "id": "htom-issue-template-task",
       "path": "templates/htom/.github/ISSUE_TEMPLATE/task.md",
-      "version": "2.2.0",
+      "version": "3.0.0",
       "target_type": [
         "HTOM",
         "Spoke"
@@ -55,7 +55,7 @@
         "issue-template",
         "task"
       ],
-      "description": "Structured шаблон задачи: мета, контекст, артефакты, ограничения, AI-agent specifics, DoD."
+      "description": "Structured шаблон задачи: мета, пять уровней постановки (User Story, ФТ, НФТ, задача исполнителю, ограничения процесса), контекст, AI-agent specifics, DoD, отклонения и вопросы."
     },
     {
       "id": "htom-validate-workflow",
@@ -97,7 +97,7 @@
     {
       "id": "htom-agents-bootstrap",
       "path": "templates/htom/AGENTS.md",
-      "version": "3.1.0",
+      "version": "3.2.0",
       "target_type": [
         "HTOM"
       ],
@@ -208,7 +208,7 @@
     {
       "id": "htom-readme",
       "path": "templates/htom/README.md",
-      "version": "0.6.0",
+      "version": "0.7.0",
       "target_type": [
         "HTOM"
       ],
@@ -244,7 +244,7 @@
     {
       "id": "htom-validate-agents-bootstrap",
       "path": "templates/htom/tools/validate-agents-bootstrap.sh",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "target_type": [
         "HTOM"
       ],
@@ -258,12 +258,12 @@
         "bootstrap",
         "environment"
       ],
-      "description": "Проверка единственной точки входа AGENTS.md и согласованности профиля."
+      "description": "Проверка единственной точки входа AGENTS.md, согласованности профиля и тонких указателей модель-специфичных файлов правил."
     },
     {
       "id": "htom-validate-repository-structure",
       "path": "templates/htom/tools/validate-repository-structure.sh",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "target_type": [
         "HTOM"
       ],
@@ -276,7 +276,7 @@
         "validation",
         "tooling"
       ],
-      "description": "Валидатор структуры HTOM-репозитория."
+      "description": "Валидатор структуры HTOM-репозитория: канонический набор, декларация каталогов, запреты docs/contracts/ и ai-generated на любой глубине."
     },
     {
       "id": "spoke-ci",
@@ -318,7 +318,7 @@
     {
       "id": "spoke-agents-bootstrap",
       "path": "templates/spoke/AGENTS.md",
-      "version": "3.1.0",
+      "version": "3.2.0",
       "target_type": [
         "Spoke"
       ],

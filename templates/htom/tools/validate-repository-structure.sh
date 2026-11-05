@@ -303,6 +303,26 @@ if grep -RIlq '{{[a-z_][a-z_]*}}' . --include='*.md' 2>/dev/null; then
   warn "найдены незаменённые плейсхолдеры шаблона ({{...}}): запустите ./init.sh для инициализации HTOM-команды."
 fi
 
+# Явные запреты генома (B-116, issue #727 Хаба). Запрет проверяется на любой
+# глубине: правило «недекларированный каталог = FAIL» выше нормирует только корень,
+# и `docs/contracts/` проходил его незамеченным. `.archive/` — замороженный снимок,
+# поэтому он не проверяется.
+while IFS= read -r dir; do
+  fail "запрещённый каталог: ${dir#./}/ — контракт живёт в доме своего класса (AGENTS.md, <artifact_homes>): контракт агента — ai-rules/ (правило <name>.md, команда commands/<slug>.md, навык skills/<slug>/SKILL.md), контракт процесса — ops/<name>.md. Перенесите файлы и удалите каталог."
+done < <(find . \( -path ./.git -o -path ./.archive \) -prune -o -type d -path '*/docs/contracts' -print)
+
+# Поле `ai-generated` во frontmatter запрещено: метка не говорит, проверено ли
+# содержимое. Участие ИИ фиксируется полями `contributors` и `ai-models`
+# (ADR-023 Хаба) или в issue, PR и CHANGELOG.
+while IFS= read -r -d '' md; do
+  line="$(awk 'NR == 1 { if ($0 !~ /^---[[:space:]]*$/) exit; next }
+               /^---[[:space:]]*$/ { exit }
+               /^[[:space:]]*ai-generated[[:space:]]*:/ { print NR; exit }' "$md")"
+  if [[ -n "$line" ]]; then
+    fail "${md#./}:$line: поле frontmatter ai-generated запрещено — назовите участников полем contributors и модель полем ai-models (ADR-023 Хаба) или зафиксируйте участие ИИ в issue, PR и CHANGELOG."
+  fi
+done < <(find . \( -path ./.git -o -path ./.archive \) -prune -o -type f -name '*.md' -print0)
+
 if [[ "$warnings" -gt 0 ]]; then
   printf '\n%d warning(s) — не блокируют, но требуют внимания.\n' "$warnings" >&2
 fi

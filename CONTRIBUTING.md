@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.14
-updated: 2026-08-17
+version: 1.15
+updated: 2026-11-04
 temperature: 0.1
 ---
 
@@ -122,7 +122,11 @@ sufficient frontmatter из
 базовые поля `status`, `version`, `updated`, `temperature` плюс обязательные
 поля класса документа. Governance-артефакты требуют `owner`, ADR требует
 `decision-type`, RFC требует `rfc-scope`. `ai-generated` во frontmatter
-запрещён.
+запрещён. Людей-участников и конкретную модель ИИ называют необязательные поля
+`contributors` и `ai-models`: `ai-models` только вместе с `contributors`,
+значения — скаляр или inline-список `[a, b]` (обязательство 5
+[frontmatter-standard.md](standards/frontmatter-standard.md#обязательства),
+[ADR-023](docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md)).
 
 ## File Naming
 
@@ -145,6 +149,7 @@ bash tools/test-agent-onboarding-authorization.sh
 bash tools/test-operating-mode-contract.sh
 bash tools/test-check-agent-work-rules-size.sh
 bash tools/test-nonempty-diff.sh
+bash tools/test-issue-statement-gate.sh
 bash tools/test-historical-immutable.sh
 bash tools/test-validate-rrp-links.sh
 ./tools/check-agent-work-rules-size.sh
@@ -180,6 +185,33 @@ python3 tools/generate-manifest.py --check
 - Агент **не ставит** эту метку сам и не просит её как способ обойти пустой
   результат работы; вместо этого он фиксирует, что именно не выполнено, и
   задаёт вопрос в PR.
+
+## Гейт постановки задачи
+
+Постановка задачи — привилегированный канал записи в структуру репозитория:
+путь, предписанный в «Готово, когда», исполнитель создаёт как результат. Поэтому
+тело issue проверяется до передачи задачи агенту. Workflow
+[.github/workflows/issue-statement-gate.yml](.github/workflows/issue-statement-gate.yml)
+на событиях `issues: [opened, edited]` запускает
+[tools/validate-issue-statement.sh](tools/validate-issue-statement.sh).
+
+- Проверяются только разделы «Готово, когда» и «Задача исполнителю». Тот же путь
+  в «Контексте» описывает факт и допустим.
+- Красная проверка: путь `docs/contracts/` на любой глубине, новый каталог
+  верхнего уровня вне ядра и `project_specific_directories` из `.hub-profile.json`,
+  каталог, перенесённый записью `path_migrations`, и предписание поля
+  frontmatter `ai-generated:`.
+- Строка с отрицанием («не создан», «без …») описывает запрет и не проверяется.
+- Workflow только краснит проверку: комментариев и меток от имени владельца он
+  не создаёт. Если путь нужен намеренно, автор постановки эскалирует вопрос по
+  разделу `<escalation>` [AGENTS.md](AGENTS.md).
+
+Локально: `bash tools/validate-issue-statement.sh --issue N` или
+`bash tools/validate-issue-statement.sh <файл-с-телом-issue>`. Нормы —
+[standards/issue-workflow.md](standards/issue-workflow.md) («Правила
+формулирования уровней», «Точки автоматизации») и
+[standards/contract-documentation-standard.md](standards/contract-documentation-standard.md)
+(«Где живёт контракт»).
 
 ## Связь практики с теорией в модулях RRP
 

@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.3
-updated: 2026-07-03
+version: 1.4
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -33,7 +33,11 @@ contract, provenance rule or document class consumes them. If a field is only
 explanatory, put the explanation in the body.
 
 `ai-generated` is forbidden in frontmatter. AI provenance belongs in issue, PR,
-changelog, audit or session records when it matters for review.
+changelog, audit or session records when it matters for review. Named
+participants and concrete models may be recorded with the optional fields
+`contributors` and `ai-models`, approved for every Hub metadata class except
+external formats; the normative rule is obligation 5 of
+[Frontmatter Standard](frontmatter-standard.md#обязательства) (ADR-023).
 
 ## Status Vocabularies
 

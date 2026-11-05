@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-07-17
+version: 0.3
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
@@ -136,7 +136,8 @@ related_artifacts:
   «standalone vs process output»). Для standalone reports они опциональны и
   добавляются только когда улучшают traceability.
 - `ai-generated` во frontmatter **ЗАПРЕЩЁН**. Provenance фиксируется в issue, PR,
-  changelog, audit или session record.
+  changelog, audit или session record; людей и модель называют необязательные
+  поля `contributors` и `ai-models` ([Frontmatter Standard, обязательство 5](frontmatter-standard.md#обязательства), ADR-023).
 
 > **Разграничение словарей (lifecycle vs frontmatter).** Правила этой секции
 > нормируют frontmatter **Report-артефактов** (объект стандарта, пути

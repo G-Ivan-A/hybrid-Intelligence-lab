@@ -149,6 +149,7 @@ is_active_file() {
     docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
     docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
     docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md | \
+    docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md | \
     projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
     projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
@@ -528,6 +529,11 @@ is_active_file() {
     research/hub/exp/independent-tech-debt-723/README.md | \
     research/hub/exp/independent-tech-debt-723/independence-check.sh | \
     research/hub/exp/independent-tech-debt-723/independence-check.log | \
+    research/hub/exp/independent-tech-debt-727/README.md | \
+    research/hub/exp/independent-tech-debt-727/independence-check.sh | \
+    research/hub/exp/independent-tech-debt-727/independence-check.log | \
+    research/hub/exp/independent-tech-debt-727/issue-statement-sweep.sh | \
+    research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log | \
     research/mango/README.md | \
     research/governance/README.md | \
     research/governance/2026-06-06-research-documentation-format.md | \
@@ -667,6 +673,7 @@ is_active_file() {
     .github/pull_request_template.md | \
     .github/workflows/update-manifest.yml | \
     .github/workflows/archive-tag.yml | \
+    .github/workflows/issue-statement-gate.yml | \
     .github/rulesets/archive-tags.json | \
     .github/workflows/validate.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
@@ -704,6 +711,7 @@ is_active_file() {
     docs/analysis/2026-11-04-sprint-31-readiness-check.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
+    docs/analysis/2026-11-04-sprint-13-hub-normative-debt-selection.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -748,6 +756,8 @@ is_active_file() {
     tools/check-agent-work-rules-size.sh | \
     tools/test-nonempty-diff.sh | \
     tools/validate-nonempty-diff.sh | \
+    tools/test-issue-statement-gate.sh | \
+    tools/validate-issue-statement.sh | \
     tools/test-historical-immutable.sh | \
     tools/validate-historical-immutable.sh | \
     tools/validate-agents-bootstrap.sh | \
@@ -1035,6 +1045,7 @@ required_files=(
   "docs/adr/2026-08-adr-010-agent-autonomy-principles.md"
   "docs/adr/2026-08-adr-011-research-models.md"
   "docs/adr/2026-09-adr-012-agents-md-root-contract.md"
+  "docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md"
   "docs/adr/README.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
@@ -1149,6 +1160,11 @@ required_files=(
   "research/hub/exp/independent-tech-debt-723/README.md"
   "research/hub/exp/independent-tech-debt-723/independence-check.sh"
   "research/hub/exp/independent-tech-debt-723/independence-check.log"
+  "research/hub/exp/independent-tech-debt-727/README.md"
+  "research/hub/exp/independent-tech-debt-727/independence-check.sh"
+  "research/hub/exp/independent-tech-debt-727/independence-check.log"
+  "research/hub/exp/independent-tech-debt-727/issue-statement-sweep.sh"
+  "research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log"
   "docs/audit/2026-06-11-task-execution-audit.md"
   "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "docs/audit/2026-07-01-documentation-boundary-audit.md"
@@ -1262,6 +1278,7 @@ required_files=(
   ".github/workflows/validate.yml"
   ".github/workflows/update-manifest.yml"
   ".github/workflows/archive-tag.yml"
+  ".github/workflows/issue-statement-gate.yml"
   ".github/rulesets/archive-tags.json"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
@@ -1283,6 +1300,8 @@ required_files=(
   "tools/check-agent-work-rules-size.sh"
   "tools/test-nonempty-diff.sh"
   "tools/validate-nonempty-diff.sh"
+  "tools/test-issue-statement-gate.sh"
+  "tools/validate-issue-statement.sh"
   "tools/test-historical-immutable.sh"
   "tools/validate-historical-immutable.sh"
   "tools/test-validate-rrp-links.sh"
@@ -1390,11 +1409,13 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "/AGENTS.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.14"
+require_text "CONTRIBUTING.md" "version: 1.15"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-08-17"
+require_text "CONTRIBUTING.md" "updated: 2026-11-04"
+require_text "CONTRIBUTING.md" "## Гейт постановки задачи"
+require_text "CONTRIBUTING.md" "tools/validate-issue-statement.sh"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" "no-diff-expected"
@@ -1491,8 +1512,8 @@ require_text "standards/README.md" "Artifact location resolver"
 require_text "standards/README.md" "resolve-artifact-location-proposal.md"
 
 require_text "standards/frontmatter-standard.md" "status: accepted"
-require_text "standards/frontmatter-standard.md" "version: 1.1"
-require_text "standards/frontmatter-standard.md" "updated: 2026-06-28"
+require_text "standards/frontmatter-standard.md" "version: 1.2"
+require_text "standards/frontmatter-standard.md" "updated: 2026-11-04"
 require_text "standards/frontmatter-standard.md" "temperature: 0.1"
 require_text "standards/frontmatter-standard.md" "owner: G-Ivan-A"
 require_text "standards/frontmatter-standard.md" '`status`'
@@ -1501,10 +1522,31 @@ require_text "standards/frontmatter-standard.md" '`updated`'
 require_text "standards/frontmatter-standard.md" '`temperature`'
 require_text "standards/frontmatter-standard.md" '`ai-generated` **ЗАПРЕЩЕН** во frontmatter'
 require_text "standards/frontmatter-standard.md" "NIST AI Risk Management Framework"
+# B-154 (issue #727): поля участия ИИ вместо метки ai-generated (ADR-023, вариант C).
+adr_023="docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md"
+require_text "$adr_023" "status: accepted"
+require_text "$adr_023" "decision-type: governance"
+require_text "$adr_023" "**Вариант C.**"
+require_text "$adr_023" "ai-models: [claude-opus-5-5]"
+require_text "docs/adr/README.md" "2026-11-adr-023-ai-participation-frontmatter-fields.md"
+require_text "standards/frontmatter-standard.md" "2026-11-adr-023-ai-participation-frontmatter-fields.md"
+require_text "standards/frontmatter-standard.md" "Только вместе с \`contributors\`"
+for participation_file in standards/frontmatter-docs-standard.md standards/analysis-standard.md \
+  standards/audit-standard.md standards/report-standard.md standards/research-standard.md \
+  standards/rfc-structure-standard.md standards/adr-structure-standard.md \
+  standards/standard-meta-structure.md standards/product-taxonomy-reference.md CONTRIBUTING.md \
+  AGENTS.md templates/htom/AGENTS.md templates/spoke/AGENTS.md; do
+  require_text "$participation_file" "ai-models"
+  require_text "$participation_file" "ADR-023"
+done
+require_text "tools/validate-frontmatter.sh" "frontmatter field ai-models requires contributors"
+require_text "tools/validate-frontmatter.sh" "generic label"
+require_text "tools/test-frontmatter-validator.sh" "ai-models requires contributors"
+require_text "tools/test-frontmatter-validator.sh" "ai participation fields outside own metadata formats"
 
 require_text "standards/frontmatter-docs-standard.md" "status: accepted"
-require_text "standards/frontmatter-docs-standard.md" "version: 1.3"
-require_text "standards/frontmatter-docs-standard.md" "updated: 2026-07-03"
+require_text "standards/frontmatter-docs-standard.md" "version: 1.4"
+require_text "standards/frontmatter-docs-standard.md" "updated: 2026-11-04"
 require_text "standards/frontmatter-docs-standard.md" "temperature: 0.1"
 require_text "standards/frontmatter-docs-standard.md" "owner: G-Ivan-A"
 require_text "standards/frontmatter-docs-standard.md" "standards/frontmatter-standard.md"
@@ -1600,7 +1642,7 @@ require_text "standards/standard-meta-structure.md" "## Related Artifacts"
 require_text "standards/standard-meta-structure.md" '`N/A`'
 require_text "standards/standard-meta-structure.md" "specific tail"
 require_text "standards/standard-meta-structure.md" "ADR-002"
-require_text "standards/standard-meta-structure.md" "version: 0.2"
+require_text "standards/standard-meta-structure.md" "version: 0.3"
 require_text "standards/standard-meta-structure.md" "executable: false"
 require_text "standards/standard-meta-structure.md" "scope: repo-wide"
 require_text "standards/standard-meta-structure.md" "related_standards:"
@@ -1733,8 +1775,11 @@ require_text "standards/team-contract.md" "education-profile.md"
 require_text "standards/team-contract.md" "Источники"
 
 require_text "standards/issue-workflow.md" "status: accepted"
-require_text "standards/issue-workflow.md" "version: 1.5"
-require_text "standards/issue-workflow.md" "updated: 2026-09-05"
+require_text "standards/issue-workflow.md" "version: 1.6"
+require_text "standards/issue-workflow.md" "updated: 2026-11-04"
+require_text "standards/issue-workflow.md" "### Правила формулирования уровней"
+require_text "standards/issue-workflow.md" "Антипаттерны смешения уровней"
+require_text "standards/issue-workflow.md" "tools/validate-issue-statement.sh"
 require_text "standards/issue-workflow.md" "temperature: 0.1"
 require_text "standards/issue-workflow.md" "executable: false"
 require_text "standards/issue-workflow.md" "## Назначение"
@@ -1957,8 +2002,13 @@ require_text "ops/repo-model.md" "Anti-Inflation"
 require_text "ops/repo-model.md" "tools/"
 require_text "ops/repo-model.md" "practices/"
 require_text "ops/repo-model.md" "status: canonical"
-require_text "ops/repo-model.md" "version: 1.5"
-require_text "ops/repo-model.md" "updated: 2026-08-11"
+require_text "ops/repo-model.md" "version: 1.6"
+require_text "ops/repo-model.md" "updated: 2026-11-04"
+require_text "ops/repo-model.md" "standards/contract-documentation-standard.md#где-живёт-контракт"
+require_text "standards/contract-documentation-standard.md" "version: 1.2"
+require_text "standards/contract-documentation-standard.md" "## Где живёт контракт"
+require_text "standards/contract-documentation-standard.md" "<artifact_homes>"
+require_text "standards/contract-documentation-standard.md" "docs/contracts/"
 require_text "ops/repo-model.md" "executable: false"
 require_text "ops/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
 
@@ -2084,7 +2134,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.56"
+require_text "ops/artifact-map.md" "version: 2.57"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2281,6 +2331,17 @@ require_text "$htom_validator" "duplicate governance contract"
 require_text "$htom_validator" "project_specific_directories"
 require_text "$htom_validator" "structure_grandfather_until"
 require_text "$htom_validator" ".github/workflows/validate.yml"
+# B-116 (issue #727): явные запреты генома на любой глубине.
+require_text "$htom_validator" "-type d -path '*/docs/contracts'"
+require_text "$htom_validator" "поле frontmatter ai-generated запрещено"
+require_text "tools/test-smart-sync.sh" "explicit bans at any depth (B-116, issue #727)"
+# B-116 (c, issue #727): модель-специфичный файл правил — только тонкий указатель.
+for adapter_validator in tools/validate-agents-bootstrap.sh templates/htom/tools/validate-agents-bootstrap.sh; do
+  require_text "$adapter_validator" "a thin pointer to AGENTS.md"
+  require_text "$adapter_validator" ".github/copilot-instructions.md"
+  require_text "$adapter_validator" "copies AGENTS.md sections"
+done
+require_text "tools/test-agents-md-integration.sh" "adapter-copied-rules"
 require_file "templates/htom/.github/workflows/validate.yml"
 require_text "templates/htom/.github/workflows/validate.yml" "./tools/validate-repository-structure.sh"
 require_text "templates/sync-metadata.json" '"htom-validate-workflow"'
@@ -2497,7 +2558,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.77"
+require_text "ops/backlog.md" "version: 1.78"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
@@ -3151,7 +3212,8 @@ require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "standards/session-h
 reject_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Конард"
 require_text "templates/htom/README.md" "AI_SESSION_HANDOVER_PROMPT.md"
 require_text "templates/htom/README.md" "status: canonical"
-require_text "templates/htom/README.md" "version: 0.6"
+require_text "templates/htom/README.md" "version: 0.7"
+require_text "templates/htom/README.md" "Явные запреты действуют на любой глубине"
 require_text "templates/htom/README.md" "## Template Placeholder Policy"
 require_text "templates/htom/README.md" "Source templates may contain placeholders"
 require_text "templates/htom/README.md" "Generated repositories must not keep unresolved source placeholders"
@@ -3171,6 +3233,13 @@ require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "🎯 Контек�
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "✅ Готово, когда"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Hybrid` (по умолчанию)'
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "version: 3.0"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 1. User Story"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 2. ФТ к системе"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 3. НФТ к системе"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 4. Задача исполнителю"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Уровень 5. Ограничения процесса"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "## Не выполнено и вопросы"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
@@ -3265,6 +3334,18 @@ require_text "research/hub/exp/ba-extraction-717/rehearse-contract.log" "E5 OK: 
 require_text "research/hub/exp/ba-extraction-717/drift-baseline.log" "files: 1 ok"
 require_text "research/hub/exp/independent-tech-debt-723/README.md" "type: experiment"
 require_text "research/hub/exp/independent-tech-debt-723/independence-check.log" "Hub fetch steps = 0"
+require_text "research/hub/exp/independent-tech-debt-727/README.md" "type: experiment"
+require_text "research/hub/exp/independent-tech-debt-727/independence-check.log" "Hub fetch steps = 0"
+require_text "research/hub/exp/independent-tech-debt-727/issue-statement-sweep.log" "mango#353: red (patient zero caught)"
+require_text ".github/workflows/validate.yml" "bash tools/test-issue-statement-gate.sh"
+require_text ".github/workflows/issue-statement-gate.yml" "types: [opened, edited]"
+require_text ".github/workflows/issue-statement-gate.yml" "bash tools/validate-issue-statement.sh"
+reject_text ".github/workflows/issue-statement-gate.yml" "issues: write"
+reject_text ".github/workflows/issue-statement-gate.yml" "gh issue comment"
+require_text ".github/workflows/issue-statement-gate.yml" "ISSUE_BODY: \${{ github.event.issue.body }}"
+require_text "tools/validate-issue-statement.sh" "is forbidden by AGENTS.md <forbidden>"
+require_text "tools/validate-issue-statement.sh" "project_specific_directories"
+require_text "tools/test-issue-statement-gate.sh" "docs/contracts/ in «Контекст» passes"
 require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 0.6
+version: 0.7
 updated: {{date}}
 temperature: 0.1
 ---
@@ -126,6 +126,17 @@ grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно остаться �
 почините их **до** отправки PR (Definition of Done из [CONTRIBUTING.md](CONTRIBUTING.md)).
 Тот же валидатор запускается автоматически в CI (`.github/workflows/validate.yml`),
 поэтому пропуск локального прогона не остаётся незамеченным.
+
+Явные запреты действуют на любой глубине дерева (кроме `.archive/`):
+
+- каталог `docs/contracts/` даёт `FAIL` с указанием каноничного дома: контракт
+  агента — `ai-rules/` по классу, контракт процесса — `ops/` (`<artifact_homes>`
+  в `AGENTS.md`);
+- поле `ai-generated` во frontmatter даёт `FAIL`: участие ИИ фиксируется полями
+  `contributors` и `ai-models` (ADR-023 Хаба) или в issue, PR и CHANGELOG;
+- модель-специфичный файл правил (`CLAUDE.md`, `.github/copilot-instructions.md`,
+  `.cursor/rules/*`, `GEMINI.md`, `.cursorrules`, `.windsurfrules`) допустим
+  только как тонкий указатель на `AGENTS.md` (`tools/validate-agents-bootstrap.sh`).
 
 ### Где живут управляющие контракты
 

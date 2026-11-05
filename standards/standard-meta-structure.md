@@ -1,7 +1,7 @@
 ---
 status: proposed
-version: 0.2
-updated: 2026-07-17
+version: 0.3
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 executable: false
@@ -84,7 +84,8 @@ owner: Human owner or owning group
 
 Дополнительные поля разрешены только когда их потребляет validator, index,
 template или другой активный governance contract. `ai-generated` во
-frontmatter ЗАПРЕЩЁН. `status` ДОЛЖЕН использовать governance vocabulary:
+frontmatter ЗАПРЕЩЁН; людей и модель называют необязательные
+поля `contributors` и `ai-models` ([Frontmatter Standard, обязательство 5](frontmatter-standard.md#обязательства), ADR-023). `status` ДОЛЖЕН использовать governance vocabulary:
 `draft`, `proposed`, `accepted`, `rejected`, `deprecated` или `superseded`.
 
 ## Minimum Body Sections

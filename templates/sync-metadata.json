@@ -89,19 +89,19 @@
     },
     "templates/htom/tools/validate-repository-structure.sh": {
       "id": "htom-validate-repository-structure",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "target_type": ["HTOM"],
       "criticality": "CORE",
       "tags": ["validation", "tooling"],
-      "description": "Валидатор структуры HTOM-репозитория."
+      "description": "Валидатор структуры HTOM-репозитория: канонический набор, декларация каталогов, запреты docs/contracts/ и ai-generated на любой глубине."
     },
     "templates/htom/tools/validate-agents-bootstrap.sh": {
       "id": "htom-validate-agents-bootstrap",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "target_type": ["HTOM"],
       "criticality": "CORE",
       "tags": ["validation", "bootstrap", "environment"],
-      "description": "Проверка единственной точки входа AGENTS.md и согласованности профиля."
+      "description": "Проверка единственной точки входа AGENTS.md, согласованности профиля и тонких указателей модель-специфичных файлов правил."
     },
     "templates/spoke/AGENTS.md": {
       "id": "spoke-agents-bootstrap",
@@ -127,11 +127,11 @@
     },
     "templates/htom/.github/ISSUE_TEMPLATE/task.md": {
       "id": "htom-issue-template-task",
-      "version": "2.2.0",
+      "version": "3.0.0",
       "target_type": ["HTOM", "Spoke"],
       "criticality": "CORE",
       "tags": ["issue-template", "task"],
-      "description": "Structured шаблон задачи: мета, контекст, артефакты, ограничения, AI-agent specifics, DoD."
+      "description": "Structured шаблон задачи: мета, пять уровней постановки (User Story, ФТ, НФТ, задача исполнителю, ограничения процесса), контекст, AI-agent specifics, DoD, отклонения и вопросы."
     },
     "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md": {
       "id": "htom-issue-template-task-creative",

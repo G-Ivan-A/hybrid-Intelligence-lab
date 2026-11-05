@@ -118,6 +118,14 @@ check "init.sh: no {{date}} placeholder left in handover prompt" \
 for rel in AI_SESSION_HANDOVER_PROMPT.md AI_GOVERNANCE.md .github/ISSUE_TEMPLATE/task.md; do
   check "init.sh: $rel names Hybrid as default mode" "mode_default_ok \"$HTOM_INIT/$rel\""
 done
+# B-115 (issue #727): геном доставляет пять уровней постановки, плейсхолдеры подставлены.
+for level in "Уровень 1. User Story" "Уровень 2. ФТ к системе" "Уровень 3. НФТ к системе" \
+             "Уровень 4. Задача исполнителю" "Уровень 5. Ограничения процесса"; do
+  check "init.sh: task.md renders '## $level'" \
+    "grep -qx '## $level' \"$HTOM_INIT/.github/ISSUE_TEMPLATE/task.md\""
+done
+check "init.sh: task.md has no {{project_name}} / {{date}} placeholder left" \
+  "! grep -q '{{project_name}}\\|{{date}}' \"$HTOM_INIT/.github/ISSUE_TEMPLATE/task.md\""
 check "init.sh: AGENTS.md defaults an omitted mode to Hybrid" \
   "grep -q 'an omitted mode defaults to Hybrid' \"$HTOM_INIT/AGENTS.md\""
 check "bootstrapped HTOM team passes its own structure validator" \
@@ -139,6 +147,45 @@ done
 check "smart sync (Spoke): handover prompt names Hybrid as default mode" \
   "mode_default_ok \"$SPOKE/AI_SESSION_HANDOVER_PROMPT.md\""
 cd "$REPO_ROOT"
+
+echo "== 9. HTOM genome validator: explicit bans at any depth (B-116, issue #727) =="
+# htom_case NAME — свежая копия забутстрапленной HTOM-команды для одного сценария.
+htom_case() {
+  rm -rf "$WORK/htom-$1"
+  cp -R "$HTOM_INIT" "$WORK/htom-$1"
+  printf '%s\n' "$WORK/htom-$1"
+}
+# htom_validate DIR LOG — запускает валидатор генома, сохраняя вывод.
+htom_validate() {
+  (cd "$1" && bash tools/validate-repository-structure.sh >"$2" 2>&1)
+}
+C="$(htom_case contracts-root)"
+mkdir -p "$C/docs/contracts"
+printf '# Contract\n' > "$C/docs/contracts/kb-citations.md"
+check "docs/contracts/ at docs/ level fails" "! htom_validate \"$C\" \"$WORK/v-contracts-root.txt\""
+check "docs/contracts/ failure names the canonical home ai-rules/" \
+  "grep -q 'запрещённый каталог: docs/contracts/.*ai-rules/' \"$WORK/v-contracts-root.txt\""
+C="$(htom_case contracts-nested)"
+mkdir -p "$C/ops/archive-notes/docs/contracts"
+check "docs/contracts/ nested deeper also fails" "! htom_validate \"$C\" \"$WORK/v-contracts-nested.txt\""
+check "nested failure names the nested path" \
+  "grep -q 'запрещённый каталог: ops/archive-notes/docs/contracts/' \"$WORK/v-contracts-nested.txt\""
+C="$(htom_case ai-generated)"
+printf -- '---\nstatus: draft\nai-generated: true\n---\n\n# Note\n' > "$C/docs/ai-note.md"
+check "ai-generated in frontmatter fails" "! htom_validate \"$C\" \"$WORK/v-ai-generated.txt\""
+check "ai-generated failure points to contributors + ai-models" \
+  "grep -q 'docs/ai-note.md:3: поле frontmatter ai-generated запрещено.*contributors.*ai-models' \"$WORK/v-ai-generated.txt\""
+C="$(htom_case ai-generated-body)"
+printf -- '---\nstatus: draft\n---\n\n# Note\n\nai-generated: упоминание в теле не является полем.\n' > "$C/docs/ai-body.md"
+check "ai-generated mentioned only in the body passes" "htom_validate \"$C\" \"$WORK/v-ai-body.txt\""
+C="$(htom_case adapter-thin)"
+printf '<!-- Generated adapter: rules live in AGENTS.md. -->\n@AGENTS.md\n' > "$C/CLAUDE.md"
+check "genome: thin generated CLAUDE.md pointer passes" "htom_validate \"$C\" \"$WORK/v-adapter-thin.txt\""
+C="$(htom_case adapter-copy)"
+cp "$C/AGENTS.md" "$C/CLAUDE.md"
+check "genome: CLAUDE.md copy of the rules fails" "! htom_validate \"$C\" \"$WORK/v-adapter-copy.txt\""
+check "genome: copy failure names the copied sections" \
+  "grep -q 'CLAUDE.md: model-specific rules file copies AGENTS.md sections' \"$WORK/v-adapter-copy.txt\""
 
 echo ""
 echo "Passed: $PASS  Failed: $FAIL"

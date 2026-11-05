@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 3.1
-updated: 2026-09-27
+version: 3.2
+updated: 2026-11-04
 temperature: 0.1
 entrypoint: true
 ---
@@ -34,7 +34,7 @@ Rule scope is explicit and machine-checkable. `<hard_rules>`, `<forbidden>`, `<g
 <forbidden>
 - Do not create `docs/contracts/`; agent contracts live in `ai-rules/`.
 - Do not copy rules into model- or environment-specific files. Generated, validator-protected pointers are allowed.
-- Do not use `ai-generated` in document frontmatter.
+- Do not use `ai-generated` in document frontmatter; name participants with `contributors` and the model with `ai-models` (ADR-023).
 - Do not add a top-level directory outside the core, archetype, declared environment, or `project_specific_directories` without the required decision record.
 - Do not add named directory denylists. A non-canonical directory is declared in `.hub-profile.json` with `path` and a non-empty `reason`; absence from the canonical set is not a prohibition.
 - Do not change `standards/` or `docs/adr/` without explicit task authority.
