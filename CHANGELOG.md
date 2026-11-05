@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.40
-updated: 2026-11-04
+version: 2.41
+updated: 2026-11-05
 temperature: 0.1
 ---
 
@@ -124,6 +124,7 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- ops: issue [#727](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/727) — сверка после merge [PR #728](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/728): B-114, B-115, B-116, B-154 и B-169 → `DONE`. Workflow `archive-tag`: отказ GitHub в push тега `archive/*` теперь падает с командами для владельца репозитория, и проверка ruleset выполняется в том же прогоне (регрессионный сценарий в `tools/test-archive-tags.sh`). В B-281 исправлена причина блокировки: кроме ruleset нужно один раз поставить тег вручную, `GITHUB_TOKEN` этого сделать не может.
 - governance: issue [#727](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/727) — нормативная часть Спринта 13 исполнена в [PR #728](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/728) по решению владельца Q-1…Q-6 (точечное исключение из порядка RFC #715). B-169: раздел «Где живёт контракт» в `standards/contract-documentation-standard.md` 1.2 (контракт агента — `ai-rules/`, процесса — `ops/<name>.md`, `docs/contracts/` запрещён), строка в `ops/repo-model.md` 1.6. B-114: «Правила формулирования уровней» в `standards/issue-workflow.md` 1.6. B-115: шаблон генома `templates/htom/.github/ISSUE_TEMPLATE/task.md` 3.0 на пять уровней; RFC постановки не изменён (IPA-1, Q-6). B-116: валидатор генома 1.2.0 запрещает `docs/contracts/` и `ai-generated` на любой глубине; модель-специфичный файл правил — только тонкий указатель на `AGENTS.md` (`validate-agents-bootstrap.sh` Хаба и генома). B-154: `standards/frontmatter-standard.md` 1.2 — SSOT полей `contributors` и `ai-models` по ADR-023; ссылки в 9 стандартах, `CONTRIBUTING.md` и трёх `AGENTS.md` (3.2); `tools/validate-frontmatter.sh` проверяет форму полей и связку `ai-models` → `contributors`. В бэклоге пять строк → `review`, B-111 и B-113 → `CANCELLED` (поглощены B-239, B-241, B-253, Q-3), критерий закрытия Спринта 13 пересмотрен: часть Хаба закрыта, доставка в спицы — шаги 2 и 4 RFC #715.
 
 - ops: issue [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) — живые ссылки Хаба на домен GRA (62 ссылки в 11 файлах) переписаны на адреса манифеста; `.hub-profile.json` получил две записи `path_migrations` (перенос #292 и вынос префикса с `manifest`, `archive`, `archive_commit`); `ops/artifact-map.md` v2.56, `research/README.md` v1.29 — указатель на спицу вместо описи домена; RFC #721, ADR-022 и стандарт выбытия v0.4 приняты; Спринт 29 архивирован, Спринт 31 (B-276…B-285) исполнен и ждёт review, кроме включения ruleset Q-6 (нужны права администратора). ai-rules: [`agent-collaboration-rules.md`](ai-rules/agent-collaboration-rules.md) v1.3 — форма предупреждения об индустриальной практике (IPA) и правила IPA-R1…IPA-R4: по умолчанию вариант практики, ответ по номеру IPA, необратимое — только после ответа.
