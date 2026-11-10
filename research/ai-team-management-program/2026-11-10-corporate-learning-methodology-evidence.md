@@ -356,16 +356,16 @@ ai-models: [claude-opus-5-5, claude-sonnet-5-5]
 5. gothamCulture — вторичное изложение (2026-10-13), коммерческий — В/М.
 6. Quarterdeck — вторичное изложение; цифры ненадёжны — В/М.
 7. Blume B.D., Ford J.K., Baldwin T.T., Huang J.L. — Transfer of training: A meta-analytic review (J Manage 36(4), 1065–1105, DOI 10.1177/0149206309352880) — копия PDF на jasonhuangatwork.com — 2010 — П.
-8. Grossman R., Salas E. — The transfer of training: what really matters (Int J Train Dev 15(2), 103–120) — копия PDF на ftq.qc.ca — 2011 — П.
+8. Grossman R., Salas E. — The transfer of training: what really matters (Int J Train Dev 15(2), 103–120, DOI 10.1111/j.1468-2419.2011.00373.x — сверено исполнителем по Crossref) — копия PDF на ftq.qc.ca — 2011 — П.
 9. Means B., Toyama Y., Murphy R., Baki M. — The effectiveness of online and blended learning: A meta-analysis (Teachers College Record 115(3)) — https://draft.epsy5221.education.uconn.edu/wp-content/uploads/sites/2358/2018/08/Means-2013-meta-analysius.pdf — 2013 — П (копия).
 10. Cepeda N.J. et al. — Distributed practice in verbal recall tasks (Psychol Bull 132(3), 354–380) — PubMed 16719566 — 2006 — А.
 11. Dunlosky J. et al. — Improving students' learning with effective learning techniques (PSPI 14(1), 4–58, DOI 10.1177/1529100612453266) — пресс-релиз psychologicalscience.org — 2013 — А.
 12. Bernard R.M. et al. — A meta-analysis of blended learning and technology use in higher education (J Comput High Educ 26(1), 87–122, DOI 10.1007/s12528-013-9077-3) — страница Springer — 2014 — А (сниппет).
 13. U.S. Department of Education — Evaluation of evidence-based practices in online learning (2010) — ed.gov — страница вернула 403, данные сниппета — А.
-14. Clardy A. — 70-20-10 and the Dominance of Informal Learning: A Fact in Search of Evidence (HRDR 17(2), 153–178) — страница SAGE — 2018 — А (платный доступ).
+14. Clardy A. — 70-20-10 and the Dominance of Informal Learning: A Fact in Search of Evidence (HRDR 17(2), 153–178, DOI 10.1177/1534484318759399 — сверено исполнителем по Crossref) — страница SAGE — 2018 — А (платный доступ).
 15. Johnson S., Blackman D., Buick F. — The 70:20:10 framework and the transfer of learning (HRDQ 29(4), 383–402, DOI 10.1002/hrdq.21330) — страница vlex — 2018 — А.
 16. ATD — страница о 70-20-10 (td.org) — 403, данные сниппета — А.
-17. Alliger G.M., Tannenbaum S.I., Bennett W., Traver H., Shotland A. — A meta-analysis of the relations among training criteria (Personnel Psychology 50, 341–358) — 1997 — выдача поиска (apps.dtic.mil и др.), полный текст не открывался — А.
+17. Alliger G.M., Tannenbaum S.I., Bennett W., Traver H., Shotland A. — A meta-analysis of the relations among training criteria (Personnel Psychology 50(2), 341–358, DOI 10.1111/j.1744-6570.1997.tb00911.x — сверено исполнителем по Crossref) — 1997 — выдача поиска (apps.dtic.mil и др.), полный текст не открывался — А.
 18. Thalheimer W. — Learning-Transfer Evaluation Model (LTEM) — https://www.worklearning.com/ltem/ — версия 13 от 2024-10-31 — П (страница), М (автор — консультант).
 19. BetterEvaluation — Success case method — https://betterevaluation.org/node/2726 — П (страница), описание метода Brinkerhoff 2003.
 20. Kirkpatrick Partners — Introduction to the New World Kirkpatrick Model (PDF) — https://kirkpatrickpartners.com/wp-content/uploads/2021/11/Introduction-to-The-New-World-Kirkpatrick®-Model.pdf — М (провайдер).
@@ -373,7 +373,7 @@ ai-models: [claude-opus-5-5, claude-sonnet-5-5]
 22. focusu.com — Enhancing Learning Design with the LTEM Model — https://focusu.com/enhancing-learning-design-with-the-ltem-model-a-guide-for-modern-ld-professionals — В (названия ярусов).
 23. Cathy Moore — 3 Alternatives to ADDIE That You Should Consider — https://blog.cathy-moore.com/alternatives-to-addie/ — П (блог автора Action Mapping, М).
 24. teachthought, UAF, Top Hat, журнал Michigan — материалы по Backward Design (Wiggins & McTighe) — В; точные URL в тексте отчёта не воспроизводятся.
-25. Biggs J. — Enhancing teaching through constructive alignment (Higher Education 32) — Springer PDF BF00138871 — 1996 — П.
+25. Biggs J. — Enhancing teaching through constructive alignment (Higher Education 32(3), 347–364, DOI 10.1007/BF00138871 — сверено исполнителем по Crossref) — Springer PDF BF00138871 — 1996 — П.
 26. Costa J.M., Miranda G.L., Melo M. — Four-component instructional design (4C/ID) model: a meta-analysis on use and effect (Learning Environments Research) — https://link.springer.com/10.1007/s10984-021-09373-y — 2021 — А (сниппет).
 27. Leonard H.S., Marquardt M.J. — The evidence for the effectiveness of action learning (Action Learning: Research and Practice 7(2), 121–136) — https://econpapers.repec.org/RePEc:taf:alresp:v:7:y:2010:i:2:p:121-136 — 2010 — А.
 28. ATD — Ask a Trainer: ADDIE versus SAM — https://www.td.org/content/atd-blog/ask-a-trainer-addie-versus-sam — П (блог, В).
@@ -382,7 +382,7 @@ ai-models: [claude-opus-5-5, claude-sonnet-5-5]
 31. infed.org — Andragogy (Malcolm Knowles) — https://infed.org/mobi/?p=2909 — П (обзор).
 32. Henschke J. — андрагогика (humanistica.ro) — П.
 33. Kestin G. et al. — AI tutoring outperforms in-class active learning (Scientific Reports 15, 17458) — PMC12179260 — 2025 — А (сниппет).
-34. Bastani H. et al. — Generative AI without guardrails can harm learning (PNAS 122(26), e2422633122) — econpapers / chibe.upenn.edu — 2025 — А (сниппет).
+34. Bastani H. et al. — Generative AI without guardrails can harm learning (PNAS 122(26), e2422633122, DOI 10.1073/pnas.2422633122 — сверено исполнителем по Crossref) — econpapers / chibe.upenn.edu — 2025 — А (сниппет).
 35. LinkedIn — Workplace Learning Report 2025 (PDF — изображение; вторичные: getabstract, thirst, techclass; tcommunity.linkedin.com) — 2025 — М/В.
 36. Федеральный закон от 29.12.2012 № 273-ФЗ, ст. 76 — https://rulaws.ru/amp/laws/Federalnyy-zakon-ot-29.12.2012-N-273-FZ/Statya-76/ — Рег — П.
 37. Приказ Минобрнауки России от 24.03.2025 № 266 — https://rulaws.ru/amp/acts/Prikaz-Minobrnauki-Rossii-ot-24.03.2025-N-266/ — Рег — П; normativ.kontur.ru (404/сниппет) и ppt.ru (сниппет) — регистрация и сроки действия — А.

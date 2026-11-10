@@ -226,6 +226,7 @@ is_active_file() {
     research/ai-team-management-program/exp/ai-team-management-program-730/README.md | \
     research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py | \
     research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
     research/ba-requirements/exp/agent-ba-industry-703/cases.json | \
