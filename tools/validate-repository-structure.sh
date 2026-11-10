@@ -214,6 +214,18 @@ is_active_file() {
     research/education/2026-07-16-retrieval-strategies-survey.md | \
     research/education/2026-06-29-partner-attraction-strategy.ru.md | \
     research/ba-requirements/README.md | \
+    research/ai-team-management-program/README.md | \
+    research/ai-team-management-program/external-sources-registry.md | \
+    research/ai-team-management-program/2026-11-10-international-benchmarks-survey.md | \
+    research/ai-team-management-program/2026-11-10-ru-universities-ai-programs-survey.md | \
+    research/ai-team-management-program/2026-11-10-ru-business-schools-ai-programs-survey.md | \
+    research/ai-team-management-program/2026-11-10-ai-adoption-russia-statistics.md | \
+    research/ai-team-management-program/2026-11-10-economics-market-benchmarks.md | \
+    research/ai-team-management-program/2026-11-10-corporate-learning-methodology-evidence.md | \
+    research/ai-team-management-program/2026-11-10-candidate-pool-facts.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/README.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
     research/ba-requirements/exp/agent-ba-industry-703/cases.json | \
@@ -587,6 +599,7 @@ is_active_file() {
     projects/repo-development/docs/contract-violations-self-report-2026-06.md | \
     projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md | \
     projects/ba-ai-process/README.md | \
+    projects/ai-team-management-program/README.md | \
     projects/ba-ai-process/ba-meta-model/00-introduction.md | \
     projects/ba-ai-process/ba-meta-model/10-theory.md | \
     projects/ba-ai-process/ba-meta-model/20-taxonomy.md | \
