@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.3
-updated: 2026-09-22
+version: 1.4
+updated: 2026-11-10
 temperature: 0.1
 source: projects/README-old.md
 ---
@@ -76,6 +76,7 @@ projects/<project-slug>/
 | --- | --- |
 | [repo-development/](repo-development/) | Развитие структуры, governance и локальных проверок самого репозитория. |
 | [ba-ai-process/](ba-ai-process/README.md) | Source модели БА-процессов: мета-модель и вложенные таксономии (`scope: mango-only`), project-scoped решения, тесты и чистые Distribution. |
+| [ai-team-management-program/](ai-team-management-program/README.md) | Корпоративная программа «ИИ в работе с командой» (issue #730): постановка, паспорт проекта (архитектура, экономика, команда, приложения), каталог методологий корпоративного обучения 2026 и внутренний пул кандидатов с разметкой GRA. |
 
 ## Мигрировавшие проекты
 

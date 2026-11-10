@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.78
-updated: 2026-11-04
+version: 1.79
+updated: 2026-11-10
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -916,6 +916,25 @@ CHANGELOG, а каталог-архив не сохраняет адресов. 
 | **B-284** | Проверить приёмку выноса тем же инструментом, что измерял вход | P2 | B-283 | DONE | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) | [RFC #721, Ш6.2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | `gra-inventory.py` показывает 0 единиц в дереве, кроме надгробия; `git grep` находит только надгробие, `path_migrations` и историю; CI зелёный; ссылки спицы на `PIN_SHA` отвечают 200. **Исполнено:** `sprint31-acceptance.sh` и журнал в `research/hub/exp/gra-extraction-cleanup-721/`: инвентарь — только надгробие, `git grep` — 0 живых ссылок, 87 уникальных ссылок спицы на коммиты Хаба отвечают 200. | Structured |
 | **B-285** | Закрепить форму Industry Practice Alert в правилах сотрудничества | P3 | B-268 | DONE | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) / [PR #726](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/726) | [RFC #721, Ш6.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | По умолчанию предлагается вариант практики, ответ адресуется по номеру IPA, необратимое действие ждёт ответа (R-5 анализа протокола #721). Без нормы предупреждения оформляются по-разному, и ответы нельзя сопоставить. **Исполнено:** раздел IPA и правила IPA-R1…IPA-R4 в `ai-rules/agent-collaboration-rules.md` 1.3. | Hybrid |
 | **B-286** | Выставить отдельную постановку очистки Хаба: суб-issue S-2 и S-3 | P1 | B-271, B-272, B-273, B-274 | DONE | [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) | [RFC #721, Ш1.3](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md#proposal) | Владелец требует порядка: сначала копирование в спицу, потом отдельная постановка очистки Хаба ([экспертиза диалога](../docs/analysis/2026-11-04-issue-721-dialog-expert-review.md), O-6). Сигнал — комментарий в #721 со ссылкой на принятый PR спицы по S-1. Черновики S-2 и S-3 — в разделе «Черновики суб-issue» RFC. **Исполнено:** владелец выставил issue #725 после слияния PR #4 спицы; S-2 и S-3 исполняются в нём одним PR (стандарт выбытия v0.4, `archive_commit`). | Structured |
+
+---
+
+## Спринт 32: Доведение программы «ИИ в работе с командой» после паспорта
+
+**Story.** Issue #730 выпустил паспорт программы, каталог методологий и пул кандидатов. Часть фактов подтверждена только по открытым источникам, а внешние действия (RFI, запрос ставок) исполнитель не выполнял без решения владельца. Эти хвосты записаны здесь, чтобы паспорт не выглядел окончательнее, чем доказательства под ним.
+
+**Цель.** Экономика и состав команды опираются на ответы кандидатов и вендоров, а не на рыночные ориентиры.
+
+**Критерий закрытия.** B-287…B-291 закрыты или отклонены владельцем; B-292 — решение о бюджете принято.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-287** | Перенести источники `atm-NNN` из Local Extension в базовый реестр внешних источников | P3 | - | todo | [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730) / [PR #731](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/731) | [исследования #730](../research/ai-team-management-program/README.md) | Реестр `research/ai-team-management-program/external-sources-registry.md` — Local Extension на 266 записей. Повторно используемые источники (мета-анализы, нормативные акты, рейтинги) нужны другим направлениям. Без переноса они дублируются при следующих исследованиях. | Structured |
+| **B-288** | Отправить RFI вендорам BI и речевых технологий для практикума | P2 | - | todo | [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730) / [PR #731](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/731) | [пул кандидатов](../projects/ai-team-management-program/docs/candidates/candidate-pool-gra.md) | Пул называет 16 компаний (Polymatica, Visiology, Just AI, MWS AI, ЦРТ, 3iTech и др.), RFI не отправлялся. Без ответов выбор стека модулей М1–М3 остаётся гипотезой (`◐`). Решение об отправке — за владельцем, это внешнее действие. | Hybrid |
+| **B-289** | Сверить компании пула с ЕГРЮЛ и реестром российского ПО Минцифры | P2 | - | todo | [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730) / [PR #731](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/731) | [пул кандидатов](../projects/ai-team-management-program/docs/candidates/candidate-pool-gra.md) | Фильтр «≥5 лет на рынке», московский офис и статус отечественного ПО подтверждены по открытым источникам, а не по реестрам. Content AI и Raft не проходят фильтр по дате регистрации юрлица; у Content AI нужна проверка правопреемства. | Structured |
+| **B-290** | Запросить ставки экспертов и пересчитать экономику | P2 | B-288 | todo | [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730) / [PR #731](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/731) | [экономика](../projects/ai-team-management-program/docs/passport/economics.md) | Ставки ролей — рыночный ориентир (`○`). Модель `economics-model.py` пересчитывает маржу за минуты, но вход нужен из ответов кандидатов. Без пересчёта цена потока 5,5 млн ₽ остаётся оценкой. | Hybrid |
+| **B-291** | Закрыть разрыв ссылки `research-profile.md` в постановках | P3 | B-021 | todo | [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730) / [PR #731](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/731) | [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730) | Issue #730 ссылается на `research-profile.md` как SSOT, но файла нет: по `standards/research-standard.md` это legacy-профиль, заменённый стандартом (удаление — B-021). Постановки новых issue продолжают ссылаться на него; гейт `validate-issue-statement.sh` такие ссылки не ловит. | Structured |
+| **B-292** | Дополнительное исследование по триггеру: перенос и эффект у руководителей банков | P3 | - | deferred (triggered) | [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730) / [PR #731](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/731) | [паспорт #730](../projects/ai-team-management-program/docs/passport/project-passport.md) | Вне бюджета 800 тыс. токенов осталось: полные PDF консалтинговых отчётов (401/403), текст 425-ФЗ на официальном портале, данные о точности извлечения поручений на русском языке. Триггер — решение владельца о бюджете (предложение и ожидаемый результат — в описании PR #731). | Hybrid |
 
 ---
 
