@@ -11,7 +11,8 @@ research/ai-team-management-program/2026-11-10-*.md, дедуплицирует 
     python3 research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py \
         > /tmp/registry-table.md
 Таблица вставляется в external-sources-registry.md между маркерами
-<!-- registry:begin --> и <!-- registry:end --> (флаг --write делает это сам).
+<!-- registry:begin --> и <!-- registry:end --> (флаг --write делает это сам;
+--check только сверяет реестр с отчётами и используется в CI).
 """
 import pathlib
 import re
@@ -156,6 +157,16 @@ def main():
     table = "\n".join(rows)
     stats = "Записей: {} (из них без URL: {}); ссылок из отчётов: {}.".format(
         len(order), sum(1 for k in order if not entries[k]["url"]), sum(len(entries[k]["refs"]) for k in order))
+    block = "<!-- registry:begin -->\n" + table + "\n\n" + stats + "\n<!-- registry:end -->"
+    if "--check" in sys.argv:
+        current = re.search(r"<!-- registry:begin -->.*<!-- registry:end -->",
+                            REGISTRY.read_text(encoding="utf-8"), flags=re.S)
+        if current is None or current.group(0) != block:
+            print("Реестр расходится со списками источников отчётов: "
+                  "перезапустите сборку с --write.", file=sys.stderr)
+            sys.exit(1)
+        print("Реестр источников согласован с отчётами. " + stats)
+        return
     if "--write" in sys.argv:
         s = REGISTRY.read_text(encoding="utf-8")
         s = re.sub(r"<!-- registry:begin -->.*<!-- registry:end -->",

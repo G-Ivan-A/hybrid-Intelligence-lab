@@ -108,6 +108,15 @@ jobs:
       - name: Check synthetic BA industry survey evidence of issue 703
         run: python3 -I research/ba-requirements/exp/agent-ba-industry-703/measure.py --check
 
+      - name: Check reproducible economics model of issue 730
+        # Цифры economics.md паспорта взяты из журнала модели: модель и журнал не должны расходиться.
+        run: |
+          python3 -I research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py \
+            | diff - research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log
+
+      - name: Check sources registry of issue 730 against reports
+        run: python3 -I research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py --check
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:

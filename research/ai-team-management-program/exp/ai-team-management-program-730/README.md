@@ -55,6 +55,7 @@ issue [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730).
 | --- | --- |
 | [`economics-model.py`](economics-model.py) | модель; все допущения — именованные константы в шапке, у каждой — комментарий с источником или пометкой ○ |
 | [`economics-model.log`](economics-model.log) | вывод запуска, зафиксировавший числа паспорта |
+| [`build-sources-registry.py`](build-sources-registry.py) | сборка Local Extension [реестра источников](../../external-sources-registry.md) из списков источников семи отчётов; `--write` обновляет реестр, `--check` только сверяет |
 
 ## Воспроизведение
 
@@ -66,6 +67,13 @@ git diff --exit-code economics-model.log   # пусто — числа пасп�
 
 Зависимостей нет, только стандартная библиотека Python 3; сеть не
 используется.
+
+Обе проверки выполняются в CI (workflow `validate`): журнал модели сверяется
+с новым запуском, а реестр источников — со списками источников отчётов:
+
+```bash
+python3 -I build-sources-registry.py --check
+```
 
 ## Ограничения
 
