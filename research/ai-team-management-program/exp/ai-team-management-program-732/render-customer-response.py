@@ -25,24 +25,26 @@ ROOT = pathlib.Path(__file__).resolve().parents[4]
 SRC = ROOT / "projects" / "ai-team-management-program" / "docs" / "passport" / "customer-response.md"
 PDF = SRC.with_suffix(".pdf")
 MAX_PAGES = 2
+MAX_WORDS = 900  # 700–900 слов: рекомендация отчёта 2026-11-11-multi-case-design-and-proposal-format-evidence.md, §2.2.3
+TABLE_PT = "12pt"  # ГОСТ Р 7.0.97-2025 рекомендует 12–14 pt; 11 pt — отклонение
 
 CSS = """
-@page { size: A4; margin: 12mm 14mm 12mm 14mm; }
+@page { size: A4; margin: 20mm 15mm 20mm 20mm; }
 * { box-sizing: border-box; }
 body { font-family: "PT Sans", "Liberation Sans", Arial, sans-serif;
-       font-size: 8.9pt; line-height: 1.3; color: #1a1a1a; margin: 0; }
-h1 { font-size: 13.5pt; margin: 0 0 1mm 0; color: #0b3d63; }
-h2 { font-size: 10.2pt; margin: 2.6mm 0 1mm 0; color: #0b3d63;
-     border-bottom: 0.4pt solid #0b3d63; padding-bottom: 0.4mm; }
-p { margin: 0 0 1.4mm 0; text-align: justify; hyphens: auto; }
-p.sub { color: #555; margin-bottom: 2mm; }
-table { border-collapse: collapse; width: 100%; margin: 0.8mm 0 1.8mm 0;
-        page-break-inside: avoid; }
-th, td { border: 0.4pt solid #9aa9b5; padding: 0.6mm 1.4mm; vertical-align: top;
+       font-size: 12pt; line-height: 1.1; color: #1a1a1a; margin: 0; }
+h1 { font-size: 14pt; margin: 0 0 1mm 0; color: #0b3d63; }
+h2 { font-size: 13pt; margin: 2.4mm 0 0.8mm 0; color: #0b3d63;
+     border-bottom: 0.4pt solid #0b3d63; padding-bottom: 0.3mm; }
+p { margin: 0 0 1.2mm 0; text-align: justify; hyphens: auto; }
+p.sub { color: #555; margin-bottom: 1.6mm; }
+table { border-collapse: collapse; width: 100%; margin: 0.6mm 0 1.4mm 0;
+        page-break-inside: avoid; font-size: TABLE_PT; }
+th, td { border: 0.4pt solid #9aa9b5; padding: 0.4mm 1.2mm; vertical-align: top;
          text-align: left; }
 th { background: #e8eff5; font-weight: bold; }
-ul, ol { margin: 0 0 1.4mm 0; padding-left: 5mm; }
-li { margin: 0 0 0.5mm 0; }
+ul, ol { margin: 0 0 1.2mm 0; padding-left: 5mm; }
+li { margin: 0 0 0.3mm 0; }
 a { color: #0b3d63; text-decoration: none; }
 """
 
@@ -106,14 +108,24 @@ def convert(md):
     return out
 
 
+def count_words(md):
+    body = re.sub(r"\A---\n.*?\n---\n", "", md, flags=re.S)
+    return len(re.findall(r"[0-9A-Za-zА-Яа-яЁё][0-9A-Za-zА-Яа-яЁё,\-–]*", body))
+
+
 def count_pages(pdf_bytes):
     return len(re.findall(rb"/Type\s*/Page(?![a-zA-Z])", pdf_bytes))
 
 
 def main():
-    body = "\n".join(convert(SRC.read_text(encoding="utf-8")))
+    md = SRC.read_text(encoding="utf-8")
+    if re.search(r"\{N_[A-Z]+\}", md):
+        sys.exit("В ответе заказчику остались незаполненные подстановки {N_...}.")
+    words = count_words(md)
+    body = "\n".join(convert(md))
     doc = ('<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">'
-           "<title>Ответ заказчику</title><style>{}</style></head><body>{}</body></html>").format(CSS, body)
+           "<title>Ответ заказчику</title><style>{}</style></head><body>{}</body></html>").format(
+               CSS.replace("TABLE_PT", TABLE_PT), body)
     tmp = pathlib.Path(tempfile.mkdtemp(prefix="customer-response-"))
     page = tmp / "customer-response.html"
     page.write_text(doc, encoding="utf-8")
@@ -130,7 +142,9 @@ def main():
     data = out.read_bytes()
     pages = count_pages(data)
     PDF.write_bytes(data)
-    print("PDF: {} — страниц: {}".format(PDF.relative_to(ROOT), pages))
+    print("PDF: {} — страниц: {}, слов: {}".format(PDF.relative_to(ROOT), pages, words))
+    if words > MAX_WORDS:
+        sys.exit("Ответ заказчику длиннее {} слов: сократите текст.".format(MAX_WORDS))
     if pages > MAX_PAGES:
         sys.exit("Ответ заказчику длиннее {} страниц A4: сократите текст.".format(MAX_PAGES))
 
