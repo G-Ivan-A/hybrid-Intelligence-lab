@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Экономическая модель MVP-программы «ИИ в работе с командой» (issues #730, #732).
+"""Экономическая модель MVP-программы «ИИ в работе с командой» (issues #730, #732, #734).
 
 Воспроизводимый расчёт для паспорта проекта
 projects/ai-team-management-program/docs/passport/economics.md.
@@ -29,6 +29,15 @@ research/ai-team-management-program/2026-11-10-economics-market-benchmarks.md,
   зал, питание, логистика куратора и проверка ИБ — силами заказчика.
   Разделы 11–15 журнала.
 
+Итерация 3 (issue #734):
+- Параметры архитектуры вынесены в словари P6 (6 месяцев, разделы 1–15
+  без изменений) и P3 (3 месяца). Ставки общие.
+- P3: М0 онлайн (неделя 1) + 3 очных модуля по 2 дня (недели 2, 7, 12) +
+  6 онлайн-сессий; оценка уровня 3 — на демо-дне М3; онлайн-сессия
+  «+60 дней» — опция вне трёх месяцев. Цены подобраны тем же правилом:
+  первый поток полного варианта — маржа ≥ 30% (НФТ-5), бережливый
+  вариант — маржа ≥ 25% при 20–25 участниках. Разделы 16–24 журнала.
+
 Запуск: python3 economics-model.py > economics-model.log
 Зависимостей нет (только стандартная библиотека), сеть не используется.
 """
@@ -37,25 +46,71 @@ SCEN = ("min", "typ", "max")
 SCEN_RU = {"min": "мин.", "typ": "типичное", "max": "макс."}
 
 # ---------------------------------------------------------------- архитектура
-IN_PERSON_DAYS = 8            # 4 модуля × 2 дня (Д-4)
+# Итерация 3 (#734): параметры архитектуры вынесены в словарь, чтобы две
+# длительности программы (6 и 3 месяца) считались одними и теми же функциями.
+def arch(name, in_person_days, online_sessions, m0_sessions, program_months,
+         guest_slots, curator_fixed_h, eval_h, indiv_consult_h_per_p=1.5):
+    a = {
+        "name": name,
+        "in_person_days": in_person_days,      # очных дней (модули по 2 дня)
+        "online_sessions": online_sessions,    # групповых онлайн-сессий
+        "m0_sessions": m0_sessions,            # из них проектируемых сессий онлайн-старта М0
+        "program_months": program_months,      # месяцев работы продюсера: подготовка потока + программа
+        "guest_slots": guest_slots,            # гостевой эксперт: по полдня в модуле
+        "curator_fixed_h": curator_fixed_h,    # канал, напоминания, логистика заданий
+        "eval_h": eval_h,                      # отчёт Киркпатрик 1–3 + интервью Бринкерхоффа
+        "indiv_consult_h_per_p": indiv_consult_h_per_p,
+    }
+    # Контактные часы (для удельной цены): очные дни × 8 ак. ч + онлайн-сессии × 2 астр. ч
+    a["contact_ak_h"] = in_person_days * AK_H_PER_DAY + round(online_sessions * ONLINE_SESSION_H * 60 / 45)
+    a["contact_astro_h"] = in_person_days * 6 + online_sessions * ONLINE_SESSION_H  # 6 астр. ч в очном дне
+    # Проектируемый контент: очные дни + сессии М0. Остальные онлайн-сессии —
+    # консультации по межмодульной работе участников, отдельной разработки не требуют.
+    a["designed_astro_h"] = in_person_days * 6 + m0_sessions * ONLINE_SESSION_H
+    return a
+
+
 AK_H_PER_DAY = 8              # академических часов в очный день
-ONLINE_GROUP_SESSIONS = 9     # М0: 2; межмодульные: 2 × 3 периода; через 60 дней: 1
 ONLINE_SESSION_H = 2          # астрономических часов на сессию
-PROGRAM_MONTHS = 6            # подготовка потока (1) + М0..М4 (4) + оценка уровня 3 (1)
-GUEST_SLOTS = 4               # гостевой эксперт: по полдня в каждом модуле
 STAFF_ON_SITE = 4             # ведущий, ИИ-инженер, куратор, гость — в питании
-INDIV_CONSULT_H_PER_P = 1.5   # индивидуальные онлайн-консультации на участника
-CURATOR_FIXED_H = 100         # ≈ 20 ч в месяц × 5 месяцев (канал, напоминания, логистика заданий)
 CURATOR_H_PER_P = 2           # проверка межмодульных заданий и артефакта по рубрике
-EVAL_H = 40                   # отчёт Киркпатрик 1–3 + интервью Бринкерхоффа
 CONTINGENCY = 0.10            # резерв на риски от прямых затрат Delivery
 
-# Контактные часы (для удельной цены): 8 дней × 8 ак. ч + онлайн 9 × 2 астр. ч
-CONTACT_AK_H = IN_PERSON_DAYS * AK_H_PER_DAY + round(ONLINE_GROUP_SESSIONS * ONLINE_SESSION_H * 60 / 45)
-CONTACT_ASTRO_H = IN_PERSON_DAYS * 6 + ONLINE_GROUP_SESSIONS * ONLINE_SESSION_H  # 6 астр. ч в очном дне
-# Проектируемый контент: очные дни + 2 сессии Модуля 0. Остальные онлайн-сессии —
-# консультации по межмодульной работе участников, отдельной разработки не требуют.
-DESIGNED_ASTRO_H = IN_PERSON_DAYS * 6 + 2 * ONLINE_SESSION_H
+# Программа на 6 месяцев (итерации 1–2): М0 онлайн + 4 очных модуля по 2 дня
+# раз в месяц + межмодульная работа + онлайн-сессия через 60 дней.
+P6 = arch("6 месяцев",
+          in_person_days=8,       # 4 модуля × 2 дня (Д-4)
+          online_sessions=9,      # М0: 2; межмодульные: 2 × 3 периода; через 60 дней: 1
+          m0_sessions=2,
+          program_months=6,       # подготовка потока (1) + М0..М4 (4) + оценка уровня 3 (1)
+          guest_slots=4,
+          curator_fixed_h=100,    # ≈ 20 ч в месяц × 5 месяцев
+          eval_h=40)
+
+# Программа на 3 месяца (итерация 3, #734): М0 онлайн (неделя 1) + 3 очных
+# модуля по 2 дня (недели 2, 7, 12) + две межмодульные практики по 4 недели.
+# Оценка уровня 3 — на демо-дне М3 (≈ 70 дней после М1); сессия «+60 дней» —
+# опция вне трёх месяцев (раздел 20 журнала).
+P3 = arch("3 месяца",
+          in_person_days=6,       # 3 модуля × 2 дня
+          online_sessions=6,      # М0: 2; межмодульные: 2 × 2 периода
+          m0_sessions=2,
+          program_months=4,       # подготовка потока (1) + программа (3)
+          guest_slots=3,
+          curator_fixed_h=60,     # ≈ 20 ч в месяц × 3 месяца
+          eval_h=30)              # уровни 1–3 на демо-дне + интервью успешных случаев
+
+# Совместимость с итерациями 1–2: прежние имена — параметры программы на 6 месяцев.
+IN_PERSON_DAYS = P6["in_person_days"]
+ONLINE_GROUP_SESSIONS = P6["online_sessions"]
+PROGRAM_MONTHS = P6["program_months"]
+GUEST_SLOTS = P6["guest_slots"]
+INDIV_CONSULT_H_PER_P = P6["indiv_consult_h_per_p"]
+CURATOR_FIXED_H = P6["curator_fixed_h"]
+EVAL_H = P6["eval_h"]
+CONTACT_AK_H = P6["contact_ak_h"]
+CONTACT_ASTRO_H = P6["contact_astro_h"]
+DESIGNED_ASTRO_H = P6["designed_astro_h"]
 
 # ---------------------------------------------------------------- ставки (○)
 RATES = {
@@ -120,12 +175,28 @@ LEAN_CURATOR_H_PER_P = 2       # проверка заданий и карты �
 PRICE_V2 = 3_000_000           # заказ целиком: разработка + один поток до 25 участников, без НДС
 V2_MARGIN_MIN = 25.0
 
+# ---------------------------------------------------------------- программа на 3 месяца (#734)
+# Цены подобраны тем же правилом, что и для 6 месяцев: первый поток целиком
+# (разработка + проведение) — маржа не ниже 30% в типичном сценарии (НФТ-5),
+# бережливый вариант — маржа не ниже 25% при 25 участниках.
+PRICE_NRE_P3 = 4_400_000          # разработка, единовременно, без НДС
+PRICE_COHORT_BASE_P3 = 4_100_000  # проведение потока до 20 участников включительно
+PRICE_EXTRA_P_P3 = 135_000        # за каждого участника сверх 20 (21–25)
+PRICE_V2_P3 = 2_500_000           # бережливый вариант: разработка + один поток до 25 участников
+# Опция для 3 месяцев: онлайн-сессия «+60 дней» после демо-дня (оценка уровня 3
+# по слоям М2–М3). Вне трёх месяцев программы, покупается отдельно.
+OPT60_SESSION_H = 2               # одна групповая сессия, 2 ч
+OPT60_EVAL_H = 12                 # анкета руководителя участника, сверка журналов «до/после», отчёт
+OPT60_CURATOR_H = 10              # напоминания, сбор журналов
+OPT60_PM_MONTHS = 0.5
+PRICE_OPT60_P3 = 200_000
 
-def nre_items_v2(s):
+
+def nre_items_v2(s, a=P6):
     r = {k: v[s] for k, v in LEAN.items()}
     return [
-        ("Адаптация методики на готовой архитектуре паспорта ({} астр. ч × {} ч/ч × ставка методиста)".format(DESIGNED_ASTRO_H, r["dev_ratio"]),
-         DESIGNED_ASTRO_H * r["dev_ratio"] * r["method_h"]),
+        ("Адаптация методики на готовой архитектуре паспорта ({} астр. ч × {} ч/ч × ставка методиста)".format(a["designed_astro_h"], r["dev_ratio"]),
+         a["designed_astro_h"] * r["dev_ratio"] * r["method_h"]),
         ("Экспертиза содержания ведущим-практиком ({} дн.)".format(r["lead_dev_days"]), r["lead_dev_days"] * r["lead_day"]),
         ("Практикум: один синтетический набор данных подразделения, 5 кейсов на общем шаблоне карты внедрения", r["practicum"]),
         ("Инструменты оценки: рубрика и анкеты паспорта без отдельной диагностики", r["instruments"]),
@@ -135,19 +206,19 @@ def nre_items_v2(s):
     ]
 
 
-def delivery_items_v2(s, n, client_in_kind=True):
+def delivery_items_v2(s, n, client_in_kind=True, a=P6):
     r = {k: v[s] for k, v in LEAN.items()}
     items = [
-        ("Ведущий-практик, {} очных дней".format(IN_PERSON_DAYS), IN_PERSON_DAYS * r["lead_day"]),
-        ("ИИ-инженер практикума, {} очных дней".format(IN_PERSON_DAYS), IN_PERSON_DAYS * r["eng_day"]),
-        ("Гости из пула стартапов и МСБ, {} × полдня".format(GUEST_SLOTS), GUEST_SLOTS * r["guest_slot"]),
-        ("Групповые онлайн-сессии, {} × {} ч".format(ONLINE_GROUP_SESSIONS, ONLINE_SESSION_H),
-         ONLINE_GROUP_SESSIONS * ONLINE_SESSION_H * r["online_h"]),
-        ("Индивидуальные онлайн-консультации, {} ч × {} уч.".format(INDIV_CONSULT_H_PER_P, n),
-         INDIV_CONSULT_H_PER_P * n * r["consult_h"]),
+        ("Ведущий-практик, {} очных дней".format(a["in_person_days"]), a["in_person_days"] * r["lead_day"]),
+        ("ИИ-инженер практикума, {} очных дней".format(a["in_person_days"]), a["in_person_days"] * r["eng_day"]),
+        ("Гости из пула стартапов и МСБ, {} × полдня".format(a["guest_slots"]), a["guest_slots"] * r["guest_slot"]),
+        ("Групповые онлайн-сессии, {} × {} ч".format(a["online_sessions"], ONLINE_SESSION_H),
+         a["online_sessions"] * ONLINE_SESSION_H * r["online_h"]),
+        ("Индивидуальные онлайн-консультации, {} ч × {} уч.".format(a["indiv_consult_h_per_p"], n),
+         a["indiv_consult_h_per_p"] * n * r["consult_h"]),
         ("Проверка заданий и карт внедрения, {} ч × {} уч.".format(LEAN_CURATOR_H_PER_P, n),
          LEAN_CURATOR_H_PER_P * n * r["curator_h"]),
-        ("Продюсер/PM, {} мес. × 30% занятости".format(PROGRAM_MONTHS), PROGRAM_MONTHS * r["pm_month"]),
+        ("Продюсер/PM, {} мес. × 30% занятости".format(a["program_months"]), a["program_months"] * r["pm_month"]),
         ("Оценка Киркпатрик 1–3 по сокращённому протоколу, {} ч".format(LEAN_EVAL_H), LEAN_EVAL_H * r["eval_h"]),
         ("Раздатка, {} уч.".format(n), n * r["handout_p"]),
     ]
@@ -156,21 +227,21 @@ def delivery_items_v2(s, n, client_in_kind=True):
         # статьи по ставкам варианта 1 (типичным для выбранного сценария)
         v = {k: RATES[k][s] for k in ("venue_day", "catering_pd", "curator_h")}
         items += [
-            ("Зал, {} дней (ставка варианта 1)".format(IN_PERSON_DAYS), IN_PERSON_DAYS * v["venue_day"]),
-            ("Питание, {} дней × ({} уч. + {} ведущих)".format(IN_PERSON_DAYS, n, STAFF_ON_SITE),
-             IN_PERSON_DAYS * (n + STAFF_ON_SITE) * v["catering_pd"]),
-            ("Логистика куратора, {} ч".format(CURATOR_FIXED_H), CURATOR_FIXED_H * v["curator_h"]),
+            ("Зал, {} дней (ставка варианта 1)".format(a["in_person_days"]), a["in_person_days"] * v["venue_day"]),
+            ("Питание, {} дней × ({} уч. + {} ведущих)".format(a["in_person_days"], n, STAFF_ON_SITE),
+             a["in_person_days"] * (n + STAFF_ON_SITE) * v["catering_pd"]),
+            ("Логистика куратора, {} ч".format(a["curator_fixed_h"]), a["curator_fixed_h"] * v["curator_h"]),
         ]
     direct = sum(v for _, v in items)
     items.append(("Резерв на риски {:.0%} от прямых затрат".format(CONTINGENCY), direct * CONTINGENCY))
     return items
 
 
-def nre_items(s):
+def nre_items(s, a=P6):
     r = {k: v[s] for k, v in RATES.items()}
     return [
-        ("Методическая разработка (проектируемый контент {} астр. ч × {} ч/ч × ставка методиста)".format(DESIGNED_ASTRO_H, r["dev_ratio"]),
-         DESIGNED_ASTRO_H * r["dev_ratio"] * r["method_h"]),
+        ("Методическая разработка (проектируемый контент {} астр. ч × {} ч/ч × ставка методиста)".format(a["designed_astro_h"], r["dev_ratio"]),
+         a["designed_astro_h"] * r["dev_ratio"] * r["method_h"]),
         ("Экспертиза содержания ведущим экспертом ({} дней)".format(r["lead_dev_days"]), r["lead_dev_days"] * r["lead_day"]),
         ("Практикум: синтетические данные 3 типов подразделений, наборы 5 кейсов К1–К5, шаблон карты внедрения, библиотека промптов", r["practicum"]),
         ("Инструменты оценки: входная диагностика, рубрика демо-дня, анкеты, протокол уровня 3", r["instruments"]),
@@ -180,27 +251,27 @@ def nre_items(s):
     ]
 
 
-def delivery_items(s, n, venue_by_client=False):
+def delivery_items(s, n, venue_by_client=False, a=P6):
     r = {k: v[s] for k, v in RATES.items()}
     items = [
-        ("Ведущий эксперт, {} очных дней".format(IN_PERSON_DAYS), IN_PERSON_DAYS * r["lead_day"]),
-        ("ИИ-инженер практикума, {} очных дней".format(IN_PERSON_DAYS), IN_PERSON_DAYS * r["eng_day"]),
-        ("Гостевые эксперты из пула кандидатов, {} × полдня".format(GUEST_SLOTS), GUEST_SLOTS * r["guest_slot"]),
-        ("Групповые онлайн-сессии, {} × {} ч".format(ONLINE_GROUP_SESSIONS, ONLINE_SESSION_H),
-         ONLINE_GROUP_SESSIONS * ONLINE_SESSION_H * r["online_h"]),
-        ("Индивидуальные онлайн-консультации, {} ч × {} уч.".format(INDIV_CONSULT_H_PER_P, n),
-         INDIV_CONSULT_H_PER_P * n * r["consult_h"]),
-        ("Куратор: {} ч + {} ч × {} уч.".format(CURATOR_FIXED_H, CURATOR_H_PER_P, n),
-         (CURATOR_FIXED_H + CURATOR_H_PER_P * n) * r["curator_h"]),
-        ("Продюсер/PM, {} мес. × 30% занятости".format(PROGRAM_MONTHS), PROGRAM_MONTHS * r["pm_month"]),
-        ("Оценка Киркпатрик 1–3 и интервью успешных случаев, {} ч".format(EVAL_H), EVAL_H * r["eval_h"]),
+        ("Ведущий эксперт, {} очных дней".format(a["in_person_days"]), a["in_person_days"] * r["lead_day"]),
+        ("ИИ-инженер практикума, {} очных дней".format(a["in_person_days"]), a["in_person_days"] * r["eng_day"]),
+        ("Гостевые эксперты из пула кандидатов, {} × полдня".format(a["guest_slots"]), a["guest_slots"] * r["guest_slot"]),
+        ("Групповые онлайн-сессии, {} × {} ч".format(a["online_sessions"], ONLINE_SESSION_H),
+         a["online_sessions"] * ONLINE_SESSION_H * r["online_h"]),
+        ("Индивидуальные онлайн-консультации, {} ч × {} уч.".format(a["indiv_consult_h_per_p"], n),
+         a["indiv_consult_h_per_p"] * n * r["consult_h"]),
+        ("Куратор: {} ч + {} ч × {} уч.".format(a["curator_fixed_h"], CURATOR_H_PER_P, n),
+         (a["curator_fixed_h"] + CURATOR_H_PER_P * n) * r["curator_h"]),
+        ("Продюсер/PM, {} мес. × 30% занятости".format(a["program_months"]), a["program_months"] * r["pm_month"]),
+        ("Оценка Киркпатрик 1–3 и интервью успешных случаев, {} ч".format(a["eval_h"]), a["eval_h"] * r["eval_h"]),
         ("Раздатка, {} уч.".format(n), n * r["handout_p"]),
     ]
     if not venue_by_client:
         items += [
-            ("Зал, {} дней".format(IN_PERSON_DAYS), IN_PERSON_DAYS * r["venue_day"]),
-            ("Питание, {} дней × ({} уч. + {} ведущих)".format(IN_PERSON_DAYS, n, STAFF_ON_SITE),
-             IN_PERSON_DAYS * (n + STAFF_ON_SITE) * r["catering_pd"]),
+            ("Зал, {} дней".format(a["in_person_days"]), a["in_person_days"] * r["venue_day"]),
+            ("Питание, {} дней × ({} уч. + {} ведущих)".format(a["in_person_days"], n, STAFF_ON_SITE),
+             a["in_person_days"] * (n + STAFF_ON_SITE) * r["catering_pd"]),
         ]
     direct = sum(v for _, v in items)
     items.append(("Резерв на риски {:.0%} от прямых затрат".format(CONTINGENCY), direct * CONTINGENCY))
@@ -211,9 +282,27 @@ def total(items):
     return sum(v for _, v in items)
 
 
-def price_cohort(n):
+def price_cohort(n, base=PRICE_COHORT_BASE, extra=PRICE_EXTRA_P):
     billable = max(n, MIN_BILLABLE)
-    return PRICE_COHORT_BASE + max(0, billable - 20) * PRICE_EXTRA_P
+    return base + max(0, billable - 20) * extra
+
+
+def price_cohort_p3(n):
+    return price_cohort(n, PRICE_COHORT_BASE_P3, PRICE_EXTRA_P_P3)
+
+
+def opt60_items(s):
+    r = {k: v[s] for k, v in RATES.items()}
+    items = [
+        ("Групповая онлайн-сессия «+60 дней», {} ч".format(OPT60_SESSION_H), OPT60_SESSION_H * r["online_h"]),
+        ("Оценка уровня 3: анкета руководителя участника, журналы «до/после», отчёт, {} ч".format(OPT60_EVAL_H),
+         OPT60_EVAL_H * r["eval_h"]),
+        ("Куратор: сбор журналов и напоминания, {} ч".format(OPT60_CURATOR_H), OPT60_CURATOR_H * r["curator_h"]),
+        ("Продюсер/PM, {} мес.".format(OPT60_PM_MONTHS), OPT60_PM_MONTHS * r["pm_month"]),
+    ]
+    direct = sum(v for _, v in items)
+    items.append(("Резерв на риски {:.0%} от прямых затрат".format(CONTINGENCY), direct * CONTINGENCY))
+    return items
 
 
 def margin(price, cost):
@@ -335,6 +424,7 @@ def main():
               rub(p22 / CONTACT_AK_H)))
     print()
     main_v2(nre)
+    main_p3(nre)
 
 
 def main_v2(nre_v1):
@@ -393,6 +483,115 @@ def main_v2(nre_v1):
     print("| Цена на участника, ₽ | {} | {} |".format(rub(v1_price / 20), rub(PRICE_V2 / 20)))
     print("| Второй и следующие потоки, цена без НДС, ₽ | {} | от {} (только проведение, маржа {:.0f}%) |".format(
         rub(price_cohort(20)), rub(total(delivery_items_v2("typ", 20)) / (1 - V2_MARGIN_MIN / 100)), V2_MARGIN_MIN))
+
+
+
+def main_p3(nre_p6):
+    a = P3
+    print("\n## Программа на 3 месяца (#734)\n")
+    print("Архитектура: М0 онлайн (неделя 1), {} очных дней — три модуля по 2 дня (недели 2, 7, 12), "
+          "{} онлайн-сессий, {} гостевых слота, оценка уровней 1–3 на демо-дне, 5 кейсов. Ставки — те же, "
+          "что у программы на 6 месяцев.\n".format(a["in_person_days"], a["online_sessions"], a["guest_slots"]))
+    print("Контактные часы: {} очных дней × {} ак. ч + {} онлайн-сессий × {} ч = {} ак. ч ({} астр. ч); "
+          "у программы на 6 месяцев — {} ак. ч.\n".format(
+              a["in_person_days"], AK_H_PER_DAY, a["online_sessions"], ONLINE_SESSION_H,
+              a["contact_ak_h"], a["contact_astro_h"], P6["contact_ak_h"]))
+    nre = table_items("16. 3 месяца: разовые затраты на разработку (NRE), ₽", lambda s: nre_items(s, a))
+    table_items("17. 3 месяца: затраты на проведение одного потока (Delivery), группа 22, ₽",
+                lambda s: delivery_items(s, 22, a=a))
+
+    print("### 18. 3 месяца: цена, предложенная заказчику (без НДС)\n")
+    print("| Позиция | Цена, ₽ | С НДС 22%, ₽ |")
+    print("|---|---:|---:|")
+    print("| Разработка программы (NRE), единовременно | {} | {} |".format(rub(PRICE_NRE_P3), rub(PRICE_NRE_P3 * (1 + VAT))))
+    for n in (20, 22, 25):
+        p = price_cohort_p3(n)
+        print("| Проведение потока, {} участников | {} | {} |".format(n, rub(p), rub(p * (1 + VAT))))
+    print("| Опция: онлайн-сессия «+60 дней» и отчёт об уровне 3 | {} | {} |".format(
+        rub(PRICE_OPT60_P3), rub(PRICE_OPT60_P3 * (1 + VAT))))
+    print("\nПравило: базовая цена потока — до 20 участников; {} ₽ за каждого участника с 21-го по 25-го; "
+          "при наборе менее 20 счёт выставляется как за 20.\n".format(rub(PRICE_EXTRA_P_P3)))
+
+    print("### 19. 3 месяца: маржинальность\n")
+    print("| Позиция | Цена, ₽ | Себестоимость мин. / тип. / макс., ₽ | Маржа мин. / тип. / макс., % |")
+    print("|---|---:|---|---|")
+    print("| Разработка (NRE) | {} | {} | {} |".format(
+        rub(PRICE_NRE_P3), " / ".join(mln(nre[s]) for s in SCEN) + " млн",
+        " / ".join("{:.1f}".format(margin(PRICE_NRE_P3, nre[s])) for s in SCEN)))
+    for n in (20, 22, 25):
+        p = price_cohort_p3(n)
+        c = {s: total(delivery_items(s, n, a=a)) for s in SCEN}
+        print("| Проведение потока, {} участников | {} | {} | {} |".format(
+            n, rub(p), " / ".join(mln(c[s]) for s in SCEN) + " млн",
+            " / ".join("{:.1f}".format(margin(p, c[s])) for s in SCEN)))
+    for n in (20, 25):
+        p = PRICE_NRE_P3 + price_cohort_p3(n)
+        c = {s: nre[s] + total(delivery_items(s, n, a=a)) for s in SCEN}
+        print("| Первый поток целиком (NRE + проведение), {} участников | {} | {} | {} |".format(
+            n, rub(p), " / ".join(mln(c[s]) for s in SCEN) + " млн",
+            " / ".join("{:.1f}".format(margin(p, c[s])) for s in SCEN)))
+    o = {s: total(opt60_items(s)) for s in SCEN}
+    print("| Опция «+60 дней» | {} | {} | {} |".format(
+        rub(PRICE_OPT60_P3), " / ".join(rub(o[s]) for s in SCEN),
+        " / ".join("{:.1f}".format(margin(PRICE_OPT60_P3, o[s])) for s in SCEN)))
+    c20 = nre["typ"] + total(delivery_items("typ", 20, a=a))
+    print("\nПорог НФТ-5 (маржа первого потока ≥ 30% в типичном сценарии, группа 20): {}; "
+          "цена для маржи 30% — {} ₽.\n".format(
+              "выполнен" if margin(PRICE_NRE_P3 + price_cohort_p3(20), c20) >= 30 else "НЕ выполнен", rub(c20 / 0.7)))
+
+    print("### 20. 3 месяца: граничный случай ГК-1, набор 15–19 участников (типичные затраты)\n")
+    print("| Участников | Без правила минимального счёта: цена, ₽ | Маржа, % | С правилом «как за 20»: маржа, % |")
+    print("|---:|---:|---:|---:|")
+    for n in (15, 17, 19):
+        c = total(delivery_items("typ", n, a=a))
+        p_prop = PRICE_COHORT_BASE_P3 / 20 * n
+        print("| {} | {} | {:.1f} | {:.1f} |".format(n, rub(p_prop), margin(p_prop, c), margin(price_cohort_p3(n), c)))
+    print()
+
+    print("## 3 месяца, бережливый вариант: цена заказа {} ₽ без НДС, маржа не ниже {:.0f}%\n".format(
+        rub(PRICE_V2_P3), V2_MARGIN_MIN))
+    nre2 = table_items("21. 3 месяца, бережливый вариант: разработка (NRE), ₽", lambda s: nre_items_v2(s, a))
+    table_items("22. 3 месяца, бережливый вариант: проведение, группа 20, зал, питание, логистика и ревью ИБ — у заказчика, ₽",
+                lambda s: delivery_items_v2(s, 20, a=a))
+    print("### 23. 3 месяца, бережливый вариант: маржа заказа целиком и граничные случаи\n")
+    print("| Случай | Цена без НДС, ₽ | Себестоимость мин. / тип. / макс., ₽ | Маржа мин. / тип. / макс., % |")
+    print("|---|---:|---|---|")
+    for n in (20, 22, 25):
+        c = {s: nre2[s] + total(delivery_items_v2(s, n, a=a)) for s in SCEN}
+        print("| Группа {} | {} | {} | {} |".format(
+            n, rub(PRICE_V2_P3), " / ".join(mln(c[s]) for s in SCEN) + " млн",
+            " / ".join("{:.1f}".format(margin(PRICE_V2_P3, c[s])) for s in SCEN)))
+    no_kind = {s: nre2[s] + total(delivery_items_v2(s, 20, client_in_kind=False, a=a)) for s in SCEN}
+    print("| Группа 20, заказчик не даёт зал, питание и логистику куратора | {} | {} | {} |".format(
+        rub(PRICE_V2_P3), " / ".join(mln(no_kind[s]) for s in SCEN) + " млн",
+        " / ".join("{:.1f}".format(margin(PRICE_V2_P3, no_kind[s])) for s in SCEN)))
+    p_vat = PRICE_V2_P3 / (1 + VAT)
+    base = {s: nre2[s] + total(delivery_items_v2(s, 20, a=a)) for s in SCEN}
+    print("| Группа 20, {} ₽ — с НДС 22% | {} | {} | {} |".format(
+        rub(PRICE_V2_P3), rub(p_vat), " / ".join(mln(base[s]) for s in SCEN) + " млн",
+        " / ".join("{:.1f}".format(margin(p_vat, base[s])) for s in SCEN)))
+    print()
+
+    print("### 24. Сравнение длительностей (группа 20, типичные ставки)\n")
+    p6_price = PRICE_NRE + price_cohort(20)
+    p6_cost = nre_p6["typ"] + total(delivery_items("typ", 20))
+    p3_price = PRICE_NRE_P3 + price_cohort_p3(20)
+    p3_cost = nre["typ"] + total(delivery_items("typ", 20, a=a))
+    nre2_p6 = total(nre_items_v2("typ"))
+    l6 = nre2_p6 + total(delivery_items_v2("typ", 20))
+    l3 = nre2["typ"] + total(delivery_items_v2("typ", 20, a=a))
+    print("| Показатель | 6 месяцев | 3 месяца |")
+    print("|---|---:|---:|")
+    print("| Очных дней / онлайн-сессий | {} / {} | {} / {} |".format(
+        P6["in_person_days"], P6["online_sessions"], a["in_person_days"], a["online_sessions"]))
+    print("| Контактных академических часов | {} | {} |".format(P6["contact_ak_h"], a["contact_ak_h"]))
+    print("| Полный вариант: цена первого потока (NRE + поток), без НДС, ₽ | {} | {} |".format(rub(p6_price), rub(p3_price)))
+    print("| Полный вариант: маржа первого потока, % | {:.1f} | {:.1f} |".format(margin(p6_price, p6_cost), margin(p3_price, p3_cost)))
+    print("| Полный вариант: цена второго потока, без НДС, ₽ | {} | {} |".format(rub(price_cohort(20)), rub(price_cohort_p3(20))))
+    print("| Полный вариант: цена потока за ак. ч на участника, ₽ | {} | {} |".format(
+        rub(price_cohort(20) / 20 / P6["contact_ak_h"]), rub(price_cohort_p3(20) / 20 / a["contact_ak_h"])))
+    print("| Бережливый вариант: цена заказа, без НДС, ₽ | {} | {} |".format(rub(PRICE_V2), rub(PRICE_V2_P3)))
+    print("| Бережливый вариант: маржа заказа, % | {:.1f} | {:.1f} |".format(margin(PRICE_V2, l6), margin(PRICE_V2_P3, l3)))
 
 
 if __name__ == "__main__":

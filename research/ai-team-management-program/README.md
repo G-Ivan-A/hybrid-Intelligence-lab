@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-11-11
 temperature: 0.1
 ---
@@ -14,7 +14,9 @@ temperature: 0.1
 20–25 человек). Источник постановки — issue
 [#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730),
 доисследование итерации 2 — issue
-[#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732); полная
+[#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732),
+длительность программы, отток и усвоение (итерация 3) — issue
+[#734](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734); полная
 постановка с граничными кейсами — в
 [`docs/task-contract.md`](../../projects/ai-team-management-program/docs/task-contract.md)
 проекта.
@@ -67,13 +69,22 @@ temperature: 0.1
 | [2026-11-11-ai-management-use-cases-evidence.md](2026-11-11-ai-management-use-cases-evidence.md) | 2 | Пять управленческих кейсов из запроса (встречи, календарь, поручения, перформанс, дашборд): внедрения в России и за рубежом, СМИ и конференции, измеренные эффекты. |
 | [2026-11-11-multi-case-design-and-proposal-format-evidence.md](2026-11-11-multi-case-design-and-proposal-format-evidence.md) | 2, 4, 5 | Распыляют ли несколько кейсов внимание группы; формат ответа заказчику на двух страницах; нефинансовая мотивация экспертов и почему её нельзя моделировать. |
 
+Отчёты итерации 3 (issue #734):
+
+| Файл | Требование задачи #734 | Назначение |
+| --- | --- | --- |
+| [2026-11-11-ru-program-duration-market-survey.md](2026-11-11-ru-program-duration-market-survey.md) | обоснование срока; доисследование конкурентов | 49 российских программ «ИИ для руководителей» и программ развития руководителей: распределение длительности, российские опросы, корпоративные кейсы; гипотеза «2–3 месяца — самый частый формат» проверена на данных. |
+| [2026-11-11-international-program-duration-survey.md](2026-11-11-international-program-duration-survey.md) | обоснование срока; доисследование конкурентов | Международные программы 2025–2026: длительность, формат, цена; отраслевая статистика длительности заказных программ и её ограничения. |
+| [2026-11-11-program-duration-attrition-absorption-evidence.md](2026-11-11-program-duration-attrition-absorption-evidence.md) | риск оттока у 6 месяцев; риск неусвоения у короткого варианта | Мета-анализы и исследования: связь длительности с оттоком, переносом и результатом, формирование привычки, скорость эффекта от ИИ, пилоты ИИ-ассистентов. |
+
 ## Сопутствующие артефакты
 
 | Артефакт | Назначение |
 | --- | --- |
-| [external-sources-registry.md](external-sources-registry.md) | Local Extension к Base Registry Хаба: все внешние источники двенадцати отчётов (идентификаторы `atm-NNN`), тип, язык, стадия, отчёты-потребители. Таблица генерируется скриптом, а не правится руками. |
+| [external-sources-registry.md](external-sources-registry.md) | Local Extension к Base Registry Хаба: все внешние источники пятнадцати отчётов (идентификаторы `atm-NNN`), тип, язык, стадия, отчёты-потребители. Таблица генерируется скриптом, а не правится руками. |
 | [exp/ai-team-management-program-730/](exp/ai-team-management-program-730/README.md) | Воспроизводимые расчёты: модель экономики (`economics-model.py` → `economics-model.log`) и генератор реестра источников (`build-sources-registry.py`). |
-| [exp/ai-team-management-program-732/](exp/ai-team-management-program-732/README.md) | Итерация 2: общий бриф исследовательских потоков, вёрстка ответа заказчику в PDF на две страницы A4, учёт исследовательских токенов. |
+| [exp/ai-team-management-program-732/](exp/ai-team-management-program-732/README.md) | Итерация 2: общий бриф исследовательских потоков, вёрстка резюме проекта в PDF на две страницы A4, учёт исследовательских токенов. |
+| [exp/ai-team-management-program-734/](exp/ai-team-management-program-734/README.md) | Итерация 3: бриф потоков о длительности, оттоке и усвоении, способ перепроверки PDF при гейте G5, учёт исследовательских токенов. |
 
 ## Как воспроизвести
 
@@ -85,7 +96,7 @@ python3 research/ai-team-management-program/exp/ai-team-management-program-730/e
 # реестр источников: пересобрать таблицу из разделов «Источники» отчётов
 python3 research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py --write
 
-# ответ заказчику: PDF A4, не больше двух страниц и 900 слов (нужен Chrome)
+# резюме проекта на 6 и 3 месяца: PDF A4, не больше двух страниц и 900 слов (нужен Chrome)
 python3 -I research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py
 ```
 
@@ -107,3 +118,10 @@ python3 -I research/ai-team-management-program/exp/ai-team-management-program-73
   подтверждены первоисточником; часть ролей руководителей стартапов известна
   только по сниппетам поиска (`○`). Оба пробела перечислены в отчётах и в
   бэклоге.
+- Итерация 3: открытых данных о доле завершивших корпоративную программу
+  для руководителей в зависимости от её длительности не найдено ни в России,
+  ни за рубежом. Поэтому тезис «шесть месяцев — высокий риск оттока» нельзя
+  ни подтвердить, ни опровергнуть прямым измерением; паспорта опираются на
+  косвенные данные и прямо об этом пишут. Отраслевая статистика длительности
+  (Mercer | Mettl, Persistence Market Research) независимой проверки не имеет
+  и помечена `◐`.

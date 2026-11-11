@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-"""Вёрстка ответа заказчику на две страницы A4 (issue #732).
+"""Вёрстка резюме проекта (ответа заказчику) на две страницы A4 (issues #732, #734).
 
-Читает projects/ai-team-management-program/docs/passport/customer-response.md,
+Читает резюме проекта — по умолчанию оба варианта
+projects/ai-team-management-program/docs/passport/project-summary-6m.md и
+project-summary-3m.md, либо файлы из аргументов командной строки, —
 переводит ограниченное подмножество Markdown (заголовки, абзацы, жирный шрифт,
 ссылки, маркированные и нумерованные списки, таблицы) в HTML с A4-вёрсткой и
 печатает его в PDF через headless Chrome. Затем считает страницы PDF и
-завершается с ошибкой, если их больше двух.
+завершается с ошибкой, если их больше двух. Итерация 3 (#734) добавила
+проверку пункта 14 чек-листа шаблона резюме: в тексте нет утверждений об
+отрасли заказчика и о «нет аналитики», которых нет в запросе.
 
 Запуск (из корня репозитория):
     python3 -I research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py
 Переменная CHROME задаёт путь к браузеру (по умолчанию google-chrome).
 Флаг --html-only только пишет HTML во временный каталог (без PDF).
+Пример для одного файла:
+    python3 -I .../render-customer-response.py projects/ai-team-management-program/docs/passport/project-summary-3m.md
 """
 import html
 import os
@@ -22,8 +28,15 @@ import sys
 import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[4]
-SRC = ROOT / "projects" / "ai-team-management-program" / "docs" / "passport" / "customer-response.md"
-PDF = SRC.with_suffix(".pdf")
+PASSPORT = ROOT / "projects" / "ai-team-management-program" / "docs" / "passport"
+DEFAULT_SOURCES = [PASSPORT / "project-summary-6m.md", PASSPORT / "project-summary-3m.md"]
+# Пункт 14 чек-листа шаблона резюме (#734): запрет утверждений о заказчике,
+# которых нет в запросе. Отрасль заказчика не названа — слово «банк» в резюме
+# недопустимо; «аналитики … нет» — пример додумывания проблемы из итерации 2.
+FORBIDDEN = [
+    (r"(?i)\bбанк", "отрасль, которой нет в запросе заказчика"),
+    (r"(?i)аналитик\w*[^.]{0,60}\bнет\b", "утверждение об отсутствии аналитики у заказчика"),
+]
 MAX_PAGES = 2
 MAX_WORDS = 900  # 700–900 слов: рекомендация отчёта 2026-11-11-multi-case-design-and-proposal-format-evidence.md, §2.2.3
 TABLE_PT = "12pt"  # ГОСТ Р 7.0.97-2025 рекомендует 12–14 pt; 11 pt — отклонение
@@ -117,19 +130,25 @@ def count_pages(pdf_bytes):
     return len(re.findall(rb"/Type\s*/Page(?![a-zA-Z])", pdf_bytes))
 
 
-def main():
-    md = SRC.read_text(encoding="utf-8")
+def render(src, html_only):
+    pdf = src.with_suffix(".pdf")
+    md = src.read_text(encoding="utf-8")
     if re.search(r"\{N_[A-Z]+\}", md):
-        sys.exit("В ответе заказчику остались незаполненные подстановки {N_...}.")
+        sys.exit("{}: остались незаполненные подстановки {{N_...}}.".format(src.name))
+    body_md = re.sub(r"\A---\n.*?\n---\n", "", md, flags=re.S)
+    for pattern, why in FORBIDDEN:
+        hit = re.search(pattern, body_md)
+        if hit:
+            sys.exit("{}: {} — «{}».".format(src.name, why, hit.group(0)))
     words = count_words(md)
     body = "\n".join(convert(md))
     doc = ('<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">'
-           "<title>Ответ заказчику</title><style>{}</style></head><body>{}</body></html>").format(
+           "<title>Резюме проекта</title><style>{}</style></head><body>{}</body></html>").format(
                CSS.replace("TABLE_PT", TABLE_PT), body)
-    tmp = pathlib.Path(tempfile.mkdtemp(prefix="customer-response-"))
-    page = tmp / "customer-response.html"
+    tmp = pathlib.Path(tempfile.mkdtemp(prefix="project-summary-"))
+    page = tmp / (src.stem + ".html")
     page.write_text(doc, encoding="utf-8")
-    if "--html-only" in sys.argv:
+    if html_only:
         print(page)
         return
     chrome = os.environ.get("CHROME") or shutil.which("google-chrome") or shutil.which("chromium")
@@ -141,12 +160,19 @@ def main():
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     data = out.read_bytes()
     pages = count_pages(data)
-    PDF.write_bytes(data)
-    print("PDF: {} — страниц: {}, слов: {}".format(PDF.relative_to(ROOT), pages, words))
+    pdf.write_bytes(data)
+    print("PDF: {} — страниц: {}, слов: {}".format(pdf.relative_to(ROOT), pages, words))
     if words > MAX_WORDS:
-        sys.exit("Ответ заказчику длиннее {} слов: сократите текст.".format(MAX_WORDS))
+        sys.exit("{}: длиннее {} слов — сократите текст.".format(src.name, MAX_WORDS))
     if pages > MAX_PAGES:
-        sys.exit("Ответ заказчику длиннее {} страниц A4: сократите текст.".format(MAX_PAGES))
+        sys.exit("{}: длиннее {} страниц A4 — сократите текст.".format(src.name, MAX_PAGES))
+
+
+def main():
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    sources = [pathlib.Path(a).resolve() for a in args] or DEFAULT_SOURCES
+    for src in sources:
+        render(src, "--html-only" in sys.argv)
 
 
 if __name__ == "__main__":

@@ -235,7 +235,13 @@ is_active_file() {
     research/ai-team-management-program/exp/ai-team-management-program-732/README.md | \
     research/ai-team-management-program/exp/ai-team-management-program-732/2026-11-11-brief-common.md | \
     research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py | \
-    research/ai-team-management-program/exp/ai-team-management-program-732/customer-response-preview.png | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-6m-preview.png | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-3m-preview.png | \
+    research/ai-team-management-program/exp/ai-team-management-program-734/README.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-734/2026-11-11-brief-common.md | \
+    research/ai-team-management-program/2026-11-11-ru-program-duration-market-survey.md | \
+    research/ai-team-management-program/2026-11-11-international-program-duration-survey.md | \
+    research/ai-team-management-program/2026-11-11-program-duration-attrition-absorption-evidence.md | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
     research/ba-requirements/exp/agent-ba-industry-703/cases.json | \
@@ -611,7 +617,7 @@ is_active_file() {
     projects/ba-ai-process/README.md | \
     projects/ai-team-management-program/README.md | \
     projects/ai-team-management-program/docs/task-contract.md | \
-    projects/ai-team-management-program/docs/passport/project-passport.md | \
+    projects/ai-team-management-program/docs/passport/project-passport-6m.md | \
     projects/ai-team-management-program/docs/passport/architecture.md | \
     projects/ai-team-management-program/docs/passport/economics.md | \
     projects/ai-team-management-program/docs/passport/team.md | \
@@ -2168,7 +2174,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.59"
+require_text "ops/artifact-map.md" "version: 2.60"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2592,7 +2598,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.80"
+require_text "ops/backlog.md" "version: 1.81"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
