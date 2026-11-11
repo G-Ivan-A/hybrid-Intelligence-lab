@@ -17,6 +17,12 @@ issue [#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732).
 [`../ai-team-management-program-730/economics-model.py`](../ai-team-management-program-730/economics-model.py)
 (правка на месте, без копии модели).
 
+Родительские отчёты итерации 2: аудит каналов кандидатов
+[`2026-11-11-candidate-public-channels-audit.md`](../../2026-11-11-candidate-public-channels-audit.md)
+и остальные отчёты от 2026-11-11 в каталоге
+[`research/ai-team-management-program/`](../../README.md); бриф
+[`brief-common.md`](brief-common.md) задаёт им общий формат.
+
 ## Состав
 
 | Файл | Что это |
