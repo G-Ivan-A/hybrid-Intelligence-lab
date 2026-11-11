@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-11-11
 temperature: 0.2
 contributors: [konard]
@@ -65,9 +65,9 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734"
 против 0,45 ([Lacerenza et al., 2017](https://doi.org/10.1037/apl0000241)).
 Привычка формируется в среднем за 66 дней
 ([Lally et al., 2010](https://doi.org/10.1002/ejsp.674)): от М1 до демо-дня
-проходит около 70. Короткий срок снижает риск оттока, но повышает риск
-неусвоения второго модуля
-([обоснование](appendix-b-methodology-rationale.md)).
+проходит около 70. Короткий срок сам по себе не защищает от оттока и
+повышает риск неусвоения второго модуля
+([паспорт](project-passport-3m.md#риск-неусвоения-и-недостижения-цели)).
 
 ## Экономика
 
