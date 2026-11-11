@@ -227,6 +227,15 @@ is_active_file() {
     research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py | \
     research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log | \
     research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py | \
+    research/ai-team-management-program/2026-11-11-candidate-public-channels-audit.md | \
+    research/ai-team-management-program/2026-11-11-ru-startups-ai-agents.md | \
+    research/ai-team-management-program/2026-11-11-ru-startups-sources-robotics-bpa.md | \
+    research/ai-team-management-program/2026-11-11-ai-management-use-cases-evidence.md | \
+    research/ai-team-management-program/2026-11-11-multi-case-design-and-proposal-format-evidence.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/README.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/2026-11-11-brief-common.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/customer-response-preview.png | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
     research/ba-requirements/exp/agent-ba-industry-703/cases.json | \
