@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-11-11
 temperature: 0.3
 contributors: [konard]
@@ -9,7 +9,7 @@ ai-models: [claude-opus-5-5]
 
 # Проект: программа «ИИ в работе с командой» для руководителей
 
-Версия: 0.2
+Версия: 0.3
 
 Дата: 2026-11-11
 
@@ -29,6 +29,15 @@ ai-models: [claude-opus-5-5]
 25%), ограничения поставляемой версии, ответ заказчику на двух страницах A4 и
 расширение пула кандидатов стартапами и МСБ.
 
+Итерация 3 ([issue #734](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734))
+обосновала длительность программы данными о рынке, оттоке и усвоении и
+добавила второй вариант — на 3 месяца, три очных модуля. Для каждого варианта
+есть резюме проекта по общему шаблону и паспорт, сверенный с резюме. Отраслевая
+гипотеза о заказчике в документах не используется: принята гипотеза, что
+инструменты, уровень автоматизации и подготовка участников различаются и
+заранее неизвестны. Отдельный RFC описывает сайт, который показывает резюме и
+паспорт одной выбранной заказчиком программы.
+
 ## Статус и граница
 
 Статус `draft`: паспорт подготовлен без возможности задать вопросы заказчику
@@ -43,16 +52,21 @@ ai-models: [claude-opus-5-5]
 | Артефакт | Назначение | Кому |
 | --- | --- | --- |
 | [docs/task-contract.md](docs/task-contract.md) | Полная постановка задачи по пяти уровням, SSOT, допущения, граничные случаи, бюджет исследований | Исполнитель, ревьюер |
-| [docs/passport/project-summary-6m.md](docs/passport/project-summary-6m.md) ([PDF](docs/passport/project-summary-6m.pdf)) | Ответ заказчику на двух страницах A4: вывод, программа, бюджет двух вариантов, ограничения | Заказчик |
-| [docs/passport/project-passport-6m.md](docs/passport/project-passport-6m.md) | Паспорт проекта — точка входа для заказчика | Заказчик |
-| [docs/passport/architecture.md](docs/passport/architecture.md) | Архитектура MVP программы: цели, результаты, траектория, оценка, ресурсы | Заказчик |
-| [docs/passport/economics.md](docs/passport/economics.md) | Бизнес-кейс и unit-экономика MVP в двух вариантах (полный и до 3 млн ₽): разовые затраты, затраты на проведение, цена, маржинальность | Заказчик |
+| [docs/methodology/project-summary-template.md](docs/methodology/project-summary-template.md) | Шаблон резюме проекта на две страницы A4: правила «только факты запроса», «гипотеза — только в допущениях», «резюме не противоречит паспорту»; структура по ТЗ, чек-лист | Исполнитель, методолог |
+| [docs/passport/project-summary-6m.md](docs/passport/project-summary-6m.md) ([PDF](docs/passport/project-summary-6m.pdf)) | Резюме проекта, вариант на 6 месяцев: две страницы A4 по шаблону | Заказчик |
+| [docs/passport/project-summary-3m.md](docs/passport/project-summary-3m.md) ([PDF](docs/passport/project-summary-3m.pdf)) | Резюме проекта, вариант на 3 месяца: две страницы A4 по шаблону | Заказчик |
+| [docs/passport/project-passport-6m.md](docs/passport/project-passport-6m.md) | Паспорт проекта, вариант на 6 месяцев: почему шесть месяцев, баланс доводов об оттоке, сверка с резюме | Заказчик |
+| [docs/passport/project-passport-3m.md](docs/passport/project-passport-3m.md) | Паспорт проекта, вариант на 3 месяца: почему не два и не шесть, риск неусвоения, отток, сверка с резюме | Заказчик |
+| [docs/passport/architecture.md](docs/passport/architecture.md) | Архитектура MVP программы на 6 месяцев: цели, результаты, траектория, оценка, ресурсы | Заказчик |
+| [docs/passport/architecture-3m.md](docs/passport/architecture-3m.md) | Архитектура варианта на 3 месяца: три очных модуля, условия короткой программы | Заказчик |
+| [docs/passport/economics.md](docs/passport/economics.md) | Бизнес-кейс и unit-экономика MVP для вариантов на 6 и 3 месяца, включая бережливые: разовые затраты, затраты на проведение, цена, маржинальность | Заказчик |
 | [docs/passport/team.md](docs/passport/team.md) | Экспертные роли, критерии отбора, число исследованных и подтверждённых кандидатов (без имён) | Заказчик |
 | [docs/passport/appendix-a-glossary.md](docs/passport/appendix-a-glossary.md) | Приложение А — глоссарий | Заказчик |
 | [docs/passport/appendix-b-methodology-rationale.md](docs/passport/appendix-b-methodology-rationale.md) | Приложение Б — обоснование решений и методологий | Заказчик |
 | [docs/passport/appendix-c-evidence-digest.md](docs/passport/appendix-c-evidence-digest.md) | Приложение В — дайджест исследований | Заказчик |
 | [docs/methodology/corporate-learning-methodology-2026.md](docs/methodology/corporate-learning-methodology-2026.md) | Каталог методологий корпоративного обучения 2026 и сквозной метод проектирования программы | Академия, методолог |
 | [docs/methodology/program-design-procedure.md](docs/methodology/program-design-procedure.md) | Исполнимый контракт: как агенту собрать паспорт программы по новому кейсу | ИИ-агент |
+| [docs/rfc/2026-11-site-presentation.md](docs/rfc/2026-11-site-presentation.md) | RFC сайта — презентация резюме и паспорта одной выбранной программы: разделы, что публикуется, юзабилити чтения | Академия, разработчик сайта |
 | [docs/candidates/candidate-pool-gra.md](docs/candidates/candidate-pool-gra.md) | Пул кандидатов (Москва) в команду реализации с разметкой по GRA и рейтингом «роль + контакт»; блок D — стартапы и МСБ — внутренний артефакт | Исполнитель, академия |
 
 Полные исследования — [research/ai-team-management-program/](../../research/ai-team-management-program/README.md)
@@ -61,7 +75,7 @@ ai-models: [claude-opus-5-5]
 
 ## Как читать
 
-Заказчик начинает с ответа на двух страницах, затем читает паспорт сверху вниз: паспорт → архитектура → экономика →
+Заказчик начинает с резюме проекта выбранного варианта на двух страницах, затем читает паспорт того же варианта сверху вниз: паспорт → архитектура → экономика →
 команда → приложения. Ревьюер начинает с task-contract: там видно, что
 заказано, что достроено исполнителем и где проходят границы. Методолог
 академии начинает с каталога методологий: паспорт — пример его применения.
