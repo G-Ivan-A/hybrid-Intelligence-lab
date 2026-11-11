@@ -214,6 +214,19 @@ is_active_file() {
     research/education/2026-07-16-retrieval-strategies-survey.md | \
     research/education/2026-06-29-partner-attraction-strategy.ru.md | \
     research/ba-requirements/README.md | \
+    research/ai-team-management-program/README.md | \
+    research/ai-team-management-program/external-sources-registry.md | \
+    research/ai-team-management-program/2026-11-10-international-benchmarks-survey.md | \
+    research/ai-team-management-program/2026-11-10-ru-universities-ai-programs-survey.md | \
+    research/ai-team-management-program/2026-11-10-ru-business-schools-ai-programs-survey.md | \
+    research/ai-team-management-program/2026-11-10-ai-adoption-russia-statistics.md | \
+    research/ai-team-management-program/2026-11-10-economics-market-benchmarks.md | \
+    research/ai-team-management-program/2026-11-10-corporate-learning-methodology-evidence.md | \
+    research/ai-team-management-program/2026-11-10-candidate-pool-facts.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/README.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log | \
+    research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
     research/ba-requirements/exp/agent-ba-industry-703/cases.json | \
@@ -587,6 +600,18 @@ is_active_file() {
     projects/repo-development/docs/contract-violations-self-report-2026-06.md | \
     projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md | \
     projects/ba-ai-process/README.md | \
+    projects/ai-team-management-program/README.md | \
+    projects/ai-team-management-program/docs/task-contract.md | \
+    projects/ai-team-management-program/docs/passport/project-passport.md | \
+    projects/ai-team-management-program/docs/passport/architecture.md | \
+    projects/ai-team-management-program/docs/passport/economics.md | \
+    projects/ai-team-management-program/docs/passport/team.md | \
+    projects/ai-team-management-program/docs/passport/appendix-a-glossary.md | \
+    projects/ai-team-management-program/docs/passport/appendix-b-methodology-rationale.md | \
+    projects/ai-team-management-program/docs/passport/appendix-c-evidence-digest.md | \
+    projects/ai-team-management-program/docs/methodology/corporate-learning-methodology-2026.md | \
+    projects/ai-team-management-program/docs/methodology/program-design-procedure.md | \
+    projects/ai-team-management-program/docs/candidates/candidate-pool-gra.md | \
     projects/ba-ai-process/ba-meta-model/00-introduction.md | \
     projects/ba-ai-process/ba-meta-model/10-theory.md | \
     projects/ba-ai-process/ba-meta-model/20-taxonomy.md | \
@@ -2134,11 +2159,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.57"
+require_text "ops/artifact-map.md" "version: 2.58"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-11-04"
+require_text "ops/artifact-map.md" "updated: 2026-11-10"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2558,7 +2583,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.78"
+require_text "ops/backlog.md" "version: 1.79"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"

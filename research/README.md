@@ -42,6 +42,7 @@ source: research/README-old.md
 | [reputation-technologies/](reputation-technologies/README.md) | **Выведен из Хаба** (RFC #721, ADR-022, issue #725): домен репутационных технологий **GRA** и курса «Технограда» живёт в спице [`aether-orbis-gra`](https://github.com/G-Ivan-A/aether-orbis-gra). Здесь остался только манифест redirect — адрес каждого прежнего пути (спица, тег `archive/reputation-technologies-2026-11`, удалённое). |
 | [ba-requirements/](ba-requirements/) | Нормализация входа BA-процессов: универсальная таксономия инициирующих артефактов и стейкхолдеров, цикл нормализации с гейтами, процесс статистики требований и Mango-специализированный срез на корпусе `runs/` (`scope: universal + mango`). |
 | [education/](education/) | Теоретическая основа для образовательных модулей Хаба: source-backed survey предметных областей, таксономии и матрицы принятия решений (`scope: repo-wide`). Учебный продукт на их основе живёт в [education/](../education/). |
+| [ai-team-management-program/](ai-team-management-program/README.md) | Доказательная база паспорта проекта «ИИ в работе с командой» (issue #730): международные бенчмарки, топ-10 вузов и бизнес-школ РФ, статистика внедрения ИИ в РФ с provenance, методологии корпоративного обучения, рыночные данные экономики, факты о кандидатах; Local Extension реестр источников (`scope: project`). |
 
 ### Подкаталог `hub/`
 
@@ -80,6 +81,14 @@ source: research/README-old.md
 | Файл | Назначение |
 | --- | --- |
 | [2026-07-16-retrieval-strategies-survey.md](education/2026-07-16-retrieval-strategies-survey.md) | Научно-теоретическое исследование retrieval-стратегий для AI-агентов (issue #418): 30 research questions, объектная модель из 10 сущностей, граф зависимостей, 9 точек принятия решений, 20 провокационных гипотез (7 от фаундера + 13 из международных практик), таксономии БЗ/запросов/стратегий, матрица «БЗ × Запрос → Стратегия», chunking, embeddings и similarity metrics, reranking, evaluation, readiness levels L0–L5, индустриальные кейсы и тренды 2024–2026, связь с архитектурой памяти агента. Теоретическая база для образовательного модуля (RFC-F). |
+
+### Подкаталог `ai-team-management-program/`
+
+| Файл | Назначение |
+| --- | --- |
+| [README.md](ai-team-management-program/README.md) | Навигация по семи отчётам M3 (Discussion Paper / Survey) с разделами G5-перепроверки, обоснование выбора `research/` как дома исследований, воспроизведение расчётов. |
+| [external-sources-registry.md](ai-team-management-program/external-sources-registry.md) | Local Extension реестр внешних источников (`atm-NNN`), генерируется из разделов «Источники» отчётов. |
+| [exp/ai-team-management-program-730/](ai-team-management-program/exp/ai-team-management-program-730/README.md) | Воспроизводимая модель экономики (NRE отдельно от Delivery, цена, маржа, чувствительность) и генератор реестра источников. |
 
 ### Подкаталог `ba-requirements/`
 
