@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-11-10
+version: 0.2
+updated: 2026-11-11
 temperature: 0.3
 contributors: [konard]
 ai-models: [claude-opus-5-5]
@@ -9,9 +9,9 @@ ai-models: [claude-opus-5-5]
 
 # Проект: программа «ИИ в работе с командой» для руководителей
 
-Версия: 0.1
+Версия: 0.2
 
-Дата: 2026-11-10
+Дата: 2026-11-11
 
 `projects/ai-team-management-program/` — дом проекта по тестовому кейсу
 корпоративной академии ([issue #730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730)):
@@ -19,9 +19,15 @@ ai-models: [claude-opus-5-5]
 командой, для повышения управленческой эффективности», её экономика, экспертная
 команда, методология проектирования корпоративных программ и пул кандидатов.
 Проект показывает тезис «корпоративное обучение как двигатель развития
-продукта»: программа строится вокруг двух рабочих артефактов руководителя
-(дашборд задач подразделения и контроль поручений), которые после обучения
-остаются продуктом, а не конспектом.
+продукта»: программа строится вокруг рабочих артефактов руководителя, которые
+после обучения остаются продуктом, а не конспектом.
+
+Итерация 2 ([issue #732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732))
+заменила выбор из двух артефактов пятью кейсами из запроса (встречи, календарь,
+поручения, перформанс, дашборд): один сет — один кейс, группа получает пять
+карт внедрения. Добавлены второй вариант бюджета (до 3 млн ₽ при марже не ниже
+25%), ограничения поставляемой версии, ответ заказчику на двух страницах A4 и
+расширение пула кандидатов стартапами и МСБ.
 
 ## Статус и граница
 
@@ -37,16 +43,17 @@ ai-models: [claude-opus-5-5]
 | Артефакт | Назначение | Кому |
 | --- | --- | --- |
 | [docs/task-contract.md](docs/task-contract.md) | Полная постановка задачи по пяти уровням, SSOT, допущения, граничные случаи, бюджет исследований | Исполнитель, ревьюер |
+| [docs/passport/customer-response.md](docs/passport/customer-response.md) ([PDF](docs/passport/customer-response.pdf)) | Ответ заказчику на двух страницах A4: вывод, программа, бюджет двух вариантов, ограничения | Заказчик |
 | [docs/passport/project-passport.md](docs/passport/project-passport.md) | Паспорт проекта — точка входа для заказчика | Заказчик |
 | [docs/passport/architecture.md](docs/passport/architecture.md) | Архитектура MVP программы: цели, результаты, траектория, оценка, ресурсы | Заказчик |
-| [docs/passport/economics.md](docs/passport/economics.md) | Бизнес-кейс и unit-экономика MVP: разовые затраты, затраты на проведение, цена, маржинальность | Заказчик |
-| [docs/passport/team.md](docs/passport/team.md) | Экспертные роли, критерии отбора, 2–3 предложенных эксперта/организации | Заказчик |
+| [docs/passport/economics.md](docs/passport/economics.md) | Бизнес-кейс и unit-экономика MVP в двух вариантах (полный и до 3 млн ₽): разовые затраты, затраты на проведение, цена, маржинальность | Заказчик |
+| [docs/passport/team.md](docs/passport/team.md) | Экспертные роли, критерии отбора, число исследованных и подтверждённых кандидатов (без имён) | Заказчик |
 | [docs/passport/appendix-a-glossary.md](docs/passport/appendix-a-glossary.md) | Приложение А — глоссарий | Заказчик |
 | [docs/passport/appendix-b-methodology-rationale.md](docs/passport/appendix-b-methodology-rationale.md) | Приложение Б — обоснование решений и методологий | Заказчик |
 | [docs/passport/appendix-c-evidence-digest.md](docs/passport/appendix-c-evidence-digest.md) | Приложение В — дайджест исследований | Заказчик |
 | [docs/methodology/corporate-learning-methodology-2026.md](docs/methodology/corporate-learning-methodology-2026.md) | Каталог методологий корпоративного обучения 2026 и сквозной метод проектирования программы | Академия, методолог |
 | [docs/methodology/program-design-procedure.md](docs/methodology/program-design-procedure.md) | Исполнимый контракт: как агенту собрать паспорт программы по новому кейсу | ИИ-агент |
-| [docs/candidates/candidate-pool-gra.md](docs/candidates/candidate-pool-gra.md) | Пул кандидатов (Москва) в команду реализации с разметкой по GRA — внутренний артефакт | Исполнитель, академия |
+| [docs/candidates/candidate-pool-gra.md](docs/candidates/candidate-pool-gra.md) | Пул кандидатов (Москва) в команду реализации с разметкой по GRA и рейтингом «роль + контакт»; блок D — стартапы и МСБ — внутренний артефакт | Исполнитель, академия |
 
 Полные исследования — [research/ai-team-management-program/](../../research/ai-team-management-program/README.md)
 (модель M3, Discussion Paper / Survey; заказчику не передаются, в паспорт входит
@@ -54,7 +61,7 @@ ai-models: [claude-opus-5-5]
 
 ## Как читать
 
-Заказчик читает паспорт сверху вниз: паспорт → архитектура → экономика →
+Заказчик начинает с ответа на двух страницах, затем читает паспорт сверху вниз: паспорт → архитектура → экономика →
 команда → приложения. Ревьюер начинает с task-contract: там видно, что
 заказано, что достроено исполнителем и где проходят границы. Методолог
 академии начинает с каталога методологий: паспорт — пример его применения.

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-11-10
+version: 0.2
+updated: 2026-11-11
 temperature: 0.1
 ---
 
@@ -12,7 +12,9 @@ temperature: 0.1
 — MVP-архитектура модульной программы «ИИ в работе с командой» для директоров
 департаментов и начальников управлений (в подчинении 25–70 человек, группа
 20–25 человек). Источник постановки — issue
-[#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730); полная
+[#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730),
+доисследование итерации 2 — issue
+[#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732); полная
 постановка с граничными кейсами — в
 [`docs/task-contract.md`](../../projects/ai-team-management-program/docs/task-contract.md)
 проекта.
@@ -55,12 +57,23 @@ temperature: 0.1
 | [2026-11-10-economics-market-benchmarks.md](2026-11-10-economics-market-benchmarks.md) | 3.6 (экономика) | Рыночные данные для экономики MVP: цены программ, ставки экспертов и ролей, НДС и льгота подп. 14 п. 2 ст. 149 НК РФ, макро (ключевая ставка, инфляция), стоимость ИИ-стека. |
 | [2026-11-10-candidate-pool-facts.md](2026-11-10-candidate-pool-facts.md) | 4 | Факты о кандидатах в команду реализации (Москва): корпоративные эксперты, независимые преподаватели вузов и бизнес-школ, компании-партнёры. Разметка GRA построена на этих фактах в проекте. |
 
+Отчёты итерации 2 (issue #732):
+
+| Файл | Пункт задачи #732 | Назначение |
+| --- | --- | --- |
+| [2026-11-11-candidate-public-channels-audit.md](2026-11-11-candidate-public-channels-audit.md) | 1 | Аудит публичных профессиональных каналов кандидатов итерации 1 (Habr, VC.ru, Telegram, страницы спикеров) и шкала доступности контакта; исправления должностей и фамилий. |
+| [2026-11-11-ru-startups-ai-agents.md](2026-11-11-ru-startups-ai-agents.md) | 1 | Стартапы и МСБ России в классах «ИИ-агенты» и «прикладной ИИ»: 32 компании, возраст не меньше двух лет, руководители и каналы связи. |
+| [2026-11-11-ru-startups-sources-robotics-bpa.md](2026-11-11-ru-startups-sources-robotics-bpa.md) | 1 | 24 российские базы и источники стартапов; 36 компаний в робототехнике и автоматизации бизнес-процессов с руководителями и каналами. |
+| [2026-11-11-ai-management-use-cases-evidence.md](2026-11-11-ai-management-use-cases-evidence.md) | 2 | Пять управленческих кейсов из запроса (встречи, календарь, поручения, перформанс, дашборд): внедрения в России и за рубежом, СМИ и конференции, измеренные эффекты. |
+| [2026-11-11-multi-case-design-and-proposal-format-evidence.md](2026-11-11-multi-case-design-and-proposal-format-evidence.md) | 2, 4, 5 | Распыляют ли несколько кейсов внимание группы; формат ответа заказчику на двух страницах; нефинансовая мотивация экспертов и почему её нельзя моделировать. |
+
 ## Сопутствующие артефакты
 
 | Артефакт | Назначение |
 | --- | --- |
-| [external-sources-registry.md](external-sources-registry.md) | Local Extension к Base Registry Хаба: все внешние источники семи отчётов (идентификаторы `atm-NNN`), тип, язык, стадия, отчёты-потребители. Таблица генерируется скриптом, а не правится руками. |
+| [external-sources-registry.md](external-sources-registry.md) | Local Extension к Base Registry Хаба: все внешние источники двенадцати отчётов (идентификаторы `atm-NNN`), тип, язык, стадия, отчёты-потребители. Таблица генерируется скриптом, а не правится руками. |
 | [exp/ai-team-management-program-730/](exp/ai-team-management-program-730/README.md) | Воспроизводимые расчёты: модель экономики (`economics-model.py` → `economics-model.log`) и генератор реестра источников (`build-sources-registry.py`). |
+| [exp/ai-team-management-program-732/](exp/ai-team-management-program-732/README.md) | Итерация 2: общий бриф исследовательских потоков, вёрстка ответа заказчику в PDF на две страницы A4, учёт исследовательских токенов. |
 
 ## Как воспроизвести
 
@@ -71,6 +84,9 @@ python3 research/ai-team-management-program/exp/ai-team-management-program-730/e
 
 # реестр источников: пересобрать таблицу из разделов «Источники» отчётов
 python3 research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py --write
+
+# ответ заказчику: PDF A4, не больше двух страниц и 900 слов (нужен Chrome)
+python3 -I research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py
 ```
 
 ## Границы и известные пробелы
@@ -86,3 +102,8 @@ python3 research/ai-team-management-program/exp/ai-team-management-program-730/b
 - Часть первоисточников (полные PDF отчётов консалтинга, текст 425-ФЗ на
   pravo.gov.ru) исполнитель открыть не смог; соответствующие claims помечены `◐`
   и перечислены в разделах G5 отчётов.
+- Итерация 2: сверка стартапов с ЕГРЮЛ из среды исследования была
+  недоступна, поэтому у 27 из 64 стартапов возраст или независимость не
+  подтверждены первоисточником; часть ролей руководителей стартапов известна
+  только по сниппетам поиска (`○`). Оба пробела перечислены в отчётах и в
+  бэклоге.
