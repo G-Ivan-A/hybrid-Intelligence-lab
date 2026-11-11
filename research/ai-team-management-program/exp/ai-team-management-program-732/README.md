@@ -21,13 +21,13 @@ issue [#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732).
 [`2026-11-11-candidate-public-channels-audit.md`](../../2026-11-11-candidate-public-channels-audit.md)
 и остальные отчёты от 2026-11-11 в каталоге
 [`research/ai-team-management-program/`](../../README.md); бриф
-[`brief-common.md`](brief-common.md) задаёт им общий формат.
+[`2026-11-11-brief-common.md`](2026-11-11-brief-common.md) задаёт им общий формат.
 
 ## Состав
 
 | Файл | Что это |
 | --- | --- |
-| [`brief-common.md`](brief-common.md) | общий бриф исследовательских потоков итерации 2: формат отчёта, правила сбора только публичных профессиональных сведений, шкала доступности контакта К0–К3 |
+| [`2026-11-11-brief-common.md`](2026-11-11-brief-common.md) | общий бриф исследовательских потоков итерации 2: формат отчёта, правила сбора только публичных профессиональных сведений, шкала доступности контакта К0–К3 |
 | [`render-customer-response.py`](render-customer-response.py) | вёрстка [ответа заказчику](../../../../projects/ai-team-management-program/docs/passport/customer-response.md) в PDF A4 через headless Chrome; завершается ошибкой, если страниц больше двух |
 
 ## Воспроизведение
