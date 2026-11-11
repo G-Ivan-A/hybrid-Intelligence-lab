@@ -1,3 +1,13 @@
+---
+status: draft
+version: 0.1
+updated: 2026-11-11
+temperature: 0.1
+type: experiment
+contributors: [konard]
+ai-models: [claude-opus-5-5]
+---
+
 # Общий бриф исследовательских потоков итерации 2 (issue #732)
 
 Бриф исполнителя (`claude-opus-5-5`) для исследовательских субагентов. Хранится
