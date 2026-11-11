@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Сборка Local Extension реестра внешних источников проекта (issue #730).
 
-Читает разделы «Список источников» / «Источники» семи отчётов
-research/ai-team-management-program/2026-11-10-*.md, дедуплицирует источники
+Читает разделы «Список источников» / «Источники» двенадцати отчётов
+research/ai-team-management-program/2026-11-10-*.md (итерация 1, #730) и
+2026-11-11-*.md (итерация 2, #732), дедуплицирует источники
 по URL и печатает таблицу реестра в формате Base Registry
 (research/external-knowledge/external-sources-registry.md) с локальной
 нумерацией `atm-NNN`.
@@ -31,6 +32,11 @@ REPORT_TAGS = {
     "2026-11-10-economics-market-benchmarks.md": "economics, pricing, taxes, market-rates",
     "2026-11-10-corporate-learning-methodology-evidence.md": "learning-science, leadership-development, evaluation, transfer",
     "2026-11-10-candidate-pool-facts.md": "candidate-pool, experts, partner-companies, moscow",
+    "2026-11-11-candidate-public-channels-audit.md": "candidate-pool, contact-channels, privacy",
+    "2026-11-11-ru-startups-ai-agents.md": "startups, sme, ai-agents, candidate-pool",
+    "2026-11-11-ru-startups-sources-robotics-bpa.md": "startups, sme, robotics, bpa, startup-databases",
+    "2026-11-11-ai-management-use-cases-evidence.md": "use-cases, ai-for-managers, evidence, banking",
+    "2026-11-11-multi-case-design-and-proposal-format-evidence.md": "learning-science, case-method, proposal-format, motivation",
 }
 SHORT = {
     "2026-11-10-international-benchmarks-survey.md": "бенчмарки",
@@ -40,6 +46,11 @@ SHORT = {
     "2026-11-10-economics-market-benchmarks.md": "экономика",
     "2026-11-10-corporate-learning-methodology-evidence.md": "методологии",
     "2026-11-10-candidate-pool-facts.md": "кандидаты",
+    "2026-11-11-candidate-public-channels-audit.md": "каналы",
+    "2026-11-11-ru-startups-ai-agents.md": "стартапы ИИ",
+    "2026-11-11-ru-startups-sources-robotics-bpa.md": "стартапы R/P",
+    "2026-11-11-ai-management-use-cases-evidence.md": "кейсы",
+    "2026-11-11-multi-case-design-and-proposal-format-evidence.md": "мультикейс",
 }
 
 ITEM = re.compile(r"^\s*(\d+)\.\s+(.*)$")

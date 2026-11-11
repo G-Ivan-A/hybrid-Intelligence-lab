@@ -227,6 +227,15 @@ is_active_file() {
     research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py | \
     research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log | \
     research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py | \
+    research/ai-team-management-program/2026-11-11-candidate-public-channels-audit.md | \
+    research/ai-team-management-program/2026-11-11-ru-startups-ai-agents.md | \
+    research/ai-team-management-program/2026-11-11-ru-startups-sources-robotics-bpa.md | \
+    research/ai-team-management-program/2026-11-11-ai-management-use-cases-evidence.md | \
+    research/ai-team-management-program/2026-11-11-multi-case-design-and-proposal-format-evidence.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/README.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/2026-11-11-brief-common.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py | \
+    research/ai-team-management-program/exp/ai-team-management-program-732/customer-response-preview.png | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
     research/ba-requirements/exp/agent-ba-industry-703/cases.json | \
@@ -2159,11 +2168,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.58"
+require_text "ops/artifact-map.md" "version: 2.59"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-11-10"
+require_text "ops/artifact-map.md" "updated: 2026-11-11"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2583,7 +2592,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.79"
+require_text "ops/backlog.md" "version: 1.80"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
