@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Сборка Local Extension реестра внешних источников проекта (issue #730).
 
-Читает разделы «Список источников» / «Источники» двенадцати отчётов
+Читает разделы «Список источников» / «Источники» пятнадцати отчётов
 research/ai-team-management-program/2026-11-10-*.md (итерация 1, #730) и
-2026-11-11-*.md (итерация 2, #732), дедуплицирует источники
+2026-11-11-*.md (итерации 2 и 3, #732 и #734), дедуплицирует источники
 по URL и печатает таблицу реестра в формате Base Registry
 (research/external-knowledge/external-sources-registry.md) с локальной
 нумерацией `atm-NNN`.
@@ -37,6 +37,9 @@ REPORT_TAGS = {
     "2026-11-11-ru-startups-sources-robotics-bpa.md": "startups, sme, robotics, bpa, startup-databases",
     "2026-11-11-ai-management-use-cases-evidence.md": "use-cases, ai-for-managers, evidence, banking",
     "2026-11-11-multi-case-design-and-proposal-format-evidence.md": "learning-science, case-method, proposal-format, motivation",
+    "2026-11-11-ru-program-duration-market-survey.md": "program-duration, ru-market, leadership-development, ai-for-leaders",
+    "2026-11-11-international-program-duration-survey.md": "program-duration, executive-education, ai-for-leaders, attrition",
+    "2026-11-11-program-duration-attrition-absorption-evidence.md": "program-duration, attrition, transfer, habit-formation",
 }
 SHORT = {
     "2026-11-10-international-benchmarks-survey.md": "бенчмарки",
@@ -51,6 +54,9 @@ SHORT = {
     "2026-11-11-ru-startups-sources-robotics-bpa.md": "стартапы R/P",
     "2026-11-11-ai-management-use-cases-evidence.md": "кейсы",
     "2026-11-11-multi-case-design-and-proposal-format-evidence.md": "мультикейс",
+    "2026-11-11-ru-program-duration-market-survey.md": "длительность РФ",
+    "2026-11-11-international-program-duration-survey.md": "длительность мир",
+    "2026-11-11-program-duration-attrition-absorption-evidence.md": "отток",
 }
 
 ITEM = re.compile(r"^\s*(\d+)\.\s+(.*)$")
