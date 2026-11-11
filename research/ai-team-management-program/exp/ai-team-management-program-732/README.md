@@ -29,7 +29,7 @@ issue [#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732).
 | --- | --- |
 | [`2026-11-11-brief-common.md`](2026-11-11-brief-common.md) | общий бриф исследовательских потоков итерации 2: формат отчёта, правила сбора только публичных профессиональных сведений, шкала доступности контакта К0–К3 (в пуле — Д0–Д3, чтобы не путать с кейсами К1–К5) |
 | [`render-customer-response.py`](render-customer-response.py) | вёрстка [ответа заказчику](../../../../projects/ai-team-management-program/docs/passport/project-summary-6m.md) в PDF A4 через headless Chrome; завершается ошибкой, если страниц больше двух или слов больше 900, и если остались подстановки `{N_...}` |
-| [`customer-response-preview.png`](customer-response-preview.png) | снимок HTML-вёрстки ответа заказчику (режим `--html-only`) для визуальной проверки без просмотрщика PDF |
+| [`project-summary-6m-preview.png`](project-summary-6m-preview.png), [`project-summary-3m-preview.png`](project-summary-3m-preview.png) | снимки HTML-вёрстки резюме проекта на 6 и 3 месяца (режим `--html-only`) для визуальной проверки без просмотрщика PDF |
 
 ## Воспроизведение
 
