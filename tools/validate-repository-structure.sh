@@ -611,7 +611,7 @@ is_active_file() {
     projects/ba-ai-process/README.md | \
     projects/ai-team-management-program/README.md | \
     projects/ai-team-management-program/docs/task-contract.md | \
-    projects/ai-team-management-program/docs/passport/project-passport.md | \
+    projects/ai-team-management-program/docs/passport/project-passport-6m.md | \
     projects/ai-team-management-program/docs/passport/architecture.md | \
     projects/ai-team-management-program/docs/passport/economics.md | \
     projects/ai-team-management-program/docs/passport/team.md | \

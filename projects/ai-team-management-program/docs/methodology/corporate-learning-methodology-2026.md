@@ -1413,7 +1413,7 @@ Salas: для открытых управленческих навыков ср�
 
 Пошаговая исполнимая версия этой цепочки для нового кейса —
 [program-design-procedure.md](program-design-procedure.md). Как цепочка
-развёрнута в этой программе — [паспорт](../passport/project-passport.md),
+развёрнута в этой программе — [паспорт](../passport/project-passport-6m.md),
 [архитектура](../passport/architecture.md) и
 [обоснование методологии](../passport/appendix-b-methodology-rationale.md).
 

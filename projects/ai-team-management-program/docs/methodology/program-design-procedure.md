@@ -235,7 +235,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730"
 | 6 | [architecture.md](../passport/architecture.md), [appendix-b-methodology-rationale.md](../passport/appendix-b-methodology-rationale.md) |
 | 7 | [economics.md](../passport/economics.md), [economics-model.py](../../../../research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py), [economics-model.log](../../../../research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log) |
 | 8 | [team.md](../passport/team.md), [candidate-pool-gra.md](../candidates/candidate-pool-gra.md) |
-| Сводка | [project-passport.md](../passport/project-passport.md) |
+| Сводка | [project-passport-6m.md](../passport/project-passport-6m.md) |
 
 Архитектура примера: онбординг М0 онлайн (2 сессии по 2 ч), четыре очных
 модуля М1–М4 по 2 дня раз в месяц, между модулями — 6 групповых

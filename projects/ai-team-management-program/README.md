@@ -43,8 +43,8 @@ ai-models: [claude-opus-5-5]
 | Артефакт | Назначение | Кому |
 | --- | --- | --- |
 | [docs/task-contract.md](docs/task-contract.md) | Полная постановка задачи по пяти уровням, SSOT, допущения, граничные случаи, бюджет исследований | Исполнитель, ревьюер |
-| [docs/passport/customer-response.md](docs/passport/customer-response.md) ([PDF](docs/passport/customer-response.pdf)) | Ответ заказчику на двух страницах A4: вывод, программа, бюджет двух вариантов, ограничения | Заказчик |
-| [docs/passport/project-passport.md](docs/passport/project-passport.md) | Паспорт проекта — точка входа для заказчика | Заказчик |
+| [docs/passport/project-summary-6m.md](docs/passport/project-summary-6m.md) ([PDF](docs/passport/project-summary-6m.pdf)) | Ответ заказчику на двух страницах A4: вывод, программа, бюджет двух вариантов, ограничения | Заказчик |
+| [docs/passport/project-passport-6m.md](docs/passport/project-passport-6m.md) | Паспорт проекта — точка входа для заказчика | Заказчик |
 | [docs/passport/architecture.md](docs/passport/architecture.md) | Архитектура MVP программы: цели, результаты, траектория, оценка, ресурсы | Заказчик |
 | [docs/passport/economics.md](docs/passport/economics.md) | Бизнес-кейс и unit-экономика MVP в двух вариантах (полный и до 3 млн ₽): разовые затраты, затраты на проведение, цена, маржинальность | Заказчик |
 | [docs/passport/team.md](docs/passport/team.md) | Экспертные роли, критерии отбора, число исследованных и подтверждённых кандидатов (без имён) | Заказчик |
