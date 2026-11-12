@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-11-11
 temperature: 0.1
 ---
@@ -16,7 +16,9 @@ temperature: 0.1
 доисследование итерации 2 — issue
 [#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732),
 длительность программы, отток и усвоение (итерация 3) — issue
-[#734](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734); полная
+[#734](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734),
+презентационный пакет на 3 месяца (итерация 4) — issue
+[#736](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/736); полная
 постановка с граничными кейсами — в
 [`docs/task-contract.md`](../../projects/ai-team-management-program/docs/task-contract.md)
 проекта.
@@ -85,6 +87,7 @@ temperature: 0.1
 | [exp/ai-team-management-program-730/](exp/ai-team-management-program-730/README.md) | Воспроизводимые расчёты: модель экономики (`economics-model.py` → `economics-model.log`) и генератор реестра источников (`build-sources-registry.py`). |
 | [exp/ai-team-management-program-732/](exp/ai-team-management-program-732/README.md) | Итерация 2: общий бриф исследовательских потоков, вёрстка резюме проекта в PDF на две страницы A4, учёт исследовательских токенов. |
 | [exp/ai-team-management-program-734/](exp/ai-team-management-program-734/README.md) | Итерация 3: бриф потоков о длительности, оттоке и усвоении, способ перепроверки PDF при гейте G5, учёт исследовательских токенов. |
+| [exp/ai-team-management-program-736/](exp/ai-team-management-program-736/README.md) | Итерация 4: рабочий документ пакета [`pop-3m`](../../projects/ai-team-management-program/pop-3m/) — постановка с граничными кейсами, SSOT, обоснование ставок, отклонённые требования, КРИК-ГЕЙТ; модель экономики (`economics-pop-3m.py` → `economics-pop-3m.log`) и проверка пакета `check-pop-3m.py` |
 
 ## Как воспроизвести
 

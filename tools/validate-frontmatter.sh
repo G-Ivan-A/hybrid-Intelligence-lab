@@ -461,6 +461,16 @@ validate_file() {
     return
   fi
 
+  # Presentation packages (projects/<project>/pop-<variant>/) go to the customer
+  # as PDF and to a static site verbatim. Issue #736 forbids version and draft
+  # metadata in them; check-pop-3m.py enforces the no-frontmatter contract, and
+  # authorship lives in the package's experiment README and git history.
+  case "$(normalize_path "$path")" in
+    projects/*/pop-*/*.md)
+      return
+      ;;
+  esac
+
   while IFS= read -r line || [[ -n "$line" ]]; do
     line="${line%$'\r'}"
     line_no=$((line_no + 1))
