@@ -5,6 +5,9 @@ name: archive-tag
 # выведенного домена (решение Q-5: аннотированный тег). На push в main workflow
 # ставит тег на archive_commit, если его ещё нет, и никогда не переписывает
 # существующий. На pull_request — пробный прогон без push.
+# GITHUB_TOKEN не может иметь право workflows, поэтому GitHub отклоняет тег на
+# коммите, где .github/workflows/ отличается от main. Тогда шаг падает с
+# инструкцией: тег один раз ставит владелец репозитория (B-281).
 # Затем проверяет ruleset (решение Q-6): теги archive/* нельзя обновить или
 # удалить. Ruleset включает администратор репозитория: на PR его отсутствие —
 # предупреждение, на main — падение с инструкцией.
@@ -46,6 +49,7 @@ jobs:
           python3 -I tools/archive-tags.py plan | tee "$RUNNER_TEMP/archive-tags.tsv"
 
       - name: Create archive tags
+        id: create
         env:
           DRY_RUN: ${{ github.event_name == 'pull_request' }}
         run: |
@@ -60,11 +64,29 @@ jobs:
             fi
             python3 -I tools/archive-tags.py message "$tag" "$commit" > "$RUNNER_TEMP/tag-message.txt"
             git tag -a "$tag" -F "$RUNNER_TEMP/tag-message.txt" "$commit"
-            git push origin "refs/tags/$tag"
+            if ! git push origin "refs/tags/$tag"; then
+              echo "::error::Тег $tag не создан: GitHub отклонил push. Инструкция для владельца репозитория — в логе шага."
+              cat <<EOF
+          Тег $tag не создан: GitHub отклонил push (причина выше).
+          Если причина — отсутствие права workflows: коммит архива $commit содержит
+          .github/workflows/ в другой редакции, чем main, а GITHUB_TOKEN этого права
+          иметь не может. Перезапуск workflow и включение ruleset тег не создадут.
+          Нужно действие владельца репозитория: один раз поставить тег из корня клона,
+          с SSH-ключом или токеном со scope workflow:
+            git fetch origin
+            python3 -I tools/archive-tags.py message $tag $commit > /tmp/tag-message.txt
+            git tag -a $tag -F /tmp/tag-message.txt $commit
+            git push origin refs/tags/$tag
+          Затем перезапустить этот workflow: план покажет ok.
+          EOF
+              exit 1
+            fi
             echo "Создан тег $tag на $commit"
           done < "$RUNNER_TEMP/archive-tags.tsv"
 
       - name: Check archive tag ruleset (Q-6)
+        # Обе инструкции — за один прогон: отказ в push не скрывает проверку ruleset.
+        if: ${{ success() || steps.create.outcome == 'failure' }}
         env:
           GH_TOKEN: ${{ github.token }}
           ON_MAIN: ${{ github.event_name != 'pull_request' }}
