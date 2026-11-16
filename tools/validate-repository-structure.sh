@@ -253,7 +253,6 @@ is_active_file() {
     research/ai-team-management-program/2026-11-16-network-building-shuttle-diplomacy-evidence.md | \
     research/ai-team-management-program/2026-11-16-university-codevelopment-project-selection.md | \
     research/ai-team-management-program/2026-11-16-vendor-education-mechanisms-formats-evidence.md | \
-    research/ai-team-management-program/vendor-education-partnerships/README.md | \
     research/ai-team-management-program/vendor-education-partnerships/00-introduction.md | \
     research/ai-team-management-program/vendor-education-partnerships/10-theory.md | \
     research/ai-team-management-program/vendor-education-partnerships/20-taxonomy.md | \
