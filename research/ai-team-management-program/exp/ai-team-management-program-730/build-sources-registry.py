@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Сборка Local Extension реестра внешних источников проекта (issue #730).
 
-Читает разделы «Список источников» / «Источники» пятнадцати отчётов
-research/ai-team-management-program/2026-11-10-*.md (итерация 1, #730) и
-2026-11-11-*.md (итерации 2 и 3, #732 и #734), дедуплицирует источники
+Читает разделы «Список источников» / «Источники» двадцати двух отчётов
+research/ai-team-management-program/2026-11-10-*.md (итерация 1, #730),
+2026-11-11-*.md (итерации 2 и 3, #732 и #734) и 2026-11-16-*.md (итерация 5,
+#740), дедуплицирует источники
 по URL и печатает таблицу реестра в формате Base Registry
 (research/external-knowledge/external-sources-registry.md) с локальной
 нумерацией `atm-NNN`.
@@ -40,6 +41,13 @@ REPORT_TAGS = {
     "2026-11-11-ru-program-duration-market-survey.md": "program-duration, ru-market, leadership-development, ai-for-leaders",
     "2026-11-11-international-program-duration-survey.md": "program-duration, executive-education, ai-for-leaders, attrition",
     "2026-11-11-program-duration-attrition-absorption-evidence.md": "program-duration, attrition, transfer, habit-formation",
+    "2026-11-16-vendor-academic-programs-international.md": "vendor-education, academic-alliances, international, case-matrix",
+    "2026-11-16-vendor-education-russia.md": "vendor-education, ru-market, universities, dpo",
+    "2026-11-16-vendor-education-china.md": "vendor-education, china, industry-university, localization",
+    "2026-11-16-specialist-positioning-ru-us-cn.md": "personal-positioning, labor-market, sanctions, consulting",
+    "2026-11-16-network-building-shuttle-diplomacy-evidence.md": "networking, brokerage, b2b-sales, conversion-rates",
+    "2026-11-16-university-codevelopment-project-selection.md": "university-industry, dpo, co-development, ba-metamodel",
+    "2026-11-16-vendor-education-mechanisms-formats-evidence.md": "vendor-education, mechanisms, formats, evidence",
 }
 SHORT = {
     "2026-11-10-international-benchmarks-survey.md": "бенчмарки",
@@ -57,6 +65,13 @@ SHORT = {
     "2026-11-11-ru-program-duration-market-survey.md": "длительность РФ",
     "2026-11-11-international-program-duration-survey.md": "длительность мир",
     "2026-11-11-program-duration-attrition-absorption-evidence.md": "отток",
+    "2026-11-16-vendor-academic-programs-international.md": "вендоры мир",
+    "2026-11-16-vendor-education-russia.md": "вендоры РФ",
+    "2026-11-16-vendor-education-china.md": "вендоры Китай",
+    "2026-11-16-specialist-positioning-ru-us-cn.md": "позиционирование",
+    "2026-11-16-network-building-shuttle-diplomacy-evidence.md": "нетворкинг",
+    "2026-11-16-university-codevelopment-project-selection.md": "вуз и проект",
+    "2026-11-16-vendor-education-mechanisms-formats-evidence.md": "механизмы",
 }
 
 ITEM = re.compile(r"^\s*(\d+)\.\s+(.*)$")

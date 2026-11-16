@@ -251,3 +251,23 @@ ai-models: [claude-opus-5-5]
 54. SaaStr — «Gong: $100K+ deals take about 70 days to close» — https://www.saastr.com/gong-100k-deals-take-about-days-to-close — без даты — ПС, сниппет.
 55. Emulent — «Sales Cycle Length Benchmarks by Industry and Projections» — https://emulent.com/resources/trends/sales-cycle-length-benchmarks-by-industry-and-projections/ — без даты — ПС, сниппет.
 56. UIDP — «Sponsored research agreement negotiation survey» — https://uidp.org/?p=20166 — без даты — ПС, сниппет.
+
+## 6. Независимая перепроверка исполнителем (гейт G5)
+
+2026-11-16 исполнитель (`claude-opus-5-5`) заново открыл первоисточники
+ключевых цифр, на которые опираются модель вероятностей и стратегия
+личного продвижения.
+
+| № | Утверждение отчёта | Первоисточник | Результат | Статус |
+|---|---|---|---|---|
+| V-1 | BLS: медиана $133 000 в год ($63,94 в час), 50 200 рабочих мест, рост 6% за 2025–2035 годы, около 4100 вакансий в год | [5] | Подтверждено дословно: «$133,000 per year», «$63.94 per hour», «50,200», «grow 6 percent from 2025 to 2035», «About 4,100 openings» | ● |
+| V-2 | Training Magazine 2025: $102,8 млрд (+4,9%), внешние продукты и услуги — $16 млрд (+29%), $874 на обучаемого, 40 часов вместо 47 | [6] | Подтверждено дословно: «jumped 4.9 percent to $102.8 billion», «outside products and services increased 29 percent to $16 billion», «$874 per learner», «40 hours … vs. 47 hours» | ● |
+| V-3 | 60% консультантов нашли первого клиента по рекомендации; 39% берут $100–250 в час | [13] | Подтверждено: «For 60% of consulting business owners, their first consulting client is a referral from their network»; «39% of consultants charge between $100-$250 per hour». Год и методика исследования на странице не указаны | ● (с оговоркой о методике) |
+| V-4 | OFAC: запрет управленческого консалтинга лицам в РФ с 07.06.2022 | [29] | Подтверждено: определение от 8 мая 2022 года по E.O. 14071 («management consulting services … to any person located in the Russian Federation»), «takes effect June 07, 2022» | ● |
+| V-5 | OFAC: распространение запрета на ИТ-консалтинг с 12.09.2024 | [30] | Подтверждено: «IT consultancy and design services», поддержка и облачные сервисы для корпоративного ПО и ПО проектирования; вступает в силу 12:01 a.m. EDT 12 сентября 2024 года | ● |
+
+**Вывод перепроверки.** Пять ключевых цифр подтверждены по первоисточникам.
+Ограничение остаётся прежним: запреты OFAC касаются услуг, оказываемых
+**лицам в РФ**, а обратное направление (резидент РФ оказывает услугу клиенту в
+США) ими прямо не описано. Поэтому тезис 4 требует заключения санкционного
+юриста и не считается установленным фактом.
