@@ -246,6 +246,24 @@ is_active_file() {
     research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.py | \
     research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.log | \
     research/ai-team-management-program/exp/ai-team-management-program-736/check-pop-3m.py | \
+    research/ai-team-management-program/2026-11-16-vendor-academic-programs-international.md | \
+    research/ai-team-management-program/2026-11-16-vendor-education-russia.md | \
+    research/ai-team-management-program/2026-11-16-vendor-education-china.md | \
+    research/ai-team-management-program/2026-11-16-specialist-positioning-ru-us-cn.md | \
+    research/ai-team-management-program/2026-11-16-network-building-shuttle-diplomacy-evidence.md | \
+    research/ai-team-management-program/2026-11-16-university-codevelopment-project-selection.md | \
+    research/ai-team-management-program/2026-11-16-vendor-education-mechanisms-formats-evidence.md | \
+    research/ai-team-management-program/vendor-education-partnerships/README.md | \
+    research/ai-team-management-program/vendor-education-partnerships/00-introduction.md | \
+    research/ai-team-management-program/vendor-education-partnerships/10-theory.md | \
+    research/ai-team-management-program/vendor-education-partnerships/20-taxonomy.md | \
+    research/ai-team-management-program/vendor-education-partnerships/30-decision-framework.md | \
+    research/ai-team-management-program/vendor-education-partnerships/40-practice-and-cases.md | \
+    research/ai-team-management-program/vendor-education-partnerships/50-open-research.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-740/README.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-740/2026-11-16-brief-common.md | \
+    research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.py | \
+    research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.log | \
     research/ba-requirements/2026-10-28-agent-ba-industry-survey.md | \
     research/ba-requirements/exp/agent-ba-industry-703/README.md | \
     research/ba-requirements/exp/agent-ba-industry-703/cases.json | \
@@ -639,6 +657,11 @@ is_active_file() {
     projects/ai-team-management-program/pop-3m/03-appendix.md | \
     projects/ai-team-management-program/pop-3m/04-rfc-site-presentation.md | \
     projects/ai-team-management-program/pop-3m/05-detailed-economics.md | \
+    projects/ai-team-management-program/strategy/README.md | \
+    projects/ai-team-management-program/strategy/l1-l4-strategy.md | \
+    projects/ai-team-management-program/strategy/service-concept.md | \
+    projects/ai-team-management-program/strategy/personal-promotion-ru-us-cn.md | \
+    projects/ai-team-management-program/strategy/new-repository-plan.md | \
     projects/ba-ai-process/ba-meta-model/00-introduction.md | \
     projects/ba-ai-process/ba-meta-model/10-theory.md | \
     projects/ba-ai-process/ba-meta-model/20-taxonomy.md | \
