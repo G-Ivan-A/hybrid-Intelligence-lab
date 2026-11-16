@@ -1,0 +1,60 @@
+# Окно заморозки B-243 (issue #738): открытые PR и issue экосистемы, 2026-11-16 ~10:00 UTC
+# gh pr list / gh issue list --state open по каждому репозиторию; столбцы: номер, draft, дата, заголовок
+== G-Ivan-A/hybrid-Intelligence-lab
+739	true	2026-11-16	[WIP] Старт оптимизации Хаба
+729	false	2026-11-16	fix(#727): сверка после merge PR #728 — пять строк Спринта 13 → DONE; archive-tag падает с инструкцией для владельца, причина блокировки B-281 исправлена
+-- issues
+738	2026-11-16	Старт оптимизации Хаба
+== G-Ivan-A/mango_ba_prompts
+487	false	2026-11-16	feat(runs): RUN-0094 v2.0 — atomic L0 feasibility assessment of BCREQ-1199 v2 with «№ пп» (#486)
+-- issues
+486	2026-11-16	business-task Оценка исполнимости ТЗ по BCREQ-1199 2 версия доработка
+== G-Ivan-A/mango-ba-ai-runtime
+-- issues
+== G-Ivan-A/aether-orbis
+47	false	2026-10-24	docs: RFC и ADR-009 — Lean Global Compliance, анонимизация на границе и дешёвый гибрид
+-- issues
+46	2026-10-23	title: "architecture: RFP (Request for Proposal) — Lean Global Compliance & Budget-Optimized Hybrid Deployment"
+43	2026-09-11	tech-debt: pyproject.toml и packaging tooling (Industrial Hardening, после MVP)
+28	2026-08-18	[T5.5] Фаза 5: чек-лист соответствия перед релизом
+27	2026-08-18	[T5.4] Фаза 5: резервное копирование Raw / Source Store
+26	2026-08-18	[T5.3] Фаза 5: управление секретами
+25	2026-08-18	[T5.2] Фаза 5: VPS для состояния
+24	2026-08-18	[T5.1] Фаза 5: serverless-развёртывание вычислительных шагов
+23	2026-08-18	[T4.4] Фаза 4: сверка стоимости прогона с бюджетом
+22	2026-08-18	[T4.3] Фаза 4: тест явного ZERO при недостаточном контексте
+21	2026-08-18	[T4.2] Фаза 4: прогон направления «Анализ практик Хаба (Habr)»
+20	2026-08-18	[T4.1] Фаза 4: прогон направления «Репутационные технологии (GRA)»
+19	2026-08-18	[T3.6] Фаза 3: точки human-in-the-loop (заглушки MVP)
+18	2026-08-18	[T3.5] Фаза 3: обязательная 2FA для публичного API
+17	2026-08-18	[T3.4] Фаза 3: публичный API на FastAPI
+16	2026-08-18	[T3.3] Фаза 3: телеметрия по контракту
+15	2026-08-18	[T3.2] Фаза 3: реализация Sufficiency Gate
+14	2026-08-18	[T3.1] Фаза 3: реализация Relevance / Quality Gate
+13	2026-08-18	[T2.5] Фаза 2: кэширование и batch API на cost-sensitive ролях
+12	2026-08-18	[T2.4] Фаза 2: YAML-конфигурации направлений
+11	2026-08-18	[T2.3] Фаза 2: evaluation качества извлечения на целевых моделях
+10	2026-08-18	[T2.2] Фаза 2: подключение моделей РФ и Китая
+9	2026-08-18	[T2.1] Фаза 2: Model Router поверх LiteLLM
+== G-Ivan-A/aether-orbis-gra
+-- issues
+== G-Ivan-A/ba-ai-metamodel
+-- issues
+
+# ba-ai-metamodel @bc1249f141f92fb03b1b76d7151a05c3b3773819: файлы дерева
+README.md
+# коммитов: 1
+
+# Дома согласованного чтения спиц (+ есть, - нет) на main каждой спицы
+== mango_ba_prompts @b1044722 2026-11-16
+-AGENTS.md +.hub-profile.json -ops/backlog.md +pr-ops +docs/contracts +docs/vision.md +docs/concept.md +docs/adr -docs/README.md -.github/ISSUE_TEMPLATE/task.md -.github/ISSUE_TEMPLATE/task-creative.md +.github/workflows/validate.yml -AI_GOVERNANCE.md -AI_SESSION_HANDOVER_PROMPT.md 
+ profile keys: []  last_sync: {"date": "2026-08-17", "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/265", "hub_repo": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab", "h
+== mango-ba-ai-runtime @68ad8fc 2026-11-05
++AGENTS.md -.hub-profile.json -ops/backlog.md -pr-ops -docs/contracts -docs/vision.md -docs/concept.md -docs/adr -docs/README.md -.github/ISSUE_TEMPLATE/task.md -.github/ISSUE_TEMPLATE/task-creative.md +.github/workflows/validate.yml -AI_GOVERNANCE.md -AI_SESSION_HANDOVER_PROMPT.md 
+== aether-orbis @ead22d6 2026-10-23
+-AGENTS.md -.hub-profile.json -ops/backlog.md -pr-ops -docs/contracts +docs/vision.md +docs/concept.md +docs/adr +docs/README.md -.github/ISSUE_TEMPLATE/task.md -.github/ISSUE_TEMPLATE/task-creative.md -.github/workflows/validate.yml -AI_GOVERNANCE.md -AI_SESSION_HANDOVER_PROMPT.md 
+== aether-orbis-gra @dba1f68 2026-11-09
++AGENTS.md +.hub-profile.json +ops/backlog.md -pr-ops -docs/contracts +docs/vision.md +docs/concept.md +docs/adr +docs/README.md +.github/ISSUE_TEMPLATE/task.md +.github/ISSUE_TEMPLATE/task-creative.md +.github/workflows/validate.yml +AI_GOVERNANCE.md +AI_SESSION_HANDOVER_PROMPT.md 
+ profile keys: ['profile_version', 'archetype', 'environment']  last_sync: {"hub_commit": "48ebe5230be87ca5bf8a08b385e296a2987e9958", "date": "2026-11-04", "scope": "research/reputation-technologies: re-import of the current documents 
+== ba-ai-metamodel @bc1249f 2026-11-04
+-AGENTS.md -.hub-profile.json -ops/backlog.md -pr-ops -docs/contracts -docs/vision.md -docs/concept.md -docs/adr -docs/README.md -.github/ISSUE_TEMPLATE/task.md -.github/ISSUE_TEMPLATE/task-creative.md -.github/workflows/validate.yml -AI_GOVERNANCE.md -AI_SESSION_HANDOVER_PROMPT.md 

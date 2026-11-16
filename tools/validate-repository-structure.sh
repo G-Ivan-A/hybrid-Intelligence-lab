@@ -558,6 +558,9 @@ is_active_file() {
     research/hub/exp/ba-extraction-717/rehearse-contract.log | \
     research/hub/exp/ba-extraction-717/drift-snapshot.py | \
     research/hub/exp/ba-extraction-717/drift-baseline.log | \
+    research/hub/exp/ba-extraction-717/drift-54face1.log | \
+    research/hub/exp/ba-extraction-717/rehearse-contract-54face1.log | \
+    research/hub/exp/ba-extraction-717/freeze-window-2026-11-16.log | \
     research/hub/exp/independent-tech-debt-723/README.md | \
     research/hub/exp/independent-tech-debt-723/independence-check.sh | \
     research/hub/exp/independent-tech-debt-723/independence-check.log | \
@@ -758,6 +761,7 @@ is_active_file() {
     docs/analysis/2026-11-04-issue-721-execution-protocol-analysis.md | \
     docs/analysis/2026-11-04-issue-721-dialog-expert-review.md | \
     docs/analysis/2026-11-04-sprint-31-readiness-check.md | \
+    docs/analysis/2026-11-16-hub-optimization-start.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
     docs/analysis/2026-11-04-sprint-13-hub-normative-debt-selection.md | \
@@ -790,6 +794,8 @@ is_active_file() {
     tools/test-path-migration-manifest.sh | \
     tools/archive-tags.py | \
     tools/test-archive-tags.sh | \
+    tools/check-extraction-freeze.sh | \
+    tools/test-extraction-freeze.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-agents-md-integration.sh | \
     tools/test-evidence-structure-validator.sh | \
@@ -1206,6 +1212,9 @@ required_files=(
   "research/hub/exp/ba-extraction-717/rehearse-contract.log"
   "research/hub/exp/ba-extraction-717/drift-snapshot.py"
   "research/hub/exp/ba-extraction-717/drift-baseline.log"
+  "research/hub/exp/ba-extraction-717/drift-54face1.log"
+  "research/hub/exp/ba-extraction-717/rehearse-contract-54face1.log"
+  "research/hub/exp/ba-extraction-717/freeze-window-2026-11-16.log"
   "research/hub/exp/independent-tech-debt-723/README.md"
   "research/hub/exp/independent-tech-debt-723/independence-check.sh"
   "research/hub/exp/independent-tech-debt-723/independence-check.log"
@@ -1337,6 +1346,8 @@ required_files=(
   "tools/test-path-migration-manifest.sh"
   "tools/archive-tags.py"
   "tools/test-archive-tags.sh"
+  "tools/check-extraction-freeze.sh"
+  "tools/test-extraction-freeze.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
   "tools/test-reference-research-terminology.sh"
@@ -2183,7 +2194,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.62"
+require_text "ops/artifact-map.md" "version: 2.63"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2607,9 +2618,10 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.83"
+require_text "ops/backlog.md" "version: 1.84"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
-require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
+require_text "ops/backlog.md" "| B-235, слияние PR #718 | DONE | [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) / [PR #739](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/739); [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1) |"
+require_text "ops/backlog.md" "**B-307**"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
@@ -3365,6 +3377,8 @@ require_text ".github/workflows/validate.yml" "bash tools/test-nonempty-diff.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-path-migration-manifest.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-archive-tags.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-extraction-freeze.sh"
+require_text ".github/workflows/validate.yml" "bash tools/check-extraction-freeze.sh research/hub/exp/ba-extraction-717/ba-instance-params.txt"
 require_text ".github/workflows/archive-tag.yml" "python3 -I tools/archive-tags.py plan"
 require_text ".github/workflows/archive-tag.yml" "python3 -I tools/path-migration-manifest.py check"
 require_text ".github/workflows/archive-tag.yml" ".github/rulesets/archive-tags.json"
@@ -3381,6 +3395,9 @@ require_text "ops/README.md" "hub-project-extraction-contract.md"
 require_text "research/hub/exp/ba-extraction-717/README.md" "type: experiment"
 require_text "research/hub/exp/ba-extraction-717/rehearse-contract.log" "E5 OK: 100 backlog rows"
 require_text "research/hub/exp/ba-extraction-717/drift-baseline.log" "files: 1 ok"
+require_text "research/hub/exp/ba-extraction-717/rehearse-contract-54face1.log" "freeze: 0 commit(s) touch the sources after HUB_SHA"
+require_text "research/hub/exp/ba-extraction-717/rehearse-contract-54face1.log" "E5 OK: 100 backlog rows"
+require_text "research/hub/exp/ba-extraction-717/drift-54face1.log" "hub_ref: 54face1618f74154ae0f072bc3e5bfb3c4817754"
 require_text "research/hub/exp/independent-tech-debt-723/README.md" "type: experiment"
 require_text "research/hub/exp/independent-tech-debt-723/independence-check.log" "Hub fetch steps = 0"
 require_text "research/hub/exp/independent-tech-debt-727/README.md" "type: experiment"
