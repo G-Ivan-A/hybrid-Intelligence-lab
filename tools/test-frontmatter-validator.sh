@@ -98,6 +98,7 @@ make_tmp_file audit_invalid_status_doc docs/audit
 make_tmp_file audit_missing_sections_doc docs/audit
 
 expect_pass "GitHub PR template without visible frontmatter" .github/pull_request_template.md
+expect_pass "Presentation package file without frontmatter" projects/ai-team-management-program/pop-3m/01-project-summary.md
 
 write_doc "$knowledge_dir/valid.md" "status: reviewed
 version: 1.0
