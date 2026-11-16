@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-11-04
+version: 0.3
+updated: 2026-11-16
 temperature: 0.1
 type: experiment
 ---
@@ -13,6 +13,9 @@ type: experiment
 и контракта
 [`../../../../ops/hub-project-extraction-contract.md`](../../../../ops/hub-project-extraction-contract.md),
 issue [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717).
+Возобновление выноса (B-243, Ш3.0) — issue
+[#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738),
+анализ [`../../../../docs/analysis/2026-11-16-hub-optimization-start.md`](../../../../docs/analysis/2026-11-16-hub-optimization-start.md).
 
 ## Что здесь проверяется
 
@@ -39,6 +42,9 @@ issue [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717).
 | `rehearse-contract.log` | Вывод репетиции (без построчного JSONL журнала ссылок) |
 | `drift-snapshot.py` | Снимок зависимостей параметров при одном коммите Хаба: источники (число, дайджест, каталоги против `DIR`), файлы Хаба с упоминанием источников, шаги CI против `CI_STEP`/`CI_JOB`, разделы бэклога против `BACKLOG`, файлы целевого репозитория, ссылки репозиториев экосистемы на источники (по SHA и плавающие) и закрепления `hub_commit`. Только чтение |
 | `drift-baseline.log` | Базовый снимок при `c06075d` и `main` экосистемы на 2026-11-04 |
+| `drift-54face1.log` | Снимок B-243 при `54face1` и `main` экосистемы на 2026-11-16, с разделом `## since c06075d` (коммиты и файлы источников после базового снимка) |
+| `rehearse-contract-54face1.log` | Итог репетиции E1, E2, E3, E5 и сканирования E4 при `HUB_SHA` = `54face1` (инструмент — из `HUB_SHA`, как в контракте) |
+| `freeze-window-2026-11-16.log` | Окно заморозки: открытые PR и issue каждого репозитория экосистемы, дерево `ba-ai-metamodel`, дома согласованного чтения спиц |
 
 ## Воспроизведение
 
@@ -66,6 +72,12 @@ python3 -I research/hub/exp/ba-extraction-717/drift-snapshot.py \
   --spoke aether-orbis-gra=/tmp/eco/aether-orbis-gra > /tmp/drift-new.log
 diff <(grep -v '^#' research/hub/exp/ba-extraction-717/drift-baseline.log) \
   <(sed '/^## since/,$d' /tmp/drift-new.log | grep -v '^#')
+```
+
+```bash
+# заморозка источников на стороне Хаба (шаг CI validate до B-249)
+bash tools/check-extraction-freeze.sh research/hub/exp/ba-extraction-717/ba-instance-params.txt
+bash tools/test-extraction-freeze.sh
 ```
 
 Репетиция отличается от контракта тремя подстановками: параметры читаются из
@@ -112,3 +124,37 @@ diff <(grep -v '^#' research/hub/exp/ba-extraction-717/drift-baseline.log) \
 
 Пустой `diff` нового снимка с базовым означает, что параметры и задачи выноса
 действуют без правки; иначе каждая строка разницы — пункт сверки в B-243.
+
+## Сверка B-243 (`HUB_SHA` = `54face1`, 2026-11-16)
+
+Триггер B-243 — решение владельца в issue
+[#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738): работа
+над `mango_ba_prompts` и связанными репозиториями на паузе два дня. Новый
+`HUB_SHA` — `main` на момент решения (`54face1`, merge PR #737).
+
+| Строка разницы с базовым снимком | Куда отнесена |
+| --- | --- |
+| Источники 322 → 324 файла: 2 коммита #719 (правило PT-5), `M ba-meta-model/20-taxonomy.md`, `A experiments/issue_719_runtime_compile_check.{log,sh}` | Покрыто `MAP: projects/ba-ai-process/=`; параметры не меняются |
+| `dir experiments`: 34 → 36 файлов | Каталог объявлен в `DIR`; без изменений |
+| Хаб: 85 → 91 файл упоминает источники (ADR-022, анализ шага 1, RFC #721, `docs/ecosystem-map.md`, этот контейнер) | Исторические записи остаются; живые указатели — в B-249 |
+| Бэклог: раздел «Спринт 30» упоминает источники (34 строки) | Раздел остаётся в Хабе (задачи выноса); `BACKLOG` не меняется |
+| `mango_ba_prompts`: плавающих ссылок 48 в 21 файле → 162 в 78 файлах; по SHA — 556 без изменений | B-249: закрепить или переписать до удаления источников |
+| `mango-ba-ai-runtime`: закрепление `dbf3baa` → `b3a9e16` | B-248 переводит закрепление на коммит нового репозитория |
+| CI: шаги и задания | Без изменений: `CI_STEP` и `CI_JOB` действуют |
+
+| Проверка | Результат |
+| --- | --- |
+| Шаг 0 | Заморозка: 0 коммитов в источниках после `HUB_SHA`; манифест — 324 файла |
+| E1 | Геном — 9 файлов; пересечение с переносом и расхождение каталогов с `DIR` пусты; валидаторы генома проходят |
+| E2 | 193 исторических пути; 234 коммита; конфликт — `README.md` |
+| E3 | 75 файлов: `url-in` 490, `file-out` 64; повторный `--check` — 0 файлов |
+| E4 | `scan` — 366 строк |
+| E5 | 13 разделов, 100 строк `B-`; валидаторы проходят |
+| Цель | `ba-ai-metamodel@bc1249f` — один `README.md`, один коммит |
+| Окно | Открытых PR и issue, меняющих источники, нет ни в одном репозитории экосистемы |
+
+Заморозку держит шаг CI Хаба «Check BA meta-model extraction source freeze»
+(`tools/check-extraction-freeze.sh`): любой коммит в путях `MAP` после
+`HUB_SHA` роняет `validate`. Шаг удаляет PR надгробия B-249. Задача выноса —
+[ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1);
+её блок `extraction-params` побайтно совпадает с `ba-instance-params.txt`.
