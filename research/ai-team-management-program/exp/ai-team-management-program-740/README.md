@@ -175,9 +175,9 @@ Decision Framework выводился из материала, а не прид�
 | Видение, концепция, архитектура, дорожная карта L1–L4 | [`strategy/l1-l4-strategy.md`](../../../../projects/ai-team-management-program/strategy/l1-l4-strategy.md) | ревью |
 | Концепция стратегии услуг | [`strategy/service-concept.md`](../../../../projects/ai-team-management-program/strategy/service-concept.md) | ревью |
 | Стратегия продвижения в России, США, Китае с вероятностями | [`strategy/personal-promotion-ru-us-cn.md`](../../../../projects/ai-team-management-program/strategy/personal-promotion-ru-us-cn.md); модель вероятностей | `strategy-probabilities.py` против лога в CI |
-| Встречи с руководителями через курс Технограда | `personal-promotion-ru-us-cn.md`, «Челночная дипломатия»; отчёт S5 | ревью |
-| Вуз и BA-метамодель или альтернатива | отчёт S6; `personal-promotion-ru-us-cn.md`, «Вуз» | ревью |
-| Резюме и проекты экосистемы | `personal-promotion-ru-us-cn.md`, «Резюме и портфель» | ревью |
+| Встречи с руководителями через курс Технограда | `personal-promotion-ru-us-cn.md`, §3 «Челночная дипломатия» и §6 «Техноград»; отчёт S5 | ревью |
+| Вуз и BA-метамодель или альтернатива | отчёт S6; `personal-promotion-ru-us-cn.md`, §4 «Вуз и проект» | ревью |
+| Резюме и проекты экосистемы | `personal-promotion-ru-us-cn.md`, §5 «CV и публичный профиль» | ревью |
 | Шаги создания нового репозитория и имена | [`strategy/new-repository-plan.md`](../../../../projects/ai-team-management-program/strategy/new-repository-plan.md) | ревью |
 | Метка «для переноса» | баннер во всех файлах пакета | `grep -L "Для переноса"` по пакету |
 | Стратегия в `projects/ai-team-management-program` | `strategy/` | ревью |

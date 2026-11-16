@@ -127,7 +127,7 @@ MAP: research/ai-team-management-program/exp/ai-team-management-program-740/=res
 DIR: strategy | стратегия и концепция услуги (issue #740)
 DIR: research | расчёты вероятностей
 CI_JOB: validate
-CI_STEP: validate / Check strategy probabilities output
+CI_STEP: validate / Check strategy probabilities model of issue 740
 BACKLOG: ## Спринт 33:
 HISTORICAL: research/exp-740/
 EXCLUDE:
