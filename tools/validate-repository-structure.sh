@@ -761,6 +761,7 @@ is_active_file() {
     docs/analysis/2026-11-04-issue-721-execution-protocol-analysis.md | \
     docs/analysis/2026-11-04-issue-721-dialog-expert-review.md | \
     docs/analysis/2026-11-04-sprint-31-readiness-check.md | \
+    docs/analysis/2026-11-16-hub-optimization-start.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
     docs/analysis/2026-11-04-sprint-13-hub-normative-debt-selection.md | \
@@ -2193,11 +2194,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.61"
+require_text "ops/artifact-map.md" "version: 2.63"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-11-11"
+require_text "ops/artifact-map.md" "updated: 2026-11-16"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2617,9 +2618,10 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.82"
+require_text "ops/backlog.md" "version: 1.84"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
-require_text "ops/backlog.md" "| B-235, слияние PR #718 | deferred (triggered) | - (deferred) |"
+require_text "ops/backlog.md" "| B-235, слияние PR #718 | DONE | [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) / [PR #739](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/739); [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1) |"
+require_text "ops/backlog.md" "**B-307**"
 require_text "ops/backlog.md" "../docs/ecosystem-map.md#матрица-проектов"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
