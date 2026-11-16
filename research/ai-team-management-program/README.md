@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-11-11
+version: 0.5
+updated: 2026-11-16
 temperature: 0.1
 ---
 
@@ -18,7 +18,10 @@ temperature: 0.1
 длительность программы, отток и усвоение (итерация 3) — issue
 [#734](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734),
 презентационный пакет на 3 месяца (итерация 4) — issue
-[#736](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/736); полная
+[#736](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/736),
+комплексная стратегия продвижения через образовательные программы вендоров
+(итерация 5) — issue
+[#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740); полная
 постановка с граничными кейсами — в
 [`docs/task-contract.md`](../../projects/ai-team-management-program/docs/task-contract.md)
 проекта.
@@ -79,15 +82,30 @@ temperature: 0.1
 | [2026-11-11-international-program-duration-survey.md](2026-11-11-international-program-duration-survey.md) | обоснование срока; доисследование конкурентов | Международные программы 2025–2026: длительность, формат, цена; отраслевая статистика длительности заказных программ и её ограничения. |
 | [2026-11-11-program-duration-attrition-absorption-evidence.md](2026-11-11-program-duration-attrition-absorption-evidence.md) | риск оттока у 6 месяцев; риск неусвоения у короткого варианта | Мета-анализы и исследования: связь длительности с оттоком, переносом и результатом, формирование привычки, скорость эффекта от ИИ, пилоты ИИ-ассистентов. |
 
+Отчёты итерации 5 (issue #740, режим Creative). Синтез семи отчётов — модуль
+RRP [`vendor-education-partnerships/`](vendor-education-partnerships/00-introduction.md):
+
+| Код | Файл | Требование задачи #740 | Назначение |
+| --- | --- | --- | --- |
+| S1 | [2026-11-16-vendor-academic-programs-international.md](2026-11-16-vendor-academic-programs-international.md) | матрица кейсов международной практики | Академические программы Cisco, SAP, AWS, Microsoft, JetBrains и др.: форматы, охват и что известно об эффекте на продажи. |
+| S2 | [2026-11-16-vendor-education-russia.md](2026-11-16-vendor-education-russia.md) | матрица кейсов; Россия | Государственные рамки (цифровые кафедры, ПИШ, 273-ФЗ), кейсы 1С, Яндекса, VK, PT, уход вендоров в 2022 году. |
+| S3 | [2026-11-16-vendor-education-china.md](2026-11-16-vendor-education-china.md) | матрица кейсов; Китай | Программа 产学合作协同育人, Huawei, Kingdee, Yonyou; российско-китайские каналы и санкционные риски. |
+| S4 | [2026-11-16-specialist-positioning-ru-us-cn.md](2026-11-16-specialist-positioning-ru-us-cn.md) | стратегия продвижения в России, США, Китае | Спрос, барьеры входа (санкции, визы, разрешения на работу), монетизация и конверсии воронки консультанта. |
+| S5 | [2026-11-16-network-building-shuttle-diplomacy-evidence.md](2026-11-16-network-building-shuttle-diplomacy-evidence.md) | встречи через Техноград; «челночная дипломатия» | Теория брокерства, форматы встреч руководителей, конверсия, этика и ст. 575 ГК РФ. |
+| S6 | [2026-11-16-university-codevelopment-project-selection.md](2026-11-16-university-codevelopment-project-selection.md) | договорённость с ИИ-лабораторией вуза о BA-метамодели | Как методологические организации работают с вузами; многокритериальный выбор проекта экосистемы для вуза. |
+| S7 | [2026-11-16-vendor-education-mechanisms-formats-evidence.md](2026-11-16-vendor-education-mechanisms-formats-evidence.md) | гипотеза; матрица форматов по целям | Механизмы М1–М6 связи обучения с продажами, матрица «формат × цель», уровни измерения L0–L5. |
+
 ## Сопутствующие артефакты
 
 | Артефакт | Назначение |
 | --- | --- |
-| [external-sources-registry.md](external-sources-registry.md) | Local Extension к Base Registry Хаба: все внешние источники пятнадцати отчётов (идентификаторы `atm-NNN`), тип, язык, стадия, отчёты-потребители. Таблица генерируется скриптом, а не правится руками. |
+| [external-sources-registry.md](external-sources-registry.md) | Local Extension к Base Registry Хаба: все внешние источники двадцати двух отчётов (идентификаторы `atm-NNN`), тип, язык, стадия, отчёты-потребители. Таблица генерируется скриптом, а не правится руками. |
 | [exp/ai-team-management-program-730/](exp/ai-team-management-program-730/README.md) | Воспроизводимые расчёты: модель экономики (`economics-model.py` → `economics-model.log`) и генератор реестра источников (`build-sources-registry.py`). |
 | [exp/ai-team-management-program-732/](exp/ai-team-management-program-732/README.md) | Итерация 2: общий бриф исследовательских потоков, вёрстка резюме проекта в PDF на две страницы A4, учёт исследовательских токенов. |
 | [exp/ai-team-management-program-734/](exp/ai-team-management-program-734/README.md) | Итерация 3: бриф потоков о длительности, оттоке и усвоении, способ перепроверки PDF при гейте G5, учёт исследовательских токенов. |
 | [exp/ai-team-management-program-736/](exp/ai-team-management-program-736/README.md) | Итерация 4: рабочий документ пакета [`pop-3m`](../../projects/ai-team-management-program/pop-3m/) — постановка с граничными кейсами, SSOT, обоснование ставок, отклонённые требования, КРИК-ГЕЙТ; модель экономики (`economics-pop-3m.py` → `economics-pop-3m.log`) и проверка пакета `check-pop-3m.py` |
+| [vendor-education-partnerships/](vendor-education-partnerships/00-introduction.md) | Итерация 5: модуль RRP о партнёрствах вендоров с вузами — теория и подгипотезы H1–H3, таксономия 17 форматов, рамка решений (матрица «формат × цель», правила П1–П8), матрица кейсов RU/CN/международных, пробелы и дизайн пилота. |
+| [exp/ai-team-management-program-740/](exp/ai-team-management-program-740/README.md) | Итерация 5: рабочий документ — постановка, SSOT, граничные кейсы, требования → артефакты, апелляции, сводка G5; модель вероятностей стратегий (`strategy-probabilities.py` → `strategy-probabilities.log`). |
 
 ## Как воспроизвести
 
@@ -101,6 +119,10 @@ python3 research/ai-team-management-program/exp/ai-team-management-program-730/b
 
 # резюме проекта на 6 и 3 месяца: PDF A4, не больше двух страниц и 900 слов (нужен Chrome)
 python3 -I research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py
+
+# вероятности стратегий продвижения (итерация 5): сверка с логом
+python3 -I research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.py \
+  | diff - research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.log
 ```
 
 ## Границы и известные пробелы
@@ -128,3 +150,9 @@ python3 -I research/ai-team-management-program/exp/ai-team-management-program-73
   косвенные данные и прямо об этом пишут. Отраслевая статистика длительности
   (Mercer | Mettl, Persistence Market Research) независимой проверки не имеет
   и помечена `◐`.
+- Итерация 5: ни одна из 50 изученных вендорских программ не публикует
+  эффект образовательного канала на продажи. Единственное причинное
+  исследование (полевой эксперимент облачного провайдера, S7 [23]) касается
+  обучения уже купивших клиентов. Связь «студент → будущая закупка» не
+  измерена; модель вероятностей поэтому опирается на конверсии B2B-воронки и
+  оценки `○`, которые закрывает журнал воронки (пробелы Г-1…Г-8 модуля).

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.84
+version: 1.85
 updated: 2026-11-16
 temperature: 0.1
 type: backlog
@@ -76,6 +76,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/723"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/721"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -967,6 +968,27 @@ CHANGELOG, а каталог-архив не сохраняет адресов. 
 
 ---
 
+## Спринт 33: Стратегия «вендор — вуз — клиент вендора» и вынос в приватную спицу
+
+**Story.** Issue #740 проверил гипотезу «встраивание ИТ-инструментов вендора в образовательные программы повышает продажи вендора». Семь отчётов M3 и RRP-модуль `vendor-education-partnerships` показали: гипотеза подтверждена только для обучения действующих клиентов вендора, а продаж от студенческих программ не публикует ни одна из 50 изученных программ. На этой базе собраны стратегия L1–L4, концепция услуг, стратегия продвижения RU/US/CN с моделью вероятностей и план приватного репозитория. Предыдущий шаг — итерация 4 (#736, PR #737); этот спринт открывает исполнение стратегии.
+
+**Цель.** Стратегия проверена на первых договорах и пилоте, а её коммерческий слой живёт в приватной спице.
+
+**Критерий закрытия.** B-308…B-314 закрыты или отклонены владельцем; по B-315 принято решение по триггеру.
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **B-308** | Получить решения владельца по стратегии #740: Р1–Р4, Д1–Д6, ЛР1–ЛР5 | P1 | - | todo | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [решения L1–L4](../projects/ai-team-management-program/strategy/l1-l4-strategy.md#5-решения-владельца) | Исполнитель записал рекомендации, но имя спицы, граница переноса, первый вендор, первые вузы, лицензия BA-метамодели и портфель RU-A + RU-B — решения владельца. Без них не стартуют B-309…B-314. | Hybrid |
+| **B-309** | Создать приватную спицу (рекомендация — `aether-orbis-bridge`) и зарегистрировать её в матрице экосистемы | P2 | B-307, B-308 | todo | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [план нового репозитория](../projects/ai-team-management-program/strategy/new-repository-plan.md#4-шаги-создания-и-выноса) | Шаги 2–3 плана. Создание репозитория — внешнее трудно обратимое действие, поэтому его выполняет владелец. Имя приватного репозитория в публичной матрице раскрывается (решение Р4). | Hybrid |
+| **B-310** | Вынести стратегию #740 в спицу по контракту выноса (E1–E6) и оставить в Хабе надгробие | P2 | B-309 | todo | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [план нового репозитория, §4.1](../projects/ai-team-management-program/strategy/new-repository-plan.md#41-черновик-блока-параметров-вариант-b) | Шаги 4–11 плана: заморозка источников по `HUB_SHA`, импорт с историей, перенос шага CI модели вероятностей, бэклог Спринта 33. Вынос не стирает git-историю Хаба: коммерческие данные с самого начала живут только в спице. | Structured |
+| **B-311** | Юридическая проверка: сетевая форма ДПО, лицензия вуза, санкционные списки треков CN и US (Г-7, Г-8) | P2 | B-308 | todo | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [открытые вопросы модуля](../research/ai-team-management-program/vendor-education-partnerships/50-open-research.md#1-пробелы-доказательной-базы) | Текст порядка сетевой формы (приказ № 882/391) не открыт, статус SenseTime, iFlytek и Inspur не проверен юристом. Заключение хранится в приватной спице, в Хаб попадает только вывод «допустимо / недопустимо». | Hybrid |
+| **B-312** | Вести журнал воронки и раз в квартал пересчитывать модель вероятностей стратегий (Г-3, Г-4) | P2 | B-309 | todo | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [стратегия продвижения, §8](../projects/ai-team-management-program/strategy/personal-promotion-ru-us-cn.md#8-журнал-воронки-и-пересчёт) | Параметры `p_meeting`, `p_proposal`, `p_contract` — допущения и иностранные ставки (`○`). Журнал считает только счётчики по коду стратегии, без имён. Порог пересмотра: за 6 месяцев меньше 1 договора при 30+ тёплых контактах. | Structured |
+| **B-313** | Провести пилот совместной ДПО для клиентов вендора с листом ожидания (Г-1, Г-5, Г-6) | P2 | B-308, B-311 | todo | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [дизайн пилота](../research/ai-team-management-program/vendor-education-partnerships/50-open-research.md#2-дизайн-пилота-совместная-дпо-для-клиентов-вендора) | Единственная проверка ядра гипотезы issue на российском рынке. Порог опровержения: разница в активных местах между волнами ≤0 в двух пилотах подряд — линия «продажи» снимается. | Creative |
+| **B-314** | Обновить CV и публичный профиль специалиста по чек-листу стратегии продвижения | P2 | B-308 | todo | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [стратегия продвижения, §5](../projects/ai-team-management-program/strategy/personal-promotion-ru-us-cn.md#5-cv-и-публичный-профиль) | Семь пунктов чек-листа: позиционирование «соединителя», ссылки на публичные отчёты Хаба, измеримые результаты. Личные контакты в Хаб не вносятся. | Hybrid |
+| **B-315** | Дополнительное исследование по триггеру: когортное исследование выпускников (Г-2) | P3 | B-313 | deferred (triggered) | [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) / [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741) | [открытые вопросы модуля, §4](../research/ai-team-management-program/vendor-education-partnerships/50-open-research.md#4-предлагаемые-задачи) | Связка «студент знакомится с инструментом → его работодатель покупает» не измерена ни в одном источнике. Триггер — вуз-партнёр после пилота B-313 готов дать доступ к выпускникам. | Creative |
+
+---
+
 ## Источники активного порядка
 
 | Источник | Что даёт бэклогу |
@@ -993,4 +1015,5 @@ CHANGELOG, а каталог-архив не сохраняет адресов. 
 | [RFC #715](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md), принят в issue [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) | Источник Спринта 30 (B-234…B-267): шаги 1–7 дорожной карты, решения владельца Q-1…Q-5 и замена таблицы статусов репозиториев ссылкой на единый реестр. |
 | Issue [#721](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/721) и [RFC завершения выноса GRA](../docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md) | Источник задач B-268…B-286 (Спринт 31): решение владельца, предусловия в спице, перенос задач Спринта 29, manifest redirect в валидаторах, вынос домена из дерева с архивом тегом ([ADR-022](../docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md)) и реестры. Фактическая база — [evidence-контейнер](../research/hub/exp/gra-extraction-cleanup-721/README.md). |
 | Issue [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) и [анализ старта оптимизации Хаба](../docs/analysis/2026-11-16-hub-optimization-start.md) | Решение владельца о возобновлении выноса метамодели БА (окно заморозки 2026-11-16): исполнение B-243, снятие триггеров B-244…B-250, задача B-307 и рекомендации по бэклогу. |
+| Issue [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) и [стратегия L1–L4](../projects/ai-team-management-program/strategy/l1-l4-strategy.md) | Источник задач B-308…B-315 (Спринт 33): решения владельца, приватная спица, юридическая проверка, журнал воронки, пилот ДПО, CV. |
 | GitHub Issues/PR | История выполненных задач, review discussion and implementation evidence. |

@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.29
-updated: 2026-11-04
+version: 1.30
+updated: 2026-11-16
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -42,7 +42,7 @@ source: research/README-old.md
 | [reputation-technologies/](reputation-technologies/README.md) | **Выведен из Хаба** (RFC #721, ADR-022, issue #725): домен репутационных технологий **GRA** и курса «Технограда» живёт в спице [`aether-orbis-gra`](https://github.com/G-Ivan-A/aether-orbis-gra). Здесь остался только манифест redirect — адрес каждого прежнего пути (спица, тег `archive/reputation-technologies-2026-11`, удалённое). |
 | [ba-requirements/](ba-requirements/) | Нормализация входа BA-процессов: универсальная таксономия инициирующих артефактов и стейкхолдеров, цикл нормализации с гейтами, процесс статистики требований и Mango-специализированный срез на корпусе `runs/` (`scope: universal + mango`). |
 | [education/](education/) | Теоретическая основа для образовательных модулей Хаба: source-backed survey предметных областей, таксономии и матрицы принятия решений (`scope: repo-wide`). Учебный продукт на их основе живёт в [education/](../education/). |
-| [ai-team-management-program/](ai-team-management-program/README.md) | Доказательная база паспорта проекта «ИИ в работе с командой» (issue #730): международные бенчмарки, топ-10 вузов и бизнес-школ РФ, статистика внедрения ИИ в РФ с provenance, методологии корпоративного обучения, рыночные данные экономики, факты о кандидатах; итерация 2 (issue #732): аудит публичных каналов кандидатов, стартапы и МСБ (ИИ-агенты, робототехника, автоматизация процессов) и их базы, пять управленческих кейсов, дизайн нескольких кейсов в группе и формат ответа заказчику; Local Extension реестр источников (`scope: project`). |
+| [ai-team-management-program/](ai-team-management-program/README.md) | Доказательная база паспорта проекта «ИИ в работе с командой» (issue #730): международные бенчмарки, топ-10 вузов и бизнес-школ РФ, статистика внедрения ИИ в РФ с provenance, методологии корпоративного обучения, рыночные данные экономики, факты о кандидатах; итерация 2 (issue #732): аудит публичных каналов кандидатов, стартапы и МСБ (ИИ-агенты, робототехника, автоматизация процессов) и их базы, пять управленческих кейсов, дизайн нескольких кейсов в группе и формат ответа заказчику; итерации 3–4 (issues #734, #736): длительность программ и пакет `pop-3m`; итерация 5 (issue #740): вендорские образовательные программы (мир, Россия, Китай), механизмы и форматы, позиционирование специалиста RU/US/CN, челночная дипломатия, выбор вуза и проекта, RRP-модуль `vendor-education-partnerships/` и модель вероятностей стратегий; Local Extension реестр источников (`scope: project`). |
 
 ### Подкаталог `hub/`
 
@@ -86,7 +86,7 @@ source: research/README-old.md
 
 | Файл | Назначение |
 | --- | --- |
-| [README.md](ai-team-management-program/README.md) | Навигация по двенадцати отчётам M3 (Discussion Paper / Survey) с разделами G5-перепроверки, обоснование выбора `research/` как дома исследований, воспроизведение расчётов. |
+| [README.md](ai-team-management-program/README.md) | Навигация по двадцати двум отчётам M3 (Discussion Paper / Survey) с разделами G5-перепроверки, обоснование выбора `research/` как дома исследований, воспроизведение расчётов. |
 | [external-sources-registry.md](ai-team-management-program/external-sources-registry.md) | Local Extension реестр внешних источников (`atm-NNN`), генерируется из разделов «Источники» отчётов. |
 | [exp/ai-team-management-program-730/](ai-team-management-program/exp/ai-team-management-program-730/README.md) | Воспроизводимая модель экономики (NRE отдельно от Delivery, цена, маржа, чувствительность) и генератор реестра источников. |
 | [2026-11-11-candidate-public-channels-audit.md](ai-team-management-program/2026-11-11-candidate-public-channels-audit.md) | Аудит публичных профессиональных каналов кандидатов итерации 1 и шкала доступности контакта (issue #732). |
@@ -95,6 +95,15 @@ source: research/README-old.md
 | [2026-11-11-ai-management-use-cases-evidence.md](ai-team-management-program/2026-11-11-ai-management-use-cases-evidence.md) | Доказательная база пяти управленческих кейсов ИИ: внедрения в России и за рубежом. |
 | [2026-11-11-multi-case-design-and-proposal-format-evidence.md](ai-team-management-program/2026-11-11-multi-case-design-and-proposal-format-evidence.md) | Несколько кейсов в одной группе, формат ответа заказчику на двух страницах, нефинансовая мотивация экспертов. |
 | [exp/ai-team-management-program-732/](ai-team-management-program/exp/ai-team-management-program-732/README.md) | Итерация 2: общий бриф исследовательских потоков, вёрстка ответа заказчику в PDF A4, учёт исследовательских токенов. |
+| [2026-11-16-vendor-academic-programs-international.md](ai-team-management-program/2026-11-16-vendor-academic-programs-international.md) | S1, итерация 5 (issue #740): международная матрица академических программ ИТ-вендоров (17 кейсов и 4 негативных), механизм «выучил → купил» и проверка гипотезы. |
+| [2026-11-16-vendor-education-russia.md](ai-team-management-program/2026-11-16-vendor-education-russia.md) | S2: вендорские образовательные программы и институциональное поле вузов в России, сетевая форма (ст. 15 273-ФЗ). |
+| [2026-11-16-vendor-education-china.md](ai-team-management-program/2026-11-16-vendor-education-china.md) | S3: вендорско-университетское образование в Китае (программа Минобра КНР 产学合作协同育人) и вход российского специалиста на рынок. |
+| [2026-11-16-vendor-education-mechanisms-formats-evidence.md](ai-team-management-program/2026-11-16-vendor-education-mechanisms-formats-evidence.md) | S7: образование от вендора и бизнес-результаты — механизмы, типология форматов, модель измерения. |
+| [2026-11-16-specialist-positioning-ru-us-cn.md](ai-team-management-program/2026-11-16-specialist-positioning-ru-us-cn.md) | S4: позиционирование специалиста по корпоративному обучению и ИИ-адопции в России, США и Китае — спрос, барьеры входа, базовые ставки. |
+| [2026-11-16-network-building-shuttle-diplomacy-evidence.md](ai-team-management-program/2026-11-16-network-building-shuttle-diplomacy-evidence.md) | S5: «челночная дипломатия» — доказательная база сетевого брокерства и форматов встреч с руководителями. |
+| [2026-11-16-university-codevelopment-project-selection.md](ai-team-management-program/2026-11-16-university-codevelopment-project-selection.md) | S6: совместная разработка методологии с ИИ-лабораторией вуза — какой проект экосистемы предлагать; лидирует сборная ДПО «ИИ для бизнес-аналитиков». |
+| [vendor-education-partnerships/](ai-team-management-program/vendor-education-partnerships/00-introduction.md) | RRP-модуль (issue #740): теория, таксономия форматов, рамка решений «формат × цель» с правилами П1–П8, кейсы, открытые вопросы и дизайн пилота. |
+| [exp/ai-team-management-program-740/](ai-team-management-program/exp/ai-team-management-program-740/README.md) | Итерация 5: общий бриф, гейт G5 по семи отчётам, модель вероятностей стратегий RU/US/CN (`strategy-probabilities.py`, сверка с `.log` в CI). |
 
 ### Подкаталог `ba-requirements/`
 

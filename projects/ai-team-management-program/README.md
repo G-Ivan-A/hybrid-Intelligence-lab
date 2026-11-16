@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-11-11
+version: 0.5
+updated: 2026-11-16
 temperature: 0.3
 contributors: [konard]
 ai-models: [claude-opus-5-5]
@@ -49,6 +49,18 @@ ai-models: [claude-opus-5-5]
 КРИК-ГЕЙТ — в рабочем документе
 [`exp/ai-team-management-program-736/`](../../research/ai-team-management-program/exp/ai-team-management-program-736/README.md).
 
+Итерация 5 ([issue #740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740))
+добавила каталог [`strategy/`](strategy/README.md) — стратегию продвижения
+через образовательные программы ИТ-вендоров: видение, концепцию, архитектуру
+и дорожную карту по уровням L1–L4, концепцию услуг для вендора, стратегию
+продвижения специалиста в России, США и Китае с вероятностями и план нового
+приватного репозитория. Все файлы каталога помечены «для переноса»: после
+решения владельца они уходят в приватную спицу. Доказательная база — модуль
+RRP
+[`vendor-education-partnerships/`](../../research/ai-team-management-program/vendor-education-partnerships/00-introduction.md)
+и рабочий документ
+[`exp/ai-team-management-program-740/`](../../research/ai-team-management-program/exp/ai-team-management-program-740/README.md).
+
 ## Статус и граница
 
 Статус `draft`: паспорт подготовлен без возможности задать вопросы заказчику
@@ -67,6 +79,7 @@ ai-models: [claude-opus-5-5]
 | [pop-3m/03-appendix.md](pop-3m/03-appendix.md) | Приложение: метрики исследования, обоснование фреймворков, единый стек JustAI, кандидаты на роли | Заказчик |
 | [pop-3m/04-rfc-site-presentation.md](pop-3m/04-rfc-site-presentation.md) | RFC сайта-презентации: структура, Jekyll и GitHub Actions, промпт инициализации, критерии приёмки | Разработчик сайта, ИИ-агент |
 | [pop-3m/05-detailed-economics.md](pop-3m/05-detailed-economics.md) | Детализированная экономика: NRE и OPEX по статьям, COGS, цена, маржа | Заказчик по запросу |
+| [strategy/README.md](strategy/README.md) | Стратегия продвижения (итерация 5, «для переноса»): L1–L4, концепция услуг, продвижение в RU/US/CN с вероятностями, план приватного репозитория | Владелец, исполнитель |
 | [docs/task-contract.md](docs/task-contract.md) | Полная постановка задачи по пяти уровням, SSOT, допущения, граничные случаи, бюджет исследований | Исполнитель, ревьюер |
 | [docs/methodology/project-summary-template.md](docs/methodology/project-summary-template.md) | Шаблон резюме проекта на две страницы A4: правила «только факты запроса», «гипотеза — только в допущениях», «резюме не противоречит паспорту»; структура по ТЗ, чек-лист | Исполнитель, методолог |
 | [docs/passport/project-summary-6m.md](docs/passport/project-summary-6m.md) ([PDF](docs/passport/project-summary-6m.pdf)) | Резюме проекта, вариант на 6 месяцев: две страницы A4 по шаблону | Заказчик |
