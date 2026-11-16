@@ -1,5 +1,5 @@
 HUB_REPO: G-Ivan-A/hybrid-Intelligence-lab
-HUB_SHA: c06075d0b45da70cb68e2df3851b861b5ec3aed1
+HUB_SHA: 54face1618f74154ae0f072bc3e5bfb3c4817754
 MAP: projects/ba-ai-process/=
 MAP: research/mango/=research/mango/
 MAP: docs/ba-meta-model-overview.md=docs/ba-meta-model-overview.md

@@ -78,6 +78,14 @@ jobs:
       - name: Test archive tag tool
         run: bash tools/test-archive-tags.sh
 
+      - name: Test extraction freeze check
+        run: bash tools/test-extraction-freeze.sh
+
+      - name: Check BA meta-model extraction source freeze
+        # B-243 (issue #738): источники выноса в ba-ai-metamodel заморожены на
+        # HUB_SHA из параметров. Снимает шаг PR надгробия B-249.
+        run: bash tools/check-extraction-freeze.sh research/hub/exp/ba-extraction-717/ba-instance-params.txt
+
       - name: Test historical immutability validator
         run: bash tools/test-historical-immutable.sh
 
