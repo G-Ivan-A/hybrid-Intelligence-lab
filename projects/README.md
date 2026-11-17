@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.5
+version: 1.6
 updated: 2026-11-17
 temperature: 0.1
 source: projects/README-old.md
@@ -49,7 +49,6 @@ source: projects/README-old.md
 | `repo-development` | HTOM-команда | Развитие governance и проверок самого Хаба, кода-продукта нет. |
 | `mango_ba_prompts` | HTOM-команда | Промпт- и knowledge-репозиторий БА, гибридная human + AI работа. |
 | `open-ai.ru` | Spoke | Первый реальный production-спок с собственным кодом и жизненным циклом. |
-| `ba-ai-process` | HTOM-команда | Source модели БА-процессов и проверяемые Distribution; production runtime остаётся во внешнем spoke. |
 
 ## Рекомендуемая структура проекта
 
@@ -75,13 +74,13 @@ projects/<project-slug>/
 | Проект | Назначение |
 | --- | --- |
 | [repo-development/](repo-development/) | Развитие структуры, governance и локальных проверок самого репозитория. |
-| [ba-ai-process/](ba-ai-process/README.md) | Source модели БА-процессов: мета-модель и вложенные таксономии (`scope: mango-only`), project-scoped решения, тесты и чистые Distribution. |
 
 ## Мигрировавшие проекты
 
 | Проект | Статус | Новый репозиторий | Дата миграции |
 |--------|--------|-------------------|---------------|
 | Mango | ✅ Мигрировал | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | 2026-06-05 |
+| [ba-ai-process](ba-ai-process/README.md) | ✅ Вынесен: E1–E6 приняты, на прежнем пути — манифест redirect (B-249, [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738)) | [ba-ai-metamodel](https://github.com/G-Ivan-A/ba-ai-metamodel) | 2026-11-17 |
 | [ai-team-management-program](ai-team-management-program/README.md) | Техническая E6 подтверждена; приёмка и PRIVATE ожидаются ([#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)) | [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) | 2026-11-17 (PR) |
 
 Прежняя архивная копия в Хабе удалена; история доступна через git, рабочая версия

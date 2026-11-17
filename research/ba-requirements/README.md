@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.7
-updated: 2026-10-29
+version: 0.8
+updated: 2026-11-17
 temperature: 0.1
 ---
 
@@ -15,7 +15,7 @@ temperature: 0.1
 Декомпозиция задана
 [RFC дорожной карты](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md).
 
-Направление намеренно отделено от [`research/mango/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/mango):
+Направление намеренно отделено от [`research/mango/`](https://github.com/G-Ivan-A/ba-ai-metamodel/tree/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango):
 там лежат датированные отчёты по конкретным задачам спицы MANGO OFFICE, здесь —
 переносимая рамка, у которой Mango является одним (первым) применением.
 
@@ -87,13 +87,13 @@ temperature: 0.1
 GigaCode, то есть являются артефактами конкретного направления, а не переносимой
 рамкой. По правилу размещения проектных артефактов
 ([`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md))
-их дом — [`projects/ba-ai-process/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/README.md)
+их дом — [`projects/ba-ai-process/`](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/README.md)
 (задача `B-155`, issue [#573](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/573)).
 Доказательная база — датированные снимки и эксперименты ниже — осталась здесь:
 снимок фиксирует состояние корпуса на дату замера и принадлежит направлению
 исследования, а не проекту.
 
-- [`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/00-introduction.md)
+- [`ba-meta-model/`](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/ba-meta-model/00-introduction.md)
   — синтез накопленной базы в каноническую мета-модель БА (issue
   [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)):
   девять канонических сущностей и закон производства `MM-1`…`MM-4`, четыре
@@ -115,7 +115,7 @@ GigaCode, то есть являются артефактами конкретн
   требует ссылок на источник (`GT-5`); заявка на универсальность снята и
   заменена проверяемой гипотезой переносимости (`scope: mango-only`).
 
-- [`process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/process-taxonomy/00-introduction.md)
+- [`process-taxonomy/`](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/ba-meta-model/process-taxonomy/00-introduction.md)
   — таксономия процессов БА на индустриальном базисе (issue
   [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)):
   четыре уровня `L0` (шесть областей знаний BABOK v3) → `L1` (шесть семейств
@@ -127,7 +127,7 @@ GigaCode, то есть являются артефактами конкретн
   распадается на три процесса. Ярусы контроля `G1`–`G7` заимствованы из
   [`research/ai-education/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/task-processing/00-introduction.md),
   метрики `MP-1`…`MP-6`.
-- [`operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ba-ai-process/ba-meta-model/operation-taxonomy/00-introduction.md)
+- [`operation-taxonomy/`](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/ba-meta-model/operation-taxonomy/00-introduction.md)
   — таксономия операций той же пересборки: операция как **атомарное, но
   семантически завершённое** когнитивное действие с шестиполевым контрактом,
   31 операция в пяти классах (`extract`, `transform`, `generate`, `check`,
