@@ -103,9 +103,21 @@ jobs:
             gh api -X POST repos/${GITHUB_REPOSITORY}/rulesets --input .github/rulesets/archive-tags.json
           и перезапустить этот workflow.
           EOF
+            if [[ "$plan_blocked" == "true" ]]; then
+              cat <<EOF
+          API rulesets недоступен для этого репозитория: GitHub вернул
+          «Upgrade to GitHub Pro or make this repository public». Импорт эталона
+          не сработает и у администратора, пока не решено одно из: тариф
+          GitHub Team/Pro, публичная видимость или пересмотр Q-6 владельцем
+          (бэклог, B-281).
+          EOF
+            fi
           }
-          if ! gh api "repos/${GITHUB_REPOSITORY}/rulesets?includes_parents=true" --paginate --jq '.[].id' > "$RUNNER_TEMP/ids.txt"; then
+          plan_blocked=false
+          if ! gh api "repos/${GITHUB_REPOSITORY}/rulesets?includes_parents=true" --paginate --jq '.[].id' > "$RUNNER_TEMP/ids.txt" 2> "$RUNNER_TEMP/rulesets.err"; then
+            cat "$RUNNER_TEMP/rulesets.err" >&2
             echo "::warning::Не удалось прочитать ruleset репозитория"
+            grep -q 'Upgrade to GitHub Pro' "$RUNNER_TEMP/rulesets.err" && plan_blocked=true
             : > "$RUNNER_TEMP/ids.txt"
           fi
           : > "$RUNNER_TEMP/rulesets.jsonl"
