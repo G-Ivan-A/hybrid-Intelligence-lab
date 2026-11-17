@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.31
+version: 1.32
 updated: 2026-11-17
 temperature: 0.1
 source: research/README-old.md
@@ -42,7 +42,7 @@ source: research/README-old.md
 | [reputation-technologies/](reputation-technologies/README.md) | **Выведен из Хаба** (RFC #721, ADR-022, issue #725): домен репутационных технологий **GRA** и курса «Технограда» живёт в спице [`aether-orbis-gra`](https://github.com/G-Ivan-A/aether-orbis-gra). Здесь остался только манифест redirect — адрес каждого прежнего пути (спица, тег `archive/reputation-technologies-2026-11`, удалённое). |
 | [ba-requirements/](ba-requirements/) | Нормализация входа BA-процессов: универсальная таксономия инициирующих артефактов и стейкхолдеров, цикл нормализации с гейтами, процесс статистики требований и Mango-специализированный срез на корпусе `runs/` (`scope: universal + mango`). |
 | [education/](education/) | Теоретическая основа для образовательных модулей Хаба: source-backed survey предметных областей, таксономии и матрицы принятия решений (`scope: repo-wide`). Учебный продукт на их основе живёт в [education/](../education/). |
-| [ai-team-management-program/](ai-team-management-program/README.md) | Перенесён в [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) по #742. Здесь только манифест прежних путей; техническая E6 подтверждена, приёмка и PRIVATE ожидаются. |
+| [ai-team-management-program/](ai-team-management-program/README.md) | Манифест прежних путей исследований, перенесённых по #742 в приватную спицу. [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta). |
 
 ### Подкаталог `hub/`
 
@@ -86,7 +86,7 @@ source: research/README-old.md
 
 Содержимое перенесено в [спицу](https://github.com/G-Ivan-A/aether-orbis-proxeneta) по #742 вместе с проектом и историей.
 Адрес каждого прежнего файла — в [манифесте redirect](ai-team-management-program/README.md#манифест).
-[Приёмка и PRIVATE](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2) ещё не подтверждены.
+Доступ к перенесённым материалам требует прав на спицу. [Подтверждение владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743#issuecomment-6960338732).
 Общие исследования вне этого направления остаются в Хабе.
 
 ### Подкаталог `ba-requirements/`

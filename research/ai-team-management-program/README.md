@@ -1,6 +1,6 @@
 ---
 status: superseded
-version: 0.6
+version: 0.7
 updated: 2026-11-17
 temperature: 0.1
 ---
@@ -16,15 +16,14 @@ temperature: 0.1
 79 файлов обоих деревьев, история, ссылки, режимы, бэклог и CI.
 [Журнал проверки](../../research/hub/exp/proxeneta-extraction-742/README.md)
 и [PR импорта #3](https://github.com/G-Ivan-A/aether-orbis-proxeneta/pull/3).
-Приёмка владельцем и перевод PUBLIC → PRIVATE остаются открытыми в
-[задаче #2](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2); до них Hub PR #743 не следует мержить.
-После PRIVATE доступ по ссылкам требует прав на спицу.
+Владелец принял импорт. Доступ по ссылкам требует прав на приватную спицу.
+[Подтверждение владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743#issuecomment-6960338732).
 
 Здесь остаётся только манифест redirect по
 [стандарту выбытия](../../standards/artifact-deprecation-standard.md#manifest-redirect).
-Архивная ревизия Хаба — `546ebabb13a4679c6801d0eb5f344c6c3f6db177`; тег `archive/proxeneta-research-2026-11` объявлен
-в [`.hub-profile.json`](../../.hub-profile.json) для создания workflow после merge.
-Тег пока не подтверждён. История публичного Хаба не переписывается.
+Аннотированный тег `archive/proxeneta-research-2026-11` указывает на архивную
+ревизию `546ebabb13a4679c6801d0eb5f344c6c3f6db177`. Подтверждение защиты тега
+ожидается. [Проверка архива](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44169153166/attempts/2).
 
 Исходный README сохранён в [спице](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/README.md);
 остальные 48 прежних путей перечислены ниже. Проектные задачи ведутся в

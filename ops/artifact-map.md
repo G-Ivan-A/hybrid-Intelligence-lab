@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 2.66
+version: 2.67
 updated: 2026-11-17
 temperature: 0.1
 ---
@@ -15,7 +15,7 @@ temperature: 0.1
 краткую визитку и ключевые ссылки, карта дает структурированную навигацию по
 типам артефактов, их обязательности и связям.
 
-Вынос #742: [удалённая E1–E6 и доказательства](../research/hub/exp/proxeneta-extraction-742/README.md). В прежних деревьях оставлены только манифесты redirect; программа и её исследования — в [спице](https://github.com/G-Ivan-A/aether-orbis-proxeneta). Приёмка и PRIVATE ещё ожидаются.
+После принятого выноса #742 в прежних деревьях Хаба остались манифесты redirect. Программа и её исследования находятся в приватной спице. [Журнал проверки](../research/hub/exp/proxeneta-extraction-742/README.md), [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta).
 
 ## Условные обозначения
 
@@ -461,7 +461,7 @@ temperature: 0.1
 | `/projects/repo-development/docs/migration-audit-2026-05.md` | исследование | — | Аудит миграции: согласованность, ссылки, таблица `-old` и рекомендации cleanup. | ✅ Да | `projects/repo-development/README.md`, `docs/concept.md` |
 | `/projects/repo-development/docs/contract-violations-self-report-2026-06.md` | исследование | — | Операционный self-report (`type: audit`) шести ошибок исполнения контрактов в сессии миграции Mango: обоснование выбора таргета, реестр нарушений, системные выводы для контрактов и анализ размещения существующих ретроспектив (без перемещения). | ⚠️ По необходимости | `projects/repo-development/README.md`, `standards/project-structure-inheritance.md`, `standards/file-naming.md`, `research/hub/2026-06-02-ai-collaboration-retrospective-mango-migration.md` |
 | `/projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md` | исследование | — | План миграции `mango_ba_prompts` к Repository Archetype Standard: применение merged Task 2 RFC, snapshot проекта, gap analysis, сравнение in-place vs new repository, рекомендация, checklist и пример GitHub Actions. | ✅ Да | `projects/repo-development/README.md`, `mango_ba_prompts`, `ops/repo-model.md`, `docs/rfc/repository-archetypes-template-release.md`, `tools/validate-repository-structure.sh` |
-| `/projects/ai-team-management-program/README.md` | навигация | — | Надгробие #742: манифест прежних путей проекта в [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta); приёмка и PRIVATE ожидаются. |
+| `/projects/ai-team-management-program/README.md` | навигация | — | Надгробие #742 с манифестом прежних путей проекта в приватной спице. [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta). |
 | `/research/README.md` | навигация | — | Навигация по исследовательским направлениям, правило запрета файлов в корне `research/` и правила воспроизводимости. | ✅ Да | `standards/research-standard.md`, `ops/repo-model.md` |
 | `/research/hub/README.md` | навигация | — | Индекс фундаментальных (`scope: repo-wide`) исследований работы Хаба. | ✅ Да | `research/README.md`, `ops/repo-model.md` |
 | `/research/mango/README.md` | навигация | — | Индекс активных исследований MANGO OFFICE; HTML генерируется через MkDocs/GitHub Pages и не хранится в репозитории. | ✅ Да | `research/README.md`, `mango_ba_prompts` |

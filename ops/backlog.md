@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.87
+version: 1.88
 updated: 2026-11-17
 temperature: 0.1
 type: backlog
@@ -939,8 +939,8 @@ CHANGELOG, а каталог-архив не сохраняет адресов. 
 
 Полный спринт и его незавершённые задачи B-287…B-306 находятся в
 [бэклоге спицы](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/582f8a074e1377405429196764b562fa8cb32fb4/ops/backlog.md).
-Удалённая E6 подтвердила перенос без перенумерации. Публичный Хаб не ведёт
-дублирующее исполнение проектных задач; подтверждение PRIVATE ещё ожидается.
+Удалённая E6 подтвердила перенос без перенумерации. Проектные задачи ведутся в
+приватной спице.
 
 ---
 
@@ -949,13 +949,14 @@ CHANGELOG, а каталог-архив не сохраняет адресов. 
 **Story.** Как владелец, я хочу перенести проект и его исследования в отдельную
 спицу, сохранить историю и проверки, затем закрыть доступ и очистить активный Хаб.
 Предыдущий план #740 принят [PR #741](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/741).
-Текущий [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) реализуется в [Hub PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743)
+По [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) приняты [Hub PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743)
 и [spoke PR #3](https://github.com/G-Ivan-A/aether-orbis-proxeneta/pull/3).
 
-**Цель и критерий закрытия.** Импорт принят владельцем, PRIVATE подтверждён,
-очистка Хаба принята, архивные теги созданы и защищены. Техническая удалённая
-E1–E6 уже подтверждена: 79 файлов, 63 коммита, 28 ID, пять проектных шагов CI.
-Оставшиеся действия перечислены в [spoke #2](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2).
+Владелец принял импорт и очистку Хаба. GitHub API подтвердил PRIVATE спицы,
+а повторная проверка принятого коммита — 79 файлов, 63 коммита, 28 ID и пять
+проектных шагов CI. Оба архивных тега созданы. Для закрытия спринта остаётся
+подтвердить защиту тегов и зафиксировать решение владельца по ранее опубликованной
+истории. [Проверка архива](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44169153166/attempts/2), [приёмка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743#issuecomment-6960338732).
 
 Все восемь исходных строк Спринта 33, включая B-311…B-315, сохранены дословно
 в спице вместе со Спринтом 32. Ниже только статус выноса со стороны Хаба.
@@ -964,9 +965,9 @@ B-307 остаётся TODO: вынос одного проекта не соз�
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-308** | Зафиксировать решения владельца для выноса #742 | P1 | - | ЧАСТИЧНО | [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) / [PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743) | [spoke #2](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2) | Имя и граница подтверждены; приёмка и решение по прежней публичной истории ожидаются. Продуктовая часть исходной задачи ведётся в спице. | Creative |
-| **B-309** | Подготовить PRIVATE aether-orbis-proxeneta и регистрацию в матрице | P2 | B-307, B-308 | ЧАСТИЧНО | [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) / [PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743) | [матрица](../docs/ecosystem-map.md#матрица-проектов) | Геном и регистрация готовы, write получен через приглашение. PUBLIC сохраняется, admin=false; PRIVATE требует владельца. | Creative |
-| **B-310** | Выполнить E1–E6 и очистить Хаб после удалённой проверки | P2 | B-309 | ЧАСТИЧНО | [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) / [PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743) | [доказательства](../research/hub/exp/proxeneta-extraction-742/README.md) | E1–E6 проверены в опубликованной ветке, [задача переноса #1](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/1) создана. Очистка, два redirect и архивные параметры подготовлены в #743; приёмка, PRIVATE, merge и защищённые теги не подтверждены. | Creative |
+| **B-308** | Зафиксировать решения владельца для выноса #742 | P1 | - | ЧАСТИЧНО | [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) / [PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743) | [spoke #2](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2) | Имя и граница подтверждены, импорт принят. Решение по ранее опубликованной истории остаётся открытым. Продуктовая часть исходной задачи ведётся в спице. | Creative |
+| **B-309** | Подготовить PRIVATE aether-orbis-proxeneta и регистрацию в матрице | P2 | B-307, B-308 | DONE | [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) / [PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743) | [матрица](../docs/ecosystem-map.md#матрица-проектов) | Спица зарегистрирована, геном принят в составе импорта, PRIVATE подтверждён GitHub API. [Подтверждение владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743#issuecomment-6960338732). | Creative |
+| **B-310** | Выполнить E1–E6 и очистить Хаб после удалённой проверки | P2 | B-309 | ЧАСТИЧНО | [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742) / [PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743) | [доказательства](../research/hub/exp/proxeneta-extraction-742/README.md) | E1–E6 проверены на принятом коммите, в `main` Хаба остались два redirect, оба тега указывают на исходный SHA. Защита `archive/*` заблокирована ограничением GitHub для приватного Хаба на текущем тарифе. [CI архива](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44169153166/attempts/2). | Creative |
 
 ---
 
