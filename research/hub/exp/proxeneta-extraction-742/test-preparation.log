@@ -1,0 +1,29 @@
+PASS: offline import, existing output, Hub output, dirty destination, changed destination, changed README
+
+Hub validation (exit status; corrected versions revalidated):
+test-frontmatter-validator: 0
+test-smart-sync: 0
+test-reference-research-terminology: 0
+test-agent-onboarding-authorization: 0
+test-operating-mode-contract: 0
+test-check-agent-work-rules-size: 0
+test-nonempty-diff: 0
+test-issue-statement-gate: 0
+test-historical-immutable: 0
+test-validate-rrp-links: 0
+test-spoke-extraction: 0
+test-extraction-freeze: 0
+check-agent-work-rules-size: 0
+validate-file-naming: 0
+validate-frontmatter: 0
+validate-repository-structure: 0
+validate-rrp-links: 0
+generate-manifest-check: 0
+check-proxeneta-freeze: 0
+test-evidence-structure-validator: 0
+verify-bundle: 0
+Python/Bash syntax: 0
+git diff --check: 0
+
+test-post-migration-validator (tracked package paths): 0
+offline integration with rg deliberately unavailable: 0

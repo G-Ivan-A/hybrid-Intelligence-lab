@@ -1,158 +1,84 @@
 ---
-status: draft
-version: 0.5
-updated: 2026-11-16
+status: superseded
+version: 0.6
+updated: 2026-11-17
 temperature: 0.1
 ---
 
-# AI Team Management Program — доказательная база паспорта проекта
+# Исследования проекта: перенос в aether-orbis-proxeneta
 
-Этот каталог содержит исследования, на которых построен паспорт проекта
-[`projects/ai-team-management-program/`](../../projects/ai-team-management-program/README.md)
-— MVP-архитектура модульной программы «ИИ в работе с командой» для директоров
-департаментов и начальников управлений (в подчинении 25–70 человек, группа
-20–25 человек). Источник постановки — issue
-[#730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730),
-доисследование итерации 2 — issue
-[#732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732),
-длительность программы, отток и усвоение (итерация 3) — issue
-[#734](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734),
-презентационный пакет на 3 месяца (итерация 4) — issue
-[#736](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/736),
-комплексная стратегия продвижения через образовательные программы вендоров
-(итерация 5) — issue
-[#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740); полная
-постановка с граничными кейсами — в
-[`docs/task-contract.md`](../../projects/ai-team-management-program/docs/task-contract.md)
-проекта.
+> **Historical compatibility path. Do not use as an active artifact.**
+> **Замена:** [research/ai-team-management-program/ в спице](https://github.com/G-Ivan-A/aether-orbis-proxeneta/tree/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/).
+> **Причина:** владелец включил программу, стратегию и связанные исследования
+> в коммерческую границу независимой спицы ([issue #742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)).
 
-> **Статус выводов.** Все отчёты каталога оформлены по модели **M3. Discussion
-> Paper / Survey** из [research-standard](../../standards/research-standard.md#три-модели-research-артефакта):
-> `status: draft`, выводы предварительны и нормой не являются, у каждого claim —
-> внешний источник, гипотезы отделены от фактов. Каждый отчёт содержит раздел
-> **G5 — перепроверка исполнителем**: ключевые цифры сверены с первоисточником
-> вручную, расхождения записаны явно.
+Удалённая техническая приёмка E1–E6 подтверждена на `8e7aec57a31dc5decaf98be6119d039d063c82da`:
+79 файлов обоих деревьев, история, ссылки, режимы, бэклог и CI.
+[Журнал проверки](../../research/hub/exp/proxeneta-extraction-742/README.md)
+и [PR импорта #3](https://github.com/G-Ivan-A/aether-orbis-proxeneta/pull/3).
+Приёмка владельцем и перевод PUBLIC → PRIVATE остаются открытыми в
+[задаче #2](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2); до них Hub PR #743 не следует мержить.
+После PRIVATE доступ по ссылкам требует прав на спицу.
 
-## Почему исследования живут в `research/`, а не в `projects/`
+Здесь остаётся только манифест redirect по
+[стандарту выбытия](../../standards/artifact-deprecation-standard.md#manifest-redirect).
+Архивная ревизия Хаба — `546ebabb13a4679c6801d0eb5f344c6c3f6db177`; тег `archive/proxeneta-research-2026-11` объявлен
+в [`.hub-profile.json`](../../.hub-profile.json) для создания workflow после merge.
+Тег пока не подтверждён. История публичного Хаба не переписывается.
 
-Постановка (§6 DoD) оставляет выбор «дома исследований» исполнителю. Выбран
-`research/ai-team-management-program/` по трём причинам:
+Исходный README сохранён в [спице](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/README.md);
+остальные 48 прежних путей перечислены ниже. Проектные задачи ведутся в
+[бэклоге спицы](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/ops/backlog.md), без перенумерации ID.
 
-1. **Повторное использование.** Статистика внедрения ИИ в РФ, обзор программ
-   вузов и бизнес-школ, доказательная база методологий корпоративного обучения
-   нужны не только этому кейсу: любой следующий образовательный проект Хаба
-   опирается на тот же корпус. В `projects/` они были бы привязаны к одному
-   заказчику.
-2. **Граница «исследование ↔ продукт».** По правилу каталога
-   [`research/README.md`](../README.md) здесь лежит «что известно и откуда мы это
-   знаем», а в `projects/` — результирующие артефакты пунктов 1, 2, 4 постановки
-   (паспорт, каталог методологий, пул кандидатов), которые получает заказчик.
-   Заказчику полные исследования не передаются (DoD), ему достаётся дайджест —
-   приложение C паспорта.
-3. **Консистентность имени.** Имя подкаталога совпадает с именем каталога
-   проекта, как требует постановка.
+## Манифест
 
-## Отчёты
-
-| Файл | Пункт постановки | Назначение |
+| Прежний путь | Диспозиция | Адрес |
 | --- | --- | --- |
-| [2026-11-10-international-benchmarks-survey.md](2026-11-10-international-benchmarks-survey.md) | 3.1, 3.2 | Международные бенчмарки: Coursera `ai-agents-for-leaders`, Agent Accelerator `ai-for-leadership-teams` и смежные программы — формат, длительность, цена, артефакты выхода, что переносимо в MVP. |
-| [2026-11-10-ru-universities-ai-programs-survey.md](2026-11-10-ru-universities-ai-programs-survey.md) | 3.3 | Топ-10 российских вузов (по рейтингу Альянса ИИ) и их программы ИИ для бизнеса и руководителей: объём, цена за академический час, формат, итоговая работа. |
-| [2026-11-10-ru-business-schools-ai-programs-survey.md](2026-11-10-ru-business-schools-ai-programs-survey.md) | 3.4 | Топ-10 бизнес-школ РФ: программы по ИИ для руководителей и нормативы формата (длительность модулей, межмодульная работа, итоговая защита). |
-| [2026-11-10-ai-adoption-russia-statistics.md](2026-11-10-ai-adoption-russia-statistics.md) | 3.5 | Статистика внедрения ИИ в компаниях и банках РФ с provenance по каждой цифре: кто опрашивал, выборка, дата, что именно измерено; приоритет — банковский сектор и уровень руководителей. |
-| [2026-11-10-corporate-learning-methodology-evidence.md](2026-11-10-corporate-learning-methodology-evidence.md) | 2, 3.6 | Доказательная база методологий корпоративного обучения (мета-анализы leadership training, spaced learning, transfer, 70-20-10, Kirkpatrick/LTEM/Brinkerhoff, ИИ-тьюторы) и тренды 2025–2026. Основание каталога методологий проекта. |
-| [2026-11-10-economics-market-benchmarks.md](2026-11-10-economics-market-benchmarks.md) | 3.6 (экономика) | Рыночные данные для экономики MVP: цены программ, ставки экспертов и ролей, НДС и льгота подп. 14 п. 2 ст. 149 НК РФ, макро (ключевая ставка, инфляция), стоимость ИИ-стека. |
-| [2026-11-10-candidate-pool-facts.md](2026-11-10-candidate-pool-facts.md) | 4 | Факты о кандидатах в команду реализации (Москва): корпоративные эксперты, независимые преподаватели вузов и бизнес-школ, компании-партнёры. Разметка GRA построена на этих фактах в проекте. |
-
-Отчёты итерации 2 (issue #732):
-
-| Файл | Пункт задачи #732 | Назначение |
-| --- | --- | --- |
-| [2026-11-11-candidate-public-channels-audit.md](2026-11-11-candidate-public-channels-audit.md) | 1 | Аудит публичных профессиональных каналов кандидатов итерации 1 (Habr, VC.ru, Telegram, страницы спикеров) и шкала доступности контакта; исправления должностей и фамилий. |
-| [2026-11-11-ru-startups-ai-agents.md](2026-11-11-ru-startups-ai-agents.md) | 1 | Стартапы и МСБ России в классах «ИИ-агенты» и «прикладной ИИ»: 32 компании, возраст не меньше двух лет, руководители и каналы связи. |
-| [2026-11-11-ru-startups-sources-robotics-bpa.md](2026-11-11-ru-startups-sources-robotics-bpa.md) | 1 | 24 российские базы и источники стартапов; 36 компаний в робототехнике и автоматизации бизнес-процессов с руководителями и каналами. |
-| [2026-11-11-ai-management-use-cases-evidence.md](2026-11-11-ai-management-use-cases-evidence.md) | 2 | Пять управленческих кейсов из запроса (встречи, календарь, поручения, перформанс, дашборд): внедрения в России и за рубежом, СМИ и конференции, измеренные эффекты. |
-| [2026-11-11-multi-case-design-and-proposal-format-evidence.md](2026-11-11-multi-case-design-and-proposal-format-evidence.md) | 2, 4, 5 | Распыляют ли несколько кейсов внимание группы; формат ответа заказчику на двух страницах; нефинансовая мотивация экспертов и почему её нельзя моделировать. |
-
-Отчёты итерации 3 (issue #734):
-
-| Файл | Требование задачи #734 | Назначение |
-| --- | --- | --- |
-| [2026-11-11-ru-program-duration-market-survey.md](2026-11-11-ru-program-duration-market-survey.md) | обоснование срока; доисследование конкурентов | 49 российских программ «ИИ для руководителей» и программ развития руководителей: распределение длительности, российские опросы, корпоративные кейсы; гипотеза «2–3 месяца — самый частый формат» проверена на данных. |
-| [2026-11-11-international-program-duration-survey.md](2026-11-11-international-program-duration-survey.md) | обоснование срока; доисследование конкурентов | Международные программы 2025–2026: длительность, формат, цена; отраслевая статистика длительности заказных программ и её ограничения. |
-| [2026-11-11-program-duration-attrition-absorption-evidence.md](2026-11-11-program-duration-attrition-absorption-evidence.md) | риск оттока у 6 месяцев; риск неусвоения у короткого варианта | Мета-анализы и исследования: связь длительности с оттоком, переносом и результатом, формирование привычки, скорость эффекта от ИИ, пилоты ИИ-ассистентов. |
-
-Отчёты итерации 5 (issue #740, режим Creative). Синтез семи отчётов — модуль
-RRP [`vendor-education-partnerships/`](vendor-education-partnerships/00-introduction.md):
-
-| Код | Файл | Требование задачи #740 | Назначение |
-| --- | --- | --- | --- |
-| S1 | [2026-11-16-vendor-academic-programs-international.md](2026-11-16-vendor-academic-programs-international.md) | матрица кейсов международной практики | Академические программы Cisco, SAP, AWS, Microsoft, JetBrains и др.: форматы, охват и что известно об эффекте на продажи. |
-| S2 | [2026-11-16-vendor-education-russia.md](2026-11-16-vendor-education-russia.md) | матрица кейсов; Россия | Государственные рамки (цифровые кафедры, ПИШ, 273-ФЗ), кейсы 1С, Яндекса, VK, PT, уход вендоров в 2022 году. |
-| S3 | [2026-11-16-vendor-education-china.md](2026-11-16-vendor-education-china.md) | матрица кейсов; Китай | Программа 产学合作协同育人, Huawei, Kingdee, Yonyou; российско-китайские каналы и санкционные риски. |
-| S4 | [2026-11-16-specialist-positioning-ru-us-cn.md](2026-11-16-specialist-positioning-ru-us-cn.md) | стратегия продвижения в России, США, Китае | Спрос, барьеры входа (санкции, визы, разрешения на работу), монетизация и конверсии воронки консультанта. |
-| S5 | [2026-11-16-network-building-shuttle-diplomacy-evidence.md](2026-11-16-network-building-shuttle-diplomacy-evidence.md) | встречи через Техноград; «челночная дипломатия» | Теория брокерства, форматы встреч руководителей, конверсия, этика и ст. 575 ГК РФ. |
-| S6 | [2026-11-16-university-codevelopment-project-selection.md](2026-11-16-university-codevelopment-project-selection.md) | договорённость с ИИ-лабораторией вуза о BA-метамодели | Как методологические организации работают с вузами; многокритериальный выбор проекта экосистемы для вуза. |
-| S7 | [2026-11-16-vendor-education-mechanisms-formats-evidence.md](2026-11-16-vendor-education-mechanisms-formats-evidence.md) | гипотеза; матрица форматов по целям | Механизмы М1–М6 связи обучения с продажами, матрица «формат × цель», уровни измерения L0–L5. |
-
-## Сопутствующие артефакты
-
-| Артефакт | Назначение |
-| --- | --- |
-| [external-sources-registry.md](external-sources-registry.md) | Local Extension к Base Registry Хаба: все внешние источники двадцати двух отчётов (идентификаторы `atm-NNN`), тип, язык, стадия, отчёты-потребители. Таблица генерируется скриптом, а не правится руками. |
-| [exp/ai-team-management-program-730/](exp/ai-team-management-program-730/README.md) | Воспроизводимые расчёты: модель экономики (`economics-model.py` → `economics-model.log`) и генератор реестра источников (`build-sources-registry.py`). |
-| [exp/ai-team-management-program-732/](exp/ai-team-management-program-732/README.md) | Итерация 2: общий бриф исследовательских потоков, вёрстка резюме проекта в PDF на две страницы A4, учёт исследовательских токенов. |
-| [exp/ai-team-management-program-734/](exp/ai-team-management-program-734/README.md) | Итерация 3: бриф потоков о длительности, оттоке и усвоении, способ перепроверки PDF при гейте G5, учёт исследовательских токенов. |
-| [exp/ai-team-management-program-736/](exp/ai-team-management-program-736/README.md) | Итерация 4: рабочий документ пакета [`pop-3m`](../../projects/ai-team-management-program/pop-3m/) — постановка с граничными кейсами, SSOT, обоснование ставок, отклонённые требования, КРИК-ГЕЙТ; модель экономики (`economics-pop-3m.py` → `economics-pop-3m.log`) и проверка пакета `check-pop-3m.py` |
-| [vendor-education-partnerships/](vendor-education-partnerships/00-introduction.md) | Итерация 5: модуль RRP о партнёрствах вендоров с вузами — теория и подгипотезы H1–H3, таксономия 17 форматов, рамка решений (матрица «формат × цель», правила П1–П8), матрица кейсов RU/CN/международных, пробелы и дизайн пилота. |
-| [exp/ai-team-management-program-740/](exp/ai-team-management-program-740/README.md) | Итерация 5: рабочий документ — постановка, SSOT, граничные кейсы, требования → артефакты, апелляции, сводка G5; модель вероятностей стратегий (`strategy-probabilities.py` → `strategy-probabilities.log`). |
-
-## Как воспроизвести
-
-```bash
-# экономика: NRE, Delivery, цена, маржа, чувствительность
-python3 research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py \
-  > research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log
-
-# реестр источников: пересобрать таблицу из разделов «Источники» отчётов
-python3 research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py --write
-
-# резюме проекта на 6 и 3 месяца: PDF A4, не больше двух страниц и 900 слов (нужен Chrome)
-python3 -I research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py
-
-# вероятности стратегий продвижения (итерация 5): сверка с логом
-python3 -I research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.py \
-  | diff - research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.log
-```
-
-## Границы и известные пробелы
-
-- Стандарт `standards/research-profile.md`, указанный в SSOT постановки, в
-  репозитории отсутствует (ссылка битая). Вместо него применён
-  [`standards/research-standard.md`](../../standards/research-standard.md);
-  расхождение вынесено в PR и в постановку проекта.
-- Ставки экспертов и ролей помечены GRA-маркером `○` (рыночный ориентир из
-  открытых прайсов, а не подписанный договор). Поэтому маржа при максимальных
-  ставках отрицательна — это записано в модели экономики как ограничение, а не
-  скрыто.
-- Часть первоисточников (полные PDF отчётов консалтинга, текст 425-ФЗ на
-  pravo.gov.ru) исполнитель открыть не смог; соответствующие claims помечены `◐`
-  и перечислены в разделах G5 отчётов.
-- Итерация 2: сверка стартапов с ЕГРЮЛ из среды исследования была
-  недоступна, поэтому у 27 из 64 стартапов возраст или независимость не
-  подтверждены первоисточником; часть ролей руководителей стартапов известна
-  только по сниппетам поиска (`○`). Оба пробела перечислены в отчётах и в
-  бэклоге.
-- Итерация 3: открытых данных о доле завершивших корпоративную программу
-  для руководителей в зависимости от её длительности не найдено ни в России,
-  ни за рубежом. Поэтому тезис «шесть месяцев — высокий риск оттока» нельзя
-  ни подтвердить, ни опровергнуть прямым измерением; паспорта опираются на
-  косвенные данные и прямо об этом пишут. Отраслевая статистика длительности
-  (Mercer | Mettl, Persistence Market Research) независимой проверки не имеет
-  и помечена `◐`.
-- Итерация 5: ни одна из 50 изученных вендорских программ не публикует
-  эффект образовательного канала на продажи. Единственное причинное
-  исследование (полевой эксперимент облачного провайдера, S7 [23]) касается
-  обучения уже купивших клиентов. Связь «студент → будущая закупка» не
-  измерена; модель вероятностей поэтому опирается на конверсии B2B-воронки и
-  оценки `○`, которые закрывает журнал воронки (пробелы Г-1…Г-8 модуля).
+| `research/ai-team-management-program/2026-11-10-ai-adoption-russia-statistics.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-10-ai-adoption-russia-statistics.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-10-ai-adoption-russia-statistics.md) |
+| `research/ai-team-management-program/2026-11-10-candidate-pool-facts.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-10-candidate-pool-facts.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-10-candidate-pool-facts.md) |
+| `research/ai-team-management-program/2026-11-10-corporate-learning-methodology-evidence.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-10-corporate-learning-methodology-evidence.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-10-corporate-learning-methodology-evidence.md) |
+| `research/ai-team-management-program/2026-11-10-economics-market-benchmarks.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-10-economics-market-benchmarks.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-10-economics-market-benchmarks.md) |
+| `research/ai-team-management-program/2026-11-10-international-benchmarks-survey.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-10-international-benchmarks-survey.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-10-international-benchmarks-survey.md) |
+| `research/ai-team-management-program/2026-11-10-ru-business-schools-ai-programs-survey.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-10-ru-business-schools-ai-programs-survey.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-10-ru-business-schools-ai-programs-survey.md) |
+| `research/ai-team-management-program/2026-11-10-ru-universities-ai-programs-survey.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-10-ru-universities-ai-programs-survey.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-10-ru-universities-ai-programs-survey.md) |
+| `research/ai-team-management-program/2026-11-11-ai-management-use-cases-evidence.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-ai-management-use-cases-evidence.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-ai-management-use-cases-evidence.md) |
+| `research/ai-team-management-program/2026-11-11-candidate-public-channels-audit.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-candidate-public-channels-audit.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-candidate-public-channels-audit.md) |
+| `research/ai-team-management-program/2026-11-11-international-program-duration-survey.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-international-program-duration-survey.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-international-program-duration-survey.md) |
+| `research/ai-team-management-program/2026-11-11-multi-case-design-and-proposal-format-evidence.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-multi-case-design-and-proposal-format-evidence.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-multi-case-design-and-proposal-format-evidence.md) |
+| `research/ai-team-management-program/2026-11-11-program-duration-attrition-absorption-evidence.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-program-duration-attrition-absorption-evidence.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-program-duration-attrition-absorption-evidence.md) |
+| `research/ai-team-management-program/2026-11-11-ru-program-duration-market-survey.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-ru-program-duration-market-survey.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-ru-program-duration-market-survey.md) |
+| `research/ai-team-management-program/2026-11-11-ru-startups-ai-agents.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-ru-startups-ai-agents.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-ru-startups-ai-agents.md) |
+| `research/ai-team-management-program/2026-11-11-ru-startups-sources-robotics-bpa.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-11-ru-startups-sources-robotics-bpa.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-11-ru-startups-sources-robotics-bpa.md) |
+| `research/ai-team-management-program/2026-11-16-network-building-shuttle-diplomacy-evidence.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-16-network-building-shuttle-diplomacy-evidence.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-16-network-building-shuttle-diplomacy-evidence.md) |
+| `research/ai-team-management-program/2026-11-16-specialist-positioning-ru-us-cn.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-16-specialist-positioning-ru-us-cn.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-16-specialist-positioning-ru-us-cn.md) |
+| `research/ai-team-management-program/2026-11-16-university-codevelopment-project-selection.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-16-university-codevelopment-project-selection.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-16-university-codevelopment-project-selection.md) |
+| `research/ai-team-management-program/2026-11-16-vendor-academic-programs-international.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-16-vendor-academic-programs-international.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-16-vendor-academic-programs-international.md) |
+| `research/ai-team-management-program/2026-11-16-vendor-education-china.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-16-vendor-education-china.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-16-vendor-education-china.md) |
+| `research/ai-team-management-program/2026-11-16-vendor-education-mechanisms-formats-evidence.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-16-vendor-education-mechanisms-formats-evidence.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-16-vendor-education-mechanisms-formats-evidence.md) |
+| `research/ai-team-management-program/2026-11-16-vendor-education-russia.md` | перенесён в спицу | [research/ai-team-management-program/2026-11-16-vendor-education-russia.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/2026-11-16-vendor-education-russia.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-730/README.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-730/README.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-730/README.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py) |
+| `research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log) |
+| `research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py) |
+| `research/ai-team-management-program/exp/ai-team-management-program-732/2026-11-11-brief-common.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-732/2026-11-11-brief-common.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-732/2026-11-11-brief-common.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-732/README.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-732/README.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-732/README.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-3m-preview.png` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-3m-preview.png](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-3m-preview.png) |
+| `research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-6m-preview.png` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-6m-preview.png](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-732/project-summary-6m-preview.png) |
+| `research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-732/render-customer-response.py) |
+| `research/ai-team-management-program/exp/ai-team-management-program-734/2026-11-11-brief-common.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-734/2026-11-11-brief-common.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-734/2026-11-11-brief-common.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-734/README.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-734/README.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-734/README.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-736/README.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-736/README.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-736/README.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-736/check-pop-3m.py` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-736/check-pop-3m.py](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-736/check-pop-3m.py) |
+| `research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.log` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.log](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.log) |
+| `research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.py` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.py](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.py) |
+| `research/ai-team-management-program/exp/ai-team-management-program-740/2026-11-16-brief-common.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-740/2026-11-16-brief-common.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-740/2026-11-16-brief-common.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-740/README.md` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-740/README.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-740/README.md) |
+| `research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.log` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.log](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.log) |
+| `research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.py` | перенесён в спицу | [research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.py](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.py) |
+| `research/ai-team-management-program/external-sources-registry.md` | перенесён в спицу | [research/ai-team-management-program/external-sources-registry.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/external-sources-registry.md) |
+| `research/ai-team-management-program/vendor-education-partnerships/00-introduction.md` | перенесён в спицу | [research/ai-team-management-program/vendor-education-partnerships/00-introduction.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/vendor-education-partnerships/00-introduction.md) |
+| `research/ai-team-management-program/vendor-education-partnerships/10-theory.md` | перенесён в спицу | [research/ai-team-management-program/vendor-education-partnerships/10-theory.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/vendor-education-partnerships/10-theory.md) |
+| `research/ai-team-management-program/vendor-education-partnerships/20-taxonomy.md` | перенесён в спицу | [research/ai-team-management-program/vendor-education-partnerships/20-taxonomy.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/vendor-education-partnerships/20-taxonomy.md) |
+| `research/ai-team-management-program/vendor-education-partnerships/30-decision-framework.md` | перенесён в спицу | [research/ai-team-management-program/vendor-education-partnerships/30-decision-framework.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/vendor-education-partnerships/30-decision-framework.md) |
+| `research/ai-team-management-program/vendor-education-partnerships/40-practice-and-cases.md` | перенесён в спицу | [research/ai-team-management-program/vendor-education-partnerships/40-practice-and-cases.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/vendor-education-partnerships/40-practice-and-cases.md) |
+| `research/ai-team-management-program/vendor-education-partnerships/50-open-research.md` | перенесён в спицу | [research/ai-team-management-program/vendor-education-partnerships/50-open-research.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/research/ai-team-management-program/vendor-education-partnerships/50-open-research.md) |

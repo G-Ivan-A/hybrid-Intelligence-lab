@@ -116,30 +116,6 @@ jobs:
       - name: Check synthetic BA industry survey evidence of issue 703
         run: python3 -I research/ba-requirements/exp/agent-ba-industry-703/measure.py --check
 
-      - name: Check reproducible economics model of issue 730
-        # Цифры economics.md паспорта взяты из журнала модели: модель и журнал не должны расходиться.
-        run: |
-          python3 -I research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.py \
-            | diff - research/ai-team-management-program/exp/ai-team-management-program-730/economics-model.log
-
-      - name: Check sources registry of issue 730 against reports
-        run: python3 -I research/ai-team-management-program/exp/ai-team-management-program-730/build-sources-registry.py --check
-
-      - name: Check reproducible economics model of issue 736
-        # Суммы 05-detailed-economics.md и агрегаты резюме pop-3m взяты из журнала модели.
-        run: |
-          python3 -I research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.py \
-            | diff - research/ai-team-management-program/exp/ai-team-management-program-736/economics-pop-3m.log
-
-      - name: Check presentation package pop-3m of issue 736
-        run: python3 -I research/ai-team-management-program/exp/ai-team-management-program-736/check-pop-3m.py
-
-      - name: Check strategy probabilities model of issue 740
-        # Вероятности стратегий в projects/ai-team-management-program/strategy/ взяты из журнала модели.
-        run: |
-          python3 -I research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.py \
-            | diff - research/ai-team-management-program/exp/ai-team-management-program-740/strategy-probabilities.log
-
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:

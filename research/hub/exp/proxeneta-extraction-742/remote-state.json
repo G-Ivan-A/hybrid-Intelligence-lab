@@ -1,0 +1,88 @@
+{
+  "default_branch": "main",
+  "full_name": "G-Ivan-A/aether-orbis-proxeneta",
+  "permissions": {
+    "admin": false,
+    "maintain": false,
+    "push": true,
+    "triage": true,
+    "pull": true
+  },
+  "private": false,
+  "pushed_at": "2026-11-17T08:54:19Z",
+  "checked_at_utc": "2026-11-17T08:56:35.599396+00:00",
+  "prior_observation": {
+    "default_branch": "main",
+    "full_name": "G-Ivan-A/aether-orbis-proxeneta",
+    "permissions": {
+      "admin": false,
+      "maintain": false,
+      "pull": true,
+      "push": false,
+      "triage": false
+    },
+    "private": false,
+    "pushed_at": "2026-11-16T19:54:29Z",
+    "checked_at_utc": "2026-11-17T05:37:25.860365+00:00"
+  },
+  "access_resolution": {
+    "invitation_id": 344316360,
+    "invited_by": "G-Ivan-A",
+    "accepted_for": "konard",
+    "permission": "write",
+    "result": "push=true; admin=false"
+  },
+  "transfer_issue": "https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/1",
+  "owner_acceptance_issue": "https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2",
+  "import_pr": "https://github.com/G-Ivan-A/aether-orbis-proxeneta/pull/3",
+  "remote_e6": {
+    "head_sha": "582f8a074e1377405429196764b562fa8cb32fb4",
+    "remote_fetch": "PASS: independent clone from GitHub",
+    "verify": {
+      "hub_sha": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+      "mode": "links",
+      "files": 79,
+      "ok": 79,
+      "missing": [],
+      "mismatch": [],
+      "mode_mismatch": [],
+      "extra": []
+    },
+    "genome": "PASS",
+    "file_naming": "PASS",
+    "link_idempotence": "PASS",
+    "backlog_sections": "PASS",
+    "backlog_ids": 28,
+    "history_commits_reachable": 63,
+    "original_target_history": "PASS",
+    "ci_runs": [
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-17T08:54:26Z",
+        "databaseId": 44050737789,
+        "headSha": "582f8a074e1377405429196764b562fa8cb32fb4",
+        "status": "completed",
+        "url": "https://github.com/G-Ivan-A/aether-orbis-proxeneta/actions/runs/44050737789"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-11-17T08:54:21Z",
+        "databaseId": 44050725321,
+        "headSha": "582f8a074e1377405429196764b562fa8cb32fb4",
+        "status": "completed",
+        "url": "https://github.com/G-Ivan-A/aether-orbis-proxeneta/actions/runs/44050725321"
+      }
+    ],
+    "checked_at_utc": "2026-11-17T08:56:35.599396+00:00"
+  },
+  "pending": [
+    "owner acceptance and merge preserving imported history",
+    "PRIVATE visibility (admin=false)",
+    "Hub PR #743 merge after acceptance and PRIVATE",
+    "annotated and protected archive tags after merge; no archive ruleset currently observed"
+  ],
+  "archive_tags": [
+    "archive/proxeneta-project-2026-11",
+    "archive/proxeneta-research-2026-11"
+  ]
+}

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.6
-updated: 2026-11-04
+version: 0.8
+updated: 2026-11-17
 temperature: 0.1
 ---
 
@@ -65,6 +65,7 @@ temperature: 0.1
 | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | `governed` | HTOM-команда | Референсная реализация | Действующий репозиторий: референсная реализация универсальной модели БА (39 классов). Статус `legacy/archived` по issue #583 отменён решением Q-3. |
 | [ba-ai-metamodel](https://github.com/G-Ivan-A/ba-ai-metamodel) — репозиторий проекта метамодели БА | `governed` | Spoke-репозиторий (архетип B) | Вынос из Хаба по [контракту выноса](../ops/hub-project-extraction-contract.md) | Ядро метамодели БА, компиляторы пакетов, тесты и eval; до выноса живёт в `projects/ba-ai-process/`. Создан 2026-11-04 с одним `README.md`; вынос отложен до окна заморозки источников ([бэклог](../ops/backlog.md), B-243). |
 | [mango-ba-ai-runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime) | `exempt-runtime` | Spoke-репозиторий | Закреплённая компиляция | Автономная среда исполнения MVP; правило `EP-C1` запрещает зависимость инструкций от документов Хаба, поэтому геном не наследует. |
+| [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) | `governed` | Spoke-репозиторий (архетип B) | [Вынос #742](../research/hub/exp/proxeneta-extraction-742/README.md): remote E1–E6 подтверждена | Геном, 79 файлов, 63 коммита, 28 ID и пять проектных проверок CI опубликованы в [PR #3](https://github.com/G-Ivan-A/aether-orbis-proxeneta/pull/3). Приёмка и PRIVATE — [открытый критерий #2](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2), не завершённый вынос. |
 | [aether-orbis-gra](https://github.com/G-Ivan-A/aether-orbis-gra) | `governed` | HTOM-команда (архетип D) | Геном и практики | GRA — исследовательский фреймворк репутационной архитектуры. |
 | [aether-orbis](https://github.com/G-Ivan-A/aether-orbis) | `governed` | Spoke-репозиторий | Геном | Спица вне контура MVP; бутстрап `AGENTS.md` и профиля — задача Ш4.3. |
 | [open-ai.ru](https://github.com/G-Ivan-A/open-ai.ru) | `dormant` | Spoke-репозиторий | Будущий единый интерфейс | Законсервирован до появления готовых решений; затем становится единым интерфейсом проектов экосистемы (Q-5). Задач согласования нет. |

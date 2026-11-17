@@ -463,8 +463,9 @@ validate_file() {
 
   # Presentation packages (projects/<project>/pop-<variant>/) go to the customer
   # as PDF and to a static site verbatim. Issue #736 forbids version and draft
-  # metadata in them; check-pop-3m.py enforces the no-frontmatter contract, and
-  # authorship lives in the package's experiment README and git history.
+  # metadata in them. Project-specific checks now live in the extracted spoke
+  # (#742); this reusable exemption is covered by an isolated test fixture.
+  # Authorship lives in the package's experiment README and git history.
   case "$(normalize_path "$path")" in
     projects/*/pop-*/*.md)
       return

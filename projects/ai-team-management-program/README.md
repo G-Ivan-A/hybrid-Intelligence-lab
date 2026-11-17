@@ -1,110 +1,65 @@
 ---
-status: draft
-version: 0.5
-updated: 2026-11-16
-temperature: 0.3
-contributors: [konard]
-ai-models: [claude-opus-5-5]
+status: superseded
+version: 0.6
+updated: 2026-11-17
+temperature: 0.1
 ---
 
-# Проект: программа «ИИ в работе с командой» для руководителей
+# Проект: перенос в aether-orbis-proxeneta
 
-Версия: 0.4
+> **Historical compatibility path. Do not use as an active artifact.**
+> **Замена:** [projects/ai-team-management-program/ в спице](https://github.com/G-Ivan-A/aether-orbis-proxeneta/tree/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/).
+> **Причина:** владелец включил программу, стратегию и связанные исследования
+> в коммерческую границу независимой спицы ([issue #742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)).
 
-Дата: 2026-11-11
+Удалённая техническая приёмка E1–E6 подтверждена на `8e7aec57a31dc5decaf98be6119d039d063c82da`:
+79 файлов обоих деревьев, история, ссылки, режимы, бэклог и CI.
+[Журнал проверки](../../research/hub/exp/proxeneta-extraction-742/README.md)
+и [PR импорта #3](https://github.com/G-Ivan-A/aether-orbis-proxeneta/pull/3).
+Приёмка владельцем и перевод PUBLIC → PRIVATE остаются открытыми в
+[задаче #2](https://github.com/G-Ivan-A/aether-orbis-proxeneta/issues/2); до них Hub PR #743 не следует мержить.
+После PRIVATE доступ по ссылкам требует прав на спицу.
 
-`projects/ai-team-management-program/` — дом проекта по тестовому кейсу
-корпоративной академии ([issue #730](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/730)):
-архитектура MVP модульной программы развития руководителей «ИИ в работе с
-командой, для повышения управленческой эффективности», её экономика, экспертная
-команда, методология проектирования корпоративных программ и пул кандидатов.
-Проект показывает тезис «корпоративное обучение как двигатель развития
-продукта»: программа строится вокруг рабочих артефактов руководителя, которые
-после обучения остаются продуктом, а не конспектом.
+Здесь остаётся только манифест redirect по
+[стандарту выбытия](../../standards/artifact-deprecation-standard.md#manifest-redirect).
+Архивная ревизия Хаба — `546ebabb13a4679c6801d0eb5f344c6c3f6db177`; тег `archive/proxeneta-project-2026-11` объявлен
+в [`.hub-profile.json`](../../.hub-profile.json) для создания workflow после merge.
+Тег пока не подтверждён. История публичного Хаба не переписывается.
 
-Итерация 2 ([issue #732](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/732))
-заменила выбор из двух артефактов пятью кейсами из запроса (встречи, календарь,
-поручения, перформанс, дашборд): один сет — один кейс, группа получает пять
-карт внедрения. Добавлены второй вариант бюджета (до 3 млн ₽ при марже не ниже
-25%), ограничения поставляемой версии, ответ заказчику на двух страницах A4 и
-расширение пула кандидатов стартапами и МСБ.
+Исходный README сохранён в [спице](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/README.md);
+остальные 29 прежних путей перечислены ниже. Проектные задачи ведутся в
+[бэклоге спицы](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/ops/backlog.md), без перенумерации ID.
 
-Итерация 3 ([issue #734](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/734))
-обосновала длительность программы данными о рынке, оттоке и усвоении и
-добавила второй вариант — на 3 месяца, три очных модуля. Для каждого варианта
-есть резюме проекта по общему шаблону и паспорт, сверенный с резюме. Отраслевая
-гипотеза о заказчике в документах не используется: принята гипотеза, что
-инструменты, уровень автоматизации и подготовка участников различаются и
-заранее неизвестны. Отдельный RFC описывает сайт, который показывает резюме и
-паспорт одной выбранной заказчиком программы.
+## Манифест
 
-Итерация 4 ([issue #736](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/736))
-переупаковала вариант на 3 месяца в презентационный пакет
-[`pop-3m/`](pop-3m/) из пяти файлов для заказчика: резюме, паспорт из пяти
-уровней, приложение с доказательной базой и кандидатами, RFC сайта-презентации
-на GitHub Pages и детализированная экономика. Пакет построен на одном
-инструменте — JustAI — и на фреймворках управления изменениями программы МФТИ
-«ИИ в управлении». Файлы пакета идут в PDF и на сайт без правок, поэтому в них
-нет служебного frontmatter; авторство, обоснование ставок и протокол
-КРИК-ГЕЙТ — в рабочем документе
-[`exp/ai-team-management-program-736/`](../../research/ai-team-management-program/exp/ai-team-management-program-736/README.md).
-
-Итерация 5 ([issue #740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740))
-добавила каталог [`strategy/`](strategy/README.md) — стратегию продвижения
-через образовательные программы ИТ-вендоров: видение, концепцию, архитектуру
-и дорожную карту по уровням L1–L4, концепцию услуг для вендора, стратегию
-продвижения специалиста в России, США и Китае с вероятностями и план нового
-приватного репозитория. Все файлы каталога помечены «для переноса»: после
-решения владельца они уходят в приватную спицу. Доказательная база — модуль
-RRP
-[`vendor-education-partnerships/`](../../research/ai-team-management-program/vendor-education-partnerships/00-introduction.md)
-и рабочий документ
-[`exp/ai-team-management-program-740/`](../../research/ai-team-management-program/exp/ai-team-management-program-740/README.md).
-
-## Статус и граница
-
-Статус `draft`: паспорт подготовлен без возможности задать вопросы заказчику
-(условие кейса), поэтому все допущения вынесены в
-[task-contract.md](docs/task-contract.md) и в раздел «Допущения» паспорта.
-Цены 2026 года — рыночные диапазоны из открытых источников, а не коммерческое
-предложение. Персоны в пуле кандидатов — публичные специалисты, данные о них
-взяты только из открытых источников и не являются договорённостью об участии.
-
-## Навигация
-
-| Артефакт | Назначение | Кому |
+| Прежний путь | Диспозиция | Адрес |
 | --- | --- | --- |
-| [pop-3m/01-project-summary.md](pop-3m/01-project-summary.md) | Резюме программы на 3 месяца: бизнес-цель, программа по неделям, команда, экономика агрегатами | Заказчик |
-| [pop-3m/02-project-passport.md](pop-3m/02-project-passport.md) | Паспорт программы по пяти уровням: цель и KPI, аудитория, программа по неделям, реализация, оценка L1–L4 | Заказчик |
-| [pop-3m/03-appendix.md](pop-3m/03-appendix.md) | Приложение: метрики исследования, обоснование фреймворков, единый стек JustAI, кандидаты на роли | Заказчик |
-| [pop-3m/04-rfc-site-presentation.md](pop-3m/04-rfc-site-presentation.md) | RFC сайта-презентации: структура, Jekyll и GitHub Actions, промпт инициализации, критерии приёмки | Разработчик сайта, ИИ-агент |
-| [pop-3m/05-detailed-economics.md](pop-3m/05-detailed-economics.md) | Детализированная экономика: NRE и OPEX по статьям, COGS, цена, маржа | Заказчик по запросу |
-| [strategy/README.md](strategy/README.md) | Стратегия продвижения (итерация 5, «для переноса»): L1–L4, концепция услуг, продвижение в RU/US/CN с вероятностями, план приватного репозитория | Владелец, исполнитель |
-| [docs/task-contract.md](docs/task-contract.md) | Полная постановка задачи по пяти уровням, SSOT, допущения, граничные случаи, бюджет исследований | Исполнитель, ревьюер |
-| [docs/methodology/project-summary-template.md](docs/methodology/project-summary-template.md) | Шаблон резюме проекта на две страницы A4: правила «только факты запроса», «гипотеза — только в допущениях», «резюме не противоречит паспорту»; структура по ТЗ, чек-лист | Исполнитель, методолог |
-| [docs/passport/project-summary-6m.md](docs/passport/project-summary-6m.md) ([PDF](docs/passport/project-summary-6m.pdf)) | Резюме проекта, вариант на 6 месяцев: две страницы A4 по шаблону | Заказчик |
-| [docs/passport/project-summary-3m.md](docs/passport/project-summary-3m.md) ([PDF](docs/passport/project-summary-3m.pdf)) | Резюме проекта, вариант на 3 месяца: две страницы A4 по шаблону | Заказчик |
-| [docs/passport/project-passport-6m.md](docs/passport/project-passport-6m.md) | Паспорт проекта, вариант на 6 месяцев: почему шесть месяцев, баланс доводов об оттоке, сверка с резюме | Заказчик |
-| [docs/passport/project-passport-3m.md](docs/passport/project-passport-3m.md) | Паспорт проекта, вариант на 3 месяца: почему не два и не шесть, риск неусвоения, отток, сверка с резюме | Заказчик |
-| [docs/passport/architecture.md](docs/passport/architecture.md) | Архитектура MVP программы на 6 месяцев: цели, результаты, траектория, оценка, ресурсы | Заказчик |
-| [docs/passport/architecture-3m.md](docs/passport/architecture-3m.md) | Архитектура варианта на 3 месяца: три очных модуля, условия короткой программы | Заказчик |
-| [docs/passport/economics.md](docs/passport/economics.md) | Бизнес-кейс и unit-экономика MVP для вариантов на 6 и 3 месяца, включая бережливые: разовые затраты, затраты на проведение, цена, маржинальность | Заказчик |
-| [docs/passport/team.md](docs/passport/team.md) | Экспертные роли, критерии отбора, число исследованных и подтверждённых кандидатов (без имён) | Заказчик |
-| [docs/passport/appendix-a-glossary.md](docs/passport/appendix-a-glossary.md) | Приложение А — глоссарий | Заказчик |
-| [docs/passport/appendix-b-methodology-rationale.md](docs/passport/appendix-b-methodology-rationale.md) | Приложение Б — обоснование решений и методологий | Заказчик |
-| [docs/passport/appendix-c-evidence-digest.md](docs/passport/appendix-c-evidence-digest.md) | Приложение В — дайджест исследований | Заказчик |
-| [docs/methodology/corporate-learning-methodology-2026.md](docs/methodology/corporate-learning-methodology-2026.md) | Каталог методологий корпоративного обучения 2026 и сквозной метод проектирования программы | Академия, методолог |
-| [docs/methodology/program-design-procedure.md](docs/methodology/program-design-procedure.md) | Исполнимый контракт: как агенту собрать паспорт программы по новому кейсу | ИИ-агент |
-| [docs/rfc/2026-11-site-presentation.md](docs/rfc/2026-11-site-presentation.md) | RFC сайта — презентация резюме и паспорта одной выбранной программы: разделы, что публикуется, юзабилити чтения | Академия, разработчик сайта |
-| [docs/candidates/candidate-pool-gra.md](docs/candidates/candidate-pool-gra.md) | Пул кандидатов (Москва) в команду реализации с разметкой по GRA и рейтингом «роль + контакт»; блок D — стартапы и МСБ — внутренний артефакт | Исполнитель, академия |
-
-Полные исследования — [research/ai-team-management-program/](../../research/ai-team-management-program/README.md)
-(модель M3, Discussion Paper / Survey; заказчику не передаются, в паспорт входит
-дайджест).
-
-## Как читать
-
-Заказчик начинает с резюме проекта выбранного варианта на двух страницах, затем читает паспорт того же варианта сверху вниз: паспорт → архитектура → экономика →
-команда → приложения. Ревьюер начинает с task-contract: там видно, что
-заказано, что достроено исполнителем и где проходят границы. Методолог
-академии начинает с каталога методологий: паспорт — пример его применения.
+| `projects/ai-team-management-program/docs/candidates/candidate-pool-gra.md` | перенесён в спицу | [projects/ai-team-management-program/docs/candidates/candidate-pool-gra.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/candidates/candidate-pool-gra.md) |
+| `projects/ai-team-management-program/docs/methodology/corporate-learning-methodology-2026.md` | перенесён в спицу | [projects/ai-team-management-program/docs/methodology/corporate-learning-methodology-2026.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/methodology/corporate-learning-methodology-2026.md) |
+| `projects/ai-team-management-program/docs/methodology/program-design-procedure.md` | перенесён в спицу | [projects/ai-team-management-program/docs/methodology/program-design-procedure.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/methodology/program-design-procedure.md) |
+| `projects/ai-team-management-program/docs/methodology/project-summary-template.md` | перенесён в спицу | [projects/ai-team-management-program/docs/methodology/project-summary-template.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/methodology/project-summary-template.md) |
+| `projects/ai-team-management-program/docs/passport/appendix-a-glossary.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/appendix-a-glossary.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/appendix-a-glossary.md) |
+| `projects/ai-team-management-program/docs/passport/appendix-b-methodology-rationale.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/appendix-b-methodology-rationale.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/appendix-b-methodology-rationale.md) |
+| `projects/ai-team-management-program/docs/passport/appendix-c-evidence-digest.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/appendix-c-evidence-digest.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/appendix-c-evidence-digest.md) |
+| `projects/ai-team-management-program/docs/passport/architecture-3m.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/architecture-3m.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/architecture-3m.md) |
+| `projects/ai-team-management-program/docs/passport/architecture.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/architecture.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/architecture.md) |
+| `projects/ai-team-management-program/docs/passport/economics.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/economics.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/economics.md) |
+| `projects/ai-team-management-program/docs/passport/project-passport-3m.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/project-passport-3m.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/project-passport-3m.md) |
+| `projects/ai-team-management-program/docs/passport/project-passport-6m.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/project-passport-6m.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/project-passport-6m.md) |
+| `projects/ai-team-management-program/docs/passport/project-summary-3m.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/project-summary-3m.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/project-summary-3m.md) |
+| `projects/ai-team-management-program/docs/passport/project-summary-3m.pdf` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/project-summary-3m.pdf](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/project-summary-3m.pdf) |
+| `projects/ai-team-management-program/docs/passport/project-summary-6m.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/project-summary-6m.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/project-summary-6m.md) |
+| `projects/ai-team-management-program/docs/passport/project-summary-6m.pdf` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/project-summary-6m.pdf](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/project-summary-6m.pdf) |
+| `projects/ai-team-management-program/docs/passport/team.md` | перенесён в спицу | [projects/ai-team-management-program/docs/passport/team.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/passport/team.md) |
+| `projects/ai-team-management-program/docs/rfc/2026-11-site-presentation.md` | перенесён в спицу | [projects/ai-team-management-program/docs/rfc/2026-11-site-presentation.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/rfc/2026-11-site-presentation.md) |
+| `projects/ai-team-management-program/docs/task-contract.md` | перенесён в спицу | [projects/ai-team-management-program/docs/task-contract.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/docs/task-contract.md) |
+| `projects/ai-team-management-program/pop-3m/01-project-summary.md` | перенесён в спицу | [projects/ai-team-management-program/pop-3m/01-project-summary.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/pop-3m/01-project-summary.md) |
+| `projects/ai-team-management-program/pop-3m/02-project-passport.md` | перенесён в спицу | [projects/ai-team-management-program/pop-3m/02-project-passport.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/pop-3m/02-project-passport.md) |
+| `projects/ai-team-management-program/pop-3m/03-appendix.md` | перенесён в спицу | [projects/ai-team-management-program/pop-3m/03-appendix.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/pop-3m/03-appendix.md) |
+| `projects/ai-team-management-program/pop-3m/04-rfc-site-presentation.md` | перенесён в спицу | [projects/ai-team-management-program/pop-3m/04-rfc-site-presentation.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/pop-3m/04-rfc-site-presentation.md) |
+| `projects/ai-team-management-program/pop-3m/05-detailed-economics.md` | перенесён в спицу | [projects/ai-team-management-program/pop-3m/05-detailed-economics.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/pop-3m/05-detailed-economics.md) |
+| `projects/ai-team-management-program/strategy/README.md` | перенесён в спицу | [projects/ai-team-management-program/strategy/README.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/strategy/README.md) |
+| `projects/ai-team-management-program/strategy/l1-l4-strategy.md` | перенесён в спицу | [projects/ai-team-management-program/strategy/l1-l4-strategy.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/strategy/l1-l4-strategy.md) |
+| `projects/ai-team-management-program/strategy/new-repository-plan.md` | перенесён в спицу | [projects/ai-team-management-program/strategy/new-repository-plan.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/strategy/new-repository-plan.md) |
+| `projects/ai-team-management-program/strategy/personal-promotion-ru-us-cn.md` | перенесён в спицу | [projects/ai-team-management-program/strategy/personal-promotion-ru-us-cn.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/strategy/personal-promotion-ru-us-cn.md) |
+| `projects/ai-team-management-program/strategy/service-concept.md` | перенесён в спицу | [projects/ai-team-management-program/strategy/service-concept.md](https://github.com/G-Ivan-A/aether-orbis-proxeneta/blob/8e7aec57a31dc5decaf98be6119d039d063c82da/projects/ai-team-management-program/strategy/service-concept.md) |

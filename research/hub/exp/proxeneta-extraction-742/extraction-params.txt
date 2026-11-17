@@ -1,0 +1,17 @@
+HUB_REPO: G-Ivan-A/hybrid-Intelligence-lab
+HUB_SHA: 546ebabb13a4679c6801d0eb5f344c6c3f6db177
+MAP: projects/ai-team-management-program/=projects/ai-team-management-program/
+MAP: research/ai-team-management-program/=research/ai-team-management-program/
+DIR: projects | project deliverables and strategy approved for extraction in issue 742
+DIR: research | project research, source registry and reproducible experiments
+CI_STEP: validate / Check reproducible economics model of issue 730
+CI_STEP: validate / Check sources registry of issue 730 against reports
+CI_STEP: validate / Check reproducible economics model of issue 736
+CI_STEP: validate / Check presentation package pop-3m of issue 736
+CI_STEP: validate / Check strategy probabilities model of issue 740
+BACKLOG: ## Спринт 32:
+BACKLOG: ## Спринт 33:
+HISTORICAL: projects/ai-team-management-program/
+HISTORICAL: research/ai-team-management-program/
+EXCLUDE:
+STAGE: E1
