@@ -724,6 +724,7 @@ is_active_file() {
     docs/analysis/2026-11-04-issue-721-dialog-expert-review.md | \
     docs/analysis/2026-11-04-sprint-31-readiness-check.md | \
     docs/analysis/2026-11-16-hub-optimization-start.md | \
+    docs/analysis/2026-11-17-backlog-audit-after-extractions.md | \
     docs/analysis/2026-11-03-ba-meta-model-extraction-step1.md | \
     docs/analysis/2026-11-04-independent-tech-debt-sprint-selection.md | \
     docs/analysis/2026-11-04-sprint-13-hub-normative-debt-selection.md | \
@@ -2156,7 +2157,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.67"
+require_text "ops/artifact-map.md" "version: 2.68"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2580,7 +2581,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.88"
+require_text "ops/backlog.md" "version: 1.89"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | DONE | [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) / [PR #739](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/739); [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1) |"
 require_text "ops/backlog.md" "**B-307**"
