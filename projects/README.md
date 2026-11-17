@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.4
-updated: 2026-11-10
+version: 1.5
+updated: 2026-11-17
 temperature: 0.1
 source: projects/README-old.md
 ---
@@ -76,13 +76,13 @@ projects/<project-slug>/
 | --- | --- |
 | [repo-development/](repo-development/) | Развитие структуры, governance и локальных проверок самого репозитория. |
 | [ba-ai-process/](ba-ai-process/README.md) | Source модели БА-процессов: мета-модель и вложенные таксономии (`scope: mango-only`), project-scoped решения, тесты и чистые Distribution. |
-| [ai-team-management-program/](ai-team-management-program/README.md) | Корпоративная программа «ИИ в работе с командой» (issues #730, #732): постановка, паспорт проекта (архитектура с пятью кейсами по сетам, экономика двух вариантов бюджета, команда, приложения), ответ заказчику на двух страницах A4, каталог методологий корпоративного обучения 2026 и внутренний пул кандидатов с разметкой GRA и рейтингом «роль + контакт». |
 
 ## Мигрировавшие проекты
 
 | Проект | Статус | Новый репозиторий | Дата миграции |
 |--------|--------|-------------------|---------------|
 | Mango | ✅ Мигрировал | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | 2026-06-05 |
+| [ai-team-management-program](ai-team-management-program/README.md) | Техническая E6 подтверждена; приёмка и PRIVATE ожидаются ([#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)) | [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) | 2026-11-17 (PR) |
 
 Прежняя архивная копия в Хабе удалена; история доступна через git, рабочая версия
 живёт во внешнем spoke-репозитории `mango_ba_prompts`.

@@ -67,6 +67,22 @@
       "archive": "archive/reputation-technologies-2026-11",
       "archive_commit": "51869aa50f14a0bc8f69f8b426e216244f16c970",
       "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725"
+    },
+    {
+      "from": "projects/ai-team-management-program/",
+      "to": "https://github.com/G-Ivan-A/aether-orbis-proxeneta",
+      "manifest": "projects/ai-team-management-program/README.md",
+      "archive": "archive/proxeneta-project-2026-11",
+      "archive_commit": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742"
+    },
+    {
+      "from": "research/ai-team-management-program/",
+      "to": "https://github.com/G-Ivan-A/aether-orbis-proxeneta",
+      "manifest": "research/ai-team-management-program/README.md",
+      "archive": "archive/proxeneta-research-2026-11",
+      "archive_commit": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742"
     }
   ]
 }
