@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.5
+version: 1.6
 updated: 2026-11-17
 temperature: 0.1
 source: projects/README-old.md
@@ -82,7 +82,7 @@ projects/<project-slug>/
 | Проект | Статус | Новый репозиторий | Дата миграции |
 |--------|--------|-------------------|---------------|
 | Mango | ✅ Мигрировал | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | 2026-06-05 |
-| [ai-team-management-program](ai-team-management-program/README.md) | Техническая E6 подтверждена; приёмка и PRIVATE ожидаются ([#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)) | [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) | 2026-11-17 (PR) |
+| [ai-team-management-program](ai-team-management-program/README.md) | Импорт принят в приватную спицу ([#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)) | [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) | 2026-11-17 |
 
 Прежняя архивная копия в Хабе удалена; история доступна через git, рабочая версия
 живёт во внешнем spoke-репозитории `mango_ba_prompts`.
