@@ -24,3 +24,5 @@ test-evidence-structure-validator: 0
 verify-bundle: 0
 Python/Bash syntax: 0
 git diff --check: 0
+
+test-post-migration-validator (tracked package paths): 0

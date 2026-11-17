@@ -398,6 +398,15 @@ is_active_file() {
     research/hub/exp/hub-governance-roadmap-715/hub-status-census.log | \
     research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.py | \
     research/hub/exp/hub-governance-roadmap-715/spoke-consistency-matrix.log | \
+    research/hub/exp/proxeneta-extraction-742/README.md | \
+    research/hub/exp/proxeneta-extraction-742/extraction-params.txt | \
+    research/hub/exp/proxeneta-extraction-742/local-verification.json | \
+    research/hub/exp/proxeneta-extraction-742/manifest.tsv | \
+    research/hub/exp/proxeneta-extraction-742/prepare-import.py | \
+    research/hub/exp/proxeneta-extraction-742/remote-state.json | \
+    research/hub/exp/proxeneta-extraction-742/spoke-readme.txt | \
+    research/hub/exp/proxeneta-extraction-742/test-preparation.log | \
+    research/hub/exp/proxeneta-extraction-742/test-preparation.sh | \
     research/hub/exp/gra-extraction-cleanup-721/README.md | \
     research/hub/exp/gra-extraction-cleanup-721/gra-inventory.py | \
     research/hub/exp/gra-extraction-cleanup-721/gra-inventory.log | \
