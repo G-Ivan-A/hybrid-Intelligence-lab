@@ -1,0 +1,69 @@
+{
+  "recorded_at_utc": "2026-11-17T05:42:20.442204+00:00",
+  "summary": {
+    "hub_sha": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+    "files": 79,
+    "history_commits": 63,
+    "link_events": {
+      "file-out": 39,
+      "url-in": 12
+    },
+    "backlog_rows": 28,
+    "ci_steps": [
+      "Check reproducible economics model of issue 730",
+      "Check sources registry of issue 730 against reports",
+      "Check reproducible economics model of issue 736",
+      "Check presentation package pop-3m of issue 736",
+      "Check strategy probabilities model of issue 740"
+    ],
+    "local_checks": "PASS",
+    "remote_import": "NOT VERIFIED (offline preparation)",
+    "visibility": "NOT VERIFIED (offline preparation)",
+    "hub_cleanup": "NOT PERFORMED (remote E6 required)"
+  },
+  "verify-filtered": {
+    "hub_sha": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+    "mode": "verbatim",
+    "files": 79,
+    "ok": 79,
+    "missing": [],
+    "mismatch": [],
+    "mode_mismatch": [],
+    "extra": []
+  },
+  "verify-import": {
+    "hub_sha": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+    "mode": "verbatim",
+    "files": 79,
+    "ok": 79,
+    "missing": [],
+    "mismatch": [],
+    "mode_mismatch": [],
+    "extra": []
+  },
+  "verify-links": {
+    "hub_sha": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+    "mode": "links",
+    "files": 79,
+    "ok": 79,
+    "missing": [],
+    "mismatch": [],
+    "mode_mismatch": [],
+    "extra": []
+  },
+  "verify-final": {
+    "hub_sha": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
+    "mode": "links",
+    "files": 79,
+    "ok": 79,
+    "missing": [],
+    "mismatch": [],
+    "mode_mismatch": [],
+    "extra": []
+  },
+  "second_link_rewrite": "PASS: --check; no changes required",
+  "stale_prefix_scan": [],
+  "integration_test": "PASS: offline import, existing output, Hub output, dirty destination, changed destination, changed README",
+  "hub_validators": "PASS; see test-preparation.log",
+  "bundle_verification": "PASS: complete history, branch issue-742-ecf948625d8a"
+}

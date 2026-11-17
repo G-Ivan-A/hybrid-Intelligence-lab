@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.46
-updated: 2026-11-16
+version: 2.47
+updated: 2026-11-17
 temperature: 0.1
 ---
 
@@ -13,6 +13,7 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- ops: [#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742), [PR #743](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743) — подготовка выноса в `aether-orbis-proxeneta`: закреплённые параметры, манифест 79 файлов, локальный импорт с историей и проверки E1–E6, защита источников в CI. Спица зарегистрирована, B-308…B-310 отражены как частично выполненные: удалённый импорт, PRIVATE и очистка Хаба заблокированы отсутствием доступа на запись.
 - research: issue [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) — итерация 5 исследований [`ai-team-management-program`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-team-management-program/README.md): семь независимых отчётов M3 с пометкой «для переноса» (S1 — международные академические программы вендоров, S2 — Россия, S3 — Китай, S4 — позиционирование специалиста RU/US/CN, S5 — «челночная дипломатия», S6 — выбор вуза и проекта, S7 — механизмы и форматы) с гейтом G5 (27 перепроверенных утверждений, 2 исправлены); RRP-модуль [`vendor-education-partnerships`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-team-management-program/vendor-education-partnerships/00-introduction.md): гипотеза «встраивание инструментов вендора в обучение повышает продажи» подтверждена только для обучения действующих клиентов вендора, ни одна из 50 программ не публикует продаж от образовательного канала; рамка решений «формат × цель» с правилами П1–П8, дизайн пилота и пороги опровержения; [модель вероятностей стратегий](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-team-management-program/exp/ai-team-management-program-740/README.md) (seed 740, 20 000 прогонов, калибровка по базовым ставкам отчётов): медиана хотя бы одного платного договора за 12 месяцев — 0,452 для RU-A и 0,661 для портфеля RU-A + RU-B. Шаг CI `Check strategy probabilities model of issue 740` сверяет вывод модели с журналом.
 - projects: issue [#740](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740) — [стратегия](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/projects/ai-team-management-program/strategy/README.md) проекта `ai-team-management-program` с пометкой «для переноса» в приватную спицу по стратегии выноса PR #739: L1–L4 «вендор — вуз — клиент вендора», концепция услуг У1–У5 с трассировкой к целям Ц1–Ц11, стратегия продвижения RU/US/CN (Россия — основной рынок, США и Китай — опционы) с вероятностями, «челночной дипломатией», Техноградом и чек-листом CV, план нового репозитория (рекомендация — `aether-orbis-bridge`, решения Р1–Р4). Коммерческих данных в Хабе нет. Бэклог 1.85: Спринт 33 (B-308…B-315).
 - ops: issue [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) — B-243 (Ш3.0 RFC #715) исполнена, вынос проекта метамодели БА в [`ba-ai-metamodel`](https://github.com/G-Ivan-A/ba-ai-metamodel) возобновлён: `HUB_SHA` параметров выноса — `54face1`, сверка дрейфа и репетиция E1–E5 в [контейнере выноса](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/exp/ba-extraction-717/README.md), задача выноса [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1). Бэклог 1.84: B-243 `DONE`, триггеры B-244…B-250 сняты, новая задача B-307 (процедура рождения спицы).

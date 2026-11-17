@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.35
-updated: 2026-10-30
+version: 0.36
+updated: 2026-11-17
 temperature: 0.1
 type: external-analysis
 context: [external-knowledge, registry, hub, ecosystem, lifecycle]
@@ -532,6 +532,8 @@ related_issues:
 | `ext-446` | [W3C — Model for Tabular Data and Metadata on the Web](https://www.w3.org/TR/tabular-data-model/) | `standard` | `en` | `tabular-data, keys, evidence-provenance` | `topic: reputation-course` | `research` | `hub` | ✅ [ссылочная целостность #709](external-insights/2026-10-30-w3c-tabular-provenance-keys.md) |
 | `ext-447` | [АРПП «Отечественный софт» — члены ассоциации](https://arppsoft.ru/members/) | `docs` | `ru` | `industry-discovery, company-directory` | `topic: reputation-course` | `observation` | `hub` | Открыт 30.10.2026; десять первых названий сохранены как упоминания, не проверенные покупатели: [конечный пример #709](https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/education/technograd-reputation-engineering/handouts/ten-company-example.md). |
 | `ext-448` | [РУССОФТ — участники](https://russoft.org/members/) | `docs` | `ru` | `industry-discovery, access-gap` | `topic: reputation-course` | `observation` | `hub` | Проверен 30.10.2026: доступный текстовый просмотр страницы не извлёк список названий; содержательные выводы о компаниях не делались. Использован другой открытый каталог; ❌ отдельный инсайт не извлечён. |
+| `ext-449` | [GitHub — Setting repository visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) | `docs` | `en` | `repository-visibility, extraction` | `topic: hub-extraction` | `observation` | `hub` | GitHub Docs, изучено 17.11.2026: публичные форки не становятся приватными; [граница #742](../hub/exp/proxeneta-extraction-742/README.md). |
+| `ext-450` | [GitHub — Removing sensitive data from a repository](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) | `docs` | `en` | `git-history, extraction, privacy` | `topic: hub-extraction` | `observation` | `hub` | GitHub Docs, изучено 17.11.2026: удаление файлов не очищает клоны, форки и PR-ссылки; [граница #742](../hub/exp/proxeneta-extraction-742/README.md). |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены

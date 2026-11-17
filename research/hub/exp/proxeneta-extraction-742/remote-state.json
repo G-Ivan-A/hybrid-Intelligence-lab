@@ -1,0 +1,14 @@
+{
+  "default_branch": "main",
+  "full_name": "G-Ivan-A/aether-orbis-proxeneta",
+  "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+  },
+  "private": false,
+  "pushed_at": "2026-11-16T19:54:29Z",
+  "checked_at_utc": "2026-11-17T05:37:25.860365+00:00"
+}
