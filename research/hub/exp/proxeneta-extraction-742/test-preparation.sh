@@ -25,22 +25,22 @@ PY
 if prepare "$WORK/import" > "$WORK/refusal.log" 2>&1; then
   echo 'FAIL: accepted an existing output directory'; exit 1
 fi
-rg -q 'must be a new directory outside the Hub' "$WORK/refusal.log"
+grep -Fq 'must be a new directory outside the Hub' "$WORK/refusal.log"
 if prepare "$HERE/forbidden-output" > "$WORK/refusal.log" 2>&1; then
   echo 'FAIL: accepted output inside the Hub'; exit 1
 fi
-rg -q 'must be a new directory outside the Hub' "$WORK/refusal.log"
+grep -Fq 'must be a new directory outside the Hub' "$WORK/refusal.log"
 printf 'human work\n' > "$WORK/base/new.md"
 if prepare "$WORK/rejected" > "$WORK/refusal.log" 2>&1; then
   echo 'FAIL: accepted a dirty destination'; exit 1
 fi
-rg -q 'uncommitted changes' "$WORK/refusal.log"
+grep -Fq 'uncommitted changes' "$WORK/refusal.log"
 git -C "$WORK/base" add new.md
 git -C "$WORK/base" commit --quiet -m 'New human work'
 if prepare "$WORK/rejected" > "$WORK/refusal.log" 2>&1; then
   echo 'FAIL: accepted new destination content'; exit 1
 fi
-rg -q 'no longer README-only' "$WORK/refusal.log"
+grep -Fq 'no longer README-only' "$WORK/refusal.log"
 git -C "$WORK/base" rm --quiet new.md
 printf '# New human README\n' > "$WORK/base/README.md"
 git -C "$WORK/base" add README.md
@@ -48,6 +48,6 @@ git -C "$WORK/base" commit --quiet -m 'Human README on README-only destination'
 if prepare "$WORK/rejected" > "$WORK/refusal.log" 2>&1; then
   echo 'FAIL: overwrote a changed README on a README-only destination'; exit 1
 fi
-rg -q 'README changed from the observed placeholder' "$WORK/refusal.log"
+grep -Fq 'README changed from the observed placeholder' "$WORK/refusal.log"
 test ! -e "$WORK/rejected"
 printf 'PASS: offline import, existing output, Hub output, dirty destination, changed destination, changed README\n'

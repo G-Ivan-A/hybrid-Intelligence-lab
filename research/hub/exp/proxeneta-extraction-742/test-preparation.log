@@ -26,3 +26,4 @@ Python/Bash syntax: 0
 git diff --check: 0
 
 test-post-migration-validator (tracked package paths): 0
+offline integration with rg deliberately unavailable: 0

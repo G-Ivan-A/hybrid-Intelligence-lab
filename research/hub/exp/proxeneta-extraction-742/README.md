@@ -92,7 +92,7 @@ source: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742
 
 ## Воспроизведение и доставка
 
-Требуются git, Python 3.9+, bash, rg и git-filter-repo 2.47.0. Создание venv
+Требуются git, Python 3.9+, bash и git-filter-repo 2.47.0. Создание venv
 не требует sudo. Команды выполняются последовательно; полная сборка продукта
 и внешние сервисы не требуются.
 
