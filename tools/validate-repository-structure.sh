@@ -58,37 +58,6 @@ is_active_file() {
     projects/*/docs/*)
       return 0
       ;;
-    # Пакет исполнения перечислен шаблоном, а не пофайлово: его состав
-    # задаётся компиляцией и меняется целиком, а полноту состава проверяет
-    # собственный валидатор пакета (tools/validate-package.py).
-    projects/ba-ai-process/dist/execution-package-gigacode-cli/*)
-      return 0
-      ;;
-    # Cline pilot Source and compiled Distribution are validated together by
-    # tools/test-cline-package.sh; the runtime package is checked by its manifest.
-    projects/ba-ai-process/build/common/* | \
-    projects/ba-ai-process/build/adapters/cline-vscode/* | \
-    projects/ba-ai-process/build/compile-cline-package.py | \
-    projects/ba-ai-process/dist/execution-package-cline-vscode/* | \
-    projects/ba-ai-process/tests/cline-package/*)
-      return 0
-      ;;
-    # OpenCode pilot Source and Distribution: tools/test-opencode-package.sh.
-    projects/ba-ai-process/build/adapters/opencode/* | \
-    projects/ba-ai-process/build/compile-opencode-package.py | \
-    projects/ba-ai-process/dist/execution-package-opencode/* | \
-    projects/ba-ai-process/tests/opencode-package/*)
-      return 0
-      ;;
-    projects/ba-ai-process/ba-meta-model/product-taxonomy/* | \
-    projects/ba-ai-process/build/compiler/*)
-      return 0
-      ;;
-    projects/ba-ai-process/meta-model-guides/* | \
-    projects/ba-ai-process/tests/execution-package/* | \
-    projects/ba-ai-process/experiments/*)
-      return 0
-      ;;
     README.md | \
     AGENTS.md | \
     .hub-profile.json | \
@@ -150,8 +119,6 @@ is_active_file() {
     docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
     docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md | \
     docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md | \
-    projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md | \
-    projects/ba-ai-process/decisions/2026-09-adr-020-clean-distribution-package.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/agents-md-bootstrap-standard.md | \
@@ -182,10 +149,6 @@ is_active_file() {
     standards/evals-contract-standard.md | \
     standards/artifact-deprecation-standard.md | \
     standards/product-taxonomy-reference.md | \
-    research/mango/2026-05-26-taxonomy-concept.md | \
-    research/mango/2026-05-26-requirements-lifecycle-uncertainty.md | \
-    research/mango/2026-05-26-rag-mapping-roadmap.md | \
-    research/mango/2026-05-27-capability-decomposition.md | \
     research/hub/2026-05-28-project-context-and-bootstrap-patterns.md | \
     research/hub/2026-06-02-ai-collaboration-retrospective.md | \
     research/hub/2026-06-02-ai-collaboration-retrospective-mango-migration.md | \
@@ -539,6 +502,9 @@ is_active_file() {
     research/hub/exp/ba-extraction-717/drift-54face1.log | \
     research/hub/exp/ba-extraction-717/rehearse-contract-54face1.log | \
     research/hub/exp/ba-extraction-717/freeze-window-2026-11-16.log | \
+    research/hub/exp/ba-extraction-717/pin-spoke-links.py | \
+    research/hub/exp/ba-extraction-717/tombstone.py | \
+    research/hub/exp/ba-extraction-717/tombstone-e1f67e2.log | \
     research/hub/exp/independent-tech-debt-723/README.md | \
     research/hub/exp/independent-tech-debt-723/independence-check.sh | \
     research/hub/exp/independent-tech-debt-723/independence-check.log | \
@@ -560,9 +526,6 @@ is_active_file() {
     research/reputation-technologies/README.md | \
     research/external-knowledge/external-insights/2026-10-30-gephi-csv-evidence-graph.md | \
     research/external-knowledge/external-insights/2026-10-30-w3c-tabular-provenance-keys.md | \
-    research/mango/2026-05-22-classification.md | \
-    research/mango/2026-05-22-classification-tz.md | \
-    research/mango/2026-05-22-requirements-flow.md | \
     research/external-knowledge/README.md | \
     research/external-knowledge/external-sources-registry.md | \
     research/external-knowledge/external-insights/README.md | \
@@ -601,24 +564,6 @@ is_active_file() {
     projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md | \
     projects/ba-ai-process/README.md | \
     projects/ai-team-management-program/README.md | \
-    projects/ba-ai-process/ba-meta-model/00-introduction.md | \
-    projects/ba-ai-process/ba-meta-model/10-theory.md | \
-    projects/ba-ai-process/ba-meta-model/20-taxonomy.md | \
-    projects/ba-ai-process/ba-meta-model/30-decision-framework.md | \
-    projects/ba-ai-process/ba-meta-model/40-practice-and-cases.md | \
-    projects/ba-ai-process/ba-meta-model/50-open-research.md | \
-    projects/ba-ai-process/ba-meta-model/process-taxonomy/00-introduction.md | \
-    projects/ba-ai-process/ba-meta-model/process-taxonomy/10-theory.md | \
-    projects/ba-ai-process/ba-meta-model/process-taxonomy/20-taxonomy.md | \
-    projects/ba-ai-process/ba-meta-model/process-taxonomy/30-decision-framework.md | \
-    projects/ba-ai-process/ba-meta-model/process-taxonomy/40-practice-and-cases.md | \
-    projects/ba-ai-process/ba-meta-model/process-taxonomy/50-open-research.md | \
-    projects/ba-ai-process/ba-meta-model/operation-taxonomy/00-introduction.md | \
-    projects/ba-ai-process/ba-meta-model/operation-taxonomy/10-theory.md | \
-    projects/ba-ai-process/ba-meta-model/operation-taxonomy/20-taxonomy.md | \
-    projects/ba-ai-process/ba-meta-model/operation-taxonomy/30-decision-framework.md | \
-    projects/ba-ai-process/ba-meta-model/operation-taxonomy/40-practice-and-cases.md | \
-    projects/ba-ai-process/ba-meta-model/operation-taxonomy/50-open-research.md | \
     docs/rfc/README.md | \
     docs/rfc/rfc-two-cases-of-project-initialization.md | \
     docs/rfc/contract-executability-rfc.md | \
@@ -652,11 +597,6 @@ is_active_file() {
     docs/rfc/2026-09-28-rfc-backlog-sprint-closure.md | \
     docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md | \
     docs/rfc/2026-11-04-rfc-gra-extraction-completion-and-hub-cleanup.md | \
-    research/mango/2026-06-18-requirements-engineering-ai-era.md | \
-    research/mango/2026-06-18-ai-classifications-formalization.md | \
-    research/mango/2026-06-19-repository-structure-vision.md | \
-    research/mango/2026-06-19-token-optimization-proposal.md | \
-    research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
@@ -769,7 +709,6 @@ is_active_file() {
     tools/test-agent-onboarding-authorization.sh | \
     tools/test-operating-mode-contract.sh | \
     tools/test-check-agent-work-rules-size.sh | \
-    tools/test-ba-meta-model-overview.sh | \
     tools/check-agent-work-rules-size.sh | \
     tools/test-nonempty-diff.sh | \
     tools/validate-nonempty-diff.sh | \
@@ -779,11 +718,6 @@ is_active_file() {
     tools/validate-historical-immutable.sh | \
     tools/validate-agents-bootstrap.sh | \
     tools/test-validate-rrp-links.sh | \
-    tools/test-execution-package.sh | \
-    tools/test-ba-requirements-forensics.sh | \
-    tools/test-bcreq-working-release-pipeline.sh | \
-    tools/test-cline-package.sh | \
-    tools/test-opencode-package.sh | \
     tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-evidence-structure.sh | \
@@ -1011,20 +945,6 @@ required_directories=(
   "practices/ai-governance"
   "frameworks"
   "projects"
-  "projects/ba-ai-process/ba-meta-model"
-  "projects/ba-ai-process/ba-meta-model/product-taxonomy"
-  "projects/ba-ai-process/build"
-  "projects/ba-ai-process/build/compiler"
-  "projects/ba-ai-process/decisions"
-  "projects/ba-ai-process/docs"
-  "projects/ba-ai-process/docs/analysis"
-  "projects/ba-ai-process/docs/rfc"
-  "projects/ba-ai-process/experiments"
-  "projects/ba-ai-process/meta-model-guides"
-  "projects/ba-ai-process/tests"
-  "projects/ba-ai-process/tests/execution-package"
-  "projects/ba-ai-process/dist"
-  "projects/ba-ai-process/dist/execution-package-gigacode-cli"
   "education"
   "ai-governance"
   "ai-rules"
@@ -1177,6 +1097,9 @@ required_files=(
   "research/hub/exp/ba-extraction-717/drift-54face1.log"
   "research/hub/exp/ba-extraction-717/rehearse-contract-54face1.log"
   "research/hub/exp/ba-extraction-717/freeze-window-2026-11-16.log"
+  "research/hub/exp/ba-extraction-717/pin-spoke-links.py"
+  "research/hub/exp/ba-extraction-717/tombstone.py"
+  "research/hub/exp/ba-extraction-717/tombstone-e1f67e2.log"
   "research/hub/exp/independent-tech-debt-723/README.md"
   "research/hub/exp/independent-tech-debt-723/independence-check.sh"
   "research/hub/exp/independent-tech-debt-723/independence-check.log"
@@ -1195,10 +1118,6 @@ required_files=(
   "research/governance/2026-06-06-executable-contract-format.md"
   "research/governance/2026-06-06-contract-documentation-format.md"
   "research/governance/2026-06-06-governance-folder-structure-decisions.md"
-  "research/mango/2026-05-22-classification.md"
-  "research/mango/2026-05-22-classification-tz.md"
-  "research/mango/2026-05-22-requirements-flow.md"
-  "research/mango/2026-05-26-rag-mapping-roadmap.md"
   "research/education/2026-06-29-partner-attraction-strategy.ru.md"
   "research/external-knowledge/README.md"
   "research/external-knowledge/external-sources-registry.md"
@@ -1229,19 +1148,6 @@ required_files=(
   "projects/README.md"
   "projects/repo-development/README.md"
   "projects/ba-ai-process/README.md"
-  "projects/ba-ai-process/ba-meta-model/00-introduction.md"
-  "projects/ba-ai-process/ba-meta-model/product-taxonomy/mango-products.yaml"
-  "projects/ba-ai-process/ba-meta-model/product-taxonomy/telecom-products.yaml"
-  "projects/ba-ai-process/build/compiler/compile-product-taxonomies.py"
-  "projects/ba-ai-process/ba-meta-model/process-taxonomy/00-introduction.md"
-  "projects/ba-ai-process/ba-meta-model/operation-taxonomy/00-introduction.md"
-  "projects/ba-ai-process/meta-model-guides/README.md"
-  "projects/ba-ai-process/decisions/2026-09-adr-017-ba-ai-process-source-distribution.md"
-  "projects/ba-ai-process/tests/execution-package/README.md"
-  "projects/ba-ai-process/dist/execution-package-gigacode-cli/README.md"
-  "projects/ba-ai-process/dist/execution-package-gigacode-cli/package-manifest.yaml"
-  "projects/ba-ai-process/dist/execution-package-gigacode-cli/docs/kb/.gitkeep"
-  "projects/ba-ai-process/dist/execution-package-gigacode-cli/meta-model/.gitkeep"
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
   "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
@@ -1267,9 +1173,6 @@ required_files=(
   "docs/rfc/repository-archetypes-template-release.md"
   "docs/rfc/product-concept-template-proposal.md"
   "docs/rfc/solution-concept-template-proposal.md"
-  "research/mango/2026-06-18-requirements-engineering-ai-era.md"
-  "research/mango/2026-06-19-repository-structure-vision.md"
-  "research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
   "templates/htom/AI_GOVERNANCE.md"
@@ -1407,7 +1310,6 @@ require_text "README.md" "agent-onboarding-protocol.md"
 require_text "README.md" "ops/repo-model.md"
 require_text "README.md" "ops/artifact-map.md"
 require_text "README.md" "projects/education-ba-prompt/README.md"
-require_text "README.md" "research/mango/README.md"
 require_text "README.md" "practices/README.md"
 require_text "README.md" "./tools/validate-frontmatter.sh"
 require_text "README.md" "./tools/validate-file-naming.sh"
@@ -2008,7 +1910,7 @@ require_text "docs/product-concept.md" "быстрее входить в раб�
 require_text "docs/product-concept.md" "Связь L1-L4"
 require_text "docs/product-concept.md" "docs/rfc/product-concept-template-proposal.md"
 require_text "docs/product-concept.md" "docs/rfc/resolve-artifact-location-proposal.md"
-require_text "docs/ecosystem-map.md" "version: 0.8"
+require_text "docs/ecosystem-map.md" "version: 0.9"
 require_text "docs/ecosystem-map.md" "единый реестр репозиториев экосистемы"
 require_text "docs/ecosystem-map.md" '`exempt-runtime`'
 require_text "docs/ecosystem-map.md" "обмен практиками"
@@ -2156,7 +2058,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.66"
+require_text "ops/artifact-map.md" "version: 2.67"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -2180,8 +2082,6 @@ require_text "ops/artifact-map.md" "standards/project-structure-inheritance.md"
 require_text "ops/artifact-map.md" "Как использовать карту"
 require_text "ops/artifact-map.md" "Как обновлять карту"
 require_text "ops/artifact-map.md" "glossary.md"
-require_text "ops/artifact-map.md" "research/mango/2026-05-22-classification.md"
-require_text "ops/artifact-map.md" "research/mango/2026-05-26-rag-mapping-roadmap.md"
 require_text "ops/artifact-map.md" "research/hub/2026-05-28-project-context-and-bootstrap-patterns.md"
 require_text "ops/artifact-map.md" "research/hub/2026-06-01-team-c-governance-strategy-audit.md"
 require_text "ops/artifact-map.md" "research/hub/2026-05-28-user-prompts-analysis.md"
@@ -2394,7 +2294,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.36"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.37"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
@@ -2499,9 +2399,7 @@ require_text "docs/rfc/methodology-research-and-proposals.md" "Open Decisions"
 
 # Wigers requirements research + AI-era RFC (issue #247): independent extraction + mango sync.
 require_text "ops/artifact-map.md" "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
-require_text "ops/artifact-map.md" "research/mango/2026-06-18-requirements-engineering-ai-era.md"
 require_text "research/external-knowledge/README.md" "2026-06-18-wigers-requirements-analysis.md"
-require_text "research/mango/README.md" "2026-06-18-requirements-engineering-ai-era.md"
 # Research doc: independent bilingual Wiegers extraction (FT-1..FT-4).
 require_text "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md" "status: draft"
 require_text "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md" "version: 0.2"
@@ -2527,29 +2425,6 @@ require_text "research/external-knowledge/2026-06-18-wigers-requirements-analysi
 require_text "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md" "CrewAI"
 require_text "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md" "Сравнение классификаций"
 require_text "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md" "ОВ‑4"
-# RFC: Wiegers <-> mango-ADR sync (FT-5) with honest reinvention gradation.
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "status: draft"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "version: 0.2"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "RFC: Requirements Engineering in the AI Era"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Decision Scope"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Карта сравнения"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "mango_ba_prompts"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "велосипед"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "requirement_level"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Бизнес-правило"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "ГОСТ 34.602-2020"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "crosswalk"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Trust & Evidence"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Candidate"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Anti-Inflation"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Acceptance Criteria"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Open Decisions"
-# Issue #249 additions: prompt = interface to Tool, prompt-engineering subprocess, AI-agent processes.
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Инжиниринг промптов"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Prompt specification"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Разработка AI-агента"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Настройка RAG"
-require_text "research/mango/2026-06-18-requirements-engineering-ai-era.md" "Оркестрация агентов"
 
 # Index/Summary format improvement (issue #237): phase dates + future horizons.
 require_text "docs/ecosystem-map-Index.md" "version: 0.2"
@@ -2580,7 +2455,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.87"
+require_text "ops/backlog.md" "version: 1.88"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | DONE | [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) / [PR #739](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/739); [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1) |"
 require_text "ops/backlog.md" "**B-307**"
@@ -2611,9 +2486,9 @@ require_text "ops/backlog.md" "issue #378"
 require_text "ops/backlog.md" "absorbed by ADR-007/B-047"
 require_text "ops/backlog.md" "**B-062**"
 require_text "ops/backlog.md" '`null`'
-require_text "ops/backlog.md" "## Спринт 19: Инициализация MVP в \`mango-ba-ai-runtime\`"
-require_text "ops/backlog.md" "**B-170**"
-require_text "ops/backlog.md" "**B-173**"
+require_text "ops/backlog.md" "## Спринты 14–21, 24–28: Перенесены в ba-ai-metamodel"
+reject_text "ops/backlog.md" "| **B-170** |"
+reject_text "ops/backlog.md" "| **B-173** |"
 require_text "ops/backlog.md" "mango-ba-ai-runtime"
 require_text "ops/backlog.md" "**B-088**"
 require_text "ops/backlog.md" "deferred (triggered)"
@@ -2978,24 +2853,21 @@ require_text "research/governance/README.md" "Active standards"
 require_text "research/governance/README.md" "Source research"
 require_text "research/governance/README.md" "Derived standards"
 
-require_text "research/mango/README.md" "status: canonical"
-require_text "research/mango/README.md" "2026-05-22-classification.md"
-require_text "research/mango/README.md" "2026-05-22-requirements-flow.md"
-require_text "research/mango/README.md" "2026-05-26-rag-mapping-roadmap.md"
-require_text "research/mango/README.md" "research/mango/exp-tz-corpus/"
-
-require_text "research/mango/2026-05-22-classification.md" "status: reviewed"
-require_text "research/mango/2026-05-22-classification.md" "source: git history before migration to research/mango/2026-05-22-classification.md"
-require_text "research/mango/2026-05-22-classification-tz.md" "status: reviewed"
-require_text "research/mango/2026-05-22-classification-tz.md" "source: git history before migration to research/mango/2026-05-22-classification-tz.md"
-require_text "research/mango/2026-05-22-requirements-flow.md" "status: reviewed"
-require_text "research/mango/2026-05-22-requirements-flow.md" "source: git history before migration to research/mango/2026-05-22-requirements-flow.md"
-require_text "research/mango/2026-05-26-rag-mapping-roadmap.md" "status: draft"
-require_text "research/mango/2026-05-26-rag-mapping-roadmap.md" "type: process-research"
-require_text "research/mango/2026-05-26-rag-mapping-roadmap.md" "Маппинг продуктов/фич"
-require_text "research/mango/2026-05-26-rag-mapping-roadmap.md" "Roadmap реализации проекта"
-require_text "research/mango/2026-05-26-rag-mapping-roadmap.md" "PlantUML"
-require_text "research/mango/2026-05-26-rag-mapping-roadmap.md" "Вопросы для согласования"
+# B-249 (issue #738): research/mango/ и projects/ba-ai-process/ вынесены в ba-ai-metamodel;
+# на прежних путях остаются только манифесты redirect по стандарту выбытия.
+require_text "research/mango/README.md" "status: superseded"
+require_text "research/mango/README.md" "https://github.com/G-Ivan-A/ba-ai-metamodel"
+require_text "projects/ba-ai-process/README.md" "status: superseded"
+require_text "projects/ba-ai-process/README.md" "https://github.com/G-Ivan-A/ba-ai-metamodel"
+require_text "docs/ba-meta-model-overview.md" "status: superseded"
+require_text "research/hub/exp/ba-extraction-717/tombstone-e1f67e2.log" "ok projects/ba-ai-process/README.md"
+require_text "research/hub/exp/ba-extraction-717/tombstone-e1f67e2.log" "ok research/mango/README.md"
+for retired in research/mango projects/ba-ai-process; do
+  extra="$(git ls-files -- "$retired" | grep -vx "$retired/README.md" || true)"
+  if [ -n "$extra" ]; then
+    fail "$retired/ is retired to ba-ai-metamodel (B-249); only README.md manifest may remain: $extra"
+  fi
+done
 
 require_text "research/hub/2026-05-28-project-context-and-bootstrap-patterns.md" "status: draft"
 require_text "research/hub/2026-05-28-project-context-and-bootstrap-patterns.md" "type: internal-analysis"
@@ -3055,26 +2927,6 @@ require_text "research/hub/2026-05-28-user-prompts-analysis.md" "Рекомен�
 require_text "research/hub/2026-05-28-user-prompts-analysis.md" "План интеграции"
 require_text "research/hub/2026-05-28-user-prompts-analysis.md" "Вопросы для согласования"
 
-require_text "research/mango/2026-05-27-capability-decomposition.md" "status: draft"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "type: atomic-functions-reference"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "scope: mango-only"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "# Fixed per draft-triage RFC Phase 1"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "research/mango/2026-05-22-classification.md"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Критерии атомарности"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Связь с НФТ-классами"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Интеграция с"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Как обновлять справочник"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Вопросы для согласования с PO/Founder"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Domain: voice-ucaas"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Domain: contact-center"
-require_text "research/mango/2026-05-27-capability-decomposition.md" "Domain: digital-channels"
-if grep -Fq 'classification-glossary.md' "research/mango/2026-05-27-capability-decomposition.md"; then
-  fail "research/mango/2026-05-27-capability-decomposition.md must not reference removed local classification-glossary.md"
-fi
-if grep -Fq '"2026-05-22-classification.md v3.0"' "research/mango/2026-05-27-capability-decomposition.md"; then
-  fail "research/mango/2026-05-27-capability-decomposition.md related_artifacts must use path-only values"
-fi
 
 require_text "practices/README.md" "status: canonical"
 require_text "practices/README.md" "version: 1.0"
@@ -3341,7 +3193,6 @@ require_text ".github/workflows/validate.yml" "bash tools/test-spoke-extraction.
 require_text ".github/workflows/validate.yml" "bash tools/test-path-migration-manifest.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-archive-tags.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-extraction-freeze.sh"
-require_text ".github/workflows/validate.yml" "bash tools/check-extraction-freeze.sh research/hub/exp/ba-extraction-717/ba-instance-params.txt"
 require_text ".github/workflows/archive-tag.yml" "python3 -I tools/archive-tags.py plan"
 require_text ".github/workflows/archive-tag.yml" "python3 -I tools/path-migration-manifest.py check"
 require_text ".github/workflows/archive-tag.yml" ".github/rulesets/archive-tags.json"
@@ -3379,7 +3230,6 @@ require_text ".github/workflows/validate.yml" "./tools/validate-nonempty-diff.sh
 require_text ".github/workflows/validate.yml" "bash tools/test-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-historical-immutable.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-validate-rrp-links.sh"
-require_text ".github/workflows/validate.yml" "bash tools/test-execution-package.sh"
 require_text ".github/workflows/validate.yml" "./tools/validate-rrp-links.sh"
 require_text ".github/workflows/validate.yml" "fetch-depth: 0"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"

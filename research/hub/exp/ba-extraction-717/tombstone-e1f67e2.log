@@ -1,0 +1,6 @@
+# python3 -I research/hub/exp/ba-extraction-717/tombstone.py --hub . --spoke <ba-ai-metamodel clone> --spoke-sha e1f67e267beb73809e1edb26313691a5c769c92a --check
+# hub_sha (archive): 54face1618f74154ae0f072bc3e5bfb3c4817754
+ok projects/ba-ai-process/README.md
+ok research/mango/README.md
+ok docs/ba-meta-model-overview.md
+exit: 0

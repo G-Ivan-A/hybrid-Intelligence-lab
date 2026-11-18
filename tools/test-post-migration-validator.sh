@@ -93,11 +93,16 @@ if grep -Fq '| **B-053** |' "$backlog_file"; then
   fail "B-053 must stay archived after issue #583 (Спринт 3 removed from the active backlog)"
 fi
 
-grep -Fq '## Спринт 19: Инициализация MVP' "$backlog_file" ||
-  fail "Спринт 19 (MVP initialization) must be present in the active backlog"
+# Спринты 14–21 и 24–28 (B-173 included) moved to ba-ai-metamodel by B-247 and
+# were removed from the Hub by the B-249 tombstone (issue #738). B-173 stays the
+# declared trigger for B-068 and B-070, so the Hub must point to the spoke backlog
+# instead of resurrecting the rows.
+grep -Fq '## Спринты 14–21, 24–28: Перенесены в ba-ai-metamodel' "$backlog_file" ||
+  fail "moved BA sprints must keep a pointer to the ba-ai-metamodel backlog"
 
-grep -Fq '| **B-173** |' "$backlog_file" ||
-  fail "B-173 must exist: it is the declared trigger for B-068, B-070 and the Спринт 14 icebox"
+if grep -Fq '| **B-173** |' "$backlog_file"; then
+  fail "B-173 lives in the ba-ai-metamodel backlog after B-249 (issue #738)"
+fi
 
 b085_line="$(grep -F '| **B-085** |' "$backlog_file")"
 for expected in \

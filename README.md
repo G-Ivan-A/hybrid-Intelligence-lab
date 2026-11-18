@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.4
-updated: 2026-08-01
+version: 1.5
+updated: 2026-11-17
 temperature: 0.1
 ---
 
@@ -53,7 +53,6 @@ temperature: 0.1
 | [docs/vision.md](docs/vision.md) | Product Vision (L1) Хаба: зачем он существует, для кого и какую ценность создаёт (1 страница). |
 | [docs/product-concept.md](docs/product-concept.md) | Product Concept (L2): персоны, сценарии, ключевые возможности, метрики и дорожная карта. |
 | [docs/ecosystem-map.md](docs/ecosystem-map.md) | Экосистемная карта: полный граф проектов, их связи и принцип Need-to-Know. |
-| [docs/ba-meta-model-overview.md](docs/ba-meta-model-overview.md) | Презентационный обзор Мета-модели БА: ценность, механика, evidence и первый MVP. |
 | [guides/README.md](guides/README.md) | Библиотека человекочитаемых гайдов «как это сделать»: быстрый старт, синхронизация, развёртывание, решение проблем. |
 
 ## Структура
@@ -85,7 +84,7 @@ temperature: 0.1
 | Проект | Назначение |
 | --- | --- |
 | [projects/README.md](projects/README.md) | Навигация по проектным рабочим областям и правило выбора `/projects` vs spoke-репозиторий. |
-| [projects/ba-ai-process/README.md](projects/ba-ai-process/README.md) | Дом мета-модели БА и таксономий процессов и операций: реализация БА-процессов КК Манго в среде GigaCode. |
+| [ba-ai-metamodel](https://github.com/G-Ivan-A/ba-ai-metamodel) | Спица метамодели БА: ядро, таксономии процессов и операций, компиляторы пакетов исполнения и исследования MANGO OFFICE; вынесена из Хаба с историей (B-249), прежние пути — [манифест](projects/ba-ai-process/README.md). |
 | [projects/repo-development/README.md](projects/repo-development/README.md) | Развитие самого репозитория: аудит миграции, согласованность и предложения по оптимизации. |
 | [projects/education-ba-prompt/README.md](projects/education-ba-prompt/README.md) | Песочница идей, терминов, кейсов и шаблонов для будущего курса БА по промпт-инжинирингу. |
 | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | Мигрировавший spoke-репозиторий Mango; прежняя архивная копия удалена из Хаба, история доступна через git. |
@@ -96,7 +95,6 @@ temperature: 0.1
 | --- | --- |
 | [research/README.md](research/README.md) | Навигация по исследовательским направлениям и правилам воспроизводимости. |
 | [research/hub/README.md](research/hub/README.md) | Исследования Хаба: governance, практики agent work, международные AI governance sources и проектный bootstrap. |
-| [research/mango/README.md](research/mango/README.md) | Активные исследования Mango: классификация продуктов, анализ корпуса ТЗ и flow требований. |
 
 ## Состояние миграции
 

@@ -25,10 +25,6 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install Python dependencies
-        # Валидатор и локальный runner используют зависимости пакета исполнения.
-        run: pip install -r projects/ba-ai-process/dist/execution-package-gigacode-cli/requirements.txt
-
 
       - name: Validate shell syntax
         run: bash -n tools/*.sh templates/htom/tools/*.sh templates/spoke/tools/*.sh
@@ -81,37 +77,14 @@ jobs:
       - name: Test extraction freeze check
         run: bash tools/test-extraction-freeze.sh
 
-      - name: Check BA meta-model extraction source freeze
-        # B-243 (issue #738): источники выноса в ba-ai-metamodel заморожены на
-        # HUB_SHA из параметров. Снимает шаг PR надгробия B-249.
-        run: bash tools/check-extraction-freeze.sh research/hub/exp/ba-extraction-717/ba-instance-params.txt
-
       - name: Test historical immutability validator
         run: bash tools/test-historical-immutable.sh
 
       - name: Test RRP link validator
         run: bash tools/test-validate-rrp-links.sh
 
-      - name: Test BA meta-model stakeholder overview
-        run: bash tools/test-ba-meta-model-overview.sh
-
-      - name: Test BCREQ Working/Release pipeline contract
-        run: bash tools/test-bcreq-working-release-pipeline.sh
-
       - name: Test AGENTS.md physical integration
         run: bash tools/test-agents-md-integration.sh
-
-      - name: Test execution package gate
-        env:
-          # Блоки инструкций БА исполняются в PowerShell 7; без pwsh тест падает, а не пропускается.
-          GUIDE_SHELL: pwsh
-        run: bash tools/test-execution-package.sh
-
-      - name: Test Cline execution package
-        run: bash tools/test-cline-package.sh
-
-      - name: Test OpenCode execution package
-        run: bash tools/test-opencode-package.sh
 
       - name: Check synthetic BA industry survey evidence of issue 703
         run: python3 -I research/ba-requirements/exp/agent-ba-industry-703/measure.py --check
@@ -172,116 +145,3 @@ jobs:
 
       - name: Validate template manifest
         run: python3 tools/generate-manifest.py --check
-
-      - name: Validate MVP BCREQ execution package (G-mach)
-        run: sh projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.sh
-
-  cline-windows:
-    runs-on: windows-2022
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Check compiled Cline package
-        run: python projects/ba-ai-process/build/compile-cline-package.py --check
-      - name: Test Cline Windows hooks, paths, and runner
-        run: python projects/ba-ai-process/tests/cline-package/test_package.py
-      - name: Run Cline guide commands verbatim in Git Bash
-        # БА работает в терминале Git Bash из Git for Windows; блоки ```bash руководств исполняются дословно.
-        shell: bash
-        env:
-          GUIDE_BASH: C:\Program Files\Git\bin\bash.exe
-        run: python projects/ba-ai-process/tests/cline-package/test_guides_bash.py
-
-  opencode:
-    # The OpenCode pilot runs on Windows 10/11 x64; the real OpenCode binary drives the
-    # guard plugin, permission rules and package commands against a scripted mock model.
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-2022]
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Check compiled OpenCode package
-        run: python projects/ba-ai-process/build/compile-opencode-package.py --check
-      - name: Test OpenCode guard, package commands, paths, and runner
-        run: python projects/ba-ai-process/tests/opencode-package/test_package.py
-      - name: Install OpenCode 1.18.35
-        run: npm install -g opencode-ai@1.18.35
-      - name: Run real OpenCode against the package (E2E)
-        shell: bash
-        run: |
-          binary="$(npm root -g)/opencode-ai/bin/opencode"
-          [ -f "$binary.exe" ] && binary="$binary.exe"
-          "$binary" --version
-          python projects/ba-ai-process/experiments/issue_652_opencode_e2e.py \
-            projects/ba-ai-process/dist/execution-package-opencode --opencode "$binary"
-
-  windows-guides:
-    # Целевая среда БА — Windows 10/11 (x64): инструкции пакета GigaCode исполняются
-    # дословно в Windows PowerShell 5.1 и PowerShell 7 на клоне с настройками Git for Windows.
-    runs-on: windows-latest
-    timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        shell: [powershell, pwsh]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Install Python dependencies
-        # pywinpty даёт runner настоящую консоль для ввода строки APPROVE.
-        run: python -m pip install -r projects/ba-ai-process/dist/execution-package-gigacode-cli/requirements.txt pywinpty
-
-      - name: Validate GigaCode package (G-mach)
-        run: python projects/ba-ai-process/dist/execution-package-gigacode-cli/tools/validate-package.py
-
-      # Каждая команда — отдельный шаг: многострочный pwsh-шаг падает только по коду последней.
-      - name: Test GigaCode package gate (G-mach negatives, BCREQ compile)
-        run: python projects/ba-ai-process/tests/execution-package/tests/test_package_gate.py
-
-      - name: Test GigaCode route emulation
-        run: python projects/ba-ai-process/tests/execution-package/tests/test_emulation.py
-
-      - name: Test GigaCode semantic regression
-        run: python projects/ba-ai-process/tests/execution-package/tests/test_semantic_regression.py
-
-      - name: Test GigaCode runner
-        run: python projects/ba-ai-process/tests/execution-package/tests/test_runner.py
-
-      - name: Execute BA guides in ${{ matrix.shell }}
-        env:
-          GUIDE_SHELL: ${{ matrix.shell }}
-        run: python projects/ba-ai-process/tests/execution-package/tests/test_guides.py
-
-      - name: Run issue 638 smoke guide experiment in ${{ matrix.shell }}
-        env:
-          GUIDE_SHELL: ${{ matrix.shell }}
-        run: python projects/ba-ai-process/experiments/issue_638_gigacode_smoke_guide.py
-
-      - name: Run issue 638 input checks experiment
-        run: python projects/ba-ai-process/experiments/issue_638_gigacode_input_checks.py
-
-      - name: Run issue 638 smoke flow experiment
-        run: python projects/ba-ai-process/experiments/issue_638_gigacode_smoke_flow.py
-
-      - name: Run issue 638 full route experiment in ${{ matrix.shell }}
-        env:
-          GUIDE_SHELL: ${{ matrix.shell }}
-        run: python projects/ba-ai-process/experiments/issue_638_gigacode_full_route.py
