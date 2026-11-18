@@ -1,7 +1,7 @@
 ---
 status: canonical
 version: 2.51
-updated: 2026-11-17
+updated: 2026-11-18
 temperature: 0.1
 ---
 
@@ -141,7 +141,7 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
-- ops: issue [#744](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/744) — бэклог сверен с фактами выносов: B-244…B-247 `DONE` (ba-ai-metamodel PR #2–#7, `e1f67e2`), B-310 `DONE` по решению владельца в PR #743, защита тегов `archive/*` сведена в B-281 с блокером тарифа (HTTP 403 rulesets на приватном Хабе); B-264…B-266 помечены как противоречащие правилу шага 7 RFC #715; B-260 разблокирована. Шаг `archive-tag` распознаёт ответ 403 тарифа и называет решение владельца; регрессионный тест в `tools/test-archive-tags.sh`.
+- ops: issue [#744](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/744), [PR #746](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/746) — бэклог сверен с фактами выносов: B-244…B-247 `DONE` (ba-ai-metamodel PR #2–#7, `e1f67e2`), B-248 `DONE` (mango-ba-ai-runtime PR #24, `90f0823`), B-310 `DONE` по решению владельца в PR #743; B-264…B-266 `CANCELLED` по [решению владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/746#issuecomment-6977571960) (правило шага 7 RFC #715); B-249 и B-250 сверены после слияния PR #745; B-260 разблокирована. Защита пяти тегов `archive/*` сведена в B-281: Хаб переведён в Public, API rulesets больше не отвечает HTTP 403, остаётся импорт эталона администратором. Шаг `archive-tag` печатает ответ API при ошибке чтения ruleset; `tools/test-archive-tags.sh` доказывает, что с импортированным эталоном шаг проходит на `main`. [Аналитический отчёт](docs/analysis/2026-11-17-backlog-audit-after-extractions.md).
 
 - ops: issue [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) — сверка гипотезы владельца после выноса метамодели БА: B-244…B-247 → `DONE` по PR #2–#7 `ba-ai-metamodel`; B-248 — [mango-ba-ai-runtime PR #24](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/24) (`source_ssot`/`source_commit` на спицу); B-249 — надгробие Хаба в этом PR и [mango_ba_prompts PR #489](https://github.com/G-Ivan-A/mango_ba_prompts/pull/489) (61 из 162 плавающих ссылок закреплены, 101 заблокирована побайтовыми замками — [mango_ba_prompts#488](https://github.com/G-Ivan-A/mango_ba_prompts/issues/488)); B-250 — замер. Живые указатели (`README.md`, `projects/README.md`, `research/README.md`, `docs/ecosystem-map.md`, `ops/artifact-map.md`, гайд `education-ba-prompt`) ведут в спицу; секции BA-спринтов бэклога заменены указателем на бэклог спицы; [журнал](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/exp/ba-extraction-717/README.md) дополнен `tombstone.py`, `pin-spoke-links.py` и выводом проверки надгробий.
 

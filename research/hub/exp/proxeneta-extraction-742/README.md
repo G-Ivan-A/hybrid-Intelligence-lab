@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-11-17
+version: 0.4
+updated: 2026-11-18
 temperature: 0.1
 type: experiment
 scope: project-extraction
@@ -128,6 +128,13 @@ GFR=/tmp/proxeneta-venv/bin/git-filter-repo \
 Проверка защиты на `main` остаётся красной: API возвращает HTTP 403, поскольку
 текущий тариф GitHub не поддерживает rulesets для приватного Хаба. [Повторный запуск CI](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44169153166/attempts/2), [требования GitHub](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets).
 
+**Сверка 2026-11-18 (#744).** По [решению владельца в PR #746](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/746#issuecomment-6977571960)
+Хаб переведён в Public. GitHub API возвращает `visibility: public`, а
+`GET /repos/…/rulesets` — `[]` вместо HTTP 403. Ограничение тарифа снято,
+ruleset применяется штатно, но ещё не создан. [Запуск на `main`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44275632292)
+прочитал ruleset без ошибки и упал только потому, что ни один тег `archive/*`
+не защищён.
+
 ## Гипотезы и границы: результат Creative-проверки
 
 **H1:** текущих прав достаточно для полного завершения. Порог опровержения —
@@ -156,7 +163,8 @@ H1 по-прежнему опровергнута: write не даёт admin и 
 ## Бэклог и следующий необходимый шаг
 
 Предшественник #740 принят в #741. B-307 остаётся TODO. B-309 выполнен:
-регистрация и PRIVATE подтверждены. В B-310 остаётся защита тегов, в B-308 —
+регистрация и PRIVATE подтверждены. B-310 владелец перевёл в `DONE`; защита
+тегов — общий ruleset на все `archive/*`, она ведётся в B-281. В B-308 остаётся
 решение по ранее опубликованной истории. B-311…B-315 ведутся в бэклоге спицы.
 
 Независимый клон приватной спицы на принятом `aee57bb157070a2f5e90dd2c006f1aaf55e238e5`
@@ -165,6 +173,6 @@ H1 по-прежнему опровергнута: write не даёт admin и 
 В Хабе на `24cd7ff36992efe5934ff1f3aaa4292ec39ecaf9` проверены оба надгробия.
 [CI спицы](https://github.com/G-Ivan-A/aether-orbis-proxeneta/actions/runs/44169273179), [CI Хаба](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44169153149).
 
-Следующий шаг для завершения B-310 — подключить тариф с rulesets для приватных
-репозиториев, импортировать `.github/rulesets/archive-tags.json` и проверить
-`archive-tag` на `main`. Решение о ранее опубликованной истории остаётся за владельцем.
+Следующий шаг для защиты тегов (B-281): администратор импортирует
+`.github/rulesets/archive-tags.json` и перезапускает `archive-tag` на `main`.
+Отдельный тариф больше не нужен — Хаб публичный. Решение о ранее опубликованной истории остаётся за владельцем.

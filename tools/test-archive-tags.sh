@@ -11,10 +11,10 @@
 #   * шаг «Create archive tags» из .github/workflows/archive-tag.yml: GitHub
 #     отклонил push тега — падение с инструкцией владельцу (B-281, на main
 #     отказ шёл без инструкции); push принят — тег на archive_commit;
-#   * шаг «Check archive tag ruleset (Q-6)»: API rulesets отвечает 403 тарифа
-#     приватного репозитория — на main падение с объяснением, что импорт
-#     невозможен без решения владельца (B-281, issue #744); вне main —
-#     предупреждение; без отказа API текст про тариф не печатается.
+#   * шаг «Check archive tag ruleset (Q-6)»: эталон импортирован — шаг
+#     проходит и на main (Хаб публичный, ruleset применяется штатно, B-281,
+#     issue #744); ruleset нет — на main падение с инструкцией импорта, вне
+#     main — предупреждение; отказ API — ответ API в логе и та же инструкция.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -172,8 +172,8 @@ else
   report "FAIL" "шаг: тег в remote указывает не на archive_commit"
 fi
 
-# Шаг проверки ruleset исполняется с поддельным gh: настоящий ответ API
-# приватного Хаба на текущем тарифе (HTTP 403) или пустой список ruleset.
+# Шаг проверки ruleset исполняется с поддельным gh: ruleset-эталон
+# импортирован (applied), ruleset нет (empty) или API ответил ошибкой (error).
 ruleset_step="$work_dir/ruleset-step.sh"
 awk '
   /- name: Check archive tag ruleset/ { found = 1; next }
@@ -186,27 +186,32 @@ fake_bin="$work_dir/fake-bin"
 mkdir -p "$fake_bin"
 cat >"$fake_bin/gh" <<'FAKE'
 #!/bin/sh
-if [ "$FAKE_GH_MODE" = "plan" ]; then
-  echo 'gh: Upgrade to GitHub Pro or make this repository public to enable this feature. (HTTP 403)' >&2
-  exit 1
-fi
+case "$FAKE_GH_MODE:$2" in
+  error:*)
+    echo 'gh: Resource not accessible by integration (HTTP 403)' >&2
+    exit 1 ;;
+  applied:*rulesets\?*) echo 1 ;;
+  applied:*rulesets/1) cat "$FAKE_GH_RULESET" ;;
+esac
 exit 0
 FAKE
 chmod +x "$fake_bin/gh"
 ruleset_step_run() {
   (cd "$clone" && PATH="$fake_bin:$PATH" FAKE_GH_MODE="$1" ON_MAIN="$2" \
-    GITHUB_REPOSITORY=owner/hub RUNNER_TEMP="$runner_temp" bash "$ruleset_step")
+    FAKE_GH_RULESET="$REFERENCE" GITHUB_REPOSITORY=owner/hub \
+    RUNNER_TEMP="$runner_temp" bash "$ruleset_step")
 }
-run "ruleset-шаг: 403 тарифа на main — падение" 1 "::error::" -- ruleset_step_run plan true
-run "ruleset-шаг: 403 тарифа — объяснение владельцу" 1 "Upgrade to GitHub Pro" -- ruleset_step_run plan true
-run "ruleset-шаг: 403 тарифа — ссылка на решение Q-6" 1 "пересмотр Q-6 владельцем" -- ruleset_step_run plan true
-run "ruleset-шаг: 403 тарифа вне main — предупреждение" 0 "::warning::" -- ruleset_step_run plan false
-run "ruleset-шаг: нет ruleset — инструкция импорта" 1 "Import a ruleset" -- ruleset_step_run empty true
-if grep -q "пересмотр Q-6" "$work_dir/out.log"; then
-  report "FAIL" "ruleset-шаг: без отказа API текст про тариф не печатается"
+run "ruleset-шаг: эталон импортирован — проходит на main" 0 "OK refs/tags/$TAG: защищён (archive-tags-immutable)" -- ruleset_step_run applied true
+if grep -qE "::(error|warning)::" "$work_dir/out.log"; then
+  report "FAIL" "ruleset-шаг: эталон импортирован — без ошибок и предупреждений"
 else
-  report "PASS" "ruleset-шаг: без отказа API текст про тариф не печатается"
+  report "PASS" "ruleset-шаг: эталон импортирован — без ошибок и предупреждений"
 fi
+run "ruleset-шаг: нет ruleset на main — падение" 1 "::error::" -- ruleset_step_run empty true
+run "ruleset-шаг: нет ruleset — инструкция импорта" 1 "Import a ruleset" -- ruleset_step_run empty true
+run "ruleset-шаг: нет ruleset вне main — предупреждение" 0 "::warning::" -- ruleset_step_run empty false
+run "ruleset-шаг: отказ API — ответ API в логе" 1 "Resource not accessible by integration (HTTP 403)" -- ruleset_step_run error true
+run "ruleset-шаг: отказ API — инструкция импорта" 1 "Import a ruleset" -- ruleset_step_run error true
 
 if ((failures > 0)); then
   printf '\n%d test(s) failed\n' "$failures" >&2
