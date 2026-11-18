@@ -7,7 +7,8 @@
 #   * revert не снимает нарушение (контракт видит любой коммит в источниках);
 #   * ветка без HUB_SHA в истории: проверяются её собственные коммиты;
 #   * HUB_SHA не 40 hex, недоступен, нет строк MAP — падение;
-#   * параметры выноса Хаба проходят на текущей ревизии репозитория.
+#   * параметры выноса Хаба: заморозка держалась до надгробия B-249, которое
+#     её снимает (первый коммит в источниках после HUB_SHA — коммит B-249).
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -125,12 +126,30 @@ run "no MAP lines" 1 "нет строк MAP" "$work_dir/nomap.txt"
 run "missing params file" 1 "нет файла параметров" "$work_dir/absent.txt"
 
 # Параметры выноса Хаба: проверка на самом репозитории, если в нём есть история.
-if git -C "$ROOT_DIR" cat-file -e "$(sed -n 's/^HUB_SHA: //p' "$HUB_PARAMS")^{commit}" 2>/dev/null; then
-  if out="$(cd "$ROOT_DIR" && bash "$TOOL" "$HUB_PARAMS" 2>&1)"; then
-    report PASS "Hub BA extraction params: $out"
+# Заморозку снимает надгробие B-249: первый коммит после HUB_SHA, меняющий
+# источники, должен быть коммитом B-249, а до его родителя заморозка держалась.
+hub_sha="$(sed -n 's/^HUB_SHA: //p' "$HUB_PARAMS")"
+if git -C "$ROOT_DIR" cat-file -e "$hub_sha^{commit}" 2>/dev/null; then
+  mapfile -t hub_sources < <(sed -n 's/^MAP: \([^=]*\)=.*/\1/p' "$HUB_PARAMS")
+  tombstone="$(git -C "$ROOT_DIR" log --reverse --format=%H "$hub_sha..HEAD" -- "${hub_sources[@]}" | head -n 1)"
+  if [[ -z "$tombstone" ]]; then
+    rev="HEAD"
+    label="Hub BA extraction params (freeze active)"
+  elif git -C "$ROOT_DIR" log -1 --format=%s "$tombstone" | grep -q 'B-249'; then
+    rev="$tombstone^"
+    label="Hub BA extraction params (freeze held until tombstone ${tombstone:0:7})"
   else
-    report FAIL "Hub BA extraction params"
-    printf '%s\n' "$out" | sed 's/^/    /'
+    rev=""
+    report FAIL "Hub BA extraction params: first source change ${tombstone:0:7} is not the B-249 tombstone"
+    git -C "$ROOT_DIR" log -1 --format='    %h %s' "$tombstone"
+  fi
+  if [[ -n "$rev" ]]; then
+    if out="$(cd "$ROOT_DIR" && bash "$TOOL" "$HUB_PARAMS" "$rev" 2>&1)"; then
+      report PASS "$label: $out"
+    else
+      report FAIL "$label"
+      printf '%s\n' "$out" | sed 's/^/    /'
+    fi
   fi
 else
   report SKIP "Hub BA extraction params: HUB_SHA not in this clone (shallow?)"

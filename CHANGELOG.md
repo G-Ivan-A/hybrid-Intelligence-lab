@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 2.50
+version: 2.51
 updated: 2026-11-17
 temperature: 0.1
 ---
@@ -129,6 +129,9 @@ All notable repository governance changes are documented here.
 
 ### Removed
 
+- projects/research: issue [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) — B-249 (Ш3.6 RFC #715): после приёмки E1–E6 в [`ba-ai-metamodel`](https://github.com/G-Ivan-A/ba-ai-metamodel) (PR #2–#7, коммит `e1f67e2`) из дерева Хаба удалены `projects/ba-ai-process/`, `research/mango/` и `docs/ba-meta-model-overview.md`; на прежних путях — надгробия с манифестом redirect (316 строк) и записи `path_migrations` с архивом при `54face1`. Удалены тесты `tools/test-ba-meta-model-overview.sh`, `test-bcreq-working-release-pipeline.sh`, `test-execution-package.sh`, `test-cline-package.sh`, `test-opencode-package.sh` и `test-ba-requirements-forensics.sh`: их предметы теперь в спице, где те же проверки идут в её CI.
+- ci: из `validate.yml` убраны 7 шагов и задания `cline-windows`, `opencode`, `windows-guides` метамодели БА, шаг заморозки источников выноса и установка `pyyaml`/`jsonschema` (её использовали только удалённые проверки); общий `tools/check-extraction-freeze.sh` с тестом остаётся.
+
 - research: issue [#725](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/725) — домен `research/reputation-technologies/` выведен из дерева Хаба в спицу [`aether-orbis-gra`](https://github.com/G-Ivan-A/aether-orbis-gra) (решения владельца Q-1…Q-5). Из 172 файлов: 37 перенесены в спицу (SHA-ссылки), 60 остаются на теге архива (из них источники курса #650 — до переноса в спицу задачей GRA-003), 73 рабочих черновика R9 удалены по мандату Q-2, файл с персональными данными удалён из дерева и в тег не входит (Q-4, история git не переписана), стратегия партнёров #292 перенесена в [`research/education/`](research/education/2026-06-29-partner-attraction-strategy.ru.md) (Q-3). Остался только [надгробие с манифестом redirect](research/reputation-technologies/README.md). Коммит архива `51869aa` должен войти в `main` merge-коммитом.
 - ci: из `validate.yml` убраны 19 шагов проверок курса GRA, из `tools/validate-frontmatter.sh` и `tools/test-frontmatter-validator.sh` — правило и тесты RFC курса, из `tools/validate-repository-structure.sh` — allowlist файлов домена; исключение A-4 снято (Q-1), задачи курса ведутся только в бэклоге спицы.
 
@@ -139,6 +142,8 @@ All notable repository governance changes are documented here.
 ### Changed
 
 - ops: issue [#744](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/744) — бэклог сверен с фактами выносов: B-244…B-247 `DONE` (ba-ai-metamodel PR #2–#7, `e1f67e2`), B-310 `DONE` по решению владельца в PR #743, защита тегов `archive/*` сведена в B-281 с блокером тарифа (HTTP 403 rulesets на приватном Хабе); B-264…B-266 помечены как противоречащие правилу шага 7 RFC #715; B-260 разблокирована. Шаг `archive-tag` распознаёт ответ 403 тарифа и называет решение владельца; регрессионный тест в `tools/test-archive-tags.sh`.
+
+- ops: issue [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) — сверка гипотезы владельца после выноса метамодели БА: B-244…B-247 → `DONE` по PR #2–#7 `ba-ai-metamodel`; B-248 — [mango-ba-ai-runtime PR #24](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/24) (`source_ssot`/`source_commit` на спицу); B-249 — надгробие Хаба в этом PR и [mango_ba_prompts PR #489](https://github.com/G-Ivan-A/mango_ba_prompts/pull/489) (61 из 162 плавающих ссылок закреплены, 101 заблокирована побайтовыми замками — [mango_ba_prompts#488](https://github.com/G-Ivan-A/mango_ba_prompts/issues/488)); B-250 — замер. Живые указатели (`README.md`, `projects/README.md`, `research/README.md`, `docs/ecosystem-map.md`, `ops/artifact-map.md`, гайд `education-ba-prompt`) ведут в спицу; секции BA-спринтов бэклога заменены указателем на бэклог спицы; [журнал](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/exp/ba-extraction-717/README.md) дополнен `tombstone.py`, `pin-spoke-links.py` и выводом проверки надгробий.
 
 - projects/research: владелец принял перенос программы и связанных исследований в приватную спицу. На принятом коммите проверены 79 файлов, 63 коммита истории, 28 ID и пять проверок CI. В прежних деревьях Хаба остались два манифеста redirect. Оба аннотированных архивных тега опубликованы, их защита ожидается. [Импорт](https://github.com/G-Ivan-A/aether-orbis-proxeneta/pull/3), [очистка Хаба](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/743), [проверка архива](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44169153166/attempts/2).
 

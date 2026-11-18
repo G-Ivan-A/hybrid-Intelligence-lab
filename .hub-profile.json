@@ -83,6 +83,22 @@
       "archive": "archive/proxeneta-research-2026-11",
       "archive_commit": "546ebabb13a4679c6801d0eb5f344c6c3f6db177",
       "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742"
+    },
+    {
+      "from": "projects/ba-ai-process/",
+      "to": "https://github.com/G-Ivan-A/ba-ai-metamodel",
+      "manifest": "projects/ba-ai-process/README.md",
+      "archive": "archive/ba-ai-process-2026-11",
+      "archive_commit": "54face1618f74154ae0f072bc3e5bfb3c4817754",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738"
+    },
+    {
+      "from": "research/mango/",
+      "to": "https://github.com/G-Ivan-A/ba-ai-metamodel",
+      "manifest": "research/mango/README.md",
+      "archive": "archive/mango-research-2026-11",
+      "archive_commit": "54face1618f74154ae0f072bc3e5bfb3c4817754",
+      "issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738"
     }
   ]
 }

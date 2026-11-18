@@ -4,7 +4,6 @@
 *.html
 
 # Build artifacts.
-research/mango/*.html
 docs/screenshots/*.png
 
 # Playwright MCP scratch artifacts.

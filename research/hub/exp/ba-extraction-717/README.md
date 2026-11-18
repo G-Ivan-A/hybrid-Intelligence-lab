@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-11-16
+version: 0.4
+updated: 2026-11-17
 temperature: 0.1
 type: experiment
 ---
@@ -45,6 +45,9 @@ issue [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717).
 | `drift-54face1.log` | Снимок B-243 при `54face1` и `main` экосистемы на 2026-11-16, с разделом `## since c06075d` (коммиты и файлы источников после базового снимка) |
 | `rehearse-contract-54face1.log` | Итог репетиции E1, E2, E3, E5 и сканирования E4 при `HUB_SHA` = `54face1` (инструмент — из `HUB_SHA`, как в контракте) |
 | `freeze-window-2026-11-16.log` | Окно заморозки: открытые PR и issue каждого репозитория экосистемы, дерево `ba-ai-metamodel`, дома согласованного чтения спиц |
+| `pin-spoke-links.py` | B-249: переписывает плавающие ссылки на вынесенные пути Хаба (`blob|tree|raw/<ветка>/…`) на тот же объект в `ba-ai-metamodel` при закреплённом SHA; `--check` и `--verify-target` |
+| `tombstone.py` | B-249: генерирует надгробия `projects/ba-ai-process/README.md`, `research/mango/README.md` (манифест redirect: прежний путь → путь в спице при SHA приёмки E6) и `docs/ba-meta-model-overview.md`; `--check` сравнивает без записи |
+| `tombstone-e1f67e2.log` | Вывод `tombstone.py --check` при SHA спицы `e1f67e2` |
 
 ## Воспроизведение
 
@@ -72,6 +75,15 @@ python3 -I research/hub/exp/ba-extraction-717/drift-snapshot.py \
   --spoke aether-orbis-gra=/tmp/eco/aether-orbis-gra > /tmp/drift-new.log
 diff <(grep -v '^#' research/hub/exp/ba-extraction-717/drift-baseline.log) \
   <(sed '/^## since/,$d' /tmp/drift-new.log | grep -v '^#')
+```
+
+```bash
+# надгробия B-249: клон ba-ai-metamodel в отдельном пустом каталоге
+python3 -I research/hub/exp/ba-extraction-717/tombstone.py --hub . \
+  --spoke /tmp/eco/ba-ai-metamodel --spoke-sha e1f67e267beb73809e1edb26313691a5c769c92a --check
+# плавающие ссылки спицы экосистемы (без --check переписывает)
+python3 -I research/hub/exp/ba-extraction-717/pin-spoke-links.py --repo /tmp/eco/mango_ba_prompts \
+  --sha e1f67e267beb73809e1edb26313691a5c769c92a --verify-target /tmp/eco/ba-ai-metamodel --check
 ```
 
 ```bash
@@ -155,6 +167,28 @@ bash tools/test-extraction-freeze.sh
 
 Заморозку держит шаг CI Хаба «Check BA meta-model extraction source freeze»
 (`tools/check-extraction-freeze.sh`): любой коммит в путях `MAP` после
-`HUB_SHA` роняет `validate`. Шаг удаляет PR надгробия B-249. Задача выноса —
+`HUB_SHA` роняет `validate`. Шаг удаляет PR надгробия B-249 (см. ниже). Задача выноса —
 [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1);
 её блок `extraction-params` побайтно совпадает с `ba-instance-params.txt`.
+
+## Надгробие B-249 (2026-11-17)
+
+Приёмка E1–E6 в спице — PR #2–#7, коммит `e1f67e2` (merge PR #7). Перед
+удалением источников последняя проверка заморозки на `main` Хаба:
+`extraction freeze OK: 8 source path(s) unchanged in 54face1..24cd7ff`.
+
+| Шаг | Результат |
+| --- | --- |
+| Сверка путей | Все 318 путей источников при `54face1` есть в спице при `e1f67e2` (`tombstone.py` падает, если хоть одной цели нет) |
+| Удаление | `projects/ba-ai-process/`, `research/mango/`, `docs/ba-meta-model-overview.md`, пять тестов `MAP` и `tools/test-ba-requirements-forensics.sh` (проверял удалённые анализ и RFC проекта, в CI не входил) |
+| Надгробия | `projects/ba-ai-process/README.md` — 304 строки манифеста, `research/mango/README.md` — 12, обзор — совместимый редирект; `--check` — `tombstone-e1f67e2.log` |
+| `path_migrations` | Два префикса в `.hub-profile.json` с архивом `archive/ba-ai-process-2026-11` и `archive/mango-research-2026-11` при `54face1`; относительные ссылки исторических документов разрешает манифест (0 битых ссылок валидатора структуры) |
+| CI Хаба | Сняты 7 шагов `CI_STEP`, 3 задания `CI_JOB` и шаг заморозки; общий `tools/check-extraction-freeze.sh` с тестом остаются для следующих выносов |
+| Живые указатели | `README.md`, `projects/README.md`, `research/README.md`, `docs/ecosystem-map.md`, `ops/artifact-map.md`, гайд `education-ba-prompt` (14 ссылок закреплены на спицу) |
+| `mango-ba-ai-runtime` | B-248: [PR #24](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/24) — `source_ssot`/`source_commit` на `ba-ai-metamodel@e1f67e2` |
+| `mango_ba_prompts` | 162 плавающие ссылки в 78 файлах: 61 в 33 файлах закреплена ([PR #489](https://github.com/G-Ivan-A/mango_ba_prompts/pull/489)); 101 в 45 файлах под побайтовыми замками опубликованных промптов, черновиков, архива и входов замеров — [issue #488](https://github.com/G-Ivan-A/mango_ba_prompts/issues/488), регрессионный валидатор не даёт числу расти |
+
+Остаток: 101 плавающая ссылка `mango_ba_prompts` до выпуска промптов отвечает
+404 на `main` Хаба; адрес того же объекта — манифест надгробия. Архивные теги
+ставит workflow `archive-tag` после слияния; при отказе прав `GITHUB_TOKEN`
+тег ставит владелец (B-281).
