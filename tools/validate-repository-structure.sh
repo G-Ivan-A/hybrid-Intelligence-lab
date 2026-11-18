@@ -2456,7 +2456,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.90"
+require_text "ops/backlog.md" "version: 1.91"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "| B-235, слияние PR #718 | DONE | [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) / [PR #739](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/739); [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1) |"
 require_text "ops/backlog.md" "**B-307**"
