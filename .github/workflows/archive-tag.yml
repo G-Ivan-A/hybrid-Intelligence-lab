@@ -104,8 +104,9 @@ jobs:
           и перезапустить этот workflow.
           EOF
           }
-          if ! gh api "repos/${GITHUB_REPOSITORY}/rulesets?includes_parents=true" --paginate --jq '.[].id' > "$RUNNER_TEMP/ids.txt"; then
-            echo "::warning::Не удалось прочитать ruleset репозитория"
+          if ! gh api "repos/${GITHUB_REPOSITORY}/rulesets?includes_parents=true" --paginate --jq '.[].id' > "$RUNNER_TEMP/ids.txt" 2> "$RUNNER_TEMP/rulesets.err"; then
+            cat "$RUNNER_TEMP/rulesets.err" >&2
+            echo "::warning::Не удалось прочитать ruleset репозитория; ответ API — выше"
             : > "$RUNNER_TEMP/ids.txt"
           fi
           : > "$RUNNER_TEMP/rulesets.jsonl"

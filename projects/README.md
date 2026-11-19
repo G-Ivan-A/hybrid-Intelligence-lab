@@ -81,7 +81,7 @@ projects/<project-slug>/
 |--------|--------|-------------------|---------------|
 | Mango | ✅ Мигрировал | [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) | 2026-06-05 |
 | [ba-ai-process](ba-ai-process/README.md) | ✅ Вынесен: E1–E6 приняты, на прежнем пути — манифест redirect (B-249, [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738)) | [ba-ai-metamodel](https://github.com/G-Ivan-A/ba-ai-metamodel) | 2026-11-17 |
-| [ai-team-management-program](ai-team-management-program/README.md) | Техническая E6 подтверждена; приёмка и PRIVATE ожидаются ([#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)) | [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) | 2026-11-17 (PR) |
+| [ai-team-management-program](ai-team-management-program/README.md) | Импорт принят в приватную спицу ([#742](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/742)) | [aether-orbis-proxeneta](https://github.com/G-Ivan-A/aether-orbis-proxeneta) | 2026-11-17 |
 
 Прежняя архивная копия в Хабе удалена; история доступна через git, рабочая версия
 живёт во внешнем spoke-репозитории `mango_ba_prompts`.
