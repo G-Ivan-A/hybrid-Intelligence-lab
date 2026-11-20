@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.92
+version: 1.93
 updated: 2026-11-20
 temperature: 0.1
 type: backlog
@@ -78,6 +78,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/740"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/747"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749"
 ---
 
 # BACKLOG - активные спринты Хаба
@@ -128,8 +129,8 @@ related_issues:
   (`projects/ba-ai-process/` и связанных путей) после выноса по [ba-ai-metamodel#1](https://github.com/G-Ivan-A/ba-ai-metamodel/issues/1).
   Этапы E1–E6 приняты (PR #2–#7, `e1f67e2`); надгробие B-249 оставило в Хабе
   только манифесты redirect. Задачи проекта ведутся только в
-  [бэклоге спицы](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/main/ops/backlog.md); в Хабе остаются B-249 и B-250
-  Спринта 30.
+  [бэклоге спицы](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/main/ops/backlog.md).
+  Шаг 3 Спринта 30 закрыт со стороны Хаба.
 
 **Правило компиляции (`EP-C1` в редакции issue #583).** Исполняемые файлы
 `mango-ba-ai-runtime` не содержат ссылок на исследовательские документы Хаба,
@@ -376,33 +377,47 @@ Anti-Inflation.
 коммита `main` Хаба перед надгробием (`54face1..24cd7ff` без изменений).
 Надгробие B-249 ([PR #745](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/745)) удалило источники и BA-разделы бэклога, сняло
 шаг заморозки. B-248 перевела runtime на спицу в [runtime PR #24](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/24).
-B-249 частично закрыта: в спице `mango_ba_prompts` остаётся [#488](https://github.com/G-Ivan-A/mango_ba_prompts/issues/488).
+B-249 — `DONE`: надгробие принято, релиз закреплённых ссылок в спице
+закрыл [mango_ba_prompts#488](https://github.com/G-Ivan-A/mango_ba_prompts/issues/488)
+([PR #496](https://github.com/G-Ivan-A/mango_ba_prompts/pull/496)).
+
+**Шаг 3 закрыт.** B-250 — `DONE` по
+[решению владельца в PR #748](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/748#issuecomment-7046732697).
+CI Хаба без BA и CI спицы прошли. Проверка на новом `source_commit`
+`657abccc171d1ad6d860bbc262b5cc56aa5e99e0` показала совпадение 324 из 324
+файлов источника и 0 из 5 сгенерированных контрактов с пакетом runtime PR #24.
+Во всех пяти закреплённых схемах обязательно поле `product_attribution`,
+которого нет в опубликованных контрактах. Проверка со стороны Хаба завершена,
+расхождение зафиксировано, пересборка делегирована репозиториям
+`mango-ba-ai-runtime` и `mango_ba_prompts`. B-249 и B-250 архивированы,
+[результаты замера](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/748#замер-b-250)
+и след закрытия сохранены в [CHANGELOG](../CHANGELOG.md#changed).
 
 **Цель.** Новый репозиторий проекта метамодели БА рождается согласованным, Хаб
 освобождается от его бэклога и CI, а каждая `governed`-спица синхронизируется с
 закреплённого SHA Хаба одним каноническим инструментом.
 
-**Критерий закрытия.** Задачи Ш1–Ш6 имеют статус `DONE` или `CANCELLED`; CI Хаба
-зелёный без шагов BA, CI нового репозитория зелёный, `mango-ba-ai-runtime`
-компилируется с закреплённого коммита нового репозитория побайтно так же
-(Ш3.7); шаг 7 поставлен строками по итогам Ш6.4.
+**Критерий закрытия.** Задачи Ш1–Ш6 имеют статус `DONE` или `CANCELLED`, шаг 7
+поставлен строками по итогам Ш6.4. Ш3.7 принят по решению владельца после
+успешного CI Хаба без BA и CI спицы и фиксации результатов сверки runtime.
 
 Следующий стратегический шаг Хаба — B-236. Её вход B-234 принят в
 [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) и [PR #718](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/718).
-ADR фиксирует I-1…I-8 перед B-238 и B-239. Открытый замер B-250 остаётся
-условием начала B-255…B-257. Приоритеты задач указаны как `null` до Ш6.4.
+Постановка B-236 в [#749](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749)
+задаёт ADR для I-1…I-8. После принятия ADR следуют B-237, B-238, B-240 и
+B-242, затем B-239 после B-238 и B-241 после B-239. Закрытие B-250 выполняет
+предусловие инвентаризации B-255…B-257. Приоритеты задач указаны как `null`
+до Ш6.4.
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-236** | Ш2.1: ADR «Контракт наследования экосистемы» (I-1…I-8) | null | B-234 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Один принятый decision record для реестра, схемы профиля, закреплённого источника, канонического инструмента, проверки дрейфа, деклараций отклонений, исправления генома и обратного потока. После принятия заменяет временное исключение контракта выноса. | Hybrid |
-| **B-237** | Ш2.2: единый реестр экосистемы (I-1) | null | B-234 | ЧАСТИЧНО | [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) | [RFC #715, Q-4](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Сделано в #717: реестр — [`docs/ecosystem-map.md`](../docs/ecosystem-map.md) с классами I-1, таблица статусов бэклога заменена ссылкой. Осталось: машиночитаемая форма реестра для инструмента синка (по ADR B-236) Ссылка на `ba-ai-metamodel` уже в реестре. | null |
+| **B-236** | Ш2.1: ADR «Контракт наследования экосистемы» (I-1…I-8) | null | B-234 | TODO | [#749](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Один принятый decision record для реестра, схемы профиля, закреплённого источника, канонического инструмента, проверки дрейфа, деклараций отклонений, исправления генома и обратного потока. После принятия заменяет временное исключение контракта выноса. | Hybrid |
+| **B-237** | Ш2.2: единый реестр экосистемы (I-1) | null | B-234, B-236 | ЧАСТИЧНО | [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) | [RFC #715, Q-4](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Сделано в #717: реестр — [`docs/ecosystem-map.md`](../docs/ecosystem-map.md) с классами I-1, таблица статусов бэклога заменена ссылкой. Осталось: машиночитаемая форма реестра для инструмента синка по ADR B-236. Ссылка на `ba-ai-metamodel` уже в реестре. | null |
 | **B-238** | Ш2.3: схема профиля, её валидатор и шаблоны `templates/*/.hub-profile.json` (I-2, I-6) | null | B-236 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | `last_sync` = `{hub_sha, date, scope, tool}` и `deviations[]` в шаблонах профиля и валидаторе. Контракт выноса уже пишет `last_sync` в этой форме. | null |
 | **B-239** | Ш2.4: канонический инструмент синка с закреплением (I-3, I-4) | null | B-238 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Синк только с SHA или тега Хаба; локальные скрипты спиц — обёртки. Вместе с B-241 поглощает B-111. Кандидат в основу — `tools/spoke-extraction.py` (подкоманды `manifest`, `materialize`, `verify`). | null |
 | **B-240** | Ш2.5: исправить геном (I-7: H-1, H-3) | null | B-236 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | `ops/` — в канонический набор генома; корневые `AI_*.md` — в `ai-rules/` и `ai-governance/`. Иначе каждый синк заново производит A-1, A-2 и M-1. Сюда же: 12 ссылок `{{hub_url}}/blob/main/…` в `templates/spoke/AGENTS.md` и 1 в `templates/spoke/README.md` нарушают I-3 — шаблон должен подставлять закреплённый SHA ([анализ #738](../docs/analysis/2026-11-16-hub-optimization-start.md), R-3). | null |
 | **B-241** | Ш2.6: шаблон CI-проверки дрейфа для спиц (I-5) | null | B-239 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Спица запускает валидаторы генома на закреплённом SHA; отставание от текущего Хаба — предупреждение, не блокировка. | null |
 | **B-242** | Ш2.7: шаблон issue обратного сбора практик (I-8) | null | B-236 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Сбор практики из спицы — только по запуску пользователя, с конкретным SHA спицы; автоотправки нет (ADR-017). | null |
-| **B-249** | Ш3.6: надгробие в Хабе | null | B-248 | ЧАСТИЧНО | [#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738) / [mango_ba_prompts PR #489](https://github.com/G-Ivan-A/mango_ba_prompts/pull/489) | [RFC #715, Ш3.6](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md); [Artifact Deprecation Standard](../standards/artifact-deprecation-standard.md) | Триггер B-243 сработал 2026-11-16 ([#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738)). Удалить рабочие копии, записать `path_migrations`, строки в `projects/README.md`, `ops/artifact-map.md` и реестре; переписать 45 входящих ссылок; убрать пути из валидатора; удалить BA-разделы бэклога (B-247 переносит их); в том же PR убрать шаг CI «Check BA meta-model extraction source freeze» и снять заморозку. По [снимку дрейфа на `54face1`](../research/hub/exp/ba-extraction-717/drift-54face1.log): 162 плавающие ссылки `blob/main` из 78 файлов `mango_ba_prompts` на источники закрепить на `HUB_SHA` или перевести на `ba-ai-metamodel` до удаления (иначе 404), 91 файл Хаба с упоминаниями проекта — исторические остаются, живые (`docs/ecosystem-map.md`, контейнер выноса) обновить. **Исполнено в Хабе** ([#738](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/738), [журнал](../research/hub/exp/ba-extraction-717/README.md#надгробие-b-249-2026-11-17)): источники и 6 тестов удалены, надгробия с манифестом (316 строк), `path_migrations`, живые указатели и валидатор, BA-разделы бэклога заменены указателем, шаги CI и заморозка сняты. **Остаток:** `mango_ba_prompts` — 61 из 162 плавающих ссылок закреплены в PR #489, 101 под побайтовыми замками опубликованных артефактов — [mango_ba_prompts#488](https://github.com/G-Ivan-A/mango_ba_prompts/issues/488) (решение владельца о выпуске новых версий). **Сверка 2026-11-18 ([аудит #744](../docs/analysis/2026-11-17-backlog-audit-after-extractions.md)):** PR #24 (`90f0823`) и PR #489 (`105b8c9`) слиты владельцем; [запуск `archive-tag` 44275632292](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44275632292) создал теги `archive/ba-ai-process-2026-11` и `archive/mango-research-2026-11` на `54face1`; их защита — B-281. Открытым остаётся только #488; по [решение владельца в PR #746](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/746#issuecomment-6988585725) решение по #488 владелец даст отдельно, до него статус `ЧАСТИЧНО`. | null |
-| **B-250** | Ш3.7: проверка выноса измерением | null | B-249 | ЧАСТИЧНО | [#747](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/747) / [PR #748](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/748) | [RFC #715, Ш3.7](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md#шаг-3-вынос-ba-ai-process--7-задач) | CI [Хаба без BA](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/actions/runs/44467009209) и [спицы](https://github.com/G-Ivan-A/ba-ai-metamodel/actions/runs/44167844748) зелёный. На `source_commit` `657abccc171d1ad6d860bbc262b5cc56aa5e99e0` совпали 324 из 324 исходных файлов, пакет на merge-коммите runtime PR #24 прошёл 116 smoke-проверок и 46 unittest. Исходный конвертер из [журнала runtime PR #4](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/4#issuecomment-5845663210) воспроизвёл 5 из 5 исторических контрактов. На новом закреплении 0 из 5 контрактов совпали с пакетом PR #24, в том числе из-за обязательного поля `product_attribution` в закреплённых схемах. Открытый критерий: версионированная чистая сборка целевого чат-пакета и побайтовое совпадение с эталоном. | null |
 | **B-251** | Ш4.1: `mango_ba_prompts` — находки M-1…M-8 ре-синком на закреплённом SHA | null | B-239, B-240 | TODO | - (planned) | [Анализ #713](../docs/analysis/2026-11-02-mango-ba-prompts-hub-practice-transfer-check.md); [RFC #715, Q-3](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Класс `governed` (Q-3): референсная реализация универсальной модели; 6 FAIL генома. Запрет #583 на задачи, меняющие этот репозиторий, снят. Геном HTOM исправлен в PR #724 (B-197: Hybrid по умолчанию): ре-синк доставит в спицу `AI_SESSION_HANDOVER_PROMPT.md` 0.10, `AI_GOVERNANCE.md` 0.6 и `task.md` 2.2. | null |
 | **B-252** | Ш4.2: `aether-orbis-gra` — A-1, A-2, A-3, A-5 и `last_sync` по схеме I-2 | null | B-239, B-240 | TODO | - (planned) | [Анализ #713](../docs/analysis/2026-11-02-aether-orbis-gra-hub-practice-transfer-check.md) | Корневые `AI_*.md` уходят одним ре-синком после исправления генома; A-4 исключена решением владельца. Геном HTOM исправлен в PR #724 (B-197: Hybrid по умолчанию): ре-синк доставит в спицу `AI_SESSION_HANDOVER_PROMPT.md` 0.10, `AI_GOVERNANCE.md` 0.6 и `task.md` 2.2. | null |
 | **B-253** | Ш4.3: `aether-orbis` — бутстрап `AGENTS.md` и профиля | null | B-239 | TODO | - (planned) | [RFC #715, Ш4.3](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Поглощает B-113. | null |
