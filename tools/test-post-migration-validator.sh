@@ -121,7 +121,23 @@ if grep -Fq \
   fail "B-085 must not name the superseded monolith as its result"
 fi
 
-grep -Fq '| **B-090** |' "$backlog_file" ||
-  fail "B-090 must remain in the active backlog"
+if grep -Fq '| **B-090** |' "$backlog_file"; then
+  fail "B-090 must stay archived after issue #747"
+fi
+
+duplicate_ids="$(sed -nE 's/^\| \*\*(B-[0-9]+)\*\* \|.*/\1/p' "$backlog_file" | sort | uniq -d)"
+if [[ -n "$duplicate_ids" ]]; then
+  fail "active Hub backlog contains duplicate IDs: $duplicate_ids"
+fi
+
+if ! awk -F ' [|] ' '
+  /^\| \*\*B-[0-9]+\*\* \| / && toupper($5) == "TODO" && $5 != "TODO" {
+    print "Noncanonical TODO status on line " NR ": " $1
+    invalid = 1
+  }
+  END { exit invalid }
+' "$backlog_file"; then
+  fail "active Hub backlog must spell TODO in uppercase"
+fi
 
 printf 'Post-migration validator regression tests passed.\n'

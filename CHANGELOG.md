@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.52
-updated: 2026-11-18
+version: 2.53
+updated: 2026-11-20
 temperature: 0.1
 ---
 
@@ -140,6 +140,23 @@ All notable repository governance changes are documented here.
 - tools: из [`tools/validate-repository-structure.sh`](tools/validate-repository-structure.sh) убрано исключение, которым `pr-ops/README.md` выводился из-под проверки «tracked legacy file»; вместо него путь `pr-ops` добавлен в `reject_path` рядом с `governance`, `website`, `experiments` и `mkdocs.yml`, то есть каталог теперь не просто отсутствует, а запрещён к воскрешению вторым SSOT. Контракты тестов инвертированы под новое состояние: `assert_deprecated_pointer_only "pr-ops"` в [`tools/test-agents-md-integration.sh`](tools/test-agents-md-integration.sh) заменён на `assert_removed_legacy_directory "pr-ops"`, из его аудита `git grep` снят pathspec-исключением ставший ненужным `pr-ops/README.md`, а [`tools/test-post-migration-validator.sh`](tools/test-post-migration-validator.sh) вместо требования сохранять заглушку теперь требует отсутствия и каталога, и самого исключения в валидаторе и проверяет `pr-ops` в сценарии отклонения legacy-путей.
 
 ### Changed
+
+- ops: по [#747](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/747)
+  закрыты и архивированы Спринты 23 (B-196, B-197,
+  [PR #724](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/724)),
+  31 (B-268…B-286; B-281 — `DONE`, активный
+  [ruleset](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/rules/27672263)
+  защищает пять тегов) и 33 (B-308…B-310,
+  [приёмка владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/746#issuecomment-6988585725)).
+  B-260 — `DONE`: архивированы строки Спринта 4 (B-056…B-058, B-060),
+  Спринта 10 (B-089, B-090, B-098, B-103, B-104), Спринта 13
+  (B-110, B-114…B-116, B-118, B-119, B-154, B-169) и Спринта 30
+  (B-234, B-235, B-243…B-248). Связи с исходными решениями сохранены в
+  [снимке бэклога до архивации](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/45cc8fa0d4b1e42e343703e281a5cc35ef6e9e73/ops/backlog.md).
+  Нормализованы статусы `TODO`, ID в Хабе уникальны после выноса BA-разделов.
+  [PR #748](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/748)
+  фиксирует результаты сверки источников runtime, открытый замер B-250 и
+  план перехода к B-236.
 
 - ops: issue [#744](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/744), [PR #746](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/746) — бэклог сверен с фактами выносов: B-244…B-247 `DONE` (ba-ai-metamodel PR #2–#7, `e1f67e2`), B-248 `DONE` (mango-ba-ai-runtime PR #24, `90f0823`), B-310 `DONE` по решению владельца в PR #743; B-264…B-266 `CANCELLED` по [решению владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/746#issuecomment-6977571960) (правило шага 7 RFC #715); B-249 и B-250 сверены после слияния PR #745; B-260 разблокирована. Защита пяти тегов `archive/*` сведена в B-281: Хаб переведён в Public, API rulesets больше не отвечает HTTP 403, остаётся импорт эталона администратором. Шаг `archive-tag` печатает ответ API при ошибке чтения ruleset; `tools/test-archive-tags.sh` доказывает, что с импортированным эталоном шаг проходит на `main`. [Аналитический отчёт](docs/analysis/2026-11-17-backlog-audit-after-extractions.md).
 
