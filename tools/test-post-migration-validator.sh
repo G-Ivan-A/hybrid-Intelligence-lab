@@ -121,9 +121,11 @@ if grep -Fq \
   fail "B-085 must not name the superseded monolith as its result"
 fi
 
-if grep -Fq '| **B-090** |' "$backlog_file"; then
-  fail "B-090 must stay archived after issue #747"
-fi
+for archived_id in B-090 B-249 B-250; do
+  if grep -Fq "| **$archived_id** |" "$backlog_file"; then
+    fail "$archived_id must stay archived after issue #747"
+  fi
+done
 
 duplicate_ids="$(sed -nE 's/^\| \*\*(B-[0-9]+)\*\* \|.*/\1/p' "$backlog_file" | sort | uniq -d)"
 if [[ -n "$duplicate_ids" ]]; then

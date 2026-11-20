@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 2.53
+version: 2.54
 updated: 2026-11-20
 temperature: 0.1
 ---
@@ -140,6 +140,22 @@ All notable repository governance changes are documented here.
 - tools: из [`tools/validate-repository-structure.sh`](tools/validate-repository-structure.sh) убрано исключение, которым `pr-ops/README.md` выводился из-под проверки «tracked legacy file»; вместо него путь `pr-ops` добавлен в `reject_path` рядом с `governance`, `website`, `experiments` и `mkdocs.yml`, то есть каталог теперь не просто отсутствует, а запрещён к воскрешению вторым SSOT. Контракты тестов инвертированы под новое состояние: `assert_deprecated_pointer_only "pr-ops"` в [`tools/test-agents-md-integration.sh`](tools/test-agents-md-integration.sh) заменён на `assert_removed_legacy_directory "pr-ops"`, из его аудита `git grep` снят pathspec-исключением ставший ненужным `pr-ops/README.md`, а [`tools/test-post-migration-validator.sh`](tools/test-post-migration-validator.sh) вместо требования сохранять заглушку теперь требует отсутствия и каталога, и самого исключения в валидаторе и проверяет `pr-ops` в сценарии отклонения legacy-путей.
 
 ### Changed
+
+- ops: архивированы B-249 и B-250 со статусом `DONE`. Надгробие Хаба принято
+  в [PR #745](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/745),
+  релиз ссылок на закреплённый SHA в спице принят в
+  [mango_ba_prompts PR #496](https://github.com/G-Ivan-A/mango_ba_prompts/pull/496)
+  и закрыл [mango_ba_prompts#488](https://github.com/G-Ivan-A/mango_ba_prompts/issues/488).
+  Проверка B-250 на `657abccc171d1ad6d860bbc262b5cc56aa5e99e0` подтвердила
+  324 из 324 файлов источника. При сверке конвертации схем с опубликованным
+  пакетом совпали 0 из 5 контрактов. В закреплённых схемах обязательно
+  поле `product_attribution`, отсутствующее в проверенных контрактах пакета.
+  [Решение владельца](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/748#issuecomment-7046732697)
+  принимает проверку Хаба и закрывает Ш3. Пересборка и актуализация артефактов
+  делегированы `mango-ba-ai-runtime` и `mango_ba_prompts`.
+  [Замер PR #748](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/748#замер-b-250).
+  Следующий приоритет — постановка ADR B-236 в
+  [#749](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749).
 
 - ops: по [#747](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/747)
   закрыты и архивированы Спринты 23 (B-196, B-197,

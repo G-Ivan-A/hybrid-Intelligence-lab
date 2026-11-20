@@ -2456,7 +2456,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.92"
+require_text "ops/backlog.md" "version: 1.93"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "**B-307**"
 require_text "ops/backlog.md" "Спринты 23, 31 и 33 закрыты."
