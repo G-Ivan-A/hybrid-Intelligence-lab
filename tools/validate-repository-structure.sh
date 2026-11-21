@@ -119,6 +119,7 @@ is_active_file() {
     docs/adr/2026-09-adr-021-agent-collaboration-layer.md | \
     docs/adr/2026-11-adr-022-hub-archive-and-extraction-redirect.md | \
     docs/adr/2026-11-adr-023-ai-participation-frontmatter-fields.md | \
+    docs/adr/2026-11-adr-024-ecosystem-inheritance-contract.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/agents-md-bootstrap-standard.md | \
@@ -2456,7 +2457,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.93"
+require_text "ops/backlog.md" "version: 1.94"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "**B-307**"
 require_text "ops/backlog.md" "Спринты 23, 31 и 33 закрыты."
