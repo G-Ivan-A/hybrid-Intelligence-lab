@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.93
-updated: 2026-11-20
+version: 1.94
+updated: 2026-11-22
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -393,27 +393,28 @@ CI Хаба без BA и CI спицы прошли. Проверка на но�
 [результаты замера](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/748#замер-b-250)
 и след закрытия сохранены в [CHANGELOG](../CHANGELOG.md#changed).
 
-**Цель.** Новый репозиторий проекта метамодели БА рождается согласованным, Хаб
-освобождается от его бэклога и CI, а каждая `governed`-спица синхронизируется с
-закреплённого SHA Хаба одним каноническим инструментом.
+**Цель.** Хаб освобождается от бэклога и CI метамодели БА. При создании
+`governed`-спица наследует структуру архетипа с закреплённого SHA Хаба.
+Дальнейший синк каноническим инструментом и проверка закреплённого генома
+доступны по запросу команды спицы.
 
 **Критерий закрытия.** Задачи Ш1–Ш6 имеют статус `DONE` или `CANCELLED`, шаг 7
 поставлен строками по итогам Ш6.4. Ш3.7 принят по решению владельца после
 успешного CI Хаба без BA и CI спицы и фиксации результатов сверки runtime.
 
-Следующий стратегический шаг Хаба — B-236. Её вход B-234 принят в
+Предшествующая задача B-234 завершена в
 [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) и [PR #718](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/718).
-Постановка B-236 в [#749](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749)
-задаёт ADR для I-1…I-8. После принятия ADR следуют B-237, B-238, B-240 и
-B-242, затем B-239 после B-238 и B-241 после B-239. Закрытие B-250 выполняет
-предусловие инвентаризации B-255…B-257. Приоритеты задач указаны как `null`
-до Ш6.4.
+Принятие ADR-024 завершает B-236. Следующей поставлена B-238. Её схема профиля
+нужна каноническому синку B-239 и процедуре создания спицы B-307.
+B-237, B-240 и B-242 могут идти параллельно, B-241 следует за B-239.
+Закрытие B-250 выполняет предусловие инвентаризации B-255…B-257.
+Приоритеты задач указаны как `null` до Ш6.4.
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **B-236** | Ш2.1: ADR «Контракт наследования экосистемы» (I-1…I-8) | null | B-234 | TODO | [#749](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Один принятый decision record для реестра, схемы профиля, закреплённого источника, канонического инструмента, проверки дрейфа, деклараций отклонений, исправления генома и обратного потока. После принятия заменяет временное исключение контракта выноса. | Hybrid |
+| **B-236** | Ш2.1: ADR «Контракт наследования экосистемы» (I-1…I-8) | null | B-234 | DONE | [#749](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749) / [PR #751](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/751) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) / [ADR-024](../docs/adr/2026-11-adr-024-ecosystem-inheritance-contract.md) | Владелец принял ADR-024 [22 ноября 2026 года](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/751#issuecomment-7077648276). ADR фиксирует I-1…I-8, проверки для B-237…B-242 и переход от E1 к каноническому синку. | Hybrid |
 | **B-237** | Ш2.2: единый реестр экосистемы (I-1) | null | B-234, B-236 | ЧАСТИЧНО | [#717](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/717) | [RFC #715, Q-4](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Сделано в #717: реестр — [`docs/ecosystem-map.md`](../docs/ecosystem-map.md) с классами I-1, таблица статусов бэклога заменена ссылкой. Осталось: машиночитаемая форма реестра для инструмента синка по ADR B-236. Ссылка на `ba-ai-metamodel` уже в реестре. | null |
-| **B-238** | Ш2.3: схема профиля, её валидатор и шаблоны `templates/*/.hub-profile.json` (I-2, I-6) | null | B-236 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | `last_sync` = `{hub_sha, date, scope, tool}` и `deviations[]` в шаблонах профиля и валидаторе. Контракт выноса уже пишет `last_sync` в этой форме. | null |
+| **B-238** | Ш2.3: схема профиля, её валидатор и шаблоны `templates/*/.hub-profile.json` (I-2, I-6) | null | B-236 | TODO | [#752](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/752) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) / [ADR-024](../docs/adr/2026-11-adr-024-ecosystem-inheritance-contract.md) | `last_sync` = `{hub_sha, date, scope, tool}` и `deviations[]` в шаблонах профиля и валидаторе. Контракт выноса уже пишет `last_sync` в этой форме. | Hybrid |
 | **B-239** | Ш2.4: канонический инструмент синка с закреплением (I-3, I-4) | null | B-238 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Синк только с SHA или тега Хаба; локальные скрипты спиц — обёртки. Вместе с B-241 поглощает B-111. Кандидат в основу — `tools/spoke-extraction.py` (подкоманды `manifest`, `materialize`, `verify`). | null |
 | **B-240** | Ш2.5: исправить геном (I-7: H-1, H-3) | null | B-236 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | `ops/` — в канонический набор генома; корневые `AI_*.md` — в `ai-rules/` и `ai-governance/`. Иначе каждый синк заново производит A-1, A-2 и M-1. Сюда же: 12 ссылок `{{hub_url}}/blob/main/…` в `templates/spoke/AGENTS.md` и 1 в `templates/spoke/README.md` нарушают I-3 — шаблон должен подставлять закреплённый SHA ([анализ #738](../docs/analysis/2026-11-16-hub-optimization-start.md), R-3). | null |
 | **B-241** | Ш2.6: шаблон CI-проверки дрейфа для спиц (I-5) | null | B-239 | TODO | - (planned) | [RFC #715, шаг 2](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md) | Спица запускает валидаторы генома на закреплённом SHA; отставание от текущего Хаба — предупреждение, не блокировка. | null |
