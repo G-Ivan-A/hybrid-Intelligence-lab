@@ -3,5 +3,6 @@
   "archetype": "D",
   "environment": "local",
   "secondary_environments": [],
-  "project_specific_directories": []
+  "project_specific_directories": [],
+  "deviations": []
 }

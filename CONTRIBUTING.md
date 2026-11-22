@@ -160,6 +160,66 @@ bash tools/test-validate-rrp-links.sh
 python3 tools/generate-manifest.py --check
 ```
 
+### Профиль наследования Хаба
+
+[Схема JSON Schema 2020-12](tools/hub-profile.schema.json) задаёт форму
+`.hub-profile.json` по [ADR-024, I-2 и I-6](docs/adr/2026-11-adr-024-ecosystem-inheritance-contract.md#decision).
+Она применяется к обоим начальным шаблонам
+[HTOM](templates/htom/.hub-profile.json) и [spoke](templates/spoke/.hub-profile.json).
+Валидатор читает профиль локально и выводит JSON, сохраняя байты входного файла.
+
+```bash
+python3 -m pip install -r tools/requirements-hub-profile.txt
+python3 tools/validate-hub-profile.py path/to/.hub-profile.json
+python3 tools/validate-hub-profile.py --require-pin path/to/.hub-profile.json
+python3 tools/test-hub-profile.py
+```
+
+Путь по умолчанию — `.hub-profile.json` в текущем каталоге. Режим для
+B-239 допускает подготовку синка с начальным или историческим профилем при
+корректных базовых полях и декларациях. B-241 использует `--require-pin`
+и продолжает проверку при коде `0`, используя `last_sync.hub_sha` из отчёта.
+
+| Код выхода | Результат |
+| --- | --- |
+| `0` | Базовые поля и декларации прошли проверку. При `--require-pin` также требуется `pin_status: pinned`. |
+| `1` | В режиме `--require-pin` нужен первый синк или миграция закрепления. |
+| `2` | Ошибка чтения, JSON, базовых полей или деклараций. |
+
+`pin_status` принимает значения `initial` при отсутствии записи, `pinned` при
+канонической форме, `migration_required` при неполной или исторической записи и
+`unavailable` при нечитаемом входе или входе, который не является объектом JSON.
+`last_sync` в отчёте содержит исходную четырёхполевую запись при `pinned`,
+в остальных случаях возвращается `null`. `drift_ready` требует валидных
+базовых полей, деклараций и канонического закрепления. В `diagnostics[]`
+стабильны `code` и `path` (ключи и индексы в JSON). Поле `message` предназначено
+для человека. Коды диагностики — `first_sync_required` в строгом режиме,
+`pin_migration_required`, `profile_invalid` и `deviation_invalid`.
+
+`hub_sha` содержит 40 шестнадцатеричных знаков, `date` — календарную дату
+в UTC в формате `YYYY-MM-DD`, а `scope` — непустой объём синка. Для даты
+включена проверка форматов JSON Schema. `tool` записывается как `имя@версия`,
+где версия — точная числовая версия с точками (допустимы `v`, prerelease и build)
+или идентификатор коммита из 12–40 шестнадцатеричных знаков, как в E1.
+Существование SHA и соответствие записи применённому геному проверяют потребители.
+
+`deviations` в отчёте содержит записи, прошедшие проверку формы. Каждая запись
+задаёт один буквальный относительный `path` или одну точную `section`, причину,
+роль `owner` либо `project` и URL GitHub issue вида
+`https://github.com/OWNER/REPO/issues/N` с допустимым якорем `#issuecomment-ID`.
+При отсутствии массива результат равен `[]`. Запись с ошибкой исключается из
+отчёта и оставляет базовую норму в силе. Для применения записи потребитель
+проверяет само решение, полномочия роли и точную область по
+[порядку разрешения нормы](docs/adr/2026-11-adr-024-ecosystem-inheritance-contract.md#порядок-разрешения-нормы).
+Декларация проектного каталога с `path` и `reason` сохраняет свою роль в
+проверке структуры.
+
+Фикстуры в [tools/fixtures/hub-profile/](tools/fixtures/hub-profile/) содержат
+исходные байты профилей [E1](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/.hub-profile.json),
+[GRA](https://github.com/G-Ivan-A/aether-orbis-gra/blob/1669943e6f0193e78b245bb9d26b3281a1c5a438/.hub-profile.json)
+и [Mango](https://github.com/G-Ivan-A/mango_ba_prompts/blob/6cda9f5026337d8d21f21919871b72eeaa97d94b/.hub-profile.json).
+В снимке Mango отдельно диагностируется отсутствие обязательного `archetype`.
+
 ## Постусловие непустого диффа
 
 Каждый pull request обязан содержать непустой полезный дифф. Постусловие

@@ -224,7 +224,15 @@ if [[ -f "$ROOT_DIR/AGENTS.md" && -f "$ROOT_DIR/.hub-profile.json" ]]; then
 fi
 
 if [[ -d "$ROOT_DIR/ops" ]]; then
+  # ADR-024 names this pinned Mango profile as historical input. Its retired
+  # paths are evidence only while the fixture matches the source Git blob.
+  mango_snapshot="tools/fixtures/hub-profile/mango.json"
+  historical_snapshot=()
+  if [[ "$(git -C "$ROOT_DIR" hash-object --no-filters "$mango_snapshot")" == "762f01f29f801a366d4d1ad2b06bbf6f80dd0ad7" ]]; then
+    historical_snapshot+=(":(exclude)$mango_snapshot")
+  fi
   if git -C "$ROOT_DIR" grep -n 'pr-ops/' -- . \
+    "${historical_snapshot[@]}" \
     ':(exclude)CHANGELOG.md' \
     ':(exclude)docs/superpowers/plans/2026-09-09-agents-md-physical-integration.md' \
     ':(exclude)docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md' \
