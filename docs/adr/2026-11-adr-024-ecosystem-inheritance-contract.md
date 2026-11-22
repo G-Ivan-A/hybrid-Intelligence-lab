@@ -1,7 +1,7 @@
 ---
-status: proposed
-version: 0.2
-updated: 2026-11-21
+status: accepted
+version: 1.0
+updated: 2026-11-22
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: governance
@@ -15,8 +15,8 @@ decision-type: governance
 | --- | --- |
 | ADR id | ADR-024 |
 | Decision type | governance |
-| Decision status | proposed, на рассмотрении владельца |
-| Decision date | Ожидается решение владельца |
+| Decision status | accepted |
+| Decision date | [2026-11-22](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/751#issuecomment-7077648276) |
 | Owner | G-Ivan-A |
 | Source | [Issue #749](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/749), [RFC #715, шаг 2](../rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md#шаг-2-контракт-детерминированного-наследования--7-задач), [уточнение владельца в PR #751](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/751#issuecomment-7059900420) |
 | Impacted artifacts | [Матрица проектов](../ecosystem-map.md#матрица-проектов), профили и шаблоны [spoke](../../templates/spoke/) и [HTOM](../../templates/htom/), инструмент синка Хаба, CI спиц, шаблон issue сбора практики и [этап E1](../../ops/hub-project-extraction-contract.md#этап-e1-скелет-генома) |
@@ -175,10 +175,10 @@ decision-type: governance
 
 ## Lifecycle
 
-Владелец принимает ADR на review. После принятия B-236 решение определяет
-целевой контракт для реализации по Спринту 30. Принятые записи E1 сохраняют
-происхождение. При первом каноническом синке инструмент использует профиль и
-поддерживает переход по I-2 и I-6, сохраняя проектные поля и артефакты.
+Принятое решение определяет целевой контракт для реализации по Спринту 30.
+Принятые записи E1 сохраняют происхождение. При первом каноническом синке
+инструмент использует профиль и поддерживает переход по I-2 и I-6,
+сохраняя проектные поля и артефакты.
 
 После выпуска схемы профиля, канонического инструмента и согласованного
 генома (B-238, B-239, B-240) этот инструмент заменяет ручное
