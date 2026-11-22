@@ -1,0 +1,46 @@
+{
+  "profile_version": "1.0",
+  "archetype": "B",
+  "environment": "local",
+  "secondary_environments": [],
+  "project_specific_directories": [
+    {
+      "path": "ba-meta-model",
+      "reason": "Ядро метамодели: классы, онтология, правила"
+    },
+    {
+      "path": "build",
+      "reason": "Компиляторы пакетов исполнения и таксономий"
+    },
+    {
+      "path": "decisions",
+      "reason": "Реестр решений проекта"
+    },
+    {
+      "path": "dist",
+      "reason": "Скомпилированные пакеты исполнения (проверяются --check)"
+    },
+    {
+      "path": "experiments",
+      "reason": "Журналы экспериментов проекта"
+    },
+    {
+      "path": "meta-model-guides",
+      "reason": "Руководства по применению метамодели"
+    },
+    {
+      "path": "research",
+      "reason": "Исследования эталонной реализации (mango)"
+    },
+    {
+      "path": "tests",
+      "reason": "Тесты и эталонные наборы проекта"
+    }
+  ],
+  "last_sync": {
+    "hub_sha": "54face1618f74154ae0f072bc3e5bfb3c4817754",
+    "date": "2026-11-16",
+    "scope": "genome",
+    "tool": "tools/spoke-extraction.py@54face1618f7"
+  }
+}

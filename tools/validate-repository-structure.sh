@@ -694,6 +694,13 @@ is_active_file() {
     tools/sync-from-hub.sh | \
     tools/spoke-extraction.py | \
     tools/test-spoke-extraction.sh | \
+    tools/hub-profile.schema.json | \
+    tools/requirements-hub-profile.txt | \
+    tools/validate-hub-profile.py | \
+    tools/test-hub-profile.py | \
+    tools/fixtures/hub-profile/e1.json | \
+    tools/fixtures/hub-profile/gra.json | \
+    tools/fixtures/hub-profile/mango.json | \
     tools/path-migration-manifest.py | \
     tools/test-path-migration-manifest.sh | \
     tools/archive-tags.py | \
@@ -1209,6 +1216,13 @@ required_files=(
   "tools/sync-from-hub.sh"
   "tools/spoke-extraction.py"
   "tools/test-spoke-extraction.sh"
+  "tools/hub-profile.schema.json"
+  "tools/requirements-hub-profile.txt"
+  "tools/validate-hub-profile.py"
+  "tools/test-hub-profile.py"
+  "tools/fixtures/hub-profile/e1.json"
+  "tools/fixtures/hub-profile/gra.json"
+  "tools/fixtures/hub-profile/mango.json"
   "tools/path-migration-manifest.py"
   "tools/test-path-migration-manifest.sh"
   "tools/archive-tags.py"

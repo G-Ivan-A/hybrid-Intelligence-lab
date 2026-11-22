@@ -68,6 +68,11 @@ jobs:
       - name: Test spoke extraction tool
         run: bash tools/test-spoke-extraction.sh
 
+      - name: Test Hub inheritance profile
+        run: |
+          python3 -m pip install --requirement tools/requirements-hub-profile.txt
+          python3 tools/test-hub-profile.py
+
       - name: Test path migration manifest redirect
         run: bash tools/test-path-migration-manifest.sh
 
