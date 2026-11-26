@@ -1,0 +1,42 @@
+{
+  "genome_version": "1.0",
+  "description": "Declarative genome of Hub spokes for tools/hub-sync.py (B-239, ADR-024 I-4). The tool reads this file from the pinned Hub SHA. Units are the scope tokens; 'genome' is the base structure, other units are optional practices. Content of the genome is fixed by B-240; this file records the current de-facto genome (E1 of ops/hub-project-extraction-contract.md for archetype B, templates/htom for archetype D).",
+  "placeholders": ["date", "hub_url", "project_name"],
+  "archetypes": {
+    "B": {
+      "profile_template": "templates/spoke/.hub-profile.json",
+      "units": {
+        "genome": {
+          "description": "Spoke genome: templates/spoke plus HTOM issue templates and the AGENTS.md bootstrap validator (same map as E1).",
+          "map": [
+            "templates/spoke/=",
+            "templates/htom/.github/ISSUE_TEMPLATE/=.github/ISSUE_TEMPLATE/",
+            "templates/htom/tools/validate-agents-bootstrap.sh=tools/validate-agents-bootstrap.sh"
+          ],
+          "exclude": [
+            "templates/spoke/.hub-profile.json",
+            "templates/spoke/README.md"
+          ],
+          "delegated": []
+        }
+      }
+    },
+    "D": {
+      "profile_template": "templates/htom/.hub-profile.json",
+      "units": {
+        "genome": {
+          "description": "HTOM genome: templates/htom without the one-shot init.sh and the project README.",
+          "map": [
+            "templates/htom/="
+          ],
+          "exclude": [
+            "templates/htom/.hub-profile.json",
+            "templates/htom/README.md",
+            "templates/htom/init.sh"
+          ],
+          "delegated": []
+        }
+      }
+    }
+  }
+}
