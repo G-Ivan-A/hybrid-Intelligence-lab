@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.54
-updated: 2026-11-20
+version: 2.55
+updated: 2026-11-26
 temperature: 0.1
 ---
 
@@ -12,6 +12,14 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- tools: B-239 ([#754](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/754)).
+  [Канонический синк](CONTRIBUTING.md#синхронизация-спицы-с-хабом)
+  `tools/hub-sync.py` применяет геном из `tools/hub-genome.json` только с
+  SHA или тега Хаба, отклоняет ветки до записи и останавливается на локальных
+  правках. Профиль проверяется валидатором B-238, `last_sync` пишется
+  последним с откатом при сбое. Повторный синк даёт нулевой дифф. Обёртка
+  спицы — `tools/hub-sync-wrapper.sh`.
 
 - tools: B-238 ([#752](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/752)).
   [Валидатор профиля наследования](CONTRIBUTING.md#профиль-наследования-хаба)

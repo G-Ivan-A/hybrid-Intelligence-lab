@@ -701,6 +701,10 @@ is_active_file() {
     tools/fixtures/hub-profile/e1.json | \
     tools/fixtures/hub-profile/gra.json | \
     tools/fixtures/hub-profile/mango.json | \
+    tools/hub-sync.py | \
+    tools/hub-sync-wrapper.sh | \
+    tools/hub-genome.json | \
+    tools/test-hub-sync.py | \
     tools/path-migration-manifest.py | \
     tools/test-path-migration-manifest.sh | \
     tools/archive-tags.py | \
@@ -1223,6 +1227,10 @@ required_files=(
   "tools/fixtures/hub-profile/e1.json"
   "tools/fixtures/hub-profile/gra.json"
   "tools/fixtures/hub-profile/mango.json"
+  "tools/hub-sync.py"
+  "tools/hub-sync-wrapper.sh"
+  "tools/hub-genome.json"
+  "tools/test-hub-sync.py"
   "tools/path-migration-manifest.py"
   "tools/test-path-migration-manifest.sh"
   "tools/archive-tags.py"
@@ -1349,11 +1357,11 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "/AGENTS.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.15"
+require_text "CONTRIBUTING.md" "version: 1.16"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-11-04"
+require_text "CONTRIBUTING.md" "updated: 2026-11-26"
 require_text "CONTRIBUTING.md" "## Гейт постановки задачи"
 require_text "CONTRIBUTING.md" "tools/validate-issue-statement.sh"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
@@ -2074,11 +2082,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.69"
+require_text "ops/artifact-map.md" "version: 2.70"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-11-18"
+require_text "ops/artifact-map.md" "updated: 2026-11-26"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2471,7 +2479,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.94"
+require_text "ops/backlog.md" "version: 1.95"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "**B-307**"
 require_text "ops/backlog.md" "Спринты 23, 31 и 33 закрыты."

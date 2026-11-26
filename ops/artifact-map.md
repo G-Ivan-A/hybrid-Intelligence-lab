@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.69
-updated: 2026-11-18
+version: 2.70
+updated: 2026-11-26
 temperature: 0.1
 ---
 
@@ -251,6 +251,10 @@ temperature: 0.1
 | `/tools/hub-profile.schema.json` | контракт | справка | Машиночитаемая форма базовых полей, закрепления и деклараций профиля по ADR-024 I-2 и I-6. | ✅ Да | `tools/validate-hub-profile.py`, `templates/htom/.hub-profile.json`, `templates/spoke/.hub-profile.json` |
 | `/tools/validate-hub-profile.py` | утилита | — | Проверка профиля наследования. JSON-отчёт содержит состояние закрепления, готовность профиля к проверке дрейфа и декларации, прошедшие проверку формы. | ✅ Да | `CONTRIBUTING.md`, `tools/hub-profile.schema.json`, `tools/requirements-hub-profile.txt`, `tools/test-hub-profile.py` |
 | `/tools/test-hub-profile.py` | утилита | — | Проверка двух шаблонов, закреплённых снимков E1, GRA и Mango и пограничных значений профиля. | ✅ Да | `tools/fixtures/hub-profile/`, `.github/workflows/validate.yml` |
+| `/tools/hub-sync.py` | утилита | — | Канонический синк Хаба (B-239, ADR-024 I-2–I-4): принимает только полный SHA или тег Хаба, применяет геном в выбранном объёме транзакционно, проверяет профиль валидатором B-238 и записывает `last_sync`. Подкоманды `resolve`, `plan`, `sync`, `verify`. | ✅ Да | `tools/hub-genome.json`, `tools/hub-sync-wrapper.sh`, `tools/spoke-extraction.py`, `tools/validate-hub-profile.py`, `CONTRIBUTING.md` |
+| `/tools/hub-genome.json` | контракт | справка | Декларация генома для `tools/hub-sync.py`: единицы объёма (`genome` и практики), карта путей, исключения и делегированные нормы по архетипам; читается на закреплённом SHA. Содержание генома фиксирует B-240. | ✅ Да | `tools/hub-sync.py`, `templates/spoke/`, `templates/htom/`, `ops/hub-project-extraction-contract.md` |
+| `/tools/hub-sync-wrapper.sh` | утилита | — | Эталонная обёртка спицы: передаёт параметры и статус выполнения в `tools/hub-sync.py` без собственной логики (I-4). | ⚠️ По необходимости | `tools/hub-sync.py` |
+| `/tools/test-hub-sync.py` | утилита | — | Сценарии приёмки ADR-024 для синка на синтетическом Хабе: I-3 (SHA и теги, отказ веток), I-4 (обёртка, выбор практики, несовместимый файл вне объёма), повторный синк, откат при сбое, I-6 и сверка генома с E1. | ✅ Да | `tools/hub-sync.py`, `.github/workflows/validate.yml` |
 | `/tools/sync-from-hub.sh` | утилита | — | Smart Sync клиент: фильтрация шаблонов по `.hub-profile.json` (target_type/stack/min_phase), отчёт и безопасное применение (`.hub-new.*`) либо `--force`-перезапись; `--init` создаёт профиль. | ✅ Да | `templates/manifest.json`, `guides/sync-from-hub.md`, `guides/rollback-sync.md` |
 | `/tools/spoke-extraction.py` | утилита | — | Детерминированный перенос поддерева Хаба в спицу по закреплённому SHA (issue #717): `manifest` (blob-манифест по правилам `--map`), `history-paths`, `materialize`, `rewrite-links` (L1 относительные ссылки → пермалинк SHA, L2 URL `main` внутри набора → спица), `scan` (остатки старых префиксов), `verify` (сверка по хешу), `sections` (дословный перенос разделов Markdown, например спринтов бэклога, с `--check`). Исполняется контрактом выноса из внешнего репозитория. | ✅ Да | `ops/hub-project-extraction-contract.md`, `tools/test-spoke-extraction.sh` |
 | `/tools/test-spoke-extraction.sh` | утилита | — | Регрессионный тест `tools/spoke-extraction.py` на синтетическом репозитории: закрепление за SHA, коллизии, отказ от перезаписи, подмена байта/режима/лишний файл в `verify`, правила L1/L2, идемпотентность, отказ на файлах, изменённых после импорта. | ✅ Да | `tools/spoke-extraction.py`, `.github/workflows/validate.yml` |

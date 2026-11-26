@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 0.9
-updated: 2026-11-22
+version: 0.10
+updated: 2026-11-26
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -49,7 +49,7 @@ frontmatter и девять обязательных секций. Машино�
 | [ADR-021](2026-09-adr-021-agent-collaboration-layer.md) | accepted | Коммуникация C-1…C-7 живёт в отдельном файле, режимы и Creative — в work rules, якоря — в onboarding; C-5 и порог 9K уточнены по issue #631. |
 | [ADR-022](2026-11-adr-022-hub-archive-and-extraction-redirect.md) | accepted | Архив Хаба — защищённый тег `archive/<slug>-<YYYY-MM>`, а не каталог; удалённый путь адресуется манифестом и `path_migrations` с внешним `to`; персональные данные не архивируются (issue #721). |
 | [ADR-023](2026-11-adr-023-ai-participation-frontmatter-fields.md) | accepted | Участие ИИ во frontmatter называют необязательные поля `contributors` (люди, роли) и `ai-models` (конкретные модели с версией, только вместе с `contributors`); метка `ai-generated` остаётся запрещённой (вариант C, issue #727). |
-| [ADR-024](2026-11-adr-024-ecosystem-inheritance-contract.md) | accepted | Обязательное наследование структуры архетипа при создании управляемой спицы. Последующий выбор практик, синк и проверка закреплённого генома по запросу команды. |
+| [ADR-024](2026-11-adr-024-ecosystem-inheritance-contract.md) | accepted | Обязательное наследование структуры архетипа при создании управляемой спицы. Последующий выбор практик, синк и проверка закреплённого генома по запросу команды. Канонический синк I-3/I-4 — [`tools/hub-sync.py`](../../tools/hub-sync.py) (B-239). |
 
 ## Related Artifacts
 
