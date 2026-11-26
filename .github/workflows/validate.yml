@@ -73,6 +73,10 @@ jobs:
           python3 -m pip install --requirement tools/requirements-hub-profile.txt
           python3 tools/test-hub-profile.py
 
+      - name: Test canonical Hub sync
+        timeout-minutes: 5
+        run: python3 tools/test-hub-sync.py
+
       - name: Test path migration manifest redirect
         run: bash tools/test-path-migration-manifest.sh
 
