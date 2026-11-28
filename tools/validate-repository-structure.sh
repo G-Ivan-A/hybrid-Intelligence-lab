@@ -172,6 +172,7 @@ is_active_file() {
     research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md | \
     research/hub/2026-07-02-task-execution-modes-research.md | \
     research/hub/2026-07-04-hub-as-agent-system-global-analysis.md | \
+    research/hub/2026-11-28-digital-employee-methodology-survey.md | \
     research/README.md | \
     research/education/README.md | \
     research/ai-education/README.md | \
@@ -323,6 +324,10 @@ is_active_file() {
     research/hub/exp/proxeneta-extraction-742/spoke-readme.txt | \
     research/hub/exp/proxeneta-extraction-742/test-preparation.log | \
     research/hub/exp/proxeneta-extraction-742/test-preparation.sh | \
+    research/hub/exp/digital-employee-757/README.md | \
+    research/hub/exp/digital-employee-757/measure.py | \
+    research/hub/exp/digital-employee-757/results.json | \
+    research/hub/exp/digital-employee-757/sources.json | \
     research/hub/exp/gra-extraction-cleanup-721/README.md | \
     research/hub/exp/gra-extraction-cleanup-721/gra-inventory.py | \
     research/hub/exp/gra-extraction-cleanup-721/gra-inventory.log | \
@@ -2082,11 +2087,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.70"
+require_text "ops/artifact-map.md" "version: 2.71"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-11-26"
+require_text "ops/artifact-map.md" "updated: 2026-11-28"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2479,7 +2484,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.95"
+require_text "ops/backlog.md" "version: 1.96"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "**B-307**"
 require_text "ops/backlog.md" "Спринты 23, 31 и 33 закрыты."
