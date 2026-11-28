@@ -1,0 +1,2292 @@
+[
+  {
+    "id": "A01",
+    "title": "Building effective agents",
+    "org_or_author": "Anthropic (Erik Schluntz, Barry Zhang)",
+    "date": "2024-12-19",
+    "url": "https://www.anthropic.com/engineering/building-effective-agents",
+    "quotes": [
+      "Workflows are systems where LLMs and tools are orchestrated through predefined code paths. Agents, on the other hand, are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.",
+      "we recommend finding the simplest solution possible, and only increasing complexity when needed. This might mean not building agentic systems at all.",
+      "In the orchestrator-workers workflow, a central LLM dynamically breaks down tasks, delegates them to worker LLMs, and synthesizes their results."
+    ],
+    "takeaway": "Canonical taxonomy: workflows vs agents; start from the augmented LLM and add complexity (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer) only when it pays off.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Fetched page text. Also contains the augmented LLM block and evaluator-optimizer pattern ('one LLM call generates a response while another provides evaluation and feedback in a loop'). The page now carries an editor note: 'Much of the tooling landscape described in this post has changed since December 2024' and points to Claude Managed Agents.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A02",
+    "title": "How we built our multi-agent research system",
+    "org_or_author": "Anthropic Engineering",
+    "date": "2025-06-13",
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "quotes": [
+      "a multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed single-agent Claude Opus 4 by 90.2% on our internal research eval.",
+      "agents typically use about 4× more tokens than chat interactions, and multi-agent systems use about 15× more tokens than chats.",
+      "some domains that require all agents to share the same context or involve many dependencies between agents are not a good fit for multi-agent systems today."
+    ],
+    "takeaway": "Orchestrator-worker research agent wins big on breadth-first tasks (+90.2%), but costs ~15x chat tokens; token usage alone explains 80% of BrowseComp variance; poor fit for tightly coupled tasks such as most coding.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Fetched page text; all three figures (90.2%, 4x/15x, 80% variance) confirmed verbatim.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A03",
+    "title": "Don't Build Multi-Agents",
+    "org_or_author": "Cognition (Walden Yan)",
+    "date": "2025-06-12",
+    "url": "https://cognition.ai/blog/dont-build-multi-agents",
+    "quotes": [
+      "Share context, and share full agent traces, not just individual messages",
+      "Actions carry implicit decisions, and conflicting decisions carry bad results",
+      "it is evident that in 2025, running multiple agents in collaboration only results in fragile systems. The decision-making ends up being too dispersed and context isn't able to be shared thoroughly enough between the agents."
+    ],
+    "takeaway": "Two context-engineering principles; default to a single-threaded linear agent; parallel sub-agents writing code produce conflicting implicit decisions.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "Fetched page text; dated 2025.06.12 on page. Superseded/narrowed by the same author's 2026-04-22 follow-up (A27).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A04",
+    "title": "A practical guide to building agents",
+    "org_or_author": "OpenAI",
+    "date": "2025-04",
+    "url": "https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf",
+    "quotes": [
+      "Agents are systems that independently accomplish tasks on your behalf.",
+      "Our general recommendation is to maximize a single agent's capabilities first.",
+      "Exceeding failure thresholds: Set limits on agent retries or actions. ... High-risk actions: Actions that are sensitive, irreversible, or have high stakes should trigger human oversight until confidence in the agent's reliability grows."
+    ],
+    "takeaway": "Single agent first; two multi-agent patterns (manager = agents as tools; decentralized = handoffs); layered guardrails; two human-intervention triggers (failure thresholds, high-risk actions).",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Downloaded the PDF (34 pp.) and extracted text with pypdf. Also verbatim: 'The manager pattern empowers a central LLM—the “manager”—to orchestrate a network of specialized agents seamlessly through tool calls' and 'Think of guardrails as a layered defense mechanism.' The PDF has no explicit date on the extracted pages; April 2025 is its widely reported publication month (not verified on the document itself). Quote 3 is abridged with '...'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A05",
+    "title": "Agents (whitepaper)",
+    "org_or_author": "Google (Julia Wiesinger, Patrick Marlow, Vladimir Vuskovic)",
+    "date": "2024-09",
+    "url": "https://www.kaggle.com/whitepaper-agents",
+    "quotes": [
+      "a Generative AI agent can be defined as an application that attempts to achieve a goal by observing the world and acting upon it using the tools that it has at its disposal.",
+      "Agents are autonomous and can act independently of human intervention, especially when provided with proper goals or objectives",
+      "The orchestration layer describes a cyclical process that governs how the agent takes in information, performs some internal reasoning, and uses that reasoning to inform its next action or decision."
+    ],
+    "takeaway": "Google's definition: model + tools + orchestration layer (cognitive architecture, ReAct/CoT/ToT); tools split into extensions, functions, data stores.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "The Kaggle page renders by JavaScript and could not be read with curl; text was verified from the PDF mirror at https://archive.org/download/google-ai-agents-whitepaper/Newwhitepaper_Agents.pdf (42 pp., footer 'September 2024', authors listed on cover). The mirror is not a Google-hosted copy.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A06",
+    "title": "What are AI agents? Definition, examples, and types",
+    "org_or_author": "Google Cloud",
+    "date": "undated (living page, fetched 2026-11-28)",
+    "url": "https://cloud.google.com/discover/what-are-ai-agents",
+    "quotes": [
+      "AI agents are software systems that use AI to pursue goals and complete tasks on behalf of users. They show reasoning, planning, and memory and have a level of autonomy to make decisions, learn, and adapt."
+    ],
+    "takeaway": "Short vendor definition of an AI agent: goal pursuit on behalf of users, with reasoning, planning, memory and a degree of autonomy.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched page text; the page has no publication date.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A07",
+    "title": "Why Do Multi-Agent LLM Systems Fail? (MAST)",
+    "org_or_author": "Cemri, Pan, Yang et al. (UC Berkeley et al.)",
+    "date": "2025-03-17 (v3 2025-10-26)",
+    "url": "https://arxiv.org/abs/2503.13657",
+    "quotes": [
+      "Despite enthusiasm for Multi-Agent LLM Systems (MAS), their performance gains on popular benchmarks are often minimal.",
+      "This process identifies 14 unique modes, clustered into 3 categories: (i) system design issues, (ii) inter-agent misalignment, and (iii) task verification.",
+      "We introduce MAST-Data, a comprehensive dataset of 1600+ annotated traces collected across 7 popular MAS frameworks."
+    ],
+    "takeaway": "Empirical failure taxonomy for MAS: 14 failure modes in 3 categories, kappa=0.88; failures are mostly design/coordination/verification problems, not just model weakness.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "Fetched arXiv abstract page (v3). Note v3 abstract cites 1600+ traces / 7 frameworks; earlier versions cited fewer (e.g., 150+ traces / 5 frameworks in v1).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A08",
+    "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "org_or_author": "Hong et al. (DeepWisdom et al.), ICLR 2024",
+    "date": "2023-08-01 (v7 2024-11-01)",
+    "url": "https://arxiv.org/abs/2308.00352",
+    "quotes": [
+      "MetaGPT encodes Standardized Operating Procedures (SOPs) into prompt sequences for more streamlined workflows, thus allowing agents with human-like domain expertise to verify intermediate results and reduce errors.",
+      "MetaGPT utilizes an assembly line paradigm to assign diverse roles to various agents, efficiently breaking down complex tasks into subtasks involving many agents working together.",
+      "Code = SOP(Team) is the core philosophy. We materialize SOP and apply it to teams composed of LLMs."
+    ],
+    "takeaway": "Encoding human SOPs and roles (PM, Architect, Project Manager, Engineer, QA) as an assembly line reduces cascading hallucinations; precursor of role-based spec pipelines.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Quotes 1-2 from arXiv abstract; roles confirmed in full-text HTML (arxiv.org/html/2308.00352v7). Quote 3 is NOT in the paper; it is from the GitHub README https://github.com/FoundationAgents/MetaGPT (backticks around Code = SOP(Team) removed).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A09",
+    "title": "Model Context Protocol — Specification (latest, version 2026-07-28)",
+    "org_or_author": "MCP project (originated by Anthropic; now under Linux Foundation AAIF)",
+    "date": "2026-07-28 (latest spec version shown)",
+    "url": "https://modelcontextprotocol.io/specification/latest",
+    "quotes": [
+      "Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools.",
+      "The protocol uses JSON-RPC 2.0 messages to establish communication between:",
+      "Users must explicitly consent to and understand all data access and operations"
+    ],
+    "takeaway": "Standard agent-to-tool/context interface (hosts, clients, servers over JSON-RPC 2.0) with explicit user-consent principles.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched the spec page; the version selector shows 'Version 2026-07-28 (latest)'. The 2025-06-18 version page was also fetched.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A10",
+    "title": "Announcing the Agent2Agent Protocol (A2A)",
+    "org_or_author": "Google (Rao Surapaneni et al.)",
+    "date": "2025-04-09",
+    "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+    "quotes": [
+      "Today, we're launching a new, open protocol called Agent2Agent (A2A), with support and contributions from more than 50 technology partners",
+      "A2A is an open protocol that complements Anthropic's Model Context Protocol (MCP), which provides helpful tools and context to agents."
+    ],
+    "takeaway": "A2A = agent-to-agent interoperability layer, positioned as complementary to MCP (agent-to-tool).",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched blog text; date APRIL 9, 2025 on page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A11",
+    "title": "Linux Foundation Launches the Agent2Agent Protocol Project",
+    "org_or_author": "The Linux Foundation",
+    "date": "2025-06-23",
+    "url": "https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents",
+    "quotes": [
+      "The Linux Foundation, the nonprofit organization enabling mass innovation through open source, today announced the launch of the Agent2Agent (A2A) project, an open protocol created by Google for secure agent-to-agent communication and collaboration."
+    ],
+    "takeaway": "A2A moved to neutral Linux Foundation governance in June 2025; a2a-protocol.org (2026) lists Apache 2.0, 6 official SDKs, 170+ partners.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched press release. Also fetched https://a2a-protocol.org/latest/ (footer 'Copyright 2026 The Linux Foundation', '6 Official SDKs', '170+ Community partners').",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A12",
+    "title": "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)",
+    "org_or_author": "The Linux Foundation",
+    "date": "2025-12-09",
+    "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation",
+    "quotes": [
+      "today announced the formation of the Agentic AI Foundation (AAIF), and founding contributions of three leading projects driving innovation in open source AI; Anthropic's Model Context Protocol (MCP), Block's goose, and OpenAI's AGENTS.md.",
+      "Platinum members include Amazon Web Services, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft and OpenAI."
+    ],
+    "takeaway": "MCP, AGENTS.md and goose placed under one vendor-neutral foundation backed by all major vendors.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched press release text; dated Dec. 9, 2025.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A13",
+    "title": "AGENTS.md",
+    "org_or_author": "agents.md (originated by OpenAI with others; stewarded by AAIF)",
+    "date": "living page (fetched 2026-11-28)",
+    "url": "https://agents.md/",
+    "quotes": [
+      "A simple, open format for guiding coding agents, used by over 60k open-source projects.",
+      "Think of AGENTS.md as a README for agents: a dedicated, predictable place to provide the context and instructions to help AI coding agents work on your project.",
+      "AGENTS.md is now stewarded by the Agentic AI Foundation under the Linux Foundation."
+    ],
+    "takeaway": "De-facto standard file for repo-level agent instructions; plain Markdown, no required fields.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A14",
+    "title": "Spec-driven development with AI: Get started with a new open source toolkit",
+    "org_or_author": "GitHub Blog (Den Delimarsky)",
+    "date": "2025-09-02",
+    "url": "https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/",
+    "quotes": [
+      "Specs become the shared source of truth. When something doesn't make sense, you go back to the spec; when a project grows complex, you refine it; when tasks feel too large, you break them down.",
+      "each phase has a specific job, and you don't move to the next one until the current task is fully validated.",
+      "We're moving from “code is the source of truth” to “intent is the source of truth.”"
+    ],
+    "takeaway": "Spec Kit formalizes Specify -> Plan -> Tasks -> Implement with validation gates; specs as living, executable artifacts.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched blog text; date September 2, 2025 on page. Commands in the blog were /specify, /plan, /tasks.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A15",
+    "title": "github/spec-kit (README, current)",
+    "org_or_author": "GitHub",
+    "date": "living repo (fetched 2026-11-28)",
+    "url": "https://github.com/github/spec-kit",
+    "quotes": [
+      "Spec Kit is an open source toolkit that gives AI coding agents structured processes, reusable templates, and documented outcomes.",
+      "Define what to build and why, then turn the specification into a plan, tasks, and working code.",
+      "Run these skills in your agent's chat, not your terminal, one at a time, reviewing each result before continuing."
+    ],
+    "takeaway": "By late 2026 Spec Kit flow is /speckit-constitution -> specify -> plan -> tasks -> implement -> converge, with human review between steps; bug-fixing and idea-assessment processes added.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched raw README.md from main. Commands renamed to /speckit-* and a 'converge' step added versus the Sep 2025 blog.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A16",
+    "title": "Kiro — Specs / Feature Specs",
+    "org_or_author": "AWS Kiro",
+    "date": "living docs (fetched 2026-11-28)",
+    "url": "https://kiro.dev/docs/specs/",
+    "quotes": [
+      "Every spec generates three key files that form the foundation of your specification: requirements.md (or bugfix.md) ... design.md ... tasks.md",
+      "The requirements.md file uses EARS (Easy Approach to Requirements Syntax) notation to provide structured, testable requirements.",
+      "WHEN [condition/event] THE SYSTEM SHALL [expected behavior]"
+    ],
+    "takeaway": "Kiro specs = requirements.md (EARS) -> design.md -> tasks.md, a three-phase workflow with approval gates (Quick Spec skips gates).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched https://kiro.dev/docs/specs/ and https://kiro.dev/docs/specs/feature-specs/ (EARS text is on the latter). Quote 1 is abridged with '...'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A17",
+    "title": "BMAD-METHOD",
+    "org_or_author": "BMad Code (bmad-code-org)",
+    "date": "v4 README (2025); current README v6.12/v7 alpha (2026)",
+    "url": "https://github.com/bmad-code-org/BMAD-METHOD",
+    "quotes": [
+      "Agentic Planning: Dedicated agents (Analyst, PM, Architect) collaborate with you to create detailed, consistent PRDs and Architecture documents.",
+      "BMad keeps you in control while its agents and workflows make the important decisions explicit and preserve them as context for the work that follows."
+    ],
+    "takeaway": "Role-agent planning (Analyst/PM/Architect -> PRD + architecture) then SM/Dev/QA via story files; 2026 versions reframe as right-sized, skills-based process.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Quote 1 from the v4.44.3 tag README (https://github.com/bmad-code-org/BMAD-METHOD/blob/v4.44.3/README.md; bold markers removed); the current main README (v7 alpha, stable v6.12) no longer names Analyst/PM/Architect or PRD. Quote 2 from current main README.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A18",
+    "title": "Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks",
+    "org_or_author": "Microsoft Research (Fourney et al.)",
+    "date": "2024-11-07",
+    "url": "https://arxiv.org/abs/2411.04468",
+    "quotes": [
+      "Magentic-One uses a multi-agent architecture where a lead agent, the Orchestrator, plans, tracks progress, and re-plans to recover from errors.",
+      "Magentic-One's modular design allows agents to be added or removed from the team without additional prompt tuning or training"
+    ],
+    "takeaway": "Orchestrator + specialized agents (WebSurfer, FileSurfer, Coder, Terminal) competitive on GAIA/AssistantBench/WebArena.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched arXiv abstract page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A19",
+    "title": "Introducing Microsoft Agent Framework",
+    "org_or_author": "Microsoft (Yina Arenas)",
+    "date": "2025-10-01",
+    "url": "https://azure.microsoft.com/en-us/blog/introducing-microsoft-agent-framework/",
+    "quotes": [
+      "The Microsoft Agent Framework, now in public preview, is the open-source SDK and runtime that simplifies the orchestration of multi-agent systems.",
+      "It converges AutoGen, a former Microsoft Research project, and the enterprise-ready foundations of Semantic Kernel into a unified, commercial-grade framework"
+    ],
+    "takeaway": "Microsoft merged AutoGen + Semantic Kernel into one OSS multi-agent SDK/runtime.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched blog text; date October 1, 2025 on page. GA status in 2026 not checked.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A20",
+    "title": "How to think about agent frameworks",
+    "org_or_author": "LangChain (Harrison Chase)",
+    "date": "2025-04-20",
+    "url": "https://blog.langchain.com/how-to-think-about-agent-frameworks/",
+    "quotes": [
+      "The hard part of building reliable agentic systems is making sure the LLM has the appropriate context at each step.",
+      "Agentic systems consist of both workflows and agents (and everything in between).",
+      "The key part of multi agent systems is how they communicate."
+    ],
+    "takeaway": "Frameworks should support the full workflow-to-agent spectrum; reliability is a context problem.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched blog text; date April 20, 2025 on page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A21",
+    "title": "LangGraph — Interrupts (human-in-the-loop)",
+    "org_or_author": "LangChain docs",
+    "date": "living docs (fetched 2026-11-28)",
+    "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+    "quotes": [
+      "Interrupts allow you to pause graph execution at specific points and wait for external input before continuing. This enables human-in-the-loop patterns where you need external input to proceed.",
+      "When an interrupt is triggered, LangGraph saves the graph state using its persistence layer and waits indefinitely until you resume execution."
+    ],
+    "takeaway": "HITL implemented as durable pause/resume over checkpointed graph state (approve/reject, edit state).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched docs page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A22",
+    "title": "Hive Mind (README.md / README.ru.md)",
+    "org_or_author": "link-assistant (open source, Unlicense)",
+    "date": "living repo (fetched 2026-11-28)",
+    "url": "https://github.com/link-assistant/hive-mind/blob/main/README.ru.md",
+    "quotes": [
+      "Hive Mind is the most autonomous, cloud-ready AI issue solver that eliminates developer babysitting while maintaining human oversight on critical decisions.",
+      "AI creates draft PRs - you decide what merges. Quality gates where they matter.",
+      "Hive Mind — наиболее автономный, облачно-ориентированный ИИ-решатель задач, который устраняет необходимость постоянного контроля со стороны разработчика, сохраняя при этом человеческий надзор над критически важными решениями.",
+      "Управляйте ИИ с любого устройства через `/solve` и `/hive` посредством Telegram-бота."
+    ],
+    "takeaway": "Orchestrator (hive) + executors (solve/review) turning GitHub issues into draft PRs via Claude Code / Codex in isolated VMs/Docker; human merges.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched raw README.md and README.ru.md from main (bold markers removed). README also describes three layers: Orchestration (hive.mjs), Execution (solve.mjs, review.mjs), Human Interface; and warns it is UNSAFE to run on a developer machine. Extra quote added from README.ru.md read via gh api on 2026-11-28.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A23",
+    "title": "Building agents with the Claude Agent SDK",
+    "org_or_author": "Anthropic",
+    "date": "2025-09-29",
+    "url": "https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk",
+    "quotes": [
+      "we're renaming the Claude Code SDK to the Claude Agent SDK.",
+      "Agents often operate in a specific feedback loop: gather context -> take action -> verify work -> repeat."
+    ],
+    "takeaway": "The coding-agent harness generalized to arbitrary agents; agent loop = gather context, act, verify.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched page text; date September 29, 2025 shown on page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A24",
+    "title": "Effective harnesses for long-running agents",
+    "org_or_author": "Anthropic Engineering",
+    "date": "2025-11-26",
+    "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+    "quotes": [
+      "an initializer agent that sets up the environment on the first run, and a coding agent that is tasked with making incremental progress in every session, while leaving clear artifacts for the next session."
+    ],
+    "takeaway": "Long-running work across context windows needs an initializer agent, progress file, feature list and git commits as handoff artifacts.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched page text; 'Published Nov 26, 2025'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A25",
+    "title": "Introducing AgentKit",
+    "org_or_author": "OpenAI",
+    "date": "2025-10-06",
+    "url": "https://openai.com/index/introducing-agentkit/",
+    "quotes": [
+      "Today we're launching AgentKit, a complete set of tools for developers and enterprises to build, deploy, and optimize agents.",
+      "Agent Builder: a visual canvas for creating and versioning multi-agent workflows"
+    ],
+    "takeaway": "OpenAI's agent platform: Agent Builder (visual multi-agent workflows), Connector Registry, ChatKit, Evals.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched page text; date October 6, 2025. Page now also points code users to the Agents SDK and others to 'Workspace Agents in ChatGPT' (later addition).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A26",
+    "title": "Building multi-agent systems: When and how to use them",
+    "org_or_author": "Anthropic / Claude blog (Cara Phillips)",
+    "date": "2026-01-23",
+    "url": "https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them",
+    "quotes": [
+      "At Anthropic, we've seen teams invest months building elaborate multi-agent architectures only to discover that improved prompting on a single agent achieved equivalent results.",
+      "In our testing, multi-agent implementations typically use 3-10x more tokens than single-agent approaches for equivalent tasks.",
+      "three situations where multiple agents consistently outperform a single agent: when context pollution degrades performance, when tasks can run in parallel, and when specialization improves tool selection or task focus."
+    ],
+    "takeaway": "2026 Anthropic guidance: single agent by default; multi-agent only for context pollution, parallelism, specialization; 3-10x token overhead.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Fetched page text; 'January 23, 2026' on page. New 2026 source (not in original list).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A27",
+    "title": "Multi-Agents: What's Actually Working",
+    "org_or_author": "Cognition (Walden Yan)",
+    "date": "2026-04-22",
+    "url": "https://cognition.ai/blog/multi-agents-working",
+    "quotes": [
+      "multi-agent systems work best today when writes stay single-threaded and the additional agents contribute intelligence rather than actions.",
+      "A clean-context reviewer catches bugs the coder can't see.",
+      "Our original observations still hold today for parallel-writer swarms: most of the sexy ideas in that space still don't see meaningful adoption."
+    ],
+    "takeaway": "Cognition's 2026 revision: allow multi-agent for review/advice/manager patterns, keep writes single-threaded.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Fetched page text; dated 2026.04.22. New 2026 source.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A28",
+    "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+    "org_or_author": "Anthropic Engineering",
+    "date": "2026-04-08",
+    "url": "https://www.anthropic.com/engineering/managed-agents",
+    "quotes": [
+      "decouple what we thought of as the “brain” (Claude and its harness) from both the “hands” (sandboxes and tools that perform actions) and the “session” (the log of session events).",
+      "Managed Agents is a meta-harness in the same spirit, unopinionated about the specific harness that Claude will need in the future."
+    ],
+    "takeaway": "2026 hosted-agent architecture: brain/hands/session as stable interfaces; containers as cattle, not pets; brains can pass hands to one another.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched page text; 'Published Apr 8, 2026'. New 2026 source.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A29",
+    "title": "The next evolution of the Agents SDK",
+    "org_or_author": "OpenAI",
+    "date": "2026-04-15",
+    "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk/",
+    "quotes": [
+      "a model-native harness that lets agents work across files and tools on a computer, plus native sandbox execution for running that work safely.",
+      "Agent systems should be designed assuming prompt-injection and exfiltration attempts. Separating harness and compute helps keep credentials out of environments where model-generated code executes."
+    ],
+    "takeaway": "OpenAI converges on the same pattern as Anthropic: harness separated from sandboxed compute, durable long-horizon execution.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched page text; 'April 15, 2026'. New 2026 source.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "A30",
+    "title": "Introducing Gemini Enterprise Agent Platform, powering the next wave of agents",
+    "org_or_author": "Google Cloud (Michael Gerstenhaber, Michael Bachman)",
+    "date": "2026-04-22",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
+    "quotes": [
+      "This supports long-running agents that maintain state for days at a time and are backed by Memory Bank for persistent, long-term context.",
+      "Establish centralized control with Agent Identity, Agent Registry, and Agent Gateway.",
+      "Agent Identity improves the security posture of your agents by ensuring every agent receives a unique cryptographic ID."
+    ],
+    "takeaway": "Google's 2026 enterprise stack: ADK + Agent Runtime + memory + governance (identity, registry, gateway) for agent fleets.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched blog text; 'April 22, 2026'. New 2026 source. ADK 2.0 (Google I/O 2026) only seen in secondary coverage, not verified.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B01",
+    "title": "Levels of Autonomy for AI Agents",
+    "org_or_author": "K. J. Kevin Feng, David W. McDonald, Amy X. Zhang (Univ. of Washington; Knight First Amendment Institute essay series)",
+    "date": "2025-06-14 (v1); v2 2025-07-28",
+    "url": "https://arxiv.org/abs/2506.12469",
+    "quotes": [
+      "We argue that an agent's level of autonomy can be treated as a deliberate design decision, separate from its capability and operational environment.",
+      "we define five levels of escalating agent autonomy, characterized by the roles a user can take when interacting with an agent: operator, collaborator, consultant, approver, and observer.",
+      "These certificates are issued by a third-party governing body to agent developers to communicate behavioral characteristics of an agent to other developers and agents."
+    ],
+    "takeaway": "Autonomy is a design choice, not a by-product of capability; five user-role levels (L1 operator to L5 observer) plus third-party 'autonomy certificates' for governing single- and multi-agent systems.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "arXiv abstract page and arXiv HTML v2 fetched; quotes 1-2 from abstract, quote 3 from section 1/4. L5 = 'User as an observer' (no means for user involvement).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B02",
+    "title": "Fully Autonomous AI Agents Should Not be Developed",
+    "org_or_author": "Margaret Mitchell, Avijit Ghosh, Alexandra Sasha Luccioni, Giada Pistilli (Hugging Face)",
+    "date": "2025-02-04 (v1); v3 2025-10-20",
+    "url": "https://arxiv.org/abs/2502.02649",
+    "quotes": [
+      "Our analysis reveals that risks to people increase with the autonomy of a system: The more control a user cedes to an AI agent, the more risks to people arise.",
+      "fully autonomous AI agents – and in particular the most advanced form of this, where systems are capable of writing and executing their own code beyond predefined constraints – should not be developed",
+      "semi-autonomous systems, which retain some level of human control, offer a more favorable risk-benefit profile"
+    ],
+    "takeaway": "Position paper: risk grows monotonically with ceded control; argues for semi-autonomous agents with retained human control and override mechanisms.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract and HTML full text fetched; quotes 2-3 from the paper body (Introduction/Conclusion).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B03",
+    "title": "Levels of AGI for Operationalizing Progress on the Path to AGI",
+    "org_or_author": "Meredith Ringel Morris et al. (Google DeepMind)",
+    "date": "2023-11-04 (v1); v5 2025-09-24 (ICML 2024 position paper)",
+    "url": "https://arxiv.org/abs/2311.02462",
+    "quotes": [
+      "Autonomy Level 1: AI as a Tool human fully controls task and uses AI to automate mundane sub-tasks",
+      "Autonomy Level 5: AI as an Agent fully autonomous AI",
+      "emphasize the importance of carefully selecting Human-AI Interaction paradigms for responsible and safe deployment of highly capable AI systems."
+    ],
+    "takeaway": "Separates capability (performance x generality) from autonomy: Level 0 No AI, 1 Tool, 2 Consultant, 3 Collaborator, 4 Expert, 5 Agent; autonomy level is a deployment choice that should be matched to risk.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "arXiv abstract + HTML (Table 2) fetched; quotes 1-2 are table cell text (no punctuation in original), quote 3 from abstract. Note the paper's title on arXiv is 'Levels of AGI for Operationalizing Progress on the Path to AGI'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B04",
+    "title": "A model for types and levels of human interaction with automation",
+    "org_or_author": "Raja Parasuraman, Thomas B. Sheridan, Christopher D. Wickens; IEEE Trans. Systems, Man, and Cybernetics - Part A 30(3):286-297",
+    "date": "2000-05",
+    "url": "https://doi.org/10.1109/3468.844354",
+    "quotes": [
+      "automation does not merely supplant but changes human activity and can impose new coordination demands on the human operator.",
+      "We propose that automation can be applied to four broad classes of functions: 1) information acquisition; 2) information analysis; 3) decision and action selection; and 4) action implementation.",
+      "Within each of these types, automation can be applied across a continuum of levels from low to high, i.e., from fully manual to fully automatic."
+    ],
+    "takeaway": "Classic HCI/human-factors basis for agent autonomy: autonomy is set per function (4 stages), each on a low-to-high level continuum; evaluate by human performance consequences, reliability and cost of errors.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Abstract verified via NCBI PubMed E-utilities (PMID 11760769, DOI 10.1109/3468.844354); IEEE Xplore and pubmed.ncbi.nlm.nih.gov HTML not readable by script. The 10-level scale (from Sheridan & Verplank 1978) is in the paper body (Table 1), not in the abstract, so it is not quoted here. Third function is officially 'decision and action selection'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B05",
+    "title": "Practices for Governing Agentic AI Systems",
+    "org_or_author": "Yonadav Shavit, Sandhini Agarwal, Miles Brundage et al. (OpenAI)",
+    "date": "2023-12-14",
+    "url": "https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf",
+    "quotes": [
+      "Some decisions may be too important for users to delegate to agents, if there is even a small chance that they're done wrong (such as independently initiating an irreversible large financial transaction).",
+      "it is important that at least one human entity is accountable for every uncompensated direct harm caused by an agentic AI system.",
+      "Interruptibility (the ability to \"turn an agent off\"), while crude, is a critical backstop for preventing an AI system from causing accidental or intentional harm."
+    ],
+    "takeaway": "Seven baseline practices (task suitability, constrained action space + approval, default behaviours, legibility, automatic monitoring, attributability via unique agent identifiers, interruptibility) and a principle that some human must always be accountable.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Full PDF (23 pp.) downloaded and text-extracted; quotes from sections 4.2, 3 (responsibility) and 4.7. Footnote marker removed from quote 2. Section 4.6 also proposes 'each agentic AI instance assigned a unique identifier'. Landing page: https://openai.com/index/practices-for-governing-agentic-ai-systems/",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B06",
+    "title": "The Agentic AI Security Scoping Matrix: A framework for securing autonomous AI systems",
+    "org_or_author": "Aaron Brown, Matt Saner (AWS Security Blog)",
+    "date": "2025-11-21",
+    "url": "https://aws.amazon.com/blogs/security/the-agentic-ai-security-scoping-matrix-a-framework-for-securing-autonomous-ai-systems/",
+    "quotes": [
+      "we've identified four architectural scopes that represent the evolution of agentic AI systems based on two critical dimensions: level of human oversight compared with autonomy and the level of agency the AI system is permitted to act within.",
+      "Scope 1: No agency ... Scope 2: Prescribed agency ... Scope 3: Supervised agency ... Scope 4: Full agency",
+      "it's critical that humans maintain supervisory oversight with the ability to provide strategic guidance, course corrections, or interventions when needed."
+    ],
+    "takeaway": "Industry (hyperscaler) taxonomy: 4 scopes from read-only/human-initiated to self-initiating agents; security controls (identity, authZ, memory, monitoring etc. - six dimensions) escalate with agency and autonomy.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Blog page fetched; publish date from article:published_time meta (2025-11-21), so it is a late-2025 post, not early 2025. Quote 2 is a condensed list of the four scope headings (ellipses mine). Companion page: https://aws.amazon.com/ai/security/agentic-ai-scoping-matrix/",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B07",
+    "title": "EU AI Act (Regulation (EU) 2024/1689) - Article 14 Human Oversight; Article 26 Obligations of Deployers of High-Risk AI Systems",
+    "org_or_author": "European Parliament & Council of the EU (text via artificialintelligenceact.eu, Future of Life Institute)",
+    "date": "2024-06-13 (adopted; OJ 2024-07-12); high-risk obligations deferred by AI Omnibus (Reg. (EU) 2026/1744) to 2027-12-02 (Annex III) / 2028-08-02 (Annex I)",
+    "url": "https://artificialintelligenceact.eu/article/14/",
+    "quotes": [
+      "High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use.",
+      "to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias)",
+      "Deployers shall assign human oversight to natural persons who have the necessary competence, training and authority, as well as the necessary support.",
+      "unless that identification has been separately verified and confirmed by at least two natural persons with the necessary competence, training and authority."
+    ],
+    "takeaway": "Binding law: high-risk AI must be overseeable by natural persons (understand, monitor, override, 'stop' button), overseers must guard against automation bias; deployers must assign competent, empowered humans (Art. 26(2)).",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Article 14 and Article 26 pages fetched (https://artificialintelligenceact.eu/article/14/ and /article/26/); quote 3 is Art. 26(2). Art. 14(4)(e) also requires ability to 'interrupt the system through a stop button'. The site now shows 'Comes into force 2 December 2027 (high-risk under Annex III) / 2 August 2028 (high-risk under Annex I)'; Omnibus delay corroborated by FPF blog (https://fpf.org/blog/the-ai-act-implementation-timeline-what-changes-under-the-ai-omnibus/). EUR-Lex itself was bot-blocked; OJ number 2026/1744 from search snippets only. Merged duplicate entry D17 (same URL).",
+    "accessed": "2026-11-28",
+    "aliases": [
+      "D17"
+    ]
+  },
+  {
+    "id": "B08",
+    "title": "NIST AI RMF 1.0 (NIST AI 100-1); Generative AI Profile (NIST AI 600-1); CAISI AI Agent Standards Initiative; NCCoE concept paper on Software and AI Agent Identity and Authorization",
+    "org_or_author": "NIST / CAISI / NCCoE (U.S. Dept. of Commerce)",
+    "date": "AI RMF 2023-01; AI 600-1 2024-07; Agent Standards Initiative 2026-02-17; NCCoE concept paper 2026-02-05 (comments summary 2026-09-29)",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+    "quotes": [
+      "GOVERN 3.2: Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations and oversight of AI systems.",
+      "Advancing research in areas of AI agent security and identity to enable new use cases and to promote trusted adoption across sectors.",
+      "these benefits cannot be realized without the ability to understand how identity principles such as identification, authentication, and authorization can apply to agents"
+    ],
+    "takeaway": "US voluntary baseline: AI RMF requires documented accountability and human-AI role definitions; 600-1 names 'Human-AI Configuration' (automation bias, over-reliance) as a GenAI risk; 2026 CAISI initiative and NCCoE project make agent identity/authorization a standards priority (600+ comments; first use case = AI agents in DevSecOps).",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched: AI 100-1 PDF (GOVERN 2.1/3.2), AI 600-1 PDF (risk 7 'Human-AI Configuration'), NIST news 2026-02-17 (https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure; quote 2), NCCoE concept paper PDF (https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf; quote 3, line numbers stripped), NIST news 2026-09-29 on 600+ comments. Caveat: the live CAISI initiative page (https://www.nist.gov/caisi/ai-agent-standards-initiative, updated 2026-11-09) now renders as 'Super Intelligence (SI) Agent Standards Initiative' - cite the Feb 2026 press release for the original name.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B09",
+    "title": "ISO/IEC 42001:2023 Information technology - Artificial intelligence - Management system",
+    "org_or_author": "ISO/IEC JTC 1/SC 42",
+    "date": "2023-12-18",
+    "url": "https://www.iso.org/standard/42001",
+    "quotes": [
+      "This document specifies the requirements and provides guidance for establishing, implementing, maintaining and continually improving an AI (artificial intelligence) management system within the context of an organization.",
+      "This document is intended to help the organization develop, provide or use AI systems responsibly in pursuing its objectives and meet applicable requirements, obligations related to interested parties and expectations from them."
+    ],
+    "takeaway": "Certifiable management-system standard (PDCA, like ISO 27001) for organisations providing or using AI; the organisational wrapper for roles, responsibilities and oversight of agents.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "iso.org returned HTTP 403 (Cloudflare) to curl, WebFetch and headless browser; abstract text verified verbatim on the IEC Webstore page for the same standard (https://webstore.iec.ch/en/publication/90574), publication date 2023-12-18. The iso.org URL is given as the canonical reference.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B10",
+    "title": "Model AI Governance Framework for Agentic AI (MGF for Agentic AI), v1.0 and updated version (May 2026)",
+    "org_or_author": "Infocomm Media Development Authority (IMDA) / Ministry of Digital Development and Information (MDDI), Singapore",
+    "date": "2026-01-22 (launch at WEF Davos); updated 2026-05-20",
+    "url": "https://www.mddi.gov.sg/newsroom/singapore-launches-new-model-ai-governance-framework-for-agentic-ai--/",
+    "quotes": [
+      "Assessing and bounding the risks upfront by selecting appropriate agentic use cases and placing limits on agents' powers such as agents' autonomy and access to tools and data;",
+      "Making humans meaningfully accountable for agents by defining significant checkpoints at which human approval is required;",
+      "recommending technical and non-technical measures to mitigate risks, while emphasising that humans are ultimately accountable."
+    ],
+    "takeaway": "First government framework specifically for agentic AI; four dimensions: bound risks (autonomy/tool limits), meaningful human accountability (approval checkpoints), technical controls across lifecycle, end-user responsibility (transparency, training). May 2026 update adds multi-agent/third-party-agent risks, automation bias and 10+ case studies (e.g., Dayos tiered autonomy: Tier 1 auto+audited, Tier 2 human approval, Tier 3 agent cannot act).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "MDDI press release (22 Jan 2026) fetched by curl - quotes 1-2. IMDA factsheet 'Updated Model AI Governance Framework for Agentic AI' (20 May 2026, https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/updated-model-ai-governance-framework-for-agentic-ai) read via headless browser - quote 3 and the Dayos case. Remaining dimensions verbatim: 'Implementing technical controls and processes throughout the agent lifecycle' and 'Enabling end-user responsibility through transparency and education/training'. Framework PDFs on imda.gov.sg were bot-blocked and not read.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B11",
+    "title": "Agentic AI - Threats and Mitigations (ASI guide v1.0) and OWASP Top 10 for Agentic Applications for 2026",
+    "org_or_author": "OWASP GenAI Security Project - Agentic Security Initiative (ASI)",
+    "date": "2025-02-17 (Threats and Mitigations); 2025-12-09 (Agentic Top 10)",
+    "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "quotes": [
+      "We expand on the concepts of Least-Privilege and Excessive Agency by citing Least-Agency. This captures our advice to organizations to avoid unnecessary autonomy",
+      "Identity & Privilege Abuse exploits dynamic trust and delegation in agents to escalate access and bypass controls by manipulating delegation chains, role inheritance, control flows, and agent context",
+      "Unlike traditional systems, AI agents autonomously inherit permissions, creating security blind"
+    ],
+    "takeaway": "Security community codifies 'least agency' (no autonomy without need) and agent identity/privilege as top risks: ASI01 Goal Hijack, ASI02 Tool Misuse, ASI03 Identity & Privilege Abuse ... ASI09 Human-Agent Trust Exploitation, ASI10 Rogue Agents; the 2025 threat model also lists 'Overwhelming Human in the Loop' (T10).",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Both landing pages and PDFs downloaded (download IDs 52117 and 45674) and text-extracted. Quotes 1-2 from the Top 10 PDF (intro p.7; ASI03 p.15); quote 3 from Threats and Mitigations PDF ('Privilege Compromise' description; sentence truncated in extraction - full phrase continues 'creating security blind spots'). Threats & Mitigations URL: https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B12",
+    "title": "Moffatt v. Air Canada, 2024 BCCRT 149",
+    "org_or_author": "Civil Resolution Tribunal of British Columbia (Tribunal Member Christopher C. Rivers)",
+    "date": "2024-02-14",
+    "url": "https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do",
+    "quotes": [
+      "In effect, Air Canada suggests the chatbot is a separate legal entity that is responsible for its own actions. This is a remarkable submission.",
+      "It should be obvious to Air Canada that it is responsible for all the information on its website. It makes no difference whether the information comes from a static page or a chatbot.",
+      "I find Air Canada did not take reasonable care to ensure its chatbot was accurate."
+    ],
+    "takeaway": "Leading precedent: the deploying company, not the AI, bears responsibility for an AI agent's statements to customers (negligent misrepresentation).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Official decision PDF from the CRT decisions site downloaded and text-extracted; quotes from paras 27-28. CanLII mirror (https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html) returned 403. Tribunal Member Christopher C. Rivers confirmed in the PDF.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B13",
+    "title": "Microsoft Entra Agent ID (Build 2025; expanded at Ignite 2025) and Workday Agent System of Record",
+    "org_or_author": "Microsoft Security blog (Vasu Jakkal); Workday, Inc. press release",
+    "date": "2025-05-19 (Microsoft); 2025-02-11 (Workday); Ignite 2025-11 (Entra Agent ID expansion)",
+    "url": "https://www.microsoft.com/en-us/security/blog/2025/05/19/microsoft-extends-zero-trust-to-secure-the-agentic-workforce/",
+    "quotes": [
+      "AI agents created within Microsoft Copilot Studio and Azure AI Foundry are automatically assigned identities in a Microsoft Entra directory—analogous to etching a unique VIN into every new car",
+      "we'll integrate Microsoft Entra Agent ID with the ServiceNow AI Platform and the Workday Agent System of Record. This will allow for automated provisioning of identities for future digital employees.",
+      "The Agent System of Record will provide an efficient, secure way to onboard new AI agents, define their roles and responsibilities, track their impact, budget and forecast their costs, support compliance"
+    ],
+    "takeaway": "Vendors operationalise 'agents as workforce': a directory identity per agent (Entra Agent ID) plus HR-style lifecycle (onboarding, roles, cost budgeting) in Workday; Microsoft explicitly uses the term 'digital employees'.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Microsoft blog fetched by curl (quotes 1-2). Workday newsroom returned 403; the official press-release PDF on investor.workday.com was fetched (https://investor.workday.com/files/doc_news/The-Next-Generation-of-Workforce-Management-is-HereWorkday-Unveils-New-Agent-System-of-Record-02-11-2025-2025.pdf) - quote 3 (ligatures 'ffi'/'fi' restored after PDF extraction dropped them). Microsoft Learn 'What's new at Ignite 2025' (https://learn.microsoft.com/en-us/entra/fundamentals/whats-new-ignite-2025) calls Entra Agent ID the 'flagship introduction' bringing 'first-class identity and access management to AI agents'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B14",
+    "title": "Visibility into AI Agents; Characterizing AI Agents for Alignment and Governance",
+    "org_or_author": "Alan Chan et al. (Centre for the Governance of AI et al.); Atoosa Kasirzadeh & Iason Gabriel (Google DeepMind / CMU)",
+    "date": "2024-01-23 (v1; v6 2024-05-17, FAccT 2024); 2025-04-30",
+    "url": "https://arxiv.org/abs/2401.13138",
+    "quotes": [
+      "Information about where, why, how, and by whom certain AI agents are used, which we refer to as visibility, is critical to these objectives.",
+      "we assess three categories of measures to increase visibility into AI agents: agent identifiers, real-time monitoring, and activity logging.",
+      "This paper provides a characterization of AI agents that focuses on four dimensions: autonomy, efficacy, goal complexity, and generality."
+    ],
+    "takeaway": "Governance via visibility (agent IDs, monitoring, logs) underpins accountability; Kasirzadeh & Gabriel add graded 'agentic profiles' along autonomy/efficacy/goal complexity/generality.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Both arXiv abstract pages fetched; quotes 1-2 from 2401.13138 abstract, quote 3 from 2504.21848 abstract (https://arxiv.org/abs/2504.21848).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B15",
+    "title": "European Parliament resolution on Civil Law Rules on Robotics (2015/2103(INL)) para. 59(f); Open Letter to the European Commission on AI and Robotics; EP resolution on civil liability regime for AI (2020/2014(INL))",
+    "org_or_author": "European Parliament; 150+ AI/robotics/law/ethics experts (robotics-openletter.eu)",
+    "date": "2017-02-16; open letter 2018-04; 2020-10-20",
+    "url": "https://www.europarl.europa.eu/doceo/document/TA-8-2017-0051_EN.html",
+    "quotes": [
+      "creating a specific legal status for robots in the long run, so that at least the most sophisticated autonomous robots could be established as having the status of electronic persons responsible for making good any damage they may cause",
+      "From an ethical and legal perspective, creating a legal personality for a robot is inappropriate whatever the legal status model",
+      "notes in this respect that it is not necessary to give legal personality to AI-systems"
+    ],
+    "takeaway": "The 2017 'electronic personhood' idea was rejected by experts (2018 letter) and dropped by Parliament itself in 2020: liability stays with humans/legal persons who build, deploy or operate AI (2017 text already says 'at least at the present stage the responsibility must lie with a human and not a robot').",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "EP 2017 text (para. 59(f), para. 56) and EP 2020 resolution (para. 7, https://www.europarl.europa.eu/doceo/document/TA-9-2020-0276_EN.html) read via headless browser (curl got bot challenge). Open letter page fetched (http://www.robotics-openletter.eu/) - quote 2. The letter page itself does not display a date in extracted text; 'April 2018' is from general knowledge.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B16",
+    "title": "Future of Work with AI Agents: Auditing Automation and Augmentation Potential across the U.S. Workforce",
+    "org_or_author": "Yijia Shao, Humishka Zope, Yucheng Jiang, Jiaxin Pei, David Nguyen, Erik Brynjolfsson, Diyi Yang (Stanford)",
+    "date": "2025-06-06 (v1); v3 2026-02-01",
+    "url": "https://arxiv.org/abs/2506.06576",
+    "quotes": [
+      "a five-level scale from H1 (no human involvement) to H5 (human involvement essential)",
+      "45.2% of occupations have H3 (equal partnership) as the dominant worker-desired level, underscoring the potential for human-agent collaboration.",
+      "For 46.1% of tasks, workers express positive attitudes toward AI agent automation, even after reflecting on potential job loss concerns and work enjoyment."
+    ],
+    "takeaway": "Human Agency Scale (H1 agent alone ... H5 continuous human involvement) as a human-centred counterpart to SAE levels; WORKBank (1,500 workers, 844 tasks, 104 occupations) shows workers mostly want partnership (H3) and generally prefer more human agency than experts deem technically necessary.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract and HTML full text fetched; quotes from Sections 1 and 3. Body also says H3 dominates in '47 out of 104 occupations'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "B17",
+    "title": "Measuring AI agent autonomy in practice",
+    "org_or_author": "Anthropic (Societal Impacts team)",
+    "date": "2026-02-18",
+    "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+    "quotes": [
+      "As users gain experience with Claude Code, they tend to stop reviewing each action and instead let Claude run autonomously, intervening only when needed.",
+      "Among new users, roughly 20% of sessions use full auto-approve, which increases to over 40% as users gain experience.",
+      "the latitude granted to models in practice lags behind what they can handle."
+    ],
+    "takeaway": "Empirical (deployment-telemetry) evidence on oversight: human oversight shifts from per-action approval to monitoring + interruption as trust grows; agent-initiated clarification stops are also a form of oversight.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "NEW source discovered (not in original list). Page fetched by curl; published date 'Feb 18, 2026' on page. Vendor self-report on its own product data.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C01",
+    "title": "Seizing the agentic AI advantage (A CEO playbook to solve the gen AI paradox)",
+    "org_or_author": "McKinsey / QuantumBlack (Sukharevsky, Kerr, Hjartar, Hämäläinen, Bout, Di Leo)",
+    "date": "2025-06-13",
+    "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage",
+    "quotes": [
+      "Nearly eight in ten companies report using gen AI—yet just as many report no significant bottom-line impact.",
+      "more transformative “vertical” (function-specific) use cases—about 90 percent of which remain stuck in pilot mode.",
+      "A new AI architecture paradigm—the agentic AI mesh—is needed to govern the rapidly evolving organizational AI landscape"
+    ],
+    "takeaway": "'Gen AI paradox': broad use, little P&L impact; agents plus workflow redesign plus an 'agentic AI mesh' architecture are framed as the way out.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Verified from Common Crawl archived copy of the primary McKinsey page (live site blocks automated clients: HTTP2/Akamai 403). Snapshot 2026-10-11 (CC-MAIN-2026-43).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C02",
+    "title": "One year of agentic AI: Six lessons from the people doing the work",
+    "org_or_author": "McKinsey (Lareina Yee, Michael Chui, Roger Roberts, Stephen Xu)",
+    "date": "2025-09-12",
+    "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/one-year-of-agentic-ai-six-lessons-from-the-people-doing-the-work",
+    "quotes": [
+      "It’s not about the agent; it’s about the workflow Achieving business value with agentic AI requires changing workflows.",
+      "Stop ‘AI slop’: Invest in evaluations and build trust with users",
+      "we recently dug into more than 50 agentic AI builds we’ve led at McKinsey, as well as dozens of others in the marketplace."
+    ],
+    "takeaway": "Practitioner lessons from 50+ builds: redesign workflows (not agents), agents aren't always the answer, invest in evals, humans remain essential but roles change.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Verified from Common Crawl archived copy of the primary McKinsey page (live site blocks automated clients: HTTP2/Akamai 403). Snapshot 2026-10-08 (CC-MAIN-2026-43). Other headings confirmed: 'Agents aren’t always the answer'; 'Humans remain essential, but their roles and numbers will change'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C03",
+    "title": "The agentic organization: Contours of the next paradigm for the AI era",
+    "org_or_author": "McKinsey (Sukharevsky, Krivkovich, Gast, Storozhev, Maor, Mahadevan, Hämäläinen, Durth)",
+    "date": "2025-09-26",
+    "url": "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era",
+    "quotes": [
+      "This new paradigm unites humans and AI agents —both virtual and physical—to work side by side at scale at near-zero marginal cost. We call it the agentic organization.",
+      "Humans will be mostly positioned above the loop to steer and direct outcomes and selectively within the loop where human contact matters.",
+      "In the agentic organization, structure will pivot to small, outcome-focused agentic teams."
+    ],
+    "takeaway": "Operating-model frame: humans above the loop, small outcome-aligned agentic teams, real-time embedded governance 'with humans holding final accountability'.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Verified from Common Crawl archived copy of the primary McKinsey page (live site blocks automated clients: HTTP2/Akamai 403). Snapshot 2026-07-21 (CC-MAIN-2026-30). Also verbatim: 'governance must become real time, data driven, and embedded—with humans holding final accountability.'",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C04",
+    "title": "The Widening AI Value Gap (Build for the Future 2025)",
+    "org_or_author": "BCG",
+    "date": "2025-09-30",
+    "url": "https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap",
+    "quotes": [
+      "Right now, 5% of firms worldwide are in this camp, while 35% are scaling AI, beginning to generate value.",
+      "AI agents already account for about 17% of total AI value in 2025 and are expected to reach 29% by 2028.",
+      "60% companies are reaping hardly any material value, reporting minimal revenue and cost gains"
+    ],
+    "takeaway": "Value concentrated in ~5% 'future-built' firms; agents a growing share of AI value; future-built firms put 15% of AI budgets into agents.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Primary page read via WebFetch (curl returns 403). Also: 'Future-built companies allocate 15% of their AI budgets to agents.'",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C04b",
+    "title": "AI at Work 2025: Momentum Builds, but Gaps Remain",
+    "org_or_author": "BCG",
+    "date": "2025-06-26",
+    "url": "https://www.bcg.com/publications/2025/ai-at-work-momentum-builds-but-gaps-remain",
+    "quotes": [
+      "Just 13% of employees see them deeply integrated into their daily workflows."
+    ],
+    "takeaway": "Agents are rarely embedded in day-to-day employee workflows yet.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Primary page via WebFetch.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C04c",
+    "title": "How Agentic AI Is Transforming Enterprise Platforms",
+    "org_or_author": "BCG",
+    "date": "2025-10-13",
+    "url": "https://www.bcg.com/publications/2025/how-agentic-ai-is-transforming-enterprise-platforms",
+    "quotes": [
+      "Effective AI agents can accelerate business processes by 30% to 50%."
+    ],
+    "takeaway": "BCG's headline process-acceleration claim for agents.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Primary page via WebFetch.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C05",
+    "title": "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027",
+    "org_or_author": "Gartner (Anushree Verma)",
+    "date": "2025-06-25",
+    "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+    "quotes": [
+      "Gartner dubbed this \"agent washing\" and said just 130 real agentic AI products exist despite claims from thousands of vendors",
+      "Most agentic AI projects right now are early stage experiments or proof of concepts that are mostly driven by hype and are often misapplied",
+      "15% of day-to-day work decisions will be made autonomously by AI agents by 2028, with a third of enterprise software applications making use of the technology by the same year."
+    ],
+    "takeaway": ">40% of agentic projects canceled by 2027 (cost, unclear value, risk controls); 'agent washing' (~130 genuine vendors); 15% autonomous decisions and 33% of enterprise apps with agentic AI by 2028.",
+    "stance": "contradicts",
+    "verified": false,
+    "verification_note": "Primary gartner.com returns 403 to all clients. Quotes verified verbatim in secondary ITPro coverage: https://www.itpro.com/technology/artificial-intelligence/agentic-ai-tools-gartner-agent-washing . Headline sentence 'Over 40% of agentic AI projects will be canceled by the end of 2027, due to escalating costs, unclear business value or inadequate risk controls' seen only in search snippet of primary (poll of 3,412 webinar attendees, Jan 2025).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C05b",
+    "title": "Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026, Up from Less Than 5% in 2025",
+    "org_or_author": "Gartner",
+    "date": "2025-08-26",
+    "url": "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025",
+    "quotes": [
+      "Forty percent of enterprise applications will be integrated with task-specific AI agents by the end of 2026"
+    ],
+    "takeaway": "Agents being embedded into enterprise apps fast (<5% in 2025 to 40% by end-2026).",
+    "stance": "supports",
+    "verified": false,
+    "verification_note": "Primary returns 403; quote from search-engine snippet of the primary page only; headline in URL/title corroborates the numbers.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C06",
+    "title": "2025: The Year the Frontier Firm Is Born (Work Trend Index 2025)",
+    "org_or_author": "Microsoft WorkLab",
+    "date": "2025-04-23",
+    "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born",
+    "quotes": [
+      "With the rise of AI and agents that can reason, plan, and act as digital labor, companies can scale capacity as needed.",
+      "Already, 82% of leaders say they're confident that they'll use digital labor to expand workforce capacity in the next 12–18 months.",
+      "we'll see the rise of the agent boss: someone who builds, delegates to, and manages agents to amplify their impact"
+    ],
+    "takeaway": "Defines 'Frontier Firm', 'digital labor', 'agent boss', 'human-agent ratio' and a 3-phase path (assistant -> 'digital colleagues' -> agent-run processes).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Primary page via curl. Also verbatim: 'organizations need a new metric: the human-agent ratio'; 'In phase 2, agents join teams as \"digital colleagues,\" taking on specific tasks at human direction'. Phrase 'agent-operated' not found on page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C07",
+    "title": "What Is Digital Labor?",
+    "org_or_author": "Salesforce (Lisa Lee)",
+    "date": "n.d. (live 2026-11)",
+    "url": "https://www.salesforce.com/agentforce/digital-labor/",
+    "quotes": [
+      "Digital labor refers to technologies (such as AI automation and AI agents) that mimic human decision-making and cognitive abilities.",
+      "Like software-as-a-service (SaaS) — which Salesforce pioneered — digital labor is a business model",
+      "A digital workforce of intelligent AI agents augments your human workforce"
+    ],
+    "takeaway": "Salesforce positions 'digital labor' as the successor business model to SaaS, sold via Agentforce.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Primary page via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C07b",
+    "title": "Agentic AI reshapes workforce (newsroom) / Agentforce 2024 news",
+    "org_or_author": "Salesforce (Marc Benioff quotes)",
+    "date": "2025-02-12",
+    "url": "https://www.salesforce.com/news/stories/agentic-ai-reshapes-workforce/",
+    "quotes": [
+      "Agentic AI is a new labor model, new productivity model, and a new economic model,",
+      "Agentforce, a complete AI system for digital labor"
+    ],
+    "takeaway": "CEO-level framing of agents as labor, not software.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "First quote from the Feb 12 2025 story; second from https://www.salesforce.com/news/stories/agentforce-news-stories-2024/ . Both via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C08",
+    "title": "Agentic automation / UiPath Maestro (agentic orchestration)",
+    "org_or_author": "UiPath",
+    "date": "n.d. (live 2026-11)",
+    "url": "https://www.uipath.com/automation/agentic-automation",
+    "quotes": [
+      "multi-agent collaboration, so that processes involving multiple agents, robots, and people happen smoothly and synchronously",
+      "Coordinate AI agents, robots, and people across long-running processes, including the systems, tools, and agents your enterprise already runs."
+    ],
+    "takeaway": "RPA incumbent reframes as 'agentic automation': orchestration of agents + RPA robots + humans (Maestro).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Second quote from Maestro page https://www.uipath.com/platform/agentic-automation/agentic-orchestration . Both via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C09",
+    "title": "What is a digital worker? / watsonx Orchestrate",
+    "org_or_author": "IBM",
+    "date": "n.d. (live 2026-11)",
+    "url": "https://www.ibm.com/think/topics/digital-worker",
+    "quotes": [
+      "In the past, the term \"digital worker\" described a human employee with digital skills. More recently, the market has defined it as a category of software robots",
+      "defining them as software-based labor that can independently run meaningful parts of complex, end-to-end processes by applying a range of skills.",
+      "A comprehensive agent management platform to build and manage all your AI agents in one control plane."
+    ],
+    "takeaway": "IBM documents the term drift of 'digital worker'; its product copy has moved from 'digital labor' to 'agent management platform'.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Third quote from https://www.ibm.com/products/watsonx-orchestrate . /think/topics/digital-labor redirects to an index; product page no longer uses 'digital labor'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C09b",
+    "title": "Digital workforce guide / RPA glossary",
+    "org_or_author": "SS&C Blue Prism",
+    "date": "n.d. (live 2026-11)",
+    "url": "https://www.blueprism.com/guides/digital-workforce/",
+    "quotes": [
+      "A digital workforce is a team of software-based digital workers that use artificial intelligence (AI), robotic process automation (RPA) and intelligent automation to carry out business processes once handled by people.",
+      "Agentic AI is the engine, turning digital workers that execute tasks into ones that plan, decide and adapt on their own.",
+      "Digital workers are super organized, multitasking software robots that work alongside people to automate and transform business processes."
+    ],
+    "takeaway": "Originator of the RPA 'digital worker' term now recasts it as agentic (WorkHQ).",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Third quote from https://www.blueprism.com/rpa-guide/rpa-glossary/ . Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C10a",
+    "title": "11x homepage",
+    "org_or_author": "11x",
+    "date": "live 2026-11",
+    "url": "https://www.11x.ai/",
+    "quotes": [
+      "11x provides AI sales agents for inbound, outbound and expansion."
+    ],
+    "takeaway": "Formerly 'digital workers' marketing; now 'AI sales agents' with personas (Alice, Julian).",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Homepage via curl; 'digital worker' wording not found on current page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C10b",
+    "title": "Artisan homepage / pricing",
+    "org_or_author": "Artisan",
+    "date": "live 2026-11",
+    "url": "https://www.artisan.co/",
+    "quotes": [
+      "Join the leading team building AI employees.",
+      "Hire your AI sales team Ava runs outbound. Aaron converts inbound."
+    ],
+    "takeaway": "Explicit 'AI employee' persona model (AI BDR); no public price.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Via curl; /pricing shows no public list price.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C10c",
+    "title": "Relevance AI homepage / pricing",
+    "org_or_author": "Relevance AI",
+    "date": "live 2026-11",
+    "url": "https://relevanceai.com/",
+    "quotes": [
+      "Your processes, run by specialist agents, measured on outcomes.",
+      "For companies looking to decouple growth from headcount via an AI workforce."
+    ],
+    "takeaway": "'AI workforce' sold explicitly as headcount decoupling.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Second quote from https://relevanceai.com/pricing (Enterprise tier). Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C10d",
+    "title": "Lindy homepage / pricing",
+    "org_or_author": "Lindy",
+    "date": "live 2026-11",
+    "url": "https://www.lindy.ai/",
+    "quotes": [
+      "Lindy is the AI employee that plugs into your tools, learns how you work, and takes real work off your plate.",
+      "paid usage starts at $29.99 per user per month"
+    ],
+    "takeaway": "SMB 'AI employee' priced as per-seat SaaS plus credits.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Price from https://www.lindy.ai/pricing ; homepage FAQ states $49.99 (inconsistency on vendor site).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C10e",
+    "title": "WorkFusion AI Agents / Digital Workers",
+    "org_or_author": "WorkFusion",
+    "date": "live 2026-11",
+    "url": "https://www.workfusion.com/digital-workers/",
+    "quotes": [
+      "Our highly skilled and experienced AI Agents are AI AML analysts",
+      "Interested in hiring WorkFusion's Digital Workforce?"
+    ],
+    "takeaway": "Named role-based agents (e.g., Evelyn, Tara) for AML/KYC, sold as 'hiring'.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Via curl (homepage and /digital-workers/).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C10f",
+    "title": "Amelia 7.0 launch (SoundHound)",
+    "org_or_author": "SoundHound AI / Amelia",
+    "date": "2025-05-08",
+    "url": "https://www.soundhound.com/",
+    "quotes": [
+      "The platform is powered by a proprietary multi-process Agentic framework – branded Agentic+."
+    ],
+    "takeaway": "Amelia historically marketed 'digital employees'; current release language is 'Agentic+'.",
+    "stance": "context",
+    "verified": false,
+    "verification_note": "SoundHound/Amelia primary pages returned 404/403; quote from silicon.co.uk reprint of the release. 'Digital employee' term not found in the release (only in third-party listings).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C11",
+    "title": "The GenAI Divide: State of AI in Business 2025",
+    "org_or_author": "MIT NANDA (Challapally, Pease, Raskar, Chari)",
+    "date": "2025-07",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "quotes": [
+      "Despite $30–40 billion in enterprise investment into GenAI, this report uncovers a surprising result in that 95% of organizations are getting zero return.",
+      "The primary factor keeping organizations on the wrong side of the GenAI Divide is the learning gap, tools that don't learn, integrate poorly, or match workflows.",
+      "external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+    ],
+    "takeaway": "Widely cited '95% zero return'; cause is the 'learning gap'; buy/partner beats build. Preliminary, small sample.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Text verified in PDF (mirror; nanda.media.mit.edu/ai_report_2025.pdf served HTML not PDF). Methodology: 300+ initiatives, 52 orgs, 153 leaders, Jan–Jun 2025; self-described preliminary.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C12",
+    "title": "TMT Predictions 2025: Autonomous generative AI agents: Under development",
+    "org_or_author": "Deloitte",
+    "date": "2024 (TMT Predictions 2025; exact day not checked)",
+    "url": "https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2025/autonomous-generative-ai-agents-still-under-development.html",
+    "quotes": [
+      "Deloitte predicts that in 2025, 25% of companies that use gen AI will launch agentic AI pilots or proofs of concept, growing to 50% in 2027."
+    ],
+    "takeaway": "Forecast concerns pilots/PoCs, not production; Deloitte press room rephrases as 'deploy'.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Via curl. Press room (https://www.deloitte.com/us/en/about/press-room/deloitte-technology-media-telecom-2025-predictions.html) says '25% of enterprises using GenAI are forecast to deploy AI Agents by 2025, growing to 50% by 2027.' — wording differs.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C12b",
+    "title": "Tech Trends 2026: The agentic reality check: Preparing for a silicon-based workforce",
+    "org_or_author": "Deloitte",
+    "date": "2025-12-10",
+    "url": "https://www.deloitte.com/global/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html",
+    "quotes": [
+      "while 30% of surveyed organizations are exploring agentic options and 38% are piloting solutions, only 14% have solutions that are ready to be deployed and a mere 11% are actively using these systems in production.",
+      "leading organizations that are reimagining operations and managing agents as workers are finding success."
+    ],
+    "takeaway": "Only 11% in production; 'silicon-based workforce' framing, managing agents as workers.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C13",
+    "title": "The Anthropic Economic Index (launch)",
+    "org_or_author": "Anthropic",
+    "date": "2025-02-10",
+    "url": "https://www.anthropic.com/news/the-anthropic-economic-index",
+    "quotes": [
+      "AI use leans more toward augmentation (57%), where AI collaborates with and enhances human capabilities, compared to automation (43%), where AI directly performs tasks."
+    ],
+    "takeaway": "Baseline: augmentation > automation in consumer use.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C13b",
+    "title": "Anthropic Economic Index report (September 2025)",
+    "org_or_author": "Anthropic",
+    "date": "2025-09",
+    "url": "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report",
+    "quotes": [
+      "\"Directive\" conversations, where users delegate complete tasks to Claude, jumped from 27% to 39%.",
+      "1P API usage is automation dominant: 77% of business uses involve automation usage patterns, compared to about 50% for Claude.ai users."
+    ],
+    "takeaway": "Enterprise API usage is predominantly automation/delegation — the substrate of 'digital employees'.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C13c",
+    "title": "Anthropic Economic Index report (January 2026)",
+    "org_or_author": "Anthropic",
+    "date": "2026-01",
+    "url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+    "quotes": [
+      "The share of conversations classified as augmented jumped 5pp to 52% and the share deemed automated fell 4pp to 45%."
+    ],
+    "takeaway": "Consumer automation share is not monotonic (Nov 2025 data swung back to augmentation).",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C14a",
+    "title": "Штат ИИ-сотрудников внутри компании: Сбер представил ГигаЧат Бизнес (GigaChat Enterprise)",
+    "org_or_author": "Sber (Sber Pro)",
+    "date": "2026-03-03",
+    "url": "https://sber.pro/publication/shtat-ii-sotrudnikov-vnutri-kompanii-sber-predstavil-gigachat-biznes-gigachat-enterprise/",
+    "quotes": [
+      "позволяет развернуть в корпоративном контуре команду персонализированных цифровых помощников",
+      "Настраиваемые ИИ-агенты берут на себя до 70% рутинных операций"
+    ],
+    "takeaway": "Russian market uses 'ИИ-сотрудник' / 'цифровой сотрудник' as product framing for enterprise agents.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Via curl. Lenta.ru (secondary, 2026-03-04, https://lenta.ru/articles/2026/03/04/tsifrovye-sotrudniki-vyhodyat-na-rabotu/) headline: '«Цифровые сотрудники» выходят на работу. Сбер представил GigaChat Enterprise'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C14b",
+    "title": "Агентный ИИ по отраслям: где и как внедряется / Корпоративные ИИ-агенты: от пилотов к цифровым исполнителям",
+    "org_or_author": "Sber (Sber Pro)",
+    "date": "2026-11-03",
+    "url": "https://sber.pro/publication/agentnii-ii-po-otraslyam-gde-i-kak-vnedryaetsya/",
+    "quotes": [
+      "В Сбере в 2025 году реализовано свыше 700 ИИ-инициатив и внедрено около 900 автономных агентов. Финансовый эффект превысил 475 млрд рублей"
+    ],
+    "takeaway": "Self-reported scale and effect claims (vendor-reported, unaudited).",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Via curl. Companion piece 'Корпоративные ИИ-агенты: от пилотов к цифровым исполнителям' (2026-10-05): https://sber.pro/publication/korporativnie-ii-agenti-ot-pilotov-k-tsifrovim-ispolnitelyam/ . Year of dates inferred from page context.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C14c",
+    "title": "Дочка МТС запустила ИИ-агентов для работы в сферах финансов и HR",
+    "org_or_author": "Expert.ru (on MTS Web Services)",
+    "date": "2026-05-19",
+    "url": "https://expert.ru/news/dochka-mts-zapustila-ii-agentov-dlya-raboty-v-sferakh-finansov-i-hr",
+    "quotes": [
+      "ИИ-сотрудники могут брать на себя широкий функционал роли и работать в гибридных командах, взаимодействуя как друг с другом, так и с людьми.",
+      "скорость процессов выросла до 40%"
+    ],
+    "takeaway": "Role-named agents ('Цифровой финансист') in hybrid human-agent teams.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Secondary news source via curl; MTS primary not fetched. Yandex/Just AI: no 'цифровой сотрудник' usage found.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C15a",
+    "title": "Fin pricing",
+    "org_or_author": "Intercom",
+    "date": "live 2026-11",
+    "url": "https://fin.ai/pricing",
+    "quotes": [
+      "AI customer service for just $0.99 per outcome Only pay when Fin delivers"
+    ],
+    "takeaway": "Canonical outcome-based price point; 2026 wording is 'per outcome' (earlier 'per resolution'); Fin Voice $1.99 per voice outcome.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Also https://www.intercom.com/pricing: 'Fin AI Agent $0.99 per outcome'. Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C15b",
+    "title": "Agentforce pricing",
+    "org_or_author": "Salesforce",
+    "date": "live 2026-11",
+    "url": "https://www.salesforce.com/agentforce/pricing/",
+    "quotes": [
+      "Choose from consumption-based pricing, with Flex Credits or Conversations, or per-user licensing",
+      "Flex Credits are a new unit of payment for Agentforce that align cost to the business value your AI agents create."
+    ],
+    "takeaway": "Hybrid: $500 per 100k Flex Credits (per action), $2 per conversation, or per-user ($50/user/month tier).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Via curl; prices on page: '$500 USD/Per 100k Credits', '$2 USD/Per conversation'.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "C15c",
+    "title": "Outcome-based pricing for AI agents",
+    "org_or_author": "Sierra (Elliot Greenwald)",
+    "date": "2024-12-10",
+    "url": "https://sierra.ai/blog/outcome-based-pricing-for-ai-agents",
+    "quotes": [
+      "AI agents executing processes autonomously enable an entirely new pricing model, where you pay only when the software achieves specific, valuable outcomes: outcome-based pricing."
+    ],
+    "takeaway": "Manifesto for pricing agents like labor outcomes rather than seats.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Via curl.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D01",
+    "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "org_or_author": "Zheng, Chiang, Sheng, Zhuang et al. (LMSYS/UC Berkeley)",
+    "date": "2023-06-09 (v4 2023-12-24)",
+    "url": "https://arxiv.org/abs/2306.05685",
+    "quotes": [
+      "strong LLM judges like GPT-4 can match both controlled and crowdsourced human preferences well, achieving over 80% agreement, the same level of agreement between humans.",
+      "We examine the usage and limitations of LLM-as-a-judge, including position, verbosity, and self-enhancement biases, as well as limited reasoning ability",
+      "the few-shot judge can significantly increase the consistency of GPT-4 from 65.0% to 77.5%"
+    ],
+    "takeaway": "A single strong judge reaches human-human agreement (>80%) on open-ended chat preferences, but has position/verbosity/self-enhancement biases (GPT-4 position consistency only 65% zero-shot). Supports automated gating for preference-style checks, not correctness-critical ones.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract; third quote from arXiv HTML full text (Sec. on position bias)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D02",
+    "title": "Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models",
+    "org_or_author": "Verga, Hofstatter, Althammer, Su et al. (Cohere)",
+    "date": "2024-04-29",
+    "url": "https://arxiv.org/abs/2404.18796",
+    "quotes": [
+      "using a PoLL composed of a larger number of smaller models outperforms a single large judge, exhibits less intra-model bias due to its composition of disjoint model families, and does so while being over seven times less expensive.",
+      "we find that very large models are often unnecessary.",
+      "The Panel of LLm evaluators (PoLL) has the highest Cohen's correlation with human judgements."
+    ],
+    "takeaway": "Directly supports the 'several budget models from different families' idea: a diverse panel beats one large judge on human agreement and costs >7x less. Evidence is from QA/Arena-style judging, not complex agentic/code review.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract; third quote from Fig. caption in arXiv HTML (apostrophe normalized)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D03",
+    "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+    "org_or_author": "Du, Li, Torralba, Tenenbaum, Mordatch (MIT/Google Brain)",
+    "date": "2023-05-23",
+    "url": "https://arxiv.org/abs/2305.14325",
+    "quotes": [
+      "multiple language model instances propose and debate their individual responses and reasoning processes over multiple rounds to arrive at a common final answer.",
+      "this approach significantly enhances mathematical and strategic reasoning across a number of tasks.",
+      "our approach improves the factual validity of generated content, reducing fallacious answers and hallucinations"
+    ],
+    "takeaway": "Original evidence that convergence via multi-round debate improves reasoning/factuality; supports the convergence mechanism, but later work (D12, D13, D20) shows gains mostly come from voting and are not robust.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D04",
+    "title": "Correlated Errors in Large Language Models",
+    "org_or_author": "Kim, Garg, Peng, Garg (Cornell Tech)",
+    "date": "2025-06-09",
+    "url": "https://arxiv.org/abs/2506.07962",
+    "quotes": [
+      "on one leaderboard dataset, models agree 60% of the time when both models err.",
+      "larger and more accurate models have highly correlated errors, even with distinct architectures and providers.",
+      "each judge systematically inflates the accuracy of models that are less accurate than itself, due to correlated errors"
+    ],
+    "takeaway": "Contradicts the independence assumption behind 'convergence = correctness': different vendors still share errors, so agreement among judges can be agreement on a wrong answer; judges inflate weaker models' accuracy.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract; third quote from arXiv HTML Sec. 4 (LLM-as-judge case study)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D05",
+    "title": "Great Models Think Alike and this Undermines AI Oversight",
+    "org_or_author": "Goel, Struber, Auzina, Chandra et al. (Tübingen/MPI-IS et al.)",
+    "date": "2025-02-06 (v2 2025-06-12)",
+    "url": "https://arxiv.org/abs/2502.04313",
+    "quotes": [
+      "Using CAPA, we first show that LLM-as-a-judge scores favor models similar to the judge, generalizing recent self-preference results.",
+      "model mistakes are becoming more similar with increasing capabilities, pointing to risks from correlated failures."
+    ],
+    "takeaway": "Contradicts naive consensus gates: judge-panel diversity erodes as models improve; similarity must be measured (CAPA) and corrected, otherwise convergence overstates reliability.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D06",
+    "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+    "org_or_author": "Panickssery, Bowman, Feng",
+    "date": "2024-04-15",
+    "url": "https://arxiv.org/abs/2404.13076",
+    "quotes": [
+      "self-preference, where an LLM evaluator scores its own outputs higher than others' while human annotators consider them of equal quality.",
+      "we discover a linear correlation between self-recognition capability and the strength of self-preference bias"
+    ],
+    "takeaway": "Gate design condition: the generator model must not sit on the jury (or must be down-weighted); otherwise self-preference biases the verdict.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D07",
+    "title": "LLMs instead of Human Judges? A Large Scale Empirical Study across 20 NLP Evaluation Tasks",
+    "org_or_author": "Bavaresco, Bernardi, Bertolazzi, Elliott et al.",
+    "date": "2024-06-26 (v3 2025-06-02)",
+    "url": "https://arxiv.org/abs/2406.18403",
+    "quotes": [
+      "Models are reliable evaluators on some tasks, but overall display substantial variability depending on the property being evaluated, the expertise level of the human judges, and whether the language is human or model-generated.",
+      "We conclude that LLMs should be carefully validated against human judgments before being used as evaluators."
+    ],
+    "takeaway": "Conditional: across 20 tasks/11 LLMs, judge reliability is task-specific; a gate is only trustworthy after per-task validation against human labels.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D08",
+    "title": "Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences",
+    "org_or_author": "Shankar, Zamfirescu-Pereira, Hartmann, Parameswaran, Arawjo (UC Berkeley)",
+    "date": "2024-04-18",
+    "url": "https://arxiv.org/abs/2404.12272",
+    "quotes": [
+      "LLM-generated evaluators simply inherit all the problems of the LLMs they evaluate, requiring further human validation.",
+      "we identify a phenomenon we dub criteria drift: users need criteria to grade outputs, but grading outputs helps users define criteria."
+    ],
+    "takeaway": "Contradicts 'gate replaces user': the user's criteria emerge from looking at outputs, so a human must stay in the loop to define/re-align gate criteria.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract (LaTeX \\emph markup removed)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D09",
+    "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+    "org_or_author": "Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery, Zhou (Google)",
+    "date": "2022-03-21 (ICLR 2023)",
+    "url": "https://arxiv.org/abs/2203.11171",
+    "quotes": [
+      "It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths.",
+      "GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%), StrategyQA (+6.4%) and ARC-challenge (+3.9%)."
+    ],
+    "takeaway": "Supports convergence/majority as a signal, but for tasks with a single verifiable answer; it is a same-model voting baseline that multi-model gates must beat.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D10",
+    "title": "Rethinking Mixture-of-Agents: Is Mixing Different Large Language Models Beneficial?",
+    "org_or_author": "Li, Lin, Xia, Jin (Princeton)",
+    "date": "2025-02-02",
+    "url": "https://arxiv.org/abs/2502.00674",
+    "quotes": [
+      "Self-MoA outperforms standard MoA that mixes different LLMs in a large number of scenarios: Self-MoA achieves 6.6% improvement over MoA on the AlpacaEval 2.0 benchmark",
+      "MoA performance is rather sensitive to the quality, and mixing different LLMs often lowers the average quality of the models."
+    ],
+    "takeaway": "Contradicts 'diversity of models is always good': adding weaker (budget) models can lower quality; repeated sampling of the single best model often wins. Mixing helps only in specific scenarios.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract ($6.6\\%$ LaTeX normalized to 6.6%)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D11",
+    "title": "Agent-as-a-Judge: Evaluate Agents with Agents",
+    "org_or_author": "Zhuge, Zhao, Ashley, Wang et al. (Meta AI/KAUST)",
+    "date": "2024-10-14",
+    "url": "https://arxiv.org/abs/2410.10934",
+    "quotes": [
+      "We benchmark three of the popular agentic systems using Agent-as-a-Judge and find it dramatically outperforms LLM-as-a-Judge and is as reliable as our human evaluation baseline.",
+      "DevAI, a new benchmark of 55 realistic automated AI development tasks. It includes rich manual annotations, like a total of 365 hierarchical user requirements."
+    ],
+    "takeaway": "Supports automated gating for code/agent tasks when the judge is agentic (can inspect workspace/trajectory) and requirements are explicit; human baseline was still needed to establish reliability.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D12",
+    "title": "Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs",
+    "org_or_author": "Smit, Duckworth, Grinsztajn, Barrett, Pretorius (InstaDeep)",
+    "date": "2023-11-29 (v3 2024-07-18, ICML 2024)",
+    "url": "https://arxiv.org/abs/2311.17371",
+    "quotes": [
+      "multi-agent debating systems, in their current form, do not reliably outperform other proposed prompting strategies, such as self-consistency and ensembling using multiple reasoning paths.",
+      "they are more sensitive to different hyperparameter settings and difficult to optimize."
+    ],
+    "takeaway": "Contradicts 'debate is better': debate is costlier and not reliably better than self-consistency; agreement-level tuning matters.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D13",
+    "title": "Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?",
+    "org_or_author": "Choi, Zhu, Li (UW-Madison)",
+    "date": "2025-08-24 (v2 2025-10-23)",
+    "url": "https://arxiv.org/abs/2508.17536",
+    "quotes": [
+      "Majority Voting alone accounts for most of the performance gains typically attributed to MAD.",
+      "We prove that it induces a martingale over agents' belief trajectories, implying that debate alone does not improve expected correctness."
+    ],
+    "takeaway": "Conditional: supports independent voting (parallel verdicts) but contradicts iterative debate-to-convergence as a quality mechanism; convergence after discussion is not evidence of correctness.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D14",
+    "title": "Demystifying evals for AI agents",
+    "org_or_author": "Anthropic Engineering (Grace, Hadfield, Olivares, De Jonghe)",
+    "date": "2026-01-09",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "quotes": [
+      "LLM-as-judge graders should be closely calibrated with human experts to gain confidence that there is little divergence between the human grading and model grading.",
+      "You won't know if your graders are working well unless you read the transcripts and grades from many trials.",
+      "Once the system is robust, it's sufficient to use human review only occasionally."
+    ],
+    "takeaway": "Conditional support from a frontier lab: combine code-based, model-based and human graders; humans move from per-item checking to calibration and periodic spot review once graders are validated.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Page fetched via curl and WebFetch 2026-11-28; quotes grep-verified in page text (typographic apostrophe normalized)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D15",
+    "title": "Using LLM-as-a-Judge For Evaluation: A Complete Guide",
+    "org_or_author": "Hamel Husain (hamel.dev)",
+    "date": "2024-10-29 (updated 2026-09-01)",
+    "url": "https://hamel.dev/blog/posts/llm-judge/",
+    "quotes": [
+      "I don't think you can eliminate humans completely, because the LLM still needs to be aligned to something, and that something is usually a human.",
+      "Treat the human labels as ground truth and report the judge's True Positive Rate and True Negative Rate separately.",
+      "Identifying and involving this Principal Domain Expert early in the process is critical."
+    ],
+    "takeaway": "Practitioner guidance (critique shadowing): judge must be aligned to a domain expert's pass/fail labels; human shifts to sampling, not eliminated.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Page fetched via curl 2026-11-28; quotes grep-verified (apostrophes normalized)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D16",
+    "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+    "org_or_author": "Becker, Rush, Barnes, Rein (METR)",
+    "date": "2025-07-12 (v2 2025-07-25)",
+    "url": "https://arxiv.org/abs/2507.09089",
+    "quotes": [
+      "After completing the study, developers estimate that allowing AI reduced completion time by 20%. Surprisingly, we find that allowing AI actually increases completion time by 19%--AI tooling slowed developers down.",
+      "This slowdown also contradicts predictions from experts in economics (39% shorter) and ML (38% shorter)."
+    ],
+    "takeaway": "Methodological caution: perceived speedups can be the opposite of measured ones; a claim that an LLM gate is 'faster than the user' needs an RCT/measured end-to-end time incl. review & rework, not perception.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D18",
+    "title": "Automation bias: a systematic review of frequency, effect mediators, and mitigators",
+    "org_or_author": "Goddard, Roudsari, Wyatt (J Am Med Inform Assoc)",
+    "date": "2012 (online 2011)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21685142/",
+    "quotes": [
+      "Automation bias (AB)--the tendency to over-rely on automation--has been studied in various academic fields.",
+      "Environmental mediators included workload, task complexity, and time constraint, which pressurized cognitive resources."
+    ],
+    "takeaway": "If a human reviews only gate-approved items under time pressure, automation bias makes rubber-stamping likely; argues for gate designs where humans see disagreements and calibration samples, not everything.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Abstract retrieved via NCBI E-utilities (PubMed ID 21685142) 2026-11-28; 74 of 13,821 papers included",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D19",
+    "title": "When combinations of humans and AI are useful: A systematic review and meta-analysis",
+    "org_or_author": "Vaccaro, Almaatouq, Malone (MIT), Nature Human Behaviour 8",
+    "date": "2024-10-28 (issue 2024-12)",
+    "url": "https://www.nature.com/articles/s41562-024-02024-1",
+    "quotes": [
+      "on average, human–AI combinations performed significantly worse than the best of humans or AI alone (Hedges' g = −0.23; 95% confidence interval, −0.39 to −0.07).",
+      "we found performance losses in tasks that involved making decisions and significantly greater gains in tasks that involved creating content.",
+      "when humans outperformed AI alone, we found performance gains in the combination, but when AI outperformed humans alone, we found losses."
+    ],
+    "takeaway": "Conditional: for decision tasks (like pass/fail gating), adding a human to a better AI tends to hurt; adding AI to a better human helps. Who is better per task must be measured.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Nature page fetched via curl with cookies 2026-11-28; abstract text verified (106 studies, 370 effect sizes)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D20",
+    "title": "Stop Overvaluing Multi-Agent Debate -- We Must Rethink Evaluation and Embrace Model Heterogeneity",
+    "org_or_author": "Zhang, Cui, Chen, Wang et al.",
+    "date": "2025-02-12 (v3 2025-06-21)",
+    "url": "https://arxiv.org/abs/2502.08788",
+    "quotes": [
+      "MAD often fail to outperform simple single-agent baselines such as Chain-of-Thought and Self-Consistency, even when consuming significantly more inference-time computation.",
+      "we further explore the role of model heterogeneity and find it as a universal antidote to consistently improve current MAD frameworks."
+    ],
+    "takeaway": "Mixed: debate per se is overvalued (contradicts), but heterogeneous models within it help (supports 'different LLMs').",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract (newer source added)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D21",
+    "title": "Limits to scalable evaluation at the frontier: LLM as Judge won't beat twice the data",
+    "org_or_author": "Dorner, Nastl, Hardt (MPI-IS Tübingen)",
+    "date": "2024-10-17 (v4 2026-08-17)",
+    "url": "https://arxiv.org/abs/2410.13341",
+    "quotes": [
+      "when the judge is no more accurate than the evaluated model, no debiasing method can decrease the required amount of ground truth labels by more than half.",
+      "the sample size savings achievable in practice are even more modest than what our theoretical limit suggests."
+    ],
+    "takeaway": "Contradicts gates where budget judges evaluate a stronger generator: theoretical cap on how much judges can replace ground-truth (human) labels.",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract (newer source added)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D22",
+    "title": "No Free Labels: Limitations of LLM-as-a-Judge Without Human Grounding",
+    "org_or_author": "Krumdick, Lovering, Reddy, Ebner et al. (Kensho)",
+    "date": "2025-03-07 (v4 2026-09-28)",
+    "url": "https://arxiv.org/abs/2503.05061",
+    "quotes": [
+      "when not provided with a correct reference, judges show high agreement with human experts only on questions the judges were able to correctly answer themselves.",
+      "providing the judges with expert-written references largely mitigates this issue"
+    ],
+    "takeaway": "Conditional: judges are reliable on correctness only within their own competence or when given a human reference (tests/spec); budget judges on hard items are unreliable.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract (newer source added)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D23",
+    "title": "Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges",
+    "org_or_author": "Thakur, Choudhary, Ramayapally, Vaidyanathan, Hupkes",
+    "date": "2024-06-18 (v6 2025-08-18)",
+    "url": "https://arxiv.org/abs/2406.12624",
+    "quotes": [
+      "only the best (and largest) models achieve reasonable alignment with humans. However, they are still quite far behind inter-human agreement",
+      "judges with high percent agreement can still assign vastly different scores."
+    ],
+    "takeaway": "Contradicts using small/budget models as standalone judges; also warns that %-agreement overstates judge quality (use kappa/TPR/TNR).",
+    "stance": "contradicts",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract (newer source added)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D24",
+    "title": "Beyond Consensus: Mitigating the Agreeableness Bias in LLM Judge Evaluations",
+    "org_or_author": "Jain, Ahmed, Sahai, Leong (NUS)",
+    "date": "2025-10-13 (v2 2025-12-24)",
+    "url": "https://arxiv.org/abs/2510.11822",
+    "quotes": [
+      "they are remarkably poor at identifying invalid ones (i.e., True Negative Rate <25%).",
+      "While ensemble-based methods like majority voting can help, we show that they are not good enough.",
+      "our regression approach reduces the maximum absolute error to just 1.2%, achieving a 2x improvement over the best-performing ensemble of 14 state-of-the-art LLMs."
+    ],
+    "takeaway": "Key for gate design: consensus/majority pass rules inherit judges' leniency; minority-veto (fail if a few judges object) plus calibration on a small human-labelled set works better.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract (newer source added; '<' HTML-unescaped)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "D25",
+    "title": "Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge",
+    "org_or_author": "Ye, Wang, Huang, Chen et al.",
+    "date": "2024-10-03",
+    "url": "https://arxiv.org/abs/2410.02736",
+    "quotes": [
+      "we identify 12 key potential biases and propose a new automated bias quantification framework-CALM",
+      "while advanced models have achieved commendable overall performance, significant biases persist in certain specific tasks."
+    ],
+    "takeaway": "Catalog of 12 judge biases; supports need for bias testing of each juror before relying on a convergent verdict.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "arXiv abstract page fetched via curl 2026-11-28; quotes copied verbatim from abstract (newer source added)",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E01",
+    "title": "AG-UI: Introduction",
+    "org_or_author": "CopilotKit / AG-UI project",
+    "date": "n.d. (docs page, accessed 2026-11-28)",
+    "url": "https://docs.ag-ui.com/introduction",
+    "quotes": [
+      "AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications.",
+      "Interrupts (human in the loop) Pause, approve, edit, retry, or escalate mid flow without losing state.",
+      "Typed store shared between agent and app, with streamed event-sourced diffs and conflict resolution for snappy collaboration."
+    ],
+    "takeaway": "There is a dedicated protocol layer between agent backends and the user's UI. It has first-class primitives for human-in-the-loop interrupts and for shared state.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E02a",
+    "title": "Introducing A2UI: an open project for agent-driven interfaces",
+    "org_or_author": "Google (Google for Developers Blog)",
+    "date": "2025-12-15",
+    "url": "https://developers.googleblog.com/en/introducing-a2ui-an-open-project-for-agent-driven-interfaces/",
+    "quotes": [
+      "A2UI allows agents to generate the interface which best suits the current conversation with the agent, and send it to a front end application.",
+      "A2UI is a declarative data format, not executable code.",
+      "We needed a way to transmit UI that is safe like data, but expressive like code."
+    ],
+    "takeaway": "The agent generates the UI as declarative data, and the client renders it natively. This keeps the generated UI safe across trust boundaries. As of Nov 2026, a2ui.org shows v1.0.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified. a2ui.org homepage also checked (shows 'A2UI v1.0').",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E02b",
+    "title": "MCP Apps: Extending servers with interactive user interfaces (SEP-1865)",
+    "org_or_author": "Model Context Protocol blog (MCP-UI, OpenAI, Anthropic contributors)",
+    "date": "2025-11-21",
+    "url": "https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/",
+    "quotes": [
+      "Introducing the MCP Apps Extension proposal (SEP-1865) to standardize interactive user interfaces in MCP, developed with the MCP-UI creators and maintainers from OpenAI and Anthropic.",
+      "builds on proven work from MCP-UI and OpenAI Apps SDK - the ability for MCP servers to deliver interactive user interfaces to hosts."
+    ],
+    "takeaway": "Agent-delivered interactive UI is being standardized across vendors in MCP. OpenAI, Anthropic, and MCP-UI converged on this proposal.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E02c",
+    "title": "MCP Apps are live (first official MCP extension)",
+    "org_or_author": "MCP Core Maintainers",
+    "date": "2026-01-26",
+    "url": "https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/",
+    "quotes": [
+      "Tools can now return interactive UI components that render directly in the conversation: dashboards, forms, visualizations, multi-step workflows, and more.",
+      "This is the first official MCP extension, and it's ready for production."
+    ],
+    "takeaway": "Since Jan 2026, tools can return dashboards and forms inside chat, and these are production-ready. ChatGPT, Claude, Goose, and VS Code support them, so 'dialog + embedded dashboard' is a standard pattern.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E02d",
+    "title": "Introducing apps in ChatGPT and the new Apps SDK",
+    "org_or_author": "OpenAI",
+    "date": "2025-10-06",
+    "url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+    "quotes": [
+      "Apps in ChatGPT are powered by the Apps SDK, available in preview for developers starting today.",
+      "It extends MCP so developers can design both the logic and interface of their apps."
+    ],
+    "takeaway": "OpenAI's Apps SDK is MCP-based and brings app UIs into the chat. It was one of the inputs to MCP Apps.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E03a",
+    "title": "Introducing Claude 3.5 Sonnet (section: Artifacts—a new way to use Claude)",
+    "org_or_author": "Anthropic",
+    "date": "2024-06-21",
+    "url": "https://www.anthropic.com/news/claude-3-5-sonnet",
+    "quotes": [
+      "When a user asks Claude to generate content like code snippets, text documents, or website designs, these Artifacts appear in a dedicated window alongside their conversation.",
+      "This creates a dynamic workspace where they can see, edit, and build upon Claude's creations in real-time"
+    ],
+    "takeaway": "This is the origin of the 'dialog + side-by-side artifact' pattern: the chat stays on one side, and a persistent, editable output appears next to it.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E03b",
+    "title": "What are artifacts and how do I use them?",
+    "org_or_author": "Anthropic (Claude Help Center)",
+    "date": "n.d. (accessed 2026-11-28; mentions legacy cut-off 2026-09-16)",
+    "url": "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them",
+    "quotes": [
+      "It's significant and self-contained, typically over 15 lines.",
+      "Claude can make an artifact out of almost anything, including documents, code snippets, single-page websites, images, diagrams and flowcharts, dashboards",
+      "Artifacts are available in Claude Code on every plan that includes Claude Code."
+    ],
+    "takeaway": "An artifact is a self-contained, reusable output such as a document, diagram, or dashboard. Claude Code now produces artifacts too.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E03c",
+    "title": "Claude Code overview",
+    "org_or_author": "Anthropic (Claude Code Docs)",
+    "date": "n.d. (docs page, accessed 2026-11-28)",
+    "url": "https://docs.claude.com/en/docs/claude-code/overview",
+    "quotes": [
+      "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools."
+    ],
+    "takeaway": "This is an example of an agentic executor: a conversational interface on top of an agent that acts directly on a repository.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E04a",
+    "title": "Copilot Studio overview",
+    "org_or_author": "Microsoft Learn",
+    "date": "2026-10-27 (ms.date; updated 2026-11-12)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio",
+    "quotes": [
+      "Microsoft Copilot Studio is a graphical, low-code studio for building and managing AI-powered agents and workflows.",
+      "Because it's low-code, you can build capable solutions without an extensive technical background, while still giving professional makers the depth they need.",
+      "Workflows include built-in testing and human-in-the-loop controls for enterprise-ready automation."
+    ],
+    "takeaway": "This is the main example of a low-code 'maker' interface where business users build agents. It describes agents in plain language and has built-in HITL controls.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E04b",
+    "title": "Request information from human review in agent flows",
+    "org_or_author": "Microsoft Learn (Copilot Studio)",
+    "date": "2026-06-18 (ms.date; updated 2026-10-15)",
+    "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-request-for-information",
+    "quotes": [
+      "The request information (RFI) action in agent flows provides a streamlined way to incorporate human oversight into automated processes.",
+      "Pause execution. Collect input from designated human reviewers before proceeding with subsequent steps."
+    ],
+    "takeaway": "A concrete HITL primitive: the agent flow pauses and asks a designated human for input or approval before it continues.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E05a",
+    "title": "'There's a new kind of coding I call \"vibe coding\"...' (post on X)",
+    "org_or_author": "Andrej Karpathy",
+    "date": "2025-02-02",
+    "url": "https://x.com/karpathy/status/1886192184808149383",
+    "quotes": [
+      "There's a new kind of coding I call \"vibe coding\", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists.",
+      "I \"Accept All\" always, I don't read the diffs anymore.",
+      "It's not too bad for throwaway weekend projects, but still quite amusing."
+    ],
+    "takeaway": "This post coined 'vibe coding', which means building without reading the code. Karpathy himself scoped it to throwaway projects.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl (X serves post text in page metadata); quotes and date (Feb 2, 2025) verified in page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E05b",
+    "title": "Not all AI-assisted programming is vibe coding (but vibe coding rocks)",
+    "org_or_author": "Simon Willison",
+    "date": "2025-03-19",
+    "url": "https://simonwillison.net/2025/Mar/19/vibe-coding/",
+    "quotes": [
+      "When I talk about vibe coding I mean building software with an LLM without reviewing the code it writes.",
+      "If an LLM wrote the code for you, and you then reviewed it, tested it thoroughly and made sure you could explain how it works to someone else that's not vibe coding, it's software development.",
+      "Think about how much harm the code you are writing could cause if it has bugs or security vulnerabilities."
+    ],
+    "takeaway": "Willison separates vibe coding from responsible AI-assisted development. For non-programmers, the takeaways are to keep stakes low, to think about security and harm, and to use sandboxes.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E06a",
+    "title": "BABOK Guide (A Guide to the Business Analysis Body of Knowledge)",
+    "org_or_author": "IIBA",
+    "date": "n.d. (v3, 2015; page accessed 2026-11-28)",
+    "url": "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/",
+    "quotes": [
+      "Recognized globally as the standard of business analysis, it guides business professionals within the six core knowledge areas, describing the skills, deliverables, and techniques",
+      "The practice of enabling change in the context of an enterprise by defining needs and recommending solutions that deliver value to stakeholders"
+    ],
+    "takeaway": "BABOK is the standard that defines business analysis as needs-to-value change work across six knowledge areas. It is the reference vocabulary for human-readable BA artifacts.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified. The page does not list the six KA names or the v3 date in the extracted text; the v3 (2015) date is from background knowledge, not verified on page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E06b",
+    "title": "Business Analysis in the Age of AI Agents",
+    "org_or_author": "IIBA Poland Chapter (article by an independent author; IIBA disclaimer)",
+    "date": "n.d. (2026, per page copyright)",
+    "url": "https://poland.iiba.org/page/business-analysis-in-the-age-of-ai-agents/",
+    "quotes": [
+      "BA is shifting from documentation to structured clarity for AI and humans.",
+      "As a result, BA artifacts now have two audiences: people and AI agents.",
+      "Prompt engineering may improve interaction with AI, but it does not replace the need for disciplined analysis and well-structured artifacts."
+    ],
+    "takeaway": "BA artifacts are now read by both humans and agents. This directly supports human-readable artifacts that are also machine-consumable.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched via curl; quotes grep-verified. This is a chapter article with an explicit disclaimer ('may not reflect the perspectives of IIBA'), not an official IIBA position. The official IIBA pages (iiba.org blog/trends, 2025/2026 Global State of BA report) were blocked by Cloudflare (403) or gated. The vancouver.iiba.org page confirms that the 2026 report covers 'AI's growing role' (2,120 professionals, 122 countries).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E07a",
+    "title": "ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processes — Requirements engineering",
+    "org_or_author": "ISO/IEC/IEEE (IEEE SA listing)",
+    "date": "2018-11-30",
+    "url": "https://standards.ieee.org/ieee/29148/6937/",
+    "quotes": [
+      "It defines the construct of a good requirement, provides attributes and characteristics of requirements, and discusses the iterative and recursive application of requirements processes throughout the life cycle."
+    ],
+    "takeaway": "This is the normative basis for 'good requirement' characteristics and for applying requirements processes iteratively.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "iso.org/standard/72089.html returned 403 (Cloudflare) to curl, WebFetch and a headless browser. The same abstract was verified on the IEEE SA page for the joint standard (Published: 2018-11-30).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E07b",
+    "title": "ISO/IEC/IEEE 42010:2022 Software, systems and enterprise — Architecture description",
+    "org_or_author": "ISO/IEC/IEEE (IEEE SA listing)",
+    "date": "2022-11-07 (IEEE publication)",
+    "url": "https://standards.ieee.org/ieee/42010/6846/",
+    "quotes": [
+      "This document specifies requirements for the structure and expression of an architecture description (AD) for various entities, including software, systems, enterprises",
+      "This document does not specify any format or media for recording an AD."
+    ],
+    "takeaway": "42010 defines what an architecture description is (viewpoints, views, model kinds) but leaves the format open. Agent-generated wiki pages or diagrams can therefore conform.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "iso.org/standard/74393.html returned 403 (Cloudflare). The abstract was verified on the IEEE SA page for the joint standard.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E08a",
+    "title": "The C4 model for visualising software architecture",
+    "org_or_author": "Simon Brown (c4model.com)",
+    "date": "n.d. (accessed 2026-11-28)",
+    "url": "https://c4model.com/",
+    "quotes": [
+      "The C4 model is an easy to learn, developer friendly approach to software architecture diagramming",
+      "A set of hierarchical diagrams - system context, containers, components, and code."
+    ],
+    "takeaway": "C4 provides zoomable diagram levels. The System Context level is readable by non-technical stakeholders.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E08b",
+    "title": "arc42 Template Overview",
+    "org_or_author": "arc42 (arc42.org)",
+    "date": "n.d. (accessed 2026-11-28)",
+    "url": "https://arc42.org/overview",
+    "quotes": [
+      "arc42 answers two questions in a pragmatic way: what should you document and communicate about your architecture, and how.",
+      "Twelve sections, each with a clear purpose, tailorable to your specific needs."
+    ],
+    "takeaway": "This is a ready-made 12-section skeleton for architecture pages, from goals and context to decisions, risks, and glossary, that an agent could fill in.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E08c",
+    "title": "About Mermaid",
+    "org_or_author": "Mermaid project (mermaid.js.org)",
+    "date": "n.d. (accessed 2026-11-28)",
+    "url": "https://mermaid.js.org/intro/",
+    "quotes": [
+      "Mermaid lets you create diagrams and visualizations using text and code.",
+      "The main purpose of Mermaid is to help documentation catch up with development."
+    ],
+    "takeaway": "With diagrams as code, an agent can generate diagram text and the human gets a rendered diagram. Mermaid's diagram list includes C4, requirement, Gantt, and others.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E09a",
+    "title": "About the Business Process Model And Notation Specification Version 2.0",
+    "org_or_author": "Object Management Group (OMG)",
+    "date": "2010-12 (v2.0; superseded by later 2.0.x)",
+    "url": "https://www.omg.org/spec/BPMN/2.0/About-BPMN",
+    "quotes": [
+      "Business Process Model and Notation has become the de-facto standard for business processes diagrams.",
+      "It is intended to be used directly by the stakeholders who design, manage and realize business processes, but at the same time be precise enough to allow BPMN diagrams to be translated into software process components."
+    ],
+    "takeaway": "BPMN is designed to be both readable by business stakeholders and precise enough to execute, so it can serve as a bridge between people and agents.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched via curl; quotes grep-verified. The page notes that this version was superseded by a newer one (BPMN 2.0.2).",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E09b",
+    "title": "About the Unified Modeling Language Specification Version 2.5.1",
+    "org_or_author": "Object Management Group (OMG)",
+    "date": "2017-12",
+    "url": "https://www.omg.org/spec/UML/",
+    "quotes": [
+      "A specification defining a graphical language for visualizing, specifying, constructing, and documenting the artifacts of distributed object systems."
+    ],
+    "takeaway": "UML 2.5.1 is the formal standard notation for software artifacts.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E10a",
+    "title": "The Scrum Guide (2020)",
+    "org_or_author": "Ken Schwaber & Jeff Sutherland",
+    "date": "2020-11",
+    "url": "https://scrumguides.org/scrum-guide.html",
+    "quotes": [
+      "An Increment is a concrete stepping stone toward the Product Goal.",
+      "In order to provide value, the Increment must be usable.",
+      "The Definition of Done is a formal description of the state of the Increment when it meets the quality measures required for the product."
+    ],
+    "takeaway": "Each increment must be usable and must meet an explicit Definition of Done, which is a natural acceptance gate for agent-delivered work.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E10b",
+    "title": "Principles behind the Agile Manifesto",
+    "org_or_author": "Agile Manifesto authors",
+    "date": "2001",
+    "url": "https://agilemanifesto.org/principles.html",
+    "quotes": [
+      "Working software is the primary measure of progress.",
+      "Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.",
+      "Business people and developers must work together daily throughout the project."
+    ],
+    "takeaway": "Agile measures progress by working results, not documents, and expects business and builders to collaborate continuously.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E11a",
+    "title": "Value Stream Mapping (Lexicon)",
+    "org_or_author": "Lean Enterprise Institute",
+    "date": "n.d. (accessed 2026-11-28)",
+    "url": "https://www.lean.org/lexicon-terms/value-stream-mapping/",
+    "quotes": [
+      "Value-stream mapping (VSM) is diagraming every step involved in the material and information flows needed to bring a product from order to delivery.",
+      "value-stream maps become a blueprint for lean implementation."
+    ],
+    "takeaway": "VSM is the lean artifact for seeing the whole flow of material and information. Related entry: https://www.lean.org/lexicon-terms/value-stream/ ('All of the actions, both value-creating and nonvalue-creating, required to bring a product...').",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E11b",
+    "title": "Focus on the Process Before Focusing on the Operations",
+    "org_or_author": "Shingo Institute (Utah State University), blog",
+    "date": "2021-03-05",
+    "url": "https://shingo.org/focus-on-the-process-before-focusing-on-the-operations/",
+    "quotes": [
+      "Production is a network of operations and processes, with one or more operations corresponding to each step in the process.",
+      "we must distinguish product flow (process) from workflow (operations) and analyze them separately.",
+      "Only after opportunities for process improvements are exhausted should operation improvements corresponding to the process be started."
+    ],
+    "takeaway": "This is Shingo's distinction: the process is the flow of the object, operations are the actions of workers or machines, and the process should be improved first.",
+    "stance": "supports",
+    "verified": false,
+    "verification_note": "curl was blocked by Cloudflare. The text came through WebFetch, whose model extraction returned these as verbatim quotes but could not be grep-checked. The secondary confirmation is the publisher (Routledge) blurb for Shingo's 'A Study of the Toyota Production System' (https://www.routledge.com/A-Study-of-the-Toyota-Production-System-From-an-Industrial-Engineering-Viewpoint/Shingo/p/book/9780915299171), grep-verified: 'examines production as a functional network of processes and operations'. The verbatim book wording is not verified. Marked unverified: quotes came from model extraction, not a byte-level copy.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E12a",
+    "title": "Product vs. Feature Teams",
+    "org_or_author": "Marty Cagan (SVPG)",
+    "date": "2019-08-29",
+    "url": "https://www.svpg.com/product-vs-feature-teams/",
+    "quotes": [
+      "they are focused on and measured by outcomes (rather than output); and they are empowered to figure out the best way to solve the problems they've been asked to solve.",
+      "Are you provided roadmaps with prioritized features and dates, or are you assigned problems to solve with business outcomes?"
+    ],
+    "takeaway": "Teams should be given problems and outcomes rather than feature roadmaps, which is the right steering mode for a 'digital employee'.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E12b",
+    "title": "The Product Operating Model: An Introduction",
+    "org_or_author": "SVPG",
+    "date": "n.d. (accessed 2026-11-28)",
+    "url": "https://www.svpg.com/the-product-operating-model-an-introduction/",
+    "quotes": [
+      "Outcomes over Output – teams exist to solve problems for the customer and the business, not to ship features that might not achieve the desired outcome",
+      "Product discovery is how product teams rapidly determine the best solution to the problems they're trying to solve."
+    ],
+    "takeaway": "'Outcomes over output' and discovery are core principles of the SVPG product model.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E12c",
+    "title": "Josh Seiden on why product teams should focus on outcomes over output (podcast transcript)",
+    "org_or_author": "Intercom (interview with Josh Seiden)",
+    "date": "n.d. (accessed 2026-11-28)",
+    "url": "https://www.intercom.com/blog/podcasts/josh-seiden-on-why-product-teams-should-focus-on-outcome-vs-output",
+    "quotes": [
+      "in the book, I say an outcome is a change in human behavior that drives business results"
+    ],
+    "takeaway": "Seiden's working definition of an outcome is a measurable change in behavior, not a shipped feature.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched via curl; quote grep-verified in transcript (Seiden speaking). Corroborated by Product Talk (https://www.producttalk.org/outcomes-vs-outputs/): 'An outcome is a change in human behavior that drives business results.' Seiden's own Medium post was blocked.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E13a",
+    "title": "Guidelines for Human-AI Interaction (CHI 2019)",
+    "org_or_author": "Amershi et al., Microsoft Research",
+    "date": "2019-05",
+    "url": "https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/",
+    "quotes": [
+      "We propose 18 generally applicable design guidelines for human-AI interaction.",
+      "These guidelines are validated through multiple rounds of evaluation including a user study with 49 design practitioners who tested the guidelines against 20 popular AI-infused products."
+    ],
+    "takeaway": "These are 18 empirically validated HAI guidelines covering initial expectations, in-interaction behavior, error handling, and change over time, usable as a checklist for the user interface.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Abstract page fetched via curl; quotes grep-verified. The individual 18 guideline texts were not extracted from the page.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E13b",
+    "title": "People + AI Guidebook — Explainability + Trust; Feedback + Control",
+    "org_or_author": "Google PAIR",
+    "date": "n.d. (guidebook 2019, v2 2021; not stated on fetched page)",
+    "url": "https://pair.withgoogle.com/chapter/explainability-trust/",
+    "quotes": [
+      "Explaining predictions, recommendations, and other AI output to users is critical for building trust.",
+      "Key considerations for explaining AI systems: ➀ Help users calibrate their trust.",
+      "What's the right level of control and customization to give our users?"
+    ],
+    "takeaway": "Calibrated trust, explanations, feedback, and control are core UX concerns for AI products.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "The guidebook home (JS-rendered) failed via curl, WebFetch and headless browser (429). The chapter pages were fetched via curl and the quotes grep-verified. The third quote is from https://pair.withgoogle.com/chapter/feedback-controls/. Dates are from background knowledge, not verified.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E14",
+    "title": "Announcing Agent Payments Protocol (AP2)",
+    "org_or_author": "Google Cloud blog",
+    "date": "2025-09-16",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol",
+    "quotes": [
+      "AP2 builds trust by using Mandates—tamper-proof, cryptographically-signed digital contracts that serve as verifiable proof of a user's instructions.",
+      "When you delegate a task like, \"Buy concert tickets the moment they go on sale,\" you sign a detailed Intent Mandate upfront.",
+      "It serves as verifiable, pre-authorized proof that can allow the agent to automatically generate a Cart Mandate on your behalf once your precise conditions are met."
+    ],
+    "takeaway": "This is a model for 'a pre-agreed command launches a process'. The user signs an intent mandate with constraints, and the agent acts autonomously within it, leaving a verifiable audit chain.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E15a",
+    "title": "Salesforce Launches Agentforce 3 ... (Agentforce Command Center)",
+    "org_or_author": "Salesforce (press release)",
+    "date": "2025-06-23",
+    "url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/",
+    "quotes": [
+      "As AI agents take on routine tasks and begin collaborating more closely with human teammates, teams need a new observability layer built for the era of digital labor.",
+      "a complete observability solution that gives leaders a unified pane of glass to monitor agent health, measure performance, and optimize outcomes."
+    ],
+    "takeaway": "Vendors are framing agents as 'digital labor' and giving business leaders an observability dashboard for them.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E15b",
+    "title": "ServiceNow Launches AI Control Tower ... / ServiceNow expands AI Control Tower",
+    "org_or_author": "ServiceNow (press releases)",
+    "date": "2025-05-06; expansion 2026-05-05",
+    "url": "https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx",
+    "quotes": [
+      "allowing customers to see all their AI agents in action, understand what they're working on, govern and track their impact, mitigate risk, keep them secure, and assign human managers to oversee their work.",
+      "businesses can oversee AI workforces in the same way the human workforce is managed",
+      "When an agent goes off script or operates beyond its permissions, AI Control Tower can detect it and shut it down in real time"
+    ],
+    "takeaway": "A 'control tower' manages agents like a workforce, with human managers and a real-time kill switch (2026).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "Both pages fetched via curl; quotes grep-verified. The third quote is from the 2026 release: https://investor.servicenow.com/news/news-details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "E15c",
+    "title": "Custom Dashboards",
+    "org_or_author": "Langfuse docs",
+    "date": "n.d. (accessed 2026-11-28)",
+    "url": "https://langfuse.com/docs/metrics/features/custom-dashboards",
+    "quotes": [
+      "Custom dashboards provide a flexible, self-service analytics solution built on a powerful query engine that supports multi-level aggregations across your tracing data.",
+      "A set of pre-built dashboards focused on Latency, Cost, and Langfuse usage to quickly get started"
+    ],
+    "takeaway": "An open-source option for agent metrics dashboards (cost, latency, quality scores) built on traces.",
+    "stance": "context",
+    "verified": true,
+    "verification_note": "Fetched 2026-11-28 via curl; quotes grep-verified against page text.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "X01",
+    "title": "aether-orbis PR #53: B-004/B-005/B-006 — Model Router, YAML-профили, HTTP/RSS для пилота техразведки",
+    "org_or_author": "G-Ivan-A/aether-orbis",
+    "date": "2026-11-27 (merged)",
+    "url": "https://github.com/G-Ivan-A/aether-orbis/pull/53",
+    "quotes": [
+      "Спринт 1 «Первый пилот техразведки»: B-004 (#9), B-005 (#12), B-006 (#51) → далее B-007 (#52)."
+    ],
+    "takeaway": "Контур техразведки экосистемы существует как код: маршрутизация моделей по ролям, YAML-профили направлений, разрешённый HTTP/RSS-манифест; пилот ещё не завершён (B-007 впереди).",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "PR body and merge state read via gh api on 2026-11-28.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "X02",
+    "title": "AetherOrbis README — Web Knowledge Acquisition Pipeline",
+    "org_or_author": "G-Ivan-A/aether-orbis",
+    "date": "living repo (HEAD 5b7f0ee, fetched 2026-11-28)",
+    "url": "https://github.com/G-Ivan-A/aether-orbis",
+    "quotes": [
+      "Прогон завершается объяснимым `SUFFICIENT`, `PARTIAL`, `ZERO`, `CONFLICT` или `EXHAUSTED`, а не додумывает недостающее."
+    ],
+    "takeaway": "Готовый в экосистеме образец автоматического гейта достаточности с явными статусами отказа — переиспользуемый шаблон для гейтов цифрового сотрудника.",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "README read via gh api on 2026-11-28; quote joined across a line break.",
+    "accessed": "2026-11-28"
+  },
+  {
+    "id": "X03",
+    "title": "ba-ai-metamodel README — Source модели БА-процессов (Mango)",
+    "org_or_author": "G-Ivan-A/ba-ai-metamodel",
+    "date": "living repo (HEAD e1f67e2, fetched 2026-11-28)",
+    "url": "https://github.com/G-Ivan-A/ba-ai-metamodel",
+    "quotes": [
+      "задают соответственно 33 навыка-подпроцесса и 31 атомарную операцию",
+      "копируемый пакет с `.gigacode/skills/`, явным dispatcher, debug-механизмом, контрактами, графом, Golden Set и машинным гейтом `G-mach`.",
+      "пилот OpenCode на том же Source и runner: блокирующий плагин `tool.execute.before`, команды `/bcreq-start` и `/bcreq-gate`, CI gate"
+    ],
+    "takeaway": "Mango уже оцифровал когнитивные операции БА (таксономии процессов и операций), машинный гейт и Golden Set — эталон для шага «декомпозиция на когнитивные операции».",
+    "stance": "supports",
+    "verified": true,
+    "verification_note": "README read via gh api on 2026-11-28; quotes joined across line breaks.",
+    "accessed": "2026-11-28"
+  }
+]
