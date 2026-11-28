@@ -188,8 +188,8 @@ for path in sorted(htom_root.rglob("*.md")):
         match = pattern.search(text) or pattern.search(flat)
         if match:
             fail(f"{path} declares Structured as the implicit default mode: {match.group(0)!r}; ADR-021 K-1 sets Hybrid")
-htom_handover = htom_root / "AI_SESSION_HANDOVER_PROMPT.md"
-htom_governance = htom_root / "AI_GOVERNANCE.md"
+htom_handover = htom_root / "ai-rules/AI_SESSION_HANDOVER_PROMPT.md"
+htom_governance = htom_root / "ai-governance/ai-governance.md"
 htom_task = htom_root / ".github/ISSUE_TEMPLATE/task.md"
 require_text(htom_handover, ["по умолчанию — Hybrid", "ai-rules/agent-work-rules.md"])
 require_text(htom_governance, ["| Hybrid | По умолчанию", "2026-09-adr-021-agent-collaboration-layer.md"])

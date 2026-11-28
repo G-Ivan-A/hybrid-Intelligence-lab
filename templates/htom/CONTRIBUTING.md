@@ -22,12 +22,12 @@ temperature: 0.1
 2. **PR.** Держите изменение reviewable: одна цель, понятные ссылки, без
    unrelated restructuring. Связывайте PR с issue.
 3. **Review.** Финальные решения по vision, publication и merge остаются за
-   человеком согласно [AI_GOVERNANCE.md](AI_GOVERNANCE.md).
+   человеком согласно [ai-governance/ai-governance.md](ai-governance/ai-governance.md).
 
 ## AI-Assisted Work
 
-AI agents следуют [AI_GOVERNANCE.md](AI_GOVERNANCE.md) и
-[AI_QUICK_RULES.md](AI_QUICK_RULES.md): читают issue и последние комментарии,
+AI agents следуют [ai-governance/ai-governance.md](ai-governance/ai-governance.md) и
+[ai-rules/ai-quick-rules.md](ai-rules/ai-quick-rules.md): читают issue и последние комментарии,
 сохраняют human decision rights, не публикуют sensitive data, работают внутри
 requested scope и не создают `research/` в HTOM-команде.
 

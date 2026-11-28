@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 0.1
-updated: 2026-11-03
+version: 0.2
+updated: 2026-11-28
 temperature: 0.1
 executable: true
 type: instruction
@@ -87,51 +87,77 @@ request. Все значения бери только из блока пара�
 
 ### Этап E1. Скелет генома
 
-1. Построй манифест генома из шаблонов Хаба на `HUB_SHA`:
+1. Построй манифест по декларации архетипа B на `HUB_SHA`. Для закреплений,
+   предшествующих `tools/hub-genome.json`, используй историческую карту E1.
 
    ```bash
-   X manifest --sha "$HUB_SHA" \
-     --map templates/spoke/= \
-     --map templates/htom/.github/ISSUE_TEMPLATE/=.github/ISSUE_TEMPLATE/ \
-     --map templates/htom/tools/validate-agents-bootstrap.sh=tools/validate-agents-bootstrap.sh \
-     --exclude templates/spoke/README.md -o "$WORK/genome.tsv"
+   if git -C "$WORK/hub" show "$HUB_SHA:tools/hub-genome.json" > "$WORK/genome.json" 2>/dev/null; then
+     python3 -I - "$WORK/genome.json" > "$WORK/genome-args.txt" <<'PY'
+   import json, sys
+   with open(sys.argv[1], encoding="utf-8") as source:
+       unit = json.load(source)["archetypes"]["B"]["units"]["genome"]
+   for option in ("map", "exclude"):
+       for path in unit.get(option, []):
+           print(f"--{option}\n{path}")
+   PY
+     mapfile -t GENOME_ARGS < "$WORK/genome-args.txt"
+   else
+     GENOME_ARGS=(--map templates/spoke/=
+       --map templates/htom/.github/ISSUE_TEMPLATE/=.github/ISSUE_TEMPLATE/
+       --map templates/htom/tools/validate-agents-bootstrap.sh=tools/validate-agents-bootstrap.sh
+       --exclude templates/spoke/README.md)
+   fi
+   X manifest --sha "$HUB_SHA" "${GENOME_ARGS[@]}" -o "$WORK/genome.tsv"
    ```
 
 2. Убедись, что геном и перенос не пересекаются по путям, а список
-   проектных каталогов совпадает с параметрами `DIR`. Обе команды выводят
-   пустой результат:
+   проектных каталогов совпадает с параметрами `DIR`. Стартовый `README.md`
+   может совпасть с путём проектного README, который принимается на этапе E2.
+   Обе команды выводят пустой результат:
 
    ```bash
-   comm -12 <(grep -v '^#' "$WORK/genome.tsv" | cut -f3 | sort) \
+   comm -12 <(grep -v '^#' "$WORK/genome.tsv" | cut -f3 | awk '$0 != "README.md"' | sort) \
             <(grep -v '^#' "$WORK/manifest.tsv" | cut -f3 | sort)
    CANON="$( { grep -v '^#' "$WORK/genome.tsv" | cut -f3 | grep / | cut -d/ -f1; echo ops; } | sort -u)"
    diff <(grep -v '^#' "$WORK/manifest.tsv" | cut -f3 | grep / | cut -d/ -f1 | sort -u | grep -vxF "$CANON") \
         <(printf '%s\n' "${DIRS[@]}" | cut -d'|' -f1 | sed 's/ *$//' | sort -u)
    ```
 
-3. Запиши геном в репозиторий:
+3. Примени геном каноническим синком на объявленном SHA. Для исторических
+   закреплений без декларации используй `materialize`.
 
    ```bash
-   X materialize --manifest "$WORK/genome.tsv" --target "$TARGET_ROOT" \
-     --substitute project_name="$(basename "$TARGET_URL")" \
-     --substitute hub_url="$HUB_URL" --substitute date="$(date -u +%F)"
+   E1_DAY="$(date -u +%F)"
+   if [[ -s "$WORK/genome.json" ]]; then
+     git -C "$WORK/hub" checkout --quiet --detach "$HUB_SHA"
+     python3 -m venv "$WORK/genome-venv"
+     "$WORK/genome-venv/bin/python" -m pip install -r "$WORK/hub/tools/requirements-hub-profile.txt"
+     "$WORK/genome-venv/bin/python" "$WORK/hub/tools/hub-sync.py" sync --hub "$WORK/hub" \
+       --target "$TARGET_ROOT" --ref "$HUB_SHA" --archetype B \
+       --project-name "$(basename "$TARGET_URL")" --hub-url "$HUB_URL"
+   else
+     X materialize --manifest "$WORK/genome.tsv" --target "$TARGET_ROOT" \
+       --substitute project_name="$(basename "$TARGET_URL")" \
+       --substitute hub_url="$HUB_URL" --substitute date="$E1_DAY"
+   fi
    ```
 
    Вывод `placeholder left` перечисли в описании pull request.
 
-4. Заполни профиль: проектные каталоги из `DIR` и запись синхронизации.
+4. Заполни проектные каталоги из `DIR`. Для исторического `materialize`
+   добавь запись синхронизации, если профиль ещё без неё.
 
    ```bash
    printf '%s\n' "${DIRS[@]}" > "$WORK/dirs.txt"
-   python3 -I - "$TARGET_ROOT/.hub-profile.json" "$WORK/dirs.txt" "$HUB_SHA" "$(date -u +%F)" <<'PY'
+   python3 -I - "$TARGET_ROOT/.hub-profile.json" "$WORK/dirs.txt" "$HUB_SHA" "$E1_DAY" <<'PY'
    import json, sys
    path, dirs, sha, day = sys.argv[1:5]
    profile = json.load(open(path, encoding="utf-8"))
    rows = [line.split("|", 1) for line in open(dirs, encoding="utf-8") if line.strip()]
    profile["project_specific_directories"] = [
        {"path": p.strip(), "reason": r.strip()} for p, r in sorted(rows)]
-   profile["last_sync"] = {"hub_sha": sha, "date": day, "scope": "genome",
-                           "tool": "tools/spoke-extraction.py@" + sha[:12]}
+   profile.setdefault("last_sync", {"hub_sha": sha, "date": day, "scope": "genome",
+                                    "tool": "tools/spoke-extraction.py@" + sha[:12]})
    open(path, "w", encoding="utf-8").write(json.dumps(profile, ensure_ascii=False, indent=2) + "\n")
    PY
    ```
@@ -199,8 +225,8 @@ request. Все значения бери только из блока пара�
      -m "import: $HUB_REPO@${HUB_SHA:0:12} с историей" refs/hub-import/main
    ```
 
-   Единственный допустимый конфликт — `README.md`, созданный GitHub при
-   создании репозитория: прими версию импорта (`git checkout --theirs
+   Единственный допустимый конфликт — стартовый `README.md`, созданный
+   GitHub или этапом E1. Прими версию импорта (`git checkout --theirs
    README.md && git add README.md && git commit --no-edit`). Любой другой
    конфликт опубликуй в задаче как вопрос и остановись.
 
@@ -480,10 +506,9 @@ ops/backlog-instruction.md на HUB_SHA>).
 
 ### Границы контракта
 
-- Контракт — **временное исключение** до принятия контракта наследования
-  (шаг 2 [RFC #715](../docs/rfc/2026-11-02-rfc-hub-governance-optimization-roadmap.md)).
-  После него геном нового репозитория создаёт канонический инструмент
-  синхронизации (I-4), а E1 этого контракта заменяется им.
+- E1 применяет объявленный геном каноническим синком (I-4). Путь
+  через `materialize` воспроизводит E1 на историческом закреплении без
+  декларации. Манифест переноса и этапы E2–E6 используют инструмент выноса.
 - Изменения на стороне Хаба после E6 — перевод закрепления runtime на новый
   репозиторий и «надгробие» в Хабе — выполняются отдельными задачами Хаба по
   журналу импорта.

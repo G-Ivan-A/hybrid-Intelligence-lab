@@ -16,7 +16,7 @@ This file is the single AI-agent entrypoint for this production spoke. Read it b
 
 The values mirror `.hub-profile.json`. Rules are not copied into model- or environment-specific files.
 
-Rule scope is explicit. `<hard_rules>`, `<forbidden>`, `<guidelines>` and `<hybrid_work>` are the **general layer** delivered from the Hub: this project MUST NOT weaken, rewrite or subtract from them. `<project_specific_rules>` is the **only** place for rules of this project. Section list, size thresholds and frontmatter contract: {{hub_url}}/blob/main/standards/agents-md-bootstrap-standard.md.
+Rule scope is explicit. `<hard_rules>`, `<forbidden>`, `<guidelines>` and `<hybrid_work>` are the **general layer** delivered from the Hub: this project MUST NOT weaken, rewrite or subtract from them. `<project_specific_rules>` is the **only** place for rules of this project. Section list, size thresholds and frontmatter contract: {{hub_url}}/blob/{{hub_sha}}/standards/agents-md-bootstrap-standard.md.
 </scope>
 
 <hard_rules>
@@ -50,7 +50,7 @@ The agent is an assistant with a right to appeal, not an executor of literal tex
 
 **Appeal.** The agent MUST appeal to the task author when the statement contradicts an active contract, the project concept, or itself; when the listed tasks do not close the stated goal; or when industry practice makes the requested path materially worse. An appeal states the conflict, the options, and the agent's recommendation. Absence of an appeal is a positive assertion that no contradiction was found. Appeal is not a stop: the agent performs the part of the work the disputed decision does not touch and carries the question into the pull request body.
 
-**Autonomy by operating mode.** The author sets the mode up front; an omitted mode defaults to Hybrid. The mode sets the level of initiative and execution budget. Modes are normed in {{hub_url}}/blob/main/ai-rules/agent-work-rules.md.
+**Autonomy by operating mode.** The author sets the mode up front; an omitted mode defaults to Hybrid. The mode sets the level of initiative and execution budget. Modes are normed in {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-work-rules.md.
 
 | Mode | Goal validation | Backlog initiative | Budget |
 | --- | --- | --- | --- |
@@ -60,7 +60,7 @@ The agent is an assistant with a right to appeal, not an executor of literal tex
 
 **Backlog.** Check it before starting; update the entry executed after finishing. Any number of new tasks may be created when escalating or when a gap is found. Maximise the number of tasks provided each is justified by a hypothesis, a requirement, a boundary case or a metric, and duplicates no existing entry. An agent without the right to create tasks records the same proposal in the pull request body instead.
 
-**Collaboration.** In every mode the agent objects to an error, offers a justified alternative instead of empty execution, and reports facts without praise or apology. {{hub_url}}/blob/main/ai-rules/agent-collaboration-rules.md governs communication; {{hub_url}}/blob/main/ai-rules/agent-work-rules.md governs modes and the `Creative` research protocol; {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md governs sync anchors. The anchors expose drift without adding gates. Only a critical risk blocks the disputed part pending the owner's decision.
+**Collaboration.** In every mode the agent objects to an error, offers a justified alternative instead of empty execution, and reports facts without praise or apology. {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-collaboration-rules.md governs communication; {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-work-rules.md governs modes and the `Creative` research protocol; {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-onboarding-protocol.md governs sync anchors. The anchors expose drift without adding gates. Only a critical risk blocks the disputed part pending the owner's decision.
 
 **Boundaries of the project.** Widening the boundary of a task is a project-specific permission and never a default. Unless `<project_specific_rules>` below grants it, an agent that sees the need to go beyond the accepted contract MUST NOT act on its own: it creates a backlog task with the rationale in `docs/analysis/` and leaves the decision to the author, who may resolve it in this project or raise it to the Hub.
 </hybrid_work>
@@ -78,14 +78,16 @@ The agent is an assistant with a right to appeal, not an executor of literal tex
 <routing>
 | Need | Canonical route |
 | --- | --- |
-| Full agent router | {{hub_url}}/blob/main/ai-rules/agent-work-routing.md |
-| Agent work rules, modes, autonomy and appeal | {{hub_url}}/blob/main/ai-rules/agent-work-rules.md |
-| Communication rules | {{hub_url}}/blob/main/ai-rules/agent-collaboration-rules.md |
-| Mode profiles and Creative protocol | {{hub_url}}/blob/main/ai-rules/agent-work-rules.md |
-| Sync anchors | {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md |
-| Structure of this file | {{hub_url}}/blob/main/standards/agents-md-bootstrap-standard.md |
-| Repository model | {{hub_url}}/blob/main/ops/repo-model.md |
-| Standards | {{hub_url}}/tree/main/standards |
+| Full agent router | {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-work-routing.md |
+| Agent work rules, modes, autonomy and appeal | {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-work-rules.md |
+| Communication rules | {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-collaboration-rules.md |
+| Mode profiles and Creative protocol | {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-work-rules.md |
+| Sync anchors | {{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-onboarding-protocol.md |
+| Structure of this file | {{hub_url}}/blob/{{hub_sha}}/standards/agents-md-bootstrap-standard.md |
+| Repository model | {{hub_url}}/blob/{{hub_sha}}/ops/repo-model.md |
+| Project decision rights | [ai-governance/ai-governance.md](ai-governance/ai-governance.md) |
+| Inherited operations and contracts | `ops/artifact-map.md` |
+| Standards | {{hub_url}}/tree/{{hub_sha}}/standards |
 </routing>
 
 <artifact_homes>

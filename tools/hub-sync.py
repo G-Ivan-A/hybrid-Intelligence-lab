@@ -19,8 +19,8 @@ A tag is resolved to its commit once; that SHA is used at every stage.
 
 Genome: tools/hub-genome.json read from the resolved SHA. Units of the
 archetype are the scope tokens: `genome` (base structure) and practices.
-Files are rendered from Hub blobs with the placeholders {{date}},
-{{hub_url}} and {{project_name}}; {{date}} is last_sync.date.
+Files are rendered from Hub blobs with {{date}}, {{hub_url}}, {{hub_sha}}
+and {{project_name}}. {{date}} and {{hub_sha}} come from the applied pin.
 
 Scope: --scope selects the units to apply (comma- or plus-separated). The
 recorded scope is the set of all managed units (previous + selected), with
@@ -49,7 +49,7 @@ import tempfile
 from pathlib import Path
 
 TOOL_NAME = "tools/hub-sync.py"
-TOOL_VERSION = "1.0.0"
+TOOL_VERSION = "1.1.0"
 TOOL_ID = f"{TOOL_NAME}@{TOOL_VERSION}"
 GENOME_SPEC = "tools/hub-genome.json"
 PROFILE_NAME = ".hub-profile.json"
@@ -197,7 +197,7 @@ def check_spec(spec, sha):
                 raise SyncError(f"{where}: bad unit name {name!r}")
             if not isinstance(unit, dict) or not unit.get("map"):
                 raise SyncError(f"{where}: unit {archetype}/{name} needs a non-empty map")
-            for key in ("map", "exclude", "delegated"):
+            for key in ("map", "exclude", "delegated", "starter"):
                 value = unit.get(key, [])
                 if not isinstance(value, list) or not all(isinstance(v, str) for v in value):
                     raise SyncError(f"{where}: unit {archetype}/{name}.{key} must be a list")
@@ -216,6 +216,10 @@ def unit_manifest(repo, sha, unit, profile_rel):
     maps = guarded(ex["parse_maps"], unit["map"])
     excludes = sorted(set(unit.get("exclude", [])))
     entries = guarded(ex["build_manifest"], str(repo), sha, maps, excludes)
+    missing_starters = set(unit.get("starter", [])) - {item["target"] for item in entries}
+    if missing_starters:
+        raise SyncError(f"starter paths are not in the genome map at {sha[:12]}: "
+                        f"{', '.join(sorted(missing_starters))}")
     for entry in entries:
         if entry["mode"] not in ("100644", "100755"):
             raise SyncError(f"{entry['source']}: unsupported mode {entry['mode']} at {sha[:12]}")
@@ -237,13 +241,30 @@ def genome_files(repo, sha, spec, archetype, units, profile_rel):
             if item["target"] in files:
                 raise SyncError(f"target collision at {sha[:12]}: {item['target']} is in units "
                                 f"{files[item['target']]['unit']} and {name}")
-            files[item["target"]] = dict(item, unit=name)
+            files[item["target"]] = dict(item, unit=name,
+                                         starter=item["target"] in unit.get("starter", []))
     return files
 
 
 def delegated_paths(spec, archetype):
     entry = spec["archetypes"].get(archetype, {})
     return [path for unit in entry.get("units", {}).values() for path in unit.get("delegated", [])]
+
+
+def legacy_e1_spec(pin, archetype):
+    """E1 before the genome declaration existed, as shipped by the extraction contract."""
+    if archetype != "B" or not pin["tool"].startswith("tools/spoke-extraction.py@"):
+        return None
+    unit = {
+        "map": [
+            "templates/spoke/=",
+            "templates/htom/.github/ISSUE_TEMPLATE/=.github/ISSUE_TEMPLATE/",
+            "templates/htom/tools/validate-agents-bootstrap.sh=tools/validate-agents-bootstrap.sh",
+        ],
+        "exclude": ["templates/spoke/.hub-profile.json", "templates/spoke/README.md"],
+    }
+    return {"placeholders": ["date", "hub_url", "project_name"],
+            "archetypes": {"B": {"units": {BASE_UNIT: unit}}}}
 
 
 def render(repo, item, variables, placeholders, cache):
@@ -427,7 +448,9 @@ def build_plan(args, validate):
     else:
         date = today()
     placeholders = spec.get("placeholders", [])
-    new_vars = {"date": date, "hub_url": hub_url, "project_name": project_name}
+    new_vars = {"date": date, "hub_sha": sha,
+                "hub_url": hub_url.rstrip("/") if "hub_sha" in placeholders else hub_url,
+                "project_name": project_name}
 
     # -- expected files: new pin and previous pin
     cache = {}
@@ -438,11 +461,14 @@ def build_plan(args, validate):
         if rev_commit(hub, old_sha) != old_sha:
             raise SyncError(f"the pinned commit {old_sha} is not available in the Hub clone; "
                             f"fetch the Hub history first")
-        old_spec = load_spec(hub, old_sha) or spec
+        old_spec = load_spec(hub, old_sha) or legacy_e1_spec(old_pin, archetype) or spec
         old_placeholders = old_spec.get("placeholders", [])
         old_vars = {"date": old_pin["date"],
                     "hub_url": old_profile.get("hub_url") or hub_url,
+                    "hub_sha": old_sha,
                     "project_name": old_profile.get("project_name") or project_name}
+        if "hub_sha" in old_placeholders:
+            old_vars["hub_url"] = old_vars["hub_url"].rstrip("/")
         if archetype in old_spec["archetypes"]:
             for unit in sorted(old_units):
                 try:
@@ -467,6 +493,9 @@ def build_plan(args, validate):
             record.update(action="keep", reason=f"deviation declared_by={deviation['declared_by']}")
         elif current == new_state:
             record.update(action="keep")
+        elif (new_item or old_item)["starter"] and (
+                not in_scope or new_item is None or current != old_state):
+            record.update(action="keep", reason="project-owned starter")
         elif current is not None and current[0] == "not-a-file":
             record.update(action="conflict", reason="target is not a regular file")
         elif not in_scope and (new_item is None or old_item is None
@@ -658,6 +687,8 @@ def cmd_verify(args, validate):
     if spec is None and args.genome_ref:
         spec = load_spec(hub, resolve_ref(hub, args.genome_ref))
     if spec is None:
+        spec = legacy_e1_spec(pin, profile["archetype"])
+    if spec is None:
         raise SyncError(f"{GENOME_SPEC} is missing at {sha}; pass --genome-ref with a Hub "
                         f"revision that declares the genome")
     units = parse_units(pin["scope"], "last_sync.scope")
@@ -667,17 +698,31 @@ def cmd_verify(args, validate):
     if missing:
         raise SyncError(f"scope unit(s) {', '.join(missing)} are unknown at {sha[:12]}", code=1)
     files = genome_files(hub, sha, spec, archetype, sorted(units), profile_rel)
-    variables = {"date": pin["date"],
-                 "hub_url": profile.get("hub_url") or DEFAULT_HUB_URL,
+    placeholders = spec.get("placeholders", [])
+    hub_url = profile.get("hub_url") or DEFAULT_HUB_URL
+    variables = {"date": pin["date"], "hub_sha": sha,
+                 "hub_url": hub_url.rstrip("/") if "hub_sha" in placeholders else hub_url,
                  "project_name": profile.get("project_name") or target.resolve().name}
+    hub_revision = re.compile(b"(" + re.escape(variables["hub_url"].encode())
+                              + rb"/(?:blob|tree))/[^/\s)]+/")
     delegated = delegated_paths(spec, archetype)
     cache, findings = {}, []
     for rel, item in sorted(files.items()):
         if deviation_for(rel, result["deviations"], delegated):
             continue
-        if file_state(target_path(target, rel)) != render(hub, item, variables,
-                                                          spec.get("placeholders", []), cache):
-            findings.append({"path": rel, "unit": item["unit"], "action": "drift"})
+        expected = render(hub, item, variables, placeholders, cache)
+        current = file_state(target_path(target, rel))
+        if current == expected:
+            continue
+        if item["starter"]:
+            if current is None or not isinstance(current[0], bytes):
+                continue
+            # Treat a changed ref in otherwise pristine starter content as
+            # link drift. Project-owned starter content may use its own pins.
+            if (hub_revision.sub(rb"\1/<sha>/", current[0]) !=
+                    hub_revision.sub(rb"\1/<sha>/", expected[0])):
+                continue
+        findings.append({"path": rel, "unit": item["unit"], "action": "drift"})
     out = {"command": "verify", "status": "ok" if not findings else "drift",
            "tool": TOOL_ID, "hub_sha": sha, "scope": pin["scope"], "files": len(files),
            "problems": findings}

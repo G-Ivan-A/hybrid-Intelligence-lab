@@ -10,7 +10,7 @@ files=(
   ai-rules/agent-work-rules.md
   standards/glossary.md
   standards/session-handover-standard.md
-  templates/htom/AI_SESSION_HANDOVER_PROMPT.md
+  templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md
   templates/htom/README.md
 )
 
@@ -37,7 +37,7 @@ require_text ai-rules/agent-onboarding-protocol.md 'новая задача на
 require_text ai-rules/agent-onboarding-protocol.md 'исправление'
 require_text ai-rules/agent-onboarding-protocol.md 'непустой дифф'
 
-require_text templates/htom/AI_SESSION_HANDOVER_PROMPT.md 'Мерж PR = согласование результата'
-require_text templates/htom/AI_SESSION_HANDOVER_PROMPT.md 'Непустой дифф'
+require_text templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md 'Мерж PR = согласование результата'
+require_text templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md 'Непустой дифф'
 
 echo "Agent onboarding authorization contract test passed."

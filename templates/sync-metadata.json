@@ -20,7 +20,8 @@
     "*.gitkeep",
     ".gitkeep",
     "templates/manifest.json",
-    "templates/sync-metadata.json"
+    "templates/sync-metadata.json",
+    "templates/htom/AI_*.md"
   ],
   "overrides": {
     "templates/htom/AGENTS.md": {
@@ -37,26 +38,32 @@
       "tags": ["bootstrap", "profile", "environment"],
       "description": "Машиночитаемый профиль архетипа и среды HTOM-команды."
     },
-    "templates/htom/AI_GOVERNANCE.md": {
+    "templates/htom/ai-governance/ai-governance.md": {
       "id": "htom-ai-governance",
       "target_type": ["HTOM"],
       "criticality": "CORE",
       "tags": ["governance", "rules", "constitution"],
       "description": "Конституция HTOM-команды: роли, правила работы ИИ, эскалация, DoD."
     },
-    "templates/htom/AI_QUICK_RULES.md": {
+    "templates/htom/ai-rules/ai-quick-rules.md": {
       "id": "htom-ai-quick-rules",
       "target_type": ["HTOM"],
       "criticality": "CORE",
       "tags": ["governance", "quick-rules"],
       "description": "Одностраничная «инструкция по выживанию» агента в HTOM-команде."
     },
-    "templates/htom/AI_SESSION_HANDOVER_PROMPT.md": {
+    "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md": {
       "id": "htom-ai-session-handover-prompt",
       "target_type": ["HTOM", "Spoke"],
       "criticality": "CORE",
       "tags": ["onboarding", "prompt", "handover"],
       "description": "Артефакт для копирования: готовый Handover Prompt для Runtime-онбординга агента в новом чате."
+    },
+    "templates/htom/ops/artifact-map.md": {
+      "target_type": ["HTOM", "Spoke"]
+    },
+    "templates/htom/ops/backlog-instruction.md": {
+      "target_type": ["HTOM", "Spoke"]
     },
     "templates/htom/README.md": {
       "id": "htom-readme",
@@ -81,7 +88,7 @@
     },
     "templates/htom/init.sh": {
       "id": "htom-init",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "target_type": ["HTOM"],
       "criticality": "RECOMMENDED",
       "tags": ["bootstrap", "tooling"],
@@ -89,7 +96,7 @@
     },
     "templates/htom/tools/validate-repository-structure.sh": {
       "id": "htom-validate-repository-structure",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "target_type": ["HTOM"],
       "criticality": "CORE",
       "tags": ["validation", "tooling"],
@@ -102,6 +109,9 @@
       "criticality": "CORE",
       "tags": ["validation", "bootstrap", "environment"],
       "description": "Проверка единственной точки входа AGENTS.md, согласованности профиля и тонких указателей модель-специфичных файлов правил."
+    },
+    "templates/spoke/ai-governance/ai-governance.md": {
+      "id": "spoke-ai-governance"
     },
     "templates/spoke/AGENTS.md": {
       "id": "spoke-agents-bootstrap",

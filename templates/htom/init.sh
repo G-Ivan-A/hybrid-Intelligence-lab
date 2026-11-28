@@ -9,6 +9,7 @@
 # Заменяемые плейсхолдеры:
 #   {{project_name}}         — имя проекта
 #   {{hub_url}}              — ссылка на Хаб (источник истины)
+#   {{hub_sha}}              — полный SHA коммита Хаба, из которого взят шаблон
 #   {{date}}                 — текущая дата (YYYY-MM-DD), автоген
 # Заполняемые поля:
 #   README description       — одно-двухстрочное описание проекта
@@ -16,7 +17,7 @@
 # Использование:
 #   ./init.sh                                  # интерактивно (спросит значения)
 #   ./init.sh --name "My HTOM Team"            # частично через флаги
-#   ./init.sh -n "My HTOM Team" -d "..." -u "URL" --yes   # неинтерактивно (для CI)
+#   ./init.sh -n "My HTOM Team" -d "..." -u "URL" --hub-sha "$HUB_SHA" --yes
 #
 set -euo pipefail
 
@@ -28,6 +29,7 @@ DEFAULT_HUB_URL="https://github.com/G-Ivan-A/hybrid-Intelligence-lab"
 project_name=""
 project_description=""
 hub_url=""
+hub_sha=""
 assume_yes=0
 
 usage() {
@@ -39,6 +41,7 @@ while [[ $# -gt 0 ]]; do
     -n|--name)        project_name="${2:-}"; shift 2;;
     -d|--description) project_description="${2:-}"; shift 2;;
     -u|--hub-url)     hub_url="${2:-}"; shift 2;;
+    --hub-sha)        hub_sha="${2:-}"; shift 2;;
     -y|--yes)         assume_yes=1; shift;;
     -h|--help)        usage; exit 0;;
     *) printf 'Unknown argument: %s\n' "$1" >&2; usage; exit 2;;
@@ -72,7 +75,12 @@ if [[ -z "$project_name" ]]; then
 fi
 project_description="$(prompt_if_empty "$project_description" "Краткое описание проекта" "TODO: добавьте описание проекта.")"
 hub_url="$(prompt_if_empty "$hub_url" "URL Хаба" "$DEFAULT_HUB_URL")"
-today="$(date +%F)"
+hub_sha="$(prompt_if_empty "$hub_sha" "Полный SHA исходного коммита Хаба" "")"
+if [[ ! "$hub_sha" =~ ^[0-9a-f]{40}$ ]]; then
+  printf 'FAIL: --hub-sha должен содержать полный SHA исходного коммита Хаба.\n' >&2
+  exit 1
+fi
+today="$(date -u +%F)"
 
 # Экранирование значений для использования в правой части sed (разделитель «|»).
 sed_escape() {
@@ -80,7 +88,7 @@ sed_escape() {
 }
 esc_name="$(sed_escape "$project_name")"
 esc_desc="$(sed_escape "$project_description")"
-esc_hub="$(sed_escape "$hub_url")"
+esc_hub="$(sed_escape "${hub_url%/}")"
 esc_date="$(sed_escape "$today")"
 
 # Портабельная in-place замена (без sed -i: работает и на GNU, и на BSD/macOS).
@@ -91,6 +99,7 @@ replace_in_file() {
     -e "s|{{project_name}}|$esc_name|g" \
     -e "s|TODO: добавьте краткое описание проекта после инициализации\\.|$esc_desc|g" \
     -e "s|{{hub_url}}|$esc_hub|g" \
+    -e "s|{{hub_sha}}|$hub_sha|g" \
     -e "s|{{date}}|$esc_date|g" \
     "$file" > "$tmp"
   cat "$tmp" > "$file"

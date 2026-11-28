@@ -59,7 +59,7 @@ bash "$REPO_ROOT/tools/sync-from-hub.sh" --apply --local "$REPO_ROOT" \
      --profile "$SPOKE/.hub-profile.json" > "$WORK/apply1.txt"
 check "spoke README.md written" "[ -f \"$SPOKE/README.md\" ]"
 check "ci.yml written to .github/workflows/" "[ -f \"$SPOKE/.github/workflows/ci.yml\" ]"
-check "handover prompt written (Spoke target)" "[ -f \"$SPOKE/AI_SESSION_HANDOVER_PROMPT.md\" ]"
+check "handover prompt written (Spoke target)" "[ -f \"$SPOKE/ai-rules/AI_SESSION_HANDOVER_PROMPT.md\" ]"
 check "last_sync updated after apply" \
   "$PY -c 'import json; d=json.load(open(\"$SPOKE/.hub-profile.json\"))[\"last_sync\"]; assert d, d'"
 
@@ -111,11 +111,12 @@ PY
 HTOM_INIT="$WORK/htom-init"
 cp -R "$REPO_ROOT/templates/htom" "$HTOM_INIT"
 bash "$HTOM_INIT/init.sh" -n "Demo HTOM" -d "Bootstrap test" \
-     -u "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" --yes >/dev/null
+     -u "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" \
+     --hub-sha "$(git -C "$REPO_ROOT" rev-parse HEAD)" --yes >/dev/null
 check "init.sh removed itself after bootstrap" "[ ! -f \"$HTOM_INIT/init.sh\" ]"
 check "init.sh: no {{date}} placeholder left in handover prompt" \
-  "! grep -q '{{date}}' \"$HTOM_INIT/AI_SESSION_HANDOVER_PROMPT.md\""
-for rel in AI_SESSION_HANDOVER_PROMPT.md AI_GOVERNANCE.md .github/ISSUE_TEMPLATE/task.md; do
+  "! grep -q '{{date}}' \"$HTOM_INIT/ai-rules/AI_SESSION_HANDOVER_PROMPT.md\""
+for rel in ai-rules/AI_SESSION_HANDOVER_PROMPT.md ai-governance/ai-governance.md .github/ISSUE_TEMPLATE/task.md; do
   check "init.sh: $rel names Hybrid as default mode" "mode_default_ok \"$HTOM_INIT/$rel\""
 done
 # B-115 (issue #727): геном доставляет пять уровней постановки, плейсхолдеры подставлены.
@@ -141,11 +142,11 @@ printf 'Y\ndemo-htom\n1\n5\n1\n' | \
 check "HTOM profile target_type=HTOM" "grep -q '\"HTOM\"' \"$HTOM_SYNC/.hub-profile.json\""
 bash "$REPO_ROOT/tools/sync-from-hub.sh" --apply --local "$REPO_ROOT" \
      --profile "$HTOM_SYNC/.hub-profile.json" > "$WORK/apply-htom.txt"
-for rel in AI_SESSION_HANDOVER_PROMPT.md AI_GOVERNANCE.md .github/ISSUE_TEMPLATE/task.md; do
+for rel in ai-rules/AI_SESSION_HANDOVER_PROMPT.md ai-governance/ai-governance.md .github/ISSUE_TEMPLATE/task.md; do
   check "smart sync (HTOM): $rel names Hybrid as default mode" "mode_default_ok \"$HTOM_SYNC/$rel\""
 done
 check "smart sync (Spoke): handover prompt names Hybrid as default mode" \
-  "mode_default_ok \"$SPOKE/AI_SESSION_HANDOVER_PROMPT.md\""
+  "mode_default_ok \"$SPOKE/ai-rules/AI_SESSION_HANDOVER_PROMPT.md\""
 cd "$REPO_ROOT"
 
 echo "== 9. HTOM genome validator: explicit bans at any depth (B-116, issue #727) =="

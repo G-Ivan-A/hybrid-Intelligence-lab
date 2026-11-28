@@ -26,7 +26,7 @@ TODO: добавьте краткое описание продукта посл
 | Пример | `mango_ba_prompts`, `repo-development` | `open-ai.ru` |
 
 Полное обоснование различия — в RFC Хаба
-[`docs/rfc/htom-vs-spoke-clarification-2026-06.md`]({{hub_url}}/blob/main/docs/rfc/htom-vs-spoke-clarification-2026-06.md).
+[`docs/rfc/htom-vs-spoke-clarification-2026-06.md`]({{hub_url}}/blob/{{hub_sha}}/docs/rfc/htom-vs-spoke-clarification-2026-06.md).
 
 ## 🔗 Связь с Хабом
 
@@ -59,9 +59,9 @@ Spoke не дублирует фундаментальные знания Хаб
 
 ## 🛠️ Плейсхолдеры
 
-Шаблон содержит `{{project_name}}`, `{{hub_url}}` и `{{date}}` (frontmatter).
-Подставьте их под конкретный spoke сразу после клонирования и убедитесь, что
-незаменённых плейсхолдеров не осталось:
+Канонический синк подставляет `{{project_name}}`, `{{hub_url}}`, `{{date}}`
+и `{{hub_sha}}` из проекта и закрепления Хаба. После применения проверьте
+исходные плейсхолдеры.
 
 ```bash
 grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно быть пусто
