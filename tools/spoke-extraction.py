@@ -416,7 +416,13 @@ def cmd_materialize(args):
         if "=" not in item:
             die(f"--substitute needs KEY=VALUE, got {item!r}")
         key, value = item.split("=", 1)
+        if key == "hub_sha" and value != sha:
+            die("--substitute hub_sha must match the manifest commit")
+        if key == "hub_url":
+            value = value.rstrip("/")
         subst["{{" + key + "}}"] = value
+    if subst:
+        subst["{{hub_sha}}"] = sha
     clashes = [e["target"] for e in entries if os.path.lexists(target_file(args, e))]
     if clashes and not args.overwrite:
         for c in clashes:

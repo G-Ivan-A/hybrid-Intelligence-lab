@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 2.56
+version: 2.57
 updated: 2026-11-28
 temperature: 0.1
 ---
@@ -12,6 +12,11 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- tools: B-240 ([#756](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/756))
+  закрепляет ссылки в геноме B и D на SHA синка, переносит полные HTOM-контракты
+  в `ai-rules/` и `ai-governance/` и добавляет общие документы в `ops/`.
+  Синк сохраняет проектный README, CI и бэклог при переходе со старого E1.
 
 - research: issue [#757](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/757) — [методология создания цифровых сотрудников](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-11-28-digital-employee-methodology-survey.md) (discussion paper M3): индустриальная практика автономных мультиагентных систем по 141 первоисточникам, определение цифрового сотрудника и модель ответственности, гейты, методология M0–M9, стресс-тест восьми гипотез и сопоставление с Mango, aether-orbis и ai-education. [Проверки](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/exp/digital-employee-757/README.md) включены в CI. В бэклог добавлены B-316 (P2, методология проектов экосистемы) и отложенная B-317 (калибровка мульти-LLM гейта).
 

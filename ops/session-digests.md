@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-06-13
+version: 0.4
+updated: 2026-11-28
 temperature: 0.1
 executable: false
 ---
@@ -42,7 +42,7 @@ executable: false
 ## Как добавить суммарию
 
 1. Спроси пользователя, нужно ли суммаризировать сессию (порог — 30 обращений или
-   ~50К токенов; см. [handover prompt](../templates/htom/AI_SESSION_HANDOVER_PROMPT.md)).
+   ~50К токенов; см. [handover prompt](../templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md)).
 2. При согласии — сформируй задачу (issue) на сохранение суммарии: правки в репо
    проходят через `issue → PR → review`, агент не коммитит напрямую.
 3. Добавь строку в **Индекс** и блок суммарии с якорем `## YYYY-MM-DD — тема`.
@@ -64,7 +64,7 @@ executable: false
 ## Разложение на проектные репо
 
 Механизм переносится в проекты (HTOM-команды, spoke-репозитории) через геном
-шаблона: [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](../templates/htom/AI_SESSION_HANDOVER_PROMPT.md)
+шаблона: [`templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md)
 синхронизируется Smart Sync ([guides/sync-with-projects.md](../guides/sync-with-projects.md)).
 Handover prompt в каждом проекте инструктирует агента вести `ops/session-digests.md`
 **в текущем репозитории** проекта (создать при первом использовании). Так
@@ -127,7 +127,7 @@ Handover prompt в каждом проекте инструктирует аге
 
 - [`standards/session-handover-standard.md`](../standards/session-handover-standard.md)
   — стандарт структуры handover prompt и разделение типов передачи контекста.
-- [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](../templates/htom/AI_SESSION_HANDOVER_PROMPT.md)
+- [`templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md)
   — handover prompt с разделом «Периодическая суммаризация сессии».
 - [`ai-rules/agent-onboarding-protocol.md`](../ai-rules/agent-onboarding-protocol.md)
   — Runtime-онбординг (другой тип передачи контекста, суммаризацию НЕ использует).

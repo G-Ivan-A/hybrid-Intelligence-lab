@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Acceptance tests for tools/hub-sync.py (B-239, ADR-024 I-2, I-3, I-4, I-6).
+"""Acceptance tests for tools/hub-sync.py (B-239, B-240, ADR-024 I-2, I-3, I-4, I-6, I-7).
 
 A synthetic Hub git repository is built in a temporary directory; every
 scenario runs the CLI as a subprocess and observes the spoke through
@@ -8,6 +8,7 @@ scenario runs the CLI as a subprocess and observes the spoke through
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -28,6 +29,7 @@ GIT_ENV = {
     "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": os.devnull,
 }
 ISSUE = "https://github.com/example/spoke/issues/1"
+HUB_URL = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab"
 DAY1, DAY2 = "2026-11-20", "2026-12-01"
 
 
@@ -170,7 +172,7 @@ class HubSyncTest(unittest.TestCase):
         run = self.sync(self.c1)
         pin = self.profile()["last_sync"]
         self.assertEqual(pin, {"hub_sha": self.c1, "date": DAY1, "scope": "genome",
-                               "tool": "tools/hub-sync.py@1.0.0"})
+                               "tool": "tools/hub-sync.py@1.1.0"})
         files = snapshot(self.spoke)
         self.assertEqual(files["AGENTS.md"][0].decode(),
                          "# demo\nupdated: 2026-11-20\n"
@@ -384,10 +386,25 @@ class RealGenomeTest(unittest.TestCase):
         shutil.copytree(ROOT / "templates", cls.hub / "templates")
         (cls.hub / "tools").mkdir()
         shutil.copy2(TOOLS / "hub-genome.json", cls.hub / "tools" / "hub-genome.json")
+        cls.spec = json.loads((TOOLS / "hub-genome.json").read_text())
+        for template in (ROOT / "templates").rglob("*.md"):
+            for view, rel in re.findall(r"\{\{hub_url\}\}/(blob|tree)/\{\{hub_sha\}\}/([^\s)#`]+)",
+                                        template.read_text(encoding="utf-8")):
+                rel = rel.rstrip(".")
+                original, copy = ROOT / rel, cls.hub / rel
+                if copy.exists():
+                    continue
+                if view == "tree":
+                    original, copy = original / "README.md", copy / "README.md"
+                copy.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(original, copy)
         git(cls.hub, "init", "-q")
         git(cls.hub, "add", "-A")
         git(cls.hub, "commit", "-q", "-m", "hub")
         cls.sha = git(cls.hub, "rev-parse", "HEAD")
+        git(cls.hub, "tag", "release")
+        git(cls.hub, "commit", "-q", "--allow-empty", "-m", "next revision")
+        cls.next_sha = git(cls.hub, "rev-parse", "HEAD")
 
     @classmethod
     def tearDownClass(cls):
@@ -405,12 +422,10 @@ class RealGenomeTest(unittest.TestCase):
             path.mkdir()
         # E1 of ops/hub-project-extraction-contract.md
         manifest = Path(self._tmp.name, "genome.tsv")
+        unit = self.spec["archetypes"]["B"]["units"]["genome"]
+        maps = [part for mapping in unit["map"] for part in ("--map", mapping)]
         steps = [
-            ["manifest", "--sha", self.sha, "--map", "templates/spoke/=",
-             "--map", "templates/htom/.github/ISSUE_TEMPLATE/=.github/ISSUE_TEMPLATE/",
-             "--map", "templates/htom/tools/validate-agents-bootstrap.sh="
-                      "tools/validate-agents-bootstrap.sh",
-             "--exclude", "templates/spoke/README.md", "-o", str(manifest)],
+            ["manifest", "--sha", self.sha, *maps, "-o", str(manifest)],
             ["materialize", "--manifest", str(manifest), "--target", str(e1),
              "--substitute", "project_name=demo",
              "--substitute", "hub_url=https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
@@ -433,7 +448,7 @@ class RealGenomeTest(unittest.TestCase):
         canonical_profile = canonical_files.pop(".hub-profile.json")
         self.assertEqual(canonical_files, e1_files)
         self.assertEqual(json.loads(canonical_profile[0])["last_sync"]["tool"],
-                         "tools/hub-sync.py@1.0.0")
+                         "tools/hub-sync.py@1.1.0")
         check = subprocess.run(["bash", str(canonical / "tools" / "validate-agents-bootstrap.sh"),
                                 str(canonical)], capture_output=True, text=True)
         self.assertEqual(check.returncode, 0, check.stdout + check.stderr)
@@ -444,6 +459,81 @@ class RealGenomeTest(unittest.TestCase):
         self.assertEqual(run.returncode, 0, run.stderr)
         report = json.loads(run.stdout)
         self.assertEqual((report["changes"], report["profile_changed"]), (0, True))
+
+    def sync(self, target, ref, archetype=None, day=DAY1):
+        extra = ["--archetype", archetype] if archetype else []
+        return self.run_tool(CLI, target, "sync", "--hub", str(self.hub), "--ref", ref,
+                             *extra, day=day)
+
+    def verify(self, target):
+        return self.run_tool(CLI, target, "verify", "--hub", str(self.hub))
+
+    def assert_pinned_hub_links(self, target, sha):
+        links = {}
+        for path, (data, _) in snapshot(target).items():
+            if not path.endswith(".md"):
+                continue
+            content = data.decode("utf-8")
+            self.assertNotIn("{{hub_sha}}", content, path)
+            urls = re.findall(re.escape(HUB_URL) + r"/(blob|tree)/([^/]+)/([^\s)#`]+)", content)
+            if urls:
+                links[path] = urls
+            for view, ref, destination in urls:
+                self.assertEqual(ref, sha, f"{path}: {destination}")
+                destination = destination.rstrip(".")
+                kind = git(self.hub, "cat-file", "-t", f"{sha}:{destination}")
+                self.assertEqual(kind, view, f"{path}: {destination}")
+        return links
+
+    def test_no_floating_links_after_sync(self):
+        target = Path(self._tmp.name, "pinned-links")
+        target.mkdir()
+        run = self.sync(target, "release", "B")
+        self.assertEqual(run.returncode, 0, run.stderr)
+        pin = json.loads((target / ".hub-profile.json").read_text())["last_sync"]
+        self.assertEqual(pin["hub_sha"], self.sha)
+        links = self.assert_pinned_hub_links(target, self.sha)
+        self.assertEqual(len(links["AGENTS.md"]), 13)  # 12 blob links and one tree link
+        self.assertEqual(len(links["README.md"]), 1)
+
+        run = self.sync(target, self.next_sha, day=DAY2)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assert_pinned_hub_links(target, self.next_sha)
+        check = self.verify(target)
+        self.assertEqual(check.returncode, 0, check.stderr + check.stdout)
+
+        for name in ("AGENTS.md", "README.md"):
+            with self.subTest(name=name):
+                document = target / name
+                original = document.read_text()
+                document.write_text(original.replace(f"/blob/{self.next_sha}/", "/blob/main/", 1))
+                check = self.verify(target)
+                self.assertEqual(check.returncode, 1, check.stderr)
+                self.assertEqual(json.loads(check.stdout)["problems"][0]["path"], name)
+                document.write_text(original)
+
+    def test_archetype_b_installs_ops_and_preserves_project_starters(self):
+        target = Path(self._tmp.name, "project-starters")
+        target.mkdir()
+        for path in ("README.md", ".github/workflows/ci.yml", "ops/backlog.md"):
+            write(target, path, f"Project content at {path}\n")
+        before = snapshot(target)
+        run = self.sync(target, self.sha, "B")
+        self.assertEqual(run.returncode, 0, run.stderr)
+        run = self.sync(target, self.next_sha, day=DAY2)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        files = snapshot(target)
+        for path, state in before.items():
+            self.assertEqual(files[path], state, path)
+        for path in ("ops/backlog-instruction.md", "ops/artifact-map.md",
+                     "ai-governance/ai-governance.md", "ai-rules/AI_SESSION_HANDOVER_PROMPT.md"):
+            self.assertIn(path, files)
+        self.assertEqual(list(target.glob("AI_*.md")), [])
+        check = self.verify(target)
+        self.assertEqual(check.returncode, 0, check.stderr + check.stdout)
+        run = self.sync(target, self.next_sha, day=DAY1)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertEqual(snapshot(target), files)
 
     def test_archetype_d_genome_builds(self):
         target = Path(self._tmp.name, "htom")
@@ -456,6 +546,38 @@ class RealGenomeTest(unittest.TestCase):
         self.assertNotIn("init.sh", files)
         self.assertEqual(json.loads(files[".hub-profile.json"][0])["archetype"], "D")
         self.assertFalse([p for p, (data, _) in files.items() if b"{{date}}" in data])
+        self.assert_pinned_hub_links(target, self.sha)
+        self.assertIn("ops/artifact-map.md", files)
+        structure = target / "tools/validate-repository-structure.sh"
+        command = ["bash", str(structure)]
+        check = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(check.returncode, 0, check.stdout + check.stderr)
+        pointers = {
+            "AI_GOVERNANCE.md": "ai-governance/ai-governance.md",
+            "AI_QUICK_RULES.md": "ai-rules/ai-quick-rules.md",
+            "AI_SESSION_HANDOVER_PROMPT.md": "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
+        }
+        self.assertEqual({p.name for p in target.glob("AI_*.md")}, set(pointers))
+        for pointer, canonical in pointers.items():
+            self.assertIn(b"Generated by the Hub genome", files[pointer][0])
+            self.assertIn(canonical.encode(), files[pointer][0])
+            self.assertGreater(len(files[canonical][0]), len(files[pointer][0]))
+
+        legacy_copy = target / "governance/AI_GOVERNANCE.md"
+        legacy_copy.parent.mkdir()
+        shutil.copyfile(target / pointers[legacy_copy.name], legacy_copy)
+        check = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(check.returncode, 1, check.stdout + check.stderr)
+        self.assertIn("governance/AI_GOVERNANCE.md duplicates the contract", check.stderr)
+        legacy_copy.unlink()
+
+        shutil.copyfile(target / pointers["AI_GOVERNANCE.md"], target / "AI_GOVERNANCE.md")
+        check = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(check.returncode, 1, check.stdout + check.stderr)
+        self.assertIn("AI_GOVERNANCE.md must be a generated pointer", check.stderr)
+        check = self.verify(target)
+        self.assertEqual(check.returncode, 1, check.stderr)
+        self.assertEqual(json.loads(check.stdout)["problems"][0]["path"], "AI_GOVERNANCE.md")
 
     def test_archetypes_without_genome_are_refused(self):
         target = Path(self._tmp.name, "c")

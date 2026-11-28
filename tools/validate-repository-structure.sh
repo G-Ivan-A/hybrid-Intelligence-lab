@@ -639,8 +639,15 @@ is_active_file() {
     .github/ISSUE_TEMPLATE/task.yml | \
     .github/ISSUE_TEMPLATE/task.md | \
     templates/htom/AI_GOVERNANCE.md | \
+    templates/htom/ai-governance/ai-governance.md | \
     templates/htom/AI_QUICK_RULES.md | \
+    templates/htom/ai-rules/ai-quick-rules.md | \
     templates/htom/AI_SESSION_HANDOVER_PROMPT.md | \
+    templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md | \
+    templates/htom/ops/backlog-instruction.md | \
+    templates/htom/ops/artifact-map.md | \
+    templates/spoke/ai-governance/ai-governance.md | \
+    docs/analysis/2026-11-28-genome-defects-b240.md | \
     templates/htom/README.md | \
     templates/htom/CONTRIBUTING.md | \
     templates/htom/CHANGELOG.md | \
@@ -925,7 +932,7 @@ validate_template_placeholders() {
 
   while IFS=: read -r file line placeholder; do
     case "$placeholder" in
-      "{{date}}" | "{{project_name}}" | "{{hub_url}}" | "{{REPO_NAME}}")
+      "{{date}}" | "{{project_name}}" | "{{hub_url}}" | "{{hub_sha}}" | "{{REPO_NAME}}")
         ;;
       *)
         fail "unapproved template placeholder in $file:$line: $placeholder"
@@ -1194,8 +1201,15 @@ required_files=(
   ".github/ISSUE_TEMPLATE/task.yml"
   ".github/ISSUE_TEMPLATE/task.md"
   "templates/htom/AI_GOVERNANCE.md"
+  "templates/htom/ai-governance/ai-governance.md"
   "templates/htom/AI_QUICK_RULES.md"
+  "templates/htom/ai-rules/ai-quick-rules.md"
   "templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
+  "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md"
+  "templates/htom/ops/backlog-instruction.md"
+  "templates/htom/ops/artifact-map.md"
+  "templates/spoke/ai-governance/ai-governance.md"
+  "docs/analysis/2026-11-28-genome-defects-b240.md"
   "templates/htom/README.md"
   "templates/htom/CONTRIBUTING.md"
   "templates/htom/CHANGELOG.md"
@@ -1362,11 +1376,11 @@ require_text "docs/concept.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "/AGENTS.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.16"
+require_text "CONTRIBUTING.md" "version: 1.17"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "ops/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-11-26"
+require_text "CONTRIBUTING.md" "updated: 2026-11-28"
 require_text "CONTRIBUTING.md" "## Гейт постановки задачи"
 require_text "CONTRIBUTING.md" "tools/validate-issue-statement.sh"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
@@ -2065,8 +2079,8 @@ require_text "docs/rfc/solution-concept-template-proposal.md" "L3 Methodology-la
 require_text "docs/rfc/solution-concept-template-proposal.md" "explicit User approval"
 
 require_text "ai-rules/agent-onboarding-protocol.md" "status: canonical"
-require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.7"
-require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-09-28"
+require_text "ai-rules/agent-onboarding-protocol.md" "version: 1.8"
+require_text "ai-rules/agent-onboarding-protocol.md" "updated: 2026-11-28"
 require_text "ai-rules/agent-onboarding-protocol.md" "executable: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "entrypoint: true"
 require_text "ai-rules/agent-onboarding-protocol.md" "ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат."
@@ -2088,7 +2102,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover
 
 require_text "ops/artifact-map.md" "status: canonical"
 require_text "ops/artifact-map.md" "version: 2.71"
-require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
+require_text "ops/artifact-map.md" "templates/htom/ai-governance/ai-governance.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
 require_text "ops/artifact-map.md" "updated: 2026-11-28"
@@ -2273,12 +2287,12 @@ require_file "$layering_exp/classify-runs.log"
 require_text "ops/artifact-map.md" '| `/research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md` | исследование |'
 require_text "ops/artifact-map.md" '| `/research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/` | исследование |'
 
-# Реализация RFC #532 (issue #537, B-106): геном получил resolve_one_of, запрет
-# дубликатов управляющих контрактов, классификацию каталогов и собственный CI.
+# B-106 и B-240: HTOM-геном проверяет указатели на канонические контракты,
+# дубликаты, классификацию каталогов и собственный CI.
 htom_validator="templates/htom/tools/validate-repository-structure.sh"
 require_file "$htom_validator"
-require_text "$htom_validator" "resolve_one_of"
-require_text "$htom_validator" "duplicate governance contract"
+require_text "$htom_validator" "must be a generated pointer"
+require_text "$htom_validator" "duplicates the contract"
 require_text "$htom_validator" "project_specific_directories"
 require_text "$htom_validator" "structure_grandfather_until"
 require_text "$htom_validator" ".github/workflows/validate.yml"
@@ -2469,22 +2483,21 @@ require_text "projects-sink/AI_PROJECT_CONTEXT-Summary.md" "мультиаген
 require_text "projects-sink/AI_PROJECT_CONTEXT-Summary.md" "графовой структуре связей"
 
 require_text "ops/session-digests.md" "status: draft"
-require_text "ops/session-digests.md" "version: 0.3"
-require_text "ops/session-digests.md" "updated: 2026-06-13"
+require_text "ops/session-digests.md" "version: 0.4"
 require_text "ops/session-digests.md" "temperature: 0.1"
 require_text "ops/session-digests.md" "Контекст"
 require_text "ops/session-digests.md" "Решения"
 require_text "ops/session-digests.md" "Открытые вопросы"
 require_text "ops/session-digests.md" "Следующие шаги"
 require_text "ops/session-digests.md" "Индекс"
-require_text "ops/session-digests.md" "2026-06-13"
+require_text "ops/session-digests.md" "updated: 2026-11-28"
 require_text "ops/session-digests.md" "Anti-Inflation"
 require_text "ops/session-digests.md" "Разложение на проектные репо"
 require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.96"
+require_text "ops/backlog.md" "version: 1.97"
 require_text "ops/backlog.md" "## Спринт 30: Детерминированное управление спицами и вынос проекта метамодели БА"
 require_text "ops/backlog.md" "**B-307**"
 require_text "ops/backlog.md" "Спринты 23, 31 и 33 закрыты."
@@ -3090,29 +3103,29 @@ require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Creative Task (consolida
 
 # HTOM-команда "ДНК-шаблон" (templates/htom/): минимальный геном для клонирования.
 # HTOM-контракты (AI_GOVERNANCE / AI_QUICK_RULES / AI_HANDOVER_PROMPT) обязательны.
-require_text "templates/htom/AI_GOVERNANCE.md" "{{project_name}}"
-require_text "templates/htom/AI_GOVERNANCE.md" "Эскалация"
-require_text "templates/htom/AI_GOVERNANCE.md" "temperature: 0.1"
-require_text "templates/htom/AI_GOVERNANCE.md" "Хаб является источником рекомендаций"
-require_text "templates/htom/AI_GOVERNANCE.md" "Обоснованный обход в Creative Mode"
-require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
-require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "agent-onboarding-protocol.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.10"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ops/session-digests.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ops/backlog.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "executable: true"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат."
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "EXECUTION"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "EXPLANATION"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "/AGENTS.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Контекст чата диалога"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Проверка шаблонов"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "standards/session-handover-standard.md"
-reject_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Конард"
+require_text "templates/htom/ai-governance/ai-governance.md" "{{project_name}}"
+require_text "templates/htom/ai-governance/ai-governance.md" "Эскалация"
+require_text "templates/htom/ai-governance/ai-governance.md" "temperature: 0.1"
+require_text "templates/htom/ai-governance/ai-governance.md" "Хаб является источником рекомендаций"
+require_text "templates/htom/ai-governance/ai-governance.md" "Обоснованный обход в Creative Mode"
+require_text "templates/htom/ai-rules/ai-quick-rules.md" "{{project_name}}"
+require_text "templates/htom/ai-rules/ai-quick-rules.md" "Не создавай"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "agent-onboarding-protocol.md"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.11"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "ops/session-digests.md"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "ops/backlog.md"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "executable: true"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат."
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "EXECUTION"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "EXPLANATION"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "/AGENTS.md"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "Контекст чата диалога"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "Проверка шаблонов"
+require_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "standards/session-handover-standard.md"
+reject_text "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md" "Конард"
 require_text "templates/htom/README.md" "AI_SESSION_HANDOVER_PROMPT.md"
 require_text "templates/htom/README.md" "status: canonical"
 require_text "templates/htom/README.md" "version: 0.7"

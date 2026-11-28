@@ -26,23 +26,24 @@ TODO: добавьте краткое описание проекта после
 | --- | --- |
 | Источник истины (governance, стандарты, research) | [{{hub_url}}]({{hub_url}}) |
 | Фундаментальные знания | `research/` Хаба (в HTOM-команде `research/` **не создаётся**) |
-| Операционный контракт команды | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
-| Быстрые правила для агента | [AI_QUICK_RULES.md](AI_QUICK_RULES.md) |
-| «Доверенность» для запуска агента (Handover Prompt) | [AI_SESSION_HANDOVER_PROMPT.md](AI_SESSION_HANDOVER_PROMPT.md) |
+| Операционный контракт команды | [ai-governance/ai-governance.md](ai-governance/ai-governance.md) |
+| Быстрые правила для агента | [ai-rules/ai-quick-rules.md](ai-rules/ai-quick-rules.md) |
+| «Доверенность» для запуска агента (Handover Prompt) | [ai-rules/AI_SESSION_HANDOVER_PROMPT.md](ai-rules/AI_SESSION_HANDOVER_PROMPT.md) |
 
 ## 🗂️ Структура (сейчас)
 
 | Путь | Роль |
 | --- | --- |
-| `AI_GOVERNANCE.md` | Конституция команды: роли, правила, эскалация, DoD. |
-| `AI_QUICK_RULES.md` | Одностраничная инструкция для AI-агента. |
-| `AI_SESSION_HANDOVER_PROMPT.md` | Готовый *Handover Prompt* (`{{REPO_NAME}}`) для запуска агента; копия хабового шаблона по `standards/session-handover-standard.md`. |
+| `ai-governance/ai-governance.md` | Конституция команды: роли, правила, эскалация, DoD. |
+| `ai-rules/ai-quick-rules.md` | Одностраничная инструкция для AI-агента. |
+| `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` | Готовый *Handover Prompt* (`{{REPO_NAME}}`) для запуска агента; копия хабового шаблона по `standards/session-handover-standard.md`. |
 | `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
 | `CHANGELOG.md` | Память команды: журнал значимых изменений. |
 | `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |
 | `docs/audit/` | Ревизии, аудиты и проверки соответствия. |
 | `.github/ISSUE_TEMPLATE/` | Шаблоны постановки задач: structured `task.md` и creative `task-creative.md` (язык Хаба). |
 | `.github/workflows/validate.yml` | CI генома: запускает валидатор структуры на каждый `pull_request` и push в `main` (RFC #532, G-02). |
+| `ops/` | Правила ведения бэклога и карта унаследованных артефактов. |
 | `tools/` | Локальные проверки структуры репозитория. |
 
 Каталоги создаются по запросу, при появлении операционной боли (Anti-Inflation
@@ -59,6 +60,7 @@ unresolved source placeholders after initialization.
 | `{{date}}` | Source template → generated repository | Allowed in source-template frontmatter. `init.sh` replaces it with the initialization date (`YYYY-MM-DD`). |
 | `{{project_name}}` | Source template → generated repository | Allowed for repository-local names. `init.sh` replaces it during initialization. |
 | `{{hub_url}}` | Source template → generated repository | Allowed for links back to the Hub. `init.sh` replaces it during initialization. |
+| `{{hub_sha}}` | Source template → generated repository | SHA исходного коммита Хаба. Канонический синк берёт его из закрепления, `init.sh` получает его через `--hub-sha`. |
 | `{{REPO_NAME}}` | Runtime handover prompt | Allowed only where a copied prompt must name the current repository at execution time. `init.sh` intentionally leaves it untouched. |
 
 No other `{{...}}` placeholders are approved for `templates/htom/` source
@@ -67,11 +69,11 @@ and matching validator behavior before they are introduced.
 
 Generated-repository Definition of Done:
 
-- `{{date}}`, `{{project_name}}`, and `{{hub_url}}` are replaced by `init.sh` or
+- `{{date}}`, `{{project_name}}`, `{{hub_url}}`, and `{{hub_sha}}` are replaced by `init.sh` or
   manually before the first commit.
 - Generated repositories must not keep unresolved source placeholders.
 - `{{REPO_NAME}}` may remain as the documented runtime placeholder for copy/paste
-  handover. The active placeholder lives in `AI_SESSION_HANDOVER_PROMPT.md`; README
+  handover. The active placeholder lives in `ai-rules/AI_SESSION_HANDOVER_PROMPT.md`; README
   guidance may reference it only to explain that exception.
 
 `init.sh` also fills the README description line from `--description`; that field
@@ -86,6 +88,7 @@ is not a `{{...}}` placeholder and is outside the placeholder whitelist.
 | --- | --- | --- |
 | `{{project_name}}` | Имя проекта/команды | `init.sh` / вручную |
 | `{{hub_url}}` | Ссылка на Хаб (источник истины) | `init.sh` / вручную |
+| `{{hub_sha}}` | Полный SHA исходного коммита Хаба | канонический синк или `init.sh --hub-sha` |
 | `{{date}}` | Текущая дата (`YYYY-MM-DD`) во frontmatter | `init.sh` (автоген) |
 | `{{REPO_NAME}}` | Имя репозитория в *Handover Prompt* | **вручную** (см. ниже) |
 
@@ -97,12 +100,12 @@ is not a `{{...}}` placeholder and is outside the placeholder whitelist.
 ./init.sh
 
 # неинтерактивно (для CI): все значения через флаги
-./init.sh -n "My HTOM Team" -d "Краткое описание" -u "https://github.com/ORG/HUB" --yes
+./init.sh -n "My HTOM Team" -d "Краткое описание" -u "https://github.com/ORG/HUB" --hub-sha "$HUB_SHA" --yes
 ```
 
 > **Почему `{{REPO_NAME}}` — отдельно.** `init.sh` заменяет только строчные
 > плейсхолдеры (`{{[a-z_]*}}`) и **не трогает** `{{REPO_NAME}}` в
-> [AI_SESSION_HANDOVER_PROMPT.md](AI_SESSION_HANDOVER_PROMPT.md): по умолчанию там остаётся
+> [ai-rules/AI_SESSION_HANDOVER_PROMPT.md](ai-rules/AI_SESSION_HANDOVER_PROMPT.md): по умолчанию там остаётся
 > `hybrid-Intelligence-lab`. Подставьте имя своего репозитория вручную или оставьте
 > дефолт, если работаете в Хабе.
 
@@ -140,20 +143,15 @@ grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно остаться �
 
 ### Где живут управляющие контракты
 
-Геном нормирует **наличие** управляющего контракта, а не его физическое
-размещение (RFC #532, P.1–P.3). Каждый из трёх контрактов должен существовать
-ровно в одном из допустимых домов:
-
-| Контракт | Допустимые дома |
+| Контракт | Канонический путь |
 | --- | --- |
-| Конституция | `AI_GOVERNANCE.md`, `governance/AI_GOVERNANCE.md`, `ai-governance/ai-governance.md` |
-| Быстрые правила | `AI_QUICK_RULES.md`, `governance/AI_QUICK_RULES.md`, `ai-rules/ai-quick-rules.md` |
-| Handover Prompt | `AI_SESSION_HANDOVER_PROMPT.md`, `governance/AI_SESSION_HANDOVER_PROMPT.md`, `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` |
+| Конституция | `ai-governance/ai-governance.md` |
+| Быстрые правила | `ai-rules/ai-quick-rules.md` |
+| Handover Prompt | `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` |
+| Правила ведения бэклога и карта генома | `ops/backlog-instruction.md`, `ops/artifact-map.md` |
 
-Копия контракта в двух домах сразу — это два SSOT, и валидатор даёт `FAIL`.
-Каталог `governance/` считается **переходным**: он допустим для обратной
-совместимости существующих команд, но новые команды разворачиваются с корневой
-раскладкой либо с парой `ai-governance/` + `ai-rules/`.
+Прежние корневые имена `AI_*.md` ведут к каноническим документам и их
+исходникам на SHA Хаба. Валидатор обнаруживает замену указателя полной копией.
 
 ### Каталоги, специфичные для проекта
 
@@ -185,9 +183,9 @@ grep -RIn '{{[a-z_]*}}' . --exclude-dir=.git   # должно остаться �
 
 | Куда | Зачем |
 | --- | --- |
-| Хаб [`ai-rules/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md) | **Кейс 1**: протокол *Runtime-онбординга* агента (Handover Prompt, Readback, исполнение мандата issue и согласование результата через PR). |
-| Хаб [`standards/session-handover-standard.md`]({{hub_url}}/blob/main/standards/session-handover-standard.md) | Draft-стандарт структуры `AI_SESSION_HANDOVER_PROMPT.md`: контекст проекта, чат-диалог, канал репо и проверка шаблонов. |
-| Хаб [`rfc-two-cases-of-project-initialization.md`]({{hub_url}}/blob/main/docs/rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 2 (этот файл) отличается от Кейса 1. |
+| Хаб [`ai-rules/agent-onboarding-protocol.md`]({{hub_url}}/blob/{{hub_sha}}/ai-rules/agent-onboarding-protocol.md) | **Кейс 1**: протокол *Runtime-онбординга* агента (Handover Prompt, Readback, исполнение мандата issue и согласование результата через PR). |
+| Хаб [`standards/session-handover-standard.md`]({{hub_url}}/blob/{{hub_sha}}/standards/session-handover-standard.md) | Draft-стандарт структуры `ai-rules/AI_SESSION_HANDOVER_PROMPT.md`: контекст проекта, чат-диалог, канал репо и проверка шаблонов. |
+| Хаб [`rfc-two-cases-of-project-initialization.md`]({{hub_url}}/blob/{{hub_sha}}/docs/rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 2 (этот файл) отличается от Кейса 1. |
 | Этот README, раздел [Design Decisions & Rationale](#design-decisions--rationale) | Дизайн «ДНК-шаблона» HTOM-команды: почему геном именно такой. |
 
 ## Design Decisions & Rationale
@@ -211,7 +209,7 @@ canonical-точкой входа для bootstrap-клонирования HTOM
 | `templates/`, а не `blueprints/` | Имя прямо подсказывает действие: копировать и адаптировать. `blueprints/` звучит как чертёж, но не как готовый минимальный набор файлов. |
 | `templates/`, а не `genesis/` | `genesis/` провоцирует избыточность и желание «сотворить мир» вместо минимального bootstrap. |
 | Namespace `htom/` | Отделяет геном HTOM-команды от шаблона production-спока (`templates/spoke/`) без раздувания корня. |
-| Kebab-case имена | Совместимо с [file-naming.md]({{hub_url}}/blob/main/standards/file-naming.md), даёт стабильные ссылки и хорошо читается AI-агентами. |
+| Kebab-case имена | Совместимо с [file-naming.md]({{hub_url}}/blob/{{hub_sha}}/standards/file-naming.md), даёт стабильные ссылки и хорошо читается AI-агентами. |
 
 ### Почему минимальный набор остаётся малым
 
@@ -222,9 +220,9 @@ canonical-точкой входа для bootstrap-клонирования HTOM
 
 | Файл | Дизайн-роль |
 | --- | --- |
-| `AI_GOVERNANCE.md` | Конституция команды: роли, решения человека, границы AI. |
-| `AI_QUICK_RULES.md` | Fail-closed инструкция для агента: куда смотреть и чего не делать. |
-| `AI_SESSION_HANDOVER_PROMPT.md` | Самодостаточный запуск Runtime-онбординга в новом репозитории. |
+| `ai-governance/ai-governance.md` | Конституция команды: роли, решения человека, границы AI. |
+| `ai-rules/ai-quick-rules.md` | Fail-closed инструкция для агента: куда смотреть и чего не делать. |
+| `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` | Самодостаточный запуск Runtime-онбординга в новом репозитории. |
 | `README.md` | Визитка команды, карта текущей структуры и связь с Хабом. |
 | `CONTRIBUTING.md` | Минимальный workflow issue → PR → review. |
 | `CHANGELOG.md` | Память изменений с первого значимого шага. |

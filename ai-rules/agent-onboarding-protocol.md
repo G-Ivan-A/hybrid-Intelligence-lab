@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.7
-updated: 2026-09-28
+version: 1.8
+updated: 2026-11-28
 temperature: 0.1
 executable: true
 entrypoint: true
@@ -12,7 +12,7 @@ entrypoint: true
 > получив ссылку на него. Не вставляйте этот документ целиком в диалог с LLM.
 > Чтобы запустить агента, скопируйте **артефакт** — готовый *Handover Prompt*
 > (Часть A ниже или
-> [templates/htom/AI_SESSION_HANDOVER_PROMPT.md](../templates/htom/AI_SESSION_HANDOVER_PROMPT.md)).
+> [templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md](../templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md)).
 > О разнице протокол↔артефакт см. [standards/glossary.md](../standards/glossary.md).
 
 > 🚦 **ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ АНАЛИЗИРУЙ, ВЫПОЛНЯЙ.**
@@ -295,7 +295,7 @@ maintainer request мандата. Отдельное разрешение на 
 | Session handover sections | Prompt должен различать Runtime-онбординг и передачу контекста между чатами; структура — в `standards/session-handover-standard.md` |
 | Место canonical-файла | `ai-rules/agent-onboarding-protocol.md`, рядом с repo governance |
 | Исполнимость | `executable: true`, `entrypoint: true`, EXECUTION сверху |
-| Наследование HTOM-командами | Копия prompt живёт в `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` |
+| Наследование HTOM-командами | Копия prompt живёт в `templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md` |
 
 Историческое разделение было таким: дизайн-предложение объясняло «почему», а
 этот файл исполнял «как». После слияния граница упрощена: по вопросам «как

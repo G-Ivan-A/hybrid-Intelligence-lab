@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-11-04",
+  "last_updated": "2026-11-28",
   "templates": [
     {
       "id": "agents-md-root-draft",
@@ -114,63 +114,6 @@
       "description": "Единая точка входа ИИ-агента в HTOM-команде."
     },
     {
-      "id": "htom-ai-governance",
-      "path": "templates/htom/AI_GOVERNANCE.md",
-      "version": "0.6.0",
-      "target_type": [
-        "HTOM"
-      ],
-      "stack": [
-        "all"
-      ],
-      "min_phase": 0,
-      "criticality": "CORE",
-      "tags": [
-        "governance",
-        "rules",
-        "constitution"
-      ],
-      "description": "Конституция HTOM-команды: роли, правила работы ИИ, эскалация, DoD."
-    },
-    {
-      "id": "htom-ai-quick-rules",
-      "path": "templates/htom/AI_QUICK_RULES.md",
-      "version": "0.2.0",
-      "target_type": [
-        "HTOM"
-      ],
-      "stack": [
-        "all"
-      ],
-      "min_phase": 0,
-      "criticality": "CORE",
-      "tags": [
-        "governance",
-        "quick-rules"
-      ],
-      "description": "Одностраничная «инструкция по выживанию» агента в HTOM-команде."
-    },
-    {
-      "id": "htom-ai-session-handover-prompt",
-      "path": "templates/htom/AI_SESSION_HANDOVER_PROMPT.md",
-      "version": "0.10.0",
-      "target_type": [
-        "HTOM",
-        "Spoke"
-      ],
-      "stack": [
-        "all"
-      ],
-      "min_phase": 0,
-      "criticality": "CORE",
-      "tags": [
-        "onboarding",
-        "prompt",
-        "handover"
-      ],
-      "description": "Артефакт для копирования: готовый Handover Prompt для Runtime-онбординга агента в новом чате."
-    },
-    {
       "id": "htom-changelog",
       "path": "templates/htom/CHANGELOG.md",
       "version": "0.1.0",
@@ -224,9 +167,66 @@
       "description": "README генома HTOM-команды."
     },
     {
+      "id": "htom-ai-governance",
+      "path": "templates/htom/ai-governance/ai-governance.md",
+      "version": "0.7.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "governance",
+        "rules",
+        "constitution"
+      ],
+      "description": "Конституция HTOM-команды: роли, правила работы ИИ, эскалация, DoD."
+    },
+    {
+      "id": "htom-ai-session-handover-prompt",
+      "path": "templates/htom/ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
+      "version": "0.11.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "onboarding",
+        "prompt",
+        "handover"
+      ],
+      "description": "Артефакт для копирования: готовый Handover Prompt для Runtime-онбординга агента в новом чате."
+    },
+    {
+      "id": "htom-ai-quick-rules",
+      "path": "templates/htom/ai-rules/ai-quick-rules.md",
+      "version": "0.3.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "governance",
+        "quick-rules"
+      ],
+      "description": "Одностраничная «инструкция по выживанию» агента в HTOM-команде."
+    },
+    {
       "id": "htom-init",
       "path": "templates/htom/init.sh",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "target_type": [
         "HTOM"
       ],
@@ -240,6 +240,38 @@
         "tooling"
       ],
       "description": "Скрипт инициализации генома: замена плейсхолдеров при клонировании из Хаба."
+    },
+    {
+      "id": "artifact-map",
+      "path": "templates/htom/ops/artifact-map.md",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [],
+      "description": ""
+    },
+    {
+      "id": "backlog-instruction",
+      "path": "templates/htom/ops/backlog-instruction.md",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM",
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [],
+      "description": ""
     },
     {
       "id": "htom-validate-agents-bootstrap",
@@ -263,7 +295,7 @@
     {
       "id": "htom-validate-repository-structure",
       "path": "templates/htom/tools/validate-repository-structure.sh",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "target_type": [
         "HTOM"
       ],
@@ -369,6 +401,21 @@
         "readme"
       ],
       "description": "README spoke-репозитория (production-продукт)."
+    },
+    {
+      "id": "spoke-ai-governance",
+      "path": "templates/spoke/ai-governance/ai-governance.md",
+      "version": "1.0.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "RECOMMENDED",
+      "tags": [],
+      "description": ""
     },
     {
       "id": "spoke-docs-readme",
