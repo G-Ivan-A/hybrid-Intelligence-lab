@@ -787,6 +787,23 @@
     "accessed": "2026-11-28"
   },
   {
+    "id": "B18",
+    "title": "LLM01:2025 Prompt Injection (OWASP Top 10 for LLM Applications 2025)",
+    "org_or_author": "OWASP GenAI Security Project",
+    "date": "2025 (Top 10 for LLM Applications 2025)",
+    "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+    "quotes": [
+      "A Prompt Injection Vulnerability occurs when user prompts alter the LLM’s behavior or output in unintended ways.",
+      "Indirect prompt injections occur when an LLM accepts input from external sources, such as websites or files.",
+      "Restrict the model’s access privileges to the minimum necessary for its intended operations."
+    ],
+    "takeaway": "Любой внешний вход (веб-страница, файл, результат инструмента, проверяемый артефакт) может изменить поведение модели, включая LLM-судью; защита — изоляция недоверенного ввода и минимальные права.",
+    "stance": "conditional",
+    "verified": true,
+    "verification_note": "Page fetched with curl on 2026-11-28; quotes matched against the HTML text after tag stripping.",
+    "accessed": "2026-11-28"
+  },
+  {
     "id": "C01",
     "title": "Seizing the agentic AI advantage (A CEO playbook to solve the gen AI paradox)",
     "org_or_author": "McKinsey / QuantumBlack (Sukharevsky, Kerr, Hjartar, Hämäläinen, Bout, Di Leo)",

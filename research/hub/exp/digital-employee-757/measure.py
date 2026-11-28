@@ -64,10 +64,10 @@ def decide(policy, k, n):
     raise ValueError(policy)
 
 
-def gate_metrics(policy, miss, rho):
+def gate_metrics(policy, miss, rho, false_alarm=FALSE_ALARM):
     n = 1 if policy == "single" else JUDGES
     bad = pass_count(n, miss, rho)
-    good = pass_count(n, 1 - FALSE_ALARM, rho)
+    good = pass_count(n, 1 - false_alarm, rho)
     out = {"defective": {"pass": F(0), "fail": F(0), "escalate": F(0)},
            "good": {"pass": F(0), "fail": F(0), "escalate": F(0)}}
     for k in range(n + 1):
@@ -139,7 +139,57 @@ def gate_probes():
     record("G-7", "operations",
            "Calibrating a miss rate to +-0.1 needs at least 97 labelled defective items",
            sample == 97)
+    # Zero misses observed on n defective items bounds the panel miss rate below p at 95%
+    # only when (1 - p)^n <= 1/20 (exact form of the "rule of three", n ~ 3/p).
+    def zero_miss_sample(p):
+        n, survive = 0, F(1)
+        while survive > F(1, 20):
+            n, survive = n + 1, survive * (1 - p)
+        return n
+    panel_1, panel_5 = zero_miss_sample(F(1, 100)), zero_miss_sample(F(1, 20))
+    record("G-8", "operations",
+           "Showing a panel misses <=1% (<=5%) of defects with zero observed misses needs 299 (59) "
+           "labelled defective items; 97 only calibrates one judge",
+           panel_1 == 299 and panel_5 == 59 and panel_1 > sample)
+    # Unanimous-or-escalate defect pass is linear in rho: rho*p + (1-rho)*p^3. The largest
+    # tolerable common mode for a target pass rate follows from that line, not from a fixed 0.6.
+    target = F(1, 10)
+    rho_star = (target - opt ** 3) / (opt - opt ** 3)
+    record("G-9", "architecture",
+           "For optimistic judges and a 1/10 target defect pass the tolerable common mode is rho <= 23/48 (~0.48)",
+           rho_star == F(23, 48)
+           and gate_metrics("unanimous_or_escalate", opt, rho_star)["defect_pass_probability"] == target)
+    # Defect pass never depends on the false-alarm rate; that rate only moves escalations.
+    alt = F(1, 25)
+    record("G-10", "security",
+           "Reverse Condorcet does not depend on the false-alarm rate (27/32 at 1/10 and 1/25); "
+           "it holds only for identical independent judges with miss > 1/2",
+           gate_metrics("majority", agr, F(0), alt)["defect_pass_probability"] == maj_agr
+           and gate_metrics("majority", F(2, 5), F(0))["defect_pass_probability"] < F(2, 5))
     return probes, sample
+
+
+GATE_ROW = re.compile(r"^\|\s*(оптимистичный|соглашательский)\s*\|\s*([\d,]+)\s*\|"
+                      r"\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*([\d,]+)\s*\|\s*$")
+SCENARIO = {"оптимистичный": "optimistic", "соглашательский": "agreeable"}
+
+
+def table_checks(text):
+    """The hand-written gate table in the survey must match the model to three decimals."""
+    rows = 0
+    for line in text.splitlines():
+        match = GATE_ROW.match(line.strip())
+        if not match:
+            continue
+        label, rho, *cells = match.groups()
+        miss, rho = MISS_RATES[SCENARIO[label]], F(rho.replace(",", "."))
+        model = [gate_metrics(p, miss, rho)["defect_pass_probability"] for p in POLICIES]
+        model.append(gate_metrics("unanimous_or_escalate", miss, rho)["human_escalation_rate"])
+        expected = [f"{float(v):.3f}".replace(".", ",") for v in model]
+        require(cells == expected, f"Survey gate row {label} rho={rho} {cells} != model {expected}")
+        rows += 1
+    require(rows >= 6, "Survey gate table (section 5.2) not found")
+    return rows
 
 
 STRESS_ROW = re.compile(r"^\|\s*(H\d+)-(\d+)\s*\|.*\|\s*(✅|⚠️|❌)[^|]*\|\s*$")
@@ -171,6 +221,7 @@ def survey_checks(sources):
     unknown = sorted(cited - registered)
     require(not unknown, "Cited source ids absent from sources.json: " + ", ".join(unknown))
     return {
+        "gate_table_rows_matching_model": table_checks(text),
         "stress_tests": {h: counts[h] for h in sorted(counts, key=lambda h: int(h[1:]))},
         "stress_tests_total": sum(sum(v.values()) for v in counts.values()),
         "external_urls_in_survey": len(external),
@@ -243,7 +294,7 @@ def main():
         require(result == json.loads(target.read_text(encoding="utf-8")),
                 "Recorded results differ; investigate before regenerating")
     survey = result["survey"]
-    print(f"{len(result['probes'])}/7 gate probes passed; {result['sources']['sources']} sources "
+    print(f"{len(result['probes'])}/{len(result['probes'])} gate probes passed; {result['sources']['sources']} sources "
           f"({result['sources']['verified']} verified); {survey['stress_tests_total']} stress tests "
           f"across {len(survey['stress_tests'])} hypotheses; results "
           + ("written" if args.write else "verified"))
