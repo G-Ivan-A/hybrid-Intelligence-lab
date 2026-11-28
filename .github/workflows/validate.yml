@@ -98,6 +98,9 @@ jobs:
       - name: Check synthetic BA industry survey evidence of issue 703
         run: python3 -I research/ba-requirements/exp/agent-ba-industry-703/measure.py --check
 
+      - name: Check digital employee survey evidence of issue 757
+        run: python3 -I research/hub/exp/digital-employee-757/measure.py --check
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:

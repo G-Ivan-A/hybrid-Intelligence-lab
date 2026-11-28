@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.32
-updated: 2026-11-17
+version: 1.33
+updated: 2026-11-28
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -65,6 +65,7 @@ source: research/README-old.md
 | [2026-06-28-research-analysis-audit-inventory.md](hub/2026-06-28-research-analysis-audit-inventory.md) | Analysis input для issue #288: Research / Analysis / Audit matrix по Hub, Mango и Clarify, concept substitutions, duplicate risks and three `Analysis -> RFC -> Standard` chains. |
 | [2026-06-30-reports-industry-norms-and-standardization-scope.md](hub/2026-06-30-reports-industry-norms-and-standardization-scope.md) | Research input для issue #307 (B-038): индустриальный benchmark норм Reports (Diátaxis, DITA, ISO/IEC/IEEE, ANSI/NISO Z39.18, ГОСТ 7.32/19.101, SDMX/DDI, NIST AI RMF, EU AI Act, Kubernetes/CNCF/OpenTelemetry), проверка гипотез H1-H4, граничные кейсы Reports ↔ Analysis/Audit и рекомендация Вариант C (гибрид) без создания стандарта. |
 | [2026-07-04-hub-as-agent-system-global-analysis.md](hub/2026-07-04-hub-as-agent-system-global-analysis.md) | Глобальный анализ Хаба как прообраза агентной системы для issue #394 (Deep Think, панель из 8 экспертов): 27 гипотез по направлениям A–H, 157 стресс-тестов (86 ✅ / 54 ⚠️ / 17 ❌), матрица, таксономия, методологический вектор, рекомендации R1–R11, индустриальные нормы (EU AI Act, OWASP LLM Top-10:2025, NIST AI RMF/600-1, ISO/IEC 42001/23894, Anthropic «Building Effective Agents») с явным разбором неприменимого, реестр из 11 пробелов и входные данные для 4 стандартов. Прикладное дополнение §14 (issue #398) заземляет анализ на спок Mango. Корректирующее до-исследование §15 (issue #400, v0.4) исправляет «критическую ошибку границ» §14: восстанавливает канонический порядок Vision (внешние источники → research → practices → проект) и добавляет вне границ проекта — индустриальные практики создания агентов (§15.1, 14 подпунктов + каталог из 12 анти-паттернов), структуру обучения (§15.2), корреляцию с экосистемой (§15.3), проверку готовности Mango к миграции (§15.4, ПГ-4), применимость (§15.5), эволюционные варианты миграции репо→агент с двумя параллельными треками и рейтингом V1–V4 (§15.6, рекоменд. V2), маршрут фаундера (§15.7), глоссарий/источники (§15.10–15.11) и самоаудит (§15.12); подготовлено семь входов для RFC (RFC-A…G). |
+| [2026-11-28-digital-employee-methodology-survey.md](hub/2026-11-28-digital-employee-methodology-survey.md) | Discussion paper M3 для issue #757: индустриальная практика автономных мультиагентных систем и предлагаемая методология создания цифровых сотрудников; доказательства — [exp/digital-employee-757/](hub/exp/digital-employee-757/README.md). Предварительные выводы, не норма. |
 
 ### Подкаталог `open-ai-ru/`
 
